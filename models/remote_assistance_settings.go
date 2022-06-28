@@ -7,6 +7,8 @@ import (
 // RemoteAssistanceSettings remote assistance settings for the account
 type RemoteAssistanceSettings struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Indicates if sessions to unenrolled devices are allowed for the account. This setting is configurable by the admin. Default value is false.
     allowSessionsToUnenrolledDevices *bool
     // The current state of remote assistance for the account. Possible values are: disabled, enabled. This setting is configurable by the admin. Remote assistance settings that have not yet been configured by the admin have a disabled state. Returned by default. Possible values are: disabled, enabled.
@@ -17,11 +19,20 @@ func NewRemoteAssistanceSettings()(*RemoteAssistanceSettings) {
     m := &RemoteAssistanceSettings{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateRemoteAssistanceSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateRemoteAssistanceSettingsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewRemoteAssistanceSettings(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *RemoteAssistanceSettings) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetAllowSessionsToUnenrolledDevices gets the allowSessionsToUnenrolledDevices property value. Indicates if sessions to unenrolled devices are allowed for the account. This setting is configurable by the admin. Default value is false.
 func (m *RemoteAssistanceSettings) GetAllowSessionsToUnenrolledDevices()(*bool) {
@@ -83,7 +94,19 @@ func (m *RemoteAssistanceSettings) Serialize(writer i878a80d2330e89d26896388a3f4
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *RemoteAssistanceSettings) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAllowSessionsToUnenrolledDevices sets the allowSessionsToUnenrolledDevices property value. Indicates if sessions to unenrolled devices are allowed for the account. This setting is configurable by the admin. Default value is false.
 func (m *RemoteAssistanceSettings) SetAllowSessionsToUnenrolledDevices(value *bool)() {

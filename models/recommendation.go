@@ -5,11 +5,13 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Recommendation provides operations to manage the directory singleton.
+// Recommendation provides operations to manage the collection of accessReview entities.
 type Recommendation struct {
     Entity
     // The actionSteps property
     actionSteps []ActionStepable
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // The benefits property
     benefits *string
     // The category property
@@ -44,6 +46,7 @@ func NewRecommendation()(*Recommendation) {
     m := &Recommendation{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateRecommendationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -56,6 +59,14 @@ func (m *Recommendation) GetActionSteps()([]ActionStepable) {
         return nil
     } else {
         return m.actionSteps
+    }
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *Recommendation) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
     }
 }
 // GetBenefits gets the benefits property value. The benefits property
@@ -440,12 +451,24 @@ func (m *Recommendation) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetActionSteps sets the actionSteps property value. The actionSteps property
 func (m *Recommendation) SetActionSteps(value []ActionStepable)() {
     if m != nil {
         m.actionSteps = value
+    }
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *Recommendation) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
     }
 }
 // SetBenefits sets the benefits property value. The benefits property

@@ -4,11 +4,13 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// EducationAssignmentDefaults provides operations to manage the educationRoot singleton.
+// EducationAssignmentDefaults 
 type EducationAssignmentDefaults struct {
     Entity
     // Class-level default behavior for handling students who are added after the assignment is published. Possible values are: none, assignIfOpen.
     addedStudentAction *EducationAddedStudentAction
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Optional field to control adding assignments to students' and teachers' calendars when the assignment is published. The possible values are: none, studentsAndPublisher, studentsAndTeamOwners, unknownFutureValue, and studentsOnly. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: studentsOnly. The default value is none.
     addToCalendarAction *EducationAddToCalendarOptions
     // Class-level default value for due time field. Default value is 23:59:00.
@@ -16,11 +18,12 @@ type EducationAssignmentDefaults struct {
     // Default Teams channel to which notifications will be sent. Default value is null.
     notificationChannelUrl *string
 }
-// NewEducationAssignmentDefaults instantiates a new educationAssignmentDefaults and sets the default values.
+// NewEducationAssignmentDefaults instantiates a new EducationAssignmentDefaults and sets the default values.
 func NewEducationAssignmentDefaults()(*EducationAssignmentDefaults) {
     m := &EducationAssignmentDefaults{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateEducationAssignmentDefaultsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -33,6 +36,14 @@ func (m *EducationAssignmentDefaults) GetAddedStudentAction()(*EducationAddedStu
         return nil
     } else {
         return m.addedStudentAction
+    }
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *EducationAssignmentDefaults) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
     }
 }
 // GetAddToCalendarAction gets the addToCalendarAction property value. Optional field to control adding assignments to students' and teachers' calendars when the assignment is published. The possible values are: none, studentsAndPublisher, studentsAndTeamOwners, unknownFutureValue, and studentsOnly. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: studentsOnly. The default value is none.
@@ -136,12 +147,24 @@ func (m *EducationAssignmentDefaults) Serialize(writer i878a80d2330e89d26896388a
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetAddedStudentAction sets the addedStudentAction property value. Class-level default behavior for handling students who are added after the assignment is published. Possible values are: none, assignIfOpen.
 func (m *EducationAssignmentDefaults) SetAddedStudentAction(value *EducationAddedStudentAction)() {
     if m != nil {
         m.addedStudentAction = value
+    }
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *EducationAssignmentDefaults) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
     }
 }
 // SetAddToCalendarAction sets the addToCalendarAction property value. Optional field to control adding assignments to students' and teachers' calendars when the assignment is published. The possible values are: none, studentsAndPublisher, studentsAndTeamOwners, unknownFutureValue, and studentsOnly. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: studentsOnly. The default value is none.

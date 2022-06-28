@@ -8,6 +8,8 @@ import (
 // Message 
 type Message struct {
     OutlookItem
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // The fileAttachment and itemAttachment attachments for the message.
     attachments []Attachmentable
     // The Bcc: recipients for the message.
@@ -82,6 +84,7 @@ func NewMessage()(*Message) {
     m := &Message{
         OutlookItem: *NewOutlookItem(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateMessageFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -108,6 +111,14 @@ func CreateMessageFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f48
         }
     }
     return NewMessage(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *Message) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetAttachments gets the attachments property value. The fileAttachment and itemAttachment attachments for the message.
 func (m *Message) GetAttachments()([]Attachmentable) {
@@ -1022,7 +1033,19 @@ func (m *Message) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *Message) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAttachments sets the attachments property value. The fileAttachment and itemAttachment attachments for the message.
 func (m *Message) SetAttachments(value []Attachmentable)() {

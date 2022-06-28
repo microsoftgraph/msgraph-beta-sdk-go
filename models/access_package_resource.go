@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AccessPackageResource provides operations to manage the identityGovernance singleton.
+// AccessPackageResource provides operations to manage the collection of accessReview entities.
 type AccessPackageResource struct {
     Entity
     // Contains the environment information for the resource. This can be set using either the @odata.bind annotation or the environment's originId.Supports $expand.
@@ -18,6 +18,8 @@ type AccessPackageResource struct {
     addedBy *string
     // The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
     addedOn *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Contains information about the attributes to be collected from the requestor and sent to the resource application.
     attributes []AccessPackageResourceAttributeable
     // A description for the resource.
@@ -40,6 +42,7 @@ func NewAccessPackageResource()(*AccessPackageResource) {
     m := &AccessPackageResource{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateAccessPackageResourceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -84,6 +87,14 @@ func (m *AccessPackageResource) GetAddedOn()(*i336074805fc853987abe6f7fe3ad97a6a
         return nil
     } else {
         return m.addedOn
+    }
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *AccessPackageResource) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
     }
 }
 // GetAttributes gets the attributes property value. Contains information about the attributes to be collected from the requestor and sent to the resource application.
@@ -393,6 +404,12 @@ func (m *AccessPackageResource) Serialize(writer i878a80d2330e89d26896388a3f487e
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetAccessPackageResourceEnvironment sets the accessPackageResourceEnvironment property value. Contains the environment information for the resource. This can be set using either the @odata.bind annotation or the environment's originId.Supports $expand.
@@ -423,6 +440,12 @@ func (m *AccessPackageResource) SetAddedBy(value *string)() {
 func (m *AccessPackageResource) SetAddedOn(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     if m != nil {
         m.addedOn = value
+    }
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *AccessPackageResource) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
     }
 }
 // SetAttributes sets the attributes property value. Contains information about the attributes to be collected from the requestor and sent to the resource application.

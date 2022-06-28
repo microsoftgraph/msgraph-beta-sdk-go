@@ -9,6 +9,8 @@ type Windows10EasEmailProfileConfiguration struct {
     EasEmailProfileConfigurationBase
     // Account name.
     accountName *string
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Duration of email to sync. Possible values are: userDefined, oneDay, threeDays, oneWeek, twoWeeks, oneMonth, unlimited.
     durationOfEmailToSync *EmailSyncDuration
     // Email attribute that is picked from AAD and injected into this profile before installing on the device. Possible values are: userPrincipalName, primarySmtpAddress.
@@ -31,6 +33,7 @@ func NewWindows10EasEmailProfileConfiguration()(*Windows10EasEmailProfileConfigu
     m := &Windows10EasEmailProfileConfiguration{
         EasEmailProfileConfigurationBase: *NewEasEmailProfileConfigurationBase(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateWindows10EasEmailProfileConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -43,6 +46,14 @@ func (m *Windows10EasEmailProfileConfiguration) GetAccountName()(*string) {
         return nil
     } else {
         return m.accountName
+    }
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *Windows10EasEmailProfileConfiguration) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
     }
 }
 // GetDurationOfEmailToSync gets the durationOfEmailToSync property value. Duration of email to sync. Possible values are: userDefined, oneDay, threeDays, oneWeek, twoWeeks, oneMonth, unlimited.
@@ -267,12 +278,24 @@ func (m *Windows10EasEmailProfileConfiguration) Serialize(writer i878a80d2330e89
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetAccountName sets the accountName property value. Account name.
 func (m *Windows10EasEmailProfileConfiguration) SetAccountName(value *string)() {
     if m != nil {
         m.accountName = value
+    }
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *Windows10EasEmailProfileConfiguration) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
     }
 }
 // SetDurationOfEmailToSync sets the durationOfEmailToSync property value. Duration of email to sync. Possible values are: userDefined, oneDay, threeDays, oneWeek, twoWeeks, oneMonth, unlimited.

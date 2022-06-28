@@ -5,9 +5,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ManagedAllDeviceCertificateState provides operations to manage the deviceManagement singleton.
+// ManagedAllDeviceCertificateState provides operations to manage the collection of accessReview entities.
 type ManagedAllDeviceCertificateState struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Certificate expiry date
     certificateExpirationDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Enhanced Key Usage
@@ -38,11 +40,20 @@ func NewManagedAllDeviceCertificateState()(*ManagedAllDeviceCertificateState) {
     m := &ManagedAllDeviceCertificateState{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateManagedAllDeviceCertificateStateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateManagedAllDeviceCertificateStateFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewManagedAllDeviceCertificateState(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *ManagedAllDeviceCertificateState) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetCertificateExpirationDateTime gets the certificateExpirationDateTime property value. Certificate expiry date
 func (m *ManagedAllDeviceCertificateState) GetCertificateExpirationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
@@ -344,7 +355,19 @@ func (m *ManagedAllDeviceCertificateState) Serialize(writer i878a80d2330e89d2689
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *ManagedAllDeviceCertificateState) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetCertificateExpirationDateTime sets the certificateExpirationDateTime property value. Certificate expiry date
 func (m *ManagedAllDeviceCertificateState) SetCertificateExpirationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {

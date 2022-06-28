@@ -5,9 +5,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// WindowsUpdateState provides operations to manage the deviceManagement singleton.
+// WindowsUpdateState provides operations to manage the collection of accessReview entities.
 type WindowsUpdateState struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Device display name.
     deviceDisplayName *string
     // The id of the device.
@@ -32,11 +34,20 @@ func NewWindowsUpdateState()(*WindowsUpdateState) {
     m := &WindowsUpdateState{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateWindowsUpdateStateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateWindowsUpdateStateFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWindowsUpdateState(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *WindowsUpdateState) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetDeviceDisplayName gets the deviceDisplayName property value. Device display name.
 func (m *WindowsUpdateState) GetDeviceDisplayName()(*string) {
@@ -266,7 +277,19 @@ func (m *WindowsUpdateState) Serialize(writer i878a80d2330e89d26896388a3f487eef2
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *WindowsUpdateState) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetDeviceDisplayName sets the deviceDisplayName property value. Device display name.
 func (m *WindowsUpdateState) SetDeviceDisplayName(value *string)() {

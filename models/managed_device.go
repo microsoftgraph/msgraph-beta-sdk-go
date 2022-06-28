@@ -12,6 +12,8 @@ type ManagedDevice struct {
     aadRegistered *bool
     // Code that allows the Activation Lock on a device to be bypassed. This property is read-only.
     activationLockBypassCode *string
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Android security patch level. This property is read-only.
     androidSecurityPatchLevel *string
     // Managed device mobile app configuration states for this device.
@@ -192,6 +194,7 @@ func NewManagedDevice()(*ManagedDevice) {
     m := &ManagedDevice{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateManagedDeviceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -231,6 +234,14 @@ func (m *ManagedDevice) GetActivationLockBypassCode()(*string) {
         return nil
     } else {
         return m.activationLockBypassCode
+    }
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *ManagedDevice) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
     }
 }
 // GetAndroidSecurityPatchLevel gets the androidSecurityPatchLevel property value. Android security patch level. This property is read-only.
@@ -2480,6 +2491,12 @@ func (m *ManagedDevice) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetAadRegistered sets the aadRegistered property value. Whether the device is Azure Active Directory registered. This property is read-only.
@@ -2492,6 +2509,12 @@ func (m *ManagedDevice) SetAadRegistered(value *bool)() {
 func (m *ManagedDevice) SetActivationLockBypassCode(value *string)() {
     if m != nil {
         m.activationLockBypassCode = value
+    }
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *ManagedDevice) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
     }
 }
 // SetAndroidSecurityPatchLevel sets the androidSecurityPatchLevel property value. Android security patch level. This property is read-only.

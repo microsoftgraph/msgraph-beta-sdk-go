@@ -5,9 +5,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// SymantecCodeSigningCertificate provides operations to manage the deviceAppManagement singleton.
+// SymantecCodeSigningCertificate provides operations to manage the collection of accessReview entities.
 type SymantecCodeSigningCertificate struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // The Windows Symantec Code-Signing Certificate in the raw data format.
     content []byte
     // The Cert Expiration Date.
@@ -32,11 +34,20 @@ func NewSymantecCodeSigningCertificate()(*SymantecCodeSigningCertificate) {
     m := &SymantecCodeSigningCertificate{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateSymantecCodeSigningCertificateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateSymantecCodeSigningCertificateFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewSymantecCodeSigningCertificate(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *SymantecCodeSigningCertificate) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetContent gets the content property value. The Windows Symantec Code-Signing Certificate in the raw data format.
 func (m *SymantecCodeSigningCertificate) GetContent()([]byte) {
@@ -266,7 +277,19 @@ func (m *SymantecCodeSigningCertificate) Serialize(writer i878a80d2330e89d268963
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *SymantecCodeSigningCertificate) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetContent sets the content property value. The Windows Symantec Code-Signing Certificate in the raw data format.
 func (m *SymantecCodeSigningCertificate) SetContent(value []byte)() {

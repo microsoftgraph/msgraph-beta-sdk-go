@@ -7,6 +7,8 @@ import (
 // DeviceManagementComplianceScheduledActionForRule scheduled Action for Rule
 type DeviceManagementComplianceScheduledActionForRule struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Name of the rule which this scheduled action applies to.
     ruleName *string
     // The list of scheduled action configurations for this compliance policy. This collection can contain a maximum of 100 elements.
@@ -17,11 +19,20 @@ func NewDeviceManagementComplianceScheduledActionForRule()(*DeviceManagementComp
     m := &DeviceManagementComplianceScheduledActionForRule{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateDeviceManagementComplianceScheduledActionForRuleFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateDeviceManagementComplianceScheduledActionForRuleFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDeviceManagementComplianceScheduledActionForRule(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *DeviceManagementComplianceScheduledActionForRule) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceManagementComplianceScheduledActionForRule) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -90,7 +101,19 @@ func (m *DeviceManagementComplianceScheduledActionForRule) Serialize(writer i878
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *DeviceManagementComplianceScheduledActionForRule) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetRuleName sets the ruleName property value. Name of the rule which this scheduled action applies to.
 func (m *DeviceManagementComplianceScheduledActionForRule) SetRuleName(value *string)() {

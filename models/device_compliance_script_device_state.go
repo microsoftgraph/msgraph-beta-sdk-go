@@ -8,6 +8,8 @@ import (
 // DeviceComplianceScriptDeviceState contains properties for device run state of the device compliance script.
 type DeviceComplianceScriptDeviceState struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Detection state from the lastest device compliance script execution. Possible values are: unknown, success, fail, scriptError, pending, notApplicable.
     detectionState *RunState
     // The next timestamp of when the device compliance script is expected to execute
@@ -28,11 +30,20 @@ func NewDeviceComplianceScriptDeviceState()(*DeviceComplianceScriptDeviceState) 
     m := &DeviceComplianceScriptDeviceState{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateDeviceComplianceScriptDeviceStateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateDeviceComplianceScriptDeviceStateFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDeviceComplianceScriptDeviceState(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *DeviceComplianceScriptDeviceState) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetDetectionState gets the detectionState property value. Detection state from the lastest device compliance script execution. Possible values are: unknown, success, fail, scriptError, pending, notApplicable.
 func (m *DeviceComplianceScriptDeviceState) GetDetectionState()(*RunState) {
@@ -214,7 +225,19 @@ func (m *DeviceComplianceScriptDeviceState) Serialize(writer i878a80d2330e89d268
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *DeviceComplianceScriptDeviceState) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetDetectionState sets the detectionState property value. Detection state from the lastest device compliance script execution. Possible values are: unknown, success, fail, scriptError, pending, notApplicable.
 func (m *DeviceComplianceScriptDeviceState) SetDetectionState(value *RunState)() {

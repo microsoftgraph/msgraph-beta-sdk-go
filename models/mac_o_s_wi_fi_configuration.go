@@ -7,6 +7,8 @@ import (
 // MacOSWiFiConfiguration 
 type MacOSWiFiConfiguration struct {
     DeviceConfiguration
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Connect automatically when this network is in range. Setting this to true will skip the user prompt and automatically connect the device to Wi-Fi network.
     connectAutomatically *bool
     // Connect when the network is not broadcasting its name (SSID). When set to true, this profile forces the device to connect to a network that doesn't broadcast its SSID to all devices.
@@ -33,6 +35,7 @@ func NewMacOSWiFiConfiguration()(*MacOSWiFiConfiguration) {
     m := &MacOSWiFiConfiguration{
         DeviceConfiguration: *NewDeviceConfiguration(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateMacOSWiFiConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -57,6 +60,14 @@ func CreateMacOSWiFiConfigurationFromDiscriminatorValue(parseNode i878a80d2330e8
         }
     }
     return NewMacOSWiFiConfiguration(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *MacOSWiFiConfiguration) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetConnectAutomatically gets the connectAutomatically property value. Connect automatically when this network is in range. Setting this to true will skip the user prompt and automatically connect the device to Wi-Fi network.
 func (m *MacOSWiFiConfiguration) GetConnectAutomatically()(*bool) {
@@ -311,7 +322,19 @@ func (m *MacOSWiFiConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *MacOSWiFiConfiguration) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetConnectAutomatically sets the connectAutomatically property value. Connect automatically when this network is in range. Setting this to true will skip the user prompt and automatically connect the device to Wi-Fi network.
 func (m *MacOSWiFiConfiguration) SetConnectAutomatically(value *bool)() {

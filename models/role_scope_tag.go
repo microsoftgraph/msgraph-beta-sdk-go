@@ -7,6 +7,8 @@ import (
 // RoleScopeTag role Scope Tag
 type RoleScopeTag struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // The list of assignments for this Role Scope Tag.
     assignments []RoleScopeTagAutoAssignmentable
     // Description of the Role Scope Tag.
@@ -21,11 +23,20 @@ func NewRoleScopeTag()(*RoleScopeTag) {
     m := &RoleScopeTag{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateRoleScopeTagFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateRoleScopeTagFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewRoleScopeTag(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *RoleScopeTag) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetAssignments gets the assignments property value. The list of assignments for this Role Scope Tag.
 func (m *RoleScopeTag) GetAssignments()([]RoleScopeTagAutoAssignmentable) {
@@ -142,7 +153,19 @@ func (m *RoleScopeTag) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *RoleScopeTag) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAssignments sets the assignments property value. The list of assignments for this Role Scope Tag.
 func (m *RoleScopeTag) SetAssignments(value []RoleScopeTagAutoAssignmentable)() {

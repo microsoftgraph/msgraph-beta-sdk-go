@@ -4,9 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// PrintDocument provides operations to manage the collection of administrativeUnit entities.
+// PrintDocument provides operations to manage the collection of accessReview entities.
 type PrintDocument struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // The configuration property
     configuration PrinterDocumentConfigurationable
     // The document's content (MIME) type. Read-only.
@@ -21,11 +23,20 @@ func NewPrintDocument()(*PrintDocument) {
     m := &PrintDocument{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreatePrintDocumentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreatePrintDocumentFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewPrintDocument(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *PrintDocument) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetConfiguration gets the configuration property value. The configuration property
 func (m *PrintDocument) GetConfiguration()(PrinterDocumentConfigurationable) {
@@ -134,7 +145,19 @@ func (m *PrintDocument) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *PrintDocument) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetConfiguration sets the configuration property value. The configuration property
 func (m *PrintDocument) SetConfiguration(value PrinterDocumentConfigurationable)() {

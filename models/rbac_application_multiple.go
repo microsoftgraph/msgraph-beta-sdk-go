@@ -4,9 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// RbacApplicationMultiple provides operations to manage the roleManagement singleton.
+// RbacApplicationMultiple 
 type RbacApplicationMultiple struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // The resourceNamespaces property
     resourceNamespaces []UnifiedRbacResourceNamespaceable
     // The roleAssignments property
@@ -14,16 +16,25 @@ type RbacApplicationMultiple struct {
     // The roleDefinitions property
     roleDefinitions []UnifiedRoleDefinitionable
 }
-// NewRbacApplicationMultiple instantiates a new rbacApplicationMultiple and sets the default values.
+// NewRbacApplicationMultiple instantiates a new RbacApplicationMultiple and sets the default values.
 func NewRbacApplicationMultiple()(*RbacApplicationMultiple) {
     m := &RbacApplicationMultiple{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateRbacApplicationMultipleFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateRbacApplicationMultipleFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewRbacApplicationMultiple(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *RbacApplicationMultiple) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *RbacApplicationMultiple) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -132,7 +143,19 @@ func (m *RbacApplicationMultiple) Serialize(writer i878a80d2330e89d26896388a3f48
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *RbacApplicationMultiple) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetResourceNamespaces sets the resourceNamespaces property value. The resourceNamespaces property
 func (m *RbacApplicationMultiple) SetResourceNamespaces(value []UnifiedRbacResourceNamespaceable)() {

@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AccessPackageAssignmentResourceRole provides operations to manage the identityGovernance singleton.
+// AccessPackageAssignmentResourceRole provides operations to manage the collection of accessReview entities.
 type AccessPackageAssignmentResourceRole struct {
     Entity
     // The access package assignments resulting in this role assignment. Read-only. Nullable.
@@ -15,6 +15,8 @@ type AccessPackageAssignmentResourceRole struct {
     accessPackageResourceScope AccessPackageResourceScopeable
     // Read-only. Nullable. Supports $filter (eq) on objectId and $expand query parameters.
     accessPackageSubject AccessPackageSubjectable
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // A unique identifier relative to the origin system, corresponding to the originId property of the accessPackageResourceRole.
     originId *string
     // The system where the role assignment is to be created or has been created for an access package assignment, such as SharePointOnline, AadGroup or AadApplication, corresponding to the originSystem property of the accessPackageResourceRole.
@@ -27,6 +29,7 @@ func NewAccessPackageAssignmentResourceRole()(*AccessPackageAssignmentResourceRo
     m := &AccessPackageAssignmentResourceRole{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateAccessPackageAssignmentResourceRoleFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -63,6 +66,14 @@ func (m *AccessPackageAssignmentResourceRole) GetAccessPackageSubject()(AccessPa
         return nil
     } else {
         return m.accessPackageSubject
+    }
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *AccessPackageAssignmentResourceRole) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -220,6 +231,12 @@ func (m *AccessPackageAssignmentResourceRole) Serialize(writer i878a80d2330e89d2
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetAccessPackageAssignments sets the accessPackageAssignments property value. The access package assignments resulting in this role assignment. Read-only. Nullable.
@@ -244,6 +261,12 @@ func (m *AccessPackageAssignmentResourceRole) SetAccessPackageResourceScope(valu
 func (m *AccessPackageAssignmentResourceRole) SetAccessPackageSubject(value AccessPackageSubjectable)() {
     if m != nil {
         m.accessPackageSubject = value
+    }
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *AccessPackageAssignmentResourceRole) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
     }
 }
 // SetOriginId sets the originId property value. A unique identifier relative to the origin system, corresponding to the originId property of the accessPackageResourceRole.

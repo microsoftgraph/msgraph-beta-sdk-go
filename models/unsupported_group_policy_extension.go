@@ -7,6 +7,8 @@ import (
 // UnsupportedGroupPolicyExtension unsupported Group Policy Extension.
 type UnsupportedGroupPolicyExtension struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // ExtensionType of the unsupported extension.
     extensionType *string
     // Namespace Url of the unsupported extension.
@@ -21,11 +23,20 @@ func NewUnsupportedGroupPolicyExtension()(*UnsupportedGroupPolicyExtension) {
     m := &UnsupportedGroupPolicyExtension{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateUnsupportedGroupPolicyExtensionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateUnsupportedGroupPolicyExtensionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewUnsupportedGroupPolicyExtension(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *UnsupportedGroupPolicyExtension) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetExtensionType gets the extensionType property value. ExtensionType of the unsupported extension.
 func (m *UnsupportedGroupPolicyExtension) GetExtensionType()(*string) {
@@ -135,7 +146,19 @@ func (m *UnsupportedGroupPolicyExtension) Serialize(writer i878a80d2330e89d26896
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *UnsupportedGroupPolicyExtension) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetExtensionType sets the extensionType property value. ExtensionType of the unsupported extension.
 func (m *UnsupportedGroupPolicyExtension) SetExtensionType(value *string)() {

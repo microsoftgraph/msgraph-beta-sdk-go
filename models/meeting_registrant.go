@@ -8,6 +8,8 @@ import (
 // MeetingRegistrant 
 type MeetingRegistrant struct {
     MeetingRegistrantBase
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // The registrant's answer to custom questions.
     customQuestionAnswers []CustomQuestionAnswerable
     // The email address of the registrant.
@@ -26,11 +28,20 @@ func NewMeetingRegistrant()(*MeetingRegistrant) {
     m := &MeetingRegistrant{
         MeetingRegistrantBase: *NewMeetingRegistrantBase(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateMeetingRegistrantFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateMeetingRegistrantFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewMeetingRegistrant(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *MeetingRegistrant) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetCustomQuestionAnswers gets the customQuestionAnswers property value. The registrant's answer to custom questions.
 func (m *MeetingRegistrant) GetCustomQuestionAnswers()([]CustomQuestionAnswerable) {
@@ -196,7 +207,19 @@ func (m *MeetingRegistrant) Serialize(writer i878a80d2330e89d26896388a3f487eef27
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *MeetingRegistrant) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetCustomQuestionAnswers sets the customQuestionAnswers property value. The registrant's answer to custom questions.
 func (m *MeetingRegistrant) SetCustomQuestionAnswers(value []CustomQuestionAnswerable)() {

@@ -7,6 +7,8 @@ import (
 // SocialIdentityProvider 
 type SocialIdentityProvider struct {
     IdentityProviderBase
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // The client identifier for the application obtained when registering the application with the identity provider. Required.
     clientId *string
     // The client secret for the application that is obtained when the application is registered with the identity provider. This is write-only. A read operation returns ****. Required.
@@ -19,11 +21,20 @@ func NewSocialIdentityProvider()(*SocialIdentityProvider) {
     m := &SocialIdentityProvider{
         IdentityProviderBase: *NewIdentityProviderBase(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateSocialIdentityProviderFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateSocialIdentityProviderFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewSocialIdentityProvider(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *SocialIdentityProvider) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetClientId gets the clientId property value. The client identifier for the application obtained when registering the application with the identity provider. Required.
 func (m *SocialIdentityProvider) GetClientId()(*string) {
@@ -108,7 +119,19 @@ func (m *SocialIdentityProvider) Serialize(writer i878a80d2330e89d26896388a3f487
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *SocialIdentityProvider) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetClientId sets the clientId property value. The client identifier for the application obtained when registering the application with the identity provider. Required.
 func (m *SocialIdentityProvider) SetClientId(value *string)() {

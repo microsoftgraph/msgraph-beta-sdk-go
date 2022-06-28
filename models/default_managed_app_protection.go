@@ -7,6 +7,8 @@ import (
 // DefaultManagedAppProtection 
 type DefaultManagedAppProtection struct {
     ManagedAppProtection
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Semicolon seperated list of device manufacturers allowed, as a string, for the managed app to work. (Android only)
     allowedAndroidDeviceManufacturers *string
     // List of device models allowed, as a string, for the managed app to work. (Android Only)
@@ -119,11 +121,20 @@ func NewDefaultManagedAppProtection()(*DefaultManagedAppProtection) {
     m := &DefaultManagedAppProtection{
         ManagedAppProtection: *NewManagedAppProtection(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateDefaultManagedAppProtectionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateDefaultManagedAppProtectionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDefaultManagedAppProtection(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *DefaultManagedAppProtection) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetAllowedAndroidDeviceManufacturers gets the allowedAndroidDeviceManufacturers property value. Semicolon seperated list of device manufacturers allowed, as a string, for the managed app to work. (Android only)
 func (m *DefaultManagedAppProtection) GetAllowedAndroidDeviceManufacturers()(*string) {
@@ -1457,7 +1468,19 @@ func (m *DefaultManagedAppProtection) Serialize(writer i878a80d2330e89d26896388a
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *DefaultManagedAppProtection) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAllowedAndroidDeviceManufacturers sets the allowedAndroidDeviceManufacturers property value. Semicolon seperated list of device manufacturers allowed, as a string, for the managed app to work. (Android only)
 func (m *DefaultManagedAppProtection) SetAllowedAndroidDeviceManufacturers(value *string)() {

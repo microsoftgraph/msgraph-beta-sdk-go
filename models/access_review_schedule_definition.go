@@ -5,9 +5,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AccessReviewScheduleDefinition provides operations to manage the collection of administrativeUnit entities.
+// AccessReviewScheduleDefinition provides operations to manage the collection of accessReview entities.
 type AccessReviewScheduleDefinition struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Defines the list of additional users or group members to be notified of the access review progress.
     additionalNotificationRecipients []AccessReviewNotificationRecipientItemable
     // The backupReviewers property
@@ -46,11 +48,20 @@ func NewAccessReviewScheduleDefinition()(*AccessReviewScheduleDefinition) {
     m := &AccessReviewScheduleDefinition{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateAccessReviewScheduleDefinitionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateAccessReviewScheduleDefinitionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAccessReviewScheduleDefinition(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *AccessReviewScheduleDefinition) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetAdditionalNotificationRecipients gets the additionalNotificationRecipients property value. Defines the list of additional users or group members to be notified of the access review progress.
 func (m *AccessReviewScheduleDefinition) GetAdditionalNotificationRecipients()([]AccessReviewNotificationRecipientItemable) {
@@ -495,7 +506,19 @@ func (m *AccessReviewScheduleDefinition) Serialize(writer i878a80d2330e89d268963
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *AccessReviewScheduleDefinition) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAdditionalNotificationRecipients sets the additionalNotificationRecipients property value. Defines the list of additional users or group members to be notified of the access review progress.
 func (m *AccessReviewScheduleDefinition) SetAdditionalNotificationRecipients(value []AccessReviewNotificationRecipientItemable)() {

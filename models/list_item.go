@@ -4,11 +4,13 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ListItem provides operations to manage the collection of administrativeUnit entities.
+// ListItem provides operations to manage the collection of accessReview entities.
 type ListItem struct {
     BaseItem
     // The list of recent activities that took place on this item.
     activities []ItemActivityOLDable
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Analytics about the view activities that took place on this item.
     analytics ItemAnalyticsable
     // The content type of this list item
@@ -31,6 +33,7 @@ func NewListItem()(*ListItem) {
     m := &ListItem{
         BaseItem: *NewBaseItem(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateListItemFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -43,6 +46,14 @@ func (m *ListItem) GetActivities()([]ItemActivityOLDable) {
         return nil
     } else {
         return m.activities
+    }
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *ListItem) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
     }
 }
 // GetAnalytics gets the analytics property value. Analytics about the view activities that took place on this item.
@@ -288,12 +299,24 @@ func (m *ListItem) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetActivities sets the activities property value. The list of recent activities that took place on this item.
 func (m *ListItem) SetActivities(value []ItemActivityOLDable)() {
     if m != nil {
         m.activities = value
+    }
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *ListItem) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
     }
 }
 // SetAnalytics sets the analytics property value. Analytics about the view activities that took place on this item.

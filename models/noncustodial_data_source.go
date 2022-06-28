@@ -1,0 +1,89 @@
+package models
+
+import (
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+)
+
+// NoncustodialDataSource 
+type NoncustodialDataSource struct {
+    DataSourceContainer
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
+    // Indicates if hold is applied to non-custodial data source (such as mailbox or site).
+    applyHoldToSource *bool
+}
+// NewNoncustodialDataSource instantiates a new NoncustodialDataSource and sets the default values.
+func NewNoncustodialDataSource()(*NoncustodialDataSource) {
+    m := &NoncustodialDataSource{
+        DataSourceContainer: *NewDataSourceContainer(),
+    }
+    m.SetAdditionalData(make(map[string]interface{}));
+    return m
+}
+// CreateNoncustodialDataSourceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateNoncustodialDataSourceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+    return NewNoncustodialDataSource(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *NoncustodialDataSource) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
+}
+// GetApplyHoldToSource gets the applyHoldToSource property value. Indicates if hold is applied to non-custodial data source (such as mailbox or site).
+func (m *NoncustodialDataSource) GetApplyHoldToSource()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.applyHoldToSource
+    }
+}
+// GetFieldDeserializers the deserialization information for the current model
+func (m *NoncustodialDataSource) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := m.DataSourceContainer.GetFieldDeserializers()
+    res["applyHoldToSource"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetApplyHoldToSource(val)
+        }
+        return nil
+    }
+    return res
+}
+// Serialize serializes information the current object
+func (m *NoncustodialDataSource) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
+    err := m.DataSourceContainer.Serialize(writer)
+    if err != nil {
+        return err
+    }
+    {
+        err = writer.WriteBoolValue("applyHoldToSource", m.GetApplyHoldToSource())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
+    return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *NoncustodialDataSource) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
+}
+// SetApplyHoldToSource sets the applyHoldToSource property value. Indicates if hold is applied to non-custodial data source (such as mailbox or site).
+func (m *NoncustodialDataSource) SetApplyHoldToSource(value *bool)() {
+    if m != nil {
+        m.applyHoldToSource = value
+    }
+}

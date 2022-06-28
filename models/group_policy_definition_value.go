@@ -8,6 +8,8 @@ import (
 // GroupPolicyDefinitionValue the definition value entity stores the value for a single group policy definition.
 type GroupPolicyDefinitionValue struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Specifies how the value should be configured. This can be either as a Policy or as a Preference. Possible values are: policy, preference.
     configurationType *GroupPolicyConfigurationType
     // The date and time the object was created.
@@ -26,11 +28,20 @@ func NewGroupPolicyDefinitionValue()(*GroupPolicyDefinitionValue) {
     m := &GroupPolicyDefinitionValue{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateGroupPolicyDefinitionValueFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateGroupPolicyDefinitionValueFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewGroupPolicyDefinitionValue(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *GroupPolicyDefinitionValue) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetConfigurationType gets the configurationType property value. Specifies how the value should be configured. This can be either as a Policy or as a Preference. Possible values are: policy, preference.
 func (m *GroupPolicyDefinitionValue) GetConfigurationType()(*GroupPolicyConfigurationType) {
@@ -196,7 +207,19 @@ func (m *GroupPolicyDefinitionValue) Serialize(writer i878a80d2330e89d26896388a3
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *GroupPolicyDefinitionValue) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetConfigurationType sets the configurationType property value. Specifies how the value should be configured. This can be either as a Policy or as a Preference. Possible values are: policy, preference.
 func (m *GroupPolicyDefinitionValue) SetConfigurationType(value *GroupPolicyConfigurationType)() {

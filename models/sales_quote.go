@@ -5,11 +5,13 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// SalesQuote provides operations to manage the financials singleton.
+// SalesQuote provides operations to manage the collection of accessReview entities.
 type SalesQuote struct {
     Entity
     // The acceptedDate property
     acceptedDate *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // The billingPostalAddress property
     billingPostalAddress PostalAddressTypeable
     // The billToCustomerId property
@@ -86,6 +88,7 @@ func NewSalesQuote()(*SalesQuote) {
     m := &SalesQuote{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateSalesQuoteFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -98,6 +101,14 @@ func (m *SalesQuote) GetAcceptedDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e
         return nil
     } else {
         return m.acceptedDate
+    }
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *SalesQuote) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
     }
 }
 // GetBillingPostalAddress gets the billingPostalAddress property value. The billingPostalAddress property
@@ -975,12 +986,24 @@ func (m *SalesQuote) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetAcceptedDate sets the acceptedDate property value. The acceptedDate property
 func (m *SalesQuote) SetAcceptedDate(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)() {
     if m != nil {
         m.acceptedDate = value
+    }
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *SalesQuote) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
     }
 }
 // SetBillingPostalAddress sets the billingPostalAddress property value. The billingPostalAddress property

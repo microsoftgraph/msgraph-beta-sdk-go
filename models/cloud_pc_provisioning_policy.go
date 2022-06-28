@@ -4,9 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// CloudPcProvisioningPolicy provides operations to manage the deviceManagement singleton.
+// CloudPcProvisioningPolicy 
 type CloudPcProvisioningPolicy struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // The URL of the alternate resource that links to this provisioning policy. Read-only.
     alternateResourceUrl *string
     // A defined collection of provisioning policy assignments. Represents the set of Microsoft 365 groups and security groups in Azure AD that have provisioning policy assigned. Returned only on $expand. See an example of getting the assignments relationship.
@@ -38,16 +40,25 @@ type CloudPcProvisioningPolicy struct {
     // Specific Windows settings to configure while creating Cloud PCs for this provisioning policy.
     windowsSettings CloudPcWindowsSettingsable
 }
-// NewCloudPcProvisioningPolicy instantiates a new cloudPcProvisioningPolicy and sets the default values.
+// NewCloudPcProvisioningPolicy instantiates a new CloudPcProvisioningPolicy and sets the default values.
 func NewCloudPcProvisioningPolicy()(*CloudPcProvisioningPolicy) {
     m := &CloudPcProvisioningPolicy{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateCloudPcProvisioningPolicyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateCloudPcProvisioningPolicyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCloudPcProvisioningPolicy(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *CloudPcProvisioningPolicy) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetAlternateResourceUrl gets the alternateResourceUrl property value. The URL of the alternate resource that links to this provisioning policy. Read-only.
 func (m *CloudPcProvisioningPolicy) GetAlternateResourceUrl()(*string) {
@@ -430,7 +441,19 @@ func (m *CloudPcProvisioningPolicy) Serialize(writer i878a80d2330e89d26896388a3f
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *CloudPcProvisioningPolicy) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAlternateResourceUrl sets the alternateResourceUrl property value. The URL of the alternate resource that links to this provisioning policy. Read-only.
 func (m *CloudPcProvisioningPolicy) SetAlternateResourceUrl(value *string)() {

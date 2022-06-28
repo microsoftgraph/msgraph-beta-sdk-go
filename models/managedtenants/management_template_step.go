@@ -6,11 +6,13 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
-// ManagementTemplateStep provides operations to manage the tenantRelationship singleton.
+// ManagementTemplateStep provides operations to manage the collection of accessReview entities.
 type ManagementTemplateStep struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
     // The acceptedVersion property
     acceptedVersion ManagementTemplateStepVersionable
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // The category property
     category *ManagementCategory
     // The createdByUserId property
@@ -39,6 +41,7 @@ func NewManagementTemplateStep()(*ManagementTemplateStep) {
     m := &ManagementTemplateStep{
         Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateManagementTemplateStepFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -51,6 +54,14 @@ func (m *ManagementTemplateStep) GetAcceptedVersion()(ManagementTemplateStepVers
         return nil
     } else {
         return m.acceptedVersion
+    }
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *ManagementTemplateStep) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
     }
 }
 // GetCategory gets the category property value. The category property
@@ -353,12 +364,24 @@ func (m *ManagementTemplateStep) Serialize(writer i878a80d2330e89d26896388a3f487
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetAcceptedVersion sets the acceptedVersion property value. The acceptedVersion property
 func (m *ManagementTemplateStep) SetAcceptedVersion(value ManagementTemplateStepVersionable)() {
     if m != nil {
         m.acceptedVersion = value
+    }
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *ManagementTemplateStep) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
     }
 }
 // SetCategory sets the category property value. The category property

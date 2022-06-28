@@ -9,6 +9,8 @@ type IosEasEmailProfileConfiguration struct {
     EasEmailProfileConfigurationBase
     // Account name.
     accountName *string
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Authentication method for this Email profile. Possible values are: usernameAndPassword, certificate, derivedCredential.
     authenticationMethod *EasAuthenticationMethod
     // Indicates whether or not to block moving messages to other email accounts.
@@ -67,6 +69,7 @@ func NewIosEasEmailProfileConfiguration()(*IosEasEmailProfileConfiguration) {
     m := &IosEasEmailProfileConfiguration{
         EasEmailProfileConfigurationBase: *NewEasEmailProfileConfigurationBase(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateIosEasEmailProfileConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -79,6 +82,14 @@ func (m *IosEasEmailProfileConfiguration) GetAccountName()(*string) {
         return nil
     } else {
         return m.accountName
+    }
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *IosEasEmailProfileConfiguration) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
     }
 }
 // GetAuthenticationMethod gets the authenticationMethod property value. Authentication method for this Email profile. Possible values are: usernameAndPassword, certificate, derivedCredential.
@@ -738,12 +749,24 @@ func (m *IosEasEmailProfileConfiguration) Serialize(writer i878a80d2330e89d26896
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetAccountName sets the accountName property value. Account name.
 func (m *IosEasEmailProfileConfiguration) SetAccountName(value *string)() {
     if m != nil {
         m.accountName = value
+    }
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *IosEasEmailProfileConfiguration) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
     }
 }
 // SetAuthenticationMethod sets the authenticationMethod property value. Authentication method for this Email profile. Possible values are: usernameAndPassword, certificate, derivedCredential.

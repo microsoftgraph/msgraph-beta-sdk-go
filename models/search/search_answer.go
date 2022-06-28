@@ -6,9 +6,11 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
-// SearchAnswer provides operations to manage the searchEntity singleton.
+// SearchAnswer provides operations to manage the collection of accessReview entities.
 type SearchAnswer struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Search answer description shown on search results page.
     description *string
     // Search answer name displayed in search results.
@@ -25,6 +27,7 @@ func NewSearchAnswer()(*SearchAnswer) {
     m := &SearchAnswer{
         Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateSearchAnswerFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -53,6 +56,14 @@ func CreateSearchAnswerFromDiscriminatorValue(parseNode i878a80d2330e89d26896388
         }
     }
     return NewSearchAnswer(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *SearchAnswer) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetDescription gets the description property value. Search answer description shown on search results page.
 func (m *SearchAnswer) GetDescription()(*string) {
@@ -185,7 +196,19 @@ func (m *SearchAnswer) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *SearchAnswer) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetDescription sets the description property value. Search answer description shown on search results page.
 func (m *SearchAnswer) SetDescription(value *string)() {

@@ -7,6 +7,8 @@ import (
 // DomainDnsCnameRecord 
 type DomainDnsCnameRecord struct {
     DomainDnsRecord
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // The canonical name of the CNAME record. Used to configure the CNAME record at the DNS host.
     canonicalName *string
 }
@@ -15,11 +17,20 @@ func NewDomainDnsCnameRecord()(*DomainDnsCnameRecord) {
     m := &DomainDnsCnameRecord{
         DomainDnsRecord: *NewDomainDnsRecord(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateDomainDnsCnameRecordFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateDomainDnsCnameRecordFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDomainDnsCnameRecord(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *DomainDnsCnameRecord) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetCanonicalName gets the canonicalName property value. The canonical name of the CNAME record. Used to configure the CNAME record at the DNS host.
 func (m *DomainDnsCnameRecord) GetCanonicalName()(*string) {
@@ -56,7 +67,19 @@ func (m *DomainDnsCnameRecord) Serialize(writer i878a80d2330e89d26896388a3f487ee
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *DomainDnsCnameRecord) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetCanonicalName sets the canonicalName property value. The canonical name of the CNAME record. Used to configure the CNAME record at the DNS host.
 func (m *DomainDnsCnameRecord) SetCanonicalName(value *string)() {

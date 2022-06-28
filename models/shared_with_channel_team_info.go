@@ -7,6 +7,8 @@ import (
 // SharedWithChannelTeamInfo 
 type SharedWithChannelTeamInfo struct {
     TeamInfo
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // A collection of team members who have access to the shared channel.
     allowedMembers []ConversationMemberable
     // Indicates whether the team is the host of the channel.
@@ -17,11 +19,20 @@ func NewSharedWithChannelTeamInfo()(*SharedWithChannelTeamInfo) {
     m := &SharedWithChannelTeamInfo{
         TeamInfo: *NewTeamInfo(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateSharedWithChannelTeamInfoFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateSharedWithChannelTeamInfoFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewSharedWithChannelTeamInfo(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *SharedWithChannelTeamInfo) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetAllowedMembers gets the allowedMembers property value. A collection of team members who have access to the shared channel.
 func (m *SharedWithChannelTeamInfo) GetAllowedMembers()([]ConversationMemberable) {
@@ -90,7 +101,19 @@ func (m *SharedWithChannelTeamInfo) Serialize(writer i878a80d2330e89d26896388a3f
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *SharedWithChannelTeamInfo) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAllowedMembers sets the allowedMembers property value. A collection of team members who have access to the shared channel.
 func (m *SharedWithChannelTeamInfo) SetAllowedMembers(value []ConversationMemberable)() {

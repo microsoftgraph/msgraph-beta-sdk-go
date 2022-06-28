@@ -8,6 +8,8 @@ import (
 // CertificateConnectorDetails entity used to retrieve information about Intune Certificate Connectors.
 type CertificateConnectorDetails struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Connector name (set during enrollment).
     connectorName *string
     // Date/time when this connector was enrolled.
@@ -22,11 +24,20 @@ func NewCertificateConnectorDetails()(*CertificateConnectorDetails) {
     m := &CertificateConnectorDetails{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateCertificateConnectorDetailsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateCertificateConnectorDetailsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCertificateConnectorDetails(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *CertificateConnectorDetails) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetConnectorName gets the connectorName property value. Connector name (set during enrollment).
 func (m *CertificateConnectorDetails) GetConnectorName()(*string) {
@@ -135,7 +146,19 @@ func (m *CertificateConnectorDetails) Serialize(writer i878a80d2330e89d26896388a
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *CertificateConnectorDetails) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetConnectorName sets the connectorName property value. Connector name (set during enrollment).
 func (m *CertificateConnectorDetails) SetConnectorName(value *string)() {

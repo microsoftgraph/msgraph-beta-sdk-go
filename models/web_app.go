@@ -7,6 +7,8 @@ import (
 // WebApp 
 type WebApp struct {
     MobileApp
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // The web app URL. This property cannot be PATCHed.
     appUrl *string
     // Whether or not to use managed browser. This property is only applicable for Android and IOS.
@@ -17,11 +19,20 @@ func NewWebApp()(*WebApp) {
     m := &WebApp{
         MobileApp: *NewMobileApp(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateWebAppFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateWebAppFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWebApp(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *WebApp) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetAppUrl gets the appUrl property value. The web app URL. This property cannot be PATCHed.
 func (m *WebApp) GetAppUrl()(*string) {
@@ -82,7 +93,19 @@ func (m *WebApp) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *WebApp) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAppUrl sets the appUrl property value. The web app URL. This property cannot be PATCHed.
 func (m *WebApp) SetAppUrl(value *string)() {

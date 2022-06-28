@@ -9,6 +9,8 @@ type SharedPCConfiguration struct {
     DeviceConfiguration
     // Specifies how accounts are managed on a shared PC. Only applies when disableAccountManager is false.
     accountManagerPolicy SharedPCAccountManagerPolicyable
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Indicates which type of accounts are allowed to use on a shared PC. Possible values are: notConfigured, guest, domain.
     allowedAccounts *SharedPCAllowedAccountType
     // Specifies whether local storage is allowed on a shared PC.
@@ -49,6 +51,7 @@ func NewSharedPCConfiguration()(*SharedPCConfiguration) {
     m := &SharedPCConfiguration{
         DeviceConfiguration: *NewDeviceConfiguration(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateSharedPCConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -61,6 +64,14 @@ func (m *SharedPCConfiguration) GetAccountManagerPolicy()(SharedPCAccountManager
         return nil
     } else {
         return m.accountManagerPolicy
+    }
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *SharedPCConfiguration) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
     }
 }
 // GetAllowedAccounts gets the allowedAccounts property value. Indicates which type of accounts are allowed to use on a shared PC. Possible values are: notConfigured, guest, domain.
@@ -505,12 +516,24 @@ func (m *SharedPCConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487e
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetAccountManagerPolicy sets the accountManagerPolicy property value. Specifies how accounts are managed on a shared PC. Only applies when disableAccountManager is false.
 func (m *SharedPCConfiguration) SetAccountManagerPolicy(value SharedPCAccountManagerPolicyable)() {
     if m != nil {
         m.accountManagerPolicy = value
+    }
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *SharedPCConfiguration) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
     }
 }
 // SetAllowedAccounts sets the allowedAccounts property value. Indicates which type of accounts are allowed to use on a shared PC. Possible values are: notConfigured, guest, domain.

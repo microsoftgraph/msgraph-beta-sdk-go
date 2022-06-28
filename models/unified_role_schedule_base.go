@@ -5,9 +5,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// UnifiedRoleScheduleBase provides operations to manage the collection of administrativeUnit entities.
+// UnifiedRoleScheduleBase provides operations to manage the collection of accessReview entities.
 type UnifiedRoleScheduleBase struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Read-only property with details of the app-specific scope when the role eligibility or assignment is scoped to an app. Nullable.
     appScope AppScopeable
     // Identifier of the app-specific scope when the assignment or eligibility is scoped to an app. The scope of an assignment or eligibility determines the set of resources for which the principal has been granted access. App scopes are scopes that are defined and understood by this application only. Use / for tenant-wide app scopes. Use directoryScopeId to limit the scope to particular directory objects, for example, administrative units.
@@ -38,6 +40,7 @@ func NewUnifiedRoleScheduleBase()(*UnifiedRoleScheduleBase) {
     m := &UnifiedRoleScheduleBase{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateUnifiedRoleScheduleBaseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -64,6 +67,14 @@ func CreateUnifiedRoleScheduleBaseFromDiscriminatorValue(parseNode i878a80d2330e
         }
     }
     return NewUnifiedRoleScheduleBase(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *UnifiedRoleScheduleBase) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetAppScope gets the appScope property value. Read-only property with details of the app-specific scope when the role eligibility or assignment is scoped to an app. Nullable.
 func (m *UnifiedRoleScheduleBase) GetAppScope()(AppScopeable) {
@@ -364,7 +375,19 @@ func (m *UnifiedRoleScheduleBase) Serialize(writer i878a80d2330e89d26896388a3f48
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *UnifiedRoleScheduleBase) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAppScope sets the appScope property value. Read-only property with details of the app-specific scope when the role eligibility or assignment is scoped to an app. Nullable.
 func (m *UnifiedRoleScheduleBase) SetAppScope(value AppScopeable)() {

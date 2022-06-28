@@ -8,6 +8,8 @@ import (
 // ManagedAppOperation represents an operation applied against an app registration.
 type ManagedAppOperation struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // The operation name.
     displayName *string
     // The last time the app operation was modified.
@@ -22,11 +24,20 @@ func NewManagedAppOperation()(*ManagedAppOperation) {
     m := &ManagedAppOperation{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateManagedAppOperationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateManagedAppOperationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewManagedAppOperation(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *ManagedAppOperation) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetDisplayName gets the displayName property value. The operation name.
 func (m *ManagedAppOperation) GetDisplayName()(*string) {
@@ -135,7 +146,19 @@ func (m *ManagedAppOperation) Serialize(writer i878a80d2330e89d26896388a3f487eef
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *ManagedAppOperation) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetDisplayName sets the displayName property value. The operation name.
 func (m *ManagedAppOperation) SetDisplayName(value *string)() {

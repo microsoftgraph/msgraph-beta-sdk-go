@@ -9,6 +9,8 @@ type DeviceComplianceActionItem struct {
     Entity
     // What action to take. Possible values are: noAction, notification, block, retire, wipe, removeResourceAccessProfiles, pushNotification, remoteLock.
     actionType *DeviceComplianceActionType
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Number of hours to wait till the action will be enforced. Valid values 0 to 8760
     gracePeriodHours *int32
     // A list of group IDs to speicify who to CC this notification message to.
@@ -21,6 +23,7 @@ func NewDeviceComplianceActionItem()(*DeviceComplianceActionItem) {
     m := &DeviceComplianceActionItem{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateDeviceComplianceActionItemFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -33,6 +36,14 @@ func (m *DeviceComplianceActionItem) GetActionType()(*DeviceComplianceActionType
         return nil
     } else {
         return m.actionType
+    }
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *DeviceComplianceActionItem) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -139,12 +150,24 @@ func (m *DeviceComplianceActionItem) Serialize(writer i878a80d2330e89d26896388a3
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetActionType sets the actionType property value. What action to take. Possible values are: noAction, notification, block, retire, wipe, removeResourceAccessProfiles, pushNotification, remoteLock.
 func (m *DeviceComplianceActionItem) SetActionType(value *DeviceComplianceActionType)() {
     if m != nil {
         m.actionType = value
+    }
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *DeviceComplianceActionItem) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
     }
 }
 // SetGracePeriodHours sets the gracePeriodHours property value. Number of hours to wait till the action will be enforced. Valid values 0 to 8760

@@ -10,6 +10,8 @@ type ExternalItem struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
     // An array of access control entries. Each entry specifies the access granted to a user or group. Required.
     acl []Aclable
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // A plain-text  representation of the contents of the item. The text in this property is full-text indexed. Optional.
     content ExternalItemContentable
     // A property bag with the properties of the item. The properties MUST conform to the schema defined for the externalConnection. Required.
@@ -20,6 +22,7 @@ func NewExternalItem()(*ExternalItem) {
     m := &ExternalItem{
         Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateExternalItemFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -32,6 +35,14 @@ func (m *ExternalItem) GetAcl()([]Aclable) {
         return nil
     } else {
         return m.acl
+    }
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *ExternalItem) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
     }
 }
 // GetContent gets the content property value. A plain-text  representation of the contents of the item. The text in this property is full-text indexed. Optional.
@@ -117,12 +128,24 @@ func (m *ExternalItem) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetAcl sets the acl property value. An array of access control entries. Each entry specifies the access granted to a user or group. Required.
 func (m *ExternalItem) SetAcl(value []Aclable)() {
     if m != nil {
         m.acl = value
+    }
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *ExternalItem) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
     }
 }
 // SetContent sets the content property value. A plain-text  representation of the contents of the item. The text in this property is full-text indexed. Optional.

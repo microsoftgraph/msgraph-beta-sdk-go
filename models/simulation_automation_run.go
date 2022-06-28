@@ -5,9 +5,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// SimulationAutomationRun provides operations to manage the security singleton.
+// SimulationAutomationRun provides operations to manage the collection of accessReview entities.
 type SimulationAutomationRun struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Date and time when the run ends in an attack simulation automation.
     endDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Unique identifier for the attack simulation campaign initiated in the attack simulation automation run.
@@ -22,11 +24,20 @@ func NewSimulationAutomationRun()(*SimulationAutomationRun) {
     m := &SimulationAutomationRun{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateSimulationAutomationRunFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateSimulationAutomationRunFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewSimulationAutomationRun(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *SimulationAutomationRun) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetEndDateTime gets the endDateTime property value. Date and time when the run ends in an attack simulation automation.
 func (m *SimulationAutomationRun) GetEndDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
@@ -136,7 +147,19 @@ func (m *SimulationAutomationRun) Serialize(writer i878a80d2330e89d26896388a3f48
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *SimulationAutomationRun) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetEndDateTime sets the endDateTime property value. Date and time when the run ends in an attack simulation automation.
 func (m *SimulationAutomationRun) SetEndDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {

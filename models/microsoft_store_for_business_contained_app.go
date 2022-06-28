@@ -7,6 +7,8 @@ import (
 // MicrosoftStoreForBusinessContainedApp 
 type MicrosoftStoreForBusinessContainedApp struct {
     MobileContainedApp
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // The app user model ID of the contained app of a MicrosoftStoreForBusinessApp.
     appUserModelId *string
 }
@@ -15,11 +17,20 @@ func NewMicrosoftStoreForBusinessContainedApp()(*MicrosoftStoreForBusinessContai
     m := &MicrosoftStoreForBusinessContainedApp{
         MobileContainedApp: *NewMobileContainedApp(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateMicrosoftStoreForBusinessContainedAppFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateMicrosoftStoreForBusinessContainedAppFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewMicrosoftStoreForBusinessContainedApp(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *MicrosoftStoreForBusinessContainedApp) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetAppUserModelId gets the appUserModelId property value. The app user model ID of the contained app of a MicrosoftStoreForBusinessApp.
 func (m *MicrosoftStoreForBusinessContainedApp) GetAppUserModelId()(*string) {
@@ -56,7 +67,19 @@ func (m *MicrosoftStoreForBusinessContainedApp) Serialize(writer i878a80d2330e89
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *MicrosoftStoreForBusinessContainedApp) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAppUserModelId sets the appUserModelId property value. The app user model ID of the contained app of a MicrosoftStoreForBusinessApp.
 func (m *MicrosoftStoreForBusinessContainedApp) SetAppUserModelId(value *string)() {

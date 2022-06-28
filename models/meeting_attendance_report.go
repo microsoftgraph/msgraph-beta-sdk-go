@@ -5,9 +5,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// MeetingAttendanceReport provides operations to manage the commsApplication singleton.
+// MeetingAttendanceReport provides operations to manage the collection of accessReview entities.
 type MeetingAttendanceReport struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // List of attendance records of an attendance report. Read-only.
     attendanceRecords []AttendanceRecordable
     // UTC time when the meeting ended. Read-only.
@@ -22,11 +24,20 @@ func NewMeetingAttendanceReport()(*MeetingAttendanceReport) {
     m := &MeetingAttendanceReport{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateMeetingAttendanceReportFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateMeetingAttendanceReportFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewMeetingAttendanceReport(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *MeetingAttendanceReport) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetAttendanceRecords gets the attendanceRecords property value. List of attendance records of an attendance report. Read-only.
 func (m *MeetingAttendanceReport) GetAttendanceRecords()([]AttendanceRecordable) {
@@ -143,7 +154,19 @@ func (m *MeetingAttendanceReport) Serialize(writer i878a80d2330e89d26896388a3f48
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *MeetingAttendanceReport) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAttendanceRecords sets the attendanceRecords property value. List of attendance records of an attendance report. Read-only.
 func (m *MeetingAttendanceReport) SetAttendanceRecords(value []AttendanceRecordable)() {

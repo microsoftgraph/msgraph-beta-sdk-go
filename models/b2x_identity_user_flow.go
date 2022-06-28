@@ -7,6 +7,8 @@ import (
 // B2xIdentityUserFlow 
 type B2xIdentityUserFlow struct {
     IdentityUserFlow
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Configuration for enabling an API connector for use as part of the self-service sign up user flow. You can only obtain the value of this object using Get userFlowApiConnectorConfiguration.
     apiConnectorConfiguration UserFlowApiConnectorConfigurationable
     // The identity providers included in the user flow.
@@ -23,11 +25,20 @@ func NewB2xIdentityUserFlow()(*B2xIdentityUserFlow) {
     m := &B2xIdentityUserFlow{
         IdentityUserFlow: *NewIdentityUserFlow(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateB2xIdentityUserFlowFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateB2xIdentityUserFlowFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewB2xIdentityUserFlow(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *B2xIdentityUserFlow) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetApiConnectorConfiguration gets the apiConnectorConfiguration property value. Configuration for enabling an API connector for use as part of the self-service sign up user flow. You can only obtain the value of this object using Get userFlowApiConnectorConfiguration.
 func (m *B2xIdentityUserFlow) GetApiConnectorConfiguration()(UserFlowApiConnectorConfigurationable) {
@@ -192,7 +203,19 @@ func (m *B2xIdentityUserFlow) Serialize(writer i878a80d2330e89d26896388a3f487eef
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *B2xIdentityUserFlow) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetApiConnectorConfiguration sets the apiConnectorConfiguration property value. Configuration for enabling an API connector for use as part of the self-service sign up user flow. You can only obtain the value of this object using Get userFlowApiConnectorConfiguration.
 func (m *B2xIdentityUserFlow) SetApiConnectorConfiguration(value UserFlowApiConnectorConfigurationable)() {

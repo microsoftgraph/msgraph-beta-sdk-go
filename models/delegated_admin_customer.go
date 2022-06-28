@@ -4,9 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DelegatedAdminCustomer provides operations to manage the tenantRelationship singleton.
+// DelegatedAdminCustomer provides operations to manage the collection of accessReview entities.
 type DelegatedAdminCustomer struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // The Azure AD display name of the customer tenant. Read-only. Supports $orderBy.
     displayName *string
     // Contains the management details of a service in the customer tenant that's managed by delegated administration.
@@ -19,11 +21,20 @@ func NewDelegatedAdminCustomer()(*DelegatedAdminCustomer) {
     m := &DelegatedAdminCustomer{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateDelegatedAdminCustomerFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateDelegatedAdminCustomerFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDelegatedAdminCustomer(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *DelegatedAdminCustomer) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetDisplayName gets the displayName property value. The Azure AD display name of the customer tenant. Read-only. Supports $orderBy.
 func (m *DelegatedAdminCustomer) GetDisplayName()(*string) {
@@ -116,7 +127,19 @@ func (m *DelegatedAdminCustomer) Serialize(writer i878a80d2330e89d26896388a3f487
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *DelegatedAdminCustomer) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetDisplayName sets the displayName property value. The Azure AD display name of the customer tenant. Read-only. Supports $orderBy.
 func (m *DelegatedAdminCustomer) SetDisplayName(value *string)() {

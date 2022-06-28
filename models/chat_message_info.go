@@ -5,9 +5,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ChatMessageInfo provides operations to manage the collection of administrativeUnit entities.
+// ChatMessageInfo provides operations to manage the collection of accessReview entities.
 type ChatMessageInfo struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Body of the chatMessage. This will still contain markers for @mentions and attachments even though the object does not return @mentions and attachments.
     body ItemBodyable
     // Date time object representing the time at which message was created.
@@ -26,11 +28,20 @@ func NewChatMessageInfo()(*ChatMessageInfo) {
     m := &ChatMessageInfo{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateChatMessageInfoFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateChatMessageInfoFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewChatMessageInfo(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *ChatMessageInfo) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetBody gets the body property value. Body of the chatMessage. This will still contain markers for @mentions and attachments even though the object does not return @mentions and attachments.
 func (m *ChatMessageInfo) GetBody()(ItemBodyable) {
@@ -188,7 +199,19 @@ func (m *ChatMessageInfo) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *ChatMessageInfo) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetBody sets the body property value. Body of the chatMessage. This will still contain markers for @mentions and attachments even though the object does not return @mentions and attachments.
 func (m *ChatMessageInfo) SetBody(value ItemBodyable)() {

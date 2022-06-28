@@ -7,6 +7,8 @@ import (
 // AppleDeviceFeaturesConfigurationBase 
 type AppleDeviceFeaturesConfigurationBase struct {
     DeviceConfiguration
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // An array of AirPrint printers that should always be shown. This collection can contain a maximum of 500 elements.
     airPrintDestinations []AirPrintDestinationable
 }
@@ -15,6 +17,7 @@ func NewAppleDeviceFeaturesConfigurationBase()(*AppleDeviceFeaturesConfiguration
     m := &AppleDeviceFeaturesConfigurationBase{
         DeviceConfiguration: *NewDeviceConfiguration(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateAppleDeviceFeaturesConfigurationBaseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -41,6 +44,14 @@ func CreateAppleDeviceFeaturesConfigurationBaseFromDiscriminatorValue(parseNode 
         }
     }
     return NewAppleDeviceFeaturesConfigurationBase(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *AppleDeviceFeaturesConfigurationBase) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetAirPrintDestinations gets the airPrintDestinations property value. An array of AirPrint printers that should always be shown. This collection can contain a maximum of 500 elements.
 func (m *AppleDeviceFeaturesConfigurationBase) GetAirPrintDestinations()([]AirPrintDestinationable) {
@@ -85,7 +96,19 @@ func (m *AppleDeviceFeaturesConfigurationBase) Serialize(writer i878a80d2330e89d
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *AppleDeviceFeaturesConfigurationBase) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAirPrintDestinations sets the airPrintDestinations property value. An array of AirPrint printers that should always be shown. This collection can contain a maximum of 500 elements.
 func (m *AppleDeviceFeaturesConfigurationBase) SetAirPrintDestinations(value []AirPrintDestinationable)() {

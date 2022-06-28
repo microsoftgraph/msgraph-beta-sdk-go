@@ -7,6 +7,8 @@ import (
 // Notebook 
 type Notebook struct {
     OnenoteEntityHierarchyModel
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Indicates whether this is the user's default notebook. Read-only.
     isDefault *bool
     // Indicates whether the notebook is shared. If true, the contents of the notebook can be seen by people other than the owner. Read-only.
@@ -29,11 +31,20 @@ func NewNotebook()(*Notebook) {
     m := &Notebook{
         OnenoteEntityHierarchyModel: *NewOnenoteEntityHierarchyModel(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateNotebookFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateNotebookFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewNotebook(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *Notebook) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Notebook) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -255,7 +266,19 @@ func (m *Notebook) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *Notebook) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetIsDefault sets the isDefault property value. Indicates whether this is the user's default notebook. Read-only.
 func (m *Notebook) SetIsDefault(value *bool)() {

@@ -7,6 +7,8 @@ import (
 // DeviceManagementSettingInstance base type for a setting instance
 type DeviceManagementSettingInstance struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // The ID of the setting definition for this instance
     definitionId *string
     // JSON representation of the value
@@ -17,6 +19,7 @@ func NewDeviceManagementSettingInstance()(*DeviceManagementSettingInstance) {
     m := &DeviceManagementSettingInstance{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateDeviceManagementSettingInstanceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -51,6 +54,14 @@ func CreateDeviceManagementSettingInstanceFromDiscriminatorValue(parseNode i878a
         }
     }
     return NewDeviceManagementSettingInstance(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *DeviceManagementSettingInstance) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetDefinitionId gets the definitionId property value. The ID of the setting definition for this instance
 func (m *DeviceManagementSettingInstance) GetDefinitionId()(*string) {
@@ -111,7 +122,19 @@ func (m *DeviceManagementSettingInstance) Serialize(writer i878a80d2330e89d26896
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *DeviceManagementSettingInstance) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetDefinitionId sets the definitionId property value. The ID of the setting definition for this instance
 func (m *DeviceManagementSettingInstance) SetDefinitionId(value *string)() {

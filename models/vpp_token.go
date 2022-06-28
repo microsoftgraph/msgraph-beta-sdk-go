@@ -8,6 +8,8 @@ import (
 // VppToken you purchase multiple licenses for iOS apps through the Apple Volume Purchase Program for Business or Education. This involves setting up an Apple VPP account from the Apple website and uploading the Apple VPP Business or Education token to Intune. You can then synchronize your volume purchase information with Intune and track your volume-purchased app use. You can upload multiple Apple VPP Business or Education tokens.
 type VppToken struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // The apple Id associated with the given Apple Volume Purchase Program Token.
     appleId *string
     // Whether or not apps for the VPP token will be automatically updated.
@@ -48,11 +50,20 @@ func NewVppToken()(*VppToken) {
     m := &VppToken{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateVppTokenFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateVppTokenFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewVppToken(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *VppToken) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetAppleId gets the appleId property value. The apple Id associated with the given Apple Volume Purchase Program Token.
 func (m *VppToken) GetAppleId()(*string) {
@@ -488,7 +499,19 @@ func (m *VppToken) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *VppToken) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAppleId sets the appleId property value. The apple Id associated with the given Apple Volume Purchase Program Token.
 func (m *VppToken) SetAppleId(value *string)() {

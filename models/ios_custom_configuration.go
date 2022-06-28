@@ -7,6 +7,8 @@ import (
 // IosCustomConfiguration 
 type IosCustomConfiguration struct {
     DeviceConfiguration
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Payload. (UTF8 encoded byte array)
     payload []byte
     // Payload file name (.mobileconfig
@@ -19,11 +21,20 @@ func NewIosCustomConfiguration()(*IosCustomConfiguration) {
     m := &IosCustomConfiguration{
         DeviceConfiguration: *NewDeviceConfiguration(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateIosCustomConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateIosCustomConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewIosCustomConfiguration(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *IosCustomConfiguration) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *IosCustomConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -108,7 +119,19 @@ func (m *IosCustomConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *IosCustomConfiguration) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetPayload sets the payload property value. Payload. (UTF8 encoded byte array)
 func (m *IosCustomConfiguration) SetPayload(value []byte)() {

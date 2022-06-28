@@ -5,9 +5,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// UnifiedRoleManagementPolicy provides operations to manage the policyRoot singleton.
+// UnifiedRoleManagementPolicy 
 type UnifiedRoleManagementPolicy struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Description for the policy.
     description *string
     // Display name for the policy.
@@ -27,16 +29,25 @@ type UnifiedRoleManagementPolicy struct {
     // The type of the scope where the policy is created. One of Directory, DirectoryRole. Required.
     scopeType *string
 }
-// NewUnifiedRoleManagementPolicy instantiates a new unifiedRoleManagementPolicy and sets the default values.
+// NewUnifiedRoleManagementPolicy instantiates a new UnifiedRoleManagementPolicy and sets the default values.
 func NewUnifiedRoleManagementPolicy()(*UnifiedRoleManagementPolicy) {
     m := &UnifiedRoleManagementPolicy{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateUnifiedRoleManagementPolicyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateUnifiedRoleManagementPolicyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewUnifiedRoleManagementPolicy(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *UnifiedRoleManagementPolicy) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetDescription gets the description property value. Description for the policy.
 func (m *UnifiedRoleManagementPolicy) GetDescription()(*string) {
@@ -281,7 +292,19 @@ func (m *UnifiedRoleManagementPolicy) Serialize(writer i878a80d2330e89d26896388a
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *UnifiedRoleManagementPolicy) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetDescription sets the description property value. Description for the policy.
 func (m *UnifiedRoleManagementPolicy) SetDescription(value *string)() {

@@ -4,9 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DomainDnsRecord provides operations to manage the collection of domainDnsRecord entities.
+// DomainDnsRecord provides operations to manage the collection of accessReview entities.
 type DomainDnsRecord struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // If false, this record must be configured by the customer at the DNS host for Microsoft Online Services to operate correctly with the domain.
     isOptional *bool
     // Value used when configuring the name of the DNS record at the DNS host.
@@ -23,6 +25,7 @@ func NewDomainDnsRecord()(*DomainDnsRecord) {
     m := &DomainDnsRecord{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateDomainDnsRecordFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -55,6 +58,14 @@ func CreateDomainDnsRecordFromDiscriminatorValue(parseNode i878a80d2330e89d26896
         }
     }
     return NewDomainDnsRecord(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *DomainDnsRecord) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DomainDnsRecord) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -187,7 +198,19 @@ func (m *DomainDnsRecord) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *DomainDnsRecord) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetIsOptional sets the isOptional property value. If false, this record must be configured by the customer at the DNS host for Microsoft Online Services to operate correctly with the domain.
 func (m *DomainDnsRecord) SetIsOptional(value *bool)() {

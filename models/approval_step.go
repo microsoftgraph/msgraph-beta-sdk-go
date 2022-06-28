@@ -5,9 +5,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ApprovalStep provides operations to manage the collection of administrativeUnit entities.
+// ApprovalStep provides operations to manage the collection of accessReview entities.
 type ApprovalStep struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Indicates whether the step is assigned to the calling user to review. Read-only.
     assignedToMe *bool
     // The label provided by the policy creator to identify an approval step. Read-only.
@@ -28,11 +30,20 @@ func NewApprovalStep()(*ApprovalStep) {
     m := &ApprovalStep{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateApprovalStepFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateApprovalStepFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewApprovalStep(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *ApprovalStep) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetAssignedToMe gets the assignedToMe property value. Indicates whether the step is assigned to the calling user to review. Read-only.
 func (m *ApprovalStep) GetAssignedToMe()(*bool) {
@@ -213,7 +224,19 @@ func (m *ApprovalStep) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *ApprovalStep) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAssignedToMe sets the assignedToMe property value. Indicates whether the step is assigned to the calling user to review. Read-only.
 func (m *ApprovalStep) SetAssignedToMe(value *bool)() {

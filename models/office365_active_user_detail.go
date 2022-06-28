@@ -4,9 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Office365ActiveUserDetail provides operations to call the getOffice365ActiveUserDetail method.
+// Office365ActiveUserDetail 
 type Office365ActiveUserDetail struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // All the products assigned for the user.
     assignedProducts []string
     // The date when the delete operation happened. Default value is 'null' when the user has not been deleted.
@@ -56,16 +58,25 @@ type Office365ActiveUserDetail struct {
     // The last date when the user was assigned a Yammer license.
     yammerLicenseAssignDate *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly
 }
-// NewOffice365ActiveUserDetail instantiates a new office365ActiveUserDetail and sets the default values.
+// NewOffice365ActiveUserDetail instantiates a new Office365ActiveUserDetail and sets the default values.
 func NewOffice365ActiveUserDetail()(*Office365ActiveUserDetail) {
     m := &Office365ActiveUserDetail{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateOffice365ActiveUserDetailFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateOffice365ActiveUserDetailFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewOffice365ActiveUserDetail(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *Office365ActiveUserDetail) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetAssignedProducts gets the assignedProducts property value. All the products assigned for the user.
 func (m *Office365ActiveUserDetail) GetAssignedProducts()([]string) {
@@ -658,7 +669,19 @@ func (m *Office365ActiveUserDetail) Serialize(writer i878a80d2330e89d26896388a3f
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *Office365ActiveUserDetail) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAssignedProducts sets the assignedProducts property value. All the products assigned for the user.
 func (m *Office365ActiveUserDetail) SetAssignedProducts(value []string)() {

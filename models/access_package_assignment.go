@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AccessPackageAssignment provides operations to manage the identityGovernance singleton.
+// AccessPackageAssignment provides operations to manage the collection of accessReview entities.
 type AccessPackageAssignment struct {
     Entity
     // Read-only. Nullable. Supports $filter (eq) on the id property and $expand query parameters.
@@ -18,6 +18,8 @@ type AccessPackageAssignment struct {
     accessPackageAssignmentResourceRoles []AccessPackageAssignmentResourceRoleable
     // The identifier of the access package. Read-only.
     accessPackageId *string
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // The identifier of the access package assignment policy. Read-only.
     assignmentPolicyId *string
     // The state of the access package assignment. Possible values are Delivering, Delivered, or Expired. Read-only. Supports $filter (eq).
@@ -42,6 +44,7 @@ func NewAccessPackageAssignment()(*AccessPackageAssignment) {
     m := &AccessPackageAssignment{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateAccessPackageAssignmentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -86,6 +89,14 @@ func (m *AccessPackageAssignment) GetAccessPackageId()(*string) {
         return nil
     } else {
         return m.accessPackageId
+    }
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *AccessPackageAssignment) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
     }
 }
 // GetAssignmentPolicyId gets the assignmentPolicyId property value. The identifier of the access package assignment policy. Read-only.
@@ -411,6 +422,12 @@ func (m *AccessPackageAssignment) Serialize(writer i878a80d2330e89d26896388a3f48
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetAccessPackage sets the accessPackage property value. Read-only. Nullable. Supports $filter (eq) on the id property and $expand query parameters.
@@ -441,6 +458,12 @@ func (m *AccessPackageAssignment) SetAccessPackageAssignmentResourceRoles(value 
 func (m *AccessPackageAssignment) SetAccessPackageId(value *string)() {
     if m != nil {
         m.accessPackageId = value
+    }
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *AccessPackageAssignment) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
     }
 }
 // SetAssignmentPolicyId sets the assignmentPolicyId property value. The identifier of the access package assignment policy. Read-only.

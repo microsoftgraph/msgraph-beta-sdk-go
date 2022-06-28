@@ -7,6 +7,8 @@ import (
 // BookingPerson represents a booking customer or staff member.
 type BookingPerson struct {
     BookingNamedEntity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // The email address of the person.
     emailAddress *string
 }
@@ -15,6 +17,7 @@ func NewBookingPerson()(*BookingPerson) {
     m := &BookingPerson{
         BookingNamedEntity: *NewBookingNamedEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateBookingPersonFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -41,6 +44,14 @@ func CreateBookingPersonFromDiscriminatorValue(parseNode i878a80d2330e89d2689638
         }
     }
     return NewBookingPerson(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *BookingPerson) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetEmailAddress gets the emailAddress property value. The email address of the person.
 func (m *BookingPerson) GetEmailAddress()(*string) {
@@ -77,7 +88,19 @@ func (m *BookingPerson) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *BookingPerson) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetEmailAddress sets the emailAddress property value. The email address of the person.
 func (m *BookingPerson) SetEmailAddress(value *string)() {

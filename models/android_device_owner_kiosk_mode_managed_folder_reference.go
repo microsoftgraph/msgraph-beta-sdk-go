@@ -1,0 +1,121 @@
+package models
+
+import (
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+)
+
+// AndroidDeviceOwnerKioskModeManagedFolderReference 
+type AndroidDeviceOwnerKioskModeManagedFolderReference struct {
+    AndroidDeviceOwnerKioskModeHomeScreenItem
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
+    // Unique identifier for the folder
+    folderIdentifier *string
+    // Name of the folder
+    folderName *string
+}
+// NewAndroidDeviceOwnerKioskModeManagedFolderReference instantiates a new AndroidDeviceOwnerKioskModeManagedFolderReference and sets the default values.
+func NewAndroidDeviceOwnerKioskModeManagedFolderReference()(*AndroidDeviceOwnerKioskModeManagedFolderReference) {
+    m := &AndroidDeviceOwnerKioskModeManagedFolderReference{
+        AndroidDeviceOwnerKioskModeHomeScreenItem: *NewAndroidDeviceOwnerKioskModeHomeScreenItem(),
+    }
+    m.SetAdditionalData(make(map[string]interface{}));
+    return m
+}
+// CreateAndroidDeviceOwnerKioskModeManagedFolderReferenceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateAndroidDeviceOwnerKioskModeManagedFolderReferenceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+    return NewAndroidDeviceOwnerKioskModeManagedFolderReference(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *AndroidDeviceOwnerKioskModeManagedFolderReference) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
+}
+// GetFieldDeserializers the deserialization information for the current model
+func (m *AndroidDeviceOwnerKioskModeManagedFolderReference) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := m.AndroidDeviceOwnerKioskModeHomeScreenItem.GetFieldDeserializers()
+    res["folderIdentifier"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetFolderIdentifier(val)
+        }
+        return nil
+    }
+    res["folderName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetFolderName(val)
+        }
+        return nil
+    }
+    return res
+}
+// GetFolderIdentifier gets the folderIdentifier property value. Unique identifier for the folder
+func (m *AndroidDeviceOwnerKioskModeManagedFolderReference) GetFolderIdentifier()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.folderIdentifier
+    }
+}
+// GetFolderName gets the folderName property value. Name of the folder
+func (m *AndroidDeviceOwnerKioskModeManagedFolderReference) GetFolderName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.folderName
+    }
+}
+// Serialize serializes information the current object
+func (m *AndroidDeviceOwnerKioskModeManagedFolderReference) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
+    err := m.AndroidDeviceOwnerKioskModeHomeScreenItem.Serialize(writer)
+    if err != nil {
+        return err
+    }
+    {
+        err = writer.WriteStringValue("folderIdentifier", m.GetFolderIdentifier())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteStringValue("folderName", m.GetFolderName())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
+    return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *AndroidDeviceOwnerKioskModeManagedFolderReference) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
+}
+// SetFolderIdentifier sets the folderIdentifier property value. Unique identifier for the folder
+func (m *AndroidDeviceOwnerKioskModeManagedFolderReference) SetFolderIdentifier(value *string)() {
+    if m != nil {
+        m.folderIdentifier = value
+    }
+}
+// SetFolderName sets the folderName property value. Name of the folder
+func (m *AndroidDeviceOwnerKioskModeManagedFolderReference) SetFolderName(value *string)() {
+    if m != nil {
+        m.folderName = value
+    }
+}

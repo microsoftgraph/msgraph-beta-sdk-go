@@ -8,6 +8,8 @@ import (
 // DeviceAppManagementTask a device app management task.
 type DeviceAppManagementTask struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // The name or email of the admin this task is assigned to.
     assignedTo *string
     // The category. Possible values are: unknown, advancedThreatProtection.
@@ -34,6 +36,7 @@ func NewDeviceAppManagementTask()(*DeviceAppManagementTask) {
     m := &DeviceAppManagementTask{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateDeviceAppManagementTaskFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -62,6 +65,14 @@ func CreateDeviceAppManagementTaskFromDiscriminatorValue(parseNode i878a80d2330e
         }
     }
     return NewDeviceAppManagementTask(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *DeviceAppManagementTask) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetAssignedTo gets the assignedTo property value. The name or email of the admin this task is assigned to.
 func (m *DeviceAppManagementTask) GetAssignedTo()(*string) {
@@ -317,7 +328,19 @@ func (m *DeviceAppManagementTask) Serialize(writer i878a80d2330e89d26896388a3f48
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *DeviceAppManagementTask) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAssignedTo sets the assignedTo property value. The name or email of the admin this task is assigned to.
 func (m *DeviceAppManagementTask) SetAssignedTo(value *string)() {

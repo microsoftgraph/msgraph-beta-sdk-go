@@ -4,9 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// EducationAssignmentResource provides operations to manage the educationRoot singleton.
+// EducationAssignmentResource provides operations to manage the collection of accessReview entities.
 type EducationAssignmentResource struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Indicates whether this resource should be copied to each student submission for modification and submission. Required
     distributeForStudentWork *bool
     // Resource object that has been associated with this assignment.
@@ -17,11 +19,20 @@ func NewEducationAssignmentResource()(*EducationAssignmentResource) {
     m := &EducationAssignmentResource{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateEducationAssignmentResourceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateEducationAssignmentResourceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewEducationAssignmentResource(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *EducationAssignmentResource) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetDistributeForStudentWork gets the distributeForStudentWork property value. Indicates whether this resource should be copied to each student submission for modification and submission. Required
 func (m *EducationAssignmentResource) GetDistributeForStudentWork()(*bool) {
@@ -82,7 +93,19 @@ func (m *EducationAssignmentResource) Serialize(writer i878a80d2330e89d26896388a
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *EducationAssignmentResource) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetDistributeForStudentWork sets the distributeForStudentWork property value. Indicates whether this resource should be copied to each student submission for modification and submission. Required
 func (m *EducationAssignmentResource) SetDistributeForStudentWork(value *bool)() {

@@ -9,6 +9,8 @@ type UserExperienceAnalyticsAppHealthOSVersionPerformance struct {
     Entity
     // The number of active devices for the OS version. Valid values -2147483648 to 2147483647
     activeDeviceCount *int32
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // The mean time to failure for the OS version in minutes. Valid values -2147483648 to 2147483647
     meanTimeToFailureInMinutes *int32
     // The OS build number installed on the device.
@@ -25,6 +27,7 @@ func NewUserExperienceAnalyticsAppHealthOSVersionPerformance()(*UserExperienceAn
     m := &UserExperienceAnalyticsAppHealthOSVersionPerformance{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateUserExperienceAnalyticsAppHealthOSVersionPerformanceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -37,6 +40,14 @@ func (m *UserExperienceAnalyticsAppHealthOSVersionPerformance) GetActiveDeviceCo
         return nil
     } else {
         return m.activeDeviceCount
+    }
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *UserExperienceAnalyticsAppHealthOSVersionPerformance) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -186,12 +197,24 @@ func (m *UserExperienceAnalyticsAppHealthOSVersionPerformance) Serialize(writer 
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetActiveDeviceCount sets the activeDeviceCount property value. The number of active devices for the OS version. Valid values -2147483648 to 2147483647
 func (m *UserExperienceAnalyticsAppHealthOSVersionPerformance) SetActiveDeviceCount(value *int32)() {
     if m != nil {
         m.activeDeviceCount = value
+    }
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *UserExperienceAnalyticsAppHealthOSVersionPerformance) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
     }
 }
 // SetMeanTimeToFailureInMinutes sets the meanTimeToFailureInMinutes property value. The mean time to failure for the OS version in minutes. Valid values -2147483648 to 2147483647

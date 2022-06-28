@@ -7,6 +7,8 @@ import (
 // ImportedWindowsAutopilotDeviceIdentity imported windows autopilot devices.
 type ImportedWindowsAutopilotDeviceIdentity struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // UPN of the user the device will be assigned
     assignedUserPrincipalName *string
     // Group Tag of the Windows autopilot device.
@@ -27,11 +29,20 @@ func NewImportedWindowsAutopilotDeviceIdentity()(*ImportedWindowsAutopilotDevice
     m := &ImportedWindowsAutopilotDeviceIdentity{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateImportedWindowsAutopilotDeviceIdentityFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateImportedWindowsAutopilotDeviceIdentityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewImportedWindowsAutopilotDeviceIdentity(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *ImportedWindowsAutopilotDeviceIdentity) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetAssignedUserPrincipalName gets the assignedUserPrincipalName property value. UPN of the user the device will be assigned
 func (m *ImportedWindowsAutopilotDeviceIdentity) GetAssignedUserPrincipalName()(*string) {
@@ -212,7 +223,19 @@ func (m *ImportedWindowsAutopilotDeviceIdentity) Serialize(writer i878a80d2330e8
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *ImportedWindowsAutopilotDeviceIdentity) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAssignedUserPrincipalName sets the assignedUserPrincipalName property value. UPN of the user the device will be assigned
 func (m *ImportedWindowsAutopilotDeviceIdentity) SetAssignedUserPrincipalName(value *string)() {

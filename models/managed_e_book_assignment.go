@@ -7,6 +7,8 @@ import (
 // ManagedEBookAssignment contains properties used to assign a eBook to a group.
 type ManagedEBookAssignment struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // The install intent for eBook. Possible values are: available, required, uninstall, availableWithoutEnrollment.
     installIntent *InstallIntent
     // The assignment target for eBook.
@@ -17,6 +19,7 @@ func NewManagedEBookAssignment()(*ManagedEBookAssignment) {
     m := &ManagedEBookAssignment{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateManagedEBookAssignmentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -41,6 +44,14 @@ func CreateManagedEBookAssignmentFromDiscriminatorValue(parseNode i878a80d2330e8
         }
     }
     return NewManagedEBookAssignment(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *ManagedEBookAssignment) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ManagedEBookAssignment) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -102,7 +113,19 @@ func (m *ManagedEBookAssignment) Serialize(writer i878a80d2330e89d26896388a3f487
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *ManagedEBookAssignment) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetInstallIntent sets the installIntent property value. The install intent for eBook. Possible values are: available, required, uninstall, availableWithoutEnrollment.
 func (m *ManagedEBookAssignment) SetInstallIntent(value *InstallIntent)() {

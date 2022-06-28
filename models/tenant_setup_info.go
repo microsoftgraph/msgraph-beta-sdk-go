@@ -4,9 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// TenantSetupInfo provides operations to call the completeSetup method.
+// TenantSetupInfo 
 type TenantSetupInfo struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // The defaultRolesSettings property
     defaultRolesSettings PrivilegedRoleSettingsable
     // The firstTimeSetup property
@@ -20,16 +22,25 @@ type TenantSetupInfo struct {
     // The userRolesActions property
     userRolesActions *string
 }
-// NewTenantSetupInfo instantiates a new tenantSetupInfo and sets the default values.
+// NewTenantSetupInfo instantiates a new TenantSetupInfo and sets the default values.
 func NewTenantSetupInfo()(*TenantSetupInfo) {
     m := &TenantSetupInfo{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateTenantSetupInfoFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateTenantSetupInfoFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewTenantSetupInfo(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *TenantSetupInfo) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetDefaultRolesSettings gets the defaultRolesSettings property value. The defaultRolesSettings property
 func (m *TenantSetupInfo) GetDefaultRolesSettings()(PrivilegedRoleSettingsable) {
@@ -191,7 +202,19 @@ func (m *TenantSetupInfo) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *TenantSetupInfo) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetDefaultRolesSettings sets the defaultRolesSettings property value. The defaultRolesSettings property
 func (m *TenantSetupInfo) SetDefaultRolesSettings(value PrivilegedRoleSettingsable)() {

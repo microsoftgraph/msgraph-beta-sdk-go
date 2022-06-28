@@ -4,9 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// IdentityProvider provides operations to manage the collection of identityProvider entities.
+// IdentityProvider provides operations to manage the collection of accessReview entities.
 type IdentityProvider struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // The client ID for the application obtained when registering the application with the identity provider. This is a required field.  Required. Not nullable.
     clientId *string
     // The client secret for the application obtained when registering the application with the identity provider. This is write-only. A read operation will return ****. This is a required field. Required. Not nullable.
@@ -21,6 +23,7 @@ func NewIdentityProvider()(*IdentityProvider) {
     m := &IdentityProvider{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateIdentityProviderFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -45,6 +48,14 @@ func CreateIdentityProviderFromDiscriminatorValue(parseNode i878a80d2330e89d2689
         }
     }
     return NewIdentityProvider(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *IdentityProvider) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetClientId gets the clientId property value. The client ID for the application obtained when registering the application with the identity provider. This is a required field.  Required. Not nullable.
 func (m *IdentityProvider) GetClientId()(*string) {
@@ -153,7 +164,19 @@ func (m *IdentityProvider) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *IdentityProvider) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetClientId sets the clientId property value. The client ID for the application obtained when registering the application with the identity provider. This is a required field.  Required. Not nullable.
 func (m *IdentityProvider) SetClientId(value *string)() {

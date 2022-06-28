@@ -4,9 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Directory provides operations to manage the directory singleton.
+// Directory 
 type Directory struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Conceptual container for user and group directory objects.
     administrativeUnits []AdministrativeUnitable
     // Group of related custom security attribute definitions.
@@ -30,16 +32,25 @@ type Directory struct {
     // The sharedEmailDomains property
     sharedEmailDomains []SharedEmailDomainable
 }
-// NewDirectory instantiates a new directory and sets the default values.
+// NewDirectory instantiates a new Directory and sets the default values.
 func NewDirectory()(*Directory) {
     m := &Directory{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateDirectoryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateDirectoryFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDirectory(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *Directory) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetAdministrativeUnits gets the administrativeUnits property value. Conceptual container for user and group directory objects.
 func (m *Directory) GetAdministrativeUnits()([]AdministrativeUnitable) {
@@ -404,7 +415,19 @@ func (m *Directory) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *Directory) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAdministrativeUnits sets the administrativeUnits property value. Conceptual container for user and group directory objects.
 func (m *Directory) SetAdministrativeUnits(value []AdministrativeUnitable)() {

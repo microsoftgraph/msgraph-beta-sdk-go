@@ -4,9 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// CloudPcServicePlan provides operations to manage the deviceManagement singleton.
+// CloudPcServicePlan 
 type CloudPcServicePlan struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // The name for the service plan. Read-only.
     displayName *string
     // The size of the RAM in GB. Read-only.
@@ -20,16 +22,25 @@ type CloudPcServicePlan struct {
     // The number of vCPUs. Read-only.
     vCpuCount *int32
 }
-// NewCloudPcServicePlan instantiates a new cloudPcServicePlan and sets the default values.
+// NewCloudPcServicePlan instantiates a new CloudPcServicePlan and sets the default values.
 func NewCloudPcServicePlan()(*CloudPcServicePlan) {
     m := &CloudPcServicePlan{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateCloudPcServicePlanFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateCloudPcServicePlanFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCloudPcServicePlan(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *CloudPcServicePlan) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetDisplayName gets the displayName property value. The name for the service plan. Read-only.
 func (m *CloudPcServicePlan) GetDisplayName()(*string) {
@@ -187,7 +198,19 @@ func (m *CloudPcServicePlan) Serialize(writer i878a80d2330e89d26896388a3f487eef2
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *CloudPcServicePlan) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetDisplayName sets the displayName property value. The name for the service plan. Read-only.
 func (m *CloudPcServicePlan) SetDisplayName(value *string)() {

@@ -8,6 +8,8 @@ import (
 // DeviceLogCollectionResponse windows Log Collection request entity.
 type DeviceLogCollectionResponse struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // The error code, if any. Valid values -9.22337203685478E+18 to 9.22337203685478E+18
     errorCode *int64
     // The DateTime of the expiration of the logs
@@ -30,11 +32,20 @@ func NewDeviceLogCollectionResponse()(*DeviceLogCollectionResponse) {
     m := &DeviceLogCollectionResponse{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateDeviceLogCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateDeviceLogCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDeviceLogCollectionResponse(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *DeviceLogCollectionResponse) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetErrorCode gets the errorCode property value. The error code, if any. Valid values -9.22337203685478E+18 to 9.22337203685478E+18
 func (m *DeviceLogCollectionResponse) GetErrorCode()(*int64) {
@@ -239,7 +250,19 @@ func (m *DeviceLogCollectionResponse) Serialize(writer i878a80d2330e89d26896388a
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *DeviceLogCollectionResponse) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetErrorCode sets the errorCode property value. The error code, if any. Valid values -9.22337203685478E+18 to 9.22337203685478E+18
 func (m *DeviceLogCollectionResponse) SetErrorCode(value *int64)() {

@@ -4,22 +4,33 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// CloudPcSupportedRegion provides operations to manage the deviceManagement singleton.
+// CloudPcSupportedRegion 
 type CloudPcSupportedRegion struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // The name for the supported region. Read-only.
     displayName *string
 }
-// NewCloudPcSupportedRegion instantiates a new cloudPcSupportedRegion and sets the default values.
+// NewCloudPcSupportedRegion instantiates a new CloudPcSupportedRegion and sets the default values.
 func NewCloudPcSupportedRegion()(*CloudPcSupportedRegion) {
     m := &CloudPcSupportedRegion{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateCloudPcSupportedRegionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateCloudPcSupportedRegionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCloudPcSupportedRegion(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *CloudPcSupportedRegion) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetDisplayName gets the displayName property value. The name for the supported region. Read-only.
 func (m *CloudPcSupportedRegion) GetDisplayName()(*string) {
@@ -56,7 +67,19 @@ func (m *CloudPcSupportedRegion) Serialize(writer i878a80d2330e89d26896388a3f487
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *CloudPcSupportedRegion) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetDisplayName sets the displayName property value. The name for the supported region. Read-only.
 func (m *CloudPcSupportedRegion) SetDisplayName(value *string)() {

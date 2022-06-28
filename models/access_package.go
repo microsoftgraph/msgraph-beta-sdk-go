@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AccessPackage provides operations to manage the identityGovernance singleton.
+// AccessPackage provides operations to manage the collection of accessReview entities.
 type AccessPackage struct {
     Entity
     // Read-only. Nullable. Supports $expand.
@@ -16,6 +16,8 @@ type AccessPackage struct {
     accessPackageResourceRoleScopes []AccessPackageResourceRoleScopeable
     // The access packages that are incompatible with this package. Read-only.
     accessPackagesIncompatibleWith []AccessPackageable
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Identifier of the access package catalog referencing this access package. Read-only.
     catalogId *string
     // The userPrincipalName of the user or identity of the subject who created this resource. Read-only.
@@ -44,6 +46,7 @@ func NewAccessPackage()(*AccessPackage) {
     m := &AccessPackage{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateAccessPackageFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -80,6 +83,14 @@ func (m *AccessPackage) GetAccessPackagesIncompatibleWith()([]AccessPackageable)
         return nil
     } else {
         return m.accessPackagesIncompatibleWith
+    }
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *AccessPackage) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
     }
 }
 // GetCatalogId gets the catalogId property value. Identifier of the access package catalog referencing this access package. Read-only.
@@ -461,6 +472,12 @@ func (m *AccessPackage) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetAccessPackageAssignmentPolicies sets the accessPackageAssignmentPolicies property value. Read-only. Nullable. Supports $expand.
@@ -485,6 +502,12 @@ func (m *AccessPackage) SetAccessPackageResourceRoleScopes(value []AccessPackage
 func (m *AccessPackage) SetAccessPackagesIncompatibleWith(value []AccessPackageable)() {
     if m != nil {
         m.accessPackagesIncompatibleWith = value
+    }
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *AccessPackage) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
     }
 }
 // SetCatalogId sets the catalogId property value. Identifier of the access package catalog referencing this access package. Read-only.

@@ -8,6 +8,8 @@ import (
 // ServiceAnnouncementBase provides operations to manage the admin singleton.
 type ServiceAnnouncementBase struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Additional details about service event. This property doesn't support filters.
     details []KeyValuePairable
     // The end time of the service event.
@@ -24,6 +26,7 @@ func NewServiceAnnouncementBase()(*ServiceAnnouncementBase) {
     m := &ServiceAnnouncementBase{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateServiceAnnouncementBaseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -50,6 +53,14 @@ func CreateServiceAnnouncementBaseFromDiscriminatorValue(parseNode i878a80d2330e
         }
     }
     return NewServiceAnnouncementBase(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *ServiceAnnouncementBase) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetDetails gets the details property value. Additional details about service event. This property doesn't support filters.
 func (m *ServiceAnnouncementBase) GetDetails()([]KeyValuePairable) {
@@ -190,7 +201,19 @@ func (m *ServiceAnnouncementBase) Serialize(writer i878a80d2330e89d26896388a3f48
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *ServiceAnnouncementBase) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetDetails sets the details property value. Additional details about service event. This property doesn't support filters.
 func (m *ServiceAnnouncementBase) SetDetails(value []KeyValuePairable)() {

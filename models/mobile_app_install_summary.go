@@ -7,6 +7,8 @@ import (
 // MobileAppInstallSummary contains properties for the installation summary of a mobile app.
 type MobileAppInstallSummary struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Number of Devices that have failed to install this app.
     failedDeviceCount *int32
     // Number of Users that have 1 or more device that failed to install this app.
@@ -33,11 +35,20 @@ func NewMobileAppInstallSummary()(*MobileAppInstallSummary) {
     m := &MobileAppInstallSummary{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateMobileAppInstallSummaryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateMobileAppInstallSummaryFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewMobileAppInstallSummary(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *MobileAppInstallSummary) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetFailedDeviceCount gets the failedDeviceCount property value. Number of Devices that have failed to install this app.
 func (m *MobileAppInstallSummary) GetFailedDeviceCount()(*int32) {
@@ -290,7 +301,19 @@ func (m *MobileAppInstallSummary) Serialize(writer i878a80d2330e89d26896388a3f48
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *MobileAppInstallSummary) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetFailedDeviceCount sets the failedDeviceCount property value. Number of Devices that have failed to install this app.
 func (m *MobileAppInstallSummary) SetFailedDeviceCount(value *int32)() {

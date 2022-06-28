@@ -4,9 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Place provides operations to manage the collection of place entities.
+// Place 
 type Place struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // The street address of the place.
     address PhysicalAddressable
     // The name associated with the place.
@@ -16,11 +18,12 @@ type Place struct {
     // The phone number of the place.
     phone *string
 }
-// NewPlace instantiates a new place and sets the default values.
+// NewPlace instantiates a new Place and sets the default values.
 func NewPlace()(*Place) {
     m := &Place{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreatePlaceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -47,6 +50,14 @@ func CreatePlaceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487e
         }
     }
     return NewPlace(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *Place) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetAddress gets the address property value. The street address of the place.
 func (m *Place) GetAddress()(PhysicalAddressable) {
@@ -155,7 +166,19 @@ func (m *Place) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c4
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *Place) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAddress sets the address property value. The street address of the place.
 func (m *Place) SetAddress(value PhysicalAddressable)() {

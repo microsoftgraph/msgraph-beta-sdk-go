@@ -4,9 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Security provides operations to manage the security singleton.
+// Security 
 type Security struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Notifications for suspicious or potential security issues in a customer’s tenant.
     alerts []Alertable
     // Provides tenants capability to launch a simulated and realistic phishing attack and learn from it.
@@ -38,16 +40,25 @@ type Security struct {
     // The userSecurityProfiles property
     userSecurityProfiles []UserSecurityProfileable
 }
-// NewSecurity instantiates a new security and sets the default values.
+// NewSecurity instantiates a new Security and sets the default values.
 func NewSecurity()(*Security) {
     m := &Security{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateSecurityFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateSecurityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewSecurity(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *Security) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetAlerts gets the alerts property value. Notifications for suspicious or potential security issues in a customer’s tenant.
 func (m *Security) GetAlerts()([]Alertable) {
@@ -532,7 +543,19 @@ func (m *Security) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *Security) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAlerts sets the alerts property value. Notifications for suspicious or potential security issues in a customer’s tenant.
 func (m *Security) SetAlerts(value []Alertable)() {

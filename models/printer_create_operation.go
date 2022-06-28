@@ -7,6 +7,8 @@ import (
 // PrinterCreateOperation 
 type PrinterCreateOperation struct {
     PrintOperation
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // The signed certificate created during the registration process. Read-only.
     certificate *string
     // The created printer entity. Read-only.
@@ -17,11 +19,20 @@ func NewPrinterCreateOperation()(*PrinterCreateOperation) {
     m := &PrinterCreateOperation{
         PrintOperation: *NewPrintOperation(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreatePrinterCreateOperationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreatePrinterCreateOperationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewPrinterCreateOperation(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *PrinterCreateOperation) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetCertificate gets the certificate property value. The signed certificate created during the registration process. Read-only.
 func (m *PrinterCreateOperation) GetCertificate()(*string) {
@@ -82,7 +93,19 @@ func (m *PrinterCreateOperation) Serialize(writer i878a80d2330e89d26896388a3f487
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *PrinterCreateOperation) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetCertificate sets the certificate property value. The signed certificate created during the registration process. Read-only.
 func (m *PrinterCreateOperation) SetCertificate(value *string)() {

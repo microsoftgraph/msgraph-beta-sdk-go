@@ -7,6 +7,8 @@ import (
 // UnifiedRoleManagementPolicyEnablementRule 
 type UnifiedRoleManagementPolicyEnablementRule struct {
     UnifiedRoleManagementPolicyRule
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // The collection of rules that are enabled for this policy rule. For example, MultiFactorAuthentication, Ticketing, and Justification.
     enabledRules []string
 }
@@ -15,11 +17,20 @@ func NewUnifiedRoleManagementPolicyEnablementRule()(*UnifiedRoleManagementPolicy
     m := &UnifiedRoleManagementPolicyEnablementRule{
         UnifiedRoleManagementPolicyRule: *NewUnifiedRoleManagementPolicyRule(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateUnifiedRoleManagementPolicyEnablementRuleFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateUnifiedRoleManagementPolicyEnablementRuleFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewUnifiedRoleManagementPolicyEnablementRule(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *UnifiedRoleManagementPolicyEnablementRule) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetEnabledRules gets the enabledRules property value. The collection of rules that are enabled for this policy rule. For example, MultiFactorAuthentication, Ticketing, and Justification.
 func (m *UnifiedRoleManagementPolicyEnablementRule) GetEnabledRules()([]string) {
@@ -60,7 +71,19 @@ func (m *UnifiedRoleManagementPolicyEnablementRule) Serialize(writer i878a80d233
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *UnifiedRoleManagementPolicyEnablementRule) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetEnabledRules sets the enabledRules property value. The collection of rules that are enabled for this policy rule. For example, MultiFactorAuthentication, Ticketing, and Justification.
 func (m *UnifiedRoleManagementPolicyEnablementRule) SetEnabledRules(value []string)() {

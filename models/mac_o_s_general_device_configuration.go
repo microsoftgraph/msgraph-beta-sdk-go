@@ -9,6 +9,8 @@ type MacOSGeneralDeviceConfiguration struct {
     DeviceConfiguration
     // Yes prevents users from adding friends to Game Center. Available for devices running macOS versions 10.13 and later.
     addingGameCenterFriendsBlocked *bool
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Indicates whether or not to allow AirDrop.
     airDropBlocked *bool
     // Indicates whether or to block users from unlocking their Mac with Apple Watch.
@@ -131,6 +133,7 @@ func NewMacOSGeneralDeviceConfiguration()(*MacOSGeneralDeviceConfiguration) {
     m := &MacOSGeneralDeviceConfiguration{
         DeviceConfiguration: *NewDeviceConfiguration(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateMacOSGeneralDeviceConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -143,6 +146,14 @@ func (m *MacOSGeneralDeviceConfiguration) GetAddingGameCenterFriendsBlocked()(*b
         return nil
     } else {
         return m.addingGameCenterFriendsBlocked
+    }
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *MacOSGeneralDeviceConfiguration) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
     }
 }
 // GetAirDropBlocked gets the airDropBlocked property value. Indicates whether or not to allow AirDrop.
@@ -1587,12 +1598,24 @@ func (m *MacOSGeneralDeviceConfiguration) Serialize(writer i878a80d2330e89d26896
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetAddingGameCenterFriendsBlocked sets the addingGameCenterFriendsBlocked property value. Yes prevents users from adding friends to Game Center. Available for devices running macOS versions 10.13 and later.
 func (m *MacOSGeneralDeviceConfiguration) SetAddingGameCenterFriendsBlocked(value *bool)() {
     if m != nil {
         m.addingGameCenterFriendsBlocked = value
+    }
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *MacOSGeneralDeviceConfiguration) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
     }
 }
 // SetAirDropBlocked sets the airDropBlocked property value. Indicates whether or not to allow AirDrop.

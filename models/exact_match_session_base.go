@@ -8,6 +8,8 @@ import (
 // ExactMatchSessionBase 
 type ExactMatchSessionBase struct {
     ExactMatchJobBase
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // The dataStoreId property
     dataStoreId *string
     // The processingCompletionDateTime property
@@ -30,6 +32,7 @@ func NewExactMatchSessionBase()(*ExactMatchSessionBase) {
     m := &ExactMatchSessionBase{
         ExactMatchJobBase: *NewExactMatchJobBase(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateExactMatchSessionBaseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -54,6 +57,14 @@ func CreateExactMatchSessionBaseFromDiscriminatorValue(parseNode i878a80d2330e89
         }
     }
     return NewExactMatchSessionBase(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *ExactMatchSessionBase) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetDataStoreId gets the dataStoreId property value. The dataStoreId property
 func (m *ExactMatchSessionBase) GetDataStoreId()(*string) {
@@ -258,7 +269,19 @@ func (m *ExactMatchSessionBase) Serialize(writer i878a80d2330e89d26896388a3f487e
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *ExactMatchSessionBase) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetDataStoreId sets the dataStoreId property value. The dataStoreId property
 func (m *ExactMatchSessionBase) SetDataStoreId(value *string)() {

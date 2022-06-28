@@ -23,6 +23,33 @@ func NewMobileAppTroubleshootingHistoryItem()(*MobileAppTroubleshootingHistoryIt
 }
 // CreateMobileAppTroubleshootingHistoryItemFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateMobileAppTroubleshootingHistoryItemFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+    if parseNode != nil {
+        mappingValueNode, err := parseNode.GetChildNode("@odata.type")
+        if err != nil {
+            return nil, err
+        }
+        if mappingValueNode != nil {
+            mappingValue, err := mappingValueNode.GetStringValue()
+            if err != nil {
+                return nil, err
+            }
+            if mappingValue != nil {
+                mappingStr := *mappingValue
+                switch mappingStr {
+                    case "#microsoft.graph.mobileAppTroubleshootingAppPolicyCreationHistory":
+                        return NewMobileAppTroubleshootingAppPolicyCreationHistory(), nil
+                    case "#microsoft.graph.mobileAppTroubleshootingAppStateHistory":
+                        return NewMobileAppTroubleshootingAppStateHistory(), nil
+                    case "#microsoft.graph.mobileAppTroubleshootingAppTargetHistory":
+                        return NewMobileAppTroubleshootingAppTargetHistory(), nil
+                    case "#microsoft.graph.mobileAppTroubleshootingAppUpdateHistory":
+                        return NewMobileAppTroubleshootingAppUpdateHistory(), nil
+                    case "#microsoft.graph.mobileAppTroubleshootingDeviceCheckinHistory":
+                        return NewMobileAppTroubleshootingDeviceCheckinHistory(), nil
+                }
+            }
+        }
+    }
     return NewMobileAppTroubleshootingHistoryItem(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.

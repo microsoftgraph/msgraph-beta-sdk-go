@@ -8,6 +8,8 @@ import (
 // DeviceManagementConfigurationPolicy device Management Configuration Policy
 type DeviceManagementConfigurationPolicy struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Policy assignments
     assignments []DeviceManagementConfigurationPolicyAssignmentable
     // Policy creation date and time
@@ -40,11 +42,20 @@ func NewDeviceManagementConfigurationPolicy()(*DeviceManagementConfigurationPoli
     m := &DeviceManagementConfigurationPolicy{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateDeviceManagementConfigurationPolicyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateDeviceManagementConfigurationPolicyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDeviceManagementConfigurationPolicy(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *DeviceManagementConfigurationPolicy) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetAssignments gets the assignments property value. Policy assignments
 func (m *DeviceManagementConfigurationPolicy) GetAssignments()([]DeviceManagementConfigurationPolicyAssignmentable) {
@@ -391,7 +402,19 @@ func (m *DeviceManagementConfigurationPolicy) Serialize(writer i878a80d2330e89d2
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *DeviceManagementConfigurationPolicy) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAssignments sets the assignments property value. Policy assignments
 func (m *DeviceManagementConfigurationPolicy) SetAssignments(value []DeviceManagementConfigurationPolicyAssignmentable)() {

@@ -4,9 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// MailFolder provides operations to manage the collection of administrativeUnit entities.
+// MailFolder provides operations to manage the collection of accessReview entities.
 type MailFolder struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // The number of immediate child mailFolders in the current mailFolder.
     childFolderCount *int32
     // The collection of child folders in the mailFolder.
@@ -39,6 +41,7 @@ func NewMailFolder()(*MailFolder) {
     m := &MailFolder{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateMailFolderFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -63,6 +66,14 @@ func CreateMailFolderFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3
         }
     }
     return NewMailFolder(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *MailFolder) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetChildFolderCount gets the childFolderCount property value. The number of immediate child mailFolders in the current mailFolder.
 func (m *MailFolder) GetChildFolderCount()(*int32) {
@@ -435,7 +446,19 @@ func (m *MailFolder) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *MailFolder) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetChildFolderCount sets the childFolderCount property value. The number of immediate child mailFolders in the current mailFolder.
 func (m *MailFolder) SetChildFolderCount(value *int32)() {

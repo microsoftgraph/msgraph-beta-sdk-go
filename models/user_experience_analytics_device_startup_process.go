@@ -7,6 +7,8 @@ import (
 // UserExperienceAnalyticsDeviceStartupProcess the user experience analytics device startup process details.
 type UserExperienceAnalyticsDeviceStartupProcess struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // The user experience analytics device id.
     managedDeviceId *string
     // User experience analytics device startup process name.
@@ -23,11 +25,20 @@ func NewUserExperienceAnalyticsDeviceStartupProcess()(*UserExperienceAnalyticsDe
     m := &UserExperienceAnalyticsDeviceStartupProcess{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateUserExperienceAnalyticsDeviceStartupProcessFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateUserExperienceAnalyticsDeviceStartupProcessFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewUserExperienceAnalyticsDeviceStartupProcess(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *UserExperienceAnalyticsDeviceStartupProcess) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *UserExperienceAnalyticsDeviceStartupProcess) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -160,7 +171,19 @@ func (m *UserExperienceAnalyticsDeviceStartupProcess) Serialize(writer i878a80d2
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *UserExperienceAnalyticsDeviceStartupProcess) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetManagedDeviceId sets the managedDeviceId property value. The user experience analytics device id.
 func (m *UserExperienceAnalyticsDeviceStartupProcess) SetManagedDeviceId(value *string)() {

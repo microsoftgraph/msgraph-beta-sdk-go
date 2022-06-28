@@ -4,9 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// PermissionGrantConditionSet provides operations to manage the collection of administrativeUnit entities.
+// PermissionGrantConditionSet casts the previous resource to application.
 type PermissionGrantConditionSet struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Set to true to only match on client applications that are Microsoft 365 certified. Set to false to match on any other client app. Default is false.
     certifiedClientApplicationsOnly *bool
     // A list of appId values for the client applications to match with, or a list with the single value all to match any client application. Default is the single value all.
@@ -31,11 +33,20 @@ func NewPermissionGrantConditionSet()(*PermissionGrantConditionSet) {
     m := &PermissionGrantConditionSet{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreatePermissionGrantConditionSetFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreatePermissionGrantConditionSetFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewPermissionGrantConditionSet(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *PermissionGrantConditionSet) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetCertifiedClientApplicationsOnly gets the certifiedClientApplicationsOnly property value. Set to true to only match on client applications that are Microsoft 365 certified. Set to false to match on any other client app. Default is false.
 func (m *PermissionGrantConditionSet) GetCertifiedClientApplicationsOnly()(*bool) {
@@ -281,7 +292,19 @@ func (m *PermissionGrantConditionSet) Serialize(writer i878a80d2330e89d26896388a
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *PermissionGrantConditionSet) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetCertifiedClientApplicationsOnly sets the certifiedClientApplicationsOnly property value. Set to true to only match on client applications that are Microsoft 365 certified. Set to false to match on any other client app. Default is false.
 func (m *PermissionGrantConditionSet) SetCertifiedClientApplicationsOnly(value *bool)() {

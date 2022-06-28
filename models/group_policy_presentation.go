@@ -8,6 +8,8 @@ import (
 // GroupPolicyPresentation the base entity for the display presentation of any of the additional options in a group policy definition.
 type GroupPolicyPresentation struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // The group policy definition associated with the presentation.
     definition GroupPolicyDefinitionable
     // Localized text label for any presentation entity. The default value is empty.
@@ -20,6 +22,7 @@ func NewGroupPolicyPresentation()(*GroupPolicyPresentation) {
     m := &GroupPolicyPresentation{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateGroupPolicyPresentationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -60,6 +63,14 @@ func CreateGroupPolicyPresentationFromDiscriminatorValue(parseNode i878a80d2330e
         }
     }
     return NewGroupPolicyPresentation(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *GroupPolicyPresentation) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetDefinition gets the definition property value. The group policy definition associated with the presentation.
 func (m *GroupPolicyPresentation) GetDefinition()(GroupPolicyDefinitionable) {
@@ -144,7 +155,19 @@ func (m *GroupPolicyPresentation) Serialize(writer i878a80d2330e89d26896388a3f48
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *GroupPolicyPresentation) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetDefinition sets the definition property value. The group policy definition associated with the presentation.
 func (m *GroupPolicyPresentation) SetDefinition(value GroupPolicyDefinitionable)() {

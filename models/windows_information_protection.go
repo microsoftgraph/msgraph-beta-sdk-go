@@ -7,6 +7,8 @@ import (
 // WindowsInformationProtection 
 type WindowsInformationProtection struct {
     ManagedAppPolicy
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Navigation property to list of security groups targeted for policy.
     assignments []TargetedManagedAppPolicyAssignmentable
     // Specifies whether to allow Azure RMS encryption for WIP
@@ -63,6 +65,7 @@ func NewWindowsInformationProtection()(*WindowsInformationProtection) {
     m := &WindowsInformationProtection{
         ManagedAppPolicy: *NewManagedAppPolicy(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateWindowsInformationProtectionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -89,6 +92,14 @@ func CreateWindowsInformationProtectionFromDiscriminatorValue(parseNode i878a80d
         }
     }
     return NewWindowsInformationProtection(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *WindowsInformationProtection) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetAssignments gets the assignments property value. Navigation property to list of security groups targeted for policy.
 func (m *WindowsInformationProtection) GetAssignments()([]TargetedManagedAppPolicyAssignmentable) {
@@ -806,7 +817,19 @@ func (m *WindowsInformationProtection) Serialize(writer i878a80d2330e89d26896388
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *WindowsInformationProtection) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAssignments sets the assignments property value. Navigation property to list of security groups targeted for policy.
 func (m *WindowsInformationProtection) SetAssignments(value []TargetedManagedAppPolicyAssignmentable)() {

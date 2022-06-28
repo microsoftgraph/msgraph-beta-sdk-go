@@ -4,9 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// RegionalAndLanguageSettings provides operations to manage the collection of administrativeUnit entities.
+// RegionalAndLanguageSettings provides operations to manage the collection of accessReview entities.
 type RegionalAndLanguageSettings struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Prioritized list of languages the user reads and authors in.Returned by default. Not nullable.
     authoringLanguages []LocaleInfoable
     // The  user's preferred user interface language (menus, buttons, ribbons, warning messages) for Microsoft web applications.Returned by default. Not nullable.
@@ -27,11 +29,20 @@ func NewRegionalAndLanguageSettings()(*RegionalAndLanguageSettings) {
     m := &RegionalAndLanguageSettings{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateRegionalAndLanguageSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateRegionalAndLanguageSettingsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewRegionalAndLanguageSettings(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *RegionalAndLanguageSettings) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetAuthoringLanguages gets the authoringLanguages property value. Prioritized list of languages the user reads and authors in.Returned by default. Not nullable.
 func (m *RegionalAndLanguageSettings) GetAuthoringLanguages()([]LocaleInfoable) {
@@ -220,7 +231,19 @@ func (m *RegionalAndLanguageSettings) Serialize(writer i878a80d2330e89d26896388a
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *RegionalAndLanguageSettings) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAuthoringLanguages sets the authoringLanguages property value. Prioritized list of languages the user reads and authors in.Returned by default. Not nullable.
 func (m *RegionalAndLanguageSettings) SetAuthoringLanguages(value []LocaleInfoable)() {

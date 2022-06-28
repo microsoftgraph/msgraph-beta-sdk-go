@@ -8,6 +8,8 @@ import (
 // GroupPolicyPresentationValue the base presentation value entity that stores the value for a single group policy presentation.
 type GroupPolicyPresentationValue struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // The date and time the object was created.
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The group policy definition value associated with the presentation value.
@@ -22,6 +24,7 @@ func NewGroupPolicyPresentationValue()(*GroupPolicyPresentationValue) {
     m := &GroupPolicyPresentationValue{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateGroupPolicyPresentationValueFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -56,6 +59,14 @@ func CreateGroupPolicyPresentationValueFromDiscriminatorValue(parseNode i878a80d
         }
     }
     return NewGroupPolicyPresentationValue(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *GroupPolicyPresentationValue) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetCreatedDateTime gets the createdDateTime property value. The date and time the object was created.
 func (m *GroupPolicyPresentationValue) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
@@ -164,7 +175,19 @@ func (m *GroupPolicyPresentationValue) Serialize(writer i878a80d2330e89d26896388
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *GroupPolicyPresentationValue) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetCreatedDateTime sets the createdDateTime property value. The date and time the object was created.
 func (m *GroupPolicyPresentationValue) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {

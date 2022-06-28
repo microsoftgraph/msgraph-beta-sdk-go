@@ -7,6 +7,8 @@ import (
 // EmbeddedSIMActivationCodePoolAssignment the embedded SIM activation code pool assignment entity assigns a specific embeddedSIMActivationCodePool to an AAD device group.
 type EmbeddedSIMActivationCodePoolAssignment struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Base type for assignment targets.
     target DeviceAndAppManagementAssignmentTargetable
 }
@@ -15,11 +17,20 @@ func NewEmbeddedSIMActivationCodePoolAssignment()(*EmbeddedSIMActivationCodePool
     m := &EmbeddedSIMActivationCodePoolAssignment{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateEmbeddedSIMActivationCodePoolAssignmentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateEmbeddedSIMActivationCodePoolAssignmentFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewEmbeddedSIMActivationCodePoolAssignment(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *EmbeddedSIMActivationCodePoolAssignment) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *EmbeddedSIMActivationCodePoolAssignment) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -56,7 +67,19 @@ func (m *EmbeddedSIMActivationCodePoolAssignment) Serialize(writer i878a80d2330e
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *EmbeddedSIMActivationCodePoolAssignment) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetTarget sets the target property value. Base type for assignment targets.
 func (m *EmbeddedSIMActivationCodePoolAssignment) SetTarget(value DeviceAndAppManagementAssignmentTargetable)() {

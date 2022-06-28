@@ -4,9 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// SitePage provides operations to manage the collection of administrativeUnit entities.
+// SitePage provides operations to manage the collection of accessReview entities.
 type SitePage struct {
     BaseItem
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // The content type of the page.
     contentType ContentTypeInfoable
     // The pageLayoutType property
@@ -23,11 +25,20 @@ func NewSitePage()(*SitePage) {
     m := &SitePage{
         BaseItem: *NewBaseItem(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateSitePageFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateSitePageFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewSitePage(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *SitePage) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetContentType gets the contentType property value. The content type of the page.
 func (m *SitePage) GetContentType()(ContentTypeInfoable) {
@@ -168,7 +179,19 @@ func (m *SitePage) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *SitePage) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetContentType sets the contentType property value. The content type of the page.
 func (m *SitePage) SetContentType(value ContentTypeInfoable)() {

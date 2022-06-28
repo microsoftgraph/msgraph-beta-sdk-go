@@ -4,22 +4,33 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ProvisioningSystem provides operations to manage the auditLogRoot singleton.
+// ProvisioningSystem 
 type ProvisioningSystem struct {
     Identity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Details of the system.
     details DetailsInfoable
 }
-// NewProvisioningSystem instantiates a new provisioningSystem and sets the default values.
+// NewProvisioningSystem instantiates a new ProvisioningSystem and sets the default values.
 func NewProvisioningSystem()(*ProvisioningSystem) {
     m := &ProvisioningSystem{
         Identity: *NewIdentity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateProvisioningSystemFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateProvisioningSystemFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewProvisioningSystem(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *ProvisioningSystem) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetDetails gets the details property value. Details of the system.
 func (m *ProvisioningSystem) GetDetails()(DetailsInfoable) {
@@ -56,7 +67,19 @@ func (m *ProvisioningSystem) Serialize(writer i878a80d2330e89d26896388a3f487eef2
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *ProvisioningSystem) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetDetails sets the details property value. Details of the system.
 func (m *ProvisioningSystem) SetDetails(value DetailsInfoable)() {

@@ -4,24 +4,35 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// TermsOfUseContainer provides operations to manage the identityGovernance singleton.
+// TermsOfUseContainer 
 type TermsOfUseContainer struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Represents the current status of a user's response to a company's customizable terms of use agreement.
     agreementAcceptances []AgreementAcceptanceable
     // Represents a tenant's customizable terms of use agreement that's created and managed with Azure Active Directory (Azure AD).
     agreements []Agreementable
 }
-// NewTermsOfUseContainer instantiates a new termsOfUseContainer and sets the default values.
+// NewTermsOfUseContainer instantiates a new TermsOfUseContainer and sets the default values.
 func NewTermsOfUseContainer()(*TermsOfUseContainer) {
     m := &TermsOfUseContainer{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateTermsOfUseContainerFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateTermsOfUseContainerFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewTermsOfUseContainer(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *TermsOfUseContainer) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetAgreementAcceptances gets the agreementAcceptances property value. Represents the current status of a user's response to a company's customizable terms of use agreement.
 func (m *TermsOfUseContainer) GetAgreementAcceptances()([]AgreementAcceptanceable) {
@@ -98,7 +109,19 @@ func (m *TermsOfUseContainer) Serialize(writer i878a80d2330e89d26896388a3f487eef
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *TermsOfUseContainer) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAgreementAcceptances sets the agreementAcceptances property value. Represents the current status of a user's response to a company's customizable terms of use agreement.
 func (m *TermsOfUseContainer) SetAgreementAcceptances(value []AgreementAcceptanceable)() {

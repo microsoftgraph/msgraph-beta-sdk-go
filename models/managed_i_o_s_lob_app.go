@@ -8,6 +8,8 @@ import (
 // ManagedIOSLobApp 
 type ManagedIOSLobApp struct {
     ManagedMobileLobApp
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Contains properties of the possible iOS device types the mobile app can run on.
     applicableDeviceType IosDeviceTypeable
     // The build number of managed iOS Line of Business (LoB) app.
@@ -28,11 +30,20 @@ func NewManagedIOSLobApp()(*ManagedIOSLobApp) {
     m := &ManagedIOSLobApp{
         ManagedMobileLobApp: *NewManagedMobileLobApp(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateManagedIOSLobAppFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateManagedIOSLobAppFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewManagedIOSLobApp(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *ManagedIOSLobApp) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetApplicableDeviceType gets the applicableDeviceType property value. Contains properties of the possible iOS device types the mobile app can run on.
 func (m *ManagedIOSLobApp) GetApplicableDeviceType()(IosDeviceTypeable) {
@@ -213,7 +224,19 @@ func (m *ManagedIOSLobApp) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *ManagedIOSLobApp) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetApplicableDeviceType sets the applicableDeviceType property value. Contains properties of the possible iOS device types the mobile app can run on.
 func (m *ManagedIOSLobApp) SetApplicableDeviceType(value IosDeviceTypeable)() {

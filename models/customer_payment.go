@@ -5,9 +5,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// CustomerPayment provides operations to manage the financials singleton.
+// CustomerPayment provides operations to manage the collection of accessReview entities.
 type CustomerPayment struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // The amount property
     amount *float64
     // The appliesToInvoiceId property
@@ -44,11 +46,20 @@ func NewCustomerPayment()(*CustomerPayment) {
     m := &CustomerPayment{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateCustomerPaymentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateCustomerPaymentFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCustomerPayment(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *CustomerPayment) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetAmount gets the amount property value. The amount property
 func (m *CustomerPayment) GetAmount()(*float64) {
@@ -421,7 +432,19 @@ func (m *CustomerPayment) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *CustomerPayment) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAmount sets the amount property value. The amount property
 func (m *CustomerPayment) SetAmount(value *float64)() {

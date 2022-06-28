@@ -7,6 +7,8 @@ import (
 // ManagedApp 
 type ManagedApp struct {
     MobileApp
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // The Application's availability. Possible values are: global, lineOfBusiness.
     appAvailability *ManagedAppAvailability
     // The Application's version.
@@ -17,6 +19,7 @@ func NewManagedApp()(*ManagedApp) {
     m := &ManagedApp{
         MobileApp: *NewMobileApp(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateManagedAppFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -45,6 +48,14 @@ func CreateManagedAppFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3
         }
     }
     return NewManagedApp(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *ManagedApp) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetAppAvailability gets the appAvailability property value. The Application's availability. Possible values are: global, lineOfBusiness.
 func (m *ManagedApp) GetAppAvailability()(*ManagedAppAvailability) {
@@ -106,7 +117,19 @@ func (m *ManagedApp) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *ManagedApp) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAppAvailability sets the appAvailability property value. The Application's availability. Possible values are: global, lineOfBusiness.
 func (m *ManagedApp) SetAppAvailability(value *ManagedAppAvailability)() {

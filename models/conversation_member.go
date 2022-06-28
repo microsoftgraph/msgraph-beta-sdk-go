@@ -5,9 +5,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ConversationMember provides operations to manage the collection of administrativeUnit entities.
+// ConversationMember provides operations to manage the collection of accessReview entities.
 type ConversationMember struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // The display name of the user.
     displayName *string
     // The roles for that user. This property only contains additional qualifiers when relevant - for example, if the member has owner privileges, the roles property contains owner as one of the values. Similarly, if the member is a guest, the roles property contains guest as one of the values. A basic member should not have any values specified in the roles property.
@@ -20,6 +22,7 @@ func NewConversationMember()(*ConversationMember) {
     m := &ConversationMember{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateConversationMemberFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -52,6 +55,14 @@ func CreateConversationMemberFromDiscriminatorValue(parseNode i878a80d2330e89d26
         }
     }
     return NewConversationMember(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *ConversationMember) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetDisplayName gets the displayName property value. The display name of the user.
 func (m *ConversationMember) GetDisplayName()(*string) {
@@ -140,7 +151,19 @@ func (m *ConversationMember) Serialize(writer i878a80d2330e89d26896388a3f487eef2
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *ConversationMember) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetDisplayName sets the displayName property value. The display name of the user.
 func (m *ConversationMember) SetDisplayName(value *string)() {

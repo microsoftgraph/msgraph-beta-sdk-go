@@ -7,6 +7,8 @@ import (
 // StsPolicy 
 type StsPolicy struct {
     PolicyBase
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // The appliesTo property
     appliesTo []DirectoryObjectable
     // A string collection containing a JSON string that defines the rules and settings for a policy. The syntax for the definition differs for each derived policy type. Required.
@@ -19,6 +21,7 @@ func NewStsPolicy()(*StsPolicy) {
     m := &StsPolicy{
         PolicyBase: *NewPolicyBase(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateStsPolicyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -51,6 +54,14 @@ func CreateStsPolicyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f
         }
     }
     return NewStsPolicy(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *StsPolicy) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetAppliesTo gets the appliesTo property value. The appliesTo property
 func (m *StsPolicy) GetAppliesTo()([]DirectoryObjectable) {
@@ -147,7 +158,19 @@ func (m *StsPolicy) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *StsPolicy) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAppliesTo sets the appliesTo property value. The appliesTo property
 func (m *StsPolicy) SetAppliesTo(value []DirectoryObjectable)() {

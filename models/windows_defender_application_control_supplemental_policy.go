@@ -5,9 +5,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// WindowsDefenderApplicationControlSupplementalPolicy provides operations to manage the deviceAppManagement singleton.
+// WindowsDefenderApplicationControlSupplementalPolicy provides operations to manage the collection of accessReview entities.
 type WindowsDefenderApplicationControlSupplementalPolicy struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // The associated group assignments for this WindowsDefenderApplicationControl supplemental policy.
     assignments []WindowsDefenderApplicationControlSupplementalPolicyAssignmentable
     // The WindowsDefenderApplicationControl supplemental policy content in byte array format.
@@ -36,11 +38,20 @@ func NewWindowsDefenderApplicationControlSupplementalPolicy()(*WindowsDefenderAp
     m := &WindowsDefenderApplicationControlSupplementalPolicy{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateWindowsDefenderApplicationControlSupplementalPolicyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateWindowsDefenderApplicationControlSupplementalPolicyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWindowsDefenderApplicationControlSupplementalPolicy(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *WindowsDefenderApplicationControlSupplementalPolicy) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetAssignments gets the assignments property value. The associated group assignments for this WindowsDefenderApplicationControl supplemental policy.
 func (m *WindowsDefenderApplicationControlSupplementalPolicy) GetAssignments()([]WindowsDefenderApplicationControlSupplementalPolicyAssignmentable) {
@@ -337,7 +348,19 @@ func (m *WindowsDefenderApplicationControlSupplementalPolicy) Serialize(writer i
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *WindowsDefenderApplicationControlSupplementalPolicy) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAssignments sets the assignments property value. The associated group assignments for this WindowsDefenderApplicationControl supplemental policy.
 func (m *WindowsDefenderApplicationControlSupplementalPolicy) SetAssignments(value []WindowsDefenderApplicationControlSupplementalPolicyAssignmentable)() {

@@ -4,11 +4,13 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AccessPackageResourceScope provides operations to manage the identityGovernance singleton.
+// AccessPackageResourceScope provides operations to manage the collection of accessReview entities.
 type AccessPackageResourceScope struct {
     Entity
     // The accessPackageResource property
     accessPackageResource AccessPackageResourceable
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // The description of the scope.
     description *string
     // The display name of the scope.
@@ -29,6 +31,7 @@ func NewAccessPackageResourceScope()(*AccessPackageResourceScope) {
     m := &AccessPackageResourceScope{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateAccessPackageResourceScopeFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -41,6 +44,14 @@ func (m *AccessPackageResourceScope) GetAccessPackageResource()(AccessPackageRes
         return nil
     } else {
         return m.accessPackageResource
+    }
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *AccessPackageResourceScope) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
     }
 }
 // GetDescription gets the description property value. The description of the scope.
@@ -238,12 +249,24 @@ func (m *AccessPackageResourceScope) Serialize(writer i878a80d2330e89d26896388a3
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetAccessPackageResource sets the accessPackageResource property value. The accessPackageResource property
 func (m *AccessPackageResourceScope) SetAccessPackageResource(value AccessPackageResourceable)() {
     if m != nil {
         m.accessPackageResource = value
+    }
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *AccessPackageResourceScope) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
     }
 }
 // SetDescription sets the description property value. The description of the scope.

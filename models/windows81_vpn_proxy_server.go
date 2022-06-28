@@ -4,24 +4,35 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Windows81VpnProxyServer vPN Proxy Server.
+// Windows81VpnProxyServer 
 type Windows81VpnProxyServer struct {
     VpnProxyServer
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Automatically detect proxy settings.
     automaticallyDetectProxySettings *bool
     // Bypass proxy server for local address.
     bypassProxyServerForLocalAddress *bool
 }
-// NewWindows81VpnProxyServer instantiates a new windows81VpnProxyServer and sets the default values.
+// NewWindows81VpnProxyServer instantiates a new Windows81VpnProxyServer and sets the default values.
 func NewWindows81VpnProxyServer()(*Windows81VpnProxyServer) {
     m := &Windows81VpnProxyServer{
         VpnProxyServer: *NewVpnProxyServer(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateWindows81VpnProxyServerFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateWindows81VpnProxyServerFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWindows81VpnProxyServer(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *Windows81VpnProxyServer) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetAutomaticallyDetectProxySettings gets the automaticallyDetectProxySettings property value. Automatically detect proxy settings.
 func (m *Windows81VpnProxyServer) GetAutomaticallyDetectProxySettings()(*bool) {
@@ -82,7 +93,19 @@ func (m *Windows81VpnProxyServer) Serialize(writer i878a80d2330e89d26896388a3f48
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *Windows81VpnProxyServer) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAutomaticallyDetectProxySettings sets the automaticallyDetectProxySettings property value. Automatically detect proxy settings.
 func (m *Windows81VpnProxyServer) SetAutomaticallyDetectProxySettings(value *bool)() {

@@ -7,6 +7,8 @@ import (
 // MacOSDeviceFeaturesConfiguration 
 type MacOSDeviceFeaturesConfiguration struct {
     AppleDeviceFeaturesConfigurationBase
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Whether to show admin host information on the login window.
     adminShowHostInfo *bool
     // Gets or sets a list that maps apps to their associated domains. Application identifiers must be unique. This collection can contain a maximum of 500 elements.
@@ -97,11 +99,20 @@ func NewMacOSDeviceFeaturesConfiguration()(*MacOSDeviceFeaturesConfiguration) {
     m := &MacOSDeviceFeaturesConfiguration{
         AppleDeviceFeaturesConfigurationBase: *NewAppleDeviceFeaturesConfigurationBase(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateMacOSDeviceFeaturesConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateMacOSDeviceFeaturesConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewMacOSDeviceFeaturesConfiguration(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *MacOSDeviceFeaturesConfiguration) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetAdminShowHostInfo gets the adminShowHostInfo property value. Whether to show admin host information on the login window.
 func (m *MacOSDeviceFeaturesConfiguration) GetAdminShowHostInfo()(*bool) {
@@ -1186,7 +1197,19 @@ func (m *MacOSDeviceFeaturesConfiguration) Serialize(writer i878a80d2330e89d2689
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *MacOSDeviceFeaturesConfiguration) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAdminShowHostInfo sets the adminShowHostInfo property value. Whether to show admin host information on the login window.
 func (m *MacOSDeviceFeaturesConfiguration) SetAdminShowHostInfo(value *bool)() {

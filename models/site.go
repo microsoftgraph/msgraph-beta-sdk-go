@@ -7,6 +7,8 @@ import (
 // Site 
 type Site struct {
     BaseItem
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Analytics about the view activities that took place in this site.
     analytics ItemAnalyticsable
     // The collection of column definitions reusable across lists under this site.
@@ -51,11 +53,20 @@ func NewSite()(*Site) {
     m := &Site{
         BaseItem: *NewBaseItem(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateSiteFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateSiteFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewSite(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *Site) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetAnalytics gets the analytics property value. Analytics about the view activities that took place in this site.
 func (m *Site) GetAnalytics()(ItemAnalyticsable) {
@@ -604,7 +615,19 @@ func (m *Site) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c49
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *Site) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAnalytics sets the analytics property value. Analytics about the view activities that took place in this site.
 func (m *Site) SetAnalytics(value ItemAnalyticsable)() {

@@ -4,9 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// MobilityManagementPolicy provides operations to manage the collection of mobilityManagementPolicy entities.
+// MobilityManagementPolicy 
 type MobilityManagementPolicy struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Indicates the user scope of the mobility management policy. Possible values are: none, all, selected.
     appliesTo *PolicyScope
     // Compliance URL of the mobility management application.
@@ -24,16 +26,25 @@ type MobilityManagementPolicy struct {
     // Terms of Use URL of the mobility management application.
     termsOfUseUrl *string
 }
-// NewMobilityManagementPolicy instantiates a new mobilityManagementPolicy and sets the default values.
+// NewMobilityManagementPolicy instantiates a new MobilityManagementPolicy and sets the default values.
 func NewMobilityManagementPolicy()(*MobilityManagementPolicy) {
     m := &MobilityManagementPolicy{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateMobilityManagementPolicyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateMobilityManagementPolicyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewMobilityManagementPolicy(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *MobilityManagementPolicy) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetAppliesTo gets the appliesTo property value. Indicates the user scope of the mobility management policy. Possible values are: none, all, selected.
 func (m *MobilityManagementPolicy) GetAppliesTo()(*PolicyScope) {
@@ -247,7 +258,19 @@ func (m *MobilityManagementPolicy) Serialize(writer i878a80d2330e89d26896388a3f4
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *MobilityManagementPolicy) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAppliesTo sets the appliesTo property value. Indicates the user scope of the mobility management policy. Possible values are: none, all, selected.
 func (m *MobilityManagementPolicy) SetAppliesTo(value *PolicyScope)() {

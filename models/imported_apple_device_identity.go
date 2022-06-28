@@ -8,6 +8,8 @@ import (
 // ImportedAppleDeviceIdentity the importedAppleDeviceIdentity resource represents the imported device identity of an Apple device .
 type ImportedAppleDeviceIdentity struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Created Date Time of the device
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The description of the device
@@ -36,6 +38,7 @@ func NewImportedAppleDeviceIdentity()(*ImportedAppleDeviceIdentity) {
     m := &ImportedAppleDeviceIdentity{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateImportedAppleDeviceIdentityFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -60,6 +63,14 @@ func CreateImportedAppleDeviceIdentityFromDiscriminatorValue(parseNode i878a80d2
         }
     }
     return NewImportedAppleDeviceIdentity(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *ImportedAppleDeviceIdentity) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetCreatedDateTime gets the createdDateTime property value. Created Date Time of the device
 func (m *ImportedAppleDeviceIdentity) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
@@ -339,7 +350,19 @@ func (m *ImportedAppleDeviceIdentity) Serialize(writer i878a80d2330e89d26896388a
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *ImportedAppleDeviceIdentity) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetCreatedDateTime sets the createdDateTime property value. Created Date Time of the device
 func (m *ImportedAppleDeviceIdentity) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {

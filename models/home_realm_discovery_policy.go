@@ -7,17 +7,28 @@ import (
 // HomeRealmDiscoveryPolicy 
 type HomeRealmDiscoveryPolicy struct {
     StsPolicy
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
 }
 // NewHomeRealmDiscoveryPolicy instantiates a new HomeRealmDiscoveryPolicy and sets the default values.
 func NewHomeRealmDiscoveryPolicy()(*HomeRealmDiscoveryPolicy) {
     m := &HomeRealmDiscoveryPolicy{
         StsPolicy: *NewStsPolicy(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateHomeRealmDiscoveryPolicyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateHomeRealmDiscoveryPolicyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewHomeRealmDiscoveryPolicy(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *HomeRealmDiscoveryPolicy) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *HomeRealmDiscoveryPolicy) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -30,5 +41,17 @@ func (m *HomeRealmDiscoveryPolicy) Serialize(writer i878a80d2330e89d26896388a3f4
     if err != nil {
         return err
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *HomeRealmDiscoveryPolicy) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }

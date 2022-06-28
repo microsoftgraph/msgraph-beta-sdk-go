@@ -5,9 +5,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ProgramControl provides operations to manage the collection of programControl entities.
+// ProgramControl provides operations to manage the collection of accessReview entities.
 type ProgramControl struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // The controlId of the control, in particular the identifier of an access review. Required on create.
     controlId *string
     // The programControlType identifies the type of program control - for example, a control linking to guest access reviews. Required on create.
@@ -32,11 +34,20 @@ func NewProgramControl()(*ProgramControl) {
     m := &ProgramControl{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateProgramControlFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateProgramControlFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewProgramControl(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *ProgramControl) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetControlId gets the controlId property value. The controlId of the control, in particular the identifier of an access review. Required on create.
 func (m *ProgramControl) GetControlId()(*string) {
@@ -265,7 +276,19 @@ func (m *ProgramControl) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *ProgramControl) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetControlId sets the controlId property value. The controlId of the control, in particular the identifier of an access review. Required on create.
 func (m *ProgramControl) SetControlId(value *string)() {

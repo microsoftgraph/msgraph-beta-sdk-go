@@ -8,6 +8,8 @@ import (
 // UserExperienceAnalyticsAppHealthDevicePerformanceDetails the user experience analytics device performance entity contains device performance details.
 type UserExperienceAnalyticsAppHealthDevicePerformanceDetails struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // The friendly name of the application for which the event occurred.
     appDisplayName *string
     // The publisher of the application.
@@ -28,11 +30,20 @@ func NewUserExperienceAnalyticsAppHealthDevicePerformanceDetails()(*UserExperien
     m := &UserExperienceAnalyticsAppHealthDevicePerformanceDetails{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateUserExperienceAnalyticsAppHealthDevicePerformanceDetailsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateUserExperienceAnalyticsAppHealthDevicePerformanceDetailsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewUserExperienceAnalyticsAppHealthDevicePerformanceDetails(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *UserExperienceAnalyticsAppHealthDevicePerformanceDetails) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetAppDisplayName gets the appDisplayName property value. The friendly name of the application for which the event occurred.
 func (m *UserExperienceAnalyticsAppHealthDevicePerformanceDetails) GetAppDisplayName()(*string) {
@@ -213,7 +224,19 @@ func (m *UserExperienceAnalyticsAppHealthDevicePerformanceDetails) Serialize(wri
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *UserExperienceAnalyticsAppHealthDevicePerformanceDetails) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAppDisplayName sets the appDisplayName property value. The friendly name of the application for which the event occurred.
 func (m *UserExperienceAnalyticsAppHealthDevicePerformanceDetails) SetAppDisplayName(value *string)() {

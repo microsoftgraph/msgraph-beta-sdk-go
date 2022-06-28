@@ -6,6 +6,7 @@ import (
 
 // WellKnownTaskListable 
 type WellKnownTaskListable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     BaseTaskListable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetWellKnownListName()(*WellKnownListName_v2)

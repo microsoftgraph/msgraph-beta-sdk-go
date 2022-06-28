@@ -8,6 +8,8 @@ import (
 // AndroidManagedStoreAccountEnterpriseSettings enterprise settings for an Android managed store account.
 type AndroidManagedStoreAccountEnterpriseSettings struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Company codes for AndroidManagedStoreAccountEnterpriseSettings
     androidDeviceOwnerFullyManagedEnrollmentEnabled *bool
     // Bind status of the tenant with the Google EMM API. Possible values are: notBound, bound, boundAndValidated, unbinding.
@@ -38,11 +40,20 @@ func NewAndroidManagedStoreAccountEnterpriseSettings()(*AndroidManagedStoreAccou
     m := &AndroidManagedStoreAccountEnterpriseSettings{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateAndroidManagedStoreAccountEnterpriseSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateAndroidManagedStoreAccountEnterpriseSettingsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAndroidManagedStoreAccountEnterpriseSettings(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *AndroidManagedStoreAccountEnterpriseSettings) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetAndroidDeviceOwnerFullyManagedEnrollmentEnabled gets the androidDeviceOwnerFullyManagedEnrollmentEnabled property value. Company codes for AndroidManagedStoreAccountEnterpriseSettings
 func (m *AndroidManagedStoreAccountEnterpriseSettings) GetAndroidDeviceOwnerFullyManagedEnrollmentEnabled()(*bool) {
@@ -362,7 +373,19 @@ func (m *AndroidManagedStoreAccountEnterpriseSettings) Serialize(writer i878a80d
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *AndroidManagedStoreAccountEnterpriseSettings) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAndroidDeviceOwnerFullyManagedEnrollmentEnabled sets the androidDeviceOwnerFullyManagedEnrollmentEnabled property value. Company codes for AndroidManagedStoreAccountEnterpriseSettings
 func (m *AndroidManagedStoreAccountEnterpriseSettings) SetAndroidDeviceOwnerFullyManagedEnrollmentEnabled(value *bool)() {

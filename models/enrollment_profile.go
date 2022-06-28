@@ -7,6 +7,8 @@ import (
 // EnrollmentProfile the enrollmentProfile resource represents a collection of configurations which must be provided pre-enrollment to enable enrolling certain devices whose identities have been pre-staged. Pre-staged device identities are assigned to this type of profile to apply the profile's configurations at enrollment of the corresponding device.
 type EnrollmentProfile struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Configuration endpoint url to use for Enrollment
     configurationEndpointUrl *string
     // Description of the profile
@@ -25,6 +27,7 @@ func NewEnrollmentProfile()(*EnrollmentProfile) {
     m := &EnrollmentProfile{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateEnrollmentProfileFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -51,6 +54,14 @@ func CreateEnrollmentProfileFromDiscriminatorValue(parseNode i878a80d2330e89d268
         }
     }
     return NewEnrollmentProfile(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *EnrollmentProfile) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetConfigurationEndpointUrl gets the configurationEndpointUrl property value. Configuration endpoint url to use for Enrollment
 func (m *EnrollmentProfile) GetConfigurationEndpointUrl()(*string) {
@@ -207,7 +218,19 @@ func (m *EnrollmentProfile) Serialize(writer i878a80d2330e89d26896388a3f487eef27
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *EnrollmentProfile) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetConfigurationEndpointUrl sets the configurationEndpointUrl property value. Configuration endpoint url to use for Enrollment
 func (m *EnrollmentProfile) SetConfigurationEndpointUrl(value *string)() {

@@ -5,9 +5,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// TeamworkDeviceHealth provides operations to manage the teamwork singleton.
+// TeamworkDeviceHealth provides operations to manage the collection of accessReview entities.
 type TeamworkDeviceHealth struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // The connection property
     connection TeamworkConnectionable
     // Identity of the user who created the device health document.
@@ -32,11 +34,20 @@ func NewTeamworkDeviceHealth()(*TeamworkDeviceHealth) {
     m := &TeamworkDeviceHealth{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateTeamworkDeviceHealthFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateTeamworkDeviceHealthFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewTeamworkDeviceHealth(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *TeamworkDeviceHealth) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetConnection gets the connection property value. The connection property
 func (m *TeamworkDeviceHealth) GetConnection()(TeamworkConnectionable) {
@@ -265,7 +276,19 @@ func (m *TeamworkDeviceHealth) Serialize(writer i878a80d2330e89d26896388a3f487ee
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *TeamworkDeviceHealth) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetConnection sets the connection property value. The connection property
 func (m *TeamworkDeviceHealth) SetConnection(value TeamworkConnectionable)() {

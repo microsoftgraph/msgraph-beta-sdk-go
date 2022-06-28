@@ -5,11 +5,13 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// CustomerPaymentJournal provides operations to manage the financials singleton.
+// CustomerPaymentJournal provides operations to manage the collection of accessReview entities.
 type CustomerPaymentJournal struct {
     Entity
     // The account property
     account Accountable
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // The balancingAccountId property
     balancingAccountId *string
     // The balancingAccountNumber property
@@ -28,6 +30,7 @@ func NewCustomerPaymentJournal()(*CustomerPaymentJournal) {
     m := &CustomerPaymentJournal{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateCustomerPaymentJournalFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -40,6 +43,14 @@ func (m *CustomerPaymentJournal) GetAccount()(Accountable) {
         return nil
     } else {
         return m.account
+    }
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *CustomerPaymentJournal) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
     }
 }
 // GetBalancingAccountId gets the balancingAccountId property value. The balancingAccountId property
@@ -221,12 +232,24 @@ func (m *CustomerPaymentJournal) Serialize(writer i878a80d2330e89d26896388a3f487
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetAccount sets the account property value. The account property
 func (m *CustomerPaymentJournal) SetAccount(value Accountable)() {
     if m != nil {
         m.account = value
+    }
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *CustomerPaymentJournal) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
     }
 }
 // SetBalancingAccountId sets the balancingAccountId property value. The balancingAccountId property

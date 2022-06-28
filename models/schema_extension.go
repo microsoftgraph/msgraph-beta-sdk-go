@@ -4,9 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// SchemaExtension provides operations to manage the collection of schemaExtension entities.
+// SchemaExtension 
 type SchemaExtension struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Description for the schema extension. Supports $filter (eq).
     description *string
     // The appId of the application that is the owner of the schema extension. This property can be supplied on creation, to set the owner.  If not supplied, then the calling application's appId will be set as the owner. In either case, the signed-in user must be the owner of the application. So, for example, if creating a new schema extension definition using Graph Explorer, you must supply the owner property. Once set, this property is read-only and cannot be changed. Supports $filter (eq).
@@ -18,16 +20,25 @@ type SchemaExtension struct {
     // Set of Microsoft Graph types (that can support extensions) that the schema extension can be applied to. Select from administrativeUnit, contact, device, event, group, message, organization, post, or user.
     targetTypes []string
 }
-// NewSchemaExtension instantiates a new schemaExtension and sets the default values.
+// NewSchemaExtension instantiates a new SchemaExtension and sets the default values.
 func NewSchemaExtension()(*SchemaExtension) {
     m := &SchemaExtension{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateSchemaExtensionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateSchemaExtensionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewSchemaExtension(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *SchemaExtension) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetDescription gets the description property value. Description for the schema extension. Supports $filter (eq).
 func (m *SchemaExtension) GetDescription()(*string) {
@@ -172,7 +183,19 @@ func (m *SchemaExtension) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *SchemaExtension) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetDescription sets the description property value. Description for the schema extension. Supports $filter (eq).
 func (m *SchemaExtension) SetDescription(value *string)() {

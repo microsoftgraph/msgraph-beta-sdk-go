@@ -9,6 +9,8 @@ type Windows10MobileCompliancePolicy struct {
     DeviceCompliancePolicy
     // Require active firewall on Windows devices.
     activeFirewallRequired *bool
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Require devices to be reported healthy by Windows Device Health Attestation - bit locker is enabled
     bitLockerEnabled *bool
     // Require devices to be reported as healthy by Windows Device Health Attestation.
@@ -49,6 +51,7 @@ func NewWindows10MobileCompliancePolicy()(*Windows10MobileCompliancePolicy) {
     m := &Windows10MobileCompliancePolicy{
         DeviceCompliancePolicy: *NewDeviceCompliancePolicy(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateWindows10MobileCompliancePolicyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -61,6 +64,14 @@ func (m *Windows10MobileCompliancePolicy) GetActiveFirewallRequired()(*bool) {
         return nil
     } else {
         return m.activeFirewallRequired
+    }
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *Windows10MobileCompliancePolicy) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
     }
 }
 // GetBitLockerEnabled gets the bitLockerEnabled property value. Require devices to be reported healthy by Windows Device Health Attestation - bit locker is enabled
@@ -507,12 +518,24 @@ func (m *Windows10MobileCompliancePolicy) Serialize(writer i878a80d2330e89d26896
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetActiveFirewallRequired sets the activeFirewallRequired property value. Require active firewall on Windows devices.
 func (m *Windows10MobileCompliancePolicy) SetActiveFirewallRequired(value *bool)() {
     if m != nil {
         m.activeFirewallRequired = value
+    }
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *Windows10MobileCompliancePolicy) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
     }
 }
 // SetBitLockerEnabled sets the bitLockerEnabled property value. Require devices to be reported healthy by Windows Device Health Attestation - bit locker is enabled

@@ -5,9 +5,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// EducationSynchronizationProfileStatus provides operations to manage the educationRoot singleton.
+// EducationSynchronizationProfileStatus provides operations to manage the collection of accessReview entities.
 type EducationSynchronizationProfileStatus struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Number of errors during synchronization.
     errorCount *int64
     // Represents the time when most recent changes were observed in profile.
@@ -24,11 +26,20 @@ func NewEducationSynchronizationProfileStatus()(*EducationSynchronizationProfile
     m := &EducationSynchronizationProfileStatus{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateEducationSynchronizationProfileStatusFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateEducationSynchronizationProfileStatusFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewEducationSynchronizationProfileStatus(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *EducationSynchronizationProfileStatus) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetErrorCount gets the errorCount property value. Number of errors during synchronization.
 func (m *EducationSynchronizationProfileStatus) GetErrorCount()(*int64) {
@@ -162,7 +173,19 @@ func (m *EducationSynchronizationProfileStatus) Serialize(writer i878a80d2330e89
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *EducationSynchronizationProfileStatus) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetErrorCount sets the errorCount property value. Number of errors during synchronization.
 func (m *EducationSynchronizationProfileStatus) SetErrorCount(value *int64)() {

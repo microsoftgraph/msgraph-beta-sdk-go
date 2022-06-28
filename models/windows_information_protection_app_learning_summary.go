@@ -7,6 +7,8 @@ import (
 // WindowsInformationProtectionAppLearningSummary windows Information Protection AppLearning Summary entity.
 type WindowsInformationProtectionAppLearningSummary struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Application Name
     applicationName *string
     // Application Type. Possible values are: universal, desktop.
@@ -19,11 +21,20 @@ func NewWindowsInformationProtectionAppLearningSummary()(*WindowsInformationProt
     m := &WindowsInformationProtectionAppLearningSummary{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateWindowsInformationProtectionAppLearningSummaryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateWindowsInformationProtectionAppLearningSummaryFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWindowsInformationProtectionAppLearningSummary(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *WindowsInformationProtectionAppLearningSummary) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetApplicationName gets the applicationName property value. Application Name
 func (m *WindowsInformationProtectionAppLearningSummary) GetApplicationName()(*string) {
@@ -109,7 +120,19 @@ func (m *WindowsInformationProtectionAppLearningSummary) Serialize(writer i878a8
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *WindowsInformationProtectionAppLearningSummary) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetApplicationName sets the applicationName property value. Application Name
 func (m *WindowsInformationProtectionAppLearningSummary) SetApplicationName(value *string)() {

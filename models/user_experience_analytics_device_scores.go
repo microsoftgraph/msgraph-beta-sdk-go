@@ -7,6 +7,8 @@ import (
 // UserExperienceAnalyticsDeviceScores the user experience analytics device scores entity consolidates the various endpoint analytics scores.
 type UserExperienceAnalyticsDeviceScores struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // The user experience analytics device app reliability score. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
     appReliabilityScore *float64
     // The user experience analytics device battery health score. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
@@ -31,11 +33,20 @@ func NewUserExperienceAnalyticsDeviceScores()(*UserExperienceAnalyticsDeviceScor
     m := &UserExperienceAnalyticsDeviceScores{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateUserExperienceAnalyticsDeviceScoresFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateUserExperienceAnalyticsDeviceScoresFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewUserExperienceAnalyticsDeviceScores(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *UserExperienceAnalyticsDeviceScores) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetAppReliabilityScore gets the appReliabilityScore property value. The user experience analytics device app reliability score. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
 func (m *UserExperienceAnalyticsDeviceScores) GetAppReliabilityScore()(*float64) {
@@ -265,7 +276,19 @@ func (m *UserExperienceAnalyticsDeviceScores) Serialize(writer i878a80d2330e89d2
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *UserExperienceAnalyticsDeviceScores) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAppReliabilityScore sets the appReliabilityScore property value. The user experience analytics device app reliability score. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
 func (m *UserExperienceAnalyticsDeviceScores) SetAppReliabilityScore(value *float64)() {

@@ -5,13 +5,15 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// TiIndicator provides operations to manage the security singleton.
+// TiIndicator provides operations to manage the collection of accessReview entities.
 type TiIndicator struct {
     Entity
     // The action to apply if the indicator is matched from within the targetProduct security tool. Possible values are: unknown, allow, block, alert. Required.
     action *TiAction
     // The cyber threat intelligence name(s) for the parties responsible for the malicious activity covered by the threat indicator.
     activityGroupNames []string
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // A catchall area into which extra data from the indicator not covered by the other tiIndicator properties may be placed. Data placed into additionalInformation will typically not be utilized by the targetProduct security tool.
     additionalInformation *string
     // Stamped by the system when the indicator is ingested. The Azure Active Directory tenant id of submitting client. Required.
@@ -130,6 +132,7 @@ func NewTiIndicator()(*TiIndicator) {
     m := &TiIndicator{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateTiIndicatorFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -150,6 +153,14 @@ func (m *TiIndicator) GetActivityGroupNames()([]string) {
         return nil
     } else {
         return m.activityGroupNames
+    }
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *TiIndicator) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
     }
 }
 // GetAdditionalInformation gets the additionalInformation property value. A catchall area into which extra data from the indicator not covered by the other tiIndicator properties may be placed. Data placed into additionalInformation will typically not be utilized by the targetProduct security tool.
@@ -1559,6 +1570,12 @@ func (m *TiIndicator) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetAction sets the action property value. The action to apply if the indicator is matched from within the targetProduct security tool. Possible values are: unknown, allow, block, alert. Required.
@@ -1571,6 +1588,12 @@ func (m *TiIndicator) SetAction(value *TiAction)() {
 func (m *TiIndicator) SetActivityGroupNames(value []string)() {
     if m != nil {
         m.activityGroupNames = value
+    }
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *TiIndicator) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
     }
 }
 // SetAdditionalInformation sets the additionalInformation property value. A catchall area into which extra data from the indicator not covered by the other tiIndicator properties may be placed. Data placed into additionalInformation will typically not be utilized by the targetProduct security tool.

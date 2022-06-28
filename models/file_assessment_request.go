@@ -7,6 +7,8 @@ import (
 // FileAssessmentRequest 
 type FileAssessmentRequest struct {
     ThreatAssessmentRequest
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Base64 encoded file content. The file content cannot fetch back because it isn't stored.
     contentData *string
     // The file name.
@@ -17,11 +19,20 @@ func NewFileAssessmentRequest()(*FileAssessmentRequest) {
     m := &FileAssessmentRequest{
         ThreatAssessmentRequest: *NewThreatAssessmentRequest(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateFileAssessmentRequestFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateFileAssessmentRequestFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewFileAssessmentRequest(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *FileAssessmentRequest) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetContentData gets the contentData property value. Base64 encoded file content. The file content cannot fetch back because it isn't stored.
 func (m *FileAssessmentRequest) GetContentData()(*string) {
@@ -82,7 +93,19 @@ func (m *FileAssessmentRequest) Serialize(writer i878a80d2330e89d26896388a3f487e
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *FileAssessmentRequest) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetContentData sets the contentData property value. Base64 encoded file content. The file content cannot fetch back because it isn't stored.
 func (m *FileAssessmentRequest) SetContentData(value *string)() {

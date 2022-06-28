@@ -7,6 +7,8 @@ import (
 // DepIOSEnrollmentProfile 
 type DepIOSEnrollmentProfile struct {
     DepEnrollmentBaseProfile
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Indicates if Apperance screen is disabled
     appearanceScreenDisabled *bool
     // Indicates if the device will need to wait for configured confirmation
@@ -71,11 +73,20 @@ func NewDepIOSEnrollmentProfile()(*DepIOSEnrollmentProfile) {
     m := &DepIOSEnrollmentProfile{
         DepEnrollmentBaseProfile: *NewDepEnrollmentBaseProfile(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateDepIOSEnrollmentProfileFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateDepIOSEnrollmentProfileFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDepIOSEnrollmentProfile(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *DepIOSEnrollmentProfile) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetAppearanceScreenDisabled gets the appearanceScreenDisabled property value. Indicates if Apperance screen is disabled
 func (m *DepIOSEnrollmentProfile) GetAppearanceScreenDisabled()(*bool) {
@@ -793,7 +804,19 @@ func (m *DepIOSEnrollmentProfile) Serialize(writer i878a80d2330e89d26896388a3f48
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *DepIOSEnrollmentProfile) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAppearanceScreenDisabled sets the appearanceScreenDisabled property value. Indicates if Apperance screen is disabled
 func (m *DepIOSEnrollmentProfile) SetAppearanceScreenDisabled(value *bool)() {

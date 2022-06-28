@@ -5,9 +5,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AccessReviewStage provides operations to manage the collection of administrativeUnit entities.
+// AccessReviewStage provides operations to manage the collection of accessReview entities.
 type AccessReviewStage struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Each user reviewed in an accessReviewStage has a decision item representing if they were approved, denied, or not yet reviewed.
     decisions []AccessReviewInstanceDecisionItemable
     // DateTime when review stage is scheduled to end. The DatetimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. This property is the cumulative total of the durationInDays for all stages. Read-only.
@@ -26,11 +28,20 @@ func NewAccessReviewStage()(*AccessReviewStage) {
     m := &AccessReviewStage{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateAccessReviewStageFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateAccessReviewStageFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAccessReviewStage(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *AccessReviewStage) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetDecisions gets the decisions property value. Each user reviewed in an accessReviewStage has a decision item representing if they were approved, denied, or not yet reviewed.
 func (m *AccessReviewStage) GetDecisions()([]AccessReviewInstanceDecisionItemable) {
@@ -211,7 +222,19 @@ func (m *AccessReviewStage) Serialize(writer i878a80d2330e89d26896388a3f487eef27
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *AccessReviewStage) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetDecisions sets the decisions property value. Each user reviewed in an accessReviewStage has a decision item representing if they were approved, denied, or not yet reviewed.
 func (m *AccessReviewStage) SetDecisions(value []AccessReviewInstanceDecisionItemable)() {

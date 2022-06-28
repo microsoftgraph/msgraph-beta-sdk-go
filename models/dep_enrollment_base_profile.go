@@ -7,6 +7,8 @@ import (
 // DepEnrollmentBaseProfile 
 type DepEnrollmentBaseProfile struct {
     EnrollmentProfile
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Indicates if Apple id setup pane is disabled
     appleIdDisabled *bool
     // Indicates if Apple pay setup pane is disabled
@@ -51,6 +53,7 @@ func NewDepEnrollmentBaseProfile()(*DepEnrollmentBaseProfile) {
     m := &DepEnrollmentBaseProfile{
         EnrollmentProfile: *NewEnrollmentProfile(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateDepEnrollmentBaseProfileFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -77,6 +80,14 @@ func CreateDepEnrollmentBaseProfileFromDiscriminatorValue(parseNode i878a80d2330
         }
     }
     return NewDepEnrollmentBaseProfile(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *DepEnrollmentBaseProfile) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetAppleIdDisabled gets the appleIdDisabled property value. Indicates if Apple id setup pane is disabled
 func (m *DepEnrollmentBaseProfile) GetAppleIdDisabled()(*bool) {
@@ -545,7 +556,19 @@ func (m *DepEnrollmentBaseProfile) Serialize(writer i878a80d2330e89d26896388a3f4
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *DepEnrollmentBaseProfile) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAppleIdDisabled sets the appleIdDisabled property value. Indicates if Apple id setup pane is disabled
 func (m *DepEnrollmentBaseProfile) SetAppleIdDisabled(value *bool)() {

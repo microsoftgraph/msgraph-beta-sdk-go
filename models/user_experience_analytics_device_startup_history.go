@@ -8,6 +8,8 @@ import (
 // UserExperienceAnalyticsDeviceStartupHistory the user experience analytics device startup history entity contains device boot performance history details.
 type UserExperienceAnalyticsDeviceStartupHistory struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // The user experience analytics device core boot time in milliseconds.
     coreBootTimeInMs *int32
     // The user experience analytics device core login time in milliseconds.
@@ -46,11 +48,20 @@ func NewUserExperienceAnalyticsDeviceStartupHistory()(*UserExperienceAnalyticsDe
     m := &UserExperienceAnalyticsDeviceStartupHistory{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateUserExperienceAnalyticsDeviceStartupHistoryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateUserExperienceAnalyticsDeviceStartupHistoryFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewUserExperienceAnalyticsDeviceStartupHistory(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *UserExperienceAnalyticsDeviceStartupHistory) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetCoreBootTimeInMs gets the coreBootTimeInMs property value. The user experience analytics device core boot time in milliseconds.
 func (m *UserExperienceAnalyticsDeviceStartupHistory) GetCoreBootTimeInMs()(*int32) {
@@ -448,7 +459,19 @@ func (m *UserExperienceAnalyticsDeviceStartupHistory) Serialize(writer i878a80d2
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *UserExperienceAnalyticsDeviceStartupHistory) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetCoreBootTimeInMs sets the coreBootTimeInMs property value. The user experience analytics device core boot time in milliseconds.
 func (m *UserExperienceAnalyticsDeviceStartupHistory) SetCoreBootTimeInMs(value *int32)() {

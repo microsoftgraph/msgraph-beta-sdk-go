@@ -5,9 +5,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// SubjectRightsRequest provides operations to manage the privacy singleton.
+// SubjectRightsRequest 
 type SubjectRightsRequest struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Identity that the request is assigned to.
     assignedTo Identityable
     // The date and time when the request was closed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
@@ -61,16 +63,25 @@ type SubjectRightsRequest struct {
     // The type of the request. Possible values are: export, delete, access, tagForAction, unknownFutureValue.
     type_escaped *SubjectRightsRequestType
 }
-// NewSubjectRightsRequest instantiates a new subjectRightsRequest and sets the default values.
+// NewSubjectRightsRequest instantiates a new SubjectRightsRequest and sets the default values.
 func NewSubjectRightsRequest()(*SubjectRightsRequest) {
     m := &SubjectRightsRequest{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateSubjectRightsRequestFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateSubjectRightsRequestFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewSubjectRightsRequest(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *SubjectRightsRequest) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetAssignedTo gets the assignedTo property value. Identity that the request is assigned to.
 func (m *SubjectRightsRequest) GetAssignedTo()(Identityable) {
@@ -738,7 +749,19 @@ func (m *SubjectRightsRequest) Serialize(writer i878a80d2330e89d26896388a3f487ee
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *SubjectRightsRequest) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAssignedTo sets the assignedTo property value. Identity that the request is assigned to.
 func (m *SubjectRightsRequest) SetAssignedTo(value Identityable)() {

@@ -9,6 +9,8 @@ type Drive struct {
     BaseItem
     // The list of recent activities that took place under this drive.
     activities []ItemActivityOLDable
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Collection of [bundles][bundle] (albums and multi-select-shared sets of items). Only in personal OneDrive.
     bundles []DriveItemable
     // Describes the type of drive represented by this resource. OneDrive personal drives will return personal. OneDrive for Business will return business. SharePoint document libraries will return documentLibrary. Read-only.
@@ -37,6 +39,7 @@ func NewDrive()(*Drive) {
     m := &Drive{
         BaseItem: *NewBaseItem(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateDriveFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -49,6 +52,14 @@ func (m *Drive) GetActivities()([]ItemActivityOLDable) {
         return nil
     } else {
         return m.activities
+    }
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *Drive) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
     }
 }
 // GetBundles gets the bundles property value. Collection of [bundles][bundle] (albums and multi-select-shared sets of items). Only in personal OneDrive.
@@ -382,12 +393,24 @@ func (m *Drive) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c4
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetActivities sets the activities property value. The list of recent activities that took place under this drive.
 func (m *Drive) SetActivities(value []ItemActivityOLDable)() {
     if m != nil {
         m.activities = value
+    }
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *Drive) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
     }
 }
 // SetBundles sets the bundles property value. Collection of [bundles][bundle] (albums and multi-select-shared sets of items). Only in personal OneDrive.

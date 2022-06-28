@@ -7,6 +7,8 @@ import (
 // CountryNamedLocation 
 type CountryNamedLocation struct {
     NamedLocation
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // List of countries and/or regions in two-letter format specified by ISO 3166-2.
     countriesAndRegions []string
     // Determines what method is used to decide which country the user is located in. Possible values are clientIpAddress (default) and authenticatorAppGps.
@@ -19,11 +21,20 @@ func NewCountryNamedLocation()(*CountryNamedLocation) {
     m := &CountryNamedLocation{
         NamedLocation: *NewNamedLocation(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateCountryNamedLocationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateCountryNamedLocationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCountryNamedLocation(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *CountryNamedLocation) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetCountriesAndRegions gets the countriesAndRegions property value. List of countries and/or regions in two-letter format specified by ISO 3166-2.
 func (m *CountryNamedLocation) GetCountriesAndRegions()([]string) {
@@ -113,7 +124,19 @@ func (m *CountryNamedLocation) Serialize(writer i878a80d2330e89d26896388a3f487ee
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *CountryNamedLocation) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetCountriesAndRegions sets the countriesAndRegions property value. List of countries and/or regions in two-letter format specified by ISO 3166-2.
 func (m *CountryNamedLocation) SetCountriesAndRegions(value []string)() {

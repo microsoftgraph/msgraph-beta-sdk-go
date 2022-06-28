@@ -7,6 +7,8 @@ import (
 // DeviceManagementConfigurationRedirectSettingDefinition 
 type DeviceManagementConfigurationRedirectSettingDefinition struct {
     DeviceManagementConfigurationSettingDefinition
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // A deep link that points to the specific location in the Intune console where feature support must be managed from.
     deepLink *string
     // A message that explains that clicking the link will redirect the user to a supported page to manage the settings.
@@ -19,11 +21,20 @@ func NewDeviceManagementConfigurationRedirectSettingDefinition()(*DeviceManageme
     m := &DeviceManagementConfigurationRedirectSettingDefinition{
         DeviceManagementConfigurationSettingDefinition: *NewDeviceManagementConfigurationSettingDefinition(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateDeviceManagementConfigurationRedirectSettingDefinitionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateDeviceManagementConfigurationRedirectSettingDefinitionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDeviceManagementConfigurationRedirectSettingDefinition(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *DeviceManagementConfigurationRedirectSettingDefinition) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetDeepLink gets the deepLink property value. A deep link that points to the specific location in the Intune console where feature support must be managed from.
 func (m *DeviceManagementConfigurationRedirectSettingDefinition) GetDeepLink()(*string) {
@@ -108,7 +119,19 @@ func (m *DeviceManagementConfigurationRedirectSettingDefinition) Serialize(write
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *DeviceManagementConfigurationRedirectSettingDefinition) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetDeepLink sets the deepLink property value. A deep link that points to the specific location in the Intune console where feature support must be managed from.
 func (m *DeviceManagementConfigurationRedirectSettingDefinition) SetDeepLink(value *string)() {

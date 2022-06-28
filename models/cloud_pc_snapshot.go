@@ -5,9 +5,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// CloudPcSnapshot provides operations to manage the deviceManagement singleton.
+// CloudPcSnapshot 
 type CloudPcSnapshot struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // The unique identifier for the Cloud PC.
     cloudPcId *string
     // The date and time at which the snapshot was taken. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
@@ -17,16 +19,25 @@ type CloudPcSnapshot struct {
     // The status of the Cloud PC snapshot. The possible values are: ready, unknownFutureValue.
     status *CloudPcSnapshotStatus
 }
-// NewCloudPcSnapshot instantiates a new cloudPcSnapshot and sets the default values.
+// NewCloudPcSnapshot instantiates a new CloudPcSnapshot and sets the default values.
 func NewCloudPcSnapshot()(*CloudPcSnapshot) {
     m := &CloudPcSnapshot{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateCloudPcSnapshotFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateCloudPcSnapshotFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCloudPcSnapshot(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *CloudPcSnapshot) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetCloudPcId gets the cloudPcId property value. The unique identifier for the Cloud PC.
 func (m *CloudPcSnapshot) GetCloudPcId()(*string) {
@@ -136,7 +147,19 @@ func (m *CloudPcSnapshot) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *CloudPcSnapshot) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetCloudPcId sets the cloudPcId property value. The unique identifier for the Cloud PC.
 func (m *CloudPcSnapshot) SetCloudPcId(value *string)() {

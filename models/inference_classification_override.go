@@ -4,9 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// InferenceClassificationOverride provides operations to manage the collection of administrativeUnit entities.
+// InferenceClassificationOverride provides operations to manage the collection of accessReview entities.
 type InferenceClassificationOverride struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Specifies how incoming messages from a specific sender should always be classified as. Possible values are: focused, other.
     classifyAs *InferenceClassificationType
     // The email address information of the sender for whom the override is created.
@@ -17,11 +19,20 @@ func NewInferenceClassificationOverride()(*InferenceClassificationOverride) {
     m := &InferenceClassificationOverride{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateInferenceClassificationOverrideFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateInferenceClassificationOverrideFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewInferenceClassificationOverride(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *InferenceClassificationOverride) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetClassifyAs gets the classifyAs property value. Specifies how incoming messages from a specific sender should always be classified as. Possible values are: focused, other.
 func (m *InferenceClassificationOverride) GetClassifyAs()(*InferenceClassificationType) {
@@ -83,7 +94,19 @@ func (m *InferenceClassificationOverride) Serialize(writer i878a80d2330e89d26896
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *InferenceClassificationOverride) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetClassifyAs sets the classifyAs property value. Specifies how incoming messages from a specific sender should always be classified as. Possible values are: focused, other.
 func (m *InferenceClassificationOverride) SetClassifyAs(value *InferenceClassificationType)() {

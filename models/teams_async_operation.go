@@ -5,9 +5,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// TeamsAsyncOperation provides operations to manage the collection of administrativeUnit entities.
+// TeamsAsyncOperation provides operations to manage the collection of accessReview entities.
 type TeamsAsyncOperation struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Number of times the operation was attempted before being marked successful or failed.
     attemptsCount *int32
     // Time when the operation was created.
@@ -30,11 +32,20 @@ func NewTeamsAsyncOperation()(*TeamsAsyncOperation) {
     m := &TeamsAsyncOperation{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateTeamsAsyncOperationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateTeamsAsyncOperationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewTeamsAsyncOperation(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *TeamsAsyncOperation) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetAttemptsCount gets the attemptsCount property value. Number of times the operation was attempted before being marked successful or failed.
 func (m *TeamsAsyncOperation) GetAttemptsCount()(*int32) {
@@ -241,7 +252,19 @@ func (m *TeamsAsyncOperation) Serialize(writer i878a80d2330e89d26896388a3f487eef
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *TeamsAsyncOperation) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAttemptsCount sets the attemptsCount property value. Number of times the operation was attempted before being marked successful or failed.
 func (m *TeamsAsyncOperation) SetAttemptsCount(value *int32)() {

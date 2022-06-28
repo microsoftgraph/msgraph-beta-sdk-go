@@ -8,6 +8,8 @@ import (
 // DeviceManagementTemplate entity that represents a defined collection of device settings
 type DeviceManagementTemplate struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Collection of setting categories within the template
     categories []DeviceManagementTemplateSettingCategoryable
     // The template's description
@@ -38,6 +40,7 @@ func NewDeviceManagementTemplate()(*DeviceManagementTemplate) {
     m := &DeviceManagementTemplate{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateDeviceManagementTemplateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -62,6 +65,14 @@ func CreateDeviceManagementTemplateFromDiscriminatorValue(parseNode i878a80d2330
         }
     }
     return NewDeviceManagementTemplate(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *DeviceManagementTemplate) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetCategories gets the categories property value. Collection of setting categories within the template
 func (m *DeviceManagementTemplate) GetCategories()([]DeviceManagementTemplateSettingCategoryable) {
@@ -389,7 +400,19 @@ func (m *DeviceManagementTemplate) Serialize(writer i878a80d2330e89d26896388a3f4
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *DeviceManagementTemplate) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetCategories sets the categories property value. Collection of setting categories within the template
 func (m *DeviceManagementTemplate) SetCategories(value []DeviceManagementTemplateSettingCategoryable)() {

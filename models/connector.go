@@ -4,9 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Connector provides operations to manage the collection of administrativeUnit entities.
+// Connector casts the previous resource to application.
 type Connector struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // The external IP address as detected by the the connector server. Read-only.
     externalIp *string
     // The machine name the connector is installed and running on.
@@ -21,11 +23,20 @@ func NewConnector()(*Connector) {
     m := &Connector{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateConnectorFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateConnectorFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewConnector(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *Connector) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetExternalIp gets the externalIp property value. The external IP address as detected by the the connector server. Read-only.
 func (m *Connector) GetExternalIp()(*string) {
@@ -143,7 +154,19 @@ func (m *Connector) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *Connector) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetExternalIp sets the externalIp property value. The external IP address as detected by the the connector server. Read-only.
 func (m *Connector) SetExternalIp(value *string)() {

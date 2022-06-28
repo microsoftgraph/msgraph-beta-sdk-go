@@ -5,9 +5,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// PrivilegedRoleAssignmentRequest provides operations to manage the collection of privilegedApproval entities.
+// PrivilegedRoleAssignmentRequest provides operations to manage the collection of accessReview entities.
 type PrivilegedRoleAssignmentRequest struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // The state of the assignment. The value can be Eligible for eligible assignment Active - if it is directly assigned Active by administrators, or activated on an eligible assignment by the users.
     assignmentState *string
     // The duration of a role assignment.
@@ -38,11 +40,20 @@ func NewPrivilegedRoleAssignmentRequest()(*PrivilegedRoleAssignmentRequest) {
     m := &PrivilegedRoleAssignmentRequest{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreatePrivilegedRoleAssignmentRequestFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreatePrivilegedRoleAssignmentRequestFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewPrivilegedRoleAssignmentRequest(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *PrivilegedRoleAssignmentRequest) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetAssignmentState gets the assignmentState property value. The state of the assignment. The value can be Eligible for eligible assignment Active - if it is directly assigned Active by administrators, or activated on an eligible assignment by the users.
 func (m *PrivilegedRoleAssignmentRequest) GetAssignmentState()(*string) {
@@ -343,7 +354,19 @@ func (m *PrivilegedRoleAssignmentRequest) Serialize(writer i878a80d2330e89d26896
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *PrivilegedRoleAssignmentRequest) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAssignmentState sets the assignmentState property value. The state of the assignment. The value can be Eligible for eligible assignment Active - if it is directly assigned Active by administrators, or activated on an eligible assignment by the users.
 func (m *PrivilegedRoleAssignmentRequest) SetAssignmentState(value *string)() {

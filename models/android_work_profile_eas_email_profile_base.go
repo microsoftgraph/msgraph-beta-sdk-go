@@ -7,6 +7,8 @@ import (
 // AndroidWorkProfileEasEmailProfileBase 
 type AndroidWorkProfileEasEmailProfileBase struct {
     DeviceConfiguration
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Authentication method for Exchange ActiveSync. Possible values are: usernameAndPassword, certificate, derivedCredential.
     authenticationMethod *EasAuthenticationMethod
     // Duration of time email should be synced to. Possible values are: userDefined, oneDay, threeDays, oneWeek, twoWeeks, oneMonth, unlimited.
@@ -27,6 +29,7 @@ func NewAndroidWorkProfileEasEmailProfileBase()(*AndroidWorkProfileEasEmailProfi
     m := &AndroidWorkProfileEasEmailProfileBase{
         DeviceConfiguration: *NewDeviceConfiguration(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateAndroidWorkProfileEasEmailProfileBaseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -53,6 +56,14 @@ func CreateAndroidWorkProfileEasEmailProfileBaseFromDiscriminatorValue(parseNode
         }
     }
     return NewAndroidWorkProfileEasEmailProfileBase(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *AndroidWorkProfileEasEmailProfileBase) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetAuthenticationMethod gets the authenticationMethod property value. Authentication method for Exchange ActiveSync. Possible values are: usernameAndPassword, certificate, derivedCredential.
 func (m *AndroidWorkProfileEasEmailProfileBase) GetAuthenticationMethod()(*EasAuthenticationMethod) {
@@ -237,7 +248,19 @@ func (m *AndroidWorkProfileEasEmailProfileBase) Serialize(writer i878a80d2330e89
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *AndroidWorkProfileEasEmailProfileBase) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAuthenticationMethod sets the authenticationMethod property value. Authentication method for Exchange ActiveSync. Possible values are: usernameAndPassword, certificate, derivedCredential.
 func (m *AndroidWorkProfileEasEmailProfileBase) SetAuthenticationMethod(value *EasAuthenticationMethod)() {

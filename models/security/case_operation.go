@@ -6,11 +6,13 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
-// CaseOperation provides operations to manage the security singleton.
+// CaseOperation provides operations to manage the collection of accessReview entities.
 type CaseOperation struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
     // The type of action the operation represents. Possible values are: addToReviewSet,applyTags,contentExport,convertToPdf,estimateStatistics, purgeData
     action *CaseAction
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // The date and time the operation was completed.
     completedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The user that created the operation.
@@ -29,6 +31,7 @@ func NewCaseOperation()(*CaseOperation) {
     m := &CaseOperation{
         Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateCaseOperationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -72,6 +75,14 @@ func (m *CaseOperation) GetAction()(*CaseAction) {
         return nil
     } else {
         return m.action
+    }
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *CaseOperation) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
     }
 }
 // GetCompletedDateTime gets the completedDateTime property value. The date and time the operation was completed.
@@ -247,12 +258,24 @@ func (m *CaseOperation) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetAction sets the action property value. The type of action the operation represents. Possible values are: addToReviewSet,applyTags,contentExport,convertToPdf,estimateStatistics, purgeData
 func (m *CaseOperation) SetAction(value *CaseAction)() {
     if m != nil {
         m.action = value
+    }
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *CaseOperation) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
     }
 }
 // SetCompletedDateTime sets the completedDateTime property value. The date and time the operation was completed.

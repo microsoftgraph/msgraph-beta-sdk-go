@@ -7,6 +7,8 @@ import (
 // MobileAppIntentAndState mobileApp Intent and Install State for a given device.
 type MobileAppIntentAndState struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Device identifier created or collected by Intune.
     managedDeviceIdentifier *string
     // The list of payload intents and states for the tenant.
@@ -19,11 +21,20 @@ func NewMobileAppIntentAndState()(*MobileAppIntentAndState) {
     m := &MobileAppIntentAndState{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateMobileAppIntentAndStateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateMobileAppIntentAndStateFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewMobileAppIntentAndState(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *MobileAppIntentAndState) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *MobileAppIntentAndState) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -116,7 +127,19 @@ func (m *MobileAppIntentAndState) Serialize(writer i878a80d2330e89d26896388a3f48
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *MobileAppIntentAndState) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetManagedDeviceIdentifier sets the managedDeviceIdentifier property value. Device identifier created or collected by Intune.
 func (m *MobileAppIntentAndState) SetManagedDeviceIdentifier(value *string)() {

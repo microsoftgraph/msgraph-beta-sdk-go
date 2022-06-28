@@ -7,6 +7,8 @@ import (
 // EdiscoveryExportOperation 
 type EdiscoveryExportOperation struct {
     CaseOperation
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // The name of the Azure storage location where the export will be stored. This only applies to exports stored in your own Azure storage location.
     azureBlobContainer *string
     // The SAS token for the Azure storage location.  This only applies to exports stored in your own Azure storage location.
@@ -31,11 +33,20 @@ func NewEdiscoveryExportOperation()(*EdiscoveryExportOperation) {
     m := &EdiscoveryExportOperation{
         CaseOperation: *NewCaseOperation(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateEdiscoveryExportOperationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateEdiscoveryExportOperationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewEdiscoveryExportOperation(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *EdiscoveryExportOperation) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetAzureBlobContainer gets the azureBlobContainer property value. The name of the Azure storage location where the export will be stored. This only applies to exports stored in your own Azure storage location.
 func (m *EdiscoveryExportOperation) GetAzureBlobContainer()(*string) {
@@ -266,7 +277,19 @@ func (m *EdiscoveryExportOperation) Serialize(writer i878a80d2330e89d26896388a3f
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *EdiscoveryExportOperation) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAzureBlobContainer sets the azureBlobContainer property value. The name of the Azure storage location where the export will be stored. This only applies to exports stored in your own Azure storage location.
 func (m *EdiscoveryExportOperation) SetAzureBlobContainer(value *string)() {

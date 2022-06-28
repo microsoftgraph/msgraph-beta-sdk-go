@@ -4,9 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// PrintTaskTrigger provides operations to manage the collection of administrativeUnit entities.
+// PrintTaskTrigger provides operations to manage the collection of accessReview entities.
 type PrintTaskTrigger struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // The definition property
     definition PrintTaskDefinitionable
     // The Universal Print event that will cause a new printTask to be triggered. Valid values are described in the following table.
@@ -17,11 +19,20 @@ func NewPrintTaskTrigger()(*PrintTaskTrigger) {
     m := &PrintTaskTrigger{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreatePrintTaskTriggerFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreatePrintTaskTriggerFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewPrintTaskTrigger(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *PrintTaskTrigger) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetDefinition gets the definition property value. The definition property
 func (m *PrintTaskTrigger) GetDefinition()(PrintTaskDefinitionable) {
@@ -83,7 +94,19 @@ func (m *PrintTaskTrigger) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *PrintTaskTrigger) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetDefinition sets the definition property value. The definition property
 func (m *PrintTaskTrigger) SetDefinition(value PrintTaskDefinitionable)() {

@@ -5,11 +5,13 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DeviceManagement singleton entity that acts as a container for all device management functionality.
+// DeviceManagement 
 type DeviceManagement struct {
     Entity
     // The date & time when tenant data moved between scaleunits.
     accountMoveCompletionDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Admin consent information.
     adminConsent AdminConsentable
     // The summary state of ATP onboarding state for this account.
@@ -351,11 +353,12 @@ type DeviceManagement struct {
     // Collection of ZebraFotaDeployments associated with account.
     zebraFotaDeployments []ZebraFotaDeploymentable
 }
-// NewDeviceManagement instantiates a new deviceManagement and sets the default values.
+// NewDeviceManagement instantiates a new DeviceManagement and sets the default values.
 func NewDeviceManagement()(*DeviceManagement) {
     m := &DeviceManagement{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateDeviceManagementFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -368,6 +371,14 @@ func (m *DeviceManagement) GetAccountMoveCompletionDateTime()(*i336074805fc85398
         return nil
     } else {
         return m.accountMoveCompletionDateTime
+    }
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *DeviceManagement) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
     }
 }
 // GetAdminConsent gets the adminConsent property value. Admin consent information.
@@ -5527,12 +5538,24 @@ func (m *DeviceManagement) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetAccountMoveCompletionDateTime sets the accountMoveCompletionDateTime property value. The date & time when tenant data moved between scaleunits.
 func (m *DeviceManagement) SetAccountMoveCompletionDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     if m != nil {
         m.accountMoveCompletionDateTime = value
+    }
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *DeviceManagement) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
     }
 }
 // SetAdminConsent sets the adminConsent property value. Admin consent information.

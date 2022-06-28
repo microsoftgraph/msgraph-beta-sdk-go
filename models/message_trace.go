@@ -5,9 +5,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// MessageTrace provides operations to manage the collection of messageTrace entities.
+// MessageTrace 
 type MessageTrace struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // The destinationIPAddress property
     destinationIPAddress *string
     // The messageId property
@@ -25,16 +27,25 @@ type MessageTrace struct {
     // The subject property
     subject *string
 }
-// NewMessageTrace instantiates a new messageTrace and sets the default values.
+// NewMessageTrace instantiates a new MessageTrace and sets the default values.
 func NewMessageTrace()(*MessageTrace) {
     m := &MessageTrace{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateMessageTraceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateMessageTraceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewMessageTrace(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *MessageTrace) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetDestinationIPAddress gets the destinationIPAddress property value. The destinationIPAddress property
 func (m *MessageTrace) GetDestinationIPAddress()(*string) {
@@ -247,7 +258,19 @@ func (m *MessageTrace) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *MessageTrace) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetDestinationIPAddress sets the destinationIPAddress property value. The destinationIPAddress property
 func (m *MessageTrace) SetDestinationIPAddress(value *string)() {

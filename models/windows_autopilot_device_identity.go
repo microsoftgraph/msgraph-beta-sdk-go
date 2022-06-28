@@ -8,6 +8,8 @@ import (
 // WindowsAutopilotDeviceIdentity the windowsAutopilotDeviceIdentity resource represents a Windows Autopilot Device.
 type WindowsAutopilotDeviceIdentity struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Addressable user name.
     addressableUserName *string
     // AAD Device ID - to be deprecated
@@ -68,11 +70,20 @@ func NewWindowsAutopilotDeviceIdentity()(*WindowsAutopilotDeviceIdentity) {
     m := &WindowsAutopilotDeviceIdentity{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateWindowsAutopilotDeviceIdentityFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateWindowsAutopilotDeviceIdentityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWindowsAutopilotDeviceIdentity(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *WindowsAutopilotDeviceIdentity) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetAddressableUserName gets the addressableUserName property value. Addressable user name.
 func (m *WindowsAutopilotDeviceIdentity) GetAddressableUserName()(*string) {
@@ -737,7 +748,19 @@ func (m *WindowsAutopilotDeviceIdentity) Serialize(writer i878a80d2330e89d268963
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *WindowsAutopilotDeviceIdentity) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAddressableUserName sets the addressableUserName property value. Addressable user name.
 func (m *WindowsAutopilotDeviceIdentity) SetAddressableUserName(value *string)() {

@@ -5,9 +5,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ExactMatchDataStoreBase provides operations to manage the dataClassificationService singleton.
+// ExactMatchDataStoreBase provides operations to manage the collection of accessReview entities.
 type ExactMatchDataStoreBase struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // The columns property
     columns []ExactDataMatchStoreColumnable
     // The dataLastUpdatedDateTime property
@@ -22,6 +24,7 @@ func NewExactMatchDataStoreBase()(*ExactMatchDataStoreBase) {
     m := &ExactMatchDataStoreBase{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateExactMatchDataStoreBaseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -46,6 +49,14 @@ func CreateExactMatchDataStoreBaseFromDiscriminatorValue(parseNode i878a80d2330e
         }
     }
     return NewExactMatchDataStoreBase(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *ExactMatchDataStoreBase) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetColumns gets the columns property value. The columns property
 func (m *ExactMatchDataStoreBase) GetColumns()([]ExactDataMatchStoreColumnable) {
@@ -162,7 +173,19 @@ func (m *ExactMatchDataStoreBase) Serialize(writer i878a80d2330e89d26896388a3f48
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *ExactMatchDataStoreBase) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetColumns sets the columns property value. The columns property
 func (m *ExactMatchDataStoreBase) SetColumns(value []ExactDataMatchStoreColumnable)() {

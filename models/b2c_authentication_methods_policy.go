@@ -4,9 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// B2cAuthenticationMethodsPolicy provides operations to manage the policyRoot singleton.
+// B2cAuthenticationMethodsPolicy 
 type B2cAuthenticationMethodsPolicy struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // The tenant admin can configure local accounts using email if the email and password authentication method is enabled.
     isEmailPasswordAuthenticationEnabled *bool
     // The tenant admin can configure local accounts using phone number if the phone number and one-time password authentication method is enabled.
@@ -14,16 +16,25 @@ type B2cAuthenticationMethodsPolicy struct {
     // The tenant admin can configure local accounts using username if the username and password authentication method is enabled.
     isUserNameAuthenticationEnabled *bool
 }
-// NewB2cAuthenticationMethodsPolicy instantiates a new b2cAuthenticationMethodsPolicy and sets the default values.
+// NewB2cAuthenticationMethodsPolicy instantiates a new B2cAuthenticationMethodsPolicy and sets the default values.
 func NewB2cAuthenticationMethodsPolicy()(*B2cAuthenticationMethodsPolicy) {
     m := &B2cAuthenticationMethodsPolicy{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateB2cAuthenticationMethodsPolicyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateB2cAuthenticationMethodsPolicyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewB2cAuthenticationMethodsPolicy(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *B2cAuthenticationMethodsPolicy) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *B2cAuthenticationMethodsPolicy) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -108,7 +119,19 @@ func (m *B2cAuthenticationMethodsPolicy) Serialize(writer i878a80d2330e89d268963
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *B2cAuthenticationMethodsPolicy) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetIsEmailPasswordAuthenticationEnabled sets the isEmailPasswordAuthenticationEnabled property value. The tenant admin can configure local accounts using email if the email and password authentication method is enabled.
 func (m *B2cAuthenticationMethodsPolicy) SetIsEmailPasswordAuthenticationEnabled(value *bool)() {

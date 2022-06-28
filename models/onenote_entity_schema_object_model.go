@@ -8,6 +8,8 @@ import (
 // OnenoteEntitySchemaObjectModel 
 type OnenoteEntitySchemaObjectModel struct {
     OnenoteEntityBaseModel
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // The date and time when the page was created. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
 }
@@ -16,6 +18,7 @@ func NewOnenoteEntitySchemaObjectModel()(*OnenoteEntitySchemaObjectModel) {
     m := &OnenoteEntitySchemaObjectModel{
         OnenoteEntityBaseModel: *NewOnenoteEntityBaseModel(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateOnenoteEntitySchemaObjectModelFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -42,6 +45,14 @@ func CreateOnenoteEntitySchemaObjectModelFromDiscriminatorValue(parseNode i878a8
         }
     }
     return NewOnenoteEntitySchemaObjectModel(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *OnenoteEntitySchemaObjectModel) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetCreatedDateTime gets the createdDateTime property value. The date and time when the page was created. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
 func (m *OnenoteEntitySchemaObjectModel) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
@@ -78,7 +89,19 @@ func (m *OnenoteEntitySchemaObjectModel) Serialize(writer i878a80d2330e89d268963
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *OnenoteEntitySchemaObjectModel) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetCreatedDateTime sets the createdDateTime property value. The date and time when the page was created. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
 func (m *OnenoteEntitySchemaObjectModel) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {

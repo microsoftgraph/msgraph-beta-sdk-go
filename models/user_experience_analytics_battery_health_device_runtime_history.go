@@ -7,6 +7,8 @@ import (
 // UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistory the user experience analytics battery health runtime history entity contains the trend of runtime of a device over a period of 30 days
 type UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistory struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // The unique identifier of the device, Intune DeviceID or SCCM device id.
     deviceId *string
     // The estimated runtime of the device when the battery is fully charged. Unit in minutes. Valid values -2147483648 to 2147483647
@@ -19,11 +21,20 @@ func NewUserExperienceAnalyticsBatteryHealthDeviceRuntimeHistory()(*UserExperien
     m := &UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistory{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateUserExperienceAnalyticsBatteryHealthDeviceRuntimeHistoryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateUserExperienceAnalyticsBatteryHealthDeviceRuntimeHistoryFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewUserExperienceAnalyticsBatteryHealthDeviceRuntimeHistory(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistory) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetDeviceId gets the deviceId property value. The unique identifier of the device, Intune DeviceID or SCCM device id.
 func (m *UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistory) GetDeviceId()(*string) {
@@ -108,7 +119,19 @@ func (m *UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistory) Serialize(wri
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistory) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetDeviceId sets the deviceId property value. The unique identifier of the device, Intune DeviceID or SCCM device id.
 func (m *UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistory) SetDeviceId(value *string)() {

@@ -5,9 +5,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ChatMessage provides operations to manage the collection of administrativeUnit entities.
+// ChatMessage provides operations to manage the collection of accessReview entities.
 type ChatMessage struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // References to attached objects like files, tabs, meetings etc.
     attachments []ChatMessageAttachmentable
     // The body property
@@ -62,11 +64,20 @@ func NewChatMessage()(*ChatMessage) {
     m := &ChatMessage{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateChatMessageFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateChatMessageFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewChatMessage(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *ChatMessage) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetAttachments gets the attachments property value. References to attached objects like files, tabs, meetings etc.
 func (m *ChatMessage) GetAttachments()([]ChatMessageAttachmentable) {
@@ -697,7 +708,19 @@ func (m *ChatMessage) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *ChatMessage) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAttachments sets the attachments property value. References to attached objects like files, tabs, meetings etc.
 func (m *ChatMessage) SetAttachments(value []ChatMessageAttachmentable)() {

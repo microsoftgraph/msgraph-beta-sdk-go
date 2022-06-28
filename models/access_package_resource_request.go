@@ -5,11 +5,13 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AccessPackageResourceRequest provides operations to manage the identityGovernance singleton.
+// AccessPackageResourceRequest provides operations to manage the collection of accessReview entities.
 type AccessPackageResourceRequest struct {
     Entity
     // The accessPackageResource property
     accessPackageResource AccessPackageResourceable
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // The unique ID of the access package catalog.
     catalogId *string
     // The executeImmediately property
@@ -34,6 +36,7 @@ func NewAccessPackageResourceRequest()(*AccessPackageResourceRequest) {
     m := &AccessPackageResourceRequest{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateAccessPackageResourceRequestFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -46,6 +49,14 @@ func (m *AccessPackageResourceRequest) GetAccessPackageResource()(AccessPackageR
         return nil
     } else {
         return m.accessPackageResource
+    }
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *AccessPackageResourceRequest) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
     }
 }
 // GetCatalogId gets the catalogId property value. The unique ID of the access package catalog.
@@ -291,12 +302,24 @@ func (m *AccessPackageResourceRequest) Serialize(writer i878a80d2330e89d26896388
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetAccessPackageResource sets the accessPackageResource property value. The accessPackageResource property
 func (m *AccessPackageResourceRequest) SetAccessPackageResource(value AccessPackageResourceable)() {
     if m != nil {
         m.accessPackageResource = value
+    }
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *AccessPackageResourceRequest) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
     }
 }
 // SetCatalogId sets the catalogId property value. The unique ID of the access package catalog.

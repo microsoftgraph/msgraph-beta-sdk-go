@@ -8,6 +8,8 @@ import (
 // DeviceAndAppManagementAssignmentFilter a class containing the properties used for Assignment Filter.
 type DeviceAndAppManagementAssignmentFilter struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Creation time of the Assignment Filter.
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Description of the Assignment Filter.
@@ -28,6 +30,7 @@ func NewDeviceAndAppManagementAssignmentFilter()(*DeviceAndAppManagementAssignme
     m := &DeviceAndAppManagementAssignmentFilter{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateDeviceAndAppManagementAssignmentFilterFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -52,6 +55,14 @@ func CreateDeviceAndAppManagementAssignmentFilterFromDiscriminatorValue(parseNod
         }
     }
     return NewDeviceAndAppManagementAssignmentFilter(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *DeviceAndAppManagementAssignmentFilter) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetCreatedDateTime gets the createdDateTime property value. Creation time of the Assignment Filter.
 func (m *DeviceAndAppManagementAssignmentFilter) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
@@ -237,7 +248,19 @@ func (m *DeviceAndAppManagementAssignmentFilter) Serialize(writer i878a80d2330e8
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *DeviceAndAppManagementAssignmentFilter) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetCreatedDateTime sets the createdDateTime property value. Creation time of the Assignment Filter.
 func (m *DeviceAndAppManagementAssignmentFilter) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {

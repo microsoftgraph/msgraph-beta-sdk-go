@@ -4,9 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DeviceRegistrationPolicy provides operations to manage the deviceRegistrationPolicy singleton.
+// DeviceRegistrationPolicy 
 type DeviceRegistrationPolicy struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Specifies the authorization policy for controlling registration of new devices using Azure AD Join within your organization. Required. For more information, see What is a device identity?.
     azureADJoin AzureAdJoinPolicyable
     // Specifies the authorization policy for controlling registration of new devices using Azure AD registered within your organization. Required. For more information, see What is a device identity?.
@@ -20,16 +22,25 @@ type DeviceRegistrationPolicy struct {
     // Specifies the maximum number of devices that a user can have within your organization before blocking new device registrations. The default value is set to 50. If this property is not specified during the policy update operation, it is automatically reset to 0 to indicate that users are not allowed to join any devices.
     userDeviceQuota *int32
 }
-// NewDeviceRegistrationPolicy instantiates a new deviceRegistrationPolicy and sets the default values.
+// NewDeviceRegistrationPolicy instantiates a new DeviceRegistrationPolicy and sets the default values.
 func NewDeviceRegistrationPolicy()(*DeviceRegistrationPolicy) {
     m := &DeviceRegistrationPolicy{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateDeviceRegistrationPolicyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateDeviceRegistrationPolicyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDeviceRegistrationPolicy(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *DeviceRegistrationPolicy) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetAzureADJoin gets the azureADJoin property value. Specifies the authorization policy for controlling registration of new devices using Azure AD Join within your organization. Required. For more information, see What is a device identity?.
 func (m *DeviceRegistrationPolicy) GetAzureADJoin()(AzureAdJoinPolicyable) {
@@ -187,7 +198,19 @@ func (m *DeviceRegistrationPolicy) Serialize(writer i878a80d2330e89d26896388a3f4
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *DeviceRegistrationPolicy) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAzureADJoin sets the azureADJoin property value. Specifies the authorization policy for controlling registration of new devices using Azure AD Join within your organization. Required. For more information, see What is a device identity?.
 func (m *DeviceRegistrationPolicy) SetAzureADJoin(value AzureAdJoinPolicyable)() {

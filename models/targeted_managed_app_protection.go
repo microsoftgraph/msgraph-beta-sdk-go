@@ -7,6 +7,8 @@ import (
 // TargetedManagedAppProtection 
 type TargetedManagedAppProtection struct {
     ManagedAppProtection
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Public Apps selection: group or individual. Possible values are: selectedPublicApps, allCoreMicrosoftApps, allMicrosoftApps, allApps.
     appGroupType *TargetedManagedAppGroupType
     // Navigation property to list of inclusion and exclusion groups to which the policy is deployed.
@@ -21,6 +23,7 @@ func NewTargetedManagedAppProtection()(*TargetedManagedAppProtection) {
     m := &TargetedManagedAppProtection{
         ManagedAppProtection: *NewManagedAppProtection(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateTargetedManagedAppProtectionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -47,6 +50,14 @@ func CreateTargetedManagedAppProtectionFromDiscriminatorValue(parseNode i878a80d
         }
     }
     return NewTargetedManagedAppProtection(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *TargetedManagedAppProtection) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetAppGroupType gets the appGroupType property value. Public Apps selection: group or individual. Possible values are: selectedPublicApps, allCoreMicrosoftApps, allMicrosoftApps, allApps.
 func (m *TargetedManagedAppProtection) GetAppGroupType()(*TargetedManagedAppGroupType) {
@@ -165,7 +176,19 @@ func (m *TargetedManagedAppProtection) Serialize(writer i878a80d2330e89d26896388
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *TargetedManagedAppProtection) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAppGroupType sets the appGroupType property value. Public Apps selection: group or individual. Possible values are: selectedPublicApps, allCoreMicrosoftApps, allMicrosoftApps, allApps.
 func (m *TargetedManagedAppProtection) SetAppGroupType(value *TargetedManagedAppGroupType)() {

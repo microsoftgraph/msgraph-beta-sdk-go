@@ -7,6 +7,8 @@ import (
 // WindowsManagedAppProtection 
 type WindowsManagedAppProtection struct {
     ManagedAppPolicy
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Indicates the sources from which data is allowed to be transferred. Some possible values are allApps or none. Possible values are: allApps, none.
     allowedInboundDataTransferSources *WindowsManagedAppDataTransferLevel
     // Indicates the level to which the clipboard may be shared across org & non-org resources. Some possible values are anyDestinationAnySource or none. Possible values are: anyDestinationAnySource, none.
@@ -61,11 +63,20 @@ func NewWindowsManagedAppProtection()(*WindowsManagedAppProtection) {
     m := &WindowsManagedAppProtection{
         ManagedAppPolicy: *NewManagedAppPolicy(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateWindowsManagedAppProtectionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateWindowsManagedAppProtectionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWindowsManagedAppProtection(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *WindowsManagedAppProtection) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetAllowedInboundDataTransferSources gets the allowedInboundDataTransferSources property value. Indicates the sources from which data is allowed to be transferred. Some possible values are allApps or none. Possible values are: allApps, none.
 func (m *WindowsManagedAppProtection) GetAllowedInboundDataTransferSources()(*WindowsManagedAppDataTransferLevel) {
@@ -676,7 +687,19 @@ func (m *WindowsManagedAppProtection) Serialize(writer i878a80d2330e89d26896388a
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *WindowsManagedAppProtection) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAllowedInboundDataTransferSources sets the allowedInboundDataTransferSources property value. Indicates the sources from which data is allowed to be transferred. Some possible values are allApps or none. Possible values are: allApps, none.
 func (m *WindowsManagedAppProtection) SetAllowedInboundDataTransferSources(value *WindowsManagedAppDataTransferLevel)() {

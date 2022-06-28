@@ -4,9 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Invitation provides operations to manage the collection of invitation entities.
+// Invitation 
 type Invitation struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // The user created as part of the invitation creation. Read-Only
     invitedUser Userable
     // The display name of the user being invited.
@@ -28,16 +30,25 @@ type Invitation struct {
     // The status of the invitation. Possible values: PendingAcceptance, Completed, InProgress, and Error
     status *string
 }
-// NewInvitation instantiates a new invitation and sets the default values.
+// NewInvitation instantiates a new Invitation and sets the default values.
 func NewInvitation()(*Invitation) {
     m := &Invitation{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateInvitationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateInvitationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewInvitation(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *Invitation) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Invitation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -290,7 +301,19 @@ func (m *Invitation) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *Invitation) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetInvitedUser sets the invitedUser property value. The user created as part of the invitation creation. Read-Only
 func (m *Invitation) SetInvitedUser(value Userable)() {

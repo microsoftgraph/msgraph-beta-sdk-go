@@ -12,6 +12,8 @@ type TermsAndConditionsAcceptanceStatus struct {
     acceptedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Most recent version number of the T&C accepted by the user.
     acceptedVersion *int32
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Navigation link to the terms and conditions that are assigned.
     termsAndConditions TermsAndConditionsable
     // Display name of the user whose acceptance the entity represents.
@@ -24,6 +26,7 @@ func NewTermsAndConditionsAcceptanceStatus()(*TermsAndConditionsAcceptanceStatus
     m := &TermsAndConditionsAcceptanceStatus{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateTermsAndConditionsAcceptanceStatusFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -44,6 +47,14 @@ func (m *TermsAndConditionsAcceptanceStatus) GetAcceptedVersion()(*int32) {
         return nil
     } else {
         return m.acceptedVersion
+    }
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *TermsAndConditionsAcceptanceStatus) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -161,6 +172,12 @@ func (m *TermsAndConditionsAcceptanceStatus) Serialize(writer i878a80d2330e89d26
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetAcceptedDateTime sets the acceptedDateTime property value. DateTime when the terms were last accepted by the user.
@@ -173,6 +190,12 @@ func (m *TermsAndConditionsAcceptanceStatus) SetAcceptedDateTime(value *i3360748
 func (m *TermsAndConditionsAcceptanceStatus) SetAcceptedVersion(value *int32)() {
     if m != nil {
         m.acceptedVersion = value
+    }
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *TermsAndConditionsAcceptanceStatus) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
     }
 }
 // SetTermsAndConditions sets the termsAndConditions property value. Navigation link to the terms and conditions that are assigned.

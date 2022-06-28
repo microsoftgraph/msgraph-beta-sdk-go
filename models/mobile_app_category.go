@@ -8,6 +8,8 @@ import (
 // MobileAppCategory contains properties for a single Intune app category.
 type MobileAppCategory struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // The name of the app category.
     displayName *string
     // The date and time the mobileAppCategory was last modified.
@@ -18,11 +20,20 @@ func NewMobileAppCategory()(*MobileAppCategory) {
     m := &MobileAppCategory{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateMobileAppCategoryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateMobileAppCategoryFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewMobileAppCategory(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *MobileAppCategory) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetDisplayName gets the displayName property value. The name of the app category.
 func (m *MobileAppCategory) GetDisplayName()(*string) {
@@ -83,7 +94,19 @@ func (m *MobileAppCategory) Serialize(writer i878a80d2330e89d26896388a3f487eef27
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *MobileAppCategory) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetDisplayName sets the displayName property value. The name of the app category.
 func (m *MobileAppCategory) SetDisplayName(value *string)() {

@@ -4,9 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Office365GroupsActivityCounts provides operations to call the getOffice365GroupsActivityCounts method.
+// Office365GroupsActivityCounts 
 type Office365GroupsActivityCounts struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // The number of emails received by Group mailboxes.
     exchangeEmailsReceived *int64
     // The date on which a number of emails were sent to a group mailbox or a number of messages were posted, read, or liked in a Yammer group
@@ -22,16 +24,25 @@ type Office365GroupsActivityCounts struct {
     // The number of messages read in Yammer groups.
     yammerMessagesRead *int64
 }
-// NewOffice365GroupsActivityCounts instantiates a new office365GroupsActivityCounts and sets the default values.
+// NewOffice365GroupsActivityCounts instantiates a new Office365GroupsActivityCounts and sets the default values.
 func NewOffice365GroupsActivityCounts()(*Office365GroupsActivityCounts) {
     m := &Office365GroupsActivityCounts{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateOffice365GroupsActivityCountsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateOffice365GroupsActivityCountsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewOffice365GroupsActivityCounts(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *Office365GroupsActivityCounts) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetExchangeEmailsReceived gets the exchangeEmailsReceived property value. The number of emails received by Group mailboxes.
 func (m *Office365GroupsActivityCounts) GetExchangeEmailsReceived()(*int64) {
@@ -212,7 +223,19 @@ func (m *Office365GroupsActivityCounts) Serialize(writer i878a80d2330e89d2689638
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *Office365GroupsActivityCounts) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetExchangeEmailsReceived sets the exchangeEmailsReceived property value. The number of emails received by Group mailboxes.
 func (m *Office365GroupsActivityCounts) SetExchangeEmailsReceived(value *int64)() {

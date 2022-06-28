@@ -9,6 +9,8 @@ type WindowsPhoneEASEmailProfileConfiguration struct {
     EasEmailProfileConfigurationBase
     // Account name.
     accountName *string
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Value indicating whether this policy only applies to Windows 8.1. This property is read-only.
     applyOnlyToWindowsPhone81 *bool
     // Duration of email to sync. Possible values are: userDefined, oneDay, threeDays, oneWeek, twoWeeks, oneMonth, unlimited.
@@ -33,6 +35,7 @@ func NewWindowsPhoneEASEmailProfileConfiguration()(*WindowsPhoneEASEmailProfileC
     m := &WindowsPhoneEASEmailProfileConfiguration{
         EasEmailProfileConfigurationBase: *NewEasEmailProfileConfigurationBase(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateWindowsPhoneEASEmailProfileConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -45,6 +48,14 @@ func (m *WindowsPhoneEASEmailProfileConfiguration) GetAccountName()(*string) {
         return nil
     } else {
         return m.accountName
+    }
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *WindowsPhoneEASEmailProfileConfiguration) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
     }
 }
 // GetApplyOnlyToWindowsPhone81 gets the applyOnlyToWindowsPhone81 property value. Value indicating whether this policy only applies to Windows 8.1. This property is read-only.
@@ -293,12 +304,24 @@ func (m *WindowsPhoneEASEmailProfileConfiguration) Serialize(writer i878a80d2330
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetAccountName sets the accountName property value. Account name.
 func (m *WindowsPhoneEASEmailProfileConfiguration) SetAccountName(value *string)() {
     if m != nil {
         m.accountName = value
+    }
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *WindowsPhoneEASEmailProfileConfiguration) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
     }
 }
 // SetApplyOnlyToWindowsPhone81 sets the applyOnlyToWindowsPhone81 property value. Value indicating whether this policy only applies to Windows 8.1. This property is read-only.

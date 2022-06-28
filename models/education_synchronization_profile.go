@@ -4,9 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// EducationSynchronizationProfile provides operations to manage the educationRoot singleton.
+// EducationSynchronizationProfile 
 type EducationSynchronizationProfile struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // The dataProvider property
     dataProvider EducationSynchronizationDataProviderable
     // Name of the configuration profile for syncing identities.
@@ -26,16 +28,25 @@ type EducationSynchronizationProfile struct {
     // The state of the profile. Possible values are: provisioning, provisioned, provisioningFailed, deleting, deletionFailed.
     state *EducationSynchronizationProfileState
 }
-// NewEducationSynchronizationProfile instantiates a new educationSynchronizationProfile and sets the default values.
+// NewEducationSynchronizationProfile instantiates a new EducationSynchronizationProfile and sets the default values.
 func NewEducationSynchronizationProfile()(*EducationSynchronizationProfile) {
     m := &EducationSynchronizationProfile{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateEducationSynchronizationProfileFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateEducationSynchronizationProfileFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewEducationSynchronizationProfile(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *EducationSynchronizationProfile) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetDataProvider gets the dataProvider property value. The dataProvider property
 func (m *EducationSynchronizationProfile) GetDataProvider()(EducationSynchronizationDataProviderable) {
@@ -281,7 +292,19 @@ func (m *EducationSynchronizationProfile) Serialize(writer i878a80d2330e89d26896
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *EducationSynchronizationProfile) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetDataProvider sets the dataProvider property value. The dataProvider property
 func (m *EducationSynchronizationProfile) SetDataProvider(value EducationSynchronizationDataProviderable)() {

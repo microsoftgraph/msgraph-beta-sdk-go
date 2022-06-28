@@ -8,6 +8,8 @@ import (
 // WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus contains properties for the deployment state of a WindowsDefenderApplicationControl supplemental policy for a device.
 type WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // The deployment state of the policy. Possible values are: unknown, success, tokenError, notAuthorizedByToken, policyNotFound.
     deploymentStatus *WindowsDefenderApplicationControlSupplementalPolicyStatuses
     // Device ID.
@@ -34,11 +36,20 @@ func NewWindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus()(*W
     m := &WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateWindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateWindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetDeploymentStatus gets the deploymentStatus property value. The deployment state of the policy. Possible values are: unknown, success, tokenError, notAuthorizedByToken, policyNotFound.
 func (m *WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus) GetDeploymentStatus()(*WindowsDefenderApplicationControlSupplementalPolicyStatuses) {
@@ -292,7 +303,19 @@ func (m *WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus) Se
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetDeploymentStatus sets the deploymentStatus property value. The deployment state of the policy. Possible values are: unknown, success, tokenError, notAuthorizedByToken, policyNotFound.
 func (m *WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus) SetDeploymentStatus(value *WindowsDefenderApplicationControlSupplementalPolicyStatuses)() {

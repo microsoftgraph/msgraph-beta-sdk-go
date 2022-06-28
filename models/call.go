@@ -9,6 +9,8 @@ type Call struct {
     Entity
     // The list of active modalities. Possible values are: unknown, audio, video, videoBasedScreenSharing, data. Read-only.
     activeModalities []string
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // The participant that answered the call. Read-only.
     answeredBy ParticipantInfoable
     // The audioRoutingGroups property
@@ -73,6 +75,7 @@ func NewCall()(*Call) {
     m := &Call{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateCallFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -85,6 +88,14 @@ func (m *Call) GetActiveModalities()([]string) {
         return nil
     } else {
         return m.activeModalities
+    }
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *Call) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
     }
 }
 // GetAnsweredBy gets the answeredBy property value. The participant that answered the call. Read-only.
@@ -872,12 +883,24 @@ func (m *Call) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c49
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetActiveModalities sets the activeModalities property value. The list of active modalities. Possible values are: unknown, audio, video, videoBasedScreenSharing, data. Read-only.
 func (m *Call) SetActiveModalities(value []string)() {
     if m != nil {
         m.activeModalities = value
+    }
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *Call) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
     }
 }
 // SetAnsweredBy sets the answeredBy property value. The participant that answered the call. Read-only.

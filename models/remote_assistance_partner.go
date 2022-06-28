@@ -8,6 +8,8 @@ import (
 // RemoteAssistancePartner remoteAssistPartner resources represent the metadata and status of a given Remote Assistance partner service.
 type RemoteAssistancePartner struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Display name of the partner.
     displayName *string
     // Timestamp of the last request sent to Intune by the TEM partner.
@@ -24,11 +26,20 @@ func NewRemoteAssistancePartner()(*RemoteAssistancePartner) {
     m := &RemoteAssistancePartner{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateRemoteAssistancePartnerFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateRemoteAssistancePartnerFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewRemoteAssistancePartner(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *RemoteAssistancePartner) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetDisplayName gets the displayName property value. Display name of the partner.
 func (m *RemoteAssistancePartner) GetDisplayName()(*string) {
@@ -162,7 +173,19 @@ func (m *RemoteAssistancePartner) Serialize(writer i878a80d2330e89d26896388a3f48
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *RemoteAssistancePartner) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetDisplayName sets the displayName property value. Display name of the partner.
 func (m *RemoteAssistancePartner) SetDisplayName(value *string)() {

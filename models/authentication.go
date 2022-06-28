@@ -4,9 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Authentication provides operations to manage the collection of administrativeUnit entities.
+// Authentication provides operations to manage the collection of accessReview entities.
 type Authentication struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Represents the email addresses registered to a user for authentication.
     emailMethods []EmailAuthenticationMethodable
     // Represents the FIDO2 security keys registered to a user for authentication.
@@ -35,11 +37,20 @@ func NewAuthentication()(*Authentication) {
     m := &Authentication{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateAuthenticationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateAuthenticationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAuthentication(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *Authentication) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetEmailMethods gets the emailMethods property value. Represents the email addresses registered to a user for authentication.
 func (m *Authentication) GetEmailMethods()([]EmailAuthenticationMethodable) {
@@ -404,7 +415,19 @@ func (m *Authentication) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *Authentication) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetEmailMethods sets the emailMethods property value. Represents the email addresses registered to a user for authentication.
 func (m *Authentication) SetEmailMethods(value []EmailAuthenticationMethodable)() {

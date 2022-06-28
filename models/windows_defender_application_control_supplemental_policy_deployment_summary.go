@@ -7,6 +7,8 @@ import (
 // WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary contains properties for the deployment summary of a WindowsDefenderApplicationControl supplemental policy.
 type WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Number of Devices that have successfully deployed this WindowsDefenderApplicationControl supplemental policy.
     deployedDeviceCount *int32
     // Number of Devices that have failed to deploy this WindowsDefenderApplicationControl supplemental policy.
@@ -17,11 +19,20 @@ func NewWindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary()(*
     m := &WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateWindowsDefenderApplicationControlSupplementalPolicyDeploymentSummaryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateWindowsDefenderApplicationControlSupplementalPolicyDeploymentSummaryFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetDeployedDeviceCount gets the deployedDeviceCount property value. Number of Devices that have successfully deployed this WindowsDefenderApplicationControl supplemental policy.
 func (m *WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary) GetDeployedDeviceCount()(*int32) {
@@ -82,7 +93,19 @@ func (m *WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary) S
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetDeployedDeviceCount sets the deployedDeviceCount property value. Number of Devices that have successfully deployed this WindowsDefenderApplicationControl supplemental policy.
 func (m *WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary) SetDeployedDeviceCount(value *int32)() {

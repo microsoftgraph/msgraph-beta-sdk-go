@@ -8,6 +8,8 @@ import (
 // AppleUserInitiatedEnrollmentProfile the enrollmentProfile resource represents a collection of configurations which must be provided pre-enrollment to enable enrolling certain devices whose identities have been pre-staged. Pre-staged device identities are assigned to this type of profile to apply the profile's configurations at enrollment of the corresponding device.
 type AppleUserInitiatedEnrollmentProfile struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // The list of assignments for this profile.
     assignments []AppleEnrollmentProfileAssignmentable
     // List of available enrollment type options
@@ -32,11 +34,20 @@ func NewAppleUserInitiatedEnrollmentProfile()(*AppleUserInitiatedEnrollmentProfi
     m := &AppleUserInitiatedEnrollmentProfile{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateAppleUserInitiatedEnrollmentProfileFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateAppleUserInitiatedEnrollmentProfileFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAppleUserInitiatedEnrollmentProfile(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *AppleUserInitiatedEnrollmentProfile) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetAssignments gets the assignments property value. The list of assignments for this profile.
 func (m *AppleUserInitiatedEnrollmentProfile) GetAssignments()([]AppleEnrollmentProfileAssignmentable) {
@@ -283,7 +294,19 @@ func (m *AppleUserInitiatedEnrollmentProfile) Serialize(writer i878a80d2330e89d2
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *AppleUserInitiatedEnrollmentProfile) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAssignments sets the assignments property value. The list of assignments for this profile.
 func (m *AppleUserInitiatedEnrollmentProfile) SetAssignments(value []AppleEnrollmentProfileAssignmentable)() {

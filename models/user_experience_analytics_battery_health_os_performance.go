@@ -9,6 +9,8 @@ type UserExperienceAnalyticsBatteryHealthOsPerformance struct {
     Entity
     // Number of active devices for that os version. Valid values -2147483648 to 2147483647
     activeDevices *int32
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // The mean of the battery age for all devices running a particular operating system version in a tenant. Unit in days. Valid values -2147483648 to 2147483647
     averageBatteryAgeInDays *int32
     // The mean of the estimated runtimes on full charge for all devices running a particular operating system version. Unit in minutes. Valid values -2147483648 to 2147483647
@@ -25,6 +27,7 @@ func NewUserExperienceAnalyticsBatteryHealthOsPerformance()(*UserExperienceAnaly
     m := &UserExperienceAnalyticsBatteryHealthOsPerformance{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateUserExperienceAnalyticsBatteryHealthOsPerformanceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -37,6 +40,14 @@ func (m *UserExperienceAnalyticsBatteryHealthOsPerformance) GetActiveDevices()(*
         return nil
     } else {
         return m.activeDevices
+    }
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *UserExperienceAnalyticsBatteryHealthOsPerformance) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
     }
 }
 // GetAverageBatteryAgeInDays gets the averageBatteryAgeInDays property value. The mean of the battery age for all devices running a particular operating system version in a tenant. Unit in days. Valid values -2147483648 to 2147483647
@@ -186,12 +197,24 @@ func (m *UserExperienceAnalyticsBatteryHealthOsPerformance) Serialize(writer i87
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetActiveDevices sets the activeDevices property value. Number of active devices for that os version. Valid values -2147483648 to 2147483647
 func (m *UserExperienceAnalyticsBatteryHealthOsPerformance) SetActiveDevices(value *int32)() {
     if m != nil {
         m.activeDevices = value
+    }
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *UserExperienceAnalyticsBatteryHealthOsPerformance) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
     }
 }
 // SetAverageBatteryAgeInDays sets the averageBatteryAgeInDays property value. The mean of the battery age for all devices running a particular operating system version in a tenant. Unit in days. Valid values -2147483648 to 2147483647

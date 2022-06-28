@@ -7,6 +7,8 @@ import (
 // Fido2AuthenticationMethodConfiguration 
 type Fido2AuthenticationMethodConfiguration struct {
     AuthenticationMethodConfiguration
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // A collection of users or groups who are enabled to use the authentication method.
     includeTargets []AuthenticationMethodTargetable
     // Determines whether attestation must be enforced for FIDO2 security key registration.
@@ -21,11 +23,20 @@ func NewFido2AuthenticationMethodConfiguration()(*Fido2AuthenticationMethodConfi
     m := &Fido2AuthenticationMethodConfiguration{
         AuthenticationMethodConfiguration: *NewAuthenticationMethodConfiguration(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateFido2AuthenticationMethodConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateFido2AuthenticationMethodConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewFido2AuthenticationMethodConfiguration(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *Fido2AuthenticationMethodConfiguration) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Fido2AuthenticationMethodConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -142,7 +153,19 @@ func (m *Fido2AuthenticationMethodConfiguration) Serialize(writer i878a80d2330e8
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *Fido2AuthenticationMethodConfiguration) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetIncludeTargets sets the includeTargets property value. A collection of users or groups who are enabled to use the authentication method.
 func (m *Fido2AuthenticationMethodConfiguration) SetIncludeTargets(value []AuthenticationMethodTargetable)() {

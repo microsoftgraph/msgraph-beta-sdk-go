@@ -10,6 +10,8 @@ type UserExperienceAnalyticsBatteryHealthCapacityDetails struct {
     Entity
     // Number of active devices within the tenant. Valid values -2147483648 to 2147483647
     activeDevices *int32
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Number of devices whose battery maximum capacity is greater than 50% but lesser than 80%. Valid values -2147483648 to 2147483647
     batteryCapacityFair *int32
     // Number of devices whose battery maximum capacity is greater than 80%. Valid values -2147483648 to 2147483647
@@ -24,6 +26,7 @@ func NewUserExperienceAnalyticsBatteryHealthCapacityDetails()(*UserExperienceAna
     m := &UserExperienceAnalyticsBatteryHealthCapacityDetails{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateUserExperienceAnalyticsBatteryHealthCapacityDetailsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -36,6 +39,14 @@ func (m *UserExperienceAnalyticsBatteryHealthCapacityDetails) GetActiveDevices()
         return nil
     } else {
         return m.activeDevices
+    }
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *UserExperienceAnalyticsBatteryHealthCapacityDetails) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
     }
 }
 // GetBatteryCapacityFair gets the batteryCapacityFair property value. Number of devices whose battery maximum capacity is greater than 50% but lesser than 80%. Valid values -2147483648 to 2147483647
@@ -161,12 +172,24 @@ func (m *UserExperienceAnalyticsBatteryHealthCapacityDetails) Serialize(writer i
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetActiveDevices sets the activeDevices property value. Number of active devices within the tenant. Valid values -2147483648 to 2147483647
 func (m *UserExperienceAnalyticsBatteryHealthCapacityDetails) SetActiveDevices(value *int32)() {
     if m != nil {
         m.activeDevices = value
+    }
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *UserExperienceAnalyticsBatteryHealthCapacityDetails) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
     }
 }
 // SetBatteryCapacityFair sets the batteryCapacityFair property value. Number of devices whose battery maximum capacity is greater than 50% but lesser than 80%. Valid values -2147483648 to 2147483647

@@ -7,6 +7,8 @@ import (
 // PersonInterest 
 type PersonInterest struct {
     ItemFacet
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Contains categories a user has associated with the interest (for example, personal, recipies).
     categories []string
     // Contains experience scenario tags a user has associated with the interest. Allowed values in the collection are: askMeAbout, ableToMentor, wantsToLearn, wantsToImprove.
@@ -25,11 +27,20 @@ func NewPersonInterest()(*PersonInterest) {
     m := &PersonInterest{
         ItemFacet: *NewItemFacet(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreatePersonInterestFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreatePersonInterestFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewPersonInterest(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *PersonInterest) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetCategories gets the categories property value. Contains categories a user has associated with the interest (for example, personal, recipies).
 func (m *PersonInterest) GetCategories()([]string) {
@@ -194,7 +205,19 @@ func (m *PersonInterest) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *PersonInterest) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetCategories sets the categories property value. Contains categories a user has associated with the interest (for example, personal, recipies).
 func (m *PersonInterest) SetCategories(value []string)() {

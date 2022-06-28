@@ -4,9 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// IdentityUserFlowAttribute provides operations to manage the identityContainer singleton.
+// IdentityUserFlowAttribute provides operations to manage the collection of accessReview entities.
 type IdentityUserFlowAttribute struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // The data type of the user flow attribute. This cannot be modified after the custom user flow attribute is created. The supported values for dataType are: string , boolean , int64 , stringCollection , dateTime.
     dataType *IdentityUserFlowAttributeDataType
     // The description of the user flow attribute that's shown to the user at the time of sign-up.
@@ -21,6 +23,7 @@ func NewIdentityUserFlowAttribute()(*IdentityUserFlowAttribute) {
     m := &IdentityUserFlowAttribute{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateIdentityUserFlowAttributeFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -47,6 +50,14 @@ func CreateIdentityUserFlowAttributeFromDiscriminatorValue(parseNode i878a80d233
         }
     }
     return NewIdentityUserFlowAttribute(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *IdentityUserFlowAttribute) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetDataType gets the dataType property value. The data type of the user flow attribute. This cannot be modified after the custom user flow attribute is created. The supported values for dataType are: string , boolean , int64 , stringCollection , dateTime.
 func (m *IdentityUserFlowAttribute) GetDataType()(*IdentityUserFlowAttributeDataType) {
@@ -157,7 +168,19 @@ func (m *IdentityUserFlowAttribute) Serialize(writer i878a80d2330e89d26896388a3f
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *IdentityUserFlowAttribute) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetDataType sets the dataType property value. The data type of the user flow attribute. This cannot be modified after the custom user flow attribute is created. The supported values for dataType are: string , boolean , int64 , stringCollection , dateTime.
 func (m *IdentityUserFlowAttribute) SetDataType(value *IdentityUserFlowAttributeDataType)() {

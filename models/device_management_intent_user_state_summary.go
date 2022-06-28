@@ -7,6 +7,8 @@ import (
 // DeviceManagementIntentUserStateSummary entity that represents user state summary for an intent
 type DeviceManagementIntentUserStateSummary struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Number of users in conflict
     conflictCount *int32
     // Number of error users
@@ -23,11 +25,20 @@ func NewDeviceManagementIntentUserStateSummary()(*DeviceManagementIntentUserStat
     m := &DeviceManagementIntentUserStateSummary{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateDeviceManagementIntentUserStateSummaryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateDeviceManagementIntentUserStateSummaryFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDeviceManagementIntentUserStateSummary(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *DeviceManagementIntentUserStateSummary) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetConflictCount gets the conflictCount property value. Number of users in conflict
 func (m *DeviceManagementIntentUserStateSummary) GetConflictCount()(*int32) {
@@ -160,7 +171,19 @@ func (m *DeviceManagementIntentUserStateSummary) Serialize(writer i878a80d2330e8
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *DeviceManagementIntentUserStateSummary) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetConflictCount sets the conflictCount property value. Number of users in conflict
 func (m *DeviceManagementIntentUserStateSummary) SetConflictCount(value *int32)() {

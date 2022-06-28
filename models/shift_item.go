@@ -4,25 +4,47 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ShiftItem provides operations to manage the collection of administrativeUnit entities.
+// ShiftItem 
 type ShiftItem struct {
     ScheduleEntity
     // An incremental part of a shift which can cover details of when and where an employee is during their shift. For example, an assignment or a scheduled break or lunch. Required.
     activities []ShiftActivityable
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // The shift label of the shiftItem.
     displayName *string
     // The shift notes for the shiftItem.
     notes *string
 }
-// NewShiftItem instantiates a new shiftItem and sets the default values.
+// NewShiftItem instantiates a new ShiftItem and sets the default values.
 func NewShiftItem()(*ShiftItem) {
     m := &ShiftItem{
         ScheduleEntity: *NewScheduleEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateShiftItemFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateShiftItemFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+    if parseNode != nil {
+        mappingValueNode, err := parseNode.GetChildNode("@odata.type")
+        if err != nil {
+            return nil, err
+        }
+        if mappingValueNode != nil {
+            mappingValue, err := mappingValueNode.GetStringValue()
+            if err != nil {
+                return nil, err
+            }
+            if mappingValue != nil {
+                mappingStr := *mappingValue
+                switch mappingStr {
+                    case "#microsoft.graph.openShiftItem":
+                        return NewOpenShiftItem(), nil
+                }
+            }
+        }
+    }
     return NewShiftItem(), nil
 }
 // GetActivities gets the activities property value. An incremental part of a shift which can cover details of when and where an employee is during their shift. For example, an assignment or a scheduled break or lunch. Required.
@@ -31,6 +53,14 @@ func (m *ShiftItem) GetActivities()([]ShiftActivityable) {
         return nil
     } else {
         return m.activities
+    }
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *ShiftItem) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
     }
 }
 // GetDisplayName gets the displayName property value. The shift label of the shiftItem.
@@ -116,12 +146,24 @@ func (m *ShiftItem) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetActivities sets the activities property value. An incremental part of a shift which can cover details of when and where an employee is during their shift. For example, an assignment or a scheduled break or lunch. Required.
 func (m *ShiftItem) SetActivities(value []ShiftActivityable)() {
     if m != nil {
         m.activities = value
+    }
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *ShiftItem) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
     }
 }
 // SetDisplayName sets the displayName property value. The shift label of the shiftItem.

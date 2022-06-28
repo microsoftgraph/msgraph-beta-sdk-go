@@ -5,9 +5,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AuthenticationMethodsPolicy provides operations to manage the authenticationMethodsPolicy singleton.
+// AuthenticationMethodsPolicy 
 type AuthenticationMethodsPolicy struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Represents the settings for each authentication method. Automatically expanded on GET /policies/authenticationMethodsPolicy.
     authenticationMethodConfigurations []AuthenticationMethodConfigurationable
     // A description of the policy.
@@ -23,16 +25,25 @@ type AuthenticationMethodsPolicy struct {
     // Enforce registration at sign-in time. This property can be used to remind users to set up targeted authentication methods.
     registrationEnforcement RegistrationEnforcementable
 }
-// NewAuthenticationMethodsPolicy instantiates a new authenticationMethodsPolicy and sets the default values.
+// NewAuthenticationMethodsPolicy instantiates a new AuthenticationMethodsPolicy and sets the default values.
 func NewAuthenticationMethodsPolicy()(*AuthenticationMethodsPolicy) {
     m := &AuthenticationMethodsPolicy{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateAuthenticationMethodsPolicyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateAuthenticationMethodsPolicyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAuthenticationMethodsPolicy(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *AuthenticationMethodsPolicy) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetAuthenticationMethodConfigurations gets the authenticationMethodConfigurations property value. Represents the settings for each authentication method. Automatically expanded on GET /policies/authenticationMethodsPolicy.
 func (m *AuthenticationMethodsPolicy) GetAuthenticationMethodConfigurations()([]AuthenticationMethodConfigurationable) {
@@ -221,7 +232,19 @@ func (m *AuthenticationMethodsPolicy) Serialize(writer i878a80d2330e89d26896388a
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *AuthenticationMethodsPolicy) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAuthenticationMethodConfigurations sets the authenticationMethodConfigurations property value. Represents the settings for each authentication method. Automatically expanded on GET /policies/authenticationMethodsPolicy.
 func (m *AuthenticationMethodsPolicy) SetAuthenticationMethodConfigurations(value []AuthenticationMethodConfigurationable)() {

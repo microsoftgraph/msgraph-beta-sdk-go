@@ -8,6 +8,8 @@ import (
 // CloudPCConnectivityIssue the user experience analyte connectivity issue entity.
 type CloudPCConnectivityIssue struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // The Intune DeviceId of the device the connection is associated with.
     deviceId *string
     // The error code of the connectivity issue.
@@ -26,11 +28,20 @@ func NewCloudPCConnectivityIssue()(*CloudPCConnectivityIssue) {
     m := &CloudPCConnectivityIssue{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateCloudPCConnectivityIssueFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateCloudPCConnectivityIssueFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCloudPCConnectivityIssue(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *CloudPCConnectivityIssue) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetDeviceId gets the deviceId property value. The Intune DeviceId of the device the connection is associated with.
 func (m *CloudPCConnectivityIssue) GetDeviceId()(*string) {
@@ -187,7 +198,19 @@ func (m *CloudPCConnectivityIssue) Serialize(writer i878a80d2330e89d26896388a3f4
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *CloudPCConnectivityIssue) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetDeviceId sets the deviceId property value. The Intune DeviceId of the device the connection is associated with.
 func (m *CloudPCConnectivityIssue) SetDeviceId(value *string)() {

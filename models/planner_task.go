@@ -5,11 +5,13 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// PlannerTask provides operations to manage the collection of administrativeUnit entities.
+// PlannerTask provides operations to manage the collection of accessReview entities.
 type PlannerTask struct {
     PlannerDelta
     // Number of checklist items with value set to false, representing incomplete items.
     activeChecklistItemCount *int32
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // The categories to which the task has been applied. See applied Categories for possible values.
     appliedCategories PlannerAppliedCategoriesable
     // Read-only. Nullable. Used to render the task correctly in the task board view when grouped by assignedTo.
@@ -66,6 +68,7 @@ func NewPlannerTask()(*PlannerTask) {
     m := &PlannerTask{
         PlannerDelta: *NewPlannerDelta(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreatePlannerTaskFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -78,6 +81,14 @@ func (m *PlannerTask) GetActiveChecklistItemCount()(*int32) {
         return nil
     } else {
         return m.activeChecklistItemCount
+    }
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *PlannerTask) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
     }
 }
 // GetAppliedCategories gets the appliedCategories property value. The categories to which the task has been applied. See applied Categories for possible values.
@@ -708,12 +719,24 @@ func (m *PlannerTask) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetActiveChecklistItemCount sets the activeChecklistItemCount property value. Number of checklist items with value set to false, representing incomplete items.
 func (m *PlannerTask) SetActiveChecklistItemCount(value *int32)() {
     if m != nil {
         m.activeChecklistItemCount = value
+    }
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *PlannerTask) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
     }
 }
 // SetAppliedCategories sets the appliedCategories property value. The categories to which the task has been applied. See applied Categories for possible values.

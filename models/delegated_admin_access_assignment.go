@@ -5,13 +5,15 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DelegatedAdminAccessAssignment provides operations to manage the tenantRelationship singleton.
+// DelegatedAdminAccessAssignment provides operations to manage the collection of accessReview entities.
 type DelegatedAdminAccessAssignment struct {
     Entity
     // The accessContainer property
     accessContainer DelegatedAdminAccessContainerable
     // The accessDetails property
     accessDetails DelegatedAdminAccessDetailsable
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // The date and time in ISO 8601 format and in UTC time when the access assignment was created. Read-only.
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The date and time in ISO 8601 and in UTC time when this access assignment was last modified. Read-only.
@@ -24,6 +26,7 @@ func NewDelegatedAdminAccessAssignment()(*DelegatedAdminAccessAssignment) {
     m := &DelegatedAdminAccessAssignment{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateDelegatedAdminAccessAssignmentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -44,6 +47,14 @@ func (m *DelegatedAdminAccessAssignment) GetAccessDetails()(DelegatedAdminAccess
         return nil
     } else {
         return m.accessDetails
+    }
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *DelegatedAdminAccessAssignment) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
     }
 }
 // GetCreatedDateTime gets the createdDateTime property value. The date and time in ISO 8601 format and in UTC time when the access assignment was created. Read-only.
@@ -162,6 +173,12 @@ func (m *DelegatedAdminAccessAssignment) Serialize(writer i878a80d2330e89d268963
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetAccessContainer sets the accessContainer property value. The accessContainer property
@@ -174,6 +191,12 @@ func (m *DelegatedAdminAccessAssignment) SetAccessContainer(value DelegatedAdmin
 func (m *DelegatedAdminAccessAssignment) SetAccessDetails(value DelegatedAdminAccessDetailsable)() {
     if m != nil {
         m.accessDetails = value
+    }
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *DelegatedAdminAccessAssignment) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
     }
 }
 // SetCreatedDateTime sets the createdDateTime property value. The date and time in ISO 8601 format and in UTC time when the access assignment was created. Read-only.

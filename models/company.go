@@ -4,11 +4,13 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Company provides operations to manage the financials singleton.
+// Company 
 type Company struct {
     Entity
     // The accounts property
     accounts []Accountable
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // The agedAccountsPayable property
     agedAccountsPayable []AgedAccountsPayableable
     // The agedAccountsReceivable property
@@ -86,11 +88,12 @@ type Company struct {
     // The vendors property
     vendors []Vendor_escapedable
 }
-// NewCompany instantiates a new company and sets the default values.
+// NewCompany instantiates a new Company and sets the default values.
 func NewCompany()(*Company) {
     m := &Company{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateCompanyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -103,6 +106,14 @@ func (m *Company) GetAccounts()([]Accountable) {
         return nil
     } else {
         return m.accounts
+    }
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *Company) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
     }
 }
 // GetAgedAccountsPayable gets the agedAccountsPayable property value. The agedAccountsPayable property
@@ -1324,12 +1335,24 @@ func (m *Company) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetAccounts sets the accounts property value. The accounts property
 func (m *Company) SetAccounts(value []Accountable)() {
     if m != nil {
         m.accounts = value
+    }
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *Company) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
     }
 }
 // SetAgedAccountsPayable sets the agedAccountsPayable property value. The agedAccountsPayable property

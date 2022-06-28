@@ -8,6 +8,8 @@ import (
 // Updates provides operations to manage the admin singleton.
 type Updates struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Catalog of content that can be approved for deployment by the deployment service. Read-only.
     catalog Catalogable
     // Deployments created using the deployment service. Read-only.
@@ -22,11 +24,20 @@ func NewUpdates()(*Updates) {
     m := &Updates{
         Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateUpdatesFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateUpdatesFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewUpdates(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *Updates) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetCatalog gets the catalog property value. Catalog of content that can be approved for deployment by the deployment service. Read-only.
 func (m *Updates) GetCatalog()(Catalogable) {
@@ -159,7 +170,19 @@ func (m *Updates) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *Updates) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetCatalog sets the catalog property value. Catalog of content that can be approved for deployment by the deployment service. Read-only.
 func (m *Updates) SetCatalog(value Catalogable)() {

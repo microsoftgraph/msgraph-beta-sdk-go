@@ -8,6 +8,8 @@ import (
 // GroupPolicyDefinitionFile the entity represents an ADMX (Administrative Template) XML file. The ADMX file contains a collection of group policy definitions and their locations by category path. The group policy definition file also contains the languages supported as determined by the language dependent ADML (Administrative Template) language files.
 type GroupPolicyDefinitionFile struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // The group policy definitions associated with the file.
     definitions []GroupPolicyDefinitionable
     // The localized description of the policy settings in the ADMX file. The default value is empty.
@@ -34,6 +36,7 @@ func NewGroupPolicyDefinitionFile()(*GroupPolicyDefinitionFile) {
     m := &GroupPolicyDefinitionFile{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateGroupPolicyDefinitionFileFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -58,6 +61,14 @@ func CreateGroupPolicyDefinitionFileFromDiscriminatorValue(parseNode i878a80d233
         }
     }
     return NewGroupPolicyDefinitionFile(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *GroupPolicyDefinitionFile) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetDefinitions gets the definitions property value. The group policy definitions associated with the file.
 func (m *GroupPolicyDefinitionFile) GetDefinitions()([]GroupPolicyDefinitionable) {
@@ -323,7 +334,19 @@ func (m *GroupPolicyDefinitionFile) Serialize(writer i878a80d2330e89d26896388a3f
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *GroupPolicyDefinitionFile) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetDefinitions sets the definitions property value. The group policy definitions associated with the file.
 func (m *GroupPolicyDefinitionFile) SetDefinitions(value []GroupPolicyDefinitionable)() {

@@ -7,6 +7,8 @@ import (
 // DeviceConfigurationState device Configuration State for a given device.
 type DeviceConfigurationState struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // The name of the policy for this policyBase
     displayName *string
     // Platform type that the policy applies to
@@ -29,11 +31,20 @@ func NewDeviceConfigurationState()(*DeviceConfigurationState) {
     m := &DeviceConfigurationState{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateDeviceConfigurationStateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateDeviceConfigurationStateFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDeviceConfigurationState(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *DeviceConfigurationState) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetDisplayName gets the displayName property value. The name of the policy for this policyBase
 func (m *DeviceConfigurationState) GetDisplayName()(*string) {
@@ -248,7 +259,19 @@ func (m *DeviceConfigurationState) Serialize(writer i878a80d2330e89d26896388a3f4
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *DeviceConfigurationState) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetDisplayName sets the displayName property value. The name of the policy for this policyBase
 func (m *DeviceConfigurationState) SetDisplayName(value *string)() {

@@ -7,6 +7,8 @@ import (
 // TermsAndConditionsGroupAssignment a termsAndConditionsGroupAssignment entity represents the assignment of a given Terms and Conditions (T&C) policy to a given group. Users in the group will be required to accept the terms in order to have devices enrolled into Intune.
 type TermsAndConditionsGroupAssignment struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Unique identifier of a group that the T&C policy is assigned to.
     targetGroupId *string
     // Navigation link to the terms and conditions that are assigned.
@@ -17,11 +19,20 @@ func NewTermsAndConditionsGroupAssignment()(*TermsAndConditionsGroupAssignment) 
     m := &TermsAndConditionsGroupAssignment{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateTermsAndConditionsGroupAssignmentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateTermsAndConditionsGroupAssignmentFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewTermsAndConditionsGroupAssignment(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *TermsAndConditionsGroupAssignment) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *TermsAndConditionsGroupAssignment) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -82,7 +93,19 @@ func (m *TermsAndConditionsGroupAssignment) Serialize(writer i878a80d2330e89d268
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *TermsAndConditionsGroupAssignment) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetTargetGroupId sets the targetGroupId property value. Unique identifier of a group that the T&C policy is assigned to.
 func (m *TermsAndConditionsGroupAssignment) SetTargetGroupId(value *string)() {

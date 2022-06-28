@@ -7,6 +7,8 @@ import (
 // SkypeUserConversationMember 
 type SkypeUserConversationMember struct {
     ConversationMember
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Skype ID of the user.
     skypeId *string
 }
@@ -15,11 +17,20 @@ func NewSkypeUserConversationMember()(*SkypeUserConversationMember) {
     m := &SkypeUserConversationMember{
         ConversationMember: *NewConversationMember(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateSkypeUserConversationMemberFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateSkypeUserConversationMemberFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewSkypeUserConversationMember(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *SkypeUserConversationMember) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *SkypeUserConversationMember) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -56,7 +67,19 @@ func (m *SkypeUserConversationMember) Serialize(writer i878a80d2330e89d26896388a
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *SkypeUserConversationMember) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetSkypeId sets the skypeId property value. Skype ID of the user.
 func (m *SkypeUserConversationMember) SetSkypeId(value *string)() {

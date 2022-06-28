@@ -12,6 +12,8 @@ type TermsAndConditions struct {
     acceptanceStatement *string
     // The list of acceptance statuses for this T&C policy.
     acceptanceStatuses []TermsAndConditionsAcceptanceStatusable
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // The list of assignments for this T&C policy.
     assignments []TermsAndConditionsAssignmentable
     // Administrator-supplied body text of the terms and conditions, typically the terms themselves. This is shown to the user on prompts to accept the T&C policy.
@@ -40,6 +42,7 @@ func NewTermsAndConditions()(*TermsAndConditions) {
     m := &TermsAndConditions{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateTermsAndConditionsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -60,6 +63,14 @@ func (m *TermsAndConditions) GetAcceptanceStatuses()([]TermsAndConditionsAccepta
         return nil
     } else {
         return m.acceptanceStatuses
+    }
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *TermsAndConditions) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
     }
 }
 // GetAssignments gets the assignments property value. The list of assignments for this T&C policy.
@@ -397,6 +408,12 @@ func (m *TermsAndConditions) Serialize(writer i878a80d2330e89d26896388a3f487eef2
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetAcceptanceStatement sets the acceptanceStatement property value. Administrator-supplied explanation of the terms and conditions, typically describing what it means to accept the terms and conditions set out in the T&C policy. This is shown to the user on prompts to accept the T&C policy.
@@ -409,6 +426,12 @@ func (m *TermsAndConditions) SetAcceptanceStatement(value *string)() {
 func (m *TermsAndConditions) SetAcceptanceStatuses(value []TermsAndConditionsAcceptanceStatusable)() {
     if m != nil {
         m.acceptanceStatuses = value
+    }
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *TermsAndConditions) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
     }
 }
 // SetAssignments sets the assignments property value. The list of assignments for this T&C policy.

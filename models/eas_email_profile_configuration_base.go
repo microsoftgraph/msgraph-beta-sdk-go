@@ -7,6 +7,8 @@ import (
 // EasEmailProfileConfigurationBase 
 type EasEmailProfileConfigurationBase struct {
     DeviceConfiguration
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Custom domain name value used while generating an email profile before installing on the device.
     customDomainName *string
     // UserDomainname attribute that is picked from AAD and injected into this profile before installing on the device. Possible values are: fullDomainName, netBiosDomainName.
@@ -21,6 +23,7 @@ func NewEasEmailProfileConfigurationBase()(*EasEmailProfileConfigurationBase) {
     m := &EasEmailProfileConfigurationBase{
         DeviceConfiguration: *NewDeviceConfiguration(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateEasEmailProfileConfigurationBaseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -49,6 +52,14 @@ func CreateEasEmailProfileConfigurationBaseFromDiscriminatorValue(parseNode i878
         }
     }
     return NewEasEmailProfileConfigurationBase(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *EasEmailProfileConfigurationBase) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetCustomDomainName gets the customDomainName property value. Custom domain name value used while generating an email profile before installing on the device.
 func (m *EasEmailProfileConfigurationBase) GetCustomDomainName()(*string) {
@@ -160,7 +171,19 @@ func (m *EasEmailProfileConfigurationBase) Serialize(writer i878a80d2330e89d2689
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *EasEmailProfileConfigurationBase) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetCustomDomainName sets the customDomainName property value. Custom domain name value used while generating an email profile before installing on the device.
 func (m *EasEmailProfileConfigurationBase) SetCustomDomainName(value *string)() {

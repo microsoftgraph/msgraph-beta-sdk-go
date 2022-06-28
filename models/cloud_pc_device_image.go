@@ -5,9 +5,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// CloudPcDeviceImage provides operations to manage the deviceManagement singleton.
+// CloudPcDeviceImage 
 type CloudPcDeviceImage struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // The image's display name.
     displayName *string
     // The date the image became unavailable.
@@ -29,16 +31,25 @@ type CloudPcDeviceImage struct {
     // The image version. For example: 0.0.1, 1.5.13.
     version *string
 }
-// NewCloudPcDeviceImage instantiates a new cloudPcDeviceImage and sets the default values.
+// NewCloudPcDeviceImage instantiates a new CloudPcDeviceImage and sets the default values.
 func NewCloudPcDeviceImage()(*CloudPcDeviceImage) {
     m := &CloudPcDeviceImage{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateCloudPcDeviceImageFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateCloudPcDeviceImageFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCloudPcDeviceImage(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *CloudPcDeviceImage) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetDisplayName gets the displayName property value. The image's display name.
 func (m *CloudPcDeviceImage) GetDisplayName()(*string) {
@@ -294,7 +305,19 @@ func (m *CloudPcDeviceImage) Serialize(writer i878a80d2330e89d26896388a3f487eef2
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *CloudPcDeviceImage) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetDisplayName sets the displayName property value. The image's display name.
 func (m *CloudPcDeviceImage) SetDisplayName(value *string)() {

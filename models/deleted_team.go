@@ -4,22 +4,33 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DeletedTeam provides operations to manage the teamwork singleton.
+// DeletedTeam 
 type DeletedTeam struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // The channels property
     channels []Channelable
 }
-// NewDeletedTeam instantiates a new deletedTeam and sets the default values.
+// NewDeletedTeam instantiates a new DeletedTeam and sets the default values.
 func NewDeletedTeam()(*DeletedTeam) {
     m := &DeletedTeam{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateDeletedTeamFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateDeletedTeamFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDeletedTeam(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *DeletedTeam) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetChannels gets the channels property value. The channels property
 func (m *DeletedTeam) GetChannels()([]Channelable) {
@@ -64,7 +75,19 @@ func (m *DeletedTeam) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *DeletedTeam) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetChannels sets the channels property value. The channels property
 func (m *DeletedTeam) SetChannels(value []Channelable)() {

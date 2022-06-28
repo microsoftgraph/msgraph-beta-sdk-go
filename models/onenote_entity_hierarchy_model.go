@@ -8,6 +8,8 @@ import (
 // OnenoteEntityHierarchyModel 
 type OnenoteEntityHierarchyModel struct {
     OnenoteEntitySchemaObjectModel
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Identity of the user, device, and application which created the item. Read-only.
     createdBy IdentitySetable
     // The name of the notebook.
@@ -22,6 +24,7 @@ func NewOnenoteEntityHierarchyModel()(*OnenoteEntityHierarchyModel) {
     m := &OnenoteEntityHierarchyModel{
         OnenoteEntitySchemaObjectModel: *NewOnenoteEntitySchemaObjectModel(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateOnenoteEntityHierarchyModelFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -50,6 +53,14 @@ func CreateOnenoteEntityHierarchyModelFromDiscriminatorValue(parseNode i878a80d2
         }
     }
     return NewOnenoteEntityHierarchyModel(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *OnenoteEntityHierarchyModel) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetCreatedBy gets the createdBy property value. Identity of the user, device, and application which created the item. Read-only.
 func (m *OnenoteEntityHierarchyModel) GetCreatedBy()(IdentitySetable) {
@@ -158,7 +169,19 @@ func (m *OnenoteEntityHierarchyModel) Serialize(writer i878a80d2330e89d26896388a
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *OnenoteEntityHierarchyModel) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetCreatedBy sets the createdBy property value. Identity of the user, device, and application which created the item. Read-only.
 func (m *OnenoteEntityHierarchyModel) SetCreatedBy(value IdentitySetable)() {

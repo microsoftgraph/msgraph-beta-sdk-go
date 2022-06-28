@@ -7,6 +7,8 @@ import (
 // Win32LobApp 
 type Win32LobApp struct {
     MobileLobApp
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // The Windows architecture(s) for which this app can run on. Possible values are: none, x86, x64, arm, neutral, arm64.
     applicableArchitectures *WindowsArchitecture
     // The detection rules to detect Win32 Line of Business (LoB) app.
@@ -47,11 +49,20 @@ func NewWin32LobApp()(*Win32LobApp) {
     m := &Win32LobApp{
         MobileLobApp: *NewMobileLobApp(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateWin32LobAppFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateWin32LobAppFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWin32LobApp(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *Win32LobApp) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetApplicableArchitectures gets the applicableArchitectures property value. The Windows architecture(s) for which this app can run on. Possible values are: none, x86, x64, arm, neutral, arm64.
 func (m *Win32LobApp) GetApplicableArchitectures()(*WindowsArchitecture) {
@@ -505,7 +516,19 @@ func (m *Win32LobApp) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *Win32LobApp) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetApplicableArchitectures sets the applicableArchitectures property value. The Windows architecture(s) for which this app can run on. Possible values are: none, x86, x64, arm, neutral, arm64.
 func (m *Win32LobApp) SetApplicableArchitectures(value *WindowsArchitecture)() {

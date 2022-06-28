@@ -4,9 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ResourceSpecificPermissionGrant provides operations to manage the collection of administrativeUnit entities.
+// ResourceSpecificPermissionGrant provides operations to manage the collection of accessReview entities.
 type ResourceSpecificPermissionGrant struct {
     DirectoryObject
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // ID of the service principal of the Azure AD app that has been granted access. Read-only.
     clientAppId *string
     // ID of the Azure AD app that has been granted access. Read-only.
@@ -23,11 +25,20 @@ func NewResourceSpecificPermissionGrant()(*ResourceSpecificPermissionGrant) {
     m := &ResourceSpecificPermissionGrant{
         DirectoryObject: *NewDirectoryObject(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateResourceSpecificPermissionGrantFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateResourceSpecificPermissionGrantFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewResourceSpecificPermissionGrant(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *ResourceSpecificPermissionGrant) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetClientAppId gets the clientAppId property value. ID of the service principal of the Azure AD app that has been granted access. Read-only.
 func (m *ResourceSpecificPermissionGrant) GetClientAppId()(*string) {
@@ -160,7 +171,19 @@ func (m *ResourceSpecificPermissionGrant) Serialize(writer i878a80d2330e89d26896
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *ResourceSpecificPermissionGrant) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetClientAppId sets the clientAppId property value. ID of the service principal of the Azure AD app that has been granted access. Read-only.
 func (m *ResourceSpecificPermissionGrant) SetClientAppId(value *string)() {

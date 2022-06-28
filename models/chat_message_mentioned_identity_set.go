@@ -4,24 +4,35 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ChatMessageMentionedIdentitySet provides operations to manage the collection of administrativeUnit entities.
+// ChatMessageMentionedIdentitySet 
 type ChatMessageMentionedIdentitySet struct {
     IdentitySet
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // If present, represents a conversation (for example, team or channel) @mentioned in a message.
     conversation TeamworkConversationIdentityable
     // If present, represents a tag @mentioned in a team message.
     tag TeamworkTagIdentityable
 }
-// NewChatMessageMentionedIdentitySet instantiates a new chatMessageMentionedIdentitySet and sets the default values.
+// NewChatMessageMentionedIdentitySet instantiates a new ChatMessageMentionedIdentitySet and sets the default values.
 func NewChatMessageMentionedIdentitySet()(*ChatMessageMentionedIdentitySet) {
     m := &ChatMessageMentionedIdentitySet{
         IdentitySet: *NewIdentitySet(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateChatMessageMentionedIdentitySetFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateChatMessageMentionedIdentitySetFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewChatMessageMentionedIdentitySet(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *ChatMessageMentionedIdentitySet) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetConversation gets the conversation property value. If present, represents a conversation (for example, team or channel) @mentioned in a message.
 func (m *ChatMessageMentionedIdentitySet) GetConversation()(TeamworkConversationIdentityable) {
@@ -82,7 +93,19 @@ func (m *ChatMessageMentionedIdentitySet) Serialize(writer i878a80d2330e89d26896
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *ChatMessageMentionedIdentitySet) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetConversation sets the conversation property value. If present, represents a conversation (for example, team or channel) @mentioned in a message.
 func (m *ChatMessageMentionedIdentitySet) SetConversation(value TeamworkConversationIdentityable)() {

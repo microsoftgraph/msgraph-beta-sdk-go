@@ -5,13 +5,15 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AccessPackageResourceRoleScope provides operations to manage the identityGovernance singleton.
+// AccessPackageResourceRoleScope provides operations to manage the collection of accessReview entities.
 type AccessPackageResourceRoleScope struct {
     Entity
     // Read-only. Nullable. Supports $expand.
     accessPackageResourceRole AccessPackageResourceRoleable
     // The accessPackageResourceScope property
     accessPackageResourceScope AccessPackageResourceScopeable
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // The createdBy property
     createdBy *string
     // The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
@@ -26,6 +28,7 @@ func NewAccessPackageResourceRoleScope()(*AccessPackageResourceRoleScope) {
     m := &AccessPackageResourceRoleScope{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateAccessPackageResourceRoleScopeFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -46,6 +49,14 @@ func (m *AccessPackageResourceRoleScope) GetAccessPackageResourceScope()(AccessP
         return nil
     } else {
         return m.accessPackageResourceScope
+    }
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *AccessPackageResourceRoleScope) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
     }
 }
 // GetCreatedBy gets the createdBy property value. The createdBy property
@@ -187,6 +198,12 @@ func (m *AccessPackageResourceRoleScope) Serialize(writer i878a80d2330e89d268963
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetAccessPackageResourceRole sets the accessPackageResourceRole property value. Read-only. Nullable. Supports $expand.
@@ -199,6 +216,12 @@ func (m *AccessPackageResourceRoleScope) SetAccessPackageResourceRole(value Acce
 func (m *AccessPackageResourceRoleScope) SetAccessPackageResourceScope(value AccessPackageResourceScopeable)() {
     if m != nil {
         m.accessPackageResourceScope = value
+    }
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *AccessPackageResourceRoleScope) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
     }
 }
 // SetCreatedBy sets the createdBy property value. The createdBy property

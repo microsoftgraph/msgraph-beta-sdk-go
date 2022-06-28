@@ -7,6 +7,8 @@ import (
 // DeviceManagementConfigurationPolicyTemplate device Management Configuration Policy Template
 type DeviceManagementConfigurationPolicyTemplate struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Allow unmanaged setting templates
     allowUnmanagedSettings *bool
     // Template base identifier
@@ -37,11 +39,20 @@ func NewDeviceManagementConfigurationPolicyTemplate()(*DeviceManagementConfigura
     m := &DeviceManagementConfigurationPolicyTemplate{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateDeviceManagementConfigurationPolicyTemplateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateDeviceManagementConfigurationPolicyTemplateFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDeviceManagementConfigurationPolicyTemplate(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *DeviceManagementConfigurationPolicyTemplate) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetAllowUnmanagedSettings gets the allowUnmanagedSettings property value. Allow unmanaged setting templates
 func (m *DeviceManagementConfigurationPolicyTemplate) GetAllowUnmanagedSettings()(*bool) {
@@ -354,7 +365,19 @@ func (m *DeviceManagementConfigurationPolicyTemplate) Serialize(writer i878a80d2
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *DeviceManagementConfigurationPolicyTemplate) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAllowUnmanagedSettings sets the allowUnmanagedSettings property value. Allow unmanaged setting templates
 func (m *DeviceManagementConfigurationPolicyTemplate) SetAllowUnmanagedSettings(value *bool)() {

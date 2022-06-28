@@ -7,6 +7,8 @@ import (
 // AppManagementPolicy 
 type AppManagementPolicy struct {
     PolicyBase
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // The appliesTo property
     appliesTo []DirectoryObjectable
     // The isEnabled property
@@ -19,11 +21,20 @@ func NewAppManagementPolicy()(*AppManagementPolicy) {
     m := &AppManagementPolicy{
         PolicyBase: *NewPolicyBase(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateAppManagementPolicyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateAppManagementPolicyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAppManagementPolicy(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *AppManagementPolicy) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetAppliesTo gets the appliesTo property value. The appliesTo property
 func (m *AppManagementPolicy) GetAppliesTo()([]DirectoryObjectable) {
@@ -116,7 +127,19 @@ func (m *AppManagementPolicy) Serialize(writer i878a80d2330e89d26896388a3f487eef
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *AppManagementPolicy) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAppliesTo sets the appliesTo property value. The appliesTo property
 func (m *AppManagementPolicy) SetAppliesTo(value []DirectoryObjectable)() {

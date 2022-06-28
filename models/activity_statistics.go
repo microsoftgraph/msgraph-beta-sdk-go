@@ -9,6 +9,8 @@ type ActivityStatistics struct {
     Entity
     // The type of activity for which statistics are returned. The possible values are: call, chat, email, focus, and meeting.
     activity *AnalyticsActivityType
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Total hours spent on the activity. The value is represented in ISO 8601 format for durations.
     duration *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration
     // Date when the activity ended, expressed in ISO 8601 format for calendar dates. For example, the property value could be '2019-07-03' that follows the YYYY-MM-DD format.
@@ -23,6 +25,7 @@ func NewActivityStatistics()(*ActivityStatistics) {
     m := &ActivityStatistics{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateActivityStatisticsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -62,6 +65,14 @@ func (m *ActivityStatistics) GetActivity()(*AnalyticsActivityType) {
         return nil
     } else {
         return m.activity
+    }
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *ActivityStatistics) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
     }
 }
 // GetDuration gets the duration property value. Total hours spent on the activity. The value is represented in ISO 8601 format for durations.
@@ -188,12 +199,24 @@ func (m *ActivityStatistics) Serialize(writer i878a80d2330e89d26896388a3f487eef2
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetActivity sets the activity property value. The type of activity for which statistics are returned. The possible values are: call, chat, email, focus, and meeting.
 func (m *ActivityStatistics) SetActivity(value *AnalyticsActivityType)() {
     if m != nil {
         m.activity = value
+    }
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *ActivityStatistics) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
     }
 }
 // SetDuration sets the duration property value. Total hours spent on the activity. The value is represented in ISO 8601 format for durations.

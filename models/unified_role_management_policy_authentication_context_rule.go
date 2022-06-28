@@ -7,6 +7,8 @@ import (
 // UnifiedRoleManagementPolicyAuthenticationContextRule 
 type UnifiedRoleManagementPolicyAuthenticationContextRule struct {
     UnifiedRoleManagementPolicyRule
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // The value of the authentication context claim.
     claimValue *string
     // Whether this rule is enabled.
@@ -17,11 +19,20 @@ func NewUnifiedRoleManagementPolicyAuthenticationContextRule()(*UnifiedRoleManag
     m := &UnifiedRoleManagementPolicyAuthenticationContextRule{
         UnifiedRoleManagementPolicyRule: *NewUnifiedRoleManagementPolicyRule(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateUnifiedRoleManagementPolicyAuthenticationContextRuleFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateUnifiedRoleManagementPolicyAuthenticationContextRuleFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewUnifiedRoleManagementPolicyAuthenticationContextRule(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *UnifiedRoleManagementPolicyAuthenticationContextRule) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetClaimValue gets the claimValue property value. The value of the authentication context claim.
 func (m *UnifiedRoleManagementPolicyAuthenticationContextRule) GetClaimValue()(*string) {
@@ -82,7 +93,19 @@ func (m *UnifiedRoleManagementPolicyAuthenticationContextRule) Serialize(writer 
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *UnifiedRoleManagementPolicyAuthenticationContextRule) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetClaimValue sets the claimValue property value. The value of the authentication context claim.
 func (m *UnifiedRoleManagementPolicyAuthenticationContextRule) SetClaimValue(value *string)() {

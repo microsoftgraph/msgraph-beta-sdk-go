@@ -4,9 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// InformationProtectionLabel provides operations to manage the collection of administrativeUnit entities.
+// InformationProtectionLabel provides operations to manage the collection of accessReview entities.
 type InformationProtectionLabel struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // The color that the UI should display for the label, if configured.
     color *string
     // The admin-defined description for the label.
@@ -27,11 +29,20 @@ func NewInformationProtectionLabel()(*InformationProtectionLabel) {
     m := &InformationProtectionLabel{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateInformationProtectionLabelFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateInformationProtectionLabelFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewInformationProtectionLabel(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *InformationProtectionLabel) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetColor gets the color property value. The color that the UI should display for the label, if configured.
 func (m *InformationProtectionLabel) GetColor()(*string) {
@@ -212,7 +223,19 @@ func (m *InformationProtectionLabel) Serialize(writer i878a80d2330e89d26896388a3
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *InformationProtectionLabel) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetColor sets the color property value. The color that the UI should display for the label, if configured.
 func (m *InformationProtectionLabel) SetColor(value *string)() {

@@ -12,6 +12,8 @@ type RemoteActionAudit struct {
     action *RemoteAction
     // Action state. Possible values are: none, pending, canceled, active, done, failed, notSupported.
     actionState *ActionState
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Intune device name.
     deviceDisplayName *string
     // IMEI of the device.
@@ -32,6 +34,7 @@ func NewRemoteActionAudit()(*RemoteActionAudit) {
     m := &RemoteActionAudit{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateRemoteActionAuditFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -52,6 +55,14 @@ func (m *RemoteActionAudit) GetActionState()(*ActionState) {
         return nil
     } else {
         return m.actionState
+    }
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *RemoteActionAudit) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
     }
 }
 // GetDeviceDisplayName gets the deviceDisplayName property value. Intune device name.
@@ -267,6 +278,12 @@ func (m *RemoteActionAudit) Serialize(writer i878a80d2330e89d26896388a3f487eef27
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetAction sets the action property value. The action name. Possible values are: unknown, factoryReset, removeCompanyData, resetPasscode, remoteLock, enableLostMode, disableLostMode, locateDevice, rebootNow, recoverPasscode, cleanWindowsDevice, logoutSharedAppleDeviceActiveUser, quickScan, fullScan, windowsDefenderUpdateSignatures, factoryResetKeepEnrollmentData, updateDeviceAccount, automaticRedeployment, shutDown, rotateBitLockerKeys, rotateFileVaultKey, getFileVaultKey, setDeviceName, activateDeviceEsim.
@@ -279,6 +296,12 @@ func (m *RemoteActionAudit) SetAction(value *RemoteAction)() {
 func (m *RemoteActionAudit) SetActionState(value *ActionState)() {
     if m != nil {
         m.actionState = value
+    }
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *RemoteActionAudit) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
     }
 }
 // SetDeviceDisplayName sets the deviceDisplayName property value. Intune device name.

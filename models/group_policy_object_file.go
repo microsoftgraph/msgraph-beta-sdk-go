@@ -8,6 +8,8 @@ import (
 // GroupPolicyObjectFile the Group Policy Object file uploaded by admin.
 type GroupPolicyObjectFile struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // The Group Policy Object file content.
     content *string
     // The date and time at which the GroupPolicy was first uploaded.
@@ -24,11 +26,20 @@ func NewGroupPolicyObjectFile()(*GroupPolicyObjectFile) {
     m := &GroupPolicyObjectFile{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateGroupPolicyObjectFileFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateGroupPolicyObjectFileFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewGroupPolicyObjectFile(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *GroupPolicyObjectFile) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetContent gets the content property value. The Group Policy Object file content.
 func (m *GroupPolicyObjectFile) GetContent()(*string) {
@@ -161,7 +172,19 @@ func (m *GroupPolicyObjectFile) Serialize(writer i878a80d2330e89d26896388a3f487e
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *GroupPolicyObjectFile) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetContent sets the content property value. The Group Policy Object file content.
 func (m *GroupPolicyObjectFile) SetContent(value *string)() {

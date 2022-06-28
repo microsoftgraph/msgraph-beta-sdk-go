@@ -4,9 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AgedAccountsPayable provides operations to manage the financials singleton.
+// AgedAccountsPayable 
 type AgedAccountsPayable struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // The agedAsOfDate property
     agedAsOfDate *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly
     // The balanceDue property
@@ -28,16 +30,25 @@ type AgedAccountsPayable struct {
     // The vendorNumber property
     vendorNumber *string
 }
-// NewAgedAccountsPayable instantiates a new agedAccountsPayable and sets the default values.
+// NewAgedAccountsPayable instantiates a new AgedAccountsPayable and sets the default values.
 func NewAgedAccountsPayable()(*AgedAccountsPayable) {
     m := &AgedAccountsPayable{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateAgedAccountsPayableFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateAgedAccountsPayableFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAgedAccountsPayable(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *AgedAccountsPayable) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetAgedAsOfDate gets the agedAsOfDate property value. The agedAsOfDate property
 func (m *AgedAccountsPayable) GetAgedAsOfDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly) {
@@ -290,7 +301,19 @@ func (m *AgedAccountsPayable) Serialize(writer i878a80d2330e89d26896388a3f487eef
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *AgedAccountsPayable) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAgedAsOfDate sets the agedAsOfDate property value. The agedAsOfDate property
 func (m *AgedAccountsPayable) SetAgedAsOfDate(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)() {

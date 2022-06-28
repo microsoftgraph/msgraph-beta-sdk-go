@@ -11,6 +11,8 @@ type Windows10GeneralConfiguration struct {
     accountsBlockAddingNonMicrosoftAccountEmail *bool
     // Specifies if Windows apps can be activated by voice. Possible values are: notConfigured, enabled, disabled.
     activateAppsWithVoice *Enablement
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Indicates whether or not to block the user from selecting an AntiTheft mode preference (Windows 10 Mobile only).
     antiTheftModeBlocked *bool
     // This policy setting permits users to change installation options that typically are available only to system administrators.
@@ -579,6 +581,7 @@ func NewWindows10GeneralConfiguration()(*Windows10GeneralConfiguration) {
     m := &Windows10GeneralConfiguration{
         DeviceConfiguration: *NewDeviceConfiguration(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateWindows10GeneralConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -599,6 +602,14 @@ func (m *Windows10GeneralConfiguration) GetActivateAppsWithVoice()(*Enablement) 
         return nil
     } else {
         return m.activateAppsWithVoice
+    }
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *Windows10GeneralConfiguration) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
     }
 }
 // GetAntiTheftModeBlocked gets the antiTheftModeBlocked property value. Indicates whether or not to block the user from selecting an AntiTheft mode preference (Windows 10 Mobile only).
@@ -7487,6 +7498,12 @@ func (m *Windows10GeneralConfiguration) Serialize(writer i878a80d2330e89d2689638
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetAccountsBlockAddingNonMicrosoftAccountEmail sets the accountsBlockAddingNonMicrosoftAccountEmail property value. Indicates whether or not to Block the user from adding email accounts to the device that are not associated with a Microsoft account.
@@ -7499,6 +7516,12 @@ func (m *Windows10GeneralConfiguration) SetAccountsBlockAddingNonMicrosoftAccoun
 func (m *Windows10GeneralConfiguration) SetActivateAppsWithVoice(value *Enablement)() {
     if m != nil {
         m.activateAppsWithVoice = value
+    }
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *Windows10GeneralConfiguration) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
     }
 }
 // SetAntiTheftModeBlocked sets the antiTheftModeBlocked property value. Indicates whether or not to block the user from selecting an AntiTheft mode preference (Windows 10 Mobile only).

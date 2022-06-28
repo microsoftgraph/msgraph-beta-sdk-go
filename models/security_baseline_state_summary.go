@@ -7,6 +7,8 @@ import (
 // SecurityBaselineStateSummary the security baseline compliance state summary for the security baseline of the account.
 type SecurityBaselineStateSummary struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Number of conflict devices
     conflictCount *int32
     // Number of error devices
@@ -25,6 +27,7 @@ func NewSecurityBaselineStateSummary()(*SecurityBaselineStateSummary) {
     m := &SecurityBaselineStateSummary{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateSecurityBaselineStateSummaryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -49,6 +52,14 @@ func CreateSecurityBaselineStateSummaryFromDiscriminatorValue(parseNode i878a80d
         }
     }
     return NewSecurityBaselineStateSummary(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *SecurityBaselineStateSummary) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetConflictCount gets the conflictCount property value. Number of conflict devices
 func (m *SecurityBaselineStateSummary) GetConflictCount()(*int32) {
@@ -205,7 +216,19 @@ func (m *SecurityBaselineStateSummary) Serialize(writer i878a80d2330e89d26896388
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *SecurityBaselineStateSummary) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetConflictCount sets the conflictCount property value. Number of conflict devices
 func (m *SecurityBaselineStateSummary) SetConflictCount(value *int32)() {

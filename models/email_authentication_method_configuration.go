@@ -7,6 +7,8 @@ import (
 // EmailAuthenticationMethodConfiguration 
 type EmailAuthenticationMethodConfiguration struct {
     AuthenticationMethodConfiguration
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Determines whether email OTP is usable by external users for authentication. Possible values are: default, enabled, disabled, unknownFutureValue. Tenants in the default state who did not use public preview will automatically have email OTP enabled beginning in October 2021.
     allowExternalIdToUseEmailOtp *ExternalEmailOtpState
     // A collection of users or groups who are enabled to use the authentication method.
@@ -17,11 +19,20 @@ func NewEmailAuthenticationMethodConfiguration()(*EmailAuthenticationMethodConfi
     m := &EmailAuthenticationMethodConfiguration{
         AuthenticationMethodConfiguration: *NewAuthenticationMethodConfiguration(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateEmailAuthenticationMethodConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateEmailAuthenticationMethodConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewEmailAuthenticationMethodConfiguration(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *EmailAuthenticationMethodConfiguration) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetAllowExternalIdToUseEmailOtp gets the allowExternalIdToUseEmailOtp property value. Determines whether email OTP is usable by external users for authentication. Possible values are: default, enabled, disabled, unknownFutureValue. Tenants in the default state who did not use public preview will automatically have email OTP enabled beginning in October 2021.
 func (m *EmailAuthenticationMethodConfiguration) GetAllowExternalIdToUseEmailOtp()(*ExternalEmailOtpState) {
@@ -91,7 +102,19 @@ func (m *EmailAuthenticationMethodConfiguration) Serialize(writer i878a80d2330e8
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *EmailAuthenticationMethodConfiguration) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAllowExternalIdToUseEmailOtp sets the allowExternalIdToUseEmailOtp property value. Determines whether email OTP is usable by external users for authentication. Possible values are: default, enabled, disabled, unknownFutureValue. Tenants in the default state who did not use public preview will automatically have email OTP enabled beginning in October 2021.
 func (m *EmailAuthenticationMethodConfiguration) SetAllowExternalIdToUseEmailOtp(value *ExternalEmailOtpState)() {

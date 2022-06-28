@@ -10,6 +10,8 @@ type Fido2AuthenticationMethod struct {
     AuthenticationMethod
     // Authenticator Attestation GUID, an identifier that indicates the type (e.g. make and model) of the authenticator.
     aaGuid *string
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // The attestation certificate(s) attached to this security key.
     attestationCertificates []string
     // The attestation level of this FIDO2 security key. Possible values are: attested, notAttested, unknownFutureValue.
@@ -28,6 +30,7 @@ func NewFido2AuthenticationMethod()(*Fido2AuthenticationMethod) {
     m := &Fido2AuthenticationMethod{
         AuthenticationMethod: *NewAuthenticationMethod(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateFido2AuthenticationMethodFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -40,6 +43,14 @@ func (m *Fido2AuthenticationMethod) GetAaGuid()(*string) {
         return nil
     } else {
         return m.aaGuid
+    }
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *Fido2AuthenticationMethod) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
     }
 }
 // GetAttestationCertificates gets the attestationCertificates property value. The attestation certificate(s) attached to this security key.
@@ -218,12 +229,24 @@ func (m *Fido2AuthenticationMethod) Serialize(writer i878a80d2330e89d26896388a3f
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetAaGuid sets the aaGuid property value. Authenticator Attestation GUID, an identifier that indicates the type (e.g. make and model) of the authenticator.
 func (m *Fido2AuthenticationMethod) SetAaGuid(value *string)() {
     if m != nil {
         m.aaGuid = value
+    }
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *Fido2AuthenticationMethod) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
     }
 }
 // SetAttestationCertificates sets the attestationCertificates property value. The attestation certificate(s) attached to this security key.

@@ -4,9 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Office365GroupsActivityDetail provides operations to call the getOffice365GroupsActivityDetail method.
+// Office365GroupsActivityDetail 
 type Office365GroupsActivityDetail struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // The storage used of the group mailbox.
     exchangeMailboxStorageUsedInBytes *int64
     // The number of items in the group mailbox.
@@ -46,16 +48,25 @@ type Office365GroupsActivityDetail struct {
     // The number of messages read in Yammer groups.
     yammerReadMessageCount *int64
 }
-// NewOffice365GroupsActivityDetail instantiates a new office365GroupsActivityDetail and sets the default values.
+// NewOffice365GroupsActivityDetail instantiates a new Office365GroupsActivityDetail and sets the default values.
 func NewOffice365GroupsActivityDetail()(*Office365GroupsActivityDetail) {
     m := &Office365GroupsActivityDetail{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateOffice365GroupsActivityDetailFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateOffice365GroupsActivityDetailFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewOffice365GroupsActivityDetail(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *Office365GroupsActivityDetail) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetExchangeMailboxStorageUsedInBytes gets the exchangeMailboxStorageUsedInBytes property value. The storage used of the group mailbox.
 func (m *Office365GroupsActivityDetail) GetExchangeMailboxStorageUsedInBytes()(*int64) {
@@ -524,7 +535,19 @@ func (m *Office365GroupsActivityDetail) Serialize(writer i878a80d2330e89d2689638
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *Office365GroupsActivityDetail) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetExchangeMailboxStorageUsedInBytes sets the exchangeMailboxStorageUsedInBytes property value. The storage used of the group mailbox.
 func (m *Office365GroupsActivityDetail) SetExchangeMailboxStorageUsedInBytes(value *int64)() {

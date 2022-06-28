@@ -4,11 +4,13 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// UnifiedRbacResourceAction provides operations to manage the roleManagement singleton.
+// UnifiedRbacResourceAction provides operations to manage the collection of accessReview entities.
 type UnifiedRbacResourceAction struct {
     Entity
     // HTTP method for the action, such as DELETE, GET, PATCH, POST, PUT, or null. Supports $filter (eq) but not for null values.
     actionVerb *string
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Description for the action. Supports $filter (eq).
     description *string
     // Name for the action within the resource namespace, such as microsoft.insights/programs/update. Can include slash character (/). Case insensitive. Required. Supports $filter (eq).
@@ -23,6 +25,7 @@ func NewUnifiedRbacResourceAction()(*UnifiedRbacResourceAction) {
     m := &UnifiedRbacResourceAction{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateUnifiedRbacResourceActionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -35,6 +38,14 @@ func (m *UnifiedRbacResourceAction) GetActionVerb()(*string) {
         return nil
     } else {
         return m.actionVerb
+    }
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *UnifiedRbacResourceAction) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
     }
 }
 // GetDescription gets the description property value. Description for the action. Supports $filter (eq).
@@ -160,12 +171,24 @@ func (m *UnifiedRbacResourceAction) Serialize(writer i878a80d2330e89d26896388a3f
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetActionVerb sets the actionVerb property value. HTTP method for the action, such as DELETE, GET, PATCH, POST, PUT, or null. Supports $filter (eq) but not for null values.
 func (m *UnifiedRbacResourceAction) SetActionVerb(value *string)() {
     if m != nil {
         m.actionVerb = value
+    }
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *UnifiedRbacResourceAction) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
     }
 }
 // SetDescription sets the description property value. Description for the action. Supports $filter (eq).

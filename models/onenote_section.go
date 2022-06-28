@@ -4,9 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// OnenoteSection provides operations to manage the collection of administrativeUnit entities.
+// OnenoteSection provides operations to manage the collection of accessReview entities.
 type OnenoteSection struct {
     OnenoteEntityHierarchyModel
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Indicates whether this is the user's default section. Read-only.
     isDefault *bool
     // Links for opening the section. The oneNoteClientURL link opens the section in the OneNote native client if it's installed. The oneNoteWebURL link opens the section in OneNote on the web.
@@ -25,11 +27,20 @@ func NewOnenoteSection()(*OnenoteSection) {
     m := &OnenoteSection{
         OnenoteEntityHierarchyModel: *NewOnenoteEntityHierarchyModel(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateOnenoteSectionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateOnenoteSectionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewOnenoteSection(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *OnenoteSection) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *OnenoteSection) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -194,7 +205,19 @@ func (m *OnenoteSection) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *OnenoteSection) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetIsDefault sets the isDefault property value. Indicates whether this is the user's default section. Read-only.
 func (m *OnenoteSection) SetIsDefault(value *bool)() {

@@ -7,6 +7,8 @@ import (
 // EventMessage 
 type EventMessage struct {
     Message
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // The end time of the requested meeting.
     endDateTime DateTimeTimeZoneable
     // The event associated with the event message. The assumption for attendees or room resources is that the Calendar Attendant is set to automatically update the calendar with an event when meeting request event messages arrive. Navigation property.  Read-only.
@@ -33,6 +35,7 @@ func NewEventMessage()(*EventMessage) {
     m := &EventMessage{
         Message: *NewMessage(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateEventMessageFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -59,6 +62,14 @@ func CreateEventMessageFromDiscriminatorValue(parseNode i878a80d2330e89d26896388
         }
     }
     return NewEventMessage(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *EventMessage) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetEndDateTime gets the endDateTime property value. The end time of the requested meeting.
 func (m *EventMessage) GetEndDateTime()(DateTimeTimeZoneable) {
@@ -313,7 +324,19 @@ func (m *EventMessage) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *EventMessage) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetEndDateTime sets the endDateTime property value. The end time of the requested meeting.
 func (m *EventMessage) SetEndDateTime(value DateTimeTimeZoneable)() {

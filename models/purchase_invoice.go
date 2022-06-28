@@ -5,9 +5,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// PurchaseInvoice provides operations to manage the financials singleton.
+// PurchaseInvoice provides operations to manage the collection of accessReview entities.
 type PurchaseInvoice struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // The buyFromAddress property
     buyFromAddress PostalAddressTypeable
     // The currency property
@@ -72,11 +74,20 @@ func NewPurchaseInvoice()(*PurchaseInvoice) {
     m := &PurchaseInvoice{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreatePurchaseInvoiceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreatePurchaseInvoiceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewPurchaseInvoice(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *PurchaseInvoice) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetBuyFromAddress gets the buyFromAddress property value. The buyFromAddress property
 func (m *PurchaseInvoice) GetBuyFromAddress()(PostalAddressTypeable) {
@@ -793,7 +804,19 @@ func (m *PurchaseInvoice) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *PurchaseInvoice) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetBuyFromAddress sets the buyFromAddress property value. The buyFromAddress property
 func (m *PurchaseInvoice) SetBuyFromAddress(value PostalAddressTypeable)() {

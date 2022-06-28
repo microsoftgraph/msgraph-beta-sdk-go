@@ -5,11 +5,13 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// RiskyServicePrincipal provides operations to manage the identityProtectionRoot singleton.
+// RiskyServicePrincipal 
 type RiskyServicePrincipal struct {
     Entity
     // true if the service principal account is enabled; otherwise, false.
     accountEnabled *bool
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // The globally unique identifier for the associated application (its appId property), if any.
     appId *string
     // The display name for the service principal.
@@ -29,11 +31,12 @@ type RiskyServicePrincipal struct {
     // Identifies whether the service principal represents an Application, a ManagedIdentity, or a legacy application (socialIdp). This is set by Azure AD internally and is inherited from servicePrincipal.
     servicePrincipalType *string
 }
-// NewRiskyServicePrincipal instantiates a new riskyServicePrincipal and sets the default values.
+// NewRiskyServicePrincipal instantiates a new RiskyServicePrincipal and sets the default values.
 func NewRiskyServicePrincipal()(*RiskyServicePrincipal) {
     m := &RiskyServicePrincipal{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateRiskyServicePrincipalFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -65,6 +68,14 @@ func (m *RiskyServicePrincipal) GetAccountEnabled()(*bool) {
         return nil
     } else {
         return m.accountEnabled
+    }
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *RiskyServicePrincipal) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
     }
 }
 // GetAppId gets the appId property value. The globally unique identifier for the associated application (its appId property), if any.
@@ -321,12 +332,24 @@ func (m *RiskyServicePrincipal) Serialize(writer i878a80d2330e89d26896388a3f487e
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetAccountEnabled sets the accountEnabled property value. true if the service principal account is enabled; otherwise, false.
 func (m *RiskyServicePrincipal) SetAccountEnabled(value *bool)() {
     if m != nil {
         m.accountEnabled = value
+    }
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *RiskyServicePrincipal) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
     }
 }
 // SetAppId sets the appId property value. The globally unique identifier for the associated application (its appId property), if any.

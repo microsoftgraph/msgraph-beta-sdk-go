@@ -5,11 +5,13 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AccessReviewInstanceDecisionItem provides operations to manage the collection of administrativeUnit entities.
+// AccessReviewInstanceDecisionItem provides operations to manage the collection of accessReview entities.
 type AccessReviewInstanceDecisionItem struct {
     Entity
     // The identifier of the accessReviewInstance parent. Supports $select. Read-only.
     accessReviewId *string
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // The identifier of the user who applied the decision. Read-only.
     appliedBy UserIdentityable
     // The timestamp when the approval decision was applied. The DatetimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.  Supports $select. Read-only.
@@ -28,7 +30,7 @@ type AccessReviewInstanceDecisionItem struct {
     principal Identityable
     // Link to the principal object. For example: https://graph.microsoft.com/v1.0/users/a6c7aecb-cbfd-4763-87ef-e91b4bd509d9. Read-only.
     principalLink *string
-    // The principalResourceMembership property
+    // Every decision item in an access review represents a principal's membership to a resource. This property provides the details of the membership. For example, whether the principal has direct access or indirect access to the resource. Supports $select. Read-only.
     principalResourceMembership DecisionItemPrincipalResourceMembershipable
     // A system-generated recommendation for the approval decision based off last interactive sign-in to tenant. Recommend approve if sign-in is within thirty days of start of review. Recommend deny if sign-in is greater than thirty days of start of review. Recommendation not available otherwise. Possible values: Approve, Deny, or NoInfoAvailable. Supports $select, $orderby, and $filter (eq only). Read-only.
     recommendation *string
@@ -48,6 +50,7 @@ func NewAccessReviewInstanceDecisionItem()(*AccessReviewInstanceDecisionItem) {
     m := &AccessReviewInstanceDecisionItem{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateAccessReviewInstanceDecisionItemFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -60,6 +63,14 @@ func (m *AccessReviewInstanceDecisionItem) GetAccessReviewId()(*string) {
         return nil
     } else {
         return m.accessReviewId
+    }
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *AccessReviewInstanceDecisionItem) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
     }
 }
 // GetAppliedBy gets the appliedBy property value. The identifier of the user who applied the decision. Read-only.
@@ -313,7 +324,7 @@ func (m *AccessReviewInstanceDecisionItem) GetPrincipalLink()(*string) {
         return m.principalLink
     }
 }
-// GetPrincipalResourceMembership gets the principalResourceMembership property value. The principalResourceMembership property
+// GetPrincipalResourceMembership gets the principalResourceMembership property value. Every decision item in an access review represents a principal's membership to a resource. This property provides the details of the membership. For example, whether the principal has direct access or indirect access to the resource. Supports $select. Read-only.
 func (m *AccessReviewInstanceDecisionItem) GetPrincipalResourceMembership()(DecisionItemPrincipalResourceMembershipable) {
     if m == nil {
         return nil
@@ -481,12 +492,24 @@ func (m *AccessReviewInstanceDecisionItem) Serialize(writer i878a80d2330e89d2689
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetAccessReviewId sets the accessReviewId property value. The identifier of the accessReviewInstance parent. Supports $select. Read-only.
 func (m *AccessReviewInstanceDecisionItem) SetAccessReviewId(value *string)() {
     if m != nil {
         m.accessReviewId = value
+    }
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *AccessReviewInstanceDecisionItem) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
     }
 }
 // SetAppliedBy sets the appliedBy property value. The identifier of the user who applied the decision. Read-only.
@@ -543,7 +566,7 @@ func (m *AccessReviewInstanceDecisionItem) SetPrincipalLink(value *string)() {
         m.principalLink = value
     }
 }
-// SetPrincipalResourceMembership sets the principalResourceMembership property value. The principalResourceMembership property
+// SetPrincipalResourceMembership sets the principalResourceMembership property value. Every decision item in an access review represents a principal's membership to a resource. This property provides the details of the membership. For example, whether the principal has direct access or indirect access to the resource. Supports $select. Read-only.
 func (m *AccessReviewInstanceDecisionItem) SetPrincipalResourceMembership(value DecisionItemPrincipalResourceMembershipable)() {
     if m != nil {
         m.principalResourceMembership = value

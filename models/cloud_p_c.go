@@ -5,11 +5,13 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// CloudPC provides operations to manage the collection of administrativeUnit entities.
+// CloudPC provides operations to manage the collection of accessReview entities.
 type CloudPC struct {
     Entity
     // The Azure Active Directory (Azure AD) device ID of the Cloud PC.
     aadDeviceId *string
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // The display name of the Cloud PC.
     displayName *string
     // The date and time when the grace period ends and reprovisioning/deprovisioning happens. Required only if the status is inGracePeriod. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
@@ -54,6 +56,7 @@ func NewCloudPC()(*CloudPC) {
     m := &CloudPC{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateCloudPCFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -66,6 +69,14 @@ func (m *CloudPC) GetAadDeviceId()(*string) {
         return nil
     } else {
         return m.aadDeviceId
+    }
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *CloudPC) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
     }
 }
 // GetDisplayName gets the displayName property value. The display name of the Cloud PC.
@@ -555,12 +566,24 @@ func (m *CloudPC) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetAadDeviceId sets the aadDeviceId property value. The Azure Active Directory (Azure AD) device ID of the Cloud PC.
 func (m *CloudPC) SetAadDeviceId(value *string)() {
     if m != nil {
         m.aadDeviceId = value
+    }
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *CloudPC) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
     }
 }
 // SetDisplayName sets the displayName property value. The display name of the Cloud PC.

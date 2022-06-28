@@ -5,9 +5,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// PrivilegedOperationEvent provides operations to manage the collection of privilegedOperationEvent entities.
+// PrivilegedOperationEvent 
 type PrivilegedOperationEvent struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Detailed human readable information for the event.
     additionalInformation *string
     // Indicates the time when the event is created.
@@ -37,16 +39,25 @@ type PrivilegedOperationEvent struct {
     // The user's display name.
     userName *string
 }
-// NewPrivilegedOperationEvent instantiates a new privilegedOperationEvent and sets the default values.
+// NewPrivilegedOperationEvent instantiates a new PrivilegedOperationEvent and sets the default values.
 func NewPrivilegedOperationEvent()(*PrivilegedOperationEvent) {
     m := &PrivilegedOperationEvent{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreatePrivilegedOperationEventFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreatePrivilegedOperationEventFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewPrivilegedOperationEvent(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *PrivilegedOperationEvent) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetAdditionalInformation gets the additionalInformation property value. Detailed human readable information for the event.
 func (m *PrivilegedOperationEvent) GetAdditionalInformation()(*string) {
@@ -395,7 +406,19 @@ func (m *PrivilegedOperationEvent) Serialize(writer i878a80d2330e89d26896388a3f4
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *PrivilegedOperationEvent) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAdditionalInformation sets the additionalInformation property value. Detailed human readable information for the event.
 func (m *PrivilegedOperationEvent) SetAdditionalInformation(value *string)() {

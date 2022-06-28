@@ -8,6 +8,8 @@ import (
 // GroupPolicyUploadedDefinitionFile 
 type GroupPolicyUploadedDefinitionFile struct {
     GroupPolicyDefinitionFile
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // The contents of the uploaded ADMX file.
     content []byte
     // The default language of the uploaded ADMX file.
@@ -26,11 +28,20 @@ func NewGroupPolicyUploadedDefinitionFile()(*GroupPolicyUploadedDefinitionFile) 
     m := &GroupPolicyUploadedDefinitionFile{
         GroupPolicyDefinitionFile: *NewGroupPolicyDefinitionFile(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateGroupPolicyUploadedDefinitionFileFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateGroupPolicyUploadedDefinitionFileFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewGroupPolicyUploadedDefinitionFile(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *GroupPolicyUploadedDefinitionFile) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetContent gets the content property value. The contents of the uploaded ADMX file.
 func (m *GroupPolicyUploadedDefinitionFile) GetContent()([]byte) {
@@ -204,7 +215,19 @@ func (m *GroupPolicyUploadedDefinitionFile) Serialize(writer i878a80d2330e89d268
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *GroupPolicyUploadedDefinitionFile) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetContent sets the content property value. The contents of the uploaded ADMX file.
 func (m *GroupPolicyUploadedDefinitionFile) SetContent(value []byte)() {

@@ -4,11 +4,13 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Profile provides operations to manage the collection of administrativeUnit entities.
+// Profile provides operations to manage the collection of accessReview entities.
 type Profile struct {
     Entity
     // The account property
     account []UserAccountInformationable
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Represents details of addresses associated with the user.
     addresses []ItemAddressable
     // Represents the details of meaningful dates associated with a person.
@@ -51,6 +53,7 @@ func NewProfile()(*Profile) {
     m := &Profile{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateProfileFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -63,6 +66,14 @@ func (m *Profile) GetAccount()([]UserAccountInformationable) {
         return nil
     } else {
         return m.account
+    }
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *Profile) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
     }
 }
 // GetAddresses gets the addresses property value. Represents details of addresses associated with the user.
@@ -676,12 +687,24 @@ func (m *Profile) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetAccount sets the account property value. The account property
 func (m *Profile) SetAccount(value []UserAccountInformationable)() {
     if m != nil {
         m.account = value
+    }
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *Profile) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
     }
 }
 // SetAddresses sets the addresses property value. Represents details of addresses associated with the user.

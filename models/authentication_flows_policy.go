@@ -4,9 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AuthenticationFlowsPolicy provides operations to manage the policyRoot singleton.
+// AuthenticationFlowsPolicy 
 type AuthenticationFlowsPolicy struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Inherited property. A description of the policy. This property is not a key. Optional. Read-only.
     description *string
     // Inherited property. The human-readable name of the policy. This property is not a key. Optional. Read-only.
@@ -14,16 +16,25 @@ type AuthenticationFlowsPolicy struct {
     // Contains selfServiceSignUpAuthenticationFlowConfiguration settings that convey whether self-service sign-up is enabled or disabled. This property is not a key. Optional. Read-only.
     selfServiceSignUp SelfServiceSignUpAuthenticationFlowConfigurationable
 }
-// NewAuthenticationFlowsPolicy instantiates a new authenticationFlowsPolicy and sets the default values.
+// NewAuthenticationFlowsPolicy instantiates a new AuthenticationFlowsPolicy and sets the default values.
 func NewAuthenticationFlowsPolicy()(*AuthenticationFlowsPolicy) {
     m := &AuthenticationFlowsPolicy{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateAuthenticationFlowsPolicyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateAuthenticationFlowsPolicyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAuthenticationFlowsPolicy(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *AuthenticationFlowsPolicy) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetDescription gets the description property value. Inherited property. A description of the policy. This property is not a key. Optional. Read-only.
 func (m *AuthenticationFlowsPolicy) GetDescription()(*string) {
@@ -108,7 +119,19 @@ func (m *AuthenticationFlowsPolicy) Serialize(writer i878a80d2330e89d26896388a3f
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *AuthenticationFlowsPolicy) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetDescription sets the description property value. Inherited property. A description of the policy. This property is not a key. Optional. Read-only.
 func (m *AuthenticationFlowsPolicy) SetDescription(value *string)() {

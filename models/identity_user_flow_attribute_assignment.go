@@ -4,9 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// IdentityUserFlowAttributeAssignment provides operations to manage the identityContainer singleton.
+// IdentityUserFlowAttributeAssignment provides operations to manage the collection of accessReview entities.
 type IdentityUserFlowAttributeAssignment struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // The display name of the identityUserFlowAttribute within a user flow.
     displayName *string
     // Determines whether the identityUserFlowAttribute is optional. true means the user doesn't have to provide a value. false means the user cannot complete sign-up without providing a value.
@@ -25,11 +27,20 @@ func NewIdentityUserFlowAttributeAssignment()(*IdentityUserFlowAttributeAssignme
     m := &IdentityUserFlowAttributeAssignment{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateIdentityUserFlowAttributeAssignmentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateIdentityUserFlowAttributeAssignmentFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewIdentityUserFlowAttributeAssignment(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *IdentityUserFlowAttributeAssignment) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetDisplayName gets the displayName property value. The display name of the identityUserFlowAttribute within a user flow.
 func (m *IdentityUserFlowAttributeAssignment) GetDisplayName()(*string) {
@@ -195,7 +206,19 @@ func (m *IdentityUserFlowAttributeAssignment) Serialize(writer i878a80d2330e89d2
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *IdentityUserFlowAttributeAssignment) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetDisplayName sets the displayName property value. The display name of the identityUserFlowAttribute within a user flow.
 func (m *IdentityUserFlowAttributeAssignment) SetDisplayName(value *string)() {

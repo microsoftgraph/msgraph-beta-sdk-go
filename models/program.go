@@ -4,9 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Program provides operations to manage the collection of programControl entities.
+// Program 
 type Program struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Controls associated with the program.
     controls []ProgramControlable
     // The description of the program.
@@ -14,16 +16,25 @@ type Program struct {
     // The name of the program.  Required on create.
     displayName *string
 }
-// NewProgram instantiates a new program and sets the default values.
+// NewProgram instantiates a new Program and sets the default values.
 func NewProgram()(*Program) {
     m := &Program{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateProgramFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateProgramFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewProgram(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *Program) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetControls gets the controls property value. Controls associated with the program.
 func (m *Program) GetControls()([]ProgramControlable) {
@@ -116,7 +127,19 @@ func (m *Program) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *Program) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetControls sets the controls property value. Controls associated with the program.
 func (m *Program) SetControls(value []ProgramControlable)() {

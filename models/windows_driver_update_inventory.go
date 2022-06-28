@@ -8,6 +8,8 @@ import (
 // WindowsDriverUpdateInventory a new entity to represent driver inventories.
 type WindowsDriverUpdateInventory struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // The number of devices for which this driver is applicable.
     applicableDeviceCount *int32
     // The approval status for this driver. Possible values are: needsReview, declined, approved, suspended.
@@ -32,11 +34,20 @@ func NewWindowsDriverUpdateInventory()(*WindowsDriverUpdateInventory) {
     m := &WindowsDriverUpdateInventory{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateWindowsDriverUpdateInventoryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateWindowsDriverUpdateInventoryFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWindowsDriverUpdateInventory(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *WindowsDriverUpdateInventory) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetApplicableDeviceCount gets the applicableDeviceCount property value. The number of devices for which this driver is applicable.
 func (m *WindowsDriverUpdateInventory) GetApplicableDeviceCount()(*int32) {
@@ -267,7 +278,19 @@ func (m *WindowsDriverUpdateInventory) Serialize(writer i878a80d2330e89d26896388
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *WindowsDriverUpdateInventory) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetApplicableDeviceCount sets the applicableDeviceCount property value. The number of devices for which this driver is applicable.
 func (m *WindowsDriverUpdateInventory) SetApplicableDeviceCount(value *int32)() {

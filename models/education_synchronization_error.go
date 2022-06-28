@@ -5,9 +5,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// EducationSynchronizationError provides operations to manage the educationRoot singleton.
+// EducationSynchronizationError provides operations to manage the collection of accessReview entities.
 type EducationSynchronizationError struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Represents the sync entity (school, section, student, teacher).
     entryType *string
     // Represents the error code for this error.
@@ -26,11 +28,20 @@ func NewEducationSynchronizationError()(*EducationSynchronizationError) {
     m := &EducationSynchronizationError{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateEducationSynchronizationErrorFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateEducationSynchronizationErrorFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewEducationSynchronizationError(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *EducationSynchronizationError) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetEntryType gets the entryType property value. Represents the sync entity (school, section, student, teacher).
 func (m *EducationSynchronizationError) GetEntryType()(*string) {
@@ -187,7 +198,19 @@ func (m *EducationSynchronizationError) Serialize(writer i878a80d2330e89d2689638
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *EducationSynchronizationError) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetEntryType sets the entryType property value. Represents the sync entity (school, section, student, teacher).
 func (m *EducationSynchronizationError) SetEntryType(value *string)() {

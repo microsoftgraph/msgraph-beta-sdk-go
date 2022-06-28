@@ -4,9 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// CustomSecurityAttributeDefinition provides operations to manage the directory singleton.
+// CustomSecurityAttributeDefinition provides operations to manage the collection of accessReview entities.
 type CustomSecurityAttributeDefinition struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Values that are predefined for this custom security attribute.This navigation property is not returned by default and must be specified in an $expand query. For example, /directory/customSecurityAttributeDefinitions?$expand=allowedValues.
     allowedValues []AllowedValueable
     // Name of the attribute set. Case insensitive.
@@ -31,11 +33,20 @@ func NewCustomSecurityAttributeDefinition()(*CustomSecurityAttributeDefinition) 
     m := &CustomSecurityAttributeDefinition{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateCustomSecurityAttributeDefinitionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateCustomSecurityAttributeDefinitionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCustomSecurityAttributeDefinition(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *CustomSecurityAttributeDefinition) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetAllowedValues gets the allowedValues property value. Values that are predefined for this custom security attribute.This navigation property is not returned by default and must be specified in an $expand query. For example, /directory/customSecurityAttributeDefinitions?$expand=allowedValues.
 func (m *CustomSecurityAttributeDefinition) GetAllowedValues()([]AllowedValueable) {
@@ -272,7 +283,19 @@ func (m *CustomSecurityAttributeDefinition) Serialize(writer i878a80d2330e89d268
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *CustomSecurityAttributeDefinition) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAllowedValues sets the allowedValues property value. Values that are predefined for this custom security attribute.This navigation property is not returned by default and must be specified in an $expand query. For example, /directory/customSecurityAttributeDefinitions?$expand=allowedValues.
 func (m *CustomSecurityAttributeDefinition) SetAllowedValues(value []AllowedValueable)() {

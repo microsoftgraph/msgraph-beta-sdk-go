@@ -9,6 +9,8 @@ type UserExperienceAnalyticsAppHealthApplicationPerformance struct {
     Entity
     // The number of devices where the app has been active. Valid values -2147483648 to 2147483647
     activeDeviceCount *int32
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // The number of crashes for the app. Valid values -2147483648 to 2147483647
     appCrashCount *int32
     // The friendly name of the application.
@@ -33,6 +35,7 @@ func NewUserExperienceAnalyticsAppHealthApplicationPerformance()(*UserExperience
     m := &UserExperienceAnalyticsAppHealthApplicationPerformance{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateUserExperienceAnalyticsAppHealthApplicationPerformanceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -45,6 +48,14 @@ func (m *UserExperienceAnalyticsAppHealthApplicationPerformance) GetActiveDevice
         return nil
     } else {
         return m.activeDeviceCount
+    }
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *UserExperienceAnalyticsAppHealthApplicationPerformance) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
     }
 }
 // GetAppCrashCount gets the appCrashCount property value. The number of crashes for the app. Valid values -2147483648 to 2147483647
@@ -290,12 +301,24 @@ func (m *UserExperienceAnalyticsAppHealthApplicationPerformance) Serialize(write
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetActiveDeviceCount sets the activeDeviceCount property value. The number of devices where the app has been active. Valid values -2147483648 to 2147483647
 func (m *UserExperienceAnalyticsAppHealthApplicationPerformance) SetActiveDeviceCount(value *int32)() {
     if m != nil {
         m.activeDeviceCount = value
+    }
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *UserExperienceAnalyticsAppHealthApplicationPerformance) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
     }
 }
 // SetAppCrashCount sets the appCrashCount property value. The number of crashes for the app. Valid values -2147483648 to 2147483647

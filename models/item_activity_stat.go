@@ -5,13 +5,15 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ItemActivityStat provides operations to manage the collection of administrativeUnit entities.
+// ItemActivityStat provides operations to manage the collection of accessReview entities.
 type ItemActivityStat struct {
     Entity
     // Statistics about the access actions in this interval. Read-only.
     access ItemActionStatable
     // Exposes the itemActivities represented in this itemActivityStat resource.
     activities []ItemActivityable
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Statistics about the create actions in this interval. Read-only.
     create ItemActionStatable
     // Statistics about the delete actions in this interval. Read-only.
@@ -34,6 +36,7 @@ func NewItemActivityStat()(*ItemActivityStat) {
     m := &ItemActivityStat{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateItemActivityStatFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -54,6 +57,14 @@ func (m *ItemActivityStat) GetActivities()([]ItemActivityable) {
         return nil
     } else {
         return m.activities
+    }
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *ItemActivityStat) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
     }
 }
 // GetCreate gets the create property value. Statistics about the create actions in this interval. Read-only.
@@ -299,6 +310,12 @@ func (m *ItemActivityStat) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetAccess sets the access property value. Statistics about the access actions in this interval. Read-only.
@@ -311,6 +328,12 @@ func (m *ItemActivityStat) SetAccess(value ItemActionStatable)() {
 func (m *ItemActivityStat) SetActivities(value []ItemActivityable)() {
     if m != nil {
         m.activities = value
+    }
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *ItemActivityStat) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
     }
 }
 // SetCreate sets the create property value. Statistics about the create actions in this interval. Read-only.

@@ -9,6 +9,8 @@ type DepMacOSEnrollmentProfile struct {
     DepEnrollmentBaseProfile
     // Indicates if Accessibility screen is disabled
     accessibilityScreenDisabled *bool
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Indicates if UnlockWithWatch screen is disabled
     autoUnlockWithWatchDisabled *bool
     // Indicates if iCloud Documents and Desktop screen is disabled
@@ -31,6 +33,7 @@ func NewDepMacOSEnrollmentProfile()(*DepMacOSEnrollmentProfile) {
     m := &DepMacOSEnrollmentProfile{
         DepEnrollmentBaseProfile: *NewDepEnrollmentBaseProfile(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateDepMacOSEnrollmentProfileFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -43,6 +46,14 @@ func (m *DepMacOSEnrollmentProfile) GetAccessibilityScreenDisabled()(*bool) {
         return nil
     } else {
         return m.accessibilityScreenDisabled
+    }
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *DepMacOSEnrollmentProfile) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
     }
 }
 // GetAutoUnlockWithWatchDisabled gets the autoUnlockWithWatchDisabled property value. Indicates if UnlockWithWatch screen is disabled
@@ -264,12 +275,24 @@ func (m *DepMacOSEnrollmentProfile) Serialize(writer i878a80d2330e89d26896388a3f
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetAccessibilityScreenDisabled sets the accessibilityScreenDisabled property value. Indicates if Accessibility screen is disabled
 func (m *DepMacOSEnrollmentProfile) SetAccessibilityScreenDisabled(value *bool)() {
     if m != nil {
         m.accessibilityScreenDisabled = value
+    }
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *DepMacOSEnrollmentProfile) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
     }
 }
 // SetAutoUnlockWithWatchDisabled sets the autoUnlockWithWatchDisabled property value. Indicates if UnlockWithWatch screen is disabled

@@ -7,6 +7,8 @@ import (
 // PersonCertification 
 type PersonCertification struct {
     ItemFacet
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // The referenceable identifier for the certification.
     certificationId *string
     // Description of the certification.
@@ -33,11 +35,20 @@ func NewPersonCertification()(*PersonCertification) {
     m := &PersonCertification{
         ItemFacet: *NewItemFacet(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreatePersonCertificationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreatePersonCertificationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewPersonCertification(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *PersonCertification) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetCertificationId gets the certificationId property value. The referenceable identifier for the certification.
 func (m *PersonCertification) GetCertificationId()(*string) {
@@ -290,7 +301,19 @@ func (m *PersonCertification) Serialize(writer i878a80d2330e89d26896388a3f487eef
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *PersonCertification) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetCertificationId sets the certificationId property value. The referenceable identifier for the certification.
 func (m *PersonCertification) SetCertificationId(value *string)() {

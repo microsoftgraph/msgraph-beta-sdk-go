@@ -7,6 +7,8 @@ import (
 // TenantRelationshipAccessPolicyBase 
 type TenantRelationshipAccessPolicyBase struct {
     PolicyBase
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // The definition property
     definition []string
 }
@@ -15,6 +17,7 @@ func NewTenantRelationshipAccessPolicyBase()(*TenantRelationshipAccessPolicyBase
     m := &TenantRelationshipAccessPolicyBase{
         PolicyBase: *NewPolicyBase(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateTenantRelationshipAccessPolicyBaseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -39,6 +42,14 @@ func CreateTenantRelationshipAccessPolicyBaseFromDiscriminatorValue(parseNode i8
         }
     }
     return NewTenantRelationshipAccessPolicyBase(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *TenantRelationshipAccessPolicyBase) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetDefinition gets the definition property value. The definition property
 func (m *TenantRelationshipAccessPolicyBase) GetDefinition()([]string) {
@@ -79,7 +90,19 @@ func (m *TenantRelationshipAccessPolicyBase) Serialize(writer i878a80d2330e89d26
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *TenantRelationshipAccessPolicyBase) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetDefinition sets the definition property value. The definition property
 func (m *TenantRelationshipAccessPolicyBase) SetDefinition(value []string)() {

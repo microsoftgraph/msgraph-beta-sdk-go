@@ -7,6 +7,8 @@ import (
 // SharedDriveItem 
 type SharedDriveItem struct {
     BaseItem
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Used to access the underlying driveItem
     driveItem DriveItemable
     // All driveItems contained in the sharing root. This collection cannot be enumerated.
@@ -29,11 +31,20 @@ func NewSharedDriveItem()(*SharedDriveItem) {
     m := &SharedDriveItem{
         BaseItem: *NewBaseItem(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateSharedDriveItemFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateSharedDriveItemFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewSharedDriveItem(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *SharedDriveItem) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetDriveItem gets the driveItem property value. Used to access the underlying driveItem
 func (m *SharedDriveItem) GetDriveItem()(DriveItemable) {
@@ -246,7 +257,19 @@ func (m *SharedDriveItem) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *SharedDriveItem) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetDriveItem sets the driveItem property value. Used to access the underlying driveItem
 func (m *SharedDriveItem) SetDriveItem(value DriveItemable)() {

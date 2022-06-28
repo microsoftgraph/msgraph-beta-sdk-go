@@ -8,6 +8,8 @@ import (
 // MicrosoftTunnelServer entity that represents a single Microsoft Tunnel server
 type MicrosoftTunnelServer struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // The digest of the current agent image running on this server
     agentImageDigest *string
     // The MicrosoftTunnelServer's display name
@@ -24,11 +26,20 @@ func NewMicrosoftTunnelServer()(*MicrosoftTunnelServer) {
     m := &MicrosoftTunnelServer{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateMicrosoftTunnelServerFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateMicrosoftTunnelServerFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewMicrosoftTunnelServer(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *MicrosoftTunnelServer) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetAgentImageDigest gets the agentImageDigest property value. The digest of the current agent image running on this server
 func (m *MicrosoftTunnelServer) GetAgentImageDigest()(*string) {
@@ -162,7 +173,19 @@ func (m *MicrosoftTunnelServer) Serialize(writer i878a80d2330e89d26896388a3f487e
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *MicrosoftTunnelServer) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAgentImageDigest sets the agentImageDigest property value. The digest of the current agent image running on this server
 func (m *MicrosoftTunnelServer) SetAgentImageDigest(value *string)() {

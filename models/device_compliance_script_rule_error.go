@@ -4,22 +4,33 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DeviceComplianceScriptRuleError provides operations to call the validateComplianceScript method.
+// DeviceComplianceScriptRuleError 
 type DeviceComplianceScriptRuleError struct {
     DeviceComplianceScriptError
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Setting name for the rule with error.
     settingName *string
 }
-// NewDeviceComplianceScriptRuleError instantiates a new deviceComplianceScriptRuleError and sets the default values.
+// NewDeviceComplianceScriptRuleError instantiates a new DeviceComplianceScriptRuleError and sets the default values.
 func NewDeviceComplianceScriptRuleError()(*DeviceComplianceScriptRuleError) {
     m := &DeviceComplianceScriptRuleError{
         DeviceComplianceScriptError: *NewDeviceComplianceScriptError(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateDeviceComplianceScriptRuleErrorFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateDeviceComplianceScriptRuleErrorFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDeviceComplianceScriptRuleError(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *DeviceComplianceScriptRuleError) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceComplianceScriptRuleError) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -56,7 +67,19 @@ func (m *DeviceComplianceScriptRuleError) Serialize(writer i878a80d2330e89d26896
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *DeviceComplianceScriptRuleError) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetSettingName sets the settingName property value. Setting name for the rule with error.
 func (m *DeviceComplianceScriptRuleError) SetSettingName(value *string)() {

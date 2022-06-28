@@ -27,6 +27,41 @@ func NewDeviceActionResult()(*DeviceActionResult) {
 }
 // CreateDeviceActionResultFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateDeviceActionResultFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+    if parseNode != nil {
+        mappingValueNode, err := parseNode.GetChildNode("@odata.type")
+        if err != nil {
+            return nil, err
+        }
+        if mappingValueNode != nil {
+            mappingValue, err := mappingValueNode.GetStringValue()
+            if err != nil {
+                return nil, err
+            }
+            if mappingValue != nil {
+                mappingStr := *mappingValue
+                switch mappingStr {
+                    case "#microsoft.graph.activateDeviceEsimActionResult":
+                        return NewActivateDeviceEsimActionResult(), nil
+                    case "#microsoft.graph.configurationManagerActionResult":
+                        return NewConfigurationManagerActionResult(), nil
+                    case "#microsoft.graph.deleteUserFromSharedAppleDeviceActionResult":
+                        return NewDeleteUserFromSharedAppleDeviceActionResult(), nil
+                    case "#microsoft.graph.locateDeviceActionResult":
+                        return NewLocateDeviceActionResult(), nil
+                    case "#microsoft.graph.remoteLockActionResult":
+                        return NewRemoteLockActionResult(), nil
+                    case "#microsoft.graph.resetPasscodeActionResult":
+                        return NewResetPasscodeActionResult(), nil
+                    case "#microsoft.graph.revokeAppleVppLicensesActionResult":
+                        return NewRevokeAppleVppLicensesActionResult(), nil
+                    case "#microsoft.graph.rotateBitLockerKeysDeviceActionResult":
+                        return NewRotateBitLockerKeysDeviceActionResult(), nil
+                    case "#microsoft.graph.windowsDefenderScanActionResult":
+                        return NewWindowsDefenderScanActionResult(), nil
+                }
+            }
+        }
+    }
     return NewDeviceActionResult(), nil
 }
 // GetActionName gets the actionName property value. Action name

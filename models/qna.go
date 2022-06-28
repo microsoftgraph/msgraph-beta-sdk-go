@@ -1,0 +1,262 @@
+package models
+
+import (
+    i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e "time"
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+)
+
+// Qna 
+type Qna struct {
+    SearchAnswer
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
+    // Timestamp of when the qna will stop to appear as a search result. Set as null for always available.
+    availabilityEndDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
+    // Timestamp of when the qna will start to appear as a search result. Set as null for always available.
+    availabilityStartDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
+    // List of security groups able to view this qna.
+    groupIds []string
+    // True if this qna was suggested to the admin by a user or was mined and suggested by Microsoft. Read-only.
+    isSuggested *bool
+    // A list of language names that are geographically specific and that this QnA can be viewed in. Each language tag value follows the pattern {language}-{region}. As an example, en-us is English as used in the United States. See supported language tags for the list of possible values.
+    languageTags []string
+    // List of devices and operating systems able to view this qna. Possible values are: unknown, android, androidForWork, ios, macOS, windowsPhone81, windowsPhone81AndLater, windows10AndLater, androidWorkProfile, androidASOP.
+    platforms []string
+}
+// NewQna instantiates a new Qna and sets the default values.
+func NewQna()(*Qna) {
+    m := &Qna{
+        SearchAnswer: *NewSearchAnswer(),
+    }
+    m.SetAdditionalData(make(map[string]interface{}));
+    return m
+}
+// CreateQnaFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateQnaFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+    return NewQna(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *Qna) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
+}
+// GetAvailabilityEndDateTime gets the availabilityEndDateTime property value. Timestamp of when the qna will stop to appear as a search result. Set as null for always available.
+func (m *Qna) GetAvailabilityEndDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.availabilityEndDateTime
+    }
+}
+// GetAvailabilityStartDateTime gets the availabilityStartDateTime property value. Timestamp of when the qna will start to appear as a search result. Set as null for always available.
+func (m *Qna) GetAvailabilityStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.availabilityStartDateTime
+    }
+}
+// GetFieldDeserializers the deserialization information for the current model
+func (m *Qna) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := m.SearchAnswer.GetFieldDeserializers()
+    res["availabilityEndDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetTimeValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetAvailabilityEndDateTime(val)
+        }
+        return nil
+    }
+    res["availabilityStartDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetTimeValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetAvailabilityStartDateTime(val)
+        }
+        return nil
+    }
+    res["groupIds"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfPrimitiveValues("string")
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetGroupIds(res)
+        }
+        return nil
+    }
+    res["isSuggested"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetIsSuggested(val)
+        }
+        return nil
+    }
+    res["languageTags"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfPrimitiveValues("string")
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetLanguageTags(res)
+        }
+        return nil
+    }
+    res["platforms"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfPrimitiveValues("string")
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetPlatforms(res)
+        }
+        return nil
+    }
+    return res
+}
+// GetGroupIds gets the groupIds property value. List of security groups able to view this qna.
+func (m *Qna) GetGroupIds()([]string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.groupIds
+    }
+}
+// GetIsSuggested gets the isSuggested property value. True if this qna was suggested to the admin by a user or was mined and suggested by Microsoft. Read-only.
+func (m *Qna) GetIsSuggested()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isSuggested
+    }
+}
+// GetLanguageTags gets the languageTags property value. A list of language names that are geographically specific and that this QnA can be viewed in. Each language tag value follows the pattern {language}-{region}. As an example, en-us is English as used in the United States. See supported language tags for the list of possible values.
+func (m *Qna) GetLanguageTags()([]string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.languageTags
+    }
+}
+// GetPlatforms gets the platforms property value. List of devices and operating systems able to view this qna. Possible values are: unknown, android, androidForWork, ios, macOS, windowsPhone81, windowsPhone81AndLater, windows10AndLater, androidWorkProfile, androidASOP.
+func (m *Qna) GetPlatforms()([]string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.platforms
+    }
+}
+// Serialize serializes information the current object
+func (m *Qna) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
+    err := m.SearchAnswer.Serialize(writer)
+    if err != nil {
+        return err
+    }
+    {
+        err = writer.WriteTimeValue("availabilityEndDateTime", m.GetAvailabilityEndDateTime())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteTimeValue("availabilityStartDateTime", m.GetAvailabilityStartDateTime())
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetGroupIds() != nil {
+        err = writer.WriteCollectionOfStringValues("groupIds", m.GetGroupIds())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteBoolValue("isSuggested", m.GetIsSuggested())
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetLanguageTags() != nil {
+        err = writer.WriteCollectionOfStringValues("languageTags", m.GetLanguageTags())
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetPlatforms() != nil {
+        err = writer.WriteCollectionOfStringValues("platforms", m.GetPlatforms())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
+    return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *Qna) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
+}
+// SetAvailabilityEndDateTime sets the availabilityEndDateTime property value. Timestamp of when the qna will stop to appear as a search result. Set as null for always available.
+func (m *Qna) SetAvailabilityEndDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
+    if m != nil {
+        m.availabilityEndDateTime = value
+    }
+}
+// SetAvailabilityStartDateTime sets the availabilityStartDateTime property value. Timestamp of when the qna will start to appear as a search result. Set as null for always available.
+func (m *Qna) SetAvailabilityStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
+    if m != nil {
+        m.availabilityStartDateTime = value
+    }
+}
+// SetGroupIds sets the groupIds property value. List of security groups able to view this qna.
+func (m *Qna) SetGroupIds(value []string)() {
+    if m != nil {
+        m.groupIds = value
+    }
+}
+// SetIsSuggested sets the isSuggested property value. True if this qna was suggested to the admin by a user or was mined and suggested by Microsoft. Read-only.
+func (m *Qna) SetIsSuggested(value *bool)() {
+    if m != nil {
+        m.isSuggested = value
+    }
+}
+// SetLanguageTags sets the languageTags property value. A list of language names that are geographically specific and that this QnA can be viewed in. Each language tag value follows the pattern {language}-{region}. As an example, en-us is English as used in the United States. See supported language tags for the list of possible values.
+func (m *Qna) SetLanguageTags(value []string)() {
+    if m != nil {
+        m.languageTags = value
+    }
+}
+// SetPlatforms sets the platforms property value. List of devices and operating systems able to view this qna. Possible values are: unknown, android, androidForWork, ios, macOS, windowsPhone81, windowsPhone81AndLater, windows10AndLater, androidWorkProfile, androidASOP.
+func (m *Qna) SetPlatforms(value []string)() {
+    if m != nil {
+        m.platforms = value
+    }
+}

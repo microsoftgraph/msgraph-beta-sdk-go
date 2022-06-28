@@ -4,9 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// MeetingRegistrationQuestion provides operations to manage the commsApplication singleton.
+// MeetingRegistrationQuestion provides operations to manage the collection of accessReview entities.
 type MeetingRegistrationQuestion struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Answer input type of the custom registration question.
     answerInputType *AnswerInputType
     // Answer options when answerInputType is radioButton.
@@ -21,11 +23,20 @@ func NewMeetingRegistrationQuestion()(*MeetingRegistrationQuestion) {
     m := &MeetingRegistrationQuestion{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateMeetingRegistrationQuestionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateMeetingRegistrationQuestionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewMeetingRegistrationQuestion(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *MeetingRegistrationQuestion) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetAnswerInputType gets the answerInputType property value. Answer input type of the custom registration question.
 func (m *MeetingRegistrationQuestion) GetAnswerInputType()(*AnswerInputType) {
@@ -139,7 +150,19 @@ func (m *MeetingRegistrationQuestion) Serialize(writer i878a80d2330e89d26896388a
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *MeetingRegistrationQuestion) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAnswerInputType sets the answerInputType property value. Answer input type of the custom registration question.
 func (m *MeetingRegistrationQuestion) SetAnswerInputType(value *AnswerInputType)() {

@@ -7,6 +7,8 @@ import (
 // Windows81CertificateProfileBase 
 type Windows81CertificateProfileBase struct {
     WindowsCertificateProfileBase
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Custom Subject Alternative Name Settings. This collection can contain a maximum of 500 elements.
     customSubjectAlternativeNames []CustomSubjectAlternativeNameable
     // Extended Key Usage (EKU) settings. This collection can contain a maximum of 500 elements.
@@ -17,6 +19,7 @@ func NewWindows81CertificateProfileBase()(*Windows81CertificateProfileBase) {
     m := &Windows81CertificateProfileBase{
         WindowsCertificateProfileBase: *NewWindowsCertificateProfileBase(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateWindows81CertificateProfileBaseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -41,6 +44,14 @@ func CreateWindows81CertificateProfileBaseFromDiscriminatorValue(parseNode i878a
         }
     }
     return NewWindows81CertificateProfileBase(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *Windows81CertificateProfileBase) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetCustomSubjectAlternativeNames gets the customSubjectAlternativeNames property value. Custom Subject Alternative Name Settings. This collection can contain a maximum of 500 elements.
 func (m *Windows81CertificateProfileBase) GetCustomSubjectAlternativeNames()([]CustomSubjectAlternativeNameable) {
@@ -117,7 +128,19 @@ func (m *Windows81CertificateProfileBase) Serialize(writer i878a80d2330e89d26896
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *Windows81CertificateProfileBase) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetCustomSubjectAlternativeNames sets the customSubjectAlternativeNames property value. Custom Subject Alternative Name Settings. This collection can contain a maximum of 500 elements.
 func (m *Windows81CertificateProfileBase) SetCustomSubjectAlternativeNames(value []CustomSubjectAlternativeNameable)() {

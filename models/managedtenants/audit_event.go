@@ -6,7 +6,7 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
-// AuditEvent provides operations to manage the tenantRelationship singleton.
+// AuditEvent provides operations to manage the collection of accessReview entities.
 type AuditEvent struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
     // A string which uniquely represents the operation that occurred. Required. Read-only.
@@ -15,6 +15,8 @@ type AuditEvent struct {
     activityDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The identifier of the activity request that made the audit event. Required. Read-only.
     activityId *string
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // A category which represents a logical grouping of activities. Required. Read-only.
     category *string
     // The HTTP verb that was used when making the API request. Required. Read-only.
@@ -41,6 +43,7 @@ func NewAuditEvent()(*AuditEvent) {
     m := &AuditEvent{
         Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateAuditEventFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -69,6 +72,14 @@ func (m *AuditEvent) GetActivityId()(*string) {
         return nil
     } else {
         return m.activityId
+    }
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *AuditEvent) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
     }
 }
 // GetCategory gets the category property value. A category which represents a logical grouping of activities. Required. Read-only.
@@ -370,6 +381,12 @@ func (m *AuditEvent) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetActivity sets the activity property value. A string which uniquely represents the operation that occurred. Required. Read-only.
@@ -388,6 +405,12 @@ func (m *AuditEvent) SetActivityDateTime(value *i336074805fc853987abe6f7fe3ad97a
 func (m *AuditEvent) SetActivityId(value *string)() {
     if m != nil {
         m.activityId = value
+    }
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *AuditEvent) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
     }
 }
 // SetCategory sets the category property value. A category which represents a logical grouping of activities. Required. Read-only.

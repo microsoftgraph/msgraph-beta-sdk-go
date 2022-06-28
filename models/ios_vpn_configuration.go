@@ -7,6 +7,8 @@ import (
 // IosVpnConfiguration 
 type IosVpnConfiguration struct {
     AppleVpnConfiguration
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Zscaler only. Zscaler cloud which the user is assigned to.
     cloudName *string
     // Tenant level settings for the Derived Credentials to be used for authentication.
@@ -29,6 +31,7 @@ func NewIosVpnConfiguration()(*IosVpnConfiguration) {
     m := &IosVpnConfiguration{
         AppleVpnConfiguration: *NewAppleVpnConfiguration(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateIosVpnConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -53,6 +56,14 @@ func CreateIosVpnConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d2
         }
     }
     return NewIosVpnConfiguration(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *IosVpnConfiguration) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetCloudName gets the cloudName property value. Zscaler only. Zscaler cloud which the user is assigned to.
 func (m *IosVpnConfiguration) GetCloudName()(*string) {
@@ -269,7 +280,19 @@ func (m *IosVpnConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *IosVpnConfiguration) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetCloudName sets the cloudName property value. Zscaler only. Zscaler cloud which the user is assigned to.
 func (m *IosVpnConfiguration) SetCloudName(value *string)() {

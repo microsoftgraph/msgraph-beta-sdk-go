@@ -4,9 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// WorkbookChartAxes provides operations to manage the collection of administrativeUnit entities.
+// WorkbookChartAxes provides operations to manage the collection of accessReview entities.
 type WorkbookChartAxes struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Represents the category axis in a chart. Read-only.
     categoryAxis WorkbookChartAxisable
     // Represents the series axis of a 3-dimensional chart. Read-only.
@@ -19,11 +21,20 @@ func NewWorkbookChartAxes()(*WorkbookChartAxes) {
     m := &WorkbookChartAxes{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateWorkbookChartAxesFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateWorkbookChartAxesFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWorkbookChartAxes(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *WorkbookChartAxes) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetCategoryAxis gets the categoryAxis property value. Represents the category axis in a chart. Read-only.
 func (m *WorkbookChartAxes) GetCategoryAxis()(WorkbookChartAxisable) {
@@ -108,7 +119,19 @@ func (m *WorkbookChartAxes) Serialize(writer i878a80d2330e89d26896388a3f487eef27
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *WorkbookChartAxes) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetCategoryAxis sets the categoryAxis property value. Represents the category axis in a chart. Read-only.
 func (m *WorkbookChartAxes) SetCategoryAxis(value WorkbookChartAxisable)() {

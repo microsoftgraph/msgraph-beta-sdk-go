@@ -4,9 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// LinkedResource provides operations to manage the collection of administrativeUnit entities.
+// LinkedResource provides operations to manage the collection of accessReview entities.
 type LinkedResource struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Field indicating the app name of the source that is sending the linkedResource.
     applicationName *string
     // Field indicating the title of the linkedResource.
@@ -21,11 +23,20 @@ func NewLinkedResource()(*LinkedResource) {
     m := &LinkedResource{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateLinkedResourceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateLinkedResourceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewLinkedResource(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *LinkedResource) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetApplicationName gets the applicationName property value. Field indicating the app name of the source that is sending the linkedResource.
 func (m *LinkedResource) GetApplicationName()(*string) {
@@ -134,7 +145,19 @@ func (m *LinkedResource) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *LinkedResource) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetApplicationName sets the applicationName property value. Field indicating the app name of the source that is sending the linkedResource.
 func (m *LinkedResource) SetApplicationName(value *string)() {

@@ -4,11 +4,13 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Office365GroupsActivityGroupCounts provides operations to call the getOffice365GroupsActivityGroupCounts method.
+// Office365GroupsActivityGroupCounts 
 type Office365GroupsActivityGroupCounts struct {
     Entity
     // The number of active groups. A group is considered active if any of the following occurred: group mailbox received email; user viewed, edited, shared, or synced files in SharePoint document library; user viewed SharePoint pages; user posted, read, or liked messages in Yammer groups.
     active *int64
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // The date on which a number of groups were active.
     reportDate *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly
     // The number of days the report covers.
@@ -18,11 +20,12 @@ type Office365GroupsActivityGroupCounts struct {
     // The total number of groups.
     total *int64
 }
-// NewOffice365GroupsActivityGroupCounts instantiates a new office365GroupsActivityGroupCounts and sets the default values.
+// NewOffice365GroupsActivityGroupCounts instantiates a new Office365GroupsActivityGroupCounts and sets the default values.
 func NewOffice365GroupsActivityGroupCounts()(*Office365GroupsActivityGroupCounts) {
     m := &Office365GroupsActivityGroupCounts{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateOffice365GroupsActivityGroupCountsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -35,6 +38,14 @@ func (m *Office365GroupsActivityGroupCounts) GetActive()(*int64) {
         return nil
     } else {
         return m.active
+    }
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *Office365GroupsActivityGroupCounts) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -160,12 +171,24 @@ func (m *Office365GroupsActivityGroupCounts) Serialize(writer i878a80d2330e89d26
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetActive sets the active property value. The number of active groups. A group is considered active if any of the following occurred: group mailbox received email; user viewed, edited, shared, or synced files in SharePoint document library; user viewed SharePoint pages; user posted, read, or liked messages in Yammer groups.
 func (m *Office365GroupsActivityGroupCounts) SetActive(value *int64)() {
     if m != nil {
         m.active = value
+    }
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *Office365GroupsActivityGroupCounts) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
     }
 }
 // SetReportDate sets the reportDate property value. The date on which a number of groups were active.

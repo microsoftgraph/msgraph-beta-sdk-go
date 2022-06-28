@@ -7,6 +7,8 @@ import (
 // DeviceManagementScriptUserState contains properties for user run state of the device management script.
 type DeviceManagementScriptUserState struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // List of run states for this script across all devices of specific user.
     deviceRunStates []DeviceManagementScriptDeviceStateable
     // Error device count for specific user.
@@ -21,11 +23,20 @@ func NewDeviceManagementScriptUserState()(*DeviceManagementScriptUserState) {
     m := &DeviceManagementScriptUserState{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateDeviceManagementScriptUserStateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateDeviceManagementScriptUserStateFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDeviceManagementScriptUserState(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *DeviceManagementScriptUserState) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetDeviceRunStates gets the deviceRunStates property value. List of run states for this script across all devices of specific user.
 func (m *DeviceManagementScriptUserState) GetDeviceRunStates()([]DeviceManagementScriptDeviceStateable) {
@@ -142,7 +153,19 @@ func (m *DeviceManagementScriptUserState) Serialize(writer i878a80d2330e89d26896
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *DeviceManagementScriptUserState) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetDeviceRunStates sets the deviceRunStates property value. List of run states for this script across all devices of specific user.
 func (m *DeviceManagementScriptUserState) SetDeviceRunStates(value []DeviceManagementScriptDeviceStateable)() {

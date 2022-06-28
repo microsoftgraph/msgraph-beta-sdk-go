@@ -4,9 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// CustomCalloutExtension provides operations to manage the identityGovernance singleton.
+// CustomCalloutExtension 
 type CustomCalloutExtension struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Configuration for securing the API call to the logic app. For example, using OAuth client credentials flow.
     authenticationConfiguration CustomExtensionAuthenticationConfigurationable
     // HTTP connection settings that define how long Azure AD can wait for a connection to a logic app, how many times you can retry a timed-out connection and the exception scenarios when retries are allowed.
@@ -18,11 +20,12 @@ type CustomCalloutExtension struct {
     // The type and details for configuring the endpoint to call the logic app's workflow.
     endpointConfiguration CustomExtensionEndpointConfigurationable
 }
-// NewCustomCalloutExtension instantiates a new customCalloutExtension and sets the default values.
+// NewCustomCalloutExtension instantiates a new CustomCalloutExtension and sets the default values.
 func NewCustomCalloutExtension()(*CustomCalloutExtension) {
     m := &CustomCalloutExtension{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateCustomCalloutExtensionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -47,6 +50,14 @@ func CreateCustomCalloutExtensionFromDiscriminatorValue(parseNode i878a80d2330e8
         }
     }
     return NewCustomCalloutExtension(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *CustomCalloutExtension) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetAuthenticationConfiguration gets the authenticationConfiguration property value. Configuration for securing the API call to the logic app. For example, using OAuth client credentials flow.
 func (m *CustomCalloutExtension) GetAuthenticationConfiguration()(CustomExtensionAuthenticationConfigurationable) {
@@ -179,7 +190,19 @@ func (m *CustomCalloutExtension) Serialize(writer i878a80d2330e89d26896388a3f487
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *CustomCalloutExtension) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAuthenticationConfiguration sets the authenticationConfiguration property value. Configuration for securing the API call to the logic app. For example, using OAuth client credentials flow.
 func (m *CustomCalloutExtension) SetAuthenticationConfiguration(value CustomExtensionAuthenticationConfigurationable)() {

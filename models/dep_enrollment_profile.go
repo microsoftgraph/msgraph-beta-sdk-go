@@ -7,6 +7,8 @@ import (
 // DepEnrollmentProfile 
 type DepEnrollmentProfile struct {
     EnrollmentProfile
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Indicates if Apple id setup pane is disabled
     appleIdDisabled *bool
     // Indicates if Apple pay setup pane is disabled
@@ -61,11 +63,20 @@ func NewDepEnrollmentProfile()(*DepEnrollmentProfile) {
     m := &DepEnrollmentProfile{
         EnrollmentProfile: *NewEnrollmentProfile(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateDepEnrollmentProfileFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateDepEnrollmentProfileFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDepEnrollmentProfile(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *DepEnrollmentProfile) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetAppleIdDisabled gets the appleIdDisabled property value. Indicates if Apple id setup pane is disabled
 func (m *DepEnrollmentProfile) GetAppleIdDisabled()(*bool) {
@@ -663,7 +674,19 @@ func (m *DepEnrollmentProfile) Serialize(writer i878a80d2330e89d26896388a3f487ee
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *DepEnrollmentProfile) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAppleIdDisabled sets the appleIdDisabled property value. Indicates if Apple id setup pane is disabled
 func (m *DepEnrollmentProfile) SetAppleIdDisabled(value *bool)() {

@@ -5,9 +5,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// PrivilegedApproval provides operations to manage the collection of privilegedApproval entities.
+// PrivilegedApproval 
 type PrivilegedApproval struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // The approvalDuration property
     approvalDuration *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration
     // Possible values are: pending, approved, denied, aborted, canceled.
@@ -31,16 +33,25 @@ type PrivilegedApproval struct {
     // The userId property
     userId *string
 }
-// NewPrivilegedApproval instantiates a new privilegedApproval and sets the default values.
+// NewPrivilegedApproval instantiates a new PrivilegedApproval and sets the default values.
 func NewPrivilegedApproval()(*PrivilegedApproval) {
     m := &PrivilegedApproval{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreatePrivilegedApprovalFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreatePrivilegedApprovalFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewPrivilegedApproval(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *PrivilegedApproval) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetApprovalDuration gets the approvalDuration property value. The approvalDuration property
 func (m *PrivilegedApproval) GetApprovalDuration()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration) {
@@ -318,7 +329,19 @@ func (m *PrivilegedApproval) Serialize(writer i878a80d2330e89d26896388a3f487eef2
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *PrivilegedApproval) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetApprovalDuration sets the approvalDuration property value. The approvalDuration property
 func (m *PrivilegedApproval) SetApprovalDuration(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)() {

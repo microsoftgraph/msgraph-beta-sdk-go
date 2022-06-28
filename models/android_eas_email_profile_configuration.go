@@ -9,6 +9,8 @@ type AndroidEasEmailProfileConfiguration struct {
     DeviceConfiguration
     // Exchange ActiveSync account name, displayed to users as name of EAS (this) profile.
     accountName *string
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Authentication method for Exchange ActiveSync. Possible values are: usernameAndPassword, certificate, derivedCredential.
     authenticationMethod *EasAuthenticationMethod
     // Custom domain name value used while generating an email profile before installing on the device.
@@ -47,6 +49,7 @@ func NewAndroidEasEmailProfileConfiguration()(*AndroidEasEmailProfileConfigurati
     m := &AndroidEasEmailProfileConfiguration{
         DeviceConfiguration: *NewDeviceConfiguration(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateAndroidEasEmailProfileConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -59,6 +62,14 @@ func (m *AndroidEasEmailProfileConfiguration) GetAccountName()(*string) {
         return nil
     } else {
         return m.accountName
+    }
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *AndroidEasEmailProfileConfiguration) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
     }
 }
 // GetAuthenticationMethod gets the authenticationMethod property value. Authentication method for Exchange ActiveSync. Possible values are: usernameAndPassword, certificate, derivedCredential.
@@ -478,12 +489,24 @@ func (m *AndroidEasEmailProfileConfiguration) Serialize(writer i878a80d2330e89d2
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetAccountName sets the accountName property value. Exchange ActiveSync account name, displayed to users as name of EAS (this) profile.
 func (m *AndroidEasEmailProfileConfiguration) SetAccountName(value *string)() {
     if m != nil {
         m.accountName = value
+    }
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *AndroidEasEmailProfileConfiguration) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
     }
 }
 // SetAuthenticationMethod sets the authenticationMethod property value. Authentication method for Exchange ActiveSync. Possible values are: usernameAndPassword, certificate, derivedCredential.

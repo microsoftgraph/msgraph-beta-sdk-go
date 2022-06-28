@@ -7,6 +7,8 @@ import (
 // DeviceEnrollmentWindowsHelloForBusinessConfiguration 
 type DeviceEnrollmentWindowsHelloForBusinessConfiguration struct {
     DeviceEnrollmentConfiguration
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Controls the ability to use the anti-spoofing features for facial recognition on devices which support it. If set to disabled, anti-spoofing features are not allowed. If set to Not Configured, the user can choose whether they want to use anti-spoofing. Possible values are: notConfigured, enabled, disabled.
     enhancedBiometricsState *Enablement
     // Controls the period of time (in days) that a PIN can be used before the system requires the user to change it. This must be set between 0 and 730, inclusive. If set to 0, the user's PIN will never expire
@@ -39,11 +41,20 @@ func NewDeviceEnrollmentWindowsHelloForBusinessConfiguration()(*DeviceEnrollment
     m := &DeviceEnrollmentWindowsHelloForBusinessConfiguration{
         DeviceEnrollmentConfiguration: *NewDeviceEnrollmentConfiguration(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateDeviceEnrollmentWindowsHelloForBusinessConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateDeviceEnrollmentWindowsHelloForBusinessConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDeviceEnrollmentWindowsHelloForBusinessConfiguration(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *DeviceEnrollmentWindowsHelloForBusinessConfiguration) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetEnhancedBiometricsState gets the enhancedBiometricsState property value. Controls the ability to use the anti-spoofing features for facial recognition on devices which support it. If set to disabled, anti-spoofing features are not allowed. If set to Not Configured, the user can choose whether they want to use anti-spoofing. Possible values are: notConfigured, enabled, disabled.
 func (m *DeviceEnrollmentWindowsHelloForBusinessConfiguration) GetEnhancedBiometricsState()(*Enablement) {
@@ -374,7 +385,19 @@ func (m *DeviceEnrollmentWindowsHelloForBusinessConfiguration) Serialize(writer 
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *DeviceEnrollmentWindowsHelloForBusinessConfiguration) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetEnhancedBiometricsState sets the enhancedBiometricsState property value. Controls the ability to use the anti-spoofing features for facial recognition on devices which support it. If set to disabled, anti-spoofing features are not allowed. If set to Not Configured, the user can choose whether they want to use anti-spoofing. Possible values are: notConfigured, enabled, disabled.
 func (m *DeviceEnrollmentWindowsHelloForBusinessConfiguration) SetEnhancedBiometricsState(value *Enablement)() {

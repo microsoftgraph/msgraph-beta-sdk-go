@@ -8,6 +8,8 @@ import (
 // IosVppApp 
 type IosVppApp struct {
     MobileApp
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // The applicable iOS Device Type.
     applicableDeviceType IosDeviceTypeable
     // The store URL.
@@ -40,11 +42,20 @@ func NewIosVppApp()(*IosVppApp) {
     m := &IosVppApp{
         MobileApp: *NewMobileApp(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateIosVppAppFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateIosVppAppFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewIosVppApp(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *IosVppApp) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetApplicableDeviceType gets the applicableDeviceType property value. The applicable iOS Device Type.
 func (m *IosVppApp) GetApplicableDeviceType()(IosDeviceTypeable) {
@@ -386,7 +397,19 @@ func (m *IosVppApp) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *IosVppApp) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetApplicableDeviceType sets the applicableDeviceType property value. The applicable iOS Device Type.
 func (m *IosVppApp) SetApplicableDeviceType(value IosDeviceTypeable)() {

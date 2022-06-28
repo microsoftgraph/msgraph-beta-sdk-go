@@ -4,9 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// EducationClass provides operations to manage the educationRoot singleton.
+// EducationClass 
 type EducationClass struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // All categories associated with this class. Nullable.
     assignmentCategories []EducationCategoryable
     // Specifies class-level defaults respected by new assignments created in the class.
@@ -48,16 +50,25 @@ type EducationClass struct {
     // Term for the class.
     term EducationTermable
 }
-// NewEducationClass instantiates a new educationClass and sets the default values.
+// NewEducationClass instantiates a new EducationClass and sets the default values.
 func NewEducationClass()(*EducationClass) {
     m := &EducationClass{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateEducationClassFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateEducationClassFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewEducationClass(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *EducationClass) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetAssignmentCategories gets the assignmentCategories property value. All categories associated with this class. Nullable.
 func (m *EducationClass) GetAssignmentCategories()([]EducationCategoryable) {
@@ -591,7 +602,19 @@ func (m *EducationClass) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *EducationClass) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAssignmentCategories sets the assignmentCategories property value. All categories associated with this class. Nullable.
 func (m *EducationClass) SetAssignmentCategories(value []EducationCategoryable)() {

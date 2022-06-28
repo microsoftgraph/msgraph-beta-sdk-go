@@ -7,6 +7,8 @@ import (
 // EducationFeedbackResourceOutcome 
 type EducationFeedbackResourceOutcome struct {
     EducationOutcome
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // The actual feedback resource.
     feedbackResource EducationResourceable
     // The status of the feedback resource. The possible values are: notPublished, pendingPublish, published, failedPublish, and unknownFutureValue.
@@ -17,11 +19,20 @@ func NewEducationFeedbackResourceOutcome()(*EducationFeedbackResourceOutcome) {
     m := &EducationFeedbackResourceOutcome{
         EducationOutcome: *NewEducationOutcome(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateEducationFeedbackResourceOutcomeFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateEducationFeedbackResourceOutcomeFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewEducationFeedbackResourceOutcome(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *EducationFeedbackResourceOutcome) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetFeedbackResource gets the feedbackResource property value. The actual feedback resource.
 func (m *EducationFeedbackResourceOutcome) GetFeedbackResource()(EducationResourceable) {
@@ -83,7 +94,19 @@ func (m *EducationFeedbackResourceOutcome) Serialize(writer i878a80d2330e89d2689
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *EducationFeedbackResourceOutcome) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetFeedbackResource sets the feedbackResource property value. The actual feedback resource.
 func (m *EducationFeedbackResourceOutcome) SetFeedbackResource(value EducationResourceable)() {

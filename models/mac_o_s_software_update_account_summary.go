@@ -8,6 +8,8 @@ import (
 // MacOSSoftwareUpdateAccountSummary macOS software update account summary report for a device and user
 type MacOSSoftwareUpdateAccountSummary struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Summary of the updates by category.
     categorySummaries []MacOSSoftwareUpdateCategorySummaryable
     // The device ID.
@@ -36,11 +38,20 @@ func NewMacOSSoftwareUpdateAccountSummary()(*MacOSSoftwareUpdateAccountSummary) 
     m := &MacOSSoftwareUpdateAccountSummary{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateMacOSSoftwareUpdateAccountSummaryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateMacOSSoftwareUpdateAccountSummaryFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewMacOSSoftwareUpdateAccountSummary(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *MacOSSoftwareUpdateAccountSummary) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetCategorySummaries gets the categorySummaries property value. Summary of the updates by category.
 func (m *MacOSSoftwareUpdateAccountSummary) GetCategorySummaries()([]MacOSSoftwareUpdateCategorySummaryable) {
@@ -325,7 +336,19 @@ func (m *MacOSSoftwareUpdateAccountSummary) Serialize(writer i878a80d2330e89d268
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *MacOSSoftwareUpdateAccountSummary) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetCategorySummaries sets the categorySummaries property value. Summary of the updates by category.
 func (m *MacOSSoftwareUpdateAccountSummary) SetCategorySummaries(value []MacOSSoftwareUpdateCategorySummaryable)() {

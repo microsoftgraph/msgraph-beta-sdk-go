@@ -7,6 +7,8 @@ import (
 // DeviceManagementSettingDefinition entity representing the defintion for a given setting
 type DeviceManagementSettingDefinition struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Collection of constraints for the setting value
     constraints []DeviceManagementConstraintable
     // Collection of dependencies on other settings
@@ -35,6 +37,7 @@ func NewDeviceManagementSettingDefinition()(*DeviceManagementSettingDefinition) 
     m := &DeviceManagementSettingDefinition{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateDeviceManagementSettingDefinitionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -63,6 +66,14 @@ func CreateDeviceManagementSettingDefinitionFromDiscriminatorValue(parseNode i87
         }
     }
     return NewDeviceManagementSettingDefinition(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *DeviceManagementSettingDefinition) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetConstraints gets the constraints property value. Collection of constraints for the setting value
 func (m *DeviceManagementSettingDefinition) GetConstraints()([]DeviceManagementConstraintable) {
@@ -360,7 +371,19 @@ func (m *DeviceManagementSettingDefinition) Serialize(writer i878a80d2330e89d268
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *DeviceManagementSettingDefinition) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetConstraints sets the constraints property value. Collection of constraints for the setting value
 func (m *DeviceManagementSettingDefinition) SetConstraints(value []DeviceManagementConstraintable)() {

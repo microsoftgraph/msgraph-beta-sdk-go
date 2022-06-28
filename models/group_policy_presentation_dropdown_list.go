@@ -7,6 +7,8 @@ import (
 // GroupPolicyPresentationDropdownList 
 type GroupPolicyPresentationDropdownList struct {
     GroupPolicyPresentation
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Localized string value identifying the default choice of the list of items.
     defaultItem GroupPolicyPresentationDropdownListItemable
     // Represents a set of localized display names and their associated values.
@@ -19,11 +21,20 @@ func NewGroupPolicyPresentationDropdownList()(*GroupPolicyPresentationDropdownLi
     m := &GroupPolicyPresentationDropdownList{
         GroupPolicyPresentation: *NewGroupPolicyPresentation(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateGroupPolicyPresentationDropdownListFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateGroupPolicyPresentationDropdownListFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewGroupPolicyPresentationDropdownList(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *GroupPolicyPresentationDropdownList) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetDefaultItem gets the defaultItem property value. Localized string value identifying the default choice of the list of items.
 func (m *GroupPolicyPresentationDropdownList) GetDefaultItem()(GroupPolicyPresentationDropdownListItemable) {
@@ -116,7 +127,19 @@ func (m *GroupPolicyPresentationDropdownList) Serialize(writer i878a80d2330e89d2
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *GroupPolicyPresentationDropdownList) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetDefaultItem sets the defaultItem property value. Localized string value identifying the default choice of the list of items.
 func (m *GroupPolicyPresentationDropdownList) SetDefaultItem(value GroupPolicyPresentationDropdownListItemable)() {

@@ -7,17 +7,28 @@ import (
 // MacOSMdatpApp 
 type MacOSMdatpApp struct {
     MobileApp
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
 }
 // NewMacOSMdatpApp instantiates a new MacOSMdatpApp and sets the default values.
 func NewMacOSMdatpApp()(*MacOSMdatpApp) {
     m := &MacOSMdatpApp{
         MobileApp: *NewMobileApp(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateMacOSMdatpAppFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateMacOSMdatpAppFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewMacOSMdatpApp(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *MacOSMdatpApp) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *MacOSMdatpApp) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -30,5 +41,17 @@ func (m *MacOSMdatpApp) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
     if err != nil {
         return err
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *MacOSMdatpApp) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }

@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AccessPackageCatalog provides operations to manage the identityGovernance singleton.
+// AccessPackageCatalog provides operations to manage the collection of accessReview entities.
 type AccessPackageCatalog struct {
     Entity
     // The roles in each resource in a catalog. Read-only.
@@ -16,6 +16,8 @@ type AccessPackageCatalog struct {
     accessPackageResourceScopes []AccessPackageResourceScopeable
     // The access packages in this catalog. Read-only. Nullable. Supports $expand.
     accessPackages []AccessPackageable
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Has the value Published if the access packages are available for management.
     catalogStatus *string
     // One of UserManaged or ServiceDefault.
@@ -42,6 +44,7 @@ func NewAccessPackageCatalog()(*AccessPackageCatalog) {
     m := &AccessPackageCatalog{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateAccessPackageCatalogFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -78,6 +81,14 @@ func (m *AccessPackageCatalog) GetAccessPackages()([]AccessPackageable) {
         return nil
     } else {
         return m.accessPackages
+    }
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *AccessPackageCatalog) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
     }
 }
 // GetCatalogStatus gets the catalogStatus property value. Has the value Published if the access packages are available for management.
@@ -435,6 +446,12 @@ func (m *AccessPackageCatalog) Serialize(writer i878a80d2330e89d26896388a3f487ee
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetAccessPackageResourceRoles sets the accessPackageResourceRoles property value. The roles in each resource in a catalog. Read-only.
@@ -459,6 +476,12 @@ func (m *AccessPackageCatalog) SetAccessPackageResourceScopes(value []AccessPack
 func (m *AccessPackageCatalog) SetAccessPackages(value []AccessPackageable)() {
     if m != nil {
         m.accessPackages = value
+    }
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *AccessPackageCatalog) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
     }
 }
 // SetCatalogStatus sets the catalogStatus property value. Has the value Published if the access packages are available for management.

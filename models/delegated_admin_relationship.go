@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DelegatedAdminRelationship provides operations to manage the tenantRelationship singleton.
+// DelegatedAdminRelationship provides operations to manage the collection of accessReview entities.
 type DelegatedAdminRelationship struct {
     Entity
     // The access assignments associated with the delegated admin relationship.
@@ -14,6 +14,8 @@ type DelegatedAdminRelationship struct {
     accessDetails DelegatedAdminAccessDetailsable
     // The date and time in ISO 8601 format and in UTC time when the relationship became active. Read-only.
     activatedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // The date and time in ISO 8601 format and in UTC time when the relationship was created. Read-only.
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The display name and unique identifier of the customer of the relationship. This is configured either by the partner at the time the relationship is created or by the system after the customer approves the relationship. Cannot be changed by the customer.
@@ -38,6 +40,7 @@ func NewDelegatedAdminRelationship()(*DelegatedAdminRelationship) {
     m := &DelegatedAdminRelationship{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateDelegatedAdminRelationshipFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -66,6 +69,14 @@ func (m *DelegatedAdminRelationship) GetActivatedDateTime()(*i336074805fc853987a
         return nil
     } else {
         return m.activatedDateTime
+    }
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *DelegatedAdminRelationship) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
     }
 }
 // GetCreatedDateTime gets the createdDateTime property value. The date and time in ISO 8601 format and in UTC time when the relationship was created. Read-only.
@@ -368,6 +379,12 @@ func (m *DelegatedAdminRelationship) Serialize(writer i878a80d2330e89d26896388a3
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetAccessAssignments sets the accessAssignments property value. The access assignments associated with the delegated admin relationship.
@@ -386,6 +403,12 @@ func (m *DelegatedAdminRelationship) SetAccessDetails(value DelegatedAdminAccess
 func (m *DelegatedAdminRelationship) SetActivatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     if m != nil {
         m.activatedDateTime = value
+    }
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *DelegatedAdminRelationship) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
     }
 }
 // SetCreatedDateTime sets the createdDateTime property value. The date and time in ISO 8601 format and in UTC time when the relationship was created. Read-only.

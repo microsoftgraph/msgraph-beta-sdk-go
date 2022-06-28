@@ -4,9 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AdminConsentRequestPolicy provides operations to manage the policyRoot singleton.
+// AdminConsentRequestPolicy 
 type AdminConsentRequestPolicy struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Specifies whether the admin consent request feature is enabled or disabled. Required.
     isEnabled *bool
     // Specifies whether reviewers will receive notifications. Required.
@@ -20,16 +22,25 @@ type AdminConsentRequestPolicy struct {
     // Specifies the version of this policy. When the policy is updated, this version is updated. Read-only.
     version *int32
 }
-// NewAdminConsentRequestPolicy instantiates a new adminConsentRequestPolicy and sets the default values.
+// NewAdminConsentRequestPolicy instantiates a new AdminConsentRequestPolicy and sets the default values.
 func NewAdminConsentRequestPolicy()(*AdminConsentRequestPolicy) {
     m := &AdminConsentRequestPolicy{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateAdminConsentRequestPolicyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateAdminConsentRequestPolicyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAdminConsentRequestPolicy(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *AdminConsentRequestPolicy) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AdminConsentRequestPolicy) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -194,7 +205,19 @@ func (m *AdminConsentRequestPolicy) Serialize(writer i878a80d2330e89d26896388a3f
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *AdminConsentRequestPolicy) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetIsEnabled sets the isEnabled property value. Specifies whether the admin consent request feature is enabled or disabled. Required.
 func (m *AdminConsentRequestPolicy) SetIsEnabled(value *bool)() {

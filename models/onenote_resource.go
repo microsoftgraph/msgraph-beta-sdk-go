@@ -7,6 +7,8 @@ import (
 // OnenoteResource 
 type OnenoteResource struct {
     OnenoteEntityBaseModel
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // The content stream
     content []byte
     // The URL for downloading the content
@@ -17,11 +19,20 @@ func NewOnenoteResource()(*OnenoteResource) {
     m := &OnenoteResource{
         OnenoteEntityBaseModel: *NewOnenoteEntityBaseModel(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateOnenoteResourceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateOnenoteResourceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewOnenoteResource(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *OnenoteResource) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetContent gets the content property value. The content stream
 func (m *OnenoteResource) GetContent()([]byte) {
@@ -82,7 +93,19 @@ func (m *OnenoteResource) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *OnenoteResource) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetContent sets the content property value. The content stream
 func (m *OnenoteResource) SetContent(value []byte)() {

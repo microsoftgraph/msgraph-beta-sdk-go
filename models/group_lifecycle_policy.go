@@ -4,9 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// GroupLifecyclePolicy provides operations to manage the collection of administrativeUnit entities.
+// GroupLifecyclePolicy provides operations to manage the collection of accessReview entities.
 type GroupLifecyclePolicy struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // List of email address to send notifications for groups without owners. Multiple email address can be defined by separating email address with a semicolon.
     alternateNotificationEmails *string
     // Number of days before a group expires and needs to be renewed. Once renewed, the group expiration is extended by the number of days defined.
@@ -19,11 +21,20 @@ func NewGroupLifecyclePolicy()(*GroupLifecyclePolicy) {
     m := &GroupLifecyclePolicy{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateGroupLifecyclePolicyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateGroupLifecyclePolicyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewGroupLifecyclePolicy(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *GroupLifecyclePolicy) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetAlternateNotificationEmails gets the alternateNotificationEmails property value. List of email address to send notifications for groups without owners. Multiple email address can be defined by separating email address with a semicolon.
 func (m *GroupLifecyclePolicy) GetAlternateNotificationEmails()(*string) {
@@ -108,7 +119,19 @@ func (m *GroupLifecyclePolicy) Serialize(writer i878a80d2330e89d26896388a3f487ee
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *GroupLifecyclePolicy) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAlternateNotificationEmails sets the alternateNotificationEmails property value. List of email address to send notifications for groups without owners. Multiple email address can be defined by separating email address with a semicolon.
 func (m *GroupLifecyclePolicy) SetAlternateNotificationEmails(value *string)() {

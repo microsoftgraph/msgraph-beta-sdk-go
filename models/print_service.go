@@ -4,22 +4,33 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// PrintService provides operations to manage the print singleton.
+// PrintService 
 type PrintService struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Endpoints that can be used to access the service. Read-only. Nullable.
     endpoints []PrintServiceEndpointable
 }
-// NewPrintService instantiates a new printService and sets the default values.
+// NewPrintService instantiates a new PrintService and sets the default values.
 func NewPrintService()(*PrintService) {
     m := &PrintService{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreatePrintServiceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreatePrintServiceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewPrintService(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *PrintService) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetEndpoints gets the endpoints property value. Endpoints that can be used to access the service. Read-only. Nullable.
 func (m *PrintService) GetEndpoints()([]PrintServiceEndpointable) {
@@ -64,7 +75,19 @@ func (m *PrintService) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *PrintService) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetEndpoints sets the endpoints property value. Endpoints that can be used to access the service. Read-only. Nullable.
 func (m *PrintService) SetEndpoints(value []PrintServiceEndpointable)() {

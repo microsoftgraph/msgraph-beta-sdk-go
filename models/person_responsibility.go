@@ -7,6 +7,8 @@ import (
 // PersonResponsibility 
 type PersonResponsibility struct {
     ItemFacet
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Contains experience scenario tags a user has associated with the interest. Allowed values in the collection are: askMeAbout, ableToMentor, wantsToLearn, wantsToImprove.
     collaborationTags []string
     // Description of the responsibility.
@@ -23,11 +25,20 @@ func NewPersonResponsibility()(*PersonResponsibility) {
     m := &PersonResponsibility{
         ItemFacet: *NewItemFacet(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreatePersonResponsibilityFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreatePersonResponsibilityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewPersonResponsibility(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *PersonResponsibility) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetCollaborationTags gets the collaborationTags property value. Contains experience scenario tags a user has associated with the interest. Allowed values in the collection are: askMeAbout, ableToMentor, wantsToLearn, wantsToImprove.
 func (m *PersonResponsibility) GetCollaborationTags()([]string) {
@@ -164,7 +175,19 @@ func (m *PersonResponsibility) Serialize(writer i878a80d2330e89d26896388a3f487ee
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *PersonResponsibility) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetCollaborationTags sets the collaborationTags property value. Contains experience scenario tags a user has associated with the interest. Allowed values in the collection are: askMeAbout, ableToMentor, wantsToLearn, wantsToImprove.
 func (m *PersonResponsibility) SetCollaborationTags(value []string)() {

@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AccessPackageAssignmentPolicy provides operations to manage the identityGovernance singleton.
+// AccessPackageAssignmentPolicy provides operations to manage the collection of accessReview entities.
 type AccessPackageAssignmentPolicy struct {
     Entity
     // The access package with this policy. Read-only. Nullable. Supports $expand.
@@ -16,6 +16,8 @@ type AccessPackageAssignmentPolicy struct {
     accessPackageId *string
     // Who must review, and how often, the assignments to the access package from this policy. This property is null if reviews are not required.
     accessReviewSettings AssignmentReviewSettingsable
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Indicates whether a user can extend the access package assignment duration after approval.
     canExtend *bool
     // The createdBy property
@@ -48,6 +50,7 @@ func NewAccessPackageAssignmentPolicy()(*AccessPackageAssignmentPolicy) {
     m := &AccessPackageAssignmentPolicy{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateAccessPackageAssignmentPolicyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -84,6 +87,14 @@ func (m *AccessPackageAssignmentPolicy) GetAccessReviewSettings()(AssignmentRevi
         return nil
     } else {
         return m.accessReviewSettings
+    }
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *AccessPackageAssignmentPolicy) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
     }
 }
 // GetCanExtend gets the canExtend property value. Indicates whether a user can extend the access package assignment duration after approval.
@@ -489,6 +500,12 @@ func (m *AccessPackageAssignmentPolicy) Serialize(writer i878a80d2330e89d2689638
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetAccessPackage sets the accessPackage property value. The access package with this policy. Read-only. Nullable. Supports $expand.
@@ -513,6 +530,12 @@ func (m *AccessPackageAssignmentPolicy) SetAccessPackageId(value *string)() {
 func (m *AccessPackageAssignmentPolicy) SetAccessReviewSettings(value AssignmentReviewSettingsable)() {
     if m != nil {
         m.accessReviewSettings = value
+    }
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *AccessPackageAssignmentPolicy) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
     }
 }
 // SetCanExtend sets the canExtend property value. Indicates whether a user can extend the access package assignment duration after approval.

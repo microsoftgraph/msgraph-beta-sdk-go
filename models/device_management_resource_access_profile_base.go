@@ -8,6 +8,8 @@ import (
 // DeviceManagementResourceAccessProfileBase base Profile Type for Resource Access
 type DeviceManagementResourceAccessProfileBase struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // The list of assignments for the device configuration profile.
     assignments []DeviceManagementResourceAccessProfileAssignmentable
     // DateTime profile was created
@@ -28,6 +30,7 @@ func NewDeviceManagementResourceAccessProfileBase()(*DeviceManagementResourceAcc
     m := &DeviceManagementResourceAccessProfileBase{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateDeviceManagementResourceAccessProfileBaseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -58,6 +61,14 @@ func CreateDeviceManagementResourceAccessProfileBaseFromDiscriminatorValue(parse
         }
     }
     return NewDeviceManagementResourceAccessProfileBase(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *DeviceManagementResourceAccessProfileBase) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetAssignments gets the assignments property value. The list of assignments for the device configuration profile.
 func (m *DeviceManagementResourceAccessProfileBase) GetAssignments()([]DeviceManagementResourceAccessProfileAssignmentable) {
@@ -250,7 +261,19 @@ func (m *DeviceManagementResourceAccessProfileBase) Serialize(writer i878a80d233
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *DeviceManagementResourceAccessProfileBase) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAssignments sets the assignments property value. The list of assignments for the device configuration profile.
 func (m *DeviceManagementResourceAccessProfileBase) SetAssignments(value []DeviceManagementResourceAccessProfileAssignmentable)() {

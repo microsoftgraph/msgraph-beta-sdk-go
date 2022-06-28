@@ -7,6 +7,8 @@ import (
 // SideLoadingKey sideLoadingKey entity is required for Windows 8 and 8.1 devices to intall Line Of Business Apps for a tenant.
 type SideLoadingKey struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Side Loading Key description displayed to the ITPro Admins..
     description *string
     // Side Loading Key Name displayed to the ITPro Admins.
@@ -23,11 +25,20 @@ func NewSideLoadingKey()(*SideLoadingKey) {
     m := &SideLoadingKey{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateSideLoadingKeyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateSideLoadingKeyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewSideLoadingKey(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *SideLoadingKey) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetDescription gets the description property value. Side Loading Key description displayed to the ITPro Admins..
 func (m *SideLoadingKey) GetDescription()(*string) {
@@ -160,7 +171,19 @@ func (m *SideLoadingKey) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *SideLoadingKey) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetDescription sets the description property value. Side Loading Key description displayed to the ITPro Admins..
 func (m *SideLoadingKey) SetDescription(value *string)() {

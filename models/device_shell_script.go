@@ -8,6 +8,8 @@ import (
 // DeviceShellScript intune will provide customer the ability to run their Shell scripts on the enrolled Mac OS devices. The script can be run once or periodically.
 type DeviceShellScript struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // The list of group assignments for the device management script.
     assignments []DeviceManagementScriptAssignmentable
     // Does not notify the user a script is being executed
@@ -46,11 +48,20 @@ func NewDeviceShellScript()(*DeviceShellScript) {
     m := &DeviceShellScript{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateDeviceShellScriptFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateDeviceShellScriptFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDeviceShellScript(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *DeviceShellScript) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetAssignments gets the assignments property value. The list of group assignments for the device management script.
 func (m *DeviceShellScript) GetAssignments()([]DeviceManagementScriptAssignmentable) {
@@ -484,7 +495,19 @@ func (m *DeviceShellScript) Serialize(writer i878a80d2330e89d26896388a3f487eef27
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *DeviceShellScript) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAssignments sets the assignments property value. The list of group assignments for the device management script.
 func (m *DeviceShellScript) SetAssignments(value []DeviceManagementScriptAssignmentable)() {

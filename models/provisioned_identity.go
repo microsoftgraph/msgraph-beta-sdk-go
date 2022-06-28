@@ -4,24 +4,35 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ProvisionedIdentity provides operations to manage the auditLogRoot singleton.
+// ProvisionedIdentity 
 type ProvisionedIdentity struct {
     Identity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Details of the identity.
     details DetailsInfoable
     // Type of identity that has been provisioned, such as 'user' or 'group'.
     identityType *string
 }
-// NewProvisionedIdentity instantiates a new provisionedIdentity and sets the default values.
+// NewProvisionedIdentity instantiates a new ProvisionedIdentity and sets the default values.
 func NewProvisionedIdentity()(*ProvisionedIdentity) {
     m := &ProvisionedIdentity{
         Identity: *NewIdentity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateProvisionedIdentityFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateProvisionedIdentityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewProvisionedIdentity(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *ProvisionedIdentity) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetDetails gets the details property value. Details of the identity.
 func (m *ProvisionedIdentity) GetDetails()(DetailsInfoable) {
@@ -82,7 +93,19 @@ func (m *ProvisionedIdentity) Serialize(writer i878a80d2330e89d26896388a3f487eef
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *ProvisionedIdentity) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetDetails sets the details property value. Details of the identity.
 func (m *ProvisionedIdentity) SetDetails(value DetailsInfoable)() {

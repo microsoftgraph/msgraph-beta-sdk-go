@@ -5,9 +5,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ItemFacet provides operations to manage the collection of administrativeUnit entities.
+// ItemFacet provides operations to manage the collection of accessReview entities.
 type ItemFacet struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // The audiences that are able to see the values contained within the associated entity. Possible values are: me, family, contacts, groupMembers, organization, federatedOrganizations, everyone, unknownFutureValue.
     allowedAudiences *AllowedAudiences
     // The createdBy property
@@ -30,6 +32,7 @@ func NewItemFacet()(*ItemFacet) {
     m := &ItemFacet{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateItemFacetFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -92,6 +95,14 @@ func CreateItemFacetFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f
         }
     }
     return NewItemFacet(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *ItemFacet) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetAllowedAudiences gets the allowedAudiences property value. The audiences that are able to see the values contained within the associated entity. Possible values are: me, family, contacts, groupMembers, organization, federatedOrganizations, everyone, unknownFutureValue.
 func (m *ItemFacet) GetAllowedAudiences()(*AllowedAudiences) {
@@ -297,7 +308,19 @@ func (m *ItemFacet) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *ItemFacet) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAllowedAudiences sets the allowedAudiences property value. The audiences that are able to see the values contained within the associated entity. Possible values are: me, family, contacts, groupMembers, organization, federatedOrganizations, everyone, unknownFutureValue.
 func (m *ItemFacet) SetAllowedAudiences(value *AllowedAudiences)() {

@@ -7,6 +7,8 @@ import (
 // DeviceManagementConfigurationChoiceSettingDefinition 
 type DeviceManagementConfigurationChoiceSettingDefinition struct {
     DeviceManagementConfigurationSettingDefinition
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Default option for choice setting
     defaultOptionId *string
     // Options for the setting that can be selected
@@ -17,6 +19,7 @@ func NewDeviceManagementConfigurationChoiceSettingDefinition()(*DeviceManagement
     m := &DeviceManagementConfigurationChoiceSettingDefinition{
         DeviceManagementConfigurationSettingDefinition: *NewDeviceManagementConfigurationSettingDefinition(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateDeviceManagementConfigurationChoiceSettingDefinitionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -41,6 +44,14 @@ func CreateDeviceManagementConfigurationChoiceSettingDefinitionFromDiscriminator
         }
     }
     return NewDeviceManagementConfigurationChoiceSettingDefinition(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *DeviceManagementConfigurationChoiceSettingDefinition) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetDefaultOptionId gets the defaultOptionId property value. Default option for choice setting
 func (m *DeviceManagementConfigurationChoiceSettingDefinition) GetDefaultOptionId()(*string) {
@@ -109,7 +120,19 @@ func (m *DeviceManagementConfigurationChoiceSettingDefinition) Serialize(writer 
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *DeviceManagementConfigurationChoiceSettingDefinition) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetDefaultOptionId sets the defaultOptionId property value. Default option for choice setting
 func (m *DeviceManagementConfigurationChoiceSettingDefinition) SetDefaultOptionId(value *string)() {

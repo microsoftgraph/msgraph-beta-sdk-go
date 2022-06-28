@@ -7,6 +7,8 @@ import (
 // RestrictedAppsViolation violation of restricted apps configuration profile per device per user
 type RestrictedAppsViolation struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Device configuration profile unique identifier, must be Guid
     deviceConfigurationId *string
     // Device configuration profile name
@@ -31,11 +33,20 @@ func NewRestrictedAppsViolation()(*RestrictedAppsViolation) {
     m := &RestrictedAppsViolation{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateRestrictedAppsViolationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateRestrictedAppsViolationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewRestrictedAppsViolation(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *RestrictedAppsViolation) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetDeviceConfigurationId gets the deviceConfigurationId property value. Device configuration profile unique identifier, must be Guid
 func (m *RestrictedAppsViolation) GetDeviceConfigurationId()(*string) {
@@ -274,7 +285,19 @@ func (m *RestrictedAppsViolation) Serialize(writer i878a80d2330e89d26896388a3f48
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *RestrictedAppsViolation) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetDeviceConfigurationId sets the deviceConfigurationId property value. Device configuration profile unique identifier, must be Guid
 func (m *RestrictedAppsViolation) SetDeviceConfigurationId(value *string)() {

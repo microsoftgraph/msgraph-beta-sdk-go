@@ -7,6 +7,8 @@ import (
 // AndroidCertificateProfileBase 
 type AndroidCertificateProfileBase struct {
     DeviceConfiguration
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Scale for the Certificate Validity Period. Possible values are: days, months, years.
     certificateValidityPeriodScale *CertificateValidityPeriodScale
     // Value for the Certificate Validity Period.
@@ -27,6 +29,7 @@ func NewAndroidCertificateProfileBase()(*AndroidCertificateProfileBase) {
     m := &AndroidCertificateProfileBase{
         DeviceConfiguration: *NewDeviceConfiguration(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateAndroidCertificateProfileBaseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -57,6 +60,14 @@ func CreateAndroidCertificateProfileBaseFromDiscriminatorValue(parseNode i878a80
         }
     }
     return NewAndroidCertificateProfileBase(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *AndroidCertificateProfileBase) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetCertificateValidityPeriodScale gets the certificateValidityPeriodScale property value. Scale for the Certificate Validity Period. Possible values are: days, months, years.
 func (m *AndroidCertificateProfileBase) GetCertificateValidityPeriodScale()(*CertificateValidityPeriodScale) {
@@ -248,7 +259,19 @@ func (m *AndroidCertificateProfileBase) Serialize(writer i878a80d2330e89d2689638
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *AndroidCertificateProfileBase) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetCertificateValidityPeriodScale sets the certificateValidityPeriodScale property value. Scale for the Certificate Validity Period. Possible values are: days, months, years.
 func (m *AndroidCertificateProfileBase) SetCertificateValidityPeriodScale(value *CertificateValidityPeriodScale)() {

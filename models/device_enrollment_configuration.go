@@ -8,6 +8,8 @@ import (
 // DeviceEnrollmentConfiguration the Base Class of Device Enrollment Configuration
 type DeviceEnrollmentConfiguration struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // The list of group assignments for the device configuration profile
     assignments []EnrollmentConfigurationAssignmentable
     // Created date time in UTC of the device enrollment configuration
@@ -32,6 +34,7 @@ func NewDeviceEnrollmentConfiguration()(*DeviceEnrollmentConfiguration) {
     m := &DeviceEnrollmentConfiguration{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateDeviceEnrollmentConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -68,6 +71,14 @@ func CreateDeviceEnrollmentConfigurationFromDiscriminatorValue(parseNode i878a80
         }
     }
     return NewDeviceEnrollmentConfiguration(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *DeviceEnrollmentConfiguration) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetAssignments gets the assignments property value. The list of group assignments for the device configuration profile
 func (m *DeviceEnrollmentConfiguration) GetAssignments()([]EnrollmentConfigurationAssignmentable) {
@@ -309,7 +320,19 @@ func (m *DeviceEnrollmentConfiguration) Serialize(writer i878a80d2330e89d2689638
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *DeviceEnrollmentConfiguration) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAssignments sets the assignments property value. The list of group assignments for the device configuration profile
 func (m *DeviceEnrollmentConfiguration) SetAssignments(value []EnrollmentConfigurationAssignmentable)() {

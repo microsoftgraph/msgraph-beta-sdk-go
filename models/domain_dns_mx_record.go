@@ -7,6 +7,8 @@ import (
 // DomainDnsMxRecord 
 type DomainDnsMxRecord struct {
     DomainDnsRecord
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Value used when configuring the answer/destination/value of the MX record at the DNS host.
     mailExchange *string
     // Value used when configuring the Preference/Priority property of the MX record at the DNS host.
@@ -17,11 +19,20 @@ func NewDomainDnsMxRecord()(*DomainDnsMxRecord) {
     m := &DomainDnsMxRecord{
         DomainDnsRecord: *NewDomainDnsRecord(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateDomainDnsMxRecordFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateDomainDnsMxRecordFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDomainDnsMxRecord(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *DomainDnsMxRecord) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DomainDnsMxRecord) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -82,7 +93,19 @@ func (m *DomainDnsMxRecord) Serialize(writer i878a80d2330e89d26896388a3f487eef27
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *DomainDnsMxRecord) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetMailExchange sets the mailExchange property value. Value used when configuring the answer/destination/value of the MX record at the DNS host.
 func (m *DomainDnsMxRecord) SetMailExchange(value *string)() {

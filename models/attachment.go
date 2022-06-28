@@ -5,9 +5,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Attachment provides operations to manage the collection of administrativeUnit entities.
+// Attachment provides operations to manage the collection of accessReview entities.
 type Attachment struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // The MIME type.
     contentType *string
     // true if the attachment is an inline attachment; otherwise, false.
@@ -24,6 +26,7 @@ func NewAttachment()(*Attachment) {
     m := &Attachment{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateAttachmentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -52,6 +55,14 @@ func CreateAttachmentFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3
         }
     }
     return NewAttachment(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *Attachment) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetContentType gets the contentType property value. The MIME type.
 func (m *Attachment) GetContentType()(*string) {
@@ -184,7 +195,19 @@ func (m *Attachment) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *Attachment) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetContentType sets the contentType property value. The MIME type.
 func (m *Attachment) SetContentType(value *string)() {

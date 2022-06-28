@@ -7,6 +7,8 @@ import (
 // RoleDefinition the Role Definition resource. The role definition is the foundation of role based access in Intune. The role combines an Intune resource such as a Mobile App and associated role permissions such as Create or Read for the resource. There are two types of roles, built-in and custom. Built-in roles cannot be modified. Both built-in roles and custom roles must have assignments to be enforced. Create custom roles if you want to define a role that allows any of the available resources and role permissions to be combined into a single role.
 type RoleDefinition struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Description of the Role definition.
     description *string
     // Display Name of the Role definition.
@@ -29,6 +31,7 @@ func NewRoleDefinition()(*RoleDefinition) {
     m := &RoleDefinition{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateRoleDefinitionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -53,6 +56,14 @@ func CreateRoleDefinitionFromDiscriminatorValue(parseNode i878a80d2330e89d268963
         }
     }
     return NewRoleDefinition(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *RoleDefinition) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetDescription gets the description property value. Description of the Role definition.
 func (m *RoleDefinition) GetDescription()(*string) {
@@ -285,7 +296,19 @@ func (m *RoleDefinition) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *RoleDefinition) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetDescription sets the description property value. Description of the Role definition.
 func (m *RoleDefinition) SetDescription(value *string)() {

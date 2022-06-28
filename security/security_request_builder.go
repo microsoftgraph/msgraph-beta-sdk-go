@@ -3,6 +3,7 @@ package security
 import (
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
+    i0c676084c053b74ed3a3133cb01b5e628a094e0413da8590be1ed0afd08d166f "github.com/microsoftgraph/msgraph-beta-sdk-go/security/triggertypes"
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
     i29dbe885802105b8f24e18a3ad45a4baf47a032bed4a97cc90638ac720b35332 "github.com/microsoftgraph/msgraph-beta-sdk-go/security/subjectrightsrequests"
     i2d37e58be29c573dea772021cbc16fb5110ad11503c90334105692cd58482307 "github.com/microsoftgraph/msgraph-beta-sdk-go/security/securescorecontrolprofiles"
@@ -14,7 +15,9 @@ import (
     i81ba5cba60c873845066ad89e2c6fe67a50b8f628aaa18e17de96216c62d64f4 "github.com/microsoftgraph/msgraph-beta-sdk-go/security/tiindicators"
     i81db0892066e847c456de63f4c19382f89016247d0403ce885a78520fdcd01b2 "github.com/microsoftgraph/msgraph-beta-sdk-go/security/usersecurityprofiles"
     i8ae7bba33296af81c9eae761d1a04dfc084176f7cefbeb91b73b5b37bbb03740 "github.com/microsoftgraph/msgraph-beta-sdk-go/security/providertenantsettings"
+    i9d73acd74b99f8c28d8e6ba0f549aeb25b13d09f6e92903e09e541ed58de8218 "github.com/microsoftgraph/msgraph-beta-sdk-go/security/triggers"
     ib0ce1c8104cd7a5487ab293f5f33f3c3b896da30437f31a1bb830fffeca99765 "github.com/microsoftgraph/msgraph-beta-sdk-go/security/securityactions"
+    ibd30f474e0f2ed1ac20c040a2570fcc591ecadd864b59a598b03981d488e873b "github.com/microsoftgraph/msgraph-beta-sdk-go/security/labels"
     id43f72338affca62b04ede5a8930eef2eacb7985a0d9ba5d084163b59793c1b0 "github.com/microsoftgraph/msgraph-beta-sdk-go/security/securescores"
     id8c8c6e6d2248957fbc7631aef94353af5a458e67dcc26feaa6a1450a99a895c "github.com/microsoftgraph/msgraph-beta-sdk-go/security/ipsecurityprofiles"
     iee2d4af12376b55381e42df8f22c5ffc39043076828fbebb0a459384ee44c9e6 "github.com/microsoftgraph/msgraph-beta-sdk-go/security/attacksimulation"
@@ -245,6 +248,10 @@ func (m *SecurityRequestBuilder) IpSecurityProfilesById(id string)(*i8366108fde7
     }
     return i8366108fde7cb9abb94de15d00c81b743720ced29144f928fd43323122437c0a.NewIpSecurityProfileItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
+// Labels the labels property
+func (m *SecurityRequestBuilder) Labels()(*ibd30f474e0f2ed1ac20c040a2570fcc591ecadd864b59a598b03981d488e873b.LabelsRequestBuilder) {
+    return ibd30f474e0f2ed1ac20c040a2570fcc591ecadd864b59a598b03981d488e873b.NewLabelsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
 // Patch update security
 func (m *SecurityRequestBuilder) Patch(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Securityable)(error) {
     return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
@@ -354,6 +361,14 @@ func (m *SecurityRequestBuilder) TiIndicatorsById(id string)(*i5c9089aa1bb65758f
         urlTplParams["tiIndicator%2Did"] = id
     }
     return i5c9089aa1bb65758fcfbff1d8a7aa9b5deeb5741c421c67322898649fd582848.NewTiIndicatorItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+}
+// Triggers the triggers property
+func (m *SecurityRequestBuilder) Triggers()(*i9d73acd74b99f8c28d8e6ba0f549aeb25b13d09f6e92903e09e541ed58de8218.TriggersRequestBuilder) {
+    return i9d73acd74b99f8c28d8e6ba0f549aeb25b13d09f6e92903e09e541ed58de8218.NewTriggersRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// TriggerTypes the triggerTypes property
+func (m *SecurityRequestBuilder) TriggerTypes()(*i0c676084c053b74ed3a3133cb01b5e628a094e0413da8590be1ed0afd08d166f.TriggerTypesRequestBuilder) {
+    return i0c676084c053b74ed3a3133cb01b5e628a094e0413da8590be1ed0afd08d166f.NewTriggerTypesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // UserSecurityProfiles the userSecurityProfiles property
 func (m *SecurityRequestBuilder) UserSecurityProfiles()(*i81db0892066e847c456de63f4c19382f89016247d0403ce885a78520fdcd01b2.UserSecurityProfilesRequestBuilder) {

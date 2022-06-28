@@ -5,9 +5,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// EducationOutcome provides operations to manage the educationRoot singleton.
+// EducationOutcome provides operations to manage the collection of accessReview entities.
 type EducationOutcome struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // The individual who updated the resource.
     lastModifiedBy IdentitySetable
     // Moment in time when the resource was last modified. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2021 is 2021-01-01T00:00:00Z.
@@ -18,6 +20,7 @@ func NewEducationOutcome()(*EducationOutcome) {
     m := &EducationOutcome{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateEducationOutcomeFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -48,6 +51,14 @@ func CreateEducationOutcomeFromDiscriminatorValue(parseNode i878a80d2330e89d2689
         }
     }
     return NewEducationOutcome(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *EducationOutcome) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *EducationOutcome) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -108,7 +119,19 @@ func (m *EducationOutcome) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *EducationOutcome) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetLastModifiedBy sets the lastModifiedBy property value. The individual who updated the resource.
 func (m *EducationOutcome) SetLastModifiedBy(value IdentitySetable)() {

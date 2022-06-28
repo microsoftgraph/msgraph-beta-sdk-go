@@ -7,6 +7,8 @@ import (
 // ManagedAppStatus represents app protection and configuration status for the organization.
 type ManagedAppStatus struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Friendly name of the status report.
     displayName *string
     // Version of the entity.
@@ -17,6 +19,7 @@ func NewManagedAppStatus()(*ManagedAppStatus) {
     m := &ManagedAppStatus{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateManagedAppStatusFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -41,6 +44,14 @@ func CreateManagedAppStatusFromDiscriminatorValue(parseNode i878a80d2330e89d2689
         }
     }
     return NewManagedAppStatus(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *ManagedAppStatus) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetDisplayName gets the displayName property value. Friendly name of the status report.
 func (m *ManagedAppStatus) GetDisplayName()(*string) {
@@ -101,7 +112,19 @@ func (m *ManagedAppStatus) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *ManagedAppStatus) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetDisplayName sets the displayName property value. Friendly name of the status report.
 func (m *ManagedAppStatus) SetDisplayName(value *string)() {

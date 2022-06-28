@@ -7,6 +7,8 @@ import (
 // WindowsDefenderAdvancedThreatProtectionConfiguration 
 type WindowsDefenderAdvancedThreatProtectionConfiguration struct {
     DeviceConfiguration
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Auto populate onboarding blob programmatically from Advanced Threat protection service
     advancedThreatProtectionAutoPopulateOnboardingBlob *bool
     // Windows Defender AdvancedThreatProtection Offboarding Blob.
@@ -27,11 +29,20 @@ func NewWindowsDefenderAdvancedThreatProtectionConfiguration()(*WindowsDefenderA
     m := &WindowsDefenderAdvancedThreatProtectionConfiguration{
         DeviceConfiguration: *NewDeviceConfiguration(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateWindowsDefenderAdvancedThreatProtectionConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateWindowsDefenderAdvancedThreatProtectionConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWindowsDefenderAdvancedThreatProtectionConfiguration(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *WindowsDefenderAdvancedThreatProtectionConfiguration) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetAdvancedThreatProtectionAutoPopulateOnboardingBlob gets the advancedThreatProtectionAutoPopulateOnboardingBlob property value. Auto populate onboarding blob programmatically from Advanced Threat protection service
 func (m *WindowsDefenderAdvancedThreatProtectionConfiguration) GetAdvancedThreatProtectionAutoPopulateOnboardingBlob()(*bool) {
@@ -212,7 +223,19 @@ func (m *WindowsDefenderAdvancedThreatProtectionConfiguration) Serialize(writer 
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *WindowsDefenderAdvancedThreatProtectionConfiguration) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAdvancedThreatProtectionAutoPopulateOnboardingBlob sets the advancedThreatProtectionAutoPopulateOnboardingBlob property value. Auto populate onboarding blob programmatically from Advanced Threat protection service
 func (m *WindowsDefenderAdvancedThreatProtectionConfiguration) SetAdvancedThreatProtectionAutoPopulateOnboardingBlob(value *bool)() {

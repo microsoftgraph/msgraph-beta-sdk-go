@@ -7,6 +7,8 @@ import (
 // ManagedMobileLobApp 
 type ManagedMobileLobApp struct {
     ManagedApp
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // The internal committed content version.
     committedContentVersion *string
     // The list of content versions for this app.
@@ -21,6 +23,7 @@ func NewManagedMobileLobApp()(*ManagedMobileLobApp) {
     m := &ManagedMobileLobApp{
         ManagedApp: *NewManagedApp(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateManagedMobileLobAppFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -47,6 +50,14 @@ func CreateManagedMobileLobAppFromDiscriminatorValue(parseNode i878a80d2330e89d2
         }
     }
     return NewManagedMobileLobApp(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *ManagedMobileLobApp) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetCommittedContentVersion gets the committedContentVersion property value. The internal committed content version.
 func (m *ManagedMobileLobApp) GetCommittedContentVersion()(*string) {
@@ -163,7 +174,19 @@ func (m *ManagedMobileLobApp) Serialize(writer i878a80d2330e89d26896388a3f487eef
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *ManagedMobileLobApp) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetCommittedContentVersion sets the committedContentVersion property value. The internal committed content version.
 func (m *ManagedMobileLobApp) SetCommittedContentVersion(value *string)() {

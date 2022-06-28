@@ -7,6 +7,8 @@ import (
 // DeviceManagementIntentDeviceSettingStateSummary entity that represents device setting state summary for an intent
 type DeviceManagementIntentDeviceSettingStateSummary struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Number of compliant devices
     compliantCount *int32
     // Number of devices in conflict
@@ -27,11 +29,20 @@ func NewDeviceManagementIntentDeviceSettingStateSummary()(*DeviceManagementInten
     m := &DeviceManagementIntentDeviceSettingStateSummary{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateDeviceManagementIntentDeviceSettingStateSummaryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateDeviceManagementIntentDeviceSettingStateSummaryFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDeviceManagementIntentDeviceSettingStateSummary(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *DeviceManagementIntentDeviceSettingStateSummary) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetCompliantCount gets the compliantCount property value. Number of compliant devices
 func (m *DeviceManagementIntentDeviceSettingStateSummary) GetCompliantCount()(*int32) {
@@ -212,7 +223,19 @@ func (m *DeviceManagementIntentDeviceSettingStateSummary) Serialize(writer i878a
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *DeviceManagementIntentDeviceSettingStateSummary) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetCompliantCount sets the compliantCount property value. Number of compliant devices
 func (m *DeviceManagementIntentDeviceSettingStateSummary) SetCompliantCount(value *int32)() {

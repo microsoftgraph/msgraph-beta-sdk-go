@@ -4,9 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ConditionalAccessRoot provides operations to manage the identityContainer singleton.
+// ConditionalAccessRoot 
 type ConditionalAccessRoot struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Read-only. Nullable. Returns a collection of the specified authentication context class references.
     authenticationContextClassReferences []AuthenticationContextClassReferenceable
     // Read-only. Nullable. Returns a collection of the specified named locations.
@@ -14,16 +16,25 @@ type ConditionalAccessRoot struct {
     // Read-only. Nullable. Returns a collection of the specified Conditional Access policies.
     policies []ConditionalAccessPolicyable
 }
-// NewConditionalAccessRoot instantiates a new conditionalAccessRoot and sets the default values.
+// NewConditionalAccessRoot instantiates a new ConditionalAccessRoot and sets the default values.
 func NewConditionalAccessRoot()(*ConditionalAccessRoot) {
     m := &ConditionalAccessRoot{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateConditionalAccessRootFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateConditionalAccessRootFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewConditionalAccessRoot(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *ConditionalAccessRoot) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetAuthenticationContextClassReferences gets the authenticationContextClassReferences property value. Read-only. Nullable. Returns a collection of the specified authentication context class references.
 func (m *ConditionalAccessRoot) GetAuthenticationContextClassReferences()([]AuthenticationContextClassReferenceable) {
@@ -132,7 +143,19 @@ func (m *ConditionalAccessRoot) Serialize(writer i878a80d2330e89d26896388a3f487e
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *ConditionalAccessRoot) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAuthenticationContextClassReferences sets the authenticationContextClassReferences property value. Read-only. Nullable. Returns a collection of the specified authentication context class references.
 func (m *ConditionalAccessRoot) SetAuthenticationContextClassReferences(value []AuthenticationContextClassReferenceable)() {

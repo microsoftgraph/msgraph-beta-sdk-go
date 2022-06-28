@@ -7,6 +7,8 @@ import (
 // AndroidGeneralDeviceConfiguration 
 type AndroidGeneralDeviceConfiguration struct {
     DeviceConfiguration
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Indicates whether or not to block clipboard sharing to copy and paste between applications.
     appsBlockClipboardSharing *bool
     // Indicates whether or not to block copy and paste within applications.
@@ -113,11 +115,20 @@ func NewAndroidGeneralDeviceConfiguration()(*AndroidGeneralDeviceConfiguration) 
     m := &AndroidGeneralDeviceConfiguration{
         DeviceConfiguration: *NewDeviceConfiguration(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateAndroidGeneralDeviceConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateAndroidGeneralDeviceConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAndroidGeneralDeviceConfiguration(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *AndroidGeneralDeviceConfiguration) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetAppsBlockClipboardSharing gets the appsBlockClipboardSharing property value. Indicates whether or not to block clipboard sharing to copy and paste between applications.
 func (m *AndroidGeneralDeviceConfiguration) GetAppsBlockClipboardSharing()(*bool) {
@@ -1374,7 +1385,19 @@ func (m *AndroidGeneralDeviceConfiguration) Serialize(writer i878a80d2330e89d268
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *AndroidGeneralDeviceConfiguration) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAppsBlockClipboardSharing sets the appsBlockClipboardSharing property value. Indicates whether or not to block clipboard sharing to copy and paste between applications.
 func (m *AndroidGeneralDeviceConfiguration) SetAppsBlockClipboardSharing(value *bool)() {

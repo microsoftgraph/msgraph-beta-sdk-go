@@ -4,9 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// WorkbookTable provides operations to manage the collection of administrativeUnit entities.
+// WorkbookTable provides operations to manage the collection of accessReview entities.
 type WorkbookTable struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Represents a collection of all the columns in the table. Read-only.
     columns []WorkbookTableColumnable
     // Indicates whether the first column contains special formatting.
@@ -41,11 +43,20 @@ func NewWorkbookTable()(*WorkbookTable) {
     m := &WorkbookTable{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateWorkbookTableFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateWorkbookTableFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWorkbookTable(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *WorkbookTable) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetColumns gets the columns property value. Represents a collection of all the columns in the table. Read-only.
 func (m *WorkbookTable) GetColumns()([]WorkbookTableColumnable) {
@@ -410,7 +421,19 @@ func (m *WorkbookTable) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *WorkbookTable) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetColumns sets the columns property value. Represents a collection of all the columns in the table. Read-only.
 func (m *WorkbookTable) SetColumns(value []WorkbookTableColumnable)() {

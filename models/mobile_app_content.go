@@ -7,6 +7,8 @@ import (
 // MobileAppContent contains content properties for a specific app version. Each mobileAppContent can have multiple mobileAppContentFile.
 type MobileAppContent struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // The collection of contained apps in a MobileLobApp acting as a package.
     containedApps []MobileContainedAppable
     // The list of files for this app content version.
@@ -17,11 +19,20 @@ func NewMobileAppContent()(*MobileAppContent) {
     m := &MobileAppContent{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateMobileAppContentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateMobileAppContentFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewMobileAppContent(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *MobileAppContent) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetContainedApps gets the containedApps property value. The collection of contained apps in a MobileLobApp acting as a package.
 func (m *MobileAppContent) GetContainedApps()([]MobileContainedAppable) {
@@ -98,7 +109,19 @@ func (m *MobileAppContent) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *MobileAppContent) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetContainedApps sets the containedApps property value. The collection of contained apps in a MobileLobApp acting as a package.
 func (m *MobileAppContent) SetContainedApps(value []MobileContainedAppable)() {

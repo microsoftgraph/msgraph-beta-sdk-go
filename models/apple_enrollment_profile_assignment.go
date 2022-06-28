@@ -7,6 +7,8 @@ import (
 // AppleEnrollmentProfileAssignment an assignment of an Apple profile.
 type AppleEnrollmentProfileAssignment struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // The assignment target for the Apple user initiated deployment profile.
     target DeviceAndAppManagementAssignmentTargetable
 }
@@ -15,11 +17,20 @@ func NewAppleEnrollmentProfileAssignment()(*AppleEnrollmentProfileAssignment) {
     m := &AppleEnrollmentProfileAssignment{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateAppleEnrollmentProfileAssignmentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateAppleEnrollmentProfileAssignmentFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAppleEnrollmentProfileAssignment(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *AppleEnrollmentProfileAssignment) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AppleEnrollmentProfileAssignment) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -56,7 +67,19 @@ func (m *AppleEnrollmentProfileAssignment) Serialize(writer i878a80d2330e89d2689
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *AppleEnrollmentProfileAssignment) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetTarget sets the target property value. The assignment target for the Apple user initiated deployment profile.
 func (m *AppleEnrollmentProfileAssignment) SetTarget(value DeviceAndAppManagementAssignmentTargetable)() {

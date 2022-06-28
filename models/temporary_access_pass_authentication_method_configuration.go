@@ -7,6 +7,8 @@ import (
 // TemporaryAccessPassAuthenticationMethodConfiguration 
 type TemporaryAccessPassAuthenticationMethodConfiguration struct {
     AuthenticationMethodConfiguration
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Default length in characters of a Temporary Access Pass object. Must be between 8 and 48 characters.
     defaultLength *int32
     // Default lifetime in minutes for a Temporary Access Pass. Value can be any integer between the minimumLifetimeInMinutes and maximumLifetimeInMinutes.
@@ -25,11 +27,20 @@ func NewTemporaryAccessPassAuthenticationMethodConfiguration()(*TemporaryAccessP
     m := &TemporaryAccessPassAuthenticationMethodConfiguration{
         AuthenticationMethodConfiguration: *NewAuthenticationMethodConfiguration(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateTemporaryAccessPassAuthenticationMethodConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateTemporaryAccessPassAuthenticationMethodConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewTemporaryAccessPassAuthenticationMethodConfiguration(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *TemporaryAccessPassAuthenticationMethodConfiguration) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetDefaultLength gets the defaultLength property value. Default length in characters of a Temporary Access Pass object. Must be between 8 and 48 characters.
 func (m *TemporaryAccessPassAuthenticationMethodConfiguration) GetDefaultLength()(*int32) {
@@ -194,7 +205,19 @@ func (m *TemporaryAccessPassAuthenticationMethodConfiguration) Serialize(writer 
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *TemporaryAccessPassAuthenticationMethodConfiguration) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetDefaultLength sets the defaultLength property value. Default length in characters of a Temporary Access Pass object. Must be between 8 and 48 characters.
 func (m *TemporaryAccessPassAuthenticationMethodConfiguration) SetDefaultLength(value *int32)() {

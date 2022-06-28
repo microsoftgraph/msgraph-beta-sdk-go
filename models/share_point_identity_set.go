@@ -4,9 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// SharePointIdentitySet provides operations to manage the collection of administrativeUnit entities.
+// SharePointIdentitySet 
 type SharePointIdentitySet struct {
     IdentitySet
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // The group associated with this action. Optional.
     group Identityable
     // The SharePoint group associated with this action. Optional.
@@ -14,16 +16,25 @@ type SharePointIdentitySet struct {
     // The SharePoint user associated with this action. Optional.
     siteUser SharePointIdentityable
 }
-// NewSharePointIdentitySet instantiates a new sharePointIdentitySet and sets the default values.
+// NewSharePointIdentitySet instantiates a new SharePointIdentitySet and sets the default values.
 func NewSharePointIdentitySet()(*SharePointIdentitySet) {
     m := &SharePointIdentitySet{
         IdentitySet: *NewIdentitySet(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateSharePointIdentitySetFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateSharePointIdentitySetFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewSharePointIdentitySet(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *SharePointIdentitySet) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *SharePointIdentitySet) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -108,7 +119,19 @@ func (m *SharePointIdentitySet) Serialize(writer i878a80d2330e89d26896388a3f487e
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *SharePointIdentitySet) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetGroup sets the group property value. The group associated with this action. Optional.
 func (m *SharePointIdentitySet) SetGroup(value Identityable)() {

@@ -7,6 +7,8 @@ import (
 // WindowsHealthMonitoringConfiguration 
 type WindowsHealthMonitoringConfiguration struct {
     DeviceConfiguration
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Enables device health monitoring on the device. Possible values are: notConfigured, enabled, disabled.
     allowDeviceHealthMonitoring *Enablement
     // Specifies custom set of events collected from the device where health monitoring is enabled
@@ -19,11 +21,20 @@ func NewWindowsHealthMonitoringConfiguration()(*WindowsHealthMonitoringConfigura
     m := &WindowsHealthMonitoringConfiguration{
         DeviceConfiguration: *NewDeviceConfiguration(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateWindowsHealthMonitoringConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateWindowsHealthMonitoringConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWindowsHealthMonitoringConfiguration(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *WindowsHealthMonitoringConfiguration) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetAllowDeviceHealthMonitoring gets the allowDeviceHealthMonitoring property value. Enables device health monitoring on the device. Possible values are: notConfigured, enabled, disabled.
 func (m *WindowsHealthMonitoringConfiguration) GetAllowDeviceHealthMonitoring()(*Enablement) {
@@ -110,7 +121,19 @@ func (m *WindowsHealthMonitoringConfiguration) Serialize(writer i878a80d2330e89d
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *WindowsHealthMonitoringConfiguration) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAllowDeviceHealthMonitoring sets the allowDeviceHealthMonitoring property value. Enables device health monitoring on the device. Possible values are: notConfigured, enabled, disabled.
 func (m *WindowsHealthMonitoringConfiguration) SetAllowDeviceHealthMonitoring(value *Enablement)() {

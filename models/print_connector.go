@@ -5,9 +5,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// PrintConnector provides operations to manage the collection of administrativeUnit entities.
+// PrintConnector provides operations to manage the collection of accessReview entities.
 type PrintConnector struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // The connector's version.
     appVersion *string
     // The connector's device health.
@@ -30,11 +32,20 @@ func NewPrintConnector()(*PrintConnector) {
     m := &PrintConnector{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreatePrintConnectorFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreatePrintConnectorFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewPrintConnector(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *PrintConnector) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetAppVersion gets the appVersion property value. The connector's version.
 func (m *PrintConnector) GetAppVersion()(*string) {
@@ -239,7 +250,19 @@ func (m *PrintConnector) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *PrintConnector) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAppVersion sets the appVersion property value. The connector's version.
 func (m *PrintConnector) SetAppVersion(value *string)() {

@@ -7,6 +7,8 @@ import (
 // Windows10SecureAssessmentConfiguration 
 type Windows10SecureAssessmentConfiguration struct {
     DeviceConfiguration
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Indicates whether or not to allow the app from printing during the test.
     allowPrinting *bool
     // Indicates whether or not to allow screen capture capability during a test.
@@ -29,11 +31,20 @@ func NewWindows10SecureAssessmentConfiguration()(*Windows10SecureAssessmentConfi
     m := &Windows10SecureAssessmentConfiguration{
         DeviceConfiguration: *NewDeviceConfiguration(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateWindows10SecureAssessmentConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateWindows10SecureAssessmentConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWindows10SecureAssessmentConfiguration(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *Windows10SecureAssessmentConfiguration) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetAllowPrinting gets the allowPrinting property value. Indicates whether or not to allow the app from printing during the test.
 func (m *Windows10SecureAssessmentConfiguration) GetAllowPrinting()(*bool) {
@@ -239,7 +250,19 @@ func (m *Windows10SecureAssessmentConfiguration) Serialize(writer i878a80d2330e8
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *Windows10SecureAssessmentConfiguration) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAllowPrinting sets the allowPrinting property value. Indicates whether or not to allow the app from printing during the test.
 func (m *Windows10SecureAssessmentConfiguration) SetAllowPrinting(value *bool)() {

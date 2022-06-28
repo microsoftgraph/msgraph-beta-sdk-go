@@ -141,6 +141,7 @@ import (
     if4dd226e0f2c5d03d114b08150ac66aef29652e888dbf65028360ee02623bdf9 "github.com/microsoftgraph/msgraph-beta-sdk-go/print/reports/getbrowseruserdetailwithperiod"
     if6320aed42bd57df6018ebfaa8490e375970ae1b65838874224d2524e3133811 "github.com/microsoftgraph/msgraph-beta-sdk-go/print/reports/getoffice365activationcounts"
     ifda5935468b5ae9cd912cd8886c9d4cca1e9ab52a6c082d9530ad21d01d3c3ad "github.com/microsoftgraph/msgraph-beta-sdk-go/print/reports/getyammeractivityuserdetailwithdate"
+    ifece25d39559e83e159712abc947b9fa9ef645ac39026b276f4c512910960f48 "github.com/microsoftgraph/msgraph-beta-sdk-go/print/reports/security"
     i1453ad3549b1a27e47913c2d4a29d5625c5b5e04deb3a2a6f264f5cd24a2e8da "github.com/microsoftgraph/msgraph-beta-sdk-go/print/reports/dailyprintusagesummariesbyprinter/item"
     i1702ca3f0c998e29512738841125456c0b4e81357e5f7ca9f4176443002d28d5 "github.com/microsoftgraph/msgraph-beta-sdk-go/print/reports/monthlyprintusagebyuser/item"
     i2268eb94e47ea5d81b666c3310292b49733c18b0196efe2957b868503a9da7ff "github.com/microsoftgraph/msgraph-beta-sdk-go/print/reports/monthlyprintusagesummariesbyuser/item"
@@ -970,6 +971,10 @@ func (m *ReportsRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(
         return err
     }
     return nil
+}
+// Security the security property
+func (m *ReportsRequestBuilder) Security()(*ifece25d39559e83e159712abc947b9fa9ef645ac39026b276f4c512910960f48.SecurityRequestBuilder) {
+    return ifece25d39559e83e159712abc947b9fa9ef645ac39026b276f4c512910960f48.NewSecurityRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // UserCredentialUsageDetails the userCredentialUsageDetails property
 func (m *ReportsRequestBuilder) UserCredentialUsageDetails()(*i254c294d6b358b3854c3ee45f61d16c1237e0477952e917b034bbb0d8a6802b1.UserCredentialUsageDetailsRequestBuilder) {

@@ -4,9 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// PolicyBase provides operations to manage the collection of administrativeUnit entities.
+// PolicyBase casts the previous resource to application.
 type PolicyBase struct {
     DirectoryObject
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Description for this policy. Required.
     description *string
     // Display name for this policy. Required.
@@ -17,6 +19,7 @@ func NewPolicyBase()(*PolicyBase) {
     m := &PolicyBase{
         DirectoryObject: *NewDirectoryObject(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreatePolicyBaseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -57,6 +60,14 @@ func CreatePolicyBaseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3
         }
     }
     return NewPolicyBase(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *PolicyBase) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetDescription gets the description property value. Description for this policy. Required.
 func (m *PolicyBase) GetDescription()(*string) {
@@ -117,7 +128,19 @@ func (m *PolicyBase) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *PolicyBase) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetDescription sets the description property value. Description for this policy. Required.
 func (m *PolicyBase) SetDescription(value *string)() {

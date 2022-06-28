@@ -7,6 +7,8 @@ import (
 // WindowsPhone81CertificateProfileBase base Windows Phone 8.1+ certificate profile.
 type WindowsPhone81CertificateProfileBase struct {
     DeviceConfiguration
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Scale for the Certificate Validity Period. Possible values are: days, months, years.
     certificateValidityPeriodScale *CertificateValidityPeriodScale
     // Value for the Certificate Validtiy Period.
@@ -27,6 +29,7 @@ func NewWindowsPhone81CertificateProfileBase()(*WindowsPhone81CertificateProfile
     m := &WindowsPhone81CertificateProfileBase{
         DeviceConfiguration: *NewDeviceConfiguration(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateWindowsPhone81CertificateProfileBaseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -51,6 +54,14 @@ func CreateWindowsPhone81CertificateProfileBaseFromDiscriminatorValue(parseNode 
         }
     }
     return NewWindowsPhone81CertificateProfileBase(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *WindowsPhone81CertificateProfileBase) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetCertificateValidityPeriodScale gets the certificateValidityPeriodScale property value. Scale for the Certificate Validity Period. Possible values are: days, months, years.
 func (m *WindowsPhone81CertificateProfileBase) GetCertificateValidityPeriodScale()(*CertificateValidityPeriodScale) {
@@ -243,7 +254,19 @@ func (m *WindowsPhone81CertificateProfileBase) Serialize(writer i878a80d2330e89d
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *WindowsPhone81CertificateProfileBase) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetCertificateValidityPeriodScale sets the certificateValidityPeriodScale property value. Scale for the Certificate Validity Period. Possible values are: days, months, years.
 func (m *WindowsPhone81CertificateProfileBase) SetCertificateValidityPeriodScale(value *CertificateValidityPeriodScale)() {

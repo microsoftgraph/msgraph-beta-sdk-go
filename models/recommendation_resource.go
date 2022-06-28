@@ -5,11 +5,13 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// RecommendationResource provides operations to manage the directory singleton.
+// RecommendationResource provides operations to manage the collection of accessReview entities.
 type RecommendationResource struct {
     Entity
     // The addedDateTime property
     addedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // The additionalDetails property
     additionalDetails []KeyValueable
     // The apiUrl property
@@ -34,6 +36,7 @@ func NewRecommendationResource()(*RecommendationResource) {
     m := &RecommendationResource{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateRecommendationResourceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -46,6 +49,14 @@ func (m *RecommendationResource) GetAddedDateTime()(*i336074805fc853987abe6f7fe3
         return nil
     } else {
         return m.addedDateTime
+    }
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *RecommendationResource) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
     }
 }
 // GetAdditionalDetails gets the additionalDetails property value. The additionalDetails property
@@ -300,12 +311,24 @@ func (m *RecommendationResource) Serialize(writer i878a80d2330e89d26896388a3f487
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetAddedDateTime sets the addedDateTime property value. The addedDateTime property
 func (m *RecommendationResource) SetAddedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     if m != nil {
         m.addedDateTime = value
+    }
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *RecommendationResource) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
     }
 }
 // SetAdditionalDetails sets the additionalDetails property value. The additionalDetails property

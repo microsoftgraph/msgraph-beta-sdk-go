@@ -7,6 +7,8 @@ import (
 // AndroidWorkProfileCompliancePolicy 
 type AndroidWorkProfileCompliancePolicy struct {
     DeviceCompliancePolicy
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // MDATP Require Mobile Threat Protection minimum risk level to report noncompliance. Possible values are: unavailable, secured, low, medium, high, notSet.
     advancedThreatProtectionRequiredSecurityLevel *DeviceThreatProtectionLevel
     // Require that devices have enabled device threat protection.
@@ -61,11 +63,20 @@ func NewAndroidWorkProfileCompliancePolicy()(*AndroidWorkProfileCompliancePolicy
     m := &AndroidWorkProfileCompliancePolicy{
         DeviceCompliancePolicy: *NewDeviceCompliancePolicy(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateAndroidWorkProfileCompliancePolicyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateAndroidWorkProfileCompliancePolicyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAndroidWorkProfileCompliancePolicy(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *AndroidWorkProfileCompliancePolicy) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetAdvancedThreatProtectionRequiredSecurityLevel gets the advancedThreatProtectionRequiredSecurityLevel property value. MDATP Require Mobile Threat Protection minimum risk level to report noncompliance. Possible values are: unavailable, secured, low, medium, high, notSet.
 func (m *AndroidWorkProfileCompliancePolicy) GetAdvancedThreatProtectionRequiredSecurityLevel()(*DeviceThreatProtectionLevel) {
@@ -658,7 +669,19 @@ func (m *AndroidWorkProfileCompliancePolicy) Serialize(writer i878a80d2330e89d26
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *AndroidWorkProfileCompliancePolicy) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAdvancedThreatProtectionRequiredSecurityLevel sets the advancedThreatProtectionRequiredSecurityLevel property value. MDATP Require Mobile Threat Protection minimum risk level to report noncompliance. Possible values are: unavailable, secured, low, medium, high, notSet.
 func (m *AndroidWorkProfileCompliancePolicy) SetAdvancedThreatProtectionRequiredSecurityLevel(value *DeviceThreatProtectionLevel)() {

@@ -5,9 +5,11 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
-// ManagedDeviceComplianceTrend provides operations to manage the tenantRelationship singleton.
+// ManagedDeviceComplianceTrend provides operations to manage the collection of accessReview entities.
 type ManagedDeviceComplianceTrend struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // The number of devices with a compliant status. Required. Read-only.
     compliantDeviceCount *int32
     // The number of devices manged by Configuration Manager. Required. Read-only.
@@ -32,11 +34,20 @@ func NewManagedDeviceComplianceTrend()(*ManagedDeviceComplianceTrend) {
     m := &ManagedDeviceComplianceTrend{
         Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateManagedDeviceComplianceTrendFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateManagedDeviceComplianceTrendFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewManagedDeviceComplianceTrend(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *ManagedDeviceComplianceTrend) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetCompliantDeviceCount gets the compliantDeviceCount property value. The number of devices with a compliant status. Required. Read-only.
 func (m *ManagedDeviceComplianceTrend) GetCompliantDeviceCount()(*int32) {
@@ -265,7 +276,19 @@ func (m *ManagedDeviceComplianceTrend) Serialize(writer i878a80d2330e89d26896388
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *ManagedDeviceComplianceTrend) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetCompliantDeviceCount sets the compliantDeviceCount property value. The number of devices with a compliant status. Required. Read-only.
 func (m *ManagedDeviceComplianceTrend) SetCompliantDeviceCount(value *int32)() {

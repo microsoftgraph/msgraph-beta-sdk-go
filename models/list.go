@@ -4,11 +4,13 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// List provides operations to manage the collection of administrativeUnit entities.
+// List provides operations to manage the collection of accessReview entities.
 type List struct {
     BaseItem
     // The recent activities that took place within this list.
     activities []ItemActivityOLDable
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // The collection of field definitions for this list.
     columns []ColumnDefinitionable
     // The collection of content types present in this list.
@@ -35,6 +37,7 @@ func NewList()(*List) {
     m := &List{
         BaseItem: *NewBaseItem(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateListFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -47,6 +50,14 @@ func (m *List) GetActivities()([]ItemActivityOLDable) {
         return nil
     } else {
         return m.activities
+    }
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *List) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
     }
 }
 // GetColumns gets the columns property value. The collection of field definitions for this list.
@@ -364,12 +375,24 @@ func (m *List) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c49
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetActivities sets the activities property value. The recent activities that took place within this list.
 func (m *List) SetActivities(value []ItemActivityOLDable)() {
     if m != nil {
         m.activities = value
+    }
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *List) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
     }
 }
 // SetColumns sets the columns property value. The collection of field definitions for this list.

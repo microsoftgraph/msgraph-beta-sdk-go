@@ -4,9 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// TeamworkPeripheral provides operations to manage the teamwork singleton.
+// TeamworkPeripheral 
 type TeamworkPeripheral struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Display name for the peripheral.
     displayName *string
     // The product ID of the device. Each product from a vendor has its own ID.
@@ -14,16 +16,25 @@ type TeamworkPeripheral struct {
     // The unique identifier for the vendor of the device. Each vendor has a unique ID.
     vendorId *string
 }
-// NewTeamworkPeripheral instantiates a new teamworkPeripheral and sets the default values.
+// NewTeamworkPeripheral instantiates a new TeamworkPeripheral and sets the default values.
 func NewTeamworkPeripheral()(*TeamworkPeripheral) {
     m := &TeamworkPeripheral{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateTeamworkPeripheralFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateTeamworkPeripheralFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewTeamworkPeripheral(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *TeamworkPeripheral) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetDisplayName gets the displayName property value. Display name for the peripheral.
 func (m *TeamworkPeripheral) GetDisplayName()(*string) {
@@ -108,7 +119,19 @@ func (m *TeamworkPeripheral) Serialize(writer i878a80d2330e89d26896388a3f487eef2
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *TeamworkPeripheral) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetDisplayName sets the displayName property value. Display name for the peripheral.
 func (m *TeamworkPeripheral) SetDisplayName(value *string)() {

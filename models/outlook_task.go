@@ -7,6 +7,8 @@ import (
 // OutlookTask 
 type OutlookTask struct {
     OutlookItem
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // The name of the person who has been assigned the task in Outlook. Read-only.
     assignedTo *string
     // The collection of fileAttachment, itemAttachment, and referenceAttachment attachments for the task.  Read-only. Nullable.
@@ -49,11 +51,20 @@ func NewOutlookTask()(*OutlookTask) {
     m := &OutlookTask{
         OutlookItem: *NewOutlookItem(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateOutlookTaskFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateOutlookTaskFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewOutlookTask(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *OutlookTask) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetAssignedTo gets the assignedTo property value. The name of the person who has been assigned the task in Outlook. Read-only.
 func (m *OutlookTask) GetAssignedTo()(*string) {
@@ -525,7 +536,19 @@ func (m *OutlookTask) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *OutlookTask) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAssignedTo sets the assignedTo property value. The name of the person who has been assigned the task in Outlook. Read-only.
 func (m *OutlookTask) SetAssignedTo(value *string)() {

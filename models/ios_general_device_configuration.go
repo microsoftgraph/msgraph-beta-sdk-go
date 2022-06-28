@@ -11,6 +11,8 @@ type IosGeneralDeviceConfiguration struct {
     accountBlockModification *bool
     // Indicates whether or not to allow activation lock when the device is in the supervised mode.
     activationLockAllowWhenSupervised *bool
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Indicates whether or not to allow AirDrop when the device is in supervised mode.
     airDropBlocked *bool
     // Indicates whether or not to cause AirDrop to be considered an unmanaged drop target (iOS 9.0 and later).
@@ -387,6 +389,7 @@ func NewIosGeneralDeviceConfiguration()(*IosGeneralDeviceConfiguration) {
     m := &IosGeneralDeviceConfiguration{
         DeviceConfiguration: *NewDeviceConfiguration(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateIosGeneralDeviceConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -407,6 +410,14 @@ func (m *IosGeneralDeviceConfiguration) GetActivationLockAllowWhenSupervised()(*
         return nil
     } else {
         return m.activationLockAllowWhenSupervised
+    }
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *IosGeneralDeviceConfiguration) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
     }
 }
 // GetAirDropBlocked gets the airDropBlocked property value. Indicates whether or not to allow AirDrop when the device is in supervised mode.
@@ -4942,6 +4953,12 @@ func (m *IosGeneralDeviceConfiguration) Serialize(writer i878a80d2330e89d2689638
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetAccountBlockModification sets the accountBlockModification property value. Indicates whether or not to allow account modification when the device is in supervised mode.
@@ -4954,6 +4971,12 @@ func (m *IosGeneralDeviceConfiguration) SetAccountBlockModification(value *bool)
 func (m *IosGeneralDeviceConfiguration) SetActivationLockAllowWhenSupervised(value *bool)() {
     if m != nil {
         m.activationLockAllowWhenSupervised = value
+    }
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *IosGeneralDeviceConfiguration) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
     }
 }
 // SetAirDropBlocked sets the airDropBlocked property value. Indicates whether or not to allow AirDrop when the device is in supervised mode.

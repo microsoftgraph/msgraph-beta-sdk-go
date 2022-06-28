@@ -29,6 +29,39 @@ func NewEducationResource()(*EducationResource) {
 }
 // CreateEducationResourceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateEducationResourceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+    if parseNode != nil {
+        mappingValueNode, err := parseNode.GetChildNode("@odata.type")
+        if err != nil {
+            return nil, err
+        }
+        if mappingValueNode != nil {
+            mappingValue, err := mappingValueNode.GetStringValue()
+            if err != nil {
+                return nil, err
+            }
+            if mappingValue != nil {
+                mappingStr := *mappingValue
+                switch mappingStr {
+                    case "#microsoft.graph.educationExcelResource":
+                        return NewEducationExcelResource(), nil
+                    case "#microsoft.graph.educationExternalResource":
+                        return NewEducationExternalResource(), nil
+                    case "#microsoft.graph.educationFileResource":
+                        return NewEducationFileResource(), nil
+                    case "#microsoft.graph.educationLinkResource":
+                        return NewEducationLinkResource(), nil
+                    case "#microsoft.graph.educationMediaResource":
+                        return NewEducationMediaResource(), nil
+                    case "#microsoft.graph.educationPowerPointResource":
+                        return NewEducationPowerPointResource(), nil
+                    case "#microsoft.graph.educationTeamsAppResource":
+                        return NewEducationTeamsAppResource(), nil
+                    case "#microsoft.graph.educationWordResource":
+                        return NewEducationWordResource(), nil
+                }
+            }
+        }
+    }
     return NewEducationResource(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.

@@ -8,6 +8,8 @@ import (
 // OrgContact 
 type OrgContact struct {
     DirectoryObject
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Postal addresses for this organizational contact. For now a contact can only have one physical address.
     addresses []PhysicalOfficeAddressable
     // Name of the company that this organizational contact belong to. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
@@ -52,11 +54,20 @@ func NewOrgContact()(*OrgContact) {
     m := &OrgContact{
         DirectoryObject: *NewDirectoryObject(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateOrgContactFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateOrgContactFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewOrgContact(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *OrgContact) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetAddresses gets the addresses property value. Postal addresses for this organizational contact. For now a contact can only have one physical address.
 func (m *OrgContact) GetAddresses()([]PhysicalOfficeAddressable) {
@@ -585,7 +596,19 @@ func (m *OrgContact) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *OrgContact) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAddresses sets the addresses property value. Postal addresses for this organizational contact. For now a contact can only have one physical address.
 func (m *OrgContact) SetAddresses(value []PhysicalOfficeAddressable)() {

@@ -5,9 +5,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// HostSecurityProfile provides operations to manage the security singleton.
+// HostSecurityProfile provides operations to manage the collection of accessReview entities.
 type HostSecurityProfile struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // The azureSubscriptionId property
     azureSubscriptionId *string
     // The azureTenantId property
@@ -50,11 +52,20 @@ func NewHostSecurityProfile()(*HostSecurityProfile) {
     m := &HostSecurityProfile{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateHostSecurityProfileFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateHostSecurityProfileFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewHostSecurityProfile(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *HostSecurityProfile) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetAzureSubscriptionId gets the azureSubscriptionId property value. The azureSubscriptionId property
 func (m *HostSecurityProfile) GetAzureSubscriptionId()(*string) {
@@ -523,7 +534,19 @@ func (m *HostSecurityProfile) Serialize(writer i878a80d2330e89d26896388a3f487eef
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *HostSecurityProfile) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAzureSubscriptionId sets the azureSubscriptionId property value. The azureSubscriptionId property
 func (m *HostSecurityProfile) SetAzureSubscriptionId(value *string)() {

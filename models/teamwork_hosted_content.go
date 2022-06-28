@@ -4,9 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// TeamworkHostedContent provides operations to manage the collection of administrativeUnit entities.
+// TeamworkHostedContent provides operations to manage the collection of accessReview entities.
 type TeamworkHostedContent struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Write only. Bytes for the hosted content (such as images).
     contentBytes []byte
     // Write only. Content type, such as image/png, image/jpg.
@@ -17,6 +19,7 @@ func NewTeamworkHostedContent()(*TeamworkHostedContent) {
     m := &TeamworkHostedContent{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateTeamworkHostedContentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -41,6 +44,14 @@ func CreateTeamworkHostedContentFromDiscriminatorValue(parseNode i878a80d2330e89
         }
     }
     return NewTeamworkHostedContent(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *TeamworkHostedContent) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetContentBytes gets the contentBytes property value. Write only. Bytes for the hosted content (such as images).
 func (m *TeamworkHostedContent) GetContentBytes()([]byte) {
@@ -101,7 +112,19 @@ func (m *TeamworkHostedContent) Serialize(writer i878a80d2330e89d26896388a3f487e
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *TeamworkHostedContent) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetContentBytes sets the contentBytes property value. Write only. Bytes for the hosted content (such as images).
 func (m *TeamworkHostedContent) SetContentBytes(value []byte)() {

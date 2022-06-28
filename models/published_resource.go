@@ -4,9 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// PublishedResource provides operations to manage the collection of onPremisesPublishingProfile entities.
+// PublishedResource provides operations to manage the collection of accessReview entities.
 type PublishedResource struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // List of onPremisesAgentGroups that a publishedResource is assigned to. Read-only. Nullable.
     agentGroups []OnPremisesAgentGroupable
     // Display Name of the publishedResource.
@@ -21,11 +23,20 @@ func NewPublishedResource()(*PublishedResource) {
     m := &PublishedResource{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreatePublishedResourceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreatePublishedResourceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewPublishedResource(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *PublishedResource) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetAgentGroups gets the agentGroups property value. List of onPremisesAgentGroups that a publishedResource is assigned to. Read-only. Nullable.
 func (m *PublishedResource) GetAgentGroups()([]OnPremisesAgentGroupable) {
@@ -143,7 +154,19 @@ func (m *PublishedResource) Serialize(writer i878a80d2330e89d26896388a3f487eef27
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *PublishedResource) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAgentGroups sets the agentGroups property value. List of onPremisesAgentGroups that a publishedResource is assigned to. Read-only. Nullable.
 func (m *PublishedResource) SetAgentGroups(value []OnPremisesAgentGroupable)() {

@@ -7,6 +7,8 @@ import (
 // Windows10DeviceFirmwareConfigurationInterface 
 type Windows10DeviceFirmwareConfigurationInterface struct {
     DeviceConfiguration
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Defines whether a user is allowed to enable Bluetooth. Possible values are: notConfigured, enabled, disabled.
     bluetooth *Enablement
     // Defines whether a user is allowed to boot from built-in network adapters. Possible values are: notConfigured, enabled, disabled.
@@ -55,11 +57,20 @@ func NewWindows10DeviceFirmwareConfigurationInterface()(*Windows10DeviceFirmware
     m := &Windows10DeviceFirmwareConfigurationInterface{
         DeviceConfiguration: *NewDeviceConfiguration(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateWindows10DeviceFirmwareConfigurationInterfaceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateWindows10DeviceFirmwareConfigurationInterfaceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWindows10DeviceFirmwareConfigurationInterface(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *Windows10DeviceFirmwareConfigurationInterface) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetBluetooth gets the bluetooth property value. Defines whether a user is allowed to enable Bluetooth. Possible values are: notConfigured, enabled, disabled.
 func (m *Windows10DeviceFirmwareConfigurationInterface) GetBluetooth()(*Enablement) {
@@ -597,7 +608,19 @@ func (m *Windows10DeviceFirmwareConfigurationInterface) Serialize(writer i878a80
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *Windows10DeviceFirmwareConfigurationInterface) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetBluetooth sets the bluetooth property value. Defines whether a user is allowed to enable Bluetooth. Possible values are: notConfigured, enabled, disabled.
 func (m *Windows10DeviceFirmwareConfigurationInterface) SetBluetooth(value *Enablement)() {

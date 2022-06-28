@@ -5,9 +5,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// SignIn provides operations to manage the auditLogRoot singleton.
+// SignIn provides operations to manage the collection of accessReview entities.
 type SignIn struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // The application name displayed in the Azure Portal. Supports $filter (eq and startsWith operators only).
     appDisplayName *string
     // The application identifier in Azure Active Directory. Supports $filter (eq operator only).
@@ -134,6 +136,7 @@ func NewSignIn()(*SignIn) {
     m := &SignIn{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateSignInFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -158,6 +161,14 @@ func CreateSignInFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
         }
     }
     return NewSignIn(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *SignIn) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetAppDisplayName gets the appDisplayName property value. The application name displayed in the Azure Portal. Supports $filter (eq and startsWith operators only).
 func (m *SignIn) GetAppDisplayName()(*string) {
@@ -1690,7 +1701,19 @@ func (m *SignIn) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *SignIn) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAppDisplayName sets the appDisplayName property value. The application name displayed in the Azure Portal. Supports $filter (eq and startsWith operators only).
 func (m *SignIn) SetAppDisplayName(value *string)() {

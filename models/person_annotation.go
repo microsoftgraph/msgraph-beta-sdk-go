@@ -7,6 +7,8 @@ import (
 // PersonAnnotation 
 type PersonAnnotation struct {
     ItemFacet
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Contains the detail of the note itself.
     detail ItemBodyable
     // Contains a friendly name for the note.
@@ -19,11 +21,20 @@ func NewPersonAnnotation()(*PersonAnnotation) {
     m := &PersonAnnotation{
         ItemFacet: *NewItemFacet(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreatePersonAnnotationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreatePersonAnnotationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewPersonAnnotation(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *PersonAnnotation) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetDetail gets the detail property value. Contains the detail of the note itself.
 func (m *PersonAnnotation) GetDetail()(ItemBodyable) {
@@ -108,7 +119,19 @@ func (m *PersonAnnotation) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *PersonAnnotation) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetDetail sets the detail property value. Contains the detail of the note itself.
 func (m *PersonAnnotation) SetDetail(value ItemBodyable)() {

@@ -8,6 +8,8 @@ import (
 // ScheduleChangeRequest 
 type ScheduleChangeRequest struct {
     ChangeTrackedEntity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // The assignedTo property
     assignedTo *ScheduleChangeRequestActor
     // The managerActionDateTime property
@@ -30,6 +32,7 @@ func NewScheduleChangeRequest()(*ScheduleChangeRequest) {
     m := &ScheduleChangeRequest{
         ChangeTrackedEntity: *NewChangeTrackedEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateScheduleChangeRequestFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -58,6 +61,14 @@ func CreateScheduleChangeRequestFromDiscriminatorValue(parseNode i878a80d2330e89
         }
     }
     return NewScheduleChangeRequest(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *ScheduleChangeRequest) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetAssignedTo gets the assignedTo property value. The assignedTo property
 func (m *ScheduleChangeRequest) GetAssignedTo()(*ScheduleChangeRequestActor) {
@@ -264,7 +275,19 @@ func (m *ScheduleChangeRequest) Serialize(writer i878a80d2330e89d26896388a3f487e
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *ScheduleChangeRequest) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAssignedTo sets the assignedTo property value. The assignedTo property
 func (m *ScheduleChangeRequest) SetAssignedTo(value *ScheduleChangeRequestActor)() {

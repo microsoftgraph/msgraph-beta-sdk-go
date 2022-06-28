@@ -7,6 +7,8 @@ import (
 // EdiscoveryReviewSet 
 type EdiscoveryReviewSet struct {
     DataSet
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Represents files within the review set.
     files []EdiscoveryFileable
     // Represents queries within the review set.
@@ -17,11 +19,20 @@ func NewEdiscoveryReviewSet()(*EdiscoveryReviewSet) {
     m := &EdiscoveryReviewSet{
         DataSet: *NewDataSet(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateEdiscoveryReviewSetFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateEdiscoveryReviewSetFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewEdiscoveryReviewSet(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *EdiscoveryReviewSet) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *EdiscoveryReviewSet) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -98,7 +109,19 @@ func (m *EdiscoveryReviewSet) Serialize(writer i878a80d2330e89d26896388a3f487eef
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *EdiscoveryReviewSet) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetFiles sets the files property value. Represents files within the review set.
 func (m *EdiscoveryReviewSet) SetFiles(value []EdiscoveryFileable)() {

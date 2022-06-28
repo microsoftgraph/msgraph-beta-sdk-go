@@ -4,9 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// FeatureRolloutPolicy provides operations to manage the directory singleton.
+// FeatureRolloutPolicy provides operations to manage the collection of accessReview entities.
 type FeatureRolloutPolicy struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Nullable. Specifies a list of directoryObjects that feature is enabled for.
     appliesTo []DirectoryObjectable
     // A description for this feature rollout policy.
@@ -25,11 +27,20 @@ func NewFeatureRolloutPolicy()(*FeatureRolloutPolicy) {
     m := &FeatureRolloutPolicy{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateFeatureRolloutPolicyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateFeatureRolloutPolicyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewFeatureRolloutPolicy(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *FeatureRolloutPolicy) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetAppliesTo gets the appliesTo property value. Nullable. Specifies a list of directoryObjects that feature is enabled for.
 func (m *FeatureRolloutPolicy) GetAppliesTo()([]DirectoryObjectable) {
@@ -195,7 +206,19 @@ func (m *FeatureRolloutPolicy) Serialize(writer i878a80d2330e89d26896388a3f487ee
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *FeatureRolloutPolicy) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAppliesTo sets the appliesTo property value. Nullable. Specifies a list of directoryObjects that feature is enabled for.
 func (m *FeatureRolloutPolicy) SetAppliesTo(value []DirectoryObjectable)() {

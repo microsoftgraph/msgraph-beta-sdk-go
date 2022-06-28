@@ -5,9 +5,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AzureADUserFeatureUsage provides operations to call the getAzureADUserFeatureUsage method.
+// AzureADUserFeatureUsage 
 type AzureADUserFeatureUsage struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // The featureUsageDetails property
     featureUsageDetails []FeatureUsageDetailable
     // The lastUpdatedDateTime property
@@ -23,16 +25,25 @@ type AzureADUserFeatureUsage struct {
     // The userPrincipalName property
     userPrincipalName *string
 }
-// NewAzureADUserFeatureUsage instantiates a new azureADUserFeatureUsage and sets the default values.
+// NewAzureADUserFeatureUsage instantiates a new AzureADUserFeatureUsage and sets the default values.
 func NewAzureADUserFeatureUsage()(*AzureADUserFeatureUsage) {
     m := &AzureADUserFeatureUsage{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateAzureADUserFeatureUsageFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateAzureADUserFeatureUsageFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAzureADUserFeatureUsage(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *AzureADUserFeatureUsage) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetFeatureUsageDetails gets the featureUsageDetails property value. The featureUsageDetails property
 func (m *AzureADUserFeatureUsage) GetFeatureUsageDetails()([]FeatureUsageDetailable) {
@@ -223,7 +234,19 @@ func (m *AzureADUserFeatureUsage) Serialize(writer i878a80d2330e89d26896388a3f48
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *AzureADUserFeatureUsage) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetFeatureUsageDetails sets the featureUsageDetails property value. The featureUsageDetails property
 func (m *AzureADUserFeatureUsage) SetFeatureUsageDetails(value []FeatureUsageDetailable)() {

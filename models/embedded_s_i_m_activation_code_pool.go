@@ -12,6 +12,8 @@ type EmbeddedSIMActivationCodePool struct {
     activationCodeCount *int32
     // The activation codes which belong to this pool. This navigation property is used to post activation codes to Intune but cannot be used to read activation codes from Intune.
     activationCodes []EmbeddedSIMActivationCodeable
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Navigational property to a list of targets to which this pool is assigned.
     assignments []EmbeddedSIMActivationCodePoolAssignmentable
     // The time the embedded SIM activation code pool was created. Generated service side.
@@ -28,6 +30,7 @@ func NewEmbeddedSIMActivationCodePool()(*EmbeddedSIMActivationCodePool) {
     m := &EmbeddedSIMActivationCodePool{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateEmbeddedSIMActivationCodePoolFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -48,6 +51,14 @@ func (m *EmbeddedSIMActivationCodePool) GetActivationCodes()([]EmbeddedSIMActiva
         return nil
     } else {
         return m.activationCodes
+    }
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *EmbeddedSIMActivationCodePool) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
     }
 }
 // GetAssignments gets the assignments property value. Navigational property to a list of targets to which this pool is assigned.
@@ -237,6 +248,12 @@ func (m *EmbeddedSIMActivationCodePool) Serialize(writer i878a80d2330e89d2689638
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetActivationCodeCount sets the activationCodeCount property value. The total count of activation codes which belong to this pool.
@@ -249,6 +266,12 @@ func (m *EmbeddedSIMActivationCodePool) SetActivationCodeCount(value *int32)() {
 func (m *EmbeddedSIMActivationCodePool) SetActivationCodes(value []EmbeddedSIMActivationCodeable)() {
     if m != nil {
         m.activationCodes = value
+    }
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *EmbeddedSIMActivationCodePool) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
     }
 }
 // SetAssignments sets the assignments property value. Navigational property to a list of targets to which this pool is assigned.

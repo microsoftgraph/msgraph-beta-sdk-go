@@ -8,6 +8,8 @@ import (
 // ZebraFotaConnector the Zebra FOTA connector entity that represents the tenant's authorization status for Intune to call Zebra Update Services.
 type ZebraFotaConnector struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Complete account enrollment authorization URL. This corresponds to verification_uri_complete in the Zebra API documentations.
     enrollmentAuthorizationUrl *string
     // Tenant enrollment token from Zebra. The token is used to enroll Zebra devices in the FOTA Service via app config.
@@ -24,11 +26,20 @@ func NewZebraFotaConnector()(*ZebraFotaConnector) {
     m := &ZebraFotaConnector{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateZebraFotaConnectorFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateZebraFotaConnectorFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewZebraFotaConnector(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *ZebraFotaConnector) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetEnrollmentAuthorizationUrl gets the enrollmentAuthorizationUrl property value. Complete account enrollment authorization URL. This corresponds to verification_uri_complete in the Zebra API documentations.
 func (m *ZebraFotaConnector) GetEnrollmentAuthorizationUrl()(*string) {
@@ -162,7 +173,19 @@ func (m *ZebraFotaConnector) Serialize(writer i878a80d2330e89d26896388a3f487eef2
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *ZebraFotaConnector) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetEnrollmentAuthorizationUrl sets the enrollmentAuthorizationUrl property value. Complete account enrollment authorization URL. This corresponds to verification_uri_complete in the Zebra API documentations.
 func (m *ZebraFotaConnector) SetEnrollmentAuthorizationUrl(value *string)() {

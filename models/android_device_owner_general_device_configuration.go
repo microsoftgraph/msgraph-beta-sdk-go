@@ -9,6 +9,8 @@ type AndroidDeviceOwnerGeneralDeviceConfiguration struct {
     DeviceConfiguration
     // Indicates whether or not adding or removing accounts is disabled.
     accountsBlockModification *bool
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Indicates whether or not the user is allowed to enable to unknown sources setting.
     appsAllowInstallFromUnknownSources *bool
     // Indicates the value of the app auto update policy. Possible values are: notConfigured, userChoice, never, wiFiOnly, always.
@@ -277,6 +279,7 @@ func NewAndroidDeviceOwnerGeneralDeviceConfiguration()(*AndroidDeviceOwnerGenera
     m := &AndroidDeviceOwnerGeneralDeviceConfiguration{
         DeviceConfiguration: *NewDeviceConfiguration(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateAndroidDeviceOwnerGeneralDeviceConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -289,6 +292,14 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetAccountsBlockModificat
         return nil
     } else {
         return m.accountsBlockModification
+    }
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
     }
 }
 // GetAppsAllowInstallFromUnknownSources gets the appsAllowInstallFromUnknownSources property value. Indicates whether or not the user is allowed to enable to unknown sources setting.
@@ -3547,12 +3558,24 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) Serialize(writer i878a80d
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetAccountsBlockModification sets the accountsBlockModification property value. Indicates whether or not adding or removing accounts is disabled.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetAccountsBlockModification(value *bool)() {
     if m != nil {
         m.accountsBlockModification = value
+    }
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
     }
 }
 // SetAppsAllowInstallFromUnknownSources sets the appsAllowInstallFromUnknownSources property value. Indicates whether or not the user is allowed to enable to unknown sources setting.

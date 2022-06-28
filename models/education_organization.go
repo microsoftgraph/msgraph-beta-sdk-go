@@ -4,9 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// EducationOrganization provides operations to manage the educationRoot singleton.
+// EducationOrganization provides operations to manage the collection of accessReview entities.
 type EducationOrganization struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Organization description.
     description *string
     // Organization display name.
@@ -21,6 +23,7 @@ func NewEducationOrganization()(*EducationOrganization) {
     m := &EducationOrganization{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateEducationOrganizationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -45,6 +48,14 @@ func CreateEducationOrganizationFromDiscriminatorValue(parseNode i878a80d2330e89
         }
     }
     return NewEducationOrganization(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *EducationOrganization) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetDescription gets the description property value. Organization description.
 func (m *EducationOrganization) GetDescription()(*string) {
@@ -154,7 +165,19 @@ func (m *EducationOrganization) Serialize(writer i878a80d2330e89d26896388a3f487e
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *EducationOrganization) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetDescription sets the description property value. Organization description.
 func (m *EducationOrganization) SetDescription(value *string)() {

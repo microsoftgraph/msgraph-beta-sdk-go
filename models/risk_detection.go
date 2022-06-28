@@ -5,13 +5,15 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// RiskDetection provides operations to manage the identityProtectionRoot singleton.
+// RiskDetection 
 type RiskDetection struct {
     Entity
     // Indicates the activity type the detected risk is linked to. The possible values are signin, user, unknownFutureValue.
     activity *ActivityType
     // Date and time that the risky activity occurred. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
     activityDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Additional information associated with the risk detection in JSON format.
     additionalInfo *string
     // Correlation ID of the sign-in associated with the risk detection. This property is null if the risk detection is not associated with a sign-in.
@@ -49,11 +51,12 @@ type RiskDetection struct {
     // The user principal name (UPN) of the user.
     userPrincipalName *string
 }
-// NewRiskDetection instantiates a new riskDetection and sets the default values.
+// NewRiskDetection instantiates a new RiskDetection and sets the default values.
 func NewRiskDetection()(*RiskDetection) {
     m := &RiskDetection{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateRiskDetectionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -74,6 +77,14 @@ func (m *RiskDetection) GetActivityDateTime()(*i336074805fc853987abe6f7fe3ad97a6
         return nil
     } else {
         return m.activityDateTime
+    }
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *RiskDetection) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
     }
 }
 // GetAdditionalInfo gets the additionalInfo property value. Additional information associated with the risk detection in JSON format.
@@ -558,6 +569,12 @@ func (m *RiskDetection) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetActivity sets the activity property value. Indicates the activity type the detected risk is linked to. The possible values are signin, user, unknownFutureValue.
@@ -570,6 +587,12 @@ func (m *RiskDetection) SetActivity(value *ActivityType)() {
 func (m *RiskDetection) SetActivityDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     if m != nil {
         m.activityDateTime = value
+    }
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *RiskDetection) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
     }
 }
 // SetAdditionalInfo sets the additionalInfo property value. Additional information associated with the risk detection in JSON format.

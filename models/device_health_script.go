@@ -8,6 +8,8 @@ import (
 // DeviceHealthScript intune will provide customer the ability to run their Powershell Health scripts (remediation + detection) on the enrolled windows 10 Azure Active Directory joined devices.
 type DeviceHealthScript struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // The list of group assignments for the device health script
     assignments []DeviceHealthScriptAssignmentable
     // The timestamp of when the device health script was created. This property is read-only.
@@ -52,11 +54,20 @@ func NewDeviceHealthScript()(*DeviceHealthScript) {
     m := &DeviceHealthScript{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateDeviceHealthScriptFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateDeviceHealthScriptFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDeviceHealthScript(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *DeviceHealthScript) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetAssignments gets the assignments property value. The list of group assignments for the device health script
 func (m *DeviceHealthScript) GetAssignments()([]DeviceHealthScriptAssignmentable) {
@@ -562,7 +573,19 @@ func (m *DeviceHealthScript) Serialize(writer i878a80d2330e89d26896388a3f487eef2
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *DeviceHealthScript) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAssignments sets the assignments property value. The list of group assignments for the device health script
 func (m *DeviceHealthScript) SetAssignments(value []DeviceHealthScriptAssignmentable)() {

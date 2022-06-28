@@ -4,9 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// PrinterBase provides operations to manage the collection of administrativeUnit entities.
+// PrinterBase provides operations to manage the collection of accessReview entities.
 type PrinterBase struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // The capabilities of the printer/printerShare.
     capabilities PrinterCapabilitiesable
     // The default print settings of printer/printerShare.
@@ -33,6 +35,7 @@ func NewPrinterBase()(*PrinterBase) {
     m := &PrinterBase{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreatePrinterBaseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -59,6 +62,14 @@ func CreatePrinterBaseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a
         }
     }
     return NewPrinterBase(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *PrinterBase) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetCapabilities gets the capabilities property value. The capabilities of the printer/printerShare.
 func (m *PrinterBase) GetCapabilities()(PrinterCapabilitiesable) {
@@ -319,7 +330,19 @@ func (m *PrinterBase) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *PrinterBase) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetCapabilities sets the capabilities property value. The capabilities of the printer/printerShare.
 func (m *PrinterBase) SetCapabilities(value PrinterCapabilitiesable)() {

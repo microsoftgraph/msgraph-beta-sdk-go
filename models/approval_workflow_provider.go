@@ -7,6 +7,8 @@ import (
 // ApprovalWorkflowProvider provides operations to manage the collection of approvalWorkflowProvider entities.
 type ApprovalWorkflowProvider struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // The businessFlows property
     businessFlows []BusinessFlowable
     // The businessFlowsWithRequestsAwaitingMyDecision property
@@ -21,11 +23,20 @@ func NewApprovalWorkflowProvider()(*ApprovalWorkflowProvider) {
     m := &ApprovalWorkflowProvider{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateApprovalWorkflowProviderFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateApprovalWorkflowProviderFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewApprovalWorkflowProvider(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *ApprovalWorkflowProvider) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetBusinessFlows gets the businessFlows property value. The businessFlows property
 func (m *ApprovalWorkflowProvider) GetBusinessFlows()([]BusinessFlowable) {
@@ -158,7 +169,19 @@ func (m *ApprovalWorkflowProvider) Serialize(writer i878a80d2330e89d26896388a3f4
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *ApprovalWorkflowProvider) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetBusinessFlows sets the businessFlows property value. The businessFlows property
 func (m *ApprovalWorkflowProvider) SetBusinessFlows(value []BusinessFlowable)() {

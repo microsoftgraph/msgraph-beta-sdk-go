@@ -4,9 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AttackSimulationRoot provides operations to manage the security singleton.
+// AttackSimulationRoot provides operations to manage the collection of accessReview entities.
 type AttackSimulationRoot struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Represents simulation automations created to run on a tenant.
     simulationAutomations []SimulationAutomationable
     // Represents an attack simulation training campaign in a tenant.
@@ -17,11 +19,20 @@ func NewAttackSimulationRoot()(*AttackSimulationRoot) {
     m := &AttackSimulationRoot{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateAttackSimulationRootFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateAttackSimulationRootFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAttackSimulationRoot(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *AttackSimulationRoot) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AttackSimulationRoot) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -98,7 +109,19 @@ func (m *AttackSimulationRoot) Serialize(writer i878a80d2330e89d26896388a3f487ee
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *AttackSimulationRoot) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetSimulationAutomations sets the simulationAutomations property value. Represents simulation automations created to run on a tenant.
 func (m *AttackSimulationRoot) SetSimulationAutomations(value []SimulationAutomationable)() {

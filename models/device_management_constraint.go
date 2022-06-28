@@ -18,6 +18,53 @@ func NewDeviceManagementConstraint()(*DeviceManagementConstraint) {
 }
 // CreateDeviceManagementConstraintFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateDeviceManagementConstraintFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+    if parseNode != nil {
+        mappingValueNode, err := parseNode.GetChildNode("@odata.type")
+        if err != nil {
+            return nil, err
+        }
+        if mappingValueNode != nil {
+            mappingValue, err := mappingValueNode.GetStringValue()
+            if err != nil {
+                return nil, err
+            }
+            if mappingValue != nil {
+                mappingStr := *mappingValue
+                switch mappingStr {
+                    case "#microsoft.graph.deviceManagementEnumConstraint":
+                        return NewDeviceManagementEnumConstraint(), nil
+                    case "#microsoft.graph.deviceManagementIntentSettingSecretConstraint":
+                        return NewDeviceManagementIntentSettingSecretConstraint(), nil
+                    case "#microsoft.graph.deviceManagementSettingAbstractImplementationConstraint":
+                        return NewDeviceManagementSettingAbstractImplementationConstraint(), nil
+                    case "#microsoft.graph.deviceManagementSettingAppConstraint":
+                        return NewDeviceManagementSettingAppConstraint(), nil
+                    case "#microsoft.graph.deviceManagementSettingBooleanConstraint":
+                        return NewDeviceManagementSettingBooleanConstraint(), nil
+                    case "#microsoft.graph.deviceManagementSettingCollectionConstraint":
+                        return NewDeviceManagementSettingCollectionConstraint(), nil
+                    case "#microsoft.graph.deviceManagementSettingEnrollmentTypeConstraint":
+                        return NewDeviceManagementSettingEnrollmentTypeConstraint(), nil
+                    case "#microsoft.graph.deviceManagementSettingFileConstraint":
+                        return NewDeviceManagementSettingFileConstraint(), nil
+                    case "#microsoft.graph.deviceManagementSettingIntegerConstraint":
+                        return NewDeviceManagementSettingIntegerConstraint(), nil
+                    case "#microsoft.graph.deviceManagementSettingProfileConstraint":
+                        return NewDeviceManagementSettingProfileConstraint(), nil
+                    case "#microsoft.graph.deviceManagementSettingRegexConstraint":
+                        return NewDeviceManagementSettingRegexConstraint(), nil
+                    case "#microsoft.graph.deviceManagementSettingRequiredConstraint":
+                        return NewDeviceManagementSettingRequiredConstraint(), nil
+                    case "#microsoft.graph.deviceManagementSettingSddlConstraint":
+                        return NewDeviceManagementSettingSddlConstraint(), nil
+                    case "#microsoft.graph.deviceManagementSettingStringLengthConstraint":
+                        return NewDeviceManagementSettingStringLengthConstraint(), nil
+                    case "#microsoft.graph.deviceManagementSettingXmlConstraint":
+                        return NewDeviceManagementSettingXmlConstraint(), nil
+                }
+            }
+        }
+    }
     return NewDeviceManagementConstraint(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.

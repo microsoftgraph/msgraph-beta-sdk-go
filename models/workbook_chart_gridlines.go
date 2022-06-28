@@ -4,9 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// WorkbookChartGridlines provides operations to manage the collection of administrativeUnit entities.
+// WorkbookChartGridlines provides operations to manage the collection of accessReview entities.
 type WorkbookChartGridlines struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Represents the formatting of chart gridlines. Read-only.
     format WorkbookChartGridlinesFormatable
     // Boolean value representing if the axis gridlines are visible or not.
@@ -17,11 +19,20 @@ func NewWorkbookChartGridlines()(*WorkbookChartGridlines) {
     m := &WorkbookChartGridlines{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateWorkbookChartGridlinesFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateWorkbookChartGridlinesFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWorkbookChartGridlines(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *WorkbookChartGridlines) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *WorkbookChartGridlines) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -82,7 +93,19 @@ func (m *WorkbookChartGridlines) Serialize(writer i878a80d2330e89d26896388a3f487
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *WorkbookChartGridlines) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetFormat sets the format property value. Represents the formatting of chart gridlines. Read-only.
 func (m *WorkbookChartGridlines) SetFormat(value WorkbookChartGridlinesFormatable)() {

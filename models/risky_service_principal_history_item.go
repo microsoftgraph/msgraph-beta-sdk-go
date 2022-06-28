@@ -9,6 +9,8 @@ type RiskyServicePrincipalHistoryItem struct {
     RiskyServicePrincipal
     // The activity related to service principal risk level change.
     activity RiskServicePrincipalActivityable
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // The identifier of the actor of the operation.
     initiatedBy *string
     // The identifier of the service principal.
@@ -19,6 +21,7 @@ func NewRiskyServicePrincipalHistoryItem()(*RiskyServicePrincipalHistoryItem) {
     m := &RiskyServicePrincipalHistoryItem{
         RiskyServicePrincipal: *NewRiskyServicePrincipal(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateRiskyServicePrincipalHistoryItemFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -31,6 +34,14 @@ func (m *RiskyServicePrincipalHistoryItem) GetActivity()(RiskServicePrincipalAct
         return nil
     } else {
         return m.activity
+    }
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *RiskyServicePrincipalHistoryItem) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -108,12 +119,24 @@ func (m *RiskyServicePrincipalHistoryItem) Serialize(writer i878a80d2330e89d2689
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetActivity sets the activity property value. The activity related to service principal risk level change.
 func (m *RiskyServicePrincipalHistoryItem) SetActivity(value RiskServicePrincipalActivityable)() {
     if m != nil {
         m.activity = value
+    }
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *RiskyServicePrincipalHistoryItem) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
     }
 }
 // SetInitiatedBy sets the initiatedBy property value. The identifier of the actor of the operation.

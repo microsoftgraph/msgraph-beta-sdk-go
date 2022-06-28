@@ -4,9 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// MeetingRegistrationBase provides operations to manage the commsApplication singleton.
+// MeetingRegistrationBase provides operations to manage the collection of accessReview entities.
 type MeetingRegistrationBase struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Specifies who can register for the meeting.
     allowedRegistrant *MeetingAudience
     // Registrants of the online meeting.
@@ -17,6 +19,7 @@ func NewMeetingRegistrationBase()(*MeetingRegistrationBase) {
     m := &MeetingRegistrationBase{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateMeetingRegistrationBaseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -43,6 +46,14 @@ func CreateMeetingRegistrationBaseFromDiscriminatorValue(parseNode i878a80d2330e
         }
     }
     return NewMeetingRegistrationBase(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *MeetingRegistrationBase) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetAllowedRegistrant gets the allowedRegistrant property value. Specifies who can register for the meeting.
 func (m *MeetingRegistrationBase) GetAllowedRegistrant()(*MeetingAudience) {
@@ -112,7 +123,19 @@ func (m *MeetingRegistrationBase) Serialize(writer i878a80d2330e89d26896388a3f48
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *MeetingRegistrationBase) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAllowedRegistrant sets the allowedRegistrant property value. Specifies who can register for the meeting.
 func (m *MeetingRegistrationBase) SetAllowedRegistrant(value *MeetingAudience)() {

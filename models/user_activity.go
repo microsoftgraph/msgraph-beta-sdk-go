@@ -5,13 +5,15 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// UserActivity provides operations to manage the collection of administrativeUnit entities.
+// UserActivity provides operations to manage the collection of accessReview entities.
 type UserActivity struct {
     Entity
     // Required. URL used to launch the activity in the best native experience represented by the appId. Might launch a web-based app if no native app exists.
     activationUrl *string
     // Required. URL for the domain representing the cross-platform identity mapping for the app. Mapping is stored either as a JSON file hosted on the domain or configurable via Windows Dev Center. The JSON file is named cross-platform-app-identifiers and is hosted at root of your HTTPS domain, either at the top level domain or include a sub domain. For example: https://contoso.com or https://myapp.contoso.com but NOT https://myapp.contoso.com/somepath. You must have a unique file and domain (or sub domain) per cross-platform app identity. For example, a separate file and domain is needed for Word vs. PowerPoint.
     activitySourceHost *string
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Required. The unique activity ID in the context of the app - supplied by caller and immutable thereafter.
     appActivityId *string
     // Optional. Short text description of the app used to generate the activity for use in cases when the app is not installed on the user’s local device.
@@ -42,6 +44,7 @@ func NewUserActivity()(*UserActivity) {
     m := &UserActivity{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateUserActivityFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -62,6 +65,14 @@ func (m *UserActivity) GetActivitySourceHost()(*string) {
         return nil
     } else {
         return m.activitySourceHost
+    }
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *UserActivity) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
     }
 }
 // GetAppActivityId gets the appActivityId property value. Required. The unique activity ID in the context of the app - supplied by caller and immutable thereafter.
@@ -404,6 +415,12 @@ func (m *UserActivity) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetActivationUrl sets the activationUrl property value. Required. URL used to launch the activity in the best native experience represented by the appId. Might launch a web-based app if no native app exists.
@@ -416,6 +433,12 @@ func (m *UserActivity) SetActivationUrl(value *string)() {
 func (m *UserActivity) SetActivitySourceHost(value *string)() {
     if m != nil {
         m.activitySourceHost = value
+    }
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *UserActivity) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
     }
 }
 // SetAppActivityId sets the appActivityId property value. Required. The unique activity ID in the context of the app - supplied by caller and immutable thereafter.

@@ -9,6 +9,8 @@ import (
 // Deployment provides operations to manage the admin singleton.
 type Deployment struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Specifies the audience to which content is deployed.
     audience DeploymentAudienceable
     // Specifies what content to deploy. Cannot be changed. Returned by default.
@@ -27,11 +29,20 @@ func NewDeployment()(*Deployment) {
     m := &Deployment{
         Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateDeploymentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateDeploymentFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDeployment(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *Deployment) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetAudience gets the audience property value. Specifies the audience to which content is deployed.
 func (m *Deployment) GetAudience()(DeploymentAudienceable) {
@@ -188,7 +199,19 @@ func (m *Deployment) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *Deployment) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAudience sets the audience property value. Specifies the audience to which content is deployed.
 func (m *Deployment) SetAudience(value DeploymentAudienceable)() {

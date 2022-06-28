@@ -5,13 +5,15 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ActivityHistoryItem provides operations to manage the collection of administrativeUnit entities.
+// ActivityHistoryItem provides operations to manage the collection of accessReview entities.
 type ActivityHistoryItem struct {
     Entity
     // Optional. The duration of active user engagement. if not supplied, this is calculated from the startedDateTime and lastActiveDateTime.
     activeDurationSeconds *int32
     // The activity property
     activity UserActivityable
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Set by the server. DateTime in UTC when the object was created on the server.
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Optional. UTC DateTime when the historyItem will undergo hard-delete. Can be set by the client.
@@ -32,6 +34,7 @@ func NewActivityHistoryItem()(*ActivityHistoryItem) {
     m := &ActivityHistoryItem{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateActivityHistoryItemFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -52,6 +55,14 @@ func (m *ActivityHistoryItem) GetActivity()(UserActivityable) {
         return nil
     } else {
         return m.activity
+    }
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *ActivityHistoryItem) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
     }
 }
 // GetCreatedDateTime gets the createdDateTime property value. Set by the server. DateTime in UTC when the object was created on the server.
@@ -266,6 +277,12 @@ func (m *ActivityHistoryItem) Serialize(writer i878a80d2330e89d26896388a3f487eef
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetActiveDurationSeconds sets the activeDurationSeconds property value. Optional. The duration of active user engagement. if not supplied, this is calculated from the startedDateTime and lastActiveDateTime.
@@ -278,6 +295,12 @@ func (m *ActivityHistoryItem) SetActiveDurationSeconds(value *int32)() {
 func (m *ActivityHistoryItem) SetActivity(value UserActivityable)() {
     if m != nil {
         m.activity = value
+    }
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *ActivityHistoryItem) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
     }
 }
 // SetCreatedDateTime sets the createdDateTime property value. Set by the server. DateTime in UTC when the object was created on the server.

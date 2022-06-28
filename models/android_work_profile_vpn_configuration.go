@@ -7,6 +7,8 @@ import (
 // AndroidWorkProfileVpnConfiguration 
 type AndroidWorkProfileVpnConfiguration struct {
     DeviceConfiguration
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Whether or not to enable always-on VPN connection.
     alwaysOn *bool
     // If always-on VPN connection is enabled, whether or not to lock network traffic when that VPN is disconnected.
@@ -45,11 +47,20 @@ func NewAndroidWorkProfileVpnConfiguration()(*AndroidWorkProfileVpnConfiguration
     m := &AndroidWorkProfileVpnConfiguration{
         DeviceConfiguration: *NewDeviceConfiguration(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateAndroidWorkProfileVpnConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateAndroidWorkProfileVpnConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAndroidWorkProfileVpnConfiguration(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *AndroidWorkProfileVpnConfiguration) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetAlwaysOn gets the alwaysOn property value. Whether or not to enable always-on VPN connection.
 func (m *AndroidWorkProfileVpnConfiguration) GetAlwaysOn()(*bool) {
@@ -484,7 +495,19 @@ func (m *AndroidWorkProfileVpnConfiguration) Serialize(writer i878a80d2330e89d26
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *AndroidWorkProfileVpnConfiguration) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAlwaysOn sets the alwaysOn property value. Whether or not to enable always-on VPN connection.
 func (m *AndroidWorkProfileVpnConfiguration) SetAlwaysOn(value *bool)() {

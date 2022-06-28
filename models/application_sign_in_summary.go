@@ -4,9 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ApplicationSignInSummary provides operations to call the getAzureADApplicationSignInSummary method.
+// ApplicationSignInSummary 
 type ApplicationSignInSummary struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Name of the application that the user signed into.
     appDisplayName *string
     // Count of failed sign-ins made by the application.
@@ -16,16 +18,25 @@ type ApplicationSignInSummary struct {
     // Percentage of successful sign-ins made by the application.
     successPercentage *float64
 }
-// NewApplicationSignInSummary instantiates a new applicationSignInSummary and sets the default values.
+// NewApplicationSignInSummary instantiates a new ApplicationSignInSummary and sets the default values.
 func NewApplicationSignInSummary()(*ApplicationSignInSummary) {
     m := &ApplicationSignInSummary{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateApplicationSignInSummaryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateApplicationSignInSummaryFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewApplicationSignInSummary(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *ApplicationSignInSummary) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetAppDisplayName gets the appDisplayName property value. Name of the application that the user signed into.
 func (m *ApplicationSignInSummary) GetAppDisplayName()(*string) {
@@ -134,7 +145,19 @@ func (m *ApplicationSignInSummary) Serialize(writer i878a80d2330e89d26896388a3f4
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *ApplicationSignInSummary) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAppDisplayName sets the appDisplayName property value. Name of the application that the user signed into.
 func (m *ApplicationSignInSummary) SetAppDisplayName(value *string)() {

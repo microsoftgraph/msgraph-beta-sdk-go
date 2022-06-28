@@ -8,6 +8,8 @@ import (
 // MobileAppInstallStatus contains properties for the installation state of a mobile app for a device.
 type MobileAppInstallStatus struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // The navigation link to the mobile app.
     app MobileAppable
     // Device ID
@@ -40,11 +42,20 @@ func NewMobileAppInstallStatus()(*MobileAppInstallStatus) {
     m := &MobileAppInstallStatus{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateMobileAppInstallStatusFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateMobileAppInstallStatusFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewMobileAppInstallStatus(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *MobileAppInstallStatus) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetApp gets the app property value. The navigation link to the mobile app.
 func (m *MobileAppInstallStatus) GetApp()(MobileAppable) {
@@ -372,7 +383,19 @@ func (m *MobileAppInstallStatus) Serialize(writer i878a80d2330e89d26896388a3f487
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *MobileAppInstallStatus) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetApp sets the app property value. The navigation link to the mobile app.
 func (m *MobileAppInstallStatus) SetApp(value MobileAppable)() {

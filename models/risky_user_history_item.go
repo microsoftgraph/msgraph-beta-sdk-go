@@ -9,6 +9,8 @@ type RiskyUserHistoryItem struct {
     RiskyUser
     // The activity related to user risk level change.
     activity RiskUserActivityable
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // The id of actor that does the operation.
     initiatedBy *string
     // The id of the user.
@@ -19,6 +21,7 @@ func NewRiskyUserHistoryItem()(*RiskyUserHistoryItem) {
     m := &RiskyUserHistoryItem{
         RiskyUser: *NewRiskyUser(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateRiskyUserHistoryItemFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -31,6 +34,14 @@ func (m *RiskyUserHistoryItem) GetActivity()(RiskUserActivityable) {
         return nil
     } else {
         return m.activity
+    }
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *RiskyUserHistoryItem) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -108,12 +119,24 @@ func (m *RiskyUserHistoryItem) Serialize(writer i878a80d2330e89d26896388a3f487ee
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetActivity sets the activity property value. The activity related to user risk level change.
 func (m *RiskyUserHistoryItem) SetActivity(value RiskUserActivityable)() {
     if m != nil {
         m.activity = value
+    }
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *RiskyUserHistoryItem) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
     }
 }
 // SetInitiatedBy sets the initiatedBy property value. The id of actor that does the operation.

@@ -5,9 +5,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Request provides operations to manage the collection of administrativeUnit entities.
+// Request provides operations to manage the collection of accessReview entities.
 type Request struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // The identifier of the approval of the request.
     approvalId *string
     // The request completion date time.
@@ -26,6 +28,7 @@ func NewRequest()(*Request) {
     m := &Request{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateRequestFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -54,6 +57,14 @@ func CreateRequestFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f48
         }
     }
     return NewRequest(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *Request) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetApprovalId gets the approvalId property value. The identifier of the approval of the request.
 func (m *Request) GetApprovalId()(*string) {
@@ -210,7 +221,19 @@ func (m *Request) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *Request) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetApprovalId sets the approvalId property value. The identifier of the approval of the request.
 func (m *Request) SetApprovalId(value *string)() {

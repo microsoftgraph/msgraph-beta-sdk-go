@@ -7,6 +7,8 @@ import (
 // DeviceManagementIntegerSettingInstance 
 type DeviceManagementIntegerSettingInstance struct {
     DeviceManagementSettingInstance
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // The integer value
     value *int32
 }
@@ -15,11 +17,20 @@ func NewDeviceManagementIntegerSettingInstance()(*DeviceManagementIntegerSetting
     m := &DeviceManagementIntegerSettingInstance{
         DeviceManagementSettingInstance: *NewDeviceManagementSettingInstance(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateDeviceManagementIntegerSettingInstanceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateDeviceManagementIntegerSettingInstanceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDeviceManagementIntegerSettingInstance(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *DeviceManagementIntegerSettingInstance) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceManagementIntegerSettingInstance) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -56,7 +67,19 @@ func (m *DeviceManagementIntegerSettingInstance) Serialize(writer i878a80d2330e8
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *DeviceManagementIntegerSettingInstance) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetValue sets the value property value. The integer value
 func (m *DeviceManagementIntegerSettingInstance) SetValue(value *int32)() {

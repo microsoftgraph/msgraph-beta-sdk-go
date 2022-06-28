@@ -7,6 +7,8 @@ import (
 // IosScepCertificateProfile 
 type IosScepCertificateProfile struct {
     IosCertificateProfileBase
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Target store certificate. Possible values are: user, machine.
     certificateStore *CertificateStore
     // Custom Subject Alternative Name Settings. The OnPremisesUserPrincipalName variable is support as well as others documented here: https://go.microsoft.com/fwlink/?LinkId=2027630. This collection can contain a maximum of 500 elements.
@@ -33,11 +35,20 @@ func NewIosScepCertificateProfile()(*IosScepCertificateProfile) {
     m := &IosScepCertificateProfile{
         IosCertificateProfileBase: *NewIosCertificateProfileBase(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateIosScepCertificateProfileFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateIosScepCertificateProfileFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewIosScepCertificateProfile(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *IosScepCertificateProfile) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetCertificateStore gets the certificateStore property value. Target store certificate. Possible values are: user, machine.
 func (m *IosScepCertificateProfile) GetCertificateStore()(*CertificateStore) {
@@ -321,7 +332,19 @@ func (m *IosScepCertificateProfile) Serialize(writer i878a80d2330e89d26896388a3f
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *IosScepCertificateProfile) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetCertificateStore sets the certificateStore property value. Target store certificate. Possible values are: user, machine.
 func (m *IosScepCertificateProfile) SetCertificateStore(value *CertificateStore)() {

@@ -7,6 +7,8 @@ import (
 // DetectedApp a managed or unmanaged app that is installed on a managed device. Unmanaged apps will only appear for devices marked as corporate owned.
 type DetectedApp struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // The number of devices that have installed this application
     deviceCount *int32
     // Name of the discovered application. Read-only
@@ -23,11 +25,20 @@ func NewDetectedApp()(*DetectedApp) {
     m := &DetectedApp{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateDetectedAppFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateDetectedAppFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDetectedApp(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *DetectedApp) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetDeviceCount gets the deviceCount property value. The number of devices that have installed this application
 func (m *DetectedApp) GetDeviceCount()(*int32) {
@@ -168,7 +179,19 @@ func (m *DetectedApp) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *DetectedApp) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetDeviceCount sets the deviceCount property value. The number of devices that have installed this application
 func (m *DetectedApp) SetDeviceCount(value *int32)() {

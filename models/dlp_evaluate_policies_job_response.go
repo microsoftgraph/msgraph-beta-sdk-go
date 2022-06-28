@@ -7,6 +7,8 @@ import (
 // DlpEvaluatePoliciesJobResponse 
 type DlpEvaluatePoliciesJobResponse struct {
     JobResponseBase
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // The result property
     result DlpPoliciesJobResultable
 }
@@ -15,11 +17,20 @@ func NewDlpEvaluatePoliciesJobResponse()(*DlpEvaluatePoliciesJobResponse) {
     m := &DlpEvaluatePoliciesJobResponse{
         JobResponseBase: *NewJobResponseBase(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateDlpEvaluatePoliciesJobResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateDlpEvaluatePoliciesJobResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDlpEvaluatePoliciesJobResponse(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *DlpEvaluatePoliciesJobResponse) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DlpEvaluatePoliciesJobResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -56,7 +67,19 @@ func (m *DlpEvaluatePoliciesJobResponse) Serialize(writer i878a80d2330e89d268963
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *DlpEvaluatePoliciesJobResponse) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetResult sets the result property value. The result property
 func (m *DlpEvaluatePoliciesJobResponse) SetResult(value DlpPoliciesJobResultable)() {

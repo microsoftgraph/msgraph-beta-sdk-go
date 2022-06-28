@@ -4,9 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// CredentialUsageSummary provides operations to call the getCredentialUsageSummary method.
+// CredentialUsageSummary 
 type CredentialUsageSummary struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Represents the authentication method that the user used. Possible values are:email, mobileSMS, mobileCall, officePhone, securityQuestion (only used for self-service password reset), appNotification, appCode, alternateMobileCall (supported only in registration), fido, appPassword, unknownFutureValue.
     authMethod *UsageAuthMethod
     // Provides the count of failed resets or registration data.
@@ -16,16 +18,25 @@ type CredentialUsageSummary struct {
     // Provides the count of successful registrations or resets.
     successfulActivityCount *int64
 }
-// NewCredentialUsageSummary instantiates a new credentialUsageSummary and sets the default values.
+// NewCredentialUsageSummary instantiates a new CredentialUsageSummary and sets the default values.
 func NewCredentialUsageSummary()(*CredentialUsageSummary) {
     m := &CredentialUsageSummary{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateCredentialUsageSummaryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateCredentialUsageSummaryFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCredentialUsageSummary(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *CredentialUsageSummary) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetAuthMethod gets the authMethod property value. Represents the authentication method that the user used. Possible values are:email, mobileSMS, mobileCall, officePhone, securityQuestion (only used for self-service password reset), appNotification, appCode, alternateMobileCall (supported only in registration), fido, appPassword, unknownFutureValue.
 func (m *CredentialUsageSummary) GetAuthMethod()(*UsageAuthMethod) {
@@ -136,7 +147,19 @@ func (m *CredentialUsageSummary) Serialize(writer i878a80d2330e89d26896388a3f487
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *CredentialUsageSummary) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAuthMethod sets the authMethod property value. Represents the authentication method that the user used. Possible values are:email, mobileSMS, mobileCall, officePhone, securityQuestion (only used for self-service password reset), appNotification, appCode, alternateMobileCall (supported only in registration), fido, appPassword, unknownFutureValue.
 func (m *CredentialUsageSummary) SetAuthMethod(value *UsageAuthMethod)() {

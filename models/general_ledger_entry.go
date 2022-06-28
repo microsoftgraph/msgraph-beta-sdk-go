@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// GeneralLedgerEntry provides operations to manage the financials singleton.
+// GeneralLedgerEntry provides operations to manage the collection of accessReview entities.
 type GeneralLedgerEntry struct {
     Entity
     // The account property
@@ -14,6 +14,8 @@ type GeneralLedgerEntry struct {
     accountId *string
     // The accountNumber property
     accountNumber *string
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // The creditAmount property
     creditAmount *float64
     // The debitAmount property
@@ -34,6 +36,7 @@ func NewGeneralLedgerEntry()(*GeneralLedgerEntry) {
     m := &GeneralLedgerEntry{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateGeneralLedgerEntryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -62,6 +65,14 @@ func (m *GeneralLedgerEntry) GetAccountNumber()(*string) {
         return nil
     } else {
         return m.accountNumber
+    }
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *GeneralLedgerEntry) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
     }
 }
 // GetCreditAmount gets the creditAmount property value. The creditAmount property
@@ -291,6 +302,12 @@ func (m *GeneralLedgerEntry) Serialize(writer i878a80d2330e89d26896388a3f487eef2
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetAccount sets the account property value. The account property
@@ -309,6 +326,12 @@ func (m *GeneralLedgerEntry) SetAccountId(value *string)() {
 func (m *GeneralLedgerEntry) SetAccountNumber(value *string)() {
     if m != nil {
         m.accountNumber = value
+    }
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *GeneralLedgerEntry) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
     }
 }
 // SetCreditAmount sets the creditAmount property value. The creditAmount property

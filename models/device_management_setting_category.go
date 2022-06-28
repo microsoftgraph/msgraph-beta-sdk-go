@@ -7,6 +7,8 @@ import (
 // DeviceManagementSettingCategory entity representing a setting category
 type DeviceManagementSettingCategory struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // The category name
     displayName *string
     // The category contains top level required setting
@@ -19,6 +21,7 @@ func NewDeviceManagementSettingCategory()(*DeviceManagementSettingCategory) {
     m := &DeviceManagementSettingCategory{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateDeviceManagementSettingCategoryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -45,6 +48,14 @@ func CreateDeviceManagementSettingCategoryFromDiscriminatorValue(parseNode i878a
         }
     }
     return NewDeviceManagementSettingCategory(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *DeviceManagementSettingCategory) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetDisplayName gets the displayName property value. The category name
 func (m *DeviceManagementSettingCategory) GetDisplayName()(*string) {
@@ -137,7 +148,19 @@ func (m *DeviceManagementSettingCategory) Serialize(writer i878a80d2330e89d26896
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *DeviceManagementSettingCategory) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetDisplayName sets the displayName property value. The category name
 func (m *DeviceManagementSettingCategory) SetDisplayName(value *string)() {

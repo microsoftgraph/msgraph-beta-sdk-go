@@ -5,13 +5,15 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// SecureScoreControlProfile provides operations to manage the security singleton.
+// SecureScoreControlProfile provides operations to manage the collection of accessReview entities.
 type SecureScoreControlProfile struct {
     Entity
     // Control action type (Config, Review, Behavior).
     actionType *string
     // URL to where the control can be actioned.
     actionUrl *string
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // GUID string for tenant ID.
     azureTenantId *string
     // The collection of compliance information associated with secure score control
@@ -52,6 +54,7 @@ func NewSecureScoreControlProfile()(*SecureScoreControlProfile) {
     m := &SecureScoreControlProfile{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateSecureScoreControlProfileFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -72,6 +75,14 @@ func (m *SecureScoreControlProfile) GetActionUrl()(*string) {
         return nil
     } else {
         return m.actionUrl
+    }
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *SecureScoreControlProfile) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
     }
 }
 // GetAzureTenantId gets the azureTenantId property value. GUID string for tenant ID.
@@ -545,6 +556,12 @@ func (m *SecureScoreControlProfile) Serialize(writer i878a80d2330e89d26896388a3f
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetActionType sets the actionType property value. Control action type (Config, Review, Behavior).
@@ -557,6 +574,12 @@ func (m *SecureScoreControlProfile) SetActionType(value *string)() {
 func (m *SecureScoreControlProfile) SetActionUrl(value *string)() {
     if m != nil {
         m.actionUrl = value
+    }
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *SecureScoreControlProfile) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
     }
 }
 // SetAzureTenantId sets the azureTenantId property value. GUID string for tenant ID.

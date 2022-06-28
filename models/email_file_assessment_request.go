@@ -7,6 +7,8 @@ import (
 // EmailFileAssessmentRequest 
 type EmailFileAssessmentRequest struct {
     ThreatAssessmentRequest
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Base64 encoded .eml email file content. The file content cannot fetch back because it isn't stored.
     contentData *string
     // The reason for mail routed to its destination. Possible values are: none, mailFlowRule, safeSender, blockedSender, advancedSpamFiltering, domainAllowList, domainBlockList, notInAddressBook, firstTimeSender, autoPurgeToInbox, autoPurgeToJunk, autoPurgeToDeleted, outbound, notJunk, junk.
@@ -19,11 +21,20 @@ func NewEmailFileAssessmentRequest()(*EmailFileAssessmentRequest) {
     m := &EmailFileAssessmentRequest{
         ThreatAssessmentRequest: *NewThreatAssessmentRequest(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateEmailFileAssessmentRequestFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateEmailFileAssessmentRequestFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewEmailFileAssessmentRequest(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *EmailFileAssessmentRequest) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetContentData gets the contentData property value. Base64 encoded .eml email file content. The file content cannot fetch back because it isn't stored.
 func (m *EmailFileAssessmentRequest) GetContentData()(*string) {
@@ -109,7 +120,19 @@ func (m *EmailFileAssessmentRequest) Serialize(writer i878a80d2330e89d26896388a3
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *EmailFileAssessmentRequest) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetContentData sets the contentData property value. Base64 encoded .eml email file content. The file content cannot fetch back because it isn't stored.
 func (m *EmailFileAssessmentRequest) SetContentData(value *string)() {

@@ -7,6 +7,8 @@ import (
 // EdiscoveryReviewTag 
 type EdiscoveryReviewTag struct {
     Tag
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Indicates whether a single or multiple child tags can be associated with a document. Possible values are: One, Many.  This value controls whether the UX presents the tags as checkboxes or a radio button group.
     childSelectability *ChildSelectability
     // Returns the tags that are a child of a tag.
@@ -19,11 +21,20 @@ func NewEdiscoveryReviewTag()(*EdiscoveryReviewTag) {
     m := &EdiscoveryReviewTag{
         Tag: *NewTag(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateEdiscoveryReviewTagFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateEdiscoveryReviewTagFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewEdiscoveryReviewTag(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *EdiscoveryReviewTag) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetChildSelectability gets the childSelectability property value. Indicates whether a single or multiple child tags can be associated with a document. Possible values are: One, Many.  This value controls whether the UX presents the tags as checkboxes or a radio button group.
 func (m *EdiscoveryReviewTag) GetChildSelectability()(*ChildSelectability) {
@@ -117,7 +128,19 @@ func (m *EdiscoveryReviewTag) Serialize(writer i878a80d2330e89d26896388a3f487eef
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *EdiscoveryReviewTag) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetChildSelectability sets the childSelectability property value. Indicates whether a single or multiple child tags can be associated with a document. Possible values are: One, Many.  This value controls whether the UX presents the tags as checkboxes or a radio button group.
 func (m *EdiscoveryReviewTag) SetChildSelectability(value *ChildSelectability)() {

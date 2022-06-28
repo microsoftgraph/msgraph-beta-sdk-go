@@ -7,6 +7,8 @@ import (
 // IosEduDeviceConfiguration 
 type IosEduDeviceConfiguration struct {
     DeviceConfiguration
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // The Trusted Root and PFX certificates for Device
     deviceCertificateSettings IosEduCertificateSettingsable
     // The Trusted Root and PFX certificates for Student
@@ -19,11 +21,20 @@ func NewIosEduDeviceConfiguration()(*IosEduDeviceConfiguration) {
     m := &IosEduDeviceConfiguration{
         DeviceConfiguration: *NewDeviceConfiguration(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateIosEduDeviceConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateIosEduDeviceConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewIosEduDeviceConfiguration(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *IosEduDeviceConfiguration) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetDeviceCertificateSettings gets the deviceCertificateSettings property value. The Trusted Root and PFX certificates for Device
 func (m *IosEduDeviceConfiguration) GetDeviceCertificateSettings()(IosEduCertificateSettingsable) {
@@ -108,7 +119,19 @@ func (m *IosEduDeviceConfiguration) Serialize(writer i878a80d2330e89d26896388a3f
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *IosEduDeviceConfiguration) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetDeviceCertificateSettings sets the deviceCertificateSettings property value. The Trusted Root and PFX certificates for Device
 func (m *IosEduDeviceConfiguration) SetDeviceCertificateSettings(value IosEduCertificateSettingsable)() {

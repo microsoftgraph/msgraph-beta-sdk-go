@@ -5,11 +5,13 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// EducationUser provides operations to manage the educationRoot singleton.
+// EducationUser provides operations to manage the collection of accessReview entities.
 type EducationUser struct {
     Entity
     // True if the account is enabled; otherwise, false. This property is required when a user is created. Supports /$filter.
     accountEnabled *bool
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // The licenses that are assigned to the user. Not nullable.
     assignedLicenses []AssignedLicenseable
     // The plans that are assigned to the user. Read-only. Not nullable.
@@ -90,6 +92,7 @@ func NewEducationUser()(*EducationUser) {
     m := &EducationUser{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateEducationUserFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -102,6 +105,14 @@ func (m *EducationUser) GetAccountEnabled()(*bool) {
         return nil
     } else {
         return m.accountEnabled
+    }
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *EducationUser) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
     }
 }
 // GetAssignedLicenses gets the assignedLicenses property value. The licenses that are assigned to the user. Not nullable.
@@ -1097,12 +1108,24 @@ func (m *EducationUser) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetAccountEnabled sets the accountEnabled property value. True if the account is enabled; otherwise, false. This property is required when a user is created. Supports /$filter.
 func (m *EducationUser) SetAccountEnabled(value *bool)() {
     if m != nil {
         m.accountEnabled = value
+    }
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *EducationUser) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
     }
 }
 // SetAssignedLicenses sets the assignedLicenses property value. The licenses that are assigned to the user. Not nullable.

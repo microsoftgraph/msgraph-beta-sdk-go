@@ -7,6 +7,8 @@ import (
 // IosDeviceFeaturesConfiguration 
 type IosDeviceFeaturesConfiguration struct {
     AppleDeviceFeaturesConfigurationBase
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Asset tag information for the device, displayed on the login window and lock screen.
     assetTagTemplate *string
     // Gets or sets iOS Web Content Filter settings, supervised mode only
@@ -43,11 +45,20 @@ func NewIosDeviceFeaturesConfiguration()(*IosDeviceFeaturesConfiguration) {
     m := &IosDeviceFeaturesConfiguration{
         AppleDeviceFeaturesConfigurationBase: *NewAppleDeviceFeaturesConfigurationBase(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateIosDeviceFeaturesConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateIosDeviceFeaturesConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewIosDeviceFeaturesConfiguration(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *IosDeviceFeaturesConfiguration) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetAssetTagTemplate gets the assetTagTemplate property value. Asset tag information for the device, displayed on the login window and lock screen.
 func (m *IosDeviceFeaturesConfiguration) GetAssetTagTemplate()(*string) {
@@ -445,7 +456,19 @@ func (m *IosDeviceFeaturesConfiguration) Serialize(writer i878a80d2330e89d268963
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *IosDeviceFeaturesConfiguration) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAssetTagTemplate sets the assetTagTemplate property value. Asset tag information for the device, displayed on the login window and lock screen.
 func (m *IosDeviceFeaturesConfiguration) SetAssetTagTemplate(value *string)() {

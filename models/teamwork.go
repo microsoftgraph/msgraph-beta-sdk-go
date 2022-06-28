@@ -4,9 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Teamwork provides operations to manage the teamwork singleton.
+// Teamwork 
 type Teamwork struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // The deletedTeams property
     deletedTeams []DeletedTeamable
     // The Teams devices provisioned for the tenant.
@@ -16,16 +18,25 @@ type Teamwork struct {
     // A workforce integration with shifts.
     workforceIntegrations []WorkforceIntegrationable
 }
-// NewTeamwork instantiates a new teamwork and sets the default values.
+// NewTeamwork instantiates a new Teamwork and sets the default values.
 func NewTeamwork()(*Teamwork) {
     m := &Teamwork{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateTeamworkFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateTeamworkFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewTeamwork(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *Teamwork) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetDeletedTeams gets the deletedTeams property value. The deletedTeams property
 func (m *Teamwork) GetDeletedTeams()([]DeletedTeamable) {
@@ -158,7 +169,19 @@ func (m *Teamwork) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *Teamwork) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetDeletedTeams sets the deletedTeams property value. The deletedTeams property
 func (m *Teamwork) SetDeletedTeams(value []DeletedTeamable)() {

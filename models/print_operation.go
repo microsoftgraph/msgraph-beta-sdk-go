@@ -5,19 +5,22 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// PrintOperation provides operations to manage the print singleton.
+// PrintOperation 
 type PrintOperation struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // The DateTimeOffset when the operation was created. Read-only.
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The status property
     status PrintOperationStatusable
 }
-// NewPrintOperation instantiates a new printOperation and sets the default values.
+// NewPrintOperation instantiates a new PrintOperation and sets the default values.
 func NewPrintOperation()(*PrintOperation) {
     m := &PrintOperation{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreatePrintOperationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -42,6 +45,14 @@ func CreatePrintOperationFromDiscriminatorValue(parseNode i878a80d2330e89d268963
         }
     }
     return NewPrintOperation(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *PrintOperation) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetCreatedDateTime gets the createdDateTime property value. The DateTimeOffset when the operation was created. Read-only.
 func (m *PrintOperation) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
@@ -102,7 +113,19 @@ func (m *PrintOperation) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *PrintOperation) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetCreatedDateTime sets the createdDateTime property value. The DateTimeOffset when the operation was created. Read-only.
 func (m *PrintOperation) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {

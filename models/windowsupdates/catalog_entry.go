@@ -9,6 +9,8 @@ import (
 // CatalogEntry provides operations to manage the admin singleton.
 type CatalogEntry struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // The date on which the content is no longer available to deploy using the service. Read-only.
     deployableUntilDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The display name of the content. Read-only.
@@ -21,6 +23,7 @@ func NewCatalogEntry()(*CatalogEntry) {
     m := &CatalogEntry{
         Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateCatalogEntryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -45,6 +48,14 @@ func CreateCatalogEntryFromDiscriminatorValue(parseNode i878a80d2330e89d26896388
         }
     }
     return NewCatalogEntry(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *CatalogEntry) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetDeployableUntilDateTime gets the deployableUntilDateTime property value. The date on which the content is no longer available to deploy using the service. Read-only.
 func (m *CatalogEntry) GetDeployableUntilDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
@@ -129,7 +140,19 @@ func (m *CatalogEntry) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *CatalogEntry) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetDeployableUntilDateTime sets the deployableUntilDateTime property value. The date on which the content is no longer available to deploy using the service. Read-only.
 func (m *CatalogEntry) SetDeployableUntilDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {

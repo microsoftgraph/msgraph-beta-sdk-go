@@ -4,9 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// IdentityApiConnector provides operations to manage the identityContainer singleton.
+// IdentityApiConnector 
 type IdentityApiConnector struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // The object which describes the authentication configuration details for calling the API. Basic and PKCS 12 client certificate are supported.
     authenticationConfiguration ApiAuthenticationConfigurationBaseable
     // The name of the API connector.
@@ -14,16 +16,25 @@ type IdentityApiConnector struct {
     // The URL of the API endpoint to call.
     targetUrl *string
 }
-// NewIdentityApiConnector instantiates a new identityApiConnector and sets the default values.
+// NewIdentityApiConnector instantiates a new IdentityApiConnector and sets the default values.
 func NewIdentityApiConnector()(*IdentityApiConnector) {
     m := &IdentityApiConnector{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateIdentityApiConnectorFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateIdentityApiConnectorFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewIdentityApiConnector(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *IdentityApiConnector) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetAuthenticationConfiguration gets the authenticationConfiguration property value. The object which describes the authentication configuration details for calling the API. Basic and PKCS 12 client certificate are supported.
 func (m *IdentityApiConnector) GetAuthenticationConfiguration()(ApiAuthenticationConfigurationBaseable) {
@@ -108,7 +119,19 @@ func (m *IdentityApiConnector) Serialize(writer i878a80d2330e89d26896388a3f487ee
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *IdentityApiConnector) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAuthenticationConfiguration sets the authenticationConfiguration property value. The object which describes the authentication configuration details for calling the API. Basic and PKCS 12 client certificate are supported.
 func (m *IdentityApiConnector) SetAuthenticationConfiguration(value ApiAuthenticationConfigurationBaseable)() {

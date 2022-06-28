@@ -4,11 +4,13 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// MessageRule provides operations to manage the collection of administrativeUnit entities.
+// MessageRule provides operations to manage the collection of accessReview entities.
 type MessageRule struct {
     Entity
     // Actions to be taken on a message when the corresponding conditions are fulfilled.
     actions MessageRuleActionsable
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Conditions that when fulfilled, will trigger the corresponding actions for that rule.
     conditions MessageRulePredicatesable
     // The display name of the rule.
@@ -29,6 +31,7 @@ func NewMessageRule()(*MessageRule) {
     m := &MessageRule{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateMessageRuleFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -41,6 +44,14 @@ func (m *MessageRule) GetActions()(MessageRuleActionsable) {
         return nil
     } else {
         return m.actions
+    }
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *MessageRule) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
     }
 }
 // GetConditions gets the conditions property value. Conditions that when fulfilled, will trigger the corresponding actions for that rule.
@@ -238,12 +249,24 @@ func (m *MessageRule) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetActions sets the actions property value. Actions to be taken on a message when the corresponding conditions are fulfilled.
 func (m *MessageRule) SetActions(value MessageRuleActionsable)() {
     if m != nil {
         m.actions = value
+    }
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *MessageRule) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
     }
 }
 // SetConditions sets the conditions property value. Conditions that when fulfilled, will trigger the corresponding actions for that rule.

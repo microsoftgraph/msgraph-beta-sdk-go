@@ -4,9 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// SubscribedSku provides operations to manage the collection of subscribedSku entities.
+// SubscribedSku 
 type SubscribedSku struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // For example, 'User' or 'Company'.
     appliesTo *string
     // Possible values are: Enabled, Warning, Suspended, Deleted, LockedOut. The capabilityStatus is Enabled if the prepaidUnits property has at least 1 unit that is enabled, and LockedOut if the customer cancelled their subscription.
@@ -22,16 +24,25 @@ type SubscribedSku struct {
     // The SKU part number; for example: 'AAD_PREMIUM' or 'RMSBASIC'. To get a list of commercial subscriptions that an organization has acquired, see List subscribedSkus.
     skuPartNumber *string
 }
-// NewSubscribedSku instantiates a new subscribedSku and sets the default values.
+// NewSubscribedSku instantiates a new SubscribedSku and sets the default values.
 func NewSubscribedSku()(*SubscribedSku) {
     m := &SubscribedSku{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateSubscribedSkuFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateSubscribedSkuFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewSubscribedSku(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *SubscribedSku) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetAppliesTo gets the appliesTo property value. For example, 'User' or 'Company'.
 func (m *SubscribedSku) GetAppliesTo()(*string) {
@@ -220,7 +231,19 @@ func (m *SubscribedSku) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *SubscribedSku) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAppliesTo sets the appliesTo property value. For example, 'User' or 'Company'.
 func (m *SubscribedSku) SetAppliesTo(value *string)() {

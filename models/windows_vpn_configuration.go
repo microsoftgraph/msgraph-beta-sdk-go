@@ -7,6 +7,8 @@ import (
 // WindowsVpnConfiguration 
 type WindowsVpnConfiguration struct {
     DeviceConfiguration
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Connection name displayed to the user.
     connectionName *string
     // Custom XML commands that configures the VPN connection. (UTF8 encoded byte array)
@@ -19,6 +21,7 @@ func NewWindowsVpnConfiguration()(*WindowsVpnConfiguration) {
     m := &WindowsVpnConfiguration{
         DeviceConfiguration: *NewDeviceConfiguration(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateWindowsVpnConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -45,6 +48,14 @@ func CreateWindowsVpnConfigurationFromDiscriminatorValue(parseNode i878a80d2330e
         }
     }
     return NewWindowsVpnConfiguration(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *WindowsVpnConfiguration) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetConnectionName gets the connectionName property value. Connection name displayed to the user.
 func (m *WindowsVpnConfiguration) GetConnectionName()(*string) {
@@ -137,7 +148,19 @@ func (m *WindowsVpnConfiguration) Serialize(writer i878a80d2330e89d26896388a3f48
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *WindowsVpnConfiguration) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetConnectionName sets the connectionName property value. Connection name displayed to the user.
 func (m *WindowsVpnConfiguration) SetConnectionName(value *string)() {

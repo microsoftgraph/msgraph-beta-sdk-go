@@ -4,9 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// EdiscoveryNoncustodialDataSource provides operations to manage the security singleton.
+// EdiscoveryNoncustodialDataSource provides operations to manage the collection of accessReview entities.
 type EdiscoveryNoncustodialDataSource struct {
     DataSourceContainer
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // User source or SharePoint site data source as non-custodial data source.
     dataSource DataSourceable
     // Operation entity that represents the latest indexing for the non-custodial data source.
@@ -17,11 +19,20 @@ func NewEdiscoveryNoncustodialDataSource()(*EdiscoveryNoncustodialDataSource) {
     m := &EdiscoveryNoncustodialDataSource{
         DataSourceContainer: *NewDataSourceContainer(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateEdiscoveryNoncustodialDataSourceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateEdiscoveryNoncustodialDataSourceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewEdiscoveryNoncustodialDataSource(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *EdiscoveryNoncustodialDataSource) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetDataSource gets the dataSource property value. User source or SharePoint site data source as non-custodial data source.
 func (m *EdiscoveryNoncustodialDataSource) GetDataSource()(DataSourceable) {
@@ -82,7 +93,19 @@ func (m *EdiscoveryNoncustodialDataSource) Serialize(writer i878a80d2330e89d2689
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *EdiscoveryNoncustodialDataSource) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetDataSource sets the dataSource property value. User source or SharePoint site data source as non-custodial data source.
 func (m *EdiscoveryNoncustodialDataSource) SetDataSource(value DataSourceable)() {

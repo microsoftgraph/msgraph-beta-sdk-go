@@ -4,13 +4,15 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// PurchaseInvoiceLine provides operations to manage the financials singleton.
+// PurchaseInvoiceLine provides operations to manage the collection of accessReview entities.
 type PurchaseInvoiceLine struct {
     Entity
     // The account property
     account Accountable
     // The accountId property
     accountId *string
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // The amountExcludingTax property
     amountExcludingTax *float64
     // The amountIncludingTax property
@@ -59,6 +61,7 @@ func NewPurchaseInvoiceLine()(*PurchaseInvoiceLine) {
     m := &PurchaseInvoiceLine{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreatePurchaseInvoiceLineFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -79,6 +82,14 @@ func (m *PurchaseInvoiceLine) GetAccountId()(*string) {
         return nil
     } else {
         return m.accountId
+    }
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *PurchaseInvoiceLine) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
     }
 }
 // GetAmountExcludingTax gets the amountExcludingTax property value. The amountExcludingTax property
@@ -628,6 +639,12 @@ func (m *PurchaseInvoiceLine) Serialize(writer i878a80d2330e89d26896388a3f487eef
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetAccount sets the account property value. The account property
@@ -640,6 +657,12 @@ func (m *PurchaseInvoiceLine) SetAccount(value Accountable)() {
 func (m *PurchaseInvoiceLine) SetAccountId(value *string)() {
     if m != nil {
         m.accountId = value
+    }
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *PurchaseInvoiceLine) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
     }
 }
 // SetAmountExcludingTax sets the amountExcludingTax property value. The amountExcludingTax property

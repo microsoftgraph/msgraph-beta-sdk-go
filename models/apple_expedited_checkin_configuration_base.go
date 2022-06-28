@@ -7,6 +7,8 @@ import (
 // AppleExpeditedCheckinConfigurationBase 
 type AppleExpeditedCheckinConfigurationBase struct {
     DeviceConfiguration
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Gets or sets whether to enable expedited device check-ins.
     enableExpeditedCheckin *bool
 }
@@ -15,6 +17,7 @@ func NewAppleExpeditedCheckinConfigurationBase()(*AppleExpeditedCheckinConfigura
     m := &AppleExpeditedCheckinConfigurationBase{
         DeviceConfiguration: *NewDeviceConfiguration(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateAppleExpeditedCheckinConfigurationBaseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -39,6 +42,14 @@ func CreateAppleExpeditedCheckinConfigurationBaseFromDiscriminatorValue(parseNod
         }
     }
     return NewAppleExpeditedCheckinConfigurationBase(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *AppleExpeditedCheckinConfigurationBase) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetEnableExpeditedCheckin gets the enableExpeditedCheckin property value. Gets or sets whether to enable expedited device check-ins.
 func (m *AppleExpeditedCheckinConfigurationBase) GetEnableExpeditedCheckin()(*bool) {
@@ -75,7 +86,19 @@ func (m *AppleExpeditedCheckinConfigurationBase) Serialize(writer i878a80d2330e8
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *AppleExpeditedCheckinConfigurationBase) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetEnableExpeditedCheckin sets the enableExpeditedCheckin property value. Gets or sets whether to enable expedited device check-ins.
 func (m *AppleExpeditedCheckinConfigurationBase) SetEnableExpeditedCheckin(value *bool)() {

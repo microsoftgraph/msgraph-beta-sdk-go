@@ -5,9 +5,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Mention provides operations to manage the collection of administrativeUnit entities.
+// Mention provides operations to manage the collection of accessReview entities.
 type Mention struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // The name of the application where the mention is created. Optional. Not used and defaulted as null for message.
     application *string
     // A unique identifier that represents a parent of the resource instance. Optional. Not used and defaulted as null for message.
@@ -30,11 +32,20 @@ func NewMention()(*Mention) {
     m := &Mention{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateMentionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateMentionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewMention(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *Mention) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetApplication gets the application property value. The name of the application where the mention is created. Optional. Not used and defaulted as null for message.
 func (m *Mention) GetApplication()(*string) {
@@ -239,7 +250,19 @@ func (m *Mention) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *Mention) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetApplication sets the application property value. The name of the application where the mention is created. Optional. Not used and defaulted as null for message.
 func (m *Mention) SetApplication(value *string)() {

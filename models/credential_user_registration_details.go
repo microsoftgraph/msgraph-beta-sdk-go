@@ -4,9 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// CredentialUserRegistrationDetails provides operations to manage the reportRoot singleton.
+// CredentialUserRegistrationDetails 
 type CredentialUserRegistrationDetails struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Represents the authentication method that the user has registered. Possible values are: email, mobilePhone, officePhone,  securityQuestion (only used for self-service password reset), appNotification,  appCode, alternateMobilePhone (supported only in registration),  fido,  appPassword,  unknownFutureValue.
     authMethods []string
     // Indicates whether the user is ready to perform self-service password reset or MFA.
@@ -22,16 +24,25 @@ type CredentialUserRegistrationDetails struct {
     // Provides the user principal name of the corresponding user.
     userPrincipalName *string
 }
-// NewCredentialUserRegistrationDetails instantiates a new credentialUserRegistrationDetails and sets the default values.
+// NewCredentialUserRegistrationDetails instantiates a new CredentialUserRegistrationDetails and sets the default values.
 func NewCredentialUserRegistrationDetails()(*CredentialUserRegistrationDetails) {
     m := &CredentialUserRegistrationDetails{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateCredentialUserRegistrationDetailsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateCredentialUserRegistrationDetailsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCredentialUserRegistrationDetails(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *CredentialUserRegistrationDetails) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetAuthMethods gets the authMethods property value. Represents the authentication method that the user has registered. Possible values are: email, mobilePhone, officePhone,  securityQuestion (only used for self-service password reset), appNotification,  appCode, alternateMobilePhone (supported only in registration),  fido,  appPassword,  unknownFutureValue.
 func (m *CredentialUserRegistrationDetails) GetAuthMethods()([]string) {
@@ -216,7 +227,19 @@ func (m *CredentialUserRegistrationDetails) Serialize(writer i878a80d2330e89d268
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *CredentialUserRegistrationDetails) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAuthMethods sets the authMethods property value. Represents the authentication method that the user has registered. Possible values are: email, mobilePhone, officePhone,  securityQuestion (only used for self-service password reset), appNotification,  appCode, alternateMobilePhone (supported only in registration),  fido,  appPassword,  unknownFutureValue.
 func (m *CredentialUserRegistrationDetails) SetAuthMethods(value []string)() {

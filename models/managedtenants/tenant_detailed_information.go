@@ -5,9 +5,11 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
-// TenantDetailedInformation provides operations to manage the tenantRelationship singleton.
+// TenantDetailedInformation provides operations to manage the collection of accessReview entities.
 type TenantDetailedInformation struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // The city where the managed tenant is located. Optional. Read-only.
     city *string
     // The code for the country where the managed tenant is located. Optional. Read-only.
@@ -34,11 +36,20 @@ func NewTenantDetailedInformation()(*TenantDetailedInformation) {
     m := &TenantDetailedInformation{
         Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateTenantDetailedInformationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateTenantDetailedInformationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewTenantDetailedInformation(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *TenantDetailedInformation) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetCity gets the city property value. The city where the managed tenant is located. Optional. Read-only.
 func (m *TenantDetailedInformation) GetCity()(*string) {
@@ -291,7 +302,19 @@ func (m *TenantDetailedInformation) Serialize(writer i878a80d2330e89d26896388a3f
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *TenantDetailedInformation) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetCity sets the city property value. The city where the managed tenant is located. Optional. Read-only.
 func (m *TenantDetailedInformation) SetCity(value *string)() {

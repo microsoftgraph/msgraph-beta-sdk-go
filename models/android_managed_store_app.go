@@ -7,6 +7,8 @@ import (
 // AndroidManagedStoreApp 
 type AndroidManagedStoreApp struct {
     MobileApp
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // The Identity Name.
     appIdentifier *string
     // The Play for Work Store app URL.
@@ -31,6 +33,7 @@ func NewAndroidManagedStoreApp()(*AndroidManagedStoreApp) {
     m := &AndroidManagedStoreApp{
         MobileApp: *NewMobileApp(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateAndroidManagedStoreAppFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -55,6 +58,14 @@ func CreateAndroidManagedStoreAppFromDiscriminatorValue(parseNode i878a80d2330e8
         }
     }
     return NewAndroidManagedStoreApp(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *AndroidManagedStoreApp) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetAppIdentifier gets the appIdentifier property value. The Identity Name.
 func (m *AndroidManagedStoreApp) GetAppIdentifier()(*string) {
@@ -291,7 +302,19 @@ func (m *AndroidManagedStoreApp) Serialize(writer i878a80d2330e89d26896388a3f487
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *AndroidManagedStoreApp) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAppIdentifier sets the appIdentifier property value. The Identity Name.
 func (m *AndroidManagedStoreApp) SetAppIdentifier(value *string)() {

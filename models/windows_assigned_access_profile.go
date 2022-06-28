@@ -4,9 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// WindowsAssignedAccessProfile assigned Access profile for Windows.
+// WindowsAssignedAccessProfile 
 type WindowsAssignedAccessProfile struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // These are the only Windows Store Apps that will be available to launch from the Start menu.
     appUserModelIds []string
     // These are the paths of the Desktop Apps that will be available on the Start menu and the only apps the user will be able to launch.
@@ -20,16 +22,25 @@ type WindowsAssignedAccessProfile struct {
     // The user accounts that will be locked to this kiosk configuration.
     userAccounts []string
 }
-// NewWindowsAssignedAccessProfile instantiates a new windowsAssignedAccessProfile and sets the default values.
+// NewWindowsAssignedAccessProfile instantiates a new WindowsAssignedAccessProfile and sets the default values.
 func NewWindowsAssignedAccessProfile()(*WindowsAssignedAccessProfile) {
     m := &WindowsAssignedAccessProfile{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateWindowsAssignedAccessProfileFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateWindowsAssignedAccessProfileFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWindowsAssignedAccessProfile(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *WindowsAssignedAccessProfile) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetAppUserModelIds gets the appUserModelIds property value. These are the only Windows Store Apps that will be available to launch from the Start menu.
 func (m *WindowsAssignedAccessProfile) GetAppUserModelIds()([]string) {
@@ -198,7 +209,19 @@ func (m *WindowsAssignedAccessProfile) Serialize(writer i878a80d2330e89d26896388
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *WindowsAssignedAccessProfile) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAppUserModelIds sets the appUserModelIds property value. These are the only Windows Store Apps that will be available to launch from the Start menu.
 func (m *WindowsAssignedAccessProfile) SetAppUserModelIds(value []string)() {

@@ -7,6 +7,8 @@ import (
 // MacOSLobApp 
 type MacOSLobApp struct {
     MobileLobApp
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // The build number of MacOS Line of Business (LoB) app.
     buildNumber *string
     // The bundle id.
@@ -33,11 +35,20 @@ func NewMacOSLobApp()(*MacOSLobApp) {
     m := &MacOSLobApp{
         MobileLobApp: *NewMobileLobApp(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateMacOSLobAppFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateMacOSLobAppFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewMacOSLobApp(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *MacOSLobApp) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetBuildNumber gets the buildNumber property value. The build number of MacOS Line of Business (LoB) app.
 func (m *MacOSLobApp) GetBuildNumber()(*string) {
@@ -302,7 +313,19 @@ func (m *MacOSLobApp) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *MacOSLobApp) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetBuildNumber sets the buildNumber property value. The build number of MacOS Line of Business (LoB) app.
 func (m *MacOSLobApp) SetBuildNumber(value *string)() {

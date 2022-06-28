@@ -7,6 +7,8 @@ import (
 // WorkforceIntegration 
 type WorkforceIntegration struct {
     ChangeTrackedEntity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // API version for the call back URL. Start with 1.
     apiVersion *int32
     // Name of the workforce integration.
@@ -29,11 +31,20 @@ func NewWorkforceIntegration()(*WorkforceIntegration) {
     m := &WorkforceIntegration{
         ChangeTrackedEntity: *NewChangeTrackedEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateWorkforceIntegrationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateWorkforceIntegrationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWorkforceIntegration(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *WorkforceIntegration) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetApiVersion gets the apiVersion property value. API version for the call back URL. Start with 1.
 func (m *WorkforceIntegration) GetApiVersion()(*int32) {
@@ -241,7 +252,19 @@ func (m *WorkforceIntegration) Serialize(writer i878a80d2330e89d26896388a3f487ee
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *WorkforceIntegration) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetApiVersion sets the apiVersion property value. API version for the call back URL. Start with 1.
 func (m *WorkforceIntegration) SetApiVersion(value *int32)() {

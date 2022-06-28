@@ -4,11 +4,13 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DeviceManagementConfigurationSettingDefinition provides operations to manage the deviceManagement singleton.
+// DeviceManagementConfigurationSettingDefinition provides operations to manage the collection of accessReview entities.
 type DeviceManagementConfigurationSettingDefinition struct {
     Entity
     // Read/write access mode of the setting. Possible values are: none, add, copy, delete, get, replace, execute.
     accessTypes *DeviceManagementConfigurationSettingAccessTypes
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Details which device setting is applicable on
     applicability DeviceManagementConfigurationSettingApplicabilityable
     // Base CSP Path
@@ -49,6 +51,7 @@ func NewDeviceManagementConfigurationSettingDefinition()(*DeviceManagementConfig
     m := &DeviceManagementConfigurationSettingDefinition{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateDeviceManagementConfigurationSettingDefinitionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -86,6 +89,14 @@ func (m *DeviceManagementConfigurationSettingDefinition) GetAccessTypes()(*Devic
         return nil
     } else {
         return m.accessTypes
+    }
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *DeviceManagementConfigurationSettingDefinition) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
     }
 }
 // GetApplicability gets the applicability property value. Details which device setting is applicable on
@@ -543,12 +554,24 @@ func (m *DeviceManagementConfigurationSettingDefinition) Serialize(writer i878a8
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetAccessTypes sets the accessTypes property value. Read/write access mode of the setting. Possible values are: none, add, copy, delete, get, replace, execute.
 func (m *DeviceManagementConfigurationSettingDefinition) SetAccessTypes(value *DeviceManagementConfigurationSettingAccessTypes)() {
     if m != nil {
         m.accessTypes = value
+    }
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *DeviceManagementConfigurationSettingDefinition) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
     }
 }
 // SetApplicability sets the applicability property value. Details which device setting is applicable on

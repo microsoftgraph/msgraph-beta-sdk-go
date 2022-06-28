@@ -7,6 +7,8 @@ import (
 // MacOSCustomConfiguration 
 type MacOSCustomConfiguration struct {
     DeviceConfiguration
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Indicates the channel used to deploy the configuration profile. Available choices are DeviceChannel, UserChannel. Possible values are: deviceChannel, userChannel.
     deploymentChannel *AppleDeploymentChannel
     // Payload. (UTF8 encoded byte array)
@@ -21,11 +23,20 @@ func NewMacOSCustomConfiguration()(*MacOSCustomConfiguration) {
     m := &MacOSCustomConfiguration{
         DeviceConfiguration: *NewDeviceConfiguration(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateMacOSCustomConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateMacOSCustomConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewMacOSCustomConfiguration(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *MacOSCustomConfiguration) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetDeploymentChannel gets the deploymentChannel property value. Indicates the channel used to deploy the configuration profile. Available choices are DeviceChannel, UserChannel. Possible values are: deviceChannel, userChannel.
 func (m *MacOSCustomConfiguration) GetDeploymentChannel()(*AppleDeploymentChannel) {
@@ -135,7 +146,19 @@ func (m *MacOSCustomConfiguration) Serialize(writer i878a80d2330e89d26896388a3f4
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *MacOSCustomConfiguration) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetDeploymentChannel sets the deploymentChannel property value. Indicates the channel used to deploy the configuration profile. Available choices are DeviceChannel, UserChannel. Possible values are: deviceChannel, userChannel.
 func (m *MacOSCustomConfiguration) SetDeploymentChannel(value *AppleDeploymentChannel)() {

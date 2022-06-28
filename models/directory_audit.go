@@ -5,13 +5,15 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DirectoryAudit provides operations to manage the auditLogRoot singleton.
+// DirectoryAudit provides operations to manage the collection of accessReview entities.
 type DirectoryAudit struct {
     Entity
     // Indicates the date and time the activity was performed. The Timestamp type is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
     activityDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Indicates the activity name or the operation name (E.g. 'Create User', 'Add member to group'). For a list of activities logged, refer to Azure Ad activity list.
     activityDisplayName *string
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Indicates additional details on the activity.
     additionalDetails []KeyValueable
     // Indicates which resource category that's targeted by the activity. (For example: User Management, Group Management etc..)
@@ -38,6 +40,7 @@ func NewDirectoryAudit()(*DirectoryAudit) {
     m := &DirectoryAudit{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateDirectoryAuditFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -58,6 +61,14 @@ func (m *DirectoryAudit) GetActivityDisplayName()(*string) {
         return nil
     } else {
         return m.activityDisplayName
+    }
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *DirectoryAudit) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
     }
 }
 // GetAdditionalDetails gets the additionalDetails property value. Indicates additional details on the activity.
@@ -360,6 +371,12 @@ func (m *DirectoryAudit) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetActivityDateTime sets the activityDateTime property value. Indicates the date and time the activity was performed. The Timestamp type is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
@@ -372,6 +389,12 @@ func (m *DirectoryAudit) SetActivityDateTime(value *i336074805fc853987abe6f7fe3a
 func (m *DirectoryAudit) SetActivityDisplayName(value *string)() {
     if m != nil {
         m.activityDisplayName = value
+    }
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *DirectoryAudit) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
     }
 }
 // SetAdditionalDetails sets the additionalDetails property value. Indicates additional details on the activity.

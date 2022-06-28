@@ -5,11 +5,13 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// TeamworkDeviceActivity provides operations to manage the teamwork singleton.
+// TeamworkDeviceActivity provides operations to manage the collection of accessReview entities.
 type TeamworkDeviceActivity struct {
     Entity
     // The active peripheral devices attached to the device.
     activePeripherals TeamworkActivePeripheralsable
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Identity of the user who created the device activity document.
     createdBy IdentitySetable
     // The UTC date and time when the device activity document was created.
@@ -24,6 +26,7 @@ func NewTeamworkDeviceActivity()(*TeamworkDeviceActivity) {
     m := &TeamworkDeviceActivity{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateTeamworkDeviceActivityFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -36,6 +39,14 @@ func (m *TeamworkDeviceActivity) GetActivePeripherals()(TeamworkActivePeripheral
         return nil
     } else {
         return m.activePeripherals
+    }
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *TeamworkDeviceActivity) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
     }
 }
 // GetCreatedBy gets the createdBy property value. Identity of the user who created the device activity document.
@@ -161,12 +172,24 @@ func (m *TeamworkDeviceActivity) Serialize(writer i878a80d2330e89d26896388a3f487
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetActivePeripherals sets the activePeripherals property value. The active peripheral devices attached to the device.
 func (m *TeamworkDeviceActivity) SetActivePeripherals(value TeamworkActivePeripheralsable)() {
     if m != nil {
         m.activePeripherals = value
+    }
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *TeamworkDeviceActivity) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
     }
 }
 // SetCreatedBy sets the createdBy property value. Identity of the user who created the device activity document.

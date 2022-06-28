@@ -9,6 +9,8 @@ type UserExperienceAnalyticsAppHealthDeviceModelPerformance struct {
     Entity
     // The number of active devices for the model. Valid values -2147483648 to 2147483647
     activeDeviceCount *int32
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // The manufacturer name of the device.
     deviceManufacturer *string
     // The model name of the device.
@@ -27,6 +29,7 @@ func NewUserExperienceAnalyticsAppHealthDeviceModelPerformance()(*UserExperience
     m := &UserExperienceAnalyticsAppHealthDeviceModelPerformance{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateUserExperienceAnalyticsAppHealthDeviceModelPerformanceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -39,6 +42,14 @@ func (m *UserExperienceAnalyticsAppHealthDeviceModelPerformance) GetActiveDevice
         return nil
     } else {
         return m.activeDeviceCount
+    }
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *UserExperienceAnalyticsAppHealthDeviceModelPerformance) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
     }
 }
 // GetDeviceManufacturer gets the deviceManufacturer property value. The manufacturer name of the device.
@@ -213,12 +224,24 @@ func (m *UserExperienceAnalyticsAppHealthDeviceModelPerformance) Serialize(write
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetActiveDeviceCount sets the activeDeviceCount property value. The number of active devices for the model. Valid values -2147483648 to 2147483647
 func (m *UserExperienceAnalyticsAppHealthDeviceModelPerformance) SetActiveDeviceCount(value *int32)() {
     if m != nil {
         m.activeDeviceCount = value
+    }
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *UserExperienceAnalyticsAppHealthDeviceModelPerformance) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
     }
 }
 // SetDeviceManufacturer sets the deviceManufacturer property value. The manufacturer name of the device.

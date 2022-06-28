@@ -4,9 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// SynchronizationSchema provides operations to manage the collection of administrativeUnit entities.
+// SynchronizationSchema casts the previous resource to application.
 type SynchronizationSchema struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Contains the collection of directories and all of their objects.
     directories []DirectoryDefinitionable
     // A collection of synchronization rules configured for the synchronizationJob or synchronizationTemplate.
@@ -19,11 +21,20 @@ func NewSynchronizationSchema()(*SynchronizationSchema) {
     m := &SynchronizationSchema{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateSynchronizationSchemaFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateSynchronizationSchemaFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewSynchronizationSchema(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *SynchronizationSchema) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetDirectories gets the directories property value. Contains the collection of directories and all of their objects.
 func (m *SynchronizationSchema) GetDirectories()([]DirectoryDefinitionable) {
@@ -124,7 +135,19 @@ func (m *SynchronizationSchema) Serialize(writer i878a80d2330e89d26896388a3f487e
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *SynchronizationSchema) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetDirectories sets the directories property value. Contains the collection of directories and all of their objects.
 func (m *SynchronizationSchema) SetDirectories(value []DirectoryDefinitionable)() {

@@ -7,6 +7,8 @@ import (
 // UserExperienceAnalyticsBatteryHealthDeviceAppImpact the user experience analytics battery health device app impact entity contains battery usage related information at an app level for a given device.
 type UserExperienceAnalyticsBatteryHealthDeviceAppImpact struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // User friendly display name for the app. Eg: Outlook
     appDisplayName *string
     // App name. Eg: oltk.exe
@@ -25,11 +27,20 @@ func NewUserExperienceAnalyticsBatteryHealthDeviceAppImpact()(*UserExperienceAna
     m := &UserExperienceAnalyticsBatteryHealthDeviceAppImpact{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateUserExperienceAnalyticsBatteryHealthDeviceAppImpactFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateUserExperienceAnalyticsBatteryHealthDeviceAppImpactFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewUserExperienceAnalyticsBatteryHealthDeviceAppImpact(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *UserExperienceAnalyticsBatteryHealthDeviceAppImpact) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetAppDisplayName gets the appDisplayName property value. User friendly display name for the app. Eg: Outlook
 func (m *UserExperienceAnalyticsBatteryHealthDeviceAppImpact) GetAppDisplayName()(*string) {
@@ -186,7 +197,19 @@ func (m *UserExperienceAnalyticsBatteryHealthDeviceAppImpact) Serialize(writer i
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *UserExperienceAnalyticsBatteryHealthDeviceAppImpact) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAppDisplayName sets the appDisplayName property value. User friendly display name for the app. Eg: Outlook
 func (m *UserExperienceAnalyticsBatteryHealthDeviceAppImpact) SetAppDisplayName(value *string)() {

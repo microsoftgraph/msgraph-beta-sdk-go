@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of bookingBusiness entities.
+// Provides operations to manage the collection of accessReview entities.
 type BookingStaffRole int
 
 const (

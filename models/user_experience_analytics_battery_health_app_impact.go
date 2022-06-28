@@ -9,6 +9,8 @@ type UserExperienceAnalyticsBatteryHealthAppImpact struct {
     Entity
     // Number of active devices for using that app over a 14-day period. Valid values -2147483648 to 2147483647
     activeDevices *int32
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // User friendly display name for the app. Eg: Outlook
     appDisplayName *string
     // App name. Eg: oltk.exe
@@ -25,6 +27,7 @@ func NewUserExperienceAnalyticsBatteryHealthAppImpact()(*UserExperienceAnalytics
     m := &UserExperienceAnalyticsBatteryHealthAppImpact{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateUserExperienceAnalyticsBatteryHealthAppImpactFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -37,6 +40,14 @@ func (m *UserExperienceAnalyticsBatteryHealthAppImpact) GetActiveDevices()(*int3
         return nil
     } else {
         return m.activeDevices
+    }
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *UserExperienceAnalyticsBatteryHealthAppImpact) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
     }
 }
 // GetAppDisplayName gets the appDisplayName property value. User friendly display name for the app. Eg: Outlook
@@ -186,12 +197,24 @@ func (m *UserExperienceAnalyticsBatteryHealthAppImpact) Serialize(writer i878a80
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetActiveDevices sets the activeDevices property value. Number of active devices for using that app over a 14-day period. Valid values -2147483648 to 2147483647
 func (m *UserExperienceAnalyticsBatteryHealthAppImpact) SetActiveDevices(value *int32)() {
     if m != nil {
         m.activeDevices = value
+    }
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *UserExperienceAnalyticsBatteryHealthAppImpact) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
     }
 }
 // SetAppDisplayName sets the appDisplayName property value. User friendly display name for the app. Eg: Outlook

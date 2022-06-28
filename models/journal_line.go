@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// JournalLine provides operations to manage the financials singleton.
+// JournalLine provides operations to manage the collection of accessReview entities.
 type JournalLine struct {
     Entity
     // The account property
@@ -14,6 +14,8 @@ type JournalLine struct {
     accountId *string
     // The accountNumber property
     accountNumber *string
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // The amount property
     amount *float64
     // The comment property
@@ -38,6 +40,7 @@ func NewJournalLine()(*JournalLine) {
     m := &JournalLine{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateJournalLineFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -66,6 +69,14 @@ func (m *JournalLine) GetAccountNumber()(*string) {
         return nil
     } else {
         return m.accountNumber
+    }
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *JournalLine) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
     }
 }
 // GetAmount gets the amount property value. The amount property
@@ -343,6 +354,12 @@ func (m *JournalLine) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetAccount sets the account property value. The account property
@@ -361,6 +378,12 @@ func (m *JournalLine) SetAccountId(value *string)() {
 func (m *JournalLine) SetAccountNumber(value *string)() {
     if m != nil {
         m.accountNumber = value
+    }
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *JournalLine) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
     }
 }
 // SetAmount sets the amount property value. The amount property

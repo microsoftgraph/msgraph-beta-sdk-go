@@ -10,6 +10,8 @@ type EdiscoveryCustodian struct {
     DataSourceContainer
     // Date and time the custodian acknowledged a hold notification.
     acknowledgedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Email address of the custodian.
     email *string
     // Operation entity that represents the latest indexing for the custodian.
@@ -26,6 +28,7 @@ func NewEdiscoveryCustodian()(*EdiscoveryCustodian) {
     m := &EdiscoveryCustodian{
         DataSourceContainer: *NewDataSourceContainer(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateEdiscoveryCustodianFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -38,6 +41,14 @@ func (m *EdiscoveryCustodian) GetAcknowledgedDateTime()(*i336074805fc853987abe6f
         return nil
     } else {
         return m.acknowledgedDateTime
+    }
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *EdiscoveryCustodian) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
     }
 }
 // GetEmail gets the email property value. Email address of the custodian.
@@ -211,12 +222,24 @@ func (m *EdiscoveryCustodian) Serialize(writer i878a80d2330e89d26896388a3f487eef
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetAcknowledgedDateTime sets the acknowledgedDateTime property value. Date and time the custodian acknowledged a hold notification.
 func (m *EdiscoveryCustodian) SetAcknowledgedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     if m != nil {
         m.acknowledgedDateTime = value
+    }
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *EdiscoveryCustodian) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
     }
 }
 // SetEmail sets the email property value. Email address of the custodian.

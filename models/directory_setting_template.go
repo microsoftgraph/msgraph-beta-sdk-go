@@ -7,6 +7,8 @@ import (
 // DirectorySettingTemplate 
 type DirectorySettingTemplate struct {
     DirectoryObject
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Description of the template. Read-only.
     description *string
     // Display name of the template. Read-only.
@@ -19,11 +21,20 @@ func NewDirectorySettingTemplate()(*DirectorySettingTemplate) {
     m := &DirectorySettingTemplate{
         DirectoryObject: *NewDirectoryObject(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateDirectorySettingTemplateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateDirectorySettingTemplateFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDirectorySettingTemplate(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *DirectorySettingTemplate) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetDescription gets the description property value. Description of the template. Read-only.
 func (m *DirectorySettingTemplate) GetDescription()(*string) {
@@ -116,7 +127,19 @@ func (m *DirectorySettingTemplate) Serialize(writer i878a80d2330e89d26896388a3f4
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *DirectorySettingTemplate) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetDescription sets the description property value. Description of the template. Read-only.
 func (m *DirectorySettingTemplate) SetDescription(value *string)() {

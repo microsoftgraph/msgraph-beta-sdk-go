@@ -4,9 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ExtensionProperty provides operations to manage the collection of administrativeUnit entities.
+// ExtensionProperty casts the previous resource to application.
 type ExtensionProperty struct {
     DirectoryObject
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Display name of the application object on which this extension property is defined. Read-only.
     appDisplayName *string
     // Specifies the data type of the value the extension property can hold. Following values are supported. Not nullable. Binary - 256 bytes maximumBooleanDateTime - Must be specified in ISO 8601 format. Will be stored in UTC.Integer - 32-bit value.LargeInteger - 64-bit value.String - 256 characters maximum
@@ -23,11 +25,20 @@ func NewExtensionProperty()(*ExtensionProperty) {
     m := &ExtensionProperty{
         DirectoryObject: *NewDirectoryObject(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateExtensionPropertyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateExtensionPropertyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewExtensionProperty(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *ExtensionProperty) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetAppDisplayName gets the appDisplayName property value. Display name of the application object on which this extension property is defined. Read-only.
 func (m *ExtensionProperty) GetAppDisplayName()(*string) {
@@ -164,7 +175,19 @@ func (m *ExtensionProperty) Serialize(writer i878a80d2330e89d26896388a3f487eef27
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *ExtensionProperty) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAppDisplayName sets the appDisplayName property value. Display name of the application object on which this extension property is defined. Read-only.
 func (m *ExtensionProperty) SetAppDisplayName(value *string)() {

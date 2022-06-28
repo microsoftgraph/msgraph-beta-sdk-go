@@ -7,6 +7,8 @@ import (
 // GroupPolicySettingMapping the Group Policy setting to MDM/Intune mapping.
 type GroupPolicySettingMapping struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Admx Group Policy Id
     admxSettingDefinitionId *string
     // List of Child Ids of the group policy setting.
@@ -53,11 +55,20 @@ func NewGroupPolicySettingMapping()(*GroupPolicySettingMapping) {
     m := &GroupPolicySettingMapping{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateGroupPolicySettingMappingFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateGroupPolicySettingMappingFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewGroupPolicySettingMapping(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *GroupPolicySettingMapping) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetAdmxSettingDefinitionId gets the admxSettingDefinitionId property value. Admx Group Policy Id
 func (m *GroupPolicySettingMapping) GetAdmxSettingDefinitionId()(*string) {
@@ -561,7 +572,19 @@ func (m *GroupPolicySettingMapping) Serialize(writer i878a80d2330e89d26896388a3f
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *GroupPolicySettingMapping) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAdmxSettingDefinitionId sets the admxSettingDefinitionId property value. Admx Group Policy Id
 func (m *GroupPolicySettingMapping) SetAdmxSettingDefinitionId(value *string)() {

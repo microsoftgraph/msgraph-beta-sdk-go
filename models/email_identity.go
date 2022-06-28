@@ -4,22 +4,33 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// EmailIdentity provides operations to manage the security singleton.
+// EmailIdentity 
 type EmailIdentity struct {
     Identity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Email address of the user.
     email *string
 }
-// NewEmailIdentity instantiates a new emailIdentity and sets the default values.
+// NewEmailIdentity instantiates a new EmailIdentity and sets the default values.
 func NewEmailIdentity()(*EmailIdentity) {
     m := &EmailIdentity{
         Identity: *NewIdentity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateEmailIdentityFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateEmailIdentityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewEmailIdentity(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *EmailIdentity) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetEmail gets the email property value. Email address of the user.
 func (m *EmailIdentity) GetEmail()(*string) {
@@ -56,7 +67,19 @@ func (m *EmailIdentity) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *EmailIdentity) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetEmail sets the email property value. Email address of the user.
 func (m *EmailIdentity) SetEmail(value *string)() {

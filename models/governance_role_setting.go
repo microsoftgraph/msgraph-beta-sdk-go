@@ -5,9 +5,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// GovernanceRoleSetting provides operations to manage the collection of governanceResource entities.
+// GovernanceRoleSetting provides operations to manage the collection of accessReview entities.
 type GovernanceRoleSetting struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // The rule settings that are evaluated when an administrator tries to add an eligible role assignment.
     adminEligibleSettings []GovernanceRuleSettingable
     // The rule settings that are evaluated when an administrator tries to add a direct member role assignment.
@@ -36,11 +38,20 @@ func NewGovernanceRoleSetting()(*GovernanceRoleSetting) {
     m := &GovernanceRoleSetting{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateGovernanceRoleSettingFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateGovernanceRoleSettingFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewGovernanceRoleSetting(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *GovernanceRoleSetting) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetAdminEligibleSettings gets the adminEligibleSettings property value. The rule settings that are evaluated when an administrator tries to add an eligible role assignment.
 func (m *GovernanceRoleSetting) GetAdminEligibleSettings()([]GovernanceRuleSettingable) {
@@ -349,7 +360,19 @@ func (m *GovernanceRoleSetting) Serialize(writer i878a80d2330e89d26896388a3f487e
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *GovernanceRoleSetting) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAdminEligibleSettings sets the adminEligibleSettings property value. The rule settings that are evaluated when an administrator tries to add an eligible role assignment.
 func (m *GovernanceRoleSetting) SetAdminEligibleSettings(value []GovernanceRuleSettingable)() {

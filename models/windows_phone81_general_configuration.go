@@ -7,6 +7,8 @@ import (
 // WindowsPhone81GeneralConfiguration 
 type WindowsPhone81GeneralConfiguration struct {
     DeviceConfiguration
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Value indicating whether this policy only applies to Windows Phone 8.1. This property is read-only.
     applyOnlyToWindowsPhone81 *bool
     // Indicates whether or not to block copy paste.
@@ -71,11 +73,20 @@ func NewWindowsPhone81GeneralConfiguration()(*WindowsPhone81GeneralConfiguration
     m := &WindowsPhone81GeneralConfiguration{
         DeviceConfiguration: *NewDeviceConfiguration(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateWindowsPhone81GeneralConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateWindowsPhone81GeneralConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWindowsPhone81GeneralConfiguration(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *WindowsPhone81GeneralConfiguration) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetApplyOnlyToWindowsPhone81 gets the applyOnlyToWindowsPhone81 property value. Value indicating whether this policy only applies to Windows Phone 8.1. This property is read-only.
 func (m *WindowsPhone81GeneralConfiguration) GetApplyOnlyToWindowsPhone81()(*bool) {
@@ -794,7 +805,19 @@ func (m *WindowsPhone81GeneralConfiguration) Serialize(writer i878a80d2330e89d26
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *WindowsPhone81GeneralConfiguration) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetApplyOnlyToWindowsPhone81 sets the applyOnlyToWindowsPhone81 property value. Value indicating whether this policy only applies to Windows Phone 8.1. This property is read-only.
 func (m *WindowsPhone81GeneralConfiguration) SetApplyOnlyToWindowsPhone81(value *bool)() {

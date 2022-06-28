@@ -8,6 +8,8 @@ import (
 // WindowsAutopilotDeploymentProfile windows Autopilot Deployment Profile
 type WindowsAutopilotDeploymentProfile struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // The list of assigned devices for the profile.
     assignedDevices []WindowsAutopilotDeviceIdentityable
     // The list of group assignments for the profile.
@@ -44,6 +46,7 @@ func NewWindowsAutopilotDeploymentProfile()(*WindowsAutopilotDeploymentProfile) 
     m := &WindowsAutopilotDeploymentProfile{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateWindowsAutopilotDeploymentProfileFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -70,6 +73,14 @@ func CreateWindowsAutopilotDeploymentProfileFromDiscriminatorValue(parseNode i87
         }
     }
     return NewWindowsAutopilotDeploymentProfile(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *WindowsAutopilotDeploymentProfile) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetAssignedDevices gets the assignedDevices property value. The list of assigned devices for the profile.
 func (m *WindowsAutopilotDeploymentProfile) GetAssignedDevices()([]WindowsAutopilotDeviceIdentityable) {
@@ -463,7 +474,19 @@ func (m *WindowsAutopilotDeploymentProfile) Serialize(writer i878a80d2330e89d268
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *WindowsAutopilotDeploymentProfile) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAssignedDevices sets the assignedDevices property value. The list of assigned devices for the profile.
 func (m *WindowsAutopilotDeploymentProfile) SetAssignedDevices(value []WindowsAutopilotDeviceIdentityable)() {

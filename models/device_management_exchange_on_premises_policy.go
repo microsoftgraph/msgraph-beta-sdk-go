@@ -9,6 +9,8 @@ type DeviceManagementExchangeOnPremisesPolicy struct {
     Entity
     // The list of device access rules in Exchange. The access rules apply globally to the entire Exchange organization
     accessRules []DeviceManagementExchangeAccessRuleable
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // The Exchange on premises conditional access settings. On premises conditional access will require devices to be both enrolled and compliant for mail access
     conditionalAccessSettings OnPremisesConditionalAccessSettingsable
     // Default access state in Exchange. This rule applies globally to the entire Exchange organization. Possible values are: none, allow, block, quarantine.
@@ -23,6 +25,7 @@ func NewDeviceManagementExchangeOnPremisesPolicy()(*DeviceManagementExchangeOnPr
     m := &DeviceManagementExchangeOnPremisesPolicy{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateDeviceManagementExchangeOnPremisesPolicyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -35,6 +38,14 @@ func (m *DeviceManagementExchangeOnPremisesPolicy) GetAccessRules()([]DeviceMana
         return nil
     } else {
         return m.accessRules
+    }
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *DeviceManagementExchangeOnPremisesPolicy) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
     }
 }
 // GetConditionalAccessSettings gets the conditionalAccessSettings property value. The Exchange on premises conditional access settings. On premises conditional access will require devices to be both enrolled and compliant for mail access
@@ -177,12 +188,24 @@ func (m *DeviceManagementExchangeOnPremisesPolicy) Serialize(writer i878a80d2330
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetAccessRules sets the accessRules property value. The list of device access rules in Exchange. The access rules apply globally to the entire Exchange organization
 func (m *DeviceManagementExchangeOnPremisesPolicy) SetAccessRules(value []DeviceManagementExchangeAccessRuleable)() {
     if m != nil {
         m.accessRules = value
+    }
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *DeviceManagementExchangeOnPremisesPolicy) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
     }
 }
 // SetConditionalAccessSettings sets the conditionalAccessSettings property value. The Exchange on premises conditional access settings. On premises conditional access will require devices to be both enrolled and compliant for mail access

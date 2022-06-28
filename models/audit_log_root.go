@@ -4,9 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AuditLogRoot provides operations to manage the auditLogRoot singleton.
+// AuditLogRoot 
 type AuditLogRoot struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // The directoryAudits property
     directoryAudits []DirectoryAuditable
     // The directoryProvisioning property
@@ -18,16 +20,25 @@ type AuditLogRoot struct {
     // The signIns property
     signIns []SignInable
 }
-// NewAuditLogRoot instantiates a new auditLogRoot and sets the default values.
+// NewAuditLogRoot instantiates a new AuditLogRoot and sets the default values.
 func NewAuditLogRoot()(*AuditLogRoot) {
     m := &AuditLogRoot{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateAuditLogRootFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateAuditLogRootFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAuditLogRoot(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *AuditLogRoot) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetDirectoryAudits gets the directoryAudits property value. The directoryAudits property
 func (m *AuditLogRoot) GetDirectoryAudits()([]DirectoryAuditable) {
@@ -200,7 +211,19 @@ func (m *AuditLogRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *AuditLogRoot) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetDirectoryAudits sets the directoryAudits property value. The directoryAudits property
 func (m *AuditLogRoot) SetDirectoryAudits(value []DirectoryAuditable)() {

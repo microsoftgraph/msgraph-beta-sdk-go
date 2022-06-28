@@ -9,6 +9,8 @@ type ResourceOperation struct {
     Entity
     // Type of action this operation is going to perform. The actionName should be concise and limited to as few words as possible.
     actionName *string
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Description of the resource operation. The description is used in mouse-over text for the operation when shown in the Azure Portal.
     description *string
     // Determines whether the Permission is validated for Scopes defined per Role Assignment. This property is read-only.
@@ -23,6 +25,7 @@ func NewResourceOperation()(*ResourceOperation) {
     m := &ResourceOperation{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateResourceOperationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -35,6 +38,14 @@ func (m *ResourceOperation) GetActionName()(*string) {
         return nil
     } else {
         return m.actionName
+    }
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *ResourceOperation) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
     }
 }
 // GetDescription gets the description property value. Description of the resource operation. The description is used in mouse-over text for the operation when shown in the Azure Portal.
@@ -160,12 +171,24 @@ func (m *ResourceOperation) Serialize(writer i878a80d2330e89d26896388a3f487eef27
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetActionName sets the actionName property value. Type of action this operation is going to perform. The actionName should be concise and limited to as few words as possible.
 func (m *ResourceOperation) SetActionName(value *string)() {
     if m != nil {
         m.actionName = value
+    }
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *ResourceOperation) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
     }
 }
 // SetDescription sets the description property value. Description of the resource operation. The description is used in mouse-over text for the operation when shown in the Azure Portal.

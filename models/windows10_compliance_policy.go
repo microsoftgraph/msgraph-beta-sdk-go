@@ -9,6 +9,8 @@ type Windows10CompliancePolicy struct {
     DeviceCompliancePolicy
     // Require active firewall on Windows devices.
     activeFirewallRequired *bool
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Require any AntiSpyware solution registered with Windows Decurity Center to be on and monitoring (e.g. Symantec, Windows Defender).
     antiSpywareRequired *bool
     // Require any Antivirus solution registered with Windows Decurity Center to be on and monitoring (e.g. Symantec, Windows Defender).
@@ -77,6 +79,7 @@ func NewWindows10CompliancePolicy()(*Windows10CompliancePolicy) {
     m := &Windows10CompliancePolicy{
         DeviceCompliancePolicy: *NewDeviceCompliancePolicy(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateWindows10CompliancePolicyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -89,6 +92,14 @@ func (m *Windows10CompliancePolicy) GetActiveFirewallRequired()(*bool) {
         return nil
     } else {
         return m.activeFirewallRequired
+    }
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *Windows10CompliancePolicy) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
     }
 }
 // GetAntiSpywareRequired gets the antiSpywareRequired property value. Require any AntiSpyware solution registered with Windows Decurity Center to be on and monitoring (e.g. Symantec, Windows Defender).
@@ -872,12 +883,24 @@ func (m *Windows10CompliancePolicy) Serialize(writer i878a80d2330e89d26896388a3f
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetActiveFirewallRequired sets the activeFirewallRequired property value. Require active firewall on Windows devices.
 func (m *Windows10CompliancePolicy) SetActiveFirewallRequired(value *bool)() {
     if m != nil {
         m.activeFirewallRequired = value
+    }
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *Windows10CompliancePolicy) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
     }
 }
 // SetAntiSpywareRequired sets the antiSpywareRequired property value. Require any AntiSpyware solution registered with Windows Decurity Center to be on and monitoring (e.g. Symantec, Windows Defender).

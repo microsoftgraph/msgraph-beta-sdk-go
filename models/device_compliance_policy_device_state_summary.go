@@ -4,9 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DeviceCompliancePolicyDeviceStateSummary provides operations to manage the deviceManagement singleton.
+// DeviceCompliancePolicyDeviceStateSummary provides operations to manage the collection of accessReview entities.
 type DeviceCompliancePolicyDeviceStateSummary struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Number of compliant devices
     compliantDeviceCount *int32
     // Number of devices that have compliance managed by System Center Configuration Manager
@@ -31,11 +33,20 @@ func NewDeviceCompliancePolicyDeviceStateSummary()(*DeviceCompliancePolicyDevice
     m := &DeviceCompliancePolicyDeviceStateSummary{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateDeviceCompliancePolicyDeviceStateSummaryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateDeviceCompliancePolicyDeviceStateSummaryFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDeviceCompliancePolicyDeviceStateSummary(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *DeviceCompliancePolicyDeviceStateSummary) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetCompliantDeviceCount gets the compliantDeviceCount property value. Number of compliant devices
 func (m *DeviceCompliancePolicyDeviceStateSummary) GetCompliantDeviceCount()(*int32) {
@@ -264,7 +275,19 @@ func (m *DeviceCompliancePolicyDeviceStateSummary) Serialize(writer i878a80d2330
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *DeviceCompliancePolicyDeviceStateSummary) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetCompliantDeviceCount sets the compliantDeviceCount property value. Number of compliant devices
 func (m *DeviceCompliancePolicyDeviceStateSummary) SetCompliantDeviceCount(value *int32)() {

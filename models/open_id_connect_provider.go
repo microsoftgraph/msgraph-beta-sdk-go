@@ -7,6 +7,8 @@ import (
 // OpenIdConnectProvider 
 type OpenIdConnectProvider struct {
     IdentityProvider
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // After the OIDC provider sends an ID token back to Azure AD, Azure AD needs to be able to map the claims from the received token to the claims that Azure AD recognizes and uses. This complex type captures that mapping. It is a required property.
     claimsMapping ClaimsMappingable
     // The domain hint can be used to skip directly to the sign-in page of the specified identity provider, instead of having the user make a selection among the list of available identity providers.
@@ -25,11 +27,20 @@ func NewOpenIdConnectProvider()(*OpenIdConnectProvider) {
     m := &OpenIdConnectProvider{
         IdentityProvider: *NewIdentityProvider(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateOpenIdConnectProviderFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateOpenIdConnectProviderFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewOpenIdConnectProvider(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *OpenIdConnectProvider) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetClaimsMapping gets the claimsMapping property value. After the OIDC provider sends an ID token back to Azure AD, Azure AD needs to be able to map the claims from the received token to the claims that Azure AD recognizes and uses. This complex type captures that mapping. It is a required property.
 func (m *OpenIdConnectProvider) GetClaimsMapping()(ClaimsMappingable) {
@@ -188,7 +199,19 @@ func (m *OpenIdConnectProvider) Serialize(writer i878a80d2330e89d26896388a3f487e
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *OpenIdConnectProvider) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetClaimsMapping sets the claimsMapping property value. After the OIDC provider sends an ID token back to Azure AD, Azure AD needs to be able to map the claims from the received token to the claims that Azure AD recognizes and uses. This complex type captures that mapping. It is a required property.
 func (m *OpenIdConnectProvider) SetClaimsMapping(value ClaimsMappingable)() {

@@ -7,6 +7,8 @@ import (
 // Room 
 type Room struct {
     Place
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Specifies the name of the audio device in the room.
     audioDeviceName *string
     // Type of room. Possible values are standard, and reserved.
@@ -39,11 +41,20 @@ func NewRoom()(*Room) {
     m := &Room{
         Place: *NewPlace(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateRoomFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateRoomFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewRoom(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *Room) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetAudioDeviceName gets the audioDeviceName property value. Specifies the name of the audio device in the room.
 func (m *Room) GetAudioDeviceName()(*string) {
@@ -373,7 +384,19 @@ func (m *Room) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c49
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *Room) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAudioDeviceName sets the audioDeviceName property value. Specifies the name of the audio device in the room.
 func (m *Room) SetAudioDeviceName(value *string)() {

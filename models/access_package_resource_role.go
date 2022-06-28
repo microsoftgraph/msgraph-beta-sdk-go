@@ -4,11 +4,13 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AccessPackageResourceRole provides operations to manage the identityGovernance singleton.
+// AccessPackageResourceRole provides operations to manage the collection of accessReview entities.
 type AccessPackageResourceRole struct {
     Entity
     // The accessPackageResource property
     accessPackageResource AccessPackageResourceable
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // A description for the resource role.
     description *string
     // The display name of the resource role such as the role defined by the application.
@@ -23,6 +25,7 @@ func NewAccessPackageResourceRole()(*AccessPackageResourceRole) {
     m := &AccessPackageResourceRole{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateAccessPackageResourceRoleFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -35,6 +38,14 @@ func (m *AccessPackageResourceRole) GetAccessPackageResource()(AccessPackageReso
         return nil
     } else {
         return m.accessPackageResource
+    }
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *AccessPackageResourceRole) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
     }
 }
 // GetDescription gets the description property value. A description for the resource role.
@@ -160,12 +171,24 @@ func (m *AccessPackageResourceRole) Serialize(writer i878a80d2330e89d26896388a3f
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetAccessPackageResource sets the accessPackageResource property value. The accessPackageResource property
 func (m *AccessPackageResourceRole) SetAccessPackageResource(value AccessPackageResourceable)() {
     if m != nil {
         m.accessPackageResource = value
+    }
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *AccessPackageResourceRole) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
     }
 }
 // SetDescription sets the description property value. A description for the resource role.

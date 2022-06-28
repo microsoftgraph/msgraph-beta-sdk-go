@@ -4,9 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// UsageRight provides operations to manage the collection of administrativeUnit entities.
+// UsageRight provides operations to manage the collection of accessReview entities.
 type UsageRight struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Product id corresponding to the usage right.
     catalogId *string
     // Identifier of the service corresponding to the usage right.
@@ -19,11 +21,20 @@ func NewUsageRight()(*UsageRight) {
     m := &UsageRight{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateUsageRightFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateUsageRightFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewUsageRight(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *UsageRight) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetCatalogId gets the catalogId property value. Product id corresponding to the usage right.
 func (m *UsageRight) GetCatalogId()(*string) {
@@ -109,7 +120,19 @@ func (m *UsageRight) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *UsageRight) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetCatalogId sets the catalogId property value. Product id corresponding to the usage right.
 func (m *UsageRight) SetCatalogId(value *string)() {

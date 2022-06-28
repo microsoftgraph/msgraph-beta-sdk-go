@@ -7,6 +7,8 @@ import (
 // AndroidScepCertificateProfile 
 type AndroidScepCertificateProfile struct {
     AndroidCertificateProfileBase
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // SCEP Hash Algorithm. Possible values are: sha1, sha2.
     hashAlgorithm *HashAlgorithms
     // SCEP Key Size. Possible values are: size1024, size2048, size4096.
@@ -27,11 +29,20 @@ func NewAndroidScepCertificateProfile()(*AndroidScepCertificateProfile) {
     m := &AndroidScepCertificateProfile{
         AndroidCertificateProfileBase: *NewAndroidCertificateProfileBase(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateAndroidScepCertificateProfileFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateAndroidScepCertificateProfileFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAndroidScepCertificateProfile(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *AndroidScepCertificateProfile) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AndroidScepCertificateProfile) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -227,7 +238,19 @@ func (m *AndroidScepCertificateProfile) Serialize(writer i878a80d2330e89d2689638
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *AndroidScepCertificateProfile) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetHashAlgorithm sets the hashAlgorithm property value. SCEP Hash Algorithm. Possible values are: sha1, sha2.
 func (m *AndroidScepCertificateProfile) SetHashAlgorithm(value *HashAlgorithms)() {

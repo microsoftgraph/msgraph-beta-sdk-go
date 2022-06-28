@@ -7,6 +7,8 @@ import (
 // MacOSCertificateProfileBase mac OS certificate profile.
 type MacOSCertificateProfileBase struct {
     DeviceConfiguration
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Scale for the Certificate Validity Period. Possible values are: days, months, years.
     certificateValidityPeriodScale *CertificateValidityPeriodScale
     // Value for the Certificate Validity Period.
@@ -23,6 +25,7 @@ func NewMacOSCertificateProfileBase()(*MacOSCertificateProfileBase) {
     m := &MacOSCertificateProfileBase{
         DeviceConfiguration: *NewDeviceConfiguration(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateMacOSCertificateProfileBaseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -51,6 +54,14 @@ func CreateMacOSCertificateProfileBaseFromDiscriminatorValue(parseNode i878a80d2
         }
     }
     return NewMacOSCertificateProfileBase(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *MacOSCertificateProfileBase) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetCertificateValidityPeriodScale gets the certificateValidityPeriodScale property value. Scale for the Certificate Validity Period. Possible values are: days, months, years.
 func (m *MacOSCertificateProfileBase) GetCertificateValidityPeriodScale()(*CertificateValidityPeriodScale) {
@@ -186,7 +197,19 @@ func (m *MacOSCertificateProfileBase) Serialize(writer i878a80d2330e89d26896388a
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *MacOSCertificateProfileBase) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetCertificateValidityPeriodScale sets the certificateValidityPeriodScale property value. Scale for the Certificate Validity Period. Possible values are: days, months, years.
 func (m *MacOSCertificateProfileBase) SetCertificateValidityPeriodScale(value *CertificateValidityPeriodScale)() {

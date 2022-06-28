@@ -4,9 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// OnPremisesAgent provides operations to manage the collection of onPremisesPublishingProfile entities.
+// OnPremisesAgent 
 type OnPremisesAgent struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // List of onPremisesAgentGroups that an onPremisesAgent is assigned to. Read-only. Nullable.
     agentGroups []OnPremisesAgentGroupable
     // The external IP address as detected by the service for the agent machine. Read-only
@@ -18,16 +20,25 @@ type OnPremisesAgent struct {
     // The supportedPublishingTypes property
     supportedPublishingTypes []string
 }
-// NewOnPremisesAgent instantiates a new onPremisesAgent and sets the default values.
+// NewOnPremisesAgent instantiates a new OnPremisesAgent and sets the default values.
 func NewOnPremisesAgent()(*OnPremisesAgent) {
     m := &OnPremisesAgent{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateOnPremisesAgentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateOnPremisesAgentFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewOnPremisesAgent(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *OnPremisesAgent) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetAgentGroups gets the agentGroups property value. List of onPremisesAgentGroups that an onPremisesAgent is assigned to. Read-only. Nullable.
 func (m *OnPremisesAgent) GetAgentGroups()([]OnPremisesAgentGroupable) {
@@ -173,7 +184,19 @@ func (m *OnPremisesAgent) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *OnPremisesAgent) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAgentGroups sets the agentGroups property value. List of onPremisesAgentGroups that an onPremisesAgent is assigned to. Read-only. Nullable.
 func (m *OnPremisesAgent) SetAgentGroups(value []OnPremisesAgentGroupable)() {

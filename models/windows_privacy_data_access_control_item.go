@@ -9,6 +9,8 @@ type WindowsPrivacyDataAccessControlItem struct {
     Entity
     // This indicates an access level for the privacy data category to which the specified application will be given to. Possible values are: notConfigured, forceAllow, forceDeny, userInControl.
     accessLevel *WindowsPrivacyDataAccessLevel
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // The Package Family Name of a Windows app. When set, the access level applies to the specified application.
     appDisplayName *string
     // The Package Family Name of a Windows app. When set, the access level applies to the specified application.
@@ -21,6 +23,7 @@ func NewWindowsPrivacyDataAccessControlItem()(*WindowsPrivacyDataAccessControlIt
     m := &WindowsPrivacyDataAccessControlItem{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateWindowsPrivacyDataAccessControlItemFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -33,6 +36,14 @@ func (m *WindowsPrivacyDataAccessControlItem) GetAccessLevel()(*WindowsPrivacyDa
         return nil
     } else {
         return m.accessLevel
+    }
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *WindowsPrivacyDataAccessControlItem) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
     }
 }
 // GetAppDisplayName gets the appDisplayName property value. The Package Family Name of a Windows app. When set, the access level applies to the specified application.
@@ -136,12 +147,24 @@ func (m *WindowsPrivacyDataAccessControlItem) Serialize(writer i878a80d2330e89d2
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetAccessLevel sets the accessLevel property value. This indicates an access level for the privacy data category to which the specified application will be given to. Possible values are: notConfigured, forceAllow, forceDeny, userInControl.
 func (m *WindowsPrivacyDataAccessControlItem) SetAccessLevel(value *WindowsPrivacyDataAccessLevel)() {
     if m != nil {
         m.accessLevel = value
+    }
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *WindowsPrivacyDataAccessControlItem) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
     }
 }
 // SetAppDisplayName sets the appDisplayName property value. The Package Family Name of a Windows app. When set, the access level applies to the specified application.

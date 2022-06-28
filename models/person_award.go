@@ -7,6 +7,8 @@ import (
 // PersonAward 
 type PersonAward struct {
     ItemFacet
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Descpription of the award or honor.
     description *string
     // Name of the award or honor.
@@ -25,11 +27,20 @@ func NewPersonAward()(*PersonAward) {
     m := &PersonAward{
         ItemFacet: *NewItemFacet(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreatePersonAwardFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreatePersonAwardFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewPersonAward(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *PersonAward) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetDescription gets the description property value. Descpription of the award or honor.
 func (m *PersonAward) GetDescription()(*string) {
@@ -186,7 +197,19 @@ func (m *PersonAward) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *PersonAward) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetDescription sets the description property value. Descpription of the award or honor.
 func (m *PersonAward) SetDescription(value *string)() {

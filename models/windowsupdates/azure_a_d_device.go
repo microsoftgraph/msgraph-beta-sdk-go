@@ -7,6 +7,8 @@ import (
 // AzureADDevice 
 type AzureADDevice struct {
     UpdatableAsset
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Specifies areas of the service in which the device is enrolled. Read-only. Returned by default.
     enrollments []UpdatableAssetEnrollmentable
     // Specifies any errors that prevent the device from being enrolled in update management or receving deployed content. Read-only. Returned by default.
@@ -17,11 +19,20 @@ func NewAzureADDevice()(*AzureADDevice) {
     m := &AzureADDevice{
         UpdatableAsset: *NewUpdatableAsset(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateAzureADDeviceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateAzureADDeviceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAzureADDevice(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *AzureADDevice) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetEnrollments gets the enrollments property value. Specifies areas of the service in which the device is enrolled. Read-only. Returned by default.
 func (m *AzureADDevice) GetEnrollments()([]UpdatableAssetEnrollmentable) {
@@ -98,7 +109,19 @@ func (m *AzureADDevice) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *AzureADDevice) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetEnrollments sets the enrollments property value. Specifies areas of the service in which the device is enrolled. Read-only. Returned by default.
 func (m *AzureADDevice) SetEnrollments(value []UpdatableAssetEnrollmentable)() {

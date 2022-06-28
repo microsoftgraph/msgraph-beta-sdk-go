@@ -8,6 +8,8 @@ import (
 // GroupPolicyDefinition the entity describes all of the information about a single group policy.
 type GroupPolicyDefinition struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // The group policy category associated with the definition.
     category GroupPolicyCategoryable
     // The localized full category path for the policy.
@@ -48,11 +50,20 @@ func NewGroupPolicyDefinition()(*GroupPolicyDefinition) {
     m := &GroupPolicyDefinition{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateGroupPolicyDefinitionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateGroupPolicyDefinitionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewGroupPolicyDefinition(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *GroupPolicyDefinition) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetCategory gets the category property value. The group policy category associated with the definition.
 func (m *GroupPolicyDefinition) GetCategory()(GroupPolicyCategoryable) {
@@ -483,7 +494,19 @@ func (m *GroupPolicyDefinition) Serialize(writer i878a80d2330e89d26896388a3f487e
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *GroupPolicyDefinition) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetCategory sets the category property value. The group policy category associated with the definition.
 func (m *GroupPolicyDefinition) SetCategory(value GroupPolicyCategoryable)() {

@@ -10,6 +10,8 @@ type ServiceUpdateMessage struct {
     ServiceAnnouncementBase
     // The expected deadline of the action for the message.
     actionRequiredByDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // A collection of serviceAnnouncementAttachments.
     attachments []ServiceAnnouncementAttachmentable
     // The zip file of all attachments for a message.
@@ -36,6 +38,7 @@ func NewServiceUpdateMessage()(*ServiceUpdateMessage) {
     m := &ServiceUpdateMessage{
         ServiceAnnouncementBase: *NewServiceAnnouncementBase(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateServiceUpdateMessageFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -48,6 +51,14 @@ func (m *ServiceUpdateMessage) GetActionRequiredByDateTime()(*i336074805fc853987
         return nil
     } else {
         return m.actionRequiredByDateTime
+    }
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *ServiceUpdateMessage) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
     }
 }
 // GetAttachments gets the attachments property value. A collection of serviceAnnouncementAttachments.
@@ -335,12 +346,24 @@ func (m *ServiceUpdateMessage) Serialize(writer i878a80d2330e89d26896388a3f487ee
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetActionRequiredByDateTime sets the actionRequiredByDateTime property value. The expected deadline of the action for the message.
 func (m *ServiceUpdateMessage) SetActionRequiredByDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     if m != nil {
         m.actionRequiredByDateTime = value
+    }
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *ServiceUpdateMessage) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
     }
 }
 // SetAttachments sets the attachments property value. A collection of serviceAnnouncementAttachments.

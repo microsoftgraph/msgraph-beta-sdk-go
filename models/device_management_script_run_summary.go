@@ -7,6 +7,8 @@ import (
 // DeviceManagementScriptRunSummary contains properties for the run summary of a device management script.
 type DeviceManagementScriptRunSummary struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Error device count.
     errorDeviceCount *int32
     // Error user count.
@@ -21,11 +23,20 @@ func NewDeviceManagementScriptRunSummary()(*DeviceManagementScriptRunSummary) {
     m := &DeviceManagementScriptRunSummary{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateDeviceManagementScriptRunSummaryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateDeviceManagementScriptRunSummaryFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDeviceManagementScriptRunSummary(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *DeviceManagementScriptRunSummary) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetErrorDeviceCount gets the errorDeviceCount property value. Error device count.
 func (m *DeviceManagementScriptRunSummary) GetErrorDeviceCount()(*int32) {
@@ -134,7 +145,19 @@ func (m *DeviceManagementScriptRunSummary) Serialize(writer i878a80d2330e89d2689
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *DeviceManagementScriptRunSummary) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetErrorDeviceCount sets the errorDeviceCount property value. Error device count.
 func (m *DeviceManagementScriptRunSummary) SetErrorDeviceCount(value *int32)() {

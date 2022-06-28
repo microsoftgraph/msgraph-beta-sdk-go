@@ -8,6 +8,8 @@ import (
 // TelecomExpenseManagementPartner telecomExpenseManagementPartner resources represent the metadata and status of a given TEM service. Once your organization has onboarded with a partner, the partner can be enabled or disabled to switch TEM functionality on or off.
 type TelecomExpenseManagementPartner struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Whether the partner's AAD app has been authorized to access Intune.
     appAuthorized *bool
     // Display name of the TEM partner.
@@ -24,11 +26,20 @@ func NewTelecomExpenseManagementPartner()(*TelecomExpenseManagementPartner) {
     m := &TelecomExpenseManagementPartner{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateTelecomExpenseManagementPartnerFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateTelecomExpenseManagementPartnerFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewTelecomExpenseManagementPartner(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *TelecomExpenseManagementPartner) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetAppAuthorized gets the appAuthorized property value. Whether the partner's AAD app has been authorized to access Intune.
 func (m *TelecomExpenseManagementPartner) GetAppAuthorized()(*bool) {
@@ -161,7 +172,19 @@ func (m *TelecomExpenseManagementPartner) Serialize(writer i878a80d2330e89d26896
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *TelecomExpenseManagementPartner) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAppAuthorized sets the appAuthorized property value. Whether the partner's AAD app has been authorized to access Intune.
 func (m *TelecomExpenseManagementPartner) SetAppAuthorized(value *bool)() {

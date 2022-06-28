@@ -7,6 +7,8 @@ import (
 // DeviceManagementScriptGroupAssignment contains properties used to assign a device management script to a group.
 type DeviceManagementScriptGroupAssignment struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // The Id of the Azure Active Directory group we are targeting the script to.
     targetGroupId *string
 }
@@ -15,11 +17,20 @@ func NewDeviceManagementScriptGroupAssignment()(*DeviceManagementScriptGroupAssi
     m := &DeviceManagementScriptGroupAssignment{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateDeviceManagementScriptGroupAssignmentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateDeviceManagementScriptGroupAssignmentFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDeviceManagementScriptGroupAssignment(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *DeviceManagementScriptGroupAssignment) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceManagementScriptGroupAssignment) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -56,7 +67,19 @@ func (m *DeviceManagementScriptGroupAssignment) Serialize(writer i878a80d2330e89
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *DeviceManagementScriptGroupAssignment) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetTargetGroupId sets the targetGroupId property value. The Id of the Azure Active Directory group we are targeting the script to.
 func (m *DeviceManagementScriptGroupAssignment) SetTargetGroupId(value *string)() {

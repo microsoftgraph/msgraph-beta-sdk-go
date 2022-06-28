@@ -7,6 +7,8 @@ import (
 // DeviceConfigurationAssignment the device configuration assignment entity assigns an AAD group to a specific device configuration.
 type DeviceConfigurationAssignment struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // The admin intent to apply or remove the profile. Possible values are: apply, remove.
     intent *DeviceConfigAssignmentIntent
     // The assignment source for the device configuration, direct or parcel/policySet. This property is read-only. Possible values are: direct, policySets.
@@ -21,11 +23,20 @@ func NewDeviceConfigurationAssignment()(*DeviceConfigurationAssignment) {
     m := &DeviceConfigurationAssignment{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateDeviceConfigurationAssignmentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateDeviceConfigurationAssignmentFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDeviceConfigurationAssignment(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *DeviceConfigurationAssignment) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceConfigurationAssignment) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -136,7 +147,19 @@ func (m *DeviceConfigurationAssignment) Serialize(writer i878a80d2330e89d2689638
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *DeviceConfigurationAssignment) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetIntent sets the intent property value. The admin intent to apply or remove the profile. Possible values are: apply, remove.
 func (m *DeviceConfigurationAssignment) SetIntent(value *DeviceConfigAssignmentIntent)() {

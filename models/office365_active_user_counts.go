@@ -4,9 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Office365ActiveUserCounts provides operations to call the getOffice365ActiveUserCounts method.
+// Office365ActiveUserCounts 
 type Office365ActiveUserCounts struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // The number of active users in Exchange. Any user who can read and send email is considered an active user.
     exchange *int64
     // The number of active users in Microsoft 365. This number includes all the active users in Exchange, OneDrive, SharePoint, Skype For Business, Yammer, and Microsoft Teams. You can find the definition of active user for each product in the respective property description.
@@ -28,16 +30,25 @@ type Office365ActiveUserCounts struct {
     // The number of active users in Yammer. Any user who can post, read, or like messages is considered an active user.
     yammer *int64
 }
-// NewOffice365ActiveUserCounts instantiates a new office365ActiveUserCounts and sets the default values.
+// NewOffice365ActiveUserCounts instantiates a new Office365ActiveUserCounts and sets the default values.
 func NewOffice365ActiveUserCounts()(*Office365ActiveUserCounts) {
     m := &Office365ActiveUserCounts{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateOffice365ActiveUserCountsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateOffice365ActiveUserCountsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewOffice365ActiveUserCounts(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *Office365ActiveUserCounts) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetExchange gets the exchange property value. The number of active users in Exchange. Any user who can read and send email is considered an active user.
 func (m *Office365ActiveUserCounts) GetExchange()(*int64) {
@@ -290,7 +301,19 @@ func (m *Office365ActiveUserCounts) Serialize(writer i878a80d2330e89d26896388a3f
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *Office365ActiveUserCounts) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetExchange sets the exchange property value. The number of active users in Exchange. Any user who can read and send email is considered an active user.
 func (m *Office365ActiveUserCounts) SetExchange(value *int64)() {

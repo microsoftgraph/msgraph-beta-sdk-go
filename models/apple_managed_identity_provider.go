@@ -7,6 +7,8 @@ import (
 // AppleManagedIdentityProvider 
 type AppleManagedIdentityProvider struct {
     IdentityProviderBase
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // The certificate data which is a long string of text from the certificate, can be null.
     certificateData *string
     // The Apple developer identifier. Required.
@@ -21,11 +23,20 @@ func NewAppleManagedIdentityProvider()(*AppleManagedIdentityProvider) {
     m := &AppleManagedIdentityProvider{
         IdentityProviderBase: *NewIdentityProviderBase(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateAppleManagedIdentityProviderFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateAppleManagedIdentityProviderFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAppleManagedIdentityProvider(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *AppleManagedIdentityProvider) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetCertificateData gets the certificateData property value. The certificate data which is a long string of text from the certificate, can be null.
 func (m *AppleManagedIdentityProvider) GetCertificateData()(*string) {
@@ -134,7 +145,19 @@ func (m *AppleManagedIdentityProvider) Serialize(writer i878a80d2330e89d26896388
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *AppleManagedIdentityProvider) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetCertificateData sets the certificateData property value. The certificate data which is a long string of text from the certificate, can be null.
 func (m *AppleManagedIdentityProvider) SetCertificateData(value *string)() {

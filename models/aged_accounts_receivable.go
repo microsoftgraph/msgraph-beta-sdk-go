@@ -4,9 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AgedAccountsReceivable provides operations to manage the financials singleton.
+// AgedAccountsReceivable 
 type AgedAccountsReceivable struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // The agedAsOfDate property
     agedAsOfDate *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly
     // The balanceDue property
@@ -28,16 +30,25 @@ type AgedAccountsReceivable struct {
     // The periodLengthFilter property
     periodLengthFilter *string
 }
-// NewAgedAccountsReceivable instantiates a new agedAccountsReceivable and sets the default values.
+// NewAgedAccountsReceivable instantiates a new AgedAccountsReceivable and sets the default values.
 func NewAgedAccountsReceivable()(*AgedAccountsReceivable) {
     m := &AgedAccountsReceivable{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateAgedAccountsReceivableFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateAgedAccountsReceivableFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAgedAccountsReceivable(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *AgedAccountsReceivable) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetAgedAsOfDate gets the agedAsOfDate property value. The agedAsOfDate property
 func (m *AgedAccountsReceivable) GetAgedAsOfDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly) {
@@ -290,7 +301,19 @@ func (m *AgedAccountsReceivable) Serialize(writer i878a80d2330e89d26896388a3f487
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *AgedAccountsReceivable) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAgedAsOfDate sets the agedAsOfDate property value. The agedAsOfDate property
 func (m *AgedAccountsReceivable) SetAgedAsOfDate(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)() {

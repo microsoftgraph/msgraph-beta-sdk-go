@@ -7,6 +7,8 @@ import (
 // Windows10VpnConfiguration 
 type Windows10VpnConfiguration struct {
     WindowsVpnConfiguration
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Associated Apps. This collection can contain a maximum of 10000 elements.
     associatedApps []Windows10AssociatedAppsable
     // Authentication method. Possible values are: certificate, usernameAndPassword, customEapXml, derivedCredential.
@@ -63,11 +65,20 @@ func NewWindows10VpnConfiguration()(*Windows10VpnConfiguration) {
     m := &Windows10VpnConfiguration{
         WindowsVpnConfiguration: *NewWindowsVpnConfiguration(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateWindows10VpnConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateWindows10VpnConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWindows10VpnConfiguration(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *Windows10VpnConfiguration) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetAssociatedApps gets the associatedApps property value. Associated Apps. This collection can contain a maximum of 10000 elements.
 func (m *Windows10VpnConfiguration) GetAssociatedApps()([]Windows10AssociatedAppsable) {
@@ -723,7 +734,19 @@ func (m *Windows10VpnConfiguration) Serialize(writer i878a80d2330e89d26896388a3f
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *Windows10VpnConfiguration) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAssociatedApps sets the associatedApps property value. Associated Apps. This collection can contain a maximum of 10000 elements.
 func (m *Windows10VpnConfiguration) SetAssociatedApps(value []Windows10AssociatedAppsable)() {

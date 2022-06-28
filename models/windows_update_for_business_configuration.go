@@ -8,6 +8,8 @@ import (
 // WindowsUpdateForBusinessConfiguration 
 type WindowsUpdateForBusinessConfiguration struct {
     DeviceConfiguration
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Allow eligible Windows 10 devices to upgrade to the latest version of Windows 11.
     allowWindows11Upgrade *bool
     // Automatic update mode. Possible values are: userDefined, notifyDownload, autoInstallAtMaintenanceTime, autoInstallAndRebootAtMaintenanceTime, autoInstallAndRebootAtScheduledTime, autoInstallAndRebootWithoutEndUserControl, windowsDefault.
@@ -88,11 +90,20 @@ func NewWindowsUpdateForBusinessConfiguration()(*WindowsUpdateForBusinessConfigu
     m := &WindowsUpdateForBusinessConfiguration{
         DeviceConfiguration: *NewDeviceConfiguration(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateWindowsUpdateForBusinessConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateWindowsUpdateForBusinessConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWindowsUpdateForBusinessConfiguration(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *WindowsUpdateForBusinessConfiguration) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetAllowWindows11Upgrade gets the allowWindows11Upgrade property value. Allow eligible Windows 10 devices to upgrade to the latest version of Windows 11.
 func (m *WindowsUpdateForBusinessConfiguration) GetAllowWindows11Upgrade()(*bool) {
@@ -1010,7 +1021,19 @@ func (m *WindowsUpdateForBusinessConfiguration) Serialize(writer i878a80d2330e89
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *WindowsUpdateForBusinessConfiguration) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAllowWindows11Upgrade sets the allowWindows11Upgrade property value. Allow eligible Windows 10 devices to upgrade to the latest version of Windows 11.
 func (m *WindowsUpdateForBusinessConfiguration) SetAllowWindows11Upgrade(value *bool)() {

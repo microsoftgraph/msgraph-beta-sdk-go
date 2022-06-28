@@ -7,6 +7,8 @@ import (
 // AllowedDataLocation provides operations to manage the collection of allowedDataLocation entities.
 type AllowedDataLocation struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // The appId property
     appId *string
     // The domain property
@@ -21,11 +23,20 @@ func NewAllowedDataLocation()(*AllowedDataLocation) {
     m := &AllowedDataLocation{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateAllowedDataLocationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateAllowedDataLocationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAllowedDataLocation(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *AllowedDataLocation) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetAppId gets the appId property value. The appId property
 func (m *AllowedDataLocation) GetAppId()(*string) {
@@ -134,7 +145,19 @@ func (m *AllowedDataLocation) Serialize(writer i878a80d2330e89d26896388a3f487eef
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *AllowedDataLocation) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAppId sets the appId property value. The appId property
 func (m *AllowedDataLocation) SetAppId(value *string)() {

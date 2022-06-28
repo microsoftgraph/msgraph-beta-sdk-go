@@ -7,6 +7,8 @@ import (
 // AssignmentFilterEvaluationStatusDetails a class containing information about the payloads on which filter has been applied.
 type AssignmentFilterEvaluationStatusDetails struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // PayloadId on which filter has been applied.
     payloadId *string
 }
@@ -15,11 +17,20 @@ func NewAssignmentFilterEvaluationStatusDetails()(*AssignmentFilterEvaluationSta
     m := &AssignmentFilterEvaluationStatusDetails{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateAssignmentFilterEvaluationStatusDetailsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateAssignmentFilterEvaluationStatusDetailsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAssignmentFilterEvaluationStatusDetails(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *AssignmentFilterEvaluationStatusDetails) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AssignmentFilterEvaluationStatusDetails) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -56,7 +67,19 @@ func (m *AssignmentFilterEvaluationStatusDetails) Serialize(writer i878a80d2330e
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *AssignmentFilterEvaluationStatusDetails) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetPayloadId sets the payloadId property value. PayloadId on which filter has been applied.
 func (m *AssignmentFilterEvaluationStatusDetails) SetPayloadId(value *string)() {

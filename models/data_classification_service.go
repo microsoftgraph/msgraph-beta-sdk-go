@@ -4,9 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DataClassificationService provides operations to manage the dataClassificationService singleton.
+// DataClassificationService 
 type DataClassificationService struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // The classifyFileJobs property
     classifyFileJobs []JobResponseBaseable
     // The classifyTextJobs property
@@ -26,16 +28,25 @@ type DataClassificationService struct {
     // The sensitivityLabels property
     sensitivityLabels []SensitivityLabelable
 }
-// NewDataClassificationService instantiates a new dataClassificationService and sets the default values.
+// NewDataClassificationService instantiates a new DataClassificationService and sets the default values.
 func NewDataClassificationService()(*DataClassificationService) {
     m := &DataClassificationService{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateDataClassificationServiceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateDataClassificationServiceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDataClassificationService(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *DataClassificationService) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetClassifyFileJobs gets the classifyFileJobs property value. The classifyFileJobs property
 func (m *DataClassificationService) GetClassifyFileJobs()([]JobResponseBaseable) {
@@ -336,7 +347,19 @@ func (m *DataClassificationService) Serialize(writer i878a80d2330e89d26896388a3f
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *DataClassificationService) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetClassifyFileJobs sets the classifyFileJobs property value. The classifyFileJobs property
 func (m *DataClassificationService) SetClassifyFileJobs(value []JobResponseBaseable)() {

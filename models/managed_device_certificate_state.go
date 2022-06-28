@@ -5,9 +5,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ManagedDeviceCertificateState provides operations to manage the deviceManagement singleton.
+// ManagedDeviceCertificateState provides operations to manage the collection of accessReview entities.
 type ManagedDeviceCertificateState struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Extended key usage
     certificateEnhancedKeyUsage *string
     // Error code
@@ -62,11 +64,20 @@ func NewManagedDeviceCertificateState()(*ManagedDeviceCertificateState) {
     m := &ManagedDeviceCertificateState{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateManagedDeviceCertificateStateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateManagedDeviceCertificateStateFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewManagedDeviceCertificateState(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *ManagedDeviceCertificateState) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetCertificateEnhancedKeyUsage gets the certificateEnhancedKeyUsage property value. Extended key usage
 func (m *ManagedDeviceCertificateState) GetCertificateEnhancedKeyUsage()(*string) {
@@ -663,7 +674,19 @@ func (m *ManagedDeviceCertificateState) Serialize(writer i878a80d2330e89d2689638
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *ManagedDeviceCertificateState) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetCertificateEnhancedKeyUsage sets the certificateEnhancedKeyUsage property value. Extended key usage
 func (m *ManagedDeviceCertificateState) SetCertificateEnhancedKeyUsage(value *string)() {

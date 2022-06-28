@@ -1,0 +1,326 @@
+package models
+
+import (
+    i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e "time"
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+)
+
+// CallRecord 
+type CallRecord struct {
+    Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
+    // UTC time when the last user left the call. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+    endDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
+    // Meeting URL associated to the call. May not be available for a peerToPeer call record type.
+    joinWebUrl *string
+    // UTC time when the call record was created. The DatetimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+    lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
+    // List of all the modalities used in the call. Possible values are: unknown, audio, video, videoBasedScreenSharing, data, screenSharing, unknownFutureValue.
+    modalities []string
+    // The organizing party's identity.
+    organizer IdentitySetable
+    // List of distinct identities involved in the call.
+    participants []IdentitySetable
+    // UTC time when the first user joined the call. The DatetimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+    startDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
+    // Monotonically increasing version of the call record. Higher version call records with the same ID includes additional data compared to the lower version.
+    version *int64
+}
+// NewCallRecord instantiates a new CallRecord and sets the default values.
+func NewCallRecord()(*CallRecord) {
+    m := &CallRecord{
+        Entity: *NewEntity(),
+    }
+    m.SetAdditionalData(make(map[string]interface{}));
+    return m
+}
+// CreateCallRecordFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateCallRecordFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+    return NewCallRecord(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *CallRecord) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
+}
+// GetEndDateTime gets the endDateTime property value. UTC time when the last user left the call. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+func (m *CallRecord) GetEndDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.endDateTime
+    }
+}
+// GetFieldDeserializers the deserialization information for the current model
+func (m *CallRecord) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := m.Entity.GetFieldDeserializers()
+    res["endDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetTimeValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetEndDateTime(val)
+        }
+        return nil
+    }
+    res["joinWebUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetJoinWebUrl(val)
+        }
+        return nil
+    }
+    res["lastModifiedDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetTimeValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetLastModifiedDateTime(val)
+        }
+        return nil
+    }
+    res["modalities"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfPrimitiveValues("string")
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetModalities(res)
+        }
+        return nil
+    }
+    res["organizer"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateIdentitySetFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOrganizer(val.(IdentitySetable))
+        }
+        return nil
+    }
+    res["participants"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateIdentitySetFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]IdentitySetable, len(val))
+            for i, v := range val {
+                res[i] = v.(IdentitySetable)
+            }
+            m.SetParticipants(res)
+        }
+        return nil
+    }
+    res["startDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetTimeValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetStartDateTime(val)
+        }
+        return nil
+    }
+    res["version"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetInt64Value()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetVersion(val)
+        }
+        return nil
+    }
+    return res
+}
+// GetJoinWebUrl gets the joinWebUrl property value. Meeting URL associated to the call. May not be available for a peerToPeer call record type.
+func (m *CallRecord) GetJoinWebUrl()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.joinWebUrl
+    }
+}
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. UTC time when the call record was created. The DatetimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+func (m *CallRecord) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.lastModifiedDateTime
+    }
+}
+// GetModalities gets the modalities property value. List of all the modalities used in the call. Possible values are: unknown, audio, video, videoBasedScreenSharing, data, screenSharing, unknownFutureValue.
+func (m *CallRecord) GetModalities()([]string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.modalities
+    }
+}
+// GetOrganizer gets the organizer property value. The organizing party's identity.
+func (m *CallRecord) GetOrganizer()(IdentitySetable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.organizer
+    }
+}
+// GetParticipants gets the participants property value. List of distinct identities involved in the call.
+func (m *CallRecord) GetParticipants()([]IdentitySetable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.participants
+    }
+}
+// GetStartDateTime gets the startDateTime property value. UTC time when the first user joined the call. The DatetimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+func (m *CallRecord) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    if m == nil {
+        return nil
+    } else {
+        return m.startDateTime
+    }
+}
+// GetVersion gets the version property value. Monotonically increasing version of the call record. Higher version call records with the same ID includes additional data compared to the lower version.
+func (m *CallRecord) GetVersion()(*int64) {
+    if m == nil {
+        return nil
+    } else {
+        return m.version
+    }
+}
+// Serialize serializes information the current object
+func (m *CallRecord) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
+    err := m.Entity.Serialize(writer)
+    if err != nil {
+        return err
+    }
+    {
+        err = writer.WriteTimeValue("endDateTime", m.GetEndDateTime())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteStringValue("joinWebUrl", m.GetJoinWebUrl())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteTimeValue("lastModifiedDateTime", m.GetLastModifiedDateTime())
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetModalities() != nil {
+        err = writer.WriteCollectionOfStringValues("modalities", m.GetModalities())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteObjectValue("organizer", m.GetOrganizer())
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetParticipants() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetParticipants()))
+        for i, v := range m.GetParticipants() {
+            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+        }
+        err = writer.WriteCollectionOfObjectValues("participants", cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteTimeValue("startDateTime", m.GetStartDateTime())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteInt64Value("version", m.GetVersion())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
+    return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *CallRecord) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
+}
+// SetEndDateTime sets the endDateTime property value. UTC time when the last user left the call. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+func (m *CallRecord) SetEndDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
+    if m != nil {
+        m.endDateTime = value
+    }
+}
+// SetJoinWebUrl sets the joinWebUrl property value. Meeting URL associated to the call. May not be available for a peerToPeer call record type.
+func (m *CallRecord) SetJoinWebUrl(value *string)() {
+    if m != nil {
+        m.joinWebUrl = value
+    }
+}
+// SetLastModifiedDateTime sets the lastModifiedDateTime property value. UTC time when the call record was created. The DatetimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+func (m *CallRecord) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
+    if m != nil {
+        m.lastModifiedDateTime = value
+    }
+}
+// SetModalities sets the modalities property value. List of all the modalities used in the call. Possible values are: unknown, audio, video, videoBasedScreenSharing, data, screenSharing, unknownFutureValue.
+func (m *CallRecord) SetModalities(value []string)() {
+    if m != nil {
+        m.modalities = value
+    }
+}
+// SetOrganizer sets the organizer property value. The organizing party's identity.
+func (m *CallRecord) SetOrganizer(value IdentitySetable)() {
+    if m != nil {
+        m.organizer = value
+    }
+}
+// SetParticipants sets the participants property value. List of distinct identities involved in the call.
+func (m *CallRecord) SetParticipants(value []IdentitySetable)() {
+    if m != nil {
+        m.participants = value
+    }
+}
+// SetStartDateTime sets the startDateTime property value. UTC time when the first user joined the call. The DatetimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+func (m *CallRecord) SetStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
+    if m != nil {
+        m.startDateTime = value
+    }
+}
+// SetVersion sets the version property value. Monotonically increasing version of the call record. Higher version call records with the same ID includes additional data compared to the lower version.
+func (m *CallRecord) SetVersion(value *int64)() {
+    if m != nil {
+        m.version = value
+    }
+}

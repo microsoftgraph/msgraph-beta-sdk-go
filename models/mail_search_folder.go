@@ -7,6 +7,8 @@ import (
 // MailSearchFolder 
 type MailSearchFolder struct {
     MailFolder
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // The OData query to filter the messages.
     filterQuery *string
     // Indicates how the mailbox folder hierarchy should be traversed in the search. true means that a deep search should be done to include child folders in the hierarchy of each folder explicitly specified in sourceFolderIds. false means a shallow search of only each of the folders explicitly specified in sourceFolderIds.
@@ -21,11 +23,20 @@ func NewMailSearchFolder()(*MailSearchFolder) {
     m := &MailSearchFolder{
         MailFolder: *NewMailFolder(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateMailSearchFolderFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateMailSearchFolderFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewMailSearchFolder(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *MailSearchFolder) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *MailSearchFolder) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -138,7 +149,19 @@ func (m *MailSearchFolder) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *MailSearchFolder) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetFilterQuery sets the filterQuery property value. The OData query to filter the messages.
 func (m *MailSearchFolder) SetFilterQuery(value *string)() {

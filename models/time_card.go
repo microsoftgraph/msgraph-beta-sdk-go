@@ -7,6 +7,8 @@ import (
 // TimeCard 
 type TimeCard struct {
     ChangeTrackedEntity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // The list of breaks associated with the timeCard.
     breaks []TimeCardBreakable
     // The clock-in event of the timeCard.
@@ -29,11 +31,20 @@ func NewTimeCard()(*TimeCard) {
     m := &TimeCard{
         ChangeTrackedEntity: *NewChangeTrackedEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateTimeCardFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateTimeCardFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewTimeCard(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *TimeCard) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetBreaks gets the breaks property value. The list of breaks associated with the timeCard.
 func (m *TimeCard) GetBreaks()([]TimeCardBreakable) {
@@ -248,7 +259,19 @@ func (m *TimeCard) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *TimeCard) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetBreaks sets the breaks property value. The list of breaks associated with the timeCard.
 func (m *TimeCard) SetBreaks(value []TimeCardBreakable)() {

@@ -1,0 +1,129 @@
+package models
+
+import (
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+)
+
+// AccessPackageMultipleChoiceQuestion 
+type AccessPackageMultipleChoiceQuestion struct {
+    AccessPackageQuestion
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
+    // Indicates whether requestor can select multiple choices as their answer.
+    allowsMultipleSelection *bool
+    // List of answer choices.
+    choices []AccessPackageAnswerChoiceable
+}
+// NewAccessPackageMultipleChoiceQuestion instantiates a new AccessPackageMultipleChoiceQuestion and sets the default values.
+func NewAccessPackageMultipleChoiceQuestion()(*AccessPackageMultipleChoiceQuestion) {
+    m := &AccessPackageMultipleChoiceQuestion{
+        AccessPackageQuestion: *NewAccessPackageQuestion(),
+    }
+    m.SetAdditionalData(make(map[string]interface{}));
+    return m
+}
+// CreateAccessPackageMultipleChoiceQuestionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateAccessPackageMultipleChoiceQuestionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+    return NewAccessPackageMultipleChoiceQuestion(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *AccessPackageMultipleChoiceQuestion) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
+}
+// GetAllowsMultipleSelection gets the allowsMultipleSelection property value. Indicates whether requestor can select multiple choices as their answer.
+func (m *AccessPackageMultipleChoiceQuestion) GetAllowsMultipleSelection()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.allowsMultipleSelection
+    }
+}
+// GetChoices gets the choices property value. List of answer choices.
+func (m *AccessPackageMultipleChoiceQuestion) GetChoices()([]AccessPackageAnswerChoiceable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.choices
+    }
+}
+// GetFieldDeserializers the deserialization information for the current model
+func (m *AccessPackageMultipleChoiceQuestion) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := m.AccessPackageQuestion.GetFieldDeserializers()
+    res["allowsMultipleSelection"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetAllowsMultipleSelection(val)
+        }
+        return nil
+    }
+    res["choices"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateAccessPackageAnswerChoiceFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]AccessPackageAnswerChoiceable, len(val))
+            for i, v := range val {
+                res[i] = v.(AccessPackageAnswerChoiceable)
+            }
+            m.SetChoices(res)
+        }
+        return nil
+    }
+    return res
+}
+// Serialize serializes information the current object
+func (m *AccessPackageMultipleChoiceQuestion) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
+    err := m.AccessPackageQuestion.Serialize(writer)
+    if err != nil {
+        return err
+    }
+    {
+        err = writer.WriteBoolValue("allowsMultipleSelection", m.GetAllowsMultipleSelection())
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetChoices() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetChoices()))
+        for i, v := range m.GetChoices() {
+            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+        }
+        err = writer.WriteCollectionOfObjectValues("choices", cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
+    return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *AccessPackageMultipleChoiceQuestion) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
+}
+// SetAllowsMultipleSelection sets the allowsMultipleSelection property value. Indicates whether requestor can select multiple choices as their answer.
+func (m *AccessPackageMultipleChoiceQuestion) SetAllowsMultipleSelection(value *bool)() {
+    if m != nil {
+        m.allowsMultipleSelection = value
+    }
+}
+// SetChoices sets the choices property value. List of answer choices.
+func (m *AccessPackageMultipleChoiceQuestion) SetChoices(value []AccessPackageAnswerChoiceable)() {
+    if m != nil {
+        m.choices = value
+    }
+}

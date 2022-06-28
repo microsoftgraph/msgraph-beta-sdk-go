@@ -7,6 +7,8 @@ import (
 // MobileLobApp 
 type MobileLobApp struct {
     MobileApp
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // The internal committed content version.
     committedContentVersion *string
     // The list of content versions for this app.
@@ -21,6 +23,7 @@ func NewMobileLobApp()(*MobileLobApp) {
     m := &MobileLobApp{
         MobileApp: *NewMobileApp(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateMobileLobAppFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -63,6 +66,14 @@ func CreateMobileLobAppFromDiscriminatorValue(parseNode i878a80d2330e89d26896388
         }
     }
     return NewMobileLobApp(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *MobileLobApp) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetCommittedContentVersion gets the committedContentVersion property value. The internal committed content version.
 func (m *MobileLobApp) GetCommittedContentVersion()(*string) {
@@ -179,7 +190,19 @@ func (m *MobileLobApp) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *MobileLobApp) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetCommittedContentVersion sets the committedContentVersion property value. The internal committed content version.
 func (m *MobileLobApp) SetCommittedContentVersion(value *string)() {

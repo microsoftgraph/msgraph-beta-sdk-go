@@ -5,9 +5,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// MobileApp an abstract class containing the base properties for Intune mobile apps.
+// MobileApp 
 type MobileApp struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // The list of group assignments for this mobile app.
     assignments []MobileAppAssignmentable
     // The list of categories for this app.
@@ -59,11 +61,12 @@ type MobileApp struct {
     // The list of installation states for this mobile app.
     userStatuses []UserAppInstallStatusable
 }
-// NewMobileApp instantiates a new mobileApp and sets the default values.
+// NewMobileApp instantiates a new MobileApp and sets the default values.
 func NewMobileApp()(*MobileApp) {
     m := &MobileApp{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateMobileAppFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -124,6 +127,14 @@ func CreateMobileAppFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f
         }
     }
     return NewMobileApp(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *MobileApp) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetAssignments gets the assignments property value. The list of group assignments for this mobile app.
 func (m *MobileApp) GetAssignments()([]MobileAppAssignmentable) {
@@ -781,7 +792,19 @@ func (m *MobileApp) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *MobileApp) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAssignments sets the assignments property value. The list of group assignments for this mobile app.
 func (m *MobileApp) SetAssignments(value []MobileAppAssignmentable)() {

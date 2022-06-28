@@ -5,11 +5,13 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Alert provides operations to manage the security singleton.
+// Alert provides operations to manage the collection of accessReview entities.
 type Alert struct {
     Entity
     // Name or alias of the activity group (attacker) this alert is attributed to.
     activityGroupName *string
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // The alertDetections property
     alertDetections []AlertDetectionable
     // Name of the analyst the alert is assigned to for triage, investigation, or remediation (supports update).
@@ -92,6 +94,7 @@ func NewAlert()(*Alert) {
     m := &Alert{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateAlertFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -104,6 +107,14 @@ func (m *Alert) GetActivityGroupName()(*string) {
         return nil
     } else {
         return m.activityGroupName
+    }
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *Alert) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
     }
 }
 // GetAlertDetections gets the alertDetections property value. The alertDetections property
@@ -1200,12 +1211,24 @@ func (m *Alert) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c4
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetActivityGroupName sets the activityGroupName property value. Name or alias of the activity group (attacker) this alert is attributed to.
 func (m *Alert) SetActivityGroupName(value *string)() {
     if m != nil {
         m.activityGroupName = value
+    }
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *Alert) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
     }
 }
 // SetAlertDetections sets the alertDetections property value. The alertDetections property

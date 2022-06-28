@@ -7,6 +7,8 @@ import (
 // BookingService represents a particular service offered by a booking business.
 type BookingService struct {
     BookingNamedEntity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Additional information that is sent to the customer when an appointment is confirmed.
     additionalInformation *string
     // Contains the set of custom questions associated with a particular service.
@@ -53,11 +55,20 @@ func NewBookingService()(*BookingService) {
     m := &BookingService{
         BookingNamedEntity: *NewBookingNamedEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateBookingServiceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateBookingServiceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewBookingService(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *BookingService) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetAdditionalInformation gets the additionalInformation property value. Additional information that is sent to the customer when an appointment is confirmed.
 func (m *BookingService) GetAdditionalInformation()(*string) {
@@ -571,7 +582,19 @@ func (m *BookingService) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *BookingService) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAdditionalInformation sets the additionalInformation property value. Additional information that is sent to the customer when an appointment is confirmed.
 func (m *BookingService) SetAdditionalInformation(value *string)() {

@@ -1,0 +1,121 @@
+package models
+
+import (
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+)
+
+// UserSource 
+type UserSource struct {
+    DataSource
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
+    // Email address of the user's mailbox.
+    email *string
+    // The URL of the user's OneDrive for Business site. Read-only.
+    siteWebUrl *string
+}
+// NewUserSource instantiates a new UserSource and sets the default values.
+func NewUserSource()(*UserSource) {
+    m := &UserSource{
+        DataSource: *NewDataSource(),
+    }
+    m.SetAdditionalData(make(map[string]interface{}));
+    return m
+}
+// CreateUserSourceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreateUserSourceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+    return NewUserSource(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *UserSource) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
+}
+// GetEmail gets the email property value. Email address of the user's mailbox.
+func (m *UserSource) GetEmail()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.email
+    }
+}
+// GetFieldDeserializers the deserialization information for the current model
+func (m *UserSource) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := m.DataSource.GetFieldDeserializers()
+    res["email"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetEmail(val)
+        }
+        return nil
+    }
+    res["siteWebUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetSiteWebUrl(val)
+        }
+        return nil
+    }
+    return res
+}
+// GetSiteWebUrl gets the siteWebUrl property value. The URL of the user's OneDrive for Business site. Read-only.
+func (m *UserSource) GetSiteWebUrl()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.siteWebUrl
+    }
+}
+// Serialize serializes information the current object
+func (m *UserSource) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
+    err := m.DataSource.Serialize(writer)
+    if err != nil {
+        return err
+    }
+    {
+        err = writer.WriteStringValue("email", m.GetEmail())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteStringValue("siteWebUrl", m.GetSiteWebUrl())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
+    return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *UserSource) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
+}
+// SetEmail sets the email property value. Email address of the user's mailbox.
+func (m *UserSource) SetEmail(value *string)() {
+    if m != nil {
+        m.email = value
+    }
+}
+// SetSiteWebUrl sets the siteWebUrl property value. The URL of the user's OneDrive for Business site. Read-only.
+func (m *UserSource) SetSiteWebUrl(value *string)() {
+    if m != nil {
+        m.siteWebUrl = value
+    }
+}

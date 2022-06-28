@@ -7,6 +7,8 @@ import (
 // MacOSMicrosoftEdgeApp 
 type MacOSMicrosoftEdgeApp struct {
     MobileApp
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // The channel to install on target devices. Possible values are: dev, beta, stable.
     channel *MicrosoftEdgeChannel
 }
@@ -15,11 +17,20 @@ func NewMacOSMicrosoftEdgeApp()(*MacOSMicrosoftEdgeApp) {
     m := &MacOSMicrosoftEdgeApp{
         MobileApp: *NewMobileApp(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateMacOSMicrosoftEdgeAppFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateMacOSMicrosoftEdgeAppFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewMacOSMicrosoftEdgeApp(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *MacOSMicrosoftEdgeApp) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetChannel gets the channel property value. The channel to install on target devices. Possible values are: dev, beta, stable.
 func (m *MacOSMicrosoftEdgeApp) GetChannel()(*MicrosoftEdgeChannel) {
@@ -57,7 +68,19 @@ func (m *MacOSMicrosoftEdgeApp) Serialize(writer i878a80d2330e89d26896388a3f487e
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *MacOSMicrosoftEdgeApp) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetChannel sets the channel property value. The channel to install on target devices. Possible values are: dev, beta, stable.
 func (m *MacOSMicrosoftEdgeApp) SetChannel(value *MicrosoftEdgeChannel)() {

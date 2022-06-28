@@ -5,13 +5,15 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// TeamworkDevice provides operations to manage the teamwork singleton.
+// TeamworkDevice provides operations to manage the collection of accessReview entities.
 type TeamworkDevice struct {
     Entity
     // The activity properties that change based on the device usage.
     activity TeamworkDeviceActivityable
     // The activity state of the device. The possible values are: unknown, busy, idle, unavailable, unknownFutureValue.
     activityState *TeamworkDeviceActivityState
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // The company asset tag assigned by the admin on the device.
     companyAssetTag *string
     // The configuration properties of the device.
@@ -44,6 +46,7 @@ func NewTeamworkDevice()(*TeamworkDevice) {
     m := &TeamworkDevice{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateTeamworkDeviceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -64,6 +67,14 @@ func (m *TeamworkDevice) GetActivityState()(*TeamworkDeviceActivityState) {
         return nil
     } else {
         return m.activityState
+    }
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *TeamworkDevice) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
     }
 }
 // GetCompanyAssetTag gets the companyAssetTag property value. The company asset tag assigned by the admin on the device.
@@ -432,6 +443,12 @@ func (m *TeamworkDevice) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetActivity sets the activity property value. The activity properties that change based on the device usage.
@@ -444,6 +461,12 @@ func (m *TeamworkDevice) SetActivity(value TeamworkDeviceActivityable)() {
 func (m *TeamworkDevice) SetActivityState(value *TeamworkDeviceActivityState)() {
     if m != nil {
         m.activityState = value
+    }
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *TeamworkDevice) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
     }
 }
 // SetCompanyAssetTag sets the companyAssetTag property value. The company asset tag assigned by the admin on the device.

@@ -7,6 +7,8 @@ import (
 // SettingStateDeviceSummary device Compilance Policy and Configuration for a Setting State summary
 type SettingStateDeviceSummary struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Device Compliant count for the setting
     compliantDeviceCount *int32
     // Device conflict error count for the setting
@@ -31,11 +33,20 @@ func NewSettingStateDeviceSummary()(*SettingStateDeviceSummary) {
     m := &SettingStateDeviceSummary{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateSettingStateDeviceSummaryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateSettingStateDeviceSummaryFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewSettingStateDeviceSummary(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *SettingStateDeviceSummary) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetCompliantDeviceCount gets the compliantDeviceCount property value. Device Compliant count for the setting
 func (m *SettingStateDeviceSummary) GetCompliantDeviceCount()(*int32) {
@@ -264,7 +275,19 @@ func (m *SettingStateDeviceSummary) Serialize(writer i878a80d2330e89d26896388a3f
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *SettingStateDeviceSummary) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetCompliantDeviceCount sets the compliantDeviceCount property value. Device Compliant count for the setting
 func (m *SettingStateDeviceSummary) SetCompliantDeviceCount(value *int32)() {

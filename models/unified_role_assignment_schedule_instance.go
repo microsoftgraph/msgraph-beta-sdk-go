@@ -10,6 +10,8 @@ type UnifiedRoleAssignmentScheduleInstance struct {
     UnifiedRoleScheduleInstanceBase
     // If the request is from an eligible administrator to activate a role, this parameter will show the related eligible assignment for that activation. Otherwise, it is null. Supports $expand.
     activatedUsing UnifiedRoleEligibilityScheduleInstanceable
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Type of the assignment which can either be Assigned or Activated. Supports $filter (eq, ne).
     assignmentType *string
     // The end date of the schedule instance.
@@ -28,6 +30,7 @@ func NewUnifiedRoleAssignmentScheduleInstance()(*UnifiedRoleAssignmentScheduleIn
     m := &UnifiedRoleAssignmentScheduleInstance{
         UnifiedRoleScheduleInstanceBase: *NewUnifiedRoleScheduleInstanceBase(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateUnifiedRoleAssignmentScheduleInstanceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -40,6 +43,14 @@ func (m *UnifiedRoleAssignmentScheduleInstance) GetActivatedUsing()(UnifiedRoleE
         return nil
     } else {
         return m.activatedUsing
+    }
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *UnifiedRoleAssignmentScheduleInstance) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
     }
 }
 // GetAssignmentType gets the assignmentType property value. Type of the assignment which can either be Assigned or Activated. Supports $filter (eq, ne).
@@ -213,12 +224,24 @@ func (m *UnifiedRoleAssignmentScheduleInstance) Serialize(writer i878a80d2330e89
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetActivatedUsing sets the activatedUsing property value. If the request is from an eligible administrator to activate a role, this parameter will show the related eligible assignment for that activation. Otherwise, it is null. Supports $expand.
 func (m *UnifiedRoleAssignmentScheduleInstance) SetActivatedUsing(value UnifiedRoleEligibilityScheduleInstanceable)() {
     if m != nil {
         m.activatedUsing = value
+    }
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *UnifiedRoleAssignmentScheduleInstance) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
     }
 }
 // SetAssignmentType sets the assignmentType property value. Type of the assignment which can either be Assigned or Activated. Supports $filter (eq, ne).

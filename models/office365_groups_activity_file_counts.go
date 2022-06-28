@@ -4,11 +4,13 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Office365GroupsActivityFileCounts provides operations to call the getOffice365GroupsActivityFileCounts method.
+// Office365GroupsActivityFileCounts 
 type Office365GroupsActivityFileCounts struct {
     Entity
     // The number of files that were viewed, edited, shared, or synced in the group's SharePoint document library.
     active *int64
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // The date on which a number of files were active in the group's SharePoint site.
     reportDate *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly
     // The number of days the report covers.
@@ -18,11 +20,12 @@ type Office365GroupsActivityFileCounts struct {
     // The total number of files in the group's SharePoint document library.
     total *int64
 }
-// NewOffice365GroupsActivityFileCounts instantiates a new office365GroupsActivityFileCounts and sets the default values.
+// NewOffice365GroupsActivityFileCounts instantiates a new Office365GroupsActivityFileCounts and sets the default values.
 func NewOffice365GroupsActivityFileCounts()(*Office365GroupsActivityFileCounts) {
     m := &Office365GroupsActivityFileCounts{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateOffice365GroupsActivityFileCountsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -35,6 +38,14 @@ func (m *Office365GroupsActivityFileCounts) GetActive()(*int64) {
         return nil
     } else {
         return m.active
+    }
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *Office365GroupsActivityFileCounts) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -160,12 +171,24 @@ func (m *Office365GroupsActivityFileCounts) Serialize(writer i878a80d2330e89d268
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetActive sets the active property value. The number of files that were viewed, edited, shared, or synced in the group's SharePoint document library.
 func (m *Office365GroupsActivityFileCounts) SetActive(value *int64)() {
     if m != nil {
         m.active = value
+    }
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *Office365GroupsActivityFileCounts) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
     }
 }
 // SetReportDate sets the reportDate property value. The date on which a number of files were active in the group's SharePoint site.

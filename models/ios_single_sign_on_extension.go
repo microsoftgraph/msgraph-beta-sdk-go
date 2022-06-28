@@ -4,20 +4,56 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// IosSingleSignOnExtension an abstract base class for all iOS-specific single sign-on extension types.
+// IosSingleSignOnExtension 
 type IosSingleSignOnExtension struct {
     SingleSignOnExtension
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
 }
-// NewIosSingleSignOnExtension instantiates a new iosSingleSignOnExtension and sets the default values.
+// NewIosSingleSignOnExtension instantiates a new IosSingleSignOnExtension and sets the default values.
 func NewIosSingleSignOnExtension()(*IosSingleSignOnExtension) {
     m := &IosSingleSignOnExtension{
         SingleSignOnExtension: *NewSingleSignOnExtension(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateIosSingleSignOnExtensionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateIosSingleSignOnExtensionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+    if parseNode != nil {
+        mappingValueNode, err := parseNode.GetChildNode("@odata.type")
+        if err != nil {
+            return nil, err
+        }
+        if mappingValueNode != nil {
+            mappingValue, err := mappingValueNode.GetStringValue()
+            if err != nil {
+                return nil, err
+            }
+            if mappingValue != nil {
+                mappingStr := *mappingValue
+                switch mappingStr {
+                    case "#microsoft.graph.iosAzureAdSingleSignOnExtension":
+                        return NewIosAzureAdSingleSignOnExtension(), nil
+                    case "#microsoft.graph.iosCredentialSingleSignOnExtension":
+                        return NewIosCredentialSingleSignOnExtension(), nil
+                    case "#microsoft.graph.iosKerberosSingleSignOnExtension":
+                        return NewIosKerberosSingleSignOnExtension(), nil
+                    case "#microsoft.graph.iosRedirectSingleSignOnExtension":
+                        return NewIosRedirectSingleSignOnExtension(), nil
+                }
+            }
+        }
+    }
     return NewIosSingleSignOnExtension(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *IosSingleSignOnExtension) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *IosSingleSignOnExtension) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -30,5 +66,17 @@ func (m *IosSingleSignOnExtension) Serialize(writer i878a80d2330e89d26896388a3f4
     if err != nil {
         return err
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *IosSingleSignOnExtension) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }

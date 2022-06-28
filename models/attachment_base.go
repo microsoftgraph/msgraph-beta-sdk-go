@@ -5,9 +5,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AttachmentBase provides operations to manage the collection of administrativeUnit entities.
+// AttachmentBase provides operations to manage the collection of accessReview entities.
 type AttachmentBase struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // The contentType property
     contentType *string
     // The lastModifiedDateTime property
@@ -22,6 +24,7 @@ func NewAttachmentBase()(*AttachmentBase) {
     m := &AttachmentBase{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateAttachmentBaseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -46,6 +49,14 @@ func CreateAttachmentBaseFromDiscriminatorValue(parseNode i878a80d2330e89d268963
         }
     }
     return NewAttachmentBase(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *AttachmentBase) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetContentType gets the contentType property value. The contentType property
 func (m *AttachmentBase) GetContentType()(*string) {
@@ -154,7 +165,19 @@ func (m *AttachmentBase) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *AttachmentBase) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetContentType sets the contentType property value. The contentType property
 func (m *AttachmentBase) SetContentType(value *string)() {

@@ -9,6 +9,8 @@ type WindowsDomainJoinConfiguration struct {
     DeviceConfiguration
     // Active Directory domain name to join.
     activeDirectoryDomainName *string
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Fixed prefix to be used for computer name.
     computerNameStaticPrefix *string
     // Dynamically generated characters used as suffix for computer name. Valid values 3 to 14
@@ -23,6 +25,7 @@ func NewWindowsDomainJoinConfiguration()(*WindowsDomainJoinConfiguration) {
     m := &WindowsDomainJoinConfiguration{
         DeviceConfiguration: *NewDeviceConfiguration(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateWindowsDomainJoinConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -35,6 +38,14 @@ func (m *WindowsDomainJoinConfiguration) GetActiveDirectoryDomainName()(*string)
         return nil
     } else {
         return m.activeDirectoryDomainName
+    }
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *WindowsDomainJoinConfiguration) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
     }
 }
 // GetComputerNameStaticPrefix gets the computerNameStaticPrefix property value. Fixed prefix to be used for computer name.
@@ -168,12 +179,24 @@ func (m *WindowsDomainJoinConfiguration) Serialize(writer i878a80d2330e89d268963
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetActiveDirectoryDomainName sets the activeDirectoryDomainName property value. Active Directory domain name to join.
 func (m *WindowsDomainJoinConfiguration) SetActiveDirectoryDomainName(value *string)() {
     if m != nil {
         m.activeDirectoryDomainName = value
+    }
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *WindowsDomainJoinConfiguration) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
     }
 }
 // SetComputerNameStaticPrefix sets the computerNameStaticPrefix property value. Fixed prefix to be used for computer name.

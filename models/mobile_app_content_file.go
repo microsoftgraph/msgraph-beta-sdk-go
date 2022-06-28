@@ -8,6 +8,8 @@ import (
 // MobileAppContentFile contains properties for a single installer file that is associated with a given mobileAppContent version.
 type MobileAppContentFile struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // The Azure Storage URI.
     azureStorageUri *string
     // The time the Azure storage Uri expires.
@@ -36,11 +38,20 @@ func NewMobileAppContentFile()(*MobileAppContentFile) {
     m := &MobileAppContentFile{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateMobileAppContentFileFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateMobileAppContentFileFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewMobileAppContentFile(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *MobileAppContentFile) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetAzureStorageUri gets the azureStorageUri property value. The Azure Storage URI.
 func (m *MobileAppContentFile) GetAzureStorageUri()(*string) {
@@ -318,7 +329,19 @@ func (m *MobileAppContentFile) Serialize(writer i878a80d2330e89d26896388a3f487ee
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *MobileAppContentFile) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAzureStorageUri sets the azureStorageUri property value. The Azure Storage URI.
 func (m *MobileAppContentFile) SetAzureStorageUri(value *string)() {

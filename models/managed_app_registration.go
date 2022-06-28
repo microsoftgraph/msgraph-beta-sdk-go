@@ -8,6 +8,8 @@ import (
 // ManagedAppRegistration the ManagedAppEntity is the base entity type for all other entity types under app management workflow.
 type ManagedAppRegistration struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // The app package Identifier
     appIdentifier MobileAppIdentifierable
     // App version
@@ -52,6 +54,7 @@ func NewManagedAppRegistration()(*ManagedAppRegistration) {
     m := &ManagedAppRegistration{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateManagedAppRegistrationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -78,6 +81,14 @@ func CreateManagedAppRegistrationFromDiscriminatorValue(parseNode i878a80d2330e8
         }
     }
     return NewManagedAppRegistration(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *ManagedAppRegistration) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetAppIdentifier gets the appIdentifier property value. The app package Identifier
 func (m *ManagedAppRegistration) GetAppIdentifier()(MobileAppIdentifierable) {
@@ -574,7 +585,19 @@ func (m *ManagedAppRegistration) Serialize(writer i878a80d2330e89d26896388a3f487
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *ManagedAppRegistration) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAppIdentifier sets the appIdentifier property value. The app package Identifier
 func (m *ManagedAppRegistration) SetAppIdentifier(value MobileAppIdentifierable)() {

@@ -7,6 +7,8 @@ import (
 // MacOSSoftwareUpdateConfiguration 
 type MacOSSoftwareUpdateConfiguration struct {
     DeviceConfiguration
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Update behavior for all other updates. Possible values are: notConfigured, default, downloadOnly, installASAP, notifyOnly, installLater.
     allOtherUpdateBehavior *MacOSSoftwareUpdateBehavior
     // Update behavior for configuration data file updates. Possible values are: notConfigured, default, downloadOnly, installASAP, notifyOnly, installLater.
@@ -27,11 +29,20 @@ func NewMacOSSoftwareUpdateConfiguration()(*MacOSSoftwareUpdateConfiguration) {
     m := &MacOSSoftwareUpdateConfiguration{
         DeviceConfiguration: *NewDeviceConfiguration(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateMacOSSoftwareUpdateConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateMacOSSoftwareUpdateConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewMacOSSoftwareUpdateConfiguration(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *MacOSSoftwareUpdateConfiguration) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetAllOtherUpdateBehavior gets the allOtherUpdateBehavior property value. Update behavior for all other updates. Possible values are: notConfigured, default, downloadOnly, installASAP, notifyOnly, installLater.
 func (m *MacOSSoftwareUpdateConfiguration) GetAllOtherUpdateBehavior()(*MacOSSoftwareUpdateBehavior) {
@@ -225,7 +236,19 @@ func (m *MacOSSoftwareUpdateConfiguration) Serialize(writer i878a80d2330e89d2689
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *MacOSSoftwareUpdateConfiguration) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAllOtherUpdateBehavior sets the allOtherUpdateBehavior property value. Update behavior for all other updates. Possible values are: notConfigured, default, downloadOnly, installASAP, notifyOnly, installLater.
 func (m *MacOSSoftwareUpdateConfiguration) SetAllOtherUpdateBehavior(value *MacOSSoftwareUpdateBehavior)() {

@@ -10,6 +10,8 @@ type AndroidDeviceOwnerEnrollmentProfile struct {
     Entity
     // Tenant GUID the enrollment profile belongs to.
     accountId *string
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Date time the enrollment profile was created.
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Description for the enrollment profile.
@@ -52,6 +54,7 @@ func NewAndroidDeviceOwnerEnrollmentProfile()(*AndroidDeviceOwnerEnrollmentProfi
     m := &AndroidDeviceOwnerEnrollmentProfile{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateAndroidDeviceOwnerEnrollmentProfileFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -64,6 +67,14 @@ func (m *AndroidDeviceOwnerEnrollmentProfile) GetAccountId()(*string) {
         return nil
     } else {
         return m.accountId
+    }
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *AndroidDeviceOwnerEnrollmentProfile) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
     }
 }
 // GetCreatedDateTime gets the createdDateTime property value. Date time the enrollment profile was created.
@@ -532,12 +543,24 @@ func (m *AndroidDeviceOwnerEnrollmentProfile) Serialize(writer i878a80d2330e89d2
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetAccountId sets the accountId property value. Tenant GUID the enrollment profile belongs to.
 func (m *AndroidDeviceOwnerEnrollmentProfile) SetAccountId(value *string)() {
     if m != nil {
         m.accountId = value
+    }
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *AndroidDeviceOwnerEnrollmentProfile) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
     }
 }
 // SetCreatedDateTime sets the createdDateTime property value. Date time the enrollment profile was created.

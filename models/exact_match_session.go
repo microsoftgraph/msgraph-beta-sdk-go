@@ -7,6 +7,8 @@ import (
 // ExactMatchSession 
 type ExactMatchSession struct {
     ExactMatchSessionBase
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // The checksum property
     checksum *string
     // The dataUploadURI property
@@ -29,11 +31,20 @@ func NewExactMatchSession()(*ExactMatchSession) {
     m := &ExactMatchSession{
         ExactMatchSessionBase: *NewExactMatchSessionBase(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateExactMatchSessionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateExactMatchSessionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewExactMatchSession(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *ExactMatchSession) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetChecksum gets the checksum property value. The checksum property
 func (m *ExactMatchSession) GetChecksum()(*string) {
@@ -242,7 +253,19 @@ func (m *ExactMatchSession) Serialize(writer i878a80d2330e89d26896388a3f487eef27
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *ExactMatchSession) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetChecksum sets the checksum property value. The checksum property
 func (m *ExactMatchSession) SetChecksum(value *string)() {

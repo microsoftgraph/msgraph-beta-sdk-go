@@ -7,6 +7,8 @@ import (
 // DeviceManagementConfigurationSimpleSettingDefinition 
 type DeviceManagementConfigurationSimpleSettingDefinition struct {
     DeviceManagementConfigurationSettingDefinition
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Default setting value for this setting
     defaultValue DeviceManagementConfigurationSettingValueable
     // list of child settings that depend on this setting
@@ -21,6 +23,7 @@ func NewDeviceManagementConfigurationSimpleSettingDefinition()(*DeviceManagement
     m := &DeviceManagementConfigurationSimpleSettingDefinition{
         DeviceManagementConfigurationSettingDefinition: *NewDeviceManagementConfigurationSettingDefinition(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateDeviceManagementConfigurationSimpleSettingDefinitionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -45,6 +48,14 @@ func CreateDeviceManagementConfigurationSimpleSettingDefinitionFromDiscriminator
         }
     }
     return NewDeviceManagementConfigurationSimpleSettingDefinition(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *DeviceManagementConfigurationSimpleSettingDefinition) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetDefaultValue gets the defaultValue property value. Default setting value for this setting
 func (m *DeviceManagementConfigurationSimpleSettingDefinition) GetDefaultValue()(DeviceManagementConfigurationSettingValueable) {
@@ -169,7 +180,19 @@ func (m *DeviceManagementConfigurationSimpleSettingDefinition) Serialize(writer 
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *DeviceManagementConfigurationSimpleSettingDefinition) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetDefaultValue sets the defaultValue property value. Default setting value for this setting
 func (m *DeviceManagementConfigurationSimpleSettingDefinition) SetDefaultValue(value DeviceManagementConfigurationSettingValueable)() {

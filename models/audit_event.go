@@ -20,6 +20,8 @@ type AuditEvent struct {
     activityType *string
     // AAD user and application that are associated with the audit event.
     actor AuditActorable
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Audit category.
     category *string
     // Component name.
@@ -36,6 +38,7 @@ func NewAuditEvent()(*AuditEvent) {
     m := &AuditEvent{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateAuditEventFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -88,6 +91,14 @@ func (m *AuditEvent) GetActor()(AuditActorable) {
         return nil
     } else {
         return m.actor
+    }
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *AuditEvent) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
     }
 }
 // GetCategory gets the category property value. Audit category.
@@ -325,6 +336,12 @@ func (m *AuditEvent) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetActivity sets the activity property value. Friendly name of the activity.
@@ -361,6 +378,12 @@ func (m *AuditEvent) SetActivityType(value *string)() {
 func (m *AuditEvent) SetActor(value AuditActorable)() {
     if m != nil {
         m.actor = value
+    }
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *AuditEvent) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
     }
 }
 // SetCategory sets the category property value. Audit category.

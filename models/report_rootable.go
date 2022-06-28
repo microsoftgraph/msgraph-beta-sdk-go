@@ -6,6 +6,7 @@ import (
 
 // ReportRootable 
 type ReportRootable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetApplicationSignInDetailedSummary()([]ApplicationSignInDetailedSummaryable)
@@ -19,6 +20,7 @@ type ReportRootable interface {
     GetMonthlyPrintUsageByUser()([]PrintUsageByUserable)
     GetMonthlyPrintUsageSummariesByPrinter()([]PrintUsageByPrinterable)
     GetMonthlyPrintUsageSummariesByUser()([]PrintUsageByUserable)
+    GetSecurity()(SecurityReportsRootable)
     GetUserCredentialUsageDetails()([]UserCredentialUsageDetailsable)
     SetApplicationSignInDetailedSummary(value []ApplicationSignInDetailedSummaryable)()
     SetAuthenticationMethods(value AuthenticationMethodsRootable)()
@@ -31,5 +33,6 @@ type ReportRootable interface {
     SetMonthlyPrintUsageByUser(value []PrintUsageByUserable)()
     SetMonthlyPrintUsageSummariesByPrinter(value []PrintUsageByPrinterable)()
     SetMonthlyPrintUsageSummariesByUser(value []PrintUsageByUserable)()
+    SetSecurity(value SecurityReportsRootable)()
     SetUserCredentialUsageDetails(value []UserCredentialUsageDetailsable)()
 }

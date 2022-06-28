@@ -5,11 +5,13 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AccessPackageResourceEnvironment provides operations to manage the identityGovernance singleton.
+// AccessPackageResourceEnvironment provides operations to manage the collection of accessReview entities.
 type AccessPackageResourceEnvironment struct {
     Entity
     // Read-only. Required.
     accessPackageResources []AccessPackageResourceable
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Connection information of an environment used to connect to a resource.
     connectionInfo ConnectionInfoable
     // The display name of the user that created this object.
@@ -36,6 +38,7 @@ func NewAccessPackageResourceEnvironment()(*AccessPackageResourceEnvironment) {
     m := &AccessPackageResourceEnvironment{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateAccessPackageResourceEnvironmentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -48,6 +51,14 @@ func (m *AccessPackageResourceEnvironment) GetAccessPackageResources()([]AccessP
         return nil
     } else {
         return m.accessPackageResources
+    }
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *AccessPackageResourceEnvironment) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
     }
 }
 // GetConnectionInfo gets the connectionInfo property value. Connection information of an environment used to connect to a resource.
@@ -325,12 +336,24 @@ func (m *AccessPackageResourceEnvironment) Serialize(writer i878a80d2330e89d2689
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetAccessPackageResources sets the accessPackageResources property value. Read-only. Required.
 func (m *AccessPackageResourceEnvironment) SetAccessPackageResources(value []AccessPackageResourceable)() {
     if m != nil {
         m.accessPackageResources = value
+    }
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *AccessPackageResourceEnvironment) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
     }
 }
 // SetConnectionInfo sets the connectionInfo property value. Connection information of an environment used to connect to a resource.

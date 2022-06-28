@@ -8,6 +8,8 @@ import (
 // MicrosoftTunnelConfiguration entity that represents a collection of Microsoft Tunnel settings
 type MicrosoftTunnelConfiguration struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Additional settings that may be applied to the server
     advancedSettings []KeyValuePairable
     // The Default Domain appendix that will be used by the clients
@@ -40,11 +42,20 @@ func NewMicrosoftTunnelConfiguration()(*MicrosoftTunnelConfiguration) {
     m := &MicrosoftTunnelConfiguration{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateMicrosoftTunnelConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateMicrosoftTunnelConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewMicrosoftTunnelConfiguration(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *MicrosoftTunnelConfiguration) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetAdvancedSettings gets the advancedSettings property value. Additional settings that may be applied to the server
 func (m *MicrosoftTunnelConfiguration) GetAdvancedSettings()([]KeyValuePairable) {
@@ -397,7 +408,19 @@ func (m *MicrosoftTunnelConfiguration) Serialize(writer i878a80d2330e89d26896388
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *MicrosoftTunnelConfiguration) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAdvancedSettings sets the advancedSettings property value. Additional settings that may be applied to the server
 func (m *MicrosoftTunnelConfiguration) SetAdvancedSettings(value []KeyValuePairable)() {

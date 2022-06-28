@@ -5,13 +5,15 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ServicePrincipalRiskDetection provides operations to manage the identityProtectionRoot singleton.
+// ServicePrincipalRiskDetection 
 type ServicePrincipalRiskDetection struct {
     Entity
     // Indicates the activity type the detected risk is linked to.  The possible values are: signin, unknownFutureValue, servicePrincipal. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: servicePrincipal.
     activity *ActivityType
     // Date and time when the risky activity occurred. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
     activityDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Additional information associated with the risk detection. This string value is represented as a JSON object with the quotations escaped.
     additionalInfo *string
     // The unique identifier for the associated application.
@@ -49,11 +51,12 @@ type ServicePrincipalRiskDetection struct {
     // Indicates the type of token issuer for the detected sign-in risk. The possible values are: AzureAD, UnknownFutureValue.
     tokenIssuerType *TokenIssuerType
 }
-// NewServicePrincipalRiskDetection instantiates a new servicePrincipalRiskDetection and sets the default values.
+// NewServicePrincipalRiskDetection instantiates a new ServicePrincipalRiskDetection and sets the default values.
 func NewServicePrincipalRiskDetection()(*ServicePrincipalRiskDetection) {
     m := &ServicePrincipalRiskDetection{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateServicePrincipalRiskDetectionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -74,6 +77,14 @@ func (m *ServicePrincipalRiskDetection) GetActivityDateTime()(*i336074805fc85398
         return nil
     } else {
         return m.activityDateTime
+    }
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *ServicePrincipalRiskDetection) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
     }
 }
 // GetAdditionalInfo gets the additionalInfo property value. Additional information associated with the risk detection. This string value is represented as a JSON object with the quotations escaped.
@@ -561,6 +572,12 @@ func (m *ServicePrincipalRiskDetection) Serialize(writer i878a80d2330e89d2689638
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetActivity sets the activity property value. Indicates the activity type the detected risk is linked to.  The possible values are: signin, unknownFutureValue, servicePrincipal. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: servicePrincipal.
@@ -573,6 +590,12 @@ func (m *ServicePrincipalRiskDetection) SetActivity(value *ActivityType)() {
 func (m *ServicePrincipalRiskDetection) SetActivityDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     if m != nil {
         m.activityDateTime = value
+    }
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *ServicePrincipalRiskDetection) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
     }
 }
 // SetAdditionalInfo sets the additionalInfo property value. Additional information associated with the risk detection. This string value is represented as a JSON object with the quotations escaped.

@@ -7,6 +7,8 @@ import (
 // DeviceManagementConfigurationSettingGroupDefinition 
 type DeviceManagementConfigurationSettingGroupDefinition struct {
     DeviceManagementConfigurationSettingDefinition
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Dependent child settings to this group of settings
     childIds []string
     // List of child settings that depend on this setting
@@ -19,6 +21,7 @@ func NewDeviceManagementConfigurationSettingGroupDefinition()(*DeviceManagementC
     m := &DeviceManagementConfigurationSettingGroupDefinition{
         DeviceManagementConfigurationSettingDefinition: *NewDeviceManagementConfigurationSettingDefinition(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateDeviceManagementConfigurationSettingGroupDefinitionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -43,6 +46,14 @@ func CreateDeviceManagementConfigurationSettingGroupDefinitionFromDiscriminatorV
         }
     }
     return NewDeviceManagementConfigurationSettingGroupDefinition(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *DeviceManagementConfigurationSettingGroupDefinition) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetChildIds gets the childIds property value. Dependent child settings to this group of settings
 func (m *DeviceManagementConfigurationSettingGroupDefinition) GetChildIds()([]string) {
@@ -147,7 +158,19 @@ func (m *DeviceManagementConfigurationSettingGroupDefinition) Serialize(writer i
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *DeviceManagementConfigurationSettingGroupDefinition) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetChildIds sets the childIds property value. Dependent child settings to this group of settings
 func (m *DeviceManagementConfigurationSettingGroupDefinition) SetChildIds(value []string)() {

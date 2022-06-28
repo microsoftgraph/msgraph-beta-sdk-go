@@ -5,9 +5,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// GovernanceRoleAssignmentRequest provides operations to manage the collection of governanceResource entities.
+// GovernanceRoleAssignmentRequest provides operations to manage the collection of accessReview entities.
 type GovernanceRoleAssignmentRequest struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Required. The state of the assignment. The possible values are: Eligible (for eligible assignment),  Active (if it is directly assigned), Active (by administrators, or activated on an eligible assignment by the users).
     assignmentState *string
     // If this is a request for role activation, it represents the id of the eligible assignment being referred; Otherwise, the value is null.
@@ -40,11 +42,20 @@ func NewGovernanceRoleAssignmentRequest()(*GovernanceRoleAssignmentRequest) {
     m := &GovernanceRoleAssignmentRequest{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateGovernanceRoleAssignmentRequestFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateGovernanceRoleAssignmentRequestFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewGovernanceRoleAssignmentRequest(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *GovernanceRoleAssignmentRequest) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetAssignmentState gets the assignmentState property value. Required. The state of the assignment. The possible values are: Eligible (for eligible assignment),  Active (if it is directly assigned), Active (by administrators, or activated on an eligible assignment by the users).
 func (m *GovernanceRoleAssignmentRequest) GetAssignmentState()(*string) {
@@ -369,7 +380,19 @@ func (m *GovernanceRoleAssignmentRequest) Serialize(writer i878a80d2330e89d26896
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *GovernanceRoleAssignmentRequest) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAssignmentState sets the assignmentState property value. Required. The state of the assignment. The possible values are: Eligible (for eligible assignment),  Active (if it is directly assigned), Active (by administrators, or activated on an eligible assignment by the users).
 func (m *GovernanceRoleAssignmentRequest) SetAssignmentState(value *string)() {

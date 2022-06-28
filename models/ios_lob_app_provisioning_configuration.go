@@ -8,6 +8,8 @@ import (
 // IosLobAppProvisioningConfiguration this topic provides descriptions of the declared methods, properties and relationships exposed by the iOS Lob App Provisioning Configuration resource.
 type IosLobAppProvisioningConfiguration struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // The associated group assignments for IosLobAppProvisioningConfiguration.
     assignments []IosLobAppProvisioningConfigurationAssignmentable
     // DateTime the object was created.
@@ -40,11 +42,20 @@ func NewIosLobAppProvisioningConfiguration()(*IosLobAppProvisioningConfiguration
     m := &IosLobAppProvisioningConfiguration{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateIosLobAppProvisioningConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateIosLobAppProvisioningConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewIosLobAppProvisioningConfiguration(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *IosLobAppProvisioningConfiguration) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetAssignments gets the assignments property value. The associated group assignments for IosLobAppProvisioningConfiguration.
 func (m *IosLobAppProvisioningConfiguration) GetAssignments()([]IosLobAppProvisioningConfigurationAssignmentable) {
@@ -405,7 +416,19 @@ func (m *IosLobAppProvisioningConfiguration) Serialize(writer i878a80d2330e89d26
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *IosLobAppProvisioningConfiguration) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAssignments sets the assignments property value. The associated group assignments for IosLobAppProvisioningConfiguration.
 func (m *IosLobAppProvisioningConfiguration) SetAssignments(value []IosLobAppProvisioningConfigurationAssignmentable)() {

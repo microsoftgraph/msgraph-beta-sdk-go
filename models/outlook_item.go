@@ -5,9 +5,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// OutlookItem provides operations to manage the collection of administrativeUnit entities.
+// OutlookItem provides operations to manage the collection of accessReview entities.
 type OutlookItem struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // The categories associated with the item
     categories []string
     // Identifies the version of the item. Every time the item is changed, changeKey changes as well. This allows Exchange to apply changes to the correct version of the object. Read-only.
@@ -22,6 +24,7 @@ func NewOutlookItem()(*OutlookItem) {
     m := &OutlookItem{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateOutlookItemFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -56,6 +59,14 @@ func CreateOutlookItemFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a
         }
     }
     return NewOutlookItem(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *OutlookItem) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetCategories gets the categories property value. The categories associated with the item
 func (m *OutlookItem) GetCategories()([]string) {
@@ -168,7 +179,19 @@ func (m *OutlookItem) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *OutlookItem) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetCategories sets the categories property value. The categories associated with the item
 func (m *OutlookItem) SetCategories(value []string)() {

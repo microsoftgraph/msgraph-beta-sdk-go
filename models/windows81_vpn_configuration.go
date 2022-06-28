@@ -7,6 +7,8 @@ import (
 // Windows81VpnConfiguration 
 type Windows81VpnConfiguration struct {
     WindowsVpnConfiguration
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Value indicating whether this policy only applies to Windows 8.1. This property is read-only.
     applyOnlyToWindows81 *bool
     // Connection type. Possible values are: pulseSecure, f5EdgeClient, dellSonicWallMobileConnect, checkPointCapsuleVpn.
@@ -23,6 +25,7 @@ func NewWindows81VpnConfiguration()(*Windows81VpnConfiguration) {
     m := &Windows81VpnConfiguration{
         WindowsVpnConfiguration: *NewWindowsVpnConfiguration(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateWindows81VpnConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -47,6 +50,14 @@ func CreateWindows81VpnConfigurationFromDiscriminatorValue(parseNode i878a80d233
         }
     }
     return NewWindows81VpnConfiguration(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *Windows81VpnConfiguration) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetApplyOnlyToWindows81 gets the applyOnlyToWindows81 property value. Value indicating whether this policy only applies to Windows 8.1. This property is read-only.
 func (m *Windows81VpnConfiguration) GetApplyOnlyToWindows81()(*bool) {
@@ -180,7 +191,19 @@ func (m *Windows81VpnConfiguration) Serialize(writer i878a80d2330e89d26896388a3f
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *Windows81VpnConfiguration) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetApplyOnlyToWindows81 sets the applyOnlyToWindows81 property value. Value indicating whether this policy only applies to Windows 8.1. This property is read-only.
 func (m *Windows81VpnConfiguration) SetApplyOnlyToWindows81(value *bool)() {

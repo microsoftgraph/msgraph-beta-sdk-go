@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ItemActivity provides operations to manage the collection of administrativeUnit entities.
+// ItemActivity provides operations to manage the collection of accessReview entities.
 type ItemActivity struct {
     Entity
     // An item was accessed.
@@ -14,6 +14,8 @@ type ItemActivity struct {
     activityDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Identity of who performed the action. Read-only.
     actor IdentitySetable
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Exposes the driveItem that was the target of this activity.
     driveItem DriveItemable
 }
@@ -22,6 +24,7 @@ func NewItemActivity()(*ItemActivity) {
     m := &ItemActivity{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateItemActivityFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -50,6 +53,14 @@ func (m *ItemActivity) GetActor()(IdentitySetable) {
         return nil
     } else {
         return m.actor
+    }
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *ItemActivity) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
     }
 }
 // GetDriveItem gets the driveItem property value. Exposes the driveItem that was the target of this activity.
@@ -135,6 +146,12 @@ func (m *ItemActivity) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetAccess sets the access property value. An item was accessed.
@@ -153,6 +170,12 @@ func (m *ItemActivity) SetActivityDateTime(value *i336074805fc853987abe6f7fe3ad9
 func (m *ItemActivity) SetActor(value IdentitySetable)() {
     if m != nil {
         m.actor = value
+    }
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *ItemActivity) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
     }
 }
 // SetDriveItem sets the driveItem property value. Exposes the driveItem that was the target of this activity.

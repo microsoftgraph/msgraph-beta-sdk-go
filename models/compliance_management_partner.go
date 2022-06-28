@@ -8,6 +8,8 @@ import (
 // ComplianceManagementPartner compliance management partner for all platforms
 type ComplianceManagementPartner struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // User groups which enroll Android devices through partner.
     androidEnrollmentAssignments []ComplianceManagementPartnerAssignmentable
     // Partner onboarded for Android devices.
@@ -36,11 +38,20 @@ func NewComplianceManagementPartner()(*ComplianceManagementPartner) {
     m := &ComplianceManagementPartner{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateComplianceManagementPartnerFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateComplianceManagementPartnerFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewComplianceManagementPartner(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *ComplianceManagementPartner) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetAndroidEnrollmentAssignments gets the androidEnrollmentAssignments property value. User groups which enroll Android devices through partner.
 func (m *ComplianceManagementPartner) GetAndroidEnrollmentAssignments()([]ComplianceManagementPartnerAssignmentable) {
@@ -350,7 +361,19 @@ func (m *ComplianceManagementPartner) Serialize(writer i878a80d2330e89d26896388a
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *ComplianceManagementPartner) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAndroidEnrollmentAssignments sets the androidEnrollmentAssignments property value. User groups which enroll Android devices through partner.
 func (m *ComplianceManagementPartner) SetAndroidEnrollmentAssignments(value []ComplianceManagementPartnerAssignmentable)() {

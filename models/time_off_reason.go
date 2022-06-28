@@ -7,6 +7,8 @@ import (
 // TimeOffReason 
 type TimeOffReason struct {
     ChangeTrackedEntity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // The name of the timeOffReason. Required.
     displayName *string
     // Supported icon types: none; car; calendar; running; plane; firstAid; doctor; notWorking; clock; juryDuty; globe; cup; phone; weather; umbrella; piggyBank; dog; cake; trafficCone; pin; sunny. Required.
@@ -19,11 +21,20 @@ func NewTimeOffReason()(*TimeOffReason) {
     m := &TimeOffReason{
         ChangeTrackedEntity: *NewChangeTrackedEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateTimeOffReasonFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateTimeOffReasonFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewTimeOffReason(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *TimeOffReason) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetDisplayName gets the displayName property value. The name of the timeOffReason. Required.
 func (m *TimeOffReason) GetDisplayName()(*string) {
@@ -109,7 +120,19 @@ func (m *TimeOffReason) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *TimeOffReason) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetDisplayName sets the displayName property value. The name of the timeOffReason. Required.
 func (m *TimeOffReason) SetDisplayName(value *string)() {

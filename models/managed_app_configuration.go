@@ -7,6 +7,8 @@ import (
 // ManagedAppConfiguration 
 type ManagedAppConfiguration struct {
     ManagedAppPolicy
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // A set of string key and string value pairs to be sent to apps for users to whom the configuration is scoped, unalterned by this service
     customSettings []KeyValuePairable
 }
@@ -15,6 +17,7 @@ func NewManagedAppConfiguration()(*ManagedAppConfiguration) {
     m := &ManagedAppConfiguration{
         ManagedAppPolicy: *NewManagedAppPolicy(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateManagedAppConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -39,6 +42,14 @@ func CreateManagedAppConfigurationFromDiscriminatorValue(parseNode i878a80d2330e
         }
     }
     return NewManagedAppConfiguration(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *ManagedAppConfiguration) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetCustomSettings gets the customSettings property value. A set of string key and string value pairs to be sent to apps for users to whom the configuration is scoped, unalterned by this service
 func (m *ManagedAppConfiguration) GetCustomSettings()([]KeyValuePairable) {
@@ -83,7 +94,19 @@ func (m *ManagedAppConfiguration) Serialize(writer i878a80d2330e89d26896388a3f48
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *ManagedAppConfiguration) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetCustomSettings sets the customSettings property value. A set of string key and string value pairs to be sent to apps for users to whom the configuration is scoped, unalterned by this service
 func (m *ManagedAppConfiguration) SetCustomSettings(value []KeyValuePairable)() {

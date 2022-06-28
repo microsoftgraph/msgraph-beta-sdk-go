@@ -7,6 +7,8 @@ import (
 // WindowsIdentityProtectionConfiguration 
 type WindowsIdentityProtectionConfiguration struct {
     DeviceConfiguration
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Boolean value used to enable enhanced anti-spoofing for facial feature recognition on Windows Hello face authentication.
     enhancedAntiSpoofingForFacialFeaturesEnabled *bool
     // Integer value specifies the period (in days) that a PIN can be used before the system requires the user to change it. Valid values are 0 to 730 inclusive. Valid values 0 to 730
@@ -41,11 +43,20 @@ func NewWindowsIdentityProtectionConfiguration()(*WindowsIdentityProtectionConfi
     m := &WindowsIdentityProtectionConfiguration{
         DeviceConfiguration: *NewDeviceConfiguration(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateWindowsIdentityProtectionConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateWindowsIdentityProtectionConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWindowsIdentityProtectionConfiguration(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *WindowsIdentityProtectionConfiguration) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetEnhancedAntiSpoofingForFacialFeaturesEnabled gets the enhancedAntiSpoofingForFacialFeaturesEnabled property value. Boolean value used to enable enhanced anti-spoofing for facial feature recognition on Windows Hello face authentication.
 func (m *WindowsIdentityProtectionConfiguration) GetEnhancedAntiSpoofingForFacialFeaturesEnabled()(*bool) {
@@ -397,7 +408,19 @@ func (m *WindowsIdentityProtectionConfiguration) Serialize(writer i878a80d2330e8
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *WindowsIdentityProtectionConfiguration) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetEnhancedAntiSpoofingForFacialFeaturesEnabled sets the enhancedAntiSpoofingForFacialFeaturesEnabled property value. Boolean value used to enable enhanced anti-spoofing for facial feature recognition on Windows Hello face authentication.
 func (m *WindowsIdentityProtectionConfiguration) SetEnhancedAntiSpoofingForFacialFeaturesEnabled(value *bool)() {

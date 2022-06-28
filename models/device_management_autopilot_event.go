@@ -12,6 +12,8 @@ type DeviceManagementAutopilotEvent struct {
     accountSetupDuration *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration
     // Deployment status for the enrollment status page account setup phase. Possible values are: unknown, success, inProgress, failure, successWithTimeout, notAttempted, disabled.
     accountSetupStatus *WindowsAutopilotDeploymentState
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Autopilot deployment duration including enrollment.
     deploymentDuration *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration
     // Deployment end time.
@@ -68,6 +70,7 @@ func NewDeviceManagementAutopilotEvent()(*DeviceManagementAutopilotEvent) {
     m := &DeviceManagementAutopilotEvent{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateDeviceManagementAutopilotEventFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -88,6 +91,14 @@ func (m *DeviceManagementAutopilotEvent) GetAccountSetupStatus()(*WindowsAutopil
         return nil
     } else {
         return m.accountSetupStatus
+    }
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *DeviceManagementAutopilotEvent) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
     }
 }
 // GetDeploymentDuration gets the deploymentDuration property value. Autopilot deployment duration including enrollment.
@@ -746,6 +757,12 @@ func (m *DeviceManagementAutopilotEvent) Serialize(writer i878a80d2330e89d268963
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetAccountSetupDuration sets the accountSetupDuration property value. Time spent in user ESP.
@@ -758,6 +775,12 @@ func (m *DeviceManagementAutopilotEvent) SetAccountSetupDuration(value *i878a80d
 func (m *DeviceManagementAutopilotEvent) SetAccountSetupStatus(value *WindowsAutopilotDeploymentState)() {
     if m != nil {
         m.accountSetupStatus = value
+    }
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *DeviceManagementAutopilotEvent) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
     }
 }
 // SetDeploymentDuration sets the deploymentDuration property value. Autopilot deployment duration including enrollment.

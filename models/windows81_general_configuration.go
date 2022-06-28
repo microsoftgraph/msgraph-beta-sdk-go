@@ -9,6 +9,8 @@ type Windows81GeneralConfiguration struct {
     DeviceConfiguration
     // Indicates whether or not to Block the user from adding email accounts to the device that are not associated with a Microsoft account.
     accountsBlockAddingNonMicrosoftAccountEmail *bool
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Value indicating whether this policy only applies to Windows 8.1. This property is read-only.
     applyOnlyToWindows81 *bool
     // Indicates whether or not to block auto fill.
@@ -83,6 +85,7 @@ func NewWindows81GeneralConfiguration()(*Windows81GeneralConfiguration) {
     m := &Windows81GeneralConfiguration{
         DeviceConfiguration: *NewDeviceConfiguration(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateWindows81GeneralConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -95,6 +98,14 @@ func (m *Windows81GeneralConfiguration) GetAccountsBlockAddingNonMicrosoftAccoun
         return nil
     } else {
         return m.accountsBlockAddingNonMicrosoftAccountEmail
+    }
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *Windows81GeneralConfiguration) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
     }
 }
 // GetApplyOnlyToWindows81 gets the applyOnlyToWindows81 property value. Value indicating whether this policy only applies to Windows 8.1. This property is read-only.
@@ -947,12 +958,24 @@ func (m *Windows81GeneralConfiguration) Serialize(writer i878a80d2330e89d2689638
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetAccountsBlockAddingNonMicrosoftAccountEmail sets the accountsBlockAddingNonMicrosoftAccountEmail property value. Indicates whether or not to Block the user from adding email accounts to the device that are not associated with a Microsoft account.
 func (m *Windows81GeneralConfiguration) SetAccountsBlockAddingNonMicrosoftAccountEmail(value *bool)() {
     if m != nil {
         m.accountsBlockAddingNonMicrosoftAccountEmail = value
+    }
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *Windows81GeneralConfiguration) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
     }
 }
 // SetApplyOnlyToWindows81 sets the applyOnlyToWindows81 property value. Value indicating whether this policy only applies to Windows 8.1. This property is read-only.

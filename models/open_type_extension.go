@@ -7,6 +7,8 @@ import (
 // OpenTypeExtension 
 type OpenTypeExtension struct {
     Extension
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // A unique text identifier for an open type data extension. Required.
     extensionName *string
 }
@@ -15,11 +17,20 @@ func NewOpenTypeExtension()(*OpenTypeExtension) {
     m := &OpenTypeExtension{
         Extension: *NewExtension(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateOpenTypeExtensionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateOpenTypeExtensionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewOpenTypeExtension(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *OpenTypeExtension) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetExtensionName gets the extensionName property value. A unique text identifier for an open type data extension. Required.
 func (m *OpenTypeExtension) GetExtensionName()(*string) {
@@ -56,7 +67,19 @@ func (m *OpenTypeExtension) Serialize(writer i878a80d2330e89d26896388a3f487eef27
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *OpenTypeExtension) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetExtensionName sets the extensionName property value. A unique text identifier for an open type data extension. Required.
 func (m *OpenTypeExtension) SetExtensionName(value *string)() {

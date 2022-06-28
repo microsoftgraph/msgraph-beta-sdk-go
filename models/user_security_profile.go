@@ -5,11 +5,13 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// UserSecurityProfile provides operations to manage the security singleton.
+// UserSecurityProfile provides operations to manage the collection of accessReview entities.
 type UserSecurityProfile struct {
     Entity
     // The accounts property
     accounts []UserAccountable
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // The azureSubscriptionId property
     azureSubscriptionId *string
     // The azureTenantId property
@@ -34,6 +36,7 @@ func NewUserSecurityProfile()(*UserSecurityProfile) {
     m := &UserSecurityProfile{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateUserSecurityProfileFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -46,6 +49,14 @@ func (m *UserSecurityProfile) GetAccounts()([]UserAccountable) {
         return nil
     } else {
         return m.accounts
+    }
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *UserSecurityProfile) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
     }
 }
 // GetAzureSubscriptionId gets the azureSubscriptionId property value. The azureSubscriptionId property
@@ -303,12 +314,24 @@ func (m *UserSecurityProfile) Serialize(writer i878a80d2330e89d26896388a3f487eef
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetAccounts sets the accounts property value. The accounts property
 func (m *UserSecurityProfile) SetAccounts(value []UserAccountable)() {
     if m != nil {
         m.accounts = value
+    }
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *UserSecurityProfile) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
     }
 }
 // SetAzureSubscriptionId sets the azureSubscriptionId property value. The azureSubscriptionId property

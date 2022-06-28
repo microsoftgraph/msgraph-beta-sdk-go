@@ -7,6 +7,8 @@ import (
 // ManagedAndroidStoreApp 
 type ManagedAndroidStoreApp struct {
     ManagedApp
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // The Android AppStoreUrl.
     appStoreUrl *string
     // Contains properties for the minimum operating system required for an Android mobile app.
@@ -19,11 +21,20 @@ func NewManagedAndroidStoreApp()(*ManagedAndroidStoreApp) {
     m := &ManagedAndroidStoreApp{
         ManagedApp: *NewManagedApp(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateManagedAndroidStoreAppFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateManagedAndroidStoreAppFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewManagedAndroidStoreApp(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *ManagedAndroidStoreApp) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetAppStoreUrl gets the appStoreUrl property value. The Android AppStoreUrl.
 func (m *ManagedAndroidStoreApp) GetAppStoreUrl()(*string) {
@@ -108,7 +119,19 @@ func (m *ManagedAndroidStoreApp) Serialize(writer i878a80d2330e89d26896388a3f487
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *ManagedAndroidStoreApp) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetAppStoreUrl sets the appStoreUrl property value. The Android AppStoreUrl.
 func (m *ManagedAndroidStoreApp) SetAppStoreUrl(value *string)() {

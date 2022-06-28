@@ -5,9 +5,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// TeamworkDeviceConfiguration provides operations to manage the teamwork singleton.
+// TeamworkDeviceConfiguration provides operations to manage the collection of accessReview entities.
 type TeamworkDeviceConfiguration struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // The camera configuration. Applicable only for Microsoft Teams Rooms-enabled devices.
     cameraConfiguration TeamworkCameraConfigurationable
     // Identity of the user who created the device configuration document.
@@ -38,11 +40,20 @@ func NewTeamworkDeviceConfiguration()(*TeamworkDeviceConfiguration) {
     m := &TeamworkDeviceConfiguration{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateTeamworkDeviceConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateTeamworkDeviceConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewTeamworkDeviceConfiguration(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *TeamworkDeviceConfiguration) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetCameraConfiguration gets the cameraConfiguration property value. The camera configuration. Applicable only for Microsoft Teams Rooms-enabled devices.
 func (m *TeamworkDeviceConfiguration) GetCameraConfiguration()(TeamworkCameraConfigurationable) {
@@ -343,7 +354,19 @@ func (m *TeamworkDeviceConfiguration) Serialize(writer i878a80d2330e89d26896388a
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *TeamworkDeviceConfiguration) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetCameraConfiguration sets the cameraConfiguration property value. The camera configuration. Applicable only for Microsoft Teams Rooms-enabled devices.
 func (m *TeamworkDeviceConfiguration) SetCameraConfiguration(value TeamworkCameraConfigurationable)() {

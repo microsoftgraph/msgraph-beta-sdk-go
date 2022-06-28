@@ -7,6 +7,8 @@ import (
 // UserSource 
 type UserSource struct {
     DataSource
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Email address of the user's mailbox.
     email *string
     // Specifies which sources are included in this group. Possible values are: mailbox, site.
@@ -19,11 +21,20 @@ func NewUserSource()(*UserSource) {
     m := &UserSource{
         DataSource: *NewDataSource(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateUserSourceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateUserSourceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewUserSource(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *UserSource) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetEmail gets the email property value. Email address of the user's mailbox.
 func (m *UserSource) GetEmail()(*string) {
@@ -109,7 +120,19 @@ func (m *UserSource) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *UserSource) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetEmail sets the email property value. Email address of the user's mailbox.
 func (m *UserSource) SetEmail(value *string)() {

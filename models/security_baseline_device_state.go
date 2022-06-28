@@ -8,6 +8,8 @@ import (
 // SecurityBaselineDeviceState the security baseline compliance state summary of the security baseline for a device.
 type SecurityBaselineDeviceState struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Display name of the device
     deviceDisplayName *string
     // Last modified date time of the policy report
@@ -24,11 +26,20 @@ func NewSecurityBaselineDeviceState()(*SecurityBaselineDeviceState) {
     m := &SecurityBaselineDeviceState{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateSecurityBaselineDeviceStateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateSecurityBaselineDeviceStateFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewSecurityBaselineDeviceState(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *SecurityBaselineDeviceState) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetDeviceDisplayName gets the deviceDisplayName property value. Display name of the device
 func (m *SecurityBaselineDeviceState) GetDeviceDisplayName()(*string) {
@@ -162,7 +173,19 @@ func (m *SecurityBaselineDeviceState) Serialize(writer i878a80d2330e89d26896388a
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *SecurityBaselineDeviceState) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetDeviceDisplayName sets the deviceDisplayName property value. Display name of the device
 func (m *SecurityBaselineDeviceState) SetDeviceDisplayName(value *string)() {

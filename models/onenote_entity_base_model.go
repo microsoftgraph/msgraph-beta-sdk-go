@@ -4,9 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// OnenoteEntityBaseModel provides operations to manage the collection of administrativeUnit entities.
+// OnenoteEntityBaseModel provides operations to manage the collection of accessReview entities.
 type OnenoteEntityBaseModel struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // The endpoint where you can get details about the page. Read-only.
     self *string
 }
@@ -15,6 +17,7 @@ func NewOnenoteEntityBaseModel()(*OnenoteEntityBaseModel) {
     m := &OnenoteEntityBaseModel{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateOnenoteEntityBaseModelFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -41,6 +44,14 @@ func CreateOnenoteEntityBaseModelFromDiscriminatorValue(parseNode i878a80d2330e8
         }
     }
     return NewOnenoteEntityBaseModel(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *OnenoteEntityBaseModel) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *OnenoteEntityBaseModel) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -77,7 +88,19 @@ func (m *OnenoteEntityBaseModel) Serialize(writer i878a80d2330e89d26896388a3f487
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *OnenoteEntityBaseModel) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetSelf sets the self property value. The endpoint where you can get details about the page. Read-only.
 func (m *OnenoteEntityBaseModel) SetSelf(value *string)() {

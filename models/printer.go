@@ -5,11 +5,13 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Printer provides operations to manage the collection of administrativeUnit entities.
+// Printer provides operations to manage the collection of accessReview entities.
 type Printer struct {
     PrinterBase
     // The acceptingJobs property
     acceptingJobs *bool
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // The connectors that are associated with the printer.
     connectors []PrintConnectorable
     // True if the printer has a physical device for printing. Read-only.
@@ -32,6 +34,7 @@ func NewPrinter()(*Printer) {
     m := &Printer{
         PrinterBase: *NewPrinterBase(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreatePrinterFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -44,6 +47,14 @@ func (m *Printer) GetAcceptingJobs()(*bool) {
         return nil
     } else {
         return m.acceptingJobs
+    }
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *Printer) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
     }
 }
 // GetConnectors gets the connectors property value. The connectors that are associated with the printer.
@@ -289,12 +300,24 @@ func (m *Printer) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetAcceptingJobs sets the acceptingJobs property value. The acceptingJobs property
 func (m *Printer) SetAcceptingJobs(value *bool)() {
     if m != nil {
         m.acceptingJobs = value
+    }
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *Printer) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
     }
 }
 // SetConnectors sets the connectors property value. The connectors that are associated with the printer.

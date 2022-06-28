@@ -7,6 +7,8 @@ import (
 // FileAttachment 
 type FileAttachment struct {
     Attachment
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // The base64-encoded contents of the file.
     contentBytes []byte
     // The ID of the attachment in the Exchange store.
@@ -19,11 +21,20 @@ func NewFileAttachment()(*FileAttachment) {
     m := &FileAttachment{
         Attachment: *NewAttachment(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateFileAttachmentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateFileAttachmentFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewFileAttachment(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *FileAttachment) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetContentBytes gets the contentBytes property value. The base64-encoded contents of the file.
 func (m *FileAttachment) GetContentBytes()([]byte) {
@@ -108,7 +119,19 @@ func (m *FileAttachment) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *FileAttachment) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetContentBytes sets the contentBytes property value. The base64-encoded contents of the file.
 func (m *FileAttachment) SetContentBytes(value []byte)() {

@@ -7,6 +7,8 @@ import (
 // DeviceEnrollmentPlatformRestrictionConfiguration 
 type DeviceEnrollmentPlatformRestrictionConfiguration struct {
     DeviceEnrollmentConfiguration
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Restrictions based on platform, platform operating system version, and device ownership
     platformRestriction DeviceEnrollmentPlatformRestrictionable
     // Type of platform for which this restriction applies. Possible values are: allPlatforms, ios, windows, windowsPhone, android, androidForWork, mac.
@@ -17,11 +19,20 @@ func NewDeviceEnrollmentPlatformRestrictionConfiguration()(*DeviceEnrollmentPlat
     m := &DeviceEnrollmentPlatformRestrictionConfiguration{
         DeviceEnrollmentConfiguration: *NewDeviceEnrollmentConfiguration(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateDeviceEnrollmentPlatformRestrictionConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateDeviceEnrollmentPlatformRestrictionConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDeviceEnrollmentPlatformRestrictionConfiguration(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *DeviceEnrollmentPlatformRestrictionConfiguration) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceEnrollmentPlatformRestrictionConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -83,7 +94,19 @@ func (m *DeviceEnrollmentPlatformRestrictionConfiguration) Serialize(writer i878
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *DeviceEnrollmentPlatformRestrictionConfiguration) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetPlatformRestriction sets the platformRestriction property value. Restrictions based on platform, platform operating system version, and device ownership
 func (m *DeviceEnrollmentPlatformRestrictionConfiguration) SetPlatformRestriction(value DeviceEnrollmentPlatformRestrictionable)() {

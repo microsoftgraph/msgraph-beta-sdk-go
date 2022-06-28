@@ -8,6 +8,8 @@ import (
 // AndroidForWorkSettings settings for Android For Work.
 type AndroidForWorkSettings struct {
     Entity
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Bind status of the tenant with the Google EMM API. Possible values are: notBound, bound, boundAndValidated, unbinding.
     bindStatus *AndroidForWorkBindStatus
     // Indicates if this account is flighting for Android Device Owner Management with CloudDPC.
@@ -32,11 +34,20 @@ func NewAndroidForWorkSettings()(*AndroidForWorkSettings) {
     m := &AndroidForWorkSettings{
         Entity: *NewEntity(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateAndroidForWorkSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateAndroidForWorkSettingsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAndroidForWorkSettings(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *AndroidForWorkSettings) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetBindStatus gets the bindStatus property value. Bind status of the tenant with the Google EMM API. Possible values are: notBound, bound, boundAndValidated, unbinding.
 func (m *AndroidForWorkSettings) GetBindStatus()(*AndroidForWorkBindStatus) {
@@ -272,7 +283,19 @@ func (m *AndroidForWorkSettings) Serialize(writer i878a80d2330e89d26896388a3f487
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *AndroidForWorkSettings) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetBindStatus sets the bindStatus property value. Bind status of the tenant with the Google EMM API. Possible values are: notBound, bound, boundAndValidated, unbinding.
 func (m *AndroidForWorkSettings) SetBindStatus(value *AndroidForWorkBindStatus)() {

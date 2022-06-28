@@ -7,6 +7,8 @@ import (
 // AndroidWorkProfileWiFiConfiguration 
 type AndroidWorkProfileWiFiConfiguration struct {
     DeviceConfiguration
+    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additionalData map[string]interface{}
     // Connect automatically when this network is in range. Setting this to true will skip the user prompt and automatically connect the device to Wi-Fi network.
     connectAutomatically *bool
     // When set to true, this profile forces the device to connect to a network that doesn't broadcast its SSID to all devices.
@@ -23,6 +25,7 @@ func NewAndroidWorkProfileWiFiConfiguration()(*AndroidWorkProfileWiFiConfigurati
     m := &AndroidWorkProfileWiFiConfiguration{
         DeviceConfiguration: *NewDeviceConfiguration(),
     }
+    m.SetAdditionalData(make(map[string]interface{}));
     return m
 }
 // CreateAndroidWorkProfileWiFiConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -47,6 +50,14 @@ func CreateAndroidWorkProfileWiFiConfigurationFromDiscriminatorValue(parseNode i
         }
     }
     return NewAndroidWorkProfileWiFiConfiguration(), nil
+}
+// GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *AndroidWorkProfileWiFiConfiguration) GetAdditionalData()(map[string]interface{}) {
+    if m == nil {
+        return nil
+    } else {
+        return m.additionalData
+    }
 }
 // GetConnectAutomatically gets the connectAutomatically property value. Connect automatically when this network is in range. Setting this to true will skip the user prompt and automatically connect the device to Wi-Fi network.
 func (m *AndroidWorkProfileWiFiConfiguration) GetConnectAutomatically()(*bool) {
@@ -180,7 +191,19 @@ func (m *AndroidWorkProfileWiFiConfiguration) Serialize(writer i878a80d2330e89d2
             return err
         }
     }
+    {
+        err = writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *AndroidWorkProfileWiFiConfiguration) SetAdditionalData(value map[string]interface{})() {
+    if m != nil {
+        m.additionalData = value
+    }
 }
 // SetConnectAutomatically sets the connectAutomatically property value. Connect automatically when this network is in range. Setting this to true will skip the user prompt and automatically connect the device to Wi-Fi network.
 func (m *AndroidWorkProfileWiFiConfiguration) SetConnectAutomatically(value *bool)() {
