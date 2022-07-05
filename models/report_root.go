@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ReportRoot provides operations to manage the reportRoot singleton.
+// ReportRoot 
 type ReportRoot struct {
     Entity
     // Represents a detailed summary of an application sign-in.
@@ -29,10 +29,12 @@ type ReportRoot struct {
     monthlyPrintUsageSummariesByPrinter []PrintUsageByPrinterable
     // The monthlyPrintUsageSummariesByUser property
     monthlyPrintUsageSummariesByUser []PrintUsageByUserable
+    // The security property
+    security SecurityReportsRootable
     // Represents the self-service password reset (SSPR) usage for a given tenant.
     userCredentialUsageDetails []UserCredentialUsageDetailsable
 }
-// NewReportRoot instantiates a new reportRoot and sets the default values.
+// NewReportRoot instantiates a new ReportRoot and sets the default values.
 func NewReportRoot()(*ReportRoot) {
     m := &ReportRoot{
         Entity: *NewEntity(),
@@ -252,6 +254,16 @@ func (m *ReportRoot) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
         }
         return nil
     }
+    res["security"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateSecurityReportsRootFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetSecurity(val.(SecurityReportsRootable))
+        }
+        return nil
+    }
     res["userCredentialUsageDetails"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateUserCredentialUsageDetailsFromDiscriminatorValue)
         if err != nil {
@@ -298,6 +310,14 @@ func (m *ReportRoot) GetMonthlyPrintUsageSummariesByUser()([]PrintUsageByUserabl
         return nil
     } else {
         return m.monthlyPrintUsageSummariesByUser
+    }
+}
+// GetSecurity gets the security property value. The security property
+func (m *ReportRoot) GetSecurity()(SecurityReportsRootable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.security
     }
 }
 // GetUserCredentialUsageDetails gets the userCredentialUsageDetails property value. Represents the self-service password reset (SSPR) usage for a given tenant.
@@ -420,6 +440,12 @@ func (m *ReportRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
             return err
         }
     }
+    {
+        err = writer.WriteObjectValue("security", m.GetSecurity())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetUserCredentialUsageDetails() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetUserCredentialUsageDetails()))
         for i, v := range m.GetUserCredentialUsageDetails() {
@@ -496,6 +522,12 @@ func (m *ReportRoot) SetMonthlyPrintUsageSummariesByPrinter(value []PrintUsageBy
 func (m *ReportRoot) SetMonthlyPrintUsageSummariesByUser(value []PrintUsageByUserable)() {
     if m != nil {
         m.monthlyPrintUsageSummariesByUser = value
+    }
+}
+// SetSecurity sets the security property value. The security property
+func (m *ReportRoot) SetSecurity(value SecurityReportsRootable)() {
+    if m != nil {
+        m.security = value
     }
 }
 // SetUserCredentialUsageDetails sets the userCredentialUsageDetails property value. Represents the self-service password reset (SSPR) usage for a given tenant.

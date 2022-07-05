@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the privacy singleton.
+// Provides operations to manage the collection of accessReview entities.
 type SubjectRightsRequestStageStatus int
 
 const (

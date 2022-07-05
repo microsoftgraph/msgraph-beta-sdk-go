@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// TenantRelationship provides operations to manage the tenantRelationship singleton.
+// TenantRelationship 
 type TenantRelationship struct {
     Entity
     // The customer who has a delegated admin relationship with a Microsoft partner.
@@ -12,7 +12,7 @@ type TenantRelationship struct {
     // The details of the delegated administrative privileges that a Microsoft partner has in a customer tenant.
     delegatedAdminRelationships []DelegatedAdminRelationshipable
 }
-// NewTenantRelationship instantiates a new tenantRelationship and sets the default values.
+// NewTenantRelationship instantiates a new TenantRelationship and sets the default values.
 func NewTenantRelationship()(*TenantRelationship) {
     m := &TenantRelationship{
         Entity: *NewEntity(),

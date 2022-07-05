@@ -4,13 +4,13 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// BookingNamedEntity booking entities that provide a display name.
+// BookingNamedEntity 
 type BookingNamedEntity struct {
     Entity
     // A name for the derived entity, which interfaces with customers.
     displayName *string
 }
-// NewBookingNamedEntity instantiates a new bookingNamedEntity and sets the default values.
+// NewBookingNamedEntity instantiates a new BookingNamedEntity and sets the default values.
 func NewBookingNamedEntity()(*BookingNamedEntity) {
     m := &BookingNamedEntity{
         Entity: *NewEntity(),

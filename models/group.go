@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Group provides operations to manage the collection of administrativeUnit entities.
+// Group provides operations to manage the collection of accessReview entities.
 type Group struct {
     DirectoryObject
     // The list of users or groups that are allowed to create post's or calendar events in this group. If this list is non-empty then only users or groups listed here are allowed to post.
@@ -164,7 +164,7 @@ type Group struct {
     unseenMessagesCount *int32
     // Specifies the group join policy and group content visibility for groups. Possible values are: Private, Public, or Hiddenmembership. Hiddenmembership can be set only for Microsoft 365 groups, when the groups are created. It can't be updated later. Other values of visibility can be updated after group creation. If visibility value is not specified during group creation on Microsoft Graph, a security group is created as Private by default and Microsoft 365 group is Public. Groups assignable to roles are always Private. See group visibility options to learn more. Returned by default. Nullable.
     visibility *string
-    // The writebackConfiguration property
+    // Specifies whether or not a group is configured to write back group object properties to on-premise Active Directory. These properties are used when group writeback is configured in the Azure AD Connect sync client.
     writebackConfiguration GroupWritebackConfigurationable
 }
 // NewGroup instantiates a new group and sets the default values.
@@ -1713,7 +1713,7 @@ func (m *Group) GetVisibility()(*string) {
         return m.visibility
     }
 }
-// GetWritebackConfiguration gets the writebackConfiguration property value. The writebackConfiguration property
+// GetWritebackConfiguration gets the writebackConfiguration property value. Specifies whether or not a group is configured to write back group object properties to on-premise Active Directory. These properties are used when group writeback is configured in the Azure AD Connect sync client.
 func (m *Group) GetWritebackConfiguration()(GroupWritebackConfigurationable) {
     if m == nil {
         return nil
@@ -2768,7 +2768,7 @@ func (m *Group) SetVisibility(value *string)() {
         m.visibility = value
     }
 }
-// SetWritebackConfiguration sets the writebackConfiguration property value. The writebackConfiguration property
+// SetWritebackConfiguration sets the writebackConfiguration property value. Specifies whether or not a group is configured to write back group object properties to on-premise Active Directory. These properties are used when group writeback is configured in the Azure AD Connect sync client.
 func (m *Group) SetWritebackConfiguration(value GroupWritebackConfigurationable)() {
     if m != nil {
         m.writebackConfiguration = value

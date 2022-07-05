@@ -18,6 +18,29 @@ func NewEducationSynchronizationDataProvider()(*EducationSynchronizationDataProv
 }
 // CreateEducationSynchronizationDataProviderFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateEducationSynchronizationDataProviderFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+    if parseNode != nil {
+        mappingValueNode, err := parseNode.GetChildNode("@odata.type")
+        if err != nil {
+            return nil, err
+        }
+        if mappingValueNode != nil {
+            mappingValue, err := mappingValueNode.GetStringValue()
+            if err != nil {
+                return nil, err
+            }
+            if mappingValue != nil {
+                mappingStr := *mappingValue
+                switch mappingStr {
+                    case "#microsoft.graph.educationCsvDataProvider":
+                        return NewEducationCsvDataProvider(), nil
+                    case "#microsoft.graph.educationOneRosterApiDataProvider":
+                        return NewEducationOneRosterApiDataProvider(), nil
+                    case "#microsoft.graph.educationPowerSchoolDataProvider":
+                        return NewEducationPowerSchoolDataProvider(), nil
+                }
+            }
+        }
+    }
     return NewEducationSynchronizationDataProvider(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.

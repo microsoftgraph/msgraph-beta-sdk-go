@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DeviceRegistrationPolicy provides operations to manage the deviceRegistrationPolicy singleton.
+// DeviceRegistrationPolicy 
 type DeviceRegistrationPolicy struct {
     Entity
     // Specifies the authorization policy for controlling registration of new devices using Azure AD Join within your organization. Required. For more information, see What is a device identity?.
@@ -20,7 +20,7 @@ type DeviceRegistrationPolicy struct {
     // Specifies the maximum number of devices that a user can have within your organization before blocking new device registrations. The default value is set to 50. If this property is not specified during the policy update operation, it is automatically reset to 0 to indicate that users are not allowed to join any devices.
     userDeviceQuota *int32
 }
-// NewDeviceRegistrationPolicy instantiates a new deviceRegistrationPolicy and sets the default values.
+// NewDeviceRegistrationPolicy instantiates a new DeviceRegistrationPolicy and sets the default values.
 func NewDeviceRegistrationPolicy()(*DeviceRegistrationPolicy) {
     m := &DeviceRegistrationPolicy{
         Entity: *NewEntity(),

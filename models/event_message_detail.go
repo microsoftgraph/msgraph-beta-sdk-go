@@ -18,6 +18,83 @@ func NewEventMessageDetail()(*EventMessageDetail) {
 }
 // CreateEventMessageDetailFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateEventMessageDetailFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+    if parseNode != nil {
+        mappingValueNode, err := parseNode.GetChildNode("@odata.type")
+        if err != nil {
+            return nil, err
+        }
+        if mappingValueNode != nil {
+            mappingValue, err := mappingValueNode.GetStringValue()
+            if err != nil {
+                return nil, err
+            }
+            if mappingValue != nil {
+                mappingStr := *mappingValue
+                switch mappingStr {
+                    case "#microsoft.graph.callEndedEventMessageDetail":
+                        return NewCallEndedEventMessageDetail(), nil
+                    case "#microsoft.graph.callRecordingEventMessageDetail":
+                        return NewCallRecordingEventMessageDetail(), nil
+                    case "#microsoft.graph.callStartedEventMessageDetail":
+                        return NewCallStartedEventMessageDetail(), nil
+                    case "#microsoft.graph.callTranscriptEventMessageDetail":
+                        return NewCallTranscriptEventMessageDetail(), nil
+                    case "#microsoft.graph.channelAddedEventMessageDetail":
+                        return NewChannelAddedEventMessageDetail(), nil
+                    case "#microsoft.graph.channelDeletedEventMessageDetail":
+                        return NewChannelDeletedEventMessageDetail(), nil
+                    case "#microsoft.graph.channelDescriptionUpdatedEventMessageDetail":
+                        return NewChannelDescriptionUpdatedEventMessageDetail(), nil
+                    case "#microsoft.graph.channelRenamedEventMessageDetail":
+                        return NewChannelRenamedEventMessageDetail(), nil
+                    case "#microsoft.graph.channelSetAsFavoriteByDefaultEventMessageDetail":
+                        return NewChannelSetAsFavoriteByDefaultEventMessageDetail(), nil
+                    case "#microsoft.graph.channelUnsetAsFavoriteByDefaultEventMessageDetail":
+                        return NewChannelUnsetAsFavoriteByDefaultEventMessageDetail(), nil
+                    case "#microsoft.graph.chatRenamedEventMessageDetail":
+                        return NewChatRenamedEventMessageDetail(), nil
+                    case "#microsoft.graph.conversationMemberRoleUpdatedEventMessageDetail":
+                        return NewConversationMemberRoleUpdatedEventMessageDetail(), nil
+                    case "#microsoft.graph.meetingPolicyUpdatedEventMessageDetail":
+                        return NewMeetingPolicyUpdatedEventMessageDetail(), nil
+                    case "#microsoft.graph.membersAddedEventMessageDetail":
+                        return NewMembersAddedEventMessageDetail(), nil
+                    case "#microsoft.graph.membersDeletedEventMessageDetail":
+                        return NewMembersDeletedEventMessageDetail(), nil
+                    case "#microsoft.graph.membersJoinedEventMessageDetail":
+                        return NewMembersJoinedEventMessageDetail(), nil
+                    case "#microsoft.graph.membersLeftEventMessageDetail":
+                        return NewMembersLeftEventMessageDetail(), nil
+                    case "#microsoft.graph.messagePinnedEventMessageDetail":
+                        return NewMessagePinnedEventMessageDetail(), nil
+                    case "#microsoft.graph.messageUnpinnedEventMessageDetail":
+                        return NewMessageUnpinnedEventMessageDetail(), nil
+                    case "#microsoft.graph.tabUpdatedEventMessageDetail":
+                        return NewTabUpdatedEventMessageDetail(), nil
+                    case "#microsoft.graph.teamArchivedEventMessageDetail":
+                        return NewTeamArchivedEventMessageDetail(), nil
+                    case "#microsoft.graph.teamCreatedEventMessageDetail":
+                        return NewTeamCreatedEventMessageDetail(), nil
+                    case "#microsoft.graph.teamDescriptionUpdatedEventMessageDetail":
+                        return NewTeamDescriptionUpdatedEventMessageDetail(), nil
+                    case "#microsoft.graph.teamJoiningDisabledEventMessageDetail":
+                        return NewTeamJoiningDisabledEventMessageDetail(), nil
+                    case "#microsoft.graph.teamJoiningEnabledEventMessageDetail":
+                        return NewTeamJoiningEnabledEventMessageDetail(), nil
+                    case "#microsoft.graph.teamRenamedEventMessageDetail":
+                        return NewTeamRenamedEventMessageDetail(), nil
+                    case "#microsoft.graph.teamsAppInstalledEventMessageDetail":
+                        return NewTeamsAppInstalledEventMessageDetail(), nil
+                    case "#microsoft.graph.teamsAppRemovedEventMessageDetail":
+                        return NewTeamsAppRemovedEventMessageDetail(), nil
+                    case "#microsoft.graph.teamsAppUpgradedEventMessageDetail":
+                        return NewTeamsAppUpgradedEventMessageDetail(), nil
+                    case "#microsoft.graph.teamUnarchivedEventMessageDetail":
+                        return NewTeamUnarchivedEventMessageDetail(), nil
+                }
+            }
+        }
+    }
     return NewEventMessageDetail(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.

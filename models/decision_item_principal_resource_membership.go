@@ -8,7 +8,7 @@ import (
 type DecisionItemPrincipalResourceMembership struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
-    // The membershipType property
+    // Type of membership that the principal has to the resource. Multi-valued. The possible values are: direct, indirect, unknownFutureValue.
     membershipType *DecisionItemPrincipalResourceMembershipType
 }
 // NewDecisionItemPrincipalResourceMembership instantiates a new decisionItemPrincipalResourceMembership and sets the default values.
@@ -45,7 +45,7 @@ func (m *DecisionItemPrincipalResourceMembership) GetFieldDeserializers()(map[st
     }
     return res
 }
-// GetMembershipType gets the membershipType property value. The membershipType property
+// GetMembershipType gets the membershipType property value. Type of membership that the principal has to the resource. Multi-valued. The possible values are: direct, indirect, unknownFutureValue.
 func (m *DecisionItemPrincipalResourceMembership) GetMembershipType()(*DecisionItemPrincipalResourceMembershipType) {
     if m == nil {
         return nil
@@ -76,7 +76,7 @@ func (m *DecisionItemPrincipalResourceMembership) SetAdditionalData(value map[st
         m.additionalData = value
     }
 }
-// SetMembershipType sets the membershipType property value. The membershipType property
+// SetMembershipType sets the membershipType property value. Type of membership that the principal has to the resource. Multi-valued. The possible values are: direct, indirect, unknownFutureValue.
 func (m *DecisionItemPrincipalResourceMembership) SetMembershipType(value *DecisionItemPrincipalResourceMembershipType)() {
     if m != nil {
         m.membershipType = value

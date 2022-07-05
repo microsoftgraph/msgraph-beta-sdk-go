@@ -16,6 +16,8 @@ type ParticipantInfo struct {
     identity IdentitySetable
     // The language culture string. Read-only.
     languageId *string
+    // The nonAnonymizedIdentity property
+    nonAnonymizedIdentity IdentitySetable
     // The participant ID of the participant. Read-only.
     participantId *string
     // The client platform ID of the participant. Read-only.
@@ -101,6 +103,16 @@ func (m *ParticipantInfo) GetFieldDeserializers()(map[string]func(i878a80d2330e8
         }
         return nil
     }
+    res["nonAnonymizedIdentity"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateIdentitySetFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetNonAnonymizedIdentity(val.(IdentitySetable))
+        }
+        return nil
+    }
     res["participantId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -147,6 +159,14 @@ func (m *ParticipantInfo) GetLanguageId()(*string) {
         return nil
     } else {
         return m.languageId
+    }
+}
+// GetNonAnonymizedIdentity gets the nonAnonymizedIdentity property value. The nonAnonymizedIdentity property
+func (m *ParticipantInfo) GetNonAnonymizedIdentity()(IdentitySetable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.nonAnonymizedIdentity
     }
 }
 // GetParticipantId gets the participantId property value. The participant ID of the participant. Read-only.
@@ -196,6 +216,12 @@ func (m *ParticipantInfo) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
     }
     {
         err := writer.WriteStringValue("languageId", m.GetLanguageId())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteObjectValue("nonAnonymizedIdentity", m.GetNonAnonymizedIdentity())
         if err != nil {
             return err
         }
@@ -254,6 +280,12 @@ func (m *ParticipantInfo) SetIdentity(value IdentitySetable)() {
 func (m *ParticipantInfo) SetLanguageId(value *string)() {
     if m != nil {
         m.languageId = value
+    }
+}
+// SetNonAnonymizedIdentity sets the nonAnonymizedIdentity property value. The nonAnonymizedIdentity property
+func (m *ParticipantInfo) SetNonAnonymizedIdentity(value IdentitySetable)() {
+    if m != nil {
+        m.nonAnonymizedIdentity = value
     }
 }
 // SetParticipantId sets the participantId property value. The participant ID of the participant. Read-only.

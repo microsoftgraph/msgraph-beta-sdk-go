@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// RelyingPartyDetailedSummary provides operations to call the getRelyingPartyDetailedSummary method.
+// RelyingPartyDetailedSummary 
 type RelyingPartyDetailedSummary struct {
     Entity
     // Number of failed sign in on Active Directory Federation Service in the period specified.
@@ -30,7 +30,7 @@ type RelyingPartyDetailedSummary struct {
     // Number of unique users that have signed into the application.
     uniqueUserCount *int64
 }
-// NewRelyingPartyDetailedSummary instantiates a new relyingPartyDetailedSummary and sets the default values.
+// NewRelyingPartyDetailedSummary instantiates a new RelyingPartyDetailedSummary and sets the default values.
 func NewRelyingPartyDetailedSummary()(*RelyingPartyDetailedSummary) {
     m := &RelyingPartyDetailedSummary{
         Entity: *NewEntity(),

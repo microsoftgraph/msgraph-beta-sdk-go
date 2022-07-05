@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Account provides operations to manage the financials singleton.
+// Account 
 type Account struct {
     Entity
     // The blocked property
@@ -21,7 +21,7 @@ type Account struct {
     // The subCategory property
     subCategory *string
 }
-// NewAccount instantiates a new account and sets the default values.
+// NewAccount instantiates a new Account and sets the default values.
 func NewAccount()(*Account) {
     m := &Account{
         Entity: *NewEntity(),

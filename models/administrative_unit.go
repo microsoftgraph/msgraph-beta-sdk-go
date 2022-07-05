@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AdministrativeUnit 
+// AdministrativeUnit provides operations to manage the collection of administrativeUnit entities.
 type AdministrativeUnit struct {
     DirectoryObject
     // An optional description for the administrative unit. Supports $filter (eq, ne, in, startsWith), $search.
@@ -19,10 +19,10 @@ type AdministrativeUnit struct {
     members []DirectoryObjectable
     // Scoped-role members of this administrative unit.
     scopedRoleMembers []ScopedRoleMembershipable
-    // Controls whether the administrative unit and its members are hidden or public. Can be set to HiddenMembership. If not set (value is null), the default behavior is public. When set to HiddenMembership, only members of the administrative unit can list other members of the administrative unit.
+    // Controls whether the administrative unit and its members are hidden or public. Can be set to HiddenMembership or Public. If not set, the default behavior is Public. When set to HiddenMembership, only members of the administrative unit can list other members of the administrative unit.
     visibility *string
 }
-// NewAdministrativeUnit instantiates a new AdministrativeUnit and sets the default values.
+// NewAdministrativeUnit instantiates a new administrativeUnit and sets the default values.
 func NewAdministrativeUnit()(*AdministrativeUnit) {
     m := &AdministrativeUnit{
         DirectoryObject: *NewDirectoryObject(),
@@ -168,7 +168,7 @@ func (m *AdministrativeUnit) GetScopedRoleMembers()([]ScopedRoleMembershipable) 
         return m.scopedRoleMembers
     }
 }
-// GetVisibility gets the visibility property value. Controls whether the administrative unit and its members are hidden or public. Can be set to HiddenMembership. If not set (value is null), the default behavior is public. When set to HiddenMembership, only members of the administrative unit can list other members of the administrative unit.
+// GetVisibility gets the visibility property value. Controls whether the administrative unit and its members are hidden or public. Can be set to HiddenMembership or Public. If not set, the default behavior is Public. When set to HiddenMembership, only members of the administrative unit can list other members of the administrative unit.
 func (m *AdministrativeUnit) GetVisibility()(*string) {
     if m == nil {
         return nil
@@ -274,7 +274,7 @@ func (m *AdministrativeUnit) SetScopedRoleMembers(value []ScopedRoleMembershipab
         m.scopedRoleMembers = value
     }
 }
-// SetVisibility sets the visibility property value. Controls whether the administrative unit and its members are hidden or public. Can be set to HiddenMembership. If not set (value is null), the default behavior is public. When set to HiddenMembership, only members of the administrative unit can list other members of the administrative unit.
+// SetVisibility sets the visibility property value. Controls whether the administrative unit and its members are hidden or public. Can be set to HiddenMembership or Public. If not set, the default behavior is Public. When set to HiddenMembership, only members of the administrative unit can list other members of the administrative unit.
 func (m *AdministrativeUnit) SetVisibility(value *string)() {
     if m != nil {
         m.visibility = value

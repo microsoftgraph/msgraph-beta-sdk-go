@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// OnlineMeeting provides operations to manage the commsApplication singleton.
+// OnlineMeeting provides operations to manage the collection of accessReview entities.
 type OnlineMeeting struct {
     Entity
     // Indicates whether attendees can turn on their camera.
@@ -20,6 +20,8 @@ type OnlineMeeting struct {
     allowTeamworkReactions *bool
     // The content stream of the alternative recording of a Microsoft Teams live event. Read-only.
     alternativeRecording []byte
+    // The anonymizeIdentityForRoles property
+    anonymizeIdentityForRoles []string
     // The attendance reports of an online meeting. Read-only.
     attendanceReports []MeetingAttendanceReportable
     // The content stream of the attendee report of a Teams live event. Read-only.
@@ -126,6 +128,14 @@ func (m *OnlineMeeting) GetAlternativeRecording()([]byte) {
         return nil
     } else {
         return m.alternativeRecording
+    }
+}
+// GetAnonymizeIdentityForRoles gets the anonymizeIdentityForRoles property value. The anonymizeIdentityForRoles property
+func (m *OnlineMeeting) GetAnonymizeIdentityForRoles()([]string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.anonymizeIdentityForRoles
     }
 }
 // GetAttendanceReports gets the attendanceReports property value. The attendance reports of an online meeting. Read-only.
@@ -260,6 +270,20 @@ func (m *OnlineMeeting) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         }
         if val != nil {
             m.SetAlternativeRecording(val)
+        }
+        return nil
+    }
+    res["anonymizeIdentityForRoles"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfPrimitiveValues("string")
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetAnonymizeIdentityForRoles(res)
         }
         return nil
     }
@@ -677,6 +701,12 @@ func (m *OnlineMeeting) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
             return err
         }
     }
+    if m.GetAnonymizeIdentityForRoles() != nil {
+        err = writer.WriteCollectionOfStringValues("anonymizeIdentityForRoles", m.GetAnonymizeIdentityForRoles())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetAttendanceReports() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAttendanceReports()))
         for i, v := range m.GetAttendanceReports() {
@@ -861,6 +891,12 @@ func (m *OnlineMeeting) SetAllowTeamworkReactions(value *bool)() {
 func (m *OnlineMeeting) SetAlternativeRecording(value []byte)() {
     if m != nil {
         m.alternativeRecording = value
+    }
+}
+// SetAnonymizeIdentityForRoles sets the anonymizeIdentityForRoles property value. The anonymizeIdentityForRoles property
+func (m *OnlineMeeting) SetAnonymizeIdentityForRoles(value []string)() {
+    if m != nil {
+        m.anonymizeIdentityForRoles = value
     }
 }
 // SetAttendanceReports sets the attendanceReports property value. The attendance reports of an online meeting. Read-only.

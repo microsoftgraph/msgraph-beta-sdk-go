@@ -6,6 +6,7 @@ import (
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
     i38c36241584d283abed567d4941512ed9e66c68e569683934efaa70fd2818554 "github.com/microsoftgraph/msgraph-beta-sdk-go/admin/sharepoint"
     i3bebed6a38e396d320d4ac9b584cfacdff3f1460850f658e519a126116ae40b8 "github.com/microsoftgraph/msgraph-beta-sdk-go/admin/windows"
+    i49dcf340f8344c7025f40bd5c0ae4cd9418dca301a765e4ac73ade0fec4a7fea "github.com/microsoftgraph/msgraph-beta-sdk-go/admin/reportsettings"
     ic4ec23e71b979f81b15c68b4aa659bac1d7db6b385d7b2e876a5399aacb43a6e "github.com/microsoftgraph/msgraph-beta-sdk-go/admin/serviceannouncement"
 )
 
@@ -136,6 +137,10 @@ func (m *AdminRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(bo
         return err
     }
     return nil
+}
+// ReportSettings the reportSettings property
+func (m *AdminRequestBuilder) ReportSettings()(*i49dcf340f8344c7025f40bd5c0ae4cd9418dca301a765e4ac73ade0fec4a7fea.ReportSettingsRequestBuilder) {
+    return i49dcf340f8344c7025f40bd5c0ae4cd9418dca301a765e4ac73ade0fec4a7fea.NewReportSettingsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ServiceAnnouncement the serviceAnnouncement property
 func (m *AdminRequestBuilder) ServiceAnnouncement()(*ic4ec23e71b979f81b15c68b4aa659bac1d7db6b385d7b2e876a5399aacb43a6e.ServiceAnnouncementRequestBuilder) {

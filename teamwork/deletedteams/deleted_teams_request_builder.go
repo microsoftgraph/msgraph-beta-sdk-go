@@ -17,7 +17,7 @@ type DeletedTeamsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// DeletedTeamsRequestBuilderGetQueryParameters get deletedTeams from teamwork
+// DeletedTeamsRequestBuilderGetQueryParameters a collection of deleted teams.
 type DeletedTeamsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -75,11 +75,11 @@ func NewDeletedTeamsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2
 func (m *DeletedTeamsRequestBuilder) Count()(*iac4883066b853657ce40ba22eef7f68529ed8b1b2a46d427e4913442e919f215.CountRequestBuilder) {
     return iac4883066b853657ce40ba22eef7f68529ed8b1b2a46d427e4913442e919f215.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation get deletedTeams from teamwork
+// CreateGetRequestInformation a collection of deleted teams.
 func (m *DeletedTeamsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration get deletedTeams from teamwork
+// CreateGetRequestInformationWithRequestConfiguration a collection of deleted teams.
 func (m *DeletedTeamsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *DeletedTeamsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,7 +113,7 @@ func (m *DeletedTeamsRequestBuilder) CreatePostRequestInformationWithRequestConf
     }
     return requestInfo, nil
 }
-// Get get deletedTeams from teamwork
+// Get a collection of deleted teams.
 func (m *DeletedTeamsRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeletedTeamCollectionResponseable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
@@ -121,7 +121,7 @@ func (m *DeletedTeamsRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde1
 func (m *DeletedTeamsRequestBuilder) GetAllMessages()(*if631ffaec8045e222bb7bfa4826dd26eb7213cbcac06d6aeb78482492fb57fe0.GetAllMessagesRequestBuilder) {
     return if631ffaec8045e222bb7bfa4826dd26eb7213cbcac06d6aeb78482492fb57fe0.NewGetAllMessagesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// GetWithRequestConfigurationAndResponseHandler get deletedTeams from teamwork
+// GetWithRequestConfigurationAndResponseHandler a collection of deleted teams.
 func (m *DeletedTeamsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *DeletedTeamsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeletedTeamCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

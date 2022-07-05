@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// SignInFrequencySessionControl provides operations to manage the policyRoot singleton.
+// SignInFrequencySessionControl 
 type SignInFrequencySessionControl struct {
     ConditionalAccessSessionControl
     // The possible values are primaryAndSecondaryAuthentication, secondaryAuthentication, unknownFutureValue.
@@ -16,7 +16,7 @@ type SignInFrequencySessionControl struct {
     // The number of days or hours.
     value *int32
 }
-// NewSignInFrequencySessionControl instantiates a new signInFrequencySessionControl and sets the default values.
+// NewSignInFrequencySessionControl instantiates a new SignInFrequencySessionControl and sets the default values.
 func NewSignInFrequencySessionControl()(*SignInFrequencySessionControl) {
     m := &SignInFrequencySessionControl{
         ConditionalAccessSessionControl: *NewConditionalAccessSessionControl(),

@@ -20,6 +20,35 @@ func NewUserSet()(*UserSet) {
 }
 // CreateUserSetFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateUserSetFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+    if parseNode != nil {
+        mappingValueNode, err := parseNode.GetChildNode("@odata.type")
+        if err != nil {
+            return nil, err
+        }
+        if mappingValueNode != nil {
+            mappingValue, err := mappingValueNode.GetStringValue()
+            if err != nil {
+                return nil, err
+            }
+            if mappingValue != nil {
+                mappingStr := *mappingValue
+                switch mappingStr {
+                    case "#microsoft.graph.connectedOrganizationMembers":
+                        return NewConnectedOrganizationMembers(), nil
+                    case "#microsoft.graph.externalSponsors":
+                        return NewExternalSponsors(), nil
+                    case "#microsoft.graph.groupMembers":
+                        return NewGroupMembers(), nil
+                    case "#microsoft.graph.internalSponsors":
+                        return NewInternalSponsors(), nil
+                    case "#microsoft.graph.requestorManager":
+                        return NewRequestorManager(), nil
+                    case "#microsoft.graph.singleUser":
+                        return NewSingleUser(), nil
+                }
+            }
+        }
+    }
     return NewUserSet(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.

@@ -10,7 +10,7 @@ type SynchronizationLinkedObjects struct {
     additionalData map[string]interface{}
     // The manager property
     manager SynchronizationJobSubjectable
-    // The members property
+    // All group members that you would like to provision.
     members []SynchronizationJobSubjectable
     // The owners property
     owners []SynchronizationJobSubjectable
@@ -85,7 +85,7 @@ func (m *SynchronizationLinkedObjects) GetManager()(SynchronizationJobSubjectabl
         return m.manager
     }
 }
-// GetMembers gets the members property value. The members property
+// GetMembers gets the members property value. All group members that you would like to provision.
 func (m *SynchronizationLinkedObjects) GetMembers()([]SynchronizationJobSubjectable) {
     if m == nil {
         return nil
@@ -149,7 +149,7 @@ func (m *SynchronizationLinkedObjects) SetManager(value SynchronizationJobSubjec
         m.manager = value
     }
 }
-// SetMembers sets the members property value. The members property
+// SetMembers sets the members property value. All group members that you would like to provision.
 func (m *SynchronizationLinkedObjects) SetMembers(value []SynchronizationJobSubjectable)() {
     if m != nil {
         m.members = value

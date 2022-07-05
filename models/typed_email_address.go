@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// TypedEmailAddress provides operations to manage the collection of administrativeUnit entities.
+// TypedEmailAddress 
 type TypedEmailAddress struct {
     EmailAddress
     // To specify a custom type of email address, set type to other, and assign otherLabel to a custom string. For example, you may use a specific email address for your volunteer activities. Set type to other, and set otherLabel to a custom string such as Volunteer work.
@@ -12,7 +12,7 @@ type TypedEmailAddress struct {
     // The type of email address. Possible values are: unknown, work, personal, main, other. The default value is unknown, which means address has not been set as a specific type.
     type_escaped *EmailType
 }
-// NewTypedEmailAddress instantiates a new typedEmailAddress and sets the default values.
+// NewTypedEmailAddress instantiates a new TypedEmailAddress and sets the default values.
 func NewTypedEmailAddress()(*TypedEmailAddress) {
     m := &TypedEmailAddress{
         EmailAddress: *NewEmailAddress(),

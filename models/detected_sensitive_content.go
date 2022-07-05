@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DetectedSensitiveContent provides operations to manage the dataClassificationService singleton.
+// DetectedSensitiveContent 
 type DetectedSensitiveContent struct {
     DetectedSensitiveContentBase
     // The classificationAttributes property
@@ -18,7 +18,7 @@ type DetectedSensitiveContent struct {
     // The sensitiveTypeSource property
     sensitiveTypeSource *SensitiveTypeSource
 }
-// NewDetectedSensitiveContent instantiates a new detectedSensitiveContent and sets the default values.
+// NewDetectedSensitiveContent instantiates a new DetectedSensitiveContent and sets the default values.
 func NewDetectedSensitiveContent()(*DetectedSensitiveContent) {
     m := &DetectedSensitiveContent{
         DetectedSensitiveContentBase: *NewDetectedSensitiveContentBase(),
@@ -27,6 +27,25 @@ func NewDetectedSensitiveContent()(*DetectedSensitiveContent) {
 }
 // CreateDetectedSensitiveContentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateDetectedSensitiveContentFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+    if parseNode != nil {
+        mappingValueNode, err := parseNode.GetChildNode("@odata.type")
+        if err != nil {
+            return nil, err
+        }
+        if mappingValueNode != nil {
+            mappingValue, err := mappingValueNode.GetStringValue()
+            if err != nil {
+                return nil, err
+            }
+            if mappingValue != nil {
+                mappingStr := *mappingValue
+                switch mappingStr {
+                    case "#microsoft.graph.machineLearningDetectedSensitiveContent":
+                        return NewMachineLearningDetectedSensitiveContent(), nil
+                }
+            }
+        }
+    }
     return NewDetectedSensitiveContent(), nil
 }
 // GetClassificationAttributes gets the classificationAttributes property value. The classificationAttributes property

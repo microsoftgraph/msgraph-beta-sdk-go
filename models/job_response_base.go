@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// JobResponseBase provides operations to manage the dataClassificationService singleton.
+// JobResponseBase 
 type JobResponseBase struct {
     Entity
     // The creationDateTime property
@@ -23,7 +23,7 @@ type JobResponseBase struct {
     // The type property
     type_escaped *string
 }
-// NewJobResponseBase instantiates a new jobResponseBase and sets the default values.
+// NewJobResponseBase instantiates a new JobResponseBase and sets the default values.
 func NewJobResponseBase()(*JobResponseBase) {
     m := &JobResponseBase{
         Entity: *NewEntity(),

@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AccessReviewReviewerScope provides operations to manage the collection of administrativeUnit entities.
+// AccessReviewReviewerScope 
 type AccessReviewReviewerScope struct {
     AccessReviewScope
     // The query specifying who will be the reviewer. See table for examples.
@@ -14,7 +14,7 @@ type AccessReviewReviewerScope struct {
     // The type of query. Examples include MicrosoftGraph and ARM.
     queryType *string
 }
-// NewAccessReviewReviewerScope instantiates a new accessReviewReviewerScope and sets the default values.
+// NewAccessReviewReviewerScope instantiates a new AccessReviewReviewerScope and sets the default values.
 func NewAccessReviewReviewerScope()(*AccessReviewReviewerScope) {
     m := &AccessReviewReviewerScope{
         AccessReviewScope: *NewAccessReviewScope(),

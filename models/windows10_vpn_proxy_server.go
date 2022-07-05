@@ -4,13 +4,13 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Windows10VpnProxyServer vPN Proxy Server.
+// Windows10VpnProxyServer 
 type Windows10VpnProxyServer struct {
     VpnProxyServer
     // Bypass proxy server for local address.
     bypassProxyServerForLocalAddress *bool
 }
-// NewWindows10VpnProxyServer instantiates a new windows10VpnProxyServer and sets the default values.
+// NewWindows10VpnProxyServer instantiates a new Windows10VpnProxyServer and sets the default values.
 func NewWindows10VpnProxyServer()(*Windows10VpnProxyServer) {
     m := &Windows10VpnProxyServer{
         VpnProxyServer: *NewVpnProxyServer(),

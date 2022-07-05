@@ -22,7 +22,7 @@ type ExtensionItemRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ExtensionItemRequestBuilderGetQueryParameters the collection of open extensions defined for the user. Nullable.
+// ExtensionItemRequestBuilderGetQueryParameters the collection of open extensions defined for the user. Supports $expand. Nullable.
 type ExtensionItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -80,11 +80,11 @@ func (m *ExtensionItemRequestBuilder) CreateDeleteRequestInformationWithRequestC
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation the collection of open extensions defined for the user. Nullable.
+// CreateGetRequestInformation the collection of open extensions defined for the user. Supports $expand. Nullable.
 func (m *ExtensionItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration the collection of open extensions defined for the user. Nullable.
+// CreateGetRequestInformationWithRequestConfiguration the collection of open extensions defined for the user. Supports $expand. Nullable.
 func (m *ExtensionItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *ExtensionItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -137,11 +137,11 @@ func (m *ExtensionItemRequestBuilder) DeleteWithRequestConfigurationAndResponseH
     }
     return nil
 }
-// Get the collection of open extensions defined for the user. Nullable.
+// Get the collection of open extensions defined for the user. Supports $expand. Nullable.
 func (m *ExtensionItemRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Extensionable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler the collection of open extensions defined for the user. Nullable.
+// GetWithRequestConfigurationAndResponseHandler the collection of open extensions defined for the user. Supports $expand. Nullable.
 func (m *ExtensionItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *ExtensionItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Extensionable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
