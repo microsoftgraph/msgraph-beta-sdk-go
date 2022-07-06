@@ -28,6 +28,8 @@ type GroupPolicyDefinitionFile struct {
     targetNamespace *string
     // Specifies the logical name that refers to the namespace within the ADMX file.
     targetPrefix *string
+    // The type property
+    type_escaped *string
 }
 // NewGroupPolicyDefinitionFile instantiates a new groupPolicyDefinitionFile and sets the default values.
 func NewGroupPolicyDefinitionFile()(*GroupPolicyDefinitionFile) {
@@ -194,6 +196,16 @@ func (m *GroupPolicyDefinitionFile) GetFieldDeserializers()(map[string]func(i878
         }
         return nil
     }
+    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetFileName gets the fileName property value. The file name of the ADMX file without the path. For example: edge.admx
@@ -250,6 +262,14 @@ func (m *GroupPolicyDefinitionFile) GetTargetPrefix()(*string) {
         return nil
     } else {
         return m.targetPrefix
+    }
+}
+// GetType gets the type property value. The type property
+func (m *GroupPolicyDefinitionFile) GetType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
     }
 }
 // Serialize serializes information the current object
@@ -323,6 +343,12 @@ func (m *GroupPolicyDefinitionFile) Serialize(writer i878a80d2330e89d26896388a3f
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("type", m.GetType())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetDefinitions sets the definitions property value. The group policy definitions associated with the file.
@@ -383,5 +409,11 @@ func (m *GroupPolicyDefinitionFile) SetTargetNamespace(value *string)() {
 func (m *GroupPolicyDefinitionFile) SetTargetPrefix(value *string)() {
     if m != nil {
         m.targetPrefix = value
+    }
+}
+// SetType sets the type property value. The type property
+func (m *GroupPolicyDefinitionFile) SetType(value *string)() {
+    if m != nil {
+        m.type_escaped = value
     }
 }

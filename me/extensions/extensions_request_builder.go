@@ -16,7 +16,7 @@ type ExtensionsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// ExtensionsRequestBuilderGetQueryParameters the collection of open extensions defined for the user. Nullable.
+// ExtensionsRequestBuilderGetQueryParameters the collection of open extensions defined for the user. Supports $expand. Nullable.
 type ExtensionsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,11 +74,11 @@ func NewExtensionsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263
 func (m *ExtensionsRequestBuilder) Count()(*i4eb7bfdfa0072a2d8e8553806608c41134f0ac0fdacff10837bf8090cc8a6c50.CountRequestBuilder) {
     return i4eb7bfdfa0072a2d8e8553806608c41134f0ac0fdacff10837bf8090cc8a6c50.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation the collection of open extensions defined for the user. Nullable.
+// CreateGetRequestInformation the collection of open extensions defined for the user. Supports $expand. Nullable.
 func (m *ExtensionsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration the collection of open extensions defined for the user. Nullable.
+// CreateGetRequestInformationWithRequestConfiguration the collection of open extensions defined for the user. Supports $expand. Nullable.
 func (m *ExtensionsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *ExtensionsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -112,11 +112,11 @@ func (m *ExtensionsRequestBuilder) CreatePostRequestInformationWithRequestConfig
     }
     return requestInfo, nil
 }
-// Get the collection of open extensions defined for the user. Nullable.
+// Get the collection of open extensions defined for the user. Supports $expand. Nullable.
 func (m *ExtensionsRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ExtensionCollectionResponseable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler the collection of open extensions defined for the user. Nullable.
+// GetWithRequestConfigurationAndResponseHandler the collection of open extensions defined for the user. Supports $expand. Nullable.
 func (m *ExtensionsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *ExtensionsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ExtensionCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

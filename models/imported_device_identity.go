@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ImportedDeviceIdentity the importedDeviceIdentity resource represents a unique hardware identity of a device that has been pre-staged for pre-enrollment configuration.
+// ImportedDeviceIdentity 
 type ImportedDeviceIdentity struct {
     Entity
     // Created Date Time of the device
@@ -24,8 +24,10 @@ type ImportedDeviceIdentity struct {
     lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The platform of the Device. Possible values are: unknown, ios, android, windows, windowsMobile, macOS.
     platform *Platform
+    // The type property
+    type_escaped *string
 }
-// NewImportedDeviceIdentity instantiates a new importedDeviceIdentity and sets the default values.
+// NewImportedDeviceIdentity instantiates a new ImportedDeviceIdentity and sets the default values.
 func NewImportedDeviceIdentity()(*ImportedDeviceIdentity) {
     m := &ImportedDeviceIdentity{
         Entity: *NewEntity(),
@@ -162,6 +164,16 @@ func (m *ImportedDeviceIdentity) GetFieldDeserializers()(map[string]func(i878a80
         }
         return nil
     }
+    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetImportedDeviceIdentifier gets the importedDeviceIdentifier property value. Imported Device Identifier
@@ -202,6 +214,14 @@ func (m *ImportedDeviceIdentity) GetPlatform()(*Platform) {
         return nil
     } else {
         return m.platform
+    }
+}
+// GetType gets the type property value. The type property
+func (m *ImportedDeviceIdentity) GetType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
     }
 }
 // Serialize serializes information the current object
@@ -261,6 +281,12 @@ func (m *ImportedDeviceIdentity) Serialize(writer i878a80d2330e89d26896388a3f487
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("type", m.GetType())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetCreatedDateTime sets the createdDateTime property value. Created Date Time of the device
@@ -309,5 +335,11 @@ func (m *ImportedDeviceIdentity) SetLastModifiedDateTime(value *i336074805fc8539
 func (m *ImportedDeviceIdentity) SetPlatform(value *Platform)() {
     if m != nil {
         m.platform = value
+    }
+}
+// SetType sets the type property value. The type property
+func (m *ImportedDeviceIdentity) SetType(value *string)() {
+    if m != nil {
+        m.type_escaped = value
     }
 }

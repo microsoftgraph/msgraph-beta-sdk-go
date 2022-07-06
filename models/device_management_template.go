@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DeviceManagementTemplate entity that represents a defined collection of device settings
+// DeviceManagementTemplate 
 type DeviceManagementTemplate struct {
     Entity
     // Collection of setting categories within the template
@@ -30,10 +30,12 @@ type DeviceManagementTemplate struct {
     templateSubtype *DeviceManagementTemplateSubtype
     // The template's type. Possible values are: securityBaseline, specializedDevices, advancedThreatProtectionSecurityBaseline, deviceConfiguration, custom, securityTemplate, microsoftEdgeSecurityBaseline, microsoftOffice365ProPlusSecurityBaseline, deviceCompliance, deviceConfigurationForOffice365, cloudPC, firewallSharedSettings.
     templateType *DeviceManagementTemplateType
+    // The type property
+    type_escaped *string
     // The template's version information
     versionInfo *string
 }
-// NewDeviceManagementTemplate instantiates a new deviceManagementTemplate and sets the default values.
+// NewDeviceManagementTemplate instantiates a new DeviceManagementTemplate and sets the default values.
 func NewDeviceManagementTemplate()(*DeviceManagementTemplate) {
     m := &DeviceManagementTemplate{
         Entity: *NewEntity(),
@@ -212,6 +214,16 @@ func (m *DeviceManagementTemplate) GetFieldDeserializers()(map[string]func(i878a
         }
         return nil
     }
+    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetType(val)
+        }
+        return nil
+    }
     res["versionInfo"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -286,6 +298,14 @@ func (m *DeviceManagementTemplate) GetTemplateType()(*DeviceManagementTemplateTy
         return nil
     } else {
         return m.templateType
+    }
+}
+// GetType gets the type property value. The type property
+func (m *DeviceManagementTemplate) GetType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
     }
 }
 // GetVersionInfo gets the versionInfo property value. The template's version information
@@ -384,6 +404,12 @@ func (m *DeviceManagementTemplate) Serialize(writer i878a80d2330e89d26896388a3f4
         }
     }
     {
+        err = writer.WriteStringValue("type", m.GetType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("versionInfo", m.GetVersionInfo())
         if err != nil {
             return err
@@ -455,6 +481,12 @@ func (m *DeviceManagementTemplate) SetTemplateSubtype(value *DeviceManagementTem
 func (m *DeviceManagementTemplate) SetTemplateType(value *DeviceManagementTemplateType)() {
     if m != nil {
         m.templateType = value
+    }
+}
+// SetType sets the type property value. The type property
+func (m *DeviceManagementTemplate) SetType(value *string)() {
+    if m != nil {
+        m.type_escaped = value
     }
 }
 // SetVersionInfo sets the versionInfo property value. The template's version information

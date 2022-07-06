@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Office365GroupsActivityCounts provides operations to call the getOffice365GroupsActivityCounts method.
+// Office365GroupsActivityCounts 
 type Office365GroupsActivityCounts struct {
     Entity
     // The number of emails received by Group mailboxes.
@@ -22,7 +22,7 @@ type Office365GroupsActivityCounts struct {
     // The number of messages read in Yammer groups.
     yammerMessagesRead *int64
 }
-// NewOffice365GroupsActivityCounts instantiates a new office365GroupsActivityCounts and sets the default values.
+// NewOffice365GroupsActivityCounts instantiates a new Office365GroupsActivityCounts and sets the default values.
 func NewOffice365GroupsActivityCounts()(*Office365GroupsActivityCounts) {
     m := &Office365GroupsActivityCounts{
         Entity: *NewEntity(),

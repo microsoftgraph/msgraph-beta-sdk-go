@@ -17,6 +17,7 @@ type AccessReviewSettingsable interface {
     GetMailNotificationsEnabled()(*bool)
     GetRecurrenceSettings()(AccessReviewRecurrenceSettingsable)
     GetRemindersEnabled()(*bool)
+    GetType()(*string)
     SetAccessRecommendationsEnabled(value *bool)()
     SetActivityDurationInDays(value *int32)()
     SetAutoApplyReviewResultsEnabled(value *bool)()
@@ -26,4 +27,5 @@ type AccessReviewSettingsable interface {
     SetMailNotificationsEnabled(value *bool)()
     SetRecurrenceSettings(value AccessReviewRecurrenceSettingsable)()
     SetRemindersEnabled(value *bool)()
+    SetType(value *string)()
 }

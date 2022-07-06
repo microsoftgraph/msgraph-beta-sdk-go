@@ -11,7 +11,9 @@ type DeviceManagementConfigurationSettingGroupDefinitionable interface {
     GetChildIds()([]string)
     GetDependedOnBy()([]DeviceManagementConfigurationSettingDependedOnByable)
     GetDependentOn()([]DeviceManagementConfigurationDependentOnable)
+    GetType()(*string)
     SetChildIds(value []string)()
     SetDependedOnBy(value []DeviceManagementConfigurationSettingDependedOnByable)()
     SetDependentOn(value []DeviceManagementConfigurationDependentOnable)()
+    SetType(value *string)()
 }

@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// FilterOperatorSchema provides operations to call the filterOperators method.
+// FilterOperatorSchema 
 type FilterOperatorSchema struct {
     Entity
     // Arity of the operator. Possible values are: Binary, Unary. The default is Binary.
@@ -14,7 +14,7 @@ type FilterOperatorSchema struct {
     // Attribute types supported by the operator. Possible values are: Boolean, Binary, Reference, Integer, String.
     supportedAttributeTypes []string
 }
-// NewFilterOperatorSchema instantiates a new filterOperatorSchema and sets the default values.
+// NewFilterOperatorSchema instantiates a new FilterOperatorSchema and sets the default values.
 func NewFilterOperatorSchema()(*FilterOperatorSchema) {
     m := &FilterOperatorSchema{
         Entity: *NewEntity(),

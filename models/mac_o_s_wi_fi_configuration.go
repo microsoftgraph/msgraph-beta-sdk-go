@@ -25,6 +25,8 @@ type MacOSWiFiConfiguration struct {
     proxySettings *WiFiProxySetting
     // This is the name of the Wi-Fi network that is broadcast to all devices.
     ssid *string
+    // The type property
+    type_escaped *string
     // Indicates whether Wi-Fi endpoint uses an EAP based security type. Possible values are: open, wpaPersonal, wpaEnterprise, wep, wpa2Personal, wpa2Enterprise.
     wiFiSecurityType *WiFiSecurityType
 }
@@ -167,6 +169,16 @@ func (m *MacOSWiFiConfiguration) GetFieldDeserializers()(map[string]func(i878a80
         }
         return nil
     }
+    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetType(val)
+        }
+        return nil
+    }
     res["wiFiSecurityType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseWiFiSecurityType)
         if err != nil {
@@ -233,6 +245,14 @@ func (m *MacOSWiFiConfiguration) GetSsid()(*string) {
         return nil
     } else {
         return m.ssid
+    }
+}
+// GetType gets the type property value. The type property
+func (m *MacOSWiFiConfiguration) GetType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
     }
 }
 // GetWiFiSecurityType gets the wiFiSecurityType property value. Indicates whether Wi-Fi endpoint uses an EAP based security type. Possible values are: open, wpaPersonal, wpaEnterprise, wep, wpa2Personal, wpa2Enterprise.
@@ -304,6 +324,12 @@ func (m *MacOSWiFiConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("type", m.GetType())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetWiFiSecurityType() != nil {
         cast := (*m.GetWiFiSecurityType()).String()
         err = writer.WriteStringValue("wiFiSecurityType", &cast)
@@ -365,6 +391,12 @@ func (m *MacOSWiFiConfiguration) SetProxySettings(value *WiFiProxySetting)() {
 func (m *MacOSWiFiConfiguration) SetSsid(value *string)() {
     if m != nil {
         m.ssid = value
+    }
+}
+// SetType sets the type property value. The type property
+func (m *MacOSWiFiConfiguration) SetType(value *string)() {
+    if m != nil {
+        m.type_escaped = value
     }
 }
 // SetWiFiSecurityType sets the wiFiSecurityType property value. Indicates whether Wi-Fi endpoint uses an EAP based security type. Possible values are: open, wpaPersonal, wpaEnterprise, wep, wpa2Personal, wpa2Enterprise.

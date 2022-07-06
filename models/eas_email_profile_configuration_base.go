@@ -9,6 +9,8 @@ type EasEmailProfileConfigurationBase struct {
     DeviceConfiguration
     // Custom domain name value used while generating an email profile before installing on the device.
     customDomainName *string
+    // The type property
+    type_escaped *string
     // UserDomainname attribute that is picked from AAD and injected into this profile before installing on the device. Possible values are: fullDomainName, netBiosDomainName.
     userDomainNameSource *DomainNameSource
     // Name of the AAD field, that will be used to retrieve UserName for email profile. Possible values are: userPrincipalName, primarySmtpAddress, samAccountName.
@@ -71,6 +73,16 @@ func (m *EasEmailProfileConfigurationBase) GetFieldDeserializers()(map[string]fu
         }
         return nil
     }
+    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetType(val)
+        }
+        return nil
+    }
     res["userDomainNameSource"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseDomainNameSource)
         if err != nil {
@@ -102,6 +114,14 @@ func (m *EasEmailProfileConfigurationBase) GetFieldDeserializers()(map[string]fu
         return nil
     }
     return res
+}
+// GetType gets the type property value. The type property
+func (m *EasEmailProfileConfigurationBase) GetType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
+    }
 }
 // GetUserDomainNameSource gets the userDomainNameSource property value. UserDomainname attribute that is picked from AAD and injected into this profile before installing on the device. Possible values are: fullDomainName, netBiosDomainName.
 func (m *EasEmailProfileConfigurationBase) GetUserDomainNameSource()(*DomainNameSource) {
@@ -139,6 +159,12 @@ func (m *EasEmailProfileConfigurationBase) Serialize(writer i878a80d2330e89d2689
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("type", m.GetType())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetUserDomainNameSource() != nil {
         cast := (*m.GetUserDomainNameSource()).String()
         err = writer.WriteStringValue("userDomainNameSource", &cast)
@@ -166,6 +192,12 @@ func (m *EasEmailProfileConfigurationBase) Serialize(writer i878a80d2330e89d2689
 func (m *EasEmailProfileConfigurationBase) SetCustomDomainName(value *string)() {
     if m != nil {
         m.customDomainName = value
+    }
+}
+// SetType sets the type property value. The type property
+func (m *EasEmailProfileConfigurationBase) SetType(value *string)() {
+    if m != nil {
+        m.type_escaped = value
     }
 }
 // SetUserDomainNameSource sets the userDomainNameSource property value. UserDomainname attribute that is picked from AAD and injected into this profile before installing on the device. Possible values are: fullDomainName, netBiosDomainName.

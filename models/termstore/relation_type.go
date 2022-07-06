@@ -2,7 +2,7 @@ package termstore
 import (
     "errors"
 )
-// Provides operations to manage the collection of administrativeUnit entities.
+// Provides operations to manage the collection of accessReviewDecision entities.
 type RelationType int
 
 const (

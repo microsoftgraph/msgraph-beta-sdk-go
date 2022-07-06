@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// B2cAuthenticationMethodsPolicy provides operations to manage the policyRoot singleton.
+// B2cAuthenticationMethodsPolicy 
 type B2cAuthenticationMethodsPolicy struct {
     Entity
     // The tenant admin can configure local accounts using email if the email and password authentication method is enabled.
@@ -14,7 +14,7 @@ type B2cAuthenticationMethodsPolicy struct {
     // The tenant admin can configure local accounts using username if the username and password authentication method is enabled.
     isUserNameAuthenticationEnabled *bool
 }
-// NewB2cAuthenticationMethodsPolicy instantiates a new b2cAuthenticationMethodsPolicy and sets the default values.
+// NewB2cAuthenticationMethodsPolicy instantiates a new B2cAuthenticationMethodsPolicy and sets the default values.
 func NewB2cAuthenticationMethodsPolicy()(*B2cAuthenticationMethodsPolicy) {
     m := &B2cAuthenticationMethodsPolicy{
         Entity: *NewEntity(),

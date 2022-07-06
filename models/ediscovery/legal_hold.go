@@ -6,7 +6,7 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
-// LegalHold provides operations to manage the compliance singleton.
+// LegalHold 
 type LegalHold struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
     // KQL query that specifies content to be held in the specified locations. To learn more, see Keyword queries and search conditions for Content Search and eDiscovery.  To hold all content in the specified locations, leave contentQuery blank.
@@ -36,7 +36,7 @@ type LegalHold struct {
     // Data source entity for a the legal hold. This is the container for a mailbox and OneDrive for Business site.
     userSources []UserSourceable
 }
-// NewLegalHold instantiates a new legalHold and sets the default values.
+// NewLegalHold instantiates a new LegalHold and sets the default values.
 func NewLegalHold()(*LegalHold) {
     m := &LegalHold{
         Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),

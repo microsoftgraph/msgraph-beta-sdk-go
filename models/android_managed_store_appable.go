@@ -16,6 +16,7 @@ type AndroidManagedStoreAppable interface {
     GetPackageId()(*string)
     GetSupportsOemConfig()(*bool)
     GetTotalLicenseCount()(*int32)
+    GetType()(*string)
     GetUsedLicenseCount()(*int32)
     SetAppIdentifier(value *string)()
     SetAppStoreUrl(value *string)()
@@ -25,5 +26,6 @@ type AndroidManagedStoreAppable interface {
     SetPackageId(value *string)()
     SetSupportsOemConfig(value *bool)()
     SetTotalLicenseCount(value *int32)()
+    SetType(value *string)()
     SetUsedLicenseCount(value *int32)()
 }

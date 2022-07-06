@@ -24,6 +24,8 @@ type PolicySetItem struct {
     payloadId *string
     // Status of the PolicySetItem. Possible values are: unknown, validating, partialSuccess, success, error, notAssigned.
     status *PolicySetStatus
+    // The type property
+    type_escaped *string
 }
 // NewPolicySetItem instantiates a new policySetItem and sets the default values.
 func NewPolicySetItem()(*PolicySetItem) {
@@ -190,6 +192,16 @@ func (m *PolicySetItem) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         }
         return nil
     }
+    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetGuidedDeploymentTags gets the guidedDeploymentTags property value. Tags of the guided deployment
@@ -230,6 +242,14 @@ func (m *PolicySetItem) GetStatus()(*PolicySetStatus) {
         return nil
     } else {
         return m.status
+    }
+}
+// GetType gets the type property value. The type property
+func (m *PolicySetItem) GetType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
     }
 }
 // Serialize serializes information the current object
@@ -288,6 +308,12 @@ func (m *PolicySetItem) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("type", m.GetType())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetCreatedDateTime sets the createdDateTime property value. Creation time of the PolicySetItem.
@@ -336,5 +362,11 @@ func (m *PolicySetItem) SetPayloadId(value *string)() {
 func (m *PolicySetItem) SetStatus(value *PolicySetStatus)() {
     if m != nil {
         m.status = value
+    }
+}
+// SetType sets the type property value. The type property
+func (m *PolicySetItem) SetType(value *string)() {
+    if m != nil {
+        m.type_escaped = value
     }
 }

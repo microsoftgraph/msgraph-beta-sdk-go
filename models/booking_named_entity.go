@@ -4,13 +4,15 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// BookingNamedEntity booking entities that provide a display name.
+// BookingNamedEntity 
 type BookingNamedEntity struct {
     Entity
     // A name for the derived entity, which interfaces with customers.
     displayName *string
+    // The type property
+    type_escaped *string
 }
-// NewBookingNamedEntity instantiates a new bookingNamedEntity and sets the default values.
+// NewBookingNamedEntity instantiates a new BookingNamedEntity and sets the default values.
 func NewBookingNamedEntity()(*BookingNamedEntity) {
     m := &BookingNamedEntity{
         Entity: *NewEntity(),
@@ -65,7 +67,25 @@ func (m *BookingNamedEntity) GetFieldDeserializers()(map[string]func(i878a80d233
         }
         return nil
     }
+    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetType(val)
+        }
+        return nil
+    }
     return res
+}
+// GetType gets the type property value. The type property
+func (m *BookingNamedEntity) GetType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
+    }
 }
 // Serialize serializes information the current object
 func (m *BookingNamedEntity) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -79,11 +99,23 @@ func (m *BookingNamedEntity) Serialize(writer i878a80d2330e89d26896388a3f487eef2
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("type", m.GetType())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetDisplayName sets the displayName property value. A name for the derived entity, which interfaces with customers.
 func (m *BookingNamedEntity) SetDisplayName(value *string)() {
     if m != nil {
         m.displayName = value
+    }
+}
+// SetType sets the type property value. The type property
+func (m *BookingNamedEntity) SetType(value *string)() {
+    if m != nil {
+        m.type_escaped = value
     }
 }

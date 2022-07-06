@@ -20,6 +20,7 @@ type DeviceManagementTemplateable interface {
     GetSettings()([]DeviceManagementSettingInstanceable)
     GetTemplateSubtype()(*DeviceManagementTemplateSubtype)
     GetTemplateType()(*DeviceManagementTemplateType)
+    GetType()(*string)
     GetVersionInfo()(*string)
     SetCategories(value []DeviceManagementTemplateSettingCategoryable)()
     SetDescription(value *string)()
@@ -32,5 +33,6 @@ type DeviceManagementTemplateable interface {
     SetSettings(value []DeviceManagementSettingInstanceable)()
     SetTemplateSubtype(value *DeviceManagementTemplateSubtype)()
     SetTemplateType(value *DeviceManagementTemplateType)()
+    SetType(value *string)()
     SetVersionInfo(value *string)()
 }

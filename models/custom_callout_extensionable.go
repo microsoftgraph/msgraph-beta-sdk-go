@@ -13,9 +13,11 @@ type CustomCalloutExtensionable interface {
     GetDescription()(*string)
     GetDisplayName()(*string)
     GetEndpointConfiguration()(CustomExtensionEndpointConfigurationable)
+    GetType()(*string)
     SetAuthenticationConfiguration(value CustomExtensionAuthenticationConfigurationable)()
     SetClientConfiguration(value CustomExtensionClientConfigurationable)()
     SetDescription(value *string)()
     SetDisplayName(value *string)()
     SetEndpointConfiguration(value CustomExtensionEndpointConfigurationable)()
+    SetType(value *string)()
 }

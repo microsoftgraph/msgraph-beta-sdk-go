@@ -13,9 +13,11 @@ type MacOSCertificateProfileBaseable interface {
     GetRenewalThresholdPercentage()(*int32)
     GetSubjectAlternativeNameType()(*SubjectAlternativeNameType)
     GetSubjectNameFormat()(*AppleSubjectNameFormat)
+    GetType()(*string)
     SetCertificateValidityPeriodScale(value *CertificateValidityPeriodScale)()
     SetCertificateValidityPeriodValue(value *int32)()
     SetRenewalThresholdPercentage(value *int32)()
     SetSubjectAlternativeNameType(value *SubjectAlternativeNameType)()
     SetSubjectNameFormat(value *AppleSubjectNameFormat)()
+    SetType(value *string)()
 }

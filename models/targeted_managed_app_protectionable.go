@@ -12,8 +12,10 @@ type TargetedManagedAppProtectionable interface {
     GetAssignments()([]TargetedManagedAppPolicyAssignmentable)
     GetIsAssigned()(*bool)
     GetTargetedAppManagementLevels()(*AppManagementLevel)
+    GetType()(*string)
     SetAppGroupType(value *TargetedManagedAppGroupType)()
     SetAssignments(value []TargetedManagedAppPolicyAssignmentable)()
     SetIsAssigned(value *bool)()
     SetTargetedAppManagementLevels(value *AppManagementLevel)()
+    SetType(value *string)()
 }

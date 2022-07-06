@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// PrivilegedRole provides operations to manage the collection of privilegedApproval entities.
+// PrivilegedRole 
 type PrivilegedRole struct {
     Entity
     // The assignments for this role. Read-only. Nullable.
@@ -16,7 +16,7 @@ type PrivilegedRole struct {
     // The summary information for this role. Read-only. Nullable.
     summary PrivilegedRoleSummaryable
 }
-// NewPrivilegedRole instantiates a new privilegedRole and sets the default values.
+// NewPrivilegedRole instantiates a new PrivilegedRole and sets the default values.
 func NewPrivilegedRole()(*PrivilegedRole) {
     m := &PrivilegedRole{
         Entity: *NewEntity(),

@@ -6,7 +6,7 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
-// PolicyBase provides operations to manage the security singleton.
+// PolicyBase provides operations to manage the collection of activityStatistics entities.
 type PolicyBase struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
     // The createdBy property
@@ -23,6 +23,8 @@ type PolicyBase struct {
     lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The status property
     status *PolicyStatus
+    // The type property
+    type_escaped *string
 }
 // NewPolicyBase instantiates a new policyBase and sets the default values.
 func NewPolicyBase()(*PolicyBase) {
@@ -159,6 +161,16 @@ func (m *PolicyBase) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
         }
         return nil
     }
+    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetLastModifiedBy gets the lastModifiedBy property value. The lastModifiedBy property
@@ -183,6 +195,14 @@ func (m *PolicyBase) GetStatus()(*PolicyStatus) {
         return nil
     } else {
         return m.status
+    }
+}
+// GetType gets the type property value. The type property
+func (m *PolicyBase) GetType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
     }
 }
 // Serialize serializes information the current object
@@ -234,6 +254,12 @@ func (m *PolicyBase) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("type", m.GetType())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetCreatedBy sets the createdBy property value. The createdBy property
@@ -276,5 +302,11 @@ func (m *PolicyBase) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3a
 func (m *PolicyBase) SetStatus(value *PolicyStatus)() {
     if m != nil {
         m.status = value
+    }
+}
+// SetType sets the type property value. The type property
+func (m *PolicyBase) SetType(value *string)() {
+    if m != nil {
+        m.type_escaped = value
     }
 }

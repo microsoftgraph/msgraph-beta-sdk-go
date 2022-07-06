@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// GovernancePolicyTemplate provides operations to manage the collection of approvalWorkflowProvider entities.
+// GovernancePolicyTemplate 
 type GovernancePolicyTemplate struct {
     Entity
     // The displayName property
@@ -14,7 +14,7 @@ type GovernancePolicyTemplate struct {
     // The settings property
     settings BusinessFlowSettingsable
 }
-// NewGovernancePolicyTemplate instantiates a new governancePolicyTemplate and sets the default values.
+// NewGovernancePolicyTemplate instantiates a new GovernancePolicyTemplate and sets the default values.
 func NewGovernancePolicyTemplate()(*GovernancePolicyTemplate) {
     m := &GovernancePolicyTemplate{
         Entity: *NewEntity(),

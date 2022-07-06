@@ -53,6 +53,7 @@ type ManagedAppProtectionable interface {
     GetPrintBlocked()(*bool)
     GetSaveAsBlocked()(*bool)
     GetSimplePinBlocked()(*bool)
+    GetType()(*string)
     SetAllowedDataIngestionLocations(value []string)()
     SetAllowedDataStorageLocations(value []string)()
     SetAllowedInboundDataTransferSources(value *ManagedAppDataTransferLevel)()
@@ -98,4 +99,5 @@ type ManagedAppProtectionable interface {
     SetPrintBlocked(value *bool)()
     SetSaveAsBlocked(value *bool)()
     SetSimplePinBlocked(value *bool)()
+    SetType(value *string)()
 }

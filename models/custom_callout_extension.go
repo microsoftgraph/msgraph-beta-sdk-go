@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// CustomCalloutExtension provides operations to manage the identityGovernance singleton.
+// CustomCalloutExtension 
 type CustomCalloutExtension struct {
     Entity
     // Configuration for securing the API call to the logic app. For example, using OAuth client credentials flow.
@@ -17,8 +17,10 @@ type CustomCalloutExtension struct {
     displayName *string
     // The type and details for configuring the endpoint to call the logic app's workflow.
     endpointConfiguration CustomExtensionEndpointConfigurationable
+    // The type property
+    type_escaped *string
 }
-// NewCustomCalloutExtension instantiates a new customCalloutExtension and sets the default values.
+// NewCustomCalloutExtension instantiates a new CustomCalloutExtension and sets the default values.
 func NewCustomCalloutExtension()(*CustomCalloutExtension) {
     m := &CustomCalloutExtension{
         Entity: *NewEntity(),
@@ -141,7 +143,25 @@ func (m *CustomCalloutExtension) GetFieldDeserializers()(map[string]func(i878a80
         }
         return nil
     }
+    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetType(val)
+        }
+        return nil
+    }
     return res
+}
+// GetType gets the type property value. The type property
+func (m *CustomCalloutExtension) GetType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
+    }
 }
 // Serialize serializes information the current object
 func (m *CustomCalloutExtension) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -179,6 +199,12 @@ func (m *CustomCalloutExtension) Serialize(writer i878a80d2330e89d26896388a3f487
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("type", m.GetType())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetAuthenticationConfiguration sets the authenticationConfiguration property value. Configuration for securing the API call to the logic app. For example, using OAuth client credentials flow.
@@ -209,5 +235,11 @@ func (m *CustomCalloutExtension) SetDisplayName(value *string)() {
 func (m *CustomCalloutExtension) SetEndpointConfiguration(value CustomExtensionEndpointConfigurationable)() {
     if m != nil {
         m.endpointConfiguration = value
+    }
+}
+// SetType sets the type property value. The type property
+func (m *CustomCalloutExtension) SetType(value *string)() {
+    if m != nil {
+        m.type_escaped = value
     }
 }

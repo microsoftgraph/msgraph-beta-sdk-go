@@ -24,6 +24,7 @@ type WindowsAutopilotDeploymentProfileable interface {
     GetManagementServiceAppId()(*string)
     GetOutOfBoxExperienceSettings()(OutOfBoxExperienceSettingsable)
     GetRoleScopeTagIds()([]string)
+    GetType()(*string)
     SetAssignedDevices(value []WindowsAutopilotDeviceIdentityable)()
     SetAssignments(value []WindowsAutopilotDeploymentProfileAssignmentable)()
     SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
@@ -39,4 +40,5 @@ type WindowsAutopilotDeploymentProfileable interface {
     SetManagementServiceAppId(value *string)()
     SetOutOfBoxExperienceSettings(value OutOfBoxExperienceSettingsable)()
     SetRoleScopeTagIds(value []string)()
+    SetType(value *string)()
 }

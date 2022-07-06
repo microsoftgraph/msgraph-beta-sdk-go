@@ -17,6 +17,7 @@ type MacOSWiFiConfigurationable interface {
     GetProxyManualPort()(*int32)
     GetProxySettings()(*WiFiProxySetting)
     GetSsid()(*string)
+    GetType()(*string)
     GetWiFiSecurityType()(*WiFiSecurityType)
     SetConnectAutomatically(value *bool)()
     SetConnectWhenNetworkNameIsHidden(value *bool)()
@@ -27,5 +28,6 @@ type MacOSWiFiConfigurationable interface {
     SetProxyManualPort(value *int32)()
     SetProxySettings(value *WiFiProxySetting)()
     SetSsid(value *string)()
+    SetType(value *string)()
     SetWiFiSecurityType(value *WiFiSecurityType)()
 }

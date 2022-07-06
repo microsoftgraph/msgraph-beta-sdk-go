@@ -7,6 +7,8 @@ import (
 // IosCertificateProfile device Configuration.
 type IosCertificateProfile struct {
     DeviceConfiguration
+    // The type property
+    type_escaped *string
 }
 // NewIosCertificateProfile instantiates a new iosCertificateProfile and sets the default values.
 func NewIosCertificateProfile()(*IosCertificateProfile) {
@@ -43,7 +45,25 @@ func CreateIosCertificateProfileFromDiscriminatorValue(parseNode i878a80d2330e89
 // GetFieldDeserializers the deserialization information for the current model
 func (m *IosCertificateProfile) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DeviceConfiguration.GetFieldDeserializers()
+    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetType(val)
+        }
+        return nil
+    }
     return res
+}
+// GetType gets the type property value. The type property
+func (m *IosCertificateProfile) GetType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
+    }
 }
 // Serialize serializes information the current object
 func (m *IosCertificateProfile) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -51,5 +71,17 @@ func (m *IosCertificateProfile) Serialize(writer i878a80d2330e89d26896388a3f487e
     if err != nil {
         return err
     }
+    {
+        err = writer.WriteStringValue("type", m.GetType())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetType sets the type property value. The type property
+func (m *IosCertificateProfile) SetType(value *string)() {
+    if m != nil {
+        m.type_escaped = value
+    }
 }

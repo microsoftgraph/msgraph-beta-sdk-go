@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DetectedSensitiveContent provides operations to manage the dataClassificationService singleton.
+// DetectedSensitiveContent 
 type DetectedSensitiveContent struct {
     DetectedSensitiveContentBase
     // The classificationAttributes property
@@ -17,8 +17,10 @@ type DetectedSensitiveContent struct {
     scope *SensitiveTypeScope
     // The sensitiveTypeSource property
     sensitiveTypeSource *SensitiveTypeSource
+    // The type property
+    type_escaped *string
 }
-// NewDetectedSensitiveContent instantiates a new detectedSensitiveContent and sets the default values.
+// NewDetectedSensitiveContent instantiates a new DetectedSensitiveContent and sets the default values.
 func NewDetectedSensitiveContent()(*DetectedSensitiveContent) {
     m := &DetectedSensitiveContent{
         DetectedSensitiveContentBase: *NewDetectedSensitiveContentBase(),
@@ -27,6 +29,25 @@ func NewDetectedSensitiveContent()(*DetectedSensitiveContent) {
 }
 // CreateDetectedSensitiveContentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateDetectedSensitiveContentFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+    if parseNode != nil {
+        mappingValueNode, err := parseNode.GetChildNode("@odata.type")
+        if err != nil {
+            return nil, err
+        }
+        if mappingValueNode != nil {
+            mappingValue, err := mappingValueNode.GetStringValue()
+            if err != nil {
+                return nil, err
+            }
+            if mappingValue != nil {
+                mappingStr := *mappingValue
+                switch mappingStr {
+                    case "#microsoft.graph.machineLearningDetectedSensitiveContent":
+                        return NewMachineLearningDetectedSensitiveContent(), nil
+                }
+            }
+        }
+    }
     return NewDetectedSensitiveContent(), nil
 }
 // GetClassificationAttributes gets the classificationAttributes property value. The classificationAttributes property
@@ -106,6 +127,16 @@ func (m *DetectedSensitiveContent) GetFieldDeserializers()(map[string]func(i878a
         }
         return nil
     }
+    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetMatches gets the matches property value. The matches property
@@ -130,6 +161,14 @@ func (m *DetectedSensitiveContent) GetSensitiveTypeSource()(*SensitiveTypeSource
         return nil
     } else {
         return m.sensitiveTypeSource
+    }
+}
+// GetType gets the type property value. The type property
+func (m *DetectedSensitiveContent) GetType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
     }
 }
 // Serialize serializes information the current object
@@ -179,6 +218,12 @@ func (m *DetectedSensitiveContent) Serialize(writer i878a80d2330e89d26896388a3f4
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("type", m.GetType())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetClassificationAttributes sets the classificationAttributes property value. The classificationAttributes property
@@ -209,5 +254,11 @@ func (m *DetectedSensitiveContent) SetScope(value *SensitiveTypeScope)() {
 func (m *DetectedSensitiveContent) SetSensitiveTypeSource(value *SensitiveTypeSource)() {
     if m != nil {
         m.sensitiveTypeSource = value
+    }
+}
+// SetType sets the type property value. The type property
+func (m *DetectedSensitiveContent) SetType(value *string)() {
+    if m != nil {
+        m.type_escaped = value
     }
 }

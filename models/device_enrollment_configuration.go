@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DeviceEnrollmentConfiguration the Base Class of Device Enrollment Configuration
+// DeviceEnrollmentConfiguration 
 type DeviceEnrollmentConfiguration struct {
     Entity
     // The list of group assignments for the device configuration profile
@@ -24,10 +24,12 @@ type DeviceEnrollmentConfiguration struct {
     priority *int32
     // Optional role scope tags for the enrollment restrictions.
     roleScopeTagIds []string
+    // The type property
+    type_escaped *string
     // The version of the device enrollment configuration
     version *int32
 }
-// NewDeviceEnrollmentConfiguration instantiates a new deviceEnrollmentConfiguration and sets the default values.
+// NewDeviceEnrollmentConfiguration instantiates a new DeviceEnrollmentConfiguration and sets the default values.
 func NewDeviceEnrollmentConfiguration()(*DeviceEnrollmentConfiguration) {
     m := &DeviceEnrollmentConfiguration{
         Entity: *NewEntity(),
@@ -200,6 +202,16 @@ func (m *DeviceEnrollmentConfiguration) GetFieldDeserializers()(map[string]func(
         }
         return nil
     }
+    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetType(val)
+        }
+        return nil
+    }
     res["version"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
@@ -234,6 +246,14 @@ func (m *DeviceEnrollmentConfiguration) GetRoleScopeTagIds()([]string) {
         return nil
     } else {
         return m.roleScopeTagIds
+    }
+}
+// GetType gets the type property value. The type property
+func (m *DeviceEnrollmentConfiguration) GetType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
     }
 }
 // GetVersion gets the version property value. The version of the device enrollment configuration
@@ -304,6 +324,12 @@ func (m *DeviceEnrollmentConfiguration) Serialize(writer i878a80d2330e89d2689638
         }
     }
     {
+        err = writer.WriteStringValue("type", m.GetType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteInt32Value("version", m.GetVersion())
         if err != nil {
             return err
@@ -357,6 +383,12 @@ func (m *DeviceEnrollmentConfiguration) SetPriority(value *int32)() {
 func (m *DeviceEnrollmentConfiguration) SetRoleScopeTagIds(value []string)() {
     if m != nil {
         m.roleScopeTagIds = value
+    }
+}
+// SetType sets the type property value. The type property
+func (m *DeviceEnrollmentConfiguration) SetType(value *string)() {
+    if m != nil {
+        m.type_escaped = value
     }
 }
 // SetVersion sets the version property value. The version of the device enrollment configuration

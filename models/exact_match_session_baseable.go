@@ -16,6 +16,7 @@ type ExactMatchSessionBaseable interface {
     GetState()(*string)
     GetTotalBlockCount()(*int32)
     GetTotalJobCount()(*int32)
+    GetType()(*string)
     GetUploadCompletionDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     SetDataStoreId(value *string)()
     SetProcessingCompletionDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
@@ -24,5 +25,6 @@ type ExactMatchSessionBaseable interface {
     SetState(value *string)()
     SetTotalBlockCount(value *int32)()
     SetTotalJobCount(value *int32)()
+    SetType(value *string)()
     SetUploadCompletionDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
 }

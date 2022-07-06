@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// OfficeClientConfiguration provides operations to manage the officeConfiguration singleton.
+// OfficeClientConfiguration 
 type OfficeClientConfiguration struct {
     Entity
     // The list of group assignments for the policy.
@@ -19,12 +19,14 @@ type OfficeClientConfiguration struct {
     policyPayload []byte
     // Priority value should be unique value for each policy under a tenant and will be used for conflict resolution, lower values mean priority is high.
     priority *int32
+    // The type property
+    type_escaped *string
     // User check-in summary for the policy.
     userCheckinSummary OfficeUserCheckinSummaryable
     // Preference settings JSON string in binary format, these values can be overridden by the user.
     userPreferencePayload []byte
 }
-// NewOfficeClientConfiguration instantiates a new officeClientConfiguration and sets the default values.
+// NewOfficeClientConfiguration instantiates a new OfficeClientConfiguration and sets the default values.
 func NewOfficeClientConfiguration()(*OfficeClientConfiguration) {
     m := &OfficeClientConfiguration{
         Entity: *NewEntity(),
@@ -159,6 +161,16 @@ func (m *OfficeClientConfiguration) GetFieldDeserializers()(map[string]func(i878
         }
         return nil
     }
+    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetType(val)
+        }
+        return nil
+    }
     res["userCheckinSummary"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateOfficeUserCheckinSummaryFromDiscriminatorValue)
         if err != nil {
@@ -195,6 +207,14 @@ func (m *OfficeClientConfiguration) GetPriority()(*int32) {
         return nil
     } else {
         return m.priority
+    }
+}
+// GetType gets the type property value. The type property
+func (m *OfficeClientConfiguration) GetType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
     }
 }
 // GetUserCheckinSummary gets the userCheckinSummary property value. User check-in summary for the policy.
@@ -264,6 +284,12 @@ func (m *OfficeClientConfiguration) Serialize(writer i878a80d2330e89d26896388a3f
         }
     }
     {
+        err = writer.WriteStringValue("type", m.GetType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteObjectValue("userCheckinSummary", m.GetUserCheckinSummary())
         if err != nil {
             return err
@@ -311,6 +337,12 @@ func (m *OfficeClientConfiguration) SetPolicyPayload(value []byte)() {
 func (m *OfficeClientConfiguration) SetPriority(value *int32)() {
     if m != nil {
         m.priority = value
+    }
+}
+// SetType sets the type property value. The type property
+func (m *OfficeClientConfiguration) SetType(value *string)() {
+    if m != nil {
+        m.type_escaped = value
     }
 }
 // SetUserCheckinSummary sets the userCheckinSummary property value. User check-in summary for the policy.

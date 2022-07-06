@@ -24,6 +24,8 @@ type ManagedDevice struct {
     azureADDeviceId *string
     // Whether the device is Azure Active Directory registered. This property is read-only.
     azureADRegistered *bool
+    // Reports if the managed device has an escrowed Bootstrap Token. This is only for macOS devices. If FALSE, no bootstrap token is escrowed. If TRUE, the device has escrowed a bootstrap token with Intune. This property is read-only.
+    bootstrapTokenEscrowed *bool
     // Chassis type of the device. This property is read-only. Possible values are: unknown, desktop, laptop, worksWorkstation, enterpriseServer, phone, tablet, mobileOther, mobileUnknown.
     chassisType *ChassisType
     // List of properties of the ChromeOS Device.
@@ -54,6 +56,8 @@ type ManagedDevice struct {
     deviceConfigurationStates []DeviceConfigurationStateable
     // Enrollment type of the device. This property is read-only. Possible values are: unknown, userEnrollment, deviceEnrollmentManager, appleBulkWithUser, appleBulkWithoutUser, windowsAzureADJoin, windowsBulkUserless, windowsAutoEnrollment, windowsBulkAzureDomainJoin, windowsCoManagement, windowsAzureADJoinUsingDeviceAuth, appleUserEnrollment, appleUserEnrollmentWithServiceAccount, azureAdJoinUsingAzureVmExtension, androidEnterpriseDedicatedDevice, androidEnterpriseFullyManaged, androidEnterpriseCorporateWorkProfile.
     deviceEnrollmentType *DeviceEnrollmentType
+    // Indicates whether the device is DFCI managed. When TRUE the device is DFCI managed. When FALSE, the device is not DFCI managed. The default value is FALSE.
+    deviceFirmwareConfigurationInterfaceManaged *bool
     // The device health attestation state. This property is read-only.
     deviceHealthAttestationState DeviceHealthAttestationStateable
     // Name of the device. This property is read-only.
@@ -166,6 +170,8 @@ type ManagedDevice struct {
     subscriberCarrier *string
     // Total Storage in Bytes. This property is read-only.
     totalStorageSpaceInBytes *int64
+    // The type property
+    type_escaped *string
     // Unique Device Identifier for iOS and macOS devices. This property is read-only.
     udid *string
     // User display name. This property is read-only.
@@ -279,6 +285,14 @@ func (m *ManagedDevice) GetAzureADRegistered()(*bool) {
         return nil
     } else {
         return m.azureADRegistered
+    }
+}
+// GetBootstrapTokenEscrowed gets the bootstrapTokenEscrowed property value. Reports if the managed device has an escrowed Bootstrap Token. This is only for macOS devices. If FALSE, no bootstrap token is escrowed. If TRUE, the device has escrowed a bootstrap token with Intune. This property is read-only.
+func (m *ManagedDevice) GetBootstrapTokenEscrowed()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.bootstrapTokenEscrowed
     }
 }
 // GetChassisType gets the chassisType property value. Chassis type of the device. This property is read-only. Possible values are: unknown, desktop, laptop, worksWorkstation, enterpriseServer, phone, tablet, mobileOther, mobileUnknown.
@@ -399,6 +413,14 @@ func (m *ManagedDevice) GetDeviceEnrollmentType()(*DeviceEnrollmentType) {
         return nil
     } else {
         return m.deviceEnrollmentType
+    }
+}
+// GetDeviceFirmwareConfigurationInterfaceManaged gets the deviceFirmwareConfigurationInterfaceManaged property value. Indicates whether the device is DFCI managed. When TRUE the device is DFCI managed. When FALSE, the device is not DFCI managed. The default value is FALSE.
+func (m *ManagedDevice) GetDeviceFirmwareConfigurationInterfaceManaged()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.deviceFirmwareConfigurationInterfaceManaged
     }
 }
 // GetDeviceHealthAttestationState gets the deviceHealthAttestationState property value. The device health attestation state. This property is read-only.
@@ -600,6 +622,16 @@ func (m *ManagedDevice) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         }
         return nil
     }
+    res["bootstrapTokenEscrowed"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetBootstrapTokenEscrowed(val)
+        }
+        return nil
+    }
     res["chassisType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseChassisType)
         if err != nil {
@@ -771,6 +803,16 @@ func (m *ManagedDevice) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         }
         if val != nil {
             m.SetDeviceEnrollmentType(val.(*DeviceEnrollmentType))
+        }
+        return nil
+    }
+    res["deviceFirmwareConfigurationInterfaceManaged"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetDeviceFirmwareConfigurationInterfaceManaged(val)
         }
         return nil
     }
@@ -1350,6 +1392,16 @@ func (m *ManagedDevice) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         }
         return nil
     }
+    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetType(val)
+        }
+        return nil
+    }
     res["udid"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -1796,6 +1848,14 @@ func (m *ManagedDevice) GetTotalStorageSpaceInBytes()(*int64) {
         return m.totalStorageSpaceInBytes
     }
 }
+// GetType gets the type property value. The type property
+func (m *ManagedDevice) GetType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
+    }
+}
 // GetUdid gets the udid property value. Unique Device Identifier for iOS and macOS devices. This property is read-only.
 func (m *ManagedDevice) GetUdid()(*string) {
     if m == nil {
@@ -1934,6 +1994,12 @@ func (m *ManagedDevice) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
             return err
         }
     }
+    {
+        err = writer.WriteBoolValue("bootstrapTokenEscrowed", m.GetBootstrapTokenEscrowed())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetChassisType() != nil {
         cast := (*m.GetChassisType()).String()
         err = writer.WriteStringValue("chassisType", &cast)
@@ -2047,6 +2113,12 @@ func (m *ManagedDevice) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
     if m.GetDeviceEnrollmentType() != nil {
         cast := (*m.GetDeviceEnrollmentType()).String()
         err = writer.WriteStringValue("deviceEnrollmentType", &cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteBoolValue("deviceFirmwareConfigurationInterfaceManaged", m.GetDeviceFirmwareConfigurationInterfaceManaged())
         if err != nil {
             return err
         }
@@ -2413,6 +2485,12 @@ func (m *ManagedDevice) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
         }
     }
     {
+        err = writer.WriteStringValue("type", m.GetType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("udid", m.GetUdid())
         if err != nil {
             return err
@@ -2530,6 +2608,12 @@ func (m *ManagedDevice) SetAzureADRegistered(value *bool)() {
         m.azureADRegistered = value
     }
 }
+// SetBootstrapTokenEscrowed sets the bootstrapTokenEscrowed property value. Reports if the managed device has an escrowed Bootstrap Token. This is only for macOS devices. If FALSE, no bootstrap token is escrowed. If TRUE, the device has escrowed a bootstrap token with Intune. This property is read-only.
+func (m *ManagedDevice) SetBootstrapTokenEscrowed(value *bool)() {
+    if m != nil {
+        m.bootstrapTokenEscrowed = value
+    }
+}
 // SetChassisType sets the chassisType property value. Chassis type of the device. This property is read-only. Possible values are: unknown, desktop, laptop, worksWorkstation, enterpriseServer, phone, tablet, mobileOther, mobileUnknown.
 func (m *ManagedDevice) SetChassisType(value *ChassisType)() {
     if m != nil {
@@ -2618,6 +2702,12 @@ func (m *ManagedDevice) SetDeviceConfigurationStates(value []DeviceConfiguration
 func (m *ManagedDevice) SetDeviceEnrollmentType(value *DeviceEnrollmentType)() {
     if m != nil {
         m.deviceEnrollmentType = value
+    }
+}
+// SetDeviceFirmwareConfigurationInterfaceManaged sets the deviceFirmwareConfigurationInterfaceManaged property value. Indicates whether the device is DFCI managed. When TRUE the device is DFCI managed. When FALSE, the device is not DFCI managed. The default value is FALSE.
+func (m *ManagedDevice) SetDeviceFirmwareConfigurationInterfaceManaged(value *bool)() {
+    if m != nil {
+        m.deviceFirmwareConfigurationInterfaceManaged = value
     }
 }
 // SetDeviceHealthAttestationState sets the deviceHealthAttestationState property value. The device health attestation state. This property is read-only.
@@ -2954,6 +3044,12 @@ func (m *ManagedDevice) SetSubscriberCarrier(value *string)() {
 func (m *ManagedDevice) SetTotalStorageSpaceInBytes(value *int64)() {
     if m != nil {
         m.totalStorageSpaceInBytes = value
+    }
+}
+// SetType sets the type property value. The type property
+func (m *ManagedDevice) SetType(value *string)() {
+    if m != nil {
+        m.type_escaped = value
     }
 }
 // SetUdid sets the udid property value. Unique Device Identifier for iOS and macOS devices. This property is read-only.

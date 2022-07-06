@@ -9,6 +9,8 @@ type DeviceManagementSettingInstance struct {
     Entity
     // The ID of the setting definition for this instance
     definitionId *string
+    // The type property
+    type_escaped *string
     // JSON representation of the value
     valueJson *string
 }
@@ -73,6 +75,16 @@ func (m *DeviceManagementSettingInstance) GetFieldDeserializers()(map[string]fun
         }
         return nil
     }
+    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetType(val)
+        }
+        return nil
+    }
     res["valueJson"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -84,6 +96,14 @@ func (m *DeviceManagementSettingInstance) GetFieldDeserializers()(map[string]fun
         return nil
     }
     return res
+}
+// GetType gets the type property value. The type property
+func (m *DeviceManagementSettingInstance) GetType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
+    }
 }
 // GetValueJson gets the valueJson property value. JSON representation of the value
 func (m *DeviceManagementSettingInstance) GetValueJson()(*string) {
@@ -106,6 +126,12 @@ func (m *DeviceManagementSettingInstance) Serialize(writer i878a80d2330e89d26896
         }
     }
     {
+        err = writer.WriteStringValue("type", m.GetType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("valueJson", m.GetValueJson())
         if err != nil {
             return err
@@ -117,6 +143,12 @@ func (m *DeviceManagementSettingInstance) Serialize(writer i878a80d2330e89d26896
 func (m *DeviceManagementSettingInstance) SetDefinitionId(value *string)() {
     if m != nil {
         m.definitionId = value
+    }
+}
+// SetType sets the type property value. The type property
+func (m *DeviceManagementSettingInstance) SetType(value *string)() {
+    if m != nil {
+        m.type_escaped = value
     }
 }
 // SetValueJson sets the valueJson property value. JSON representation of the value

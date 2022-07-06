@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// RoleAssignment the Role Assignment resource. Role assignments tie together a role definition with members and scopes. There can be one or more role assignments per role. This applies to custom and built-in roles.
+// RoleAssignment 
 type RoleAssignment struct {
     Entity
     // Description of the Role Assignment.
@@ -19,8 +19,10 @@ type RoleAssignment struct {
     scopeMembers []string
     // Specifies the type of scope for a Role Assignment. Default type 'ResourceScope' allows assignment of ResourceScopes. For 'AllDevices', 'AllLicensedUsers', and 'AllDevicesAndLicensedUsers', the ResourceScopes property should be left empty. Possible values are: resourceScope, allDevices, allLicensedUsers, allDevicesAndLicensedUsers.
     scopeType *RoleAssignmentScopeType
+    // The type property
+    type_escaped *string
 }
-// NewRoleAssignment instantiates a new roleAssignment and sets the default values.
+// NewRoleAssignment instantiates a new RoleAssignment and sets the default values.
 func NewRoleAssignment()(*RoleAssignment) {
     m := &RoleAssignment{
         Entity: *NewEntity(),
@@ -137,6 +139,16 @@ func (m *RoleAssignment) GetFieldDeserializers()(map[string]func(i878a80d2330e89
         }
         return nil
     }
+    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetResourceScopes gets the resourceScopes property value. List of ids of role scope member security groups.  These are IDs from Azure Active Directory.
@@ -169,6 +181,14 @@ func (m *RoleAssignment) GetScopeType()(*RoleAssignmentScopeType) {
         return nil
     } else {
         return m.scopeType
+    }
+}
+// GetType gets the type property value. The type property
+func (m *RoleAssignment) GetType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
     }
 }
 // Serialize serializes information the current object
@@ -214,6 +234,12 @@ func (m *RoleAssignment) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("type", m.GetType())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetDescription sets the description property value. Description of the Role Assignment.
@@ -250,5 +276,11 @@ func (m *RoleAssignment) SetScopeMembers(value []string)() {
 func (m *RoleAssignment) SetScopeType(value *RoleAssignmentScopeType)() {
     if m != nil {
         m.scopeType = value
+    }
+}
+// SetType sets the type property value. The type property
+func (m *RoleAssignment) SetType(value *string)() {
+    if m != nil {
+        m.type_escaped = value
     }
 }

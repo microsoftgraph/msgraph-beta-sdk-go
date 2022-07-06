@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// WindowsUpdateCatalogItem windows update catalog item entity
+// WindowsUpdateCatalogItem 
 type WindowsUpdateCatalogItem struct {
     Entity
     // The display name for the catalog item.
@@ -14,8 +14,10 @@ type WindowsUpdateCatalogItem struct {
     endOfSupportDate *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The date the catalog item was released
     releaseDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
+    // The type property
+    type_escaped *string
 }
-// NewWindowsUpdateCatalogItem instantiates a new windowsUpdateCatalogItem and sets the default values.
+// NewWindowsUpdateCatalogItem instantiates a new WindowsUpdateCatalogItem and sets the default values.
 func NewWindowsUpdateCatalogItem()(*WindowsUpdateCatalogItem) {
     m := &WindowsUpdateCatalogItem{
         Entity: *NewEntity(),
@@ -96,6 +98,16 @@ func (m *WindowsUpdateCatalogItem) GetFieldDeserializers()(map[string]func(i878a
         }
         return nil
     }
+    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetReleaseDateTime gets the releaseDateTime property value. The date the catalog item was released
@@ -104,6 +116,14 @@ func (m *WindowsUpdateCatalogItem) GetReleaseDateTime()(*i336074805fc853987abe6f
         return nil
     } else {
         return m.releaseDateTime
+    }
+}
+// GetType gets the type property value. The type property
+func (m *WindowsUpdateCatalogItem) GetType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
     }
 }
 // Serialize serializes information the current object
@@ -130,6 +150,12 @@ func (m *WindowsUpdateCatalogItem) Serialize(writer i878a80d2330e89d26896388a3f4
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("type", m.GetType())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetDisplayName sets the displayName property value. The display name for the catalog item.
@@ -148,5 +174,11 @@ func (m *WindowsUpdateCatalogItem) SetEndOfSupportDate(value *i336074805fc853987
 func (m *WindowsUpdateCatalogItem) SetReleaseDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     if m != nil {
         m.releaseDateTime = value
+    }
+}
+// SetType sets the type property value. The type property
+func (m *WindowsUpdateCatalogItem) SetType(value *string)() {
+    if m != nil {
+        m.type_escaped = value
     }
 }

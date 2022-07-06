@@ -11,9 +11,11 @@ type DeviceManagementConfigurationSimpleSettingDefinitionable interface {
     GetDefaultValue()(DeviceManagementConfigurationSettingValueable)
     GetDependedOnBy()([]DeviceManagementConfigurationSettingDependedOnByable)
     GetDependentOn()([]DeviceManagementConfigurationDependentOnable)
+    GetType()(*string)
     GetValueDefinition()(DeviceManagementConfigurationSettingValueDefinitionable)
     SetDefaultValue(value DeviceManagementConfigurationSettingValueable)()
     SetDependedOnBy(value []DeviceManagementConfigurationSettingDependedOnByable)()
     SetDependentOn(value []DeviceManagementConfigurationDependentOnable)()
+    SetType(value *string)()
     SetValueDefinition(value DeviceManagementConfigurationSettingValueDefinitionable)()
 }

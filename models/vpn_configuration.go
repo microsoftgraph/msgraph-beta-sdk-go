@@ -17,6 +17,8 @@ type VpnConfiguration struct {
     role *string
     // List of VPN Servers on the network. Make sure end users can access these network locations. This collection can contain a maximum of 500 elements.
     servers []VpnServerable
+    // The type property
+    type_escaped *string
 }
 // NewVpnConfiguration instantiates a new VpnConfiguration and sets the default values.
 func NewVpnConfiguration()(*VpnConfiguration) {
@@ -121,6 +123,16 @@ func (m *VpnConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e
         }
         return nil
     }
+    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetRealm gets the realm property value. Realm when connection type is set to Pulse Secure.
@@ -145,6 +157,14 @@ func (m *VpnConfiguration) GetServers()([]VpnServerable) {
         return nil
     } else {
         return m.servers
+    }
+}
+// GetType gets the type property value. The type property
+func (m *VpnConfiguration) GetType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
     }
 }
 // Serialize serializes information the current object
@@ -188,6 +208,12 @@ func (m *VpnConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("type", m.GetType())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetAuthenticationMethod sets the authenticationMethod property value. Authentication method. Possible values are: certificate, usernameAndPassword, sharedSecret, derivedCredential, azureAD.
@@ -218,5 +244,11 @@ func (m *VpnConfiguration) SetRole(value *string)() {
 func (m *VpnConfiguration) SetServers(value []VpnServerable)() {
     if m != nil {
         m.servers = value
+    }
+}
+// SetType sets the type property value. The type property
+func (m *VpnConfiguration) SetType(value *string)() {
+    if m != nil {
+        m.type_escaped = value
     }
 }

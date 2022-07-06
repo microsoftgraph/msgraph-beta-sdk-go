@@ -41,6 +41,8 @@ type AndroidDeviceOwnerGeneralDeviceConfiguration struct {
     dateTimeConfigurationBlocked *bool
     // Represents the customized detailed help text provided to users when they attempt to modify managed settings on their device.
     detailedHelpText AndroidDeviceOwnerUserFacingMessageable
+    // Represents the customized lock screen message provided to users when they attempt to modify managed settings on their device.
+    deviceOwnerLockScreenMessage AndroidDeviceOwnerUserFacingMessageable
     // Indicates which enrollment profile you want to configure. Possible values are: notConfigured, dedicatedDevice, fullyManaged.
     enrollmentProfile *AndroidDeviceOwnerEnrollmentProfileType
     // Indicates whether or not the factory reset option in settings is disabled.
@@ -207,6 +209,8 @@ type AndroidDeviceOwnerGeneralDeviceConfiguration struct {
     playStoreMode *AndroidDeviceOwnerPlayStoreMode
     // Indicates whether or not to disable the capability to take screenshots.
     screenCaptureBlocked *bool
+    // Represents the security common criteria mode enabled provided to users when they attempt to modify managed settings on their device.
+    securityCommonCriteriaModeEnabled *bool
     // Indicates whether or not the user is allowed to access developer settings like developer options and safe boot on the device.
     securityDeveloperSettingsEnabled *bool
     // Indicates whether or not verify apps is required.
@@ -419,6 +423,14 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetDetailedHelpText()(And
         return m.detailedHelpText
     }
 }
+// GetDeviceOwnerLockScreenMessage gets the deviceOwnerLockScreenMessage property value. Represents the customized lock screen message provided to users when they attempt to modify managed settings on their device.
+func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetDeviceOwnerLockScreenMessage()(AndroidDeviceOwnerUserFacingMessageable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.deviceOwnerLockScreenMessage
+    }
+}
 // GetEnrollmentProfile gets the enrollmentProfile property value. Indicates which enrollment profile you want to configure. Possible values are: notConfigured, dedicatedDevice, fullyManaged.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetEnrollmentProfile()(*AndroidDeviceOwnerEnrollmentProfileType) {
     if m == nil {
@@ -617,6 +629,16 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetFieldDeserializers()(m
         }
         if val != nil {
             m.SetDetailedHelpText(val.(AndroidDeviceOwnerUserFacingMessageable))
+        }
+        return nil
+    }
+    res["deviceOwnerLockScreenMessage"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateAndroidDeviceOwnerUserFacingMessageFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetDeviceOwnerLockScreenMessage(val.(AndroidDeviceOwnerUserFacingMessageable))
         }
         return nil
     }
@@ -1475,6 +1497,16 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetFieldDeserializers()(m
         }
         if val != nil {
             m.SetScreenCaptureBlocked(val)
+        }
+        return nil
+    }
+    res["securityCommonCriteriaModeEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetSecurityCommonCriteriaModeEnabled(val)
         }
         return nil
     }
@@ -2448,6 +2480,14 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetScreenCaptureBlocked()
         return m.screenCaptureBlocked
     }
 }
+// GetSecurityCommonCriteriaModeEnabled gets the securityCommonCriteriaModeEnabled property value. Represents the security common criteria mode enabled provided to users when they attempt to modify managed settings on their device.
+func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetSecurityCommonCriteriaModeEnabled()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.securityCommonCriteriaModeEnabled
+    }
+}
 // GetSecurityDeveloperSettingsEnabled gets the securityDeveloperSettingsEnabled property value. Indicates whether or not the user is allowed to access developer settings like developer options and safe boot on the device.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetSecurityDeveloperSettingsEnabled()(*bool) {
     if m == nil {
@@ -2815,6 +2855,12 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) Serialize(writer i878a80d
     }
     {
         err = writer.WriteObjectValue("detailedHelpText", m.GetDetailedHelpText())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteObjectValue("deviceOwnerLockScreenMessage", m.GetDeviceOwnerLockScreenMessage())
         if err != nil {
             return err
         }
@@ -3349,6 +3395,12 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) Serialize(writer i878a80d
         }
     }
     {
+        err = writer.WriteBoolValue("securityCommonCriteriaModeEnabled", m.GetSecurityCommonCriteriaModeEnabled())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteBoolValue("securityDeveloperSettingsEnabled", m.GetSecurityDeveloperSettingsEnabled())
         if err != nil {
             return err
@@ -3649,6 +3701,12 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetDateTimeConfigurationB
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetDetailedHelpText(value AndroidDeviceOwnerUserFacingMessageable)() {
     if m != nil {
         m.detailedHelpText = value
+    }
+}
+// SetDeviceOwnerLockScreenMessage sets the deviceOwnerLockScreenMessage property value. Represents the customized lock screen message provided to users when they attempt to modify managed settings on their device.
+func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetDeviceOwnerLockScreenMessage(value AndroidDeviceOwnerUserFacingMessageable)() {
+    if m != nil {
+        m.deviceOwnerLockScreenMessage = value
     }
 }
 // SetEnrollmentProfile sets the enrollmentProfile property value. Indicates which enrollment profile you want to configure. Possible values are: notConfigured, dedicatedDevice, fullyManaged.
@@ -4147,6 +4205,12 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetPlayStoreMode(value *A
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetScreenCaptureBlocked(value *bool)() {
     if m != nil {
         m.screenCaptureBlocked = value
+    }
+}
+// SetSecurityCommonCriteriaModeEnabled sets the securityCommonCriteriaModeEnabled property value. Represents the security common criteria mode enabled provided to users when they attempt to modify managed settings on their device.
+func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetSecurityCommonCriteriaModeEnabled(value *bool)() {
+    if m != nil {
+        m.securityCommonCriteriaModeEnabled = value
     }
 }
 // SetSecurityDeveloperSettingsEnabled sets the securityDeveloperSettingsEnabled property value. Indicates whether or not the user is allowed to access developer settings like developer options and safe boot on the device.

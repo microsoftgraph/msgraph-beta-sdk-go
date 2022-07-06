@@ -13,6 +13,8 @@ type DeviceManagementConfigurationSimpleSettingDefinition struct {
     dependedOnBy []DeviceManagementConfigurationSettingDependedOnByable
     // list of parent settings this setting is dependent on
     dependentOn []DeviceManagementConfigurationDependentOnable
+    // The type property
+    type_escaped *string
     // Definition of the value for this setting
     valueDefinition DeviceManagementConfigurationSettingValueDefinitionable
 }
@@ -111,6 +113,16 @@ func (m *DeviceManagementConfigurationSimpleSettingDefinition) GetFieldDeseriali
         }
         return nil
     }
+    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetType(val)
+        }
+        return nil
+    }
     res["valueDefinition"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateDeviceManagementConfigurationSettingValueDefinitionFromDiscriminatorValue)
         if err != nil {
@@ -122,6 +134,14 @@ func (m *DeviceManagementConfigurationSimpleSettingDefinition) GetFieldDeseriali
         return nil
     }
     return res
+}
+// GetType gets the type property value. The type property
+func (m *DeviceManagementConfigurationSimpleSettingDefinition) GetType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
+    }
 }
 // GetValueDefinition gets the valueDefinition property value. Definition of the value for this setting
 func (m *DeviceManagementConfigurationSimpleSettingDefinition) GetValueDefinition()(DeviceManagementConfigurationSettingValueDefinitionable) {
@@ -164,6 +184,12 @@ func (m *DeviceManagementConfigurationSimpleSettingDefinition) Serialize(writer 
         }
     }
     {
+        err = writer.WriteStringValue("type", m.GetType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteObjectValue("valueDefinition", m.GetValueDefinition())
         if err != nil {
             return err
@@ -187,6 +213,12 @@ func (m *DeviceManagementConfigurationSimpleSettingDefinition) SetDependedOnBy(v
 func (m *DeviceManagementConfigurationSimpleSettingDefinition) SetDependentOn(value []DeviceManagementConfigurationDependentOnable)() {
     if m != nil {
         m.dependentOn = value
+    }
+}
+// SetType sets the type property value. The type property
+func (m *DeviceManagementConfigurationSimpleSettingDefinition) SetType(value *string)() {
+    if m != nil {
+        m.type_escaped = value
     }
 }
 // SetValueDefinition sets the valueDefinition property value. Definition of the value for this setting

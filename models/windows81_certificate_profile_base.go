@@ -11,6 +11,8 @@ type Windows81CertificateProfileBase struct {
     customSubjectAlternativeNames []CustomSubjectAlternativeNameable
     // Extended Key Usage (EKU) settings. This collection can contain a maximum of 500 elements.
     extendedKeyUsages []ExtendedKeyUsageable
+    // The type property
+    type_escaped *string
 }
 // NewWindows81CertificateProfileBase instantiates a new Windows81CertificateProfileBase and sets the default values.
 func NewWindows81CertificateProfileBase()(*Windows81CertificateProfileBase) {
@@ -89,7 +91,25 @@ func (m *Windows81CertificateProfileBase) GetFieldDeserializers()(map[string]fun
         }
         return nil
     }
+    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetType(val)
+        }
+        return nil
+    }
     return res
+}
+// GetType gets the type property value. The type property
+func (m *Windows81CertificateProfileBase) GetType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
+    }
 }
 // Serialize serializes information the current object
 func (m *Windows81CertificateProfileBase) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -117,6 +137,12 @@ func (m *Windows81CertificateProfileBase) Serialize(writer i878a80d2330e89d26896
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("type", m.GetType())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetCustomSubjectAlternativeNames sets the customSubjectAlternativeNames property value. Custom Subject Alternative Name Settings. This collection can contain a maximum of 500 elements.
@@ -129,5 +155,11 @@ func (m *Windows81CertificateProfileBase) SetCustomSubjectAlternativeNames(value
 func (m *Windows81CertificateProfileBase) SetExtendedKeyUsages(value []ExtendedKeyUsageable)() {
     if m != nil {
         m.extendedKeyUsages = value
+    }
+}
+// SetType sets the type property value. The type property
+func (m *Windows81CertificateProfileBase) SetType(value *string)() {
+    if m != nil {
+        m.type_escaped = value
     }
 }

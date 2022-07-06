@@ -11,7 +11,9 @@ type DeviceManagementConfigurationSettingInstanceTemplateable interface {
     GetIsRequired()(*bool)
     GetSettingDefinitionId()(*string)
     GetSettingInstanceTemplateId()(*string)
+    GetType()(*string)
     SetIsRequired(value *bool)()
     SetSettingDefinitionId(value *string)()
     SetSettingInstanceTemplateId(value *string)()
+    SetType(value *string)()
 }

@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// BaseTask provides operations to manage the collection of administrativeUnit entities.
+// BaseTask provides operations to manage the collection of accessReviewDecision entities.
 type BaseTask struct {
     Entity
     // The date and time when the task was last modified. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2020 would look like this: '2020-01-01T00:00:00Z'.
@@ -38,6 +38,8 @@ type BaseTask struct {
     status *TaskStatus_v2
     // The task body in text format that typically contains information about the task.
     textBody *string
+    // The type property
+    type_escaped *string
     // The viewpoint property
     viewpoint TaskViewpointable
 }
@@ -292,6 +294,16 @@ func (m *BaseTask) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
         }
         return nil
     }
+    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetType(val)
+        }
+        return nil
+    }
     res["viewpoint"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateTaskViewpointFromDiscriminatorValue)
         if err != nil {
@@ -366,6 +378,14 @@ func (m *BaseTask) GetTextBody()(*string) {
         return nil
     } else {
         return m.textBody
+    }
+}
+// GetType gets the type property value. The type property
+func (m *BaseTask) GetType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
     }
 }
 // GetViewpoint gets the viewpoint property value. The viewpoint property
@@ -487,6 +507,12 @@ func (m *BaseTask) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
         }
     }
     {
+        err = writer.WriteStringValue("type", m.GetType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteObjectValue("viewpoint", m.GetViewpoint())
         if err != nil {
             return err
@@ -582,6 +608,12 @@ func (m *BaseTask) SetStatus(value *TaskStatus_v2)() {
 func (m *BaseTask) SetTextBody(value *string)() {
     if m != nil {
         m.textBody = value
+    }
+}
+// SetType sets the type property value. The type property
+func (m *BaseTask) SetType(value *string)() {
+    if m != nil {
+        m.type_escaped = value
     }
 }
 // SetViewpoint sets the viewpoint property value. The viewpoint property

@@ -11,11 +11,13 @@ type AssignmentFilterEvaluateRequestable interface {
     GetOrderBy()([]string)
     GetPlatform()(*DevicePlatformType)
     GetRule()(*string)
+    GetSearch()(*string)
     GetSkip()(*int32)
     GetTop()(*int32)
     SetOrderBy(value []string)()
     SetPlatform(value *DevicePlatformType)()
     SetRule(value *string)()
+    SetSearch(value *string)()
     SetSkip(value *int32)()
     SetTop(value *int32)()
 }

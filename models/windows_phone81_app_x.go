@@ -23,6 +23,8 @@ type WindowsPhone81AppX struct {
     phoneProductIdentifier *string
     // The Phone Publisher Id.
     phonePublisherId *string
+    // The type property
+    type_escaped *string
 }
 // NewWindowsPhone81AppX instantiates a new WindowsPhone81AppX and sets the default values.
 func NewWindowsPhone81AppX()(*WindowsPhone81AppX) {
@@ -145,6 +147,16 @@ func (m *WindowsPhone81AppX) GetFieldDeserializers()(map[string]func(i878a80d233
         }
         return nil
     }
+    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetIdentityName gets the identityName property value. The Identity Name.
@@ -203,6 +215,14 @@ func (m *WindowsPhone81AppX) GetPhonePublisherId()(*string) {
         return m.phonePublisherId
     }
 }
+// GetType gets the type property value. The type property
+func (m *WindowsPhone81AppX) GetType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
+    }
+}
 // Serialize serializes information the current object
 func (m *WindowsPhone81AppX) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     err := m.MobileLobApp.Serialize(writer)
@@ -258,6 +278,12 @@ func (m *WindowsPhone81AppX) Serialize(writer i878a80d2330e89d26896388a3f487eef2
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("type", m.GetType())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetApplicableArchitectures sets the applicableArchitectures property value. The Windows architecture(s) for which this app can run on. Possible values are: none, x86, x64, arm, neutral, arm64.
@@ -306,5 +332,11 @@ func (m *WindowsPhone81AppX) SetPhoneProductIdentifier(value *string)() {
 func (m *WindowsPhone81AppX) SetPhonePublisherId(value *string)() {
     if m != nil {
         m.phonePublisherId = value
+    }
+}
+// SetType sets the type property value. The type property
+func (m *WindowsPhone81AppX) SetType(value *string)() {
+    if m != nil {
+        m.type_escaped = value
     }
 }

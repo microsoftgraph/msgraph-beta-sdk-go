@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ItemInsights 
+// ItemInsights provides operations to manage the collection of activityStatistics entities.
 type ItemInsights struct {
     OfficeGraphInsights
 }
-// NewItemInsights instantiates a new ItemInsights and sets the default values.
+// NewItemInsights instantiates a new itemInsights and sets the default values.
 func NewItemInsights()(*ItemInsights) {
     m := &ItemInsights{
         OfficeGraphInsights: *NewOfficeGraphInsights(),

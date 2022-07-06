@@ -11,7 +11,9 @@ type DeviceManagementSettingCategoryable interface {
     GetDisplayName()(*string)
     GetHasRequiredSetting()(*bool)
     GetSettingDefinitions()([]DeviceManagementSettingDefinitionable)
+    GetType()(*string)
     SetDisplayName(value *string)()
     SetHasRequiredSetting(value *bool)()
     SetSettingDefinitions(value []DeviceManagementSettingDefinitionable)()
+    SetType(value *string)()
 }

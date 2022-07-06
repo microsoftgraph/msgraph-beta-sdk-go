@@ -10,6 +10,8 @@ type Windows81CertificateProfileBaseable interface {
     WindowsCertificateProfileBaseable
     GetCustomSubjectAlternativeNames()([]CustomSubjectAlternativeNameable)
     GetExtendedKeyUsages()([]ExtendedKeyUsageable)
+    GetType()(*string)
     SetCustomSubjectAlternativeNames(value []CustomSubjectAlternativeNameable)()
     SetExtendedKeyUsages(value []ExtendedKeyUsageable)()
+    SetType(value *string)()
 }

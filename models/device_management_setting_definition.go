@@ -27,6 +27,8 @@ type DeviceManagementSettingDefinition struct {
     keywords []string
     // Placeholder text as an example of valid input
     placeholderText *string
+    // The type property
+    type_escaped *string
     // The data type of the value. Possible values are: integer, boolean, string, complex, collection, abstractComplex.
     valueType *DeviceManangementIntentValueType
 }
@@ -219,6 +221,16 @@ func (m *DeviceManagementSettingDefinition) GetFieldDeserializers()(map[string]f
         }
         return nil
     }
+    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetType(val)
+        }
+        return nil
+    }
     res["valueType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseDeviceManangementIntentValueType)
         if err != nil {
@@ -269,6 +281,14 @@ func (m *DeviceManagementSettingDefinition) GetPlaceholderText()(*string) {
         return nil
     } else {
         return m.placeholderText
+    }
+}
+// GetType gets the type property value. The type property
+func (m *DeviceManagementSettingDefinition) GetType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
     }
 }
 // GetValueType gets the valueType property value. The data type of the value. Possible values are: integer, boolean, string, complex, collection, abstractComplex.
@@ -353,6 +373,12 @@ func (m *DeviceManagementSettingDefinition) Serialize(writer i878a80d2330e89d268
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("type", m.GetType())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetValueType() != nil {
         cast := (*m.GetValueType()).String()
         err = writer.WriteStringValue("valueType", &cast)
@@ -420,6 +446,12 @@ func (m *DeviceManagementSettingDefinition) SetKeywords(value []string)() {
 func (m *DeviceManagementSettingDefinition) SetPlaceholderText(value *string)() {
     if m != nil {
         m.placeholderText = value
+    }
+}
+// SetType sets the type property value. The type property
+func (m *DeviceManagementSettingDefinition) SetType(value *string)() {
+    if m != nil {
+        m.type_escaped = value
     }
 }
 // SetValueType sets the valueType property value. The data type of the value. Possible values are: integer, boolean, string, complex, collection, abstractComplex.

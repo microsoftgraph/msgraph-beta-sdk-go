@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// BaseTaskList provides operations to manage the collection of administrativeUnit entities.
+// BaseTaskList provides operations to manage the collection of accessReviewDecision entities.
 type BaseTaskList struct {
     Entity
     // The name of the task list.
@@ -13,6 +13,8 @@ type BaseTaskList struct {
     extensions []Extensionable
     // The tasks in this task list. Read-only. Nullable.
     tasks []BaseTaskable
+    // The type property
+    type_escaped *string
 }
 // NewBaseTaskList instantiates a new baseTaskList and sets the default values.
 func NewBaseTaskList()(*BaseTaskList) {
@@ -103,6 +105,16 @@ func (m *BaseTaskList) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
         }
         return nil
     }
+    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetTasks gets the tasks property value. The tasks in this task list. Read-only. Nullable.
@@ -111,6 +123,14 @@ func (m *BaseTaskList) GetTasks()([]BaseTaskable) {
         return nil
     } else {
         return m.tasks
+    }
+}
+// GetType gets the type property value. The type property
+func (m *BaseTaskList) GetType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
     }
 }
 // Serialize serializes information the current object
@@ -145,6 +165,12 @@ func (m *BaseTaskList) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("type", m.GetType())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetDisplayName sets the displayName property value. The name of the task list.
@@ -163,5 +189,11 @@ func (m *BaseTaskList) SetExtensions(value []Extensionable)() {
 func (m *BaseTaskList) SetTasks(value []BaseTaskable)() {
     if m != nil {
         m.tasks = value
+    }
+}
+// SetType sets the type property value. The type property
+func (m *BaseTaskList) SetType(value *string)() {
+    if m != nil {
+        m.type_escaped = value
     }
 }

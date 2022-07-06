@@ -11,7 +11,9 @@ type VpnProxyServerable interface {
     GetAddress()(*string)
     GetAutomaticConfigurationScriptUrl()(*string)
     GetPort()(*int32)
+    GetType()(*string)
     SetAddress(value *string)()
     SetAutomaticConfigurationScriptUrl(value *string)()
     SetPort(value *int32)()
+    SetType(value *string)()
 }

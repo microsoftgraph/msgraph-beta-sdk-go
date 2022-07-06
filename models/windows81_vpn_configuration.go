@@ -17,6 +17,8 @@ type Windows81VpnConfiguration struct {
     loginGroupOrDomain *string
     // Proxy Server.
     proxyServer Windows81VpnProxyServerable
+    // The type property
+    type_escaped *string
 }
 // NewWindows81VpnConfiguration instantiates a new Windows81VpnConfiguration and sets the default values.
 func NewWindows81VpnConfiguration()(*Windows81VpnConfiguration) {
@@ -125,6 +127,16 @@ func (m *Windows81VpnConfiguration) GetFieldDeserializers()(map[string]func(i878
         }
         return nil
     }
+    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetLoginGroupOrDomain gets the loginGroupOrDomain property value. Login group or domain when connection type is set to Dell SonicWALL Mobile Connection.
@@ -141,6 +153,14 @@ func (m *Windows81VpnConfiguration) GetProxyServer()(Windows81VpnProxyServerable
         return nil
     } else {
         return m.proxyServer
+    }
+}
+// GetType gets the type property value. The type property
+func (m *Windows81VpnConfiguration) GetType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
     }
 }
 // Serialize serializes information the current object
@@ -180,6 +200,12 @@ func (m *Windows81VpnConfiguration) Serialize(writer i878a80d2330e89d26896388a3f
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("type", m.GetType())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetApplyOnlyToWindows81 sets the applyOnlyToWindows81 property value. Value indicating whether this policy only applies to Windows 8.1. This property is read-only.
@@ -210,5 +236,11 @@ func (m *Windows81VpnConfiguration) SetLoginGroupOrDomain(value *string)() {
 func (m *Windows81VpnConfiguration) SetProxyServer(value Windows81VpnProxyServerable)() {
     if m != nil {
         m.proxyServer = value
+    }
+}
+// SetType sets the type property value. The type property
+func (m *Windows81VpnConfiguration) SetType(value *string)() {
+    if m != nil {
+        m.type_escaped = value
     }
 }

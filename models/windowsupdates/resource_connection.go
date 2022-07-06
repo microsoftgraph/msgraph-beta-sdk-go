@@ -10,6 +10,8 @@ type ResourceConnection struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
     // The state property
     state *ResourceConnectionState
+    // The type property
+    type_escaped *string
 }
 // NewResourceConnection instantiates a new resourceConnection and sets the default values.
 func NewResourceConnection()(*ResourceConnection) {
@@ -54,6 +56,16 @@ func (m *ResourceConnection) GetFieldDeserializers()(map[string]func(i878a80d233
         }
         return nil
     }
+    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetState gets the state property value. The state property
@@ -62,6 +74,14 @@ func (m *ResourceConnection) GetState()(*ResourceConnectionState) {
         return nil
     } else {
         return m.state
+    }
+}
+// GetType gets the type property value. The type property
+func (m *ResourceConnection) GetType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
     }
 }
 // Serialize serializes information the current object
@@ -77,11 +97,23 @@ func (m *ResourceConnection) Serialize(writer i878a80d2330e89d26896388a3f487eef2
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("type", m.GetType())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetState sets the state property value. The state property
 func (m *ResourceConnection) SetState(value *ResourceConnectionState)() {
     if m != nil {
         m.state = value
+    }
+}
+// SetType sets the type property value. The type property
+func (m *ResourceConnection) SetType(value *string)() {
+    if m != nil {
+        m.type_escaped = value
     }
 }

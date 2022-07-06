@@ -13,9 +13,11 @@ type VpnConfigurationable interface {
     GetRealm()(*string)
     GetRole()(*string)
     GetServers()([]VpnServerable)
+    GetType()(*string)
     SetAuthenticationMethod(value *VpnAuthenticationMethod)()
     SetConnectionName(value *string)()
     SetRealm(value *string)()
     SetRole(value *string)()
     SetServers(value []VpnServerable)()
+    SetType(value *string)()
 }

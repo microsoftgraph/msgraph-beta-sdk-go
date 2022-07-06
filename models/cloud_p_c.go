@@ -5,11 +5,13 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// CloudPC provides operations to manage the collection of administrativeUnit entities.
+// CloudPC provides operations to manage the collection of activityStatistics entities.
 type CloudPC struct {
     Entity
     // The Azure Active Directory (Azure AD) device ID of the Cloud PC.
     aadDeviceId *string
+    // The connectivityResult property
+    connectivityResult CloudPcConnectivityResultable
     // The display name of the Cloud PC.
     displayName *string
     // The date and time when the grace period ends and reprovisioning/deprovisioning happens. Required only if the status is inGracePeriod. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
@@ -68,6 +70,14 @@ func (m *CloudPC) GetAadDeviceId()(*string) {
         return m.aadDeviceId
     }
 }
+// GetConnectivityResult gets the connectivityResult property value. The connectivityResult property
+func (m *CloudPC) GetConnectivityResult()(CloudPcConnectivityResultable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.connectivityResult
+    }
+}
 // GetDisplayName gets the displayName property value. The display name of the Cloud PC.
 func (m *CloudPC) GetDisplayName()(*string) {
     if m == nil {
@@ -86,6 +96,16 @@ func (m *CloudPC) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
         }
         if val != nil {
             m.SetAadDeviceId(val)
+        }
+        return nil
+    }
+    res["connectivityResult"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateCloudPcConnectivityResultFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetConnectivityResult(val.(CloudPcConnectivityResultable))
         }
         return nil
     }
@@ -438,6 +458,12 @@ func (m *CloudPC) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
         }
     }
     {
+        err = writer.WriteObjectValue("connectivityResult", m.GetConnectivityResult())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("displayName", m.GetDisplayName())
         if err != nil {
             return err
@@ -561,6 +587,12 @@ func (m *CloudPC) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
 func (m *CloudPC) SetAadDeviceId(value *string)() {
     if m != nil {
         m.aadDeviceId = value
+    }
+}
+// SetConnectivityResult sets the connectivityResult property value. The connectivityResult property
+func (m *CloudPC) SetConnectivityResult(value CloudPcConnectivityResultable)() {
+    if m != nil {
+        m.connectivityResult = value
     }
 }
 // SetDisplayName sets the displayName property value. The display name of the Cloud PC.

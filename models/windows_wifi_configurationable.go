@@ -20,6 +20,7 @@ type WindowsWifiConfigurationable interface {
     GetProxyManualPort()(*int32)
     GetProxySetting()(*WiFiProxySetting)
     GetSsid()(*string)
+    GetType()(*string)
     GetWifiSecurityType()(*WiFiSecurityType)
     SetConnectAutomatically(value *bool)()
     SetConnectToPreferredNetwork(value *bool)()
@@ -33,5 +34,6 @@ type WindowsWifiConfigurationable interface {
     SetProxyManualPort(value *int32)()
     SetProxySetting(value *WiFiProxySetting)()
     SetSsid(value *string)()
+    SetType(value *string)()
     SetWifiSecurityType(value *WiFiSecurityType)()
 }

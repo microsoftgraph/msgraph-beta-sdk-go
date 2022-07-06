@@ -13,6 +13,8 @@ type DeviceManagementConfigurationSettingGroupDefinition struct {
     dependedOnBy []DeviceManagementConfigurationSettingDependedOnByable
     // List of Dependencies for the setting group
     dependentOn []DeviceManagementConfigurationDependentOnable
+    // The type property
+    type_escaped *string
 }
 // NewDeviceManagementConfigurationSettingGroupDefinition instantiates a new DeviceManagementConfigurationSettingGroupDefinition and sets the default values.
 func NewDeviceManagementConfigurationSettingGroupDefinition()(*DeviceManagementConfigurationSettingGroupDefinition) {
@@ -113,7 +115,25 @@ func (m *DeviceManagementConfigurationSettingGroupDefinition) GetFieldDeserializ
         }
         return nil
     }
+    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetType(val)
+        }
+        return nil
+    }
     return res
+}
+// GetType gets the type property value. The type property
+func (m *DeviceManagementConfigurationSettingGroupDefinition) GetType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
+    }
 }
 // Serialize serializes information the current object
 func (m *DeviceManagementConfigurationSettingGroupDefinition) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -147,6 +167,12 @@ func (m *DeviceManagementConfigurationSettingGroupDefinition) Serialize(writer i
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("type", m.GetType())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetChildIds sets the childIds property value. Dependent child settings to this group of settings
@@ -165,5 +191,11 @@ func (m *DeviceManagementConfigurationSettingGroupDefinition) SetDependedOnBy(va
 func (m *DeviceManagementConfigurationSettingGroupDefinition) SetDependentOn(value []DeviceManagementConfigurationDependentOnable)() {
     if m != nil {
         m.dependentOn = value
+    }
+}
+// SetType sets the type property value. The type property
+func (m *DeviceManagementConfigurationSettingGroupDefinition) SetType(value *string)() {
+    if m != nil {
+        m.type_escaped = value
     }
 }

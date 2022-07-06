@@ -15,6 +15,8 @@ type AndroidForWorkWiFiConfiguration struct {
     networkName *string
     // This is the name of the Wi-Fi network that is broadcast to all devices.
     ssid *string
+    // The type property
+    type_escaped *string
     // Indicates whether Wi-Fi endpoint uses an EAP based security type. Possible values are: open, wpaEnterprise, wpa2Enterprise.
     wiFiSecurityType *AndroidWiFiSecurityType
 }
@@ -107,6 +109,16 @@ func (m *AndroidForWorkWiFiConfiguration) GetFieldDeserializers()(map[string]fun
         }
         return nil
     }
+    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetType(val)
+        }
+        return nil
+    }
     res["wiFiSecurityType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseAndroidWiFiSecurityType)
         if err != nil {
@@ -133,6 +145,14 @@ func (m *AndroidForWorkWiFiConfiguration) GetSsid()(*string) {
         return nil
     } else {
         return m.ssid
+    }
+}
+// GetType gets the type property value. The type property
+func (m *AndroidForWorkWiFiConfiguration) GetType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
     }
 }
 // GetWiFiSecurityType gets the wiFiSecurityType property value. Indicates whether Wi-Fi endpoint uses an EAP based security type. Possible values are: open, wpaEnterprise, wpa2Enterprise.
@@ -173,6 +193,12 @@ func (m *AndroidForWorkWiFiConfiguration) Serialize(writer i878a80d2330e89d26896
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("type", m.GetType())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetWiFiSecurityType() != nil {
         cast := (*m.GetWiFiSecurityType()).String()
         err = writer.WriteStringValue("wiFiSecurityType", &cast)
@@ -204,6 +230,12 @@ func (m *AndroidForWorkWiFiConfiguration) SetNetworkName(value *string)() {
 func (m *AndroidForWorkWiFiConfiguration) SetSsid(value *string)() {
     if m != nil {
         m.ssid = value
+    }
+}
+// SetType sets the type property value. The type property
+func (m *AndroidForWorkWiFiConfiguration) SetType(value *string)() {
+    if m != nil {
+        m.type_escaped = value
     }
 }
 // SetWiFiSecurityType sets the wiFiSecurityType property value. Indicates whether Wi-Fi endpoint uses an EAP based security type. Possible values are: open, wpaEnterprise, wpa2Enterprise.

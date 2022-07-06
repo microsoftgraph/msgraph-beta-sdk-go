@@ -21,6 +21,8 @@ type AndroidForWorkCertificateProfileBase struct {
     subjectAlternativeNameType *SubjectAlternativeNameType
     // Certificate Subject Name Format. Possible values are: commonName, commonNameIncludingEmail, commonNameAsEmail, custom, commonNameAsIMEI, commonNameAsSerialNumber, commonNameAsAadDeviceId, commonNameAsIntuneDeviceId, commonNameAsDurableDeviceId.
     subjectNameFormat *SubjectNameFormat
+    // The type property
+    type_escaped *string
 }
 // NewAndroidForWorkCertificateProfileBase instantiates a new AndroidForWorkCertificateProfileBase and sets the default values.
 func NewAndroidForWorkCertificateProfileBase()(*AndroidForWorkCertificateProfileBase) {
@@ -155,6 +157,16 @@ func (m *AndroidForWorkCertificateProfileBase) GetFieldDeserializers()(map[strin
         }
         return nil
     }
+    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetRenewalThresholdPercentage gets the renewalThresholdPercentage property value. Certificate renewal threshold percentage. Valid values 1 to 99
@@ -187,6 +199,14 @@ func (m *AndroidForWorkCertificateProfileBase) GetSubjectNameFormat()(*SubjectNa
         return nil
     } else {
         return m.subjectNameFormat
+    }
+}
+// GetType gets the type property value. The type property
+func (m *AndroidForWorkCertificateProfileBase) GetType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
     }
 }
 // Serialize serializes information the current object
@@ -244,6 +264,12 @@ func (m *AndroidForWorkCertificateProfileBase) Serialize(writer i878a80d2330e89d
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("type", m.GetType())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetCertificateValidityPeriodScale sets the certificateValidityPeriodScale property value. Scale for the Certificate Validity Period. Possible values are: days, months, years.
@@ -286,5 +312,11 @@ func (m *AndroidForWorkCertificateProfileBase) SetSubjectAlternativeNameType(val
 func (m *AndroidForWorkCertificateProfileBase) SetSubjectNameFormat(value *SubjectNameFormat)() {
     if m != nil {
         m.subjectNameFormat = value
+    }
+}
+// SetType sets the type property value. The type property
+func (m *AndroidForWorkCertificateProfileBase) SetType(value *string)() {
+    if m != nil {
+        m.type_escaped = value
     }
 }

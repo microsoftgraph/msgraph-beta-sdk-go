@@ -30,6 +30,7 @@ type AppleVpnConfigurationable interface {
     GetRole()(*string)
     GetSafariDomains()([]string)
     GetServer()(VpnServerable)
+    GetType()(*string)
     SetAssociatedDomains(value []string)()
     SetAuthenticationMethod(value *VpnAuthenticationMethod)()
     SetConnectionName(value *string)()
@@ -52,4 +53,5 @@ type AppleVpnConfigurationable interface {
     SetRole(value *string)()
     SetSafariDomains(value []string)()
     SetServer(value VpnServerable)()
+    SetType(value *string)()
 }

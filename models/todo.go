@@ -4,13 +4,13 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Todo provides operations to manage the collection of administrativeUnit entities.
+// Todo 
 type Todo struct {
     Entity
     // The task lists in the users mailbox.
     lists []TodoTaskListable
 }
-// NewTodo instantiates a new todo and sets the default values.
+// NewTodo instantiates a new Todo and sets the default values.
 func NewTodo()(*Todo) {
     m := &Todo{
         Entity: *NewEntity(),

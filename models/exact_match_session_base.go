@@ -22,6 +22,8 @@ type ExactMatchSessionBase struct {
     totalBlockCount *int32
     // The totalJobCount property
     totalJobCount *int32
+    // The type property
+    type_escaped *string
     // The uploadCompletionDateTime property
     uploadCompletionDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
 }
@@ -136,6 +138,16 @@ func (m *ExactMatchSessionBase) GetFieldDeserializers()(map[string]func(i878a80d
         }
         return nil
     }
+    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetType(val)
+        }
+        return nil
+    }
     res["uploadCompletionDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
@@ -196,6 +208,14 @@ func (m *ExactMatchSessionBase) GetTotalJobCount()(*int32) {
         return m.totalJobCount
     }
 }
+// GetType gets the type property value. The type property
+func (m *ExactMatchSessionBase) GetType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
+    }
+}
 // GetUploadCompletionDateTime gets the uploadCompletionDateTime property value. The uploadCompletionDateTime property
 func (m *ExactMatchSessionBase) GetUploadCompletionDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
@@ -253,6 +273,12 @@ func (m *ExactMatchSessionBase) Serialize(writer i878a80d2330e89d26896388a3f487e
         }
     }
     {
+        err = writer.WriteStringValue("type", m.GetType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteTimeValue("uploadCompletionDateTime", m.GetUploadCompletionDateTime())
         if err != nil {
             return err
@@ -300,6 +326,12 @@ func (m *ExactMatchSessionBase) SetTotalBlockCount(value *int32)() {
 func (m *ExactMatchSessionBase) SetTotalJobCount(value *int32)() {
     if m != nil {
         m.totalJobCount = value
+    }
+}
+// SetType sets the type property value. The type property
+func (m *ExactMatchSessionBase) SetType(value *string)() {
+    if m != nil {
+        m.type_escaped = value
     }
 }
 // SetUploadCompletionDateTime sets the uploadCompletionDateTime property value. The uploadCompletionDateTime property

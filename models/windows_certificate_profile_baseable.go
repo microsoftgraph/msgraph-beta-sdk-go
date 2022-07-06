@@ -14,10 +14,12 @@ type WindowsCertificateProfileBaseable interface {
     GetRenewalThresholdPercentage()(*int32)
     GetSubjectAlternativeNameType()(*SubjectAlternativeNameType)
     GetSubjectNameFormat()(*SubjectNameFormat)
+    GetType()(*string)
     SetCertificateValidityPeriodScale(value *CertificateValidityPeriodScale)()
     SetCertificateValidityPeriodValue(value *int32)()
     SetKeyStorageProvider(value *KeyStorageProviderOption)()
     SetRenewalThresholdPercentage(value *int32)()
     SetSubjectAlternativeNameType(value *SubjectAlternativeNameType)()
     SetSubjectNameFormat(value *SubjectNameFormat)()
+    SetType(value *string)()
 }

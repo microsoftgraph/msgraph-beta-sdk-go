@@ -4,13 +4,15 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// MeetingRegistrationBase provides operations to manage the commsApplication singleton.
+// MeetingRegistrationBase provides operations to manage the collection of activityStatistics entities.
 type MeetingRegistrationBase struct {
     Entity
     // Specifies who can register for the meeting.
     allowedRegistrant *MeetingAudience
     // Registrants of the online meeting.
     registrants []MeetingRegistrantBaseable
+    // The type property
+    type_escaped *string
 }
 // NewMeetingRegistrationBase instantiates a new meetingRegistrationBase and sets the default values.
 func NewMeetingRegistrationBase()(*MeetingRegistrationBase) {
@@ -79,6 +81,16 @@ func (m *MeetingRegistrationBase) GetFieldDeserializers()(map[string]func(i878a8
         }
         return nil
     }
+    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetRegistrants gets the registrants property value. Registrants of the online meeting.
@@ -87,6 +99,14 @@ func (m *MeetingRegistrationBase) GetRegistrants()([]MeetingRegistrantBaseable) 
         return nil
     } else {
         return m.registrants
+    }
+}
+// GetType gets the type property value. The type property
+func (m *MeetingRegistrationBase) GetType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
     }
 }
 // Serialize serializes information the current object
@@ -112,6 +132,12 @@ func (m *MeetingRegistrationBase) Serialize(writer i878a80d2330e89d26896388a3f48
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("type", m.GetType())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetAllowedRegistrant sets the allowedRegistrant property value. Specifies who can register for the meeting.
@@ -124,5 +150,11 @@ func (m *MeetingRegistrationBase) SetAllowedRegistrant(value *MeetingAudience)()
 func (m *MeetingRegistrationBase) SetRegistrants(value []MeetingRegistrantBaseable)() {
     if m != nil {
         m.registrants = value
+    }
+}
+// SetType sets the type property value. The type property
+func (m *MeetingRegistrationBase) SetType(value *string)() {
+    if m != nil {
+        m.type_escaped = value
     }
 }

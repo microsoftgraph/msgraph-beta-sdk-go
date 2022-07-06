@@ -17,6 +17,8 @@ type MacOSCertificateProfileBase struct {
     subjectAlternativeNameType *SubjectAlternativeNameType
     // Certificate Subject Name Format. Possible values are: commonName, commonNameAsEmail, custom, commonNameIncludingEmail, commonNameAsIMEI, commonNameAsSerialNumber.
     subjectNameFormat *AppleSubjectNameFormat
+    // The type property
+    type_escaped *string
 }
 // NewMacOSCertificateProfileBase instantiates a new macOSCertificateProfileBase and sets the default values.
 func NewMacOSCertificateProfileBase()(*MacOSCertificateProfileBase) {
@@ -121,6 +123,16 @@ func (m *MacOSCertificateProfileBase) GetFieldDeserializers()(map[string]func(i8
         }
         return nil
     }
+    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetRenewalThresholdPercentage gets the renewalThresholdPercentage property value. Certificate renewal threshold percentage.
@@ -145,6 +157,14 @@ func (m *MacOSCertificateProfileBase) GetSubjectNameFormat()(*AppleSubjectNameFo
         return nil
     } else {
         return m.subjectNameFormat
+    }
+}
+// GetType gets the type property value. The type property
+func (m *MacOSCertificateProfileBase) GetType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
     }
 }
 // Serialize serializes information the current object
@@ -186,6 +206,12 @@ func (m *MacOSCertificateProfileBase) Serialize(writer i878a80d2330e89d26896388a
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("type", m.GetType())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetCertificateValidityPeriodScale sets the certificateValidityPeriodScale property value. Scale for the Certificate Validity Period. Possible values are: days, months, years.
@@ -216,5 +242,11 @@ func (m *MacOSCertificateProfileBase) SetSubjectAlternativeNameType(value *Subje
 func (m *MacOSCertificateProfileBase) SetSubjectNameFormat(value *AppleSubjectNameFormat)() {
     if m != nil {
         m.subjectNameFormat = value
+    }
+}
+// SetType sets the type property value. The type property
+func (m *MacOSCertificateProfileBase) SetType(value *string)() {
+    if m != nil {
+        m.type_escaped = value
     }
 }

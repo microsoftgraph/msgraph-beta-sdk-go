@@ -15,6 +15,8 @@ type TargetedManagedAppProtection struct {
     isAssigned *bool
     // The intended app management levels for this policy. Possible values are: unspecified, unmanaged, mdm, androidEnterprise.
     targetedAppManagementLevels *AppManagementLevel
+    // The type property
+    type_escaped *string
 }
 // NewTargetedManagedAppProtection instantiates a new TargetedManagedAppProtection and sets the default values.
 func NewTargetedManagedAppProtection()(*TargetedManagedAppProtection) {
@@ -111,6 +113,16 @@ func (m *TargetedManagedAppProtection) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
+    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetIsAssigned gets the isAssigned property value. Indicates if the policy is deployed to any inclusion groups or not.
@@ -127,6 +139,14 @@ func (m *TargetedManagedAppProtection) GetTargetedAppManagementLevels()(*AppMana
         return nil
     } else {
         return m.targetedAppManagementLevels
+    }
+}
+// GetType gets the type property value. The type property
+func (m *TargetedManagedAppProtection) GetType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
     }
 }
 // Serialize serializes information the current object
@@ -165,6 +185,12 @@ func (m *TargetedManagedAppProtection) Serialize(writer i878a80d2330e89d26896388
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("type", m.GetType())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetAppGroupType sets the appGroupType property value. Public Apps selection: group or individual. Possible values are: selectedPublicApps, allCoreMicrosoftApps, allMicrosoftApps, allApps.
@@ -189,5 +215,11 @@ func (m *TargetedManagedAppProtection) SetIsAssigned(value *bool)() {
 func (m *TargetedManagedAppProtection) SetTargetedAppManagementLevels(value *AppManagementLevel)() {
     if m != nil {
         m.targetedAppManagementLevels = value
+    }
+}
+// SetType sets the type property value. The type property
+func (m *TargetedManagedAppProtection) SetType(value *string)() {
+    if m != nil {
+        m.type_escaped = value
     }
 }

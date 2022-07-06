@@ -9,6 +9,8 @@ type ListItemVersion struct {
     BaseItemVersion
     // A collection of the fields and values for this version of the list item.
     fields FieldValueSetable
+    // The type property
+    type_escaped *string
 }
 // NewListItemVersion instantiates a new ListItemVersion and sets the default values.
 func NewListItemVersion()(*ListItemVersion) {
@@ -53,6 +55,16 @@ func (m *ListItemVersion) GetFieldDeserializers()(map[string]func(i878a80d2330e8
         }
         return nil
     }
+    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetFields gets the fields property value. A collection of the fields and values for this version of the list item.
@@ -61,6 +73,14 @@ func (m *ListItemVersion) GetFields()(FieldValueSetable) {
         return nil
     } else {
         return m.fields
+    }
+}
+// GetType gets the type property value. The type property
+func (m *ListItemVersion) GetType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
     }
 }
 // Serialize serializes information the current object
@@ -75,11 +95,23 @@ func (m *ListItemVersion) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("type", m.GetType())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetFields sets the fields property value. A collection of the fields and values for this version of the list item.
 func (m *ListItemVersion) SetFields(value FieldValueSetable)() {
     if m != nil {
         m.fields = value
+    }
+}
+// SetType sets the type property value. The type property
+func (m *ListItemVersion) SetType(value *string)() {
+    if m != nil {
+        m.type_escaped = value
     }
 }

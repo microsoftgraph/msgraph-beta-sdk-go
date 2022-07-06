@@ -17,6 +17,8 @@ type MobileAppRelationship struct {
     targetPublisher *string
     // The type of relationship indicating whether the target is a parent or child. Possible values are: child, parent.
     targetType *MobileAppRelationshipType
+    // The type property
+    type_escaped *string
 }
 // NewMobileAppRelationship instantiates a new mobileAppRelationship and sets the default values.
 func NewMobileAppRelationship()(*MobileAppRelationship) {
@@ -103,6 +105,16 @@ func (m *MobileAppRelationship) GetFieldDeserializers()(map[string]func(i878a80d
         }
         return nil
     }
+    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetTargetDisplayName gets the targetDisplayName property value. The target mobile app's display name.
@@ -145,6 +157,14 @@ func (m *MobileAppRelationship) GetTargetType()(*MobileAppRelationshipType) {
         return m.targetType
     }
 }
+// GetType gets the type property value. The type property
+func (m *MobileAppRelationship) GetType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
+    }
+}
 // Serialize serializes information the current object
 func (m *MobileAppRelationship) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
@@ -182,6 +202,12 @@ func (m *MobileAppRelationship) Serialize(writer i878a80d2330e89d26896388a3f487e
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("type", m.GetType())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetTargetDisplayName sets the targetDisplayName property value. The target mobile app's display name.
@@ -212,5 +238,11 @@ func (m *MobileAppRelationship) SetTargetPublisher(value *string)() {
 func (m *MobileAppRelationship) SetTargetType(value *MobileAppRelationshipType)() {
     if m != nil {
         m.targetType = value
+    }
+}
+// SetType sets the type property value. The type property
+func (m *MobileAppRelationship) SetType(value *string)() {
+    if m != nil {
+        m.type_escaped = value
     }
 }

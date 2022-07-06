@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// PlannerRoster provides operations to manage the planner singleton.
+// PlannerRoster 
 type PlannerRoster struct {
     Entity
     // Retrieves the members of the plannerRoster.
@@ -12,7 +12,7 @@ type PlannerRoster struct {
     // Retrieves the plans contained by the plannerRoster.
     plans []PlannerPlanable
 }
-// NewPlannerRoster instantiates a new plannerRoster and sets the default values.
+// NewPlannerRoster instantiates a new PlannerRoster and sets the default values.
 func NewPlannerRoster()(*PlannerRoster) {
     m := &PlannerRoster{
         Entity: *NewEntity(),

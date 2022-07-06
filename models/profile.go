@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Profile provides operations to manage the collection of administrativeUnit entities.
+// Profile 
 type Profile struct {
     Entity
     // The account property
@@ -46,7 +46,7 @@ type Profile struct {
     // Represents detailed information about websites associated with a user in various services.
     websites []PersonWebsiteable
 }
-// NewProfile instantiates a new profile and sets the default values.
+// NewProfile instantiates a new Profile and sets the default values.
 func NewProfile()(*Profile) {
     m := &Profile{
         Entity: *NewEntity(),

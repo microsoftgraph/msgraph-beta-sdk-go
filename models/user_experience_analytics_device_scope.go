@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// UserExperienceAnalyticsDeviceScope the user experience analytics device scope entity contains device scope configuration values use to apply filtering on the endpoint analytics reports.
+// UserExperienceAnalyticsDeviceScope 
 type UserExperienceAnalyticsDeviceScope struct {
     Entity
     // Indicates the creation date and time for the custom device scope.
@@ -31,7 +31,7 @@ type UserExperienceAnalyticsDeviceScope struct {
     // The unique identifier for a user device scope tag Id used for the creation of device scope configuration.
     valueObjectId *string
 }
-// NewUserExperienceAnalyticsDeviceScope instantiates a new userExperienceAnalyticsDeviceScope and sets the default values.
+// NewUserExperienceAnalyticsDeviceScope instantiates a new UserExperienceAnalyticsDeviceScope and sets the default values.
 func NewUserExperienceAnalyticsDeviceScope()(*UserExperienceAnalyticsDeviceScope) {
     m := &UserExperienceAnalyticsDeviceScope{
         Entity: *NewEntity(),

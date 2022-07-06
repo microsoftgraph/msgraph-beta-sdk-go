@@ -18,6 +18,7 @@ type DeviceManagementSettingDefinitionable interface {
     GetIsTopLevel()(*bool)
     GetKeywords()([]string)
     GetPlaceholderText()(*string)
+    GetType()(*string)
     GetValueType()(*DeviceManangementIntentValueType)
     SetConstraints(value []DeviceManagementConstraintable)()
     SetDependencies(value []DeviceManagementSettingDependencyable)()
@@ -29,5 +30,6 @@ type DeviceManagementSettingDefinitionable interface {
     SetIsTopLevel(value *bool)()
     SetKeywords(value []string)()
     SetPlaceholderText(value *string)()
+    SetType(value *string)()
     SetValueType(value *DeviceManangementIntentValueType)()
 }

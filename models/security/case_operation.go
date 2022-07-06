@@ -6,7 +6,7 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
-// CaseOperation provides operations to manage the security singleton.
+// CaseOperation provides operations to manage the collection of activityStatistics entities.
 type CaseOperation struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
     // The type of action the operation represents. Possible values are: addToReviewSet,applyTags,contentExport,convertToPdf,estimateStatistics, purgeData
@@ -23,6 +23,8 @@ type CaseOperation struct {
     resultInfo ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ResultInfoable
     // The status of the case operation. Possible values are: notStarted, submissionFailed, running, succeeded, partiallySucceeded, failed.
     status *CaseOperationStatus
+    // The type property
+    type_escaped *string
 }
 // NewCaseOperation instantiates a new caseOperation and sets the default values.
 func NewCaseOperation()(*CaseOperation) {
@@ -171,6 +173,16 @@ func (m *CaseOperation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         }
         return nil
     }
+    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetPercentProgress gets the percentProgress property value. The progress of the operation.
@@ -195,6 +207,14 @@ func (m *CaseOperation) GetStatus()(*CaseOperationStatus) {
         return nil
     } else {
         return m.status
+    }
+}
+// GetType gets the type property value. The type property
+func (m *CaseOperation) GetType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
     }
 }
 // Serialize serializes information the current object
@@ -247,6 +267,12 @@ func (m *CaseOperation) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("type", m.GetType())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetAction sets the action property value. The type of action the operation represents. Possible values are: addToReviewSet,applyTags,contentExport,convertToPdf,estimateStatistics, purgeData
@@ -289,5 +315,11 @@ func (m *CaseOperation) SetResultInfo(value ie233ee762e29b4ba6970aa2a2efce4b7fde
 func (m *CaseOperation) SetStatus(value *CaseOperationStatus)() {
     if m != nil {
         m.status = value
+    }
+}
+// SetType sets the type property value. The type property
+func (m *CaseOperation) SetType(value *string)() {
+    if m != nil {
+        m.type_escaped = value
     }
 }

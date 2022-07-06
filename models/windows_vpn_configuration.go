@@ -13,6 +13,8 @@ type WindowsVpnConfiguration struct {
     customXml []byte
     // List of VPN Servers on the network. Make sure end users can access these network locations. This collection can contain a maximum of 500 elements.
     servers []VpnServerable
+    // The type property
+    type_escaped *string
 }
 // NewWindowsVpnConfiguration instantiates a new WindowsVpnConfiguration and sets the default values.
 func NewWindowsVpnConfiguration()(*WindowsVpnConfiguration) {
@@ -99,6 +101,16 @@ func (m *WindowsVpnConfiguration) GetFieldDeserializers()(map[string]func(i878a8
         }
         return nil
     }
+    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetServers gets the servers property value. List of VPN Servers on the network. Make sure end users can access these network locations. This collection can contain a maximum of 500 elements.
@@ -107,6 +119,14 @@ func (m *WindowsVpnConfiguration) GetServers()([]VpnServerable) {
         return nil
     } else {
         return m.servers
+    }
+}
+// GetType gets the type property value. The type property
+func (m *WindowsVpnConfiguration) GetType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
     }
 }
 // Serialize serializes information the current object
@@ -137,6 +157,12 @@ func (m *WindowsVpnConfiguration) Serialize(writer i878a80d2330e89d26896388a3f48
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("type", m.GetType())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetConnectionName sets the connectionName property value. Connection name displayed to the user.
@@ -155,5 +181,11 @@ func (m *WindowsVpnConfiguration) SetCustomXml(value []byte)() {
 func (m *WindowsVpnConfiguration) SetServers(value []VpnServerable)() {
     if m != nil {
         m.servers = value
+    }
+}
+// SetType sets the type property value. The type property
+func (m *WindowsVpnConfiguration) SetType(value *string)() {
+    if m != nil {
+        m.type_escaped = value
     }
 }

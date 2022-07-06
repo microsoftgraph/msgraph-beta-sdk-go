@@ -27,6 +27,7 @@ type DepEnrollmentBaseProfileable interface {
     GetSupportPhoneNumber()(*string)
     GetTermsAndConditionsDisabled()(*bool)
     GetTouchIdDisabled()(*bool)
+    GetType()(*string)
     SetAppleIdDisabled(value *bool)()
     SetApplePayDisabled(value *bool)()
     SetConfigurationWebUrl(value *bool)()
@@ -46,4 +47,5 @@ type DepEnrollmentBaseProfileable interface {
     SetSupportPhoneNumber(value *string)()
     SetTermsAndConditionsDisabled(value *bool)()
     SetTouchIdDisabled(value *bool)()
+    SetType(value *string)()
 }

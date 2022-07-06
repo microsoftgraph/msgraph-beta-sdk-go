@@ -12,10 +12,12 @@ type AndroidWiFiConfigurationable interface {
     GetConnectWhenNetworkNameIsHidden()(*bool)
     GetNetworkName()(*string)
     GetSsid()(*string)
+    GetType()(*string)
     GetWiFiSecurityType()(*AndroidWiFiSecurityType)
     SetConnectAutomatically(value *bool)()
     SetConnectWhenNetworkNameIsHidden(value *bool)()
     SetNetworkName(value *string)()
     SetSsid(value *string)()
+    SetType(value *string)()
     SetWiFiSecurityType(value *AndroidWiFiSecurityType)()
 }

@@ -12,6 +12,8 @@ type GenericError struct {
     code *string
     // The error message.
     message *string
+    // The type property
+    type_escaped *string
 }
 // NewGenericError instantiates a new genericError and sets the default values.
 func NewGenericError()(*GenericError) {
@@ -22,6 +24,25 @@ func NewGenericError()(*GenericError) {
 }
 // CreateGenericErrorFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateGenericErrorFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+    if parseNode != nil {
+        mappingValueNode, err := parseNode.GetChildNode("@odata.type")
+        if err != nil {
+            return nil, err
+        }
+        if mappingValueNode != nil {
+            mappingValue, err := mappingValueNode.GetStringValue()
+            if err != nil {
+                return nil, err
+            }
+            if mappingValue != nil {
+                mappingStr := *mappingValue
+                switch mappingStr {
+                    case "#microsoft.graph.accessReviewError":
+                        return NewAccessReviewError(), nil
+                }
+            }
+        }
+    }
     return NewGenericError(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -63,6 +84,16 @@ func (m *GenericError) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
         }
         return nil
     }
+    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetMessage gets the message property value. The error message.
@@ -71,6 +102,14 @@ func (m *GenericError) GetMessage()(*string) {
         return nil
     } else {
         return m.message
+    }
+}
+// GetType gets the type property value. The type property
+func (m *GenericError) GetType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
     }
 }
 // Serialize serializes information the current object
@@ -83,6 +122,12 @@ func (m *GenericError) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
     }
     {
         err := writer.WriteStringValue("message", m.GetMessage())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("type", m.GetType())
         if err != nil {
             return err
         }
@@ -111,5 +156,11 @@ func (m *GenericError) SetCode(value *string)() {
 func (m *GenericError) SetMessage(value *string)() {
     if m != nil {
         m.message = value
+    }
+}
+// SetType sets the type property value. The type property
+func (m *GenericError) SetType(value *string)() {
+    if m != nil {
+        m.type_escaped = value
     }
 }

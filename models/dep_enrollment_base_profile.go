@@ -45,6 +45,8 @@ type DepEnrollmentBaseProfile struct {
     termsAndConditionsDisabled *bool
     // Indicates if touch id setup pane is disabled
     touchIdDisabled *bool
+    // The type property
+    type_escaped *string
 }
 // NewDepEnrollmentBaseProfile instantiates a new DepEnrollmentBaseProfile and sets the default values.
 func NewDepEnrollmentBaseProfile()(*DepEnrollmentBaseProfile) {
@@ -319,6 +321,16 @@ func (m *DepEnrollmentBaseProfile) GetFieldDeserializers()(map[string]func(i878a
         }
         return nil
     }
+    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetIsDefault gets the isDefault property value. Indicates if this is the default profile
@@ -423,6 +435,14 @@ func (m *DepEnrollmentBaseProfile) GetTouchIdDisabled()(*bool) {
         return nil
     } else {
         return m.touchIdDisabled
+    }
+}
+// GetType gets the type property value. The type property
+func (m *DepEnrollmentBaseProfile) GetType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
     }
 }
 // Serialize serializes information the current object
@@ -545,6 +565,12 @@ func (m *DepEnrollmentBaseProfile) Serialize(writer i878a80d2330e89d26896388a3f4
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("type", m.GetType())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetAppleIdDisabled sets the appleIdDisabled property value. Indicates if Apple id setup pane is disabled
@@ -659,5 +685,11 @@ func (m *DepEnrollmentBaseProfile) SetTermsAndConditionsDisabled(value *bool)() 
 func (m *DepEnrollmentBaseProfile) SetTouchIdDisabled(value *bool)() {
     if m != nil {
         m.touchIdDisabled = value
+    }
+}
+// SetType sets the type property value. The type property
+func (m *DepEnrollmentBaseProfile) SetType(value *string)() {
+    if m != nil {
+        m.type_escaped = value
     }
 }

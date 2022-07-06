@@ -21,6 +21,8 @@ type WindowsPhone81CertificateProfileBase struct {
     subjectAlternativeNameType *SubjectAlternativeNameType
     // Certificate Subject Name Format. Possible values are: commonName, commonNameIncludingEmail, commonNameAsEmail, custom, commonNameAsIMEI, commonNameAsSerialNumber, commonNameAsAadDeviceId, commonNameAsIntuneDeviceId, commonNameAsDurableDeviceId.
     subjectNameFormat *SubjectNameFormat
+    // The type property
+    type_escaped *string
 }
 // NewWindowsPhone81CertificateProfileBase instantiates a new windowsPhone81CertificateProfileBase and sets the default values.
 func NewWindowsPhone81CertificateProfileBase()(*WindowsPhone81CertificateProfileBase) {
@@ -153,6 +155,16 @@ func (m *WindowsPhone81CertificateProfileBase) GetFieldDeserializers()(map[strin
         }
         return nil
     }
+    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetKeyStorageProvider gets the keyStorageProvider property value. Key Storage Provider (KSP). Possible values are: useTpmKspOtherwiseUseSoftwareKsp, useTpmKspOtherwiseFail, usePassportForWorkKspOtherwiseFail, useSoftwareKsp.
@@ -185,6 +197,14 @@ func (m *WindowsPhone81CertificateProfileBase) GetSubjectNameFormat()(*SubjectNa
         return nil
     } else {
         return m.subjectNameFormat
+    }
+}
+// GetType gets the type property value. The type property
+func (m *WindowsPhone81CertificateProfileBase) GetType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
     }
 }
 // Serialize serializes information the current object
@@ -243,6 +263,12 @@ func (m *WindowsPhone81CertificateProfileBase) Serialize(writer i878a80d2330e89d
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("type", m.GetType())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetCertificateValidityPeriodScale sets the certificateValidityPeriodScale property value. Scale for the Certificate Validity Period. Possible values are: days, months, years.
@@ -285,5 +311,11 @@ func (m *WindowsPhone81CertificateProfileBase) SetSubjectAlternativeNameType(val
 func (m *WindowsPhone81CertificateProfileBase) SetSubjectNameFormat(value *SubjectNameFormat)() {
     if m != nil {
         m.subjectNameFormat = value
+    }
+}
+// SetType sets the type property value. The type property
+func (m *WindowsPhone81CertificateProfileBase) SetType(value *string)() {
+    if m != nil {
+        m.type_escaped = value
     }
 }

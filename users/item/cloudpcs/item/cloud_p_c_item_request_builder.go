@@ -7,6 +7,7 @@ import (
     i07d40583df1b4aa1b0a3e7e32084dc8b4ab30be70327b272f2ad24d3ccd4095e "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/cloudpcs/item/troubleshoot"
     i97a56d161f68b1fd3ad12ad108342214d2bfeedae4b18c9748dc91bc1e04df9f "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/cloudpcs/item/changeuseraccounttype"
     i97b00529155a730b3ecc9a3f5590a17060250dc44e1d660aed1789b4345f43c0 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/cloudpcs/item/reprovision"
+    ia61fe12a9afb510b22d29ffdd8c08791cfe9a108eb25a9e8d7a920279c6220ba "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/cloudpcs/item/getcloudpcconnectivityhistory"
     iabd9a09efde7cff52110da1822c7742e59aeb1e5915ccfe038d929a6b7ad268b "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/cloudpcs/item/endgraceperiod"
     iecadcd2b05f98b70514e4bc46dddb17b2c7871f504fd101f5951b02df655c022 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/cloudpcs/item/rename"
     ief59a775175af2e50c2ba2215af92a5bdc70b7dceef0de8704dccb1033d7ed7e "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/cloudpcs/item/reboot"
@@ -155,6 +156,10 @@ func (m *CloudPCItemRequestBuilder) EndGracePeriod()(*iabd9a09efde7cff52110da182
 // Get get cloudPCs from users
 func (m *CloudPCItemRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPCable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
+}
+// GetCloudPcConnectivityHistory provides operations to call the getCloudPcConnectivityHistory method.
+func (m *CloudPCItemRequestBuilder) GetCloudPcConnectivityHistory()(*ia61fe12a9afb510b22d29ffdd8c08791cfe9a108eb25a9e8d7a920279c6220ba.GetCloudPcConnectivityHistoryRequestBuilder) {
+    return ia61fe12a9afb510b22d29ffdd8c08791cfe9a108eb25a9e8d7a920279c6220ba.NewGetCloudPcConnectivityHistoryRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // GetCloudPcLaunchInfo provides operations to call the getCloudPcLaunchInfo method.
 func (m *CloudPCItemRequestBuilder) GetCloudPcLaunchInfo()(*if4dc1d7e15dcd2713c85cab00a5a53d94f288c3f116521764c65b1ad462b0eb0.GetCloudPcLaunchInfoRequestBuilder) {

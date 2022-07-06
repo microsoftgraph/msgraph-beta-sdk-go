@@ -22,7 +22,7 @@ type TransitiveMemberOfRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// TransitiveMemberOfRequestBuilderGetQueryParameters get transitiveMemberOf from groups
+// TransitiveMemberOfRequestBuilderGetQueryParameters the groups that a group is a member of, either directly and through nested membership. Nullable.
 type TransitiveMemberOfRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -77,11 +77,11 @@ func NewTransitiveMemberOfRequestBuilder(rawUrl string, requestAdapter i2ae4187f
 func (m *TransitiveMemberOfRequestBuilder) Count()(*ifc0c576c85f182a8c24de4d78ba2a4aaa8336be5a9e7f5e0ec0889151419c3af.CountRequestBuilder) {
     return ifc0c576c85f182a8c24de4d78ba2a4aaa8336be5a9e7f5e0ec0889151419c3af.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation get transitiveMemberOf from groups
+// CreateGetRequestInformation the groups that a group is a member of, either directly and through nested membership. Nullable.
 func (m *TransitiveMemberOfRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration get transitiveMemberOf from groups
+// CreateGetRequestInformationWithRequestConfiguration the groups that a group is a member of, either directly and through nested membership. Nullable.
 func (m *TransitiveMemberOfRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *TransitiveMemberOfRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -101,11 +101,11 @@ func (m *TransitiveMemberOfRequestBuilder) CreateGetRequestInformationWithReques
 func (m *TransitiveMemberOfRequestBuilder) Device()(*i870a6ce3d01b361e259cf4ac3c7bdf5c5766b815800797cdf2a667aac697a6ef.DeviceRequestBuilder) {
     return i870a6ce3d01b361e259cf4ac3c7bdf5c5766b815800797cdf2a667aac697a6ef.NewDeviceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Get get transitiveMemberOf from groups
+// Get the groups that a group is a member of, either directly and through nested membership. Nullable.
 func (m *TransitiveMemberOfRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectCollectionResponseable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler get transitiveMemberOf from groups
+// GetWithRequestConfigurationAndResponseHandler the groups that a group is a member of, either directly and through nested membership. Nullable.
 func (m *TransitiveMemberOfRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *TransitiveMemberOfRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

@@ -6,7 +6,7 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
-// DataSourceContainer provides operations to manage the security singleton.
+// DataSourceContainer provides operations to manage the collection of activityStatistics entities.
 type DataSourceContainer struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
     // Created date and time of the dataSourceContainer entity.
@@ -21,6 +21,8 @@ type DataSourceContainer struct {
     releasedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Latest status of the dataSourceContainer. Possible values are: Active, Released.
     status *DataSourceContainerStatus
+    // The type property
+    type_escaped *string
 }
 // NewDataSourceContainer instantiates a new dataSourceContainer and sets the default values.
 func NewDataSourceContainer()(*DataSourceContainer) {
@@ -133,6 +135,16 @@ func (m *DataSourceContainer) GetFieldDeserializers()(map[string]func(i878a80d23
         }
         return nil
     }
+    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetHoldStatus gets the holdStatus property value. The hold status of the dataSourceContainer.The possible values are: notApplied, applied, applying, removing, partial
@@ -165,6 +177,14 @@ func (m *DataSourceContainer) GetStatus()(*DataSourceContainerStatus) {
         return nil
     } else {
         return m.status
+    }
+}
+// GetType gets the type property value. The type property
+func (m *DataSourceContainer) GetType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
     }
 }
 // Serialize serializes information the current object
@@ -211,6 +231,12 @@ func (m *DataSourceContainer) Serialize(writer i878a80d2330e89d26896388a3f487eef
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("type", m.GetType())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetCreatedDateTime sets the createdDateTime property value. Created date and time of the dataSourceContainer entity.
@@ -247,5 +273,11 @@ func (m *DataSourceContainer) SetReleasedDateTime(value *i336074805fc853987abe6f
 func (m *DataSourceContainer) SetStatus(value *DataSourceContainerStatus)() {
     if m != nil {
         m.status = value
+    }
+}
+// SetType sets the type property value. The type property
+func (m *DataSourceContainer) SetType(value *string)() {
+    if m != nil {
+        m.type_escaped = value
     }
 }

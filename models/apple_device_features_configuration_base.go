@@ -9,6 +9,8 @@ type AppleDeviceFeaturesConfigurationBase struct {
     DeviceConfiguration
     // An array of AirPrint printers that should always be shown. This collection can contain a maximum of 500 elements.
     airPrintDestinations []AirPrintDestinationable
+    // The type property
+    type_escaped *string
 }
 // NewAppleDeviceFeaturesConfigurationBase instantiates a new AppleDeviceFeaturesConfigurationBase and sets the default values.
 func NewAppleDeviceFeaturesConfigurationBase()(*AppleDeviceFeaturesConfigurationBase) {
@@ -67,7 +69,25 @@ func (m *AppleDeviceFeaturesConfigurationBase) GetFieldDeserializers()(map[strin
         }
         return nil
     }
+    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetType(val)
+        }
+        return nil
+    }
     return res
+}
+// GetType gets the type property value. The type property
+func (m *AppleDeviceFeaturesConfigurationBase) GetType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
+    }
 }
 // Serialize serializes information the current object
 func (m *AppleDeviceFeaturesConfigurationBase) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -85,11 +105,23 @@ func (m *AppleDeviceFeaturesConfigurationBase) Serialize(writer i878a80d2330e89d
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("type", m.GetType())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetAirPrintDestinations sets the airPrintDestinations property value. An array of AirPrint printers that should always be shown. This collection can contain a maximum of 500 elements.
 func (m *AppleDeviceFeaturesConfigurationBase) SetAirPrintDestinations(value []AirPrintDestinationable)() {
     if m != nil {
         m.airPrintDestinations = value
+    }
+}
+// SetType sets the type property value. The type property
+func (m *AppleDeviceFeaturesConfigurationBase) SetType(value *string)() {
+    if m != nil {
+        m.type_escaped = value
     }
 }

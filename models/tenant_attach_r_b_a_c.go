@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// TenantAttachRBAC singleton entity that acts as a container for tenant attach enablement functionality.
+// TenantAttachRBAC 
 type TenantAttachRBAC struct {
     Entity
 }
-// NewTenantAttachRBAC instantiates a new tenantAttachRBAC and sets the default values.
+// NewTenantAttachRBAC instantiates a new TenantAttachRBAC and sets the default values.
 func NewTenantAttachRBAC()(*TenantAttachRBAC) {
     m := &TenantAttachRBAC{
         Entity: *NewEntity(),

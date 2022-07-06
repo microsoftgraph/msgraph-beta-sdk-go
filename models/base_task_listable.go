@@ -11,7 +11,9 @@ type BaseTaskListable interface {
     GetDisplayName()(*string)
     GetExtensions()([]Extensionable)
     GetTasks()([]BaseTaskable)
+    GetType()(*string)
     SetDisplayName(value *string)()
     SetExtensions(value []Extensionable)()
     SetTasks(value []BaseTaskable)()
+    SetType(value *string)()
 }

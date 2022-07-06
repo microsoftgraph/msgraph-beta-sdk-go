@@ -6,7 +6,7 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
-// Search provides operations to manage the security singleton.
+// Search provides operations to manage the collection of activityStatistics entities.
 type Search struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
     // The contentQuery property
@@ -23,6 +23,8 @@ type Search struct {
     lastModifiedBy ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentitySetable
     // The lastModifiedDateTime property
     lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
+    // The type property
+    type_escaped *string
 }
 // NewSearch instantiates a new search and sets the default values.
 func NewSearch()(*Search) {
@@ -169,6 +171,16 @@ func (m *Search) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689638
         }
         return nil
     }
+    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetLastModifiedBy gets the lastModifiedBy property value. The lastModifiedBy property
@@ -185,6 +197,14 @@ func (m *Search) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f
         return nil
     } else {
         return m.lastModifiedDateTime
+    }
+}
+// GetType gets the type property value. The type property
+func (m *Search) GetType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
     }
 }
 // Serialize serializes information the current object
@@ -235,6 +255,12 @@ func (m *Search) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("type", m.GetType())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetContentQuery sets the contentQuery property value. The contentQuery property
@@ -277,5 +303,11 @@ func (m *Search) SetLastModifiedBy(value ie233ee762e29b4ba6970aa2a2efce4b7fde116
 func (m *Search) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     if m != nil {
         m.lastModifiedDateTime = value
+    }
+}
+// SetType sets the type property value. The type property
+func (m *Search) SetType(value *string)() {
+    if m != nil {
+        m.type_escaped = value
     }
 }

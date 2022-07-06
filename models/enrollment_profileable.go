@@ -14,10 +14,12 @@ type EnrollmentProfileable interface {
     GetEnableAuthenticationViaCompanyPortal()(*bool)
     GetRequireCompanyPortalOnSetupAssistantEnrolledDevices()(*bool)
     GetRequiresUserAuthentication()(*bool)
+    GetType()(*string)
     SetConfigurationEndpointUrl(value *string)()
     SetDescription(value *string)()
     SetDisplayName(value *string)()
     SetEnableAuthenticationViaCompanyPortal(value *bool)()
     SetRequireCompanyPortalOnSetupAssistantEnrolledDevices(value *bool)()
     SetRequiresUserAuthentication(value *bool)()
+    SetType(value *string)()
 }

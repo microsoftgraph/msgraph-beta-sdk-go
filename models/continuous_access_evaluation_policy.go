@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ContinuousAccessEvaluationPolicy provides operations to manage the identityContainer singleton.
+// ContinuousAccessEvaluationPolicy 
 type ContinuousAccessEvaluationPolicy struct {
     Entity
     // Continuous access evaluation automatically blocks access to resources and applications in near real time when a user's access is removed or a client IP address changes. Read-only.
@@ -20,7 +20,7 @@ type ContinuousAccessEvaluationPolicy struct {
     // The collection of user identifiers in scope for evaluation. All users are in scope when the collection is empty. Read-only.
     users []string
 }
-// NewContinuousAccessEvaluationPolicy instantiates a new continuousAccessEvaluationPolicy and sets the default values.
+// NewContinuousAccessEvaluationPolicy instantiates a new ContinuousAccessEvaluationPolicy and sets the default values.
 func NewContinuousAccessEvaluationPolicy()(*ContinuousAccessEvaluationPolicy) {
     m := &ContinuousAccessEvaluationPolicy{
         Entity: *NewEntity(),

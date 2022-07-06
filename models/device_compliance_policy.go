@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DeviceCompliancePolicy this is the base class for Compliance policy. Compliance policies are platform specific and individual per-platform compliance policies inherit from here. 
+// DeviceCompliancePolicy 
 type DeviceCompliancePolicy struct {
     Entity
     // The collection of assignments for this compliance policy.
@@ -28,6 +28,8 @@ type DeviceCompliancePolicy struct {
     roleScopeTagIds []string
     // The list of scheduled action for this rule
     scheduledActionsForRule []DeviceComplianceScheduledActionForRuleable
+    // The type property
+    type_escaped *string
     // List of DeviceComplianceUserStatus.
     userStatuses []DeviceComplianceUserStatusable
     // Device compliance users status overview
@@ -35,7 +37,7 @@ type DeviceCompliancePolicy struct {
     // Version of the device configuration.
     version *int32
 }
-// NewDeviceCompliancePolicy instantiates a new deviceCompliancePolicy and sets the default values.
+// NewDeviceCompliancePolicy instantiates a new DeviceCompliancePolicy and sets the default values.
 func NewDeviceCompliancePolicy()(*DeviceCompliancePolicy) {
     m := &DeviceCompliancePolicy{
         Entity: *NewEntity(),
@@ -266,6 +268,16 @@ func (m *DeviceCompliancePolicy) GetFieldDeserializers()(map[string]func(i878a80
         }
         return nil
     }
+    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetType(val)
+        }
+        return nil
+    }
     res["userStatuses"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateDeviceComplianceUserStatusFromDiscriminatorValue)
         if err != nil {
@@ -324,6 +336,14 @@ func (m *DeviceCompliancePolicy) GetScheduledActionsForRule()([]DeviceCompliance
         return nil
     } else {
         return m.scheduledActionsForRule
+    }
+}
+// GetType gets the type property value. The type property
+func (m *DeviceCompliancePolicy) GetType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
     }
 }
 // GetUserStatuses gets the userStatuses property value. List of DeviceComplianceUserStatus.
@@ -432,6 +452,12 @@ func (m *DeviceCompliancePolicy) Serialize(writer i878a80d2330e89d26896388a3f487
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("type", m.GetType())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetUserStatuses() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetUserStatuses()))
         for i, v := range m.GetUserStatuses() {
@@ -514,6 +540,12 @@ func (m *DeviceCompliancePolicy) SetRoleScopeTagIds(value []string)() {
 func (m *DeviceCompliancePolicy) SetScheduledActionsForRule(value []DeviceComplianceScheduledActionForRuleable)() {
     if m != nil {
         m.scheduledActionsForRule = value
+    }
+}
+// SetType sets the type property value. The type property
+func (m *DeviceCompliancePolicy) SetType(value *string)() {
+    if m != nil {
+        m.type_escaped = value
     }
 }
 // SetUserStatuses sets the userStatuses property value. List of DeviceComplianceUserStatus.

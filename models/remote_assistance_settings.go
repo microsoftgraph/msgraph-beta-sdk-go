@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// RemoteAssistanceSettings remote assistance settings for the account
+// RemoteAssistanceSettings 
 type RemoteAssistanceSettings struct {
     Entity
     // Indicates if sessions to unenrolled devices are allowed for the account. This setting is configurable by the admin. Default value is false.
@@ -12,7 +12,7 @@ type RemoteAssistanceSettings struct {
     // The current state of remote assistance for the account. Possible values are: disabled, enabled. This setting is configurable by the admin. Remote assistance settings that have not yet been configured by the admin have a disabled state. Returned by default. Possible values are: disabled, enabled.
     remoteAssistanceState *RemoteAssistanceState
 }
-// NewRemoteAssistanceSettings instantiates a new remoteAssistanceSettings and sets the default values.
+// NewRemoteAssistanceSettings instantiates a new RemoteAssistanceSettings and sets the default values.
 func NewRemoteAssistanceSettings()(*RemoteAssistanceSettings) {
     m := &RemoteAssistanceSettings{
         Entity: *NewEntity(),

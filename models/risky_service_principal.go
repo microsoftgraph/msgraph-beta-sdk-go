@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// RiskyServicePrincipal provides operations to manage the identityProtectionRoot singleton.
+// RiskyServicePrincipal 
 type RiskyServicePrincipal struct {
     Entity
     // true if the service principal account is enabled; otherwise, false.
@@ -28,8 +28,10 @@ type RiskyServicePrincipal struct {
     riskState *RiskState
     // Identifies whether the service principal represents an Application, a ManagedIdentity, or a legacy application (socialIdp). This is set by Azure AD internally and is inherited from servicePrincipal.
     servicePrincipalType *string
+    // The type property
+    type_escaped *string
 }
-// NewRiskyServicePrincipal instantiates a new riskyServicePrincipal and sets the default values.
+// NewRiskyServicePrincipal instantiates a new RiskyServicePrincipal and sets the default values.
 func NewRiskyServicePrincipal()(*RiskyServicePrincipal) {
     m := &RiskyServicePrincipal{
         Entity: *NewEntity(),
@@ -190,6 +192,16 @@ func (m *RiskyServicePrincipal) GetFieldDeserializers()(map[string]func(i878a80d
         }
         return nil
     }
+    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetHistory gets the history property value. Represents the risk history of Azure AD service principals.
@@ -246,6 +258,14 @@ func (m *RiskyServicePrincipal) GetServicePrincipalType()(*string) {
         return nil
     } else {
         return m.servicePrincipalType
+    }
+}
+// GetType gets the type property value. The type property
+func (m *RiskyServicePrincipal) GetType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
     }
 }
 // Serialize serializes information the current object
@@ -321,6 +341,12 @@ func (m *RiskyServicePrincipal) Serialize(writer i878a80d2330e89d26896388a3f487e
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("type", m.GetType())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetAccountEnabled sets the accountEnabled property value. true if the service principal account is enabled; otherwise, false.
@@ -381,5 +407,11 @@ func (m *RiskyServicePrincipal) SetRiskState(value *RiskState)() {
 func (m *RiskyServicePrincipal) SetServicePrincipalType(value *string)() {
     if m != nil {
         m.servicePrincipalType = value
+    }
+}
+// SetType sets the type property value. The type property
+func (m *RiskyServicePrincipal) SetType(value *string)() {
+    if m != nil {
+        m.type_escaped = value
     }
 }

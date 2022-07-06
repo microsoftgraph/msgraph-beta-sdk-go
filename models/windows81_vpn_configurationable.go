@@ -13,9 +13,11 @@ type Windows81VpnConfigurationable interface {
     GetEnableSplitTunneling()(*bool)
     GetLoginGroupOrDomain()(*string)
     GetProxyServer()(Windows81VpnProxyServerable)
+    GetType()(*string)
     SetApplyOnlyToWindows81(value *bool)()
     SetConnectionType(value *WindowsVpnConnectionType)()
     SetEnableSplitTunneling(value *bool)()
     SetLoginGroupOrDomain(value *string)()
     SetProxyServer(value Windows81VpnProxyServerable)()
+    SetType(value *string)()
 }

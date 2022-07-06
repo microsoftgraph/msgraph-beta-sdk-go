@@ -13,8 +13,10 @@ type AttachmentBaseable interface {
     GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetName()(*string)
     GetSize()(*int32)
+    GetType()(*string)
     SetContentType(value *string)()
     SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetName(value *string)()
     SetSize(value *int32)()
+    SetType(value *string)()
 }

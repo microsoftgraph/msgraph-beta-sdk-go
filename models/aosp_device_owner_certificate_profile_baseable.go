@@ -15,6 +15,7 @@ type AospDeviceOwnerCertificateProfileBaseable interface {
     GetRootCertificate()(AospDeviceOwnerTrustedRootCertificateable)
     GetSubjectAlternativeNameType()(*SubjectAlternativeNameType)
     GetSubjectNameFormat()(*SubjectNameFormat)
+    GetType()(*string)
     SetCertificateValidityPeriodScale(value *CertificateValidityPeriodScale)()
     SetCertificateValidityPeriodValue(value *int32)()
     SetExtendedKeyUsages(value []ExtendedKeyUsageable)()
@@ -22,4 +23,5 @@ type AospDeviceOwnerCertificateProfileBaseable interface {
     SetRootCertificate(value AospDeviceOwnerTrustedRootCertificateable)()
     SetSubjectAlternativeNameType(value *SubjectAlternativeNameType)()
     SetSubjectNameFormat(value *SubjectNameFormat)()
+    SetType(value *string)()
 }

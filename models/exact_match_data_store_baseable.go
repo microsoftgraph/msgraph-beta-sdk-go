@@ -13,8 +13,10 @@ type ExactMatchDataStoreBaseable interface {
     GetDataLastUpdatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetDescription()(*string)
     GetDisplayName()(*string)
+    GetType()(*string)
     SetColumns(value []ExactDataMatchStoreColumnable)()
     SetDataLastUpdatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetDescription(value *string)()
     SetDisplayName(value *string)()
+    SetType(value *string)()
 }

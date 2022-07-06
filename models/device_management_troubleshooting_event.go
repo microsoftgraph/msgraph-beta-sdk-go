@@ -18,6 +18,8 @@ type DeviceManagementTroubleshootingEvent struct {
     eventName *string
     // Object containing detailed information about the error and its remediation.
     troubleshootingErrorDetails DeviceManagementTroubleshootingErrorDetailsable
+    // The type property
+    type_escaped *string
 }
 // NewDeviceManagementTroubleshootingEvent instantiates a new deviceManagementTroubleshootingEvent and sets the default values.
 func NewDeviceManagementTroubleshootingEvent()(*DeviceManagementTroubleshootingEvent) {
@@ -142,6 +144,16 @@ func (m *DeviceManagementTroubleshootingEvent) GetFieldDeserializers()(map[strin
         }
         return nil
     }
+    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetTroubleshootingErrorDetails gets the troubleshootingErrorDetails property value. Object containing detailed information about the error and its remediation.
@@ -150,6 +162,14 @@ func (m *DeviceManagementTroubleshootingEvent) GetTroubleshootingErrorDetails()(
         return nil
     } else {
         return m.troubleshootingErrorDetails
+    }
+}
+// GetType gets the type property value. The type property
+func (m *DeviceManagementTroubleshootingEvent) GetType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
     }
 }
 // Serialize serializes information the current object
@@ -192,6 +212,12 @@ func (m *DeviceManagementTroubleshootingEvent) Serialize(writer i878a80d2330e89d
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("type", m.GetType())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetAdditionalInformation sets the additionalInformation property value. A set of string key and string value pairs which provides additional information on the Troubleshooting event
@@ -222,5 +248,11 @@ func (m *DeviceManagementTroubleshootingEvent) SetEventName(value *string)() {
 func (m *DeviceManagementTroubleshootingEvent) SetTroubleshootingErrorDetails(value DeviceManagementTroubleshootingErrorDetailsable)() {
     if m != nil {
         m.troubleshootingErrorDetails = value
+    }
+}
+// SetType sets the type property value. The type property
+func (m *DeviceManagementTroubleshootingEvent) SetType(value *string)() {
+    if m != nil {
+        m.type_escaped = value
     }
 }

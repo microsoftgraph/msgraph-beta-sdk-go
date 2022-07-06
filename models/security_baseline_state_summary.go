@@ -17,6 +17,8 @@ type SecurityBaselineStateSummary struct {
     notSecureCount *int32
     // Number of secure devices
     secureCount *int32
+    // The type property
+    type_escaped *string
     // Number of unknown devices
     unknownCount *int32
 }
@@ -119,6 +121,16 @@ func (m *SecurityBaselineStateSummary) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
+    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetType(val)
+        }
+        return nil
+    }
     res["unknownCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
@@ -153,6 +165,14 @@ func (m *SecurityBaselineStateSummary) GetSecureCount()(*int32) {
         return nil
     } else {
         return m.secureCount
+    }
+}
+// GetType gets the type property value. The type property
+func (m *SecurityBaselineStateSummary) GetType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
     }
 }
 // GetUnknownCount gets the unknownCount property value. Number of unknown devices
@@ -200,6 +220,12 @@ func (m *SecurityBaselineStateSummary) Serialize(writer i878a80d2330e89d26896388
         }
     }
     {
+        err = writer.WriteStringValue("type", m.GetType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteInt32Value("unknownCount", m.GetUnknownCount())
         if err != nil {
             return err
@@ -235,6 +261,12 @@ func (m *SecurityBaselineStateSummary) SetNotSecureCount(value *int32)() {
 func (m *SecurityBaselineStateSummary) SetSecureCount(value *int32)() {
     if m != nil {
         m.secureCount = value
+    }
+}
+// SetType sets the type property value. The type property
+func (m *SecurityBaselineStateSummary) SetType(value *string)() {
+    if m != nil {
+        m.type_escaped = value
     }
 }
 // SetUnknownCount sets the unknownCount property value. Number of unknown devices

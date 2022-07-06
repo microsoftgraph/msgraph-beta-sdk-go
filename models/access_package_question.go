@@ -18,6 +18,8 @@ type AccessPackageQuestion struct {
     sequence *int32
     // The text of the question to show to the requestor.
     text AccessPackageLocalizedContentable
+    // The type property
+    type_escaped *string
 }
 // NewAccessPackageQuestion instantiates a new accessPackageQuestion and sets the default values.
 func NewAccessPackageQuestion()(*AccessPackageQuestion) {
@@ -28,6 +30,27 @@ func NewAccessPackageQuestion()(*AccessPackageQuestion) {
 }
 // CreateAccessPackageQuestionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateAccessPackageQuestionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+    if parseNode != nil {
+        mappingValueNode, err := parseNode.GetChildNode("@odata.type")
+        if err != nil {
+            return nil, err
+        }
+        if mappingValueNode != nil {
+            mappingValue, err := mappingValueNode.GetStringValue()
+            if err != nil {
+                return nil, err
+            }
+            if mappingValue != nil {
+                mappingStr := *mappingValue
+                switch mappingStr {
+                    case "#microsoft.graph.accessPackageMultipleChoiceQuestion":
+                        return NewAccessPackageMultipleChoiceQuestion(), nil
+                    case "#microsoft.graph.accessPackageTextInputQuestion":
+                        return NewAccessPackageTextInputQuestion(), nil
+                }
+            }
+        }
+    }
     return NewAccessPackageQuestion(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -91,6 +114,16 @@ func (m *AccessPackageQuestion) GetFieldDeserializers()(map[string]func(i878a80d
         }
         return nil
     }
+    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetId gets the id property value. ID of the question.
@@ -133,6 +166,14 @@ func (m *AccessPackageQuestion) GetText()(AccessPackageLocalizedContentable) {
         return m.text
     }
 }
+// GetType gets the type property value. The type property
+func (m *AccessPackageQuestion) GetType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
+    }
+}
 // Serialize serializes information the current object
 func (m *AccessPackageQuestion) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
@@ -161,6 +202,12 @@ func (m *AccessPackageQuestion) Serialize(writer i878a80d2330e89d26896388a3f487e
     }
     {
         err := writer.WriteObjectValue("text", m.GetText())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("type", m.GetType())
         if err != nil {
             return err
         }
@@ -207,5 +254,11 @@ func (m *AccessPackageQuestion) SetSequence(value *int32)() {
 func (m *AccessPackageQuestion) SetText(value AccessPackageLocalizedContentable)() {
     if m != nil {
         m.text = value
+    }
+}
+// SetType sets the type property value. The type property
+func (m *AccessPackageQuestion) SetType(value *string)() {
+    if m != nil {
+        m.type_escaped = value
     }
 }

@@ -19,6 +19,8 @@ type AospDeviceOwnerWiFiConfiguration struct {
     preSharedKeyIsSet *bool
     // This is the name of the Wi-Fi network that is broadcast to all devices.
     ssid *string
+    // The type property
+    type_escaped *string
     // Indicates whether Wi-Fi endpoint uses an EAP based security type. Possible values are: open, wep, wpaPersonal, wpaEnterprise.
     wiFiSecurityType *AospDeviceOwnerWiFiSecurityType
 }
@@ -131,6 +133,16 @@ func (m *AospDeviceOwnerWiFiConfiguration) GetFieldDeserializers()(map[string]fu
         }
         return nil
     }
+    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetType(val)
+        }
+        return nil
+    }
     res["wiFiSecurityType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseAospDeviceOwnerWiFiSecurityType)
         if err != nil {
@@ -173,6 +185,14 @@ func (m *AospDeviceOwnerWiFiConfiguration) GetSsid()(*string) {
         return nil
     } else {
         return m.ssid
+    }
+}
+// GetType gets the type property value. The type property
+func (m *AospDeviceOwnerWiFiConfiguration) GetType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
     }
 }
 // GetWiFiSecurityType gets the wiFiSecurityType property value. Indicates whether Wi-Fi endpoint uses an EAP based security type. Possible values are: open, wep, wpaPersonal, wpaEnterprise.
@@ -225,6 +245,12 @@ func (m *AospDeviceOwnerWiFiConfiguration) Serialize(writer i878a80d2330e89d2689
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("type", m.GetType())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetWiFiSecurityType() != nil {
         cast := (*m.GetWiFiSecurityType()).String()
         err = writer.WriteStringValue("wiFiSecurityType", &cast)
@@ -268,6 +294,12 @@ func (m *AospDeviceOwnerWiFiConfiguration) SetPreSharedKeyIsSet(value *bool)() {
 func (m *AospDeviceOwnerWiFiConfiguration) SetSsid(value *string)() {
     if m != nil {
         m.ssid = value
+    }
+}
+// SetType sets the type property value. The type property
+func (m *AospDeviceOwnerWiFiConfiguration) SetType(value *string)() {
+    if m != nil {
+        m.type_escaped = value
     }
 }
 // SetWiFiSecurityType sets the wiFiSecurityType property value. Indicates whether Wi-Fi endpoint uses an EAP based security type. Possible values are: open, wep, wpaPersonal, wpaEnterprise.

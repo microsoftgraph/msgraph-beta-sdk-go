@@ -19,6 +19,7 @@ type RiskyServicePrincipalable interface {
     GetRiskLevel()(*RiskLevel)
     GetRiskState()(*RiskState)
     GetServicePrincipalType()(*string)
+    GetType()(*string)
     SetAccountEnabled(value *bool)()
     SetAppId(value *string)()
     SetDisplayName(value *string)()
@@ -29,4 +30,5 @@ type RiskyServicePrincipalable interface {
     SetRiskLevel(value *RiskLevel)()
     SetRiskState(value *RiskState)()
     SetServicePrincipalType(value *string)()
+    SetType(value *string)()
 }

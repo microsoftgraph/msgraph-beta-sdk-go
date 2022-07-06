@@ -12,6 +12,8 @@ type EmailAddress struct {
     address *string
     // The display name of an entity instance.
     name *string
+    // The type property
+    type_escaped *string
 }
 // NewEmailAddress instantiates a new emailAddress and sets the default values.
 func NewEmailAddress()(*EmailAddress) {
@@ -22,6 +24,25 @@ func NewEmailAddress()(*EmailAddress) {
 }
 // CreateEmailAddressFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateEmailAddressFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+    if parseNode != nil {
+        mappingValueNode, err := parseNode.GetChildNode("@odata.type")
+        if err != nil {
+            return nil, err
+        }
+        if mappingValueNode != nil {
+            mappingValue, err := mappingValueNode.GetStringValue()
+            if err != nil {
+                return nil, err
+            }
+            if mappingValue != nil {
+                mappingStr := *mappingValue
+                switch mappingStr {
+                    case "#microsoft.graph.typedEmailAddress":
+                        return NewTypedEmailAddress(), nil
+                }
+            }
+        }
+    }
     return NewEmailAddress(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -63,6 +84,16 @@ func (m *EmailAddress) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
         }
         return nil
     }
+    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetName gets the name property value. The display name of an entity instance.
@@ -71,6 +102,14 @@ func (m *EmailAddress) GetName()(*string) {
         return nil
     } else {
         return m.name
+    }
+}
+// GetType gets the type property value. The type property
+func (m *EmailAddress) GetType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
     }
 }
 // Serialize serializes information the current object
@@ -83,6 +122,12 @@ func (m *EmailAddress) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
     }
     {
         err := writer.WriteStringValue("name", m.GetName())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("type", m.GetType())
         if err != nil {
             return err
         }
@@ -111,5 +156,11 @@ func (m *EmailAddress) SetAddress(value *string)() {
 func (m *EmailAddress) SetName(value *string)() {
     if m != nil {
         m.name = value
+    }
+}
+// SetType sets the type property value. The type property
+func (m *EmailAddress) SetType(value *string)() {
+    if m != nil {
+        m.type_escaped = value
     }
 }

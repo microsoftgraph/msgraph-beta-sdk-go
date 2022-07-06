@@ -14,9 +14,11 @@ type DeviceManagementTroubleshootingEventable interface {
     GetEventDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetEventName()(*string)
     GetTroubleshootingErrorDetails()(DeviceManagementTroubleshootingErrorDetailsable)
+    GetType()(*string)
     SetAdditionalInformation(value []KeyValuePairable)()
     SetCorrelationId(value *string)()
     SetEventDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetEventName(value *string)()
     SetTroubleshootingErrorDetails(value DeviceManagementTroubleshootingErrorDetailsable)()
+    SetType(value *string)()
 }

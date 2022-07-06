@@ -15,6 +15,7 @@ type DeviceManagementResourceAccessProfileBaseable interface {
     GetDisplayName()(*string)
     GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetRoleScopeTagIds()([]string)
+    GetType()(*string)
     GetVersion()(*int32)
     SetAssignments(value []DeviceManagementResourceAccessProfileAssignmentable)()
     SetCreationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
@@ -22,5 +23,6 @@ type DeviceManagementResourceAccessProfileBaseable interface {
     SetDisplayName(value *string)()
     SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetRoleScopeTagIds(value []string)()
+    SetType(value *string)()
     SetVersion(value *int32)()
 }

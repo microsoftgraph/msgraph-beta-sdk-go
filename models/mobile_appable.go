@@ -32,6 +32,7 @@ type MobileAppable interface {
     GetRoleScopeTagIds()([]string)
     GetSupersededAppCount()(*int32)
     GetSupersedingAppCount()(*int32)
+    GetType()(*string)
     GetUploadState()(*int32)
     GetUserStatuses()([]UserAppInstallStatusable)
     SetAssignments(value []MobileAppAssignmentable)()
@@ -57,6 +58,7 @@ type MobileAppable interface {
     SetRoleScopeTagIds(value []string)()
     SetSupersededAppCount(value *int32)()
     SetSupersedingAppCount(value *int32)()
+    SetType(value *string)()
     SetUploadState(value *int32)()
     SetUserStatuses(value []UserAppInstallStatusable)()
 }

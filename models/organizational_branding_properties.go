@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// OrganizationalBrandingProperties provides operations to manage the collection of administrativeUnit entities.
+// OrganizationalBrandingProperties provides operations to manage the collection of activityStatistics entities.
 type OrganizationalBrandingProperties struct {
     Entity
     // Color that appears in place of the background image in low-bandwidth connections. We recommend that you use the primary color of your banner logo or your organization color. Specify this in hexadecimal format, for example, white is #FFFFFF.
@@ -51,6 +51,8 @@ type OrganizationalBrandingProperties struct {
     squareLogo []byte
     // A relative URL for the squareLogo property that is combined with a CDN base URL from the cdnList to provide the version served by a CDN. Read-only.
     squareLogoRelativeUrl *string
+    // The type property
+    type_escaped *string
     // A string that shows as the hint in the username textbox on the sign-in screen. This text must be a Unicode, without links or code, and can't exceed 64 characters.
     usernameHintText *string
 }
@@ -449,6 +451,16 @@ func (m *OrganizationalBrandingProperties) GetFieldDeserializers()(map[string]fu
         }
         return nil
     }
+    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetType(val)
+        }
+        return nil
+    }
     res["usernameHintText"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -499,6 +511,14 @@ func (m *OrganizationalBrandingProperties) GetSquareLogoRelativeUrl()(*string) {
         return nil
     } else {
         return m.squareLogoRelativeUrl
+    }
+}
+// GetType gets the type property value. The type property
+func (m *OrganizationalBrandingProperties) GetType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
     }
 }
 // GetUsernameHintText gets the usernameHintText property value. A string that shows as the hint in the username textbox on the sign-in screen. This text must be a Unicode, without links or code, and can't exceed 64 characters.
@@ -648,6 +668,12 @@ func (m *OrganizationalBrandingProperties) Serialize(writer i878a80d2330e89d2689
         }
     }
     {
+        err = writer.WriteStringValue("type", m.GetType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("usernameHintText", m.GetUsernameHintText())
         if err != nil {
             return err
@@ -785,6 +811,12 @@ func (m *OrganizationalBrandingProperties) SetSquareLogo(value []byte)() {
 func (m *OrganizationalBrandingProperties) SetSquareLogoRelativeUrl(value *string)() {
     if m != nil {
         m.squareLogoRelativeUrl = value
+    }
+}
+// SetType sets the type property value. The type property
+func (m *OrganizationalBrandingProperties) SetType(value *string)() {
+    if m != nil {
+        m.type_escaped = value
     }
 }
 // SetUsernameHintText sets the usernameHintText property value. A string that shows as the hint in the username textbox on the sign-in screen. This text must be a Unicode, without links or code, and can't exceed 64 characters.

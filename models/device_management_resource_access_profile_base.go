@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DeviceManagementResourceAccessProfileBase base Profile Type for Resource Access
+// DeviceManagementResourceAccessProfileBase 
 type DeviceManagementResourceAccessProfileBase struct {
     Entity
     // The list of assignments for the device configuration profile.
@@ -20,10 +20,12 @@ type DeviceManagementResourceAccessProfileBase struct {
     lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Scope Tags
     roleScopeTagIds []string
+    // The type property
+    type_escaped *string
     // Version of the profile
     version *int32
 }
-// NewDeviceManagementResourceAccessProfileBase instantiates a new deviceManagementResourceAccessProfileBase and sets the default values.
+// NewDeviceManagementResourceAccessProfileBase instantiates a new DeviceManagementResourceAccessProfileBase and sets the default values.
 func NewDeviceManagementResourceAccessProfileBase()(*DeviceManagementResourceAccessProfileBase) {
     m := &DeviceManagementResourceAccessProfileBase{
         Entity: *NewEntity(),
@@ -162,6 +164,16 @@ func (m *DeviceManagementResourceAccessProfileBase) GetFieldDeserializers()(map[
         }
         return nil
     }
+    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetType(val)
+        }
+        return nil
+    }
     res["version"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
@@ -188,6 +200,14 @@ func (m *DeviceManagementResourceAccessProfileBase) GetRoleScopeTagIds()([]strin
         return nil
     } else {
         return m.roleScopeTagIds
+    }
+}
+// GetType gets the type property value. The type property
+func (m *DeviceManagementResourceAccessProfileBase) GetType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
     }
 }
 // GetVersion gets the version property value. Version of the profile
@@ -245,6 +265,12 @@ func (m *DeviceManagementResourceAccessProfileBase) Serialize(writer i878a80d233
         }
     }
     {
+        err = writer.WriteStringValue("type", m.GetType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteInt32Value("version", m.GetVersion())
         if err != nil {
             return err
@@ -286,6 +312,12 @@ func (m *DeviceManagementResourceAccessProfileBase) SetLastModifiedDateTime(valu
 func (m *DeviceManagementResourceAccessProfileBase) SetRoleScopeTagIds(value []string)() {
     if m != nil {
         m.roleScopeTagIds = value
+    }
+}
+// SetType sets the type property value. The type property
+func (m *DeviceManagementResourceAccessProfileBase) SetType(value *string)() {
+    if m != nil {
+        m.type_escaped = value
     }
 }
 // SetVersion sets the version property value. Version of the profile

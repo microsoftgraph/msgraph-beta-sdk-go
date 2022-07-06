@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// UserSecurityProfile provides operations to manage the security singleton.
+// UserSecurityProfile 
 type UserSecurityProfile struct {
     Entity
     // The accounts property
@@ -29,7 +29,7 @@ type UserSecurityProfile struct {
     // The vendorInformation property
     vendorInformation SecurityVendorInformationable
 }
-// NewUserSecurityProfile instantiates a new userSecurityProfile and sets the default values.
+// NewUserSecurityProfile instantiates a new UserSecurityProfile and sets the default values.
 func NewUserSecurityProfile()(*UserSecurityProfile) {
     m := &UserSecurityProfile{
         Entity: *NewEntity(),

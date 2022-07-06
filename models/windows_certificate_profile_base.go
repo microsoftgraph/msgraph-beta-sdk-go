@@ -19,6 +19,8 @@ type WindowsCertificateProfileBase struct {
     subjectAlternativeNameType *SubjectAlternativeNameType
     // Certificate Subject Name Format. Possible values are: commonName, commonNameIncludingEmail, commonNameAsEmail, custom, commonNameAsIMEI, commonNameAsSerialNumber, commonNameAsAadDeviceId, commonNameAsIntuneDeviceId, commonNameAsDurableDeviceId.
     subjectNameFormat *SubjectNameFormat
+    // The type property
+    type_escaped *string
 }
 // NewWindowsCertificateProfileBase instantiates a new WindowsCertificateProfileBase and sets the default values.
 func NewWindowsCertificateProfileBase()(*WindowsCertificateProfileBase) {
@@ -135,6 +137,16 @@ func (m *WindowsCertificateProfileBase) GetFieldDeserializers()(map[string]func(
         }
         return nil
     }
+    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetKeyStorageProvider gets the keyStorageProvider property value. Key Storage Provider (KSP). Possible values are: useTpmKspOtherwiseUseSoftwareKsp, useTpmKspOtherwiseFail, usePassportForWorkKspOtherwiseFail, useSoftwareKsp.
@@ -167,6 +179,14 @@ func (m *WindowsCertificateProfileBase) GetSubjectNameFormat()(*SubjectNameForma
         return nil
     } else {
         return m.subjectNameFormat
+    }
+}
+// GetType gets the type property value. The type property
+func (m *WindowsCertificateProfileBase) GetType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
     }
 }
 // Serialize serializes information the current object
@@ -215,6 +235,12 @@ func (m *WindowsCertificateProfileBase) Serialize(writer i878a80d2330e89d2689638
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("type", m.GetType())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetCertificateValidityPeriodScale sets the certificateValidityPeriodScale property value. Scale for the Certificate Validity Period. Possible values are: days, months, years.
@@ -251,5 +277,11 @@ func (m *WindowsCertificateProfileBase) SetSubjectAlternativeNameType(value *Sub
 func (m *WindowsCertificateProfileBase) SetSubjectNameFormat(value *SubjectNameFormat)() {
     if m != nil {
         m.subjectNameFormat = value
+    }
+}
+// SetType sets the type property value. The type property
+func (m *WindowsCertificateProfileBase) SetType(value *string)() {
+    if m != nil {
+        m.type_escaped = value
     }
 }

@@ -6,7 +6,7 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
-// DataSource provides operations to manage the compliance singleton.
+// DataSource provides operations to manage the collection of activityStatistics entities.
 type DataSource struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
     // The user who created the dataSource.
@@ -17,6 +17,8 @@ type DataSource struct {
     displayName *string
     // The holdStatus property
     holdStatus *DataSourceHoldStatus
+    // The type property
+    type_escaped *string
 }
 // NewDataSource instantiates a new dataSource and sets the default values.
 func NewDataSource()(*DataSource) {
@@ -119,6 +121,16 @@ func (m *DataSource) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
         }
         return nil
     }
+    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetHoldStatus gets the holdStatus property value. The holdStatus property
@@ -127,6 +139,14 @@ func (m *DataSource) GetHoldStatus()(*DataSourceHoldStatus) {
         return nil
     } else {
         return m.holdStatus
+    }
+}
+// GetType gets the type property value. The type property
+func (m *DataSource) GetType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
     }
 }
 // Serialize serializes information the current object
@@ -160,6 +180,12 @@ func (m *DataSource) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("type", m.GetType())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetCreatedBy sets the createdBy property value. The user who created the dataSource.
@@ -184,5 +210,11 @@ func (m *DataSource) SetDisplayName(value *string)() {
 func (m *DataSource) SetHoldStatus(value *DataSourceHoldStatus)() {
     if m != nil {
         m.holdStatus = value
+    }
+}
+// SetType sets the type property value. The type property
+func (m *DataSource) SetType(value *string)() {
+    if m != nil {
+        m.type_escaped = value
     }
 }

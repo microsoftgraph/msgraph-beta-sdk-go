@@ -9,6 +9,8 @@ type BookingPerson struct {
     BookingNamedEntity
     // The email address of the person.
     emailAddress *string
+    // The type property
+    type_escaped *string
 }
 // NewBookingPerson instantiates a new bookingPerson and sets the default values.
 func NewBookingPerson()(*BookingPerson) {
@@ -63,7 +65,25 @@ func (m *BookingPerson) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         }
         return nil
     }
+    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetType(val)
+        }
+        return nil
+    }
     return res
+}
+// GetType gets the type property value. The type property
+func (m *BookingPerson) GetType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
+    }
 }
 // Serialize serializes information the current object
 func (m *BookingPerson) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -77,11 +97,23 @@ func (m *BookingPerson) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("type", m.GetType())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetEmailAddress sets the emailAddress property value. The email address of the person.
 func (m *BookingPerson) SetEmailAddress(value *string)() {
     if m != nil {
         m.emailAddress = value
+    }
+}
+// SetType sets the type property value. The type property
+func (m *BookingPerson) SetType(value *string)() {
+    if m != nil {
+        m.type_escaped = value
     }
 }

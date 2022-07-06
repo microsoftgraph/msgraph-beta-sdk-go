@@ -15,6 +15,7 @@ type WindowsPhone81CertificateProfileBaseable interface {
     GetRenewalThresholdPercentage()(*int32)
     GetSubjectAlternativeNameType()(*SubjectAlternativeNameType)
     GetSubjectNameFormat()(*SubjectNameFormat)
+    GetType()(*string)
     SetCertificateValidityPeriodScale(value *CertificateValidityPeriodScale)()
     SetCertificateValidityPeriodValue(value *int32)()
     SetExtendedKeyUsages(value []ExtendedKeyUsageable)()
@@ -22,4 +23,5 @@ type WindowsPhone81CertificateProfileBaseable interface {
     SetRenewalThresholdPercentage(value *int32)()
     SetSubjectAlternativeNameType(value *SubjectAlternativeNameType)()
     SetSubjectNameFormat(value *SubjectNameFormat)()
+    SetType(value *string)()
 }

@@ -6,7 +6,7 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
-// File provides operations to manage the security singleton.
+// File provides operations to manage the collection of activityStatistics entities.
 type File struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
     // The content property
@@ -33,6 +33,8 @@ type File struct {
     sourceType *SourceType
     // The subjectTitle property
     subjectTitle *string
+    // The type property
+    type_escaped *string
 }
 // NewFile instantiates a new file and sets the default values.
 func NewFile()(*File) {
@@ -223,6 +225,16 @@ func (m *File) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a
         }
         return nil
     }
+    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetMediaType gets the mediaType property value. The mediaType property
@@ -287,6 +299,14 @@ func (m *File) GetSubjectTitle()(*string) {
         return nil
     } else {
         return m.subjectTitle
+    }
+}
+// GetType gets the type property value. The type property
+func (m *File) GetType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
     }
 }
 // Serialize serializes information the current object
@@ -369,6 +389,12 @@ func (m *File) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c49
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("type", m.GetType())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetContent sets the content property value. The content property
@@ -441,5 +467,11 @@ func (m *File) SetSourceType(value *SourceType)() {
 func (m *File) SetSubjectTitle(value *string)() {
     if m != nil {
         m.subjectTitle = value
+    }
+}
+// SetType sets the type property value. The type property
+func (m *File) SetType(value *string)() {
+    if m != nil {
+        m.type_escaped = value
     }
 }

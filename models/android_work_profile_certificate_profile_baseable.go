@@ -15,6 +15,7 @@ type AndroidWorkProfileCertificateProfileBaseable interface {
     GetRootCertificate()(AndroidWorkProfileTrustedRootCertificateable)
     GetSubjectAlternativeNameType()(*SubjectAlternativeNameType)
     GetSubjectNameFormat()(*SubjectNameFormat)
+    GetType()(*string)
     SetCertificateValidityPeriodScale(value *CertificateValidityPeriodScale)()
     SetCertificateValidityPeriodValue(value *int32)()
     SetExtendedKeyUsages(value []ExtendedKeyUsageable)()
@@ -22,4 +23,5 @@ type AndroidWorkProfileCertificateProfileBaseable interface {
     SetRootCertificate(value AndroidWorkProfileTrustedRootCertificateable)()
     SetSubjectAlternativeNameType(value *SubjectAlternativeNameType)()
     SetSubjectNameFormat(value *SubjectNameFormat)()
+    SetType(value *string)()
 }

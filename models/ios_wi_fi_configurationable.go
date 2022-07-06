@@ -18,6 +18,7 @@ type IosWiFiConfigurationable interface {
     GetProxyManualPort()(*int32)
     GetProxySettings()(*WiFiProxySetting)
     GetSsid()(*string)
+    GetType()(*string)
     GetWiFiSecurityType()(*WiFiSecurityType)
     SetConnectAutomatically(value *bool)()
     SetConnectWhenNetworkNameIsHidden(value *bool)()
@@ -29,5 +30,6 @@ type IosWiFiConfigurationable interface {
     SetProxyManualPort(value *int32)()
     SetProxySettings(value *WiFiProxySetting)()
     SetSsid(value *string)()
+    SetType(value *string)()
     SetWiFiSecurityType(value *WiFiSecurityType)()
 }

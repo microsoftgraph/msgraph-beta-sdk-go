@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// GovernanceResource provides operations to manage the collection of governanceResource entities.
+// GovernanceResource 
 type GovernanceResource struct {
     Entity
     // The display name of the resource.
@@ -31,7 +31,7 @@ type GovernanceResource struct {
     // Required. Resource type. For example, for Azure resources, the type could be 'Subscription', 'ResourceGroup', 'Microsoft.Sql/server', etc.
     type_escaped *string
 }
-// NewGovernanceResource instantiates a new governanceResource and sets the default values.
+// NewGovernanceResource instantiates a new GovernanceResource and sets the default values.
 func NewGovernanceResource()(*GovernanceResource) {
     m := &GovernanceResource{
         Entity: *NewEntity(),

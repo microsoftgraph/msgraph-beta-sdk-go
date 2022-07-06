@@ -16,6 +16,8 @@ type DetectedSensitiveContentBase struct {
     id *string
     // The recommendedConfidence property
     recommendedConfidence *int32
+    // The type property
+    type_escaped *string
     // The uniqueCount property
     uniqueCount *int32
 }
@@ -28,6 +30,27 @@ func NewDetectedSensitiveContentBase()(*DetectedSensitiveContentBase) {
 }
 // CreateDetectedSensitiveContentBaseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateDetectedSensitiveContentBaseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+    if parseNode != nil {
+        mappingValueNode, err := parseNode.GetChildNode("@odata.type")
+        if err != nil {
+            return nil, err
+        }
+        if mappingValueNode != nil {
+            mappingValue, err := mappingValueNode.GetStringValue()
+            if err != nil {
+                return nil, err
+            }
+            if mappingValue != nil {
+                mappingStr := *mappingValue
+                switch mappingStr {
+                    case "#microsoft.graph.detectedSensitiveContent":
+                        return NewDetectedSensitiveContent(), nil
+                    case "#microsoft.graph.exactMatchDetectedSensitiveContent":
+                        return NewExactMatchDetectedSensitiveContent(), nil
+                }
+            }
+        }
+    }
     return NewDetectedSensitiveContentBase(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -97,6 +120,16 @@ func (m *DetectedSensitiveContentBase) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
+    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetType(val)
+        }
+        return nil
+    }
     res["uniqueCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
@@ -123,6 +156,14 @@ func (m *DetectedSensitiveContentBase) GetRecommendedConfidence()(*int32) {
         return nil
     } else {
         return m.recommendedConfidence
+    }
+}
+// GetType gets the type property value. The type property
+func (m *DetectedSensitiveContentBase) GetType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
     }
 }
 // GetUniqueCount gets the uniqueCount property value. The uniqueCount property
@@ -155,6 +196,12 @@ func (m *DetectedSensitiveContentBase) Serialize(writer i878a80d2330e89d26896388
     }
     {
         err := writer.WriteInt32Value("recommendedConfidence", m.GetRecommendedConfidence())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("type", m.GetType())
         if err != nil {
             return err
         }
@@ -201,6 +248,12 @@ func (m *DetectedSensitiveContentBase) SetId(value *string)() {
 func (m *DetectedSensitiveContentBase) SetRecommendedConfidence(value *int32)() {
     if m != nil {
         m.recommendedConfidence = value
+    }
+}
+// SetType sets the type property value. The type property
+func (m *DetectedSensitiveContentBase) SetType(value *string)() {
+    if m != nil {
+        m.type_escaped = value
     }
 }
 // SetUniqueCount sets the uniqueCount property value. The uniqueCount property

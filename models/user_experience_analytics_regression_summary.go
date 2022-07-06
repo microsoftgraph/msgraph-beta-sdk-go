@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// UserExperienceAnalyticsRegressionSummary the user experience analytics Regression Summary.
+// UserExperienceAnalyticsRegressionSummary 
 type UserExperienceAnalyticsRegressionSummary struct {
     Entity
     // The metric values for the user experience analytics Manufacturer regression.
@@ -14,7 +14,7 @@ type UserExperienceAnalyticsRegressionSummary struct {
     // The metric values for the user experience analytics operating system regression.
     operatingSystemRegression []UserExperienceAnalyticsMetricable
 }
-// NewUserExperienceAnalyticsRegressionSummary instantiates a new userExperienceAnalyticsRegressionSummary and sets the default values.
+// NewUserExperienceAnalyticsRegressionSummary instantiates a new UserExperienceAnalyticsRegressionSummary and sets the default values.
 func NewUserExperienceAnalyticsRegressionSummary()(*UserExperienceAnalyticsRegressionSummary) {
     m := &UserExperienceAnalyticsRegressionSummary{
         Entity: *NewEntity(),

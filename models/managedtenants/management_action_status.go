@@ -2,7 +2,7 @@ package managedtenants
 import (
     "errors"
 )
-// Provides operations to manage the tenantRelationship singleton.
+// Provides operations to manage the collection of accessReviewDecision entities.
 type ManagementActionStatus int
 
 const (

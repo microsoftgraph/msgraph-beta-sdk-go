@@ -19,6 +19,7 @@ type GroupPolicyDefinitionFileable interface {
     GetRevision()(*string)
     GetTargetNamespace()(*string)
     GetTargetPrefix()(*string)
+    GetType()(*string)
     SetDefinitions(value []GroupPolicyDefinitionable)()
     SetDescription(value *string)()
     SetDisplayName(value *string)()
@@ -29,4 +30,5 @@ type GroupPolicyDefinitionFileable interface {
     SetRevision(value *string)()
     SetTargetNamespace(value *string)()
     SetTargetPrefix(value *string)()
+    SetType(value *string)()
 }

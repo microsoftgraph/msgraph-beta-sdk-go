@@ -12,6 +12,8 @@ type HardwareInformation struct {
     batteryChargeCycles *int32
     // The device’s current battery’s health percentage. Valid values 0 to 100
     batteryHealthPercentage *int32
+    // The battery level, between 0.0 and 100, or null if the battery level cannot be determined. The update frequency of this property is per-checkin. Note this property is currently supported only on devices running iOS 5.0 and later, and is available only when Device Information access right is obtained. Valid values 0 to 100
+    batteryLevelPercentage *float64
     // The serial number of the device’s current battery
     batterySerialNumber *string
     // Cellular technology of the device
@@ -24,6 +26,12 @@ type HardwareInformation struct {
     deviceGuardVirtualizationBasedSecurityHardwareRequirementState *DeviceGuardVirtualizationBasedSecurityHardwareRequirementState
     // Virtualization-based security status. . Possible values are: running, rebootRequired, require64BitArchitecture, notLicensed, notConfigured, doesNotMeetHardwareRequirements, other.
     deviceGuardVirtualizationBasedSecurityState *DeviceGuardVirtualizationBasedSecurityState
+    // A standard error code indicating the last error, or 0 indicating no error (default). The update frequency of this property is daily. Note this property is currently supported only for Windows based Device based subscription licensing. Valid values 0 to 2147483647
+    deviceLicensingLastErrorCode *int32
+    // Error text message as a descripition for deviceLicensingLastErrorCode. The update frequency of this property is daily. Note this property is currently supported only for Windows based Device based subscription licensing.
+    deviceLicensingLastErrorDescription *string
+    // Device based subscription licensing status. The update frequency of this property is daily. Note this property is currently supported only for Windows based Device based subscription licensing. In case it is not supported, the value will be set to unknown (-1).
+    deviceLicensingStatus *DeviceLicensingStatus
     // eSIM identifier
     esimIdentifier *string
     // Free storage space of the device.
@@ -54,6 +62,10 @@ type HardwareInformation struct {
     osBuildNumber *string
     // Phone number of the device
     phoneNumber *string
+    // The product name, e.g. iPad8,12 etc. The update frequency of this property is weekly. Note this property is currently supported only on iOS/MacOS devices, and is available only when Device Information access right is obtained.
+    productName *string
+    // The number of users currently on this device, or null (default) if the value of this property cannot be determined. The update frequency of this property is per-checkin. Note this property is currently supported only on devices running iOS 13.4 and later, and is available only when Device Information access right is obtained. Valid values 0 to 2147483647
+    residentUsersCount *int32
     // Serial number.
     serialNumber *string
     // All users on the shared Apple device
@@ -74,6 +86,8 @@ type HardwareInformation struct {
     tpmVersion *string
     // WiFi MAC address of the device
     wifiMac *string
+    // A list of wired IPv4 addresses. The update frequency (the maximum delay for the change of property value to be synchronized from the device to the cloud storage) of this property is daily. Note this property is currently supported only on devices running on Windows.
+    wiredIPv4Addresses []string
 }
 // NewHardwareInformation instantiates a new hardwareInformation and sets the default values.
 func NewHardwareInformation()(*HardwareInformation) {
@@ -108,6 +122,14 @@ func (m *HardwareInformation) GetBatteryHealthPercentage()(*int32) {
         return nil
     } else {
         return m.batteryHealthPercentage
+    }
+}
+// GetBatteryLevelPercentage gets the batteryLevelPercentage property value. The battery level, between 0.0 and 100, or null if the battery level cannot be determined. The update frequency of this property is per-checkin. Note this property is currently supported only on devices running iOS 5.0 and later, and is available only when Device Information access right is obtained. Valid values 0 to 100
+func (m *HardwareInformation) GetBatteryLevelPercentage()(*float64) {
+    if m == nil {
+        return nil
+    } else {
+        return m.batteryLevelPercentage
     }
 }
 // GetBatterySerialNumber gets the batterySerialNumber property value. The serial number of the device’s current battery
@@ -158,6 +180,30 @@ func (m *HardwareInformation) GetDeviceGuardVirtualizationBasedSecurityState()(*
         return m.deviceGuardVirtualizationBasedSecurityState
     }
 }
+// GetDeviceLicensingLastErrorCode gets the deviceLicensingLastErrorCode property value. A standard error code indicating the last error, or 0 indicating no error (default). The update frequency of this property is daily. Note this property is currently supported only for Windows based Device based subscription licensing. Valid values 0 to 2147483647
+func (m *HardwareInformation) GetDeviceLicensingLastErrorCode()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.deviceLicensingLastErrorCode
+    }
+}
+// GetDeviceLicensingLastErrorDescription gets the deviceLicensingLastErrorDescription property value. Error text message as a descripition for deviceLicensingLastErrorCode. The update frequency of this property is daily. Note this property is currently supported only for Windows based Device based subscription licensing.
+func (m *HardwareInformation) GetDeviceLicensingLastErrorDescription()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.deviceLicensingLastErrorDescription
+    }
+}
+// GetDeviceLicensingStatus gets the deviceLicensingStatus property value. Device based subscription licensing status. The update frequency of this property is daily. Note this property is currently supported only for Windows based Device based subscription licensing. In case it is not supported, the value will be set to unknown (-1).
+func (m *HardwareInformation) GetDeviceLicensingStatus()(*DeviceLicensingStatus) {
+    if m == nil {
+        return nil
+    } else {
+        return m.deviceLicensingStatus
+    }
+}
 // GetEsimIdentifier gets the esimIdentifier property value. eSIM identifier
 func (m *HardwareInformation) GetEsimIdentifier()(*string) {
     if m == nil {
@@ -186,6 +232,16 @@ func (m *HardwareInformation) GetFieldDeserializers()(map[string]func(i878a80d23
         }
         if val != nil {
             m.SetBatteryHealthPercentage(val)
+        }
+        return nil
+    }
+    res["batteryLevelPercentage"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetFloat64Value()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetBatteryLevelPercentage(val)
         }
         return nil
     }
@@ -246,6 +302,36 @@ func (m *HardwareInformation) GetFieldDeserializers()(map[string]func(i878a80d23
         }
         if val != nil {
             m.SetDeviceGuardVirtualizationBasedSecurityState(val.(*DeviceGuardVirtualizationBasedSecurityState))
+        }
+        return nil
+    }
+    res["deviceLicensingLastErrorCode"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetInt32Value()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetDeviceLicensingLastErrorCode(val)
+        }
+        return nil
+    }
+    res["deviceLicensingLastErrorDescription"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetDeviceLicensingLastErrorDescription(val)
+        }
+        return nil
+    }
+    res["deviceLicensingStatus"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseDeviceLicensingStatus)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetDeviceLicensingStatus(val.(*DeviceLicensingStatus))
         }
         return nil
     }
@@ -399,6 +485,26 @@ func (m *HardwareInformation) GetFieldDeserializers()(map[string]func(i878a80d23
         }
         return nil
     }
+    res["productName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetProductName(val)
+        }
+        return nil
+    }
+    res["residentUsersCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetInt32Value()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetResidentUsersCount(val)
+        }
+        return nil
+    }
     res["serialNumber"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -500,6 +606,20 @@ func (m *HardwareInformation) GetFieldDeserializers()(map[string]func(i878a80d23
         }
         if val != nil {
             m.SetWifiMac(val)
+        }
+        return nil
+    }
+    res["wiredIPv4Addresses"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfPrimitiveValues("string")
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetWiredIPv4Addresses(res)
         }
         return nil
     }
@@ -617,6 +737,22 @@ func (m *HardwareInformation) GetPhoneNumber()(*string) {
         return m.phoneNumber
     }
 }
+// GetProductName gets the productName property value. The product name, e.g. iPad8,12 etc. The update frequency of this property is weekly. Note this property is currently supported only on iOS/MacOS devices, and is available only when Device Information access right is obtained.
+func (m *HardwareInformation) GetProductName()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.productName
+    }
+}
+// GetResidentUsersCount gets the residentUsersCount property value. The number of users currently on this device, or null (default) if the value of this property cannot be determined. The update frequency of this property is per-checkin. Note this property is currently supported only on devices running iOS 13.4 and later, and is available only when Device Information access right is obtained. Valid values 0 to 2147483647
+func (m *HardwareInformation) GetResidentUsersCount()(*int32) {
+    if m == nil {
+        return nil
+    } else {
+        return m.residentUsersCount
+    }
+}
 // GetSerialNumber gets the serialNumber property value. Serial number.
 func (m *HardwareInformation) GetSerialNumber()(*string) {
     if m == nil {
@@ -697,6 +833,14 @@ func (m *HardwareInformation) GetWifiMac()(*string) {
         return m.wifiMac
     }
 }
+// GetWiredIPv4Addresses gets the wiredIPv4Addresses property value. A list of wired IPv4 addresses. The update frequency (the maximum delay for the change of property value to be synchronized from the device to the cloud storage) of this property is daily. Note this property is currently supported only on devices running on Windows.
+func (m *HardwareInformation) GetWiredIPv4Addresses()([]string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.wiredIPv4Addresses
+    }
+}
 // Serialize serializes information the current object
 func (m *HardwareInformation) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
@@ -707,6 +851,12 @@ func (m *HardwareInformation) Serialize(writer i878a80d2330e89d26896388a3f487eef
     }
     {
         err := writer.WriteInt32Value("batteryHealthPercentage", m.GetBatteryHealthPercentage())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteFloat64Value("batteryLevelPercentage", m.GetBatteryLevelPercentage())
         if err != nil {
             return err
         }
@@ -746,6 +896,25 @@ func (m *HardwareInformation) Serialize(writer i878a80d2330e89d26896388a3f487eef
     if m.GetDeviceGuardVirtualizationBasedSecurityState() != nil {
         cast := (*m.GetDeviceGuardVirtualizationBasedSecurityState()).String()
         err := writer.WriteStringValue("deviceGuardVirtualizationBasedSecurityState", &cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteInt32Value("deviceLicensingLastErrorCode", m.GetDeviceLicensingLastErrorCode())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("deviceLicensingLastErrorDescription", m.GetDeviceLicensingLastErrorDescription())
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetDeviceLicensingStatus() != nil {
+        cast := (*m.GetDeviceLicensingStatus()).String()
+        err := writer.WriteStringValue("deviceLicensingStatus", &cast)
         if err != nil {
             return err
         }
@@ -841,6 +1010,18 @@ func (m *HardwareInformation) Serialize(writer i878a80d2330e89d26896388a3f487eef
         }
     }
     {
+        err := writer.WriteStringValue("productName", m.GetProductName())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteInt32Value("residentUsersCount", m.GetResidentUsersCount())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err := writer.WriteStringValue("serialNumber", m.GetSerialNumber())
         if err != nil {
             return err
@@ -904,6 +1085,12 @@ func (m *HardwareInformation) Serialize(writer i878a80d2330e89d26896388a3f487eef
             return err
         }
     }
+    if m.GetWiredIPv4Addresses() != nil {
+        err := writer.WriteCollectionOfStringValues("wiredIPv4Addresses", m.GetWiredIPv4Addresses())
+        if err != nil {
+            return err
+        }
+    }
     {
         err := writer.WriteAdditionalData(m.GetAdditionalData())
         if err != nil {
@@ -928,6 +1115,12 @@ func (m *HardwareInformation) SetBatteryChargeCycles(value *int32)() {
 func (m *HardwareInformation) SetBatteryHealthPercentage(value *int32)() {
     if m != nil {
         m.batteryHealthPercentage = value
+    }
+}
+// SetBatteryLevelPercentage sets the batteryLevelPercentage property value. The battery level, between 0.0 and 100, or null if the battery level cannot be determined. The update frequency of this property is per-checkin. Note this property is currently supported only on devices running iOS 5.0 and later, and is available only when Device Information access right is obtained. Valid values 0 to 100
+func (m *HardwareInformation) SetBatteryLevelPercentage(value *float64)() {
+    if m != nil {
+        m.batteryLevelPercentage = value
     }
 }
 // SetBatterySerialNumber sets the batterySerialNumber property value. The serial number of the device’s current battery
@@ -964,6 +1157,24 @@ func (m *HardwareInformation) SetDeviceGuardVirtualizationBasedSecurityHardwareR
 func (m *HardwareInformation) SetDeviceGuardVirtualizationBasedSecurityState(value *DeviceGuardVirtualizationBasedSecurityState)() {
     if m != nil {
         m.deviceGuardVirtualizationBasedSecurityState = value
+    }
+}
+// SetDeviceLicensingLastErrorCode sets the deviceLicensingLastErrorCode property value. A standard error code indicating the last error, or 0 indicating no error (default). The update frequency of this property is daily. Note this property is currently supported only for Windows based Device based subscription licensing. Valid values 0 to 2147483647
+func (m *HardwareInformation) SetDeviceLicensingLastErrorCode(value *int32)() {
+    if m != nil {
+        m.deviceLicensingLastErrorCode = value
+    }
+}
+// SetDeviceLicensingLastErrorDescription sets the deviceLicensingLastErrorDescription property value. Error text message as a descripition for deviceLicensingLastErrorCode. The update frequency of this property is daily. Note this property is currently supported only for Windows based Device based subscription licensing.
+func (m *HardwareInformation) SetDeviceLicensingLastErrorDescription(value *string)() {
+    if m != nil {
+        m.deviceLicensingLastErrorDescription = value
+    }
+}
+// SetDeviceLicensingStatus sets the deviceLicensingStatus property value. Device based subscription licensing status. The update frequency of this property is daily. Note this property is currently supported only for Windows based Device based subscription licensing. In case it is not supported, the value will be set to unknown (-1).
+func (m *HardwareInformation) SetDeviceLicensingStatus(value *DeviceLicensingStatus)() {
+    if m != nil {
+        m.deviceLicensingStatus = value
     }
 }
 // SetEsimIdentifier sets the esimIdentifier property value. eSIM identifier
@@ -1056,6 +1267,18 @@ func (m *HardwareInformation) SetPhoneNumber(value *string)() {
         m.phoneNumber = value
     }
 }
+// SetProductName sets the productName property value. The product name, e.g. iPad8,12 etc. The update frequency of this property is weekly. Note this property is currently supported only on iOS/MacOS devices, and is available only when Device Information access right is obtained.
+func (m *HardwareInformation) SetProductName(value *string)() {
+    if m != nil {
+        m.productName = value
+    }
+}
+// SetResidentUsersCount sets the residentUsersCount property value. The number of users currently on this device, or null (default) if the value of this property cannot be determined. The update frequency of this property is per-checkin. Note this property is currently supported only on devices running iOS 13.4 and later, and is available only when Device Information access right is obtained. Valid values 0 to 2147483647
+func (m *HardwareInformation) SetResidentUsersCount(value *int32)() {
+    if m != nil {
+        m.residentUsersCount = value
+    }
+}
 // SetSerialNumber sets the serialNumber property value. Serial number.
 func (m *HardwareInformation) SetSerialNumber(value *string)() {
     if m != nil {
@@ -1114,5 +1337,11 @@ func (m *HardwareInformation) SetTpmVersion(value *string)() {
 func (m *HardwareInformation) SetWifiMac(value *string)() {
     if m != nil {
         m.wifiMac = value
+    }
+}
+// SetWiredIPv4Addresses sets the wiredIPv4Addresses property value. A list of wired IPv4 addresses. The update frequency (the maximum delay for the change of property value to be synchronized from the device to the cloud storage) of this property is daily. Note this property is currently supported only on devices running on Windows.
+func (m *HardwareInformation) SetWiredIPv4Addresses(value []string)() {
+    if m != nil {
+        m.wiredIPv4Addresses = value
     }
 }

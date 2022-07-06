@@ -17,6 +17,7 @@ type PolicySetItemable interface {
     GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetPayloadId()(*string)
     GetStatus()(*PolicySetStatus)
+    GetType()(*string)
     SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetDisplayName(value *string)()
     SetErrorCode(value *ErrorCode)()
@@ -25,4 +26,5 @@ type PolicySetItemable interface {
     SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetPayloadId(value *string)()
     SetStatus(value *PolicySetStatus)()
+    SetType(value *string)()
 }

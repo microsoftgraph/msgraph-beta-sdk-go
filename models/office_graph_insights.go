@@ -4,17 +4,19 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// OfficeGraphInsights provides operations to manage the collection of administrativeUnit entities.
+// OfficeGraphInsights 
 type OfficeGraphInsights struct {
     Entity
     // Access this property from the derived type itemInsights.
     shared []SharedInsightable
     // Access this property from the derived type itemInsights.
     trending []Trendingable
+    // The type property
+    type_escaped *string
     // Access this property from the derived type itemInsights.
     used []UsedInsightable
 }
-// NewOfficeGraphInsights instantiates a new officeGraphInsights and sets the default values.
+// NewOfficeGraphInsights instantiates a new OfficeGraphInsights and sets the default values.
 func NewOfficeGraphInsights()(*OfficeGraphInsights) {
     m := &OfficeGraphInsights{
         Entity: *NewEntity(),
@@ -75,6 +77,16 @@ func (m *OfficeGraphInsights) GetFieldDeserializers()(map[string]func(i878a80d23
         }
         return nil
     }
+    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetType(val)
+        }
+        return nil
+    }
     res["used"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateUsedInsightFromDiscriminatorValue)
         if err != nil {
@@ -105,6 +117,14 @@ func (m *OfficeGraphInsights) GetTrending()([]Trendingable) {
         return nil
     } else {
         return m.trending
+    }
+}
+// GetType gets the type property value. The type property
+func (m *OfficeGraphInsights) GetType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
     }
 }
 // GetUsed gets the used property value. Access this property from the derived type itemInsights.
@@ -141,6 +161,12 @@ func (m *OfficeGraphInsights) Serialize(writer i878a80d2330e89d26896388a3f487eef
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("type", m.GetType())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetUsed() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetUsed()))
         for i, v := range m.GetUsed() {
@@ -163,6 +189,12 @@ func (m *OfficeGraphInsights) SetShared(value []SharedInsightable)() {
 func (m *OfficeGraphInsights) SetTrending(value []Trendingable)() {
     if m != nil {
         m.trending = value
+    }
+}
+// SetType sets the type property value. The type property
+func (m *OfficeGraphInsights) SetType(value *string)() {
+    if m != nil {
+        m.type_escaped = value
     }
 }
 // SetUsed sets the used property value. Access this property from the derived type itemInsights.

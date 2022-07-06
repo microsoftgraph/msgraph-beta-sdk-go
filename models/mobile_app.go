@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// MobileApp an abstract class containing the base properties for Intune mobile apps.
+// MobileApp 
 type MobileApp struct {
     Entity
     // The list of group assignments for this mobile app.
@@ -54,12 +54,14 @@ type MobileApp struct {
     supersededAppCount *int32
     // The total number of apps this app directly or indirectly supersedes.
     supersedingAppCount *int32
+    // The type property
+    type_escaped *string
     // The upload state.
     uploadState *int32
     // The list of installation states for this mobile app.
     userStatuses []UserAppInstallStatusable
 }
-// NewMobileApp instantiates a new mobileApp and sets the default values.
+// NewMobileApp instantiates a new MobileApp and sets the default values.
 func NewMobileApp()(*MobileApp) {
     m := &MobileApp{
         Entity: *NewEntity(),
@@ -442,6 +444,16 @@ func (m *MobileApp) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
         }
         return nil
     }
+    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetType(val)
+        }
+        return nil
+    }
     res["uploadState"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
@@ -586,6 +598,14 @@ func (m *MobileApp) GetSupersedingAppCount()(*int32) {
         return nil
     } else {
         return m.supersedingAppCount
+    }
+}
+// GetType gets the type property value. The type property
+func (m *MobileApp) GetType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
     }
 }
 // GetUploadState gets the uploadState property value. The upload state.
@@ -766,6 +786,12 @@ func (m *MobileApp) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
         }
     }
     {
+        err = writer.WriteStringValue("type", m.GetType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteInt32Value("uploadState", m.GetUploadState())
         if err != nil {
             return err
@@ -919,6 +945,12 @@ func (m *MobileApp) SetSupersededAppCount(value *int32)() {
 func (m *MobileApp) SetSupersedingAppCount(value *int32)() {
     if m != nil {
         m.supersedingAppCount = value
+    }
+}
+// SetType sets the type property value. The type property
+func (m *MobileApp) SetType(value *string)() {
+    if m != nil {
+        m.type_escaped = value
     }
 }
 // SetUploadState sets the uploadState property value. The upload state.

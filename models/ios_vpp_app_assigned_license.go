@@ -4,9 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// IosVppAppAssignedLicense iOS Volume Purchase Program license assignment. This class does not support Create, Delete, or Update.
+// IosVppAppAssignedLicense 
 type IosVppAppAssignedLicense struct {
     Entity
+    // The type property
+    type_escaped *string
     // The user email address.
     userEmailAddress *string
     // The user ID.
@@ -16,7 +18,7 @@ type IosVppAppAssignedLicense struct {
     // The user principal name.
     userPrincipalName *string
 }
-// NewIosVppAppAssignedLicense instantiates a new iosVppAppAssignedLicense and sets the default values.
+// NewIosVppAppAssignedLicense instantiates a new IosVppAppAssignedLicense and sets the default values.
 func NewIosVppAppAssignedLicense()(*IosVppAppAssignedLicense) {
     m := &IosVppAppAssignedLicense{
         Entity: *NewEntity(),
@@ -51,6 +53,16 @@ func CreateIosVppAppAssignedLicenseFromDiscriminatorValue(parseNode i878a80d2330
 // GetFieldDeserializers the deserialization information for the current model
 func (m *IosVppAppAssignedLicense) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
+    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetType(val)
+        }
+        return nil
+    }
     res["userEmailAddress"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -93,6 +105,14 @@ func (m *IosVppAppAssignedLicense) GetFieldDeserializers()(map[string]func(i878a
     }
     return res
 }
+// GetType gets the type property value. The type property
+func (m *IosVppAppAssignedLicense) GetType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
+    }
+}
 // GetUserEmailAddress gets the userEmailAddress property value. The user email address.
 func (m *IosVppAppAssignedLicense) GetUserEmailAddress()(*string) {
     if m == nil {
@@ -132,6 +152,12 @@ func (m *IosVppAppAssignedLicense) Serialize(writer i878a80d2330e89d26896388a3f4
         return err
     }
     {
+        err = writer.WriteStringValue("type", m.GetType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("userEmailAddress", m.GetUserEmailAddress())
         if err != nil {
             return err
@@ -156,6 +182,12 @@ func (m *IosVppAppAssignedLicense) Serialize(writer i878a80d2330e89d26896388a3f4
         }
     }
     return nil
+}
+// SetType sets the type property value. The type property
+func (m *IosVppAppAssignedLicense) SetType(value *string)() {
+    if m != nil {
+        m.type_escaped = value
+    }
 }
 // SetUserEmailAddress sets the userEmailAddress property value. The user email address.
 func (m *IosVppAppAssignedLicense) SetUserEmailAddress(value *string)() {

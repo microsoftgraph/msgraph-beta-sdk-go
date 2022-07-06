@@ -24,6 +24,7 @@ type BaseTaskable interface {
     GetStartDateTime()(DateTimeTimeZoneable)
     GetStatus()(*TaskStatus_v2)
     GetTextBody()(*string)
+    GetType()(*string)
     GetViewpoint()(TaskViewpointable)
     SetBodyLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetChecklistItems(value []ChecklistItemable)()
@@ -40,5 +41,6 @@ type BaseTaskable interface {
     SetStartDateTime(value DateTimeTimeZoneable)()
     SetStatus(value *TaskStatus_v2)()
     SetTextBody(value *string)()
+    SetType(value *string)()
     SetViewpoint(value TaskViewpointable)()
 }

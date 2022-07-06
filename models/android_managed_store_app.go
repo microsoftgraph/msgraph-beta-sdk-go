@@ -23,6 +23,8 @@ type AndroidManagedStoreApp struct {
     supportsOemConfig *bool
     // The total number of VPP licenses.
     totalLicenseCount *int32
+    // The type property
+    type_escaped *string
     // The number of VPP licenses in use.
     usedLicenseCount *int32
 }
@@ -167,6 +169,16 @@ func (m *AndroidManagedStoreApp) GetFieldDeserializers()(map[string]func(i878a80
         }
         return nil
     }
+    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetType(val)
+        }
+        return nil
+    }
     res["usedLicenseCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
@@ -217,6 +229,14 @@ func (m *AndroidManagedStoreApp) GetTotalLicenseCount()(*int32) {
         return nil
     } else {
         return m.totalLicenseCount
+    }
+}
+// GetType gets the type property value. The type property
+func (m *AndroidManagedStoreApp) GetType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
     }
 }
 // GetUsedLicenseCount gets the usedLicenseCount property value. The number of VPP licenses in use.
@@ -286,6 +306,12 @@ func (m *AndroidManagedStoreApp) Serialize(writer i878a80d2330e89d26896388a3f487
         }
     }
     {
+        err = writer.WriteStringValue("type", m.GetType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteInt32Value("usedLicenseCount", m.GetUsedLicenseCount())
         if err != nil {
             return err
@@ -339,6 +365,12 @@ func (m *AndroidManagedStoreApp) SetSupportsOemConfig(value *bool)() {
 func (m *AndroidManagedStoreApp) SetTotalLicenseCount(value *int32)() {
     if m != nil {
         m.totalLicenseCount = value
+    }
+}
+// SetType sets the type property value. The type property
+func (m *AndroidManagedStoreApp) SetType(value *string)() {
+    if m != nil {
+        m.type_escaped = value
     }
 }
 // SetUsedLicenseCount sets the usedLicenseCount property value. The number of VPP licenses in use.

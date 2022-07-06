@@ -13,11 +13,13 @@ type SecurityBaselineStateSummaryable interface {
     GetNotApplicableCount()(*int32)
     GetNotSecureCount()(*int32)
     GetSecureCount()(*int32)
+    GetType()(*string)
     GetUnknownCount()(*int32)
     SetConflictCount(value *int32)()
     SetErrorCount(value *int32)()
     SetNotApplicableCount(value *int32)()
     SetNotSecureCount(value *int32)()
     SetSecureCount(value *int32)()
+    SetType(value *string)()
     SetUnknownCount(value *int32)()
 }

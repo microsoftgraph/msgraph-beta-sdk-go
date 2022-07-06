@@ -13,9 +13,11 @@ type MobileAppRelationshipable interface {
     GetTargetId()(*string)
     GetTargetPublisher()(*string)
     GetTargetType()(*MobileAppRelationshipType)
+    GetType()(*string)
     SetTargetDisplayName(value *string)()
     SetTargetDisplayVersion(value *string)()
     SetTargetId(value *string)()
     SetTargetPublisher(value *string)()
     SetTargetType(value *MobileAppRelationshipType)()
+    SetType(value *string)()
 }

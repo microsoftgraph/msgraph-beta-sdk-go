@@ -14,6 +14,7 @@ type AndroidForWorkEasEmailProfileBaseable interface {
     GetHostName()(*string)
     GetIdentityCertificate()(AndroidForWorkCertificateProfileBaseable)
     GetRequireSsl()(*bool)
+    GetType()(*string)
     GetUsernameSource()(*AndroidUsernameSource)
     SetAuthenticationMethod(value *EasAuthenticationMethod)()
     SetDurationOfEmailToSync(value *EmailSyncDuration)()
@@ -21,5 +22,6 @@ type AndroidForWorkEasEmailProfileBaseable interface {
     SetHostName(value *string)()
     SetIdentityCertificate(value AndroidForWorkCertificateProfileBaseable)()
     SetRequireSsl(value *bool)()
+    SetType(value *string)()
     SetUsernameSource(value *AndroidUsernameSource)()
 }

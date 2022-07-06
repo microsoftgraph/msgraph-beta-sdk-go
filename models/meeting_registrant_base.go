@@ -4,11 +4,13 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// MeetingRegistrantBase provides operations to manage the commsApplication singleton.
+// MeetingRegistrantBase provides operations to manage the collection of activityStatistics entities.
 type MeetingRegistrantBase struct {
     Entity
     // A unique web URL for the registrant to join the meeting. Read-only.
     joinWebUrl *string
+    // The type property
+    type_escaped *string
 }
 // NewMeetingRegistrantBase instantiates a new meetingRegistrantBase and sets the default values.
 func NewMeetingRegistrantBase()(*MeetingRegistrantBase) {
@@ -55,6 +57,16 @@ func (m *MeetingRegistrantBase) GetFieldDeserializers()(map[string]func(i878a80d
         }
         return nil
     }
+    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetJoinWebUrl gets the joinWebUrl property value. A unique web URL for the registrant to join the meeting. Read-only.
@@ -63,6 +75,14 @@ func (m *MeetingRegistrantBase) GetJoinWebUrl()(*string) {
         return nil
     } else {
         return m.joinWebUrl
+    }
+}
+// GetType gets the type property value. The type property
+func (m *MeetingRegistrantBase) GetType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
     }
 }
 // Serialize serializes information the current object
@@ -77,11 +97,23 @@ func (m *MeetingRegistrantBase) Serialize(writer i878a80d2330e89d26896388a3f487e
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("type", m.GetType())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetJoinWebUrl sets the joinWebUrl property value. A unique web URL for the registrant to join the meeting. Read-only.
 func (m *MeetingRegistrantBase) SetJoinWebUrl(value *string)() {
     if m != nil {
         m.joinWebUrl = value
+    }
+}
+// SetType sets the type property value. The type property
+func (m *MeetingRegistrantBase) SetType(value *string)() {
+    if m != nil {
+        m.type_escaped = value
     }
 }

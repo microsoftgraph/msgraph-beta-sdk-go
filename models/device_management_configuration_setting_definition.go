@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DeviceManagementConfigurationSettingDefinition provides operations to manage the deviceManagement singleton.
+// DeviceManagementConfigurationSettingDefinition provides operations to manage the collection of activityStatistics entities.
 type DeviceManagementConfigurationSettingDefinition struct {
     Entity
     // Read/write access mode of the setting. Possible values are: none, add, copy, delete, get, replace, execute.
@@ -37,6 +37,8 @@ type DeviceManagementConfigurationSettingDefinition struct {
     rootDefinitionId *string
     // Setting type, for example, configuration and compliance. Possible values are: none, configuration, compliance.
     settingUsage *DeviceManagementConfigurationSettingUsage
+    // The type property
+    type_escaped *string
     // Setting control type representation in the UX. Possible values are: default, dropdown, smallTextBox, largeTextBox, toggle, multiheaderGrid, contextPane.
     uxBehavior *DeviceManagementConfigurationControlType
     // Item Version
@@ -293,6 +295,16 @@ func (m *DeviceManagementConfigurationSettingDefinition) GetFieldDeserializers()
         }
         return nil
     }
+    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetType(val)
+        }
+        return nil
+    }
     res["uxBehavior"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseDeviceManagementConfigurationControlType)
         if err != nil {
@@ -395,6 +407,14 @@ func (m *DeviceManagementConfigurationSettingDefinition) GetSettingUsage()(*Devi
         return nil
     } else {
         return m.settingUsage
+    }
+}
+// GetType gets the type property value. The type property
+func (m *DeviceManagementConfigurationSettingDefinition) GetType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
     }
 }
 // GetUxBehavior gets the uxBehavior property value. Setting control type representation in the UX. Possible values are: default, dropdown, smallTextBox, largeTextBox, toggle, multiheaderGrid, contextPane.
@@ -523,6 +543,12 @@ func (m *DeviceManagementConfigurationSettingDefinition) Serialize(writer i878a8
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("type", m.GetType())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetUxBehavior() != nil {
         cast := (*m.GetUxBehavior()).String()
         err = writer.WriteStringValue("uxBehavior", &cast)
@@ -633,6 +659,12 @@ func (m *DeviceManagementConfigurationSettingDefinition) SetRootDefinitionId(val
 func (m *DeviceManagementConfigurationSettingDefinition) SetSettingUsage(value *DeviceManagementConfigurationSettingUsage)() {
     if m != nil {
         m.settingUsage = value
+    }
+}
+// SetType sets the type property value. The type property
+func (m *DeviceManagementConfigurationSettingDefinition) SetType(value *string)() {
+    if m != nil {
+        m.type_escaped = value
     }
 }
 // SetUxBehavior sets the uxBehavior property value. Setting control type representation in the UX. Possible values are: default, dropdown, smallTextBox, largeTextBox, toggle, multiheaderGrid, contextPane.

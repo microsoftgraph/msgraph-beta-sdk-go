@@ -14,6 +14,7 @@ type AospDeviceOwnerWiFiConfigurationable interface {
     GetPreSharedKey()(*string)
     GetPreSharedKeyIsSet()(*bool)
     GetSsid()(*string)
+    GetType()(*string)
     GetWiFiSecurityType()(*AospDeviceOwnerWiFiSecurityType)
     SetConnectAutomatically(value *bool)()
     SetConnectWhenNetworkNameIsHidden(value *bool)()
@@ -21,5 +22,6 @@ type AospDeviceOwnerWiFiConfigurationable interface {
     SetPreSharedKey(value *string)()
     SetPreSharedKeyIsSet(value *bool)()
     SetSsid(value *string)()
+    SetType(value *string)()
     SetWiFiSecurityType(value *AospDeviceOwnerWiFiSecurityType)()
 }

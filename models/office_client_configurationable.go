@@ -14,6 +14,7 @@ type OfficeClientConfigurationable interface {
     GetDisplayName()(*string)
     GetPolicyPayload()([]byte)
     GetPriority()(*int32)
+    GetType()(*string)
     GetUserCheckinSummary()(OfficeUserCheckinSummaryable)
     GetUserPreferencePayload()([]byte)
     SetAssignments(value []OfficeClientConfigurationAssignmentable)()
@@ -22,6 +23,7 @@ type OfficeClientConfigurationable interface {
     SetDisplayName(value *string)()
     SetPolicyPayload(value []byte)()
     SetPriority(value *int32)()
+    SetType(value *string)()
     SetUserCheckinSummary(value OfficeUserCheckinSummaryable)()
     SetUserPreferencePayload(value []byte)()
 }

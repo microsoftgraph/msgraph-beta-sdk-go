@@ -11,7 +11,9 @@ type WindowsVpnConfigurationable interface {
     GetConnectionName()(*string)
     GetCustomXml()([]byte)
     GetServers()([]VpnServerable)
+    GetType()(*string)
     SetConnectionName(value *string)()
     SetCustomXml(value []byte)()
     SetServers(value []VpnServerable)()
+    SetType(value *string)()
 }

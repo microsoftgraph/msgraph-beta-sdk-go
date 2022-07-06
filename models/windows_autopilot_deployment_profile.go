@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// WindowsAutopilotDeploymentProfile windows Autopilot Deployment Profile
+// WindowsAutopilotDeploymentProfile 
 type WindowsAutopilotDeploymentProfile struct {
     Entity
     // The list of assigned devices for the profile.
@@ -38,8 +38,10 @@ type WindowsAutopilotDeploymentProfile struct {
     outOfBoxExperienceSettings OutOfBoxExperienceSettingsable
     // Scope tags for the profile.
     roleScopeTagIds []string
+    // The type property
+    type_escaped *string
 }
-// NewWindowsAutopilotDeploymentProfile instantiates a new windowsAutopilotDeploymentProfile and sets the default values.
+// NewWindowsAutopilotDeploymentProfile instantiates a new WindowsAutopilotDeploymentProfile and sets the default values.
 func NewWindowsAutopilotDeploymentProfile()(*WindowsAutopilotDeploymentProfile) {
     m := &WindowsAutopilotDeploymentProfile{
         Entity: *NewEntity(),
@@ -316,6 +318,16 @@ func (m *WindowsAutopilotDeploymentProfile) GetFieldDeserializers()(map[string]f
         }
         return nil
     }
+    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetLanguage gets the language property value. Language configured on the device
@@ -356,6 +368,14 @@ func (m *WindowsAutopilotDeploymentProfile) GetRoleScopeTagIds()([]string) {
         return nil
     } else {
         return m.roleScopeTagIds
+    }
+}
+// GetType gets the type property value. The type property
+func (m *WindowsAutopilotDeploymentProfile) GetType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
     }
 }
 // Serialize serializes information the current object
@@ -463,6 +483,12 @@ func (m *WindowsAutopilotDeploymentProfile) Serialize(writer i878a80d2330e89d268
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("type", m.GetType())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetAssignedDevices sets the assignedDevices property value. The list of assigned devices for the profile.
@@ -553,5 +579,11 @@ func (m *WindowsAutopilotDeploymentProfile) SetOutOfBoxExperienceSettings(value 
 func (m *WindowsAutopilotDeploymentProfile) SetRoleScopeTagIds(value []string)() {
     if m != nil {
         m.roleScopeTagIds = value
+    }
+}
+// SetType sets the type property value. The type property
+func (m *WindowsAutopilotDeploymentProfile) SetType(value *string)() {
+    if m != nil {
+        m.type_escaped = value
     }
 }

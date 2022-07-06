@@ -6,7 +6,7 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
-// SearchAnswer provides operations to manage the searchEntity singleton.
+// SearchAnswer provides operations to manage the collection of accessReviewDecision entities.
 type SearchAnswer struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
     // Search answer description shown on search results page.
@@ -17,6 +17,8 @@ type SearchAnswer struct {
     lastModifiedBy IdentitySetable
     // Timestamp of when the search answer is created or edited. Read-only.
     lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
+    // The type property
+    type_escaped *string
     // Search answer URL link. When users click this search answer in search results, they will go to this URL.
     webUrl *string
 }
@@ -113,6 +115,16 @@ func (m *SearchAnswer) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
         }
         return nil
     }
+    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetType(val)
+        }
+        return nil
+    }
     res["webUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -139,6 +151,14 @@ func (m *SearchAnswer) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad9
         return nil
     } else {
         return m.lastModifiedDateTime
+    }
+}
+// GetType gets the type property value. The type property
+func (m *SearchAnswer) GetType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
     }
 }
 // GetWebUrl gets the webUrl property value. Search answer URL link. When users click this search answer in search results, they will go to this URL.
@@ -180,6 +200,12 @@ func (m *SearchAnswer) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
         }
     }
     {
+        err = writer.WriteStringValue("type", m.GetType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("webUrl", m.GetWebUrl())
         if err != nil {
             return err
@@ -209,6 +235,12 @@ func (m *SearchAnswer) SetLastModifiedBy(value IdentitySetable)() {
 func (m *SearchAnswer) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     if m != nil {
         m.lastModifiedDateTime = value
+    }
+}
+// SetType sets the type property value. The type property
+func (m *SearchAnswer) SetType(value *string)() {
+    if m != nil {
+        m.type_escaped = value
     }
 }
 // SetWebUrl sets the webUrl property value. Search answer URL link. When users click this search answer in search results, they will go to this URL.

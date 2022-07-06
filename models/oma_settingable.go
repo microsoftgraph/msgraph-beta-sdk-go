@@ -13,9 +13,11 @@ type OmaSettingable interface {
     GetIsEncrypted()(*bool)
     GetOmaUri()(*string)
     GetSecretReferenceValueId()(*string)
+    GetType()(*string)
     SetDescription(value *string)()
     SetDisplayName(value *string)()
     SetIsEncrypted(value *bool)()
     SetOmaUri(value *string)()
     SetSecretReferenceValueId(value *string)()
+    SetType(value *string)()
 }

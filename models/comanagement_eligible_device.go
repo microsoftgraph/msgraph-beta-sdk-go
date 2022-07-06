@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ComanagementEligibleDevice device Co-Management eligibility state
+// ComanagementEligibleDevice 
 type ComanagementEligibleDevice struct {
     Entity
     // ClientRegistrationStatus. Possible values are: notRegistered, registered, revoked, keyConflict, approvalPending, certificateReset, notRegisteredPendingEnrollment, unknown.
@@ -46,7 +46,7 @@ type ComanagementEligibleDevice struct {
     // UserName
     userName *string
 }
-// NewComanagementEligibleDevice instantiates a new comanagementEligibleDevice and sets the default values.
+// NewComanagementEligibleDevice instantiates a new ComanagementEligibleDevice and sets the default values.
 func NewComanagementEligibleDevice()(*ComanagementEligibleDevice) {
     m := &ComanagementEligibleDevice{
         Entity: *NewEntity(),

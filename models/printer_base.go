@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// PrinterBase provides operations to manage the collection of administrativeUnit entities.
+// PrinterBase provides operations to manage the collection of activityStatistics entities.
 type PrinterBase struct {
     Entity
     // The capabilities of the printer/printerShare.
@@ -27,6 +27,8 @@ type PrinterBase struct {
     name *string
     // The processing status of the printer/printerShare, including any errors.
     status PrinterStatusable
+    // The type property
+    type_escaped *string
 }
 // NewPrinterBase instantiates a new printerBase and sets the default values.
 func NewPrinterBase()(*PrinterBase) {
@@ -191,6 +193,16 @@ func (m *PrinterBase) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
         }
         return nil
     }
+    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetIsAcceptingJobs gets the isAcceptingJobs property value. Whether the printer/printerShare is currently accepting new print jobs.
@@ -247,6 +259,14 @@ func (m *PrinterBase) GetStatus()(PrinterStatusable) {
         return nil
     } else {
         return m.status
+    }
+}
+// GetType gets the type property value. The type property
+func (m *PrinterBase) GetType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
     }
 }
 // Serialize serializes information the current object
@@ -319,6 +339,12 @@ func (m *PrinterBase) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("type", m.GetType())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetCapabilities sets the capabilities property value. The capabilities of the printer/printerShare.
@@ -379,5 +405,11 @@ func (m *PrinterBase) SetName(value *string)() {
 func (m *PrinterBase) SetStatus(value PrinterStatusable)() {
     if m != nil {
         m.status = value
+    }
+}
+// SetType sets the type property value. The type property
+func (m *PrinterBase) SetType(value *string)() {
+    if m != nil {
+        m.type_escaped = value
     }
 }

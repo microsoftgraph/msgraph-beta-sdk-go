@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// SignIn provides operations to manage the auditLogRoot singleton.
+// SignIn provides operations to manage the collection of accessReviewDecision entities.
 type SignIn struct {
     Entity
     // The application name displayed in the Azure Portal. Supports $filter (eq and startsWith operators only).
@@ -116,6 +116,8 @@ type SignIn struct {
     tokenIssuerName *string
     // The type of identity provider. The possible values are: AzureAD, ADFederationServices, UnknownFutureValue, AzureADBackupAuth, ADFederationServicesMFAAdapter, NPSExtension. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: AzureADBackupAuth , ADFederationServicesMFAAdapter , NPSExtension.
     tokenIssuerType *TokenIssuerType
+    // The type property
+    type_escaped *string
     // A unique base64 encoded request identifier used to track tokens issued by Azure AD as they are redeemed at resource providers.
     uniqueTokenIdentifier *string
     // The user agent information related to sign-in. Supports $filter (eq and startsWith operators only).
@@ -902,6 +904,16 @@ func (m *SignIn) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689638
         }
         return nil
     }
+    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetType(val)
+        }
+        return nil
+    }
     res["uniqueTokenIdentifier"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -1234,6 +1246,14 @@ func (m *SignIn) GetTokenIssuerType()(*TokenIssuerType) {
         return nil
     } else {
         return m.tokenIssuerType
+    }
+}
+// GetType gets the type property value. The type property
+func (m *SignIn) GetType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
     }
 }
 // GetUniqueTokenIdentifier gets the uniqueTokenIdentifier property value. A unique base64 encoded request identifier used to track tokens issued by Azure AD as they are redeemed at resource providers.
@@ -1654,6 +1674,12 @@ func (m *SignIn) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c
         }
     }
     {
+        err = writer.WriteStringValue("type", m.GetType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("uniqueTokenIdentifier", m.GetUniqueTokenIdentifier())
         if err != nil {
             return err
@@ -2014,6 +2040,12 @@ func (m *SignIn) SetTokenIssuerName(value *string)() {
 func (m *SignIn) SetTokenIssuerType(value *TokenIssuerType)() {
     if m != nil {
         m.tokenIssuerType = value
+    }
+}
+// SetType sets the type property value. The type property
+func (m *SignIn) SetType(value *string)() {
+    if m != nil {
+        m.type_escaped = value
     }
 }
 // SetUniqueTokenIdentifier sets the uniqueTokenIdentifier property value. A unique base64 encoded request identifier used to track tokens issued by Azure AD as they are redeemed at resource providers.

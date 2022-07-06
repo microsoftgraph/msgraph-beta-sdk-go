@@ -5,10 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// TodoTask provides operations to manage the collection of administrativeUnit entities.
+// TodoTask provides operations to manage the collection of accessReviewDecision entities.
 type TodoTask struct {
     Entity
-    // The attachments property
+    // A collection of file attachments for the task.
     attachments []AttachmentBaseable
     // The attachmentSessions property
     attachmentSessions []AttachmentSessionable
@@ -28,7 +28,7 @@ type TodoTask struct {
     dueDateTime DateTimeTimeZoneable
     // The collection of open extensions defined for the task. Nullable.
     extensions []Extensionable
-    // The hasAttachments property
+    // Indicates whether the task has attachments.
     hasAttachments *bool
     // The importance of the task. Possible values are: low, normal, high.
     importance *Importance
@@ -42,6 +42,8 @@ type TodoTask struct {
     recurrence PatternedRecurrenceable
     // The date and time for a reminder alert of the task to occur.
     reminderDateTime DateTimeTimeZoneable
+    // The startDateTime property
+    startDateTime DateTimeTimeZoneable
     // Indicates the state or progress of the task. Possible values are: notStarted, inProgress, completed, waitingOnOthers, deferred.
     status *TaskStatus
     // A brief description of the task.
@@ -58,7 +60,7 @@ func NewTodoTask()(*TodoTask) {
 func CreateTodoTaskFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewTodoTask(), nil
 }
-// GetAttachments gets the attachments property value. The attachments property
+// GetAttachments gets the attachments property value. A collection of file attachments for the task.
 func (m *TodoTask) GetAttachments()([]AttachmentBaseable) {
     if m == nil {
         return nil
@@ -335,6 +337,16 @@ func (m *TodoTask) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
         }
         return nil
     }
+    res["startDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateDateTimeTimeZoneFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetStartDateTime(val.(DateTimeTimeZoneable))
+        }
+        return nil
+    }
     res["status"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseTaskStatus)
         if err != nil {
@@ -357,7 +369,7 @@ func (m *TodoTask) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
     }
     return res
 }
-// GetHasAttachments gets the hasAttachments property value. The hasAttachments property
+// GetHasAttachments gets the hasAttachments property value. Indicates whether the task has attachments.
 func (m *TodoTask) GetHasAttachments()(*bool) {
     if m == nil {
         return nil
@@ -411,6 +423,14 @@ func (m *TodoTask) GetReminderDateTime()(DateTimeTimeZoneable) {
         return nil
     } else {
         return m.reminderDateTime
+    }
+}
+// GetStartDateTime gets the startDateTime property value. The startDateTime property
+func (m *TodoTask) GetStartDateTime()(DateTimeTimeZoneable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.startDateTime
     }
 }
 // GetStatus gets the status property value. Indicates the state or progress of the task. Possible values are: notStarted, inProgress, completed, waitingOnOthers, deferred.
@@ -558,6 +578,12 @@ func (m *TodoTask) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
             return err
         }
     }
+    {
+        err = writer.WriteObjectValue("startDateTime", m.GetStartDateTime())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetStatus() != nil {
         cast := (*m.GetStatus()).String()
         err = writer.WriteStringValue("status", &cast)
@@ -573,7 +599,7 @@ func (m *TodoTask) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
     }
     return nil
 }
-// SetAttachments sets the attachments property value. The attachments property
+// SetAttachments sets the attachments property value. A collection of file attachments for the task.
 func (m *TodoTask) SetAttachments(value []AttachmentBaseable)() {
     if m != nil {
         m.attachments = value
@@ -633,7 +659,7 @@ func (m *TodoTask) SetExtensions(value []Extensionable)() {
         m.extensions = value
     }
 }
-// SetHasAttachments sets the hasAttachments property value. The hasAttachments property
+// SetHasAttachments sets the hasAttachments property value. Indicates whether the task has attachments.
 func (m *TodoTask) SetHasAttachments(value *bool)() {
     if m != nil {
         m.hasAttachments = value
@@ -673,6 +699,12 @@ func (m *TodoTask) SetRecurrence(value PatternedRecurrenceable)() {
 func (m *TodoTask) SetReminderDateTime(value DateTimeTimeZoneable)() {
     if m != nil {
         m.reminderDateTime = value
+    }
+}
+// SetStartDateTime sets the startDateTime property value. The startDateTime property
+func (m *TodoTask) SetStartDateTime(value DateTimeTimeZoneable)() {
+    if m != nil {
+        m.startDateTime = value
     }
 }
 // SetStatus sets the status property value. Indicates the state or progress of the task. Possible values are: notStarted, inProgress, completed, waitingOnOthers, deferred.

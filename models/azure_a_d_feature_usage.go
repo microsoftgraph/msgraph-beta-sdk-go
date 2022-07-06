@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AzureADFeatureUsage provides operations to call the getAzureADFeatureUsage method.
+// AzureADFeatureUsage 
 type AzureADFeatureUsage struct {
     Entity
     // The featureName property
@@ -15,7 +15,7 @@ type AzureADFeatureUsage struct {
     // The usage property
     usage *int32
 }
-// NewAzureADFeatureUsage instantiates a new azureADFeatureUsage and sets the default values.
+// NewAzureADFeatureUsage instantiates a new AzureADFeatureUsage and sets the default values.
 func NewAzureADFeatureUsage()(*AzureADFeatureUsage) {
     m := &AzureADFeatureUsage{
         Entity: *NewEntity(),

@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// EdiscoveryEstimateOperation provides operations to manage the security singleton.
+// EdiscoveryEstimateOperation provides operations to manage the collection of activityStatistics entities.
 type EdiscoveryEstimateOperation struct {
     CaseOperation
     // The estimated count of items for the search that matched the content query.

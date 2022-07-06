@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DeviceAndAppManagementAssignmentFilter a class containing the properties used for Assignment Filter.
+// DeviceAndAppManagementAssignmentFilter 
 type DeviceAndAppManagementAssignmentFilter struct {
     Entity
     // Creation time of the Assignment Filter.
@@ -22,8 +22,10 @@ type DeviceAndAppManagementAssignmentFilter struct {
     roleScopeTags []string
     // Rule definition of the Assignment Filter.
     rule *string
+    // The type property
+    type_escaped *string
 }
-// NewDeviceAndAppManagementAssignmentFilter instantiates a new deviceAndAppManagementAssignmentFilter and sets the default values.
+// NewDeviceAndAppManagementAssignmentFilter instantiates a new DeviceAndAppManagementAssignmentFilter and sets the default values.
 func NewDeviceAndAppManagementAssignmentFilter()(*DeviceAndAppManagementAssignmentFilter) {
     m := &DeviceAndAppManagementAssignmentFilter{
         Entity: *NewEntity(),
@@ -154,6 +156,16 @@ func (m *DeviceAndAppManagementAssignmentFilter) GetFieldDeserializers()(map[str
         }
         return nil
     }
+    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. Last modified time of the Assignment Filter.
@@ -186,6 +198,14 @@ func (m *DeviceAndAppManagementAssignmentFilter) GetRule()(*string) {
         return nil
     } else {
         return m.rule
+    }
+}
+// GetType gets the type property value. The type property
+func (m *DeviceAndAppManagementAssignmentFilter) GetType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
     }
 }
 // Serialize serializes information the current object
@@ -237,6 +257,12 @@ func (m *DeviceAndAppManagementAssignmentFilter) Serialize(writer i878a80d2330e8
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("type", m.GetType())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetCreatedDateTime sets the createdDateTime property value. Creation time of the Assignment Filter.
@@ -279,5 +305,11 @@ func (m *DeviceAndAppManagementAssignmentFilter) SetRoleScopeTags(value []string
 func (m *DeviceAndAppManagementAssignmentFilter) SetRule(value *string)() {
     if m != nil {
         m.rule = value
+    }
+}
+// SetType sets the type property value. The type property
+func (m *DeviceAndAppManagementAssignmentFilter) SetType(value *string)() {
+    if m != nil {
+        m.type_escaped = value
     }
 }

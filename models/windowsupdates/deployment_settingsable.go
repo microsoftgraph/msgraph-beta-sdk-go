@@ -11,7 +11,9 @@ type DeploymentSettingsable interface {
     GetMonitoring()(MonitoringSettingsable)
     GetRollout()(RolloutSettingsable)
     GetSafeguard()(SafeguardSettingsable)
+    GetType()(*string)
     SetMonitoring(value MonitoringSettingsable)()
     SetRollout(value RolloutSettingsable)()
     SetSafeguard(value SafeguardSettingsable)()
+    SetType(value *string)()
 }

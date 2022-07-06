@@ -9,10 +9,12 @@ type EasEmailProfileConfigurationBaseable interface {
     DeviceConfigurationable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetCustomDomainName()(*string)
+    GetType()(*string)
     GetUserDomainNameSource()(*DomainNameSource)
     GetUsernameAADSource()(*UsernameSource)
     GetUsernameSource()(*UserEmailSource)
     SetCustomDomainName(value *string)()
+    SetType(value *string)()
     SetUserDomainNameSource(value *DomainNameSource)()
     SetUsernameAADSource(value *UsernameSource)()
     SetUsernameSource(value *UserEmailSource)()

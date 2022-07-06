@@ -14,10 +14,12 @@ type RoleAssignmentable interface {
     GetRoleDefinition()(RoleDefinitionable)
     GetScopeMembers()([]string)
     GetScopeType()(*RoleAssignmentScopeType)
+    GetType()(*string)
     SetDescription(value *string)()
     SetDisplayName(value *string)()
     SetResourceScopes(value []string)()
     SetRoleDefinition(value RoleDefinitionable)()
     SetScopeMembers(value []string)()
     SetScopeType(value *RoleAssignmentScopeType)()
+    SetType(value *string)()
 }

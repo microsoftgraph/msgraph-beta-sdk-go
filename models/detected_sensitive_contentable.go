@@ -13,9 +13,11 @@ type DetectedSensitiveContentable interface {
     GetMatches()([]SensitiveContentLocationable)
     GetScope()(*SensitiveTypeScope)
     GetSensitiveTypeSource()(*SensitiveTypeSource)
+    GetType()(*string)
     SetClassificationAttributes(value []ClassificationAttributeable)()
     SetClassificationMethod(value *ClassificationMethod)()
     SetMatches(value []SensitiveContentLocationable)()
     SetScope(value *SensitiveTypeScope)()
     SetSensitiveTypeSource(value *SensitiveTypeSource)()
+    SetType(value *string)()
 }

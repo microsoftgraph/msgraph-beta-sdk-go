@@ -16,6 +16,7 @@ type WindowsPhone81AppXable interface {
     GetMinimumSupportedOperatingSystem()(WindowsMinimumOperatingSystemable)
     GetPhoneProductIdentifier()(*string)
     GetPhonePublisherId()(*string)
+    GetType()(*string)
     SetApplicableArchitectures(value *WindowsArchitecture)()
     SetIdentityName(value *string)()
     SetIdentityPublisherHash(value *string)()
@@ -24,4 +25,5 @@ type WindowsPhone81AppXable interface {
     SetMinimumSupportedOperatingSystem(value WindowsMinimumOperatingSystemable)()
     SetPhoneProductIdentifier(value *string)()
     SetPhonePublisherId(value *string)()
+    SetType(value *string)()
 }

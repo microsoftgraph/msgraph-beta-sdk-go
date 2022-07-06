@@ -4,13 +4,13 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// GroupWritebackConfiguration provides operations to manage the collection of administrativeUnit entities.
+// GroupWritebackConfiguration 
 type GroupWritebackConfiguration struct {
     WritebackConfiguration
-    // The onPremisesGroupType property
+    // Indicates the target on-premise group type the cloud object will be written back as. Nullable. The possible values are: universalDistributionGroup, universalSecurityGroup, universalMailEnabledSecurityGroup.If the cloud group is a unified (Microsoft 365) group, this property can be one of the following: universalDistributionGroup, universalSecurityGroup, universalMailEnabledSecurityGroup. Azure AD security groups can be written back as universalSecurityGroup. If isEnabled or the NewUnifiedGroupWritebackDefault group setting is true but this property is not explicitly configured: Microsoft 365 groups will be written back as universalDistributionGroup by defaultSecurity groups will be written back as universalSecurityGroup by default
     onPremisesGroupType *string
 }
-// NewGroupWritebackConfiguration instantiates a new groupWritebackConfiguration and sets the default values.
+// NewGroupWritebackConfiguration instantiates a new GroupWritebackConfiguration and sets the default values.
 func NewGroupWritebackConfiguration()(*GroupWritebackConfiguration) {
     m := &GroupWritebackConfiguration{
         WritebackConfiguration: *NewWritebackConfiguration(),
@@ -36,7 +36,7 @@ func (m *GroupWritebackConfiguration) GetFieldDeserializers()(map[string]func(i8
     }
     return res
 }
-// GetOnPremisesGroupType gets the onPremisesGroupType property value. The onPremisesGroupType property
+// GetOnPremisesGroupType gets the onPremisesGroupType property value. Indicates the target on-premise group type the cloud object will be written back as. Nullable. The possible values are: universalDistributionGroup, universalSecurityGroup, universalMailEnabledSecurityGroup.If the cloud group is a unified (Microsoft 365) group, this property can be one of the following: universalDistributionGroup, universalSecurityGroup, universalMailEnabledSecurityGroup. Azure AD security groups can be written back as universalSecurityGroup. If isEnabled or the NewUnifiedGroupWritebackDefault group setting is true but this property is not explicitly configured: Microsoft 365 groups will be written back as universalDistributionGroup by defaultSecurity groups will be written back as universalSecurityGroup by default
 func (m *GroupWritebackConfiguration) GetOnPremisesGroupType()(*string) {
     if m == nil {
         return nil
@@ -58,7 +58,7 @@ func (m *GroupWritebackConfiguration) Serialize(writer i878a80d2330e89d26896388a
     }
     return nil
 }
-// SetOnPremisesGroupType sets the onPremisesGroupType property value. The onPremisesGroupType property
+// SetOnPremisesGroupType sets the onPremisesGroupType property value. Indicates the target on-premise group type the cloud object will be written back as. Nullable. The possible values are: universalDistributionGroup, universalSecurityGroup, universalMailEnabledSecurityGroup.If the cloud group is a unified (Microsoft 365) group, this property can be one of the following: universalDistributionGroup, universalSecurityGroup, universalMailEnabledSecurityGroup. Azure AD security groups can be written back as universalSecurityGroup. If isEnabled or the NewUnifiedGroupWritebackDefault group setting is true but this property is not explicitly configured: Microsoft 365 groups will be written back as universalDistributionGroup by defaultSecurity groups will be written back as universalSecurityGroup by default
 func (m *GroupWritebackConfiguration) SetOnPremisesGroupType(value *string)() {
     if m != nil {
         m.onPremisesGroupType = value

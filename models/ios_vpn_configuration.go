@@ -21,6 +21,8 @@ type IosVpnConfiguration struct {
     strictEnforcement *bool
     // Targeted mobile apps. This collection can contain a maximum of 500 elements.
     targetedMobileApps []AppListItemable
+    // The type property
+    type_escaped *string
     // Zscaler only. Enter a static domain to pre-populate the login field with in the Zscaler app. If this is left empty, the user's Azure Active Directory domain will be used instead.
     userDomain *string
 }
@@ -159,6 +161,16 @@ func (m *IosVpnConfiguration) GetFieldDeserializers()(map[string]func(i878a80d23
         }
         return nil
     }
+    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetType(val)
+        }
+        return nil
+    }
     res["userDomain"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -201,6 +213,14 @@ func (m *IosVpnConfiguration) GetTargetedMobileApps()([]AppListItemable) {
         return nil
     } else {
         return m.targetedMobileApps
+    }
+}
+// GetType gets the type property value. The type property
+func (m *IosVpnConfiguration) GetType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
     }
 }
 // GetUserDomain gets the userDomain property value. Zscaler only. Enter a static domain to pre-populate the login field with in the Zscaler app. If this is left empty, the user's Azure Active Directory domain will be used instead.
@@ -264,6 +284,12 @@ func (m *IosVpnConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef
         }
     }
     {
+        err = writer.WriteStringValue("type", m.GetType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("userDomain", m.GetUserDomain())
         if err != nil {
             return err
@@ -311,6 +337,12 @@ func (m *IosVpnConfiguration) SetStrictEnforcement(value *bool)() {
 func (m *IosVpnConfiguration) SetTargetedMobileApps(value []AppListItemable)() {
     if m != nil {
         m.targetedMobileApps = value
+    }
+}
+// SetType sets the type property value. The type property
+func (m *IosVpnConfiguration) SetType(value *string)() {
+    if m != nil {
+        m.type_escaped = value
     }
 }
 // SetUserDomain sets the userDomain property value. Zscaler only. Enter a static domain to pre-populate the login field with in the Zscaler app. If this is left empty, the user's Azure Active Directory domain will be used instead.

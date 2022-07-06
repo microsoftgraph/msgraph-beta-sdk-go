@@ -12,8 +12,10 @@ type DeviceManagementConfigurationSettingApplicabilityable interface {
     GetDeviceMode()(*DeviceManagementConfigurationDeviceMode)
     GetPlatform()(*DeviceManagementConfigurationPlatforms)
     GetTechnologies()(*DeviceManagementConfigurationTechnologies)
+    GetType()(*string)
     SetDescription(value *string)()
     SetDeviceMode(value *DeviceManagementConfigurationDeviceMode)()
     SetPlatform(value *DeviceManagementConfigurationPlatforms)()
     SetTechnologies(value *DeviceManagementConfigurationTechnologies)()
+    SetType(value *string)()
 }

@@ -31,6 +31,8 @@ type WindowsWifiConfiguration struct {
     proxySetting *WiFiProxySetting
     // Specify the SSID of the wifi connection.
     ssid *string
+    // The type property
+    type_escaped *string
     // Specify the Wifi Security Type. Possible values are: open, wpaPersonal, wpaEnterprise, wep, wpa2Personal, wpa2Enterprise.
     wifiSecurityType *WiFiSecurityType
 }
@@ -211,6 +213,16 @@ func (m *WindowsWifiConfiguration) GetFieldDeserializers()(map[string]func(i878a
         }
         return nil
     }
+    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetType(val)
+        }
+        return nil
+    }
     res["wifiSecurityType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseWiFiSecurityType)
         if err != nil {
@@ -293,6 +305,14 @@ func (m *WindowsWifiConfiguration) GetSsid()(*string) {
         return nil
     } else {
         return m.ssid
+    }
+}
+// GetType gets the type property value. The type property
+func (m *WindowsWifiConfiguration) GetType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
     }
 }
 // GetWifiSecurityType gets the wifiSecurityType property value. Specify the Wifi Security Type. Possible values are: open, wpaPersonal, wpaEnterprise, wep, wpa2Personal, wpa2Enterprise.
@@ -383,6 +403,12 @@ func (m *WindowsWifiConfiguration) Serialize(writer i878a80d2330e89d26896388a3f4
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("type", m.GetType())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetWifiSecurityType() != nil {
         cast := (*m.GetWifiSecurityType()).String()
         err = writer.WriteStringValue("wifiSecurityType", &cast)
@@ -462,6 +488,12 @@ func (m *WindowsWifiConfiguration) SetProxySetting(value *WiFiProxySetting)() {
 func (m *WindowsWifiConfiguration) SetSsid(value *string)() {
     if m != nil {
         m.ssid = value
+    }
+}
+// SetType sets the type property value. The type property
+func (m *WindowsWifiConfiguration) SetType(value *string)() {
+    if m != nil {
+        m.type_escaped = value
     }
 }
 // SetWifiSecurityType sets the wifiSecurityType property value. Specify the Wifi Security Type. Possible values are: open, wpaPersonal, wpaEnterprise, wep, wpa2Personal, wpa2Enterprise.

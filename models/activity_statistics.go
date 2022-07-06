@@ -17,6 +17,8 @@ type ActivityStatistics struct {
     startDate *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly
     // The time zone that the user sets in Microsoft Outlook is used for the computation. For example, the property value could be 'Pacific Standard Time.'
     timeZoneUsed *string
+    // The type property
+    type_escaped *string
 }
 // NewActivityStatistics instantiates a new activityStatistics and sets the default values.
 func NewActivityStatistics()(*ActivityStatistics) {
@@ -133,6 +135,16 @@ func (m *ActivityStatistics) GetFieldDeserializers()(map[string]func(i878a80d233
         }
         return nil
     }
+    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetStartDate gets the startDate property value. Date when the activity started, expressed in ISO 8601 format for calendar dates. For example, the property value could be '2019-07-04' that follows the YYYY-MM-DD format.
@@ -149,6 +161,14 @@ func (m *ActivityStatistics) GetTimeZoneUsed()(*string) {
         return nil
     } else {
         return m.timeZoneUsed
+    }
+}
+// GetType gets the type property value. The type property
+func (m *ActivityStatistics) GetType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
     }
 }
 // Serialize serializes information the current object
@@ -188,6 +208,12 @@ func (m *ActivityStatistics) Serialize(writer i878a80d2330e89d26896388a3f487eef2
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("type", m.GetType())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetActivity sets the activity property value. The type of activity for which statistics are returned. The possible values are: call, chat, email, focus, and meeting.
@@ -218,5 +244,11 @@ func (m *ActivityStatistics) SetStartDate(value *i878a80d2330e89d26896388a3f487e
 func (m *ActivityStatistics) SetTimeZoneUsed(value *string)() {
     if m != nil {
         m.timeZoneUsed = value
+    }
+}
+// SetType sets the type property value. The type property
+func (m *ActivityStatistics) SetType(value *string)() {
+    if m != nil {
+        m.type_escaped = value
     }
 }

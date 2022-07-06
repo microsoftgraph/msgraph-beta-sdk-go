@@ -18,6 +18,7 @@ type PrinterBaseable interface {
     GetModel()(*string)
     GetName()(*string)
     GetStatus()(PrinterStatusable)
+    GetType()(*string)
     SetCapabilities(value PrinterCapabilitiesable)()
     SetDefaults(value PrinterDefaultsable)()
     SetDisplayName(value *string)()
@@ -28,4 +29,5 @@ type PrinterBaseable interface {
     SetModel(value *string)()
     SetName(value *string)()
     SetStatus(value PrinterStatusable)()
+    SetType(value *string)()
 }

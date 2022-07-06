@@ -15,6 +15,7 @@ type IosVpnConfigurationable interface {
     GetMicrosoftTunnelSiteId()(*string)
     GetStrictEnforcement()(*bool)
     GetTargetedMobileApps()([]AppListItemable)
+    GetType()(*string)
     GetUserDomain()(*string)
     SetCloudName(value *string)()
     SetDerivedCredentialSettings(value DeviceManagementDerivedCredentialSettingsable)()
@@ -23,5 +24,6 @@ type IosVpnConfigurationable interface {
     SetMicrosoftTunnelSiteId(value *string)()
     SetStrictEnforcement(value *bool)()
     SetTargetedMobileApps(value []AppListItemable)()
+    SetType(value *string)()
     SetUserDomain(value *string)()
 }

@@ -19,6 +19,8 @@ type AndroidWorkProfileEasEmailProfileBase struct {
     identityCertificate AndroidWorkProfileCertificateProfileBaseable
     // Indicates whether or not to use SSL.
     requireSsl *bool
+    // The type property
+    type_escaped *string
     // Username attribute that is picked from AAD and injected into this profile before installing on the device. Possible values are: username, userPrincipalName, samAccountName, primarySmtpAddress.
     usernameSource *AndroidUsernameSource
 }
@@ -141,6 +143,16 @@ func (m *AndroidWorkProfileEasEmailProfileBase) GetFieldDeserializers()(map[stri
         }
         return nil
     }
+    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetType(val)
+        }
+        return nil
+    }
     res["usernameSource"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseAndroidUsernameSource)
         if err != nil {
@@ -175,6 +187,14 @@ func (m *AndroidWorkProfileEasEmailProfileBase) GetRequireSsl()(*bool) {
         return nil
     } else {
         return m.requireSsl
+    }
+}
+// GetType gets the type property value. The type property
+func (m *AndroidWorkProfileEasEmailProfileBase) GetType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
     }
 }
 // GetUsernameSource gets the usernameSource property value. Username attribute that is picked from AAD and injected into this profile before installing on the device. Possible values are: username, userPrincipalName, samAccountName, primarySmtpAddress.
@@ -230,6 +250,12 @@ func (m *AndroidWorkProfileEasEmailProfileBase) Serialize(writer i878a80d2330e89
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("type", m.GetType())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetUsernameSource() != nil {
         cast := (*m.GetUsernameSource()).String()
         err = writer.WriteStringValue("usernameSource", &cast)
@@ -273,6 +299,12 @@ func (m *AndroidWorkProfileEasEmailProfileBase) SetIdentityCertificate(value And
 func (m *AndroidWorkProfileEasEmailProfileBase) SetRequireSsl(value *bool)() {
     if m != nil {
         m.requireSsl = value
+    }
+}
+// SetType sets the type property value. The type property
+func (m *AndroidWorkProfileEasEmailProfileBase) SetType(value *string)() {
+    if m != nil {
+        m.type_escaped = value
     }
 }
 // SetUsernameSource sets the usernameSource property value. Username attribute that is picked from AAD and injected into this profile before installing on the device. Possible values are: username, userPrincipalName, samAccountName, primarySmtpAddress.

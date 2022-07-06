@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ExactMatchDataStoreBase provides operations to manage the dataClassificationService singleton.
+// ExactMatchDataStoreBase provides operations to manage the collection of accessReviewDecision entities.
 type ExactMatchDataStoreBase struct {
     Entity
     // The columns property
@@ -16,6 +16,8 @@ type ExactMatchDataStoreBase struct {
     description *string
     // The displayName property
     displayName *string
+    // The type property
+    type_escaped *string
 }
 // NewExactMatchDataStoreBase instantiates a new exactMatchDataStoreBase and sets the default values.
 func NewExactMatchDataStoreBase()(*ExactMatchDataStoreBase) {
@@ -126,7 +128,25 @@ func (m *ExactMatchDataStoreBase) GetFieldDeserializers()(map[string]func(i878a8
         }
         return nil
     }
+    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetType(val)
+        }
+        return nil
+    }
     return res
+}
+// GetType gets the type property value. The type property
+func (m *ExactMatchDataStoreBase) GetType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
+    }
 }
 // Serialize serializes information the current object
 func (m *ExactMatchDataStoreBase) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -162,6 +182,12 @@ func (m *ExactMatchDataStoreBase) Serialize(writer i878a80d2330e89d26896388a3f48
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("type", m.GetType())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetColumns sets the columns property value. The columns property
@@ -186,5 +212,11 @@ func (m *ExactMatchDataStoreBase) SetDescription(value *string)() {
 func (m *ExactMatchDataStoreBase) SetDisplayName(value *string)() {
     if m != nil {
         m.displayName = value
+    }
+}
+// SetType sets the type property value. The type property
+func (m *ExactMatchDataStoreBase) SetType(value *string)() {
+    if m != nil {
+        m.type_escaped = value
     }
 }

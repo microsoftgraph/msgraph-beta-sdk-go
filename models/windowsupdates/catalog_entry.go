@@ -15,6 +15,8 @@ type CatalogEntry struct {
     displayName *string
     // The release date for the content. Read-only.
     releaseDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
+    // The type property
+    type_escaped *string
 }
 // NewCatalogEntry instantiates a new catalogEntry and sets the default values.
 func NewCatalogEntry()(*CatalogEntry) {
@@ -95,6 +97,16 @@ func (m *CatalogEntry) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
         }
         return nil
     }
+    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetReleaseDateTime gets the releaseDateTime property value. The release date for the content. Read-only.
@@ -103,6 +115,14 @@ func (m *CatalogEntry) GetReleaseDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6
         return nil
     } else {
         return m.releaseDateTime
+    }
+}
+// GetType gets the type property value. The type property
+func (m *CatalogEntry) GetType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
     }
 }
 // Serialize serializes information the current object
@@ -129,6 +149,12 @@ func (m *CatalogEntry) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("type", m.GetType())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetDeployableUntilDateTime sets the deployableUntilDateTime property value. The date on which the content is no longer available to deploy using the service. Read-only.
@@ -147,5 +173,11 @@ func (m *CatalogEntry) SetDisplayName(value *string)() {
 func (m *CatalogEntry) SetReleaseDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     if m != nil {
         m.releaseDateTime = value
+    }
+}
+// SetType sets the type property value. The type property
+func (m *CatalogEntry) SetType(value *string)() {
+    if m != nil {
+        m.type_escaped = value
     }
 }

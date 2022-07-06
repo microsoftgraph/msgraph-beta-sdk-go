@@ -10,6 +10,8 @@ type DeviceManagementConfigurationSettingValue struct {
     additionalData map[string]interface{}
     // Setting value template reference
     settingValueTemplateReference DeviceManagementConfigurationSettingValueTemplateReferenceable
+    // The type property
+    type_escaped *string
 }
 // NewDeviceManagementConfigurationSettingValue instantiates a new deviceManagementConfigurationSettingValue and sets the default values.
 func NewDeviceManagementConfigurationSettingValue()(*DeviceManagementConfigurationSettingValue) {
@@ -20,6 +22,29 @@ func NewDeviceManagementConfigurationSettingValue()(*DeviceManagementConfigurati
 }
 // CreateDeviceManagementConfigurationSettingValueFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateDeviceManagementConfigurationSettingValueFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+    if parseNode != nil {
+        mappingValueNode, err := parseNode.GetChildNode("@odata.type")
+        if err != nil {
+            return nil, err
+        }
+        if mappingValueNode != nil {
+            mappingValue, err := mappingValueNode.GetStringValue()
+            if err != nil {
+                return nil, err
+            }
+            if mappingValue != nil {
+                mappingStr := *mappingValue
+                switch mappingStr {
+                    case "#microsoft.graph.deviceManagementConfigurationChoiceSettingValue":
+                        return NewDeviceManagementConfigurationChoiceSettingValue(), nil
+                    case "#microsoft.graph.deviceManagementConfigurationGroupSettingValue":
+                        return NewDeviceManagementConfigurationGroupSettingValue(), nil
+                    case "#microsoft.graph.deviceManagementConfigurationSimpleSettingValue":
+                        return NewDeviceManagementConfigurationSimpleSettingValue(), nil
+                }
+            }
+        }
+    }
     return NewDeviceManagementConfigurationSettingValue(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -43,6 +68,16 @@ func (m *DeviceManagementConfigurationSettingValue) GetFieldDeserializers()(map[
         }
         return nil
     }
+    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetSettingValueTemplateReference gets the settingValueTemplateReference property value. Setting value template reference
@@ -53,10 +88,24 @@ func (m *DeviceManagementConfigurationSettingValue) GetSettingValueTemplateRefer
         return m.settingValueTemplateReference
     }
 }
+// GetType gets the type property value. The type property
+func (m *DeviceManagementConfigurationSettingValue) GetType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
+    }
+}
 // Serialize serializes information the current object
 func (m *DeviceManagementConfigurationSettingValue) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
         err := writer.WriteObjectValue("settingValueTemplateReference", m.GetSettingValueTemplateReference())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("type", m.GetType())
         if err != nil {
             return err
         }
@@ -79,5 +128,11 @@ func (m *DeviceManagementConfigurationSettingValue) SetAdditionalData(value map[
 func (m *DeviceManagementConfigurationSettingValue) SetSettingValueTemplateReference(value DeviceManagementConfigurationSettingValueTemplateReferenceable)() {
     if m != nil {
         m.settingValueTemplateReference = value
+    }
+}
+// SetType sets the type property value. The type property
+func (m *DeviceManagementConfigurationSettingValue) SetType(value *string)() {
+    if m != nil {
+        m.type_escaped = value
     }
 }

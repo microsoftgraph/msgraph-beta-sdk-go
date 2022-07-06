@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DataClassificationService provides operations to manage the dataClassificationService singleton.
+// DataClassificationService 
 type DataClassificationService struct {
     Entity
     // The classifyFileJobs property
@@ -26,7 +26,7 @@ type DataClassificationService struct {
     // The sensitivityLabels property
     sensitivityLabels []SensitivityLabelable
 }
-// NewDataClassificationService instantiates a new dataClassificationService and sets the default values.
+// NewDataClassificationService instantiates a new DataClassificationService and sets the default values.
 func NewDataClassificationService()(*DataClassificationService) {
     m := &DataClassificationService{
         Entity: *NewEntity(),

@@ -16,6 +16,7 @@ type RoleDefinitionable interface {
     GetRoleAssignments()([]RoleAssignmentable)
     GetRolePermissions()([]RolePermissionable)
     GetRoleScopeTagIds()([]string)
+    GetType()(*string)
     SetDescription(value *string)()
     SetDisplayName(value *string)()
     SetIsBuiltIn(value *bool)()
@@ -24,4 +25,5 @@ type RoleDefinitionable interface {
     SetRoleAssignments(value []RoleAssignmentable)()
     SetRolePermissions(value []RolePermissionable)()
     SetRoleScopeTagIds(value []string)()
+    SetType(value *string)()
 }

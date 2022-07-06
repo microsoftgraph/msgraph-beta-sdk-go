@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ApprovalWorkflowProvider provides operations to manage the collection of approvalWorkflowProvider entities.
+// ApprovalWorkflowProvider 
 type ApprovalWorkflowProvider struct {
     Entity
     // The businessFlows property
@@ -16,7 +16,7 @@ type ApprovalWorkflowProvider struct {
     // The policyTemplates property
     policyTemplates []GovernancePolicyTemplateable
 }
-// NewApprovalWorkflowProvider instantiates a new approvalWorkflowProvider and sets the default values.
+// NewApprovalWorkflowProvider instantiates a new ApprovalWorkflowProvider and sets the default values.
 func NewApprovalWorkflowProvider()(*ApprovalWorkflowProvider) {
     m := &ApprovalWorkflowProvider{
         Entity: *NewEntity(),

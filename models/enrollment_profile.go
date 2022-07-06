@@ -19,6 +19,8 @@ type EnrollmentProfile struct {
     requireCompanyPortalOnSetupAssistantEnrolledDevices *bool
     // Indicates if the profile requires user authentication
     requiresUserAuthentication *bool
+    // The type property
+    type_escaped *string
 }
 // NewEnrollmentProfile instantiates a new enrollmentProfile and sets the default values.
 func NewEnrollmentProfile()(*EnrollmentProfile) {
@@ -147,6 +149,16 @@ func (m *EnrollmentProfile) GetFieldDeserializers()(map[string]func(i878a80d2330
         }
         return nil
     }
+    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetRequireCompanyPortalOnSetupAssistantEnrolledDevices gets the requireCompanyPortalOnSetupAssistantEnrolledDevices property value. Indicates that Company Portal is required on setup assistant enrolled devices
@@ -163,6 +175,14 @@ func (m *EnrollmentProfile) GetRequiresUserAuthentication()(*bool) {
         return nil
     } else {
         return m.requiresUserAuthentication
+    }
+}
+// GetType gets the type property value. The type property
+func (m *EnrollmentProfile) GetType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
     }
 }
 // Serialize serializes information the current object
@@ -207,6 +227,12 @@ func (m *EnrollmentProfile) Serialize(writer i878a80d2330e89d26896388a3f487eef27
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("type", m.GetType())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetConfigurationEndpointUrl sets the configurationEndpointUrl property value. Configuration endpoint url to use for Enrollment
@@ -243,5 +269,11 @@ func (m *EnrollmentProfile) SetRequireCompanyPortalOnSetupAssistantEnrolledDevic
 func (m *EnrollmentProfile) SetRequiresUserAuthentication(value *bool)() {
     if m != nil {
         m.requiresUserAuthentication = value
+    }
+}
+// SetType sets the type property value. The type property
+func (m *EnrollmentProfile) SetType(value *string)() {
+    if m != nil {
+        m.type_escaped = value
     }
 }
