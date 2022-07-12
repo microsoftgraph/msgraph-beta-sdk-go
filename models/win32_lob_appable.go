@@ -8,6 +8,7 @@ import (
 type Win32LobAppable interface {
     MobileLobAppable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAllowAvailableUninstall()(*bool)
     GetApplicableArchitectures()(*WindowsArchitecture)
     GetDetectionRules()([]Win32LobAppDetectionable)
     GetDisplayVersion()(*string)
@@ -25,6 +26,7 @@ type Win32LobAppable interface {
     GetRules()([]Win32LobAppRuleable)
     GetSetupFilePath()(*string)
     GetUninstallCommandLine()(*string)
+    SetAllowAvailableUninstall(value *bool)()
     SetApplicableArchitectures(value *WindowsArchitecture)()
     SetDetectionRules(value []Win32LobAppDetectionable)()
     SetDisplayVersion(value *string)()

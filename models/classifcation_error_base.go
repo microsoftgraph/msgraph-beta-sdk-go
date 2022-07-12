@@ -16,16 +16,39 @@ type ClassifcationErrorBase struct {
     message *string
     // The target property
     target *string
+    // The type property
+    type_escaped *string
 }
 // NewClassifcationErrorBase instantiates a new classifcationErrorBase and sets the default values.
 func NewClassifcationErrorBase()(*ClassifcationErrorBase) {
     m := &ClassifcationErrorBase{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    typeValue := "#microsoft.graph.classifcationErrorBase";
+    m.SetType(&typeValue);
     return m
 }
 // CreateClassifcationErrorBaseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateClassifcationErrorBaseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+    if parseNode != nil {
+        mappingValueNode, err := parseNode.GetChildNode("@odata.type")
+        if err != nil {
+            return nil, err
+        }
+        if mappingValueNode != nil {
+            mappingValue, err := mappingValueNode.GetStringValue()
+            if err != nil {
+                return nil, err
+            }
+            if mappingValue != nil {
+                mappingStr := *mappingValue
+                switch mappingStr {
+                    case "#microsoft.graph.classificationError":
+                        return NewClassificationError(), nil
+                }
+            }
+        }
+    }
     return NewClassifcationErrorBase(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -87,6 +110,16 @@ func (m *ClassifcationErrorBase) GetFieldDeserializers()(map[string]func(i878a80
         }
         return nil
     }
+    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetInnerError gets the innerError property value. The innerError property
@@ -113,6 +146,14 @@ func (m *ClassifcationErrorBase) GetTarget()(*string) {
         return m.target
     }
 }
+// GetType gets the type property value. The type property
+func (m *ClassifcationErrorBase) GetType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
+    }
+}
 // Serialize serializes information the current object
 func (m *ClassifcationErrorBase) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
@@ -135,6 +176,12 @@ func (m *ClassifcationErrorBase) Serialize(writer i878a80d2330e89d26896388a3f487
     }
     {
         err := writer.WriteStringValue("target", m.GetTarget())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("type", m.GetType())
         if err != nil {
             return err
         }
@@ -175,5 +222,11 @@ func (m *ClassifcationErrorBase) SetMessage(value *string)() {
 func (m *ClassifcationErrorBase) SetTarget(value *string)() {
     if m != nil {
         m.target = value
+    }
+}
+// SetType sets the type property value. The type property
+func (m *ClassifcationErrorBase) SetType(value *string)() {
+    if m != nil {
+        m.type_escaped = value
     }
 }

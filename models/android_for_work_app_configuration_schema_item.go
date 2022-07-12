@@ -8,7 +8,7 @@ import (
 type AndroidForWorkAppConfigurationSchemaItem struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
-    // The type of value this item describes. Possible values are: bool, integer, string, choice, multiselect, bundle, bundleArray, hidden.
+    // Data type for a configuration item inside an Android for Work application's custom configuration schema
     dataType *AndroidForWorkAppConfigurationSchemaItemDataType
     // Default value for boolean type items, if specified by the app developer
     defaultBoolValue *bool
@@ -46,7 +46,7 @@ func (m *AndroidForWorkAppConfigurationSchemaItem) GetAdditionalData()(map[strin
         return m.additionalData
     }
 }
-// GetDataType gets the dataType property value. The type of value this item describes. Possible values are: bool, integer, string, choice, multiselect, bundle, bundleArray, hidden.
+// GetDataType gets the dataType property value. Data type for a configuration item inside an Android for Work application's custom configuration schema
 func (m *AndroidForWorkAppConfigurationSchemaItem) GetDataType()(*AndroidForWorkAppConfigurationSchemaItemDataType) {
     if m == nil {
         return nil
@@ -296,7 +296,7 @@ func (m *AndroidForWorkAppConfigurationSchemaItem) SetAdditionalData(value map[s
         m.additionalData = value
     }
 }
-// SetDataType sets the dataType property value. The type of value this item describes. Possible values are: bool, integer, string, choice, multiselect, bundle, bundleArray, hidden.
+// SetDataType sets the dataType property value. Data type for a configuration item inside an Android for Work application's custom configuration schema
 func (m *AndroidForWorkAppConfigurationSchemaItem) SetDataType(value *AndroidForWorkAppConfigurationSchemaItemDataType)() {
     if m != nil {
         m.dataType = value

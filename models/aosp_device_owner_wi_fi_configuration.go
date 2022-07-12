@@ -19,7 +19,7 @@ type AospDeviceOwnerWiFiConfiguration struct {
     preSharedKeyIsSet *bool
     // This is the name of the Wi-Fi network that is broadcast to all devices.
     ssid *string
-    // Indicates whether Wi-Fi endpoint uses an EAP based security type. Possible values are: open, wep, wpaPersonal, wpaEnterprise.
+    // Wi-Fi Security Types for AOSP Device Owner.
     wiFiSecurityType *AospDeviceOwnerWiFiSecurityType
 }
 // NewAospDeviceOwnerWiFiConfiguration instantiates a new AospDeviceOwnerWiFiConfiguration and sets the default values.
@@ -27,6 +27,8 @@ func NewAospDeviceOwnerWiFiConfiguration()(*AospDeviceOwnerWiFiConfiguration) {
     m := &AospDeviceOwnerWiFiConfiguration{
         DeviceConfiguration: *NewDeviceConfiguration(),
     }
+    typeValue := "#microsoft.graph.aospDeviceOwnerWiFiConfiguration";
+    m.SetType(&typeValue);
     return m
 }
 // CreateAospDeviceOwnerWiFiConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -175,7 +177,7 @@ func (m *AospDeviceOwnerWiFiConfiguration) GetSsid()(*string) {
         return m.ssid
     }
 }
-// GetWiFiSecurityType gets the wiFiSecurityType property value. Indicates whether Wi-Fi endpoint uses an EAP based security type. Possible values are: open, wep, wpaPersonal, wpaEnterprise.
+// GetWiFiSecurityType gets the wiFiSecurityType property value. Wi-Fi Security Types for AOSP Device Owner.
 func (m *AospDeviceOwnerWiFiConfiguration) GetWiFiSecurityType()(*AospDeviceOwnerWiFiSecurityType) {
     if m == nil {
         return nil
@@ -270,7 +272,7 @@ func (m *AospDeviceOwnerWiFiConfiguration) SetSsid(value *string)() {
         m.ssid = value
     }
 }
-// SetWiFiSecurityType sets the wiFiSecurityType property value. Indicates whether Wi-Fi endpoint uses an EAP based security type. Possible values are: open, wep, wpaPersonal, wpaEnterprise.
+// SetWiFiSecurityType sets the wiFiSecurityType property value. Wi-Fi Security Types for AOSP Device Owner.
 func (m *AospDeviceOwnerWiFiConfiguration) SetWiFiSecurityType(value *AospDeviceOwnerWiFiSecurityType)() {
     if m != nil {
         m.wiFiSecurityType = value

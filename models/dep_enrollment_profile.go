@@ -21,7 +21,7 @@ type DepEnrollmentProfile struct {
     isDefault *bool
     // Indicates if the profile is mandatory
     isMandatory *bool
-    // Indicates the iTunes pairing mode. Possible values are: disallow, allow, requiresCertificate.
+    // The iTunesPairingMode property
     iTunesPairingMode *ITunesPairingMode
     // Indicates if Location service setup pane is disabled
     locationDisabled *bool
@@ -372,7 +372,7 @@ func (m *DepEnrollmentProfile) GetIsMandatory()(*bool) {
         return m.isMandatory
     }
 }
-// GetITunesPairingMode gets the iTunesPairingMode property value. Indicates the iTunes pairing mode. Possible values are: disallow, allow, requiresCertificate.
+// GetITunesPairingMode gets the iTunesPairingMode property value. The iTunesPairingMode property
 func (m *DepEnrollmentProfile) GetITunesPairingMode()(*ITunesPairingMode) {
     if m == nil {
         return nil
@@ -707,7 +707,7 @@ func (m *DepEnrollmentProfile) SetIsMandatory(value *bool)() {
         m.isMandatory = value
     }
 }
-// SetITunesPairingMode sets the iTunesPairingMode property value. Indicates the iTunes pairing mode. Possible values are: disallow, allow, requiresCertificate.
+// SetITunesPairingMode sets the iTunesPairingMode property value. The iTunesPairingMode property
 func (m *DepEnrollmentProfile) SetITunesPairingMode(value *ITunesPairingMode)() {
     if m != nil {
         m.iTunesPairingMode = value

@@ -8,7 +8,7 @@ import (
 type UserRegistrationFeatureCount struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
-    // Number of users registered or capable for Multi-Factor Authentication, Self-Service Password Reset and Passwordless Authentication. Possible values are: ssprRegistered, ssprEnabled, ssprCapable, passwordlessCapable, mfaCapable.
+    // The feature property
     feature *AuthenticationMethodFeature
     // Number of users.
     userCount *int64
@@ -32,7 +32,7 @@ func (m *UserRegistrationFeatureCount) GetAdditionalData()(map[string]interface{
         return m.additionalData
     }
 }
-// GetFeature gets the feature property value. Number of users registered or capable for Multi-Factor Authentication, Self-Service Password Reset and Passwordless Authentication. Possible values are: ssprRegistered, ssprEnabled, ssprCapable, passwordlessCapable, mfaCapable.
+// GetFeature gets the feature property value. The feature property
 func (m *UserRegistrationFeatureCount) GetFeature()(*AuthenticationMethodFeature) {
     if m == nil {
         return nil
@@ -102,7 +102,7 @@ func (m *UserRegistrationFeatureCount) SetAdditionalData(value map[string]interf
         m.additionalData = value
     }
 }
-// SetFeature sets the feature property value. Number of users registered or capable for Multi-Factor Authentication, Self-Service Password Reset and Passwordless Authentication. Possible values are: ssprRegistered, ssprEnabled, ssprCapable, passwordlessCapable, mfaCapable.
+// SetFeature sets the feature property value. The feature property
 func (m *UserRegistrationFeatureCount) SetFeature(value *AuthenticationMethodFeature)() {
     if m != nil {
         m.feature = value

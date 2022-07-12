@@ -15,7 +15,7 @@ type ZebraFotaDeploymentStatus struct {
     completeOrCanceledDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Date and time when the deployment status was updated from Zebra
     lastUpdatedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // See zebraFotaDeploymentState enum for possible values. Possible values are: pendingCreation, createFailed, created, inProgress, completed, pendingCancel, canceled, unknownFutureValue.
+    // Represents the state of Zebra FOTA deployment.
     state *ZebraFotaDeploymentState
     // An integer that indicates the total number of devices where installation was successful.
     totalAwaitingInstall *int32
@@ -226,7 +226,7 @@ func (m *ZebraFotaDeploymentStatus) GetLastUpdatedDateTime()(*i336074805fc853987
         return m.lastUpdatedDateTime
     }
 }
-// GetState gets the state property value. See zebraFotaDeploymentState enum for possible values. Possible values are: pendingCreation, createFailed, created, inProgress, completed, pendingCancel, canceled, unknownFutureValue.
+// GetState gets the state property value. Represents the state of Zebra FOTA deployment.
 func (m *ZebraFotaDeploymentStatus) GetState()(*ZebraFotaDeploymentState) {
     if m == nil {
         return nil
@@ -433,7 +433,7 @@ func (m *ZebraFotaDeploymentStatus) SetLastUpdatedDateTime(value *i336074805fc85
         m.lastUpdatedDateTime = value
     }
 }
-// SetState sets the state property value. See zebraFotaDeploymentState enum for possible values. Possible values are: pendingCreation, createFailed, created, inProgress, completed, pendingCancel, canceled, unknownFutureValue.
+// SetState sets the state property value. Represents the state of Zebra FOTA deployment.
 func (m *ZebraFotaDeploymentStatus) SetState(value *ZebraFotaDeploymentState)() {
     if m != nil {
         m.state = value

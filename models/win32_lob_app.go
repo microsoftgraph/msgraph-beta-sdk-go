@@ -7,7 +7,9 @@ import (
 // Win32LobApp 
 type Win32LobApp struct {
     MobileLobApp
-    // The Windows architecture(s) for which this app can run on. Possible values are: none, x86, x64, arm, neutral, arm64.
+    // When TRUE, indicates that uninstall is supported from the company portal for the Windows app (Win32) with an Available assignment. When FALSE, indicates that uninstall is not supported for the Windows app (Win32) with an Available assignment. Default value is FALSE.
+    allowAvailableUninstall *bool
+    // Contains properties for Windows architecture.
     applicableArchitectures *WindowsArchitecture
     // The detection rules to detect Win32 Line of Business (LoB) app.
     detectionRules []Win32LobAppDetectionable
@@ -53,7 +55,15 @@ func NewWin32LobApp()(*Win32LobApp) {
 func CreateWin32LobAppFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWin32LobApp(), nil
 }
-// GetApplicableArchitectures gets the applicableArchitectures property value. The Windows architecture(s) for which this app can run on. Possible values are: none, x86, x64, arm, neutral, arm64.
+// GetAllowAvailableUninstall gets the allowAvailableUninstall property value. When TRUE, indicates that uninstall is supported from the company portal for the Windows app (Win32) with an Available assignment. When FALSE, indicates that uninstall is not supported for the Windows app (Win32) with an Available assignment. Default value is FALSE.
+func (m *Win32LobApp) GetAllowAvailableUninstall()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.allowAvailableUninstall
+    }
+}
+// GetApplicableArchitectures gets the applicableArchitectures property value. Contains properties for Windows architecture.
 func (m *Win32LobApp) GetApplicableArchitectures()(*WindowsArchitecture) {
     if m == nil {
         return nil
@@ -80,6 +90,16 @@ func (m *Win32LobApp) GetDisplayVersion()(*string) {
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Win32LobApp) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.MobileLobApp.GetFieldDeserializers()
+    res["allowAvailableUninstall"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetAllowAvailableUninstall(val)
+        }
+        return nil
+    }
     res["applicableArchitectures"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseWindowsArchitecture)
         if err != nil {
@@ -386,6 +406,12 @@ func (m *Win32LobApp) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
     if err != nil {
         return err
     }
+    {
+        err = writer.WriteBoolValue("allowAvailableUninstall", m.GetAllowAvailableUninstall())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetApplicableArchitectures() != nil {
         cast := (*m.GetApplicableArchitectures()).String()
         err = writer.WriteStringValue("applicableArchitectures", &cast)
@@ -507,7 +533,13 @@ func (m *Win32LobApp) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
     }
     return nil
 }
-// SetApplicableArchitectures sets the applicableArchitectures property value. The Windows architecture(s) for which this app can run on. Possible values are: none, x86, x64, arm, neutral, arm64.
+// SetAllowAvailableUninstall sets the allowAvailableUninstall property value. When TRUE, indicates that uninstall is supported from the company portal for the Windows app (Win32) with an Available assignment. When FALSE, indicates that uninstall is not supported for the Windows app (Win32) with an Available assignment. Default value is FALSE.
+func (m *Win32LobApp) SetAllowAvailableUninstall(value *bool)() {
+    if m != nil {
+        m.allowAvailableUninstall = value
+    }
+}
+// SetApplicableArchitectures sets the applicableArchitectures property value. Contains properties for Windows architecture.
 func (m *Win32LobApp) SetApplicableArchitectures(value *WindowsArchitecture)() {
     if m != nil {
         m.applicableArchitectures = value

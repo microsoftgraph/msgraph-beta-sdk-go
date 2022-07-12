@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// GovernanceRoleAssignmentRequest provides operations to manage the collection of governanceResource entities.
+// GovernanceRoleAssignmentRequest 
 type GovernanceRoleAssignmentRequest struct {
     Entity
     // Required. The state of the assignment. The possible values are: Eligible (for eligible assignment),  Active (if it is directly assigned), Active (by administrators, or activated on an eligible assignment by the users).
@@ -32,10 +32,8 @@ type GovernanceRoleAssignmentRequest struct {
     subject GovernanceSubjectable
     // Required. The unique identifier of the principal or subject that the role assignment request is associated with. Principals can be users, groups, or service principals.
     subjectId *string
-    // Required. Representing the type of the operation on the role assignment. The possible values are: AdminAdd , UserAdd , AdminUpdate , AdminRemove , UserRemove , UserExtend , AdminExtend , UserRenew , AdminRenew.
-    type_escaped *string
 }
-// NewGovernanceRoleAssignmentRequest instantiates a new governanceRoleAssignmentRequest and sets the default values.
+// NewGovernanceRoleAssignmentRequest instantiates a new GovernanceRoleAssignmentRequest and sets the default values.
 func NewGovernanceRoleAssignmentRequest()(*GovernanceRoleAssignmentRequest) {
     m := &GovernanceRoleAssignmentRequest{
         Entity: *NewEntity(),
@@ -177,16 +175,6 @@ func (m *GovernanceRoleAssignmentRequest) GetFieldDeserializers()(map[string]fun
         }
         return nil
     }
-    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetType(val)
-        }
-        return nil
-    }
     return res
 }
 // GetLinkedEligibleRoleAssignmentId gets the linkedEligibleRoleAssignmentId property value. If this is a request for role activation, it represents the id of the eligible assignment being referred; Otherwise, the value is null.
@@ -277,14 +265,6 @@ func (m *GovernanceRoleAssignmentRequest) GetSubjectId()(*string) {
         return m.subjectId
     }
 }
-// GetType gets the type property value. Required. Representing the type of the operation on the role assignment. The possible values are: AdminAdd , UserAdd , AdminUpdate , AdminRemove , UserRemove , UserExtend , AdminExtend , UserRenew , AdminRenew.
-func (m *GovernanceRoleAssignmentRequest) GetType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.type_escaped
-    }
-}
 // Serialize serializes information the current object
 func (m *GovernanceRoleAssignmentRequest) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
@@ -363,12 +343,6 @@ func (m *GovernanceRoleAssignmentRequest) Serialize(writer i878a80d2330e89d26896
             return err
         }
     }
-    {
-        err = writer.WriteStringValue("type", m.GetType())
-        if err != nil {
-            return err
-        }
-    }
     return nil
 }
 // SetAssignmentState sets the assignmentState property value. Required. The state of the assignment. The possible values are: Eligible (for eligible assignment),  Active (if it is directly assigned), Active (by administrators, or activated on an eligible assignment by the users).
@@ -441,11 +415,5 @@ func (m *GovernanceRoleAssignmentRequest) SetSubject(value GovernanceSubjectable
 func (m *GovernanceRoleAssignmentRequest) SetSubjectId(value *string)() {
     if m != nil {
         m.subjectId = value
-    }
-}
-// SetType sets the type property value. Required. Representing the type of the operation on the role assignment. The possible values are: AdminAdd , UserAdd , AdminUpdate , AdminRemove , UserRemove , UserExtend , AdminExtend , UserRenew , AdminRenew.
-func (m *GovernanceRoleAssignmentRequest) SetType(value *string)() {
-    if m != nil {
-        m.type_escaped = value
     }
 }

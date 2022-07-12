@@ -8,7 +8,7 @@ import (
 type IosNotificationSettings struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
-    // Indicates the type of alert for notifications for this app. Possible values are: deviceDefault, banner, modal, none.
+    // Notification Settings Alert Type.
     alertType *IosNotificationAlertType
     // Application name to be associated with the bundleID.
     appName *string
@@ -18,7 +18,7 @@ type IosNotificationSettings struct {
     bundleID *string
     // Indicates whether notifications are allowed for this app.
     enabled *bool
-    // Overrides the notification preview policy set by the user on an iOS device. Possible values are: notConfigured, alwaysShow, hideWhenLocked, neverShow.
+    // Determines when notification previews are visible on an iOS device. Previews can include things like text (from Messages and Mail) and invitation details (from Calendar). When configured, it will override the user's defined preview settings.
     previewVisibility *IosNotificationPreviewVisibility
     // Publisher to be associated with the bundleID.
     publisher *string
@@ -48,7 +48,7 @@ func (m *IosNotificationSettings) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// GetAlertType gets the alertType property value. Indicates the type of alert for notifications for this app. Possible values are: deviceDefault, banner, modal, none.
+// GetAlertType gets the alertType property value. Notification Settings Alert Type.
 func (m *IosNotificationSettings) GetAlertType()(*IosNotificationAlertType) {
     if m == nil {
         return nil
@@ -193,7 +193,7 @@ func (m *IosNotificationSettings) GetFieldDeserializers()(map[string]func(i878a8
     }
     return res
 }
-// GetPreviewVisibility gets the previewVisibility property value. Overrides the notification preview policy set by the user on an iOS device. Possible values are: notConfigured, alwaysShow, hideWhenLocked, neverShow.
+// GetPreviewVisibility gets the previewVisibility property value. Determines when notification previews are visible on an iOS device. Previews can include things like text (from Messages and Mail) and invitation details (from Calendar). When configured, it will override the user's defined preview settings.
 func (m *IosNotificationSettings) GetPreviewVisibility()(*IosNotificationPreviewVisibility) {
     if m == nil {
         return nil
@@ -311,7 +311,7 @@ func (m *IosNotificationSettings) SetAdditionalData(value map[string]interface{}
         m.additionalData = value
     }
 }
-// SetAlertType sets the alertType property value. Indicates the type of alert for notifications for this app. Possible values are: deviceDefault, banner, modal, none.
+// SetAlertType sets the alertType property value. Notification Settings Alert Type.
 func (m *IosNotificationSettings) SetAlertType(value *IosNotificationAlertType)() {
     if m != nil {
         m.alertType = value
@@ -341,7 +341,7 @@ func (m *IosNotificationSettings) SetEnabled(value *bool)() {
         m.enabled = value
     }
 }
-// SetPreviewVisibility sets the previewVisibility property value. Overrides the notification preview policy set by the user on an iOS device. Possible values are: notConfigured, alwaysShow, hideWhenLocked, neverShow.
+// SetPreviewVisibility sets the previewVisibility property value. Determines when notification previews are visible on an iOS device. Previews can include things like text (from Messages and Mail) and invitation details (from Calendar). When configured, it will override the user's defined preview settings.
 func (m *IosNotificationSettings) SetPreviewVisibility(value *IosNotificationPreviewVisibility)() {
     if m != nil {
         m.previewVisibility = value

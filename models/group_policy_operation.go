@@ -10,9 +10,9 @@ type GroupPolicyOperation struct {
     Entity
     // The date and time the entity was last modified.
     lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The group policy operation status. Possible values are: unknown, inProgress, success, failed.
+    // Type of Group Policy operation status.
     operationStatus *GroupPolicyOperationStatus
-    // The type of group policy operation. Possible values are: none, upload, uploadNewVersion, addLanguageFiles, removeLanguageFiles, updateLanguageFiles, remove.
+    // Type of Group Policy operation.
     operationType *GroupPolicyOperationType
     // The group policy operation status detail.
     statusDetails *string
@@ -81,7 +81,7 @@ func (m *GroupPolicyOperation) GetLastModifiedDateTime()(*i336074805fc853987abe6
         return m.lastModifiedDateTime
     }
 }
-// GetOperationStatus gets the operationStatus property value. The group policy operation status. Possible values are: unknown, inProgress, success, failed.
+// GetOperationStatus gets the operationStatus property value. Type of Group Policy operation status.
 func (m *GroupPolicyOperation) GetOperationStatus()(*GroupPolicyOperationStatus) {
     if m == nil {
         return nil
@@ -89,7 +89,7 @@ func (m *GroupPolicyOperation) GetOperationStatus()(*GroupPolicyOperationStatus)
         return m.operationStatus
     }
 }
-// GetOperationType gets the operationType property value. The type of group policy operation. Possible values are: none, upload, uploadNewVersion, addLanguageFiles, removeLanguageFiles, updateLanguageFiles, remove.
+// GetOperationType gets the operationType property value. Type of Group Policy operation.
 func (m *GroupPolicyOperation) GetOperationType()(*GroupPolicyOperationType) {
     if m == nil {
         return nil
@@ -145,13 +145,13 @@ func (m *GroupPolicyOperation) SetLastModifiedDateTime(value *i336074805fc853987
         m.lastModifiedDateTime = value
     }
 }
-// SetOperationStatus sets the operationStatus property value. The group policy operation status. Possible values are: unknown, inProgress, success, failed.
+// SetOperationStatus sets the operationStatus property value. Type of Group Policy operation status.
 func (m *GroupPolicyOperation) SetOperationStatus(value *GroupPolicyOperationStatus)() {
     if m != nil {
         m.operationStatus = value
     }
 }
-// SetOperationType sets the operationType property value. The type of group policy operation. Possible values are: none, upload, uploadNewVersion, addLanguageFiles, removeLanguageFiles, updateLanguageFiles, remove.
+// SetOperationType sets the operationType property value. Type of Group Policy operation.
 func (m *GroupPolicyOperation) SetOperationType(value *GroupPolicyOperationType)() {
     if m != nil {
         m.operationType = value

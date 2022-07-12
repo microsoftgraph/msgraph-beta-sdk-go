@@ -13,7 +13,7 @@ type EasEmailProfileConfigurationBase struct {
     userDomainNameSource *DomainNameSource
     // Name of the AAD field, that will be used to retrieve UserName for email profile. Possible values are: userPrincipalName, primarySmtpAddress, samAccountName.
     usernameAADSource *UsernameSource
-    // Username attribute that is picked from AAD and injected into this profile before installing on the device. Possible values are: userPrincipalName, primarySmtpAddress.
+    // Possible values for username source or email source.
     usernameSource *UserEmailSource
 }
 // NewEasEmailProfileConfigurationBase instantiates a new EasEmailProfileConfigurationBase and sets the default values.
@@ -21,6 +21,8 @@ func NewEasEmailProfileConfigurationBase()(*EasEmailProfileConfigurationBase) {
     m := &EasEmailProfileConfigurationBase{
         DeviceConfiguration: *NewDeviceConfiguration(),
     }
+    typeValue := "#microsoft.graph.easEmailProfileConfigurationBase";
+    m.SetType(&typeValue);
     return m
 }
 // CreateEasEmailProfileConfigurationBaseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -119,7 +121,7 @@ func (m *EasEmailProfileConfigurationBase) GetUsernameAADSource()(*UsernameSourc
         return m.usernameAADSource
     }
 }
-// GetUsernameSource gets the usernameSource property value. Username attribute that is picked from AAD and injected into this profile before installing on the device. Possible values are: userPrincipalName, primarySmtpAddress.
+// GetUsernameSource gets the usernameSource property value. Possible values for username source or email source.
 func (m *EasEmailProfileConfigurationBase) GetUsernameSource()(*UserEmailSource) {
     if m == nil {
         return nil
@@ -180,7 +182,7 @@ func (m *EasEmailProfileConfigurationBase) SetUsernameAADSource(value *UsernameS
         m.usernameAADSource = value
     }
 }
-// SetUsernameSource sets the usernameSource property value. Username attribute that is picked from AAD and injected into this profile before installing on the device. Possible values are: userPrincipalName, primarySmtpAddress.
+// SetUsernameSource sets the usernameSource property value. Possible values for username source or email source.
 func (m *EasEmailProfileConfigurationBase) SetUsernameSource(value *UserEmailSource)() {
     if m != nil {
         m.usernameSource = value

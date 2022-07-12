@@ -7,7 +7,7 @@ import (
 // DeviceCompliancePolicyAssignment device compliance policy assignment.
 type DeviceCompliancePolicyAssignment struct {
     Entity
-    // The assignment source for the device compliance policy, direct or parcel/policySet. Possible values are: direct, policySets.
+    // Represents source of assignment.
     source *DeviceAndAppManagementAssignmentSource
     // The identifier of the source of the assignment.
     sourceId *string
@@ -60,7 +60,7 @@ func (m *DeviceCompliancePolicyAssignment) GetFieldDeserializers()(map[string]fu
     }
     return res
 }
-// GetSource gets the source property value. The assignment source for the device compliance policy, direct or parcel/policySet. Possible values are: direct, policySets.
+// GetSource gets the source property value. Represents source of assignment.
 func (m *DeviceCompliancePolicyAssignment) GetSource()(*DeviceAndAppManagementAssignmentSource) {
     if m == nil {
         return nil
@@ -111,7 +111,7 @@ func (m *DeviceCompliancePolicyAssignment) Serialize(writer i878a80d2330e89d2689
     }
     return nil
 }
-// SetSource sets the source property value. The assignment source for the device compliance policy, direct or parcel/policySet. Possible values are: direct, policySets.
+// SetSource sets the source property value. Represents source of assignment.
 func (m *DeviceCompliancePolicyAssignment) SetSource(value *DeviceAndAppManagementAssignmentSource)() {
     if m != nil {
         m.source = value

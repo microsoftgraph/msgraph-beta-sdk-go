@@ -7,7 +7,7 @@ import (
 // AndroidDeviceOwnerPkcsCertificateProfile 
 type AndroidDeviceOwnerPkcsCertificateProfile struct {
     AndroidDeviceOwnerCertificateProfileBase
-    // Target store certificate. Possible values are: user, machine.
+    // CertificateStore types
     certificateStore *CertificateStore
     // PKCS Certificate Template Name
     certificateTemplateName *string
@@ -15,7 +15,7 @@ type AndroidDeviceOwnerPkcsCertificateProfile struct {
     certificationAuthority *string
     // PKCS Certification Authority Name
     certificationAuthorityName *string
-    // Certification authority type. Possible values are: notConfigured, microsoft, digiCert.
+    // Device Management Certification Authority Types.
     certificationAuthorityType *DeviceManagementCertificationAuthority
     // Custom Subject Alternative Name Settings. This collection can contain a maximum of 500 elements.
     customSubjectAlternativeNames []CustomSubjectAlternativeNameable
@@ -37,7 +37,7 @@ func NewAndroidDeviceOwnerPkcsCertificateProfile()(*AndroidDeviceOwnerPkcsCertif
 func CreateAndroidDeviceOwnerPkcsCertificateProfileFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAndroidDeviceOwnerPkcsCertificateProfile(), nil
 }
-// GetCertificateStore gets the certificateStore property value. Target store certificate. Possible values are: user, machine.
+// GetCertificateStore gets the certificateStore property value. CertificateStore types
 func (m *AndroidDeviceOwnerPkcsCertificateProfile) GetCertificateStore()(*CertificateStore) {
     if m == nil {
         return nil
@@ -69,7 +69,7 @@ func (m *AndroidDeviceOwnerPkcsCertificateProfile) GetCertificationAuthorityName
         return m.certificationAuthorityName
     }
 }
-// GetCertificationAuthorityType gets the certificationAuthorityType property value. Certification authority type. Possible values are: notConfigured, microsoft, digiCert.
+// GetCertificationAuthorityType gets the certificationAuthorityType property value. Device Management Certification Authority Types.
 func (m *AndroidDeviceOwnerPkcsCertificateProfile) GetCertificationAuthorityType()(*DeviceManagementCertificationAuthority) {
     if m == nil {
         return nil
@@ -284,7 +284,7 @@ func (m *AndroidDeviceOwnerPkcsCertificateProfile) Serialize(writer i878a80d2330
     }
     return nil
 }
-// SetCertificateStore sets the certificateStore property value. Target store certificate. Possible values are: user, machine.
+// SetCertificateStore sets the certificateStore property value. CertificateStore types
 func (m *AndroidDeviceOwnerPkcsCertificateProfile) SetCertificateStore(value *CertificateStore)() {
     if m != nil {
         m.certificateStore = value
@@ -308,7 +308,7 @@ func (m *AndroidDeviceOwnerPkcsCertificateProfile) SetCertificationAuthorityName
         m.certificationAuthorityName = value
     }
 }
-// SetCertificationAuthorityType sets the certificationAuthorityType property value. Certification authority type. Possible values are: notConfigured, microsoft, digiCert.
+// SetCertificationAuthorityType sets the certificationAuthorityType property value. Device Management Certification Authority Types.
 func (m *AndroidDeviceOwnerPkcsCertificateProfile) SetCertificationAuthorityType(value *DeviceManagementCertificationAuthority)() {
     if m != nil {
         m.certificationAuthorityType = value

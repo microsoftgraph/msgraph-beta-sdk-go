@@ -5,16 +5,16 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// UserCredentialUsageDetails provides operations to manage the reportRoot singleton.
+// UserCredentialUsageDetails provides operations to manage the collection of accessReview entities.
 type UserCredentialUsageDetails struct {
     Entity
-    // Represents the authentication method that the user used. Possible values are:email, mobileSMS, mobileCall, officePhone, securityQuestion (only used for self-service password reset), appNotification, appCode, alternateMobileCall (supported only in registration), fido, appPassword,unknownFutureValue
+    // The authMethod property
     authMethod *UsageAuthMethod
     // The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
     eventDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Provides the failure reason for the corresponding reset or registration workflow.
     failureReason *string
-    // Possible values are: registration, reset, unknownFutureValue.
+    // The feature property
     feature *FeatureType
     // Indicates success or failure of the workflow.
     isSuccess *bool
@@ -34,7 +34,7 @@ func NewUserCredentialUsageDetails()(*UserCredentialUsageDetails) {
 func CreateUserCredentialUsageDetailsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewUserCredentialUsageDetails(), nil
 }
-// GetAuthMethod gets the authMethod property value. Represents the authentication method that the user used. Possible values are:email, mobileSMS, mobileCall, officePhone, securityQuestion (only used for self-service password reset), appNotification, appCode, alternateMobileCall (supported only in registration), fido, appPassword,unknownFutureValue
+// GetAuthMethod gets the authMethod property value. The authMethod property
 func (m *UserCredentialUsageDetails) GetAuthMethod()(*UsageAuthMethod) {
     if m == nil {
         return nil
@@ -58,7 +58,7 @@ func (m *UserCredentialUsageDetails) GetFailureReason()(*string) {
         return m.failureReason
     }
 }
-// GetFeature gets the feature property value. Possible values are: registration, reset, unknownFutureValue.
+// GetFeature gets the feature property value. The feature property
 func (m *UserCredentialUsageDetails) GetFeature()(*FeatureType) {
     if m == nil {
         return nil
@@ -217,7 +217,7 @@ func (m *UserCredentialUsageDetails) Serialize(writer i878a80d2330e89d26896388a3
     }
     return nil
 }
-// SetAuthMethod sets the authMethod property value. Represents the authentication method that the user used. Possible values are:email, mobileSMS, mobileCall, officePhone, securityQuestion (only used for self-service password reset), appNotification, appCode, alternateMobileCall (supported only in registration), fido, appPassword,unknownFutureValue
+// SetAuthMethod sets the authMethod property value. The authMethod property
 func (m *UserCredentialUsageDetails) SetAuthMethod(value *UsageAuthMethod)() {
     if m != nil {
         m.authMethod = value
@@ -235,7 +235,7 @@ func (m *UserCredentialUsageDetails) SetFailureReason(value *string)() {
         m.failureReason = value
     }
 }
-// SetFeature sets the feature property value. Possible values are: registration, reset, unknownFutureValue.
+// SetFeature sets the feature property value. The feature property
 func (m *UserCredentialUsageDetails) SetFeature(value *FeatureType)() {
     if m != nil {
         m.feature = value

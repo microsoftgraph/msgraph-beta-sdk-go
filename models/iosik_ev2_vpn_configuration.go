@@ -15,7 +15,7 @@ type IosikEv2VpnConfiguration struct {
     alwaysOnConfiguration AppleVpnAlwaysOnConfigurationable
     // Child Security Association Parameters
     childSecurityAssociationParameters IosVpnSecurityAssociationParametersable
-    // Type of Client Authentication the VPN client will use. Possible values are: userAuthentication, deviceAuthentication.
+    // The type of VPN client authentication type
     clientAuthenticationType *VpnClientAuthenticationType
     // Determine how often to check if a peer connection is still active. . Possible values are: medium, none, low, high.
     deadPeerDetectionRate *VpnDeadPeerDetectionRate
@@ -33,7 +33,7 @@ type IosikEv2VpnConfiguration struct {
     enablePerfectForwardSecrecy *bool
     // Enable Use Internal Subnet Attributes.
     enableUseInternalSubnetAttributes *bool
-    // Method of identifying the client that is trying to connect via VPN. . Possible values are: deviceFQDN, empty, clientCertificateSubjectName.
+    // The type of VPN local identifier
     localIdentifier *VpnLocalIdentifier
     // Maximum transmission unit. Valid values 1280 to 1400
     mtuSizeInBytes *int32
@@ -97,7 +97,7 @@ func (m *IosikEv2VpnConfiguration) GetChildSecurityAssociationParameters()(IosVp
         return m.childSecurityAssociationParameters
     }
 }
-// GetClientAuthenticationType gets the clientAuthenticationType property value. Type of Client Authentication the VPN client will use. Possible values are: userAuthentication, deviceAuthentication.
+// GetClientAuthenticationType gets the clientAuthenticationType property value. The type of VPN client authentication type
 func (m *IosikEv2VpnConfiguration) GetClientAuthenticationType()(*VpnClientAuthenticationType) {
     if m == nil {
         return nil
@@ -404,7 +404,7 @@ func (m *IosikEv2VpnConfiguration) GetFieldDeserializers()(map[string]func(i878a
     }
     return res
 }
-// GetLocalIdentifier gets the localIdentifier property value. Method of identifying the client that is trying to connect via VPN. . Possible values are: deviceFQDN, empty, clientCertificateSubjectName.
+// GetLocalIdentifier gets the localIdentifier property value. The type of VPN local identifier
 func (m *IosikEv2VpnConfiguration) GetLocalIdentifier()(*VpnLocalIdentifier) {
     if m == nil {
         return nil
@@ -658,7 +658,7 @@ func (m *IosikEv2VpnConfiguration) SetChildSecurityAssociationParameters(value I
         m.childSecurityAssociationParameters = value
     }
 }
-// SetClientAuthenticationType sets the clientAuthenticationType property value. Type of Client Authentication the VPN client will use. Possible values are: userAuthentication, deviceAuthentication.
+// SetClientAuthenticationType sets the clientAuthenticationType property value. The type of VPN client authentication type
 func (m *IosikEv2VpnConfiguration) SetClientAuthenticationType(value *VpnClientAuthenticationType)() {
     if m != nil {
         m.clientAuthenticationType = value
@@ -712,7 +712,7 @@ func (m *IosikEv2VpnConfiguration) SetEnableUseInternalSubnetAttributes(value *b
         m.enableUseInternalSubnetAttributes = value
     }
 }
-// SetLocalIdentifier sets the localIdentifier property value. Method of identifying the client that is trying to connect via VPN. . Possible values are: deviceFQDN, empty, clientCertificateSubjectName.
+// SetLocalIdentifier sets the localIdentifier property value. The type of VPN local identifier
 func (m *IosikEv2VpnConfiguration) SetLocalIdentifier(value *VpnLocalIdentifier)() {
     if m != nil {
         m.localIdentifier = value

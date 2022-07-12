@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DeviceComplianceScript intune will provide customer the ability to run their Powershell Compliance scripts (detection) on the enrolled windows 10 Azure Active Directory joined devices.
+// DeviceComplianceScript 
 type DeviceComplianceScript struct {
     Entity
     // The list of group assignments for the device compliance script
@@ -30,14 +30,14 @@ type DeviceComplianceScript struct {
     roleScopeTagIds []string
     // Indicate whether PowerShell script(s) should run as 32-bit
     runAs32Bit *bool
-    // Indicates the type of execution context. Possible values are: system, user.
+    // Indicates the type of execution context the app runs in.
     runAsAccount *RunAsAccountType
     // High level run summary for device compliance script.
     runSummary DeviceComplianceScriptRunSummaryable
     // Version of the device compliance script
     version *string
 }
-// NewDeviceComplianceScript instantiates a new deviceComplianceScript and sets the default values.
+// NewDeviceComplianceScript instantiates a new DeviceComplianceScript and sets the default values.
 func NewDeviceComplianceScript()(*DeviceComplianceScript) {
     m := &DeviceComplianceScript{
         Entity: *NewEntity(),
@@ -293,7 +293,7 @@ func (m *DeviceComplianceScript) GetRunAs32Bit()(*bool) {
         return m.runAs32Bit
     }
 }
-// GetRunAsAccount gets the runAsAccount property value. Indicates the type of execution context. Possible values are: system, user.
+// GetRunAsAccount gets the runAsAccount property value. Indicates the type of execution context the app runs in.
 func (m *DeviceComplianceScript) GetRunAsAccount()(*RunAsAccountType) {
     if m == nil {
         return nil
@@ -484,7 +484,7 @@ func (m *DeviceComplianceScript) SetRunAs32Bit(value *bool)() {
         m.runAs32Bit = value
     }
 }
-// SetRunAsAccount sets the runAsAccount property value. Indicates the type of execution context. Possible values are: system, user.
+// SetRunAsAccount sets the runAsAccount property value. Indicates the type of execution context the app runs in.
 func (m *DeviceComplianceScript) SetRunAsAccount(value *RunAsAccountType)() {
     if m != nil {
         m.runAsAccount = value

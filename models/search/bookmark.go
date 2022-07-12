@@ -26,7 +26,7 @@ type Bookmark struct {
     platforms []string
     // List of Power Apps associated with this bookmark. If users add existing Power Apps to a bookmark, they can complete tasks, such as to enter vacation time or to report expenses on the search results page.
     powerAppIds []string
-    // State of the bookmark. Possible values are: published, draft, excluded, or unknownFutureValue.
+    // The state property
     state *AnswerState
     // Variations of a bookmark for different countries or devices. Use when you need to show different content to users based on their device, country/region, or both. The date and group settings will apply to all variations.
     targetedVariations []AnswerVariantable
@@ -253,7 +253,7 @@ func (m *Bookmark) GetPowerAppIds()([]string) {
         return m.powerAppIds
     }
 }
-// GetState gets the state property value. State of the bookmark. Possible values are: published, draft, excluded, or unknownFutureValue.
+// GetState gets the state property value. The state property
 func (m *Bookmark) GetState()(*AnswerState) {
     if m == nil {
         return nil
@@ -402,7 +402,7 @@ func (m *Bookmark) SetPowerAppIds(value []string)() {
         m.powerAppIds = value
     }
 }
-// SetState sets the state property value. State of the bookmark. Possible values are: published, draft, excluded, or unknownFutureValue.
+// SetState sets the state property value. The state property
 func (m *Bookmark) SetState(value *AnswerState)() {
     if m != nil {
         m.state = value

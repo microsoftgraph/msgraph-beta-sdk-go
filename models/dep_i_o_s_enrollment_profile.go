@@ -29,7 +29,7 @@ type DepIOSEnrollmentProfile struct {
     homeButtonScreenDisabled *bool
     // Indicates if iMessage and FaceTime screen is disabled
     iMessageAndFaceTimeScreenDisabled *bool
-    // Indicates the iTunes pairing mode. Possible values are: disallow, allow, requiresCertificate.
+    // The iTunesPairingMode property
     iTunesPairingMode *ITunesPairingMode
     // Management certificates for Apple Configurator
     managementCertificates []ManagementCertificateWithThumbprintable
@@ -464,7 +464,7 @@ func (m *DepIOSEnrollmentProfile) GetIMessageAndFaceTimeScreenDisabled()(*bool) 
         return m.iMessageAndFaceTimeScreenDisabled
     }
 }
-// GetITunesPairingMode gets the iTunesPairingMode property value. Indicates the iTunes pairing mode. Possible values are: disallow, allow, requiresCertificate.
+// GetITunesPairingMode gets the iTunesPairingMode property value. The iTunesPairingMode property
 func (m *DepIOSEnrollmentProfile) GetITunesPairingMode()(*ITunesPairingMode) {
     if m == nil {
         return nil
@@ -861,7 +861,7 @@ func (m *DepIOSEnrollmentProfile) SetIMessageAndFaceTimeScreenDisabled(value *bo
         m.iMessageAndFaceTimeScreenDisabled = value
     }
 }
-// SetITunesPairingMode sets the iTunesPairingMode property value. Indicates the iTunes pairing mode. Possible values are: disallow, allow, requiresCertificate.
+// SetITunesPairingMode sets the iTunesPairingMode property value. The iTunesPairingMode property
 func (m *DepIOSEnrollmentProfile) SetITunesPairingMode(value *ITunesPairingMode)() {
     if m != nil {
         m.iTunesPairingMode = value

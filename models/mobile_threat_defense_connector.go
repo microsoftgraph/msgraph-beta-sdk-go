@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// MobileThreatDefenseConnector entity which represents a connection to Mobile threat defense partner.
+// MobileThreatDefenseConnector 
 type MobileThreatDefenseConnector struct {
     Entity
     // For IOS devices, allows the admin to configure whether the data sync partner may also collect metadata about installed applications from Intune
@@ -32,7 +32,7 @@ type MobileThreatDefenseConnector struct {
     macEnabled *bool
     // When TRUE, configuration profile management via Microsoft Defender for Endpoint is enabled. When FALSE, configuration profile management via Microsoft Defender for Endpoint is disabled.
     microsoftDefenderForEndpointAttachEnabled *bool
-    // Data Sync Partner state for this account. Possible values are: unavailable, available, enabled, unresponsive.
+    // Partner state of this tenant.
     partnerState *MobileThreatPartnerTenantState
     // Get or Set days the per tenant tolerance to unresponsiveness for this partner integration
     partnerUnresponsivenessThresholdInDays *int32
@@ -43,7 +43,7 @@ type MobileThreatDefenseConnector struct {
     // For Windows, get or set whether data from the data sync partner should be used during compliance evaluations
     windowsEnabled *bool
 }
-// NewMobileThreatDefenseConnector instantiates a new mobileThreatDefenseConnector and sets the default values.
+// NewMobileThreatDefenseConnector instantiates a new MobileThreatDefenseConnector and sets the default values.
 func NewMobileThreatDefenseConnector()(*MobileThreatDefenseConnector) {
     m := &MobileThreatDefenseConnector{
         Entity: *NewEntity(),
@@ -325,7 +325,7 @@ func (m *MobileThreatDefenseConnector) GetMicrosoftDefenderForEndpointAttachEnab
         return m.microsoftDefenderForEndpointAttachEnabled
     }
 }
-// GetPartnerState gets the partnerState property value. Data Sync Partner state for this account. Possible values are: unavailable, available, enabled, unresponsive.
+// GetPartnerState gets the partnerState property value. Partner state of this tenant.
 func (m *MobileThreatDefenseConnector) GetPartnerState()(*MobileThreatPartnerTenantState) {
     if m == nil {
         return nil
@@ -548,7 +548,7 @@ func (m *MobileThreatDefenseConnector) SetMicrosoftDefenderForEndpointAttachEnab
         m.microsoftDefenderForEndpointAttachEnabled = value
     }
 }
-// SetPartnerState sets the partnerState property value. Data Sync Partner state for this account. Possible values are: unavailable, available, enabled, unresponsive.
+// SetPartnerState sets the partnerState property value. Partner state of this tenant.
 func (m *MobileThreatDefenseConnector) SetPartnerState(value *MobileThreatPartnerTenantState)() {
     if m != nil {
         m.partnerState = value

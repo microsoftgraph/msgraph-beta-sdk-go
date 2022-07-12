@@ -19,7 +19,7 @@ type AssignmentFilterStatusDetails struct {
     // Unique identifier for UserId object. Can be null
     userId *string
 }
-// NewAssignmentFilterStatusDetails instantiates a new AssignmentFilterStatusDetails and sets the default values.
+// NewAssignmentFilterStatusDetails instantiates a new assignmentFilterStatusDetails and sets the default values.
 func NewAssignmentFilterStatusDetails()(*AssignmentFilterStatusDetails) {
     m := &AssignmentFilterStatusDetails{
     }

@@ -15,7 +15,7 @@ type AndroidForWorkWiFiConfiguration struct {
     networkName *string
     // This is the name of the Wi-Fi network that is broadcast to all devices.
     ssid *string
-    // Indicates whether Wi-Fi endpoint uses an EAP based security type. Possible values are: open, wpaEnterprise, wpa2Enterprise.
+    // Wi-Fi Security Types for Android.
     wiFiSecurityType *AndroidWiFiSecurityType
 }
 // NewAndroidForWorkWiFiConfiguration instantiates a new AndroidForWorkWiFiConfiguration and sets the default values.
@@ -23,6 +23,8 @@ func NewAndroidForWorkWiFiConfiguration()(*AndroidForWorkWiFiConfiguration) {
     m := &AndroidForWorkWiFiConfiguration{
         DeviceConfiguration: *NewDeviceConfiguration(),
     }
+    typeValue := "#microsoft.graph.androidForWorkWiFiConfiguration";
+    m.SetType(&typeValue);
     return m
 }
 // CreateAndroidForWorkWiFiConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -135,7 +137,7 @@ func (m *AndroidForWorkWiFiConfiguration) GetSsid()(*string) {
         return m.ssid
     }
 }
-// GetWiFiSecurityType gets the wiFiSecurityType property value. Indicates whether Wi-Fi endpoint uses an EAP based security type. Possible values are: open, wpaEnterprise, wpa2Enterprise.
+// GetWiFiSecurityType gets the wiFiSecurityType property value. Wi-Fi Security Types for Android.
 func (m *AndroidForWorkWiFiConfiguration) GetWiFiSecurityType()(*AndroidWiFiSecurityType) {
     if m == nil {
         return nil
@@ -206,7 +208,7 @@ func (m *AndroidForWorkWiFiConfiguration) SetSsid(value *string)() {
         m.ssid = value
     }
 }
-// SetWiFiSecurityType sets the wiFiSecurityType property value. Indicates whether Wi-Fi endpoint uses an EAP based security type. Possible values are: open, wpaEnterprise, wpa2Enterprise.
+// SetWiFiSecurityType sets the wiFiSecurityType property value. Wi-Fi Security Types for Android.
 func (m *AndroidForWorkWiFiConfiguration) SetWiFiSecurityType(value *AndroidWiFiSecurityType)() {
     if m != nil {
         m.wiFiSecurityType = value

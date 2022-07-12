@@ -17,7 +17,7 @@ type CloudPcBulkRemoteActionResult struct {
     // A list of all the Intune managed device IDs that completed the bulk action successfully.
     successfulDeviceIds []string
 }
-// NewCloudPcBulkRemoteActionResult instantiates a new CloudPcBulkRemoteActionResult and sets the default values.
+// NewCloudPcBulkRemoteActionResult instantiates a new cloudPcBulkRemoteActionResult and sets the default values.
 func NewCloudPcBulkRemoteActionResult()(*CloudPcBulkRemoteActionResult) {
     m := &CloudPcBulkRemoteActionResult{
     }

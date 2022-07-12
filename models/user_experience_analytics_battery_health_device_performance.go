@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// UserExperienceAnalyticsBatteryHealthDevicePerformance the user experience analytics battery health device performance entity contains device level battery information.
+// UserExperienceAnalyticsBatteryHealthDevicePerformance 
 type UserExperienceAnalyticsBatteryHealthDevicePerformance struct {
     Entity
     // Estimated battery age. Unit in days. Valid values -2147483648 to 2147483647
@@ -17,7 +17,7 @@ type UserExperienceAnalyticsBatteryHealthDevicePerformance struct {
     deviceName *string
     // The estimated runtime of the device when the battery is fully charged. Unit in minutes. Valid values -2147483648 to 2147483647
     estimatedRuntimeInMinutes *int32
-    // The overall battery health status of the device. Possible values are: unknown, insufficientData, needsAttention, meetingGoals.
+    // The healthStatus property
     healthStatus *UserExperienceAnalyticsHealthState
     // The manufacturer name of the device.
     manufacturer *string
@@ -26,7 +26,7 @@ type UserExperienceAnalyticsBatteryHealthDevicePerformance struct {
     // The model name of the device.
     model *string
 }
-// NewUserExperienceAnalyticsBatteryHealthDevicePerformance instantiates a new userExperienceAnalyticsBatteryHealthDevicePerformance and sets the default values.
+// NewUserExperienceAnalyticsBatteryHealthDevicePerformance instantiates a new UserExperienceAnalyticsBatteryHealthDevicePerformance and sets the default values.
 func NewUserExperienceAnalyticsBatteryHealthDevicePerformance()(*UserExperienceAnalyticsBatteryHealthDevicePerformance) {
     m := &UserExperienceAnalyticsBatteryHealthDevicePerformance{
         Entity: *NewEntity(),
@@ -172,7 +172,7 @@ func (m *UserExperienceAnalyticsBatteryHealthDevicePerformance) GetFieldDeserial
     }
     return res
 }
-// GetHealthStatus gets the healthStatus property value. The overall battery health status of the device. Possible values are: unknown, insufficientData, needsAttention, meetingGoals.
+// GetHealthStatus gets the healthStatus property value. The healthStatus property
 func (m *UserExperienceAnalyticsBatteryHealthDevicePerformance) GetHealthStatus()(*UserExperienceAnalyticsHealthState) {
     if m == nil {
         return nil
@@ -297,7 +297,7 @@ func (m *UserExperienceAnalyticsBatteryHealthDevicePerformance) SetEstimatedRunt
         m.estimatedRuntimeInMinutes = value
     }
 }
-// SetHealthStatus sets the healthStatus property value. The overall battery health status of the device. Possible values are: unknown, insufficientData, needsAttention, meetingGoals.
+// SetHealthStatus sets the healthStatus property value. The healthStatus property
 func (m *UserExperienceAnalyticsBatteryHealthDevicePerformance) SetHealthStatus(value *UserExperienceAnalyticsHealthState)() {
     if m != nil {
         m.healthStatus = value

@@ -6,7 +6,7 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
-// SearchAnswer provides operations to manage the searchEntity singleton.
+// SearchAnswer provides operations to manage the collection of accessReview entities.
 type SearchAnswer struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
     // Search answer description shown on search results page.
@@ -25,6 +25,8 @@ func NewSearchAnswer()(*SearchAnswer) {
     m := &SearchAnswer{
         Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),
     }
+    typeValue := "#microsoft.graph.search.searchAnswer";
+    m.SetType(&typeValue);
     return m
 }
 // CreateSearchAnswerFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

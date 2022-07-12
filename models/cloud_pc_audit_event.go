@@ -5,22 +5,22 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// CloudPcAuditEvent provides operations to manage the deviceManagement singleton.
+// CloudPcAuditEvent 
 type CloudPcAuditEvent struct {
     Entity
     // Friendly name of the activity. Optional.
     activity *string
     // The date time in UTC when the activity was performed. Read-only.
     activityDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The HTTP operation type of the activity. Possible values include create, delete, patch and other. Read-only.
+    // The activityOperationType property
     activityOperationType *CloudPcAuditActivityOperationType
-    // The result of the activity. Read-only.
+    // The activityResult property
     activityResult *CloudPcAuditActivityResult
     // The type of activity that was performed. Read-only.
     activityType *string
     // The actor property
     actor CloudPcAuditActorable
-    // Audit category. Read-only.
+    // The category property
     category *CloudPcAuditCategory
     // Component name. Read-only.
     componentName *string
@@ -31,7 +31,7 @@ type CloudPcAuditEvent struct {
     // List of cloudPcAuditResource objects. Read-only.
     resources []CloudPcAuditResourceable
 }
-// NewCloudPcAuditEvent instantiates a new cloudPcAuditEvent and sets the default values.
+// NewCloudPcAuditEvent instantiates a new CloudPcAuditEvent and sets the default values.
 func NewCloudPcAuditEvent()(*CloudPcAuditEvent) {
     m := &CloudPcAuditEvent{
         Entity: *NewEntity(),
@@ -58,7 +58,7 @@ func (m *CloudPcAuditEvent) GetActivityDateTime()(*i336074805fc853987abe6f7fe3ad
         return m.activityDateTime
     }
 }
-// GetActivityOperationType gets the activityOperationType property value. The HTTP operation type of the activity. Possible values include create, delete, patch and other. Read-only.
+// GetActivityOperationType gets the activityOperationType property value. The activityOperationType property
 func (m *CloudPcAuditEvent) GetActivityOperationType()(*CloudPcAuditActivityOperationType) {
     if m == nil {
         return nil
@@ -66,7 +66,7 @@ func (m *CloudPcAuditEvent) GetActivityOperationType()(*CloudPcAuditActivityOper
         return m.activityOperationType
     }
 }
-// GetActivityResult gets the activityResult property value. The result of the activity. Read-only.
+// GetActivityResult gets the activityResult property value. The activityResult property
 func (m *CloudPcAuditEvent) GetActivityResult()(*CloudPcAuditActivityResult) {
     if m == nil {
         return nil
@@ -90,7 +90,7 @@ func (m *CloudPcAuditEvent) GetActor()(CloudPcAuditActorable) {
         return m.actor
     }
 }
-// GetCategory gets the category property value. Audit category. Read-only.
+// GetCategory gets the category property value. The category property
 func (m *CloudPcAuditEvent) GetCategory()(*CloudPcAuditCategory) {
     if m == nil {
         return nil
@@ -342,13 +342,13 @@ func (m *CloudPcAuditEvent) SetActivityDateTime(value *i336074805fc853987abe6f7f
         m.activityDateTime = value
     }
 }
-// SetActivityOperationType sets the activityOperationType property value. The HTTP operation type of the activity. Possible values include create, delete, patch and other. Read-only.
+// SetActivityOperationType sets the activityOperationType property value. The activityOperationType property
 func (m *CloudPcAuditEvent) SetActivityOperationType(value *CloudPcAuditActivityOperationType)() {
     if m != nil {
         m.activityOperationType = value
     }
 }
-// SetActivityResult sets the activityResult property value. The result of the activity. Read-only.
+// SetActivityResult sets the activityResult property value. The activityResult property
 func (m *CloudPcAuditEvent) SetActivityResult(value *CloudPcAuditActivityResult)() {
     if m != nil {
         m.activityResult = value
@@ -366,7 +366,7 @@ func (m *CloudPcAuditEvent) SetActor(value CloudPcAuditActorable)() {
         m.actor = value
     }
 }
-// SetCategory sets the category property value. Audit category. Read-only.
+// SetCategory sets the category property value. The category property
 func (m *CloudPcAuditEvent) SetCategory(value *CloudPcAuditCategory)() {
     if m != nil {
         m.category = value

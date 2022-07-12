@@ -15,7 +15,7 @@ type RiskDetectionsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// RiskDetectionsRequestBuilderGetQueryParameters retrieve the properties of a **riskDetection** object.
+// RiskDetectionsRequestBuilderGetQueryParameters retrieve the properties of a collection of **riskDetection** objects.
 type RiskDetectionsRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -65,11 +65,11 @@ func NewRiskDetectionsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7dae
     urlParams["request-raw-url"] = rawUrl
     return NewRiskDetectionsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformation retrieve the properties of a **riskDetection** object.
+// CreateGetRequestInformation retrieve the properties of a collection of **riskDetection** objects.
 func (m *RiskDetectionsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration retrieve the properties of a **riskDetection** object.
+// CreateGetRequestInformationWithRequestConfiguration retrieve the properties of a collection of **riskDetection** objects.
 func (m *RiskDetectionsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *RiskDetectionsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -103,11 +103,11 @@ func (m *RiskDetectionsRequestBuilder) CreatePostRequestInformationWithRequestCo
     }
     return requestInfo, nil
 }
-// Get retrieve the properties of a **riskDetection** object.
+// Get retrieve the properties of a collection of **riskDetection** objects.
 func (m *RiskDetectionsRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RiskDetectionCollectionResponseable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler retrieve the properties of a **riskDetection** object.
+// GetWithRequestConfigurationAndResponseHandler retrieve the properties of a collection of **riskDetection** objects.
 func (m *RiskDetectionsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *RiskDetectionsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RiskDetectionCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DeviceComplianceDeviceStatus provides operations to manage the deviceManagement singleton.
+// DeviceComplianceDeviceStatus provides operations to manage the collection of activityStatistics entities.
 type DeviceComplianceDeviceStatus struct {
     Entity
     // The DateTime when device compliance grace period expires
@@ -18,7 +18,7 @@ type DeviceComplianceDeviceStatus struct {
     lastReportedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Platform of the device that is being reported
     platform *int32
-    // Compliance status of the policy report. Possible values are: unknown, notApplicable, compliant, remediated, nonCompliant, error, conflict, notAssigned.
+    // The status property
     status *ComplianceStatus
     // The User Name that is being reported
     userName *string
@@ -161,7 +161,7 @@ func (m *DeviceComplianceDeviceStatus) GetPlatform()(*int32) {
         return m.platform
     }
 }
-// GetStatus gets the status property value. Compliance status of the policy report. Possible values are: unknown, notApplicable, compliant, remediated, nonCompliant, error, conflict, notAssigned.
+// GetStatus gets the status property value. The status property
 func (m *DeviceComplianceDeviceStatus) GetStatus()(*ComplianceStatus) {
     if m == nil {
         return nil
@@ -272,7 +272,7 @@ func (m *DeviceComplianceDeviceStatus) SetPlatform(value *int32)() {
         m.platform = value
     }
 }
-// SetStatus sets the status property value. Compliance status of the policy report. Possible values are: unknown, notApplicable, compliant, remediated, nonCompliant, error, conflict, notAssigned.
+// SetStatus sets the status property value. The status property
 func (m *DeviceComplianceDeviceStatus) SetStatus(value *ComplianceStatus)() {
     if m != nil {
         m.status = value

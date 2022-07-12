@@ -8,13 +8,13 @@ import (
 type ContentInfo struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
-    // Possible values are: default, email.
+    // The format property
     format *ContentFormat
     // Identifier used for Azure Information Protection Analytics.
     identifier *string
     // Existing Microsoft Purview Information Protection metadata is passed as key/value pairs, where the key is the MSIP_Label_GUID_PropName.
     metadata []KeyValuePairable
-    // Possible values are: rest, motion, use.
+    // The state property
     state *ContentState
 }
 // NewContentInfo instantiates a new contentInfo and sets the default values.
@@ -85,7 +85,7 @@ func (m *ContentInfo) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
     }
     return res
 }
-// GetFormat gets the format property value. Possible values are: default, email.
+// GetFormat gets the format property value. The format property
 func (m *ContentInfo) GetFormat()(*ContentFormat) {
     if m == nil {
         return nil
@@ -109,7 +109,7 @@ func (m *ContentInfo) GetMetadata()([]KeyValuePairable) {
         return m.metadata
     }
 }
-// GetState gets the state property value. Possible values are: rest, motion, use.
+// GetState gets the state property value. The state property
 func (m *ContentInfo) GetState()(*ContentState) {
     if m == nil {
         return nil
@@ -163,7 +163,7 @@ func (m *ContentInfo) SetAdditionalData(value map[string]interface{})() {
         m.additionalData = value
     }
 }
-// SetFormat sets the format property value. Possible values are: default, email.
+// SetFormat sets the format property value. The format property
 func (m *ContentInfo) SetFormat(value *ContentFormat)() {
     if m != nil {
         m.format = value
@@ -181,7 +181,7 @@ func (m *ContentInfo) SetMetadata(value []KeyValuePairable)() {
         m.metadata = value
     }
 }
-// SetState sets the state property value. Possible values are: rest, motion, use.
+// SetState sets the state property value. The state property
 func (m *ContentInfo) SetState(value *ContentState)() {
     if m != nil {
         m.state = value

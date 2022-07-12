@@ -15,11 +15,11 @@ type RestrictedAppsViolation struct {
     deviceName *string
     // Managed device unique identifier, must be Guid
     managedDeviceId *string
-    // Platform type. Possible values are: android, androidForWork, iOS, macOS, windowsPhone81, windows81AndLater, windows10AndLater, androidWorkProfile, windows10XProfile, androidAOSP, all.
+    // Supported platform types for policies.
     platformType *PolicyPlatformType
     // List of violated restricted apps
     restrictedApps []ManagedDeviceReportedAppable
-    // Restricted apps state. Possible values are: prohibitedApps, notApprovedApps.
+    // Restricted apps state
     restrictedAppsState *RestrictedAppsState
     // User unique identifier, must be Guid
     userId *string
@@ -168,7 +168,7 @@ func (m *RestrictedAppsViolation) GetManagedDeviceId()(*string) {
         return m.managedDeviceId
     }
 }
-// GetPlatformType gets the platformType property value. Platform type. Possible values are: android, androidForWork, iOS, macOS, windowsPhone81, windows81AndLater, windows10AndLater, androidWorkProfile, windows10XProfile, androidAOSP, all.
+// GetPlatformType gets the platformType property value. Supported platform types for policies.
 func (m *RestrictedAppsViolation) GetPlatformType()(*PolicyPlatformType) {
     if m == nil {
         return nil
@@ -184,7 +184,7 @@ func (m *RestrictedAppsViolation) GetRestrictedApps()([]ManagedDeviceReportedApp
         return m.restrictedApps
     }
 }
-// GetRestrictedAppsState gets the restrictedAppsState property value. Restricted apps state. Possible values are: prohibitedApps, notApprovedApps.
+// GetRestrictedAppsState gets the restrictedAppsState property value. Restricted apps state
 func (m *RestrictedAppsViolation) GetRestrictedAppsState()(*RestrictedAppsState) {
     if m == nil {
         return nil
@@ -300,7 +300,7 @@ func (m *RestrictedAppsViolation) SetManagedDeviceId(value *string)() {
         m.managedDeviceId = value
     }
 }
-// SetPlatformType sets the platformType property value. Platform type. Possible values are: android, androidForWork, iOS, macOS, windowsPhone81, windows81AndLater, windows10AndLater, androidWorkProfile, windows10XProfile, androidAOSP, all.
+// SetPlatformType sets the platformType property value. Supported platform types for policies.
 func (m *RestrictedAppsViolation) SetPlatformType(value *PolicyPlatformType)() {
     if m != nil {
         m.platformType = value
@@ -312,7 +312,7 @@ func (m *RestrictedAppsViolation) SetRestrictedApps(value []ManagedDeviceReporte
         m.restrictedApps = value
     }
 }
-// SetRestrictedAppsState sets the restrictedAppsState property value. Restricted apps state. Possible values are: prohibitedApps, notApprovedApps.
+// SetRestrictedAppsState sets the restrictedAppsState property value. Restricted apps state
 func (m *RestrictedAppsViolation) SetRestrictedAppsState(value *RestrictedAppsState)() {
     if m != nil {
         m.restrictedAppsState = value

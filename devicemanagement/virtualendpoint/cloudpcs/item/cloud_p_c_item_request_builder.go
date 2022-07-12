@@ -10,6 +10,7 @@ import (
     i6e8302b9072d34b3ea0f98fa81a45d53c8e894280a606660773b4ade2bc98d42 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/virtualendpoint/cloudpcs/item/getcloudpclaunchinfo"
     i7174971b3bcb6f4ec85df581ff277b07bbaf56b391c32a3f561718b3a00346fe "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/virtualendpoint/cloudpcs/item/troubleshoot"
     ia073266fa87f992d3a858948753dc53b6ac9007c5febc8b5d74af59df63531cf "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/virtualendpoint/cloudpcs/item/reprovision"
+    iafdeeea6f76d4e54cc8d64182d5ef5738139e7487d31b19e0f8cd67313dd907f "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/virtualendpoint/cloudpcs/item/getcloudpcconnectivityhistory"
     ic5c3712fbfc3279ed202453cc12bb33fc813457da47b3438a76bf9022c5b2f4a "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/virtualendpoint/cloudpcs/item/endgraceperiod"
 )
 
@@ -155,6 +156,10 @@ func (m *CloudPCItemRequestBuilder) EndGracePeriod()(*ic5c3712fbfc3279ed202453cc
 // Get cloud managed virtual desktops.
 func (m *CloudPCItemRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPCable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
+}
+// GetCloudPcConnectivityHistory provides operations to call the getCloudPcConnectivityHistory method.
+func (m *CloudPCItemRequestBuilder) GetCloudPcConnectivityHistory()(*iafdeeea6f76d4e54cc8d64182d5ef5738139e7487d31b19e0f8cd67313dd907f.GetCloudPcConnectivityHistoryRequestBuilder) {
+    return iafdeeea6f76d4e54cc8d64182d5ef5738139e7487d31b19e0f8cd67313dd907f.NewGetCloudPcConnectivityHistoryRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // GetCloudPcLaunchInfo provides operations to call the getCloudPcLaunchInfo method.
 func (m *CloudPCItemRequestBuilder) GetCloudPcLaunchInfo()(*i6e8302b9072d34b3ea0f98fa81a45d53c8e894280a606660773b4ade2bc98d42.GetCloudPcLaunchInfoRequestBuilder) {

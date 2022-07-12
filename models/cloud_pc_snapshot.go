@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// CloudPcSnapshot provides operations to manage the deviceManagement singleton.
+// CloudPcSnapshot 
 type CloudPcSnapshot struct {
     Entity
     // The unique identifier for the Cloud PC.
@@ -17,7 +17,7 @@ type CloudPcSnapshot struct {
     // The status of the Cloud PC snapshot. The possible values are: ready, unknownFutureValue.
     status *CloudPcSnapshotStatus
 }
-// NewCloudPcSnapshot instantiates a new cloudPcSnapshot and sets the default values.
+// NewCloudPcSnapshot instantiates a new CloudPcSnapshot and sets the default values.
 func NewCloudPcSnapshot()(*CloudPcSnapshot) {
     m := &CloudPcSnapshot{
         Entity: *NewEntity(),

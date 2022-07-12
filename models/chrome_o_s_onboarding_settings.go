@@ -5,19 +5,19 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ChromeOSOnboardingSettings entity that represents a Chromebook tenant settings
+// ChromeOSOnboardingSettings 
 type ChromeOSOnboardingSettings struct {
     Entity
     // The ChromebookTenant's LastDirectorySyncDateTime
     lastDirectorySyncDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The ChromebookTenant's LastModifiedDateTime
     lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The ChromebookTenant's OnboardingStatus. Possible values are: unknown, inprogress, onboarded, failed, offboarding, unknownFutureValue.
+    // The onboarding status of the tenant.
     onboardingStatus *OnboardingStatus
     // The ChromebookTenant's OwnerUserPrincipalName
     ownerUserPrincipalName *string
 }
-// NewChromeOSOnboardingSettings instantiates a new chromeOSOnboardingSettings and sets the default values.
+// NewChromeOSOnboardingSettings instantiates a new ChromeOSOnboardingSettings and sets the default values.
 func NewChromeOSOnboardingSettings()(*ChromeOSOnboardingSettings) {
     m := &ChromeOSOnboardingSettings{
         Entity: *NewEntity(),
@@ -89,7 +89,7 @@ func (m *ChromeOSOnboardingSettings) GetLastModifiedDateTime()(*i336074805fc8539
         return m.lastModifiedDateTime
     }
 }
-// GetOnboardingStatus gets the onboardingStatus property value. The ChromebookTenant's OnboardingStatus. Possible values are: unknown, inprogress, onboarded, failed, offboarding, unknownFutureValue.
+// GetOnboardingStatus gets the onboardingStatus property value. The onboarding status of the tenant.
 func (m *ChromeOSOnboardingSettings) GetOnboardingStatus()(*OnboardingStatus) {
     if m == nil {
         return nil
@@ -150,7 +150,7 @@ func (m *ChromeOSOnboardingSettings) SetLastModifiedDateTime(value *i336074805fc
         m.lastModifiedDateTime = value
     }
 }
-// SetOnboardingStatus sets the onboardingStatus property value. The ChromebookTenant's OnboardingStatus. Possible values are: unknown, inprogress, onboarded, failed, offboarding, unknownFutureValue.
+// SetOnboardingStatus sets the onboardingStatus property value. The onboarding status of the tenant.
 func (m *ChromeOSOnboardingSettings) SetOnboardingStatus(value *OnboardingStatus)() {
     if m != nil {
         m.onboardingStatus = value

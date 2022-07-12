@@ -11,13 +11,13 @@ type OfficeSuiteApp struct {
     autoAcceptEula *bool
     // The property to represent the apps which are excluded from the selected Office365 Product Id.
     excludedApps ExcludedAppsable
-    // To specify the level of display for the Installation Progress Setup UI on the Device. Possible values are: none, full.
+    // The Enum to specify the level of display for the Installation Progress Setup UI on the Device.
     installProgressDisplayLevel *OfficeSuiteInstallProgressDisplayLevel
     // The property to represent the locales which are installed when the apps from Office365 is installed. It uses standard RFC 6033. Ref: https://technet.microsoft.com/library/cc179219(v=office.16).aspx
     localesToInstall []string
     // The property to represent the XML configuration file that can be specified for Office ProPlus Apps. Takes precedence over all other properties. When present, the XML configuration file will be used to create the app.
     officeConfigurationXml []byte
-    // The property to represent the Office365 app suite version. Possible values are: none, x86, x64, arm, neutral, arm64.
+    // Contains properties for Windows architecture.
     officePlatformArchitecture *WindowsArchitecture
     // The Product Ids that represent the Office365 Suite SKU.
     productIds []string
@@ -25,7 +25,7 @@ type OfficeSuiteApp struct {
     shouldUninstallOlderVersionsOfOffice *bool
     // The property to represent the specific target version for the Office365 app suite that should be remained deployed on the devices.
     targetVersion *string
-    // The property to represent the Office365 Update Channel. Possible values are: none, current, deferred, firstReleaseCurrent, firstReleaseDeferred, monthlyEnterprise.
+    // The Enum to specify the Office365 Updates Channel.
     updateChannel *OfficeUpdateChannel
     // The property to represent the update version in which the specific target version is available for the Office365 app suite.
     updateVersion *string
@@ -192,7 +192,7 @@ func (m *OfficeSuiteApp) GetFieldDeserializers()(map[string]func(i878a80d2330e89
     }
     return res
 }
-// GetInstallProgressDisplayLevel gets the installProgressDisplayLevel property value. To specify the level of display for the Installation Progress Setup UI on the Device. Possible values are: none, full.
+// GetInstallProgressDisplayLevel gets the installProgressDisplayLevel property value. The Enum to specify the level of display for the Installation Progress Setup UI on the Device.
 func (m *OfficeSuiteApp) GetInstallProgressDisplayLevel()(*OfficeSuiteInstallProgressDisplayLevel) {
     if m == nil {
         return nil
@@ -216,7 +216,7 @@ func (m *OfficeSuiteApp) GetOfficeConfigurationXml()([]byte) {
         return m.officeConfigurationXml
     }
 }
-// GetOfficePlatformArchitecture gets the officePlatformArchitecture property value. The property to represent the Office365 app suite version. Possible values are: none, x86, x64, arm, neutral, arm64.
+// GetOfficePlatformArchitecture gets the officePlatformArchitecture property value. Contains properties for Windows architecture.
 func (m *OfficeSuiteApp) GetOfficePlatformArchitecture()(*WindowsArchitecture) {
     if m == nil {
         return nil
@@ -248,7 +248,7 @@ func (m *OfficeSuiteApp) GetTargetVersion()(*string) {
         return m.targetVersion
     }
 }
-// GetUpdateChannel gets the updateChannel property value. The property to represent the Office365 Update Channel. Possible values are: none, current, deferred, firstReleaseCurrent, firstReleaseDeferred, monthlyEnterprise.
+// GetUpdateChannel gets the updateChannel property value. The Enum to specify the Office365 Updates Channel.
 func (m *OfficeSuiteApp) GetUpdateChannel()(*OfficeUpdateChannel) {
     if m == nil {
         return nil
@@ -367,7 +367,7 @@ func (m *OfficeSuiteApp) SetExcludedApps(value ExcludedAppsable)() {
         m.excludedApps = value
     }
 }
-// SetInstallProgressDisplayLevel sets the installProgressDisplayLevel property value. To specify the level of display for the Installation Progress Setup UI on the Device. Possible values are: none, full.
+// SetInstallProgressDisplayLevel sets the installProgressDisplayLevel property value. The Enum to specify the level of display for the Installation Progress Setup UI on the Device.
 func (m *OfficeSuiteApp) SetInstallProgressDisplayLevel(value *OfficeSuiteInstallProgressDisplayLevel)() {
     if m != nil {
         m.installProgressDisplayLevel = value
@@ -385,7 +385,7 @@ func (m *OfficeSuiteApp) SetOfficeConfigurationXml(value []byte)() {
         m.officeConfigurationXml = value
     }
 }
-// SetOfficePlatformArchitecture sets the officePlatformArchitecture property value. The property to represent the Office365 app suite version. Possible values are: none, x86, x64, arm, neutral, arm64.
+// SetOfficePlatformArchitecture sets the officePlatformArchitecture property value. Contains properties for Windows architecture.
 func (m *OfficeSuiteApp) SetOfficePlatformArchitecture(value *WindowsArchitecture)() {
     if m != nil {
         m.officePlatformArchitecture = value
@@ -409,7 +409,7 @@ func (m *OfficeSuiteApp) SetTargetVersion(value *string)() {
         m.targetVersion = value
     }
 }
-// SetUpdateChannel sets the updateChannel property value. The property to represent the Office365 Update Channel. Possible values are: none, current, deferred, firstReleaseCurrent, firstReleaseDeferred, monthlyEnterprise.
+// SetUpdateChannel sets the updateChannel property value. The Enum to specify the Office365 Updates Channel.
 func (m *OfficeSuiteApp) SetUpdateChannel(value *OfficeUpdateChannel)() {
     if m != nil {
         m.updateChannel = value

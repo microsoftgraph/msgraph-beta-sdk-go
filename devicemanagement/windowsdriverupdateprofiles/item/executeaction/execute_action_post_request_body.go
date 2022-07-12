@@ -8,7 +8,7 @@ import (
 
 // ExecuteActionPostRequestBody provides operations to call the executeAction method.
 type ExecuteActionPostRequestBody struct {
-    // The actionName property
+    // An enum type to represent approval actions of single or list of drivers.
     actionName *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DriverApprovalAction
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
@@ -28,7 +28,7 @@ func NewExecuteActionPostRequestBody()(*ExecuteActionPostRequestBody) {
 func CreateExecuteActionPostRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewExecuteActionPostRequestBody(), nil
 }
-// GetActionName gets the actionName property value. The actionName property
+// GetActionName gets the actionName property value. An enum type to represent approval actions of single or list of drivers.
 func (m *ExecuteActionPostRequestBody) GetActionName()(*ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DriverApprovalAction) {
     if m == nil {
         return nil
@@ -128,7 +128,7 @@ func (m *ExecuteActionPostRequestBody) Serialize(writer i878a80d2330e89d26896388
     }
     return nil
 }
-// SetActionName sets the actionName property value. The actionName property
+// SetActionName sets the actionName property value. An enum type to represent approval actions of single or list of drivers.
 func (m *ExecuteActionPostRequestBody) SetActionName(value *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DriverApprovalAction)() {
     if m != nil {
         m.actionName = value

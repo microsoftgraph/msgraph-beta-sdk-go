@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// IosUpdateDeviceStatus provides operations to manage the deviceManagement singleton.
+// IosUpdateDeviceStatus 
 type IosUpdateDeviceStatus struct {
     Entity
     // The DateTime when device compliance grace period expires
@@ -16,7 +16,7 @@ type IosUpdateDeviceStatus struct {
     deviceId *string
     // The device model that is being reported
     deviceModel *string
-    // The installation status of the policy report. Possible values are: success, available, idle, unknown, mdmClientCrashed, timeout, downloading, downloadFailed, downloadRequiresComputer, downloadInsufficientSpace, downloadInsufficientPower, downloadInsufficientNetwork, installing, installInsufficientSpace, installInsufficientPower, installPhoneCallInProgress, installFailed, notSupportedOperation, sharedDeviceUserLoggedInError, updateError, deviceOsHigherThanDesiredOsVersion, updateScanFailed.
+    // The installStatus property
     installStatus *IosUpdatesInstallStatus
     // Last modified date time of the policy report.
     lastReportedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
@@ -24,7 +24,7 @@ type IosUpdateDeviceStatus struct {
     osVersion *string
     // Platform of the device that is being reported
     platform *int32
-    // Compliance status of the policy report. Possible values are: unknown, notApplicable, compliant, remediated, nonCompliant, error, conflict, notAssigned.
+    // The status property
     status *ComplianceStatus
     // The User id that is being reported.
     userId *string
@@ -33,7 +33,7 @@ type IosUpdateDeviceStatus struct {
     // UserPrincipalName.
     userPrincipalName *string
 }
-// NewIosUpdateDeviceStatus instantiates a new iosUpdateDeviceStatus and sets the default values.
+// NewIosUpdateDeviceStatus instantiates a new IosUpdateDeviceStatus and sets the default values.
 func NewIosUpdateDeviceStatus()(*IosUpdateDeviceStatus) {
     m := &IosUpdateDeviceStatus{
         Entity: *NewEntity(),
@@ -201,7 +201,7 @@ func (m *IosUpdateDeviceStatus) GetFieldDeserializers()(map[string]func(i878a80d
     }
     return res
 }
-// GetInstallStatus gets the installStatus property value. The installation status of the policy report. Possible values are: success, available, idle, unknown, mdmClientCrashed, timeout, downloading, downloadFailed, downloadRequiresComputer, downloadInsufficientSpace, downloadInsufficientPower, downloadInsufficientNetwork, installing, installInsufficientSpace, installInsufficientPower, installPhoneCallInProgress, installFailed, notSupportedOperation, sharedDeviceUserLoggedInError, updateError, deviceOsHigherThanDesiredOsVersion, updateScanFailed.
+// GetInstallStatus gets the installStatus property value. The installStatus property
 func (m *IosUpdateDeviceStatus) GetInstallStatus()(*IosUpdatesInstallStatus) {
     if m == nil {
         return nil
@@ -233,7 +233,7 @@ func (m *IosUpdateDeviceStatus) GetPlatform()(*int32) {
         return m.platform
     }
 }
-// GetStatus gets the status property value. Compliance status of the policy report. Possible values are: unknown, notApplicable, compliant, remediated, nonCompliant, error, conflict, notAssigned.
+// GetStatus gets the status property value. The status property
 func (m *IosUpdateDeviceStatus) GetStatus()(*ComplianceStatus) {
     if m == nil {
         return nil
@@ -371,7 +371,7 @@ func (m *IosUpdateDeviceStatus) SetDeviceModel(value *string)() {
         m.deviceModel = value
     }
 }
-// SetInstallStatus sets the installStatus property value. The installation status of the policy report. Possible values are: success, available, idle, unknown, mdmClientCrashed, timeout, downloading, downloadFailed, downloadRequiresComputer, downloadInsufficientSpace, downloadInsufficientPower, downloadInsufficientNetwork, installing, installInsufficientSpace, installInsufficientPower, installPhoneCallInProgress, installFailed, notSupportedOperation, sharedDeviceUserLoggedInError, updateError, deviceOsHigherThanDesiredOsVersion, updateScanFailed.
+// SetInstallStatus sets the installStatus property value. The installStatus property
 func (m *IosUpdateDeviceStatus) SetInstallStatus(value *IosUpdatesInstallStatus)() {
     if m != nil {
         m.installStatus = value
@@ -395,7 +395,7 @@ func (m *IosUpdateDeviceStatus) SetPlatform(value *int32)() {
         m.platform = value
     }
 }
-// SetStatus sets the status property value. Compliance status of the policy report. Possible values are: unknown, notApplicable, compliant, remediated, nonCompliant, error, conflict, notAssigned.
+// SetStatus sets the status property value. The status property
 func (m *IosUpdateDeviceStatus) SetStatus(value *ComplianceStatus)() {
     if m != nil {
         m.status = value

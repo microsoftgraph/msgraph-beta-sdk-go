@@ -35,7 +35,7 @@ type ChannelItemRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ChannelItemRequestBuilderGetQueryParameters get channels from teamwork
+// ChannelItemRequestBuilderGetQueryParameters the channels those are either shared with this deleted team or created in this deleted team.
 type ChannelItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -97,11 +97,11 @@ func (m *ChannelItemRequestBuilder) CreateDeleteRequestInformationWithRequestCon
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation get channels from teamwork
+// CreateGetRequestInformation the channels those are either shared with this deleted team or created in this deleted team.
 func (m *ChannelItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration get channels from teamwork
+// CreateGetRequestInformationWithRequestConfiguration the channels those are either shared with this deleted team or created in this deleted team.
 func (m *ChannelItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *ChannelItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -162,11 +162,11 @@ func (m *ChannelItemRequestBuilder) DoesUserHaveAccessWithUserIdWithTenantIdWith
 func (m *ChannelItemRequestBuilder) FilesFolder()(*ieef334d66ca01e1a9abeee81f9c42528fb192bb0f4e3b566e1006c4d792ef0ee.FilesFolderRequestBuilder) {
     return ieef334d66ca01e1a9abeee81f9c42528fb192bb0f4e3b566e1006c4d792ef0ee.NewFilesFolderRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Get get channels from teamwork
+// Get the channels those are either shared with this deleted team or created in this deleted team.
 func (m *ChannelItemRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Channelable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler get channels from teamwork
+// GetWithRequestConfigurationAndResponseHandler the channels those are either shared with this deleted team or created in this deleted team.
 func (m *ChannelItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *ChannelItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Channelable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

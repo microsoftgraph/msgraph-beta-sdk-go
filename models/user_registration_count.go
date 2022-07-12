@@ -10,7 +10,7 @@ type UserRegistrationCount struct {
     additionalData map[string]interface{}
     // Provides the registration count for your tenant.
     registrationCount *int64
-    // Represents the status of user registration. Possible values are: registered, enabled, capable, and mfaRegistered.
+    // The registrationStatus property
     registrationStatus *RegistrationStatusType
 }
 // NewUserRegistrationCount instantiates a new userRegistrationCount and sets the default values.
@@ -65,7 +65,7 @@ func (m *UserRegistrationCount) GetRegistrationCount()(*int64) {
         return m.registrationCount
     }
 }
-// GetRegistrationStatus gets the registrationStatus property value. Represents the status of user registration. Possible values are: registered, enabled, capable, and mfaRegistered.
+// GetRegistrationStatus gets the registrationStatus property value. The registrationStatus property
 func (m *UserRegistrationCount) GetRegistrationStatus()(*RegistrationStatusType) {
     if m == nil {
         return nil
@@ -108,7 +108,7 @@ func (m *UserRegistrationCount) SetRegistrationCount(value *int64)() {
         m.registrationCount = value
     }
 }
-// SetRegistrationStatus sets the registrationStatus property value. Represents the status of user registration. Possible values are: registered, enabled, capable, and mfaRegistered.
+// SetRegistrationStatus sets the registrationStatus property value. The registrationStatus property
 func (m *UserRegistrationCount) SetRegistrationStatus(value *RegistrationStatusType)() {
     if m != nil {
         m.registrationStatus = value

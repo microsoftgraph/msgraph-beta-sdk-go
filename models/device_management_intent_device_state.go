@@ -14,7 +14,7 @@ type DeviceManagementIntentDeviceState struct {
     deviceId *string
     // Last modified date time of an intent report
     lastReportedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // Device state for an intent. Possible values are: unknown, notApplicable, compliant, remediated, nonCompliant, error, conflict, notAssigned.
+    // The state property
     state *ComplianceStatus
     // The user name that is being reported on a device
     userName *string
@@ -121,7 +121,7 @@ func (m *DeviceManagementIntentDeviceState) GetLastReportedDateTime()(*i33607480
         return m.lastReportedDateTime
     }
 }
-// GetState gets the state property value. Device state for an intent. Possible values are: unknown, notApplicable, compliant, remediated, nonCompliant, error, conflict, notAssigned.
+// GetState gets the state property value. The state property
 func (m *DeviceManagementIntentDeviceState) GetState()(*ComplianceStatus) {
     if m == nil {
         return nil
@@ -208,7 +208,7 @@ func (m *DeviceManagementIntentDeviceState) SetLastReportedDateTime(value *i3360
         m.lastReportedDateTime = value
     }
 }
-// SetState sets the state property value. Device state for an intent. Possible values are: unknown, notApplicable, compliant, remediated, nonCompliant, error, conflict, notAssigned.
+// SetState sets the state property value. The state property
 func (m *DeviceManagementIntentDeviceState) SetState(value *ComplianceStatus)() {
     if m != nil {
         m.state = value

@@ -25,11 +25,11 @@ type AndroidDeviceOwnerWiFiConfiguration struct {
     proxyManualAddress *string
     // Specify the proxy server port.
     proxyManualPort *int32
-    // Specify the proxy setting for Wi-Fi configuration. Possible values include none, manual, and automatic. Possible values are: none, manual, automatic.
+    // Wi-Fi Proxy Settings.
     proxySettings *WiFiProxySetting
     // This is the name of the Wi-Fi network that is broadcast to all devices.
     ssid *string
-    // Indicates whether Wi-Fi endpoint uses an EAP based security type. Possible values are: open, wep, wpaPersonal, wpaEnterprise.
+    // Wi-Fi Security Types for Android Device Owner.
     wiFiSecurityType *AndroidDeviceOwnerWiFiSecurityType
 }
 // NewAndroidDeviceOwnerWiFiConfiguration instantiates a new AndroidDeviceOwnerWiFiConfiguration and sets the default values.
@@ -37,6 +37,8 @@ func NewAndroidDeviceOwnerWiFiConfiguration()(*AndroidDeviceOwnerWiFiConfigurati
     m := &AndroidDeviceOwnerWiFiConfiguration{
         DeviceConfiguration: *NewDeviceConfiguration(),
     }
+    typeValue := "#microsoft.graph.androidDeviceOwnerWiFiConfiguration";
+    m.SetType(&typeValue);
     return m
 }
 // CreateAndroidDeviceOwnerWiFiConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -259,7 +261,7 @@ func (m *AndroidDeviceOwnerWiFiConfiguration) GetProxyManualPort()(*int32) {
         return m.proxyManualPort
     }
 }
-// GetProxySettings gets the proxySettings property value. Specify the proxy setting for Wi-Fi configuration. Possible values include none, manual, and automatic. Possible values are: none, manual, automatic.
+// GetProxySettings gets the proxySettings property value. Wi-Fi Proxy Settings.
 func (m *AndroidDeviceOwnerWiFiConfiguration) GetProxySettings()(*WiFiProxySetting) {
     if m == nil {
         return nil
@@ -275,7 +277,7 @@ func (m *AndroidDeviceOwnerWiFiConfiguration) GetSsid()(*string) {
         return m.ssid
     }
 }
-// GetWiFiSecurityType gets the wiFiSecurityType property value. Indicates whether Wi-Fi endpoint uses an EAP based security type. Possible values are: open, wep, wpaPersonal, wpaEnterprise.
+// GetWiFiSecurityType gets the wiFiSecurityType property value. Wi-Fi Security Types for Android Device Owner.
 func (m *AndroidDeviceOwnerWiFiConfiguration) GetWiFiSecurityType()(*AndroidDeviceOwnerWiFiSecurityType) {
     if m == nil {
         return nil
@@ -419,7 +421,7 @@ func (m *AndroidDeviceOwnerWiFiConfiguration) SetProxyManualPort(value *int32)()
         m.proxyManualPort = value
     }
 }
-// SetProxySettings sets the proxySettings property value. Specify the proxy setting for Wi-Fi configuration. Possible values include none, manual, and automatic. Possible values are: none, manual, automatic.
+// SetProxySettings sets the proxySettings property value. Wi-Fi Proxy Settings.
 func (m *AndroidDeviceOwnerWiFiConfiguration) SetProxySettings(value *WiFiProxySetting)() {
     if m != nil {
         m.proxySettings = value
@@ -431,7 +433,7 @@ func (m *AndroidDeviceOwnerWiFiConfiguration) SetSsid(value *string)() {
         m.ssid = value
     }
 }
-// SetWiFiSecurityType sets the wiFiSecurityType property value. Indicates whether Wi-Fi endpoint uses an EAP based security type. Possible values are: open, wep, wpaPersonal, wpaEnterprise.
+// SetWiFiSecurityType sets the wiFiSecurityType property value. Wi-Fi Security Types for Android Device Owner.
 func (m *AndroidDeviceOwnerWiFiConfiguration) SetWiFiSecurityType(value *AndroidDeviceOwnerWiFiSecurityType)() {
     if m != nil {
         m.wiFiSecurityType = value

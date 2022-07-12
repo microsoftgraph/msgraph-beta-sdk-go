@@ -16,7 +16,7 @@ type ContentLabel struct {
     // The sensitivityLabelId property
     sensitivityLabelId *string
 }
-// NewContentLabel instantiates a new ContentLabel and sets the default values.
+// NewContentLabel instantiates a new contentLabel and sets the default values.
 func NewContentLabel()(*ContentLabel) {
     m := &ContentLabel{
     }

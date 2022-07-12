@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// OfficeGraphInsights provides operations to manage the collection of administrativeUnit entities.
+// OfficeGraphInsights 
 type OfficeGraphInsights struct {
     Entity
     // Access this property from the derived type itemInsights.
@@ -14,11 +14,13 @@ type OfficeGraphInsights struct {
     // Access this property from the derived type itemInsights.
     used []UsedInsightable
 }
-// NewOfficeGraphInsights instantiates a new officeGraphInsights and sets the default values.
+// NewOfficeGraphInsights instantiates a new OfficeGraphInsights and sets the default values.
 func NewOfficeGraphInsights()(*OfficeGraphInsights) {
     m := &OfficeGraphInsights{
         Entity: *NewEntity(),
     }
+    typeValue := "#microsoft.graph.officeGraphInsights";
+    m.SetType(&typeValue);
     return m
 }
 // CreateOfficeGraphInsightsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

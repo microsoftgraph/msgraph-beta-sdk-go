@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// UserExperienceAnalyticsWorkFromAnywhereModelPerformance the user experience analytics work from anywhere model performance.
+// UserExperienceAnalyticsWorkFromAnywhereModelPerformance 
 type UserExperienceAnalyticsWorkFromAnywhereModelPerformance struct {
     Entity
     // The user experience work from anywhere's cloud identity score for the model. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
@@ -13,7 +13,7 @@ type UserExperienceAnalyticsWorkFromAnywhereModelPerformance struct {
     cloudManagementScore *float64
     // The user experience work from anywhere's cloud provisioning score for the model. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
     cloudProvisioningScore *float64
-    // The health state of the user experience analytics work from anywhere model. Possible values are: unknown, insufficientData, needsAttention, meetingGoals.
+    // The healthStatus property
     healthStatus *UserExperienceAnalyticsHealthState
     // The user experience work from anywhere's manufacturer name of the devices.
     manufacturer *string
@@ -26,7 +26,7 @@ type UserExperienceAnalyticsWorkFromAnywhereModelPerformance struct {
     // The user experience work from anywhere overall score for the model. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
     workFromAnywhereScore *float64
 }
-// NewUserExperienceAnalyticsWorkFromAnywhereModelPerformance instantiates a new userExperienceAnalyticsWorkFromAnywhereModelPerformance and sets the default values.
+// NewUserExperienceAnalyticsWorkFromAnywhereModelPerformance instantiates a new UserExperienceAnalyticsWorkFromAnywhereModelPerformance and sets the default values.
 func NewUserExperienceAnalyticsWorkFromAnywhereModelPerformance()(*UserExperienceAnalyticsWorkFromAnywhereModelPerformance) {
     m := &UserExperienceAnalyticsWorkFromAnywhereModelPerformance{
         Entity: *NewEntity(),
@@ -156,7 +156,7 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereModelPerformance) GetFieldDeseri
     }
     return res
 }
-// GetHealthStatus gets the healthStatus property value. The health state of the user experience analytics work from anywhere model. Possible values are: unknown, insufficientData, needsAttention, meetingGoals.
+// GetHealthStatus gets the healthStatus property value. The healthStatus property
 func (m *UserExperienceAnalyticsWorkFromAnywhereModelPerformance) GetHealthStatus()(*UserExperienceAnalyticsHealthState) {
     if m == nil {
         return nil
@@ -285,7 +285,7 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereModelPerformance) SetCloudProvis
         m.cloudProvisioningScore = value
     }
 }
-// SetHealthStatus sets the healthStatus property value. The health state of the user experience analytics work from anywhere model. Possible values are: unknown, insufficientData, needsAttention, meetingGoals.
+// SetHealthStatus sets the healthStatus property value. The healthStatus property
 func (m *UserExperienceAnalyticsWorkFromAnywhereModelPerformance) SetHealthStatus(value *UserExperienceAnalyticsHealthState)() {
     if m != nil {
         m.healthStatus = value

@@ -5,10 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DelegatedAdminRelationshipRequest provides operations to manage the tenantRelationship singleton.
+// DelegatedAdminRelationshipRequest provides operations to manage the collection of activityStatistics entities.
 type DelegatedAdminRelationshipRequest struct {
     Entity
-    // The action to be performed on the delegated admin relationship.
+    // The action property
     action *DelegatedAdminRelationshipRequestAction
     // The date and time in ISO 8601 format and in UTC time when the relationship request was created. Read-only.
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
@@ -28,7 +28,7 @@ func NewDelegatedAdminRelationshipRequest()(*DelegatedAdminRelationshipRequest) 
 func CreateDelegatedAdminRelationshipRequestFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDelegatedAdminRelationshipRequest(), nil
 }
-// GetAction gets the action property value. The action to be performed on the delegated admin relationship.
+// GetAction gets the action property value. The action property
 func (m *DelegatedAdminRelationshipRequest) GetAction()(*DelegatedAdminRelationshipRequestAction) {
     if m == nil {
         return nil
@@ -139,7 +139,7 @@ func (m *DelegatedAdminRelationshipRequest) Serialize(writer i878a80d2330e89d268
     }
     return nil
 }
-// SetAction sets the action property value. The action to be performed on the delegated admin relationship.
+// SetAction sets the action property value. The action property
 func (m *DelegatedAdminRelationshipRequest) SetAction(value *DelegatedAdminRelationshipRequestAction)() {
     if m != nil {
         m.action = value

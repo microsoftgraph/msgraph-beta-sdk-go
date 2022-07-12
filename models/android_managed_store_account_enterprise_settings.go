@@ -5,22 +5,22 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AndroidManagedStoreAccountEnterpriseSettings enterprise settings for an Android managed store account.
+// AndroidManagedStoreAccountEnterpriseSettings 
 type AndroidManagedStoreAccountEnterpriseSettings struct {
     Entity
     // Company codes for AndroidManagedStoreAccountEnterpriseSettings
     androidDeviceOwnerFullyManagedEnrollmentEnabled *bool
-    // Bind status of the tenant with the Google EMM API. Possible values are: notBound, bound, boundAndValidated, unbinding.
+    // Bind status of the tenant with the Google EMM API
     bindStatus *AndroidManagedStoreAccountBindStatus
     // Company codes for AndroidManagedStoreAccountEnterpriseSettings
     companyCodes []AndroidEnrollmentCompanyCodeable
     // Indicates if this account is flighting for Android Device Owner Management with CloudDPC.
     deviceOwnerManagementEnabled *bool
-    // Indicates which users can enroll devices in Android Enterprise device management. Possible values are: none, all, targeted, targetedAsEnrollmentRestrictions.
+    // Android for Work device management targeting type for the account
     enrollmentTarget *AndroidManagedStoreAccountEnrollmentTarget
     // Last completion time for app sync
     lastAppSyncDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // Last application sync result. Possible values are: success, credentialsNotValid, androidForWorkApiError, managementServiceError, unknownError, none.
+    // Sync status of the tenant with the Google EMM API
     lastAppSyncStatus *AndroidManagedStoreAccountAppSyncStatus
     // Last modification time for Android enterprise settings
     lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
@@ -33,7 +33,7 @@ type AndroidManagedStoreAccountEnterpriseSettings struct {
     // Specifies which AAD groups can enroll devices in Android for Work device management if enrollmentTarget is set to 'Targeted'
     targetGroupIds []string
 }
-// NewAndroidManagedStoreAccountEnterpriseSettings instantiates a new androidManagedStoreAccountEnterpriseSettings and sets the default values.
+// NewAndroidManagedStoreAccountEnterpriseSettings instantiates a new AndroidManagedStoreAccountEnterpriseSettings and sets the default values.
 func NewAndroidManagedStoreAccountEnterpriseSettings()(*AndroidManagedStoreAccountEnterpriseSettings) {
     m := &AndroidManagedStoreAccountEnterpriseSettings{
         Entity: *NewEntity(),
@@ -52,7 +52,7 @@ func (m *AndroidManagedStoreAccountEnterpriseSettings) GetAndroidDeviceOwnerFull
         return m.androidDeviceOwnerFullyManagedEnrollmentEnabled
     }
 }
-// GetBindStatus gets the bindStatus property value. Bind status of the tenant with the Google EMM API. Possible values are: notBound, bound, boundAndValidated, unbinding.
+// GetBindStatus gets the bindStatus property value. Bind status of the tenant with the Google EMM API
 func (m *AndroidManagedStoreAccountEnterpriseSettings) GetBindStatus()(*AndroidManagedStoreAccountBindStatus) {
     if m == nil {
         return nil
@@ -76,7 +76,7 @@ func (m *AndroidManagedStoreAccountEnterpriseSettings) GetDeviceOwnerManagementE
         return m.deviceOwnerManagementEnabled
     }
 }
-// GetEnrollmentTarget gets the enrollmentTarget property value. Indicates which users can enroll devices in Android Enterprise device management. Possible values are: none, all, targeted, targetedAsEnrollmentRestrictions.
+// GetEnrollmentTarget gets the enrollmentTarget property value. Android for Work device management targeting type for the account
 func (m *AndroidManagedStoreAccountEnterpriseSettings) GetEnrollmentTarget()(*AndroidManagedStoreAccountEnrollmentTarget) {
     if m == nil {
         return nil
@@ -229,7 +229,7 @@ func (m *AndroidManagedStoreAccountEnterpriseSettings) GetLastAppSyncDateTime()(
         return m.lastAppSyncDateTime
     }
 }
-// GetLastAppSyncStatus gets the lastAppSyncStatus property value. Last application sync result. Possible values are: success, credentialsNotValid, androidForWorkApiError, managementServiceError, unknownError, none.
+// GetLastAppSyncStatus gets the lastAppSyncStatus property value. Sync status of the tenant with the Google EMM API
 func (m *AndroidManagedStoreAccountEnterpriseSettings) GetLastAppSyncStatus()(*AndroidManagedStoreAccountAppSyncStatus) {
     if m == nil {
         return nil
@@ -370,7 +370,7 @@ func (m *AndroidManagedStoreAccountEnterpriseSettings) SetAndroidDeviceOwnerFull
         m.androidDeviceOwnerFullyManagedEnrollmentEnabled = value
     }
 }
-// SetBindStatus sets the bindStatus property value. Bind status of the tenant with the Google EMM API. Possible values are: notBound, bound, boundAndValidated, unbinding.
+// SetBindStatus sets the bindStatus property value. Bind status of the tenant with the Google EMM API
 func (m *AndroidManagedStoreAccountEnterpriseSettings) SetBindStatus(value *AndroidManagedStoreAccountBindStatus)() {
     if m != nil {
         m.bindStatus = value
@@ -388,7 +388,7 @@ func (m *AndroidManagedStoreAccountEnterpriseSettings) SetDeviceOwnerManagementE
         m.deviceOwnerManagementEnabled = value
     }
 }
-// SetEnrollmentTarget sets the enrollmentTarget property value. Indicates which users can enroll devices in Android Enterprise device management. Possible values are: none, all, targeted, targetedAsEnrollmentRestrictions.
+// SetEnrollmentTarget sets the enrollmentTarget property value. Android for Work device management targeting type for the account
 func (m *AndroidManagedStoreAccountEnterpriseSettings) SetEnrollmentTarget(value *AndroidManagedStoreAccountEnrollmentTarget)() {
     if m != nil {
         m.enrollmentTarget = value
@@ -400,7 +400,7 @@ func (m *AndroidManagedStoreAccountEnterpriseSettings) SetLastAppSyncDateTime(va
         m.lastAppSyncDateTime = value
     }
 }
-// SetLastAppSyncStatus sets the lastAppSyncStatus property value. Last application sync result. Possible values are: success, credentialsNotValid, androidForWorkApiError, managementServiceError, unknownError, none.
+// SetLastAppSyncStatus sets the lastAppSyncStatus property value. Sync status of the tenant with the Google EMM API
 func (m *AndroidManagedStoreAccountEnterpriseSettings) SetLastAppSyncStatus(value *AndroidManagedStoreAccountAppSyncStatus)() {
     if m != nil {
         m.lastAppSyncStatus = value

@@ -9,7 +9,7 @@ type Windows81VpnConfiguration struct {
     WindowsVpnConfiguration
     // Value indicating whether this policy only applies to Windows 8.1. This property is read-only.
     applyOnlyToWindows81 *bool
-    // Connection type. Possible values are: pulseSecure, f5EdgeClient, dellSonicWallMobileConnect, checkPointCapsuleVpn.
+    // Windows VPN connection type.
     connectionType *WindowsVpnConnectionType
     // Enable split tunneling for the VPN.
     enableSplitTunneling *bool
@@ -23,6 +23,8 @@ func NewWindows81VpnConfiguration()(*Windows81VpnConfiguration) {
     m := &Windows81VpnConfiguration{
         WindowsVpnConfiguration: *NewWindowsVpnConfiguration(),
     }
+    typeValue := "#microsoft.graph.windows81VpnConfiguration";
+    m.SetType(&typeValue);
     return m
 }
 // CreateWindows81VpnConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -56,7 +58,7 @@ func (m *Windows81VpnConfiguration) GetApplyOnlyToWindows81()(*bool) {
         return m.applyOnlyToWindows81
     }
 }
-// GetConnectionType gets the connectionType property value. Connection type. Possible values are: pulseSecure, f5EdgeClient, dellSonicWallMobileConnect, checkPointCapsuleVpn.
+// GetConnectionType gets the connectionType property value. Windows VPN connection type.
 func (m *Windows81VpnConfiguration) GetConnectionType()(*WindowsVpnConnectionType) {
     if m == nil {
         return nil
@@ -188,7 +190,7 @@ func (m *Windows81VpnConfiguration) SetApplyOnlyToWindows81(value *bool)() {
         m.applyOnlyToWindows81 = value
     }
 }
-// SetConnectionType sets the connectionType property value. Connection type. Possible values are: pulseSecure, f5EdgeClient, dellSonicWallMobileConnect, checkPointCapsuleVpn.
+// SetConnectionType sets the connectionType property value. Windows VPN connection type.
 func (m *Windows81VpnConfiguration) SetConnectionType(value *WindowsVpnConnectionType)() {
     if m != nil {
         m.connectionType = value

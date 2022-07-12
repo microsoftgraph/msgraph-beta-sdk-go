@@ -5,17 +5,17 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// NdesConnector entity which represents an OnPrem Ndes connector.
+// NdesConnector 
 type NdesConnector struct {
     Entity
     // The friendly name of the Ndes Connector.
     displayName *string
     // Last connection time for the Ndes Connector
     lastConnectionDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // Ndes Connector Status. Possible values are: none, active, inactive.
+    // The current status of the Ndes Connector.
     state *NdesConnectorState
 }
-// NewNdesConnector instantiates a new ndesConnector and sets the default values.
+// NewNdesConnector instantiates a new NdesConnector and sets the default values.
 func NewNdesConnector()(*NdesConnector) {
     m := &NdesConnector{
         Entity: *NewEntity(),
@@ -77,7 +77,7 @@ func (m *NdesConnector) GetLastConnectionDateTime()(*i336074805fc853987abe6f7fe3
         return m.lastConnectionDateTime
     }
 }
-// GetState gets the state property value. Ndes Connector Status. Possible values are: none, active, inactive.
+// GetState gets the state property value. The current status of the Ndes Connector.
 func (m *NdesConnector) GetState()(*NdesConnectorState) {
     if m == nil {
         return nil
@@ -124,7 +124,7 @@ func (m *NdesConnector) SetLastConnectionDateTime(value *i336074805fc853987abe6f
         m.lastConnectionDateTime = value
     }
 }
-// SetState sets the state property value. Ndes Connector Status. Possible values are: none, active, inactive.
+// SetState sets the state property value. The current status of the Ndes Connector.
 func (m *NdesConnector) SetState(value *NdesConnectorState)() {
     if m != nil {
         m.state = value

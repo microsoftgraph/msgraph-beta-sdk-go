@@ -7,11 +7,11 @@ import (
 
 // IosVppAppRevokeLicensesActionResult defines results for actions on iOS Vpp Apps, contains inherited properties for ActionResult.
 type IosVppAppRevokeLicensesActionResult struct {
-    // The reason for the revoke licenses action failure. Possible values are: none, appleFailure, internalError, expiredVppToken, expiredApplePushNotificationCertificate.
+    // Possible types of reasons for an Apple Volume Purchase Program token action failure.
     actionFailureReason *VppTokenActionFailureReason
     // Action name
     actionName *string
-    // State of the action. Possible values are: none, pending, canceled, active, done, failed, notSupported.
+    // The actionState property
     actionState *ActionState
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
@@ -39,7 +39,7 @@ func NewIosVppAppRevokeLicensesActionResult()(*IosVppAppRevokeLicensesActionResu
 func CreateIosVppAppRevokeLicensesActionResultFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewIosVppAppRevokeLicensesActionResult(), nil
 }
-// GetActionFailureReason gets the actionFailureReason property value. The reason for the revoke licenses action failure. Possible values are: none, appleFailure, internalError, expiredVppToken, expiredApplePushNotificationCertificate.
+// GetActionFailureReason gets the actionFailureReason property value. Possible types of reasons for an Apple Volume Purchase Program token action failure.
 func (m *IosVppAppRevokeLicensesActionResult) GetActionFailureReason()(*VppTokenActionFailureReason) {
     if m == nil {
         return nil
@@ -55,7 +55,7 @@ func (m *IosVppAppRevokeLicensesActionResult) GetActionName()(*string) {
         return m.actionName
     }
 }
-// GetActionState gets the actionState property value. State of the action. Possible values are: none, pending, canceled, active, done, failed, notSupported.
+// GetActionState gets the actionState property value. The actionState property
 func (m *IosVppAppRevokeLicensesActionResult) GetActionState()(*ActionState) {
     if m == nil {
         return nil
@@ -280,7 +280,7 @@ func (m *IosVppAppRevokeLicensesActionResult) Serialize(writer i878a80d2330e89d2
     }
     return nil
 }
-// SetActionFailureReason sets the actionFailureReason property value. The reason for the revoke licenses action failure. Possible values are: none, appleFailure, internalError, expiredVppToken, expiredApplePushNotificationCertificate.
+// SetActionFailureReason sets the actionFailureReason property value. Possible types of reasons for an Apple Volume Purchase Program token action failure.
 func (m *IosVppAppRevokeLicensesActionResult) SetActionFailureReason(value *VppTokenActionFailureReason)() {
     if m != nil {
         m.actionFailureReason = value
@@ -292,7 +292,7 @@ func (m *IosVppAppRevokeLicensesActionResult) SetActionName(value *string)() {
         m.actionName = value
     }
 }
-// SetActionState sets the actionState property value. State of the action. Possible values are: none, pending, canceled, active, done, failed, notSupported.
+// SetActionState sets the actionState property value. The actionState property
 func (m *IosVppAppRevokeLicensesActionResult) SetActionState(value *ActionState)() {
     if m != nil {
         m.actionState = value

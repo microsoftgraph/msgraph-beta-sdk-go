@@ -24,13 +24,13 @@ type BitLockerSystemDrivePolicy struct {
     startupAuthenticationBlockWithoutTpmChip *bool
     // Require additional authentication at startup.
     startupAuthenticationRequired *bool
-    // Indicates if TPM startup key is allowed/required/disallowed. Possible values are: blocked, required, allowed, notConfigured.
+    // Possible values of the ConfigurationUsage list.
     startupAuthenticationTpmKeyUsage *ConfigurationUsage
-    // Indicates if TPM startup pin key and key are allowed/required/disallowed. Possible values are: blocked, required, allowed, notConfigured.
+    // Possible values of the ConfigurationUsage list.
     startupAuthenticationTpmPinAndKeyUsage *ConfigurationUsage
-    // Indicates if TPM startup pin is allowed/required/disallowed. Possible values are: blocked, required, allowed, notConfigured.
+    // Possible values of the ConfigurationUsage list.
     startupAuthenticationTpmPinUsage *ConfigurationUsage
-    // Indicates if TPM startup is allowed/required/disallowed. Possible values are: blocked, required, allowed, notConfigured.
+    // Possible values of the ConfigurationUsage list.
     startupAuthenticationTpmUsage *ConfigurationUsage
 }
 // NewBitLockerSystemDrivePolicy instantiates a new bitLockerSystemDrivePolicy and sets the default values.
@@ -241,7 +241,7 @@ func (m *BitLockerSystemDrivePolicy) GetStartupAuthenticationRequired()(*bool) {
         return m.startupAuthenticationRequired
     }
 }
-// GetStartupAuthenticationTpmKeyUsage gets the startupAuthenticationTpmKeyUsage property value. Indicates if TPM startup key is allowed/required/disallowed. Possible values are: blocked, required, allowed, notConfigured.
+// GetStartupAuthenticationTpmKeyUsage gets the startupAuthenticationTpmKeyUsage property value. Possible values of the ConfigurationUsage list.
 func (m *BitLockerSystemDrivePolicy) GetStartupAuthenticationTpmKeyUsage()(*ConfigurationUsage) {
     if m == nil {
         return nil
@@ -249,7 +249,7 @@ func (m *BitLockerSystemDrivePolicy) GetStartupAuthenticationTpmKeyUsage()(*Conf
         return m.startupAuthenticationTpmKeyUsage
     }
 }
-// GetStartupAuthenticationTpmPinAndKeyUsage gets the startupAuthenticationTpmPinAndKeyUsage property value. Indicates if TPM startup pin key and key are allowed/required/disallowed. Possible values are: blocked, required, allowed, notConfigured.
+// GetStartupAuthenticationTpmPinAndKeyUsage gets the startupAuthenticationTpmPinAndKeyUsage property value. Possible values of the ConfigurationUsage list.
 func (m *BitLockerSystemDrivePolicy) GetStartupAuthenticationTpmPinAndKeyUsage()(*ConfigurationUsage) {
     if m == nil {
         return nil
@@ -257,7 +257,7 @@ func (m *BitLockerSystemDrivePolicy) GetStartupAuthenticationTpmPinAndKeyUsage()
         return m.startupAuthenticationTpmPinAndKeyUsage
     }
 }
-// GetStartupAuthenticationTpmPinUsage gets the startupAuthenticationTpmPinUsage property value. Indicates if TPM startup pin is allowed/required/disallowed. Possible values are: blocked, required, allowed, notConfigured.
+// GetStartupAuthenticationTpmPinUsage gets the startupAuthenticationTpmPinUsage property value. Possible values of the ConfigurationUsage list.
 func (m *BitLockerSystemDrivePolicy) GetStartupAuthenticationTpmPinUsage()(*ConfigurationUsage) {
     if m == nil {
         return nil
@@ -265,7 +265,7 @@ func (m *BitLockerSystemDrivePolicy) GetStartupAuthenticationTpmPinUsage()(*Conf
         return m.startupAuthenticationTpmPinUsage
     }
 }
-// GetStartupAuthenticationTpmUsage gets the startupAuthenticationTpmUsage property value. Indicates if TPM startup is allowed/required/disallowed. Possible values are: blocked, required, allowed, notConfigured.
+// GetStartupAuthenticationTpmUsage gets the startupAuthenticationTpmUsage property value. Possible values of the ConfigurationUsage list.
 func (m *BitLockerSystemDrivePolicy) GetStartupAuthenticationTpmUsage()(*ConfigurationUsage) {
     if m == nil {
         return nil
@@ -414,25 +414,25 @@ func (m *BitLockerSystemDrivePolicy) SetStartupAuthenticationRequired(value *boo
         m.startupAuthenticationRequired = value
     }
 }
-// SetStartupAuthenticationTpmKeyUsage sets the startupAuthenticationTpmKeyUsage property value. Indicates if TPM startup key is allowed/required/disallowed. Possible values are: blocked, required, allowed, notConfigured.
+// SetStartupAuthenticationTpmKeyUsage sets the startupAuthenticationTpmKeyUsage property value. Possible values of the ConfigurationUsage list.
 func (m *BitLockerSystemDrivePolicy) SetStartupAuthenticationTpmKeyUsage(value *ConfigurationUsage)() {
     if m != nil {
         m.startupAuthenticationTpmKeyUsage = value
     }
 }
-// SetStartupAuthenticationTpmPinAndKeyUsage sets the startupAuthenticationTpmPinAndKeyUsage property value. Indicates if TPM startup pin key and key are allowed/required/disallowed. Possible values are: blocked, required, allowed, notConfigured.
+// SetStartupAuthenticationTpmPinAndKeyUsage sets the startupAuthenticationTpmPinAndKeyUsage property value. Possible values of the ConfigurationUsage list.
 func (m *BitLockerSystemDrivePolicy) SetStartupAuthenticationTpmPinAndKeyUsage(value *ConfigurationUsage)() {
     if m != nil {
         m.startupAuthenticationTpmPinAndKeyUsage = value
     }
 }
-// SetStartupAuthenticationTpmPinUsage sets the startupAuthenticationTpmPinUsage property value. Indicates if TPM startup pin is allowed/required/disallowed. Possible values are: blocked, required, allowed, notConfigured.
+// SetStartupAuthenticationTpmPinUsage sets the startupAuthenticationTpmPinUsage property value. Possible values of the ConfigurationUsage list.
 func (m *BitLockerSystemDrivePolicy) SetStartupAuthenticationTpmPinUsage(value *ConfigurationUsage)() {
     if m != nil {
         m.startupAuthenticationTpmPinUsage = value
     }
 }
-// SetStartupAuthenticationTpmUsage sets the startupAuthenticationTpmUsage property value. Indicates if TPM startup is allowed/required/disallowed. Possible values are: blocked, required, allowed, notConfigured.
+// SetStartupAuthenticationTpmUsage sets the startupAuthenticationTpmUsage property value. Possible values of the ConfigurationUsage list.
 func (m *BitLockerSystemDrivePolicy) SetStartupAuthenticationTpmUsage(value *ConfigurationUsage)() {
     if m != nil {
         m.startupAuthenticationTpmUsage = value

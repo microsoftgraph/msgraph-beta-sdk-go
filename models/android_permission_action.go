@@ -6,7 +6,7 @@ import (
 
 // AndroidPermissionAction mapping between an Android app permission and the action Android should take when that permission is requested.
 type AndroidPermissionAction struct {
-    // Type of Android permission action. Possible values are: prompt, autoGrant, autoDeny.
+    // Android action taken when an app requests a dangerous permission.
     action *AndroidPermissionActionType
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
@@ -24,7 +24,7 @@ func NewAndroidPermissionAction()(*AndroidPermissionAction) {
 func CreateAndroidPermissionActionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAndroidPermissionAction(), nil
 }
-// GetAction gets the action property value. Type of Android permission action. Possible values are: prompt, autoGrant, autoDeny.
+// GetAction gets the action property value. Android action taken when an app requests a dangerous permission.
 func (m *AndroidPermissionAction) GetAction()(*AndroidPermissionActionType) {
     if m == nil {
         return nil
@@ -96,7 +96,7 @@ func (m *AndroidPermissionAction) Serialize(writer i878a80d2330e89d26896388a3f48
     }
     return nil
 }
-// SetAction sets the action property value. Type of Android permission action. Possible values are: prompt, autoGrant, autoDeny.
+// SetAction sets the action property value. Android action taken when an app requests a dangerous permission.
 func (m *AndroidPermissionAction) SetAction(value *AndroidPermissionActionType)() {
     if m != nil {
         m.action = value

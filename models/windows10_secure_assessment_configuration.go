@@ -17,7 +17,7 @@ type Windows10SecureAssessmentConfiguration struct {
     assessmentAppUserModelId *string
     // The account used to configure the Windows device for taking the test. The user can be a domain account (domain/user), an AAD account (username@tenant.com) or a local account (username).
     configurationAccount *string
-    // The account type used to by ConfigurationAccount. Possible values are: azureADAccount, domainAccount, localAccount, localGuestAccount.
+    // Type of accounts that are allowed for Windows10SecureAssessment ConfigurationAccount.
     configurationAccountType *SecureAssessmentAccountType
     // Url link to an assessment that's automatically loaded when the secure assessment browser is launched. It has to be a valid Url (http[s]://msdn.microsoft.com/).
     launchUri *string
@@ -75,7 +75,7 @@ func (m *Windows10SecureAssessmentConfiguration) GetConfigurationAccount()(*stri
         return m.configurationAccount
     }
 }
-// GetConfigurationAccountType gets the configurationAccountType property value. The account type used to by ConfigurationAccount. Possible values are: azureADAccount, domainAccount, localAccount, localGuestAccount.
+// GetConfigurationAccountType gets the configurationAccountType property value. Type of accounts that are allowed for Windows10SecureAssessment ConfigurationAccount.
 func (m *Windows10SecureAssessmentConfiguration) GetConfigurationAccountType()(*SecureAssessmentAccountType) {
     if m == nil {
         return nil
@@ -271,7 +271,7 @@ func (m *Windows10SecureAssessmentConfiguration) SetConfigurationAccount(value *
         m.configurationAccount = value
     }
 }
-// SetConfigurationAccountType sets the configurationAccountType property value. The account type used to by ConfigurationAccount. Possible values are: azureADAccount, domainAccount, localAccount, localGuestAccount.
+// SetConfigurationAccountType sets the configurationAccountType property value. Type of accounts that are allowed for Windows10SecureAssessment ConfigurationAccount.
 func (m *Windows10SecureAssessmentConfiguration) SetConfigurationAccountType(value *SecureAssessmentAccountType)() {
     if m != nil {
         m.configurationAccountType = value

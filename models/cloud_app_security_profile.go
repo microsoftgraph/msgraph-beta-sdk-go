@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// CloudAppSecurityProfile provides operations to manage the security singleton.
+// CloudAppSecurityProfile provides operations to manage the collection of activityStatistics entities.
 type CloudAppSecurityProfile struct {
     Entity
     // The azureSubscriptionId property
@@ -38,8 +38,6 @@ type CloudAppSecurityProfile struct {
     riskScore *string
     // The tags property
     tags []string
-    // The type property
-    type_escaped *string
     // The vendorInformation property
     vendorInformation SecurityVendorInformationable
 }
@@ -251,16 +249,6 @@ func (m *CloudAppSecurityProfile) GetFieldDeserializers()(map[string]func(i878a8
         }
         return nil
     }
-    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetType(val)
-        }
-        return nil
-    }
     res["vendorInformation"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateSecurityVendorInformationFromDiscriminatorValue)
         if err != nil {
@@ -351,14 +339,6 @@ func (m *CloudAppSecurityProfile) GetTags()([]string) {
         return nil
     } else {
         return m.tags
-    }
-}
-// GetType gets the type property value. The type property
-func (m *CloudAppSecurityProfile) GetType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.type_escaped
     }
 }
 // GetVendorInformation gets the vendorInformation property value. The vendorInformation property
@@ -467,12 +447,6 @@ func (m *CloudAppSecurityProfile) Serialize(writer i878a80d2330e89d26896388a3f48
         }
     }
     {
-        err = writer.WriteStringValue("type", m.GetType())
-        if err != nil {
-            return err
-        }
-    }
-    {
         err = writer.WriteObjectValue("vendorInformation", m.GetVendorInformation())
         if err != nil {
             return err
@@ -568,12 +542,6 @@ func (m *CloudAppSecurityProfile) SetRiskScore(value *string)() {
 func (m *CloudAppSecurityProfile) SetTags(value []string)() {
     if m != nil {
         m.tags = value
-    }
-}
-// SetType sets the type property value. The type property
-func (m *CloudAppSecurityProfile) SetType(value *string)() {
-    if m != nil {
-        m.type_escaped = value
     }
 }
 // SetVendorInformation sets the vendorInformation property value. The vendorInformation property

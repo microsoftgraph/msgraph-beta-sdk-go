@@ -16,7 +16,7 @@ type WindowsFirewallNetworkProfile struct {
     connectionSecurityRulesFromGroupPolicyMerged *bool
     // Configures the firewall to prevent merging connection security rules from group policy with those from local store instead of ignoring the local store rules. When ConnectionSecurityRulesFromGroupPolicyNotMerged and ConnectionSecurityRulesFromGroupPolicyMerged are both true, ConnectionSecurityRulesFromGroupPolicyMerged takes priority.
     connectionSecurityRulesFromGroupPolicyNotMerged *bool
-    // Configures the host device to allow or block the firewall and advanced security enforcement for the network profile. Possible values are: notConfigured, blocked, allowed.
+    // State Management Setting.
     firewallEnabled *StateManagementSetting
     // Configures the firewall to merge global port rules from group policy with those from local store instead of ignoring the local store rules. When GlobalPortRulesFromGroupPolicyNotMerged and GlobalPortRulesFromGroupPolicyMerged are both true, GlobalPortRulesFromGroupPolicyMerged takes priority.
     globalPortRulesFromGroupPolicyMerged *bool
@@ -341,7 +341,7 @@ func (m *WindowsFirewallNetworkProfile) GetFieldDeserializers()(map[string]func(
     }
     return res
 }
-// GetFirewallEnabled gets the firewallEnabled property value. Configures the host device to allow or block the firewall and advanced security enforcement for the network profile. Possible values are: notConfigured, blocked, allowed.
+// GetFirewallEnabled gets the firewallEnabled property value. State Management Setting.
 func (m *WindowsFirewallNetworkProfile) GetFirewallEnabled()(*StateManagementSetting) {
     if m == nil {
         return nil
@@ -672,7 +672,7 @@ func (m *WindowsFirewallNetworkProfile) SetConnectionSecurityRulesFromGroupPolic
         m.connectionSecurityRulesFromGroupPolicyNotMerged = value
     }
 }
-// SetFirewallEnabled sets the firewallEnabled property value. Configures the host device to allow or block the firewall and advanced security enforcement for the network profile. Possible values are: notConfigured, blocked, allowed.
+// SetFirewallEnabled sets the firewallEnabled property value. State Management Setting.
 func (m *WindowsFirewallNetworkProfile) SetFirewallEnabled(value *StateManagementSetting)() {
     if m != nil {
         m.firewallEnabled = value

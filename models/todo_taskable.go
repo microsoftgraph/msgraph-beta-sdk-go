@@ -26,6 +26,7 @@ type TodoTaskable interface {
     GetLinkedResources()([]LinkedResourceable)
     GetRecurrence()(PatternedRecurrenceable)
     GetReminderDateTime()(DateTimeTimeZoneable)
+    GetStartDateTime()(DateTimeTimeZoneable)
     GetStatus()(*TaskStatus)
     GetTitle()(*string)
     SetAttachments(value []AttachmentBaseable)()
@@ -45,6 +46,7 @@ type TodoTaskable interface {
     SetLinkedResources(value []LinkedResourceable)()
     SetRecurrence(value PatternedRecurrenceable)()
     SetReminderDateTime(value DateTimeTimeZoneable)()
+    SetStartDateTime(value DateTimeTimeZoneable)()
     SetStatus(value *TaskStatus)()
     SetTitle(value *string)()
 }

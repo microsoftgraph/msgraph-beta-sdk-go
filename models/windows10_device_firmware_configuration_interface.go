@@ -7,47 +7,47 @@ import (
 // Windows10DeviceFirmwareConfigurationInterface 
 type Windows10DeviceFirmwareConfigurationInterface struct {
     DeviceConfiguration
-    // Defines whether a user is allowed to enable Bluetooth. Possible values are: notConfigured, enabled, disabled.
+    // Possible values of a property
     bluetooth *Enablement
-    // Defines whether a user is allowed to boot from built-in network adapters. Possible values are: notConfigured, enabled, disabled.
+    // Possible values of a property
     bootFromBuiltInNetworkAdapters *Enablement
-    // Defines whether a user is allowed to boot from external media. Possible values are: notConfigured, enabled, disabled.
+    // Possible values of a property
     bootFromExternalMedia *Enablement
-    // Defines whether built-in cameras are enabled. Possible values are: notConfigured, enabled, disabled.
+    // Possible values of a property
     cameras *Enablement
-    // Defines the permission level granted to users to change UEFI settings. Possible values are: notConfiguredOnly, none.
+    // Defines the permission level granted to users to enable them change Uefi settings
     changeUefiSettingsPermission *ChangeUefiSettingsPermission
-    // Defines whether a user is allowed to enable Front Camera. Possible values are: notConfigured, enabled, disabled.
+    // Possible values of a property
     frontCamera *Enablement
-    // Defines whether a user is allowed to enable Infrared camera. Possible values are: notConfigured, enabled, disabled.
+    // Possible values of a property
     infraredCamera *Enablement
-    // Defines whether a user is allowed to enable Microphone. Possible values are: notConfigured, enabled, disabled.
+    // Possible values of a property
     microphone *Enablement
-    // Defines whether built-in microphones or speakers are enabled. Possible values are: notConfigured, enabled, disabled.
+    // Possible values of a property
     microphonesAndSpeakers *Enablement
-    // Defines whether a user is allowed to enable Near Field Communication. Possible values are: notConfigured, enabled, disabled.
+    // Possible values of a property
     nearFieldCommunication *Enablement
-    // Defines whether built-in radios e.g. WIFI, NFC, Bluetooth, are enabled. Possible values are: notConfigured, enabled, disabled.
+    // Possible values of a property
     radios *Enablement
-    // Defines whether a user is allowed to enable rear camera. Possible values are: notConfigured, enabled, disabled.
+    // Possible values of a property
     rearCamera *Enablement
-    // Defines whether a user is allowed to enable SD Card Port. Possible values are: notConfigured, enabled, disabled.
+    // Possible values of a property
     sdCard *Enablement
-    // Defines whether a user is allowed to enable Simultaneous MultiThreading. Possible values are: notConfigured, enabled, disabled.
+    // Possible values of a property
     simultaneousMultiThreading *Enablement
-    // Defines whether a user is allowed to enable USB Type A Port. Possible values are: notConfigured, enabled, disabled.
+    // Possible values of a property
     usbTypeAPort *Enablement
-    // Defines whether CPU and IO virtualization is enabled. Possible values are: notConfigured, enabled, disabled.
+    // Possible values of a property
     virtualizationOfCpuAndIO *Enablement
-    // Defines whether a user is allowed to enable Wake on LAN. Possible values are: notConfigured, enabled, disabled.
+    // Possible values of a property
     wakeOnLAN *Enablement
-    // Defines whether a user is allowed to enable Wake On Power. Possible values are: notConfigured, enabled, disabled.
+    // Possible values of a property
     wakeOnPower *Enablement
-    // Defines whether a user is allowed to enable WiFi. Possible values are: notConfigured, enabled, disabled.
+    // Possible values of a property
     wiFi *Enablement
-    // Defines whether a user is allowed to enable Windows Platform Binary Table. Possible values are: notConfigured, enabled, disabled.
+    // Possible values of a property
     windowsPlatformBinaryTable *Enablement
-    // Defines whether a user is allowed to enable Wireless Wide Area Network. Possible values are: notConfigured, enabled, disabled.
+    // Possible values of a property
     wirelessWideAreaNetwork *Enablement
 }
 // NewWindows10DeviceFirmwareConfigurationInterface instantiates a new Windows10DeviceFirmwareConfigurationInterface and sets the default values.
@@ -61,7 +61,7 @@ func NewWindows10DeviceFirmwareConfigurationInterface()(*Windows10DeviceFirmware
 func CreateWindows10DeviceFirmwareConfigurationInterfaceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWindows10DeviceFirmwareConfigurationInterface(), nil
 }
-// GetBluetooth gets the bluetooth property value. Defines whether a user is allowed to enable Bluetooth. Possible values are: notConfigured, enabled, disabled.
+// GetBluetooth gets the bluetooth property value. Possible values of a property
 func (m *Windows10DeviceFirmwareConfigurationInterface) GetBluetooth()(*Enablement) {
     if m == nil {
         return nil
@@ -69,7 +69,7 @@ func (m *Windows10DeviceFirmwareConfigurationInterface) GetBluetooth()(*Enableme
         return m.bluetooth
     }
 }
-// GetBootFromBuiltInNetworkAdapters gets the bootFromBuiltInNetworkAdapters property value. Defines whether a user is allowed to boot from built-in network adapters. Possible values are: notConfigured, enabled, disabled.
+// GetBootFromBuiltInNetworkAdapters gets the bootFromBuiltInNetworkAdapters property value. Possible values of a property
 func (m *Windows10DeviceFirmwareConfigurationInterface) GetBootFromBuiltInNetworkAdapters()(*Enablement) {
     if m == nil {
         return nil
@@ -77,7 +77,7 @@ func (m *Windows10DeviceFirmwareConfigurationInterface) GetBootFromBuiltInNetwor
         return m.bootFromBuiltInNetworkAdapters
     }
 }
-// GetBootFromExternalMedia gets the bootFromExternalMedia property value. Defines whether a user is allowed to boot from external media. Possible values are: notConfigured, enabled, disabled.
+// GetBootFromExternalMedia gets the bootFromExternalMedia property value. Possible values of a property
 func (m *Windows10DeviceFirmwareConfigurationInterface) GetBootFromExternalMedia()(*Enablement) {
     if m == nil {
         return nil
@@ -85,7 +85,7 @@ func (m *Windows10DeviceFirmwareConfigurationInterface) GetBootFromExternalMedia
         return m.bootFromExternalMedia
     }
 }
-// GetCameras gets the cameras property value. Defines whether built-in cameras are enabled. Possible values are: notConfigured, enabled, disabled.
+// GetCameras gets the cameras property value. Possible values of a property
 func (m *Windows10DeviceFirmwareConfigurationInterface) GetCameras()(*Enablement) {
     if m == nil {
         return nil
@@ -93,7 +93,7 @@ func (m *Windows10DeviceFirmwareConfigurationInterface) GetCameras()(*Enablement
         return m.cameras
     }
 }
-// GetChangeUefiSettingsPermission gets the changeUefiSettingsPermission property value. Defines the permission level granted to users to change UEFI settings. Possible values are: notConfiguredOnly, none.
+// GetChangeUefiSettingsPermission gets the changeUefiSettingsPermission property value. Defines the permission level granted to users to enable them change Uefi settings
 func (m *Windows10DeviceFirmwareConfigurationInterface) GetChangeUefiSettingsPermission()(*ChangeUefiSettingsPermission) {
     if m == nil {
         return nil
@@ -316,7 +316,7 @@ func (m *Windows10DeviceFirmwareConfigurationInterface) GetFieldDeserializers()(
     }
     return res
 }
-// GetFrontCamera gets the frontCamera property value. Defines whether a user is allowed to enable Front Camera. Possible values are: notConfigured, enabled, disabled.
+// GetFrontCamera gets the frontCamera property value. Possible values of a property
 func (m *Windows10DeviceFirmwareConfigurationInterface) GetFrontCamera()(*Enablement) {
     if m == nil {
         return nil
@@ -324,7 +324,7 @@ func (m *Windows10DeviceFirmwareConfigurationInterface) GetFrontCamera()(*Enable
         return m.frontCamera
     }
 }
-// GetInfraredCamera gets the infraredCamera property value. Defines whether a user is allowed to enable Infrared camera. Possible values are: notConfigured, enabled, disabled.
+// GetInfraredCamera gets the infraredCamera property value. Possible values of a property
 func (m *Windows10DeviceFirmwareConfigurationInterface) GetInfraredCamera()(*Enablement) {
     if m == nil {
         return nil
@@ -332,7 +332,7 @@ func (m *Windows10DeviceFirmwareConfigurationInterface) GetInfraredCamera()(*Ena
         return m.infraredCamera
     }
 }
-// GetMicrophone gets the microphone property value. Defines whether a user is allowed to enable Microphone. Possible values are: notConfigured, enabled, disabled.
+// GetMicrophone gets the microphone property value. Possible values of a property
 func (m *Windows10DeviceFirmwareConfigurationInterface) GetMicrophone()(*Enablement) {
     if m == nil {
         return nil
@@ -340,7 +340,7 @@ func (m *Windows10DeviceFirmwareConfigurationInterface) GetMicrophone()(*Enablem
         return m.microphone
     }
 }
-// GetMicrophonesAndSpeakers gets the microphonesAndSpeakers property value. Defines whether built-in microphones or speakers are enabled. Possible values are: notConfigured, enabled, disabled.
+// GetMicrophonesAndSpeakers gets the microphonesAndSpeakers property value. Possible values of a property
 func (m *Windows10DeviceFirmwareConfigurationInterface) GetMicrophonesAndSpeakers()(*Enablement) {
     if m == nil {
         return nil
@@ -348,7 +348,7 @@ func (m *Windows10DeviceFirmwareConfigurationInterface) GetMicrophonesAndSpeaker
         return m.microphonesAndSpeakers
     }
 }
-// GetNearFieldCommunication gets the nearFieldCommunication property value. Defines whether a user is allowed to enable Near Field Communication. Possible values are: notConfigured, enabled, disabled.
+// GetNearFieldCommunication gets the nearFieldCommunication property value. Possible values of a property
 func (m *Windows10DeviceFirmwareConfigurationInterface) GetNearFieldCommunication()(*Enablement) {
     if m == nil {
         return nil
@@ -356,7 +356,7 @@ func (m *Windows10DeviceFirmwareConfigurationInterface) GetNearFieldCommunicatio
         return m.nearFieldCommunication
     }
 }
-// GetRadios gets the radios property value. Defines whether built-in radios e.g. WIFI, NFC, Bluetooth, are enabled. Possible values are: notConfigured, enabled, disabled.
+// GetRadios gets the radios property value. Possible values of a property
 func (m *Windows10DeviceFirmwareConfigurationInterface) GetRadios()(*Enablement) {
     if m == nil {
         return nil
@@ -364,7 +364,7 @@ func (m *Windows10DeviceFirmwareConfigurationInterface) GetRadios()(*Enablement)
         return m.radios
     }
 }
-// GetRearCamera gets the rearCamera property value. Defines whether a user is allowed to enable rear camera. Possible values are: notConfigured, enabled, disabled.
+// GetRearCamera gets the rearCamera property value. Possible values of a property
 func (m *Windows10DeviceFirmwareConfigurationInterface) GetRearCamera()(*Enablement) {
     if m == nil {
         return nil
@@ -372,7 +372,7 @@ func (m *Windows10DeviceFirmwareConfigurationInterface) GetRearCamera()(*Enablem
         return m.rearCamera
     }
 }
-// GetSdCard gets the sdCard property value. Defines whether a user is allowed to enable SD Card Port. Possible values are: notConfigured, enabled, disabled.
+// GetSdCard gets the sdCard property value. Possible values of a property
 func (m *Windows10DeviceFirmwareConfigurationInterface) GetSdCard()(*Enablement) {
     if m == nil {
         return nil
@@ -380,7 +380,7 @@ func (m *Windows10DeviceFirmwareConfigurationInterface) GetSdCard()(*Enablement)
         return m.sdCard
     }
 }
-// GetSimultaneousMultiThreading gets the simultaneousMultiThreading property value. Defines whether a user is allowed to enable Simultaneous MultiThreading. Possible values are: notConfigured, enabled, disabled.
+// GetSimultaneousMultiThreading gets the simultaneousMultiThreading property value. Possible values of a property
 func (m *Windows10DeviceFirmwareConfigurationInterface) GetSimultaneousMultiThreading()(*Enablement) {
     if m == nil {
         return nil
@@ -388,7 +388,7 @@ func (m *Windows10DeviceFirmwareConfigurationInterface) GetSimultaneousMultiThre
         return m.simultaneousMultiThreading
     }
 }
-// GetUsbTypeAPort gets the usbTypeAPort property value. Defines whether a user is allowed to enable USB Type A Port. Possible values are: notConfigured, enabled, disabled.
+// GetUsbTypeAPort gets the usbTypeAPort property value. Possible values of a property
 func (m *Windows10DeviceFirmwareConfigurationInterface) GetUsbTypeAPort()(*Enablement) {
     if m == nil {
         return nil
@@ -396,7 +396,7 @@ func (m *Windows10DeviceFirmwareConfigurationInterface) GetUsbTypeAPort()(*Enabl
         return m.usbTypeAPort
     }
 }
-// GetVirtualizationOfCpuAndIO gets the virtualizationOfCpuAndIO property value. Defines whether CPU and IO virtualization is enabled. Possible values are: notConfigured, enabled, disabled.
+// GetVirtualizationOfCpuAndIO gets the virtualizationOfCpuAndIO property value. Possible values of a property
 func (m *Windows10DeviceFirmwareConfigurationInterface) GetVirtualizationOfCpuAndIO()(*Enablement) {
     if m == nil {
         return nil
@@ -404,7 +404,7 @@ func (m *Windows10DeviceFirmwareConfigurationInterface) GetVirtualizationOfCpuAn
         return m.virtualizationOfCpuAndIO
     }
 }
-// GetWakeOnLAN gets the wakeOnLAN property value. Defines whether a user is allowed to enable Wake on LAN. Possible values are: notConfigured, enabled, disabled.
+// GetWakeOnLAN gets the wakeOnLAN property value. Possible values of a property
 func (m *Windows10DeviceFirmwareConfigurationInterface) GetWakeOnLAN()(*Enablement) {
     if m == nil {
         return nil
@@ -412,7 +412,7 @@ func (m *Windows10DeviceFirmwareConfigurationInterface) GetWakeOnLAN()(*Enableme
         return m.wakeOnLAN
     }
 }
-// GetWakeOnPower gets the wakeOnPower property value. Defines whether a user is allowed to enable Wake On Power. Possible values are: notConfigured, enabled, disabled.
+// GetWakeOnPower gets the wakeOnPower property value. Possible values of a property
 func (m *Windows10DeviceFirmwareConfigurationInterface) GetWakeOnPower()(*Enablement) {
     if m == nil {
         return nil
@@ -420,7 +420,7 @@ func (m *Windows10DeviceFirmwareConfigurationInterface) GetWakeOnPower()(*Enable
         return m.wakeOnPower
     }
 }
-// GetWiFi gets the wiFi property value. Defines whether a user is allowed to enable WiFi. Possible values are: notConfigured, enabled, disabled.
+// GetWiFi gets the wiFi property value. Possible values of a property
 func (m *Windows10DeviceFirmwareConfigurationInterface) GetWiFi()(*Enablement) {
     if m == nil {
         return nil
@@ -428,7 +428,7 @@ func (m *Windows10DeviceFirmwareConfigurationInterface) GetWiFi()(*Enablement) {
         return m.wiFi
     }
 }
-// GetWindowsPlatformBinaryTable gets the windowsPlatformBinaryTable property value. Defines whether a user is allowed to enable Windows Platform Binary Table. Possible values are: notConfigured, enabled, disabled.
+// GetWindowsPlatformBinaryTable gets the windowsPlatformBinaryTable property value. Possible values of a property
 func (m *Windows10DeviceFirmwareConfigurationInterface) GetWindowsPlatformBinaryTable()(*Enablement) {
     if m == nil {
         return nil
@@ -436,7 +436,7 @@ func (m *Windows10DeviceFirmwareConfigurationInterface) GetWindowsPlatformBinary
         return m.windowsPlatformBinaryTable
     }
 }
-// GetWirelessWideAreaNetwork gets the wirelessWideAreaNetwork property value. Defines whether a user is allowed to enable Wireless Wide Area Network. Possible values are: notConfigured, enabled, disabled.
+// GetWirelessWideAreaNetwork gets the wirelessWideAreaNetwork property value. Possible values of a property
 func (m *Windows10DeviceFirmwareConfigurationInterface) GetWirelessWideAreaNetwork()(*Enablement) {
     if m == nil {
         return nil
@@ -599,127 +599,127 @@ func (m *Windows10DeviceFirmwareConfigurationInterface) Serialize(writer i878a80
     }
     return nil
 }
-// SetBluetooth sets the bluetooth property value. Defines whether a user is allowed to enable Bluetooth. Possible values are: notConfigured, enabled, disabled.
+// SetBluetooth sets the bluetooth property value. Possible values of a property
 func (m *Windows10DeviceFirmwareConfigurationInterface) SetBluetooth(value *Enablement)() {
     if m != nil {
         m.bluetooth = value
     }
 }
-// SetBootFromBuiltInNetworkAdapters sets the bootFromBuiltInNetworkAdapters property value. Defines whether a user is allowed to boot from built-in network adapters. Possible values are: notConfigured, enabled, disabled.
+// SetBootFromBuiltInNetworkAdapters sets the bootFromBuiltInNetworkAdapters property value. Possible values of a property
 func (m *Windows10DeviceFirmwareConfigurationInterface) SetBootFromBuiltInNetworkAdapters(value *Enablement)() {
     if m != nil {
         m.bootFromBuiltInNetworkAdapters = value
     }
 }
-// SetBootFromExternalMedia sets the bootFromExternalMedia property value. Defines whether a user is allowed to boot from external media. Possible values are: notConfigured, enabled, disabled.
+// SetBootFromExternalMedia sets the bootFromExternalMedia property value. Possible values of a property
 func (m *Windows10DeviceFirmwareConfigurationInterface) SetBootFromExternalMedia(value *Enablement)() {
     if m != nil {
         m.bootFromExternalMedia = value
     }
 }
-// SetCameras sets the cameras property value. Defines whether built-in cameras are enabled. Possible values are: notConfigured, enabled, disabled.
+// SetCameras sets the cameras property value. Possible values of a property
 func (m *Windows10DeviceFirmwareConfigurationInterface) SetCameras(value *Enablement)() {
     if m != nil {
         m.cameras = value
     }
 }
-// SetChangeUefiSettingsPermission sets the changeUefiSettingsPermission property value. Defines the permission level granted to users to change UEFI settings. Possible values are: notConfiguredOnly, none.
+// SetChangeUefiSettingsPermission sets the changeUefiSettingsPermission property value. Defines the permission level granted to users to enable them change Uefi settings
 func (m *Windows10DeviceFirmwareConfigurationInterface) SetChangeUefiSettingsPermission(value *ChangeUefiSettingsPermission)() {
     if m != nil {
         m.changeUefiSettingsPermission = value
     }
 }
-// SetFrontCamera sets the frontCamera property value. Defines whether a user is allowed to enable Front Camera. Possible values are: notConfigured, enabled, disabled.
+// SetFrontCamera sets the frontCamera property value. Possible values of a property
 func (m *Windows10DeviceFirmwareConfigurationInterface) SetFrontCamera(value *Enablement)() {
     if m != nil {
         m.frontCamera = value
     }
 }
-// SetInfraredCamera sets the infraredCamera property value. Defines whether a user is allowed to enable Infrared camera. Possible values are: notConfigured, enabled, disabled.
+// SetInfraredCamera sets the infraredCamera property value. Possible values of a property
 func (m *Windows10DeviceFirmwareConfigurationInterface) SetInfraredCamera(value *Enablement)() {
     if m != nil {
         m.infraredCamera = value
     }
 }
-// SetMicrophone sets the microphone property value. Defines whether a user is allowed to enable Microphone. Possible values are: notConfigured, enabled, disabled.
+// SetMicrophone sets the microphone property value. Possible values of a property
 func (m *Windows10DeviceFirmwareConfigurationInterface) SetMicrophone(value *Enablement)() {
     if m != nil {
         m.microphone = value
     }
 }
-// SetMicrophonesAndSpeakers sets the microphonesAndSpeakers property value. Defines whether built-in microphones or speakers are enabled. Possible values are: notConfigured, enabled, disabled.
+// SetMicrophonesAndSpeakers sets the microphonesAndSpeakers property value. Possible values of a property
 func (m *Windows10DeviceFirmwareConfigurationInterface) SetMicrophonesAndSpeakers(value *Enablement)() {
     if m != nil {
         m.microphonesAndSpeakers = value
     }
 }
-// SetNearFieldCommunication sets the nearFieldCommunication property value. Defines whether a user is allowed to enable Near Field Communication. Possible values are: notConfigured, enabled, disabled.
+// SetNearFieldCommunication sets the nearFieldCommunication property value. Possible values of a property
 func (m *Windows10DeviceFirmwareConfigurationInterface) SetNearFieldCommunication(value *Enablement)() {
     if m != nil {
         m.nearFieldCommunication = value
     }
 }
-// SetRadios sets the radios property value. Defines whether built-in radios e.g. WIFI, NFC, Bluetooth, are enabled. Possible values are: notConfigured, enabled, disabled.
+// SetRadios sets the radios property value. Possible values of a property
 func (m *Windows10DeviceFirmwareConfigurationInterface) SetRadios(value *Enablement)() {
     if m != nil {
         m.radios = value
     }
 }
-// SetRearCamera sets the rearCamera property value. Defines whether a user is allowed to enable rear camera. Possible values are: notConfigured, enabled, disabled.
+// SetRearCamera sets the rearCamera property value. Possible values of a property
 func (m *Windows10DeviceFirmwareConfigurationInterface) SetRearCamera(value *Enablement)() {
     if m != nil {
         m.rearCamera = value
     }
 }
-// SetSdCard sets the sdCard property value. Defines whether a user is allowed to enable SD Card Port. Possible values are: notConfigured, enabled, disabled.
+// SetSdCard sets the sdCard property value. Possible values of a property
 func (m *Windows10DeviceFirmwareConfigurationInterface) SetSdCard(value *Enablement)() {
     if m != nil {
         m.sdCard = value
     }
 }
-// SetSimultaneousMultiThreading sets the simultaneousMultiThreading property value. Defines whether a user is allowed to enable Simultaneous MultiThreading. Possible values are: notConfigured, enabled, disabled.
+// SetSimultaneousMultiThreading sets the simultaneousMultiThreading property value. Possible values of a property
 func (m *Windows10DeviceFirmwareConfigurationInterface) SetSimultaneousMultiThreading(value *Enablement)() {
     if m != nil {
         m.simultaneousMultiThreading = value
     }
 }
-// SetUsbTypeAPort sets the usbTypeAPort property value. Defines whether a user is allowed to enable USB Type A Port. Possible values are: notConfigured, enabled, disabled.
+// SetUsbTypeAPort sets the usbTypeAPort property value. Possible values of a property
 func (m *Windows10DeviceFirmwareConfigurationInterface) SetUsbTypeAPort(value *Enablement)() {
     if m != nil {
         m.usbTypeAPort = value
     }
 }
-// SetVirtualizationOfCpuAndIO sets the virtualizationOfCpuAndIO property value. Defines whether CPU and IO virtualization is enabled. Possible values are: notConfigured, enabled, disabled.
+// SetVirtualizationOfCpuAndIO sets the virtualizationOfCpuAndIO property value. Possible values of a property
 func (m *Windows10DeviceFirmwareConfigurationInterface) SetVirtualizationOfCpuAndIO(value *Enablement)() {
     if m != nil {
         m.virtualizationOfCpuAndIO = value
     }
 }
-// SetWakeOnLAN sets the wakeOnLAN property value. Defines whether a user is allowed to enable Wake on LAN. Possible values are: notConfigured, enabled, disabled.
+// SetWakeOnLAN sets the wakeOnLAN property value. Possible values of a property
 func (m *Windows10DeviceFirmwareConfigurationInterface) SetWakeOnLAN(value *Enablement)() {
     if m != nil {
         m.wakeOnLAN = value
     }
 }
-// SetWakeOnPower sets the wakeOnPower property value. Defines whether a user is allowed to enable Wake On Power. Possible values are: notConfigured, enabled, disabled.
+// SetWakeOnPower sets the wakeOnPower property value. Possible values of a property
 func (m *Windows10DeviceFirmwareConfigurationInterface) SetWakeOnPower(value *Enablement)() {
     if m != nil {
         m.wakeOnPower = value
     }
 }
-// SetWiFi sets the wiFi property value. Defines whether a user is allowed to enable WiFi. Possible values are: notConfigured, enabled, disabled.
+// SetWiFi sets the wiFi property value. Possible values of a property
 func (m *Windows10DeviceFirmwareConfigurationInterface) SetWiFi(value *Enablement)() {
     if m != nil {
         m.wiFi = value
     }
 }
-// SetWindowsPlatformBinaryTable sets the windowsPlatformBinaryTable property value. Defines whether a user is allowed to enable Windows Platform Binary Table. Possible values are: notConfigured, enabled, disabled.
+// SetWindowsPlatformBinaryTable sets the windowsPlatformBinaryTable property value. Possible values of a property
 func (m *Windows10DeviceFirmwareConfigurationInterface) SetWindowsPlatformBinaryTable(value *Enablement)() {
     if m != nil {
         m.windowsPlatformBinaryTable = value
     }
 }
-// SetWirelessWideAreaNetwork sets the wirelessWideAreaNetwork property value. Defines whether a user is allowed to enable Wireless Wide Area Network. Possible values are: notConfigured, enabled, disabled.
+// SetWirelessWideAreaNetwork sets the wirelessWideAreaNetwork property value. Possible values of a property
 func (m *Windows10DeviceFirmwareConfigurationInterface) SetWirelessWideAreaNetwork(value *Enablement)() {
     if m != nil {
         m.wirelessWideAreaNetwork = value

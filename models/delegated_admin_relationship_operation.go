@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DelegatedAdminRelationshipOperation provides operations to manage the tenantRelationship singleton.
+// DelegatedAdminRelationshipOperation provides operations to manage the collection of activityStatistics entities.
 type DelegatedAdminRelationshipOperation struct {
     Entity
     // The time in ISO 8601 format and in UTC time when the long-running operation was created. Read-only.
@@ -14,9 +14,9 @@ type DelegatedAdminRelationshipOperation struct {
     data *string
     // The time in ISO 8601 format and in UTC time when the long-running operation was last modified. Read-only.
     lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The type of long-running operation. The possible values are: delegatedAdminAccessAssignmentUpdate, unknownFutureValue. Read-only.
+    // The operationType property
     operationType *DelegatedAdminRelationshipOperationType
-    // The status of the operation. Read-only. The possible values are: notStarted, running, succeeded, failed, unknownFutureValue. Read-only. Supports $orderBy.
+    // The status property
     status *LongRunningOperationStatus
 }
 // NewDelegatedAdminRelationshipOperation instantiates a new delegatedAdminRelationshipOperation and sets the default values.
@@ -109,7 +109,7 @@ func (m *DelegatedAdminRelationshipOperation) GetLastModifiedDateTime()(*i336074
         return m.lastModifiedDateTime
     }
 }
-// GetOperationType gets the operationType property value. The type of long-running operation. The possible values are: delegatedAdminAccessAssignmentUpdate, unknownFutureValue. Read-only.
+// GetOperationType gets the operationType property value. The operationType property
 func (m *DelegatedAdminRelationshipOperation) GetOperationType()(*DelegatedAdminRelationshipOperationType) {
     if m == nil {
         return nil
@@ -117,7 +117,7 @@ func (m *DelegatedAdminRelationshipOperation) GetOperationType()(*DelegatedAdmin
         return m.operationType
     }
 }
-// GetStatus gets the status property value. The status of the operation. Read-only. The possible values are: notStarted, running, succeeded, failed, unknownFutureValue. Read-only. Supports $orderBy.
+// GetStatus gets the status property value. The status property
 func (m *DelegatedAdminRelationshipOperation) GetStatus()(*LongRunningOperationStatus) {
     if m == nil {
         return nil
@@ -183,13 +183,13 @@ func (m *DelegatedAdminRelationshipOperation) SetLastModifiedDateTime(value *i33
         m.lastModifiedDateTime = value
     }
 }
-// SetOperationType sets the operationType property value. The type of long-running operation. The possible values are: delegatedAdminAccessAssignmentUpdate, unknownFutureValue. Read-only.
+// SetOperationType sets the operationType property value. The operationType property
 func (m *DelegatedAdminRelationshipOperation) SetOperationType(value *DelegatedAdminRelationshipOperationType)() {
     if m != nil {
         m.operationType = value
     }
 }
-// SetStatus sets the status property value. The status of the operation. Read-only. The possible values are: notStarted, running, succeeded, failed, unknownFutureValue. Read-only. Supports $orderBy.
+// SetStatus sets the status property value. The status property
 func (m *DelegatedAdminRelationshipOperation) SetStatus(value *LongRunningOperationStatus)() {
     if m != nil {
         m.status = value

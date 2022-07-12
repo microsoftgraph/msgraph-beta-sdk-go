@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// UserPFXCertificate entity that encapsulates all information required for a user's PFX certificates.
+// UserPFXCertificate 
 type UserPFXCertificate struct {
     Entity
     // Date/time when this PFX certificate was imported.
@@ -16,13 +16,13 @@ type UserPFXCertificate struct {
     encryptedPfxPassword *string
     // Certificate's validity expiration date/time.
     expirationDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // Certificate's intended purpose from the point-of-view of deployment. Possible values are: unassigned, smimeEncryption, smimeSigning, vpn, wifi.
+    // Supported values for the intended purpose of a user PFX certificate.
     intendedPurpose *UserPfxIntendedPurpose
     // Name of the key (within the provider) used to encrypt the blob.
     keyName *string
     // Date/time when this PFX certificate was last modified.
     lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // Padding scheme used by the provider during encryption/decryption. Possible values are: none, pkcs1, oaepSha1, oaepSha256, oaepSha384, oaepSha512.
+    // Supported values for the padding scheme used by encryption provider.
     paddingScheme *UserPfxPaddingScheme
     // Crypto provider used to encrypt this blob.
     providerName *string
@@ -33,7 +33,7 @@ type UserPFXCertificate struct {
     // User Principal Name of the PFX certificate.
     userPrincipalName *string
 }
-// NewUserPFXCertificate instantiates a new userPFXCertificate and sets the default values.
+// NewUserPFXCertificate instantiates a new UserPFXCertificate and sets the default values.
 func NewUserPFXCertificate()(*UserPFXCertificate) {
     m := &UserPFXCertificate{
         Entity: *NewEntity(),
@@ -201,7 +201,7 @@ func (m *UserPFXCertificate) GetFieldDeserializers()(map[string]func(i878a80d233
     }
     return res
 }
-// GetIntendedPurpose gets the intendedPurpose property value. Certificate's intended purpose from the point-of-view of deployment. Possible values are: unassigned, smimeEncryption, smimeSigning, vpn, wifi.
+// GetIntendedPurpose gets the intendedPurpose property value. Supported values for the intended purpose of a user PFX certificate.
 func (m *UserPFXCertificate) GetIntendedPurpose()(*UserPfxIntendedPurpose) {
     if m == nil {
         return nil
@@ -225,7 +225,7 @@ func (m *UserPFXCertificate) GetLastModifiedDateTime()(*i336074805fc853987abe6f7
         return m.lastModifiedDateTime
     }
 }
-// GetPaddingScheme gets the paddingScheme property value. Padding scheme used by the provider during encryption/decryption. Possible values are: none, pkcs1, oaepSha1, oaepSha256, oaepSha384, oaepSha512.
+// GetPaddingScheme gets the paddingScheme property value. Supported values for the padding scheme used by encryption provider.
 func (m *UserPFXCertificate) GetPaddingScheme()(*UserPfxPaddingScheme) {
     if m == nil {
         return nil
@@ -371,7 +371,7 @@ func (m *UserPFXCertificate) SetExpirationDateTime(value *i336074805fc853987abe6
         m.expirationDateTime = value
     }
 }
-// SetIntendedPurpose sets the intendedPurpose property value. Certificate's intended purpose from the point-of-view of deployment. Possible values are: unassigned, smimeEncryption, smimeSigning, vpn, wifi.
+// SetIntendedPurpose sets the intendedPurpose property value. Supported values for the intended purpose of a user PFX certificate.
 func (m *UserPFXCertificate) SetIntendedPurpose(value *UserPfxIntendedPurpose)() {
     if m != nil {
         m.intendedPurpose = value
@@ -389,7 +389,7 @@ func (m *UserPFXCertificate) SetLastModifiedDateTime(value *i336074805fc853987ab
         m.lastModifiedDateTime = value
     }
 }
-// SetPaddingScheme sets the paddingScheme property value. Padding scheme used by the provider during encryption/decryption. Possible values are: none, pkcs1, oaepSha1, oaepSha256, oaepSha384, oaepSha512.
+// SetPaddingScheme sets the paddingScheme property value. Supported values for the padding scheme used by encryption provider.
 func (m *UserPFXCertificate) SetPaddingScheme(value *UserPfxPaddingScheme)() {
     if m != nil {
         m.paddingScheme = value

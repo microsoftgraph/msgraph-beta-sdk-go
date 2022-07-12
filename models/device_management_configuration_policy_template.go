@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DeviceManagementConfigurationPolicyTemplate device Management Configuration Policy Template
+// DeviceManagementConfigurationPolicyTemplate 
 type DeviceManagementConfigurationPolicyTemplate struct {
     Entity
     // Allow unmanaged setting templates
@@ -17,22 +17,22 @@ type DeviceManagementConfigurationPolicyTemplate struct {
     displayName *string
     // Description of template version
     displayVersion *string
-    // Indicate current lifecycle state of template. Possible values are: invalid, draft, active, superseded, deprecated, retired.
+    // Describes current lifecycle state of a template
     lifecycleState *DeviceManagementTemplateLifecycleState
-    // Platforms for this template. Possible values are: none, android, iOS, macOS, windows10X, windows10, linux, unknownFutureValue.
+    // Supported platform types.
     platforms *DeviceManagementConfigurationPlatforms
     // Number of setting templates. Valid values 0 to 2147483647. This property is read-only.
     settingTemplateCount *int32
     // Setting templates
     settingTemplates []DeviceManagementConfigurationSettingTemplateable
-    // Technologies for this template. Possible values are: none, mdm, windows10XManagement, configManager, appleRemoteManagement, microsoftSense, exchangeOnline, linuxMdm, unknownFutureValue.
+    // Describes which technology this setting can be deployed with
     technologies *DeviceManagementConfigurationTechnologies
-    // TemplateFamily for this template. Possible values are: none, endpointSecurityAntivirus, endpointSecurityDiskEncryption, endpointSecurityFirewall, endpointSecurityEndpointDetectionAndResponse, endpointSecurityAttackSurfaceReduction, endpointSecurityAccountProtection, endpointSecurityApplicationControl, baseline.
+    // Describes the TemplateFamily for the Template entity
     templateFamily *DeviceManagementConfigurationTemplateFamily
     // Template version. Valid values 1 to 2147483647. This property is read-only.
     version *int32
 }
-// NewDeviceManagementConfigurationPolicyTemplate instantiates a new deviceManagementConfigurationPolicyTemplate and sets the default values.
+// NewDeviceManagementConfigurationPolicyTemplate instantiates a new DeviceManagementConfigurationPolicyTemplate and sets the default values.
 func NewDeviceManagementConfigurationPolicyTemplate()(*DeviceManagementConfigurationPolicyTemplate) {
     m := &DeviceManagementConfigurationPolicyTemplate{
         Entity: *NewEntity(),
@@ -212,7 +212,7 @@ func (m *DeviceManagementConfigurationPolicyTemplate) GetFieldDeserializers()(ma
     }
     return res
 }
-// GetLifecycleState gets the lifecycleState property value. Indicate current lifecycle state of template. Possible values are: invalid, draft, active, superseded, deprecated, retired.
+// GetLifecycleState gets the lifecycleState property value. Describes current lifecycle state of a template
 func (m *DeviceManagementConfigurationPolicyTemplate) GetLifecycleState()(*DeviceManagementTemplateLifecycleState) {
     if m == nil {
         return nil
@@ -220,7 +220,7 @@ func (m *DeviceManagementConfigurationPolicyTemplate) GetLifecycleState()(*Devic
         return m.lifecycleState
     }
 }
-// GetPlatforms gets the platforms property value. Platforms for this template. Possible values are: none, android, iOS, macOS, windows10X, windows10, linux, unknownFutureValue.
+// GetPlatforms gets the platforms property value. Supported platform types.
 func (m *DeviceManagementConfigurationPolicyTemplate) GetPlatforms()(*DeviceManagementConfigurationPlatforms) {
     if m == nil {
         return nil
@@ -244,7 +244,7 @@ func (m *DeviceManagementConfigurationPolicyTemplate) GetSettingTemplates()([]De
         return m.settingTemplates
     }
 }
-// GetTechnologies gets the technologies property value. Technologies for this template. Possible values are: none, mdm, windows10XManagement, configManager, appleRemoteManagement, microsoftSense, exchangeOnline, linuxMdm, unknownFutureValue.
+// GetTechnologies gets the technologies property value. Describes which technology this setting can be deployed with
 func (m *DeviceManagementConfigurationPolicyTemplate) GetTechnologies()(*DeviceManagementConfigurationTechnologies) {
     if m == nil {
         return nil
@@ -252,7 +252,7 @@ func (m *DeviceManagementConfigurationPolicyTemplate) GetTechnologies()(*DeviceM
         return m.technologies
     }
 }
-// GetTemplateFamily gets the templateFamily property value. TemplateFamily for this template. Possible values are: none, endpointSecurityAntivirus, endpointSecurityDiskEncryption, endpointSecurityFirewall, endpointSecurityEndpointDetectionAndResponse, endpointSecurityAttackSurfaceReduction, endpointSecurityAccountProtection, endpointSecurityApplicationControl, baseline.
+// GetTemplateFamily gets the templateFamily property value. Describes the TemplateFamily for the Template entity
 func (m *DeviceManagementConfigurationPolicyTemplate) GetTemplateFamily()(*DeviceManagementConfigurationTemplateFamily) {
     if m == nil {
         return nil
@@ -386,13 +386,13 @@ func (m *DeviceManagementConfigurationPolicyTemplate) SetDisplayVersion(value *s
         m.displayVersion = value
     }
 }
-// SetLifecycleState sets the lifecycleState property value. Indicate current lifecycle state of template. Possible values are: invalid, draft, active, superseded, deprecated, retired.
+// SetLifecycleState sets the lifecycleState property value. Describes current lifecycle state of a template
 func (m *DeviceManagementConfigurationPolicyTemplate) SetLifecycleState(value *DeviceManagementTemplateLifecycleState)() {
     if m != nil {
         m.lifecycleState = value
     }
 }
-// SetPlatforms sets the platforms property value. Platforms for this template. Possible values are: none, android, iOS, macOS, windows10X, windows10, linux, unknownFutureValue.
+// SetPlatforms sets the platforms property value. Supported platform types.
 func (m *DeviceManagementConfigurationPolicyTemplate) SetPlatforms(value *DeviceManagementConfigurationPlatforms)() {
     if m != nil {
         m.platforms = value
@@ -410,13 +410,13 @@ func (m *DeviceManagementConfigurationPolicyTemplate) SetSettingTemplates(value 
         m.settingTemplates = value
     }
 }
-// SetTechnologies sets the technologies property value. Technologies for this template. Possible values are: none, mdm, windows10XManagement, configManager, appleRemoteManagement, microsoftSense, exchangeOnline, linuxMdm, unknownFutureValue.
+// SetTechnologies sets the technologies property value. Describes which technology this setting can be deployed with
 func (m *DeviceManagementConfigurationPolicyTemplate) SetTechnologies(value *DeviceManagementConfigurationTechnologies)() {
     if m != nil {
         m.technologies = value
     }
 }
-// SetTemplateFamily sets the templateFamily property value. TemplateFamily for this template. Possible values are: none, endpointSecurityAntivirus, endpointSecurityDiskEncryption, endpointSecurityFirewall, endpointSecurityEndpointDetectionAndResponse, endpointSecurityAttackSurfaceReduction, endpointSecurityAccountProtection, endpointSecurityApplicationControl, baseline.
+// SetTemplateFamily sets the templateFamily property value. Describes the TemplateFamily for the Template entity
 func (m *DeviceManagementConfigurationPolicyTemplate) SetTemplateFamily(value *DeviceManagementConfigurationTemplateFamily)() {
     if m != nil {
         m.templateFamily = value

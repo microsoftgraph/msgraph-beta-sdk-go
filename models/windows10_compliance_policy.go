@@ -27,7 +27,7 @@ type Windows10CompliancePolicy struct {
     deviceCompliancePolicyScript DeviceCompliancePolicyScriptable
     // Require that devices have enabled device threat protection.
     deviceThreatProtectionEnabled *bool
-    // Require Device Threat Protection minimum risk level to report noncompliance. Possible values are: unavailable, secured, low, medium, high, notSet.
+    // Device threat protection levels for the Device Threat Protection API.
     deviceThreatProtectionRequiredSecurityLevel *DeviceThreatProtectionLevel
     // Require devices to be reported as healthy by Windows Device Health Attestation - early launch antimalware driver is enabled.
     earlyLaunchAntiMalwareDriverEnabled *bool
@@ -55,7 +55,7 @@ type Windows10CompliancePolicy struct {
     passwordRequired *bool
     // Require a password to unlock an idle device.
     passwordRequiredToUnlockFromIdle *bool
-    // The required password type. Possible values are: deviceDefault, alphanumeric, numeric.
+    // Possible values of required passwords.
     passwordRequiredType *RequiredPasswordType
     // Require devices to be reported as healthy by Windows Device Health Attestation.
     requireHealthyDeviceReport *bool
@@ -163,7 +163,7 @@ func (m *Windows10CompliancePolicy) GetDeviceThreatProtectionEnabled()(*bool) {
         return m.deviceThreatProtectionEnabled
     }
 }
-// GetDeviceThreatProtectionRequiredSecurityLevel gets the deviceThreatProtectionRequiredSecurityLevel property value. Require Device Threat Protection minimum risk level to report noncompliance. Possible values are: unavailable, secured, low, medium, high, notSet.
+// GetDeviceThreatProtectionRequiredSecurityLevel gets the deviceThreatProtectionRequiredSecurityLevel property value. Device threat protection levels for the Device Threat Protection API.
 func (m *Windows10CompliancePolicy) GetDeviceThreatProtectionRequiredSecurityLevel()(*DeviceThreatProtectionLevel) {
     if m == nil {
         return nil
@@ -604,7 +604,7 @@ func (m *Windows10CompliancePolicy) GetPasswordRequiredToUnlockFromIdle()(*bool)
         return m.passwordRequiredToUnlockFromIdle
     }
 }
-// GetPasswordRequiredType gets the passwordRequiredType property value. The required password type. Possible values are: deviceDefault, alphanumeric, numeric.
+// GetPasswordRequiredType gets the passwordRequiredType property value. Possible values of required passwords.
 func (m *Windows10CompliancePolicy) GetPasswordRequiredType()(*RequiredPasswordType) {
     if m == nil {
         return nil
@@ -934,7 +934,7 @@ func (m *Windows10CompliancePolicy) SetDeviceThreatProtectionEnabled(value *bool
         m.deviceThreatProtectionEnabled = value
     }
 }
-// SetDeviceThreatProtectionRequiredSecurityLevel sets the deviceThreatProtectionRequiredSecurityLevel property value. Require Device Threat Protection minimum risk level to report noncompliance. Possible values are: unavailable, secured, low, medium, high, notSet.
+// SetDeviceThreatProtectionRequiredSecurityLevel sets the deviceThreatProtectionRequiredSecurityLevel property value. Device threat protection levels for the Device Threat Protection API.
 func (m *Windows10CompliancePolicy) SetDeviceThreatProtectionRequiredSecurityLevel(value *DeviceThreatProtectionLevel)() {
     if m != nil {
         m.deviceThreatProtectionRequiredSecurityLevel = value
@@ -1018,7 +1018,7 @@ func (m *Windows10CompliancePolicy) SetPasswordRequiredToUnlockFromIdle(value *b
         m.passwordRequiredToUnlockFromIdle = value
     }
 }
-// SetPasswordRequiredType sets the passwordRequiredType property value. The required password type. Possible values are: deviceDefault, alphanumeric, numeric.
+// SetPasswordRequiredType sets the passwordRequiredType property value. Possible values of required passwords.
 func (m *Windows10CompliancePolicy) SetPasswordRequiredType(value *RequiredPasswordType)() {
     if m != nil {
         m.passwordRequiredType = value

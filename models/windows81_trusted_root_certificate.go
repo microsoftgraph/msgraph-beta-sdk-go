@@ -4,12 +4,12 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Windows81TrustedRootCertificate windows 8.1 Trusted Certificate configuration profile
+// Windows81TrustedRootCertificate 
 type Windows81TrustedRootCertificate struct {
     DeviceConfiguration
     // File name to display in UI.
     certFileName *string
-    // Destination store location for the Trusted Root Certificate. Possible values are: computerCertStoreRoot, computerCertStoreIntermediate, userCertStoreIntermediate.
+    // Possible values for the Certificate Destination Store.
     destinationStore *CertificateDestinationStore
     // Trusted Root Certificate
     trustedRootCertificate []byte
@@ -33,7 +33,7 @@ func (m *Windows81TrustedRootCertificate) GetCertFileName()(*string) {
         return m.certFileName
     }
 }
-// GetDestinationStore gets the destinationStore property value. Destination store location for the Trusted Root Certificate. Possible values are: computerCertStoreRoot, computerCertStoreIntermediate, userCertStoreIntermediate.
+// GetDestinationStore gets the destinationStore property value. Possible values for the Certificate Destination Store.
 func (m *Windows81TrustedRootCertificate) GetDestinationStore()(*CertificateDestinationStore) {
     if m == nil {
         return nil
@@ -117,7 +117,7 @@ func (m *Windows81TrustedRootCertificate) SetCertFileName(value *string)() {
         m.certFileName = value
     }
 }
-// SetDestinationStore sets the destinationStore property value. Destination store location for the Trusted Root Certificate. Possible values are: computerCertStoreRoot, computerCertStoreIntermediate, userCertStoreIntermediate.
+// SetDestinationStore sets the destinationStore property value. Possible values for the Certificate Destination Store.
 func (m *Windows81TrustedRootCertificate) SetDestinationStore(value *CertificateDestinationStore)() {
     if m != nil {
         m.destinationStore = value

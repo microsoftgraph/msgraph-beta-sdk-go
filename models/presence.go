@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Presence provides operations to manage the collection of administrativeUnit entities.
+// Presence 
 type Presence struct {
     Entity
     // The supplemental information to a user's availability. Possible values are Available, Away, BeRightBack, Busy, DoNotDisturb, InACall, InAConferenceCall, Inactive,InAMeeting, Offline, OffWork,OutOfOffice, PresenceUnknown,Presenting, UrgentInterruptionsOnly.
@@ -14,7 +14,7 @@ type Presence struct {
     // The out of office settings for a user.
     outOfOfficeSettings OutOfOfficeSettingsable
 }
-// NewPresence instantiates a new presence and sets the default values.
+// NewPresence instantiates a new Presence and sets the default values.
 func NewPresence()(*Presence) {
     m := &Presence{
         Entity: *NewEntity(),

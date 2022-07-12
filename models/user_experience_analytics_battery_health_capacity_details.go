@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// UserExperienceAnalyticsBatteryHealthCapacityDetails the user experience analytics battery health capacity entity contains count of devices broken down into 3 categories - devices with capacity > 80%, devices with capacity 50-80% and devices with capacity < 50 %.This API provides the count of devices in these 3 categories..
+// UserExperienceAnalyticsBatteryHealthCapacityDetails 
 type UserExperienceAnalyticsBatteryHealthCapacityDetails struct {
     Entity
     // Number of active devices within the tenant. Valid values -2147483648 to 2147483647
@@ -19,7 +19,7 @@ type UserExperienceAnalyticsBatteryHealthCapacityDetails struct {
     // Recorded date time of this capacity details instance.
     lastRefreshedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
 }
-// NewUserExperienceAnalyticsBatteryHealthCapacityDetails instantiates a new userExperienceAnalyticsBatteryHealthCapacityDetails and sets the default values.
+// NewUserExperienceAnalyticsBatteryHealthCapacityDetails instantiates a new UserExperienceAnalyticsBatteryHealthCapacityDetails and sets the default values.
 func NewUserExperienceAnalyticsBatteryHealthCapacityDetails()(*UserExperienceAnalyticsBatteryHealthCapacityDetails) {
     m := &UserExperienceAnalyticsBatteryHealthCapacityDetails{
         Entity: *NewEntity(),

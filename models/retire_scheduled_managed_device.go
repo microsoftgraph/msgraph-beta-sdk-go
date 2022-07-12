@@ -9,13 +9,13 @@ import (
 type RetireScheduledManagedDevice struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
-    // Managed Device ComplianceStatus. Possible values are: unknown, notApplicable, compliant, remediated, nonCompliant, error, conflict, notAssigned.
+    // The complianceState property
     complianceState *ComplianceStatus
     // Device Compliance PolicyId
     deviceCompliancePolicyId *string
     // Device Compliance Policy Name
     deviceCompliancePolicyName *string
-    // Managed Device Device Type. Possible values are: desktop, windowsRT, winMO6, nokia, windowsPhone, mac, winCE, winEmbedded, iPhone, iPad, iPod, android, iSocConsumer, unix, macMDM, holoLens, surfaceHub, androidForWork, androidEnterprise, windows10x, androidnGMS, cloudPC, blackberry, palm, unknown.
+    // Device type.
     deviceType *DeviceType
     // Key of the entity.
     id *string
@@ -23,9 +23,9 @@ type RetireScheduledManagedDevice struct {
     managedDeviceId *string
     // Managed Device Name
     managedDeviceName *string
-    // Managed Device ManagementAgentType. Possible values are: eas, mdm, easMdm, intuneClient, easIntuneClient, configurationManagerClient, configurationManagerClientMdm, configurationManagerClientMdmEas, unknown, jamf, googleCloudDevicePolicyController, microsoft365ManagedMdm, windowsManagementCloudApi.
+    // Management agent type.
     managementAgent *ManagementAgentType
-    // Managed Device ManagedDeviceOwnerType. Possible values are: unknown, company, personal.
+    // Owner type of device.
     ownerType *ManagedDeviceOwnerType
     // Managed Device Retire After DateTime
     retireAfterDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
@@ -51,7 +51,7 @@ func (m *RetireScheduledManagedDevice) GetAdditionalData()(map[string]interface{
         return m.additionalData
     }
 }
-// GetComplianceState gets the complianceState property value. Managed Device ComplianceStatus. Possible values are: unknown, notApplicable, compliant, remediated, nonCompliant, error, conflict, notAssigned.
+// GetComplianceState gets the complianceState property value. The complianceState property
 func (m *RetireScheduledManagedDevice) GetComplianceState()(*ComplianceStatus) {
     if m == nil {
         return nil
@@ -75,7 +75,7 @@ func (m *RetireScheduledManagedDevice) GetDeviceCompliancePolicyName()(*string) 
         return m.deviceCompliancePolicyName
     }
 }
-// GetDeviceType gets the deviceType property value. Managed Device Device Type. Possible values are: desktop, windowsRT, winMO6, nokia, windowsPhone, mac, winCE, winEmbedded, iPhone, iPad, iPod, android, iSocConsumer, unix, macMDM, holoLens, surfaceHub, androidForWork, androidEnterprise, windows10x, androidnGMS, cloudPC, blackberry, palm, unknown.
+// GetDeviceType gets the deviceType property value. Device type.
 func (m *RetireScheduledManagedDevice) GetDeviceType()(*DeviceType) {
     if m == nil {
         return nil
@@ -226,7 +226,7 @@ func (m *RetireScheduledManagedDevice) GetManagedDeviceName()(*string) {
         return m.managedDeviceName
     }
 }
-// GetManagementAgent gets the managementAgent property value. Managed Device ManagementAgentType. Possible values are: eas, mdm, easMdm, intuneClient, easIntuneClient, configurationManagerClient, configurationManagerClientMdm, configurationManagerClientMdmEas, unknown, jamf, googleCloudDevicePolicyController, microsoft365ManagedMdm, windowsManagementCloudApi.
+// GetManagementAgent gets the managementAgent property value. Management agent type.
 func (m *RetireScheduledManagedDevice) GetManagementAgent()(*ManagementAgentType) {
     if m == nil {
         return nil
@@ -234,7 +234,7 @@ func (m *RetireScheduledManagedDevice) GetManagementAgent()(*ManagementAgentType
         return m.managementAgent
     }
 }
-// GetOwnerType gets the ownerType property value. Managed Device ManagedDeviceOwnerType. Possible values are: unknown, company, personal.
+// GetOwnerType gets the ownerType property value. Owner type of device.
 func (m *RetireScheduledManagedDevice) GetOwnerType()(*ManagedDeviceOwnerType) {
     if m == nil {
         return nil
@@ -344,7 +344,7 @@ func (m *RetireScheduledManagedDevice) SetAdditionalData(value map[string]interf
         m.additionalData = value
     }
 }
-// SetComplianceState sets the complianceState property value. Managed Device ComplianceStatus. Possible values are: unknown, notApplicable, compliant, remediated, nonCompliant, error, conflict, notAssigned.
+// SetComplianceState sets the complianceState property value. The complianceState property
 func (m *RetireScheduledManagedDevice) SetComplianceState(value *ComplianceStatus)() {
     if m != nil {
         m.complianceState = value
@@ -362,7 +362,7 @@ func (m *RetireScheduledManagedDevice) SetDeviceCompliancePolicyName(value *stri
         m.deviceCompliancePolicyName = value
     }
 }
-// SetDeviceType sets the deviceType property value. Managed Device Device Type. Possible values are: desktop, windowsRT, winMO6, nokia, windowsPhone, mac, winCE, winEmbedded, iPhone, iPad, iPod, android, iSocConsumer, unix, macMDM, holoLens, surfaceHub, androidForWork, androidEnterprise, windows10x, androidnGMS, cloudPC, blackberry, palm, unknown.
+// SetDeviceType sets the deviceType property value. Device type.
 func (m *RetireScheduledManagedDevice) SetDeviceType(value *DeviceType)() {
     if m != nil {
         m.deviceType = value
@@ -386,13 +386,13 @@ func (m *RetireScheduledManagedDevice) SetManagedDeviceName(value *string)() {
         m.managedDeviceName = value
     }
 }
-// SetManagementAgent sets the managementAgent property value. Managed Device ManagementAgentType. Possible values are: eas, mdm, easMdm, intuneClient, easIntuneClient, configurationManagerClient, configurationManagerClientMdm, configurationManagerClientMdmEas, unknown, jamf, googleCloudDevicePolicyController, microsoft365ManagedMdm, windowsManagementCloudApi.
+// SetManagementAgent sets the managementAgent property value. Management agent type.
 func (m *RetireScheduledManagedDevice) SetManagementAgent(value *ManagementAgentType)() {
     if m != nil {
         m.managementAgent = value
     }
 }
-// SetOwnerType sets the ownerType property value. Managed Device ManagedDeviceOwnerType. Possible values are: unknown, company, personal.
+// SetOwnerType sets the ownerType property value. Owner type of device.
 func (m *RetireScheduledManagedDevice) SetOwnerType(value *ManagedDeviceOwnerType)() {
     if m != nil {
         m.ownerType = value

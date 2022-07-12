@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// UserAnalytics provides operations to manage the collection of administrativeUnit entities.
+// UserAnalytics 
 type UserAnalytics struct {
     Entity
     // The collection of work activities that a user spent time on during and outside of working hours. Read-only. Nullable.
@@ -12,7 +12,7 @@ type UserAnalytics struct {
     // The current settings for a user to use the analytics API.
     settings Settingsable
 }
-// NewUserAnalytics instantiates a new userAnalytics and sets the default values.
+// NewUserAnalytics instantiates a new UserAnalytics and sets the default values.
 func NewUserAnalytics()(*UserAnalytics) {
     m := &UserAnalytics{
         Entity: *NewEntity(),

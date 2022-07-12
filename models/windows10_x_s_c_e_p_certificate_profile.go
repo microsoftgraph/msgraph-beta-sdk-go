@@ -7,9 +7,9 @@ import (
 // Windows10XSCEPCertificateProfile 
 type Windows10XSCEPCertificateProfile struct {
     Windows10XCertificateProfile
-    // Target store certificate. Possible values are: user, machine.
+    // CertificateStore types
     certificateStore *CertificateStore
-    // Scale for the Certificate Validity Period. Possible values are: days, months, years.
+    // Certificate Validity Period Options.
     certificateValidityPeriodScale *CertificateValidityPeriodScale
     // Value for the Certificate Validity Period
     certificateValidityPeriodValue *int32
@@ -17,11 +17,11 @@ type Windows10XSCEPCertificateProfile struct {
     extendedKeyUsages []ExtendedKeyUsageable
     // SCEP Hash Algorithm.
     hashAlgorithm []string
-    // SCEP Key Size. Possible values are: size1024, size2048, size4096.
+    // Key Size Options.
     keySize *KeySize
-    // Key Storage Provider (KSP). Possible values are: useTpmKspOtherwiseUseSoftwareKsp, useTpmKspOtherwiseFail, usePassportForWorkKspOtherwiseFail, useSoftwareKsp.
+    // Key Storage Provider (KSP) Import Options.
     keyStorageProvider *KeyStorageProviderOption
-    // SCEP Key Usage. Possible values are: keyEncipherment, digitalSignature.
+    // Key Usage Options.
     keyUsage *KeyUsages
     // Certificate renewal threshold percentage
     renewalThresholdPercentage *int32
@@ -45,7 +45,7 @@ func NewWindows10XSCEPCertificateProfile()(*Windows10XSCEPCertificateProfile) {
 func CreateWindows10XSCEPCertificateProfileFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWindows10XSCEPCertificateProfile(), nil
 }
-// GetCertificateStore gets the certificateStore property value. Target store certificate. Possible values are: user, machine.
+// GetCertificateStore gets the certificateStore property value. CertificateStore types
 func (m *Windows10XSCEPCertificateProfile) GetCertificateStore()(*CertificateStore) {
     if m == nil {
         return nil
@@ -53,7 +53,7 @@ func (m *Windows10XSCEPCertificateProfile) GetCertificateStore()(*CertificateSto
         return m.certificateStore
     }
 }
-// GetCertificateValidityPeriodScale gets the certificateValidityPeriodScale property value. Scale for the Certificate Validity Period. Possible values are: days, months, years.
+// GetCertificateValidityPeriodScale gets the certificateValidityPeriodScale property value. Certificate Validity Period Options.
 func (m *Windows10XSCEPCertificateProfile) GetCertificateValidityPeriodScale()(*CertificateValidityPeriodScale) {
     if m == nil {
         return nil
@@ -236,7 +236,7 @@ func (m *Windows10XSCEPCertificateProfile) GetHashAlgorithm()([]string) {
         return m.hashAlgorithm
     }
 }
-// GetKeySize gets the keySize property value. SCEP Key Size. Possible values are: size1024, size2048, size4096.
+// GetKeySize gets the keySize property value. Key Size Options.
 func (m *Windows10XSCEPCertificateProfile) GetKeySize()(*KeySize) {
     if m == nil {
         return nil
@@ -244,7 +244,7 @@ func (m *Windows10XSCEPCertificateProfile) GetKeySize()(*KeySize) {
         return m.keySize
     }
 }
-// GetKeyStorageProvider gets the keyStorageProvider property value. Key Storage Provider (KSP). Possible values are: useTpmKspOtherwiseUseSoftwareKsp, useTpmKspOtherwiseFail, usePassportForWorkKspOtherwiseFail, useSoftwareKsp.
+// GetKeyStorageProvider gets the keyStorageProvider property value. Key Storage Provider (KSP) Import Options.
 func (m *Windows10XSCEPCertificateProfile) GetKeyStorageProvider()(*KeyStorageProviderOption) {
     if m == nil {
         return nil
@@ -252,7 +252,7 @@ func (m *Windows10XSCEPCertificateProfile) GetKeyStorageProvider()(*KeyStoragePr
         return m.keyStorageProvider
     }
 }
-// GetKeyUsage gets the keyUsage property value. SCEP Key Usage. Possible values are: keyEncipherment, digitalSignature.
+// GetKeyUsage gets the keyUsage property value. Key Usage Options.
 func (m *Windows10XSCEPCertificateProfile) GetKeyUsage()(*KeyUsages) {
     if m == nil {
         return nil
@@ -399,13 +399,13 @@ func (m *Windows10XSCEPCertificateProfile) Serialize(writer i878a80d2330e89d2689
     }
     return nil
 }
-// SetCertificateStore sets the certificateStore property value. Target store certificate. Possible values are: user, machine.
+// SetCertificateStore sets the certificateStore property value. CertificateStore types
 func (m *Windows10XSCEPCertificateProfile) SetCertificateStore(value *CertificateStore)() {
     if m != nil {
         m.certificateStore = value
     }
 }
-// SetCertificateValidityPeriodScale sets the certificateValidityPeriodScale property value. Scale for the Certificate Validity Period. Possible values are: days, months, years.
+// SetCertificateValidityPeriodScale sets the certificateValidityPeriodScale property value. Certificate Validity Period Options.
 func (m *Windows10XSCEPCertificateProfile) SetCertificateValidityPeriodScale(value *CertificateValidityPeriodScale)() {
     if m != nil {
         m.certificateValidityPeriodScale = value
@@ -429,19 +429,19 @@ func (m *Windows10XSCEPCertificateProfile) SetHashAlgorithm(value []string)() {
         m.hashAlgorithm = value
     }
 }
-// SetKeySize sets the keySize property value. SCEP Key Size. Possible values are: size1024, size2048, size4096.
+// SetKeySize sets the keySize property value. Key Size Options.
 func (m *Windows10XSCEPCertificateProfile) SetKeySize(value *KeySize)() {
     if m != nil {
         m.keySize = value
     }
 }
-// SetKeyStorageProvider sets the keyStorageProvider property value. Key Storage Provider (KSP). Possible values are: useTpmKspOtherwiseUseSoftwareKsp, useTpmKspOtherwiseFail, usePassportForWorkKspOtherwiseFail, useSoftwareKsp.
+// SetKeyStorageProvider sets the keyStorageProvider property value. Key Storage Provider (KSP) Import Options.
 func (m *Windows10XSCEPCertificateProfile) SetKeyStorageProvider(value *KeyStorageProviderOption)() {
     if m != nil {
         m.keyStorageProvider = value
     }
 }
-// SetKeyUsage sets the keyUsage property value. SCEP Key Usage. Possible values are: keyEncipherment, digitalSignature.
+// SetKeyUsage sets the keyUsage property value. Key Usage Options.
 func (m *Windows10XSCEPCertificateProfile) SetKeyUsage(value *KeyUsages)() {
     if m != nil {
         m.keyUsage = value

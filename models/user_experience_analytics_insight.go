@@ -10,7 +10,7 @@ type UserExperienceAnalyticsInsight struct {
     additionalData map[string]interface{}
     // The unique identifier of the user experience analytics insight.
     insightId *string
-    // The value of the user experience analytics insight. Possible values are: none, informational, warning, error.
+    // The severity property
     severity *UserExperienceAnalyticsInsightSeverity
     // The unique identifier of the user experience analytics insight.
     userExperienceAnalyticsMetricId *string
@@ -93,7 +93,7 @@ func (m *UserExperienceAnalyticsInsight) GetInsightId()(*string) {
         return m.insightId
     }
 }
-// GetSeverity gets the severity property value. The value of the user experience analytics insight. Possible values are: none, informational, warning, error.
+// GetSeverity gets the severity property value. The severity property
 func (m *UserExperienceAnalyticsInsight) GetSeverity()(*UserExperienceAnalyticsInsightSeverity) {
     if m == nil {
         return nil
@@ -168,7 +168,7 @@ func (m *UserExperienceAnalyticsInsight) SetInsightId(value *string)() {
         m.insightId = value
     }
 }
-// SetSeverity sets the severity property value. The value of the user experience analytics insight. Possible values are: none, informational, warning, error.
+// SetSeverity sets the severity property value. The severity property
 func (m *UserExperienceAnalyticsInsight) SetSeverity(value *UserExperienceAnalyticsInsightSeverity)() {
     if m != nil {
         m.severity = value

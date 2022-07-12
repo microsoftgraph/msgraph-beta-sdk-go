@@ -20,7 +20,7 @@ type PrintJobStatus struct {
     processingState *PrintJobProcessingState
     // The processingStateDescription property
     processingStateDescription *string
-    // The print job's current processing state. Valid values are described in the following table. Read-only.
+    // The state property
     state *PrintJobProcessingState
 }
 // NewPrintJobStatus instantiates a new printJobStatus and sets the default values.
@@ -169,7 +169,7 @@ func (m *PrintJobStatus) GetProcessingStateDescription()(*string) {
         return m.processingStateDescription
     }
 }
-// GetState gets the state property value. The print job's current processing state. Valid values are described in the following table. Read-only.
+// GetState gets the state property value. The state property
 func (m *PrintJobStatus) GetState()(*PrintJobProcessingState) {
     if m == nil {
         return nil
@@ -273,7 +273,7 @@ func (m *PrintJobStatus) SetProcessingStateDescription(value *string)() {
         m.processingStateDescription = value
     }
 }
-// SetState sets the state property value. The print job's current processing state. Valid values are described in the following table. Read-only.
+// SetState sets the state property value. The state property
 func (m *PrintJobStatus) SetState(value *PrintJobProcessingState)() {
     if m != nil {
         m.state = value

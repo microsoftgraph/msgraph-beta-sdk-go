@@ -4,13 +4,13 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ExactMatchDetectedSensitiveContent provides operations to call the classifyExactMatches method.
+// ExactMatchDetectedSensitiveContent 
 type ExactMatchDetectedSensitiveContent struct {
     DetectedSensitiveContentBase
     // The matches property
     matches []SensitiveContentLocationable
 }
-// NewExactMatchDetectedSensitiveContent instantiates a new exactMatchDetectedSensitiveContent and sets the default values.
+// NewExactMatchDetectedSensitiveContent instantiates a new ExactMatchDetectedSensitiveContent and sets the default values.
 func NewExactMatchDetectedSensitiveContent()(*ExactMatchDetectedSensitiveContent) {
     m := &ExactMatchDetectedSensitiveContent{
         DetectedSensitiveContentBase: *NewDetectedSensitiveContentBase(),

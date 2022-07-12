@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Office365GroupsActivityFileCounts provides operations to call the getOffice365GroupsActivityFileCounts method.
+// Office365GroupsActivityFileCounts 
 type Office365GroupsActivityFileCounts struct {
     Entity
     // The number of files that were viewed, edited, shared, or synced in the group's SharePoint document library.
@@ -18,7 +18,7 @@ type Office365GroupsActivityFileCounts struct {
     // The total number of files in the group's SharePoint document library.
     total *int64
 }
-// NewOffice365GroupsActivityFileCounts instantiates a new office365GroupsActivityFileCounts and sets the default values.
+// NewOffice365GroupsActivityFileCounts instantiates a new Office365GroupsActivityFileCounts and sets the default values.
 func NewOffice365GroupsActivityFileCounts()(*Office365GroupsActivityFileCounts) {
     m := &Office365GroupsActivityFileCounts{
         Entity: *NewEntity(),

@@ -13,7 +13,7 @@ type DeviceHealthScriptRemediationSummary struct {
     // The number of device health scripts deployed.
     scriptCount *int32
 }
-// NewDeviceHealthScriptRemediationSummary instantiates a new DeviceHealthScriptRemediationSummary and sets the default values.
+// NewDeviceHealthScriptRemediationSummary instantiates a new deviceHealthScriptRemediationSummary and sets the default values.
 func NewDeviceHealthScriptRemediationSummary()(*DeviceHealthScriptRemediationSummary) {
     m := &DeviceHealthScriptRemediationSummary{
     }

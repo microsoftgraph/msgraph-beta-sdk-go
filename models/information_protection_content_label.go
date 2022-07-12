@@ -9,14 +9,14 @@ import (
 type InformationProtectionContentLabel struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
-    // Possible values are: standard, privileged, auto.
+    // The assignmentMethod property
     assignmentMethod *AssignmentMethod
     // The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
     creationDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Details on the label that is currently applied to the file.
     label LabelDetailsable
 }
-// NewInformationProtectionContentLabel instantiates a new InformationProtectionContentLabel and sets the default values.
+// NewInformationProtectionContentLabel instantiates a new informationProtectionContentLabel and sets the default values.
 func NewInformationProtectionContentLabel()(*InformationProtectionContentLabel) {
     m := &InformationProtectionContentLabel{
     }
@@ -35,7 +35,7 @@ func (m *InformationProtectionContentLabel) GetAdditionalData()(map[string]inter
         return m.additionalData
     }
 }
-// GetAssignmentMethod gets the assignmentMethod property value. Possible values are: standard, privileged, auto.
+// GetAssignmentMethod gets the assignmentMethod property value. The assignmentMethod property
 func (m *InformationProtectionContentLabel) GetAssignmentMethod()(*AssignmentMethod) {
     if m == nil {
         return nil
@@ -129,7 +129,7 @@ func (m *InformationProtectionContentLabel) SetAdditionalData(value map[string]i
         m.additionalData = value
     }
 }
-// SetAssignmentMethod sets the assignmentMethod property value. Possible values are: standard, privileged, auto.
+// SetAssignmentMethod sets the assignmentMethod property value. The assignmentMethod property
 func (m *InformationProtectionContentLabel) SetAssignmentMethod(value *AssignmentMethod)() {
     if m != nil {
         m.assignmentMethod = value

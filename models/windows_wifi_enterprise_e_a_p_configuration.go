@@ -21,7 +21,7 @@ type WindowsWifiEnterpriseEAPConfiguration struct {
     disableUserPromptForServerValidation *bool
     // Specify the number of seconds to wait before sending an EAPOL (Extensible Authentication Protocol over LAN) Start message. Valid range 1-3600.
     eapolStartPeriodInSeconds *int32
-    // Extensible Authentication Protocol (EAP). Indicates the type of EAP protocol set on the Wi-Fi endpoint (router). Possible values are: eapTls, leap, eapSim, eapTtls, peap, eapFast, teap.
+    // Extensible Authentication Protocol (EAP) configuration types.
     eapType *EapType
     // Specify whether the wifi connection should enable pairwise master key caching.
     enablePairwiseMasterKeyCaching *bool
@@ -129,7 +129,7 @@ func (m *WindowsWifiEnterpriseEAPConfiguration) GetEapolStartPeriodInSeconds()(*
         return m.eapolStartPeriodInSeconds
     }
 }
-// GetEapType gets the eapType property value. Extensible Authentication Protocol (EAP). Indicates the type of EAP protocol set on the Wi-Fi endpoint (router). Possible values are: eapTls, leap, eapSim, eapTtls, peap, eapFast, teap.
+// GetEapType gets the eapType property value. Extensible Authentication Protocol (EAP) configuration types.
 func (m *WindowsWifiEnterpriseEAPConfiguration) GetEapType()(*EapType) {
     if m == nil {
         return nil
@@ -793,7 +793,7 @@ func (m *WindowsWifiEnterpriseEAPConfiguration) SetEapolStartPeriodInSeconds(val
         m.eapolStartPeriodInSeconds = value
     }
 }
-// SetEapType sets the eapType property value. Extensible Authentication Protocol (EAP). Indicates the type of EAP protocol set on the Wi-Fi endpoint (router). Possible values are: eapTls, leap, eapSim, eapTtls, peap, eapFast, teap.
+// SetEapType sets the eapType property value. Extensible Authentication Protocol (EAP) configuration types.
 func (m *WindowsWifiEnterpriseEAPConfiguration) SetEapType(value *EapType)() {
     if m != nil {
         m.eapType = value

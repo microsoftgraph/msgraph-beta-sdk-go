@@ -17,7 +17,7 @@ type AttachmentsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// AttachmentsRequestBuilderGetQueryParameters get attachments from users
+// AttachmentsRequestBuilderGetQueryParameters a collection of file attachments for the task.
 type AttachmentsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -71,11 +71,11 @@ func NewAttachmentsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26
 func (m *AttachmentsRequestBuilder) Count()(*i78a58c9bb0e48273804c7bb9c37871e5db3b62e24969eb67e26d4229815887cb.CountRequestBuilder) {
     return i78a58c9bb0e48273804c7bb9c37871e5db3b62e24969eb67e26d4229815887cb.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation get attachments from users
+// CreateGetRequestInformation a collection of file attachments for the task.
 func (m *AttachmentsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration get attachments from users
+// CreateGetRequestInformationWithRequestConfiguration a collection of file attachments for the task.
 func (m *AttachmentsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *AttachmentsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -113,11 +113,11 @@ func (m *AttachmentsRequestBuilder) CreatePostRequestInformationWithRequestConfi
 func (m *AttachmentsRequestBuilder) CreateUploadSession()(*i277f88a14299fabf3d7796681e30092dbf160a91321be00a63c2f42f871201d8.CreateUploadSessionRequestBuilder) {
     return i277f88a14299fabf3d7796681e30092dbf160a91321be00a63c2f42f871201d8.NewCreateUploadSessionRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Get get attachments from users
+// Get a collection of file attachments for the task.
 func (m *AttachmentsRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AttachmentBaseCollectionResponseable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler get attachments from users
+// GetWithRequestConfigurationAndResponseHandler a collection of file attachments for the task.
 func (m *AttachmentsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *AttachmentsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AttachmentBaseCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

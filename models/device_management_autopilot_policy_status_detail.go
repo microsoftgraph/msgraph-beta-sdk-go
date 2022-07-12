@@ -8,7 +8,7 @@ import (
 // DeviceManagementAutopilotPolicyStatusDetail policy status detail item contained by an autopilot event.
 type DeviceManagementAutopilotPolicyStatusDetail struct {
     Entity
-    // The policy compliance status. Possible values are: unknown, compliant, installed, notCompliant, notInstalled, error.
+    // The complianceStatus property
     complianceStatus *DeviceManagementAutopilotPolicyComplianceStatus
     // The friendly name of the policy.
     displayName *string
@@ -16,7 +16,7 @@ type DeviceManagementAutopilotPolicyStatusDetail struct {
     errorCode *int32
     // Timestamp of the reported policy status
     lastReportedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The type of policy. Possible values are: unknown, application, appModel, configurationPolicy.
+    // The policyType property
     policyType *DeviceManagementAutopilotPolicyType
     // Indicates if this prolicy was tracked as part of the autopilot bootstrap enrollment sync session
     trackedOnEnrollmentStatus *bool
@@ -32,7 +32,7 @@ func NewDeviceManagementAutopilotPolicyStatusDetail()(*DeviceManagementAutopilot
 func CreateDeviceManagementAutopilotPolicyStatusDetailFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDeviceManagementAutopilotPolicyStatusDetail(), nil
 }
-// GetComplianceStatus gets the complianceStatus property value. The policy compliance status. Possible values are: unknown, compliant, installed, notCompliant, notInstalled, error.
+// GetComplianceStatus gets the complianceStatus property value. The complianceStatus property
 func (m *DeviceManagementAutopilotPolicyStatusDetail) GetComplianceStatus()(*DeviceManagementAutopilotPolicyComplianceStatus) {
     if m == nil {
         return nil
@@ -129,7 +129,7 @@ func (m *DeviceManagementAutopilotPolicyStatusDetail) GetLastReportedDateTime()(
         return m.lastReportedDateTime
     }
 }
-// GetPolicyType gets the policyType property value. The type of policy. Possible values are: unknown, application, appModel, configurationPolicy.
+// GetPolicyType gets the policyType property value. The policyType property
 func (m *DeviceManagementAutopilotPolicyStatusDetail) GetPolicyType()(*DeviceManagementAutopilotPolicyType) {
     if m == nil {
         return nil
@@ -191,7 +191,7 @@ func (m *DeviceManagementAutopilotPolicyStatusDetail) Serialize(writer i878a80d2
     }
     return nil
 }
-// SetComplianceStatus sets the complianceStatus property value. The policy compliance status. Possible values are: unknown, compliant, installed, notCompliant, notInstalled, error.
+// SetComplianceStatus sets the complianceStatus property value. The complianceStatus property
 func (m *DeviceManagementAutopilotPolicyStatusDetail) SetComplianceStatus(value *DeviceManagementAutopilotPolicyComplianceStatus)() {
     if m != nil {
         m.complianceStatus = value
@@ -215,7 +215,7 @@ func (m *DeviceManagementAutopilotPolicyStatusDetail) SetLastReportedDateTime(va
         m.lastReportedDateTime = value
     }
 }
-// SetPolicyType sets the policyType property value. The type of policy. Possible values are: unknown, application, appModel, configurationPolicy.
+// SetPolicyType sets the policyType property value. The policyType property
 func (m *DeviceManagementAutopilotPolicyStatusDetail) SetPolicyType(value *DeviceManagementAutopilotPolicyType)() {
     if m != nil {
         m.policyType = value

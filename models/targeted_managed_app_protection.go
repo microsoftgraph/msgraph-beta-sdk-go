@@ -7,13 +7,13 @@ import (
 // TargetedManagedAppProtection 
 type TargetedManagedAppProtection struct {
     ManagedAppProtection
-    // Public Apps selection: group or individual. Possible values are: selectedPublicApps, allCoreMicrosoftApps, allMicrosoftApps, allApps.
+    // Indicates a collection of apps to target which can be one of several pre-defined lists of apps or a manually selected list of apps
     appGroupType *TargetedManagedAppGroupType
     // Navigation property to list of inclusion and exclusion groups to which the policy is deployed.
     assignments []TargetedManagedAppPolicyAssignmentable
     // Indicates if the policy is deployed to any inclusion groups or not.
     isAssigned *bool
-    // The intended app management levels for this policy. Possible values are: unspecified, unmanaged, mdm, androidEnterprise.
+    // Management levels for apps
     targetedAppManagementLevels *AppManagementLevel
 }
 // NewTargetedManagedAppProtection instantiates a new TargetedManagedAppProtection and sets the default values.
@@ -21,6 +21,8 @@ func NewTargetedManagedAppProtection()(*TargetedManagedAppProtection) {
     m := &TargetedManagedAppProtection{
         ManagedAppProtection: *NewManagedAppProtection(),
     }
+    typeValue := "#microsoft.graph.targetedManagedAppProtection";
+    m.SetType(&typeValue);
     return m
 }
 // CreateTargetedManagedAppProtectionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -48,7 +50,7 @@ func CreateTargetedManagedAppProtectionFromDiscriminatorValue(parseNode i878a80d
     }
     return NewTargetedManagedAppProtection(), nil
 }
-// GetAppGroupType gets the appGroupType property value. Public Apps selection: group or individual. Possible values are: selectedPublicApps, allCoreMicrosoftApps, allMicrosoftApps, allApps.
+// GetAppGroupType gets the appGroupType property value. Indicates a collection of apps to target which can be one of several pre-defined lists of apps or a manually selected list of apps
 func (m *TargetedManagedAppProtection) GetAppGroupType()(*TargetedManagedAppGroupType) {
     if m == nil {
         return nil
@@ -121,7 +123,7 @@ func (m *TargetedManagedAppProtection) GetIsAssigned()(*bool) {
         return m.isAssigned
     }
 }
-// GetTargetedAppManagementLevels gets the targetedAppManagementLevels property value. The intended app management levels for this policy. Possible values are: unspecified, unmanaged, mdm, androidEnterprise.
+// GetTargetedAppManagementLevels gets the targetedAppManagementLevels property value. Management levels for apps
 func (m *TargetedManagedAppProtection) GetTargetedAppManagementLevels()(*AppManagementLevel) {
     if m == nil {
         return nil
@@ -167,7 +169,7 @@ func (m *TargetedManagedAppProtection) Serialize(writer i878a80d2330e89d26896388
     }
     return nil
 }
-// SetAppGroupType sets the appGroupType property value. Public Apps selection: group or individual. Possible values are: selectedPublicApps, allCoreMicrosoftApps, allMicrosoftApps, allApps.
+// SetAppGroupType sets the appGroupType property value. Indicates a collection of apps to target which can be one of several pre-defined lists of apps or a manually selected list of apps
 func (m *TargetedManagedAppProtection) SetAppGroupType(value *TargetedManagedAppGroupType)() {
     if m != nil {
         m.appGroupType = value
@@ -185,7 +187,7 @@ func (m *TargetedManagedAppProtection) SetIsAssigned(value *bool)() {
         m.isAssigned = value
     }
 }
-// SetTargetedAppManagementLevels sets the targetedAppManagementLevels property value. The intended app management levels for this policy. Possible values are: unspecified, unmanaged, mdm, androidEnterprise.
+// SetTargetedAppManagementLevels sets the targetedAppManagementLevels property value. Management levels for apps
 func (m *TargetedManagedAppProtection) SetTargetedAppManagementLevels(value *AppManagementLevel)() {
     if m != nil {
         m.targetedAppManagementLevels = value

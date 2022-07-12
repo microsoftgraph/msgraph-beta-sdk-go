@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DeviceEnrollmentConfiguration the Base Class of Device Enrollment Configuration
+// DeviceEnrollmentConfiguration 
 type DeviceEnrollmentConfiguration struct {
     Entity
     // The list of group assignments for the device configuration profile
@@ -14,7 +14,7 @@ type DeviceEnrollmentConfiguration struct {
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The description of the device enrollment configuration
     description *string
-    // Support for Enrollment Configuration Type
+    // Describes the TemplateFamily for the Template entity
     deviceEnrollmentConfigurationType *DeviceEnrollmentConfigurationType
     // The display name of the device enrollment configuration
     displayName *string
@@ -27,11 +27,13 @@ type DeviceEnrollmentConfiguration struct {
     // The version of the device enrollment configuration
     version *int32
 }
-// NewDeviceEnrollmentConfiguration instantiates a new deviceEnrollmentConfiguration and sets the default values.
+// NewDeviceEnrollmentConfiguration instantiates a new DeviceEnrollmentConfiguration and sets the default values.
 func NewDeviceEnrollmentConfiguration()(*DeviceEnrollmentConfiguration) {
     m := &DeviceEnrollmentConfiguration{
         Entity: *NewEntity(),
     }
+    typeValue := "#microsoft.graph.deviceEnrollmentConfiguration";
+    m.SetType(&typeValue);
     return m
 }
 // CreateDeviceEnrollmentConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -93,7 +95,7 @@ func (m *DeviceEnrollmentConfiguration) GetDescription()(*string) {
         return m.description
     }
 }
-// GetDeviceEnrollmentConfigurationType gets the deviceEnrollmentConfigurationType property value. Support for Enrollment Configuration Type
+// GetDeviceEnrollmentConfigurationType gets the deviceEnrollmentConfigurationType property value. Describes the TemplateFamily for the Template entity
 func (m *DeviceEnrollmentConfiguration) GetDeviceEnrollmentConfigurationType()(*DeviceEnrollmentConfigurationType) {
     if m == nil {
         return nil
@@ -329,7 +331,7 @@ func (m *DeviceEnrollmentConfiguration) SetDescription(value *string)() {
         m.description = value
     }
 }
-// SetDeviceEnrollmentConfigurationType sets the deviceEnrollmentConfigurationType property value. Support for Enrollment Configuration Type
+// SetDeviceEnrollmentConfigurationType sets the deviceEnrollmentConfigurationType property value. Describes the TemplateFamily for the Template entity
 func (m *DeviceEnrollmentConfiguration) SetDeviceEnrollmentConfigurationType(value *DeviceEnrollmentConfigurationType)() {
     if m != nil {
         m.deviceEnrollmentConfigurationType = value

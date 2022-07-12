@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DeviceManagementTemplate entity that represents a defined collection of device settings
+// DeviceManagementTemplate 
 type DeviceManagementTemplate struct {
     Entity
     // Collection of setting categories within the template
@@ -20,24 +20,26 @@ type DeviceManagementTemplate struct {
     isDeprecated *bool
     // Collection of templates this template can migrate to
     migratableTo []DeviceManagementTemplateable
-    // The template's platform. Possible values are: android, androidForWork, iOS, macOS, windowsPhone81, windows81AndLater, windows10AndLater, androidWorkProfile, windows10XProfile, all.
+    // Supported platform types for policies.
     platformType *PolicyPlatformType
     // When the template was published
     publishedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Collection of all settings this template has
     settings []DeviceManagementSettingInstanceable
-    // The template's subtype. Possible values are: none, firewall, diskEncryption, attackSurfaceReduction, endpointDetectionReponse, accountProtection, antivirus, firewallSharedAppList, firewallSharedIpList, firewallSharedPortlist.
+    // Template subtype
     templateSubtype *DeviceManagementTemplateSubtype
-    // The template's type. Possible values are: securityBaseline, specializedDevices, advancedThreatProtectionSecurityBaseline, deviceConfiguration, custom, securityTemplate, microsoftEdgeSecurityBaseline, microsoftOffice365ProPlusSecurityBaseline, deviceCompliance, deviceConfigurationForOffice365, cloudPC, firewallSharedSettings.
+    // Template type
     templateType *DeviceManagementTemplateType
     // The template's version information
     versionInfo *string
 }
-// NewDeviceManagementTemplate instantiates a new deviceManagementTemplate and sets the default values.
+// NewDeviceManagementTemplate instantiates a new DeviceManagementTemplate and sets the default values.
 func NewDeviceManagementTemplate()(*DeviceManagementTemplate) {
     m := &DeviceManagementTemplate{
         Entity: *NewEntity(),
     }
+    typeValue := "#microsoft.graph.deviceManagementTemplate";
+    m.SetType(&typeValue);
     return m
 }
 // CreateDeviceManagementTemplateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -248,7 +250,7 @@ func (m *DeviceManagementTemplate) GetMigratableTo()([]DeviceManagementTemplatea
         return m.migratableTo
     }
 }
-// GetPlatformType gets the platformType property value. The template's platform. Possible values are: android, androidForWork, iOS, macOS, windowsPhone81, windows81AndLater, windows10AndLater, androidWorkProfile, windows10XProfile, all.
+// GetPlatformType gets the platformType property value. Supported platform types for policies.
 func (m *DeviceManagementTemplate) GetPlatformType()(*PolicyPlatformType) {
     if m == nil {
         return nil
@@ -272,7 +274,7 @@ func (m *DeviceManagementTemplate) GetSettings()([]DeviceManagementSettingInstan
         return m.settings
     }
 }
-// GetTemplateSubtype gets the templateSubtype property value. The template's subtype. Possible values are: none, firewall, diskEncryption, attackSurfaceReduction, endpointDetectionReponse, accountProtection, antivirus, firewallSharedAppList, firewallSharedIpList, firewallSharedPortlist.
+// GetTemplateSubtype gets the templateSubtype property value. Template subtype
 func (m *DeviceManagementTemplate) GetTemplateSubtype()(*DeviceManagementTemplateSubtype) {
     if m == nil {
         return nil
@@ -280,7 +282,7 @@ func (m *DeviceManagementTemplate) GetTemplateSubtype()(*DeviceManagementTemplat
         return m.templateSubtype
     }
 }
-// GetTemplateType gets the templateType property value. The template's type. Possible values are: securityBaseline, specializedDevices, advancedThreatProtectionSecurityBaseline, deviceConfiguration, custom, securityTemplate, microsoftEdgeSecurityBaseline, microsoftOffice365ProPlusSecurityBaseline, deviceCompliance, deviceConfigurationForOffice365, cloudPC, firewallSharedSettings.
+// GetTemplateType gets the templateType property value. Template type
 func (m *DeviceManagementTemplate) GetTemplateType()(*DeviceManagementTemplateType) {
     if m == nil {
         return nil
@@ -427,7 +429,7 @@ func (m *DeviceManagementTemplate) SetMigratableTo(value []DeviceManagementTempl
         m.migratableTo = value
     }
 }
-// SetPlatformType sets the platformType property value. The template's platform. Possible values are: android, androidForWork, iOS, macOS, windowsPhone81, windows81AndLater, windows10AndLater, androidWorkProfile, windows10XProfile, all.
+// SetPlatformType sets the platformType property value. Supported platform types for policies.
 func (m *DeviceManagementTemplate) SetPlatformType(value *PolicyPlatformType)() {
     if m != nil {
         m.platformType = value
@@ -445,13 +447,13 @@ func (m *DeviceManagementTemplate) SetSettings(value []DeviceManagementSettingIn
         m.settings = value
     }
 }
-// SetTemplateSubtype sets the templateSubtype property value. The template's subtype. Possible values are: none, firewall, diskEncryption, attackSurfaceReduction, endpointDetectionReponse, accountProtection, antivirus, firewallSharedAppList, firewallSharedIpList, firewallSharedPortlist.
+// SetTemplateSubtype sets the templateSubtype property value. Template subtype
 func (m *DeviceManagementTemplate) SetTemplateSubtype(value *DeviceManagementTemplateSubtype)() {
     if m != nil {
         m.templateSubtype = value
     }
 }
-// SetTemplateType sets the templateType property value. The template's type. Possible values are: securityBaseline, specializedDevices, advancedThreatProtectionSecurityBaseline, deviceConfiguration, custom, securityTemplate, microsoftEdgeSecurityBaseline, microsoftOffice365ProPlusSecurityBaseline, deviceCompliance, deviceConfigurationForOffice365, cloudPC, firewallSharedSettings.
+// SetTemplateType sets the templateType property value. Template type
 func (m *DeviceManagementTemplate) SetTemplateType(value *DeviceManagementTemplateType)() {
     if m != nil {
         m.templateType = value

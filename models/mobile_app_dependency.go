@@ -7,7 +7,7 @@ import (
 // MobileAppDependency 
 type MobileAppDependency struct {
     MobileAppRelationship
-    // The type of dependency relationship between the parent and child apps. Possible values are: detect, autoInstall.
+    // Indicates the dependency type associated with a relationship between two mobile apps.
     dependencyType *MobileAppDependencyType
     // The total number of apps that directly or indirectly depend on the parent app.
     dependentAppCount *int32
@@ -25,7 +25,7 @@ func NewMobileAppDependency()(*MobileAppDependency) {
 func CreateMobileAppDependencyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewMobileAppDependency(), nil
 }
-// GetDependencyType gets the dependencyType property value. The type of dependency relationship between the parent and child apps. Possible values are: detect, autoInstall.
+// GetDependencyType gets the dependencyType property value. Indicates the dependency type associated with a relationship between two mobile apps.
 func (m *MobileAppDependency) GetDependencyType()(*MobileAppDependencyType) {
     if m == nil {
         return nil
@@ -111,7 +111,7 @@ func (m *MobileAppDependency) Serialize(writer i878a80d2330e89d26896388a3f487eef
     }
     return nil
 }
-// SetDependencyType sets the dependencyType property value. The type of dependency relationship between the parent and child apps. Possible values are: detect, autoInstall.
+// SetDependencyType sets the dependencyType property value. Indicates the dependency type associated with a relationship between two mobile apps.
 func (m *MobileAppDependency) SetDependencyType(value *MobileAppDependencyType)() {
     if m != nil {
         m.dependencyType = value

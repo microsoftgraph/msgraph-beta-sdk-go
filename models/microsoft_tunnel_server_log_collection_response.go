@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// MicrosoftTunnelServerLogCollectionResponse entity that stores the server log collection status.
+// MicrosoftTunnelServerLogCollectionResponse 
 type MicrosoftTunnelServerLogCollectionResponse struct {
     Entity
     // The end time of the logs collected
@@ -20,10 +20,10 @@ type MicrosoftTunnelServerLogCollectionResponse struct {
     sizeInBytes *int64
     // The start time of the logs collected
     startDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The status of log collection. Possible values are: pending, completed, failed.
+    // Enum type that represent the status of log collection.
     status *MicrosoftTunnelLogCollectionStatus
 }
-// NewMicrosoftTunnelServerLogCollectionResponse instantiates a new microsoftTunnelServerLogCollectionResponse and sets the default values.
+// NewMicrosoftTunnelServerLogCollectionResponse instantiates a new MicrosoftTunnelServerLogCollectionResponse and sets the default values.
 func NewMicrosoftTunnelServerLogCollectionResponse()(*MicrosoftTunnelServerLogCollectionResponse) {
     m := &MicrosoftTunnelServerLogCollectionResponse{
         Entity: *NewEntity(),
@@ -157,7 +157,7 @@ func (m *MicrosoftTunnelServerLogCollectionResponse) GetStartDateTime()(*i336074
         return m.startDateTime
     }
 }
-// GetStatus gets the status property value. The status of log collection. Possible values are: pending, completed, failed.
+// GetStatus gets the status property value. Enum type that represent the status of log collection.
 func (m *MicrosoftTunnelServerLogCollectionResponse) GetStatus()(*MicrosoftTunnelLogCollectionStatus) {
     if m == nil {
         return nil
@@ -252,7 +252,7 @@ func (m *MicrosoftTunnelServerLogCollectionResponse) SetStartDateTime(value *i33
         m.startDateTime = value
     }
 }
-// SetStatus sets the status property value. The status of log collection. Possible values are: pending, completed, failed.
+// SetStatus sets the status property value. Enum type that represent the status of log collection.
 func (m *MicrosoftTunnelServerLogCollectionResponse) SetStatus(value *MicrosoftTunnelLogCollectionStatus)() {
     if m != nil {
         m.status = value

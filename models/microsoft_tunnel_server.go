@@ -16,7 +16,7 @@ type MicrosoftTunnelServer struct {
     lastCheckinDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The digest of the current server image running on this server
     serverImageDigest *string
-    // The MicrosoftTunnelServer's health status. Possible values are: unknown, healthy, unhealthy, warning, offline, upgradeInProgress, upgradeFailed.
+    // Enum of possible MicrosoftTunnelServer health status types
     tunnelServerHealthStatus *MicrosoftTunnelServerHealthStatus
 }
 // NewMicrosoftTunnelServer instantiates a new microsoftTunnelServer and sets the default values.
@@ -117,7 +117,7 @@ func (m *MicrosoftTunnelServer) GetServerImageDigest()(*string) {
         return m.serverImageDigest
     }
 }
-// GetTunnelServerHealthStatus gets the tunnelServerHealthStatus property value. The MicrosoftTunnelServer's health status. Possible values are: unknown, healthy, unhealthy, warning, offline, upgradeInProgress, upgradeFailed.
+// GetTunnelServerHealthStatus gets the tunnelServerHealthStatus property value. Enum of possible MicrosoftTunnelServer health status types
 func (m *MicrosoftTunnelServer) GetTunnelServerHealthStatus()(*MicrosoftTunnelServerHealthStatus) {
     if m == nil {
         return nil
@@ -188,7 +188,7 @@ func (m *MicrosoftTunnelServer) SetServerImageDigest(value *string)() {
         m.serverImageDigest = value
     }
 }
-// SetTunnelServerHealthStatus sets the tunnelServerHealthStatus property value. The MicrosoftTunnelServer's health status. Possible values are: unknown, healthy, unhealthy, warning, offline, upgradeInProgress, upgradeFailed.
+// SetTunnelServerHealthStatus sets the tunnelServerHealthStatus property value. Enum of possible MicrosoftTunnelServer health status types
 func (m *MicrosoftTunnelServer) SetTunnelServerHealthStatus(value *MicrosoftTunnelServerHealthStatus)() {
     if m != nil {
         m.tunnelServerHealthStatus = value

@@ -13,9 +13,9 @@ type IosScepCertificateProfile struct {
     customSubjectAlternativeNames []CustomSubjectAlternativeNameable
     // Extended Key Usage (EKU) settings. This collection can contain a maximum of 500 elements.
     extendedKeyUsages []ExtendedKeyUsageable
-    // SCEP Key Size. Possible values are: size1024, size2048, size4096.
+    // Key Size Options.
     keySize *KeySize
-    // SCEP Key Usage. Possible values are: keyEncipherment, digitalSignature.
+    // Key Usage Options.
     keyUsage *KeyUsages
     // Certificate state for devices. This collection can contain a maximum of 2147483647 elements.
     managedDeviceCertificateStates []ManagedDeviceCertificateStateable
@@ -184,7 +184,7 @@ func (m *IosScepCertificateProfile) GetFieldDeserializers()(map[string]func(i878
     }
     return res
 }
-// GetKeySize gets the keySize property value. SCEP Key Size. Possible values are: size1024, size2048, size4096.
+// GetKeySize gets the keySize property value. Key Size Options.
 func (m *IosScepCertificateProfile) GetKeySize()(*KeySize) {
     if m == nil {
         return nil
@@ -192,7 +192,7 @@ func (m *IosScepCertificateProfile) GetKeySize()(*KeySize) {
         return m.keySize
     }
 }
-// GetKeyUsage gets the keyUsage property value. SCEP Key Usage. Possible values are: keyEncipherment, digitalSignature.
+// GetKeyUsage gets the keyUsage property value. Key Usage Options.
 func (m *IosScepCertificateProfile) GetKeyUsage()(*KeyUsages) {
     if m == nil {
         return nil
@@ -341,13 +341,13 @@ func (m *IosScepCertificateProfile) SetExtendedKeyUsages(value []ExtendedKeyUsag
         m.extendedKeyUsages = value
     }
 }
-// SetKeySize sets the keySize property value. SCEP Key Size. Possible values are: size1024, size2048, size4096.
+// SetKeySize sets the keySize property value. Key Size Options.
 func (m *IosScepCertificateProfile) SetKeySize(value *KeySize)() {
     if m != nil {
         m.keySize = value
     }
 }
-// SetKeyUsage sets the keyUsage property value. SCEP Key Usage. Possible values are: keyEncipherment, digitalSignature.
+// SetKeyUsage sets the keyUsage property value. Key Usage Options.
 func (m *IosScepCertificateProfile) SetKeyUsage(value *KeyUsages)() {
     if m != nil {
         m.keyUsage = value

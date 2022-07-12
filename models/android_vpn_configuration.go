@@ -7,11 +7,11 @@ import (
 // AndroidVpnConfiguration 
 type AndroidVpnConfiguration struct {
     DeviceConfiguration
-    // Authentication method. Possible values are: certificate, usernameAndPassword, sharedSecret, derivedCredential, azureAD.
+    // VPN Authentication Method.
     authenticationMethod *VpnAuthenticationMethod
     // Connection name displayed to the user.
     connectionName *string
-    // Connection type. Possible values are: ciscoAnyConnect, pulseSecure, f5EdgeClient, dellSonicWallMobileConnect, checkPointCapsuleVpn, citrix, microsoftTunnel, netMotionMobility, microsoftProtect.
+    // Android VPN connection type.
     connectionType *AndroidVpnConnectionType
     // Custom data when connection type is set to Citrix. This collection can contain a maximum of 25 elements.
     customData []KeyValueable
@@ -39,7 +39,7 @@ func NewAndroidVpnConfiguration()(*AndroidVpnConfiguration) {
 func CreateAndroidVpnConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAndroidVpnConfiguration(), nil
 }
-// GetAuthenticationMethod gets the authenticationMethod property value. Authentication method. Possible values are: certificate, usernameAndPassword, sharedSecret, derivedCredential, azureAD.
+// GetAuthenticationMethod gets the authenticationMethod property value. VPN Authentication Method.
 func (m *AndroidVpnConfiguration) GetAuthenticationMethod()(*VpnAuthenticationMethod) {
     if m == nil {
         return nil
@@ -55,7 +55,7 @@ func (m *AndroidVpnConfiguration) GetConnectionName()(*string) {
         return m.connectionName
     }
 }
-// GetConnectionType gets the connectionType property value. Connection type. Possible values are: ciscoAnyConnect, pulseSecure, f5EdgeClient, dellSonicWallMobileConnect, checkPointCapsuleVpn, citrix, microsoftTunnel, netMotionMobility, microsoftProtect.
+// GetConnectionType gets the connectionType property value. Android VPN connection type.
 func (m *AndroidVpnConfiguration) GetConnectionType()(*AndroidVpnConnectionType) {
     if m == nil {
         return nil
@@ -318,7 +318,7 @@ func (m *AndroidVpnConfiguration) Serialize(writer i878a80d2330e89d26896388a3f48
     }
     return nil
 }
-// SetAuthenticationMethod sets the authenticationMethod property value. Authentication method. Possible values are: certificate, usernameAndPassword, sharedSecret, derivedCredential, azureAD.
+// SetAuthenticationMethod sets the authenticationMethod property value. VPN Authentication Method.
 func (m *AndroidVpnConfiguration) SetAuthenticationMethod(value *VpnAuthenticationMethod)() {
     if m != nil {
         m.authenticationMethod = value
@@ -330,7 +330,7 @@ func (m *AndroidVpnConfiguration) SetConnectionName(value *string)() {
         m.connectionName = value
     }
 }
-// SetConnectionType sets the connectionType property value. Connection type. Possible values are: ciscoAnyConnect, pulseSecure, f5EdgeClient, dellSonicWallMobileConnect, checkPointCapsuleVpn, citrix, microsoftTunnel, netMotionMobility, microsoftProtect.
+// SetConnectionType sets the connectionType property value. Android VPN connection type.
 func (m *AndroidVpnConfiguration) SetConnectionType(value *AndroidVpnConnectionType)() {
     if m != nil {
         m.connectionType = value

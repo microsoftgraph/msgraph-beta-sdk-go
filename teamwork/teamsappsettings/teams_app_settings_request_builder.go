@@ -22,7 +22,7 @@ type TeamsAppSettingsRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// TeamsAppSettingsRequestBuilderGetQueryParameters get teamsAppSettings from teamwork
+// TeamsAppSettingsRequestBuilderGetQueryParameters represents tenant-wide settings for all Teams apps in the tenant.
 type TeamsAppSettingsRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -80,11 +80,11 @@ func (m *TeamsAppSettingsRequestBuilder) CreateDeleteRequestInformationWithReque
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation get teamsAppSettings from teamwork
+// CreateGetRequestInformation represents tenant-wide settings for all Teams apps in the tenant.
 func (m *TeamsAppSettingsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration get teamsAppSettings from teamwork
+// CreateGetRequestInformationWithRequestConfiguration represents tenant-wide settings for all Teams apps in the tenant.
 func (m *TeamsAppSettingsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *TeamsAppSettingsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -137,11 +137,11 @@ func (m *TeamsAppSettingsRequestBuilder) DeleteWithRequestConfigurationAndRespon
     }
     return nil
 }
-// Get get teamsAppSettings from teamwork
+// Get represents tenant-wide settings for all Teams apps in the tenant.
 func (m *TeamsAppSettingsRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamsAppSettingsable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler get teamsAppSettings from teamwork
+// GetWithRequestConfigurationAndResponseHandler represents tenant-wide settings for all Teams apps in the tenant.
 func (m *TeamsAppSettingsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *TeamsAppSettingsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamsAppSettingsable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

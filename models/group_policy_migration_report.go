@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// GroupPolicyMigrationReport the Group Policy migration report.
+// GroupPolicyMigrationReport 
 type GroupPolicyMigrationReport struct {
     Entity
     // The date and time at which the GroupPolicyMigrationReport was created.
@@ -22,7 +22,7 @@ type GroupPolicyMigrationReport struct {
     groupPolicySettingMappings []GroupPolicySettingMappingable
     // The date and time at which the GroupPolicyMigrationReport was last modified.
     lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The Intune coverage for the associated Group Policy Object file. Possible values are: none, partial, complete, error, notApplicable.
+    // Indicates if the Group Policy Object file is covered and ready for Intune migration.
     migrationReadiness *GroupPolicyMigrationReadiness
     // The distinguished name of the OU.
     ouDistinguishedName *string
@@ -37,7 +37,7 @@ type GroupPolicyMigrationReport struct {
     // A list of unsupported group policy extensions inside the Group Policy Object.
     unsupportedGroupPolicyExtensions []UnsupportedGroupPolicyExtensionable
 }
-// NewGroupPolicyMigrationReport instantiates a new groupPolicyMigrationReport and sets the default values.
+// NewGroupPolicyMigrationReport instantiates a new GroupPolicyMigrationReport and sets the default values.
 func NewGroupPolicyMigrationReport()(*GroupPolicyMigrationReport) {
     m := &GroupPolicyMigrationReport{
         Entity: *NewEntity(),
@@ -257,7 +257,7 @@ func (m *GroupPolicyMigrationReport) GetLastModifiedDateTime()(*i336074805fc8539
         return m.lastModifiedDateTime
     }
 }
-// GetMigrationReadiness gets the migrationReadiness property value. The Intune coverage for the associated Group Policy Object file. Possible values are: none, partial, complete, error, notApplicable.
+// GetMigrationReadiness gets the migrationReadiness property value. Indicates if the Group Policy Object file is covered and ready for Intune migration.
 func (m *GroupPolicyMigrationReport) GetMigrationReadiness()(*GroupPolicyMigrationReadiness) {
     if m == nil {
         return nil
@@ -456,7 +456,7 @@ func (m *GroupPolicyMigrationReport) SetLastModifiedDateTime(value *i336074805fc
         m.lastModifiedDateTime = value
     }
 }
-// SetMigrationReadiness sets the migrationReadiness property value. The Intune coverage for the associated Group Policy Object file. Possible values are: none, partial, complete, error, notApplicable.
+// SetMigrationReadiness sets the migrationReadiness property value. Indicates if the Group Policy Object file is covered and ready for Intune migration.
 func (m *GroupPolicyMigrationReport) SetMigrationReadiness(value *GroupPolicyMigrationReadiness)() {
     if m != nil {
         m.migrationReadiness = value

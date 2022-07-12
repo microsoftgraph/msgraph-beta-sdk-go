@@ -10,11 +10,11 @@ type WindowsUpdateForBusinessConfiguration struct {
     DeviceConfiguration
     // Allow eligible Windows 10 devices to upgrade to the latest version of Windows 11.
     allowWindows11Upgrade *bool
-    // Automatic update mode. Possible values are: userDefined, notifyDownload, autoInstallAtMaintenanceTime, autoInstallAndRebootAtMaintenanceTime, autoInstallAndRebootAtScheduledTime, autoInstallAndRebootWithoutEndUserControl, windowsDefault.
+    // Possible values for automatic update mode.
     automaticUpdateMode *AutomaticUpdateMode
-    // Specify the method by which the auto-restart required notification is dismissed. Possible values are: notConfigured, automatic, user.
+    // Auto restart required notification dismissal method
     autoRestartNotificationDismissal *AutoRestartNotificationDismissalMethod
-    // Determines which branch devices will receive their updates from. Possible values are: userDefined, all, businessReadyOnly, windowsInsiderBuildFast, windowsInsiderBuildSlow, windowsInsiderBuildRelease.
+    // Which branch devices will receive their updates from
     businessReadyUpdatesOnly *WindowsUpdateType
     // Number of days before feature updates are installed automatically with valid range from 0 to 30 days
     deadlineForFeatureUpdatesInDays *int32
@@ -22,7 +22,7 @@ type WindowsUpdateForBusinessConfiguration struct {
     deadlineForQualityUpdatesInDays *int32
     // Number of days after deadline  until restarts occur automatically with valid range from 0 to 7 days
     deadlineGracePeriodInDays *int32
-    // Delivery Optimization Mode. Possible values are: userDefined, httpOnly, httpWithPeeringNat, httpWithPeeringPrivateGroup, httpWithInternetPeering, simpleDownload, bypassMode.
+    // Delivery optimization mode for peer distribution
     deliveryOptimizationMode *WindowsDeliveryOptimizationMode
     // Windows update for business configuration device states. This collection can contain a maximum of 500 elements.
     deviceUpdateStates []WindowsUpdateStateable
@@ -54,7 +54,7 @@ type WindowsUpdateForBusinessConfiguration struct {
     microsoftUpdateServiceAllowed *bool
     // Specifies if the device should wait until deadline for rebooting outside of active hours
     postponeRebootUntilAfterDeadline *bool
-    // The pre-release features. Possible values are: userDefined, settingsOnly, settingsAndExperimentations, notAllowed.
+    // Possible values for pre-release features.
     prereleaseFeatures *PrereleaseFeatures
     // Defer Quality Updates by these many days
     qualityUpdatesDeferralPeriodInDays *int32
@@ -74,13 +74,13 @@ type WindowsUpdateForBusinessConfiguration struct {
     scheduleRestartWarningInHours *int32
     // Set to skip all check before restart: Battery level = 40%, User presence, Display Needed, Presentation mode, Full screen mode, phone call state, game mode etc.
     skipChecksBeforeRestart *bool
-    // Specifies what Windows Update notifications users see. Possible values are: notConfigured, defaultNotifications, restartWarningsOnly, disableAllNotifications.
+    // Windows Update Notification Display Options
     updateNotificationLevel *WindowsUpdateNotificationDisplayOption
     // Scheduled the update installation on the weeks of the month. Possible values are: userDefined, firstWeek, secondWeek, thirdWeek, fourthWeek, everyWeek.
     updateWeeks *WindowsUpdateForBusinessUpdateWeeks
-    // Specifies whether to enable end user’s access to pause software updates. Possible values are: notConfigured, enabled, disabled.
+    // Possible values of a property
     userPauseAccess *Enablement
-    // Specifies whether to disable user’s access to scan Windows Update. Possible values are: notConfigured, enabled, disabled.
+    // Possible values of a property
     userWindowsUpdateScanAccess *Enablement
 }
 // NewWindowsUpdateForBusinessConfiguration instantiates a new WindowsUpdateForBusinessConfiguration and sets the default values.
@@ -102,7 +102,7 @@ func (m *WindowsUpdateForBusinessConfiguration) GetAllowWindows11Upgrade()(*bool
         return m.allowWindows11Upgrade
     }
 }
-// GetAutomaticUpdateMode gets the automaticUpdateMode property value. Automatic update mode. Possible values are: userDefined, notifyDownload, autoInstallAtMaintenanceTime, autoInstallAndRebootAtMaintenanceTime, autoInstallAndRebootAtScheduledTime, autoInstallAndRebootWithoutEndUserControl, windowsDefault.
+// GetAutomaticUpdateMode gets the automaticUpdateMode property value. Possible values for automatic update mode.
 func (m *WindowsUpdateForBusinessConfiguration) GetAutomaticUpdateMode()(*AutomaticUpdateMode) {
     if m == nil {
         return nil
@@ -110,7 +110,7 @@ func (m *WindowsUpdateForBusinessConfiguration) GetAutomaticUpdateMode()(*Automa
         return m.automaticUpdateMode
     }
 }
-// GetAutoRestartNotificationDismissal gets the autoRestartNotificationDismissal property value. Specify the method by which the auto-restart required notification is dismissed. Possible values are: notConfigured, automatic, user.
+// GetAutoRestartNotificationDismissal gets the autoRestartNotificationDismissal property value. Auto restart required notification dismissal method
 func (m *WindowsUpdateForBusinessConfiguration) GetAutoRestartNotificationDismissal()(*AutoRestartNotificationDismissalMethod) {
     if m == nil {
         return nil
@@ -118,7 +118,7 @@ func (m *WindowsUpdateForBusinessConfiguration) GetAutoRestartNotificationDismis
         return m.autoRestartNotificationDismissal
     }
 }
-// GetBusinessReadyUpdatesOnly gets the businessReadyUpdatesOnly property value. Determines which branch devices will receive their updates from. Possible values are: userDefined, all, businessReadyOnly, windowsInsiderBuildFast, windowsInsiderBuildSlow, windowsInsiderBuildRelease.
+// GetBusinessReadyUpdatesOnly gets the businessReadyUpdatesOnly property value. Which branch devices will receive their updates from
 func (m *WindowsUpdateForBusinessConfiguration) GetBusinessReadyUpdatesOnly()(*WindowsUpdateType) {
     if m == nil {
         return nil
@@ -150,7 +150,7 @@ func (m *WindowsUpdateForBusinessConfiguration) GetDeadlineGracePeriodInDays()(*
         return m.deadlineGracePeriodInDays
     }
 }
-// GetDeliveryOptimizationMode gets the deliveryOptimizationMode property value. Delivery Optimization Mode. Possible values are: userDefined, httpOnly, httpWithPeeringNat, httpWithPeeringPrivateGroup, httpWithInternetPeering, simpleDownload, bypassMode.
+// GetDeliveryOptimizationMode gets the deliveryOptimizationMode property value. Delivery optimization mode for peer distribution
 func (m *WindowsUpdateForBusinessConfiguration) GetDeliveryOptimizationMode()(*WindowsDeliveryOptimizationMode) {
     if m == nil {
         return nil
@@ -657,7 +657,7 @@ func (m *WindowsUpdateForBusinessConfiguration) GetPostponeRebootUntilAfterDeadl
         return m.postponeRebootUntilAfterDeadline
     }
 }
-// GetPrereleaseFeatures gets the prereleaseFeatures property value. The pre-release features. Possible values are: userDefined, settingsOnly, settingsAndExperimentations, notAllowed.
+// GetPrereleaseFeatures gets the prereleaseFeatures property value. Possible values for pre-release features.
 func (m *WindowsUpdateForBusinessConfiguration) GetPrereleaseFeatures()(*PrereleaseFeatures) {
     if m == nil {
         return nil
@@ -737,7 +737,7 @@ func (m *WindowsUpdateForBusinessConfiguration) GetSkipChecksBeforeRestart()(*bo
         return m.skipChecksBeforeRestart
     }
 }
-// GetUpdateNotificationLevel gets the updateNotificationLevel property value. Specifies what Windows Update notifications users see. Possible values are: notConfigured, defaultNotifications, restartWarningsOnly, disableAllNotifications.
+// GetUpdateNotificationLevel gets the updateNotificationLevel property value. Windows Update Notification Display Options
 func (m *WindowsUpdateForBusinessConfiguration) GetUpdateNotificationLevel()(*WindowsUpdateNotificationDisplayOption) {
     if m == nil {
         return nil
@@ -753,7 +753,7 @@ func (m *WindowsUpdateForBusinessConfiguration) GetUpdateWeeks()(*WindowsUpdateF
         return m.updateWeeks
     }
 }
-// GetUserPauseAccess gets the userPauseAccess property value. Specifies whether to enable end user’s access to pause software updates. Possible values are: notConfigured, enabled, disabled.
+// GetUserPauseAccess gets the userPauseAccess property value. Possible values of a property
 func (m *WindowsUpdateForBusinessConfiguration) GetUserPauseAccess()(*Enablement) {
     if m == nil {
         return nil
@@ -761,7 +761,7 @@ func (m *WindowsUpdateForBusinessConfiguration) GetUserPauseAccess()(*Enablement
         return m.userPauseAccess
     }
 }
-// GetUserWindowsUpdateScanAccess gets the userWindowsUpdateScanAccess property value. Specifies whether to disable user’s access to scan Windows Update. Possible values are: notConfigured, enabled, disabled.
+// GetUserWindowsUpdateScanAccess gets the userWindowsUpdateScanAccess property value. Possible values of a property
 func (m *WindowsUpdateForBusinessConfiguration) GetUserWindowsUpdateScanAccess()(*Enablement) {
     if m == nil {
         return nil
@@ -1018,19 +1018,19 @@ func (m *WindowsUpdateForBusinessConfiguration) SetAllowWindows11Upgrade(value *
         m.allowWindows11Upgrade = value
     }
 }
-// SetAutomaticUpdateMode sets the automaticUpdateMode property value. Automatic update mode. Possible values are: userDefined, notifyDownload, autoInstallAtMaintenanceTime, autoInstallAndRebootAtMaintenanceTime, autoInstallAndRebootAtScheduledTime, autoInstallAndRebootWithoutEndUserControl, windowsDefault.
+// SetAutomaticUpdateMode sets the automaticUpdateMode property value. Possible values for automatic update mode.
 func (m *WindowsUpdateForBusinessConfiguration) SetAutomaticUpdateMode(value *AutomaticUpdateMode)() {
     if m != nil {
         m.automaticUpdateMode = value
     }
 }
-// SetAutoRestartNotificationDismissal sets the autoRestartNotificationDismissal property value. Specify the method by which the auto-restart required notification is dismissed. Possible values are: notConfigured, automatic, user.
+// SetAutoRestartNotificationDismissal sets the autoRestartNotificationDismissal property value. Auto restart required notification dismissal method
 func (m *WindowsUpdateForBusinessConfiguration) SetAutoRestartNotificationDismissal(value *AutoRestartNotificationDismissalMethod)() {
     if m != nil {
         m.autoRestartNotificationDismissal = value
     }
 }
-// SetBusinessReadyUpdatesOnly sets the businessReadyUpdatesOnly property value. Determines which branch devices will receive their updates from. Possible values are: userDefined, all, businessReadyOnly, windowsInsiderBuildFast, windowsInsiderBuildSlow, windowsInsiderBuildRelease.
+// SetBusinessReadyUpdatesOnly sets the businessReadyUpdatesOnly property value. Which branch devices will receive their updates from
 func (m *WindowsUpdateForBusinessConfiguration) SetBusinessReadyUpdatesOnly(value *WindowsUpdateType)() {
     if m != nil {
         m.businessReadyUpdatesOnly = value
@@ -1054,7 +1054,7 @@ func (m *WindowsUpdateForBusinessConfiguration) SetDeadlineGracePeriodInDays(val
         m.deadlineGracePeriodInDays = value
     }
 }
-// SetDeliveryOptimizationMode sets the deliveryOptimizationMode property value. Delivery Optimization Mode. Possible values are: userDefined, httpOnly, httpWithPeeringNat, httpWithPeeringPrivateGroup, httpWithInternetPeering, simpleDownload, bypassMode.
+// SetDeliveryOptimizationMode sets the deliveryOptimizationMode property value. Delivery optimization mode for peer distribution
 func (m *WindowsUpdateForBusinessConfiguration) SetDeliveryOptimizationMode(value *WindowsDeliveryOptimizationMode)() {
     if m != nil {
         m.deliveryOptimizationMode = value
@@ -1150,7 +1150,7 @@ func (m *WindowsUpdateForBusinessConfiguration) SetPostponeRebootUntilAfterDeadl
         m.postponeRebootUntilAfterDeadline = value
     }
 }
-// SetPrereleaseFeatures sets the prereleaseFeatures property value. The pre-release features. Possible values are: userDefined, settingsOnly, settingsAndExperimentations, notAllowed.
+// SetPrereleaseFeatures sets the prereleaseFeatures property value. Possible values for pre-release features.
 func (m *WindowsUpdateForBusinessConfiguration) SetPrereleaseFeatures(value *PrereleaseFeatures)() {
     if m != nil {
         m.prereleaseFeatures = value
@@ -1210,7 +1210,7 @@ func (m *WindowsUpdateForBusinessConfiguration) SetSkipChecksBeforeRestart(value
         m.skipChecksBeforeRestart = value
     }
 }
-// SetUpdateNotificationLevel sets the updateNotificationLevel property value. Specifies what Windows Update notifications users see. Possible values are: notConfigured, defaultNotifications, restartWarningsOnly, disableAllNotifications.
+// SetUpdateNotificationLevel sets the updateNotificationLevel property value. Windows Update Notification Display Options
 func (m *WindowsUpdateForBusinessConfiguration) SetUpdateNotificationLevel(value *WindowsUpdateNotificationDisplayOption)() {
     if m != nil {
         m.updateNotificationLevel = value
@@ -1222,13 +1222,13 @@ func (m *WindowsUpdateForBusinessConfiguration) SetUpdateWeeks(value *WindowsUpd
         m.updateWeeks = value
     }
 }
-// SetUserPauseAccess sets the userPauseAccess property value. Specifies whether to enable end user’s access to pause software updates. Possible values are: notConfigured, enabled, disabled.
+// SetUserPauseAccess sets the userPauseAccess property value. Possible values of a property
 func (m *WindowsUpdateForBusinessConfiguration) SetUserPauseAccess(value *Enablement)() {
     if m != nil {
         m.userPauseAccess = value
     }
 }
-// SetUserWindowsUpdateScanAccess sets the userWindowsUpdateScanAccess property value. Specifies whether to disable user’s access to scan Windows Update. Possible values are: notConfigured, enabled, disabled.
+// SetUserWindowsUpdateScanAccess sets the userWindowsUpdateScanAccess property value. Possible values of a property
 func (m *WindowsUpdateForBusinessConfiguration) SetUserWindowsUpdateScanAccess(value *Enablement)() {
     if m != nil {
         m.userWindowsUpdateScanAccess = value

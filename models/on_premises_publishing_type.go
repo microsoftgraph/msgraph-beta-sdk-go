@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of onPremisesPublishingProfile entities.
+// Provides operations to manage the collection of activityStatistics entities.
 type OnPremisesPublishingType int
 
 const (

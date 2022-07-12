@@ -6,7 +6,7 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
-// DataSource provides operations to manage the compliance singleton.
+// DataSource provides operations to manage the collection of accessReview entities.
 type DataSource struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
     // The user who created the dataSource.
@@ -23,6 +23,8 @@ func NewDataSource()(*DataSource) {
     m := &DataSource{
         Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),
     }
+    typeValue := "#microsoft.graph.ediscovery.dataSource";
+    m.SetType(&typeValue);
     return m
 }
 // CreateDataSourceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

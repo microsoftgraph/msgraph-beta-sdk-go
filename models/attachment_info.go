@@ -8,13 +8,13 @@ import (
 type AttachmentInfo struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
-    // The attachmentType property
+    // The type of the attachment. The possible values are: file, item, reference. Required.
     attachmentType *AttachmentType
-    // The contentType property
+    // The nature of the data in the attachment. Optional.
     contentType *string
-    // The name property
+    // The display name of the attachment. This can be a descriptive string and does not have to be the actual file name. Required.
     name *string
-    // The size property
+    // The length of the attachment in bytes. Required.
     size *int64
 }
 // NewAttachmentInfo instantiates a new attachmentInfo and sets the default values.
@@ -36,7 +36,7 @@ func (m *AttachmentInfo) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// GetAttachmentType gets the attachmentType property value. The attachmentType property
+// GetAttachmentType gets the attachmentType property value. The type of the attachment. The possible values are: file, item, reference. Required.
 func (m *AttachmentInfo) GetAttachmentType()(*AttachmentType) {
     if m == nil {
         return nil
@@ -44,7 +44,7 @@ func (m *AttachmentInfo) GetAttachmentType()(*AttachmentType) {
         return m.attachmentType
     }
 }
-// GetContentType gets the contentType property value. The contentType property
+// GetContentType gets the contentType property value. The nature of the data in the attachment. Optional.
 func (m *AttachmentInfo) GetContentType()(*string) {
     if m == nil {
         return nil
@@ -97,7 +97,7 @@ func (m *AttachmentInfo) GetFieldDeserializers()(map[string]func(i878a80d2330e89
     }
     return res
 }
-// GetName gets the name property value. The name property
+// GetName gets the name property value. The display name of the attachment. This can be a descriptive string and does not have to be the actual file name. Required.
 func (m *AttachmentInfo) GetName()(*string) {
     if m == nil {
         return nil
@@ -105,7 +105,7 @@ func (m *AttachmentInfo) GetName()(*string) {
         return m.name
     }
 }
-// GetSize gets the size property value. The size property
+// GetSize gets the size property value. The length of the attachment in bytes. Required.
 func (m *AttachmentInfo) GetSize()(*int64) {
     if m == nil {
         return nil
@@ -154,25 +154,25 @@ func (m *AttachmentInfo) SetAdditionalData(value map[string]interface{})() {
         m.additionalData = value
     }
 }
-// SetAttachmentType sets the attachmentType property value. The attachmentType property
+// SetAttachmentType sets the attachmentType property value. The type of the attachment. The possible values are: file, item, reference. Required.
 func (m *AttachmentInfo) SetAttachmentType(value *AttachmentType)() {
     if m != nil {
         m.attachmentType = value
     }
 }
-// SetContentType sets the contentType property value. The contentType property
+// SetContentType sets the contentType property value. The nature of the data in the attachment. Optional.
 func (m *AttachmentInfo) SetContentType(value *string)() {
     if m != nil {
         m.contentType = value
     }
 }
-// SetName sets the name property value. The name property
+// SetName sets the name property value. The display name of the attachment. This can be a descriptive string and does not have to be the actual file name. Required.
 func (m *AttachmentInfo) SetName(value *string)() {
     if m != nil {
         m.name = value
     }
 }
-// SetSize sets the size property value. The size property
+// SetSize sets the size property value. The length of the attachment in bytes. Required.
 func (m *AttachmentInfo) SetSize(value *int64)() {
     if m != nil {
         m.size = value

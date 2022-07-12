@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// WindowsUpdateCatalogItem windows update catalog item entity
+// WindowsUpdateCatalogItem 
 type WindowsUpdateCatalogItem struct {
     Entity
     // The display name for the catalog item.
@@ -15,11 +15,13 @@ type WindowsUpdateCatalogItem struct {
     // The date the catalog item was released
     releaseDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
 }
-// NewWindowsUpdateCatalogItem instantiates a new windowsUpdateCatalogItem and sets the default values.
+// NewWindowsUpdateCatalogItem instantiates a new WindowsUpdateCatalogItem and sets the default values.
 func NewWindowsUpdateCatalogItem()(*WindowsUpdateCatalogItem) {
     m := &WindowsUpdateCatalogItem{
         Entity: *NewEntity(),
     }
+    typeValue := "#microsoft.graph.windowsUpdateCatalogItem";
+    m.SetType(&typeValue);
     return m
 }
 // CreateWindowsUpdateCatalogItemFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

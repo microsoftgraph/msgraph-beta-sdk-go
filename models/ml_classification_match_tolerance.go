@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to call the classifyText method.
+// Provides operations to manage the collection of accessReview entities.
 type MlClassificationMatchTolerance int
 
 const (

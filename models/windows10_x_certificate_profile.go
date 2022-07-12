@@ -13,6 +13,8 @@ func NewWindows10XCertificateProfile()(*Windows10XCertificateProfile) {
     m := &Windows10XCertificateProfile{
         DeviceManagementResourceAccessProfileBase: *NewDeviceManagementResourceAccessProfileBase(),
     }
+    typeValue := "#microsoft.graph.windows10XCertificateProfile";
+    m.SetType(&typeValue);
     return m
 }
 // CreateWindows10XCertificateProfileFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

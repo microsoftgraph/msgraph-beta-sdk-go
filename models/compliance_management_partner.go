@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ComplianceManagementPartner compliance management partner for all platforms
+// ComplianceManagementPartner 
 type ComplianceManagementPartner struct {
     Entity
     // User groups which enroll Android devices through partner.
@@ -24,14 +24,14 @@ type ComplianceManagementPartner struct {
     macOsEnrollmentAssignments []ComplianceManagementPartnerAssignmentable
     // Partner onboarded for Mac devices.
     macOsOnboarded *bool
-    // Partner state of this tenant. Possible values are: unknown, unavailable, enabled, terminated, rejected, unresponsive.
+    // Partner state of this tenant.
     partnerState *DeviceManagementPartnerTenantState
     // User groups which enroll Windows devices through partner.
     windowsEnrollmentAssignments []ComplianceManagementPartnerAssignmentable
     // Partner onboarded for Windows devices.
     windowsOnboarded *bool
 }
-// NewComplianceManagementPartner instantiates a new complianceManagementPartner and sets the default values.
+// NewComplianceManagementPartner instantiates a new ComplianceManagementPartner and sets the default values.
 func NewComplianceManagementPartner()(*ComplianceManagementPartner) {
     m := &ComplianceManagementPartner{
         Entity: *NewEntity(),
@@ -237,7 +237,7 @@ func (m *ComplianceManagementPartner) GetMacOsOnboarded()(*bool) {
         return m.macOsOnboarded
     }
 }
-// GetPartnerState gets the partnerState property value. Partner state of this tenant. Possible values are: unknown, unavailable, enabled, terminated, rejected, unresponsive.
+// GetPartnerState gets the partnerState property value. Partner state of this tenant.
 func (m *ComplianceManagementPartner) GetPartnerState()(*DeviceManagementPartnerTenantState) {
     if m == nil {
         return nil
@@ -400,7 +400,7 @@ func (m *ComplianceManagementPartner) SetMacOsOnboarded(value *bool)() {
         m.macOsOnboarded = value
     }
 }
-// SetPartnerState sets the partnerState property value. Partner state of this tenant. Possible values are: unknown, unavailable, enabled, terminated, rejected, unresponsive.
+// SetPartnerState sets the partnerState property value. Partner state of this tenant.
 func (m *ComplianceManagementPartner) SetPartnerState(value *DeviceManagementPartnerTenantState)() {
     if m != nil {
         m.partnerState = value

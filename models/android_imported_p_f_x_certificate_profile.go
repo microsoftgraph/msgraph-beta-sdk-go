@@ -7,7 +7,7 @@ import (
 // AndroidImportedPFXCertificateProfile 
 type AndroidImportedPFXCertificateProfile struct {
     AndroidCertificateProfileBase
-    // Intended Purpose of the Certificate Profile - which could be Unassigned, SmimeEncryption, SmimeSigning etc. Possible values are: unassigned, smimeEncryption, smimeSigning, vpn, wifi.
+    // PFX Import Options.
     intendedPurpose *IntendedPurpose
     // Certificate state for devices. This collection can contain a maximum of 2147483647 elements.
     managedDeviceCertificateStates []ManagedDeviceCertificateStateable
@@ -52,7 +52,7 @@ func (m *AndroidImportedPFXCertificateProfile) GetFieldDeserializers()(map[strin
     }
     return res
 }
-// GetIntendedPurpose gets the intendedPurpose property value. Intended Purpose of the Certificate Profile - which could be Unassigned, SmimeEncryption, SmimeSigning etc. Possible values are: unassigned, smimeEncryption, smimeSigning, vpn, wifi.
+// GetIntendedPurpose gets the intendedPurpose property value. PFX Import Options.
 func (m *AndroidImportedPFXCertificateProfile) GetIntendedPurpose()(*IntendedPurpose) {
     if m == nil {
         return nil
@@ -93,7 +93,7 @@ func (m *AndroidImportedPFXCertificateProfile) Serialize(writer i878a80d2330e89d
     }
     return nil
 }
-// SetIntendedPurpose sets the intendedPurpose property value. Intended Purpose of the Certificate Profile - which could be Unassigned, SmimeEncryption, SmimeSigning etc. Possible values are: unassigned, smimeEncryption, smimeSigning, vpn, wifi.
+// SetIntendedPurpose sets the intendedPurpose property value. PFX Import Options.
 func (m *AndroidImportedPFXCertificateProfile) SetIntendedPurpose(value *IntendedPurpose)() {
     if m != nil {
         m.intendedPurpose = value

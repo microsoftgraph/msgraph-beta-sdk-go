@@ -9,7 +9,7 @@ import (
 type SynchronizationStatus struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
-    // High-level status code of the synchronization job. Possible values are: NotConfigured, NotRun, Active, Paused, Quarantine.
+    // The code property
     code *SynchronizationStatusCode
     // Number of consecutive times this job failed.
     countSuccessiveCompleteFailures *int64
@@ -53,7 +53,7 @@ func (m *SynchronizationStatus) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// GetCode gets the code property value. High-level status code of the synchronization job. Possible values are: NotConfigured, NotRun, Active, Paused, Quarantine.
+// GetCode gets the code property value. The code property
 func (m *SynchronizationStatus) GetCode()(*SynchronizationStatusCode) {
     if m == nil {
         return nil
@@ -379,7 +379,7 @@ func (m *SynchronizationStatus) SetAdditionalData(value map[string]interface{})(
         m.additionalData = value
     }
 }
-// SetCode sets the code property value. High-level status code of the synchronization job. Possible values are: NotConfigured, NotRun, Active, Paused, Quarantine.
+// SetCode sets the code property value. The code property
 func (m *SynchronizationStatus) SetCode(value *SynchronizationStatusCode)() {
     if m != nil {
         m.code = value

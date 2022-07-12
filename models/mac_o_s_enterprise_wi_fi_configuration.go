@@ -11,7 +11,7 @@ type MacOSEnterpriseWiFiConfiguration struct {
     authenticationMethod *WiFiAuthenticationMethod
     // EAP-FAST Configuration Option when EAP-FAST is the selected EAP Type. Possible values are: noProtectedAccessCredential, useProtectedAccessCredential, useProtectedAccessCredentialAndProvision, useProtectedAccessCredentialAndProvisionAnonymously.
     eapFastConfiguration *EapFastConfiguration
-    // Extensible Authentication Protocol (EAP). Indicates the type of EAP protocol set on the Wi-Fi endpoint (router). Possible values are: eapTls, leap, eapSim, eapTtls, peap, eapFast, teap.
+    // Extensible Authentication Protocol (EAP) configuration types.
     eapType *EapType
     // Identity Certificate for client authentication when EAP Type is configured to EAP-TLS, EAP-TTLS (with Certificate Authentication), or PEAP (with Certificate Authentication).
     identityCertificateForClientAuthentication MacOSCertificateProfileBaseable
@@ -53,7 +53,7 @@ func (m *MacOSEnterpriseWiFiConfiguration) GetEapFastConfiguration()(*EapFastCon
         return m.eapFastConfiguration
     }
 }
-// GetEapType gets the eapType property value. Extensible Authentication Protocol (EAP). Indicates the type of EAP protocol set on the Wi-Fi endpoint (router). Possible values are: eapTls, leap, eapSim, eapTtls, peap, eapFast, teap.
+// GetEapType gets the eapType property value. Extensible Authentication Protocol (EAP) configuration types.
 func (m *MacOSEnterpriseWiFiConfiguration) GetEapType()(*EapType) {
     if m == nil {
         return nil
@@ -294,7 +294,7 @@ func (m *MacOSEnterpriseWiFiConfiguration) SetEapFastConfiguration(value *EapFas
         m.eapFastConfiguration = value
     }
 }
-// SetEapType sets the eapType property value. Extensible Authentication Protocol (EAP). Indicates the type of EAP protocol set on the Wi-Fi endpoint (router). Possible values are: eapTls, leap, eapSim, eapTtls, peap, eapFast, teap.
+// SetEapType sets the eapType property value. Extensible Authentication Protocol (EAP) configuration types.
 func (m *MacOSEnterpriseWiFiConfiguration) SetEapType(value *EapType)() {
     if m != nil {
         m.eapType = value

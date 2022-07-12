@@ -7,11 +7,11 @@ import (
 // DeviceEnrollmentWindowsHelloForBusinessConfiguration 
 type DeviceEnrollmentWindowsHelloForBusinessConfiguration struct {
     DeviceEnrollmentConfiguration
-    // Controls the ability to use the anti-spoofing features for facial recognition on devices which support it. If set to disabled, anti-spoofing features are not allowed. If set to Not Configured, the user can choose whether they want to use anti-spoofing. Possible values are: notConfigured, enabled, disabled.
+    // Possible values of a property
     enhancedBiometricsState *Enablement
     // Controls the period of time (in days) that a PIN can be used before the system requires the user to change it. This must be set between 0 and 730, inclusive. If set to 0, the user's PIN will never expire
     pinExpirationInDays *int32
-    // Controls the ability to use lowercase letters in the Windows Hello for Business PIN.  Allowed permits the use of lowercase letter(s), whereas Required ensures they are present. If set to Not Allowed, lowercase letters will not be permitted. Possible values are: allowed, required, disallowed.
+    // Windows Hello for Business pin usage options
     pinLowercaseCharactersUsage *WindowsHelloForBusinessPinUsage
     // Controls the maximum number of characters allowed for the Windows Hello for Business PIN. This value must be between 4 and 127, inclusive. This value must be greater than or equal to the value set for the minimum PIN.
     pinMaximumLength *int32
@@ -19,17 +19,17 @@ type DeviceEnrollmentWindowsHelloForBusinessConfiguration struct {
     pinMinimumLength *int32
     // Controls the ability to prevent users from using past PINs. This must be set between 0 and 50, inclusive, and the current PIN of the user is included in that count. If set to 0, previous PINs are not stored. PIN history is not preserved through a PIN reset.
     pinPreviousBlockCount *int32
-    // Controls the ability to use special characters in the Windows Hello for Business PIN.  Allowed permits the use of special character(s), whereas Required ensures they are present. If set to Not Allowed, special character(s) will not be permitted. Possible values are: allowed, required, disallowed.
+    // Windows Hello for Business pin usage options
     pinSpecialCharactersUsage *WindowsHelloForBusinessPinUsage
-    // Controls the ability to use uppercase letters in the Windows Hello for Business PIN.  Allowed permits the use of uppercase letter(s), whereas Required ensures they are present. If set to Not Allowed, uppercase letters will not be permitted. Possible values are: allowed, required, disallowed.
+    // Windows Hello for Business pin usage options
     pinUppercaseCharactersUsage *WindowsHelloForBusinessPinUsage
     // Controls the use of Remote Windows Hello for Business. Remote Windows Hello for Business provides the ability for a portable, registered device to be usable as a companion for desktop authentication. The desktop must be Azure AD joined and the companion device must have a Windows Hello for Business PIN.
     remotePassportEnabled *bool
     // Controls whether to require a Trusted Platform Module (TPM) for provisioning Windows Hello for Business. A TPM provides an additional security benefit in that data stored on it cannot be used on other devices. If set to False, all devices can provision Windows Hello for Business even if there is not a usable TPM.
     securityDeviceRequired *bool
-    // Security key for Sign In provides the capacity for remotely turning ON/OFF Windows Hello Sercurity Keyl Not configured will honor configurations done on the clinet. Possible values are: notConfigured, enabled, disabled.
+    // Possible values of a property
     securityKeyForSignIn *Enablement
-    // Controls whether to allow the device to be configured for Windows Hello for Business. If set to disabled, the user cannot provision Windows Hello for Business except on Azure Active Directory joined mobile phones if otherwise required. If set to Not Configured, Intune will not override client defaults. Possible values are: notConfigured, enabled, disabled.
+    // Possible values of a property
     state *Enablement
     // Controls the use of biometric gestures, such as face and fingerprint, as an alternative to the Windows Hello for Business PIN.  If set to False, biometric gestures are not allowed. Users must still configure a PIN as a backup in case of failures.
     unlockWithBiometricsEnabled *bool
@@ -45,7 +45,7 @@ func NewDeviceEnrollmentWindowsHelloForBusinessConfiguration()(*DeviceEnrollment
 func CreateDeviceEnrollmentWindowsHelloForBusinessConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDeviceEnrollmentWindowsHelloForBusinessConfiguration(), nil
 }
-// GetEnhancedBiometricsState gets the enhancedBiometricsState property value. Controls the ability to use the anti-spoofing features for facial recognition on devices which support it. If set to disabled, anti-spoofing features are not allowed. If set to Not Configured, the user can choose whether they want to use anti-spoofing. Possible values are: notConfigured, enabled, disabled.
+// GetEnhancedBiometricsState gets the enhancedBiometricsState property value. Possible values of a property
 func (m *DeviceEnrollmentWindowsHelloForBusinessConfiguration) GetEnhancedBiometricsState()(*Enablement) {
     if m == nil {
         return nil
@@ -196,7 +196,7 @@ func (m *DeviceEnrollmentWindowsHelloForBusinessConfiguration) GetPinExpirationI
         return m.pinExpirationInDays
     }
 }
-// GetPinLowercaseCharactersUsage gets the pinLowercaseCharactersUsage property value. Controls the ability to use lowercase letters in the Windows Hello for Business PIN.  Allowed permits the use of lowercase letter(s), whereas Required ensures they are present. If set to Not Allowed, lowercase letters will not be permitted. Possible values are: allowed, required, disallowed.
+// GetPinLowercaseCharactersUsage gets the pinLowercaseCharactersUsage property value. Windows Hello for Business pin usage options
 func (m *DeviceEnrollmentWindowsHelloForBusinessConfiguration) GetPinLowercaseCharactersUsage()(*WindowsHelloForBusinessPinUsage) {
     if m == nil {
         return nil
@@ -228,7 +228,7 @@ func (m *DeviceEnrollmentWindowsHelloForBusinessConfiguration) GetPinPreviousBlo
         return m.pinPreviousBlockCount
     }
 }
-// GetPinSpecialCharactersUsage gets the pinSpecialCharactersUsage property value. Controls the ability to use special characters in the Windows Hello for Business PIN.  Allowed permits the use of special character(s), whereas Required ensures they are present. If set to Not Allowed, special character(s) will not be permitted. Possible values are: allowed, required, disallowed.
+// GetPinSpecialCharactersUsage gets the pinSpecialCharactersUsage property value. Windows Hello for Business pin usage options
 func (m *DeviceEnrollmentWindowsHelloForBusinessConfiguration) GetPinSpecialCharactersUsage()(*WindowsHelloForBusinessPinUsage) {
     if m == nil {
         return nil
@@ -236,7 +236,7 @@ func (m *DeviceEnrollmentWindowsHelloForBusinessConfiguration) GetPinSpecialChar
         return m.pinSpecialCharactersUsage
     }
 }
-// GetPinUppercaseCharactersUsage gets the pinUppercaseCharactersUsage property value. Controls the ability to use uppercase letters in the Windows Hello for Business PIN.  Allowed permits the use of uppercase letter(s), whereas Required ensures they are present. If set to Not Allowed, uppercase letters will not be permitted. Possible values are: allowed, required, disallowed.
+// GetPinUppercaseCharactersUsage gets the pinUppercaseCharactersUsage property value. Windows Hello for Business pin usage options
 func (m *DeviceEnrollmentWindowsHelloForBusinessConfiguration) GetPinUppercaseCharactersUsage()(*WindowsHelloForBusinessPinUsage) {
     if m == nil {
         return nil
@@ -260,7 +260,7 @@ func (m *DeviceEnrollmentWindowsHelloForBusinessConfiguration) GetSecurityDevice
         return m.securityDeviceRequired
     }
 }
-// GetSecurityKeyForSignIn gets the securityKeyForSignIn property value. Security key for Sign In provides the capacity for remotely turning ON/OFF Windows Hello Sercurity Keyl Not configured will honor configurations done on the clinet. Possible values are: notConfigured, enabled, disabled.
+// GetSecurityKeyForSignIn gets the securityKeyForSignIn property value. Possible values of a property
 func (m *DeviceEnrollmentWindowsHelloForBusinessConfiguration) GetSecurityKeyForSignIn()(*Enablement) {
     if m == nil {
         return nil
@@ -268,7 +268,7 @@ func (m *DeviceEnrollmentWindowsHelloForBusinessConfiguration) GetSecurityKeyFor
         return m.securityKeyForSignIn
     }
 }
-// GetState gets the state property value. Controls whether to allow the device to be configured for Windows Hello for Business. If set to disabled, the user cannot provision Windows Hello for Business except on Azure Active Directory joined mobile phones if otherwise required. If set to Not Configured, Intune will not override client defaults. Possible values are: notConfigured, enabled, disabled.
+// GetState gets the state property value. Possible values of a property
 func (m *DeviceEnrollmentWindowsHelloForBusinessConfiguration) GetState()(*Enablement) {
     if m == nil {
         return nil
@@ -376,7 +376,7 @@ func (m *DeviceEnrollmentWindowsHelloForBusinessConfiguration) Serialize(writer 
     }
     return nil
 }
-// SetEnhancedBiometricsState sets the enhancedBiometricsState property value. Controls the ability to use the anti-spoofing features for facial recognition on devices which support it. If set to disabled, anti-spoofing features are not allowed. If set to Not Configured, the user can choose whether they want to use anti-spoofing. Possible values are: notConfigured, enabled, disabled.
+// SetEnhancedBiometricsState sets the enhancedBiometricsState property value. Possible values of a property
 func (m *DeviceEnrollmentWindowsHelloForBusinessConfiguration) SetEnhancedBiometricsState(value *Enablement)() {
     if m != nil {
         m.enhancedBiometricsState = value
@@ -388,7 +388,7 @@ func (m *DeviceEnrollmentWindowsHelloForBusinessConfiguration) SetPinExpirationI
         m.pinExpirationInDays = value
     }
 }
-// SetPinLowercaseCharactersUsage sets the pinLowercaseCharactersUsage property value. Controls the ability to use lowercase letters in the Windows Hello for Business PIN.  Allowed permits the use of lowercase letter(s), whereas Required ensures they are present. If set to Not Allowed, lowercase letters will not be permitted. Possible values are: allowed, required, disallowed.
+// SetPinLowercaseCharactersUsage sets the pinLowercaseCharactersUsage property value. Windows Hello for Business pin usage options
 func (m *DeviceEnrollmentWindowsHelloForBusinessConfiguration) SetPinLowercaseCharactersUsage(value *WindowsHelloForBusinessPinUsage)() {
     if m != nil {
         m.pinLowercaseCharactersUsage = value
@@ -412,13 +412,13 @@ func (m *DeviceEnrollmentWindowsHelloForBusinessConfiguration) SetPinPreviousBlo
         m.pinPreviousBlockCount = value
     }
 }
-// SetPinSpecialCharactersUsage sets the pinSpecialCharactersUsage property value. Controls the ability to use special characters in the Windows Hello for Business PIN.  Allowed permits the use of special character(s), whereas Required ensures they are present. If set to Not Allowed, special character(s) will not be permitted. Possible values are: allowed, required, disallowed.
+// SetPinSpecialCharactersUsage sets the pinSpecialCharactersUsage property value. Windows Hello for Business pin usage options
 func (m *DeviceEnrollmentWindowsHelloForBusinessConfiguration) SetPinSpecialCharactersUsage(value *WindowsHelloForBusinessPinUsage)() {
     if m != nil {
         m.pinSpecialCharactersUsage = value
     }
 }
-// SetPinUppercaseCharactersUsage sets the pinUppercaseCharactersUsage property value. Controls the ability to use uppercase letters in the Windows Hello for Business PIN.  Allowed permits the use of uppercase letter(s), whereas Required ensures they are present. If set to Not Allowed, uppercase letters will not be permitted. Possible values are: allowed, required, disallowed.
+// SetPinUppercaseCharactersUsage sets the pinUppercaseCharactersUsage property value. Windows Hello for Business pin usage options
 func (m *DeviceEnrollmentWindowsHelloForBusinessConfiguration) SetPinUppercaseCharactersUsage(value *WindowsHelloForBusinessPinUsage)() {
     if m != nil {
         m.pinUppercaseCharactersUsage = value
@@ -436,13 +436,13 @@ func (m *DeviceEnrollmentWindowsHelloForBusinessConfiguration) SetSecurityDevice
         m.securityDeviceRequired = value
     }
 }
-// SetSecurityKeyForSignIn sets the securityKeyForSignIn property value. Security key for Sign In provides the capacity for remotely turning ON/OFF Windows Hello Sercurity Keyl Not configured will honor configurations done on the clinet. Possible values are: notConfigured, enabled, disabled.
+// SetSecurityKeyForSignIn sets the securityKeyForSignIn property value. Possible values of a property
 func (m *DeviceEnrollmentWindowsHelloForBusinessConfiguration) SetSecurityKeyForSignIn(value *Enablement)() {
     if m != nil {
         m.securityKeyForSignIn = value
     }
 }
-// SetState sets the state property value. Controls whether to allow the device to be configured for Windows Hello for Business. If set to disabled, the user cannot provision Windows Hello for Business except on Azure Active Directory joined mobile phones if otherwise required. If set to Not Configured, Intune will not override client defaults. Possible values are: notConfigured, enabled, disabled.
+// SetState sets the state property value. Possible values of a property
 func (m *DeviceEnrollmentWindowsHelloForBusinessConfiguration) SetState(value *Enablement)() {
     if m != nil {
         m.state = value

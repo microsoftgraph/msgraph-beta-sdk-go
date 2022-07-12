@@ -5,12 +5,12 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// RemoteActionAudit report of remote actions initiated on the devices belonging to a certain tenant.
+// RemoteActionAudit 
 type RemoteActionAudit struct {
     Entity
-    // The action name. Possible values are: unknown, factoryReset, removeCompanyData, resetPasscode, remoteLock, enableLostMode, disableLostMode, locateDevice, rebootNow, recoverPasscode, cleanWindowsDevice, logoutSharedAppleDeviceActiveUser, quickScan, fullScan, windowsDefenderUpdateSignatures, factoryResetKeepEnrollmentData, updateDeviceAccount, automaticRedeployment, shutDown, rotateBitLockerKeys, rotateFileVaultKey, getFileVaultKey, setDeviceName, activateDeviceEsim.
+    // Remote actions Intune supports.
     action *RemoteAction
-    // Action state. Possible values are: none, pending, canceled, active, done, failed, notSupported.
+    // The actionState property
     actionState *ActionState
     // Intune device name.
     deviceDisplayName *string
@@ -27,7 +27,7 @@ type RemoteActionAudit struct {
     // [deprecated] Please use InitiatedByUserPrincipalName instead.
     userName *string
 }
-// NewRemoteActionAudit instantiates a new remoteActionAudit and sets the default values.
+// NewRemoteActionAudit instantiates a new RemoteActionAudit and sets the default values.
 func NewRemoteActionAudit()(*RemoteActionAudit) {
     m := &RemoteActionAudit{
         Entity: *NewEntity(),
@@ -38,7 +38,7 @@ func NewRemoteActionAudit()(*RemoteActionAudit) {
 func CreateRemoteActionAuditFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewRemoteActionAudit(), nil
 }
-// GetAction gets the action property value. The action name. Possible values are: unknown, factoryReset, removeCompanyData, resetPasscode, remoteLock, enableLostMode, disableLostMode, locateDevice, rebootNow, recoverPasscode, cleanWindowsDevice, logoutSharedAppleDeviceActiveUser, quickScan, fullScan, windowsDefenderUpdateSignatures, factoryResetKeepEnrollmentData, updateDeviceAccount, automaticRedeployment, shutDown, rotateBitLockerKeys, rotateFileVaultKey, getFileVaultKey, setDeviceName, activateDeviceEsim.
+// GetAction gets the action property value. Remote actions Intune supports.
 func (m *RemoteActionAudit) GetAction()(*RemoteAction) {
     if m == nil {
         return nil
@@ -46,7 +46,7 @@ func (m *RemoteActionAudit) GetAction()(*RemoteAction) {
         return m.action
     }
 }
-// GetActionState gets the actionState property value. Action state. Possible values are: none, pending, canceled, active, done, failed, notSupported.
+// GetActionState gets the actionState property value. The actionState property
 func (m *RemoteActionAudit) GetActionState()(*ActionState) {
     if m == nil {
         return nil
@@ -269,13 +269,13 @@ func (m *RemoteActionAudit) Serialize(writer i878a80d2330e89d26896388a3f487eef27
     }
     return nil
 }
-// SetAction sets the action property value. The action name. Possible values are: unknown, factoryReset, removeCompanyData, resetPasscode, remoteLock, enableLostMode, disableLostMode, locateDevice, rebootNow, recoverPasscode, cleanWindowsDevice, logoutSharedAppleDeviceActiveUser, quickScan, fullScan, windowsDefenderUpdateSignatures, factoryResetKeepEnrollmentData, updateDeviceAccount, automaticRedeployment, shutDown, rotateBitLockerKeys, rotateFileVaultKey, getFileVaultKey, setDeviceName, activateDeviceEsim.
+// SetAction sets the action property value. Remote actions Intune supports.
 func (m *RemoteActionAudit) SetAction(value *RemoteAction)() {
     if m != nil {
         m.action = value
     }
 }
-// SetActionState sets the actionState property value. Action state. Possible values are: none, pending, canceled, active, done, failed, notSupported.
+// SetActionState sets the actionState property value. The actionState property
 func (m *RemoteActionAudit) SetActionState(value *ActionState)() {
     if m != nil {
         m.actionState = value

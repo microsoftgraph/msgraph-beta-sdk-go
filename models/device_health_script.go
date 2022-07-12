@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DeviceHealthScript intune will provide customer the ability to run their Powershell Health scripts (remediation + detection) on the enrolled windows 10 Azure Active Directory joined devices.
+// DeviceHealthScript 
 type DeviceHealthScript struct {
     Entity
     // The list of group assignments for the device health script
@@ -40,14 +40,14 @@ type DeviceHealthScript struct {
     roleScopeTagIds []string
     // Indicate whether PowerShell script(s) should run as 32-bit
     runAs32Bit *bool
-    // Indicates the type of execution context. Possible values are: system, user.
+    // Indicates the type of execution context the app runs in.
     runAsAccount *RunAsAccountType
     // High level run summary for device health script.
     runSummary DeviceHealthScriptRunSummaryable
     // Version of the device health script
     version *string
 }
-// NewDeviceHealthScript instantiates a new deviceHealthScript and sets the default values.
+// NewDeviceHealthScript instantiates a new DeviceHealthScript and sets the default values.
 func NewDeviceHealthScript()(*DeviceHealthScript) {
     m := &DeviceHealthScript{
         Entity: *NewEntity(),
@@ -401,7 +401,7 @@ func (m *DeviceHealthScript) GetRunAs32Bit()(*bool) {
         return m.runAs32Bit
     }
 }
-// GetRunAsAccount gets the runAsAccount property value. Indicates the type of execution context. Possible values are: system, user.
+// GetRunAsAccount gets the runAsAccount property value. Indicates the type of execution context the app runs in.
 func (m *DeviceHealthScript) GetRunAsAccount()(*RunAsAccountType) {
     if m == nil {
         return nil
@@ -660,7 +660,7 @@ func (m *DeviceHealthScript) SetRunAs32Bit(value *bool)() {
         m.runAs32Bit = value
     }
 }
-// SetRunAsAccount sets the runAsAccount property value. Indicates the type of execution context. Possible values are: system, user.
+// SetRunAsAccount sets the runAsAccount property value. Indicates the type of execution context the app runs in.
 func (m *DeviceHealthScript) SetRunAsAccount(value *RunAsAccountType)() {
     if m != nil {
         m.runAsAccount = value

@@ -5,19 +5,19 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DeviceManagementDomainJoinConnector a Domain Join Connector is a connector that is responsible to allocate (and delete) machine account blobs
+// DeviceManagementDomainJoinConnector 
 type DeviceManagementDomainJoinConnector struct {
     Entity
     // The connector display name.
     displayName *string
     // Last time connector contacted Intune.
     lastConnectionDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The connector state. Possible values are: active, error, inactive.
+    // The ODJ request states.
     state *DeviceManagementDomainJoinConnectorState
     // The version of the connector.
     version *string
 }
-// NewDeviceManagementDomainJoinConnector instantiates a new deviceManagementDomainJoinConnector and sets the default values.
+// NewDeviceManagementDomainJoinConnector instantiates a new DeviceManagementDomainJoinConnector and sets the default values.
 func NewDeviceManagementDomainJoinConnector()(*DeviceManagementDomainJoinConnector) {
     m := &DeviceManagementDomainJoinConnector{
         Entity: *NewEntity(),
@@ -89,7 +89,7 @@ func (m *DeviceManagementDomainJoinConnector) GetLastConnectionDateTime()(*i3360
         return m.lastConnectionDateTime
     }
 }
-// GetState gets the state property value. The connector state. Possible values are: active, error, inactive.
+// GetState gets the state property value. The ODJ request states.
 func (m *DeviceManagementDomainJoinConnector) GetState()(*DeviceManagementDomainJoinConnectorState) {
     if m == nil {
         return nil
@@ -150,7 +150,7 @@ func (m *DeviceManagementDomainJoinConnector) SetLastConnectionDateTime(value *i
         m.lastConnectionDateTime = value
     }
 }
-// SetState sets the state property value. The connector state. Possible values are: active, error, inactive.
+// SetState sets the state property value. The ODJ request states.
 func (m *DeviceManagementDomainJoinConnector) SetState(value *DeviceManagementDomainJoinConnectorState)() {
     if m != nil {
         m.state = value

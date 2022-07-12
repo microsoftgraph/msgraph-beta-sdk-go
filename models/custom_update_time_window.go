@@ -8,11 +8,11 @@ import (
 type CustomUpdateTimeWindow struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
-    // End day of the time window. Possible values are: sunday, monday, tuesday, wednesday, thursday, friday, saturday.
+    // The endDay property
     endDay *DayOfWeek
     // End time of the time window
     endTime *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.TimeOnly
-    // Start day of the time window. Possible values are: sunday, monday, tuesday, wednesday, thursday, friday, saturday.
+    // The startDay property
     startDay *DayOfWeek
     // Start time of the time window
     startTime *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.TimeOnly
@@ -36,7 +36,7 @@ func (m *CustomUpdateTimeWindow) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// GetEndDay gets the endDay property value. End day of the time window. Possible values are: sunday, monday, tuesday, wednesday, thursday, friday, saturday.
+// GetEndDay gets the endDay property value. The endDay property
 func (m *CustomUpdateTimeWindow) GetEndDay()(*DayOfWeek) {
     if m == nil {
         return nil
@@ -97,7 +97,7 @@ func (m *CustomUpdateTimeWindow) GetFieldDeserializers()(map[string]func(i878a80
     }
     return res
 }
-// GetStartDay gets the startDay property value. Start day of the time window. Possible values are: sunday, monday, tuesday, wednesday, thursday, friday, saturday.
+// GetStartDay gets the startDay property value. The startDay property
 func (m *CustomUpdateTimeWindow) GetStartDay()(*DayOfWeek) {
     if m == nil {
         return nil
@@ -155,7 +155,7 @@ func (m *CustomUpdateTimeWindow) SetAdditionalData(value map[string]interface{})
         m.additionalData = value
     }
 }
-// SetEndDay sets the endDay property value. End day of the time window. Possible values are: sunday, monday, tuesday, wednesday, thursday, friday, saturday.
+// SetEndDay sets the endDay property value. The endDay property
 func (m *CustomUpdateTimeWindow) SetEndDay(value *DayOfWeek)() {
     if m != nil {
         m.endDay = value
@@ -167,7 +167,7 @@ func (m *CustomUpdateTimeWindow) SetEndTime(value *i878a80d2330e89d26896388a3f48
         m.endTime = value
     }
 }
-// SetStartDay sets the startDay property value. Start day of the time window. Possible values are: sunday, monday, tuesday, wednesday, thursday, friday, saturday.
+// SetStartDay sets the startDay property value. The startDay property
 func (m *CustomUpdateTimeWindow) SetStartDay(value *DayOfWeek)() {
     if m != nil {
         m.startDay = value

@@ -12,7 +12,7 @@ type GroupPolicyDefinition struct {
     category GroupPolicyCategoryable
     // The localized full category path for the policy.
     categoryPath *string
-    // Identifies the type of groups the policy can be applied to. Possible values are: user, machine.
+    // Group Policy Definition Class Type.
     classType *GroupPolicyDefinitionClassType
     // The group policy file associated with the definition.
     definitionFile GroupPolicyDefinitionFileable
@@ -32,7 +32,7 @@ type GroupPolicyDefinition struct {
     minUserCspVersion *string
     // Definition of the next version of this definition
     nextVersionDefinition GroupPolicyDefinitionable
-    // Specifies the type of group policy. Possible values are: admxBacked, admxIngested.
+    // Type of Group Policy File or Definition.
     policyType *GroupPolicyType
     // The group policy presentations associated with the definition.
     presentations []GroupPolicyPresentationable
@@ -70,7 +70,7 @@ func (m *GroupPolicyDefinition) GetCategoryPath()(*string) {
         return m.categoryPath
     }
 }
-// GetClassType gets the classType property value. Identifies the type of groups the policy can be applied to. Possible values are: user, machine.
+// GetClassType gets the classType property value. Group Policy Definition Class Type.
 func (m *GroupPolicyDefinition) GetClassType()(*GroupPolicyDefinitionClassType) {
     if m == nil {
         return nil
@@ -329,7 +329,7 @@ func (m *GroupPolicyDefinition) GetNextVersionDefinition()(GroupPolicyDefinition
         return m.nextVersionDefinition
     }
 }
-// GetPolicyType gets the policyType property value. Specifies the type of group policy. Possible values are: admxBacked, admxIngested.
+// GetPolicyType gets the policyType property value. Type of Group Policy File or Definition.
 func (m *GroupPolicyDefinition) GetPolicyType()(*GroupPolicyType) {
     if m == nil {
         return nil
@@ -497,7 +497,7 @@ func (m *GroupPolicyDefinition) SetCategoryPath(value *string)() {
         m.categoryPath = value
     }
 }
-// SetClassType sets the classType property value. Identifies the type of groups the policy can be applied to. Possible values are: user, machine.
+// SetClassType sets the classType property value. Group Policy Definition Class Type.
 func (m *GroupPolicyDefinition) SetClassType(value *GroupPolicyDefinitionClassType)() {
     if m != nil {
         m.classType = value
@@ -557,7 +557,7 @@ func (m *GroupPolicyDefinition) SetNextVersionDefinition(value GroupPolicyDefini
         m.nextVersionDefinition = value
     }
 }
-// SetPolicyType sets the policyType property value. Specifies the type of group policy. Possible values are: admxBacked, admxIngested.
+// SetPolicyType sets the policyType property value. Type of Group Policy File or Definition.
 func (m *GroupPolicyDefinition) SetPolicyType(value *GroupPolicyType)() {
     if m != nil {
         m.policyType = value

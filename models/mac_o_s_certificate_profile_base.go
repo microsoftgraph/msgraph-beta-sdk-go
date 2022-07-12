@@ -4,10 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// MacOSCertificateProfileBase mac OS certificate profile.
+// MacOSCertificateProfileBase 
 type MacOSCertificateProfileBase struct {
     DeviceConfiguration
-    // Scale for the Certificate Validity Period. Possible values are: days, months, years.
+    // Certificate Validity Period Options.
     certificateValidityPeriodScale *CertificateValidityPeriodScale
     // Value for the Certificate Validity Period.
     certificateValidityPeriodValue *int32
@@ -15,7 +15,7 @@ type MacOSCertificateProfileBase struct {
     renewalThresholdPercentage *int32
     // Certificate Subject Alternative Name Type. Possible values are: none, emailAddress, userPrincipalName, customAzureADAttribute, domainNameService, universalResourceIdentifier.
     subjectAlternativeNameType *SubjectAlternativeNameType
-    // Certificate Subject Name Format. Possible values are: commonName, commonNameAsEmail, custom, commonNameIncludingEmail, commonNameAsIMEI, commonNameAsSerialNumber.
+    // Subject Name Format Options for Apple devices.
     subjectNameFormat *AppleSubjectNameFormat
 }
 // NewMacOSCertificateProfileBase instantiates a new macOSCertificateProfileBase and sets the default values.
@@ -23,6 +23,8 @@ func NewMacOSCertificateProfileBase()(*MacOSCertificateProfileBase) {
     m := &MacOSCertificateProfileBase{
         DeviceConfiguration: *NewDeviceConfiguration(),
     }
+    typeValue := "#microsoft.graph.macOSCertificateProfileBase";
+    m.SetType(&typeValue);
     return m
 }
 // CreateMacOSCertificateProfileBaseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -52,7 +54,7 @@ func CreateMacOSCertificateProfileBaseFromDiscriminatorValue(parseNode i878a80d2
     }
     return NewMacOSCertificateProfileBase(), nil
 }
-// GetCertificateValidityPeriodScale gets the certificateValidityPeriodScale property value. Scale for the Certificate Validity Period. Possible values are: days, months, years.
+// GetCertificateValidityPeriodScale gets the certificateValidityPeriodScale property value. Certificate Validity Period Options.
 func (m *MacOSCertificateProfileBase) GetCertificateValidityPeriodScale()(*CertificateValidityPeriodScale) {
     if m == nil {
         return nil
@@ -139,7 +141,7 @@ func (m *MacOSCertificateProfileBase) GetSubjectAlternativeNameType()(*SubjectAl
         return m.subjectAlternativeNameType
     }
 }
-// GetSubjectNameFormat gets the subjectNameFormat property value. Certificate Subject Name Format. Possible values are: commonName, commonNameAsEmail, custom, commonNameIncludingEmail, commonNameAsIMEI, commonNameAsSerialNumber.
+// GetSubjectNameFormat gets the subjectNameFormat property value. Subject Name Format Options for Apple devices.
 func (m *MacOSCertificateProfileBase) GetSubjectNameFormat()(*AppleSubjectNameFormat) {
     if m == nil {
         return nil
@@ -188,7 +190,7 @@ func (m *MacOSCertificateProfileBase) Serialize(writer i878a80d2330e89d26896388a
     }
     return nil
 }
-// SetCertificateValidityPeriodScale sets the certificateValidityPeriodScale property value. Scale for the Certificate Validity Period. Possible values are: days, months, years.
+// SetCertificateValidityPeriodScale sets the certificateValidityPeriodScale property value. Certificate Validity Period Options.
 func (m *MacOSCertificateProfileBase) SetCertificateValidityPeriodScale(value *CertificateValidityPeriodScale)() {
     if m != nil {
         m.certificateValidityPeriodScale = value
@@ -212,7 +214,7 @@ func (m *MacOSCertificateProfileBase) SetSubjectAlternativeNameType(value *Subje
         m.subjectAlternativeNameType = value
     }
 }
-// SetSubjectNameFormat sets the subjectNameFormat property value. Certificate Subject Name Format. Possible values are: commonName, commonNameAsEmail, custom, commonNameIncludingEmail, commonNameAsIMEI, commonNameAsSerialNumber.
+// SetSubjectNameFormat sets the subjectNameFormat property value. Subject Name Format Options for Apple devices.
 func (m *MacOSCertificateProfileBase) SetSubjectNameFormat(value *AppleSubjectNameFormat)() {
     if m != nil {
         m.subjectNameFormat = value

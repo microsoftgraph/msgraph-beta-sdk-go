@@ -23,10 +23,10 @@ type CloudPcReviewStatus struct {
     subscriptionId *string
     // The name of the Azure subscription in which the Cloud PC snapshot is being saved.
     subscriptionName *string
-    // The access level of the end user on the Cloud PC. Possible values are: unrestricted, restricted.
+    // The userAccessLevel property
     userAccessLevel *CloudPcUserAccessLevel
 }
-// NewCloudPcReviewStatus instantiates a new CloudPcReviewStatus and sets the default values.
+// NewCloudPcReviewStatus instantiates a new cloudPcReviewStatus and sets the default values.
 func NewCloudPcReviewStatus()(*CloudPcReviewStatus) {
     m := &CloudPcReviewStatus{
     }
@@ -186,7 +186,7 @@ func (m *CloudPcReviewStatus) GetSubscriptionName()(*string) {
         return m.subscriptionName
     }
 }
-// GetUserAccessLevel gets the userAccessLevel property value. The access level of the end user on the Cloud PC. Possible values are: unrestricted, restricted.
+// GetUserAccessLevel gets the userAccessLevel property value. The userAccessLevel property
 func (m *CloudPcReviewStatus) GetUserAccessLevel()(*CloudPcUserAccessLevel) {
     if m == nil {
         return nil
@@ -301,7 +301,7 @@ func (m *CloudPcReviewStatus) SetSubscriptionName(value *string)() {
         m.subscriptionName = value
     }
 }
-// SetUserAccessLevel sets the userAccessLevel property value. The access level of the end user on the Cloud PC. Possible values are: unrestricted, restricted.
+// SetUserAccessLevel sets the userAccessLevel property value. The userAccessLevel property
 func (m *CloudPcReviewStatus) SetUserAccessLevel(value *CloudPcUserAccessLevel)() {
     if m != nil {
         m.userAccessLevel = value

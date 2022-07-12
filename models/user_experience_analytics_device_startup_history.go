@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// UserExperienceAnalyticsDeviceStartupHistory the user experience analytics device startup history entity contains device boot performance history details.
+// UserExperienceAnalyticsDeviceStartupHistory 
 type UserExperienceAnalyticsDeviceStartupHistory struct {
     Entity
     // The user experience analytics device core boot time in milliseconds.
@@ -28,7 +28,7 @@ type UserExperienceAnalyticsDeviceStartupHistory struct {
     operatingSystemVersion *string
     // The user experience analytics responsive desktop time in milliseconds.
     responsiveDesktopTimeInMs *int32
-    // OS restart category. Possible values are: unknown, restartWithUpdate, restartWithoutUpdate, blueScreen, shutdownWithUpdate, shutdownWithoutUpdate, longPowerButtonPress, bootError, update.
+    // Operating System restart category
     restartCategory *UserExperienceAnalyticsOperatingSystemRestartCategory
     // OS restart fault bucket. The fault bucket is used to find additional information about a system crash.
     restartFaultBucket *string
@@ -41,7 +41,7 @@ type UserExperienceAnalyticsDeviceStartupHistory struct {
     // The user experience analytics device total login time in milliseconds.
     totalLoginTimeInMs *int32
 }
-// NewUserExperienceAnalyticsDeviceStartupHistory instantiates a new userExperienceAnalyticsDeviceStartupHistory and sets the default values.
+// NewUserExperienceAnalyticsDeviceStartupHistory instantiates a new UserExperienceAnalyticsDeviceStartupHistory and sets the default values.
 func NewUserExperienceAnalyticsDeviceStartupHistory()(*UserExperienceAnalyticsDeviceStartupHistory) {
     m := &UserExperienceAnalyticsDeviceStartupHistory{
         Entity: *NewEntity(),
@@ -297,7 +297,7 @@ func (m *UserExperienceAnalyticsDeviceStartupHistory) GetResponsiveDesktopTimeIn
         return m.responsiveDesktopTimeInMs
     }
 }
-// GetRestartCategory gets the restartCategory property value. OS restart category. Possible values are: unknown, restartWithUpdate, restartWithoutUpdate, blueScreen, shutdownWithUpdate, shutdownWithoutUpdate, longPowerButtonPress, bootError, update.
+// GetRestartCategory gets the restartCategory property value. Operating System restart category
 func (m *UserExperienceAnalyticsDeviceStartupHistory) GetRestartCategory()(*UserExperienceAnalyticsOperatingSystemRestartCategory) {
     if m == nil {
         return nil
@@ -510,7 +510,7 @@ func (m *UserExperienceAnalyticsDeviceStartupHistory) SetResponsiveDesktopTimeIn
         m.responsiveDesktopTimeInMs = value
     }
 }
-// SetRestartCategory sets the restartCategory property value. OS restart category. Possible values are: unknown, restartWithUpdate, restartWithoutUpdate, blueScreen, shutdownWithUpdate, shutdownWithoutUpdate, longPowerButtonPress, bootError, update.
+// SetRestartCategory sets the restartCategory property value. Operating System restart category
 func (m *UserExperienceAnalyticsDeviceStartupHistory) SetRestartCategory(value *UserExperienceAnalyticsOperatingSystemRestartCategory)() {
     if m != nil {
         m.restartCategory = value

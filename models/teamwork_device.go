@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// TeamworkDevice provides operations to manage the teamwork singleton.
+// TeamworkDevice 
 type TeamworkDevice struct {
     Entity
     // The activity properties that change based on the device usage.
@@ -22,7 +22,7 @@ type TeamworkDevice struct {
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The signed-in user on the device.
     currentUser TeamworkUserIdentityable
-    // The type of device. The possible values are: unknown, ipPhone, teamsRoom, surfaceHub, collaborationBar, teamsDisplay, touchConsole, lowCostPhone, teamsPanel, sip, unknownFutureValue.
+    // The deviceType property
     deviceType *TeamworkDeviceType
     // The hardwareDetail property
     hardwareDetail TeamworkHardwareDetailable
@@ -39,7 +39,7 @@ type TeamworkDevice struct {
     // The async operations on the device.
     operations []TeamworkDeviceOperationable
 }
-// NewTeamworkDevice instantiates a new teamworkDevice and sets the default values.
+// NewTeamworkDevice instantiates a new TeamworkDevice and sets the default values.
 func NewTeamworkDevice()(*TeamworkDevice) {
     m := &TeamworkDevice{
         Entity: *NewEntity(),
@@ -106,7 +106,7 @@ func (m *TeamworkDevice) GetCurrentUser()(TeamworkUserIdentityable) {
         return m.currentUser
     }
 }
-// GetDeviceType gets the deviceType property value. The type of device. The possible values are: unknown, ipPhone, teamsRoom, surfaceHub, collaborationBar, teamsDisplay, touchConsole, lowCostPhone, teamsPanel, sip, unknownFutureValue.
+// GetDeviceType gets the deviceType property value. The deviceType property
 func (m *TeamworkDevice) GetDeviceType()(*TeamworkDeviceType) {
     if m == nil {
         return nil
@@ -476,7 +476,7 @@ func (m *TeamworkDevice) SetCurrentUser(value TeamworkUserIdentityable)() {
         m.currentUser = value
     }
 }
-// SetDeviceType sets the deviceType property value. The type of device. The possible values are: unknown, ipPhone, teamsRoom, surfaceHub, collaborationBar, teamsDisplay, touchConsole, lowCostPhone, teamsPanel, sip, unknownFutureValue.
+// SetDeviceType sets the deviceType property value. The deviceType property
 func (m *TeamworkDevice) SetDeviceType(value *TeamworkDeviceType)() {
     if m != nil {
         m.deviceType = value

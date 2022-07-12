@@ -9,7 +9,7 @@ type Windows10XTrustedRootCertificate struct {
     DeviceManagementResourceAccessProfileBase
     // File name to display in UI.
     certFileName *string
-    // Destination store location for the Trusted Root Certificate. Possible values are: computerCertStoreRoot, computerCertStoreIntermediate, userCertStoreIntermediate.
+    // Possible values for the Certificate Destination Store.
     destinationStore *CertificateDestinationStore
     // Trusted Root Certificate
     trustedRootCertificate []byte
@@ -33,7 +33,7 @@ func (m *Windows10XTrustedRootCertificate) GetCertFileName()(*string) {
         return m.certFileName
     }
 }
-// GetDestinationStore gets the destinationStore property value. Destination store location for the Trusted Root Certificate. Possible values are: computerCertStoreRoot, computerCertStoreIntermediate, userCertStoreIntermediate.
+// GetDestinationStore gets the destinationStore property value. Possible values for the Certificate Destination Store.
 func (m *Windows10XTrustedRootCertificate) GetDestinationStore()(*CertificateDestinationStore) {
     if m == nil {
         return nil
@@ -117,7 +117,7 @@ func (m *Windows10XTrustedRootCertificate) SetCertFileName(value *string)() {
         m.certFileName = value
     }
 }
-// SetDestinationStore sets the destinationStore property value. Destination store location for the Trusted Root Certificate. Possible values are: computerCertStoreRoot, computerCertStoreIntermediate, userCertStoreIntermediate.
+// SetDestinationStore sets the destinationStore property value. Possible values for the Certificate Destination Store.
 func (m *Windows10XTrustedRootCertificate) SetDestinationStore(value *CertificateDestinationStore)() {
     if m != nil {
         m.destinationStore = value

@@ -7,7 +7,7 @@ import (
 // TargetedManagedAppPolicyAssignment the type for deployment of groups or apps.
 type TargetedManagedAppPolicyAssignment struct {
     Entity
-    // Type of resource used for deployment to a group, direct or parcel/policySet. Possible values are: direct, policySets.
+    // Represents source of assignment.
     source *DeviceAndAppManagementAssignmentSource
     // Identifier for resource used for deployment to a group
     sourceId *string
@@ -60,7 +60,7 @@ func (m *TargetedManagedAppPolicyAssignment) GetFieldDeserializers()(map[string]
     }
     return res
 }
-// GetSource gets the source property value. Type of resource used for deployment to a group, direct or parcel/policySet. Possible values are: direct, policySets.
+// GetSource gets the source property value. Represents source of assignment.
 func (m *TargetedManagedAppPolicyAssignment) GetSource()(*DeviceAndAppManagementAssignmentSource) {
     if m == nil {
         return nil
@@ -111,7 +111,7 @@ func (m *TargetedManagedAppPolicyAssignment) Serialize(writer i878a80d2330e89d26
     }
     return nil
 }
-// SetSource sets the source property value. Type of resource used for deployment to a group, direct or parcel/policySet. Possible values are: direct, policySets.
+// SetSource sets the source property value. Represents source of assignment.
 func (m *TargetedManagedAppPolicyAssignment) SetSource(value *DeviceAndAppManagementAssignmentSource)() {
     if m != nil {
         m.source = value

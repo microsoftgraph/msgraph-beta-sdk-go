@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// PrivilegedRoleSettings provides operations to manage the collection of privilegedApproval entities.
+// PrivilegedRoleSettings 
 type PrivilegedRoleSettings struct {
     Entity
     // true if the approval is required when activate the role. false if the approval is not required when activate the role.
@@ -28,7 +28,7 @@ type PrivilegedRoleSettings struct {
     // true if the ticketing information is required when activate the role. false if the ticketing information is not required when activate the role.
     ticketingInfoOnElevation *bool
 }
-// NewPrivilegedRoleSettings instantiates a new privilegedRoleSettings and sets the default values.
+// NewPrivilegedRoleSettings instantiates a new PrivilegedRoleSettings and sets the default values.
 func NewPrivilegedRoleSettings()(*PrivilegedRoleSettings) {
     m := &PrivilegedRoleSettings{
         Entity: *NewEntity(),

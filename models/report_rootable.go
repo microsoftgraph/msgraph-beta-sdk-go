@@ -19,6 +19,7 @@ type ReportRootable interface {
     GetMonthlyPrintUsageByUser()([]PrintUsageByUserable)
     GetMonthlyPrintUsageSummariesByPrinter()([]PrintUsageByPrinterable)
     GetMonthlyPrintUsageSummariesByUser()([]PrintUsageByUserable)
+    GetSecurity()(SecurityReportsRootable)
     GetUserCredentialUsageDetails()([]UserCredentialUsageDetailsable)
     SetApplicationSignInDetailedSummary(value []ApplicationSignInDetailedSummaryable)()
     SetAuthenticationMethods(value AuthenticationMethodsRootable)()
@@ -31,5 +32,6 @@ type ReportRootable interface {
     SetMonthlyPrintUsageByUser(value []PrintUsageByUserable)()
     SetMonthlyPrintUsageSummariesByPrinter(value []PrintUsageByPrinterable)()
     SetMonthlyPrintUsageSummariesByUser(value []PrintUsageByUserable)()
+    SetSecurity(value SecurityReportsRootable)()
     SetUserCredentialUsageDetails(value []UserCredentialUsageDetailsable)()
 }

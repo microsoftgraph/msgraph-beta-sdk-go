@@ -7,7 +7,7 @@ import (
 // WindowsAutopilotDeploymentProfileAssignment an assignment of a Windows Autopilot deployment profile to an AAD group.
 type WindowsAutopilotDeploymentProfileAssignment struct {
     Entity
-    // Type of resource used for deployment to a group, direct or parcel/policySet. Possible values are: direct, policySets.
+    // Represents source of assignment.
     source *DeviceAndAppManagementAssignmentSource
     // Identifier for resource used for deployment to a group
     sourceId *string
@@ -60,7 +60,7 @@ func (m *WindowsAutopilotDeploymentProfileAssignment) GetFieldDeserializers()(ma
     }
     return res
 }
-// GetSource gets the source property value. Type of resource used for deployment to a group, direct or parcel/policySet. Possible values are: direct, policySets.
+// GetSource gets the source property value. Represents source of assignment.
 func (m *WindowsAutopilotDeploymentProfileAssignment) GetSource()(*DeviceAndAppManagementAssignmentSource) {
     if m == nil {
         return nil
@@ -111,7 +111,7 @@ func (m *WindowsAutopilotDeploymentProfileAssignment) Serialize(writer i878a80d2
     }
     return nil
 }
-// SetSource sets the source property value. Type of resource used for deployment to a group, direct or parcel/policySet. Possible values are: direct, policySets.
+// SetSource sets the source property value. Represents source of assignment.
 func (m *WindowsAutopilotDeploymentProfileAssignment) SetSource(value *DeviceAndAppManagementAssignmentSource)() {
     if m != nil {
         m.source = value

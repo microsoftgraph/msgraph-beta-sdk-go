@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// WindowsAssignedAccessProfile assigned Access profile for Windows.
+// WindowsAssignedAccessProfile 
 type WindowsAssignedAccessProfile struct {
     Entity
     // These are the only Windows Store Apps that will be available to launch from the Start menu.
@@ -20,7 +20,7 @@ type WindowsAssignedAccessProfile struct {
     // The user accounts that will be locked to this kiosk configuration.
     userAccounts []string
 }
-// NewWindowsAssignedAccessProfile instantiates a new windowsAssignedAccessProfile and sets the default values.
+// NewWindowsAssignedAccessProfile instantiates a new WindowsAssignedAccessProfile and sets the default values.
 func NewWindowsAssignedAccessProfile()(*WindowsAssignedAccessProfile) {
     m := &WindowsAssignedAccessProfile{
         Entity: *NewEntity(),

@@ -15,7 +15,7 @@ type WorkloadStatus struct {
     offboardedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The date and time the workload was onboarded. Optional. Read-only.
     onboardedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The onboarding status for the workload. Possible values are: notOnboarded, onboarded, unknownFutureValue. Optional. Read-only.
+    // The onboardingStatus property
     onboardingStatus *WorkloadOnboardingStatus
 }
 // NewWorkloadStatus instantiates a new workloadStatus and sets the default values.
@@ -106,7 +106,7 @@ func (m *WorkloadStatus) GetOnboardedDateTime()(*i336074805fc853987abe6f7fe3ad97
         return m.onboardedDateTime
     }
 }
-// GetOnboardingStatus gets the onboardingStatus property value. The onboarding status for the workload. Possible values are: notOnboarded, onboarded, unknownFutureValue. Optional. Read-only.
+// GetOnboardingStatus gets the onboardingStatus property value. The onboardingStatus property
 func (m *WorkloadStatus) GetOnboardingStatus()(*WorkloadOnboardingStatus) {
     if m == nil {
         return nil
@@ -173,7 +173,7 @@ func (m *WorkloadStatus) SetOnboardedDateTime(value *i336074805fc853987abe6f7fe3
         m.onboardedDateTime = value
     }
 }
-// SetOnboardingStatus sets the onboardingStatus property value. The onboarding status for the workload. Possible values are: notOnboarded, onboarded, unknownFutureValue. Optional. Read-only.
+// SetOnboardingStatus sets the onboardingStatus property value. The onboardingStatus property
 func (m *WorkloadStatus) SetOnboardingStatus(value *WorkloadOnboardingStatus)() {
     if m != nil {
         m.onboardingStatus = value

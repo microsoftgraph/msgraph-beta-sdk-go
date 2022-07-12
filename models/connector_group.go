@@ -4,12 +4,12 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ConnectorGroup provides operations to manage the collection of administrativeUnit entities.
+// ConnectorGroup 
 type ConnectorGroup struct {
     Entity
     // The applications property
     applications []Applicationable
-    // Indicates the type of hybrid agent. This pre-set by the system. Possible values are: applicationProxy. Read-only.
+    // The connectorGroupType property
     connectorGroupType *ConnectorGroupType
     // Indicates if the connectorGroup is the default connectorGroup. Only a single connector group can be the default connectorGroup and this is pre-set by the system. Read-only.
     isDefault *bool
@@ -39,7 +39,7 @@ func (m *ConnectorGroup) GetApplications()([]Applicationable) {
         return m.applications
     }
 }
-// GetConnectorGroupType gets the connectorGroupType property value. Indicates the type of hybrid agent. This pre-set by the system. Possible values are: applicationProxy. Read-only.
+// GetConnectorGroupType gets the connectorGroupType property value. The connectorGroupType property
 func (m *ConnectorGroup) GetConnectorGroupType()(*ConnectorGroupType) {
     if m == nil {
         return nil
@@ -212,7 +212,7 @@ func (m *ConnectorGroup) SetApplications(value []Applicationable)() {
         m.applications = value
     }
 }
-// SetConnectorGroupType sets the connectorGroupType property value. Indicates the type of hybrid agent. This pre-set by the system. Possible values are: applicationProxy. Read-only.
+// SetConnectorGroupType sets the connectorGroupType property value. The connectorGroupType property
 func (m *ConnectorGroup) SetConnectorGroupType(value *ConnectorGroupType)() {
     if m != nil {
         m.connectorGroupType = value

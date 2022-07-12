@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// RbacApplicationMultiple provides operations to manage the roleManagement singleton.
+// RbacApplicationMultiple 
 type RbacApplicationMultiple struct {
     Entity
     // The resourceNamespaces property
@@ -14,7 +14,7 @@ type RbacApplicationMultiple struct {
     // The roleDefinitions property
     roleDefinitions []UnifiedRoleDefinitionable
 }
-// NewRbacApplicationMultiple instantiates a new rbacApplicationMultiple and sets the default values.
+// NewRbacApplicationMultiple instantiates a new RbacApplicationMultiple and sets the default values.
 func NewRbacApplicationMultiple()(*RbacApplicationMultiple) {
     m := &RbacApplicationMultiple{
         Entity: *NewEntity(),

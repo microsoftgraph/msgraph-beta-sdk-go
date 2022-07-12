@@ -17,9 +17,9 @@ type OpenIdConnectIdentityProvider struct {
     domainHint *string
     // The URL for the metadata document of the OpenID Connect identity provider. Every OpenID Connect identity provider describes a metadata document that contains most of the information required to perform sign-in. This includes information such as the URLs to use and the location of the service's public signing keys. The OpenID Connect metadata document is always located at an endpoint that ends in .well-known/openid-configuration. Provide the metadata URL for the OpenID Connect identity provider you add. Read-only. Required.
     metadataUrl *string
-    // The response mode defines the method used to send data back from the custom identity provider to Azure AD B2C. Possible values: form_post, query. Required.
+    // The responseMode property
     responseMode *OpenIdConnectResponseMode
-    // The response type describes the type of information sent back in the initial call to the authorization_endpoint of the custom identity provider. Possible values: code , id_token , token.  Required.
+    // The responseType property
     responseType *OpenIdConnectResponseTypes
     // Scope defines the information and permissions you are looking to gather from your custom identity provider. OpenID Connect requests must contain the openid scope value in order to receive the ID token from the identity provider. Without the ID token, users are not able to sign in to Azure AD B2C using the custom identity provider. Other scopes can be appended, separated by a space. For more details about the scope limitations see RFC6749 Section 3.3. Required.
     scope *string
@@ -160,7 +160,7 @@ func (m *OpenIdConnectIdentityProvider) GetMetadataUrl()(*string) {
         return m.metadataUrl
     }
 }
-// GetResponseMode gets the responseMode property value. The response mode defines the method used to send data back from the custom identity provider to Azure AD B2C. Possible values: form_post, query. Required.
+// GetResponseMode gets the responseMode property value. The responseMode property
 func (m *OpenIdConnectIdentityProvider) GetResponseMode()(*OpenIdConnectResponseMode) {
     if m == nil {
         return nil
@@ -168,7 +168,7 @@ func (m *OpenIdConnectIdentityProvider) GetResponseMode()(*OpenIdConnectResponse
         return m.responseMode
     }
 }
-// GetResponseType gets the responseType property value. The response type describes the type of information sent back in the initial call to the authorization_endpoint of the custom identity provider. Possible values: code , id_token , token.  Required.
+// GetResponseType gets the responseType property value. The responseType property
 func (m *OpenIdConnectIdentityProvider) GetResponseType()(*OpenIdConnectResponseTypes) {
     if m == nil {
         return nil
@@ -272,13 +272,13 @@ func (m *OpenIdConnectIdentityProvider) SetMetadataUrl(value *string)() {
         m.metadataUrl = value
     }
 }
-// SetResponseMode sets the responseMode property value. The response mode defines the method used to send data back from the custom identity provider to Azure AD B2C. Possible values: form_post, query. Required.
+// SetResponseMode sets the responseMode property value. The responseMode property
 func (m *OpenIdConnectIdentityProvider) SetResponseMode(value *OpenIdConnectResponseMode)() {
     if m != nil {
         m.responseMode = value
     }
 }
-// SetResponseType sets the responseType property value. The response type describes the type of information sent back in the initial call to the authorization_endpoint of the custom identity provider. Possible values: code , id_token , token.  Required.
+// SetResponseType sets the responseType property value. The responseType property
 func (m *OpenIdConnectIdentityProvider) SetResponseType(value *OpenIdConnectResponseTypes)() {
     if m != nil {
         m.responseType = value

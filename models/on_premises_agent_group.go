@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// OnPremisesAgentGroup provides operations to manage the collection of onPremisesPublishingProfile entities.
+// OnPremisesAgentGroup provides operations to manage the collection of activityStatistics entities.
 type OnPremisesAgentGroup struct {
     Entity
     // List of onPremisesAgent that are assigned to an onPremisesAgentGroup. Read-only. Nullable.
@@ -15,7 +15,7 @@ type OnPremisesAgentGroup struct {
     isDefault *bool
     // List of publishedResource that are assigned to an onPremisesAgentGroup. Read-only. Nullable.
     publishedResources []PublishedResourceable
-    // Possible values are: applicationProxy, exchangeOnline, authentication, provisioning, adAdministration.
+    // The publishingType property
     publishingType *OnPremisesPublishingType
 }
 // NewOnPremisesAgentGroup instantiates a new onPremisesAgentGroup and sets the default values.
@@ -124,7 +124,7 @@ func (m *OnPremisesAgentGroup) GetPublishedResources()([]PublishedResourceable) 
         return m.publishedResources
     }
 }
-// GetPublishingType gets the publishingType property value. Possible values are: applicationProxy, exchangeOnline, authentication, provisioning, adAdministration.
+// GetPublishingType gets the publishingType property value. The publishingType property
 func (m *OnPremisesAgentGroup) GetPublishingType()(*OnPremisesPublishingType) {
     if m == nil {
         return nil
@@ -203,7 +203,7 @@ func (m *OnPremisesAgentGroup) SetPublishedResources(value []PublishedResourceab
         m.publishedResources = value
     }
 }
-// SetPublishingType sets the publishingType property value. Possible values are: applicationProxy, exchangeOnline, authentication, provisioning, adAdministration.
+// SetPublishingType sets the publishingType property value. The publishingType property
 func (m *OnPremisesAgentGroup) SetPublishingType(value *OnPremisesPublishingType)() {
     if m != nil {
         m.publishingType = value

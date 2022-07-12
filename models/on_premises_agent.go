@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// OnPremisesAgent provides operations to manage the collection of onPremisesPublishingProfile entities.
+// OnPremisesAgent 
 type OnPremisesAgent struct {
     Entity
     // List of onPremisesAgentGroups that an onPremisesAgent is assigned to. Read-only. Nullable.
@@ -13,12 +13,12 @@ type OnPremisesAgent struct {
     externalIp *string
     // The name of the machine that the aggent is running on. Read-only
     machineName *string
-    // Possible values are: active, inactive.
+    // The status property
     status *AgentStatus
     // The supportedPublishingTypes property
     supportedPublishingTypes []string
 }
-// NewOnPremisesAgent instantiates a new onPremisesAgent and sets the default values.
+// NewOnPremisesAgent instantiates a new OnPremisesAgent and sets the default values.
 func NewOnPremisesAgent()(*OnPremisesAgent) {
     m := &OnPremisesAgent{
         Entity: *NewEntity(),
@@ -116,7 +116,7 @@ func (m *OnPremisesAgent) GetMachineName()(*string) {
         return m.machineName
     }
 }
-// GetStatus gets the status property value. Possible values are: active, inactive.
+// GetStatus gets the status property value. The status property
 func (m *OnPremisesAgent) GetStatus()(*AgentStatus) {
     if m == nil {
         return nil
@@ -193,7 +193,7 @@ func (m *OnPremisesAgent) SetMachineName(value *string)() {
         m.machineName = value
     }
 }
-// SetStatus sets the status property value. Possible values are: active, inactive.
+// SetStatus sets the status property value. The status property
 func (m *OnPremisesAgent) SetStatus(value *AgentStatus)() {
     if m != nil {
         m.status = value

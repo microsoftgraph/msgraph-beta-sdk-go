@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// VppToken you purchase multiple licenses for iOS apps through the Apple Volume Purchase Program for Business or Education. This involves setting up an Apple VPP account from the Apple website and uploading the Apple VPP Business or Education token to Intune. You can then synchronize your volume purchase information with Intune and track your volume-purchased app use. You can upload multiple Apple VPP Business or Education tokens.
+// VppToken 
 type VppToken struct {
     Entity
     // The apple Id associated with the given Apple Volume Purchase Program Token.
@@ -26,7 +26,7 @@ type VppToken struct {
     lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The last time when an application sync was done with the Apple volume purchase program service using the the Apple Volume Purchase Program Token.
     lastSyncDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // Current sync status of the last application sync which was triggered using the Apple Volume Purchase Program Token. Possible values are: none, inProgress, completed, failed. Possible values are: none, inProgress, completed, failed.
+    // Possible sync statuses associated with an Apple Volume Purchase Program token.
     lastSyncStatus *VppTokenSyncStatus
     // Token location returned from Apple VPP.
     locationName *string
@@ -34,16 +34,16 @@ type VppToken struct {
     organizationName *string
     // Role Scope Tags IDs assigned to this entity.
     roleScopeTagIds []string
-    // Current state of the Apple Volume Purchase Program Token. Possible values are: unknown, valid, expired, invalid, assignedToExternalMDM. Possible values are: unknown, valid, expired, invalid, assignedToExternalMDM, duplicateLocationId.
+    // Possible states associated with an Apple Volume Purchase Program token.
     state *VppTokenState
     // The Apple Volume Purchase Program Token string downloaded from the Apple Volume Purchase Program.
     token *string
     // The collection of statuses of the actions performed on the Apple Volume Purchase Program Token.
     tokenActionResults []VppTokenActionResultable
-    // The type of volume purchase program which the given Apple Volume Purchase Program Token is associated with. Possible values are: business, education. Possible values are: business, education.
+    // Possible types of an Apple Volume Purchase Program token.
     vppTokenAccountType *VppTokenAccountType
 }
-// NewVppToken instantiates a new vppToken and sets the default values.
+// NewVppToken instantiates a new VppToken and sets the default values.
 func NewVppToken()(*VppToken) {
     m := &VppToken{
         Entity: *NewEntity(),
@@ -309,7 +309,7 @@ func (m *VppToken) GetLastSyncDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f30
         return m.lastSyncDateTime
     }
 }
-// GetLastSyncStatus gets the lastSyncStatus property value. Current sync status of the last application sync which was triggered using the Apple Volume Purchase Program Token. Possible values are: none, inProgress, completed, failed. Possible values are: none, inProgress, completed, failed.
+// GetLastSyncStatus gets the lastSyncStatus property value. Possible sync statuses associated with an Apple Volume Purchase Program token.
 func (m *VppToken) GetLastSyncStatus()(*VppTokenSyncStatus) {
     if m == nil {
         return nil
@@ -341,7 +341,7 @@ func (m *VppToken) GetRoleScopeTagIds()([]string) {
         return m.roleScopeTagIds
     }
 }
-// GetState gets the state property value. Current state of the Apple Volume Purchase Program Token. Possible values are: unknown, valid, expired, invalid, assignedToExternalMDM. Possible values are: unknown, valid, expired, invalid, assignedToExternalMDM, duplicateLocationId.
+// GetState gets the state property value. Possible states associated with an Apple Volume Purchase Program token.
 func (m *VppToken) GetState()(*VppTokenState) {
     if m == nil {
         return nil
@@ -365,7 +365,7 @@ func (m *VppToken) GetTokenActionResults()([]VppTokenActionResultable) {
         return m.tokenActionResults
     }
 }
-// GetVppTokenAccountType gets the vppTokenAccountType property value. The type of volume purchase program which the given Apple Volume Purchase Program Token is associated with. Possible values are: business, education. Possible values are: business, education.
+// GetVppTokenAccountType gets the vppTokenAccountType property value. Possible types of an Apple Volume Purchase Program token.
 func (m *VppToken) GetVppTokenAccountType()(*VppTokenAccountType) {
     if m == nil {
         return nil
@@ -544,7 +544,7 @@ func (m *VppToken) SetLastSyncDateTime(value *i336074805fc853987abe6f7fe3ad97a6a
         m.lastSyncDateTime = value
     }
 }
-// SetLastSyncStatus sets the lastSyncStatus property value. Current sync status of the last application sync which was triggered using the Apple Volume Purchase Program Token. Possible values are: none, inProgress, completed, failed. Possible values are: none, inProgress, completed, failed.
+// SetLastSyncStatus sets the lastSyncStatus property value. Possible sync statuses associated with an Apple Volume Purchase Program token.
 func (m *VppToken) SetLastSyncStatus(value *VppTokenSyncStatus)() {
     if m != nil {
         m.lastSyncStatus = value
@@ -568,7 +568,7 @@ func (m *VppToken) SetRoleScopeTagIds(value []string)() {
         m.roleScopeTagIds = value
     }
 }
-// SetState sets the state property value. Current state of the Apple Volume Purchase Program Token. Possible values are: unknown, valid, expired, invalid, assignedToExternalMDM. Possible values are: unknown, valid, expired, invalid, assignedToExternalMDM, duplicateLocationId.
+// SetState sets the state property value. Possible states associated with an Apple Volume Purchase Program token.
 func (m *VppToken) SetState(value *VppTokenState)() {
     if m != nil {
         m.state = value
@@ -586,7 +586,7 @@ func (m *VppToken) SetTokenActionResults(value []VppTokenActionResultable)() {
         m.tokenActionResults = value
     }
 }
-// SetVppTokenAccountType sets the vppTokenAccountType property value. The type of volume purchase program which the given Apple Volume Purchase Program Token is associated with. Possible values are: business, education. Possible values are: business, education.
+// SetVppTokenAccountType sets the vppTokenAccountType property value. Possible types of an Apple Volume Purchase Program token.
 func (m *VppToken) SetVppTokenAccountType(value *VppTokenAccountType)() {
     if m != nil {
         m.vppTokenAccountType = value

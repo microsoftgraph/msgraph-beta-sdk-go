@@ -9,7 +9,7 @@ import (
 type WindowsDriverUpdateProfileInventorySyncStatus struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
-    // The state of the latest sync. Possible values are: pending, success, failure.
+    // Windows DnF update inventory sync state.
     driverInventorySyncState *WindowsDriverUpdateProfileInventorySyncState
     // The last successful sync date and time in UTC.
     lastSuccessfulSyncDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
@@ -33,7 +33,7 @@ func (m *WindowsDriverUpdateProfileInventorySyncStatus) GetAdditionalData()(map[
         return m.additionalData
     }
 }
-// GetDriverInventorySyncState gets the driverInventorySyncState property value. The state of the latest sync. Possible values are: pending, success, failure.
+// GetDriverInventorySyncState gets the driverInventorySyncState property value. Windows DnF update inventory sync state.
 func (m *WindowsDriverUpdateProfileInventorySyncStatus) GetDriverInventorySyncState()(*WindowsDriverUpdateProfileInventorySyncState) {
     if m == nil {
         return nil
@@ -103,7 +103,7 @@ func (m *WindowsDriverUpdateProfileInventorySyncStatus) SetAdditionalData(value 
         m.additionalData = value
     }
 }
-// SetDriverInventorySyncState sets the driverInventorySyncState property value. The state of the latest sync. Possible values are: pending, success, failure.
+// SetDriverInventorySyncState sets the driverInventorySyncState property value. Windows DnF update inventory sync state.
 func (m *WindowsDriverUpdateProfileInventorySyncStatus) SetDriverInventorySyncState(value *WindowsDriverUpdateProfileInventorySyncState)() {
     if m != nil {
         m.driverInventorySyncState = value

@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// OnlineMeeting provides operations to manage the commsApplication singleton.
+// OnlineMeeting 
 type OnlineMeeting struct {
     Entity
     // Indicates whether attendees can turn on their camera.
@@ -20,6 +20,8 @@ type OnlineMeeting struct {
     allowTeamworkReactions *bool
     // The content stream of the alternative recording of a Microsoft Teams live event. Read-only.
     alternativeRecording []byte
+    // The anonymizeIdentityForRoles property
+    anonymizeIdentityForRoles []string
     // The attendance reports of an online meeting. Read-only.
     attendanceReports []MeetingAttendanceReportable
     // The content stream of the attendee report of a Teams live event. Read-only.
@@ -44,7 +46,7 @@ type OnlineMeeting struct {
     isEntryExitAnnounced *bool
     // The join information in the language and locale variant specified in 'Accept-Language' request HTTP header. Read-only.
     joinInformation ItemBodyable
-    // The joinMeetingIdSettings property
+    // Specifies the joinMeetingId, the meeting passcode, and the requirement for the passcode.
     joinMeetingIdSettings JoinMeetingIdSettingsable
     // The joinUrl property
     joinUrl *string
@@ -69,7 +71,7 @@ type OnlineMeeting struct {
     // The video teleconferencing ID. Read-only.
     videoTeleconferenceId *string
 }
-// NewOnlineMeeting instantiates a new onlineMeeting and sets the default values.
+// NewOnlineMeeting instantiates a new OnlineMeeting and sets the default values.
 func NewOnlineMeeting()(*OnlineMeeting) {
     m := &OnlineMeeting{
         Entity: *NewEntity(),
@@ -126,6 +128,14 @@ func (m *OnlineMeeting) GetAlternativeRecording()([]byte) {
         return nil
     } else {
         return m.alternativeRecording
+    }
+}
+// GetAnonymizeIdentityForRoles gets the anonymizeIdentityForRoles property value. The anonymizeIdentityForRoles property
+func (m *OnlineMeeting) GetAnonymizeIdentityForRoles()([]string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.anonymizeIdentityForRoles
     }
 }
 // GetAttendanceReports gets the attendanceReports property value. The attendance reports of an online meeting. Read-only.
@@ -260,6 +270,20 @@ func (m *OnlineMeeting) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         }
         if val != nil {
             m.SetAlternativeRecording(val)
+        }
+        return nil
+    }
+    res["anonymizeIdentityForRoles"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfPrimitiveValues("string")
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetAnonymizeIdentityForRoles(res)
         }
         return nil
     }
@@ -537,7 +561,7 @@ func (m *OnlineMeeting) GetJoinInformation()(ItemBodyable) {
         return m.joinInformation
     }
 }
-// GetJoinMeetingIdSettings gets the joinMeetingIdSettings property value. The joinMeetingIdSettings property
+// GetJoinMeetingIdSettings gets the joinMeetingIdSettings property value. Specifies the joinMeetingId, the meeting passcode, and the requirement for the passcode.
 func (m *OnlineMeeting) GetJoinMeetingIdSettings()(JoinMeetingIdSettingsable) {
     if m == nil {
         return nil
@@ -673,6 +697,12 @@ func (m *OnlineMeeting) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
     }
     {
         err = writer.WriteByteArrayValue("alternativeRecording", m.GetAlternativeRecording())
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetAnonymizeIdentityForRoles() != nil {
+        err = writer.WriteCollectionOfStringValues("anonymizeIdentityForRoles", m.GetAnonymizeIdentityForRoles())
         if err != nil {
             return err
         }
@@ -863,6 +893,12 @@ func (m *OnlineMeeting) SetAlternativeRecording(value []byte)() {
         m.alternativeRecording = value
     }
 }
+// SetAnonymizeIdentityForRoles sets the anonymizeIdentityForRoles property value. The anonymizeIdentityForRoles property
+func (m *OnlineMeeting) SetAnonymizeIdentityForRoles(value []string)() {
+    if m != nil {
+        m.anonymizeIdentityForRoles = value
+    }
+}
 // SetAttendanceReports sets the attendanceReports property value. The attendance reports of an online meeting. Read-only.
 func (m *OnlineMeeting) SetAttendanceReports(value []MeetingAttendanceReportable)() {
     if m != nil {
@@ -935,7 +971,7 @@ func (m *OnlineMeeting) SetJoinInformation(value ItemBodyable)() {
         m.joinInformation = value
     }
 }
-// SetJoinMeetingIdSettings sets the joinMeetingIdSettings property value. The joinMeetingIdSettings property
+// SetJoinMeetingIdSettings sets the joinMeetingIdSettings property value. Specifies the joinMeetingId, the meeting passcode, and the requirement for the passcode.
 func (m *OnlineMeeting) SetJoinMeetingIdSettings(value JoinMeetingIdSettingsable)() {
     if m != nil {
         m.joinMeetingIdSettings = value

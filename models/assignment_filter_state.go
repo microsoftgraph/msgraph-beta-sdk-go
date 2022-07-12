@@ -11,7 +11,7 @@ type AssignmentFilterState struct {
     // Indicator to if AssignmentFilter is enabled or disabled.
     enabled *bool
 }
-// NewAssignmentFilterState instantiates a new AssignmentFilterState and sets the default values.
+// NewAssignmentFilterState instantiates a new assignmentFilterState and sets the default values.
 func NewAssignmentFilterState()(*AssignmentFilterState) {
     m := &AssignmentFilterState{
     }

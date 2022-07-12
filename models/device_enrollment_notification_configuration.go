@@ -7,15 +7,15 @@ import (
 // DeviceEnrollmentNotificationConfiguration 
 type DeviceEnrollmentNotificationConfiguration struct {
     DeviceEnrollmentConfiguration
-    // Branding Options for the Enrollment Notification. Possible values are: none, includeCompanyLogo, includeCompanyName, includeContactInformation, includeCompanyPortalLink, includeDeviceDetails.
+    // Branding Options for the Message Template. Branding is defined in the Intune Admin Console.
     brandingOptions *EnrollmentNotificationBrandingOptions
     // DefaultLocale for the Enrollment Notification
     defaultLocale *string
     // Notification Message Template Id
     notificationMessageTemplateId *string
-    // Platform type of the Enrollment Notification. Possible values are: allPlatforms, ios, windows, windowsPhone, android, androidForWork, mac.
+    // This enum indicates the platform type for which the enrollment restriction applies.
     platformType *EnrollmentRestrictionPlatformType
-    // Template type of the Enrollment Notification. Possible values are: email, push, unknownFutureValue.
+    // This enum indicates the Template type for which the enrollment notification applies.
     templateType *EnrollmentNotificationTemplateType
 }
 // NewDeviceEnrollmentNotificationConfiguration instantiates a new DeviceEnrollmentNotificationConfiguration and sets the default values.
@@ -29,7 +29,7 @@ func NewDeviceEnrollmentNotificationConfiguration()(*DeviceEnrollmentNotificatio
 func CreateDeviceEnrollmentNotificationConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDeviceEnrollmentNotificationConfiguration(), nil
 }
-// GetBrandingOptions gets the brandingOptions property value. Branding Options for the Enrollment Notification. Possible values are: none, includeCompanyLogo, includeCompanyName, includeContactInformation, includeCompanyPortalLink, includeDeviceDetails.
+// GetBrandingOptions gets the brandingOptions property value. Branding Options for the Message Template. Branding is defined in the Intune Admin Console.
 func (m *DeviceEnrollmentNotificationConfiguration) GetBrandingOptions()(*EnrollmentNotificationBrandingOptions) {
     if m == nil {
         return nil
@@ -108,7 +108,7 @@ func (m *DeviceEnrollmentNotificationConfiguration) GetNotificationMessageTempla
         return m.notificationMessageTemplateId
     }
 }
-// GetPlatformType gets the platformType property value. Platform type of the Enrollment Notification. Possible values are: allPlatforms, ios, windows, windowsPhone, android, androidForWork, mac.
+// GetPlatformType gets the platformType property value. This enum indicates the platform type for which the enrollment restriction applies.
 func (m *DeviceEnrollmentNotificationConfiguration) GetPlatformType()(*EnrollmentRestrictionPlatformType) {
     if m == nil {
         return nil
@@ -116,7 +116,7 @@ func (m *DeviceEnrollmentNotificationConfiguration) GetPlatformType()(*Enrollmen
         return m.platformType
     }
 }
-// GetTemplateType gets the templateType property value. Template type of the Enrollment Notification. Possible values are: email, push, unknownFutureValue.
+// GetTemplateType gets the templateType property value. This enum indicates the Template type for which the enrollment notification applies.
 func (m *DeviceEnrollmentNotificationConfiguration) GetTemplateType()(*EnrollmentNotificationTemplateType) {
     if m == nil {
         return nil
@@ -165,7 +165,7 @@ func (m *DeviceEnrollmentNotificationConfiguration) Serialize(writer i878a80d233
     }
     return nil
 }
-// SetBrandingOptions sets the brandingOptions property value. Branding Options for the Enrollment Notification. Possible values are: none, includeCompanyLogo, includeCompanyName, includeContactInformation, includeCompanyPortalLink, includeDeviceDetails.
+// SetBrandingOptions sets the brandingOptions property value. Branding Options for the Message Template. Branding is defined in the Intune Admin Console.
 func (m *DeviceEnrollmentNotificationConfiguration) SetBrandingOptions(value *EnrollmentNotificationBrandingOptions)() {
     if m != nil {
         m.brandingOptions = value
@@ -183,13 +183,13 @@ func (m *DeviceEnrollmentNotificationConfiguration) SetNotificationMessageTempla
         m.notificationMessageTemplateId = value
     }
 }
-// SetPlatformType sets the platformType property value. Platform type of the Enrollment Notification. Possible values are: allPlatforms, ios, windows, windowsPhone, android, androidForWork, mac.
+// SetPlatformType sets the platformType property value. This enum indicates the platform type for which the enrollment restriction applies.
 func (m *DeviceEnrollmentNotificationConfiguration) SetPlatformType(value *EnrollmentRestrictionPlatformType)() {
     if m != nil {
         m.platformType = value
     }
 }
-// SetTemplateType sets the templateType property value. Template type of the Enrollment Notification. Possible values are: email, push, unknownFutureValue.
+// SetTemplateType sets the templateType property value. This enum indicates the Template type for which the enrollment notification applies.
 func (m *DeviceEnrollmentNotificationConfiguration) SetTemplateType(value *EnrollmentNotificationTemplateType)() {
     if m != nil {
         m.templateType = value

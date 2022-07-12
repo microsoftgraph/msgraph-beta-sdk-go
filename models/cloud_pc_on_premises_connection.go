@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// CloudPcOnPremisesConnection provides operations to manage the deviceManagement singleton.
+// CloudPcOnPremisesConnection 
 type CloudPcOnPremisesConnection struct {
     Entity
     // The fully qualified domain name (FQDN) of the Active Directory domain you want to join. Optional.
@@ -17,13 +17,13 @@ type CloudPcOnPremisesConnection struct {
     alternateResourceUrl *string
     // The display name for the Azure network connection.
     displayName *string
-    // The status of the most recent health check done on the Azure network connection. For example, if status is passed, the Azure network connection has passed all checks run by the service. Possible values are: pending, running, passed, failed, unknownFutureValue. Read-only.
+    // The healthCheckStatus property
     healthCheckStatus *CloudPcOnPremisesConnectionStatus
     // The details of the connection's health checks and the corresponding results. Returned only on $select. For an example that shows how to get the inUse property, see Example 2: Get the selected properties of an Azure network connection, including healthCheckStatusDetails. Read-only.
     healthCheckStatusDetails CloudPcOnPremisesConnectionStatusDetailsable
     // When true, the Azure network connection is in use. When false, the connection is not in use. You cannot delete a connection that’s in use. Returned only on $select. For an example that shows how to get the inUse property, see Example 2: Get the selected properties of an Azure network connection, including healthCheckStatusDetails. Read-only.
     inUse *bool
-    // Specifies which services manage the Azure network connection. Possible values are: windows365, devBox, unknownFutureValue. Read-only.
+    // The managedBy property
     managedBy *CloudPcManagementService
     // The organizational unit (OU) in which the computer account is created. If left null, the OU that’s configured as the default (a well-known computer object container) in your Active Directory domain (OU) is used. Optional.
     organizationalUnit *string
@@ -35,12 +35,10 @@ type CloudPcOnPremisesConnection struct {
     subscriptionId *string
     // The name of the target Azure subscription. Read-only.
     subscriptionName *string
-    // Specifies how the provisioned Cloud PC will be joined to Azure Active Directory. Default value is hybridAzureADJoin. Possible values are: azureADJoin, hybridAzureADJoin, unknownFutureValue.
-    type_escaped *CloudPcOnPremisesConnectionType
     // The ID of the target virtual network. Required format: /subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworks/{virtualNetworkName}.
     virtualNetworkId *string
 }
-// NewCloudPcOnPremisesConnection instantiates a new cloudPcOnPremisesConnection and sets the default values.
+// NewCloudPcOnPremisesConnection instantiates a new CloudPcOnPremisesConnection and sets the default values.
 func NewCloudPcOnPremisesConnection()(*CloudPcOnPremisesConnection) {
     m := &CloudPcOnPremisesConnection{
         Entity: *NewEntity(),
@@ -234,16 +232,6 @@ func (m *CloudPcOnPremisesConnection) GetFieldDeserializers()(map[string]func(i8
         }
         return nil
     }
-    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseCloudPcOnPremisesConnectionType)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetType(val.(*CloudPcOnPremisesConnectionType))
-        }
-        return nil
-    }
     res["virtualNetworkId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -256,7 +244,7 @@ func (m *CloudPcOnPremisesConnection) GetFieldDeserializers()(map[string]func(i8
     }
     return res
 }
-// GetHealthCheckStatus gets the healthCheckStatus property value. The status of the most recent health check done on the Azure network connection. For example, if status is passed, the Azure network connection has passed all checks run by the service. Possible values are: pending, running, passed, failed, unknownFutureValue. Read-only.
+// GetHealthCheckStatus gets the healthCheckStatus property value. The healthCheckStatus property
 func (m *CloudPcOnPremisesConnection) GetHealthCheckStatus()(*CloudPcOnPremisesConnectionStatus) {
     if m == nil {
         return nil
@@ -280,7 +268,7 @@ func (m *CloudPcOnPremisesConnection) GetInUse()(*bool) {
         return m.inUse
     }
 }
-// GetManagedBy gets the managedBy property value. Specifies which services manage the Azure network connection. Possible values are: windows365, devBox, unknownFutureValue. Read-only.
+// GetManagedBy gets the managedBy property value. The managedBy property
 func (m *CloudPcOnPremisesConnection) GetManagedBy()(*CloudPcManagementService) {
     if m == nil {
         return nil
@@ -326,14 +314,6 @@ func (m *CloudPcOnPremisesConnection) GetSubscriptionName()(*string) {
         return nil
     } else {
         return m.subscriptionName
-    }
-}
-// GetType gets the type property value. Specifies how the provisioned Cloud PC will be joined to Azure Active Directory. Default value is hybridAzureADJoin. Possible values are: azureADJoin, hybridAzureADJoin, unknownFutureValue.
-func (m *CloudPcOnPremisesConnection) GetType()(*CloudPcOnPremisesConnectionType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.type_escaped
     }
 }
 // GetVirtualNetworkId gets the virtualNetworkId property value. The ID of the target virtual network. Required format: /subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworks/{virtualNetworkName}.
@@ -436,13 +416,6 @@ func (m *CloudPcOnPremisesConnection) Serialize(writer i878a80d2330e89d26896388a
             return err
         }
     }
-    if m.GetType() != nil {
-        cast := (*m.GetType()).String()
-        err = writer.WriteStringValue("type", &cast)
-        if err != nil {
-            return err
-        }
-    }
     {
         err = writer.WriteStringValue("virtualNetworkId", m.GetVirtualNetworkId())
         if err != nil {
@@ -481,7 +454,7 @@ func (m *CloudPcOnPremisesConnection) SetDisplayName(value *string)() {
         m.displayName = value
     }
 }
-// SetHealthCheckStatus sets the healthCheckStatus property value. The status of the most recent health check done on the Azure network connection. For example, if status is passed, the Azure network connection has passed all checks run by the service. Possible values are: pending, running, passed, failed, unknownFutureValue. Read-only.
+// SetHealthCheckStatus sets the healthCheckStatus property value. The healthCheckStatus property
 func (m *CloudPcOnPremisesConnection) SetHealthCheckStatus(value *CloudPcOnPremisesConnectionStatus)() {
     if m != nil {
         m.healthCheckStatus = value
@@ -499,7 +472,7 @@ func (m *CloudPcOnPremisesConnection) SetInUse(value *bool)() {
         m.inUse = value
     }
 }
-// SetManagedBy sets the managedBy property value. Specifies which services manage the Azure network connection. Possible values are: windows365, devBox, unknownFutureValue. Read-only.
+// SetManagedBy sets the managedBy property value. The managedBy property
 func (m *CloudPcOnPremisesConnection) SetManagedBy(value *CloudPcManagementService)() {
     if m != nil {
         m.managedBy = value
@@ -533,12 +506,6 @@ func (m *CloudPcOnPremisesConnection) SetSubscriptionId(value *string)() {
 func (m *CloudPcOnPremisesConnection) SetSubscriptionName(value *string)() {
     if m != nil {
         m.subscriptionName = value
-    }
-}
-// SetType sets the type property value. Specifies how the provisioned Cloud PC will be joined to Azure Active Directory. Default value is hybridAzureADJoin. Possible values are: azureADJoin, hybridAzureADJoin, unknownFutureValue.
-func (m *CloudPcOnPremisesConnection) SetType(value *CloudPcOnPremisesConnectionType)() {
-    if m != nil {
-        m.type_escaped = value
     }
 }
 // SetVirtualNetworkId sets the virtualNetworkId property value. The ID of the target virtual network. Required format: /subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworks/{virtualNetworkName}.

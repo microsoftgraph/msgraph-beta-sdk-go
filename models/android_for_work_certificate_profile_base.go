@@ -7,7 +7,7 @@ import (
 // AndroidForWorkCertificateProfileBase 
 type AndroidForWorkCertificateProfileBase struct {
     DeviceConfiguration
-    // Scale for the Certificate Validity Period. Possible values are: days, months, years.
+    // Certificate Validity Period Options.
     certificateValidityPeriodScale *CertificateValidityPeriodScale
     // Value for the Certificate Validity Period.
     certificateValidityPeriodValue *int32
@@ -19,7 +19,7 @@ type AndroidForWorkCertificateProfileBase struct {
     rootCertificate AndroidForWorkTrustedRootCertificateable
     // Certificate Subject Alternative Name Type. Possible values are: none, emailAddress, userPrincipalName, customAzureADAttribute, domainNameService, universalResourceIdentifier.
     subjectAlternativeNameType *SubjectAlternativeNameType
-    // Certificate Subject Name Format. Possible values are: commonName, commonNameIncludingEmail, commonNameAsEmail, custom, commonNameAsIMEI, commonNameAsSerialNumber, commonNameAsAadDeviceId, commonNameAsIntuneDeviceId, commonNameAsDurableDeviceId.
+    // Subject Name Format Options.
     subjectNameFormat *SubjectNameFormat
 }
 // NewAndroidForWorkCertificateProfileBase instantiates a new AndroidForWorkCertificateProfileBase and sets the default values.
@@ -27,6 +27,8 @@ func NewAndroidForWorkCertificateProfileBase()(*AndroidForWorkCertificateProfile
     m := &AndroidForWorkCertificateProfileBase{
         DeviceConfiguration: *NewDeviceConfiguration(),
     }
+    typeValue := "#microsoft.graph.androidForWorkCertificateProfileBase";
+    m.SetType(&typeValue);
     return m
 }
 // CreateAndroidForWorkCertificateProfileBaseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -54,7 +56,7 @@ func CreateAndroidForWorkCertificateProfileBaseFromDiscriminatorValue(parseNode 
     }
     return NewAndroidForWorkCertificateProfileBase(), nil
 }
-// GetCertificateValidityPeriodScale gets the certificateValidityPeriodScale property value. Scale for the Certificate Validity Period. Possible values are: days, months, years.
+// GetCertificateValidityPeriodScale gets the certificateValidityPeriodScale property value. Certificate Validity Period Options.
 func (m *AndroidForWorkCertificateProfileBase) GetCertificateValidityPeriodScale()(*CertificateValidityPeriodScale) {
     if m == nil {
         return nil
@@ -181,7 +183,7 @@ func (m *AndroidForWorkCertificateProfileBase) GetSubjectAlternativeNameType()(*
         return m.subjectAlternativeNameType
     }
 }
-// GetSubjectNameFormat gets the subjectNameFormat property value. Certificate Subject Name Format. Possible values are: commonName, commonNameIncludingEmail, commonNameAsEmail, custom, commonNameAsIMEI, commonNameAsSerialNumber, commonNameAsAadDeviceId, commonNameAsIntuneDeviceId, commonNameAsDurableDeviceId.
+// GetSubjectNameFormat gets the subjectNameFormat property value. Subject Name Format Options.
 func (m *AndroidForWorkCertificateProfileBase) GetSubjectNameFormat()(*SubjectNameFormat) {
     if m == nil {
         return nil
@@ -246,7 +248,7 @@ func (m *AndroidForWorkCertificateProfileBase) Serialize(writer i878a80d2330e89d
     }
     return nil
 }
-// SetCertificateValidityPeriodScale sets the certificateValidityPeriodScale property value. Scale for the Certificate Validity Period. Possible values are: days, months, years.
+// SetCertificateValidityPeriodScale sets the certificateValidityPeriodScale property value. Certificate Validity Period Options.
 func (m *AndroidForWorkCertificateProfileBase) SetCertificateValidityPeriodScale(value *CertificateValidityPeriodScale)() {
     if m != nil {
         m.certificateValidityPeriodScale = value
@@ -282,7 +284,7 @@ func (m *AndroidForWorkCertificateProfileBase) SetSubjectAlternativeNameType(val
         m.subjectAlternativeNameType = value
     }
 }
-// SetSubjectNameFormat sets the subjectNameFormat property value. Certificate Subject Name Format. Possible values are: commonName, commonNameIncludingEmail, commonNameAsEmail, custom, commonNameAsIMEI, commonNameAsSerialNumber, commonNameAsAadDeviceId, commonNameAsIntuneDeviceId, commonNameAsDurableDeviceId.
+// SetSubjectNameFormat sets the subjectNameFormat property value. Subject Name Format Options.
 func (m *AndroidForWorkCertificateProfileBase) SetSubjectNameFormat(value *SubjectNameFormat)() {
     if m != nil {
         m.subjectNameFormat = value

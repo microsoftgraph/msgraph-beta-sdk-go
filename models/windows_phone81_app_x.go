@@ -7,7 +7,7 @@ import (
 // WindowsPhone81AppX 
 type WindowsPhone81AppX struct {
     MobileLobApp
-    // The Windows architecture(s) for which this app can run on. Possible values are: none, x86, x64, arm, neutral, arm64.
+    // Contains properties for Windows architecture.
     applicableArchitectures *WindowsArchitecture
     // The Identity Name.
     identityName *string
@@ -29,6 +29,8 @@ func NewWindowsPhone81AppX()(*WindowsPhone81AppX) {
     m := &WindowsPhone81AppX{
         MobileLobApp: *NewMobileLobApp(),
     }
+    typeValue := "#microsoft.graph.windowsPhone81AppX";
+    m.SetType(&typeValue);
     return m
 }
 // CreateWindowsPhone81AppXFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -54,7 +56,7 @@ func CreateWindowsPhone81AppXFromDiscriminatorValue(parseNode i878a80d2330e89d26
     }
     return NewWindowsPhone81AppX(), nil
 }
-// GetApplicableArchitectures gets the applicableArchitectures property value. The Windows architecture(s) for which this app can run on. Possible values are: none, x86, x64, arm, neutral, arm64.
+// GetApplicableArchitectures gets the applicableArchitectures property value. Contains properties for Windows architecture.
 func (m *WindowsPhone81AppX) GetApplicableArchitectures()(*WindowsArchitecture) {
     if m == nil {
         return nil
@@ -260,7 +262,7 @@ func (m *WindowsPhone81AppX) Serialize(writer i878a80d2330e89d26896388a3f487eef2
     }
     return nil
 }
-// SetApplicableArchitectures sets the applicableArchitectures property value. The Windows architecture(s) for which this app can run on. Possible values are: none, x86, x64, arm, neutral, arm64.
+// SetApplicableArchitectures sets the applicableArchitectures property value. Contains properties for Windows architecture.
 func (m *WindowsPhone81AppX) SetApplicableArchitectures(value *WindowsArchitecture)() {
     if m != nil {
         m.applicableArchitectures = value

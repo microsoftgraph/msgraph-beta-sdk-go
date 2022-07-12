@@ -7,7 +7,7 @@ import (
 // WellKnownTaskList 
 type WellKnownTaskList struct {
     BaseTaskList
-    // Property indicating the list name if the given list is a well-known list.. The possible values are: none, defaultList, flaggedEmails, unknownFutureValue.
+    // The wellKnownListName property
     wellKnownListName *WellKnownListName_v2
 }
 // NewWellKnownTaskList instantiates a new WellKnownTaskList and sets the default values.
@@ -36,7 +36,7 @@ func (m *WellKnownTaskList) GetFieldDeserializers()(map[string]func(i878a80d2330
     }
     return res
 }
-// GetWellKnownListName gets the wellKnownListName property value. Property indicating the list name if the given list is a well-known list.. The possible values are: none, defaultList, flaggedEmails, unknownFutureValue.
+// GetWellKnownListName gets the wellKnownListName property value. The wellKnownListName property
 func (m *WellKnownTaskList) GetWellKnownListName()(*WellKnownListName_v2) {
     if m == nil {
         return nil
@@ -59,7 +59,7 @@ func (m *WellKnownTaskList) Serialize(writer i878a80d2330e89d26896388a3f487eef27
     }
     return nil
 }
-// SetWellKnownListName sets the wellKnownListName property value. Property indicating the list name if the given list is a well-known list.. The possible values are: none, defaultList, flaggedEmails, unknownFutureValue.
+// SetWellKnownListName sets the wellKnownListName property value. The wellKnownListName property
 func (m *WellKnownTaskList) SetWellKnownListName(value *WellKnownListName_v2)() {
     if m != nil {
         m.wellKnownListName = value

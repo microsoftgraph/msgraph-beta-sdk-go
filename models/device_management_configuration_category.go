@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DeviceManagementConfigurationCategory device Management Configuration Policy
+// DeviceManagementConfigurationCategory 
 type DeviceManagementConfigurationCategory struct {
     Entity
     // Description of the category header
@@ -21,16 +21,16 @@ type DeviceManagementConfigurationCategory struct {
     name *string
     // Parent id of the category.
     parentCategoryId *string
-    // Platforms types, which settings in the category have. Possible values are: none, android, iOS, macOS, windows10X, windows10, linux, unknownFutureValue.
+    // Supported platform types.
     platforms *DeviceManagementConfigurationPlatforms
     // Root id of the category.
     rootCategoryId *string
-    // Indicates that the category contains settings that are used for Compliance or Configuration. Possible values are: none, configuration, compliance.
+    // Supported setting types
     settingUsage *DeviceManagementConfigurationSettingUsage
-    // Technologies types, which settings in the category have. Possible values are: none, mdm, windows10XManagement, configManager, appleRemoteManagement, microsoftSense, exchangeOnline, linuxMdm, unknownFutureValue.
+    // Describes which technology this setting can be deployed with
     technologies *DeviceManagementConfigurationTechnologies
 }
-// NewDeviceManagementConfigurationCategory instantiates a new deviceManagementConfigurationCategory and sets the default values.
+// NewDeviceManagementConfigurationCategory instantiates a new DeviceManagementConfigurationCategory and sets the default values.
 func NewDeviceManagementConfigurationCategory()(*DeviceManagementConfigurationCategory) {
     m := &DeviceManagementConfigurationCategory{
         Entity: *NewEntity(),
@@ -216,7 +216,7 @@ func (m *DeviceManagementConfigurationCategory) GetParentCategoryId()(*string) {
         return m.parentCategoryId
     }
 }
-// GetPlatforms gets the platforms property value. Platforms types, which settings in the category have. Possible values are: none, android, iOS, macOS, windows10X, windows10, linux, unknownFutureValue.
+// GetPlatforms gets the platforms property value. Supported platform types.
 func (m *DeviceManagementConfigurationCategory) GetPlatforms()(*DeviceManagementConfigurationPlatforms) {
     if m == nil {
         return nil
@@ -232,7 +232,7 @@ func (m *DeviceManagementConfigurationCategory) GetRootCategoryId()(*string) {
         return m.rootCategoryId
     }
 }
-// GetSettingUsage gets the settingUsage property value. Indicates that the category contains settings that are used for Compliance or Configuration. Possible values are: none, configuration, compliance.
+// GetSettingUsage gets the settingUsage property value. Supported setting types
 func (m *DeviceManagementConfigurationCategory) GetSettingUsage()(*DeviceManagementConfigurationSettingUsage) {
     if m == nil {
         return nil
@@ -240,7 +240,7 @@ func (m *DeviceManagementConfigurationCategory) GetSettingUsage()(*DeviceManagem
         return m.settingUsage
     }
 }
-// GetTechnologies gets the technologies property value. Technologies types, which settings in the category have. Possible values are: none, mdm, windows10XManagement, configManager, appleRemoteManagement, microsoftSense, exchangeOnline, linuxMdm, unknownFutureValue.
+// GetTechnologies gets the technologies property value. Describes which technology this setting can be deployed with
 func (m *DeviceManagementConfigurationCategory) GetTechnologies()(*DeviceManagementConfigurationTechnologies) {
     if m == nil {
         return nil
@@ -367,7 +367,7 @@ func (m *DeviceManagementConfigurationCategory) SetParentCategoryId(value *strin
         m.parentCategoryId = value
     }
 }
-// SetPlatforms sets the platforms property value. Platforms types, which settings in the category have. Possible values are: none, android, iOS, macOS, windows10X, windows10, linux, unknownFutureValue.
+// SetPlatforms sets the platforms property value. Supported platform types.
 func (m *DeviceManagementConfigurationCategory) SetPlatforms(value *DeviceManagementConfigurationPlatforms)() {
     if m != nil {
         m.platforms = value
@@ -379,13 +379,13 @@ func (m *DeviceManagementConfigurationCategory) SetRootCategoryId(value *string)
         m.rootCategoryId = value
     }
 }
-// SetSettingUsage sets the settingUsage property value. Indicates that the category contains settings that are used for Compliance or Configuration. Possible values are: none, configuration, compliance.
+// SetSettingUsage sets the settingUsage property value. Supported setting types
 func (m *DeviceManagementConfigurationCategory) SetSettingUsage(value *DeviceManagementConfigurationSettingUsage)() {
     if m != nil {
         m.settingUsage = value
     }
 }
-// SetTechnologies sets the technologies property value. Technologies types, which settings in the category have. Possible values are: none, mdm, windows10XManagement, configManager, appleRemoteManagement, microsoftSense, exchangeOnline, linuxMdm, unknownFutureValue.
+// SetTechnologies sets the technologies property value. Describes which technology this setting can be deployed with
 func (m *DeviceManagementConfigurationCategory) SetTechnologies(value *DeviceManagementConfigurationTechnologies)() {
     if m != nil {
         m.technologies = value

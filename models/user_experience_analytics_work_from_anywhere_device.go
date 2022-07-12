@@ -29,7 +29,7 @@ type UserExperienceAnalyticsWorkFromAnywhereDevice struct {
     deviceId *string
     // The work from anywhere device's name.
     deviceName *string
-    // The user experience work from anywhere per device health status. Possible values are: unknown, insufficientData, needsAttention, meetingGoals.
+    // The healthStatus property
     healthStatus *UserExperienceAnalyticsHealthState
     // The user experience work from anywhere device's Cloud Management Gateway for Configuration Manager is enabled.
     isCloudManagedGatewayEnabled *bool
@@ -69,7 +69,7 @@ type UserExperienceAnalyticsWorkFromAnywhereDevice struct {
     tenantAttached *bool
     // The user experience work from anywhere device, Is Trusted Platform Module (TPM) hardware check failed for device to the latest version of upgrade to windows.
     tpmCheckFailed *bool
-    // The user experience work from anywhere windows upgrade eligibility status of device. Possible values are: upgraded, unknown, notCapable, capable.
+    // Work From Anywhere windows device upgrade eligibility status
     upgradeEligibility *OperatingSystemUpgradeEligibility
     // The user experience work from anywhere per device windows score. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
     windowsScore *float64
@@ -520,7 +520,7 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) GetFieldDeserializers()(
     }
     return res
 }
-// GetHealthStatus gets the healthStatus property value. The user experience work from anywhere per device health status. Possible values are: unknown, insufficientData, needsAttention, meetingGoals.
+// GetHealthStatus gets the healthStatus property value. The healthStatus property
 func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) GetHealthStatus()(*UserExperienceAnalyticsHealthState) {
     if m == nil {
         return nil
@@ -680,7 +680,7 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) GetTpmCheckFailed()(*boo
         return m.tpmCheckFailed
     }
 }
-// GetUpgradeEligibility gets the upgradeEligibility property value. The user experience work from anywhere windows upgrade eligibility status of device. Possible values are: upgraded, unknown, notCapable, capable.
+// GetUpgradeEligibility gets the upgradeEligibility property value. Work From Anywhere windows device upgrade eligibility status
 func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) GetUpgradeEligibility()(*OperatingSystemUpgradeEligibility) {
     if m == nil {
         return nil
@@ -984,7 +984,7 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) SetDeviceName(value *str
         m.deviceName = value
     }
 }
-// SetHealthStatus sets the healthStatus property value. The user experience work from anywhere per device health status. Possible values are: unknown, insufficientData, needsAttention, meetingGoals.
+// SetHealthStatus sets the healthStatus property value. The healthStatus property
 func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) SetHealthStatus(value *UserExperienceAnalyticsHealthState)() {
     if m != nil {
         m.healthStatus = value
@@ -1104,7 +1104,7 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) SetTpmCheckFailed(value 
         m.tpmCheckFailed = value
     }
 }
-// SetUpgradeEligibility sets the upgradeEligibility property value. The user experience work from anywhere windows upgrade eligibility status of device. Possible values are: upgraded, unknown, notCapable, capable.
+// SetUpgradeEligibility sets the upgradeEligibility property value. Work From Anywhere windows device upgrade eligibility status
 func (m *UserExperienceAnalyticsWorkFromAnywhereDevice) SetUpgradeEligibility(value *OperatingSystemUpgradeEligibility)() {
     if m != nil {
         m.upgradeEligibility = value

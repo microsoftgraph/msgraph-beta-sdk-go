@@ -11,7 +11,7 @@ type WindowsIdentityProtectionConfiguration struct {
     enhancedAntiSpoofingForFacialFeaturesEnabled *bool
     // Integer value specifies the period (in days) that a PIN can be used before the system requires the user to change it. Valid values are 0 to 730 inclusive. Valid values 0 to 730
     pinExpirationInDays *int32
-    // This value configures the use of lowercase characters in the Windows Hello for Business PIN. Possible values are: blocked, required, allowed, notConfigured.
+    // Possible values of the ConfigurationUsage list.
     pinLowercaseCharactersUsage *ConfigurationUsage
     // Integer value that sets the maximum number of characters allowed for the work PIN. Valid values are 4 to 127 inclusive and greater than or equal to the value set for the minimum PIN. Valid values 4 to 127
     pinMaximumLength *int32
@@ -21,9 +21,9 @@ type WindowsIdentityProtectionConfiguration struct {
     pinPreviousBlockCount *int32
     // Boolean value that enables a user to change their PIN by using the Windows Hello for Business PIN recovery service.
     pinRecoveryEnabled *bool
-    // Controls the ability to use special characters in the Windows Hello for Business PIN. Possible values are: blocked, required, allowed, notConfigured.
+    // Possible values of the ConfigurationUsage list.
     pinSpecialCharactersUsage *ConfigurationUsage
-    // This value configures the use of uppercase characters in the Windows Hello for Business PIN. Possible values are: blocked, required, allowed, notConfigured.
+    // Possible values of the ConfigurationUsage list.
     pinUppercaseCharactersUsage *ConfigurationUsage
     // Controls whether to require a Trusted Platform Module (TPM) for provisioning Windows Hello for Business. A TPM provides an additional security benefit in that data stored on it cannot be used on other devices. If set to False, all devices can provision Windows Hello for Business even if there is not a usable TPM.
     securityDeviceRequired *bool
@@ -208,7 +208,7 @@ func (m *WindowsIdentityProtectionConfiguration) GetPinExpirationInDays()(*int32
         return m.pinExpirationInDays
     }
 }
-// GetPinLowercaseCharactersUsage gets the pinLowercaseCharactersUsage property value. This value configures the use of lowercase characters in the Windows Hello for Business PIN. Possible values are: blocked, required, allowed, notConfigured.
+// GetPinLowercaseCharactersUsage gets the pinLowercaseCharactersUsage property value. Possible values of the ConfigurationUsage list.
 func (m *WindowsIdentityProtectionConfiguration) GetPinLowercaseCharactersUsage()(*ConfigurationUsage) {
     if m == nil {
         return nil
@@ -248,7 +248,7 @@ func (m *WindowsIdentityProtectionConfiguration) GetPinRecoveryEnabled()(*bool) 
         return m.pinRecoveryEnabled
     }
 }
-// GetPinSpecialCharactersUsage gets the pinSpecialCharactersUsage property value. Controls the ability to use special characters in the Windows Hello for Business PIN. Possible values are: blocked, required, allowed, notConfigured.
+// GetPinSpecialCharactersUsage gets the pinSpecialCharactersUsage property value. Possible values of the ConfigurationUsage list.
 func (m *WindowsIdentityProtectionConfiguration) GetPinSpecialCharactersUsage()(*ConfigurationUsage) {
     if m == nil {
         return nil
@@ -256,7 +256,7 @@ func (m *WindowsIdentityProtectionConfiguration) GetPinSpecialCharactersUsage()(
         return m.pinSpecialCharactersUsage
     }
 }
-// GetPinUppercaseCharactersUsage gets the pinUppercaseCharactersUsage property value. This value configures the use of uppercase characters in the Windows Hello for Business PIN. Possible values are: blocked, required, allowed, notConfigured.
+// GetPinUppercaseCharactersUsage gets the pinUppercaseCharactersUsage property value. Possible values of the ConfigurationUsage list.
 func (m *WindowsIdentityProtectionConfiguration) GetPinUppercaseCharactersUsage()(*ConfigurationUsage) {
     if m == nil {
         return nil
@@ -411,7 +411,7 @@ func (m *WindowsIdentityProtectionConfiguration) SetPinExpirationInDays(value *i
         m.pinExpirationInDays = value
     }
 }
-// SetPinLowercaseCharactersUsage sets the pinLowercaseCharactersUsage property value. This value configures the use of lowercase characters in the Windows Hello for Business PIN. Possible values are: blocked, required, allowed, notConfigured.
+// SetPinLowercaseCharactersUsage sets the pinLowercaseCharactersUsage property value. Possible values of the ConfigurationUsage list.
 func (m *WindowsIdentityProtectionConfiguration) SetPinLowercaseCharactersUsage(value *ConfigurationUsage)() {
     if m != nil {
         m.pinLowercaseCharactersUsage = value
@@ -441,13 +441,13 @@ func (m *WindowsIdentityProtectionConfiguration) SetPinRecoveryEnabled(value *bo
         m.pinRecoveryEnabled = value
     }
 }
-// SetPinSpecialCharactersUsage sets the pinSpecialCharactersUsage property value. Controls the ability to use special characters in the Windows Hello for Business PIN. Possible values are: blocked, required, allowed, notConfigured.
+// SetPinSpecialCharactersUsage sets the pinSpecialCharactersUsage property value. Possible values of the ConfigurationUsage list.
 func (m *WindowsIdentityProtectionConfiguration) SetPinSpecialCharactersUsage(value *ConfigurationUsage)() {
     if m != nil {
         m.pinSpecialCharactersUsage = value
     }
 }
-// SetPinUppercaseCharactersUsage sets the pinUppercaseCharactersUsage property value. This value configures the use of uppercase characters in the Windows Hello for Business PIN. Possible values are: blocked, required, allowed, notConfigured.
+// SetPinUppercaseCharactersUsage sets the pinUppercaseCharactersUsage property value. Possible values of the ConfigurationUsage list.
 func (m *WindowsIdentityProtectionConfiguration) SetPinUppercaseCharactersUsage(value *ConfigurationUsage)() {
     if m != nil {
         m.pinUppercaseCharactersUsage = value

@@ -31,7 +31,7 @@ type SynchronizationTaskExecution struct {
     countImportedReferenceDeltas *int64
     // If an error was encountered, contains a synchronizationError object with details.
     error SynchronizationErrorable
-    // Code summarizing the result of this run. Possible values are: Succeeded, Failed, EntryLevelErrors.
+    // The state property
     state *SynchronizationTaskExecutionResult
     // Time when this job run began. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
     timeBegan *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
@@ -290,7 +290,7 @@ func (m *SynchronizationTaskExecution) GetFieldDeserializers()(map[string]func(i
     }
     return res
 }
-// GetState gets the state property value. Code summarizing the result of this run. Possible values are: Succeeded, Failed, EntryLevelErrors.
+// GetState gets the state property value. The state property
 func (m *SynchronizationTaskExecution) GetState()(*SynchronizationTaskExecutionResult) {
     if m == nil {
         return nil
@@ -481,7 +481,7 @@ func (m *SynchronizationTaskExecution) SetError(value SynchronizationErrorable)(
         m.error = value
     }
 }
-// SetState sets the state property value. Code summarizing the result of this run. Possible values are: Succeeded, Failed, EntryLevelErrors.
+// SetState sets the state property value. The state property
 func (m *SynchronizationTaskExecution) SetState(value *SynchronizationTaskExecutionResult)() {
     if m != nil {
         m.state = value

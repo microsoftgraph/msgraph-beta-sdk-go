@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// TeamworkDeviceOperation provides operations to manage the teamwork singleton.
+// TeamworkDeviceOperation 
 type TeamworkDeviceOperation struct {
     Entity
     // Time at which the operation reached a final state (for example, Successful, Failed, and Cancelled).
@@ -20,14 +20,14 @@ type TeamworkDeviceOperation struct {
     lastActionBy IdentitySetable
     // The UTC date and time when the device operation was last modified.
     lastActionDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // Type of async operation on a device. The possible values are: deviceRestart, configUpdate, deviceDiagnostics, softwareUpdate, deviceManagementAgentConfigUpdate, remoteLogin, remoteLogout, unknownFutureValue.
+    // The operationType property
     operationType *TeamworkDeviceOperationType
     // Time at which the operation was started.
     startedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The current status of the async operation, for example, Queued, Scheduled, InProgress,  Successful, Cancelled, and Failed.
     status *string
 }
-// NewTeamworkDeviceOperation instantiates a new teamworkDeviceOperation and sets the default values.
+// NewTeamworkDeviceOperation instantiates a new TeamworkDeviceOperation and sets the default values.
 func NewTeamworkDeviceOperation()(*TeamworkDeviceOperation) {
     m := &TeamworkDeviceOperation{
         Entity: *NewEntity(),
@@ -181,7 +181,7 @@ func (m *TeamworkDeviceOperation) GetLastActionDateTime()(*i336074805fc853987abe
         return m.lastActionDateTime
     }
 }
-// GetOperationType gets the operationType property value. Type of async operation on a device. The possible values are: deviceRestart, configUpdate, deviceDiagnostics, softwareUpdate, deviceManagementAgentConfigUpdate, remoteLogin, remoteLogout, unknownFutureValue.
+// GetOperationType gets the operationType property value. The operationType property
 func (m *TeamworkDeviceOperation) GetOperationType()(*TeamworkDeviceOperationType) {
     if m == nil {
         return nil
@@ -304,7 +304,7 @@ func (m *TeamworkDeviceOperation) SetLastActionDateTime(value *i336074805fc85398
         m.lastActionDateTime = value
     }
 }
-// SetOperationType sets the operationType property value. Type of async operation on a device. The possible values are: deviceRestart, configUpdate, deviceDiagnostics, softwareUpdate, deviceManagementAgentConfigUpdate, remoteLogin, remoteLogout, unknownFutureValue.
+// SetOperationType sets the operationType property value. The operationType property
 func (m *TeamworkDeviceOperation) SetOperationType(value *TeamworkDeviceOperationType)() {
     if m != nil {
         m.operationType = value

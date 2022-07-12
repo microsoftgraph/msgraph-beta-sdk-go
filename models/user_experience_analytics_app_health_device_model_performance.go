@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// UserExperienceAnalyticsAppHealthDeviceModelPerformance the user experience analytics device model performance entity contains device model performance details.
+// UserExperienceAnalyticsAppHealthDeviceModelPerformance 
 type UserExperienceAnalyticsAppHealthDeviceModelPerformance struct {
     Entity
     // The number of active devices for the model. Valid values -2147483648 to 2147483647
@@ -13,7 +13,7 @@ type UserExperienceAnalyticsAppHealthDeviceModelPerformance struct {
     deviceManufacturer *string
     // The model name of the device.
     deviceModel *string
-    // The health state of the user experience analytics model. Possible values are: unknown, insufficientData, needsAttention, meetingGoals.
+    // The healthStatus property
     healthStatus *UserExperienceAnalyticsHealthState
     // The mean time to failure for the model device in minutes. Valid values -2147483648 to 2147483647
     meanTimeToFailureInMinutes *int32
@@ -22,7 +22,7 @@ type UserExperienceAnalyticsAppHealthDeviceModelPerformance struct {
     // The overall app health status of the device model.
     modelAppHealthStatus *string
 }
-// NewUserExperienceAnalyticsAppHealthDeviceModelPerformance instantiates a new userExperienceAnalyticsAppHealthDeviceModelPerformance and sets the default values.
+// NewUserExperienceAnalyticsAppHealthDeviceModelPerformance instantiates a new UserExperienceAnalyticsAppHealthDeviceModelPerformance and sets the default values.
 func NewUserExperienceAnalyticsAppHealthDeviceModelPerformance()(*UserExperienceAnalyticsAppHealthDeviceModelPerformance) {
     m := &UserExperienceAnalyticsAppHealthDeviceModelPerformance{
         Entity: *NewEntity(),
@@ -132,7 +132,7 @@ func (m *UserExperienceAnalyticsAppHealthDeviceModelPerformance) GetFieldDeseria
     }
     return res
 }
-// GetHealthStatus gets the healthStatus property value. The health state of the user experience analytics model. Possible values are: unknown, insufficientData, needsAttention, meetingGoals.
+// GetHealthStatus gets the healthStatus property value. The healthStatus property
 func (m *UserExperienceAnalyticsAppHealthDeviceModelPerformance) GetHealthStatus()(*UserExperienceAnalyticsHealthState) {
     if m == nil {
         return nil
@@ -233,7 +233,7 @@ func (m *UserExperienceAnalyticsAppHealthDeviceModelPerformance) SetDeviceModel(
         m.deviceModel = value
     }
 }
-// SetHealthStatus sets the healthStatus property value. The health state of the user experience analytics model. Possible values are: unknown, insufficientData, needsAttention, meetingGoals.
+// SetHealthStatus sets the healthStatus property value. The healthStatus property
 func (m *UserExperienceAnalyticsAppHealthDeviceModelPerformance) SetHealthStatus(value *UserExperienceAnalyticsHealthState)() {
     if m != nil {
         m.healthStatus = value

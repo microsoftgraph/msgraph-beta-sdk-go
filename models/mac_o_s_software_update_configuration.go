@@ -7,17 +7,17 @@ import (
 // MacOSSoftwareUpdateConfiguration 
 type MacOSSoftwareUpdateConfiguration struct {
     DeviceConfiguration
-    // Update behavior for all other updates. Possible values are: notConfigured, default, downloadOnly, installASAP, notifyOnly, installLater.
+    // Update behavior options for macOS software updates.
     allOtherUpdateBehavior *MacOSSoftwareUpdateBehavior
-    // Update behavior for configuration data file updates. Possible values are: notConfigured, default, downloadOnly, installASAP, notifyOnly, installLater.
+    // Update behavior options for macOS software updates.
     configDataUpdateBehavior *MacOSSoftwareUpdateBehavior
-    // Update behavior for critical updates. Possible values are: notConfigured, default, downloadOnly, installASAP, notifyOnly, installLater.
+    // Update behavior options for macOS software updates.
     criticalUpdateBehavior *MacOSSoftwareUpdateBehavior
     // Custom Time windows when updates will be allowed or blocked. This collection can contain a maximum of 20 elements.
     customUpdateTimeWindows []CustomUpdateTimeWindowable
-    // Update behavior for firmware updates. Possible values are: notConfigured, default, downloadOnly, installASAP, notifyOnly, installLater.
+    // Update behavior options for macOS software updates.
     firmwareUpdateBehavior *MacOSSoftwareUpdateBehavior
-    // Update schedule type. Possible values are: alwaysUpdate, updateDuringTimeWindows, updateOutsideOfTimeWindows.
+    // Update schedule type for macOS software updates.
     updateScheduleType *MacOSSoftwareUpdateScheduleType
     // Minutes indicating UTC offset for each update time window
     updateTimeWindowUtcOffsetInMinutes *int32
@@ -33,7 +33,7 @@ func NewMacOSSoftwareUpdateConfiguration()(*MacOSSoftwareUpdateConfiguration) {
 func CreateMacOSSoftwareUpdateConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewMacOSSoftwareUpdateConfiguration(), nil
 }
-// GetAllOtherUpdateBehavior gets the allOtherUpdateBehavior property value. Update behavior for all other updates. Possible values are: notConfigured, default, downloadOnly, installASAP, notifyOnly, installLater.
+// GetAllOtherUpdateBehavior gets the allOtherUpdateBehavior property value. Update behavior options for macOS software updates.
 func (m *MacOSSoftwareUpdateConfiguration) GetAllOtherUpdateBehavior()(*MacOSSoftwareUpdateBehavior) {
     if m == nil {
         return nil
@@ -41,7 +41,7 @@ func (m *MacOSSoftwareUpdateConfiguration) GetAllOtherUpdateBehavior()(*MacOSSof
         return m.allOtherUpdateBehavior
     }
 }
-// GetConfigDataUpdateBehavior gets the configDataUpdateBehavior property value. Update behavior for configuration data file updates. Possible values are: notConfigured, default, downloadOnly, installASAP, notifyOnly, installLater.
+// GetConfigDataUpdateBehavior gets the configDataUpdateBehavior property value. Update behavior options for macOS software updates.
 func (m *MacOSSoftwareUpdateConfiguration) GetConfigDataUpdateBehavior()(*MacOSSoftwareUpdateBehavior) {
     if m == nil {
         return nil
@@ -49,7 +49,7 @@ func (m *MacOSSoftwareUpdateConfiguration) GetConfigDataUpdateBehavior()(*MacOSS
         return m.configDataUpdateBehavior
     }
 }
-// GetCriticalUpdateBehavior gets the criticalUpdateBehavior property value. Update behavior for critical updates. Possible values are: notConfigured, default, downloadOnly, installASAP, notifyOnly, installLater.
+// GetCriticalUpdateBehavior gets the criticalUpdateBehavior property value. Update behavior options for macOS software updates.
 func (m *MacOSSoftwareUpdateConfiguration) GetCriticalUpdateBehavior()(*MacOSSoftwareUpdateBehavior) {
     if m == nil {
         return nil
@@ -144,7 +144,7 @@ func (m *MacOSSoftwareUpdateConfiguration) GetFieldDeserializers()(map[string]fu
     }
     return res
 }
-// GetFirmwareUpdateBehavior gets the firmwareUpdateBehavior property value. Update behavior for firmware updates. Possible values are: notConfigured, default, downloadOnly, installASAP, notifyOnly, installLater.
+// GetFirmwareUpdateBehavior gets the firmwareUpdateBehavior property value. Update behavior options for macOS software updates.
 func (m *MacOSSoftwareUpdateConfiguration) GetFirmwareUpdateBehavior()(*MacOSSoftwareUpdateBehavior) {
     if m == nil {
         return nil
@@ -152,7 +152,7 @@ func (m *MacOSSoftwareUpdateConfiguration) GetFirmwareUpdateBehavior()(*MacOSSof
         return m.firmwareUpdateBehavior
     }
 }
-// GetUpdateScheduleType gets the updateScheduleType property value. Update schedule type. Possible values are: alwaysUpdate, updateDuringTimeWindows, updateOutsideOfTimeWindows.
+// GetUpdateScheduleType gets the updateScheduleType property value. Update schedule type for macOS software updates.
 func (m *MacOSSoftwareUpdateConfiguration) GetUpdateScheduleType()(*MacOSSoftwareUpdateScheduleType) {
     if m == nil {
         return nil
@@ -227,19 +227,19 @@ func (m *MacOSSoftwareUpdateConfiguration) Serialize(writer i878a80d2330e89d2689
     }
     return nil
 }
-// SetAllOtherUpdateBehavior sets the allOtherUpdateBehavior property value. Update behavior for all other updates. Possible values are: notConfigured, default, downloadOnly, installASAP, notifyOnly, installLater.
+// SetAllOtherUpdateBehavior sets the allOtherUpdateBehavior property value. Update behavior options for macOS software updates.
 func (m *MacOSSoftwareUpdateConfiguration) SetAllOtherUpdateBehavior(value *MacOSSoftwareUpdateBehavior)() {
     if m != nil {
         m.allOtherUpdateBehavior = value
     }
 }
-// SetConfigDataUpdateBehavior sets the configDataUpdateBehavior property value. Update behavior for configuration data file updates. Possible values are: notConfigured, default, downloadOnly, installASAP, notifyOnly, installLater.
+// SetConfigDataUpdateBehavior sets the configDataUpdateBehavior property value. Update behavior options for macOS software updates.
 func (m *MacOSSoftwareUpdateConfiguration) SetConfigDataUpdateBehavior(value *MacOSSoftwareUpdateBehavior)() {
     if m != nil {
         m.configDataUpdateBehavior = value
     }
 }
-// SetCriticalUpdateBehavior sets the criticalUpdateBehavior property value. Update behavior for critical updates. Possible values are: notConfigured, default, downloadOnly, installASAP, notifyOnly, installLater.
+// SetCriticalUpdateBehavior sets the criticalUpdateBehavior property value. Update behavior options for macOS software updates.
 func (m *MacOSSoftwareUpdateConfiguration) SetCriticalUpdateBehavior(value *MacOSSoftwareUpdateBehavior)() {
     if m != nil {
         m.criticalUpdateBehavior = value
@@ -251,13 +251,13 @@ func (m *MacOSSoftwareUpdateConfiguration) SetCustomUpdateTimeWindows(value []Cu
         m.customUpdateTimeWindows = value
     }
 }
-// SetFirmwareUpdateBehavior sets the firmwareUpdateBehavior property value. Update behavior for firmware updates. Possible values are: notConfigured, default, downloadOnly, installASAP, notifyOnly, installLater.
+// SetFirmwareUpdateBehavior sets the firmwareUpdateBehavior property value. Update behavior options for macOS software updates.
 func (m *MacOSSoftwareUpdateConfiguration) SetFirmwareUpdateBehavior(value *MacOSSoftwareUpdateBehavior)() {
     if m != nil {
         m.firmwareUpdateBehavior = value
     }
 }
-// SetUpdateScheduleType sets the updateScheduleType property value. Update schedule type. Possible values are: alwaysUpdate, updateDuringTimeWindows, updateOutsideOfTimeWindows.
+// SetUpdateScheduleType sets the updateScheduleType property value. Update schedule type for macOS software updates.
 func (m *MacOSSoftwareUpdateConfiguration) SetUpdateScheduleType(value *MacOSSoftwareUpdateScheduleType)() {
     if m != nil {
         m.updateScheduleType = value

@@ -10,10 +10,12 @@ type AssignmentFilterEvaluateRequest struct {
     additionalData map[string]interface{}
     // Order the devices should be sorted in. Default is ascending on device name.
     orderBy []string
-    // Platform type of the devices on which the Assignment Filter will be applicable. Possible values are: android, androidForWork, iOS, macOS, windowsPhone81, windows81AndLater, windows10AndLater, androidWorkProfile, unknown.
+    // Supported platform types.
     platform *DevicePlatformType
     // Rule definition of the Assignment Filter.
     rule *string
+    // Search keyword applied to scope found devices.
+    search *string
     // Number of records to skip. Default value is 0
     skip *int32
     // Limit of records per request. Default value is 100, if provided less than 0 or greater than 100
@@ -75,6 +77,16 @@ func (m *AssignmentFilterEvaluateRequest) GetFieldDeserializers()(map[string]fun
         }
         return nil
     }
+    res["search"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetSearch(val)
+        }
+        return nil
+    }
     res["skip"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
@@ -105,7 +117,7 @@ func (m *AssignmentFilterEvaluateRequest) GetOrderBy()([]string) {
         return m.orderBy
     }
 }
-// GetPlatform gets the platform property value. Platform type of the devices on which the Assignment Filter will be applicable. Possible values are: android, androidForWork, iOS, macOS, windowsPhone81, windows81AndLater, windows10AndLater, androidWorkProfile, unknown.
+// GetPlatform gets the platform property value. Supported platform types.
 func (m *AssignmentFilterEvaluateRequest) GetPlatform()(*DevicePlatformType) {
     if m == nil {
         return nil
@@ -119,6 +131,14 @@ func (m *AssignmentFilterEvaluateRequest) GetRule()(*string) {
         return nil
     } else {
         return m.rule
+    }
+}
+// GetSearch gets the search property value. Search keyword applied to scope found devices.
+func (m *AssignmentFilterEvaluateRequest) GetSearch()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.search
     }
 }
 // GetSkip gets the skip property value. Number of records to skip. Default value is 0
@@ -159,6 +179,12 @@ func (m *AssignmentFilterEvaluateRequest) Serialize(writer i878a80d2330e89d26896
         }
     }
     {
+        err := writer.WriteStringValue("search", m.GetSearch())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err := writer.WriteInt32Value("skip", m.GetSkip())
         if err != nil {
             return err
@@ -190,7 +216,7 @@ func (m *AssignmentFilterEvaluateRequest) SetOrderBy(value []string)() {
         m.orderBy = value
     }
 }
-// SetPlatform sets the platform property value. Platform type of the devices on which the Assignment Filter will be applicable. Possible values are: android, androidForWork, iOS, macOS, windowsPhone81, windows81AndLater, windows10AndLater, androidWorkProfile, unknown.
+// SetPlatform sets the platform property value. Supported platform types.
 func (m *AssignmentFilterEvaluateRequest) SetPlatform(value *DevicePlatformType)() {
     if m != nil {
         m.platform = value
@@ -200,6 +226,12 @@ func (m *AssignmentFilterEvaluateRequest) SetPlatform(value *DevicePlatformType)
 func (m *AssignmentFilterEvaluateRequest) SetRule(value *string)() {
     if m != nil {
         m.rule = value
+    }
+}
+// SetSearch sets the search property value. Search keyword applied to scope found devices.
+func (m *AssignmentFilterEvaluateRequest) SetSearch(value *string)() {
+    if m != nil {
+        m.search = value
     }
 }
 // SetSkip sets the skip property value. Number of records to skip. Default value is 0

@@ -11,7 +11,7 @@ type UpdateStatusPostRequestBody struct {
     additionalData map[string]interface{}
     // The note property
     note *string
-    // The status property
+    // Device app management task status.
     status *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceAppManagementTaskStatus
 }
 // NewUpdateStatusPostRequestBody instantiates a new updateStatusPostRequestBody and sets the default values.
@@ -66,7 +66,7 @@ func (m *UpdateStatusPostRequestBody) GetNote()(*string) {
         return m.note
     }
 }
-// GetStatus gets the status property value. The status property
+// GetStatus gets the status property value. Device app management task status.
 func (m *UpdateStatusPostRequestBody) GetStatus()(*ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceAppManagementTaskStatus) {
     if m == nil {
         return nil
@@ -109,7 +109,7 @@ func (m *UpdateStatusPostRequestBody) SetNote(value *string)() {
         m.note = value
     }
 }
-// SetStatus sets the status property value. The status property
+// SetStatus sets the status property value. Device app management task status.
 func (m *UpdateStatusPostRequestBody) SetStatus(value *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceAppManagementTaskStatus)() {
     if m != nil {
         m.status = value

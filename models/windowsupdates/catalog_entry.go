@@ -6,7 +6,7 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
-// CatalogEntry provides operations to manage the admin singleton.
+// CatalogEntry provides operations to manage the collection of activityStatistics entities.
 type CatalogEntry struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
     // The date on which the content is no longer available to deploy using the service. Read-only.
@@ -21,6 +21,8 @@ func NewCatalogEntry()(*CatalogEntry) {
     m := &CatalogEntry{
         Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),
     }
+    typeValue := "#microsoft.graph.windowsUpdates.catalogEntry";
+    m.SetType(&typeValue);
     return m
 }
 // CreateCatalogEntryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

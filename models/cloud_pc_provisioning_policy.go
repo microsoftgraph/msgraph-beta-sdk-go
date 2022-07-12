@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// CloudPcProvisioningPolicy provides operations to manage the deviceManagement singleton.
+// CloudPcProvisioningPolicy 
 type CloudPcProvisioningPolicy struct {
     Entity
     // The URL of the alternate resource that links to this provisioning policy. Read-only.
@@ -25,11 +25,11 @@ type CloudPcProvisioningPolicy struct {
     imageDisplayName *string
     // The ID of the OS image you want to provision on Cloud PCs. The format for a gallery type image is: {publisher_offer_sku}. Supported values for each of the parameters are as follows:publisher: Microsoftwindowsdesktop. offer: windows-ent-cpc. sku: 21h1-ent-cpc-m365, 21h1-ent-cpc-os, 20h2-ent-cpc-m365, 20h2-ent-cpc-os, 20h1-ent-cpc-m365, 20h1-ent-cpc-os, 19h2-ent-cpc-m365 and 19h2-ent-cpc-os.
     imageId *string
-    // The type of OS image (custom or gallery) you want to provision on Cloud PCs. Possible values are: gallery, custom.
+    // The imageType property
     imageType *CloudPcProvisioningPolicyImageType
     // Indicates whether the local admin option is enabled. If the local admin option is enabled, the end user can be an admin of the Cloud PC device. Read-only.
     localAdminEnabled *bool
-    // Specifies which services manage the Azure network connection. Possible values are: windows365, devBox, unknownFutureValue. Read-only.
+    // The managedBy property
     managedBy *CloudPcManagementService
     // The specific settings for the Microsoft Managed Desktop, which enables customers to get a managed device experience for the Cloud PC. Before you can enable Microsoft Managed Desktop, an admin must configure it.
     microsoftManagedDesktop MicrosoftManagedDesktopable
@@ -38,7 +38,7 @@ type CloudPcProvisioningPolicy struct {
     // Specific Windows settings to configure while creating Cloud PCs for this provisioning policy.
     windowsSettings CloudPcWindowsSettingsable
 }
-// NewCloudPcProvisioningPolicy instantiates a new cloudPcProvisioningPolicy and sets the default values.
+// NewCloudPcProvisioningPolicy instantiates a new CloudPcProvisioningPolicy and sets the default values.
 func NewCloudPcProvisioningPolicy()(*CloudPcProvisioningPolicy) {
     m := &CloudPcProvisioningPolicy{
         Entity: *NewEntity(),
@@ -280,7 +280,7 @@ func (m *CloudPcProvisioningPolicy) GetImageId()(*string) {
         return m.imageId
     }
 }
-// GetImageType gets the imageType property value. The type of OS image (custom or gallery) you want to provision on Cloud PCs. Possible values are: gallery, custom.
+// GetImageType gets the imageType property value. The imageType property
 func (m *CloudPcProvisioningPolicy) GetImageType()(*CloudPcProvisioningPolicyImageType) {
     if m == nil {
         return nil
@@ -296,7 +296,7 @@ func (m *CloudPcProvisioningPolicy) GetLocalAdminEnabled()(*bool) {
         return m.localAdminEnabled
     }
 }
-// GetManagedBy gets the managedBy property value. Specifies which services manage the Azure network connection. Possible values are: windows365, devBox, unknownFutureValue. Read-only.
+// GetManagedBy gets the managedBy property value. The managedBy property
 func (m *CloudPcProvisioningPolicy) GetManagedBy()(*CloudPcManagementService) {
     if m == nil {
         return nil
@@ -486,7 +486,7 @@ func (m *CloudPcProvisioningPolicy) SetImageId(value *string)() {
         m.imageId = value
     }
 }
-// SetImageType sets the imageType property value. The type of OS image (custom or gallery) you want to provision on Cloud PCs. Possible values are: gallery, custom.
+// SetImageType sets the imageType property value. The imageType property
 func (m *CloudPcProvisioningPolicy) SetImageType(value *CloudPcProvisioningPolicyImageType)() {
     if m != nil {
         m.imageType = value
@@ -498,7 +498,7 @@ func (m *CloudPcProvisioningPolicy) SetLocalAdminEnabled(value *bool)() {
         m.localAdminEnabled = value
     }
 }
-// SetManagedBy sets the managedBy property value. Specifies which services manage the Azure network connection. Possible values are: windows365, devBox, unknownFutureValue. Read-only.
+// SetManagedBy sets the managedBy property value. The managedBy property
 func (m *CloudPcProvisioningPolicy) SetManagedBy(value *CloudPcManagementService)() {
     if m != nil {
         m.managedBy = value

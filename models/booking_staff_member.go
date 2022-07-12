@@ -13,7 +13,7 @@ type BookingStaffMember struct {
     colorIndex *int32
     // The isEmailNotificationEnabled property
     isEmailNotificationEnabled *bool
-    // The role of the staff member in the business. Possible values are: guest, administrator, viewer, externalGuest, unknownFutureValue, scheduler and member. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: scheduler, member. Required.
+    // The role property
     role *BookingStaffRole
     // The time zone of the staff member. For a list of possible values, see dateTimeTimeZone.
     timeZone *string
@@ -136,7 +136,7 @@ func (m *BookingStaffMember) GetIsEmailNotificationEnabled()(*bool) {
         return m.isEmailNotificationEnabled
     }
 }
-// GetRole gets the role property value. The role of the staff member in the business. Possible values are: guest, administrator, viewer, externalGuest, unknownFutureValue, scheduler and member. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: scheduler, member. Required.
+// GetRole gets the role property value. The role property
 func (m *BookingStaffMember) GetRole()(*BookingStaffRole) {
     if m == nil {
         return nil
@@ -241,7 +241,7 @@ func (m *BookingStaffMember) SetIsEmailNotificationEnabled(value *bool)() {
         m.isEmailNotificationEnabled = value
     }
 }
-// SetRole sets the role property value. The role of the staff member in the business. Possible values are: guest, administrator, viewer, externalGuest, unknownFutureValue, scheduler and member. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: scheduler, member. Required.
+// SetRole sets the role property value. The role property
 func (m *BookingStaffMember) SetRole(value *BookingStaffRole)() {
     if m != nil {
         m.role = value

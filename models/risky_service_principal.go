@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// RiskyServicePrincipal provides operations to manage the identityProtectionRoot singleton.
+// RiskyServicePrincipal 
 type RiskyServicePrincipal struct {
     Entity
     // true if the service principal account is enabled; otherwise, false.
@@ -29,11 +29,13 @@ type RiskyServicePrincipal struct {
     // Identifies whether the service principal represents an Application, a ManagedIdentity, or a legacy application (socialIdp). This is set by Azure AD internally and is inherited from servicePrincipal.
     servicePrincipalType *string
 }
-// NewRiskyServicePrincipal instantiates a new riskyServicePrincipal and sets the default values.
+// NewRiskyServicePrincipal instantiates a new RiskyServicePrincipal and sets the default values.
 func NewRiskyServicePrincipal()(*RiskyServicePrincipal) {
     m := &RiskyServicePrincipal{
         Entity: *NewEntity(),
     }
+    typeValue := "#microsoft.graph.riskyServicePrincipal";
+    m.SetType(&typeValue);
     return m
 }
 // CreateRiskyServicePrincipalFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

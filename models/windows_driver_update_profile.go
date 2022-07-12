@@ -5,10 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// WindowsDriverUpdateProfile windows Driver Update Profile
+// WindowsDriverUpdateProfile 
 type WindowsDriverUpdateProfile struct {
     Entity
-    // Driver update profile approval type. For example, manual or automatic approval. Possible values are: manual, automatic.
+    // An enum type to represent approval type of a driver update profile.
     approvalType *DriverUpdateProfileApprovalType
     // The list of group assignments of the profile.
     assignments []WindowsDriverUpdateProfileAssignmentable
@@ -33,7 +33,7 @@ type WindowsDriverUpdateProfile struct {
     // List of Scope Tags for this Driver Update entity.
     roleScopeTagIds []string
 }
-// NewWindowsDriverUpdateProfile instantiates a new windowsDriverUpdateProfile and sets the default values.
+// NewWindowsDriverUpdateProfile instantiates a new WindowsDriverUpdateProfile and sets the default values.
 func NewWindowsDriverUpdateProfile()(*WindowsDriverUpdateProfile) {
     m := &WindowsDriverUpdateProfile{
         Entity: *NewEntity(),
@@ -44,7 +44,7 @@ func NewWindowsDriverUpdateProfile()(*WindowsDriverUpdateProfile) {
 func CreateWindowsDriverUpdateProfileFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWindowsDriverUpdateProfile(), nil
 }
-// GetApprovalType gets the approvalType property value. Driver update profile approval type. For example, manual or automatic approval. Possible values are: manual, automatic.
+// GetApprovalType gets the approvalType property value. An enum type to represent approval type of a driver update profile.
 func (m *WindowsDriverUpdateProfile) GetApprovalType()(*DriverUpdateProfileApprovalType) {
     if m == nil {
         return nil
@@ -366,7 +366,7 @@ func (m *WindowsDriverUpdateProfile) Serialize(writer i878a80d2330e89d26896388a3
     }
     return nil
 }
-// SetApprovalType sets the approvalType property value. Driver update profile approval type. For example, manual or automatic approval. Possible values are: manual, automatic.
+// SetApprovalType sets the approvalType property value. An enum type to represent approval type of a driver update profile.
 func (m *WindowsDriverUpdateProfile) SetApprovalType(value *DriverUpdateProfileApprovalType)() {
     if m != nil {
         m.approvalType = value

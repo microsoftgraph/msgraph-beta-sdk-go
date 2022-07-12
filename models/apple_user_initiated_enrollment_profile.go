@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AppleUserInitiatedEnrollmentProfile the enrollmentProfile resource represents a collection of configurations which must be provided pre-enrollment to enable enrolling certain devices whose identities have been pre-staged. Pre-staged device identities are assigned to this type of profile to apply the profile's configurations at enrollment of the corresponding device.
+// AppleUserInitiatedEnrollmentProfile 
 type AppleUserInitiatedEnrollmentProfile struct {
     Entity
     // The list of assignments for this profile.
@@ -14,7 +14,7 @@ type AppleUserInitiatedEnrollmentProfile struct {
     availableEnrollmentTypeOptions []AppleOwnerTypeEnrollmentTypeable
     // Profile creation time
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The default profile enrollment type. Possible values are: unknown, device, user.
+    // The defaultEnrollmentType property
     defaultEnrollmentType *AppleUserInitiatedEnrollmentType
     // Description of the profile
     description *string
@@ -22,12 +22,12 @@ type AppleUserInitiatedEnrollmentProfile struct {
     displayName *string
     // Profile last modified time
     lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The platform of the Device. Possible values are: android, androidForWork, iOS, macOS, windowsPhone81, windows81AndLater, windows10AndLater, androidWorkProfile, unknown, androidAOSP.
+    // Supported platform types.
     platform *DevicePlatformType
     // Priority, 0 is highest
     priority *int32
 }
-// NewAppleUserInitiatedEnrollmentProfile instantiates a new appleUserInitiatedEnrollmentProfile and sets the default values.
+// NewAppleUserInitiatedEnrollmentProfile instantiates a new AppleUserInitiatedEnrollmentProfile and sets the default values.
 func NewAppleUserInitiatedEnrollmentProfile()(*AppleUserInitiatedEnrollmentProfile) {
     m := &AppleUserInitiatedEnrollmentProfile{
         Entity: *NewEntity(),
@@ -62,7 +62,7 @@ func (m *AppleUserInitiatedEnrollmentProfile) GetCreatedDateTime()(*i336074805fc
         return m.createdDateTime
     }
 }
-// GetDefaultEnrollmentType gets the defaultEnrollmentType property value. The default profile enrollment type. Possible values are: unknown, device, user.
+// GetDefaultEnrollmentType gets the defaultEnrollmentType property value. The defaultEnrollmentType property
 func (m *AppleUserInitiatedEnrollmentProfile) GetDefaultEnrollmentType()(*AppleUserInitiatedEnrollmentType) {
     if m == nil {
         return nil
@@ -197,7 +197,7 @@ func (m *AppleUserInitiatedEnrollmentProfile) GetLastModifiedDateTime()(*i336074
         return m.lastModifiedDateTime
     }
 }
-// GetPlatform gets the platform property value. The platform of the Device. Possible values are: android, androidForWork, iOS, macOS, windowsPhone81, windows81AndLater, windows10AndLater, androidWorkProfile, unknown, androidAOSP.
+// GetPlatform gets the platform property value. Supported platform types.
 func (m *AppleUserInitiatedEnrollmentProfile) GetPlatform()(*DevicePlatformType) {
     if m == nil {
         return nil
@@ -303,7 +303,7 @@ func (m *AppleUserInitiatedEnrollmentProfile) SetCreatedDateTime(value *i3360748
         m.createdDateTime = value
     }
 }
-// SetDefaultEnrollmentType sets the defaultEnrollmentType property value. The default profile enrollment type. Possible values are: unknown, device, user.
+// SetDefaultEnrollmentType sets the defaultEnrollmentType property value. The defaultEnrollmentType property
 func (m *AppleUserInitiatedEnrollmentProfile) SetDefaultEnrollmentType(value *AppleUserInitiatedEnrollmentType)() {
     if m != nil {
         m.defaultEnrollmentType = value
@@ -327,7 +327,7 @@ func (m *AppleUserInitiatedEnrollmentProfile) SetLastModifiedDateTime(value *i33
         m.lastModifiedDateTime = value
     }
 }
-// SetPlatform sets the platform property value. The platform of the Device. Possible values are: android, androidForWork, iOS, macOS, windowsPhone81, windows81AndLater, windows10AndLater, androidWorkProfile, unknown, androidAOSP.
+// SetPlatform sets the platform property value. Supported platform types.
 func (m *AppleUserInitiatedEnrollmentProfile) SetPlatform(value *DevicePlatformType)() {
     if m != nil {
         m.platform = value

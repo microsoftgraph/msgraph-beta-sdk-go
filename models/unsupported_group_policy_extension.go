@@ -13,7 +13,7 @@ type UnsupportedGroupPolicyExtension struct {
     namespaceUrl *string
     // Node name of the unsupported extension.
     nodeName *string
-    // Setting Scope of the unsupported extension. Possible values are: unknown, device, user.
+    // Scope of the group policy setting.
     settingScope *GroupPolicySettingScope
 }
 // NewUnsupportedGroupPolicyExtension instantiates a new unsupportedGroupPolicyExtension and sets the default values.
@@ -96,7 +96,7 @@ func (m *UnsupportedGroupPolicyExtension) GetNodeName()(*string) {
         return m.nodeName
     }
 }
-// GetSettingScope gets the settingScope property value. Setting Scope of the unsupported extension. Possible values are: unknown, device, user.
+// GetSettingScope gets the settingScope property value. Scope of the group policy setting.
 func (m *UnsupportedGroupPolicyExtension) GetSettingScope()(*GroupPolicySettingScope) {
     if m == nil {
         return nil
@@ -155,7 +155,7 @@ func (m *UnsupportedGroupPolicyExtension) SetNodeName(value *string)() {
         m.nodeName = value
     }
 }
-// SetSettingScope sets the settingScope property value. Setting Scope of the unsupported extension. Possible values are: unknown, device, user.
+// SetSettingScope sets the settingScope property value. Scope of the group policy setting.
 func (m *UnsupportedGroupPolicyExtension) SetSettingScope(value *GroupPolicySettingScope)() {
     if m != nil {
         m.settingScope = value

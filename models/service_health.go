@@ -4,14 +4,14 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ServiceHealth provides operations to manage the admin singleton.
+// ServiceHealth provides operations to manage the collection of accessReview entities.
 type ServiceHealth struct {
     Entity
     // A collection of issues that happened on the service, with detailed information for each issue.
     issues []ServiceHealthIssueable
     // The service name. Use the list healthOverviews operation to get exact string names for services subscribed by the tenant.
     service *string
-    // Show the overall service health status. Possible values are: serviceOperational, investigating, restoringService, verifyingService, serviceRestored, postIncidentReviewPublished, serviceDegradation, serviceInterruption, extendedRecovery, falsePositive, investigationSuspended, resolved, mitigatedExternal, mitigated, resolvedExternal, confirmed, reported, unknownFutureValue. For more details, see serviceHealthStatus values.
+    // The status property
     status *ServiceHealthStatus
 }
 // NewServiceHealth instantiates a new serviceHealth and sets the default values.
@@ -80,7 +80,7 @@ func (m *ServiceHealth) GetService()(*string) {
         return m.service
     }
 }
-// GetStatus gets the status property value. Show the overall service health status. Possible values are: serviceOperational, investigating, restoringService, verifyingService, serviceRestored, postIncidentReviewPublished, serviceDegradation, serviceInterruption, extendedRecovery, falsePositive, investigationSuspended, resolved, mitigatedExternal, mitigated, resolvedExternal, confirmed, reported, unknownFutureValue. For more details, see serviceHealthStatus values.
+// GetStatus gets the status property value. The status property
 func (m *ServiceHealth) GetStatus()(*ServiceHealthStatus) {
     if m == nil {
         return nil
@@ -131,7 +131,7 @@ func (m *ServiceHealth) SetService(value *string)() {
         m.service = value
     }
 }
-// SetStatus sets the status property value. Show the overall service health status. Possible values are: serviceOperational, investigating, restoringService, verifyingService, serviceRestored, postIncidentReviewPublished, serviceDegradation, serviceInterruption, extendedRecovery, falsePositive, investigationSuspended, resolved, mitigatedExternal, mitigated, resolvedExternal, confirmed, reported, unknownFutureValue. For more details, see serviceHealthStatus values.
+// SetStatus sets the status property value. The status property
 func (m *ServiceHealth) SetStatus(value *ServiceHealthStatus)() {
     if m != nil {
         m.status = value

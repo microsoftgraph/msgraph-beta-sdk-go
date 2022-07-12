@@ -12,7 +12,7 @@ type MeetingCapability struct {
     allowAnonymousUsersToDialOut *bool
     // Indicates whether anonymous users are allowed to start a meeting.
     allowAnonymousUsersToStartMeeting *bool
-    // Possible values are: everyoneInCompany, everyone.
+    // The autoAdmittedUsers property
     autoAdmittedUsers *AutoAdmittedUsersType
 }
 // NewMeetingCapability instantiates a new meetingCapability and sets the default values.
@@ -50,7 +50,7 @@ func (m *MeetingCapability) GetAllowAnonymousUsersToStartMeeting()(*bool) {
         return m.allowAnonymousUsersToStartMeeting
     }
 }
-// GetAutoAdmittedUsers gets the autoAdmittedUsers property value. Possible values are: everyoneInCompany, everyone.
+// GetAutoAdmittedUsers gets the autoAdmittedUsers property value. The autoAdmittedUsers property
 func (m *MeetingCapability) GetAutoAdmittedUsers()(*AutoAdmittedUsersType) {
     if m == nil {
         return nil
@@ -140,7 +140,7 @@ func (m *MeetingCapability) SetAllowAnonymousUsersToStartMeeting(value *bool)() 
         m.allowAnonymousUsersToStartMeeting = value
     }
 }
-// SetAutoAdmittedUsers sets the autoAdmittedUsers property value. Possible values are: everyoneInCompany, everyone.
+// SetAutoAdmittedUsers sets the autoAdmittedUsers property value. The autoAdmittedUsers property
 func (m *MeetingCapability) SetAutoAdmittedUsers(value *AutoAdmittedUsersType)() {
     if m != nil {
         m.autoAdmittedUsers = value

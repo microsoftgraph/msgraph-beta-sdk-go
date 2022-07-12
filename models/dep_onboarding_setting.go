@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DepOnboardingSetting the depOnboardingSetting represents an instance of the Apple DEP service being onboarded to Intune. The onboarded service instance manages an Apple Token used to synchronize data between Apple and Intune.
+// DepOnboardingSetting 
 type DepOnboardingSetting struct {
     Entity
     // The Apple ID used to obtain the current token.
@@ -38,10 +38,10 @@ type DepOnboardingSetting struct {
     tokenExpirationDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Friendly Name for Dep Token
     tokenName *string
-    // Gets or sets the Dep Token Type. Possible values are: none, dep, appleSchoolManager.
+    // The tokenType property
     tokenType *DepTokenType
 }
-// NewDepOnboardingSetting instantiates a new depOnboardingSetting and sets the default values.
+// NewDepOnboardingSetting instantiates a new DepOnboardingSetting and sets the default values.
 func NewDepOnboardingSetting()(*DepOnboardingSetting) {
     m := &DepOnboardingSetting{
         Entity: *NewEntity(),
@@ -349,7 +349,7 @@ func (m *DepOnboardingSetting) GetTokenName()(*string) {
         return m.tokenName
     }
 }
-// GetTokenType gets the tokenType property value. Gets or sets the Dep Token Type. Possible values are: none, dep, appleSchoolManager.
+// GetTokenType gets the tokenType property value. The tokenType property
 func (m *DepOnboardingSetting) GetTokenType()(*DepTokenType) {
     if m == nil {
         return nil
@@ -560,7 +560,7 @@ func (m *DepOnboardingSetting) SetTokenName(value *string)() {
         m.tokenName = value
     }
 }
-// SetTokenType sets the tokenType property value. Gets or sets the Dep Token Type. Possible values are: none, dep, appleSchoolManager.
+// SetTokenType sets the tokenType property value. The tokenType property
 func (m *DepOnboardingSetting) SetTokenType(value *DepTokenType)() {
     if m != nil {
         m.tokenType = value

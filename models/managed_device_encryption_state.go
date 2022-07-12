@@ -4,20 +4,20 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ManagedDeviceEncryptionState encryption report per device
+// ManagedDeviceEncryptionState 
 type ManagedDeviceEncryptionState struct {
     Entity
     // Advanced BitLocker State. Possible values are: success, noUserConsent, osVolumeUnprotected, osVolumeTpmRequired, osVolumeTpmOnlyRequired, osVolumeTpmPinRequired, osVolumeTpmStartupKeyRequired, osVolumeTpmPinStartupKeyRequired, osVolumeEncryptionMethodMismatch, recoveryKeyBackupFailed, fixedDriveNotEncrypted, fixedDriveEncryptionMethodMismatch, loggedOnUserNonAdmin, windowsRecoveryEnvironmentNotConfigured, tpmNotAvailable, tpmNotReady, networkError.
     advancedBitLockerStates *AdvancedBitLockerState
     // Device name
     deviceName *string
-    // Platform of the device. Possible values are: desktop, windowsRT, winMO6, nokia, windowsPhone, mac, winCE, winEmbedded, iPhone, iPad, iPod, android, iSocConsumer, unix, macMDM, holoLens, surfaceHub, androidForWork, androidEnterprise, blackberry, palm, unknown.
+    // Device type.
     deviceType *DeviceTypes
-    // Encryption policy setting state. Possible values are: unknown, notApplicable, compliant, remediated, nonCompliant, error, conflict, notAssigned.
+    // The encryptionPolicySettingState property
     encryptionPolicySettingState *ComplianceStatus
-    // Encryption readiness state. Possible values are: notReady, ready.
+    // Encryption readiness state
     encryptionReadinessState *EncryptionReadinessState
-    // Device encryption state. Possible values are: notEncrypted, encrypted.
+    // Encryption state
     encryptionState *EncryptionState
     // FileVault State. Possible values are: success, driveEncryptedByUser, userDeferredEncryption, escrowNotEnabled.
     fileVaultStates *FileVaultState
@@ -30,7 +30,7 @@ type ManagedDeviceEncryptionState struct {
     // User name
     userPrincipalName *string
 }
-// NewManagedDeviceEncryptionState instantiates a new managedDeviceEncryptionState and sets the default values.
+// NewManagedDeviceEncryptionState instantiates a new ManagedDeviceEncryptionState and sets the default values.
 func NewManagedDeviceEncryptionState()(*ManagedDeviceEncryptionState) {
     m := &ManagedDeviceEncryptionState{
         Entity: *NewEntity(),
@@ -57,7 +57,7 @@ func (m *ManagedDeviceEncryptionState) GetDeviceName()(*string) {
         return m.deviceName
     }
 }
-// GetDeviceType gets the deviceType property value. Platform of the device. Possible values are: desktop, windowsRT, winMO6, nokia, windowsPhone, mac, winCE, winEmbedded, iPhone, iPad, iPod, android, iSocConsumer, unix, macMDM, holoLens, surfaceHub, androidForWork, androidEnterprise, blackberry, palm, unknown.
+// GetDeviceType gets the deviceType property value. Device type.
 func (m *ManagedDeviceEncryptionState) GetDeviceType()(*DeviceTypes) {
     if m == nil {
         return nil
@@ -65,7 +65,7 @@ func (m *ManagedDeviceEncryptionState) GetDeviceType()(*DeviceTypes) {
         return m.deviceType
     }
 }
-// GetEncryptionPolicySettingState gets the encryptionPolicySettingState property value. Encryption policy setting state. Possible values are: unknown, notApplicable, compliant, remediated, nonCompliant, error, conflict, notAssigned.
+// GetEncryptionPolicySettingState gets the encryptionPolicySettingState property value. The encryptionPolicySettingState property
 func (m *ManagedDeviceEncryptionState) GetEncryptionPolicySettingState()(*ComplianceStatus) {
     if m == nil {
         return nil
@@ -73,7 +73,7 @@ func (m *ManagedDeviceEncryptionState) GetEncryptionPolicySettingState()(*Compli
         return m.encryptionPolicySettingState
     }
 }
-// GetEncryptionReadinessState gets the encryptionReadinessState property value. Encryption readiness state. Possible values are: notReady, ready.
+// GetEncryptionReadinessState gets the encryptionReadinessState property value. Encryption readiness state
 func (m *ManagedDeviceEncryptionState) GetEncryptionReadinessState()(*EncryptionReadinessState) {
     if m == nil {
         return nil
@@ -81,7 +81,7 @@ func (m *ManagedDeviceEncryptionState) GetEncryptionReadinessState()(*Encryption
         return m.encryptionReadinessState
     }
 }
-// GetEncryptionState gets the encryptionState property value. Device encryption state. Possible values are: notEncrypted, encrypted.
+// GetEncryptionState gets the encryptionState property value. Encryption state
 func (m *ManagedDeviceEncryptionState) GetEncryptionState()(*EncryptionState) {
     if m == nil {
         return nil
@@ -344,25 +344,25 @@ func (m *ManagedDeviceEncryptionState) SetDeviceName(value *string)() {
         m.deviceName = value
     }
 }
-// SetDeviceType sets the deviceType property value. Platform of the device. Possible values are: desktop, windowsRT, winMO6, nokia, windowsPhone, mac, winCE, winEmbedded, iPhone, iPad, iPod, android, iSocConsumer, unix, macMDM, holoLens, surfaceHub, androidForWork, androidEnterprise, blackberry, palm, unknown.
+// SetDeviceType sets the deviceType property value. Device type.
 func (m *ManagedDeviceEncryptionState) SetDeviceType(value *DeviceTypes)() {
     if m != nil {
         m.deviceType = value
     }
 }
-// SetEncryptionPolicySettingState sets the encryptionPolicySettingState property value. Encryption policy setting state. Possible values are: unknown, notApplicable, compliant, remediated, nonCompliant, error, conflict, notAssigned.
+// SetEncryptionPolicySettingState sets the encryptionPolicySettingState property value. The encryptionPolicySettingState property
 func (m *ManagedDeviceEncryptionState) SetEncryptionPolicySettingState(value *ComplianceStatus)() {
     if m != nil {
         m.encryptionPolicySettingState = value
     }
 }
-// SetEncryptionReadinessState sets the encryptionReadinessState property value. Encryption readiness state. Possible values are: notReady, ready.
+// SetEncryptionReadinessState sets the encryptionReadinessState property value. Encryption readiness state
 func (m *ManagedDeviceEncryptionState) SetEncryptionReadinessState(value *EncryptionReadinessState)() {
     if m != nil {
         m.encryptionReadinessState = value
     }
 }
-// SetEncryptionState sets the encryptionState property value. Device encryption state. Possible values are: notEncrypted, encrypted.
+// SetEncryptionState sets the encryptionState property value. Encryption state
 func (m *ManagedDeviceEncryptionState) SetEncryptionState(value *EncryptionState)() {
     if m != nil {
         m.encryptionState = value

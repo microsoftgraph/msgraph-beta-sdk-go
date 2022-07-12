@@ -12,7 +12,7 @@ type PolicySetItem struct {
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // DisplayName of the PolicySetItem.
     displayName *string
-    // Error code if any occured. Possible values are: noError, unauthorized, notFound, deleted.
+    // The errorCode property
     errorCode *ErrorCode
     // Tags of the guided deployment
     guidedDeploymentTags []string
@@ -22,7 +22,7 @@ type PolicySetItem struct {
     lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // PayloadId of the PolicySetItem.
     payloadId *string
-    // Status of the PolicySetItem. Possible values are: unknown, validating, partialSuccess, success, error, notAssigned.
+    // The enum to specify the status of PolicySet.
     status *PolicySetStatus
 }
 // NewPolicySetItem instantiates a new policySetItem and sets the default values.
@@ -30,6 +30,8 @@ func NewPolicySetItem()(*PolicySetItem) {
     m := &PolicySetItem{
         Entity: *NewEntity(),
     }
+    typeValue := "#microsoft.graph.policySetItem";
+    m.SetType(&typeValue);
     return m
 }
 // CreatePolicySetItemFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -95,7 +97,7 @@ func (m *PolicySetItem) GetDisplayName()(*string) {
         return m.displayName
     }
 }
-// GetErrorCode gets the errorCode property value. Error code if any occured. Possible values are: noError, unauthorized, notFound, deleted.
+// GetErrorCode gets the errorCode property value. The errorCode property
 func (m *PolicySetItem) GetErrorCode()(*ErrorCode) {
     if m == nil {
         return nil
@@ -224,7 +226,7 @@ func (m *PolicySetItem) GetPayloadId()(*string) {
         return m.payloadId
     }
 }
-// GetStatus gets the status property value. Status of the PolicySetItem. Possible values are: unknown, validating, partialSuccess, success, error, notAssigned.
+// GetStatus gets the status property value. The enum to specify the status of PolicySet.
 func (m *PolicySetItem) GetStatus()(*PolicySetStatus) {
     if m == nil {
         return nil
@@ -302,7 +304,7 @@ func (m *PolicySetItem) SetDisplayName(value *string)() {
         m.displayName = value
     }
 }
-// SetErrorCode sets the errorCode property value. Error code if any occured. Possible values are: noError, unauthorized, notFound, deleted.
+// SetErrorCode sets the errorCode property value. The errorCode property
 func (m *PolicySetItem) SetErrorCode(value *ErrorCode)() {
     if m != nil {
         m.errorCode = value
@@ -332,7 +334,7 @@ func (m *PolicySetItem) SetPayloadId(value *string)() {
         m.payloadId = value
     }
 }
-// SetStatus sets the status property value. Status of the PolicySetItem. Possible values are: unknown, validating, partialSuccess, success, error, notAssigned.
+// SetStatus sets the status property value. The enum to specify the status of PolicySet.
 func (m *PolicySetItem) SetStatus(value *PolicySetStatus)() {
     if m != nil {
         m.status = value

@@ -7,13 +7,13 @@ import (
 // AndroidCompliancePolicy 
 type AndroidCompliancePolicy struct {
     DeviceCompliancePolicy
-    // MDATP Require Mobile Threat Protection minimum risk level to report noncompliance. Possible values are: unavailable, secured, low, medium, high, notSet.
+    // Device threat protection levels for the Device Threat Protection API.
     advancedThreatProtectionRequiredSecurityLevel *DeviceThreatProtectionLevel
     // Condition statement id.
     conditionStatementId *string
     // Require that devices have enabled device threat protection.
     deviceThreatProtectionEnabled *bool
-    // Require Mobile Threat Protection minimum risk level to report noncompliance. Possible values are: unavailable, secured, low, medium, high, notSet.
+    // Device threat protection levels for the Device Threat Protection API.
     deviceThreatProtectionRequiredSecurityLevel *DeviceThreatProtectionLevel
     // Minimum Android security patch level.
     minAndroidSecurityPatchLevel *string
@@ -31,11 +31,11 @@ type AndroidCompliancePolicy struct {
     passwordPreviousPasswordBlockCount *int32
     // Require a password to unlock device.
     passwordRequired *bool
-    // Type of characters in password. Possible values are: deviceDefault, alphabetic, alphanumeric, alphanumericWithSymbols, lowSecurityBiometric, numeric, numericComplex, any.
+    // Android required password type.
     passwordRequiredType *AndroidRequiredPasswordType
     // Number of sign-in failures allowed before factory reset. Valid values 1 to 16
     passwordSignInFailureCountBeforeFactoryReset *int32
-    // Indicates the required password complexity on Android. One of: NONE, LOW, MEDIUM, HIGH. This is a new API targeted to Android 11+. Possible values are: none, low, medium, high.
+    // The password complexity types that can be set on Android. One of: NONE, LOW, MEDIUM, HIGH. This is an API targeted to Android 11+.
     requiredPasswordComplexity *AndroidRequiredPasswordComplexity
     // Require the device to not have the specified apps installed. This collection can contain a maximum of 100 elements.
     restrictedApps []AppListItemable
@@ -73,7 +73,7 @@ func NewAndroidCompliancePolicy()(*AndroidCompliancePolicy) {
 func CreateAndroidCompliancePolicyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAndroidCompliancePolicy(), nil
 }
-// GetAdvancedThreatProtectionRequiredSecurityLevel gets the advancedThreatProtectionRequiredSecurityLevel property value. MDATP Require Mobile Threat Protection minimum risk level to report noncompliance. Possible values are: unavailable, secured, low, medium, high, notSet.
+// GetAdvancedThreatProtectionRequiredSecurityLevel gets the advancedThreatProtectionRequiredSecurityLevel property value. Device threat protection levels for the Device Threat Protection API.
 func (m *AndroidCompliancePolicy) GetAdvancedThreatProtectionRequiredSecurityLevel()(*DeviceThreatProtectionLevel) {
     if m == nil {
         return nil
@@ -97,7 +97,7 @@ func (m *AndroidCompliancePolicy) GetDeviceThreatProtectionEnabled()(*bool) {
         return m.deviceThreatProtectionEnabled
     }
 }
-// GetDeviceThreatProtectionRequiredSecurityLevel gets the deviceThreatProtectionRequiredSecurityLevel property value. Require Mobile Threat Protection minimum risk level to report noncompliance. Possible values are: unavailable, secured, low, medium, high, notSet.
+// GetDeviceThreatProtectionRequiredSecurityLevel gets the deviceThreatProtectionRequiredSecurityLevel property value. Device threat protection levels for the Device Threat Protection API.
 func (m *AndroidCompliancePolicy) GetDeviceThreatProtectionRequiredSecurityLevel()(*DeviceThreatProtectionLevel) {
     if m == nil {
         return nil
@@ -448,7 +448,7 @@ func (m *AndroidCompliancePolicy) GetPasswordRequired()(*bool) {
         return m.passwordRequired
     }
 }
-// GetPasswordRequiredType gets the passwordRequiredType property value. Type of characters in password. Possible values are: deviceDefault, alphabetic, alphanumeric, alphanumericWithSymbols, lowSecurityBiometric, numeric, numericComplex, any.
+// GetPasswordRequiredType gets the passwordRequiredType property value. Android required password type.
 func (m *AndroidCompliancePolicy) GetPasswordRequiredType()(*AndroidRequiredPasswordType) {
     if m == nil {
         return nil
@@ -464,7 +464,7 @@ func (m *AndroidCompliancePolicy) GetPasswordSignInFailureCountBeforeFactoryRese
         return m.passwordSignInFailureCountBeforeFactoryReset
     }
 }
-// GetRequiredPasswordComplexity gets the requiredPasswordComplexity property value. Indicates the required password complexity on Android. One of: NONE, LOW, MEDIUM, HIGH. This is a new API targeted to Android 11+. Possible values are: none, low, medium, high.
+// GetRequiredPasswordComplexity gets the requiredPasswordComplexity property value. The password complexity types that can be set on Android. One of: NONE, LOW, MEDIUM, HIGH. This is an API targeted to Android 11+.
 func (m *AndroidCompliancePolicy) GetRequiredPasswordComplexity()(*AndroidRequiredPasswordComplexity) {
     if m == nil {
         return nil
@@ -746,7 +746,7 @@ func (m *AndroidCompliancePolicy) Serialize(writer i878a80d2330e89d26896388a3f48
     }
     return nil
 }
-// SetAdvancedThreatProtectionRequiredSecurityLevel sets the advancedThreatProtectionRequiredSecurityLevel property value. MDATP Require Mobile Threat Protection minimum risk level to report noncompliance. Possible values are: unavailable, secured, low, medium, high, notSet.
+// SetAdvancedThreatProtectionRequiredSecurityLevel sets the advancedThreatProtectionRequiredSecurityLevel property value. Device threat protection levels for the Device Threat Protection API.
 func (m *AndroidCompliancePolicy) SetAdvancedThreatProtectionRequiredSecurityLevel(value *DeviceThreatProtectionLevel)() {
     if m != nil {
         m.advancedThreatProtectionRequiredSecurityLevel = value
@@ -764,7 +764,7 @@ func (m *AndroidCompliancePolicy) SetDeviceThreatProtectionEnabled(value *bool)(
         m.deviceThreatProtectionEnabled = value
     }
 }
-// SetDeviceThreatProtectionRequiredSecurityLevel sets the deviceThreatProtectionRequiredSecurityLevel property value. Require Mobile Threat Protection minimum risk level to report noncompliance. Possible values are: unavailable, secured, low, medium, high, notSet.
+// SetDeviceThreatProtectionRequiredSecurityLevel sets the deviceThreatProtectionRequiredSecurityLevel property value. Device threat protection levels for the Device Threat Protection API.
 func (m *AndroidCompliancePolicy) SetDeviceThreatProtectionRequiredSecurityLevel(value *DeviceThreatProtectionLevel)() {
     if m != nil {
         m.deviceThreatProtectionRequiredSecurityLevel = value
@@ -818,7 +818,7 @@ func (m *AndroidCompliancePolicy) SetPasswordRequired(value *bool)() {
         m.passwordRequired = value
     }
 }
-// SetPasswordRequiredType sets the passwordRequiredType property value. Type of characters in password. Possible values are: deviceDefault, alphabetic, alphanumeric, alphanumericWithSymbols, lowSecurityBiometric, numeric, numericComplex, any.
+// SetPasswordRequiredType sets the passwordRequiredType property value. Android required password type.
 func (m *AndroidCompliancePolicy) SetPasswordRequiredType(value *AndroidRequiredPasswordType)() {
     if m != nil {
         m.passwordRequiredType = value
@@ -830,7 +830,7 @@ func (m *AndroidCompliancePolicy) SetPasswordSignInFailureCountBeforeFactoryRese
         m.passwordSignInFailureCountBeforeFactoryReset = value
     }
 }
-// SetRequiredPasswordComplexity sets the requiredPasswordComplexity property value. Indicates the required password complexity on Android. One of: NONE, LOW, MEDIUM, HIGH. This is a new API targeted to Android 11+. Possible values are: none, low, medium, high.
+// SetRequiredPasswordComplexity sets the requiredPasswordComplexity property value. The password complexity types that can be set on Android. One of: NONE, LOW, MEDIUM, HIGH. This is an API targeted to Android 11+.
 func (m *AndroidCompliancePolicy) SetRequiredPasswordComplexity(value *AndroidRequiredPasswordComplexity)() {
     if m != nil {
         m.requiredPasswordComplexity = value

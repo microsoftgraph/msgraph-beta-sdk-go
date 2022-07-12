@@ -8,7 +8,7 @@ import (
 type LabelingOptions struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
-    // Possible values are: standard, privileged, auto.
+    // The assignmentMethod property
     assignmentMethod *AssignmentMethod
     // The downgrade justification object that indicates if downgrade was justified and, if so, the reason.
     downgradeJustification DowngradeJustificationable
@@ -36,7 +36,7 @@ func (m *LabelingOptions) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// GetAssignmentMethod gets the assignmentMethod property value. Possible values are: standard, privileged, auto.
+// GetAssignmentMethod gets the assignmentMethod property value. The assignmentMethod property
 func (m *LabelingOptions) GetAssignmentMethod()(*AssignmentMethod) {
     if m == nil {
         return nil
@@ -162,7 +162,7 @@ func (m *LabelingOptions) SetAdditionalData(value map[string]interface{})() {
         m.additionalData = value
     }
 }
-// SetAssignmentMethod sets the assignmentMethod property value. Possible values are: standard, privileged, auto.
+// SetAssignmentMethod sets the assignmentMethod property value. The assignmentMethod property
 func (m *LabelingOptions) SetAssignmentMethod(value *AssignmentMethod)() {
     if m != nil {
         m.assignmentMethod = value

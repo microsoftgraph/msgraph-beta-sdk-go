@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// RoleAssignment the Role Assignment resource. Role assignments tie together a role definition with members and scopes. There can be one or more role assignments per role. This applies to custom and built-in roles.
+// RoleAssignment 
 type RoleAssignment struct {
     Entity
     // Description of the Role Assignment.
@@ -17,14 +17,16 @@ type RoleAssignment struct {
     roleDefinition RoleDefinitionable
     // List of ids of role scope member security groups.  These are IDs from Azure Active Directory.
     scopeMembers []string
-    // Specifies the type of scope for a Role Assignment. Default type 'ResourceScope' allows assignment of ResourceScopes. For 'AllDevices', 'AllLicensedUsers', and 'AllDevicesAndLicensedUsers', the ResourceScopes property should be left empty. Possible values are: resourceScope, allDevices, allLicensedUsers, allDevicesAndLicensedUsers.
+    // Specifies the type of scope for a Role Assignment.
     scopeType *RoleAssignmentScopeType
 }
-// NewRoleAssignment instantiates a new roleAssignment and sets the default values.
+// NewRoleAssignment instantiates a new RoleAssignment and sets the default values.
 func NewRoleAssignment()(*RoleAssignment) {
     m := &RoleAssignment{
         Entity: *NewEntity(),
     }
+    typeValue := "#microsoft.graph.roleAssignment";
+    m.SetType(&typeValue);
     return m
 }
 // CreateRoleAssignmentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -163,7 +165,7 @@ func (m *RoleAssignment) GetScopeMembers()([]string) {
         return m.scopeMembers
     }
 }
-// GetScopeType gets the scopeType property value. Specifies the type of scope for a Role Assignment. Default type 'ResourceScope' allows assignment of ResourceScopes. For 'AllDevices', 'AllLicensedUsers', and 'AllDevicesAndLicensedUsers', the ResourceScopes property should be left empty. Possible values are: resourceScope, allDevices, allLicensedUsers, allDevicesAndLicensedUsers.
+// GetScopeType gets the scopeType property value. Specifies the type of scope for a Role Assignment.
 func (m *RoleAssignment) GetScopeType()(*RoleAssignmentScopeType) {
     if m == nil {
         return nil
@@ -246,7 +248,7 @@ func (m *RoleAssignment) SetScopeMembers(value []string)() {
         m.scopeMembers = value
     }
 }
-// SetScopeType sets the scopeType property value. Specifies the type of scope for a Role Assignment. Default type 'ResourceScope' allows assignment of ResourceScopes. For 'AllDevices', 'AllLicensedUsers', and 'AllDevicesAndLicensedUsers', the ResourceScopes property should be left empty. Possible values are: resourceScope, allDevices, allLicensedUsers, allDevicesAndLicensedUsers.
+// SetScopeType sets the scopeType property value. Specifies the type of scope for a Role Assignment.
 func (m *RoleAssignment) SetScopeType(value *RoleAssignmentScopeType)() {
     if m != nil {
         m.scopeType = value

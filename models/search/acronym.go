@@ -9,7 +9,7 @@ type Acronym struct {
     SearchAnswer
     // What the acronym stands for.
     standsFor *string
-    // State of the acronym. Possible values are: published, draft, excluded, or unknownFutureValue.
+    // The state property
     state *AnswerState
 }
 // NewAcronym instantiates a new Acronym and sets the default values.
@@ -56,7 +56,7 @@ func (m *Acronym) GetStandsFor()(*string) {
         return m.standsFor
     }
 }
-// GetState gets the state property value. State of the acronym. Possible values are: published, draft, excluded, or unknownFutureValue.
+// GetState gets the state property value. The state property
 func (m *Acronym) GetState()(*AnswerState) {
     if m == nil {
         return nil
@@ -91,7 +91,7 @@ func (m *Acronym) SetStandsFor(value *string)() {
         m.standsFor = value
     }
 }
-// SetState sets the state property value. State of the acronym. Possible values are: published, draft, excluded, or unknownFutureValue.
+// SetState sets the state property value. The state property
 func (m *Acronym) SetState(value *AnswerState)() {
     if m != nil {
         m.state = value

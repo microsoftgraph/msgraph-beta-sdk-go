@@ -31,7 +31,7 @@ type AndroidGeneralDeviceConfiguration struct {
     cellularBlockVoiceRoaming *bool
     // Indicates whether or not to block syncing Wi-Fi tethering.
     cellularBlockWiFiTethering *bool
-    // Type of list that is in the CompliantAppsList. Possible values are: none, appsInListCompliant, appsNotInListCompliant.
+    // Possible values of the compliance app list.
     compliantAppListType *AppListType
     // List of apps in the compliance (either allow list or block list, controlled by CompliantAppListType). This collection can contain a maximum of 10000 elements.
     compliantAppsList []AppListItemable
@@ -71,13 +71,13 @@ type AndroidGeneralDeviceConfiguration struct {
     passwordPreviousPasswordBlockCount *int32
     // Indicates whether or not to require a password.
     passwordRequired *bool
-    // Type of password that is required. Possible values are: deviceDefault, alphabetic, alphanumeric, alphanumericWithSymbols, lowSecurityBiometric, numeric, numericComplex, any.
+    // Android required password type.
     passwordRequiredType *AndroidRequiredPasswordType
     // Number of sign in failures allowed before factory reset. Valid values 1 to 16
     passwordSignInFailureCountBeforeFactoryReset *int32
     // Indicates whether or not to block powering off the device.
     powerOffBlocked *bool
-    // Indicates the required password complexity on Android. One of: NONE, LOW, MEDIUM, HIGH. This is an API targeted to Android 11+. Possible values are: none, low, medium, high.
+    // The password complexity types that can be set on Android. One of: NONE, LOW, MEDIUM, HIGH. This is an API targeted to Android 11+.
     requiredPasswordComplexity *AndroidRequiredPasswordComplexity
     // Indicates whether or not to block screenshots.
     screenCaptureBlocked *bool
@@ -103,7 +103,7 @@ type AndroidGeneralDeviceConfiguration struct {
     webBrowserBlockJavaScript *bool
     // Indicates whether or not to block popups within the web browser.
     webBrowserBlockPopups *bool
-    // Cookie settings within the web browser. Possible values are: browserDefault, blockAlways, allowCurrentWebSite, allowFromWebsitesVisited, allowAlways.
+    // Web Browser Cookie Settings.
     webBrowserCookieSettings *WebBrowserCookieSettings
     // Indicates whether or not to block syncing Wi-Fi.
     wiFiBlocked *bool
@@ -215,7 +215,7 @@ func (m *AndroidGeneralDeviceConfiguration) GetCellularBlockWiFiTethering()(*boo
         return m.cellularBlockWiFiTethering
     }
 }
-// GetCompliantAppListType gets the compliantAppListType property value. Type of list that is in the CompliantAppsList. Possible values are: none, appsInListCompliant, appsNotInListCompliant.
+// GetCompliantAppListType gets the compliantAppListType property value. Possible values of the compliance app list.
 func (m *AndroidGeneralDeviceConfiguration) GetCompliantAppListType()(*AppListType) {
     if m == nil {
         return nil
@@ -900,7 +900,7 @@ func (m *AndroidGeneralDeviceConfiguration) GetPasswordRequired()(*bool) {
         return m.passwordRequired
     }
 }
-// GetPasswordRequiredType gets the passwordRequiredType property value. Type of password that is required. Possible values are: deviceDefault, alphabetic, alphanumeric, alphanumericWithSymbols, lowSecurityBiometric, numeric, numericComplex, any.
+// GetPasswordRequiredType gets the passwordRequiredType property value. Android required password type.
 func (m *AndroidGeneralDeviceConfiguration) GetPasswordRequiredType()(*AndroidRequiredPasswordType) {
     if m == nil {
         return nil
@@ -924,7 +924,7 @@ func (m *AndroidGeneralDeviceConfiguration) GetPowerOffBlocked()(*bool) {
         return m.powerOffBlocked
     }
 }
-// GetRequiredPasswordComplexity gets the requiredPasswordComplexity property value. Indicates the required password complexity on Android. One of: NONE, LOW, MEDIUM, HIGH. This is an API targeted to Android 11+. Possible values are: none, low, medium, high.
+// GetRequiredPasswordComplexity gets the requiredPasswordComplexity property value. The password complexity types that can be set on Android. One of: NONE, LOW, MEDIUM, HIGH. This is an API targeted to Android 11+.
 func (m *AndroidGeneralDeviceConfiguration) GetRequiredPasswordComplexity()(*AndroidRequiredPasswordComplexity) {
     if m == nil {
         return nil
@@ -1028,7 +1028,7 @@ func (m *AndroidGeneralDeviceConfiguration) GetWebBrowserBlockPopups()(*bool) {
         return m.webBrowserBlockPopups
     }
 }
-// GetWebBrowserCookieSettings gets the webBrowserCookieSettings property value. Cookie settings within the web browser. Possible values are: browserDefault, blockAlways, allowCurrentWebSite, allowFromWebsitesVisited, allowAlways.
+// GetWebBrowserCookieSettings gets the webBrowserCookieSettings property value. Web Browser Cookie Settings.
 func (m *AndroidGeneralDeviceConfiguration) GetWebBrowserCookieSettings()(*WebBrowserCookieSettings) {
     if m == nil {
         return nil
@@ -1448,7 +1448,7 @@ func (m *AndroidGeneralDeviceConfiguration) SetCellularBlockWiFiTethering(value 
         m.cellularBlockWiFiTethering = value
     }
 }
-// SetCompliantAppListType sets the compliantAppListType property value. Type of list that is in the CompliantAppsList. Possible values are: none, appsInListCompliant, appsNotInListCompliant.
+// SetCompliantAppListType sets the compliantAppListType property value. Possible values of the compliance app list.
 func (m *AndroidGeneralDeviceConfiguration) SetCompliantAppListType(value *AppListType)() {
     if m != nil {
         m.compliantAppListType = value
@@ -1568,7 +1568,7 @@ func (m *AndroidGeneralDeviceConfiguration) SetPasswordRequired(value *bool)() {
         m.passwordRequired = value
     }
 }
-// SetPasswordRequiredType sets the passwordRequiredType property value. Type of password that is required. Possible values are: deviceDefault, alphabetic, alphanumeric, alphanumericWithSymbols, lowSecurityBiometric, numeric, numericComplex, any.
+// SetPasswordRequiredType sets the passwordRequiredType property value. Android required password type.
 func (m *AndroidGeneralDeviceConfiguration) SetPasswordRequiredType(value *AndroidRequiredPasswordType)() {
     if m != nil {
         m.passwordRequiredType = value
@@ -1586,7 +1586,7 @@ func (m *AndroidGeneralDeviceConfiguration) SetPowerOffBlocked(value *bool)() {
         m.powerOffBlocked = value
     }
 }
-// SetRequiredPasswordComplexity sets the requiredPasswordComplexity property value. Indicates the required password complexity on Android. One of: NONE, LOW, MEDIUM, HIGH. This is an API targeted to Android 11+. Possible values are: none, low, medium, high.
+// SetRequiredPasswordComplexity sets the requiredPasswordComplexity property value. The password complexity types that can be set on Android. One of: NONE, LOW, MEDIUM, HIGH. This is an API targeted to Android 11+.
 func (m *AndroidGeneralDeviceConfiguration) SetRequiredPasswordComplexity(value *AndroidRequiredPasswordComplexity)() {
     if m != nil {
         m.requiredPasswordComplexity = value
@@ -1664,7 +1664,7 @@ func (m *AndroidGeneralDeviceConfiguration) SetWebBrowserBlockPopups(value *bool
         m.webBrowserBlockPopups = value
     }
 }
-// SetWebBrowserCookieSettings sets the webBrowserCookieSettings property value. Cookie settings within the web browser. Possible values are: browserDefault, blockAlways, allowCurrentWebSite, allowFromWebsitesVisited, allowAlways.
+// SetWebBrowserCookieSettings sets the webBrowserCookieSettings property value. Web Browser Cookie Settings.
 func (m *AndroidGeneralDeviceConfiguration) SetWebBrowserCookieSettings(value *WebBrowserCookieSettings)() {
     if m != nil {
         m.webBrowserCookieSettings = value

@@ -9,7 +9,7 @@ type QualityUpdateCatalogEntry struct {
     SoftwareUpdateCatalogEntry
     // Indicates whether the content can be deployed as an expedited quality update. Read-only.
     isExpeditable *bool
-    // The classification on the quality update. Possible values are: all, security, nonSecurity, unknownFutureValue. Read-only.
+    // The qualityUpdateClassification property
     qualityUpdateClassification *QualityUpdateClassification
 }
 // NewQualityUpdateCatalogEntry instantiates a new QualityUpdateCatalogEntry and sets the default values.
@@ -56,7 +56,7 @@ func (m *QualityUpdateCatalogEntry) GetIsExpeditable()(*bool) {
         return m.isExpeditable
     }
 }
-// GetQualityUpdateClassification gets the qualityUpdateClassification property value. The classification on the quality update. Possible values are: all, security, nonSecurity, unknownFutureValue. Read-only.
+// GetQualityUpdateClassification gets the qualityUpdateClassification property value. The qualityUpdateClassification property
 func (m *QualityUpdateCatalogEntry) GetQualityUpdateClassification()(*QualityUpdateClassification) {
     if m == nil {
         return nil
@@ -91,7 +91,7 @@ func (m *QualityUpdateCatalogEntry) SetIsExpeditable(value *bool)() {
         m.isExpeditable = value
     }
 }
-// SetQualityUpdateClassification sets the qualityUpdateClassification property value. The classification on the quality update. Possible values are: all, security, nonSecurity, unknownFutureValue. Read-only.
+// SetQualityUpdateClassification sets the qualityUpdateClassification property value. The qualityUpdateClassification property
 func (m *QualityUpdateCatalogEntry) SetQualityUpdateClassification(value *QualityUpdateClassification)() {
     if m != nil {
         m.qualityUpdateClassification = value

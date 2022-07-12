@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DeviceManagementScript intune will provide customer the ability to run their Powershell scripts on the enrolled windows 10 Azure Active Directory joined devices. The script can be run once or periodically.
+// DeviceManagementScript 
 type DeviceManagementScript struct {
     Entity
     // The list of group assignments for the device management script.
@@ -30,7 +30,7 @@ type DeviceManagementScript struct {
     roleScopeTagIds []string
     // A value indicating whether the PowerShell script should run as 32-bit
     runAs32Bit *bool
-    // Indicates the type of execution context. Possible values are: system, user.
+    // Indicates the type of execution context the app runs in.
     runAsAccount *RunAsAccountType
     // Run summary for device management script.
     runSummary DeviceManagementScriptRunSummaryable
@@ -39,7 +39,7 @@ type DeviceManagementScript struct {
     // List of run states for this script across all users.
     userRunStates []DeviceManagementScriptUserStateable
 }
-// NewDeviceManagementScript instantiates a new deviceManagementScript and sets the default values.
+// NewDeviceManagementScript instantiates a new DeviceManagementScript and sets the default values.
 func NewDeviceManagementScript()(*DeviceManagementScript) {
     m := &DeviceManagementScript{
         Entity: *NewEntity(),
@@ -313,7 +313,7 @@ func (m *DeviceManagementScript) GetRunAs32Bit()(*bool) {
         return m.runAs32Bit
     }
 }
-// GetRunAsAccount gets the runAsAccount property value. Indicates the type of execution context. Possible values are: system, user.
+// GetRunAsAccount gets the runAsAccount property value. Indicates the type of execution context the app runs in.
 func (m *DeviceManagementScript) GetRunAsAccount()(*RunAsAccountType) {
     if m == nil {
         return nil
@@ -526,7 +526,7 @@ func (m *DeviceManagementScript) SetRunAs32Bit(value *bool)() {
         m.runAs32Bit = value
     }
 }
-// SetRunAsAccount sets the runAsAccount property value. Indicates the type of execution context. Possible values are: system, user.
+// SetRunAsAccount sets the runAsAccount property value. Indicates the type of execution context the app runs in.
 func (m *DeviceManagementScript) SetRunAsAccount(value *RunAsAccountType)() {
     if m != nil {
         m.runAsAccount = value

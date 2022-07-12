@@ -18,7 +18,7 @@ type ManagedDeviceMobileAppConfigurationDeviceStatus struct {
     lastReportedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Platform of the device that is being reported
     platform *int32
-    // Compliance status of the policy report. Possible values are: unknown, notApplicable, compliant, remediated, nonCompliant, error, conflict, notAssigned.
+    // The status property
     status *ComplianceStatus
     // The User Name that is being reported
     userName *string
@@ -161,7 +161,7 @@ func (m *ManagedDeviceMobileAppConfigurationDeviceStatus) GetPlatform()(*int32) 
         return m.platform
     }
 }
-// GetStatus gets the status property value. Compliance status of the policy report. Possible values are: unknown, notApplicable, compliant, remediated, nonCompliant, error, conflict, notAssigned.
+// GetStatus gets the status property value. The status property
 func (m *ManagedDeviceMobileAppConfigurationDeviceStatus) GetStatus()(*ComplianceStatus) {
     if m == nil {
         return nil
@@ -272,7 +272,7 @@ func (m *ManagedDeviceMobileAppConfigurationDeviceStatus) SetPlatform(value *int
         m.platform = value
     }
 }
-// SetStatus sets the status property value. Compliance status of the policy report. Possible values are: unknown, notApplicable, compliant, remediated, nonCompliant, error, conflict, notAssigned.
+// SetStatus sets the status property value. The status property
 func (m *ManagedDeviceMobileAppConfigurationDeviceStatus) SetStatus(value *ComplianceStatus)() {
     if m != nil {
         m.status = value

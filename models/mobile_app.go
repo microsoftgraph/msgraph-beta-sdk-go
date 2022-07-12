@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// MobileApp an abstract class containing the base properties for Intune mobile apps.
+// MobileApp 
 type MobileApp struct {
     Entity
     // The list of group assignments for this mobile app.
@@ -44,7 +44,7 @@ type MobileApp struct {
     privacyInformationUrl *string
     // The publisher of the app.
     publisher *string
-    // The publishing state for the app. The app cannot be assigned unless the app is published. Possible values are: notPublished, processing, published.
+    // Indicates the publishing state of an app.
     publishingState *MobileAppPublishingState
     // List of relationships for this mobile app.
     relationships []MobileAppRelationshipable
@@ -59,11 +59,13 @@ type MobileApp struct {
     // The list of installation states for this mobile app.
     userStatuses []UserAppInstallStatusable
 }
-// NewMobileApp instantiates a new mobileApp and sets the default values.
+// NewMobileApp instantiates a new MobileApp and sets the default values.
 func NewMobileApp()(*MobileApp) {
     m := &MobileApp{
         Entity: *NewEntity(),
     }
+    typeValue := "#microsoft.graph.mobileApp";
+    m.SetType(&typeValue);
     return m
 }
 // CreateMobileAppFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -548,7 +550,7 @@ func (m *MobileApp) GetPublisher()(*string) {
         return m.publisher
     }
 }
-// GetPublishingState gets the publishingState property value. The publishing state for the app. The app cannot be assigned unless the app is published. Possible values are: notPublished, processing, published.
+// GetPublishingState gets the publishingState property value. Indicates the publishing state of an app.
 func (m *MobileApp) GetPublishingState()(*MobileAppPublishingState) {
     if m == nil {
         return nil
@@ -891,7 +893,7 @@ func (m *MobileApp) SetPublisher(value *string)() {
         m.publisher = value
     }
 }
-// SetPublishingState sets the publishingState property value. The publishing state for the app. The app cannot be assigned unless the app is published. Possible values are: notPublished, processing, published.
+// SetPublishingState sets the publishingState property value. Indicates the publishing state of an app.
 func (m *MobileApp) SetPublishingState(value *MobileAppPublishingState)() {
     if m != nil {
         m.publishingState = value

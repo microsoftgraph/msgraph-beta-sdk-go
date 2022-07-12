@@ -15,7 +15,7 @@ type AndroidForWorkMobileAppConfiguration struct {
     payloadJson *string
     // List of Android app permissions and corresponding permission actions.
     permissionActions []AndroidPermissionActionable
-    // Android Enterprise profile applicability (AndroidWorkProfile, DeviceOwner, or default (applies to both)). Possible values are: default, androidWorkProfile, androidDeviceOwner.
+    // Android profile applicability
     profileApplicability *AndroidProfileApplicability
 }
 // NewAndroidForWorkMobileAppConfiguration instantiates a new AndroidForWorkMobileAppConfiguration and sets the default values.
@@ -120,7 +120,7 @@ func (m *AndroidForWorkMobileAppConfiguration) GetPermissionActions()([]AndroidP
         return m.permissionActions
     }
 }
-// GetProfileApplicability gets the profileApplicability property value. Android Enterprise profile applicability (AndroidWorkProfile, DeviceOwner, or default (applies to both)). Possible values are: default, androidWorkProfile, androidDeviceOwner.
+// GetProfileApplicability gets the profileApplicability property value. Android profile applicability
 func (m *AndroidForWorkMobileAppConfiguration) GetProfileApplicability()(*AndroidProfileApplicability) {
     if m == nil {
         return nil
@@ -195,7 +195,7 @@ func (m *AndroidForWorkMobileAppConfiguration) SetPermissionActions(value []Andr
         m.permissionActions = value
     }
 }
-// SetProfileApplicability sets the profileApplicability property value. Android Enterprise profile applicability (AndroidWorkProfile, DeviceOwner, or default (applies to both)). Possible values are: default, androidWorkProfile, androidDeviceOwner.
+// SetProfileApplicability sets the profileApplicability property value. Android profile applicability
 func (m *AndroidForWorkMobileAppConfiguration) SetProfileApplicability(value *AndroidProfileApplicability)() {
     if m != nil {
         m.profileApplicability = value

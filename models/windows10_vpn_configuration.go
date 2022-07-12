@@ -9,9 +9,9 @@ type Windows10VpnConfiguration struct {
     WindowsVpnConfiguration
     // Associated Apps. This collection can contain a maximum of 10000 elements.
     associatedApps []Windows10AssociatedAppsable
-    // Authentication method. Possible values are: certificate, usernameAndPassword, customEapXml, derivedCredential.
+    // Windows 10 VPN connection types.
     authenticationMethod *Windows10VpnAuthenticationMethod
-    // Connection type. Possible values are: pulseSecure, f5EdgeClient, dellSonicWallMobileConnect, checkPointCapsuleVpn, automatic, ikEv2, l2tp, pptp, citrix, paloAltoGlobalProtect, ciscoAnyConnect, unknownFutureValue, microsoftTunnel.
+    // VPN connection types.
     connectionType *Windows10VpnConnectionType
     // Cryptography Suite security settings for IKEv2 VPN in Windows10 and above
     cryptographySuite CryptographySuiteable
@@ -77,7 +77,7 @@ func (m *Windows10VpnConfiguration) GetAssociatedApps()([]Windows10AssociatedApp
         return m.associatedApps
     }
 }
-// GetAuthenticationMethod gets the authenticationMethod property value. Authentication method. Possible values are: certificate, usernameAndPassword, customEapXml, derivedCredential.
+// GetAuthenticationMethod gets the authenticationMethod property value. Windows 10 VPN connection types.
 func (m *Windows10VpnConfiguration) GetAuthenticationMethod()(*Windows10VpnAuthenticationMethod) {
     if m == nil {
         return nil
@@ -85,7 +85,7 @@ func (m *Windows10VpnConfiguration) GetAuthenticationMethod()(*Windows10VpnAuthe
         return m.authenticationMethod
     }
 }
-// GetConnectionType gets the connectionType property value. Connection type. Possible values are: pulseSecure, f5EdgeClient, dellSonicWallMobileConnect, checkPointCapsuleVpn, automatic, ikEv2, l2tp, pptp, citrix, paloAltoGlobalProtect, ciscoAnyConnect, unknownFutureValue, microsoftTunnel.
+// GetConnectionType gets the connectionType property value. VPN connection types.
 func (m *Windows10VpnConfiguration) GetConnectionType()(*Windows10VpnConnectionType) {
     if m == nil {
         return nil
@@ -731,13 +731,13 @@ func (m *Windows10VpnConfiguration) SetAssociatedApps(value []Windows10Associate
         m.associatedApps = value
     }
 }
-// SetAuthenticationMethod sets the authenticationMethod property value. Authentication method. Possible values are: certificate, usernameAndPassword, customEapXml, derivedCredential.
+// SetAuthenticationMethod sets the authenticationMethod property value. Windows 10 VPN connection types.
 func (m *Windows10VpnConfiguration) SetAuthenticationMethod(value *Windows10VpnAuthenticationMethod)() {
     if m != nil {
         m.authenticationMethod = value
     }
 }
-// SetConnectionType sets the connectionType property value. Connection type. Possible values are: pulseSecure, f5EdgeClient, dellSonicWallMobileConnect, checkPointCapsuleVpn, automatic, ikEv2, l2tp, pptp, citrix, paloAltoGlobalProtect, ciscoAnyConnect, unknownFutureValue, microsoftTunnel.
+// SetConnectionType sets the connectionType property value. VPN connection types.
 func (m *Windows10VpnConfiguration) SetConnectionType(value *Windows10VpnConnectionType)() {
     if m != nil {
         m.connectionType = value

@@ -4,13 +4,13 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DirectoryRoleAccessReviewPolicy provides operations to manage the policyRoot singleton.
+// DirectoryRoleAccessReviewPolicy 
 type DirectoryRoleAccessReviewPolicy struct {
     Entity
     // The settings property
     settings AccessReviewScheduleSettingsable
 }
-// NewDirectoryRoleAccessReviewPolicy instantiates a new directoryRoleAccessReviewPolicy and sets the default values.
+// NewDirectoryRoleAccessReviewPolicy instantiates a new DirectoryRoleAccessReviewPolicy and sets the default values.
 func NewDirectoryRoleAccessReviewPolicy()(*DirectoryRoleAccessReviewPolicy) {
     m := &DirectoryRoleAccessReviewPolicy{
         Entity: *NewEntity(),

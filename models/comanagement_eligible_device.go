@@ -4,20 +4,20 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ComanagementEligibleDevice device Co-Management eligibility state
+// ComanagementEligibleDevice 
 type ComanagementEligibleDevice struct {
     Entity
-    // ClientRegistrationStatus. Possible values are: notRegistered, registered, revoked, keyConflict, approvalPending, certificateReset, notRegisteredPendingEnrollment, unknown.
+    // Device registration status.
     clientRegistrationStatus *DeviceRegistrationState
     // DeviceName
     deviceName *string
-    // DeviceType. Possible values are: desktop, windowsRT, winMO6, nokia, windowsPhone, mac, winCE, winEmbedded, iPhone, iPad, iPod, android, iSocConsumer, unix, macMDM, holoLens, surfaceHub, androidForWork, androidEnterprise, windows10x, androidnGMS, chromeOS, linux, blackberry, palm, unknown, cloudPC.
+    // Device type.
     deviceType *DeviceType
     // EntitySource
     entitySource *int32
-    // ManagementAgents. Possible values are: eas, mdm, easMdm, intuneClient, easIntuneClient, configurationManagerClient, configurationManagerClientMdm, configurationManagerClientMdmEas, unknown, jamf, googleCloudDevicePolicyController, microsoft365ManagedMdm, msSense, intuneAosp.
+    // Management agent type.
     managementAgents *ManagementAgentType
-    // ManagementState. Possible values are: managed, retirePending, retireFailed, wipePending, wipeFailed, unhealthy, deletePending, retireIssued, wipeIssued, wipeCanceled, retireCanceled, discovered.
+    // Management state of device in Microsoft Intune.
     managementState *ManagementState
     // Manufacturer
     manufacturer *string
@@ -29,13 +29,13 @@ type ComanagementEligibleDevice struct {
     osDescription *string
     // OSVersion
     osVersion *string
-    // OwnerType. Possible values are: unknown, company, personal.
+    // Owner type of device.
     ownerType *OwnerType
     // ReferenceId
     referenceId *string
     // SerialNumber
     serialNumber *string
-    // ComanagementEligibleStatus. Possible values are: comanaged, eligible, eligibleButNotAzureAdJoined, needsOsUpdate, ineligible.
+    // The status property
     status *ComanagementEligibleType
     // UPN
     upn *string
@@ -46,7 +46,7 @@ type ComanagementEligibleDevice struct {
     // UserName
     userName *string
 }
-// NewComanagementEligibleDevice instantiates a new comanagementEligibleDevice and sets the default values.
+// NewComanagementEligibleDevice instantiates a new ComanagementEligibleDevice and sets the default values.
 func NewComanagementEligibleDevice()(*ComanagementEligibleDevice) {
     m := &ComanagementEligibleDevice{
         Entity: *NewEntity(),
@@ -57,7 +57,7 @@ func NewComanagementEligibleDevice()(*ComanagementEligibleDevice) {
 func CreateComanagementEligibleDeviceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewComanagementEligibleDevice(), nil
 }
-// GetClientRegistrationStatus gets the clientRegistrationStatus property value. ClientRegistrationStatus. Possible values are: notRegistered, registered, revoked, keyConflict, approvalPending, certificateReset, notRegisteredPendingEnrollment, unknown.
+// GetClientRegistrationStatus gets the clientRegistrationStatus property value. Device registration status.
 func (m *ComanagementEligibleDevice) GetClientRegistrationStatus()(*DeviceRegistrationState) {
     if m == nil {
         return nil
@@ -73,7 +73,7 @@ func (m *ComanagementEligibleDevice) GetDeviceName()(*string) {
         return m.deviceName
     }
 }
-// GetDeviceType gets the deviceType property value. DeviceType. Possible values are: desktop, windowsRT, winMO6, nokia, windowsPhone, mac, winCE, winEmbedded, iPhone, iPad, iPod, android, iSocConsumer, unix, macMDM, holoLens, surfaceHub, androidForWork, androidEnterprise, windows10x, androidnGMS, chromeOS, linux, blackberry, palm, unknown, cloudPC.
+// GetDeviceType gets the deviceType property value. Device type.
 func (m *ComanagementEligibleDevice) GetDeviceType()(*DeviceType) {
     if m == nil {
         return nil
@@ -284,7 +284,7 @@ func (m *ComanagementEligibleDevice) GetFieldDeserializers()(map[string]func(i87
     }
     return res
 }
-// GetManagementAgents gets the managementAgents property value. ManagementAgents. Possible values are: eas, mdm, easMdm, intuneClient, easIntuneClient, configurationManagerClient, configurationManagerClientMdm, configurationManagerClientMdmEas, unknown, jamf, googleCloudDevicePolicyController, microsoft365ManagedMdm, msSense, intuneAosp.
+// GetManagementAgents gets the managementAgents property value. Management agent type.
 func (m *ComanagementEligibleDevice) GetManagementAgents()(*ManagementAgentType) {
     if m == nil {
         return nil
@@ -292,7 +292,7 @@ func (m *ComanagementEligibleDevice) GetManagementAgents()(*ManagementAgentType)
         return m.managementAgents
     }
 }
-// GetManagementState gets the managementState property value. ManagementState. Possible values are: managed, retirePending, retireFailed, wipePending, wipeFailed, unhealthy, deletePending, retireIssued, wipeIssued, wipeCanceled, retireCanceled, discovered.
+// GetManagementState gets the managementState property value. Management state of device in Microsoft Intune.
 func (m *ComanagementEligibleDevice) GetManagementState()(*ManagementState) {
     if m == nil {
         return nil
@@ -340,7 +340,7 @@ func (m *ComanagementEligibleDevice) GetOsVersion()(*string) {
         return m.osVersion
     }
 }
-// GetOwnerType gets the ownerType property value. OwnerType. Possible values are: unknown, company, personal.
+// GetOwnerType gets the ownerType property value. Owner type of device.
 func (m *ComanagementEligibleDevice) GetOwnerType()(*OwnerType) {
     if m == nil {
         return nil
@@ -364,7 +364,7 @@ func (m *ComanagementEligibleDevice) GetSerialNumber()(*string) {
         return m.serialNumber
     }
 }
-// GetStatus gets the status property value. ComanagementEligibleStatus. Possible values are: comanaged, eligible, eligibleButNotAzureAdJoined, needsOsUpdate, ineligible.
+// GetStatus gets the status property value. The status property
 func (m *ComanagementEligibleDevice) GetStatus()(*ComanagementEligibleType) {
     if m == nil {
         return nil
@@ -532,7 +532,7 @@ func (m *ComanagementEligibleDevice) Serialize(writer i878a80d2330e89d26896388a3
     }
     return nil
 }
-// SetClientRegistrationStatus sets the clientRegistrationStatus property value. ClientRegistrationStatus. Possible values are: notRegistered, registered, revoked, keyConflict, approvalPending, certificateReset, notRegisteredPendingEnrollment, unknown.
+// SetClientRegistrationStatus sets the clientRegistrationStatus property value. Device registration status.
 func (m *ComanagementEligibleDevice) SetClientRegistrationStatus(value *DeviceRegistrationState)() {
     if m != nil {
         m.clientRegistrationStatus = value
@@ -544,7 +544,7 @@ func (m *ComanagementEligibleDevice) SetDeviceName(value *string)() {
         m.deviceName = value
     }
 }
-// SetDeviceType sets the deviceType property value. DeviceType. Possible values are: desktop, windowsRT, winMO6, nokia, windowsPhone, mac, winCE, winEmbedded, iPhone, iPad, iPod, android, iSocConsumer, unix, macMDM, holoLens, surfaceHub, androidForWork, androidEnterprise, windows10x, androidnGMS, chromeOS, linux, blackberry, palm, unknown, cloudPC.
+// SetDeviceType sets the deviceType property value. Device type.
 func (m *ComanagementEligibleDevice) SetDeviceType(value *DeviceType)() {
     if m != nil {
         m.deviceType = value
@@ -556,13 +556,13 @@ func (m *ComanagementEligibleDevice) SetEntitySource(value *int32)() {
         m.entitySource = value
     }
 }
-// SetManagementAgents sets the managementAgents property value. ManagementAgents. Possible values are: eas, mdm, easMdm, intuneClient, easIntuneClient, configurationManagerClient, configurationManagerClientMdm, configurationManagerClientMdmEas, unknown, jamf, googleCloudDevicePolicyController, microsoft365ManagedMdm, msSense, intuneAosp.
+// SetManagementAgents sets the managementAgents property value. Management agent type.
 func (m *ComanagementEligibleDevice) SetManagementAgents(value *ManagementAgentType)() {
     if m != nil {
         m.managementAgents = value
     }
 }
-// SetManagementState sets the managementState property value. ManagementState. Possible values are: managed, retirePending, retireFailed, wipePending, wipeFailed, unhealthy, deletePending, retireIssued, wipeIssued, wipeCanceled, retireCanceled, discovered.
+// SetManagementState sets the managementState property value. Management state of device in Microsoft Intune.
 func (m *ComanagementEligibleDevice) SetManagementState(value *ManagementState)() {
     if m != nil {
         m.managementState = value
@@ -598,7 +598,7 @@ func (m *ComanagementEligibleDevice) SetOsVersion(value *string)() {
         m.osVersion = value
     }
 }
-// SetOwnerType sets the ownerType property value. OwnerType. Possible values are: unknown, company, personal.
+// SetOwnerType sets the ownerType property value. Owner type of device.
 func (m *ComanagementEligibleDevice) SetOwnerType(value *OwnerType)() {
     if m != nil {
         m.ownerType = value
@@ -616,7 +616,7 @@ func (m *ComanagementEligibleDevice) SetSerialNumber(value *string)() {
         m.serialNumber = value
     }
 }
-// SetStatus sets the status property value. ComanagementEligibleStatus. Possible values are: comanaged, eligible, eligibleButNotAzureAdJoined, needsOsUpdate, ineligible.
+// SetStatus sets the status property value. The status property
 func (m *ComanagementEligibleDevice) SetStatus(value *ComanagementEligibleType)() {
     if m != nil {
         m.status = value

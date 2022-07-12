@@ -6,7 +6,7 @@ import (
 
 // TriggerDeviceScopeActionPostRequestBody provides operations to call the triggerDeviceScopeAction method.
 type TriggerDeviceScopeActionPostRequestBody struct {
-    // The actionName property
+    // Trigger on the service to either START or STOP computing metrics data based on a device scope configuration.
     actionName *string
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
@@ -24,7 +24,7 @@ func NewTriggerDeviceScopeActionPostRequestBody()(*TriggerDeviceScopeActionPostR
 func CreateTriggerDeviceScopeActionPostRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewTriggerDeviceScopeActionPostRequestBody(), nil
 }
-// GetActionName gets the actionName property value. The actionName property
+// GetActionName gets the actionName property value. Trigger on the service to either START or STOP computing metrics data based on a device scope configuration.
 func (m *TriggerDeviceScopeActionPostRequestBody) GetActionName()(*string) {
     if m == nil {
         return nil
@@ -95,7 +95,7 @@ func (m *TriggerDeviceScopeActionPostRequestBody) Serialize(writer i878a80d2330e
     }
     return nil
 }
-// SetActionName sets the actionName property value. The actionName property
+// SetActionName sets the actionName property value. Trigger on the service to either START or STOP computing metrics data based on a device scope configuration.
 func (m *TriggerDeviceScopeActionPostRequestBody) SetActionName(value *string)() {
     if m != nil {
         m.actionName = value

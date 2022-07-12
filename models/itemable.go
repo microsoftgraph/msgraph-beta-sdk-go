@@ -23,7 +23,6 @@ type Itemable interface {
     GetPriceIncludesTax()(*bool)
     GetTaxGroupCode()(*string)
     GetTaxGroupId()(*string)
-    GetType()(*string)
     GetUnitCost()(*float64)
     GetUnitPrice()(*float64)
     SetBaseUnitOfMeasureId(value *string)()
@@ -40,7 +39,6 @@ type Itemable interface {
     SetPriceIncludesTax(value *bool)()
     SetTaxGroupCode(value *string)()
     SetTaxGroupId(value *string)()
-    SetType(value *string)()
     SetUnitCost(value *float64)()
     SetUnitPrice(value *float64)()
 }

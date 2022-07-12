@@ -37,7 +37,7 @@ type UserExperienceAnalyticsWorkFromAnywhereDevicesSummary struct {
     // The count of windows 10 devices that are Intune and Comanaged. Valid values -2147483648 to 2147483647
     windows10DevicesWithoutTenantAttach *int32
 }
-// NewUserExperienceAnalyticsWorkFromAnywhereDevicesSummary instantiates a new UserExperienceAnalyticsWorkFromAnywhereDevicesSummary and sets the default values.
+// NewUserExperienceAnalyticsWorkFromAnywhereDevicesSummary instantiates a new userExperienceAnalyticsWorkFromAnywhereDevicesSummary and sets the default values.
 func NewUserExperienceAnalyticsWorkFromAnywhereDevicesSummary()(*UserExperienceAnalyticsWorkFromAnywhereDevicesSummary) {
     m := &UserExperienceAnalyticsWorkFromAnywhereDevicesSummary{
     }

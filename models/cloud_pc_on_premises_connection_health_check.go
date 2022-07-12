@@ -21,7 +21,7 @@ type CloudPcOnPremisesConnectionHealthCheck struct {
     recommendedAction *string
     // The start time of the health check item. Read-only.
     startDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The status of the health check item. Possible values are: pending, running, passed, failed, unknownFutureValue. Read-only.
+    // The status property
     status *CloudPcOnPremisesConnectionStatus
 }
 // NewCloudPcOnPremisesConnectionHealthCheck instantiates a new cloudPcOnPremisesConnectionHealthCheck and sets the default values.
@@ -166,7 +166,7 @@ func (m *CloudPcOnPremisesConnectionHealthCheck) GetStartDateTime()(*i336074805f
         return m.startDateTime
     }
 }
-// GetStatus gets the status property value. The status of the health check item. Possible values are: pending, running, passed, failed, unknownFutureValue. Read-only.
+// GetStatus gets the status property value. The status property
 func (m *CloudPcOnPremisesConnectionHealthCheck) GetStatus()(*CloudPcOnPremisesConnectionStatus) {
     if m == nil {
         return nil
@@ -270,7 +270,7 @@ func (m *CloudPcOnPremisesConnectionHealthCheck) SetStartDateTime(value *i336074
         m.startDateTime = value
     }
 }
-// SetStatus sets the status property value. The status of the health check item. Possible values are: pending, running, passed, failed, unknownFutureValue. Read-only.
+// SetStatus sets the status property value. The status property
 func (m *CloudPcOnPremisesConnectionHealthCheck) SetStatus(value *CloudPcOnPremisesConnectionStatus)() {
     if m != nil {
         m.status = value

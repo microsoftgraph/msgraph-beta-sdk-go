@@ -14,7 +14,7 @@ type ManagementActionDeploymentStatus struct {
     managementTemplateId *string
     // The managementTemplateVersion property
     managementTemplateVersion *int32
-    // The status of the management action. Possible values are: toAddress, completed, error, timeOut, inProgress, planned, resolvedBy3rdParty, resolvedThroughAlternateMitigation, riskAccepted, unknownFutureValue. Required.
+    // The status property
     status *ManagementActionStatus
     // The collection of workload action deployment statues for the given management action. Optional.
     workloadActionDeploymentStatuses []WorkloadActionDeploymentStatusable
@@ -121,7 +121,7 @@ func (m *ManagementActionDeploymentStatus) GetManagementTemplateVersion()(*int32
         return m.managementTemplateVersion
     }
 }
-// GetStatus gets the status property value. The status of the management action. Possible values are: toAddress, completed, error, timeOut, inProgress, planned, resolvedBy3rdParty, resolvedThroughAlternateMitigation, riskAccepted, unknownFutureValue. Required.
+// GetStatus gets the status property value. The status property
 func (m *ManagementActionDeploymentStatus) GetStatus()(*ManagementActionStatus) {
     if m == nil {
         return nil
@@ -206,7 +206,7 @@ func (m *ManagementActionDeploymentStatus) SetManagementTemplateVersion(value *i
         m.managementTemplateVersion = value
     }
 }
-// SetStatus sets the status property value. The status of the management action. Possible values are: toAddress, completed, error, timeOut, inProgress, planned, resolvedBy3rdParty, resolvedThroughAlternateMitigation, riskAccepted, unknownFutureValue. Required.
+// SetStatus sets the status property value. The status property
 func (m *ManagementActionDeploymentStatus) SetStatus(value *ManagementActionStatus)() {
     if m != nil {
         m.status = value

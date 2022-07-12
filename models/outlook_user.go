@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// OutlookUser provides operations to manage the collection of administrativeUnit entities.
+// OutlookUser 
 type OutlookUser struct {
     Entity
     // A list of categories defined for the user.
@@ -16,7 +16,7 @@ type OutlookUser struct {
     // The tasks property
     tasks []OutlookTaskable
 }
-// NewOutlookUser instantiates a new outlookUser and sets the default values.
+// NewOutlookUser instantiates a new OutlookUser and sets the default values.
 func NewOutlookUser()(*OutlookUser) {
     m := &OutlookUser{
         Entity: *NewEntity(),

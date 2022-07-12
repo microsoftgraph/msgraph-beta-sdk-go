@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// UserExperienceAnalyticsDeviceScores the user experience analytics device scores entity consolidates the various endpoint analytics scores.
+// UserExperienceAnalyticsDeviceScores 
 type UserExperienceAnalyticsDeviceScores struct {
     Entity
     // The user experience analytics device app reliability score. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
@@ -15,7 +15,7 @@ type UserExperienceAnalyticsDeviceScores struct {
     deviceName *string
     // The user experience analytics device score. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
     endpointAnalyticsScore *float64
-    // The health state of the user experience analytics device. Possible values are: unknown, insufficientData, needsAttention, meetingGoals.
+    // The healthStatus property
     healthStatus *UserExperienceAnalyticsHealthState
     // The user experience analytics device manufacturer.
     manufacturer *string
@@ -26,7 +26,7 @@ type UserExperienceAnalyticsDeviceScores struct {
     // The user experience analytics device work From anywhere score. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
     workFromAnywhereScore *float64
 }
-// NewUserExperienceAnalyticsDeviceScores instantiates a new userExperienceAnalyticsDeviceScores and sets the default values.
+// NewUserExperienceAnalyticsDeviceScores instantiates a new UserExperienceAnalyticsDeviceScores and sets the default values.
 func NewUserExperienceAnalyticsDeviceScores()(*UserExperienceAnalyticsDeviceScores) {
     m := &UserExperienceAnalyticsDeviceScores{
         Entity: *NewEntity(),
@@ -164,7 +164,7 @@ func (m *UserExperienceAnalyticsDeviceScores) GetFieldDeserializers()(map[string
     }
     return res
 }
-// GetHealthStatus gets the healthStatus property value. The health state of the user experience analytics device. Possible values are: unknown, insufficientData, needsAttention, meetingGoals.
+// GetHealthStatus gets the healthStatus property value. The healthStatus property
 func (m *UserExperienceAnalyticsDeviceScores) GetHealthStatus()(*UserExperienceAnalyticsHealthState) {
     if m == nil {
         return nil
@@ -291,7 +291,7 @@ func (m *UserExperienceAnalyticsDeviceScores) SetEndpointAnalyticsScore(value *f
         m.endpointAnalyticsScore = value
     }
 }
-// SetHealthStatus sets the healthStatus property value. The health state of the user experience analytics device. Possible values are: unknown, insufficientData, needsAttention, meetingGoals.
+// SetHealthStatus sets the healthStatus property value. The healthStatus property
 func (m *UserExperienceAnalyticsDeviceScores) SetHealthStatus(value *UserExperienceAnalyticsHealthState)() {
     if m != nil {
         m.healthStatus = value

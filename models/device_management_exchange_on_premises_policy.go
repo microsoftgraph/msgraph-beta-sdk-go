@@ -4,21 +4,21 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DeviceManagementExchangeOnPremisesPolicy singleton entity which represents the Exchange OnPremises policy configured for a tenant.
+// DeviceManagementExchangeOnPremisesPolicy 
 type DeviceManagementExchangeOnPremisesPolicy struct {
     Entity
     // The list of device access rules in Exchange. The access rules apply globally to the entire Exchange organization
     accessRules []DeviceManagementExchangeAccessRuleable
     // The Exchange on premises conditional access settings. On premises conditional access will require devices to be both enrolled and compliant for mail access
     conditionalAccessSettings OnPremisesConditionalAccessSettingsable
-    // Default access state in Exchange. This rule applies globally to the entire Exchange organization. Possible values are: none, allow, block, quarantine.
+    // Access Level in Exchange.
     defaultAccessLevel *DeviceManagementExchangeAccessLevel
     // The list of device classes known to Exchange
     knownDeviceClasses []DeviceManagementExchangeDeviceClassable
     // Notification text that will be sent to users quarantined by this policy. This is UTF8 encoded byte array HTML.
     notificationContent []byte
 }
-// NewDeviceManagementExchangeOnPremisesPolicy instantiates a new deviceManagementExchangeOnPremisesPolicy and sets the default values.
+// NewDeviceManagementExchangeOnPremisesPolicy instantiates a new DeviceManagementExchangeOnPremisesPolicy and sets the default values.
 func NewDeviceManagementExchangeOnPremisesPolicy()(*DeviceManagementExchangeOnPremisesPolicy) {
     m := &DeviceManagementExchangeOnPremisesPolicy{
         Entity: *NewEntity(),
@@ -45,7 +45,7 @@ func (m *DeviceManagementExchangeOnPremisesPolicy) GetConditionalAccessSettings(
         return m.conditionalAccessSettings
     }
 }
-// GetDefaultAccessLevel gets the defaultAccessLevel property value. Default access state in Exchange. This rule applies globally to the entire Exchange organization. Possible values are: none, allow, block, quarantine.
+// GetDefaultAccessLevel gets the defaultAccessLevel property value. Access Level in Exchange.
 func (m *DeviceManagementExchangeOnPremisesPolicy) GetDefaultAccessLevel()(*DeviceManagementExchangeAccessLevel) {
     if m == nil {
         return nil
@@ -191,7 +191,7 @@ func (m *DeviceManagementExchangeOnPremisesPolicy) SetConditionalAccessSettings(
         m.conditionalAccessSettings = value
     }
 }
-// SetDefaultAccessLevel sets the defaultAccessLevel property value. Default access state in Exchange. This rule applies globally to the entire Exchange organization. Possible values are: none, allow, block, quarantine.
+// SetDefaultAccessLevel sets the defaultAccessLevel property value. Access Level in Exchange.
 func (m *DeviceManagementExchangeOnPremisesPolicy) SetDefaultAccessLevel(value *DeviceManagementExchangeAccessLevel)() {
     if m != nil {
         m.defaultAccessLevel = value

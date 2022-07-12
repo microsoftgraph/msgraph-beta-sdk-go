@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// SymantecCodeSigningCertificate provides operations to manage the deviceAppManagement singleton.
+// SymantecCodeSigningCertificate 
 type SymantecCodeSigningCertificate struct {
     Entity
     // The Windows Symantec Code-Signing Certificate in the raw data format.
@@ -18,7 +18,7 @@ type SymantecCodeSigningCertificate struct {
     issuerName *string
     // The Password required for .pfx file.
     password *string
-    // The Cert Status Provisioned or not Provisioned. Possible values are: notProvisioned, provisioned.
+    // The status property
     status *CertificateStatus
     // The Subject value for the cert.
     subject *string
@@ -27,7 +27,7 @@ type SymantecCodeSigningCertificate struct {
     // The Type of the CodeSigning Cert as Symantec Cert.
     uploadDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
 }
-// NewSymantecCodeSigningCertificate instantiates a new symantecCodeSigningCertificate and sets the default values.
+// NewSymantecCodeSigningCertificate instantiates a new SymantecCodeSigningCertificate and sets the default values.
 func NewSymantecCodeSigningCertificate()(*SymantecCodeSigningCertificate) {
     m := &SymantecCodeSigningCertificate{
         Entity: *NewEntity(),
@@ -173,7 +173,7 @@ func (m *SymantecCodeSigningCertificate) GetPassword()(*string) {
         return m.password
     }
 }
-// GetStatus gets the status property value. The Cert Status Provisioned or not Provisioned. Possible values are: notProvisioned, provisioned.
+// GetStatus gets the status property value. The status property
 func (m *SymantecCodeSigningCertificate) GetStatus()(*CertificateStatus) {
     if m == nil {
         return nil
@@ -298,7 +298,7 @@ func (m *SymantecCodeSigningCertificate) SetPassword(value *string)() {
         m.password = value
     }
 }
-// SetStatus sets the status property value. The Cert Status Provisioned or not Provisioned. Possible values are: notProvisioned, provisioned.
+// SetStatus sets the status property value. The status property
 func (m *SymantecCodeSigningCertificate) SetStatus(value *CertificateStatus)() {
     if m != nil {
         m.status = value

@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// IPv4Range iPv4 Range definition.
+// IPv4Range 
 type IPv4Range struct {
     IpRange
     // Lower address.
@@ -12,7 +12,7 @@ type IPv4Range struct {
     // Upper address.
     upperAddress *string
 }
-// NewIPv4Range instantiates a new iPv4Range and sets the default values.
+// NewIPv4Range instantiates a new IPv4Range and sets the default values.
 func NewIPv4Range()(*IPv4Range) {
     m := &IPv4Range{
         IpRange: *NewIpRange(),
