@@ -16,7 +16,7 @@ type GroupPolicyUploadedDefinitionFile struct {
     groupPolicyOperations []GroupPolicyOperationable
     // The list of ADML files associated with the uploaded ADMX file.
     groupPolicyUploadedLanguageFiles []GroupPolicyUploadedLanguageFileable
-    // The upload status of the uploaded ADMX file. Possible values are: none, uploadInProgress, available, assigned, removalInProgress, uploadFailed, removalFailed.
+    // Type of Group Policy uploaded definition file status.
     status *GroupPolicyUploadedDefinitionFileStatus
     // The uploaded time of the uploaded ADMX file.
     uploadDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
@@ -137,7 +137,7 @@ func (m *GroupPolicyUploadedDefinitionFile) GetGroupPolicyUploadedLanguageFiles(
         return m.groupPolicyUploadedLanguageFiles
     }
 }
-// GetStatus gets the status property value. The upload status of the uploaded ADMX file. Possible values are: none, uploadInProgress, available, assigned, removalInProgress, uploadFailed, removalFailed.
+// GetStatus gets the status property value. Type of Group Policy uploaded definition file status.
 func (m *GroupPolicyUploadedDefinitionFile) GetStatus()(*GroupPolicyUploadedDefinitionFileStatus) {
     if m == nil {
         return nil
@@ -230,7 +230,7 @@ func (m *GroupPolicyUploadedDefinitionFile) SetGroupPolicyUploadedLanguageFiles(
         m.groupPolicyUploadedLanguageFiles = value
     }
 }
-// SetStatus sets the status property value. The upload status of the uploaded ADMX file. Possible values are: none, uploadInProgress, available, assigned, removalInProgress, uploadFailed, removalFailed.
+// SetStatus sets the status property value. Type of Group Policy uploaded definition file status.
 func (m *GroupPolicyUploadedDefinitionFile) SetStatus(value *GroupPolicyUploadedDefinitionFileStatus)() {
     if m != nil {
         m.status = value

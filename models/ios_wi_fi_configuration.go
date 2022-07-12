@@ -23,11 +23,11 @@ type IosWiFiConfiguration struct {
     proxyManualAddress *string
     // Port of the proxy server when manual configuration is selected.
     proxyManualPort *int32
-    // Proxy Type for this Wi-Fi connection. Possible values are: none, manual, automatic.
+    // Wi-Fi Proxy Settings.
     proxySettings *WiFiProxySetting
     // This is the name of the Wi-Fi network that is broadcast to all devices.
     ssid *string
-    // Indicates whether Wi-Fi endpoint uses an EAP based security type. Possible values are: open, wpaPersonal, wpaEnterprise, wep, wpa2Personal, wpa2Enterprise.
+    // Wi-Fi Security Types.
     wiFiSecurityType *WiFiSecurityType
 }
 // NewIosWiFiConfiguration instantiates a new IosWiFiConfiguration and sets the default values.
@@ -35,6 +35,8 @@ func NewIosWiFiConfiguration()(*IosWiFiConfiguration) {
     m := &IosWiFiConfiguration{
         DeviceConfiguration: *NewDeviceConfiguration(),
     }
+    typeValue := "#microsoft.graph.iosWiFiConfiguration";
+    m.SetType(&typeValue);
     return m
 }
 // CreateIosWiFiConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -239,7 +241,7 @@ func (m *IosWiFiConfiguration) GetProxyManualPort()(*int32) {
         return m.proxyManualPort
     }
 }
-// GetProxySettings gets the proxySettings property value. Proxy Type for this Wi-Fi connection. Possible values are: none, manual, automatic.
+// GetProxySettings gets the proxySettings property value. Wi-Fi Proxy Settings.
 func (m *IosWiFiConfiguration) GetProxySettings()(*WiFiProxySetting) {
     if m == nil {
         return nil
@@ -255,7 +257,7 @@ func (m *IosWiFiConfiguration) GetSsid()(*string) {
         return m.ssid
     }
 }
-// GetWiFiSecurityType gets the wiFiSecurityType property value. Indicates whether Wi-Fi endpoint uses an EAP based security type. Possible values are: open, wpaPersonal, wpaEnterprise, wep, wpa2Personal, wpa2Enterprise.
+// GetWiFiSecurityType gets the wiFiSecurityType property value. Wi-Fi Security Types.
 func (m *IosWiFiConfiguration) GetWiFiSecurityType()(*WiFiSecurityType) {
     if m == nil {
         return nil
@@ -387,7 +389,7 @@ func (m *IosWiFiConfiguration) SetProxyManualPort(value *int32)() {
         m.proxyManualPort = value
     }
 }
-// SetProxySettings sets the proxySettings property value. Proxy Type for this Wi-Fi connection. Possible values are: none, manual, automatic.
+// SetProxySettings sets the proxySettings property value. Wi-Fi Proxy Settings.
 func (m *IosWiFiConfiguration) SetProxySettings(value *WiFiProxySetting)() {
     if m != nil {
         m.proxySettings = value
@@ -399,7 +401,7 @@ func (m *IosWiFiConfiguration) SetSsid(value *string)() {
         m.ssid = value
     }
 }
-// SetWiFiSecurityType sets the wiFiSecurityType property value. Indicates whether Wi-Fi endpoint uses an EAP based security type. Possible values are: open, wpaPersonal, wpaEnterprise, wep, wpa2Personal, wpa2Enterprise.
+// SetWiFiSecurityType sets the wiFiSecurityType property value. Wi-Fi Security Types.
 func (m *IosWiFiConfiguration) SetWiFiSecurityType(value *WiFiSecurityType)() {
     if m != nil {
         m.wiFiSecurityType = value

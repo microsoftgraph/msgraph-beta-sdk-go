@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the deviceManagement singleton.
+// Provides operations to manage the collection of activityStatistics entities.
 type DeviceManagementConfigurationTechnologies int
 
 const (
@@ -22,12 +22,14 @@ const (
     EXCHANGEONLINE_DEVICEMANAGEMENTCONFIGURATIONTECHNOLOGIES
     // Setting can be deployed through the Linux Mdm channel
     LINUXMDM_DEVICEMANAGEMENTCONFIGURATIONTECHNOLOGIES
+    // Setting can be deployed through device enrollment.
+    ENROLLMENT_DEVICEMANAGEMENTCONFIGURATIONTECHNOLOGIES
     // Sentinel member for cases where the client cannot handle the new enum values.
     UNKNOWNFUTUREVALUE_DEVICEMANAGEMENTCONFIGURATIONTECHNOLOGIES
 )
 
 func (i DeviceManagementConfigurationTechnologies) String() string {
-    return []string{"none", "mdm", "windows10XManagement", "configManager", "appleRemoteManagement", "microsoftSense", "exchangeOnline", "linuxMdm", "unknownFutureValue"}[i]
+    return []string{"none", "mdm", "windows10XManagement", "configManager", "appleRemoteManagement", "microsoftSense", "exchangeOnline", "linuxMdm", "enrollment", "unknownFutureValue"}[i]
 }
 func ParseDeviceManagementConfigurationTechnologies(v string) (interface{}, error) {
     result := NONE_DEVICEMANAGEMENTCONFIGURATIONTECHNOLOGIES
@@ -48,6 +50,8 @@ func ParseDeviceManagementConfigurationTechnologies(v string) (interface{}, erro
             result = EXCHANGEONLINE_DEVICEMANAGEMENTCONFIGURATIONTECHNOLOGIES
         case "linuxMdm":
             result = LINUXMDM_DEVICEMANAGEMENTCONFIGURATIONTECHNOLOGIES
+        case "enrollment":
+            result = ENROLLMENT_DEVICEMANAGEMENTCONFIGURATIONTECHNOLOGIES
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_DEVICEMANAGEMENTCONFIGURATIONTECHNOLOGIES
         default:

@@ -8,14 +8,14 @@ import (
 type AppLogCollectionDownloadDetails struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
-    // DecryptionAlgorithm for Content. Possible values are: aes256.
+    // The appLogDecryptionAlgorithm property
     appLogDecryptionAlgorithm *AppLogDecryptionAlgorithm
     // DecryptionKey as string
     decryptionKey *string
     // Download SAS Url for completed AppLogUploadRequest
     downloadUrl *string
 }
-// NewAppLogCollectionDownloadDetails instantiates a new AppLogCollectionDownloadDetails and sets the default values.
+// NewAppLogCollectionDownloadDetails instantiates a new appLogCollectionDownloadDetails and sets the default values.
 func NewAppLogCollectionDownloadDetails()(*AppLogCollectionDownloadDetails) {
     m := &AppLogCollectionDownloadDetails{
     }
@@ -34,7 +34,7 @@ func (m *AppLogCollectionDownloadDetails) GetAdditionalData()(map[string]interfa
         return m.additionalData
     }
 }
-// GetAppLogDecryptionAlgorithm gets the appLogDecryptionAlgorithm property value. DecryptionAlgorithm for Content. Possible values are: aes256.
+// GetAppLogDecryptionAlgorithm gets the appLogDecryptionAlgorithm property value. The appLogDecryptionAlgorithm property
 func (m *AppLogCollectionDownloadDetails) GetAppLogDecryptionAlgorithm()(*AppLogDecryptionAlgorithm) {
     if m == nil {
         return nil
@@ -128,7 +128,7 @@ func (m *AppLogCollectionDownloadDetails) SetAdditionalData(value map[string]int
         m.additionalData = value
     }
 }
-// SetAppLogDecryptionAlgorithm sets the appLogDecryptionAlgorithm property value. DecryptionAlgorithm for Content. Possible values are: aes256.
+// SetAppLogDecryptionAlgorithm sets the appLogDecryptionAlgorithm property value. The appLogDecryptionAlgorithm property
 func (m *AppLogCollectionDownloadDetails) SetAppLogDecryptionAlgorithm(value *AppLogDecryptionAlgorithm)() {
     if m != nil {
         m.appLogDecryptionAlgorithm = value

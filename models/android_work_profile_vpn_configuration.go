@@ -11,11 +11,11 @@ type AndroidWorkProfileVpnConfiguration struct {
     alwaysOn *bool
     // If always-on VPN connection is enabled, whether or not to lock network traffic when that VPN is disconnected.
     alwaysOnLockdown *bool
-    // Authentication method. Possible values are: certificate, usernameAndPassword, sharedSecret, derivedCredential, azureAD.
+    // VPN Authentication Method.
     authenticationMethod *VpnAuthenticationMethod
     // Connection name displayed to the user.
     connectionName *string
-    // Connection type. Possible values are: ciscoAnyConnect, pulseSecure, f5EdgeClient, dellSonicWallMobileConnect, checkPointCapsuleVpn, citrix, paloAltoGlobalProtect, microsoftTunnel, netMotionMobility, microsoftProtect.
+    // Android Work Profile VPN connection type.
     connectionType *AndroidWorkProfileVpnConnectionType
     // Custom data when connection type is set to Citrix. This collection can contain a maximum of 25 elements.
     customData []KeyValueable
@@ -67,7 +67,7 @@ func (m *AndroidWorkProfileVpnConfiguration) GetAlwaysOnLockdown()(*bool) {
         return m.alwaysOnLockdown
     }
 }
-// GetAuthenticationMethod gets the authenticationMethod property value. Authentication method. Possible values are: certificate, usernameAndPassword, sharedSecret, derivedCredential, azureAD.
+// GetAuthenticationMethod gets the authenticationMethod property value. VPN Authentication Method.
 func (m *AndroidWorkProfileVpnConfiguration) GetAuthenticationMethod()(*VpnAuthenticationMethod) {
     if m == nil {
         return nil
@@ -83,7 +83,7 @@ func (m *AndroidWorkProfileVpnConfiguration) GetConnectionName()(*string) {
         return m.connectionName
     }
 }
-// GetConnectionType gets the connectionType property value. Connection type. Possible values are: ciscoAnyConnect, pulseSecure, f5EdgeClient, dellSonicWallMobileConnect, checkPointCapsuleVpn, citrix, paloAltoGlobalProtect, microsoftTunnel, netMotionMobility, microsoftProtect.
+// GetConnectionType gets the connectionType property value. Android Work Profile VPN connection type.
 func (m *AndroidWorkProfileVpnConfiguration) GetConnectionType()(*AndroidWorkProfileVpnConnectionType) {
     if m == nil {
         return nil
@@ -498,7 +498,7 @@ func (m *AndroidWorkProfileVpnConfiguration) SetAlwaysOnLockdown(value *bool)() 
         m.alwaysOnLockdown = value
     }
 }
-// SetAuthenticationMethod sets the authenticationMethod property value. Authentication method. Possible values are: certificate, usernameAndPassword, sharedSecret, derivedCredential, azureAD.
+// SetAuthenticationMethod sets the authenticationMethod property value. VPN Authentication Method.
 func (m *AndroidWorkProfileVpnConfiguration) SetAuthenticationMethod(value *VpnAuthenticationMethod)() {
     if m != nil {
         m.authenticationMethod = value
@@ -510,7 +510,7 @@ func (m *AndroidWorkProfileVpnConfiguration) SetConnectionName(value *string)() 
         m.connectionName = value
     }
 }
-// SetConnectionType sets the connectionType property value. Connection type. Possible values are: ciscoAnyConnect, pulseSecure, f5EdgeClient, dellSonicWallMobileConnect, checkPointCapsuleVpn, citrix, paloAltoGlobalProtect, microsoftTunnel, netMotionMobility, microsoftProtect.
+// SetConnectionType sets the connectionType property value. Android Work Profile VPN connection type.
 func (m *AndroidWorkProfileVpnConfiguration) SetConnectionType(value *AndroidWorkProfileVpnConnectionType)() {
     if m != nil {
         m.connectionType = value

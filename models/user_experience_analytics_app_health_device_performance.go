@@ -26,7 +26,7 @@ type UserExperienceAnalyticsAppHealthDevicePerformance struct {
     deviceManufacturer *string
     // The model name of the device.
     deviceModel *string
-    // The health state of the user experience analytics device. Possible values are: unknown, insufficientData, needsAttention, meetingGoals.
+    // The healthStatus property
     healthStatus *UserExperienceAnalyticsHealthState
     // The mean time to failure for the device in minutes. Valid values -2147483648 to 2147483647
     meanTimeToFailureInMinutes *int32
@@ -241,7 +241,7 @@ func (m *UserExperienceAnalyticsAppHealthDevicePerformance) GetFieldDeserializer
     }
     return res
 }
-// GetHealthStatus gets the healthStatus property value. The health state of the user experience analytics device. Possible values are: unknown, insufficientData, needsAttention, meetingGoals.
+// GetHealthStatus gets the healthStatus property value. The healthStatus property
 func (m *UserExperienceAnalyticsAppHealthDevicePerformance) GetHealthStatus()(*UserExperienceAnalyticsHealthState) {
     if m == nil {
         return nil
@@ -400,7 +400,7 @@ func (m *UserExperienceAnalyticsAppHealthDevicePerformance) SetDeviceModel(value
         m.deviceModel = value
     }
 }
-// SetHealthStatus sets the healthStatus property value. The health state of the user experience analytics device. Possible values are: unknown, insufficientData, needsAttention, meetingGoals.
+// SetHealthStatus sets the healthStatus property value. The healthStatus property
 func (m *UserExperienceAnalyticsAppHealthDevicePerformance) SetHealthStatus(value *UserExperienceAnalyticsHealthState)() {
     if m != nil {
         m.healthStatus = value

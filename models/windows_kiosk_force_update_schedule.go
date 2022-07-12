@@ -11,9 +11,9 @@ type WindowsKioskForceUpdateSchedule struct {
     additionalData map[string]interface{}
     // Day of month. Valid values 1 to 31
     dayofMonth *int32
-    // Day of week. Possible values are: sunday, monday, tuesday, wednesday, thursday, friday, saturday.
+    // The dayofWeek property
     dayofWeek *DayOfWeek
-    // Recurrence schedule. Possible values are: none, daily, weekly, monthly.
+    // Possible values for App update on Windows10 recurrence.
     recurrence *Windows10AppsUpdateRecurrence
     // If true, runs the task immediately if StartDateTime is in the past, else, runs at the next recurrence.
     runImmediatelyIfAfterStartDateTime *bool
@@ -47,7 +47,7 @@ func (m *WindowsKioskForceUpdateSchedule) GetDayofMonth()(*int32) {
         return m.dayofMonth
     }
 }
-// GetDayofWeek gets the dayofWeek property value. Day of week. Possible values are: sunday, monday, tuesday, wednesday, thursday, friday, saturday.
+// GetDayofWeek gets the dayofWeek property value. The dayofWeek property
 func (m *WindowsKioskForceUpdateSchedule) GetDayofWeek()(*DayOfWeek) {
     if m == nil {
         return nil
@@ -110,7 +110,7 @@ func (m *WindowsKioskForceUpdateSchedule) GetFieldDeserializers()(map[string]fun
     }
     return res
 }
-// GetRecurrence gets the recurrence property value. Recurrence schedule. Possible values are: none, daily, weekly, monthly.
+// GetRecurrence gets the recurrence property value. Possible values for App update on Windows10 recurrence.
 func (m *WindowsKioskForceUpdateSchedule) GetRecurrence()(*Windows10AppsUpdateRecurrence) {
     if m == nil {
         return nil
@@ -188,13 +188,13 @@ func (m *WindowsKioskForceUpdateSchedule) SetDayofMonth(value *int32)() {
         m.dayofMonth = value
     }
 }
-// SetDayofWeek sets the dayofWeek property value. Day of week. Possible values are: sunday, monday, tuesday, wednesday, thursday, friday, saturday.
+// SetDayofWeek sets the dayofWeek property value. The dayofWeek property
 func (m *WindowsKioskForceUpdateSchedule) SetDayofWeek(value *DayOfWeek)() {
     if m != nil {
         m.dayofWeek = value
     }
 }
-// SetRecurrence sets the recurrence property value. Recurrence schedule. Possible values are: none, daily, weekly, monthly.
+// SetRecurrence sets the recurrence property value. Possible values for App update on Windows10 recurrence.
 func (m *WindowsKioskForceUpdateSchedule) SetRecurrence(value *Windows10AppsUpdateRecurrence)() {
     if m != nil {
         m.recurrence = value

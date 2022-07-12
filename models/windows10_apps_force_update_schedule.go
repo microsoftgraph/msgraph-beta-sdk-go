@@ -9,7 +9,7 @@ import (
 type Windows10AppsForceUpdateSchedule struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
-    // Recurrence schedule. Possible values are: none, daily, weekly, monthly.
+    // Possible values for App update on Windows10 recurrence.
     recurrence *Windows10AppsUpdateRecurrence
     // If true, runs the task immediately if StartDateTime is in the past, else, runs at the next recurrence.
     runImmediatelyIfAfterStartDateTime *bool
@@ -70,7 +70,7 @@ func (m *Windows10AppsForceUpdateSchedule) GetFieldDeserializers()(map[string]fu
     }
     return res
 }
-// GetRecurrence gets the recurrence property value. Recurrence schedule. Possible values are: none, daily, weekly, monthly.
+// GetRecurrence gets the recurrence property value. Possible values for App update on Windows10 recurrence.
 func (m *Windows10AppsForceUpdateSchedule) GetRecurrence()(*Windows10AppsUpdateRecurrence) {
     if m == nil {
         return nil
@@ -129,7 +129,7 @@ func (m *Windows10AppsForceUpdateSchedule) SetAdditionalData(value map[string]in
         m.additionalData = value
     }
 }
-// SetRecurrence sets the recurrence property value. Recurrence schedule. Possible values are: none, daily, weekly, monthly.
+// SetRecurrence sets the recurrence property value. Possible values for App update on Windows10 recurrence.
 func (m *Windows10AppsForceUpdateSchedule) SetRecurrence(value *Windows10AppsUpdateRecurrence)() {
     if m != nil {
         m.recurrence = value

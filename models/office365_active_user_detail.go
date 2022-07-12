@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Office365ActiveUserDetail provides operations to call the getOffice365ActiveUserDetail method.
+// Office365ActiveUserDetail 
 type Office365ActiveUserDetail struct {
     Entity
     // All the products assigned for the user.
@@ -56,7 +56,7 @@ type Office365ActiveUserDetail struct {
     // The last date when the user was assigned a Yammer license.
     yammerLicenseAssignDate *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly
 }
-// NewOffice365ActiveUserDetail instantiates a new office365ActiveUserDetail and sets the default values.
+// NewOffice365ActiveUserDetail instantiates a new Office365ActiveUserDetail and sets the default values.
 func NewOffice365ActiveUserDetail()(*Office365ActiveUserDetail) {
     m := &Office365ActiveUserDetail{
         Entity: *NewEntity(),

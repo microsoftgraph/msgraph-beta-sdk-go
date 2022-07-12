@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ZebraFotaConnector the Zebra FOTA connector entity that represents the tenant's authorization status for Intune to call Zebra Update Services.
+// ZebraFotaConnector 
 type ZebraFotaConnector struct {
     Entity
     // Complete account enrollment authorization URL. This corresponds to verification_uri_complete in the Zebra API documentations.
@@ -16,7 +16,7 @@ type ZebraFotaConnector struct {
     fotaAppsApproved *bool
     // Date and time when the account was last synched with Zebra
     lastSyncDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The Zebra connector state. Possible values are: none, connected, disconnected, unknownFutureValue.
+    // Represents various states for Zebra FOTA connector.
     state *ZebraFotaConnectorState
 }
 // NewZebraFotaConnector instantiates a new zebraFotaConnector and sets the default values.
@@ -117,7 +117,7 @@ func (m *ZebraFotaConnector) GetLastSyncDateTime()(*i336074805fc853987abe6f7fe3a
         return m.lastSyncDateTime
     }
 }
-// GetState gets the state property value. The Zebra connector state. Possible values are: none, connected, disconnected, unknownFutureValue.
+// GetState gets the state property value. Represents various states for Zebra FOTA connector.
 func (m *ZebraFotaConnector) GetState()(*ZebraFotaConnectorState) {
     if m == nil {
         return nil
@@ -188,7 +188,7 @@ func (m *ZebraFotaConnector) SetLastSyncDateTime(value *i336074805fc853987abe6f7
         m.lastSyncDateTime = value
     }
 }
-// SetState sets the state property value. The Zebra connector state. Possible values are: none, connected, disconnected, unknownFutureValue.
+// SetState sets the state property value. Represents various states for Zebra FOTA connector.
 func (m *ZebraFotaConnector) SetState(value *ZebraFotaConnectorState)() {
     if m != nil {
         m.state = value

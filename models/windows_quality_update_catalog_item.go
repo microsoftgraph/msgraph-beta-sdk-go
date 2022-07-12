@@ -7,7 +7,7 @@ import (
 // WindowsQualityUpdateCatalogItem 
 type WindowsQualityUpdateCatalogItem struct {
     WindowsUpdateCatalogItem
-    // Classification of the quality update. Possible values are: all, security, nonSecurity.
+    // Windows quality update classification
     classification *WindowsQualityUpdateClassification
     // Flag indicating if update qualifies for expedite
     isExpeditable *bool
@@ -25,7 +25,7 @@ func NewWindowsQualityUpdateCatalogItem()(*WindowsQualityUpdateCatalogItem) {
 func CreateWindowsQualityUpdateCatalogItemFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWindowsQualityUpdateCatalogItem(), nil
 }
-// GetClassification gets the classification property value. Classification of the quality update. Possible values are: all, security, nonSecurity.
+// GetClassification gets the classification property value. Windows quality update classification
 func (m *WindowsQualityUpdateCatalogItem) GetClassification()(*WindowsQualityUpdateClassification) {
     if m == nil {
         return nil
@@ -111,7 +111,7 @@ func (m *WindowsQualityUpdateCatalogItem) Serialize(writer i878a80d2330e89d26896
     }
     return nil
 }
-// SetClassification sets the classification property value. Classification of the quality update. Possible values are: all, security, nonSecurity.
+// SetClassification sets the classification property value. Windows quality update classification
 func (m *WindowsQualityUpdateCatalogItem) SetClassification(value *WindowsQualityUpdateClassification)() {
     if m != nil {
         m.classification = value

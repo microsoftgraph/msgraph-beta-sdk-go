@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// TenantSetupInfo provides operations to call the completeSetup method.
+// TenantSetupInfo 
 type TenantSetupInfo struct {
     Entity
     // The defaultRolesSettings property
@@ -20,7 +20,7 @@ type TenantSetupInfo struct {
     // The userRolesActions property
     userRolesActions *string
 }
-// NewTenantSetupInfo instantiates a new tenantSetupInfo and sets the default values.
+// NewTenantSetupInfo instantiates a new TenantSetupInfo and sets the default values.
 func NewTenantSetupInfo()(*TenantSetupInfo) {
     m := &TenantSetupInfo{
         Entity: *NewEntity(),

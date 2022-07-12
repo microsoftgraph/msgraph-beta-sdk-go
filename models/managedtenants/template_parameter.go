@@ -16,7 +16,7 @@ type TemplateParameter struct {
     jsonAllowedValues *string
     // The default value for the template parameter represented by a serialized string of JSON. Required. Read-only.
     jsonDefaultValue *string
-    // The data type for the template parameter.. Possible values are: string, integer, boolean, guid, stringCollection, integerCollection, booleanCollection, guidCollection, unknownFutureValue. Required. Read-only.
+    // The valueType property
     valueType *ManagementParameterValueType
 }
 // NewTemplateParameter instantiates a new templateParameter and sets the default values.
@@ -125,7 +125,7 @@ func (m *TemplateParameter) GetJsonDefaultValue()(*string) {
         return m.jsonDefaultValue
     }
 }
-// GetValueType gets the valueType property value. The data type for the template parameter.. Possible values are: string, integer, boolean, guid, stringCollection, integerCollection, booleanCollection, guidCollection, unknownFutureValue. Required. Read-only.
+// GetValueType gets the valueType property value. The valueType property
 func (m *TemplateParameter) GetValueType()(*ManagementParameterValueType) {
     if m == nil {
         return nil
@@ -204,7 +204,7 @@ func (m *TemplateParameter) SetJsonDefaultValue(value *string)() {
         m.jsonDefaultValue = value
     }
 }
-// SetValueType sets the valueType property value. The data type for the template parameter.. Possible values are: string, integer, boolean, guid, stringCollection, integerCollection, booleanCollection, guidCollection, unknownFutureValue. Required. Read-only.
+// SetValueType sets the valueType property value. The valueType property
 func (m *TemplateParameter) SetValueType(value *ManagementParameterValueType)() {
     if m != nil {
         m.valueType = value

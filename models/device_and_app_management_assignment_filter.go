@@ -16,7 +16,7 @@ type DeviceAndAppManagementAssignmentFilter struct {
     displayName *string
     // Last modified time of the Assignment Filter.
     lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // Platform type of the devices on which the Assignment Filter will be applicable. Possible values are: android, androidForWork, iOS, macOS, windowsPhone81, windows81AndLater, windows10AndLater, androidWorkProfile, unknown.
+    // Supported platform types.
     platform *DevicePlatformType
     // RoleScopeTags of the Assignment Filter.
     roleScopeTags []string
@@ -28,6 +28,8 @@ func NewDeviceAndAppManagementAssignmentFilter()(*DeviceAndAppManagementAssignme
     m := &DeviceAndAppManagementAssignmentFilter{
         Entity: *NewEntity(),
     }
+    typeValue := "#microsoft.graph.deviceAndAppManagementAssignmentFilter";
+    m.SetType(&typeValue);
     return m
 }
 // CreateDeviceAndAppManagementAssignmentFilterFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -164,7 +166,7 @@ func (m *DeviceAndAppManagementAssignmentFilter) GetLastModifiedDateTime()(*i336
         return m.lastModifiedDateTime
     }
 }
-// GetPlatform gets the platform property value. Platform type of the devices on which the Assignment Filter will be applicable. Possible values are: android, androidForWork, iOS, macOS, windowsPhone81, windows81AndLater, windows10AndLater, androidWorkProfile, unknown.
+// GetPlatform gets the platform property value. Supported platform types.
 func (m *DeviceAndAppManagementAssignmentFilter) GetPlatform()(*DevicePlatformType) {
     if m == nil {
         return nil
@@ -263,7 +265,7 @@ func (m *DeviceAndAppManagementAssignmentFilter) SetLastModifiedDateTime(value *
         m.lastModifiedDateTime = value
     }
 }
-// SetPlatform sets the platform property value. Platform type of the devices on which the Assignment Filter will be applicable. Possible values are: android, androidForWork, iOS, macOS, windowsPhone81, windows81AndLater, windows10AndLater, androidWorkProfile, unknown.
+// SetPlatform sets the platform property value. Supported platform types.
 func (m *DeviceAndAppManagementAssignmentFilter) SetPlatform(value *DevicePlatformType)() {
     if m != nil {
         m.platform = value

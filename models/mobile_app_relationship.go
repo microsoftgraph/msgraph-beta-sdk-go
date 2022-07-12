@@ -15,7 +15,7 @@ type MobileAppRelationship struct {
     targetId *string
     // The target mobile app's publisher.
     targetPublisher *string
-    // The type of relationship indicating whether the target is a parent or child. Possible values are: child, parent.
+    // Indicates whether the target of a relationship is the parent or the child in the relationship.
     targetType *MobileAppRelationshipType
 }
 // NewMobileAppRelationship instantiates a new mobileAppRelationship and sets the default values.
@@ -23,6 +23,8 @@ func NewMobileAppRelationship()(*MobileAppRelationship) {
     m := &MobileAppRelationship{
         Entity: *NewEntity(),
     }
+    typeValue := "#microsoft.graph.mobileAppRelationship";
+    m.SetType(&typeValue);
     return m
 }
 // CreateMobileAppRelationshipFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -137,7 +139,7 @@ func (m *MobileAppRelationship) GetTargetPublisher()(*string) {
         return m.targetPublisher
     }
 }
-// GetTargetType gets the targetType property value. The type of relationship indicating whether the target is a parent or child. Possible values are: child, parent.
+// GetTargetType gets the targetType property value. Indicates whether the target of a relationship is the parent or the child in the relationship.
 func (m *MobileAppRelationship) GetTargetType()(*MobileAppRelationshipType) {
     if m == nil {
         return nil
@@ -208,7 +210,7 @@ func (m *MobileAppRelationship) SetTargetPublisher(value *string)() {
         m.targetPublisher = value
     }
 }
-// SetTargetType sets the targetType property value. The type of relationship indicating whether the target is a parent or child. Possible values are: child, parent.
+// SetTargetType sets the targetType property value. Indicates whether the target of a relationship is the parent or the child in the relationship.
 func (m *MobileAppRelationship) SetTargetType(value *MobileAppRelationshipType)() {
     if m != nil {
         m.targetType = value

@@ -5,17 +5,19 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
-// ResourceConnection provides operations to manage the admin singleton.
+// ResourceConnection 
 type ResourceConnection struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
     // The state property
     state *ResourceConnectionState
 }
-// NewResourceConnection instantiates a new resourceConnection and sets the default values.
+// NewResourceConnection instantiates a new ResourceConnection and sets the default values.
 func NewResourceConnection()(*ResourceConnection) {
     m := &ResourceConnection{
         Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),
     }
+    typeValue := "#microsoft.graph.windowsUpdates.resourceConnection";
+    m.SetType(&typeValue);
     return m
 }
 // CreateResourceConnectionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

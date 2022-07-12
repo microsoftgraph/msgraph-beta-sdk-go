@@ -8,7 +8,7 @@ import (
 // DeviceComplianceScriptDeviceState contains properties for device run state of the device compliance script.
 type DeviceComplianceScriptDeviceState struct {
     Entity
-    // Detection state from the lastest device compliance script execution. Possible values are: unknown, success, fail, scriptError, pending, notApplicable.
+    // Indicates the type of execution status of the device management script.
     detectionState *RunState
     // The next timestamp of when the device compliance script is expected to execute
     expectedStateUpdateDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
@@ -34,7 +34,7 @@ func NewDeviceComplianceScriptDeviceState()(*DeviceComplianceScriptDeviceState) 
 func CreateDeviceComplianceScriptDeviceStateFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDeviceComplianceScriptDeviceState(), nil
 }
-// GetDetectionState gets the detectionState property value. Detection state from the lastest device compliance script execution. Possible values are: unknown, success, fail, scriptError, pending, notApplicable.
+// GetDetectionState gets the detectionState property value. Indicates the type of execution status of the device management script.
 func (m *DeviceComplianceScriptDeviceState) GetDetectionState()(*RunState) {
     if m == nil {
         return nil
@@ -216,7 +216,7 @@ func (m *DeviceComplianceScriptDeviceState) Serialize(writer i878a80d2330e89d268
     }
     return nil
 }
-// SetDetectionState sets the detectionState property value. Detection state from the lastest device compliance script execution. Possible values are: unknown, success, fail, scriptError, pending, notApplicable.
+// SetDetectionState sets the detectionState property value. Indicates the type of execution status of the device management script.
 func (m *DeviceComplianceScriptDeviceState) SetDetectionState(value *RunState)() {
     if m != nil {
         m.detectionState = value

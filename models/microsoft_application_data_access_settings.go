@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// MicrosoftApplicationDataAccessSettings provides operations to manage the collection of administrativeUnit entities.
+// MicrosoftApplicationDataAccessSettings 
 type MicrosoftApplicationDataAccessSettings struct {
     Entity
     // The ID of an Azure Active Directory (Azure AD) security group for which the members are allowed to access Microsoft 365 data using only Microsoft 365 apps, but not other Microsoft apps such as Edge.  This is only applicable if isEnabledForAllMicrosoftApplications is set to true.

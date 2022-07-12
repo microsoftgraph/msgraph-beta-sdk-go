@@ -30,7 +30,7 @@ type DeviceComplianceScript struct {
     roleScopeTagIds []string
     // Indicate whether PowerShell script(s) should run as 32-bit
     runAs32Bit *bool
-    // Indicates the type of execution context. Possible values are: system, user.
+    // Indicates the type of execution context the app runs in.
     runAsAccount *RunAsAccountType
     // High level run summary for device compliance script.
     runSummary DeviceComplianceScriptRunSummaryable
@@ -293,7 +293,7 @@ func (m *DeviceComplianceScript) GetRunAs32Bit()(*bool) {
         return m.runAs32Bit
     }
 }
-// GetRunAsAccount gets the runAsAccount property value. Indicates the type of execution context. Possible values are: system, user.
+// GetRunAsAccount gets the runAsAccount property value. Indicates the type of execution context the app runs in.
 func (m *DeviceComplianceScript) GetRunAsAccount()(*RunAsAccountType) {
     if m == nil {
         return nil
@@ -484,7 +484,7 @@ func (m *DeviceComplianceScript) SetRunAs32Bit(value *bool)() {
         m.runAs32Bit = value
     }
 }
-// SetRunAsAccount sets the runAsAccount property value. Indicates the type of execution context. Possible values are: system, user.
+// SetRunAsAccount sets the runAsAccount property value. Indicates the type of execution context the app runs in.
 func (m *DeviceComplianceScript) SetRunAsAccount(value *RunAsAccountType)() {
     if m != nil {
         m.runAsAccount = value

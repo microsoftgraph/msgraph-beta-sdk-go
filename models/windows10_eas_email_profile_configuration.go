@@ -9,11 +9,11 @@ type Windows10EasEmailProfileConfiguration struct {
     EasEmailProfileConfigurationBase
     // Account name.
     accountName *string
-    // Duration of email to sync. Possible values are: userDefined, oneDay, threeDays, oneWeek, twoWeeks, oneMonth, unlimited.
+    // Possible values for email sync duration.
     durationOfEmailToSync *EmailSyncDuration
-    // Email attribute that is picked from AAD and injected into this profile before installing on the device. Possible values are: userPrincipalName, primarySmtpAddress.
+    // Possible values for username source or email source.
     emailAddressSource *UserEmailSource
-    // Email sync schedule. Possible values are: userDefined, asMessagesArrive, manual, fifteenMinutes, thirtyMinutes, sixtyMinutes, basedOnMyUsage.
+    // Possible values for email sync schedule.
     emailSyncSchedule *EmailSyncSchedule
     // Exchange location that (URL) that the native mail app connects to.
     hostName *string
@@ -45,7 +45,7 @@ func (m *Windows10EasEmailProfileConfiguration) GetAccountName()(*string) {
         return m.accountName
     }
 }
-// GetDurationOfEmailToSync gets the durationOfEmailToSync property value. Duration of email to sync. Possible values are: userDefined, oneDay, threeDays, oneWeek, twoWeeks, oneMonth, unlimited.
+// GetDurationOfEmailToSync gets the durationOfEmailToSync property value. Possible values for email sync duration.
 func (m *Windows10EasEmailProfileConfiguration) GetDurationOfEmailToSync()(*EmailSyncDuration) {
     if m == nil {
         return nil
@@ -53,7 +53,7 @@ func (m *Windows10EasEmailProfileConfiguration) GetDurationOfEmailToSync()(*Emai
         return m.durationOfEmailToSync
     }
 }
-// GetEmailAddressSource gets the emailAddressSource property value. Email attribute that is picked from AAD and injected into this profile before installing on the device. Possible values are: userPrincipalName, primarySmtpAddress.
+// GetEmailAddressSource gets the emailAddressSource property value. Possible values for username source or email source.
 func (m *Windows10EasEmailProfileConfiguration) GetEmailAddressSource()(*UserEmailSource) {
     if m == nil {
         return nil
@@ -61,7 +61,7 @@ func (m *Windows10EasEmailProfileConfiguration) GetEmailAddressSource()(*UserEma
         return m.emailAddressSource
     }
 }
-// GetEmailSyncSchedule gets the emailSyncSchedule property value. Email sync schedule. Possible values are: userDefined, asMessagesArrive, manual, fifteenMinutes, thirtyMinutes, sixtyMinutes, basedOnMyUsage.
+// GetEmailSyncSchedule gets the emailSyncSchedule property value. Possible values for email sync schedule.
 func (m *Windows10EasEmailProfileConfiguration) GetEmailSyncSchedule()(*EmailSyncSchedule) {
     if m == nil {
         return nil
@@ -275,19 +275,19 @@ func (m *Windows10EasEmailProfileConfiguration) SetAccountName(value *string)() 
         m.accountName = value
     }
 }
-// SetDurationOfEmailToSync sets the durationOfEmailToSync property value. Duration of email to sync. Possible values are: userDefined, oneDay, threeDays, oneWeek, twoWeeks, oneMonth, unlimited.
+// SetDurationOfEmailToSync sets the durationOfEmailToSync property value. Possible values for email sync duration.
 func (m *Windows10EasEmailProfileConfiguration) SetDurationOfEmailToSync(value *EmailSyncDuration)() {
     if m != nil {
         m.durationOfEmailToSync = value
     }
 }
-// SetEmailAddressSource sets the emailAddressSource property value. Email attribute that is picked from AAD and injected into this profile before installing on the device. Possible values are: userPrincipalName, primarySmtpAddress.
+// SetEmailAddressSource sets the emailAddressSource property value. Possible values for username source or email source.
 func (m *Windows10EasEmailProfileConfiguration) SetEmailAddressSource(value *UserEmailSource)() {
     if m != nil {
         m.emailAddressSource = value
     }
 }
-// SetEmailSyncSchedule sets the emailSyncSchedule property value. Email sync schedule. Possible values are: userDefined, asMessagesArrive, manual, fifteenMinutes, thirtyMinutes, sixtyMinutes, basedOnMyUsage.
+// SetEmailSyncSchedule sets the emailSyncSchedule property value. Possible values for email sync schedule.
 func (m *Windows10EasEmailProfileConfiguration) SetEmailSyncSchedule(value *EmailSyncSchedule)() {
     if m != nil {
         m.emailSyncSchedule = value

@@ -4,19 +4,19 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Teamwork provides operations to manage the teamwork singleton.
+// Teamwork 
 type Teamwork struct {
     Entity
-    // The deletedTeams property
+    // A collection of deleted teams.
     deletedTeams []DeletedTeamable
     // The Teams devices provisioned for the tenant.
     devices []TeamworkDeviceable
-    // The teamsAppSettings property
+    // Represents tenant-wide settings for all Teams apps in the tenant.
     teamsAppSettings TeamsAppSettingsable
     // A workforce integration with shifts.
     workforceIntegrations []WorkforceIntegrationable
 }
-// NewTeamwork instantiates a new teamwork and sets the default values.
+// NewTeamwork instantiates a new Teamwork and sets the default values.
 func NewTeamwork()(*Teamwork) {
     m := &Teamwork{
         Entity: *NewEntity(),
@@ -27,7 +27,7 @@ func NewTeamwork()(*Teamwork) {
 func CreateTeamworkFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewTeamwork(), nil
 }
-// GetDeletedTeams gets the deletedTeams property value. The deletedTeams property
+// GetDeletedTeams gets the deletedTeams property value. A collection of deleted teams.
 func (m *Teamwork) GetDeletedTeams()([]DeletedTeamable) {
     if m == nil {
         return nil
@@ -100,7 +100,7 @@ func (m *Teamwork) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
     }
     return res
 }
-// GetTeamsAppSettings gets the teamsAppSettings property value. The teamsAppSettings property
+// GetTeamsAppSettings gets the teamsAppSettings property value. Represents tenant-wide settings for all Teams apps in the tenant.
 func (m *Teamwork) GetTeamsAppSettings()(TeamsAppSettingsable) {
     if m == nil {
         return nil
@@ -160,7 +160,7 @@ func (m *Teamwork) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
     }
     return nil
 }
-// SetDeletedTeams sets the deletedTeams property value. The deletedTeams property
+// SetDeletedTeams sets the deletedTeams property value. A collection of deleted teams.
 func (m *Teamwork) SetDeletedTeams(value []DeletedTeamable)() {
     if m != nil {
         m.deletedTeams = value
@@ -172,7 +172,7 @@ func (m *Teamwork) SetDevices(value []TeamworkDeviceable)() {
         m.devices = value
     }
 }
-// SetTeamsAppSettings sets the teamsAppSettings property value. The teamsAppSettings property
+// SetTeamsAppSettings sets the teamsAppSettings property value. Represents tenant-wide settings for all Teams apps in the tenant.
 func (m *Teamwork) SetTeamsAppSettings(value TeamsAppSettingsable)() {
     if m != nil {
         m.teamsAppSettings = value

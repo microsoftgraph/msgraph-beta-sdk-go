@@ -4,13 +4,13 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// BusinessFlowSettings provides operations to manage the collection of approvalWorkflowProvider entities.
+// BusinessFlowSettings 
 type BusinessFlowSettings struct {
     AccessReviewSettings
     // The durationInDays property
     durationInDays *int32
 }
-// NewBusinessFlowSettings instantiates a new businessFlowSettings and sets the default values.
+// NewBusinessFlowSettings instantiates a new BusinessFlowSettings and sets the default values.
 func NewBusinessFlowSettings()(*BusinessFlowSettings) {
     m := &BusinessFlowSettings{
         AccessReviewSettings: *NewAccessReviewSettings(),

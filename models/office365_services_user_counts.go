@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Office365ServicesUserCounts provides operations to call the getOffice365ServicesUserCounts method.
+// Office365ServicesUserCounts 
 type Office365ServicesUserCounts struct {
     Entity
     // The number of active users on Exchange. Any user who can read and send email is considered an active user.
@@ -40,7 +40,7 @@ type Office365ServicesUserCounts struct {
     // The number of inactive users on Yammer.
     yammerInactive *int64
 }
-// NewOffice365ServicesUserCounts instantiates a new office365ServicesUserCounts and sets the default values.
+// NewOffice365ServicesUserCounts instantiates a new Office365ServicesUserCounts and sets the default values.
 func NewOffice365ServicesUserCounts()(*Office365ServicesUserCounts) {
     m := &Office365ServicesUserCounts{
         Entity: *NewEntity(),

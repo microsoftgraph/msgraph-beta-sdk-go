@@ -38,7 +38,7 @@ type DepOnboardingSetting struct {
     tokenExpirationDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Friendly Name for Dep Token
     tokenName *string
-    // Gets or sets the Dep Token Type. Possible values are: none, dep, appleSchoolManager.
+    // The tokenType property
     tokenType *DepTokenType
 }
 // NewDepOnboardingSetting instantiates a new depOnboardingSetting and sets the default values.
@@ -349,7 +349,7 @@ func (m *DepOnboardingSetting) GetTokenName()(*string) {
         return m.tokenName
     }
 }
-// GetTokenType gets the tokenType property value. Gets or sets the Dep Token Type. Possible values are: none, dep, appleSchoolManager.
+// GetTokenType gets the tokenType property value. The tokenType property
 func (m *DepOnboardingSetting) GetTokenType()(*DepTokenType) {
     if m == nil {
         return nil
@@ -560,7 +560,7 @@ func (m *DepOnboardingSetting) SetTokenName(value *string)() {
         m.tokenName = value
     }
 }
-// SetTokenType sets the tokenType property value. Gets or sets the Dep Token Type. Possible values are: none, dep, appleSchoolManager.
+// SetTokenType sets the tokenType property value. The tokenType property
 func (m *DepOnboardingSetting) SetTokenType(value *DepTokenType)() {
     if m != nil {
         m.tokenType = value

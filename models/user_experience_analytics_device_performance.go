@@ -23,13 +23,13 @@ type UserExperienceAnalyticsDevicePerformance struct {
     deviceCount *int64
     // The user experience analytics device name.
     deviceName *string
-    // The user experience analytics device disk type. Possible values are: unknown, hdd, ssd, unknownFutureValue.
+    // The diskType property
     diskType *DiskType
     // The user experience analytics device group policy boot time in milliseconds.
     groupPolicyBootTimeInMs *int32
     // The user experience analytics device group policy login time in milliseconds.
     groupPolicyLoginTimeInMs *int32
-    // The health state of the user experience analytics device. Possible values are: unknown, insufficientData, needsAttention, meetingGoals.
+    // The healthStatus property
     healthStatus *UserExperienceAnalyticsHealthState
     // The user experience analytics device login score.
     loginScore *int32
@@ -123,7 +123,7 @@ func (m *UserExperienceAnalyticsDevicePerformance) GetDeviceName()(*string) {
         return m.deviceName
     }
 }
-// GetDiskType gets the diskType property value. The user experience analytics device disk type. Possible values are: unknown, hdd, ssd, unknownFutureValue.
+// GetDiskType gets the diskType property value. The diskType property
 func (m *UserExperienceAnalyticsDevicePerformance) GetDiskType()(*DiskType) {
     if m == nil {
         return nil
@@ -352,7 +352,7 @@ func (m *UserExperienceAnalyticsDevicePerformance) GetGroupPolicyLoginTimeInMs()
         return m.groupPolicyLoginTimeInMs
     }
 }
-// GetHealthStatus gets the healthStatus property value. The health state of the user experience analytics device. Possible values are: unknown, insufficientData, needsAttention, meetingGoals.
+// GetHealthStatus gets the healthStatus property value. The healthStatus property
 func (m *UserExperienceAnalyticsDevicePerformance) GetHealthStatus()(*UserExperienceAnalyticsHealthState) {
     if m == nil {
         return nil
@@ -602,7 +602,7 @@ func (m *UserExperienceAnalyticsDevicePerformance) SetDeviceName(value *string)(
         m.deviceName = value
     }
 }
-// SetDiskType sets the diskType property value. The user experience analytics device disk type. Possible values are: unknown, hdd, ssd, unknownFutureValue.
+// SetDiskType sets the diskType property value. The diskType property
 func (m *UserExperienceAnalyticsDevicePerformance) SetDiskType(value *DiskType)() {
     if m != nil {
         m.diskType = value
@@ -620,7 +620,7 @@ func (m *UserExperienceAnalyticsDevicePerformance) SetGroupPolicyLoginTimeInMs(v
         m.groupPolicyLoginTimeInMs = value
     }
 }
-// SetHealthStatus sets the healthStatus property value. The health state of the user experience analytics device. Possible values are: unknown, insufficientData, needsAttention, meetingGoals.
+// SetHealthStatus sets the healthStatus property value. The healthStatus property
 func (m *UserExperienceAnalyticsDevicePerformance) SetHealthStatus(value *UserExperienceAnalyticsHealthState)() {
     if m != nil {
         m.healthStatus = value

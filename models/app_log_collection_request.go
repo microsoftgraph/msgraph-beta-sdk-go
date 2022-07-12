@@ -14,7 +14,7 @@ type AppLogCollectionRequest struct {
     customLogFolders []string
     // Error message if any during the upload process
     errorMessage *string
-    // Log upload status. Possible values are: pending, completed, failed.
+    // AppLogUploadStatus
     status *AppLogUploadState
 }
 // NewAppLogCollectionRequest instantiates a new appLogCollectionRequest and sets the default values.
@@ -101,7 +101,7 @@ func (m *AppLogCollectionRequest) GetFieldDeserializers()(map[string]func(i878a8
     }
     return res
 }
-// GetStatus gets the status property value. Log upload status. Possible values are: pending, completed, failed.
+// GetStatus gets the status property value. AppLogUploadStatus
 func (m *AppLogCollectionRequest) GetStatus()(*AppLogUploadState) {
     if m == nil {
         return nil
@@ -160,7 +160,7 @@ func (m *AppLogCollectionRequest) SetErrorMessage(value *string)() {
         m.errorMessage = value
     }
 }
-// SetStatus sets the status property value. Log upload status. Possible values are: pending, completed, failed.
+// SetStatus sets the status property value. AppLogUploadStatus
 func (m *AppLogCollectionRequest) SetStatus(value *AppLogUploadState)() {
     if m != nil {
         m.status = value

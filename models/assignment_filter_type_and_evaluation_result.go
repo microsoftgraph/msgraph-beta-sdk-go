@@ -8,9 +8,9 @@ import (
 type AssignmentFilterTypeAndEvaluationResult struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
-    // Represents the filter type. Possible values are: none, include, exclude.
+    // Represents type of the assignment filter.
     assignmentFilterType *DeviceAndAppManagementAssignmentFilterType
-    // Represents the evalaution result of the filter. Possible values are: unknown, match, notMatch, inconclusive, failure, notEvaluated.
+    // Supported evaluation results for filter.
     evaluationResult *AssignmentFilterEvaluationResult
 }
 // NewAssignmentFilterTypeAndEvaluationResult instantiates a new assignmentFilterTypeAndEvaluationResult and sets the default values.
@@ -32,7 +32,7 @@ func (m *AssignmentFilterTypeAndEvaluationResult) GetAdditionalData()(map[string
         return m.additionalData
     }
 }
-// GetAssignmentFilterType gets the assignmentFilterType property value. Represents the filter type. Possible values are: none, include, exclude.
+// GetAssignmentFilterType gets the assignmentFilterType property value. Represents type of the assignment filter.
 func (m *AssignmentFilterTypeAndEvaluationResult) GetAssignmentFilterType()(*DeviceAndAppManagementAssignmentFilterType) {
     if m == nil {
         return nil
@@ -40,7 +40,7 @@ func (m *AssignmentFilterTypeAndEvaluationResult) GetAssignmentFilterType()(*Dev
         return m.assignmentFilterType
     }
 }
-// GetEvaluationResult gets the evaluationResult property value. Represents the evalaution result of the filter. Possible values are: unknown, match, notMatch, inconclusive, failure, notEvaluated.
+// GetEvaluationResult gets the evaluationResult property value. Supported evaluation results for filter.
 func (m *AssignmentFilterTypeAndEvaluationResult) GetEvaluationResult()(*AssignmentFilterEvaluationResult) {
     if m == nil {
         return nil
@@ -103,13 +103,13 @@ func (m *AssignmentFilterTypeAndEvaluationResult) SetAdditionalData(value map[st
         m.additionalData = value
     }
 }
-// SetAssignmentFilterType sets the assignmentFilterType property value. Represents the filter type. Possible values are: none, include, exclude.
+// SetAssignmentFilterType sets the assignmentFilterType property value. Represents type of the assignment filter.
 func (m *AssignmentFilterTypeAndEvaluationResult) SetAssignmentFilterType(value *DeviceAndAppManagementAssignmentFilterType)() {
     if m != nil {
         m.assignmentFilterType = value
     }
 }
-// SetEvaluationResult sets the evaluationResult property value. Represents the evalaution result of the filter. Possible values are: unknown, match, notMatch, inconclusive, failure, notEvaluated.
+// SetEvaluationResult sets the evaluationResult property value. Supported evaluation results for filter.
 func (m *AssignmentFilterTypeAndEvaluationResult) SetEvaluationResult(value *AssignmentFilterEvaluationResult)() {
     if m != nil {
         m.evaluationResult = value

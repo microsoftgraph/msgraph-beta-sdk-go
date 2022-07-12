@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// PrivilegedRoleSummary provides operations to manage the collection of privilegedApproval entities.
+// PrivilegedRoleSummary 
 type PrivilegedRoleSummary struct {
     Entity
     // The number of users that have the role assigned and the role is activated.
@@ -18,7 +18,7 @@ type PrivilegedRoleSummary struct {
     // The number of users that are assigned with the role.
     usersCount *int32
 }
-// NewPrivilegedRoleSummary instantiates a new privilegedRoleSummary and sets the default values.
+// NewPrivilegedRoleSummary instantiates a new PrivilegedRoleSummary and sets the default values.
 func NewPrivilegedRoleSummary()(*PrivilegedRoleSummary) {
     m := &PrivilegedRoleSummary{
         Entity: *NewEntity(),

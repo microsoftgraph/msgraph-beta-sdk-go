@@ -12,7 +12,7 @@ type MobileAppSupportedDeviceType struct {
     maximumOperatingSystemVersion *string
     // Minimum OS version
     minimumOperatingSystemVersion *string
-    // Device type. Possible values are: desktop, windowsRT, winMO6, nokia, windowsPhone, mac, winCE, winEmbedded, iPhone, iPad, iPod, android, iSocConsumer, unix, macMDM, holoLens, surfaceHub, androidForWork, androidEnterprise, windows10x, androidnGMS, chromeOS, linux, blackberry, palm, unknown, cloudPC.
+    // Device type.
     type_escaped *DeviceType
 }
 // NewMobileAppSupportedDeviceType instantiates a new mobileAppSupportedDeviceType and sets the default values.
@@ -85,7 +85,7 @@ func (m *MobileAppSupportedDeviceType) GetMinimumOperatingSystemVersion()(*strin
         return m.minimumOperatingSystemVersion
     }
 }
-// GetType gets the type property value. Device type. Possible values are: desktop, windowsRT, winMO6, nokia, windowsPhone, mac, winCE, winEmbedded, iPhone, iPad, iPod, android, iSocConsumer, unix, macMDM, holoLens, surfaceHub, androidForWork, androidEnterprise, windows10x, androidnGMS, chromeOS, linux, blackberry, palm, unknown, cloudPC.
+// GetType gets the type property value. Device type.
 func (m *MobileAppSupportedDeviceType) GetType()(*DeviceType) {
     if m == nil {
         return nil
@@ -140,7 +140,7 @@ func (m *MobileAppSupportedDeviceType) SetMinimumOperatingSystemVersion(value *s
         m.minimumOperatingSystemVersion = value
     }
 }
-// SetType sets the type property value. Device type. Possible values are: desktop, windowsRT, winMO6, nokia, windowsPhone, mac, winCE, winEmbedded, iPhone, iPad, iPod, android, iSocConsumer, unix, macMDM, holoLens, surfaceHub, androidForWork, androidEnterprise, windows10x, androidnGMS, chromeOS, linux, blackberry, palm, unknown, cloudPC.
+// SetType sets the type property value. Device type.
 func (m *MobileAppSupportedDeviceType) SetType(value *DeviceType)() {
     if m != nil {
         m.type_escaped = value

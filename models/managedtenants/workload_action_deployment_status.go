@@ -24,7 +24,7 @@ type WorkloadActionDeploymentStatus struct {
     includeGroups []string
     // The date and time the workload action was last deployed. Optional.
     lastDeploymentDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The status of the workload action deployment. Possible values are: toAddress, completed, error, timeOut, inProgress, unknownFutureValue. Required. Read-only.
+    // The status property
     status *WorkloadActionStatus
 }
 // NewWorkloadActionDeploymentStatus instantiates a new workloadActionDeploymentStatus and sets the default values.
@@ -195,7 +195,7 @@ func (m *WorkloadActionDeploymentStatus) GetLastDeploymentDateTime()(*i336074805
         return m.lastDeploymentDateTime
     }
 }
-// GetStatus gets the status property value. The status of the workload action deployment. Possible values are: toAddress, completed, error, timeOut, inProgress, unknownFutureValue. Required. Read-only.
+// GetStatus gets the status property value. The status property
 func (m *WorkloadActionDeploymentStatus) GetStatus()(*WorkloadActionStatus) {
     if m == nil {
         return nil
@@ -310,7 +310,7 @@ func (m *WorkloadActionDeploymentStatus) SetLastDeploymentDateTime(value *i33607
         m.lastDeploymentDateTime = value
     }
 }
-// SetStatus sets the status property value. The status of the workload action deployment. Possible values are: toAddress, completed, error, timeOut, inProgress, unknownFutureValue. Required. Read-only.
+// SetStatus sets the status property value. The status property
 func (m *WorkloadActionDeploymentStatus) SetStatus(value *WorkloadActionStatus)() {
     if m != nil {
         m.status = value

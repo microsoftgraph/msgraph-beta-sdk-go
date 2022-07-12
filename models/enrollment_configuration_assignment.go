@@ -7,7 +7,7 @@ import (
 // EnrollmentConfigurationAssignment enrollment Configuration Assignment
 type EnrollmentConfigurationAssignment struct {
     Entity
-    // Type of resource used for deployment to a group, direct or policySet. Possible values are: direct, policySets.
+    // Represents source of assignment.
     source *DeviceAndAppManagementAssignmentSource
     // Identifier for resource used for deployment to a group
     sourceId *string
@@ -60,7 +60,7 @@ func (m *EnrollmentConfigurationAssignment) GetFieldDeserializers()(map[string]f
     }
     return res
 }
-// GetSource gets the source property value. Type of resource used for deployment to a group, direct or policySet. Possible values are: direct, policySets.
+// GetSource gets the source property value. Represents source of assignment.
 func (m *EnrollmentConfigurationAssignment) GetSource()(*DeviceAndAppManagementAssignmentSource) {
     if m == nil {
         return nil
@@ -111,7 +111,7 @@ func (m *EnrollmentConfigurationAssignment) Serialize(writer i878a80d2330e89d268
     }
     return nil
 }
-// SetSource sets the source property value. Type of resource used for deployment to a group, direct or policySet. Possible values are: direct, policySets.
+// SetSource sets the source property value. Represents source of assignment.
 func (m *EnrollmentConfigurationAssignment) SetSource(value *DeviceAndAppManagementAssignmentSource)() {
     if m != nil {
         m.source = value

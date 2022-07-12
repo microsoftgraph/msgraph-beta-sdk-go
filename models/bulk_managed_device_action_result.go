@@ -17,7 +17,7 @@ type BulkManagedDeviceActionResult struct {
     // Successful devices
     successfulDeviceIds []string
 }
-// NewBulkManagedDeviceActionResult instantiates a new BulkManagedDeviceActionResult and sets the default values.
+// NewBulkManagedDeviceActionResult instantiates a new bulkManagedDeviceActionResult and sets the default values.
 func NewBulkManagedDeviceActionResult()(*BulkManagedDeviceActionResult) {
     m := &BulkManagedDeviceActionResult{
     }

@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// CloudPcDeviceImage provides operations to manage the deviceManagement singleton.
+// CloudPcDeviceImage 
 type CloudPcDeviceImage struct {
     Entity
     // The image's display name.
@@ -29,7 +29,7 @@ type CloudPcDeviceImage struct {
     // The image version. For example: 0.0.1, 1.5.13.
     version *string
 }
-// NewCloudPcDeviceImage instantiates a new cloudPcDeviceImage and sets the default values.
+// NewCloudPcDeviceImage instantiates a new CloudPcDeviceImage and sets the default values.
 func NewCloudPcDeviceImage()(*CloudPcDeviceImage) {
     m := &CloudPcDeviceImage{
         Entity: *NewEntity(),

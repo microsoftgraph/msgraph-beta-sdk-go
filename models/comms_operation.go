@@ -4,14 +4,14 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// CommsOperation provides operations to manage the commsApplication singleton.
+// CommsOperation provides operations to manage the collection of activityStatistics entities.
 type CommsOperation struct {
     Entity
     // Unique Client Context string. Max limit is 256 chars.
     clientContext *string
     // The result information. Read-only.
     resultInfo ResultInfoable
-    // Possible values are: notStarted, running, completed, failed. Read-only.
+    // The status property
     status *OperationStatus
 }
 // NewCommsOperation instantiates a new commsOperation and sets the default values.
@@ -19,6 +19,8 @@ func NewCommsOperation()(*CommsOperation) {
     m := &CommsOperation{
         Entity: *NewEntity(),
     }
+    typeValue := "#microsoft.graph.commsOperation";
+    m.SetType(&typeValue);
     return m
 }
 // CreateCommsOperationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -117,7 +119,7 @@ func (m *CommsOperation) GetResultInfo()(ResultInfoable) {
         return m.resultInfo
     }
 }
-// GetStatus gets the status property value. Possible values are: notStarted, running, completed, failed. Read-only.
+// GetStatus gets the status property value. The status property
 func (m *CommsOperation) GetStatus()(*OperationStatus) {
     if m == nil {
         return nil
@@ -164,7 +166,7 @@ func (m *CommsOperation) SetResultInfo(value ResultInfoable)() {
         m.resultInfo = value
     }
 }
-// SetStatus sets the status property value. Possible values are: notStarted, running, completed, failed. Read-only.
+// SetStatus sets the status property value. The status property
 func (m *CommsOperation) SetStatus(value *OperationStatus)() {
     if m != nil {
         m.status = value

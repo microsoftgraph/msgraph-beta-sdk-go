@@ -9,7 +9,7 @@ type SharedPCConfiguration struct {
     DeviceConfiguration
     // Specifies how accounts are managed on a shared PC. Only applies when disableAccountManager is false.
     accountManagerPolicy SharedPCAccountManagerPolicyable
-    // Indicates which type of accounts are allowed to use on a shared PC. Possible values are: notConfigured, guest, domain.
+    // Type of accounts that are allowed to share the PC.
     allowedAccounts *SharedPCAllowedAccountType
     // Specifies whether local storage is allowed on a shared PC.
     allowLocalStorage *bool
@@ -23,7 +23,7 @@ type SharedPCConfiguration struct {
     disableSignInOnResume *bool
     // Enables shared PC mode and applies the shared pc policies.
     enabled *bool
-    // Specifies whether to auto connect new non-admin Azure AD accounts to pre-configured candidate local accounts. Possible values are: notConfigured, enabled, disabled.
+    // Possible values of a property
     fastFirstSignIn *Enablement
     // Specifies the time in seconds that a device must sit idle before the PC goes to sleep. Setting this value to 0 prevents the sleep timeout from occurring.
     idleTimeBeforeSleepInSeconds *int32
@@ -31,17 +31,17 @@ type SharedPCConfiguration struct {
     kioskAppDisplayName *string
     // Specifies the application user model ID of the app to use with assigned access.
     kioskAppUserModelId *string
-    // Specifies whether local storage is allowed on a shared PC. Possible values are: notConfigured, enabled, disabled.
+    // Possible values of a property
     localStorage *Enablement
     // Specifies the daily start time of maintenance hour.
     maintenanceStartTime *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.TimeOnly
-    // Disables the account manager for shared PC mode. Possible values are: notConfigured, enabled, disabled.
+    // Possible values of a property
     setAccountManager *Enablement
-    // Specifies whether the default shared PC education environment policies should be enabled/disabled/not configured. For Windows 10 RS2 and later, this policy will be applied without setting Enabled to true. Possible values are: notConfigured, enabled, disabled.
+    // Possible values of a property
     setEduPolicies *Enablement
-    // Specifies whether the default shared PC power policies should be enabled/disabled. Possible values are: notConfigured, enabled, disabled.
+    // Possible values of a property
     setPowerPolicies *Enablement
-    // Specifies the requirement to sign in whenever the device wakes up from sleep mode. Possible values are: notConfigured, enabled, disabled.
+    // Possible values of a property
     signInOnResume *Enablement
 }
 // NewSharedPCConfiguration instantiates a new SharedPCConfiguration and sets the default values.
@@ -63,7 +63,7 @@ func (m *SharedPCConfiguration) GetAccountManagerPolicy()(SharedPCAccountManager
         return m.accountManagerPolicy
     }
 }
-// GetAllowedAccounts gets the allowedAccounts property value. Indicates which type of accounts are allowed to use on a shared PC. Possible values are: notConfigured, guest, domain.
+// GetAllowedAccounts gets the allowedAccounts property value. Type of accounts that are allowed to share the PC.
 func (m *SharedPCConfiguration) GetAllowedAccounts()(*SharedPCAllowedAccountType) {
     if m == nil {
         return nil
@@ -119,7 +119,7 @@ func (m *SharedPCConfiguration) GetEnabled()(*bool) {
         return m.enabled
     }
 }
-// GetFastFirstSignIn gets the fastFirstSignIn property value. Specifies whether to auto connect new non-admin Azure AD accounts to pre-configured candidate local accounts. Possible values are: notConfigured, enabled, disabled.
+// GetFastFirstSignIn gets the fastFirstSignIn property value. Possible values of a property
 func (m *SharedPCConfiguration) GetFastFirstSignIn()(*Enablement) {
     if m == nil {
         return nil
@@ -336,7 +336,7 @@ func (m *SharedPCConfiguration) GetKioskAppUserModelId()(*string) {
         return m.kioskAppUserModelId
     }
 }
-// GetLocalStorage gets the localStorage property value. Specifies whether local storage is allowed on a shared PC. Possible values are: notConfigured, enabled, disabled.
+// GetLocalStorage gets the localStorage property value. Possible values of a property
 func (m *SharedPCConfiguration) GetLocalStorage()(*Enablement) {
     if m == nil {
         return nil
@@ -352,7 +352,7 @@ func (m *SharedPCConfiguration) GetMaintenanceStartTime()(*i878a80d2330e89d26896
         return m.maintenanceStartTime
     }
 }
-// GetSetAccountManager gets the setAccountManager property value. Disables the account manager for shared PC mode. Possible values are: notConfigured, enabled, disabled.
+// GetSetAccountManager gets the setAccountManager property value. Possible values of a property
 func (m *SharedPCConfiguration) GetSetAccountManager()(*Enablement) {
     if m == nil {
         return nil
@@ -360,7 +360,7 @@ func (m *SharedPCConfiguration) GetSetAccountManager()(*Enablement) {
         return m.setAccountManager
     }
 }
-// GetSetEduPolicies gets the setEduPolicies property value. Specifies whether the default shared PC education environment policies should be enabled/disabled/not configured. For Windows 10 RS2 and later, this policy will be applied without setting Enabled to true. Possible values are: notConfigured, enabled, disabled.
+// GetSetEduPolicies gets the setEduPolicies property value. Possible values of a property
 func (m *SharedPCConfiguration) GetSetEduPolicies()(*Enablement) {
     if m == nil {
         return nil
@@ -368,7 +368,7 @@ func (m *SharedPCConfiguration) GetSetEduPolicies()(*Enablement) {
         return m.setEduPolicies
     }
 }
-// GetSetPowerPolicies gets the setPowerPolicies property value. Specifies whether the default shared PC power policies should be enabled/disabled. Possible values are: notConfigured, enabled, disabled.
+// GetSetPowerPolicies gets the setPowerPolicies property value. Possible values of a property
 func (m *SharedPCConfiguration) GetSetPowerPolicies()(*Enablement) {
     if m == nil {
         return nil
@@ -376,7 +376,7 @@ func (m *SharedPCConfiguration) GetSetPowerPolicies()(*Enablement) {
         return m.setPowerPolicies
     }
 }
-// GetSignInOnResume gets the signInOnResume property value. Specifies the requirement to sign in whenever the device wakes up from sleep mode. Possible values are: notConfigured, enabled, disabled.
+// GetSignInOnResume gets the signInOnResume property value. Possible values of a property
 func (m *SharedPCConfiguration) GetSignInOnResume()(*Enablement) {
     if m == nil {
         return nil
@@ -513,7 +513,7 @@ func (m *SharedPCConfiguration) SetAccountManagerPolicy(value SharedPCAccountMan
         m.accountManagerPolicy = value
     }
 }
-// SetAllowedAccounts sets the allowedAccounts property value. Indicates which type of accounts are allowed to use on a shared PC. Possible values are: notConfigured, guest, domain.
+// SetAllowedAccounts sets the allowedAccounts property value. Type of accounts that are allowed to share the PC.
 func (m *SharedPCConfiguration) SetAllowedAccounts(value *SharedPCAllowedAccountType)() {
     if m != nil {
         m.allowedAccounts = value
@@ -555,7 +555,7 @@ func (m *SharedPCConfiguration) SetEnabled(value *bool)() {
         m.enabled = value
     }
 }
-// SetFastFirstSignIn sets the fastFirstSignIn property value. Specifies whether to auto connect new non-admin Azure AD accounts to pre-configured candidate local accounts. Possible values are: notConfigured, enabled, disabled.
+// SetFastFirstSignIn sets the fastFirstSignIn property value. Possible values of a property
 func (m *SharedPCConfiguration) SetFastFirstSignIn(value *Enablement)() {
     if m != nil {
         m.fastFirstSignIn = value
@@ -579,7 +579,7 @@ func (m *SharedPCConfiguration) SetKioskAppUserModelId(value *string)() {
         m.kioskAppUserModelId = value
     }
 }
-// SetLocalStorage sets the localStorage property value. Specifies whether local storage is allowed on a shared PC. Possible values are: notConfigured, enabled, disabled.
+// SetLocalStorage sets the localStorage property value. Possible values of a property
 func (m *SharedPCConfiguration) SetLocalStorage(value *Enablement)() {
     if m != nil {
         m.localStorage = value
@@ -591,25 +591,25 @@ func (m *SharedPCConfiguration) SetMaintenanceStartTime(value *i878a80d2330e89d2
         m.maintenanceStartTime = value
     }
 }
-// SetSetAccountManager sets the setAccountManager property value. Disables the account manager for shared PC mode. Possible values are: notConfigured, enabled, disabled.
+// SetSetAccountManager sets the setAccountManager property value. Possible values of a property
 func (m *SharedPCConfiguration) SetSetAccountManager(value *Enablement)() {
     if m != nil {
         m.setAccountManager = value
     }
 }
-// SetSetEduPolicies sets the setEduPolicies property value. Specifies whether the default shared PC education environment policies should be enabled/disabled/not configured. For Windows 10 RS2 and later, this policy will be applied without setting Enabled to true. Possible values are: notConfigured, enabled, disabled.
+// SetSetEduPolicies sets the setEduPolicies property value. Possible values of a property
 func (m *SharedPCConfiguration) SetSetEduPolicies(value *Enablement)() {
     if m != nil {
         m.setEduPolicies = value
     }
 }
-// SetSetPowerPolicies sets the setPowerPolicies property value. Specifies whether the default shared PC power policies should be enabled/disabled. Possible values are: notConfigured, enabled, disabled.
+// SetSetPowerPolicies sets the setPowerPolicies property value. Possible values of a property
 func (m *SharedPCConfiguration) SetSetPowerPolicies(value *Enablement)() {
     if m != nil {
         m.setPowerPolicies = value
     }
 }
-// SetSignInOnResume sets the signInOnResume property value. Specifies the requirement to sign in whenever the device wakes up from sleep mode. Possible values are: notConfigured, enabled, disabled.
+// SetSignInOnResume sets the signInOnResume property value. Possible values of a property
 func (m *SharedPCConfiguration) SetSignInOnResume(value *Enablement)() {
     if m != nil {
         m.signInOnResume = value

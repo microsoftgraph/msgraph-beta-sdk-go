@@ -14,16 +14,49 @@ type DeviceManagementConfigurationSettingInstanceTemplate struct {
     settingDefinitionId *string
     // Setting Instance Template Id
     settingInstanceTemplateId *string
+    // The type property
+    type_escaped *string
 }
 // NewDeviceManagementConfigurationSettingInstanceTemplate instantiates a new deviceManagementConfigurationSettingInstanceTemplate and sets the default values.
 func NewDeviceManagementConfigurationSettingInstanceTemplate()(*DeviceManagementConfigurationSettingInstanceTemplate) {
     m := &DeviceManagementConfigurationSettingInstanceTemplate{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    typeValue := "#microsoft.graph.deviceManagementConfigurationSettingInstanceTemplate";
+    m.SetType(&typeValue);
     return m
 }
 // CreateDeviceManagementConfigurationSettingInstanceTemplateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateDeviceManagementConfigurationSettingInstanceTemplateFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+    if parseNode != nil {
+        mappingValueNode, err := parseNode.GetChildNode("@odata.type")
+        if err != nil {
+            return nil, err
+        }
+        if mappingValueNode != nil {
+            mappingValue, err := mappingValueNode.GetStringValue()
+            if err != nil {
+                return nil, err
+            }
+            if mappingValue != nil {
+                mappingStr := *mappingValue
+                switch mappingStr {
+                    case "#microsoft.graph.deviceManagementConfigurationChoiceSettingCollectionInstanceTemplate":
+                        return NewDeviceManagementConfigurationChoiceSettingCollectionInstanceTemplate(), nil
+                    case "#microsoft.graph.deviceManagementConfigurationChoiceSettingInstanceTemplate":
+                        return NewDeviceManagementConfigurationChoiceSettingInstanceTemplate(), nil
+                    case "#microsoft.graph.deviceManagementConfigurationGroupSettingCollectionInstanceTemplate":
+                        return NewDeviceManagementConfigurationGroupSettingCollectionInstanceTemplate(), nil
+                    case "#microsoft.graph.deviceManagementConfigurationGroupSettingInstanceTemplate":
+                        return NewDeviceManagementConfigurationGroupSettingInstanceTemplate(), nil
+                    case "#microsoft.graph.deviceManagementConfigurationSimpleSettingCollectionInstanceTemplate":
+                        return NewDeviceManagementConfigurationSimpleSettingCollectionInstanceTemplate(), nil
+                    case "#microsoft.graph.deviceManagementConfigurationSimpleSettingInstanceTemplate":
+                        return NewDeviceManagementConfigurationSimpleSettingInstanceTemplate(), nil
+                }
+            }
+        }
+    }
     return NewDeviceManagementConfigurationSettingInstanceTemplate(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -67,6 +100,16 @@ func (m *DeviceManagementConfigurationSettingInstanceTemplate) GetFieldDeseriali
         }
         return nil
     }
+    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetIsRequired gets the isRequired property value. Indicates if a policy must specify this setting.
@@ -93,6 +136,14 @@ func (m *DeviceManagementConfigurationSettingInstanceTemplate) GetSettingInstanc
         return m.settingInstanceTemplateId
     }
 }
+// GetType gets the type property value. The type property
+func (m *DeviceManagementConfigurationSettingInstanceTemplate) GetType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
+    }
+}
 // Serialize serializes information the current object
 func (m *DeviceManagementConfigurationSettingInstanceTemplate) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
@@ -109,6 +160,12 @@ func (m *DeviceManagementConfigurationSettingInstanceTemplate) Serialize(writer 
     }
     {
         err := writer.WriteStringValue("settingInstanceTemplateId", m.GetSettingInstanceTemplateId())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("type", m.GetType())
         if err != nil {
             return err
         }
@@ -143,5 +200,11 @@ func (m *DeviceManagementConfigurationSettingInstanceTemplate) SetSettingDefinit
 func (m *DeviceManagementConfigurationSettingInstanceTemplate) SetSettingInstanceTemplateId(value *string)() {
     if m != nil {
         m.settingInstanceTemplateId = value
+    }
+}
+// SetType sets the type property value. The type property
+func (m *DeviceManagementConfigurationSettingInstanceTemplate) SetType(value *string)() {
+    if m != nil {
+        m.type_escaped = value
     }
 }

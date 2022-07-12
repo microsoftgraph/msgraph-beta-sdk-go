@@ -8,7 +8,7 @@ import (
 type DeviceManagementSettingComparison struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
-    // Setting comparison result. Possible values are: unknown, equal, notEqual, added, removed.
+    // Setting comparison result type
     comparisonResult *DeviceManagementComparisonResult
     // JSON representation of current intent (or) template setting's value
     currentValueJson *string
@@ -40,7 +40,7 @@ func (m *DeviceManagementSettingComparison) GetAdditionalData()(map[string]inter
         return m.additionalData
     }
 }
-// GetComparisonResult gets the comparisonResult property value. Setting comparison result. Possible values are: unknown, equal, notEqual, added, removed.
+// GetComparisonResult gets the comparisonResult property value. Setting comparison result type
 func (m *DeviceManagementSettingComparison) GetComparisonResult()(*DeviceManagementComparisonResult) {
     if m == nil {
         return nil
@@ -206,7 +206,7 @@ func (m *DeviceManagementSettingComparison) SetAdditionalData(value map[string]i
         m.additionalData = value
     }
 }
-// SetComparisonResult sets the comparisonResult property value. Setting comparison result. Possible values are: unknown, equal, notEqual, added, removed.
+// SetComparisonResult sets the comparisonResult property value. Setting comparison result type
 func (m *DeviceManagementSettingComparison) SetComparisonResult(value *DeviceManagementComparisonResult)() {
     if m != nil {
         m.comparisonResult = value

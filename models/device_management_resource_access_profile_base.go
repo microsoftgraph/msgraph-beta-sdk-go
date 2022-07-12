@@ -28,6 +28,8 @@ func NewDeviceManagementResourceAccessProfileBase()(*DeviceManagementResourceAcc
     m := &DeviceManagementResourceAccessProfileBase{
         Entity: *NewEntity(),
     }
+    typeValue := "#microsoft.graph.deviceManagementResourceAccessProfileBase";
+    m.SetType(&typeValue);
     return m
 }
 // CreateDeviceManagementResourceAccessProfileBaseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

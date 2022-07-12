@@ -2,7 +2,7 @@ package windowsupdates
 import (
     "errors"
 )
-// Provides operations to call the enrollAssets method.
+// Provides operations to manage the collection of accessReview entities.
 type UpdateCategory int
 
 const (

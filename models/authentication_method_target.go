@@ -4,12 +4,12 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AuthenticationMethodTarget provides operations to manage the collection of authenticationMethodConfiguration entities.
+// AuthenticationMethodTarget provides operations to manage the collection of activityStatistics entities.
 type AuthenticationMethodTarget struct {
     Entity
     // Determines if the user is enforced to register the authentication method.
     isRegistrationRequired *bool
-    // Possible values are: user, group, and unknownFutureValue.
+    // The targetType property
     targetType *AuthenticationMethodTargetType
 }
 // NewAuthenticationMethodTarget instantiates a new authenticationMethodTarget and sets the default values.
@@ -17,6 +17,8 @@ func NewAuthenticationMethodTarget()(*AuthenticationMethodTarget) {
     m := &AuthenticationMethodTarget{
         Entity: *NewEntity(),
     }
+    typeValue := "#microsoft.graph.authenticationMethodTarget";
+    m.SetType(&typeValue);
     return m
 }
 // CreateAuthenticationMethodTargetFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -77,7 +79,7 @@ func (m *AuthenticationMethodTarget) GetIsRegistrationRequired()(*bool) {
         return m.isRegistrationRequired
     }
 }
-// GetTargetType gets the targetType property value. Possible values are: user, group, and unknownFutureValue.
+// GetTargetType gets the targetType property value. The targetType property
 func (m *AuthenticationMethodTarget) GetTargetType()(*AuthenticationMethodTargetType) {
     if m == nil {
         return nil
@@ -112,7 +114,7 @@ func (m *AuthenticationMethodTarget) SetIsRegistrationRequired(value *bool)() {
         m.isRegistrationRequired = value
     }
 }
-// SetTargetType sets the targetType property value. Possible values are: user, group, and unknownFutureValue.
+// SetTargetType sets the targetType property value. The targetType property
 func (m *AuthenticationMethodTarget) SetTargetType(value *AuthenticationMethodTargetType)() {
     if m != nil {
         m.targetType = value

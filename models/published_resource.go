@@ -4,14 +4,14 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// PublishedResource provides operations to manage the collection of onPremisesPublishingProfile entities.
+// PublishedResource provides operations to manage the collection of accessReview entities.
 type PublishedResource struct {
     Entity
     // List of onPremisesAgentGroups that a publishedResource is assigned to. Read-only. Nullable.
     agentGroups []OnPremisesAgentGroupable
     // Display Name of the publishedResource.
     displayName *string
-    // Possible values are: applicationProxy, exchangeOnline, authentication, provisioning, adAdministration.
+    // The publishingType property
     publishingType *OnPremisesPublishingType
     // Name of the publishedResource.
     resourceName *string
@@ -92,7 +92,7 @@ func (m *PublishedResource) GetFieldDeserializers()(map[string]func(i878a80d2330
     }
     return res
 }
-// GetPublishingType gets the publishingType property value. Possible values are: applicationProxy, exchangeOnline, authentication, provisioning, adAdministration.
+// GetPublishingType gets the publishingType property value. The publishingType property
 func (m *PublishedResource) GetPublishingType()(*OnPremisesPublishingType) {
     if m == nil {
         return nil
@@ -157,7 +157,7 @@ func (m *PublishedResource) SetDisplayName(value *string)() {
         m.displayName = value
     }
 }
-// SetPublishingType sets the publishingType property value. Possible values are: applicationProxy, exchangeOnline, authentication, provisioning, adAdministration.
+// SetPublishingType sets the publishingType property value. The publishingType property
 func (m *PublishedResource) SetPublishingType(value *OnPremisesPublishingType)() {
     if m != nil {
         m.publishingType = value

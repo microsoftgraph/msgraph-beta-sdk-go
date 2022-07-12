@@ -9,7 +9,7 @@ type AndroidWorkProfileEnterpriseWiFiConfiguration struct {
     AndroidWorkProfileWiFiConfiguration
     // Indicates the Authentication Method the client (device) needs to use when the EAP Type is configured to PEAP or EAP-TTLS. Possible values are: certificate, usernameAndPassword, derivedCredential.
     authenticationMethod *WiFiAuthenticationMethod
-    // Indicates the type of EAP protocol set on the Wi-Fi endpoint (router). Possible values are: eapTls, eapTtls, peap.
+    // Extensible Authentication Protocol (EAP) Configuration Types.
     eapType *AndroidEapType
     // Identity Certificate for client authentication when EAP Type is configured to EAP-TLS, EAP-TTLS (with Certificate Authentication), or PEAP (with Certificate Authentication). This is the certificate presented by client to the Wi-Fi endpoint. The authentication server sitting behind the Wi-Fi endpoint must accept this certificate to successfully establish a Wi-Fi connection.
     identityCertificateForClientAuthentication AndroidWorkProfileCertificateProfileBaseable
@@ -21,7 +21,7 @@ type AndroidWorkProfileEnterpriseWiFiConfiguration struct {
     outerIdentityPrivacyTemporaryValue *string
     // URL of the proxy server automatic configuration script when automatic configuration is selected. This URL is typically the location of PAC (Proxy Auto Configuration) file.
     proxyAutomaticConfigurationUrl *string
-    // Proxy Type for this Wi-Fi connection. Possible values are: none, manual, automatic.
+    // Wi-Fi Proxy Settings.
     proxySettings *WiFiProxySetting
     // Trusted Root Certificate for Server Validation when EAP Type is configured to EAP-TLS, EAP-TTLS or PEAP. This is the certificate presented by the Wi-Fi endpoint when the device attempts to connect to Wi-Fi endpoint. The device (or user) must accept this certificate to continue the connection attempt.
     rootCertificateForServerValidation AndroidWorkProfileTrustedRootCertificateable
@@ -47,7 +47,7 @@ func (m *AndroidWorkProfileEnterpriseWiFiConfiguration) GetAuthenticationMethod(
         return m.authenticationMethod
     }
 }
-// GetEapType gets the eapType property value. Indicates the type of EAP protocol set on the Wi-Fi endpoint (router). Possible values are: eapTls, eapTtls, peap.
+// GetEapType gets the eapType property value. Extensible Authentication Protocol (EAP) Configuration Types.
 func (m *AndroidWorkProfileEnterpriseWiFiConfiguration) GetEapType()(*AndroidEapType) {
     if m == nil {
         return nil
@@ -204,7 +204,7 @@ func (m *AndroidWorkProfileEnterpriseWiFiConfiguration) GetProxyAutomaticConfigu
         return m.proxyAutomaticConfigurationUrl
     }
 }
-// GetProxySettings gets the proxySettings property value. Proxy Type for this Wi-Fi connection. Possible values are: none, manual, automatic.
+// GetProxySettings gets the proxySettings property value. Wi-Fi Proxy Settings.
 func (m *AndroidWorkProfileEnterpriseWiFiConfiguration) GetProxySettings()(*WiFiProxySetting) {
     if m == nil {
         return nil
@@ -307,7 +307,7 @@ func (m *AndroidWorkProfileEnterpriseWiFiConfiguration) SetAuthenticationMethod(
         m.authenticationMethod = value
     }
 }
-// SetEapType sets the eapType property value. Indicates the type of EAP protocol set on the Wi-Fi endpoint (router). Possible values are: eapTls, eapTtls, peap.
+// SetEapType sets the eapType property value. Extensible Authentication Protocol (EAP) Configuration Types.
 func (m *AndroidWorkProfileEnterpriseWiFiConfiguration) SetEapType(value *AndroidEapType)() {
     if m != nil {
         m.eapType = value
@@ -343,7 +343,7 @@ func (m *AndroidWorkProfileEnterpriseWiFiConfiguration) SetProxyAutomaticConfigu
         m.proxyAutomaticConfigurationUrl = value
     }
 }
-// SetProxySettings sets the proxySettings property value. Proxy Type for this Wi-Fi connection. Possible values are: none, manual, automatic.
+// SetProxySettings sets the proxySettings property value. Wi-Fi Proxy Settings.
 func (m *AndroidWorkProfileEnterpriseWiFiConfiguration) SetProxySettings(value *WiFiProxySetting)() {
     if m != nil {
         m.proxySettings = value

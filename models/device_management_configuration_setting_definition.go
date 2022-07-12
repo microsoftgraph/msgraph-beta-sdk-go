@@ -4,10 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DeviceManagementConfigurationSettingDefinition provides operations to manage the deviceManagement singleton.
+// DeviceManagementConfigurationSettingDefinition provides operations to manage the collection of activityStatistics entities.
 type DeviceManagementConfigurationSettingDefinition struct {
     Entity
-    // Read/write access mode of the setting. Possible values are: none, add, copy, delete, get, replace, execute.
+    // The accessTypes property
     accessTypes *DeviceManagementConfigurationSettingAccessTypes
     // Details which device setting is applicable on
     applicability DeviceManagementConfigurationSettingApplicabilityable
@@ -35,13 +35,13 @@ type DeviceManagementConfigurationSettingDefinition struct {
     referredSettingInformationList []DeviceManagementConfigurationReferredSettingInformationable
     // Root setting definition if the setting is a child setting.
     rootDefinitionId *string
-    // Setting type, for example, configuration and compliance. Possible values are: none, configuration, compliance.
+    // Supported setting types
     settingUsage *DeviceManagementConfigurationSettingUsage
-    // Setting control type representation in the UX. Possible values are: default, dropdown, smallTextBox, largeTextBox, toggle, multiheaderGrid, contextPane.
+    // Setting control type representation in the UX
     uxBehavior *DeviceManagementConfigurationControlType
     // Item Version
     version *string
-    // Setting visibility scope to UX. Possible values are: none, settingsCatalog, template.
+    // Supported setting types
     visibility *DeviceManagementConfigurationSettingVisibility
 }
 // NewDeviceManagementConfigurationSettingDefinition instantiates a new deviceManagementConfigurationSettingDefinition and sets the default values.
@@ -49,6 +49,8 @@ func NewDeviceManagementConfigurationSettingDefinition()(*DeviceManagementConfig
     m := &DeviceManagementConfigurationSettingDefinition{
         Entity: *NewEntity(),
     }
+    typeValue := "#microsoft.graph.deviceManagementConfigurationSettingDefinition";
+    m.SetType(&typeValue);
     return m
 }
 // CreateDeviceManagementConfigurationSettingDefinitionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -80,7 +82,7 @@ func CreateDeviceManagementConfigurationSettingDefinitionFromDiscriminatorValue(
     }
     return NewDeviceManagementConfigurationSettingDefinition(), nil
 }
-// GetAccessTypes gets the accessTypes property value. Read/write access mode of the setting. Possible values are: none, add, copy, delete, get, replace, execute.
+// GetAccessTypes gets the accessTypes property value. The accessTypes property
 func (m *DeviceManagementConfigurationSettingDefinition) GetAccessTypes()(*DeviceManagementConfigurationSettingAccessTypes) {
     if m == nil {
         return nil
@@ -389,7 +391,7 @@ func (m *DeviceManagementConfigurationSettingDefinition) GetRootDefinitionId()(*
         return m.rootDefinitionId
     }
 }
-// GetSettingUsage gets the settingUsage property value. Setting type, for example, configuration and compliance. Possible values are: none, configuration, compliance.
+// GetSettingUsage gets the settingUsage property value. Supported setting types
 func (m *DeviceManagementConfigurationSettingDefinition) GetSettingUsage()(*DeviceManagementConfigurationSettingUsage) {
     if m == nil {
         return nil
@@ -397,7 +399,7 @@ func (m *DeviceManagementConfigurationSettingDefinition) GetSettingUsage()(*Devi
         return m.settingUsage
     }
 }
-// GetUxBehavior gets the uxBehavior property value. Setting control type representation in the UX. Possible values are: default, dropdown, smallTextBox, largeTextBox, toggle, multiheaderGrid, contextPane.
+// GetUxBehavior gets the uxBehavior property value. Setting control type representation in the UX
 func (m *DeviceManagementConfigurationSettingDefinition) GetUxBehavior()(*DeviceManagementConfigurationControlType) {
     if m == nil {
         return nil
@@ -413,7 +415,7 @@ func (m *DeviceManagementConfigurationSettingDefinition) GetVersion()(*string) {
         return m.version
     }
 }
-// GetVisibility gets the visibility property value. Setting visibility scope to UX. Possible values are: none, settingsCatalog, template.
+// GetVisibility gets the visibility property value. Supported setting types
 func (m *DeviceManagementConfigurationSettingDefinition) GetVisibility()(*DeviceManagementConfigurationSettingVisibility) {
     if m == nil {
         return nil
@@ -545,7 +547,7 @@ func (m *DeviceManagementConfigurationSettingDefinition) Serialize(writer i878a8
     }
     return nil
 }
-// SetAccessTypes sets the accessTypes property value. Read/write access mode of the setting. Possible values are: none, add, copy, delete, get, replace, execute.
+// SetAccessTypes sets the accessTypes property value. The accessTypes property
 func (m *DeviceManagementConfigurationSettingDefinition) SetAccessTypes(value *DeviceManagementConfigurationSettingAccessTypes)() {
     if m != nil {
         m.accessTypes = value
@@ -629,13 +631,13 @@ func (m *DeviceManagementConfigurationSettingDefinition) SetRootDefinitionId(val
         m.rootDefinitionId = value
     }
 }
-// SetSettingUsage sets the settingUsage property value. Setting type, for example, configuration and compliance. Possible values are: none, configuration, compliance.
+// SetSettingUsage sets the settingUsage property value. Supported setting types
 func (m *DeviceManagementConfigurationSettingDefinition) SetSettingUsage(value *DeviceManagementConfigurationSettingUsage)() {
     if m != nil {
         m.settingUsage = value
     }
 }
-// SetUxBehavior sets the uxBehavior property value. Setting control type representation in the UX. Possible values are: default, dropdown, smallTextBox, largeTextBox, toggle, multiheaderGrid, contextPane.
+// SetUxBehavior sets the uxBehavior property value. Setting control type representation in the UX
 func (m *DeviceManagementConfigurationSettingDefinition) SetUxBehavior(value *DeviceManagementConfigurationControlType)() {
     if m != nil {
         m.uxBehavior = value
@@ -647,7 +649,7 @@ func (m *DeviceManagementConfigurationSettingDefinition) SetVersion(value *strin
         m.version = value
     }
 }
-// SetVisibility sets the visibility property value. Setting visibility scope to UX. Possible values are: none, settingsCatalog, template.
+// SetVisibility sets the visibility property value. Supported setting types
 func (m *DeviceManagementConfigurationSettingDefinition) SetVisibility(value *DeviceManagementConfigurationSettingVisibility)() {
     if m != nil {
         m.visibility = value

@@ -8,11 +8,11 @@ import (
 type JoinMeetingIdSettings struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
-    // The isPasscodeRequired property
+    // Indicates whether a passcode is required to join a meeting when using joinMeetingId. Optional.
     isPasscodeRequired *bool
-    // The joinMeetingId property
+    // The meeting ID to be used to join a meeting. Optional. Read-only.
     joinMeetingId *string
-    // The passcode property
+    // The passcode to join a meeting.  Optional. Read-only.
     passcode *string
 }
 // NewJoinMeetingIdSettings instantiates a new joinMeetingIdSettings and sets the default values.
@@ -69,7 +69,7 @@ func (m *JoinMeetingIdSettings) GetFieldDeserializers()(map[string]func(i878a80d
     }
     return res
 }
-// GetIsPasscodeRequired gets the isPasscodeRequired property value. The isPasscodeRequired property
+// GetIsPasscodeRequired gets the isPasscodeRequired property value. Indicates whether a passcode is required to join a meeting when using joinMeetingId. Optional.
 func (m *JoinMeetingIdSettings) GetIsPasscodeRequired()(*bool) {
     if m == nil {
         return nil
@@ -77,7 +77,7 @@ func (m *JoinMeetingIdSettings) GetIsPasscodeRequired()(*bool) {
         return m.isPasscodeRequired
     }
 }
-// GetJoinMeetingId gets the joinMeetingId property value. The joinMeetingId property
+// GetJoinMeetingId gets the joinMeetingId property value. The meeting ID to be used to join a meeting. Optional. Read-only.
 func (m *JoinMeetingIdSettings) GetJoinMeetingId()(*string) {
     if m == nil {
         return nil
@@ -85,7 +85,7 @@ func (m *JoinMeetingIdSettings) GetJoinMeetingId()(*string) {
         return m.joinMeetingId
     }
 }
-// GetPasscode gets the passcode property value. The passcode property
+// GetPasscode gets the passcode property value. The passcode to join a meeting.  Optional. Read-only.
 func (m *JoinMeetingIdSettings) GetPasscode()(*string) {
     if m == nil {
         return nil
@@ -127,19 +127,19 @@ func (m *JoinMeetingIdSettings) SetAdditionalData(value map[string]interface{})(
         m.additionalData = value
     }
 }
-// SetIsPasscodeRequired sets the isPasscodeRequired property value. The isPasscodeRequired property
+// SetIsPasscodeRequired sets the isPasscodeRequired property value. Indicates whether a passcode is required to join a meeting when using joinMeetingId. Optional.
 func (m *JoinMeetingIdSettings) SetIsPasscodeRequired(value *bool)() {
     if m != nil {
         m.isPasscodeRequired = value
     }
 }
-// SetJoinMeetingId sets the joinMeetingId property value. The joinMeetingId property
+// SetJoinMeetingId sets the joinMeetingId property value. The meeting ID to be used to join a meeting. Optional. Read-only.
 func (m *JoinMeetingIdSettings) SetJoinMeetingId(value *string)() {
     if m != nil {
         m.joinMeetingId = value
     }
 }
-// SetPasscode sets the passcode property value. The passcode property
+// SetPasscode sets the passcode property value. The passcode to join a meeting.  Optional. Read-only.
 func (m *JoinMeetingIdSettings) SetPasscode(value *string)() {
     if m != nil {
         m.passcode = value

@@ -17,7 +17,7 @@ type AndroidManagedStoreAppConfiguration struct {
     payloadJson *string
     // List of Android app permissions and corresponding permission actions.
     permissionActions []AndroidPermissionActionable
-    // Android Enterprise profile applicability (AndroidWorkProfile, DeviceOwner, or default (applies to both)). Possible values are: default, androidWorkProfile, androidDeviceOwner.
+    // Android profile applicability
     profileApplicability *AndroidProfileApplicability
 }
 // NewAndroidManagedStoreAppConfiguration instantiates a new AndroidManagedStoreAppConfiguration and sets the default values.
@@ -140,7 +140,7 @@ func (m *AndroidManagedStoreAppConfiguration) GetPermissionActions()([]AndroidPe
         return m.permissionActions
     }
 }
-// GetProfileApplicability gets the profileApplicability property value. Android Enterprise profile applicability (AndroidWorkProfile, DeviceOwner, or default (applies to both)). Possible values are: default, androidWorkProfile, androidDeviceOwner.
+// GetProfileApplicability gets the profileApplicability property value. Android profile applicability
 func (m *AndroidManagedStoreAppConfiguration) GetProfileApplicability()(*AndroidProfileApplicability) {
     if m == nil {
         return nil
@@ -227,7 +227,7 @@ func (m *AndroidManagedStoreAppConfiguration) SetPermissionActions(value []Andro
         m.permissionActions = value
     }
 }
-// SetProfileApplicability sets the profileApplicability property value. Android Enterprise profile applicability (AndroidWorkProfile, DeviceOwner, or default (applies to both)). Possible values are: default, androidWorkProfile, androidDeviceOwner.
+// SetProfileApplicability sets the profileApplicability property value. Android profile applicability
 func (m *AndroidManagedStoreAppConfiguration) SetProfileApplicability(value *AndroidProfileApplicability)() {
     if m != nil {
         m.profileApplicability = value

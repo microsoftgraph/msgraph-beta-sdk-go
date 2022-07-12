@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DeviceRegistrationPolicy provides operations to manage the deviceRegistrationPolicy singleton.
+// DeviceRegistrationPolicy 
 type DeviceRegistrationPolicy struct {
     Entity
     // Specifies the authorization policy for controlling registration of new devices using Azure AD Join within your organization. Required. For more information, see What is a device identity?.
@@ -15,12 +15,12 @@ type DeviceRegistrationPolicy struct {
     description *string
     // The name of the device registration policy. It is always set to Device Registration Policy. Read-only.
     displayName *string
-    // Specifies the authentication policy for a user to complete registration using Azure AD Join or Azure AD registered within your organization. The possible values are: 0 (meaning notRequired), 1 (meaning required), and 2 (meaning unknownFutureValue). The default value is 0.
+    // The multiFactorAuthConfiguration property
     multiFactorAuthConfiguration *MultiFactorAuthConfiguration
     // Specifies the maximum number of devices that a user can have within your organization before blocking new device registrations. The default value is set to 50. If this property is not specified during the policy update operation, it is automatically reset to 0 to indicate that users are not allowed to join any devices.
     userDeviceQuota *int32
 }
-// NewDeviceRegistrationPolicy instantiates a new deviceRegistrationPolicy and sets the default values.
+// NewDeviceRegistrationPolicy instantiates a new DeviceRegistrationPolicy and sets the default values.
 func NewDeviceRegistrationPolicy()(*DeviceRegistrationPolicy) {
     m := &DeviceRegistrationPolicy{
         Entity: *NewEntity(),
@@ -128,7 +128,7 @@ func (m *DeviceRegistrationPolicy) GetFieldDeserializers()(map[string]func(i878a
     }
     return res
 }
-// GetMultiFactorAuthConfiguration gets the multiFactorAuthConfiguration property value. Specifies the authentication policy for a user to complete registration using Azure AD Join or Azure AD registered within your organization. The possible values are: 0 (meaning notRequired), 1 (meaning required), and 2 (meaning unknownFutureValue). The default value is 0.
+// GetMultiFactorAuthConfiguration gets the multiFactorAuthConfiguration property value. The multiFactorAuthConfiguration property
 func (m *DeviceRegistrationPolicy) GetMultiFactorAuthConfiguration()(*MultiFactorAuthConfiguration) {
     if m == nil {
         return nil
@@ -213,7 +213,7 @@ func (m *DeviceRegistrationPolicy) SetDisplayName(value *string)() {
         m.displayName = value
     }
 }
-// SetMultiFactorAuthConfiguration sets the multiFactorAuthConfiguration property value. Specifies the authentication policy for a user to complete registration using Azure AD Join or Azure AD registered within your organization. The possible values are: 0 (meaning notRequired), 1 (meaning required), and 2 (meaning unknownFutureValue). The default value is 0.
+// SetMultiFactorAuthConfiguration sets the multiFactorAuthConfiguration property value. The multiFactorAuthConfiguration property
 func (m *DeviceRegistrationPolicy) SetMultiFactorAuthConfiguration(value *MultiFactorAuthConfiguration)() {
     if m != nil {
         m.multiFactorAuthConfiguration = value

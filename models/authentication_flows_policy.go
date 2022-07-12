@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AuthenticationFlowsPolicy provides operations to manage the policyRoot singleton.
+// AuthenticationFlowsPolicy 
 type AuthenticationFlowsPolicy struct {
     Entity
     // Inherited property. A description of the policy. This property is not a key. Optional. Read-only.
@@ -14,7 +14,7 @@ type AuthenticationFlowsPolicy struct {
     // Contains selfServiceSignUpAuthenticationFlowConfiguration settings that convey whether self-service sign-up is enabled or disabled. This property is not a key. Optional. Read-only.
     selfServiceSignUp SelfServiceSignUpAuthenticationFlowConfigurationable
 }
-// NewAuthenticationFlowsPolicy instantiates a new authenticationFlowsPolicy and sets the default values.
+// NewAuthenticationFlowsPolicy instantiates a new AuthenticationFlowsPolicy and sets the default values.
 func NewAuthenticationFlowsPolicy()(*AuthenticationFlowsPolicy) {
     m := &AuthenticationFlowsPolicy{
         Entity: *NewEntity(),

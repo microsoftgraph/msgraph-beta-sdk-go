@@ -31,6 +31,8 @@ func NewAndroidManagedStoreApp()(*AndroidManagedStoreApp) {
     m := &AndroidManagedStoreApp{
         MobileApp: *NewMobileApp(),
     }
+    typeValue := "#microsoft.graph.androidManagedStoreApp";
+    m.SetType(&typeValue);
     return m
 }
 // CreateAndroidManagedStoreAppFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -24,7 +24,7 @@ type ComplianceManagementPartner struct {
     macOsEnrollmentAssignments []ComplianceManagementPartnerAssignmentable
     // Partner onboarded for Mac devices.
     macOsOnboarded *bool
-    // Partner state of this tenant. Possible values are: unknown, unavailable, enabled, terminated, rejected, unresponsive.
+    // Partner state of this tenant.
     partnerState *DeviceManagementPartnerTenantState
     // User groups which enroll Windows devices through partner.
     windowsEnrollmentAssignments []ComplianceManagementPartnerAssignmentable
@@ -237,7 +237,7 @@ func (m *ComplianceManagementPartner) GetMacOsOnboarded()(*bool) {
         return m.macOsOnboarded
     }
 }
-// GetPartnerState gets the partnerState property value. Partner state of this tenant. Possible values are: unknown, unavailable, enabled, terminated, rejected, unresponsive.
+// GetPartnerState gets the partnerState property value. Partner state of this tenant.
 func (m *ComplianceManagementPartner) GetPartnerState()(*DeviceManagementPartnerTenantState) {
     if m == nil {
         return nil
@@ -400,7 +400,7 @@ func (m *ComplianceManagementPartner) SetMacOsOnboarded(value *bool)() {
         m.macOsOnboarded = value
     }
 }
-// SetPartnerState sets the partnerState property value. Partner state of this tenant. Possible values are: unknown, unavailable, enabled, terminated, rejected, unresponsive.
+// SetPartnerState sets the partnerState property value. Partner state of this tenant.
 func (m *ComplianceManagementPartner) SetPartnerState(value *DeviceManagementPartnerTenantState)() {
     if m != nil {
         m.partnerState = value

@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Connector provides operations to manage the collection of administrativeUnit entities.
+// Connector provides operations to manage the collection of accessReview entities.
 type Connector struct {
     Entity
     // The external IP address as detected by the the connector server. Read-only.
@@ -13,7 +13,7 @@ type Connector struct {
     machineName *string
     // The connectorGroup that the connector is a member of. Read-only.
     memberOf []ConnectorGroupable
-    // Indicates the status of the connector. Possible values are: active, inactive. Read-only.
+    // The status property
     status *ConnectorStatus
 }
 // NewConnector instantiates a new connector and sets the default values.
@@ -100,7 +100,7 @@ func (m *Connector) GetMemberOf()([]ConnectorGroupable) {
         return m.memberOf
     }
 }
-// GetStatus gets the status property value. Indicates the status of the connector. Possible values are: active, inactive. Read-only.
+// GetStatus gets the status property value. The status property
 func (m *Connector) GetStatus()(*ConnectorStatus) {
     if m == nil {
         return nil
@@ -163,7 +163,7 @@ func (m *Connector) SetMemberOf(value []ConnectorGroupable)() {
         m.memberOf = value
     }
 }
-// SetStatus sets the status property value. Indicates the status of the connector. Possible values are: active, inactive. Read-only.
+// SetStatus sets the status property value. The status property
 func (m *Connector) SetStatus(value *ConnectorStatus)() {
     if m != nil {
         m.status = value

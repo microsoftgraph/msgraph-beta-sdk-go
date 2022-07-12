@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ProviderTenantSetting provides operations to manage the security singleton.
+// ProviderTenantSetting 
 type ProviderTenantSetting struct {
     Entity
     // The azureTenantId property
@@ -19,7 +19,7 @@ type ProviderTenantSetting struct {
     // The vendor property
     vendor_escaped *string
 }
-// NewProviderTenantSetting instantiates a new providerTenantSetting and sets the default values.
+// NewProviderTenantSetting instantiates a new ProviderTenantSetting and sets the default values.
 func NewProviderTenantSetting()(*ProviderTenantSetting) {
     m := &ProviderTenantSetting{
         Entity: *NewEntity(),

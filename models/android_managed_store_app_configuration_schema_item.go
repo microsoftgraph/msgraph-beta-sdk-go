@@ -8,7 +8,7 @@ import (
 type AndroidManagedStoreAppConfigurationSchemaItem struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
-    // The type of value this item describes. Possible values are: bool, integer, string, choice, multiselect, bundle, bundleArray, hidden.
+    // Data type for a configuration item inside an Android application's custom configuration schema
     dataType *AndroidManagedStoreAppConfigurationSchemaItemDataType
     // Default value for boolean type items, if specified by the app developer
     defaultBoolValue *bool
@@ -50,7 +50,7 @@ func (m *AndroidManagedStoreAppConfigurationSchemaItem) GetAdditionalData()(map[
         return m.additionalData
     }
 }
-// GetDataType gets the dataType property value. The type of value this item describes. Possible values are: bool, integer, string, choice, multiselect, bundle, bundleArray, hidden.
+// GetDataType gets the dataType property value. Data type for a configuration item inside an Android application's custom configuration schema
 func (m *AndroidManagedStoreAppConfigurationSchemaItem) GetDataType()(*AndroidManagedStoreAppConfigurationSchemaItemDataType) {
     if m == nil {
         return nil
@@ -348,7 +348,7 @@ func (m *AndroidManagedStoreAppConfigurationSchemaItem) SetAdditionalData(value 
         m.additionalData = value
     }
 }
-// SetDataType sets the dataType property value. The type of value this item describes. Possible values are: bool, integer, string, choice, multiselect, bundle, bundleArray, hidden.
+// SetDataType sets the dataType property value. Data type for a configuration item inside an Android application's custom configuration schema
 func (m *AndroidManagedStoreAppConfigurationSchemaItem) SetDataType(value *AndroidManagedStoreAppConfigurationSchemaItemDataType)() {
     if m != nil {
         m.dataType = value

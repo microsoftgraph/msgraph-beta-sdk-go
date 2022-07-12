@@ -15,7 +15,7 @@ type SynchronizationQuarantine struct {
     error SynchronizationErrorable
     // Date and time when the next attempt to re-evaluate the quarantine will be made. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
     nextAttempt *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // A code that signifies why the quarantine was imposed. Possible values are: EncounteredBaseEscrowThreshold, EncounteredTotalEscrowThreshold, EncounteredEscrowProportionThreshold, EncounteredQuarantineException, QuarantinedOnDemand, TooManyDeletes, Unknown.
+    // The reason property
     reason *QuarantineReason
     // Date and time when the quarantine was first imposed in this series (a series starts when a quarantine is first imposed, and is reset as soon as the quarantine is lifted). The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
     seriesBegan *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
@@ -130,7 +130,7 @@ func (m *SynchronizationQuarantine) GetNextAttempt()(*i336074805fc853987abe6f7fe
         return m.nextAttempt
     }
 }
-// GetReason gets the reason property value. A code that signifies why the quarantine was imposed. Possible values are: EncounteredBaseEscrowThreshold, EncounteredTotalEscrowThreshold, EncounteredEscrowProportionThreshold, EncounteredQuarantineException, QuarantinedOnDemand, TooManyDeletes, Unknown.
+// GetReason gets the reason property value. The reason property
 func (m *SynchronizationQuarantine) GetReason()(*QuarantineReason) {
     if m == nil {
         return nil
@@ -225,7 +225,7 @@ func (m *SynchronizationQuarantine) SetNextAttempt(value *i336074805fc853987abe6
         m.nextAttempt = value
     }
 }
-// SetReason sets the reason property value. A code that signifies why the quarantine was imposed. Possible values are: EncounteredBaseEscrowThreshold, EncounteredTotalEscrowThreshold, EncounteredEscrowProportionThreshold, EncounteredQuarantineException, QuarantinedOnDemand, TooManyDeletes, Unknown.
+// SetReason sets the reason property value. The reason property
 func (m *SynchronizationQuarantine) SetReason(value *QuarantineReason)() {
     if m != nil {
         m.reason = value

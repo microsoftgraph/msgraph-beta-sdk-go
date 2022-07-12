@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DeviceCompliancePolicySettingStateSummary device Compilance Policy Setting State summary across the account.
+// DeviceCompliancePolicySettingStateSummary 
 type DeviceCompliancePolicySettingStateSummary struct {
     Entity
     // Number of compliant devices
@@ -19,7 +19,7 @@ type DeviceCompliancePolicySettingStateSummary struct {
     nonCompliantDeviceCount *int32
     // Number of not applicable devices
     notApplicableDeviceCount *int32
-    // Setting platform. Possible values are: android, androidForWork, iOS, macOS, windowsPhone81, windows81AndLater, windows10AndLater, androidWorkProfile, windows10XProfile, androidAOSP, all.
+    // Supported platform types for policies.
     platformType *PolicyPlatformType
     // Number of remediated devices
     remediatedDeviceCount *int32
@@ -30,7 +30,7 @@ type DeviceCompliancePolicySettingStateSummary struct {
     // Number of unknown devices
     unknownDeviceCount *int32
 }
-// NewDeviceCompliancePolicySettingStateSummary instantiates a new deviceCompliancePolicySettingStateSummary and sets the default values.
+// NewDeviceCompliancePolicySettingStateSummary instantiates a new DeviceCompliancePolicySettingStateSummary and sets the default values.
 func NewDeviceCompliancePolicySettingStateSummary()(*DeviceCompliancePolicySettingStateSummary) {
     m := &DeviceCompliancePolicySettingStateSummary{
         Entity: *NewEntity(),
@@ -208,7 +208,7 @@ func (m *DeviceCompliancePolicySettingStateSummary) GetNotApplicableDeviceCount(
         return m.notApplicableDeviceCount
     }
 }
-// GetPlatformType gets the platformType property value. Setting platform. Possible values are: android, androidForWork, iOS, macOS, windowsPhone81, windows81AndLater, windows10AndLater, androidWorkProfile, windows10XProfile, androidAOSP, all.
+// GetPlatformType gets the platformType property value. Supported platform types for policies.
 func (m *DeviceCompliancePolicySettingStateSummary) GetPlatformType()(*PolicyPlatformType) {
     if m == nil {
         return nil
@@ -363,7 +363,7 @@ func (m *DeviceCompliancePolicySettingStateSummary) SetNotApplicableDeviceCount(
         m.notApplicableDeviceCount = value
     }
 }
-// SetPlatformType sets the platformType property value. Setting platform. Possible values are: android, androidForWork, iOS, macOS, windowsPhone81, windows81AndLater, windows10AndLater, androidWorkProfile, windows10XProfile, androidAOSP, all.
+// SetPlatformType sets the platformType property value. Supported platform types for policies.
 func (m *DeviceCompliancePolicySettingStateSummary) SetPlatformType(value *PolicyPlatformType)() {
     if m != nil {
         m.platformType = value

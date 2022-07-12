@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// PurchaseInvoice provides operations to manage the financials singleton.
+// PurchaseInvoice 
 type PurchaseInvoice struct {
     Entity
     // The buyFromAddress property
@@ -67,7 +67,7 @@ type PurchaseInvoice struct {
     // The vendorNumber property
     vendorNumber *string
 }
-// NewPurchaseInvoice instantiates a new purchaseInvoice and sets the default values.
+// NewPurchaseInvoice instantiates a new PurchaseInvoice and sets the default values.
 func NewPurchaseInvoice()(*PurchaseInvoice) {
     m := &PurchaseInvoice{
         Entity: *NewEntity(),

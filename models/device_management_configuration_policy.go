@@ -22,7 +22,7 @@ type DeviceManagementConfigurationPolicy struct {
     lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Policy name
     name *string
-    // Platforms for this policy. Possible values are: none, android, iOS, macOS, windows10X, windows10, linux, unknownFutureValue.
+    // Supported platform types.
     platforms *DeviceManagementConfigurationPlatforms
     // List of Scope Tags for this Entity instance.
     roleScopeTagIds []string
@@ -30,7 +30,7 @@ type DeviceManagementConfigurationPolicy struct {
     settingCount *int32
     // Policy settings
     settings []DeviceManagementConfigurationSettingable
-    // Technologies for this policy. Possible values are: none, mdm, windows10XManagement, configManager, appleRemoteManagement, microsoftSense, exchangeOnline, linuxMdm, unknownFutureValue.
+    // Describes which technology this setting can be deployed with
     technologies *DeviceManagementConfigurationTechnologies
     // Template reference information
     templateReference DeviceManagementConfigurationPolicyTemplateReferenceable
@@ -249,7 +249,7 @@ func (m *DeviceManagementConfigurationPolicy) GetName()(*string) {
         return m.name
     }
 }
-// GetPlatforms gets the platforms property value. Platforms for this policy. Possible values are: none, android, iOS, macOS, windows10X, windows10, linux, unknownFutureValue.
+// GetPlatforms gets the platforms property value. Supported platform types.
 func (m *DeviceManagementConfigurationPolicy) GetPlatforms()(*DeviceManagementConfigurationPlatforms) {
     if m == nil {
         return nil
@@ -281,7 +281,7 @@ func (m *DeviceManagementConfigurationPolicy) GetSettings()([]DeviceManagementCo
         return m.settings
     }
 }
-// GetTechnologies gets the technologies property value. Technologies for this policy. Possible values are: none, mdm, windows10XManagement, configManager, appleRemoteManagement, microsoftSense, exchangeOnline, linuxMdm, unknownFutureValue.
+// GetTechnologies gets the technologies property value. Describes which technology this setting can be deployed with
 func (m *DeviceManagementConfigurationPolicy) GetTechnologies()(*DeviceManagementConfigurationTechnologies) {
     if m == nil {
         return nil
@@ -435,7 +435,7 @@ func (m *DeviceManagementConfigurationPolicy) SetName(value *string)() {
         m.name = value
     }
 }
-// SetPlatforms sets the platforms property value. Platforms for this policy. Possible values are: none, android, iOS, macOS, windows10X, windows10, linux, unknownFutureValue.
+// SetPlatforms sets the platforms property value. Supported platform types.
 func (m *DeviceManagementConfigurationPolicy) SetPlatforms(value *DeviceManagementConfigurationPlatforms)() {
     if m != nil {
         m.platforms = value
@@ -459,7 +459,7 @@ func (m *DeviceManagementConfigurationPolicy) SetSettings(value []DeviceManageme
         m.settings = value
     }
 }
-// SetTechnologies sets the technologies property value. Technologies for this policy. Possible values are: none, mdm, windows10XManagement, configManager, appleRemoteManagement, microsoftSense, exchangeOnline, linuxMdm, unknownFutureValue.
+// SetTechnologies sets the technologies property value. Describes which technology this setting can be deployed with
 func (m *DeviceManagementConfigurationPolicy) SetTechnologies(value *DeviceManagementConfigurationTechnologies)() {
     if m != nil {
         m.technologies = value

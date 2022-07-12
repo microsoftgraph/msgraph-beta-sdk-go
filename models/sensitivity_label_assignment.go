@@ -8,7 +8,7 @@ import (
 type SensitivityLabelAssignment struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
-    // Indicates whether the label assignment is done automatically, as a standard, or a privileged operation. The possible values are: standard, privileged, auto, unknownFutureValue.
+    // The assignmentMethod property
     assignmentMethod *SensitivityLabelAssignmentMethod
     // The unique identifier for the sensitivity label assigned to the file.
     sensitivityLabelId *string
@@ -34,7 +34,7 @@ func (m *SensitivityLabelAssignment) GetAdditionalData()(map[string]interface{})
         return m.additionalData
     }
 }
-// GetAssignmentMethod gets the assignmentMethod property value. Indicates whether the label assignment is done automatically, as a standard, or a privileged operation. The possible values are: standard, privileged, auto, unknownFutureValue.
+// GetAssignmentMethod gets the assignmentMethod property value. The assignmentMethod property
 func (m *SensitivityLabelAssignment) GetAssignmentMethod()(*SensitivityLabelAssignmentMethod) {
     if m == nil {
         return nil
@@ -128,7 +128,7 @@ func (m *SensitivityLabelAssignment) SetAdditionalData(value map[string]interfac
         m.additionalData = value
     }
 }
-// SetAssignmentMethod sets the assignmentMethod property value. Indicates whether the label assignment is done automatically, as a standard, or a privileged operation. The possible values are: standard, privileged, auto, unknownFutureValue.
+// SetAssignmentMethod sets the assignmentMethod property value. The assignmentMethod property
 func (m *SensitivityLabelAssignment) SetAssignmentMethod(value *SensitivityLabelAssignmentMethod)() {
     if m != nil {
         m.assignmentMethod = value

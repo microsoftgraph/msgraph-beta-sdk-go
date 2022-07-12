@@ -16,11 +16,11 @@ type BitLockerRecoveryOptions struct {
     enableRecoveryInformationSaveToStore *bool
     // Indicates whether or not to allow showing recovery options in BitLocker Setup Wizard for fixed or system disk.
     hideRecoveryOptions *bool
-    // Configure what pieces of BitLocker recovery information are stored to AD DS. Possible values are: passwordAndKey, passwordOnly.
+    // BitLockerRecoveryInformationType types
     recoveryInformationToStore *BitLockerRecoveryInformationType
-    // Indicates whether users are allowed or required to generate a 256-bit recovery key for fixed or system disk. Possible values are: blocked, required, allowed, notConfigured.
+    // Possible values of the ConfigurationUsage list.
     recoveryKeyUsage *ConfigurationUsage
-    // Indicates whether users are allowed or required to generate a 48-digit recovery password for fixed or system disk. Possible values are: blocked, required, allowed, notConfigured.
+    // Possible values of the ConfigurationUsage list.
     recoveryPasswordUsage *ConfigurationUsage
 }
 // NewBitLockerRecoveryOptions instantiates a new bitLockerRecoveryOptions and sets the default values.
@@ -149,7 +149,7 @@ func (m *BitLockerRecoveryOptions) GetHideRecoveryOptions()(*bool) {
         return m.hideRecoveryOptions
     }
 }
-// GetRecoveryInformationToStore gets the recoveryInformationToStore property value. Configure what pieces of BitLocker recovery information are stored to AD DS. Possible values are: passwordAndKey, passwordOnly.
+// GetRecoveryInformationToStore gets the recoveryInformationToStore property value. BitLockerRecoveryInformationType types
 func (m *BitLockerRecoveryOptions) GetRecoveryInformationToStore()(*BitLockerRecoveryInformationType) {
     if m == nil {
         return nil
@@ -157,7 +157,7 @@ func (m *BitLockerRecoveryOptions) GetRecoveryInformationToStore()(*BitLockerRec
         return m.recoveryInformationToStore
     }
 }
-// GetRecoveryKeyUsage gets the recoveryKeyUsage property value. Indicates whether users are allowed or required to generate a 256-bit recovery key for fixed or system disk. Possible values are: blocked, required, allowed, notConfigured.
+// GetRecoveryKeyUsage gets the recoveryKeyUsage property value. Possible values of the ConfigurationUsage list.
 func (m *BitLockerRecoveryOptions) GetRecoveryKeyUsage()(*ConfigurationUsage) {
     if m == nil {
         return nil
@@ -165,7 +165,7 @@ func (m *BitLockerRecoveryOptions) GetRecoveryKeyUsage()(*ConfigurationUsage) {
         return m.recoveryKeyUsage
     }
 }
-// GetRecoveryPasswordUsage gets the recoveryPasswordUsage property value. Indicates whether users are allowed or required to generate a 48-digit recovery password for fixed or system disk. Possible values are: blocked, required, allowed, notConfigured.
+// GetRecoveryPasswordUsage gets the recoveryPasswordUsage property value. Possible values of the ConfigurationUsage list.
 func (m *BitLockerRecoveryOptions) GetRecoveryPasswordUsage()(*ConfigurationUsage) {
     if m == nil {
         return nil
@@ -258,19 +258,19 @@ func (m *BitLockerRecoveryOptions) SetHideRecoveryOptions(value *bool)() {
         m.hideRecoveryOptions = value
     }
 }
-// SetRecoveryInformationToStore sets the recoveryInformationToStore property value. Configure what pieces of BitLocker recovery information are stored to AD DS. Possible values are: passwordAndKey, passwordOnly.
+// SetRecoveryInformationToStore sets the recoveryInformationToStore property value. BitLockerRecoveryInformationType types
 func (m *BitLockerRecoveryOptions) SetRecoveryInformationToStore(value *BitLockerRecoveryInformationType)() {
     if m != nil {
         m.recoveryInformationToStore = value
     }
 }
-// SetRecoveryKeyUsage sets the recoveryKeyUsage property value. Indicates whether users are allowed or required to generate a 256-bit recovery key for fixed or system disk. Possible values are: blocked, required, allowed, notConfigured.
+// SetRecoveryKeyUsage sets the recoveryKeyUsage property value. Possible values of the ConfigurationUsage list.
 func (m *BitLockerRecoveryOptions) SetRecoveryKeyUsage(value *ConfigurationUsage)() {
     if m != nil {
         m.recoveryKeyUsage = value
     }
 }
-// SetRecoveryPasswordUsage sets the recoveryPasswordUsage property value. Indicates whether users are allowed or required to generate a 48-digit recovery password for fixed or system disk. Possible values are: blocked, required, allowed, notConfigured.
+// SetRecoveryPasswordUsage sets the recoveryPasswordUsage property value. Possible values of the ConfigurationUsage list.
 func (m *BitLockerRecoveryOptions) SetRecoveryPasswordUsage(value *ConfigurationUsage)() {
     if m != nil {
         m.recoveryPasswordUsage = value

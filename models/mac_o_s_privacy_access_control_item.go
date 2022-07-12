@@ -6,11 +6,11 @@ import (
 
 // MacOSPrivacyAccessControlItem represents per-process privacy preferences.
 type MacOSPrivacyAccessControlItem struct {
-    // Allow the app or process to control the Mac via the Accessibility subsystem. Possible values are: notConfigured, enabled, disabled.
+    // Possible values of a property
     accessibility *Enablement
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
-    // Allow or block access to contact information managed by Contacts. Possible values are: notConfigured, enabled, disabled.
+    // Possible values of a property
     addressBook *Enablement
     // Allow or deny the app or process to send a restricted Apple event to another app or process. You will need to know the identifier, identifier type, and code requirement of the receiving app or process. This collection can contain a maximum of 500 elements.
     appleEventsAllowedReceivers []MacOSAppleEventReceiverable
@@ -22,43 +22,43 @@ type MacOSPrivacyAccessControlItem struct {
     blockMicrophone *bool
     // Block app from capturing contents of system display. Requires macOS 10.15 or later.
     blockScreenCapture *bool
-    // Allow or block access to event information managed by Calendar. Possible values are: notConfigured, enabled, disabled.
+    // Possible values of a property
     calendar *Enablement
     // Enter the code requirement, which can be obtained with the command 'codesign –display -r –' in the Terminal app. Include everything after '=>'.
     codeRequirement *string
     // The display name of the app, process, or executable.
     displayName *string
-    // Allow the app or process to access files managed by another app’s file provider extension. Requires macOS 10.15 or later. . Possible values are: notConfigured, enabled, disabled.
+    // Possible values of a property
     fileProviderPresence *Enablement
     // The bundle ID or path of the app, process, or executable.
     identifier *string
-    // A bundle ID is used to identify an app. A path is used to identify a process or executable. Possible values are: bundleID, path.
+    // Process identifier types for MacOS Privacy Preferences
     identifierType *MacOSProcessIdentifierType
-    // Allow or block access to music and the media library. Possible values are: notConfigured, enabled, disabled.
+    // Possible values of a property
     mediaLibrary *Enablement
-    // Allow or block access to images managed by Photos. Possible values are: notConfigured, enabled, disabled.
+    // Possible values of a property
     photos *Enablement
-    // Control access to CoreGraphics APIs, which are used to send CGEvents to the system event stream. Possible values are: notConfigured, enabled, disabled.
+    // Possible values of a property
     postEvent *Enablement
-    // Allow or block access to information managed by Reminders. Possible values are: notConfigured, enabled, disabled.
+    // Possible values of a property
     reminders *Enablement
-    // Allow or block access to system speech recognition facility. Possible values are: notConfigured, enabled, disabled.
+    // Possible values of a property
     speechRecognition *Enablement
     // Statically validates the code requirement. Use this setting if the process invalidates its dynamic code signature.
     staticCodeValidation *bool
-    // Control access to all protected files on a device. Files might be in locations such as emails, messages, apps, and administrative settings. Apply this setting with caution. Possible values are: notConfigured, enabled, disabled.
+    // Possible values of a property
     systemPolicyAllFiles *Enablement
-    // Allow or block access to Desktop folder. Possible values are: notConfigured, enabled, disabled.
+    // Possible values of a property
     systemPolicyDesktopFolder *Enablement
-    // Allow or block access to Documents folder. Possible values are: notConfigured, enabled, disabled.
+    // Possible values of a property
     systemPolicyDocumentsFolder *Enablement
-    // Allow or block access to Downloads folder. Possible values are: notConfigured, enabled, disabled.
+    // Possible values of a property
     systemPolicyDownloadsFolder *Enablement
-    // Allow or block access to network volumes. Requires macOS 10.15 or later. Possible values are: notConfigured, enabled, disabled.
+    // Possible values of a property
     systemPolicyNetworkVolumes *Enablement
-    // Control access to removable  volumes on the device, such as an external hard drive. Requires macOS 10.15 or later. Possible values are: notConfigured, enabled, disabled.
+    // Possible values of a property
     systemPolicyRemovableVolumes *Enablement
-    // Allow app or process to access files used in system administration. Possible values are: notConfigured, enabled, disabled.
+    // Possible values of a property
     systemPolicySystemAdminFiles *Enablement
 }
 // NewMacOSPrivacyAccessControlItem instantiates a new macOSPrivacyAccessControlItem and sets the default values.
@@ -72,7 +72,7 @@ func NewMacOSPrivacyAccessControlItem()(*MacOSPrivacyAccessControlItem) {
 func CreateMacOSPrivacyAccessControlItemFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewMacOSPrivacyAccessControlItem(), nil
 }
-// GetAccessibility gets the accessibility property value. Allow the app or process to control the Mac via the Accessibility subsystem. Possible values are: notConfigured, enabled, disabled.
+// GetAccessibility gets the accessibility property value. Possible values of a property
 func (m *MacOSPrivacyAccessControlItem) GetAccessibility()(*Enablement) {
     if m == nil {
         return nil
@@ -88,7 +88,7 @@ func (m *MacOSPrivacyAccessControlItem) GetAdditionalData()(map[string]interface
         return m.additionalData
     }
 }
-// GetAddressBook gets the addressBook property value. Allow or block access to contact information managed by Contacts. Possible values are: notConfigured, enabled, disabled.
+// GetAddressBook gets the addressBook property value. Possible values of a property
 func (m *MacOSPrivacyAccessControlItem) GetAddressBook()(*Enablement) {
     if m == nil {
         return nil
@@ -136,7 +136,7 @@ func (m *MacOSPrivacyAccessControlItem) GetBlockScreenCapture()(*bool) {
         return m.blockScreenCapture
     }
 }
-// GetCalendar gets the calendar property value. Allow or block access to event information managed by Calendar. Possible values are: notConfigured, enabled, disabled.
+// GetCalendar gets the calendar property value. Possible values of a property
 func (m *MacOSPrivacyAccessControlItem) GetCalendar()(*Enablement) {
     if m == nil {
         return nil
@@ -429,7 +429,7 @@ func (m *MacOSPrivacyAccessControlItem) GetFieldDeserializers()(map[string]func(
     }
     return res
 }
-// GetFileProviderPresence gets the fileProviderPresence property value. Allow the app or process to access files managed by another app’s file provider extension. Requires macOS 10.15 or later. . Possible values are: notConfigured, enabled, disabled.
+// GetFileProviderPresence gets the fileProviderPresence property value. Possible values of a property
 func (m *MacOSPrivacyAccessControlItem) GetFileProviderPresence()(*Enablement) {
     if m == nil {
         return nil
@@ -445,7 +445,7 @@ func (m *MacOSPrivacyAccessControlItem) GetIdentifier()(*string) {
         return m.identifier
     }
 }
-// GetIdentifierType gets the identifierType property value. A bundle ID is used to identify an app. A path is used to identify a process or executable. Possible values are: bundleID, path.
+// GetIdentifierType gets the identifierType property value. Process identifier types for MacOS Privacy Preferences
 func (m *MacOSPrivacyAccessControlItem) GetIdentifierType()(*MacOSProcessIdentifierType) {
     if m == nil {
         return nil
@@ -453,7 +453,7 @@ func (m *MacOSPrivacyAccessControlItem) GetIdentifierType()(*MacOSProcessIdentif
         return m.identifierType
     }
 }
-// GetMediaLibrary gets the mediaLibrary property value. Allow or block access to music and the media library. Possible values are: notConfigured, enabled, disabled.
+// GetMediaLibrary gets the mediaLibrary property value. Possible values of a property
 func (m *MacOSPrivacyAccessControlItem) GetMediaLibrary()(*Enablement) {
     if m == nil {
         return nil
@@ -461,7 +461,7 @@ func (m *MacOSPrivacyAccessControlItem) GetMediaLibrary()(*Enablement) {
         return m.mediaLibrary
     }
 }
-// GetPhotos gets the photos property value. Allow or block access to images managed by Photos. Possible values are: notConfigured, enabled, disabled.
+// GetPhotos gets the photos property value. Possible values of a property
 func (m *MacOSPrivacyAccessControlItem) GetPhotos()(*Enablement) {
     if m == nil {
         return nil
@@ -469,7 +469,7 @@ func (m *MacOSPrivacyAccessControlItem) GetPhotos()(*Enablement) {
         return m.photos
     }
 }
-// GetPostEvent gets the postEvent property value. Control access to CoreGraphics APIs, which are used to send CGEvents to the system event stream. Possible values are: notConfigured, enabled, disabled.
+// GetPostEvent gets the postEvent property value. Possible values of a property
 func (m *MacOSPrivacyAccessControlItem) GetPostEvent()(*Enablement) {
     if m == nil {
         return nil
@@ -477,7 +477,7 @@ func (m *MacOSPrivacyAccessControlItem) GetPostEvent()(*Enablement) {
         return m.postEvent
     }
 }
-// GetReminders gets the reminders property value. Allow or block access to information managed by Reminders. Possible values are: notConfigured, enabled, disabled.
+// GetReminders gets the reminders property value. Possible values of a property
 func (m *MacOSPrivacyAccessControlItem) GetReminders()(*Enablement) {
     if m == nil {
         return nil
@@ -485,7 +485,7 @@ func (m *MacOSPrivacyAccessControlItem) GetReminders()(*Enablement) {
         return m.reminders
     }
 }
-// GetSpeechRecognition gets the speechRecognition property value. Allow or block access to system speech recognition facility. Possible values are: notConfigured, enabled, disabled.
+// GetSpeechRecognition gets the speechRecognition property value. Possible values of a property
 func (m *MacOSPrivacyAccessControlItem) GetSpeechRecognition()(*Enablement) {
     if m == nil {
         return nil
@@ -501,7 +501,7 @@ func (m *MacOSPrivacyAccessControlItem) GetStaticCodeValidation()(*bool) {
         return m.staticCodeValidation
     }
 }
-// GetSystemPolicyAllFiles gets the systemPolicyAllFiles property value. Control access to all protected files on a device. Files might be in locations such as emails, messages, apps, and administrative settings. Apply this setting with caution. Possible values are: notConfigured, enabled, disabled.
+// GetSystemPolicyAllFiles gets the systemPolicyAllFiles property value. Possible values of a property
 func (m *MacOSPrivacyAccessControlItem) GetSystemPolicyAllFiles()(*Enablement) {
     if m == nil {
         return nil
@@ -509,7 +509,7 @@ func (m *MacOSPrivacyAccessControlItem) GetSystemPolicyAllFiles()(*Enablement) {
         return m.systemPolicyAllFiles
     }
 }
-// GetSystemPolicyDesktopFolder gets the systemPolicyDesktopFolder property value. Allow or block access to Desktop folder. Possible values are: notConfigured, enabled, disabled.
+// GetSystemPolicyDesktopFolder gets the systemPolicyDesktopFolder property value. Possible values of a property
 func (m *MacOSPrivacyAccessControlItem) GetSystemPolicyDesktopFolder()(*Enablement) {
     if m == nil {
         return nil
@@ -517,7 +517,7 @@ func (m *MacOSPrivacyAccessControlItem) GetSystemPolicyDesktopFolder()(*Enableme
         return m.systemPolicyDesktopFolder
     }
 }
-// GetSystemPolicyDocumentsFolder gets the systemPolicyDocumentsFolder property value. Allow or block access to Documents folder. Possible values are: notConfigured, enabled, disabled.
+// GetSystemPolicyDocumentsFolder gets the systemPolicyDocumentsFolder property value. Possible values of a property
 func (m *MacOSPrivacyAccessControlItem) GetSystemPolicyDocumentsFolder()(*Enablement) {
     if m == nil {
         return nil
@@ -525,7 +525,7 @@ func (m *MacOSPrivacyAccessControlItem) GetSystemPolicyDocumentsFolder()(*Enable
         return m.systemPolicyDocumentsFolder
     }
 }
-// GetSystemPolicyDownloadsFolder gets the systemPolicyDownloadsFolder property value. Allow or block access to Downloads folder. Possible values are: notConfigured, enabled, disabled.
+// GetSystemPolicyDownloadsFolder gets the systemPolicyDownloadsFolder property value. Possible values of a property
 func (m *MacOSPrivacyAccessControlItem) GetSystemPolicyDownloadsFolder()(*Enablement) {
     if m == nil {
         return nil
@@ -533,7 +533,7 @@ func (m *MacOSPrivacyAccessControlItem) GetSystemPolicyDownloadsFolder()(*Enable
         return m.systemPolicyDownloadsFolder
     }
 }
-// GetSystemPolicyNetworkVolumes gets the systemPolicyNetworkVolumes property value. Allow or block access to network volumes. Requires macOS 10.15 or later. Possible values are: notConfigured, enabled, disabled.
+// GetSystemPolicyNetworkVolumes gets the systemPolicyNetworkVolumes property value. Possible values of a property
 func (m *MacOSPrivacyAccessControlItem) GetSystemPolicyNetworkVolumes()(*Enablement) {
     if m == nil {
         return nil
@@ -541,7 +541,7 @@ func (m *MacOSPrivacyAccessControlItem) GetSystemPolicyNetworkVolumes()(*Enablem
         return m.systemPolicyNetworkVolumes
     }
 }
-// GetSystemPolicyRemovableVolumes gets the systemPolicyRemovableVolumes property value. Control access to removable  volumes on the device, such as an external hard drive. Requires macOS 10.15 or later. Possible values are: notConfigured, enabled, disabled.
+// GetSystemPolicyRemovableVolumes gets the systemPolicyRemovableVolumes property value. Possible values of a property
 func (m *MacOSPrivacyAccessControlItem) GetSystemPolicyRemovableVolumes()(*Enablement) {
     if m == nil {
         return nil
@@ -549,7 +549,7 @@ func (m *MacOSPrivacyAccessControlItem) GetSystemPolicyRemovableVolumes()(*Enabl
         return m.systemPolicyRemovableVolumes
     }
 }
-// GetSystemPolicySystemAdminFiles gets the systemPolicySystemAdminFiles property value. Allow app or process to access files used in system administration. Possible values are: notConfigured, enabled, disabled.
+// GetSystemPolicySystemAdminFiles gets the systemPolicySystemAdminFiles property value. Possible values of a property
 func (m *MacOSPrivacyAccessControlItem) GetSystemPolicySystemAdminFiles()(*Enablement) {
     if m == nil {
         return nil
@@ -744,7 +744,7 @@ func (m *MacOSPrivacyAccessControlItem) Serialize(writer i878a80d2330e89d2689638
     }
     return nil
 }
-// SetAccessibility sets the accessibility property value. Allow the app or process to control the Mac via the Accessibility subsystem. Possible values are: notConfigured, enabled, disabled.
+// SetAccessibility sets the accessibility property value. Possible values of a property
 func (m *MacOSPrivacyAccessControlItem) SetAccessibility(value *Enablement)() {
     if m != nil {
         m.accessibility = value
@@ -756,7 +756,7 @@ func (m *MacOSPrivacyAccessControlItem) SetAdditionalData(value map[string]inter
         m.additionalData = value
     }
 }
-// SetAddressBook sets the addressBook property value. Allow or block access to contact information managed by Contacts. Possible values are: notConfigured, enabled, disabled.
+// SetAddressBook sets the addressBook property value. Possible values of a property
 func (m *MacOSPrivacyAccessControlItem) SetAddressBook(value *Enablement)() {
     if m != nil {
         m.addressBook = value
@@ -792,7 +792,7 @@ func (m *MacOSPrivacyAccessControlItem) SetBlockScreenCapture(value *bool)() {
         m.blockScreenCapture = value
     }
 }
-// SetCalendar sets the calendar property value. Allow or block access to event information managed by Calendar. Possible values are: notConfigured, enabled, disabled.
+// SetCalendar sets the calendar property value. Possible values of a property
 func (m *MacOSPrivacyAccessControlItem) SetCalendar(value *Enablement)() {
     if m != nil {
         m.calendar = value
@@ -810,7 +810,7 @@ func (m *MacOSPrivacyAccessControlItem) SetDisplayName(value *string)() {
         m.displayName = value
     }
 }
-// SetFileProviderPresence sets the fileProviderPresence property value. Allow the app or process to access files managed by another app’s file provider extension. Requires macOS 10.15 or later. . Possible values are: notConfigured, enabled, disabled.
+// SetFileProviderPresence sets the fileProviderPresence property value. Possible values of a property
 func (m *MacOSPrivacyAccessControlItem) SetFileProviderPresence(value *Enablement)() {
     if m != nil {
         m.fileProviderPresence = value
@@ -822,37 +822,37 @@ func (m *MacOSPrivacyAccessControlItem) SetIdentifier(value *string)() {
         m.identifier = value
     }
 }
-// SetIdentifierType sets the identifierType property value. A bundle ID is used to identify an app. A path is used to identify a process or executable. Possible values are: bundleID, path.
+// SetIdentifierType sets the identifierType property value. Process identifier types for MacOS Privacy Preferences
 func (m *MacOSPrivacyAccessControlItem) SetIdentifierType(value *MacOSProcessIdentifierType)() {
     if m != nil {
         m.identifierType = value
     }
 }
-// SetMediaLibrary sets the mediaLibrary property value. Allow or block access to music and the media library. Possible values are: notConfigured, enabled, disabled.
+// SetMediaLibrary sets the mediaLibrary property value. Possible values of a property
 func (m *MacOSPrivacyAccessControlItem) SetMediaLibrary(value *Enablement)() {
     if m != nil {
         m.mediaLibrary = value
     }
 }
-// SetPhotos sets the photos property value. Allow or block access to images managed by Photos. Possible values are: notConfigured, enabled, disabled.
+// SetPhotos sets the photos property value. Possible values of a property
 func (m *MacOSPrivacyAccessControlItem) SetPhotos(value *Enablement)() {
     if m != nil {
         m.photos = value
     }
 }
-// SetPostEvent sets the postEvent property value. Control access to CoreGraphics APIs, which are used to send CGEvents to the system event stream. Possible values are: notConfigured, enabled, disabled.
+// SetPostEvent sets the postEvent property value. Possible values of a property
 func (m *MacOSPrivacyAccessControlItem) SetPostEvent(value *Enablement)() {
     if m != nil {
         m.postEvent = value
     }
 }
-// SetReminders sets the reminders property value. Allow or block access to information managed by Reminders. Possible values are: notConfigured, enabled, disabled.
+// SetReminders sets the reminders property value. Possible values of a property
 func (m *MacOSPrivacyAccessControlItem) SetReminders(value *Enablement)() {
     if m != nil {
         m.reminders = value
     }
 }
-// SetSpeechRecognition sets the speechRecognition property value. Allow or block access to system speech recognition facility. Possible values are: notConfigured, enabled, disabled.
+// SetSpeechRecognition sets the speechRecognition property value. Possible values of a property
 func (m *MacOSPrivacyAccessControlItem) SetSpeechRecognition(value *Enablement)() {
     if m != nil {
         m.speechRecognition = value
@@ -864,43 +864,43 @@ func (m *MacOSPrivacyAccessControlItem) SetStaticCodeValidation(value *bool)() {
         m.staticCodeValidation = value
     }
 }
-// SetSystemPolicyAllFiles sets the systemPolicyAllFiles property value. Control access to all protected files on a device. Files might be in locations such as emails, messages, apps, and administrative settings. Apply this setting with caution. Possible values are: notConfigured, enabled, disabled.
+// SetSystemPolicyAllFiles sets the systemPolicyAllFiles property value. Possible values of a property
 func (m *MacOSPrivacyAccessControlItem) SetSystemPolicyAllFiles(value *Enablement)() {
     if m != nil {
         m.systemPolicyAllFiles = value
     }
 }
-// SetSystemPolicyDesktopFolder sets the systemPolicyDesktopFolder property value. Allow or block access to Desktop folder. Possible values are: notConfigured, enabled, disabled.
+// SetSystemPolicyDesktopFolder sets the systemPolicyDesktopFolder property value. Possible values of a property
 func (m *MacOSPrivacyAccessControlItem) SetSystemPolicyDesktopFolder(value *Enablement)() {
     if m != nil {
         m.systemPolicyDesktopFolder = value
     }
 }
-// SetSystemPolicyDocumentsFolder sets the systemPolicyDocumentsFolder property value. Allow or block access to Documents folder. Possible values are: notConfigured, enabled, disabled.
+// SetSystemPolicyDocumentsFolder sets the systemPolicyDocumentsFolder property value. Possible values of a property
 func (m *MacOSPrivacyAccessControlItem) SetSystemPolicyDocumentsFolder(value *Enablement)() {
     if m != nil {
         m.systemPolicyDocumentsFolder = value
     }
 }
-// SetSystemPolicyDownloadsFolder sets the systemPolicyDownloadsFolder property value. Allow or block access to Downloads folder. Possible values are: notConfigured, enabled, disabled.
+// SetSystemPolicyDownloadsFolder sets the systemPolicyDownloadsFolder property value. Possible values of a property
 func (m *MacOSPrivacyAccessControlItem) SetSystemPolicyDownloadsFolder(value *Enablement)() {
     if m != nil {
         m.systemPolicyDownloadsFolder = value
     }
 }
-// SetSystemPolicyNetworkVolumes sets the systemPolicyNetworkVolumes property value. Allow or block access to network volumes. Requires macOS 10.15 or later. Possible values are: notConfigured, enabled, disabled.
+// SetSystemPolicyNetworkVolumes sets the systemPolicyNetworkVolumes property value. Possible values of a property
 func (m *MacOSPrivacyAccessControlItem) SetSystemPolicyNetworkVolumes(value *Enablement)() {
     if m != nil {
         m.systemPolicyNetworkVolumes = value
     }
 }
-// SetSystemPolicyRemovableVolumes sets the systemPolicyRemovableVolumes property value. Control access to removable  volumes on the device, such as an external hard drive. Requires macOS 10.15 or later. Possible values are: notConfigured, enabled, disabled.
+// SetSystemPolicyRemovableVolumes sets the systemPolicyRemovableVolumes property value. Possible values of a property
 func (m *MacOSPrivacyAccessControlItem) SetSystemPolicyRemovableVolumes(value *Enablement)() {
     if m != nil {
         m.systemPolicyRemovableVolumes = value
     }
 }
-// SetSystemPolicySystemAdminFiles sets the systemPolicySystemAdminFiles property value. Allow app or process to access files used in system administration. Possible values are: notConfigured, enabled, disabled.
+// SetSystemPolicySystemAdminFiles sets the systemPolicySystemAdminFiles property value. Possible values of a property
 func (m *MacOSPrivacyAccessControlItem) SetSystemPolicySystemAdminFiles(value *Enablement)() {
     if m != nil {
         m.systemPolicySystemAdminFiles = value

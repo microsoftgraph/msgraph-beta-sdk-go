@@ -12,7 +12,7 @@ type ObjectMapping struct {
     attributeMappings []AttributeMappingable
     // When true, this object mapping will be processed during synchronization. When false, this object mapping will be skipped.
     enabled *bool
-    // Which flow types are enabled for this object mapping. Add creates new objects in the target directory, Update modifies existing objects, and Delete deprovisions existing users. The default is Add, Update, Delete.
+    // The flowTypes property
     flowTypes *ObjectFlowTypes
     // Additional extension properties. Unless mentioned explicitly, metadata values should not be changed.
     metadata []MetadataEntryable
@@ -153,7 +153,7 @@ func (m *ObjectMapping) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
     }
     return res
 }
-// GetFlowTypes gets the flowTypes property value. Which flow types are enabled for this object mapping. Add creates new objects in the target directory, Update modifies existing objects, and Delete deprovisions existing users. The default is Add, Update, Delete.
+// GetFlowTypes gets the flowTypes property value. The flowTypes property
 func (m *ObjectMapping) GetFlowTypes()(*ObjectFlowTypes) {
     if m == nil {
         return nil
@@ -286,7 +286,7 @@ func (m *ObjectMapping) SetEnabled(value *bool)() {
         m.enabled = value
     }
 }
-// SetFlowTypes sets the flowTypes property value. Which flow types are enabled for this object mapping. Add creates new objects in the target directory, Update modifies existing objects, and Delete deprovisions existing users. The default is Add, Update, Delete.
+// SetFlowTypes sets the flowTypes property value. The flowTypes property
 func (m *ObjectMapping) SetFlowTypes(value *ObjectFlowTypes)() {
     if m != nil {
         m.flowTypes = value

@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DeviceConfigurationConflictSummary conflict summary for a set of device configuration policies.
+// DeviceConfigurationConflictSummary 
 type DeviceConfigurationConflictSummary struct {
     Entity
     // The set of policies in conflict with the given setting
@@ -14,7 +14,7 @@ type DeviceConfigurationConflictSummary struct {
     // The count of checkins impacted by the conflicting policies and settings
     deviceCheckinsImpacted *int32
 }
-// NewDeviceConfigurationConflictSummary instantiates a new deviceConfigurationConflictSummary and sets the default values.
+// NewDeviceConfigurationConflictSummary instantiates a new DeviceConfigurationConflictSummary and sets the default values.
 func NewDeviceConfigurationConflictSummary()(*DeviceConfigurationConflictSummary) {
     m := &DeviceConfigurationConflictSummary{
         Entity: *NewEntity(),

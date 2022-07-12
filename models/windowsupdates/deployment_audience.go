@@ -5,7 +5,7 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
-// DeploymentAudience provides operations to manage the admin singleton.
+// DeploymentAudience 
 type DeploymentAudience struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
     // Specifies the assets to exclude from the audience.
@@ -13,7 +13,7 @@ type DeploymentAudience struct {
     // Specifies the assets to include in the audience.
     members []UpdatableAssetable
 }
-// NewDeploymentAudience instantiates a new deploymentAudience and sets the default values.
+// NewDeploymentAudience instantiates a new DeploymentAudience and sets the default values.
 func NewDeploymentAudience()(*DeploymentAudience) {
     m := &DeploymentAudience{
         Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),

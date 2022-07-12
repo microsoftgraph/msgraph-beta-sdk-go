@@ -6,13 +6,13 @@ import (
 
 // CompanyPortalBlockedAction blocked actions on the company portal as per platform and device ownership types
 type CompanyPortalBlockedAction struct {
-    // Device Action. Possible values are: unknown, remove, reset.
+    // Action on a device that can be executed in the Company Portal
     action *CompanyPortalAction
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
-    // Device ownership type. Possible values are: unknown, company, personal.
+    // Owner type of device.
     ownerType *OwnerType
-    // Device OS/Platform. Possible values are: android, androidForWork, iOS, macOS, windowsPhone81, windows81AndLater, windows10AndLater, androidWorkProfile, unknown.
+    // Supported platform types.
     platform *DevicePlatformType
 }
 // NewCompanyPortalBlockedAction instantiates a new companyPortalBlockedAction and sets the default values.
@@ -26,7 +26,7 @@ func NewCompanyPortalBlockedAction()(*CompanyPortalBlockedAction) {
 func CreateCompanyPortalBlockedActionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCompanyPortalBlockedAction(), nil
 }
-// GetAction gets the action property value. Device Action. Possible values are: unknown, remove, reset.
+// GetAction gets the action property value. Action on a device that can be executed in the Company Portal
 func (m *CompanyPortalBlockedAction) GetAction()(*CompanyPortalAction) {
     if m == nil {
         return nil
@@ -77,7 +77,7 @@ func (m *CompanyPortalBlockedAction) GetFieldDeserializers()(map[string]func(i87
     }
     return res
 }
-// GetOwnerType gets the ownerType property value. Device ownership type. Possible values are: unknown, company, personal.
+// GetOwnerType gets the ownerType property value. Owner type of device.
 func (m *CompanyPortalBlockedAction) GetOwnerType()(*OwnerType) {
     if m == nil {
         return nil
@@ -85,7 +85,7 @@ func (m *CompanyPortalBlockedAction) GetOwnerType()(*OwnerType) {
         return m.ownerType
     }
 }
-// GetPlatform gets the platform property value. Device OS/Platform. Possible values are: android, androidForWork, iOS, macOS, windowsPhone81, windows81AndLater, windows10AndLater, androidWorkProfile, unknown.
+// GetPlatform gets the platform property value. Supported platform types.
 func (m *CompanyPortalBlockedAction) GetPlatform()(*DevicePlatformType) {
     if m == nil {
         return nil
@@ -124,7 +124,7 @@ func (m *CompanyPortalBlockedAction) Serialize(writer i878a80d2330e89d26896388a3
     }
     return nil
 }
-// SetAction sets the action property value. Device Action. Possible values are: unknown, remove, reset.
+// SetAction sets the action property value. Action on a device that can be executed in the Company Portal
 func (m *CompanyPortalBlockedAction) SetAction(value *CompanyPortalAction)() {
     if m != nil {
         m.action = value
@@ -136,13 +136,13 @@ func (m *CompanyPortalBlockedAction) SetAdditionalData(value map[string]interfac
         m.additionalData = value
     }
 }
-// SetOwnerType sets the ownerType property value. Device ownership type. Possible values are: unknown, company, personal.
+// SetOwnerType sets the ownerType property value. Owner type of device.
 func (m *CompanyPortalBlockedAction) SetOwnerType(value *OwnerType)() {
     if m != nil {
         m.ownerType = value
     }
 }
-// SetPlatform sets the platform property value. Device OS/Platform. Possible values are: android, androidForWork, iOS, macOS, windowsPhone81, windows81AndLater, windows10AndLater, androidWorkProfile, unknown.
+// SetPlatform sets the platform property value. Supported platform types.
 func (m *CompanyPortalBlockedAction) SetPlatform(value *DevicePlatformType)() {
     if m != nil {
         m.platform = value

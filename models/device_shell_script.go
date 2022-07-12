@@ -32,7 +32,7 @@ type DeviceShellScript struct {
     retryCount *int32
     // List of Scope Tag IDs for this PowerShellScript instance.
     roleScopeTagIds []string
-    // Indicates the type of execution context. Possible values are: system, user.
+    // Indicates the type of execution context the app runs in.
     runAsAccount *RunAsAccountType
     // Run summary for device management script.
     runSummary DeviceManagementScriptRunSummaryable
@@ -333,7 +333,7 @@ func (m *DeviceShellScript) GetRoleScopeTagIds()([]string) {
         return m.roleScopeTagIds
     }
 }
-// GetRunAsAccount gets the runAsAccount property value. Indicates the type of execution context. Possible values are: system, user.
+// GetRunAsAccount gets the runAsAccount property value. Indicates the type of execution context the app runs in.
 func (m *DeviceShellScript) GetRunAsAccount()(*RunAsAccountType) {
     if m == nil {
         return nil
@@ -558,7 +558,7 @@ func (m *DeviceShellScript) SetRoleScopeTagIds(value []string)() {
         m.roleScopeTagIds = value
     }
 }
-// SetRunAsAccount sets the runAsAccount property value. Indicates the type of execution context. Possible values are: system, user.
+// SetRunAsAccount sets the runAsAccount property value. Indicates the type of execution context the app runs in.
 func (m *DeviceShellScript) SetRunAsAccount(value *RunAsAccountType)() {
     if m != nil {
         m.runAsAccount = value

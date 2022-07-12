@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// WindowsUpdateState provides operations to manage the deviceManagement singleton.
+// WindowsUpdateState provides operations to manage the collection of accessReview entities.
 type WindowsUpdateState struct {
     Entity
     // Device display name.
@@ -20,7 +20,7 @@ type WindowsUpdateState struct {
     lastSyncDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The Quality Update Version of the device.
     qualityUpdateVersion *string
-    // Windows udpate status. Possible values are: upToDate, pendingInstallation, pendingReboot, failed.
+    // Windows update for business configuration device states
     status *WindowsUpdateStatus
     // The id of the user.
     userId *string
@@ -181,7 +181,7 @@ func (m *WindowsUpdateState) GetQualityUpdateVersion()(*string) {
         return m.qualityUpdateVersion
     }
 }
-// GetStatus gets the status property value. Windows udpate status. Possible values are: upToDate, pendingInstallation, pendingReboot, failed.
+// GetStatus gets the status property value. Windows update for business configuration device states
 func (m *WindowsUpdateState) GetStatus()(*WindowsUpdateStatus) {
     if m == nil {
         return nil
@@ -304,7 +304,7 @@ func (m *WindowsUpdateState) SetQualityUpdateVersion(value *string)() {
         m.qualityUpdateVersion = value
     }
 }
-// SetStatus sets the status property value. Windows udpate status. Possible values are: upToDate, pendingInstallation, pendingReboot, failed.
+// SetStatus sets the status property value. Windows update for business configuration device states
 func (m *WindowsUpdateState) SetStatus(value *WindowsUpdateStatus)() {
     if m != nil {
         m.status = value

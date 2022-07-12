@@ -32,7 +32,7 @@ type IntuneBrandingProfile struct {
     disableClientTelemetry *bool
     // Company/organization name that is displayed to end users
     displayName *string
-    // Customized device enrollment flow displayed to the end user . Possible values are: availableWithPrompts, availableWithoutPrompts, unavailable.
+    // Options available for enrollment flow customization
     enrollmentAvailability *EnrollmentAvailabilityOptions
     // Boolean that represents whether the profile is used as default or not
     isDefaultProfile *bool
@@ -180,7 +180,7 @@ func (m *IntuneBrandingProfile) GetDisplayName()(*string) {
         return m.displayName
     }
 }
-// GetEnrollmentAvailability gets the enrollmentAvailability property value. Customized device enrollment flow displayed to the end user . Possible values are: availableWithPrompts, availableWithoutPrompts, unavailable.
+// GetEnrollmentAvailability gets the enrollmentAvailability property value. Options available for enrollment flow customization
 func (m *IntuneBrandingProfile) GetEnrollmentAvailability()(*EnrollmentAvailabilityOptions) {
     if m == nil {
         return nil
@@ -958,7 +958,7 @@ func (m *IntuneBrandingProfile) SetDisplayName(value *string)() {
         m.displayName = value
     }
 }
-// SetEnrollmentAvailability sets the enrollmentAvailability property value. Customized device enrollment flow displayed to the end user . Possible values are: availableWithPrompts, availableWithoutPrompts, unavailable.
+// SetEnrollmentAvailability sets the enrollmentAvailability property value. Options available for enrollment flow customization
 func (m *IntuneBrandingProfile) SetEnrollmentAvailability(value *EnrollmentAvailabilityOptions)() {
     if m != nil {
         m.enrollmentAvailability = value

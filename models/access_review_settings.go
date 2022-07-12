@@ -26,16 +26,39 @@ type AccessReviewSettings struct {
     recurrenceSettings AccessReviewRecurrenceSettingsable
     // Indicates whether sending reminder emails to reviewers is enabled.
     remindersEnabled *bool
+    // The type property
+    type_escaped *string
 }
 // NewAccessReviewSettings instantiates a new accessReviewSettings and sets the default values.
 func NewAccessReviewSettings()(*AccessReviewSettings) {
     m := &AccessReviewSettings{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    typeValue := "#microsoft.graph.accessReviewSettings";
+    m.SetType(&typeValue);
     return m
 }
 // CreateAccessReviewSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateAccessReviewSettingsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+    if parseNode != nil {
+        mappingValueNode, err := parseNode.GetChildNode("@odata.type")
+        if err != nil {
+            return nil, err
+        }
+        if mappingValueNode != nil {
+            mappingValue, err := mappingValueNode.GetStringValue()
+            if err != nil {
+                return nil, err
+            }
+            if mappingValue != nil {
+                mappingStr := *mappingValue
+                switch mappingStr {
+                    case "#microsoft.graph.businessFlowSettings":
+                        return NewBusinessFlowSettings(), nil
+                }
+            }
+        }
+    }
     return NewAccessReviewSettings(), nil
 }
 // GetAccessRecommendationsEnabled gets the accessRecommendationsEnabled property value. Indicates whether showing recommendations to reviewers is enabled.
@@ -179,6 +202,16 @@ func (m *AccessReviewSettings) GetFieldDeserializers()(map[string]func(i878a80d2
         }
         return nil
     }
+    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetJustificationRequiredOnApproval gets the justificationRequiredOnApproval property value. Indicates whether reviewers are required to provide a justification when reviewing access.
@@ -211,6 +244,14 @@ func (m *AccessReviewSettings) GetRemindersEnabled()(*bool) {
         return nil
     } else {
         return m.remindersEnabled
+    }
+}
+// GetType gets the type property value. The type property
+func (m *AccessReviewSettings) GetType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
     }
 }
 // Serialize serializes information the current object
@@ -265,6 +306,12 @@ func (m *AccessReviewSettings) Serialize(writer i878a80d2330e89d26896388a3f487ee
     }
     {
         err := writer.WriteBoolValue("remindersEnabled", m.GetRemindersEnabled())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("type", m.GetType())
         if err != nil {
             return err
         }
@@ -335,5 +382,11 @@ func (m *AccessReviewSettings) SetRecurrenceSettings(value AccessReviewRecurrenc
 func (m *AccessReviewSettings) SetRemindersEnabled(value *bool)() {
     if m != nil {
         m.remindersEnabled = value
+    }
+}
+// SetType sets the type property value. The type property
+func (m *AccessReviewSettings) SetType(value *string)() {
+    if m != nil {
+        m.type_escaped = value
     }
 }

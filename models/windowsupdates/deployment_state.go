@@ -10,9 +10,9 @@ type DeploymentState struct {
     additionalData map[string]interface{}
     // Specifies the reasons the deployment has its state value. Read-only.
     reasons []DeploymentStateReasonable
-    // Specifies the requested state of the deployment. Supports a subset of the values for requestedDeploymentStateValue. Possible values are: none, paused, unknownFutureValue.
+    // The requestedValue property
     requestedValue *RequestedDeploymentStateValue
-    // Specifies the state of the deployment. Supports a subset of the values for deploymentStateValue. Possible values are: scheduled, offering, paused, unknownFutureValue. Read-only.
+    // The value property
     value *DeploymentStateValue
 }
 // NewDeploymentState instantiates a new deploymentState and sets the default values.
@@ -81,7 +81,7 @@ func (m *DeploymentState) GetReasons()([]DeploymentStateReasonable) {
         return m.reasons
     }
 }
-// GetRequestedValue gets the requestedValue property value. Specifies the requested state of the deployment. Supports a subset of the values for requestedDeploymentStateValue. Possible values are: none, paused, unknownFutureValue.
+// GetRequestedValue gets the requestedValue property value. The requestedValue property
 func (m *DeploymentState) GetRequestedValue()(*RequestedDeploymentStateValue) {
     if m == nil {
         return nil
@@ -89,7 +89,7 @@ func (m *DeploymentState) GetRequestedValue()(*RequestedDeploymentStateValue) {
         return m.requestedValue
     }
 }
-// GetValue gets the value property value. Specifies the state of the deployment. Supports a subset of the values for deploymentStateValue. Possible values are: scheduled, offering, paused, unknownFutureValue. Read-only.
+// GetValue gets the value property value. The value property
 func (m *DeploymentState) GetValue()(*DeploymentStateValue) {
     if m == nil {
         return nil
@@ -143,13 +143,13 @@ func (m *DeploymentState) SetReasons(value []DeploymentStateReasonable)() {
         m.reasons = value
     }
 }
-// SetRequestedValue sets the requestedValue property value. Specifies the requested state of the deployment. Supports a subset of the values for requestedDeploymentStateValue. Possible values are: none, paused, unknownFutureValue.
+// SetRequestedValue sets the requestedValue property value. The requestedValue property
 func (m *DeploymentState) SetRequestedValue(value *RequestedDeploymentStateValue)() {
     if m != nil {
         m.requestedValue = value
     }
 }
-// SetValue sets the value property value. Specifies the state of the deployment. Supports a subset of the values for deploymentStateValue. Possible values are: scheduled, offering, paused, unknownFutureValue. Read-only.
+// SetValue sets the value property value. The value property
 func (m *DeploymentState) SetValue(value *DeploymentStateValue)() {
     if m != nil {
         m.value = value

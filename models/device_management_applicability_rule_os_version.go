@@ -14,7 +14,7 @@ type DeviceManagementApplicabilityRuleOsVersion struct {
     minOSVersion *string
     // Name for object.
     name *string
-    // Applicability Rule type. Possible values are: include, exclude.
+    // Supported Applicability rule types for Device Configuration
     ruleType *DeviceManagementApplicabilityRuleType
 }
 // NewDeviceManagementApplicabilityRuleOsVersion instantiates a new deviceManagementApplicabilityRuleOsVersion and sets the default values.
@@ -105,7 +105,7 @@ func (m *DeviceManagementApplicabilityRuleOsVersion) GetName()(*string) {
         return m.name
     }
 }
-// GetRuleType gets the ruleType property value. Applicability Rule type. Possible values are: include, exclude.
+// GetRuleType gets the ruleType property value. Supported Applicability rule types for Device Configuration
 func (m *DeviceManagementApplicabilityRuleOsVersion) GetRuleType()(*DeviceManagementApplicabilityRuleType) {
     if m == nil {
         return nil
@@ -172,7 +172,7 @@ func (m *DeviceManagementApplicabilityRuleOsVersion) SetName(value *string)() {
         m.name = value
     }
 }
-// SetRuleType sets the ruleType property value. Applicability Rule type. Possible values are: include, exclude.
+// SetRuleType sets the ruleType property value. Supported Applicability rule types for Device Configuration
 func (m *DeviceManagementApplicabilityRuleOsVersion) SetRuleType(value *DeviceManagementApplicabilityRuleType)() {
     if m != nil {
         m.ruleType = value

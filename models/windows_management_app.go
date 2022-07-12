@@ -4,14 +4,14 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// WindowsManagementApp windows management app entity.
+// WindowsManagementApp 
 type WindowsManagementApp struct {
     Entity
     // Windows management app available version.
     availableVersion *string
     // The list of health states for installed Windows management app.
     healthStates []WindowsManagementAppHealthStateable
-    // Managed Installer Status. Possible values are: disabled, enabled.
+    // ManagedInstallerStatus
     managedInstaller *ManagedInstallerStatus
     // Managed Installer Configured Date Time
     managedInstallerConfiguredDateTime *string
@@ -92,7 +92,7 @@ func (m *WindowsManagementApp) GetHealthStates()([]WindowsManagementAppHealthSta
         return m.healthStates
     }
 }
-// GetManagedInstaller gets the managedInstaller property value. Managed Installer Status. Possible values are: disabled, enabled.
+// GetManagedInstaller gets the managedInstaller property value. ManagedInstallerStatus
 func (m *WindowsManagementApp) GetManagedInstaller()(*ManagedInstallerStatus) {
     if m == nil {
         return nil
@@ -157,7 +157,7 @@ func (m *WindowsManagementApp) SetHealthStates(value []WindowsManagementAppHealt
         m.healthStates = value
     }
 }
-// SetManagedInstaller sets the managedInstaller property value. Managed Installer Status. Possible values are: disabled, enabled.
+// SetManagedInstaller sets the managedInstaller property value. ManagedInstallerStatus
 func (m *WindowsManagementApp) SetManagedInstaller(value *ManagedInstallerStatus)() {
     if m != nil {
         m.managedInstaller = value

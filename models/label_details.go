@@ -4,11 +4,11 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// LabelDetails provides operations to call the extractLabel method.
+// LabelDetails 
 type LabelDetails struct {
     ParentLabelDetails
 }
-// NewLabelDetails instantiates a new labelDetails and sets the default values.
+// NewLabelDetails instantiates a new LabelDetails and sets the default values.
 func NewLabelDetails()(*LabelDetails) {
     m := &LabelDetails{
         ParentLabelDetails: *NewParentLabelDetails(),

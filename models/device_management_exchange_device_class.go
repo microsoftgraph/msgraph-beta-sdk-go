@@ -10,7 +10,7 @@ type DeviceManagementExchangeDeviceClass struct {
     additionalData map[string]interface{}
     // Name of the device class which will be impacted by this rule.
     name *string
-    // Type of device which is impacted by this rule e.g. Model, Family. Possible values are: family, model.
+    // Criteria which defines the type of device this access rule will apply to
     type_escaped *DeviceManagementExchangeAccessRuleType
 }
 // NewDeviceManagementExchangeDeviceClass instantiates a new deviceManagementExchangeDeviceClass and sets the default values.
@@ -65,7 +65,7 @@ func (m *DeviceManagementExchangeDeviceClass) GetName()(*string) {
         return m.name
     }
 }
-// GetType gets the type property value. Type of device which is impacted by this rule e.g. Model, Family. Possible values are: family, model.
+// GetType gets the type property value. Criteria which defines the type of device this access rule will apply to
 func (m *DeviceManagementExchangeDeviceClass) GetType()(*DeviceManagementExchangeAccessRuleType) {
     if m == nil {
         return nil
@@ -108,7 +108,7 @@ func (m *DeviceManagementExchangeDeviceClass) SetName(value *string)() {
         m.name = value
     }
 }
-// SetType sets the type property value. Type of device which is impacted by this rule e.g. Model, Family. Possible values are: family, model.
+// SetType sets the type property value. Criteria which defines the type of device this access rule will apply to
 func (m *DeviceManagementExchangeDeviceClass) SetType(value *DeviceManagementExchangeAccessRuleType)() {
     if m != nil {
         m.type_escaped = value

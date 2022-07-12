@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// CustomSecurityAttributeDefinition provides operations to manage the directory singleton.
+// CustomSecurityAttributeDefinition provides operations to manage the collection of activityStatistics entities.
 type CustomSecurityAttributeDefinition struct {
     Entity
     // Values that are predefined for this custom security attribute.This navigation property is not returned by default and must be specified in an $expand query. For example, /directory/customSecurityAttributeDefinitions?$expand=allowedValues.
@@ -21,8 +21,6 @@ type CustomSecurityAttributeDefinition struct {
     name *string
     // Specifies whether the custom security attribute is active or deactivated. Acceptable values are Available and Deprecated. Can be changed later.
     status *string
-    // Data type for the custom security attribute values. Supported types are Boolean, Integer, and String. Cannot be changed later.
-    type_escaped *string
     // Indicates whether only predefined values can be assigned to the custom security attribute. If set to false, free-form values are allowed. Can later be changed from true to false, but cannot be changed from false to true. If type is set to Boolean, usePreDefinedValuesOnly cannot be set to true.
     usePreDefinedValuesOnly *bool
 }
@@ -138,16 +136,6 @@ func (m *CustomSecurityAttributeDefinition) GetFieldDeserializers()(map[string]f
         }
         return nil
     }
-    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetType(val)
-        }
-        return nil
-    }
     res["usePreDefinedValuesOnly"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
@@ -190,14 +178,6 @@ func (m *CustomSecurityAttributeDefinition) GetStatus()(*string) {
         return nil
     } else {
         return m.status
-    }
-}
-// GetType gets the type property value. Data type for the custom security attribute values. Supported types are Boolean, Integer, and String. Cannot be changed later.
-func (m *CustomSecurityAttributeDefinition) GetType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.type_escaped
     }
 }
 // GetUsePreDefinedValuesOnly gets the usePreDefinedValuesOnly property value. Indicates whether only predefined values can be assigned to the custom security attribute. If set to false, free-form values are allowed. Can later be changed from true to false, but cannot be changed from false to true. If type is set to Boolean, usePreDefinedValuesOnly cannot be set to true.
@@ -261,12 +241,6 @@ func (m *CustomSecurityAttributeDefinition) Serialize(writer i878a80d2330e89d268
         }
     }
     {
-        err = writer.WriteStringValue("type", m.GetType())
-        if err != nil {
-            return err
-        }
-    }
-    {
         err = writer.WriteBoolValue("usePreDefinedValuesOnly", m.GetUsePreDefinedValuesOnly())
         if err != nil {
             return err
@@ -314,12 +288,6 @@ func (m *CustomSecurityAttributeDefinition) SetName(value *string)() {
 func (m *CustomSecurityAttributeDefinition) SetStatus(value *string)() {
     if m != nil {
         m.status = value
-    }
-}
-// SetType sets the type property value. Data type for the custom security attribute values. Supported types are Boolean, Integer, and String. Cannot be changed later.
-func (m *CustomSecurityAttributeDefinition) SetType(value *string)() {
-    if m != nil {
-        m.type_escaped = value
     }
 }
 // SetUsePreDefinedValuesOnly sets the usePreDefinedValuesOnly property value. Indicates whether only predefined values can be assigned to the custom security attribute. If set to false, free-form values are allowed. Can later be changed from true to false, but cannot be changed from false to true. If type is set to Boolean, usePreDefinedValuesOnly cannot be set to true.

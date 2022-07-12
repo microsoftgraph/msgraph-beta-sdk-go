@@ -14,16 +14,39 @@ type DlpEvaluationInput struct {
     currentLabel CurrentLabelable
     // The discoveredSensitiveTypes property
     discoveredSensitiveTypes []DiscoveredSensitiveTypeable
+    // The type property
+    type_escaped *string
 }
 // NewDlpEvaluationInput instantiates a new dlpEvaluationInput and sets the default values.
 func NewDlpEvaluationInput()(*DlpEvaluationInput) {
     m := &DlpEvaluationInput{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    typeValue := "#microsoft.graph.dlpEvaluationInput";
+    m.SetType(&typeValue);
     return m
 }
 // CreateDlpEvaluationInputFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateDlpEvaluationInputFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+    if parseNode != nil {
+        mappingValueNode, err := parseNode.GetChildNode("@odata.type")
+        if err != nil {
+            return nil, err
+        }
+        if mappingValueNode != nil {
+            mappingValue, err := mappingValueNode.GetStringValue()
+            if err != nil {
+                return nil, err
+            }
+            if mappingValue != nil {
+                mappingStr := *mappingValue
+                switch mappingStr {
+                    case "#microsoft.graph.dlpEvaluationWindowsDevicesInput":
+                        return NewDlpEvaluationWindowsDevicesInput(), nil
+                }
+            }
+        }
+    }
     return NewDlpEvaluationInput(), nil
 }
 // GetAccessScope gets the accessScope property value. The accessScope property
@@ -95,7 +118,25 @@ func (m *DlpEvaluationInput) GetFieldDeserializers()(map[string]func(i878a80d233
         }
         return nil
     }
+    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetType(val)
+        }
+        return nil
+    }
     return res
+}
+// GetType gets the type property value. The type property
+func (m *DlpEvaluationInput) GetType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
+    }
 }
 // Serialize serializes information the current object
 func (m *DlpEvaluationInput) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -118,6 +159,12 @@ func (m *DlpEvaluationInput) Serialize(writer i878a80d2330e89d26896388a3f487eef2
             cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
         }
         err := writer.WriteCollectionOfObjectValues("discoveredSensitiveTypes", cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("type", m.GetType())
         if err != nil {
             return err
         }
@@ -152,5 +199,11 @@ func (m *DlpEvaluationInput) SetCurrentLabel(value CurrentLabelable)() {
 func (m *DlpEvaluationInput) SetDiscoveredSensitiveTypes(value []DiscoveredSensitiveTypeable)() {
     if m != nil {
         m.discoveredSensitiveTypes = value
+    }
+}
+// SetType sets the type property value. The type property
+func (m *DlpEvaluationInput) SetType(value *string)() {
+    if m != nil {
+        m.type_escaped = value
     }
 }

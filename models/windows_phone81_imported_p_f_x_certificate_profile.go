@@ -7,7 +7,7 @@ import (
 // WindowsPhone81ImportedPFXCertificateProfile 
 type WindowsPhone81ImportedPFXCertificateProfile struct {
     WindowsCertificateProfileBase
-    // Intended Purpose of the Certificate Profile - which could be Unassigned, SmimeEncryption, SmimeSigning etc. Possible values are: unassigned, smimeEncryption, smimeSigning, vpn, wifi.
+    // PFX Import Options.
     intendedPurpose *IntendedPurpose
     // Certificate state for devices. This collection can contain a maximum of 2147483647 elements.
     managedDeviceCertificateStates []ManagedDeviceCertificateStateable
@@ -52,7 +52,7 @@ func (m *WindowsPhone81ImportedPFXCertificateProfile) GetFieldDeserializers()(ma
     }
     return res
 }
-// GetIntendedPurpose gets the intendedPurpose property value. Intended Purpose of the Certificate Profile - which could be Unassigned, SmimeEncryption, SmimeSigning etc. Possible values are: unassigned, smimeEncryption, smimeSigning, vpn, wifi.
+// GetIntendedPurpose gets the intendedPurpose property value. PFX Import Options.
 func (m *WindowsPhone81ImportedPFXCertificateProfile) GetIntendedPurpose()(*IntendedPurpose) {
     if m == nil {
         return nil
@@ -93,7 +93,7 @@ func (m *WindowsPhone81ImportedPFXCertificateProfile) Serialize(writer i878a80d2
     }
     return nil
 }
-// SetIntendedPurpose sets the intendedPurpose property value. Intended Purpose of the Certificate Profile - which could be Unassigned, SmimeEncryption, SmimeSigning etc. Possible values are: unassigned, smimeEncryption, smimeSigning, vpn, wifi.
+// SetIntendedPurpose sets the intendedPurpose property value. PFX Import Options.
 func (m *WindowsPhone81ImportedPFXCertificateProfile) SetIntendedPurpose(value *IntendedPurpose)() {
     if m != nil {
         m.intendedPurpose = value

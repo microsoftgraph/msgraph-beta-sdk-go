@@ -24,7 +24,6 @@ type CloudAppSecurityProfileable interface {
     GetPublisher()(*string)
     GetRiskScore()(*string)
     GetTags()([]string)
-    GetType()(*string)
     GetVendorInformation()(SecurityVendorInformationable)
     SetAzureSubscriptionId(value *string)()
     SetAzureTenantId(value *string)()
@@ -41,6 +40,5 @@ type CloudAppSecurityProfileable interface {
     SetPublisher(value *string)()
     SetRiskScore(value *string)()
     SetTags(value []string)()
-    SetType(value *string)()
     SetVendorInformation(value SecurityVendorInformationable)()
 }

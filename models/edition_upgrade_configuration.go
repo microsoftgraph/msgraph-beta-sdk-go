@@ -9,13 +9,13 @@ type EditionUpgradeConfiguration struct {
     DeviceConfiguration
     // Edition Upgrade License File Content.
     license *string
-    // Edition Upgrade License Type. Possible values are: productKey, licenseFile, notConfigured.
+    // Edition Upgrade License type
     licenseType *EditionUpgradeLicenseType
     // Edition Upgrade Product Key.
     productKey *string
-    // Edition Upgrade Target Edition. Possible values are: windows10Enterprise, windows10EnterpriseN, windows10Education, windows10EducationN, windows10MobileEnterprise, windows10HolographicEnterprise, windows10Professional, windows10ProfessionalN, windows10ProfessionalEducation, windows10ProfessionalEducationN, windows10ProfessionalWorkstation, windows10ProfessionalWorkstationN, notConfigured, windows10Home, windows10HomeChina, windows10HomeN, windows10HomeSingleLanguage, windows10Mobile, windows10IoTCore, windows10IoTCoreCommercial.
+    // Windows 10 Edition type.
     targetEdition *Windows10EditionType
-    // S mode configuration. Possible values are: noRestriction, block, unlock.
+    // The possible options to configure S mode unlock
     windowsSMode *WindowsSModeConfiguration
 }
 // NewEditionUpgradeConfiguration instantiates a new EditionUpgradeConfiguration and sets the default values.
@@ -92,7 +92,7 @@ func (m *EditionUpgradeConfiguration) GetLicense()(*string) {
         return m.license
     }
 }
-// GetLicenseType gets the licenseType property value. Edition Upgrade License Type. Possible values are: productKey, licenseFile, notConfigured.
+// GetLicenseType gets the licenseType property value. Edition Upgrade License type
 func (m *EditionUpgradeConfiguration) GetLicenseType()(*EditionUpgradeLicenseType) {
     if m == nil {
         return nil
@@ -108,7 +108,7 @@ func (m *EditionUpgradeConfiguration) GetProductKey()(*string) {
         return m.productKey
     }
 }
-// GetTargetEdition gets the targetEdition property value. Edition Upgrade Target Edition. Possible values are: windows10Enterprise, windows10EnterpriseN, windows10Education, windows10EducationN, windows10MobileEnterprise, windows10HolographicEnterprise, windows10Professional, windows10ProfessionalN, windows10ProfessionalEducation, windows10ProfessionalEducationN, windows10ProfessionalWorkstation, windows10ProfessionalWorkstationN, notConfigured, windows10Home, windows10HomeChina, windows10HomeN, windows10HomeSingleLanguage, windows10Mobile, windows10IoTCore, windows10IoTCoreCommercial.
+// GetTargetEdition gets the targetEdition property value. Windows 10 Edition type.
 func (m *EditionUpgradeConfiguration) GetTargetEdition()(*Windows10EditionType) {
     if m == nil {
         return nil
@@ -116,7 +116,7 @@ func (m *EditionUpgradeConfiguration) GetTargetEdition()(*Windows10EditionType) 
         return m.targetEdition
     }
 }
-// GetWindowsSMode gets the windowsSMode property value. S mode configuration. Possible values are: noRestriction, block, unlock.
+// GetWindowsSMode gets the windowsSMode property value. The possible options to configure S mode unlock
 func (m *EditionUpgradeConfiguration) GetWindowsSMode()(*WindowsSModeConfiguration) {
     if m == nil {
         return nil
@@ -171,7 +171,7 @@ func (m *EditionUpgradeConfiguration) SetLicense(value *string)() {
         m.license = value
     }
 }
-// SetLicenseType sets the licenseType property value. Edition Upgrade License Type. Possible values are: productKey, licenseFile, notConfigured.
+// SetLicenseType sets the licenseType property value. Edition Upgrade License type
 func (m *EditionUpgradeConfiguration) SetLicenseType(value *EditionUpgradeLicenseType)() {
     if m != nil {
         m.licenseType = value
@@ -183,13 +183,13 @@ func (m *EditionUpgradeConfiguration) SetProductKey(value *string)() {
         m.productKey = value
     }
 }
-// SetTargetEdition sets the targetEdition property value. Edition Upgrade Target Edition. Possible values are: windows10Enterprise, windows10EnterpriseN, windows10Education, windows10EducationN, windows10MobileEnterprise, windows10HolographicEnterprise, windows10Professional, windows10ProfessionalN, windows10ProfessionalEducation, windows10ProfessionalEducationN, windows10ProfessionalWorkstation, windows10ProfessionalWorkstationN, notConfigured, windows10Home, windows10HomeChina, windows10HomeN, windows10HomeSingleLanguage, windows10Mobile, windows10IoTCore, windows10IoTCoreCommercial.
+// SetTargetEdition sets the targetEdition property value. Windows 10 Edition type.
 func (m *EditionUpgradeConfiguration) SetTargetEdition(value *Windows10EditionType)() {
     if m != nil {
         m.targetEdition = value
     }
 }
-// SetWindowsSMode sets the windowsSMode property value. S mode configuration. Possible values are: noRestriction, block, unlock.
+// SetWindowsSMode sets the windowsSMode property value. The possible options to configure S mode unlock
 func (m *EditionUpgradeConfiguration) SetWindowsSMode(value *WindowsSModeConfiguration)() {
     if m != nil {
         m.windowsSMode = value

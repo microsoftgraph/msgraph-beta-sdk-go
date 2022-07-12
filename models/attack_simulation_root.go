@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AttackSimulationRoot provides operations to manage the security singleton.
+// AttackSimulationRoot 
 type AttackSimulationRoot struct {
     Entity
     // Represents simulation automations created to run on a tenant.
@@ -12,7 +12,7 @@ type AttackSimulationRoot struct {
     // Represents an attack simulation training campaign in a tenant.
     simulations []Simulationable
 }
-// NewAttackSimulationRoot instantiates a new attackSimulationRoot and sets the default values.
+// NewAttackSimulationRoot instantiates a new AttackSimulationRoot and sets the default values.
 func NewAttackSimulationRoot()(*AttackSimulationRoot) {
     m := &AttackSimulationRoot{
         Entity: *NewEntity(),

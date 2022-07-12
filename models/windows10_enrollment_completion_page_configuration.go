@@ -13,6 +13,8 @@ type Windows10EnrollmentCompletionPageConfiguration struct {
     allowDeviceUseOnInstallFailure *bool
     // Allow or block log collection on installation failure
     allowLogCollectionOnInstallFailure *bool
+    // Install all required apps as non blocking apps during white glove
+    allowNonBlockingAppInstallation *bool
     // Allow the user to retry the setup on installation failure
     blockDeviceSetupRetryByUser *bool
     // Set custom error message to show upon installation failure
@@ -61,6 +63,14 @@ func (m *Windows10EnrollmentCompletionPageConfiguration) GetAllowLogCollectionOn
         return nil
     } else {
         return m.allowLogCollectionOnInstallFailure
+    }
+}
+// GetAllowNonBlockingAppInstallation gets the allowNonBlockingAppInstallation property value. Install all required apps as non blocking apps during white glove
+func (m *Windows10EnrollmentCompletionPageConfiguration) GetAllowNonBlockingAppInstallation()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.allowNonBlockingAppInstallation
     }
 }
 // GetBlockDeviceSetupRetryByUser gets the blockDeviceSetupRetryByUser property value. Allow the user to retry the setup on installation failure
@@ -117,6 +127,16 @@ func (m *Windows10EnrollmentCompletionPageConfiguration) GetFieldDeserializers()
         }
         if val != nil {
             m.SetAllowLogCollectionOnInstallFailure(val)
+        }
+        return nil
+    }
+    res["allowNonBlockingAppInstallation"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetAllowNonBlockingAppInstallation(val)
         }
         return nil
     }
@@ -253,6 +273,12 @@ func (m *Windows10EnrollmentCompletionPageConfiguration) Serialize(writer i878a8
         }
     }
     {
+        err = writer.WriteBoolValue("allowNonBlockingAppInstallation", m.GetAllowNonBlockingAppInstallation())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteBoolValue("blockDeviceSetupRetryByUser", m.GetBlockDeviceSetupRetryByUser())
         if err != nil {
             return err
@@ -312,6 +338,12 @@ func (m *Windows10EnrollmentCompletionPageConfiguration) SetAllowDeviceUseOnInst
 func (m *Windows10EnrollmentCompletionPageConfiguration) SetAllowLogCollectionOnInstallFailure(value *bool)() {
     if m != nil {
         m.allowLogCollectionOnInstallFailure = value
+    }
+}
+// SetAllowNonBlockingAppInstallation sets the allowNonBlockingAppInstallation property value. Install all required apps as non blocking apps during white glove
+func (m *Windows10EnrollmentCompletionPageConfiguration) SetAllowNonBlockingAppInstallation(value *bool)() {
+    if m != nil {
+        m.allowNonBlockingAppInstallation = value
     }
 }
 // SetBlockDeviceSetupRetryByUser sets the blockDeviceSetupRetryByUser property value. Allow the user to retry the setup on installation failure

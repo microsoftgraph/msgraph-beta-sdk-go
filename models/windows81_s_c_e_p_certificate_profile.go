@@ -9,11 +9,11 @@ type Windows81SCEPCertificateProfile struct {
     Windows81CertificateProfileBase
     // Target store certificate. Possible values are: user, machine.
     certificateStore *CertificateStore
-    // SCEP Hash Algorithm. Possible values are: sha1, sha2.
+    // Hash Algorithm Options.
     hashAlgorithm *HashAlgorithms
-    // SCEP Key Size. Possible values are: size1024, size2048, size4096.
+    // Key Size Options.
     keySize *KeySize
-    // SCEP Key Usage. Possible values are: keyEncipherment, digitalSignature.
+    // Key Usage Options.
     keyUsage *KeyUsages
     // Certificate state for devices. This collection can contain a maximum of 2147483647 elements.
     managedDeviceCertificateStates []ManagedDeviceCertificateStateable
@@ -148,7 +148,7 @@ func (m *Windows81SCEPCertificateProfile) GetFieldDeserializers()(map[string]fun
     }
     return res
 }
-// GetHashAlgorithm gets the hashAlgorithm property value. SCEP Hash Algorithm. Possible values are: sha1, sha2.
+// GetHashAlgorithm gets the hashAlgorithm property value. Hash Algorithm Options.
 func (m *Windows81SCEPCertificateProfile) GetHashAlgorithm()(*HashAlgorithms) {
     if m == nil {
         return nil
@@ -156,7 +156,7 @@ func (m *Windows81SCEPCertificateProfile) GetHashAlgorithm()(*HashAlgorithms) {
         return m.hashAlgorithm
     }
 }
-// GetKeySize gets the keySize property value. SCEP Key Size. Possible values are: size1024, size2048, size4096.
+// GetKeySize gets the keySize property value. Key Size Options.
 func (m *Windows81SCEPCertificateProfile) GetKeySize()(*KeySize) {
     if m == nil {
         return nil
@@ -164,7 +164,7 @@ func (m *Windows81SCEPCertificateProfile) GetKeySize()(*KeySize) {
         return m.keySize
     }
 }
-// GetKeyUsage gets the keyUsage property value. SCEP Key Usage. Possible values are: keyEncipherment, digitalSignature.
+// GetKeyUsage gets the keyUsage property value. Key Usage Options.
 func (m *Windows81SCEPCertificateProfile) GetKeyUsage()(*KeyUsages) {
     if m == nil {
         return nil
@@ -288,19 +288,19 @@ func (m *Windows81SCEPCertificateProfile) SetCertificateStore(value *Certificate
         m.certificateStore = value
     }
 }
-// SetHashAlgorithm sets the hashAlgorithm property value. SCEP Hash Algorithm. Possible values are: sha1, sha2.
+// SetHashAlgorithm sets the hashAlgorithm property value. Hash Algorithm Options.
 func (m *Windows81SCEPCertificateProfile) SetHashAlgorithm(value *HashAlgorithms)() {
     if m != nil {
         m.hashAlgorithm = value
     }
 }
-// SetKeySize sets the keySize property value. SCEP Key Size. Possible values are: size1024, size2048, size4096.
+// SetKeySize sets the keySize property value. Key Size Options.
 func (m *Windows81SCEPCertificateProfile) SetKeySize(value *KeySize)() {
     if m != nil {
         m.keySize = value
     }
 }
-// SetKeyUsage sets the keyUsage property value. SCEP Key Usage. Possible values are: keyEncipherment, digitalSignature.
+// SetKeyUsage sets the keyUsage property value. Key Usage Options.
 func (m *Windows81SCEPCertificateProfile) SetKeyUsage(value *KeyUsages)() {
     if m != nil {
         m.keyUsage = value

@@ -18,7 +18,7 @@ type DeviceManagementScriptDeviceState struct {
     managedDevice ManagedDeviceable
     // Details of execution output.
     resultMessage *string
-    // State of latest run of the device management script. Possible values are: unknown, success, fail, scriptError, pending, notApplicable.
+    // Indicates the type of execution status of the device management script.
     runState *RunState
 }
 // NewDeviceManagementScriptDeviceState instantiates a new deviceManagementScriptDeviceState and sets the default values.
@@ -137,7 +137,7 @@ func (m *DeviceManagementScriptDeviceState) GetResultMessage()(*string) {
         return m.resultMessage
     }
 }
-// GetRunState gets the runState property value. State of latest run of the device management script. Possible values are: unknown, success, fail, scriptError, pending, notApplicable.
+// GetRunState gets the runState property value. Indicates the type of execution status of the device management script.
 func (m *DeviceManagementScriptDeviceState) GetRunState()(*RunState) {
     if m == nil {
         return nil
@@ -220,7 +220,7 @@ func (m *DeviceManagementScriptDeviceState) SetResultMessage(value *string)() {
         m.resultMessage = value
     }
 }
-// SetRunState sets the runState property value. State of latest run of the device management script. Possible values are: unknown, success, fail, scriptError, pending, notApplicable.
+// SetRunState sets the runState property value. Indicates the type of execution status of the device management script.
 func (m *DeviceManagementScriptDeviceState) SetRunState(value *RunState)() {
     if m != nil {
         m.runState = value

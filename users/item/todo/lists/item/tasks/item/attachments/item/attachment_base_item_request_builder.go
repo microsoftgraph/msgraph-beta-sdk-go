@@ -23,7 +23,7 @@ type AttachmentBaseItemRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// AttachmentBaseItemRequestBuilderGetQueryParameters get attachments from users
+// AttachmentBaseItemRequestBuilderGetQueryParameters a collection of file attachments for the task.
 type AttachmentBaseItemRequestBuilderGetQueryParameters struct {
     // Select properties to be returned
     Select []string `uriparametername:"%24select"`
@@ -83,11 +83,11 @@ func (m *AttachmentBaseItemRequestBuilder) CreateDeleteRequestInformationWithReq
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation get attachments from users
+// CreateGetRequestInformation a collection of file attachments for the task.
 func (m *AttachmentBaseItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration get attachments from users
+// CreateGetRequestInformationWithRequestConfiguration a collection of file attachments for the task.
 func (m *AttachmentBaseItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *AttachmentBaseItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -140,11 +140,11 @@ func (m *AttachmentBaseItemRequestBuilder) DeleteWithRequestConfigurationAndResp
     }
     return nil
 }
-// Get get attachments from users
+// Get a collection of file attachments for the task.
 func (m *AttachmentBaseItemRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AttachmentBaseable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler get attachments from users
+// GetWithRequestConfigurationAndResponseHandler a collection of file attachments for the task.
 func (m *AttachmentBaseItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *AttachmentBaseItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AttachmentBaseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

@@ -8,7 +8,7 @@ import (
 type Windows10AssociatedApps struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
-    // Application type. Possible values are: desktop, universal.
+    // Windows 10 Application type.
     appType *Windows10AppType
     // Identifier.
     identifier *string
@@ -32,7 +32,7 @@ func (m *Windows10AssociatedApps) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// GetAppType gets the appType property value. Application type. Possible values are: desktop, universal.
+// GetAppType gets the appType property value. Windows 10 Application type.
 func (m *Windows10AssociatedApps) GetAppType()(*Windows10AppType) {
     if m == nil {
         return nil
@@ -102,7 +102,7 @@ func (m *Windows10AssociatedApps) SetAdditionalData(value map[string]interface{}
         m.additionalData = value
     }
 }
-// SetAppType sets the appType property value. Application type. Possible values are: desktop, universal.
+// SetAppType sets the appType property value. Windows 10 Application type.
 func (m *Windows10AssociatedApps) SetAppType(value *Windows10AppType)() {
     if m != nil {
         m.appType = value

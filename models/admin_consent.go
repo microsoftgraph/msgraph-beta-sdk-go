@@ -8,9 +8,9 @@ import (
 type AdminConsent struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
-    // The admin consent state of sharing user and device data to Apple. Possible values are: notConfigured, granted, notGranted.
+    // Admin consent state.
     shareAPNSData *AdminConsentState
-    // Gets or sets the admin consent for sharing User experience analytics data. Possible values are: notConfigured, granted, notGranted.
+    // Admin consent state.
     shareUserExperienceAnalyticsData *AdminConsentState
 }
 // NewAdminConsent instantiates a new adminConsent and sets the default values.
@@ -57,7 +57,7 @@ func (m *AdminConsent) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
     }
     return res
 }
-// GetShareAPNSData gets the shareAPNSData property value. The admin consent state of sharing user and device data to Apple. Possible values are: notConfigured, granted, notGranted.
+// GetShareAPNSData gets the shareAPNSData property value. Admin consent state.
 func (m *AdminConsent) GetShareAPNSData()(*AdminConsentState) {
     if m == nil {
         return nil
@@ -65,7 +65,7 @@ func (m *AdminConsent) GetShareAPNSData()(*AdminConsentState) {
         return m.shareAPNSData
     }
 }
-// GetShareUserExperienceAnalyticsData gets the shareUserExperienceAnalyticsData property value. Gets or sets the admin consent for sharing User experience analytics data. Possible values are: notConfigured, granted, notGranted.
+// GetShareUserExperienceAnalyticsData gets the shareUserExperienceAnalyticsData property value. Admin consent state.
 func (m *AdminConsent) GetShareUserExperienceAnalyticsData()(*AdminConsentState) {
     if m == nil {
         return nil
@@ -103,13 +103,13 @@ func (m *AdminConsent) SetAdditionalData(value map[string]interface{})() {
         m.additionalData = value
     }
 }
-// SetShareAPNSData sets the shareAPNSData property value. The admin consent state of sharing user and device data to Apple. Possible values are: notConfigured, granted, notGranted.
+// SetShareAPNSData sets the shareAPNSData property value. Admin consent state.
 func (m *AdminConsent) SetShareAPNSData(value *AdminConsentState)() {
     if m != nil {
         m.shareAPNSData = value
     }
 }
-// SetShareUserExperienceAnalyticsData sets the shareUserExperienceAnalyticsData property value. Gets or sets the admin consent for sharing User experience analytics data. Possible values are: notConfigured, granted, notGranted.
+// SetShareUserExperienceAnalyticsData sets the shareUserExperienceAnalyticsData property value. Admin consent state.
 func (m *AdminConsent) SetShareUserExperienceAnalyticsData(value *AdminConsentState)() {
     if m != nil {
         m.shareUserExperienceAnalyticsData = value

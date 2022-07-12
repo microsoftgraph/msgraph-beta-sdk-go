@@ -7,7 +7,7 @@ import (
 // DeviceManagementResourceAccessProfileAssignment entity that describes tenant level settings for derived credentials
 type DeviceManagementResourceAccessProfileAssignment struct {
     Entity
-    // The assignment intent for the resource access profile. Possible values are: apply, remove.
+    // The administrator intent for the assignment of the profile.
     intent *DeviceManagementResourceAccessProfileIntent
     // The identifier of the source of the assignment.
     sourceId *string
@@ -60,7 +60,7 @@ func (m *DeviceManagementResourceAccessProfileAssignment) GetFieldDeserializers(
     }
     return res
 }
-// GetIntent gets the intent property value. The assignment intent for the resource access profile. Possible values are: apply, remove.
+// GetIntent gets the intent property value. The administrator intent for the assignment of the profile.
 func (m *DeviceManagementResourceAccessProfileAssignment) GetIntent()(*DeviceManagementResourceAccessProfileIntent) {
     if m == nil {
         return nil
@@ -111,7 +111,7 @@ func (m *DeviceManagementResourceAccessProfileAssignment) Serialize(writer i878a
     }
     return nil
 }
-// SetIntent sets the intent property value. The assignment intent for the resource access profile. Possible values are: apply, remove.
+// SetIntent sets the intent property value. The administrator intent for the assignment of the profile.
 func (m *DeviceManagementResourceAccessProfileAssignment) SetIntent(value *DeviceManagementResourceAccessProfileIntent)() {
     if m != nil {
         m.intent = value

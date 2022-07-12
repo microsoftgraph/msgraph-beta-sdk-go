@@ -11,15 +11,15 @@ type AndroidManagedAppProtection struct {
     allowedAndroidDeviceManufacturers *string
     // List of device models allowed, as a string, for the managed app to work.
     allowedAndroidDeviceModels []string
-    // Defines a managed app behavior, either block or wipe, if the specified device manufacturer is not allowed. Possible values are: block, wipe, warn.
+    // An admin initiated action to be applied on a managed app.
     appActionIfAndroidDeviceManufacturerNotAllowed *ManagedAppRemediationAction
-    // Defines a managed app behavior, either block or wipe, if the specified device model is not allowed.
+    // An admin initiated action to be applied on a managed app.
     appActionIfAndroidDeviceModelNotAllowed *ManagedAppRemediationAction
-    // Defines a managed app behavior, either warn or block, if the specified Android App Verification requirment fails. Possible values are: block, wipe, warn.
+    // An admin initiated action to be applied on a managed app.
     appActionIfAndroidSafetyNetAppsVerificationFailed *ManagedAppRemediationAction
-    // Defines a managed app behavior, either warn or block, if the specified Android SafetyNet Attestation requirment fails. Possible values are: block, wipe, warn.
+    // An admin initiated action to be applied on a managed app.
     appActionIfAndroidSafetyNetDeviceAttestationFailed *ManagedAppRemediationAction
-    // Defines a managed app behavior, either warn, block or wipe, if the screen lock is required on android device but is not set.
+    // An admin initiated action to be applied on a managed app.
     appActionIfDeviceLockNotSet *ManagedAppRemediationAction
     // If the device does not have a passcode of high complexity or higher, trigger the stored action.
     appActionIfDevicePasscodeComplexityLessThanHigh *ManagedAppRemediationAction
@@ -75,11 +75,11 @@ type AndroidManagedAppProtection struct {
     minimumWipePatchVersion *string
     // Require user to apply Class 3 Biometrics on their Android device.
     requireClass3Biometrics *bool
-    // Defines the Android SafetyNet Apps Verification requirement for a managed app to work. Possible values are: none, enabled.
+    // An admin enforced Android SafetyNet Device Attestation requirement on a managed app.
     requiredAndroidSafetyNetAppsVerificationType *AndroidManagedAppSafetyNetAppsVerificationType
-    // Defines the Android SafetyNet Device Attestation requirement for a managed app to work. Possible values are: none, basicIntegrity, basicIntegrityAndDeviceCertification.
+    // An admin enforced Android SafetyNet Device Attestation requirement on a managed app.
     requiredAndroidSafetyNetDeviceAttestationType *AndroidManagedAppSafetyNetDeviceAttestationType
-    // Defines the Android SafetyNet evaluation type requirement for a managed app to work.
+    // An admin enforced Android SafetyNet evaluation type requirement on a managed app.
     requiredAndroidSafetyNetEvaluationType *AndroidManagedAppSafetyNetEvaluationType
     // A PIN prompt will override biometric prompts if class 3 biometrics are updated on the device.
     requirePinAfterBiometricChange *bool
@@ -117,7 +117,7 @@ func (m *AndroidManagedAppProtection) GetAllowedAndroidDeviceModels()([]string) 
         return m.allowedAndroidDeviceModels
     }
 }
-// GetAppActionIfAndroidDeviceManufacturerNotAllowed gets the appActionIfAndroidDeviceManufacturerNotAllowed property value. Defines a managed app behavior, either block or wipe, if the specified device manufacturer is not allowed. Possible values are: block, wipe, warn.
+// GetAppActionIfAndroidDeviceManufacturerNotAllowed gets the appActionIfAndroidDeviceManufacturerNotAllowed property value. An admin initiated action to be applied on a managed app.
 func (m *AndroidManagedAppProtection) GetAppActionIfAndroidDeviceManufacturerNotAllowed()(*ManagedAppRemediationAction) {
     if m == nil {
         return nil
@@ -125,7 +125,7 @@ func (m *AndroidManagedAppProtection) GetAppActionIfAndroidDeviceManufacturerNot
         return m.appActionIfAndroidDeviceManufacturerNotAllowed
     }
 }
-// GetAppActionIfAndroidDeviceModelNotAllowed gets the appActionIfAndroidDeviceModelNotAllowed property value. Defines a managed app behavior, either block or wipe, if the specified device model is not allowed.
+// GetAppActionIfAndroidDeviceModelNotAllowed gets the appActionIfAndroidDeviceModelNotAllowed property value. An admin initiated action to be applied on a managed app.
 func (m *AndroidManagedAppProtection) GetAppActionIfAndroidDeviceModelNotAllowed()(*ManagedAppRemediationAction) {
     if m == nil {
         return nil
@@ -133,7 +133,7 @@ func (m *AndroidManagedAppProtection) GetAppActionIfAndroidDeviceModelNotAllowed
         return m.appActionIfAndroidDeviceModelNotAllowed
     }
 }
-// GetAppActionIfAndroidSafetyNetAppsVerificationFailed gets the appActionIfAndroidSafetyNetAppsVerificationFailed property value. Defines a managed app behavior, either warn or block, if the specified Android App Verification requirment fails. Possible values are: block, wipe, warn.
+// GetAppActionIfAndroidSafetyNetAppsVerificationFailed gets the appActionIfAndroidSafetyNetAppsVerificationFailed property value. An admin initiated action to be applied on a managed app.
 func (m *AndroidManagedAppProtection) GetAppActionIfAndroidSafetyNetAppsVerificationFailed()(*ManagedAppRemediationAction) {
     if m == nil {
         return nil
@@ -141,7 +141,7 @@ func (m *AndroidManagedAppProtection) GetAppActionIfAndroidSafetyNetAppsVerifica
         return m.appActionIfAndroidSafetyNetAppsVerificationFailed
     }
 }
-// GetAppActionIfAndroidSafetyNetDeviceAttestationFailed gets the appActionIfAndroidSafetyNetDeviceAttestationFailed property value. Defines a managed app behavior, either warn or block, if the specified Android SafetyNet Attestation requirment fails. Possible values are: block, wipe, warn.
+// GetAppActionIfAndroidSafetyNetDeviceAttestationFailed gets the appActionIfAndroidSafetyNetDeviceAttestationFailed property value. An admin initiated action to be applied on a managed app.
 func (m *AndroidManagedAppProtection) GetAppActionIfAndroidSafetyNetDeviceAttestationFailed()(*ManagedAppRemediationAction) {
     if m == nil {
         return nil
@@ -149,7 +149,7 @@ func (m *AndroidManagedAppProtection) GetAppActionIfAndroidSafetyNetDeviceAttest
         return m.appActionIfAndroidSafetyNetDeviceAttestationFailed
     }
 }
-// GetAppActionIfDeviceLockNotSet gets the appActionIfDeviceLockNotSet property value. Defines a managed app behavior, either warn, block or wipe, if the screen lock is required on android device but is not set.
+// GetAppActionIfDeviceLockNotSet gets the appActionIfDeviceLockNotSet property value. An admin initiated action to be applied on a managed app.
 func (m *AndroidManagedAppProtection) GetAppActionIfDeviceLockNotSet()(*ManagedAppRemediationAction) {
     if m == nil {
         return nil
@@ -804,7 +804,7 @@ func (m *AndroidManagedAppProtection) GetRequireClass3Biometrics()(*bool) {
         return m.requireClass3Biometrics
     }
 }
-// GetRequiredAndroidSafetyNetAppsVerificationType gets the requiredAndroidSafetyNetAppsVerificationType property value. Defines the Android SafetyNet Apps Verification requirement for a managed app to work. Possible values are: none, enabled.
+// GetRequiredAndroidSafetyNetAppsVerificationType gets the requiredAndroidSafetyNetAppsVerificationType property value. An admin enforced Android SafetyNet Device Attestation requirement on a managed app.
 func (m *AndroidManagedAppProtection) GetRequiredAndroidSafetyNetAppsVerificationType()(*AndroidManagedAppSafetyNetAppsVerificationType) {
     if m == nil {
         return nil
@@ -812,7 +812,7 @@ func (m *AndroidManagedAppProtection) GetRequiredAndroidSafetyNetAppsVerificatio
         return m.requiredAndroidSafetyNetAppsVerificationType
     }
 }
-// GetRequiredAndroidSafetyNetDeviceAttestationType gets the requiredAndroidSafetyNetDeviceAttestationType property value. Defines the Android SafetyNet Device Attestation requirement for a managed app to work. Possible values are: none, basicIntegrity, basicIntegrityAndDeviceCertification.
+// GetRequiredAndroidSafetyNetDeviceAttestationType gets the requiredAndroidSafetyNetDeviceAttestationType property value. An admin enforced Android SafetyNet Device Attestation requirement on a managed app.
 func (m *AndroidManagedAppProtection) GetRequiredAndroidSafetyNetDeviceAttestationType()(*AndroidManagedAppSafetyNetDeviceAttestationType) {
     if m == nil {
         return nil
@@ -820,7 +820,7 @@ func (m *AndroidManagedAppProtection) GetRequiredAndroidSafetyNetDeviceAttestati
         return m.requiredAndroidSafetyNetDeviceAttestationType
     }
 }
-// GetRequiredAndroidSafetyNetEvaluationType gets the requiredAndroidSafetyNetEvaluationType property value. Defines the Android SafetyNet evaluation type requirement for a managed app to work.
+// GetRequiredAndroidSafetyNetEvaluationType gets the requiredAndroidSafetyNetEvaluationType property value. An admin enforced Android SafetyNet evaluation type requirement on a managed app.
 func (m *AndroidManagedAppProtection) GetRequiredAndroidSafetyNetEvaluationType()(*AndroidManagedAppSafetyNetEvaluationType) {
     if m == nil {
         return nil
@@ -1149,31 +1149,31 @@ func (m *AndroidManagedAppProtection) SetAllowedAndroidDeviceModels(value []stri
         m.allowedAndroidDeviceModels = value
     }
 }
-// SetAppActionIfAndroidDeviceManufacturerNotAllowed sets the appActionIfAndroidDeviceManufacturerNotAllowed property value. Defines a managed app behavior, either block or wipe, if the specified device manufacturer is not allowed. Possible values are: block, wipe, warn.
+// SetAppActionIfAndroidDeviceManufacturerNotAllowed sets the appActionIfAndroidDeviceManufacturerNotAllowed property value. An admin initiated action to be applied on a managed app.
 func (m *AndroidManagedAppProtection) SetAppActionIfAndroidDeviceManufacturerNotAllowed(value *ManagedAppRemediationAction)() {
     if m != nil {
         m.appActionIfAndroidDeviceManufacturerNotAllowed = value
     }
 }
-// SetAppActionIfAndroidDeviceModelNotAllowed sets the appActionIfAndroidDeviceModelNotAllowed property value. Defines a managed app behavior, either block or wipe, if the specified device model is not allowed.
+// SetAppActionIfAndroidDeviceModelNotAllowed sets the appActionIfAndroidDeviceModelNotAllowed property value. An admin initiated action to be applied on a managed app.
 func (m *AndroidManagedAppProtection) SetAppActionIfAndroidDeviceModelNotAllowed(value *ManagedAppRemediationAction)() {
     if m != nil {
         m.appActionIfAndroidDeviceModelNotAllowed = value
     }
 }
-// SetAppActionIfAndroidSafetyNetAppsVerificationFailed sets the appActionIfAndroidSafetyNetAppsVerificationFailed property value. Defines a managed app behavior, either warn or block, if the specified Android App Verification requirment fails. Possible values are: block, wipe, warn.
+// SetAppActionIfAndroidSafetyNetAppsVerificationFailed sets the appActionIfAndroidSafetyNetAppsVerificationFailed property value. An admin initiated action to be applied on a managed app.
 func (m *AndroidManagedAppProtection) SetAppActionIfAndroidSafetyNetAppsVerificationFailed(value *ManagedAppRemediationAction)() {
     if m != nil {
         m.appActionIfAndroidSafetyNetAppsVerificationFailed = value
     }
 }
-// SetAppActionIfAndroidSafetyNetDeviceAttestationFailed sets the appActionIfAndroidSafetyNetDeviceAttestationFailed property value. Defines a managed app behavior, either warn or block, if the specified Android SafetyNet Attestation requirment fails. Possible values are: block, wipe, warn.
+// SetAppActionIfAndroidSafetyNetDeviceAttestationFailed sets the appActionIfAndroidSafetyNetDeviceAttestationFailed property value. An admin initiated action to be applied on a managed app.
 func (m *AndroidManagedAppProtection) SetAppActionIfAndroidSafetyNetDeviceAttestationFailed(value *ManagedAppRemediationAction)() {
     if m != nil {
         m.appActionIfAndroidSafetyNetDeviceAttestationFailed = value
     }
 }
-// SetAppActionIfDeviceLockNotSet sets the appActionIfDeviceLockNotSet property value. Defines a managed app behavior, either warn, block or wipe, if the screen lock is required on android device but is not set.
+// SetAppActionIfDeviceLockNotSet sets the appActionIfDeviceLockNotSet property value. An admin initiated action to be applied on a managed app.
 func (m *AndroidManagedAppProtection) SetAppActionIfDeviceLockNotSet(value *ManagedAppRemediationAction)() {
     if m != nil {
         m.appActionIfDeviceLockNotSet = value
@@ -1341,19 +1341,19 @@ func (m *AndroidManagedAppProtection) SetRequireClass3Biometrics(value *bool)() 
         m.requireClass3Biometrics = value
     }
 }
-// SetRequiredAndroidSafetyNetAppsVerificationType sets the requiredAndroidSafetyNetAppsVerificationType property value. Defines the Android SafetyNet Apps Verification requirement for a managed app to work. Possible values are: none, enabled.
+// SetRequiredAndroidSafetyNetAppsVerificationType sets the requiredAndroidSafetyNetAppsVerificationType property value. An admin enforced Android SafetyNet Device Attestation requirement on a managed app.
 func (m *AndroidManagedAppProtection) SetRequiredAndroidSafetyNetAppsVerificationType(value *AndroidManagedAppSafetyNetAppsVerificationType)() {
     if m != nil {
         m.requiredAndroidSafetyNetAppsVerificationType = value
     }
 }
-// SetRequiredAndroidSafetyNetDeviceAttestationType sets the requiredAndroidSafetyNetDeviceAttestationType property value. Defines the Android SafetyNet Device Attestation requirement for a managed app to work. Possible values are: none, basicIntegrity, basicIntegrityAndDeviceCertification.
+// SetRequiredAndroidSafetyNetDeviceAttestationType sets the requiredAndroidSafetyNetDeviceAttestationType property value. An admin enforced Android SafetyNet Device Attestation requirement on a managed app.
 func (m *AndroidManagedAppProtection) SetRequiredAndroidSafetyNetDeviceAttestationType(value *AndroidManagedAppSafetyNetDeviceAttestationType)() {
     if m != nil {
         m.requiredAndroidSafetyNetDeviceAttestationType = value
     }
 }
-// SetRequiredAndroidSafetyNetEvaluationType sets the requiredAndroidSafetyNetEvaluationType property value. Defines the Android SafetyNet evaluation type requirement for a managed app to work.
+// SetRequiredAndroidSafetyNetEvaluationType sets the requiredAndroidSafetyNetEvaluationType property value. An admin enforced Android SafetyNet evaluation type requirement on a managed app.
 func (m *AndroidManagedAppProtection) SetRequiredAndroidSafetyNetEvaluationType(value *AndroidManagedAppSafetyNetEvaluationType)() {
     if m != nil {
         m.requiredAndroidSafetyNetEvaluationType = value

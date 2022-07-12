@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ManagedAllDeviceCertificateState provides operations to manage the deviceManagement singleton.
+// ManagedAllDeviceCertificateState provides operations to manage the collection of activityStatistics entities.
 type ManagedAllDeviceCertificateState struct {
     Entity
     // Certificate expiry date
@@ -18,7 +18,7 @@ type ManagedAllDeviceCertificateState struct {
     certificateIssuerName *string
     // Key Usage
     certificateKeyUsages *int32
-    // Revoke status. Possible values are: none, pending, issued, failed, revoked.
+    // Certificate Revocation Status.
     certificateRevokeStatus *CertificateRevocationStatus
     // The time the revoke status was last changed
     certificateRevokeStatusLastChangeDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
@@ -84,7 +84,7 @@ func (m *ManagedAllDeviceCertificateState) GetCertificateKeyUsages()(*int32) {
         return m.certificateKeyUsages
     }
 }
-// GetCertificateRevokeStatus gets the certificateRevokeStatus property value. Revoke status. Possible values are: none, pending, issued, failed, revoked.
+// GetCertificateRevokeStatus gets the certificateRevokeStatus property value. Certificate Revocation Status.
 func (m *ManagedAllDeviceCertificateState) GetCertificateRevokeStatus()(*CertificateRevocationStatus) {
     if m == nil {
         return nil
@@ -376,7 +376,7 @@ func (m *ManagedAllDeviceCertificateState) SetCertificateKeyUsages(value *int32)
         m.certificateKeyUsages = value
     }
 }
-// SetCertificateRevokeStatus sets the certificateRevokeStatus property value. Revoke status. Possible values are: none, pending, issued, failed, revoked.
+// SetCertificateRevokeStatus sets the certificateRevokeStatus property value. Certificate Revocation Status.
 func (m *ManagedAllDeviceCertificateState) SetCertificateRevokeStatus(value *CertificateRevocationStatus)() {
     if m != nil {
         m.certificateRevokeStatus = value

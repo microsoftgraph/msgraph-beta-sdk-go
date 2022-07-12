@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// VirtualEndpoint provides operations to manage the deviceManagement singleton.
+// VirtualEndpoint 
 type VirtualEndpoint struct {
     Entity
     // Cloud PC audit event.
@@ -13,6 +13,8 @@ type VirtualEndpoint struct {
     cloudPCs []CloudPCable
     // The image resource on Cloud PC.
     deviceImages []CloudPcDeviceImageable
+    // The externalPartnerSettings property
+    externalPartnerSettings []CloudPcExternalPartnerSettingable
     // The gallery image resource on Cloud PC.
     galleryImages []CloudPcGalleryImageable
     // A defined collection of Azure resource information that can be used to establish on-premises network connectivity for Cloud PCs.
@@ -30,7 +32,7 @@ type VirtualEndpoint struct {
     // Cloud PC user settings.
     userSettings []CloudPcUserSettingable
 }
-// NewVirtualEndpoint instantiates a new virtualEndpoint and sets the default values.
+// NewVirtualEndpoint instantiates a new VirtualEndpoint and sets the default values.
 func NewVirtualEndpoint()(*VirtualEndpoint) {
     m := &VirtualEndpoint{
         Entity: *NewEntity(),
@@ -63,6 +65,14 @@ func (m *VirtualEndpoint) GetDeviceImages()([]CloudPcDeviceImageable) {
         return nil
     } else {
         return m.deviceImages
+    }
+}
+// GetExternalPartnerSettings gets the externalPartnerSettings property value. The externalPartnerSettings property
+func (m *VirtualEndpoint) GetExternalPartnerSettings()([]CloudPcExternalPartnerSettingable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.externalPartnerSettings
     }
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -107,6 +117,20 @@ func (m *VirtualEndpoint) GetFieldDeserializers()(map[string]func(i878a80d2330e8
                 res[i] = v.(CloudPcDeviceImageable)
             }
             m.SetDeviceImages(res)
+        }
+        return nil
+    }
+    res["externalPartnerSettings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateCloudPcExternalPartnerSettingFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]CloudPcExternalPartnerSettingable, len(val))
+            for i, v := range val {
+                res[i] = v.(CloudPcExternalPartnerSettingable)
+            }
+            m.SetExternalPartnerSettings(res)
         }
         return nil
     }
@@ -320,6 +344,16 @@ func (m *VirtualEndpoint) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
             return err
         }
     }
+    if m.GetExternalPartnerSettings() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetExternalPartnerSettings()))
+        for i, v := range m.GetExternalPartnerSettings() {
+            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+        }
+        err = writer.WriteCollectionOfObjectValues("externalPartnerSettings", cast)
+        if err != nil {
+            return err
+        }
+    }
     if m.GetGalleryImages() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetGalleryImages()))
         for i, v := range m.GetGalleryImages() {
@@ -414,6 +448,12 @@ func (m *VirtualEndpoint) SetCloudPCs(value []CloudPCable)() {
 func (m *VirtualEndpoint) SetDeviceImages(value []CloudPcDeviceImageable)() {
     if m != nil {
         m.deviceImages = value
+    }
+}
+// SetExternalPartnerSettings sets the externalPartnerSettings property value. The externalPartnerSettings property
+func (m *VirtualEndpoint) SetExternalPartnerSettings(value []CloudPcExternalPartnerSettingable)() {
+    if m != nil {
+        m.externalPartnerSettings = value
     }
 }
 // SetGalleryImages sets the galleryImages property value. The gallery image resource on Cloud PC.

@@ -11,13 +11,13 @@ type MacOSWiredNetworkConfiguration struct {
     authenticationMethod *WiFiAuthenticationMethod
     // EAP-FAST Configuration Option when EAP-FAST is the selected EAP Type. Possible values are: noProtectedAccessCredential, useProtectedAccessCredential, useProtectedAccessCredentialAndProvision, useProtectedAccessCredentialAndProvisionAnonymously.
     eapFastConfiguration *EapFastConfiguration
-    // Extensible Authentication Protocol (EAP). Indicates the type of EAP protocol set on the wired network. Possible values are: eapTls, leap, eapSim, eapTtls, peap, eapFast, teap.
+    // Extensible Authentication Protocol (EAP) configuration types.
     eapType *EapType
     // Enable identity privacy (Outer Identity) when EAP Type is configured to EAP-TTLS, EAP-FAST or PEAP. This property masks usernames with the text you enter. For example, if you use 'anonymous', each user that authenticates with this wired network using their real username is displayed as 'anonymous'.
     enableOuterIdentityPrivacy *string
     // Identity Certificate for client authentication when EAP Type is configured to EAP-TLS, EAP-TTLS (with Certificate Authentication), or PEAP (with Certificate Authentication).
     identityCertificateForClientAuthentication MacOSCertificateProfileBaseable
-    // Network interface. Possible values are: anyEthernet, firstActiveEthernet, secondActiveEthernet, thirdActiveEthernet, firstEthernet, secondEthernet, thirdEthernet.
+    // Apple network interface type.
     networkInterface *WiredNetworkInterface
     // Network Name
     networkName *string
@@ -55,7 +55,7 @@ func (m *MacOSWiredNetworkConfiguration) GetEapFastConfiguration()(*EapFastConfi
         return m.eapFastConfiguration
     }
 }
-// GetEapType gets the eapType property value. Extensible Authentication Protocol (EAP). Indicates the type of EAP protocol set on the wired network. Possible values are: eapTls, leap, eapSim, eapTtls, peap, eapFast, teap.
+// GetEapType gets the eapType property value. Extensible Authentication Protocol (EAP) configuration types.
 func (m *MacOSWiredNetworkConfiguration) GetEapType()(*EapType) {
     if m == nil {
         return nil
@@ -188,7 +188,7 @@ func (m *MacOSWiredNetworkConfiguration) GetIdentityCertificateForClientAuthenti
         return m.identityCertificateForClientAuthentication
     }
 }
-// GetNetworkInterface gets the networkInterface property value. Network interface. Possible values are: anyEthernet, firstActiveEthernet, secondActiveEthernet, thirdActiveEthernet, firstEthernet, secondEthernet, thirdEthernet.
+// GetNetworkInterface gets the networkInterface property value. Apple network interface type.
 func (m *MacOSWiredNetworkConfiguration) GetNetworkInterface()(*WiredNetworkInterface) {
     if m == nil {
         return nil
@@ -313,7 +313,7 @@ func (m *MacOSWiredNetworkConfiguration) SetEapFastConfiguration(value *EapFastC
         m.eapFastConfiguration = value
     }
 }
-// SetEapType sets the eapType property value. Extensible Authentication Protocol (EAP). Indicates the type of EAP protocol set on the wired network. Possible values are: eapTls, leap, eapSim, eapTtls, peap, eapFast, teap.
+// SetEapType sets the eapType property value. Extensible Authentication Protocol (EAP) configuration types.
 func (m *MacOSWiredNetworkConfiguration) SetEapType(value *EapType)() {
     if m != nil {
         m.eapType = value
@@ -331,7 +331,7 @@ func (m *MacOSWiredNetworkConfiguration) SetIdentityCertificateForClientAuthenti
         m.identityCertificateForClientAuthentication = value
     }
 }
-// SetNetworkInterface sets the networkInterface property value. Network interface. Possible values are: anyEthernet, firstActiveEthernet, secondActiveEthernet, thirdActiveEthernet, firstEthernet, secondEthernet, thirdEthernet.
+// SetNetworkInterface sets the networkInterface property value. Apple network interface type.
 func (m *MacOSWiredNetworkConfiguration) SetNetworkInterface(value *WiredNetworkInterface)() {
     if m != nil {
         m.networkInterface = value

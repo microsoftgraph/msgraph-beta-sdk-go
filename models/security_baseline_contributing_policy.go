@@ -12,7 +12,7 @@ type SecurityBaselineContributingPolicy struct {
     displayName *string
     // Unique identifier of the policy
     sourceId *string
-    // Authoring source of the policy. Possible values are: deviceConfiguration, deviceIntent.
+    // Authoring source of a policy
     sourceType *SecurityBaselinePolicySourceType
 }
 // NewSecurityBaselineContributingPolicy instantiates a new securityBaselineContributingPolicy and sets the default values.
@@ -85,7 +85,7 @@ func (m *SecurityBaselineContributingPolicy) GetSourceId()(*string) {
         return m.sourceId
     }
 }
-// GetSourceType gets the sourceType property value. Authoring source of the policy. Possible values are: deviceConfiguration, deviceIntent.
+// GetSourceType gets the sourceType property value. Authoring source of a policy
 func (m *SecurityBaselineContributingPolicy) GetSourceType()(*SecurityBaselinePolicySourceType) {
     if m == nil {
         return nil
@@ -140,7 +140,7 @@ func (m *SecurityBaselineContributingPolicy) SetSourceId(value *string)() {
         m.sourceId = value
     }
 }
-// SetSourceType sets the sourceType property value. Authoring source of the policy. Possible values are: deviceConfiguration, deviceIntent.
+// SetSourceType sets the sourceType property value. Authoring source of a policy
 func (m *SecurityBaselineContributingPolicy) SetSourceType(value *SecurityBaselinePolicySourceType)() {
     if m != nil {
         m.sourceType = value

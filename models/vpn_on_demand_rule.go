@@ -6,13 +6,13 @@ import (
 
 // VpnOnDemandRule vPN On-Demand Rule definition.
 type VpnOnDemandRule struct {
-    // Action. Possible values are: connect, evaluateConnection, ignore, disconnect.
+    // VPN On-Demand Rule Connection Action.
     action *VpnOnDemandRuleConnectionAction
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
     // DNS Search Domains.
     dnsSearchDomains []string
-    // Domain Action (Only applicable when Action is evaluate connection). Possible values are: connectIfNeeded, neverConnect.
+    // VPN On-Demand Rule Connection Domain Action.
     domainAction *VpnOnDemandRuleConnectionDomainAction
     // Domains (Only applicable when Action is evaluate connection).
     domains []string
@@ -34,7 +34,7 @@ func NewVpnOnDemandRule()(*VpnOnDemandRule) {
 func CreateVpnOnDemandRuleFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewVpnOnDemandRule(), nil
 }
-// GetAction gets the action property value. Action. Possible values are: connect, evaluateConnection, ignore, disconnect.
+// GetAction gets the action property value. VPN On-Demand Rule Connection Action.
 func (m *VpnOnDemandRule) GetAction()(*VpnOnDemandRuleConnectionAction) {
     if m == nil {
         return nil
@@ -58,7 +58,7 @@ func (m *VpnOnDemandRule) GetDnsSearchDomains()([]string) {
         return m.dnsSearchDomains
     }
 }
-// GetDomainAction gets the domainAction property value. Domain Action (Only applicable when Action is evaluate connection). Possible values are: connectIfNeeded, neverConnect.
+// GetDomainAction gets the domainAction property value. VPN On-Demand Rule Connection Domain Action.
 func (m *VpnOnDemandRule) GetDomainAction()(*VpnOnDemandRuleConnectionDomainAction) {
     if m == nil {
         return nil
@@ -239,7 +239,7 @@ func (m *VpnOnDemandRule) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
     }
     return nil
 }
-// SetAction sets the action property value. Action. Possible values are: connect, evaluateConnection, ignore, disconnect.
+// SetAction sets the action property value. VPN On-Demand Rule Connection Action.
 func (m *VpnOnDemandRule) SetAction(value *VpnOnDemandRuleConnectionAction)() {
     if m != nil {
         m.action = value
@@ -257,7 +257,7 @@ func (m *VpnOnDemandRule) SetDnsSearchDomains(value []string)() {
         m.dnsSearchDomains = value
     }
 }
-// SetDomainAction sets the domainAction property value. Domain Action (Only applicable when Action is evaluate connection). Possible values are: connectIfNeeded, neverConnect.
+// SetDomainAction sets the domainAction property value. VPN On-Demand Rule Connection Domain Action.
 func (m *VpnOnDemandRule) SetDomainAction(value *VpnOnDemandRuleConnectionDomainAction)() {
     if m != nil {
         m.domainAction = value

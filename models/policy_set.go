@@ -16,7 +16,7 @@ type PolicySet struct {
     description *string
     // DisplayName of the PolicySet.
     displayName *string
-    // Error code if any occured. Possible values are: noError, unauthorized, notFound, deleted.
+    // The errorCode property
     errorCode *ErrorCode
     // Tags of the guided deployment
     guidedDeploymentTags []string
@@ -26,7 +26,7 @@ type PolicySet struct {
     lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // RoleScopeTags of the PolicySet
     roleScopeTags []string
-    // Validation/assignment status of the PolicySet. Possible values are: unknown, validating, partialSuccess, success, error, notAssigned.
+    // The enum to specify the status of PolicySet.
     status *PolicySetStatus
 }
 // NewPolicySet instantiates a new policySet and sets the default values.
@@ -72,7 +72,7 @@ func (m *PolicySet) GetDisplayName()(*string) {
         return m.displayName
     }
 }
-// GetErrorCode gets the errorCode property value. Error code if any occured. Possible values are: noError, unauthorized, notFound, deleted.
+// GetErrorCode gets the errorCode property value. The errorCode property
 func (m *PolicySet) GetErrorCode()(*ErrorCode) {
     if m == nil {
         return nil
@@ -233,7 +233,7 @@ func (m *PolicySet) GetRoleScopeTags()([]string) {
         return m.roleScopeTags
     }
 }
-// GetStatus gets the status property value. Validation/assignment status of the PolicySet. Possible values are: unknown, validating, partialSuccess, success, error, notAssigned.
+// GetStatus gets the status property value. The enum to specify the status of PolicySet.
 func (m *PolicySet) GetStatus()(*PolicySetStatus) {
     if m == nil {
         return nil
@@ -343,7 +343,7 @@ func (m *PolicySet) SetDisplayName(value *string)() {
         m.displayName = value
     }
 }
-// SetErrorCode sets the errorCode property value. Error code if any occured. Possible values are: noError, unauthorized, notFound, deleted.
+// SetErrorCode sets the errorCode property value. The errorCode property
 func (m *PolicySet) SetErrorCode(value *ErrorCode)() {
     if m != nil {
         m.errorCode = value
@@ -373,7 +373,7 @@ func (m *PolicySet) SetRoleScopeTags(value []string)() {
         m.roleScopeTags = value
     }
 }
-// SetStatus sets the status property value. Validation/assignment status of the PolicySet. Possible values are: unknown, validating, partialSuccess, success, error, notAssigned.
+// SetStatus sets the status property value. The enum to specify the status of PolicySet.
 func (m *PolicySet) SetStatus(value *PolicySetStatus)() {
     if m != nil {
         m.status = value

@@ -29,9 +29,9 @@ type Windows81GeneralConfiguration struct {
     browserBlockSingleWordEntryOnIntranetSites *bool
     // The enterprise mode site list location. Could be a local file, local network or http location.
     browserEnterpriseModeSiteListLocation *string
-    // The internet security level. Possible values are: userDefined, medium, mediumHigh, high.
+    // Possible values for internet site security level.
     browserInternetSecurityLevel *InternetSiteSecurityLevel
-    // The Intranet security level. Possible values are: userDefined, low, mediumLow, medium, mediumHigh, high.
+    // Possible values for site security level.
     browserIntranetSecurityLevel *SiteSecurityLevel
     // The logging report location.
     browserLoggingReportLocation *string
@@ -43,13 +43,13 @@ type Windows81GeneralConfiguration struct {
     browserRequireHighSecurityForRestrictedSites *bool
     // Indicates whether or not to require the user to use the smart screen filter.
     browserRequireSmartScreen *bool
-    // The trusted sites security level. Possible values are: userDefined, low, mediumLow, medium, mediumHigh, high.
+    // Possible values for site security level.
     browserTrustedSitesSecurityLevel *SiteSecurityLevel
     // Indicates whether or not to block data roaming.
     cellularBlockDataRoaming *bool
     // Indicates whether or not to block diagnostic data submission.
     diagnosticsBlockDataSubmission *bool
-    // The minimum update classification to install automatically. Possible values are: userDefined, recommendedAndImportant, important, none.
+    // Possible values for automatic update classification.
     minimumAutoInstallClassification *UpdateClassification
     // Indicates whether or not to Block the user from using a pictures password and pin.
     passwordBlockPicturePasswordAndPin *bool
@@ -63,17 +63,17 @@ type Windows81GeneralConfiguration struct {
     passwordMinutesOfInactivityBeforeScreenTimeout *int32
     // The number of previous passwords to prevent re-use of. Valid values 0 to 24
     passwordPreviousPasswordBlockCount *int32
-    // The required password type. Possible values are: deviceDefault, alphanumeric, numeric.
+    // Possible values of required passwords.
     passwordRequiredType *RequiredPasswordType
     // The number of sign in failures before factory reset.
     passwordSignInFailureCountBeforeFactoryReset *int32
     // Indicates whether or not to require encryption on a mobile device.
     storageRequireDeviceEncryption *bool
-    // The minimum update classification to install automatically. Possible values are: userDefined, recommendedAndImportant, important, none.
+    // Possible values for automatic update classification.
     updatesMinimumAutoInstallClassification *UpdateClassification
     // Indicates whether or not to require automatic updates.
     updatesRequireAutomaticUpdates *bool
-    // The user account control settings. Possible values are: userDefined, alwaysNotify, notifyOnAppChanges, notifyOnAppChangesWithoutDimming, neverNotify.
+    // Possible values for Windows user account control settings.
     userAccountControlSettings *WindowsUserAccountControlSettings
     // The work folders url.
     workFoldersUrl *string
@@ -177,7 +177,7 @@ func (m *Windows81GeneralConfiguration) GetBrowserEnterpriseModeSiteListLocation
         return m.browserEnterpriseModeSiteListLocation
     }
 }
-// GetBrowserInternetSecurityLevel gets the browserInternetSecurityLevel property value. The internet security level. Possible values are: userDefined, medium, mediumHigh, high.
+// GetBrowserInternetSecurityLevel gets the browserInternetSecurityLevel property value. Possible values for internet site security level.
 func (m *Windows81GeneralConfiguration) GetBrowserInternetSecurityLevel()(*InternetSiteSecurityLevel) {
     if m == nil {
         return nil
@@ -185,7 +185,7 @@ func (m *Windows81GeneralConfiguration) GetBrowserInternetSecurityLevel()(*Inter
         return m.browserInternetSecurityLevel
     }
 }
-// GetBrowserIntranetSecurityLevel gets the browserIntranetSecurityLevel property value. The Intranet security level. Possible values are: userDefined, low, mediumLow, medium, mediumHigh, high.
+// GetBrowserIntranetSecurityLevel gets the browserIntranetSecurityLevel property value. Possible values for site security level.
 func (m *Windows81GeneralConfiguration) GetBrowserIntranetSecurityLevel()(*SiteSecurityLevel) {
     if m == nil {
         return nil
@@ -233,7 +233,7 @@ func (m *Windows81GeneralConfiguration) GetBrowserRequireSmartScreen()(*bool) {
         return m.browserRequireSmartScreen
     }
 }
-// GetBrowserTrustedSitesSecurityLevel gets the browserTrustedSitesSecurityLevel property value. The trusted sites security level. Possible values are: userDefined, low, mediumLow, medium, mediumHigh, high.
+// GetBrowserTrustedSitesSecurityLevel gets the browserTrustedSitesSecurityLevel property value. Possible values for site security level.
 func (m *Windows81GeneralConfiguration) GetBrowserTrustedSitesSecurityLevel()(*SiteSecurityLevel) {
     if m == nil {
         return nil
@@ -612,7 +612,7 @@ func (m *Windows81GeneralConfiguration) GetFieldDeserializers()(map[string]func(
     }
     return res
 }
-// GetMinimumAutoInstallClassification gets the minimumAutoInstallClassification property value. The minimum update classification to install automatically. Possible values are: userDefined, recommendedAndImportant, important, none.
+// GetMinimumAutoInstallClassification gets the minimumAutoInstallClassification property value. Possible values for automatic update classification.
 func (m *Windows81GeneralConfiguration) GetMinimumAutoInstallClassification()(*UpdateClassification) {
     if m == nil {
         return nil
@@ -668,7 +668,7 @@ func (m *Windows81GeneralConfiguration) GetPasswordPreviousPasswordBlockCount()(
         return m.passwordPreviousPasswordBlockCount
     }
 }
-// GetPasswordRequiredType gets the passwordRequiredType property value. The required password type. Possible values are: deviceDefault, alphanumeric, numeric.
+// GetPasswordRequiredType gets the passwordRequiredType property value. Possible values of required passwords.
 func (m *Windows81GeneralConfiguration) GetPasswordRequiredType()(*RequiredPasswordType) {
     if m == nil {
         return nil
@@ -692,7 +692,7 @@ func (m *Windows81GeneralConfiguration) GetStorageRequireDeviceEncryption()(*boo
         return m.storageRequireDeviceEncryption
     }
 }
-// GetUpdatesMinimumAutoInstallClassification gets the updatesMinimumAutoInstallClassification property value. The minimum update classification to install automatically. Possible values are: userDefined, recommendedAndImportant, important, none.
+// GetUpdatesMinimumAutoInstallClassification gets the updatesMinimumAutoInstallClassification property value. Possible values for automatic update classification.
 func (m *Windows81GeneralConfiguration) GetUpdatesMinimumAutoInstallClassification()(*UpdateClassification) {
     if m == nil {
         return nil
@@ -708,7 +708,7 @@ func (m *Windows81GeneralConfiguration) GetUpdatesRequireAutomaticUpdates()(*boo
         return m.updatesRequireAutomaticUpdates
     }
 }
-// GetUserAccountControlSettings gets the userAccountControlSettings property value. The user account control settings. Possible values are: userDefined, alwaysNotify, notifyOnAppChanges, notifyOnAppChangesWithoutDimming, neverNotify.
+// GetUserAccountControlSettings gets the userAccountControlSettings property value. Possible values for Windows user account control settings.
 func (m *Windows81GeneralConfiguration) GetUserAccountControlSettings()(*WindowsUserAccountControlSettings) {
     if m == nil {
         return nil
@@ -1015,13 +1015,13 @@ func (m *Windows81GeneralConfiguration) SetBrowserEnterpriseModeSiteListLocation
         m.browserEnterpriseModeSiteListLocation = value
     }
 }
-// SetBrowserInternetSecurityLevel sets the browserInternetSecurityLevel property value. The internet security level. Possible values are: userDefined, medium, mediumHigh, high.
+// SetBrowserInternetSecurityLevel sets the browserInternetSecurityLevel property value. Possible values for internet site security level.
 func (m *Windows81GeneralConfiguration) SetBrowserInternetSecurityLevel(value *InternetSiteSecurityLevel)() {
     if m != nil {
         m.browserInternetSecurityLevel = value
     }
 }
-// SetBrowserIntranetSecurityLevel sets the browserIntranetSecurityLevel property value. The Intranet security level. Possible values are: userDefined, low, mediumLow, medium, mediumHigh, high.
+// SetBrowserIntranetSecurityLevel sets the browserIntranetSecurityLevel property value. Possible values for site security level.
 func (m *Windows81GeneralConfiguration) SetBrowserIntranetSecurityLevel(value *SiteSecurityLevel)() {
     if m != nil {
         m.browserIntranetSecurityLevel = value
@@ -1057,7 +1057,7 @@ func (m *Windows81GeneralConfiguration) SetBrowserRequireSmartScreen(value *bool
         m.browserRequireSmartScreen = value
     }
 }
-// SetBrowserTrustedSitesSecurityLevel sets the browserTrustedSitesSecurityLevel property value. The trusted sites security level. Possible values are: userDefined, low, mediumLow, medium, mediumHigh, high.
+// SetBrowserTrustedSitesSecurityLevel sets the browserTrustedSitesSecurityLevel property value. Possible values for site security level.
 func (m *Windows81GeneralConfiguration) SetBrowserTrustedSitesSecurityLevel(value *SiteSecurityLevel)() {
     if m != nil {
         m.browserTrustedSitesSecurityLevel = value
@@ -1075,7 +1075,7 @@ func (m *Windows81GeneralConfiguration) SetDiagnosticsBlockDataSubmission(value 
         m.diagnosticsBlockDataSubmission = value
     }
 }
-// SetMinimumAutoInstallClassification sets the minimumAutoInstallClassification property value. The minimum update classification to install automatically. Possible values are: userDefined, recommendedAndImportant, important, none.
+// SetMinimumAutoInstallClassification sets the minimumAutoInstallClassification property value. Possible values for automatic update classification.
 func (m *Windows81GeneralConfiguration) SetMinimumAutoInstallClassification(value *UpdateClassification)() {
     if m != nil {
         m.minimumAutoInstallClassification = value
@@ -1117,7 +1117,7 @@ func (m *Windows81GeneralConfiguration) SetPasswordPreviousPasswordBlockCount(va
         m.passwordPreviousPasswordBlockCount = value
     }
 }
-// SetPasswordRequiredType sets the passwordRequiredType property value. The required password type. Possible values are: deviceDefault, alphanumeric, numeric.
+// SetPasswordRequiredType sets the passwordRequiredType property value. Possible values of required passwords.
 func (m *Windows81GeneralConfiguration) SetPasswordRequiredType(value *RequiredPasswordType)() {
     if m != nil {
         m.passwordRequiredType = value
@@ -1135,7 +1135,7 @@ func (m *Windows81GeneralConfiguration) SetStorageRequireDeviceEncryption(value 
         m.storageRequireDeviceEncryption = value
     }
 }
-// SetUpdatesMinimumAutoInstallClassification sets the updatesMinimumAutoInstallClassification property value. The minimum update classification to install automatically. Possible values are: userDefined, recommendedAndImportant, important, none.
+// SetUpdatesMinimumAutoInstallClassification sets the updatesMinimumAutoInstallClassification property value. Possible values for automatic update classification.
 func (m *Windows81GeneralConfiguration) SetUpdatesMinimumAutoInstallClassification(value *UpdateClassification)() {
     if m != nil {
         m.updatesMinimumAutoInstallClassification = value
@@ -1147,7 +1147,7 @@ func (m *Windows81GeneralConfiguration) SetUpdatesRequireAutomaticUpdates(value 
         m.updatesRequireAutomaticUpdates = value
     }
 }
-// SetUserAccountControlSettings sets the userAccountControlSettings property value. The user account control settings. Possible values are: userDefined, alwaysNotify, notifyOnAppChanges, notifyOnAppChangesWithoutDimming, neverNotify.
+// SetUserAccountControlSettings sets the userAccountControlSettings property value. Possible values for Windows user account control settings.
 func (m *Windows81GeneralConfiguration) SetUserAccountControlSettings(value *WindowsUserAccountControlSettings)() {
     if m != nil {
         m.userAccountControlSettings = value

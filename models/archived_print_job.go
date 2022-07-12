@@ -33,7 +33,7 @@ type ArchivedPrintJob struct {
     pageCount *int32
     // The printer ID that the job was queued for. Read-only.
     printerId *string
-    // The print job's final processing state. Read-only.
+    // The processingState property
     processingState *PrintJobProcessingState
     // The number of simplex (single-sided) pages that were printed. Read-only.
     simplexPageCount *int32
@@ -298,7 +298,7 @@ func (m *ArchivedPrintJob) GetPrinterId()(*string) {
         return m.printerId
     }
 }
-// GetProcessingState gets the processingState property value. The print job's final processing state. Read-only.
+// GetProcessingState gets the processingState property value. The processingState property
 func (m *ArchivedPrintJob) GetProcessingState()(*PrintJobProcessingState) {
     if m == nil {
         return nil
@@ -487,7 +487,7 @@ func (m *ArchivedPrintJob) SetPrinterId(value *string)() {
         m.printerId = value
     }
 }
-// SetProcessingState sets the processingState property value. The print job's final processing state. Read-only.
+// SetProcessingState sets the processingState property value. The processingState property
 func (m *ArchivedPrintJob) SetProcessingState(value *PrintJobProcessingState)() {
     if m != nil {
         m.processingState = value

@@ -23,9 +23,9 @@ type Windows10EndpointProtectionConfiguration struct {
     applicationGuardAllowPrintToXPS *bool
     // Allow application guard to use virtual GPU
     applicationGuardAllowVirtualGPU *bool
-    // Block clipboard to share data from Host to Container, or from Container to Host, or both ways, or neither ways. Possible values are: notConfigured, blockBoth, blockHostToContainer, blockContainerToHost, blockNone.
+    // Possible values for applicationGuardBlockClipboardSharingType
     applicationGuardBlockClipboardSharing *ApplicationGuardBlockClipboardSharingType
-    // Block clipboard to transfer image file, text file or neither of them. Possible values are: notConfigured, blockImageAndTextFile, blockImageFile, blockNone, blockTextFile.
+    // Possible values for applicationGuardBlockFileTransfer
     applicationGuardBlockFileTransfer *ApplicationGuardBlockFileTransferType
     // Block enterprise sites to load non-enterprise content, such as third party plug-ins
     applicationGuardBlockNonEnterpriseContent *bool
@@ -33,11 +33,11 @@ type Windows10EndpointProtectionConfiguration struct {
     applicationGuardCertificateThumbprints []string
     // Enable Windows Defender Application Guard
     applicationGuardEnabled *bool
-    // Enable Windows Defender Application Guard for newer Windows builds. Possible values are: notConfigured, enabledForEdge, enabledForOffice, enabledForEdgeAndOffice.
+    // Possible values for ApplicationGuardEnabledOptions
     applicationGuardEnabledOptions *ApplicationGuardEnabledOptions
     // Force auditing will persist Windows logs and events to meet security/compliance criteria (sample events are user login-logoff, use of privilege rights, software installation, system changes, etc.)
     applicationGuardForceAuditing *bool
-    // Enables the Admin to choose what types of app to allow on devices. Possible values are: notConfigured, enforceComponentsAndStoreApps, auditComponentsAndStoreApps, enforceComponentsStoreAppsAndSmartlocker, auditComponentsStoreAppsAndSmartlocker.
+    // Possible values of AppLocker Application Control Types
     appLockerApplicationControl *AppLockerApplicationControlType
     // Allows the admin to allow standard users to enable encrpytion during Azure AD Join.
     bitLockerAllowStandardUserEncryption *bool
@@ -49,7 +49,7 @@ type Windows10EndpointProtectionConfiguration struct {
     bitLockerEncryptDevice *bool
     // BitLocker Fixed Drive Policy.
     bitLockerFixedDrivePolicy BitLockerFixedDrivePolicyable
-    // This setting initiates a client-driven recovery password rotation after an OS drive recovery (either by using bootmgr or WinRE). Possible values are: notConfigured, disabled, enabledForAzureAd, enabledForAzureAdAndHybrid.
+    // BitLocker recovery password rotation type
     bitLockerRecoveryPasswordRotation *BitLockerRecoveryPasswordRotationType
     // BitLocker Removable Drive Policy.
     bitLockerRemovableDrivePolicy BitLockerRemovableDrivePolicyable
@@ -57,9 +57,9 @@ type Windows10EndpointProtectionConfiguration struct {
     bitLockerSystemDrivePolicy BitLockerSystemDrivePolicyable
     // List of folder paths to be added to the list of protected folders
     defenderAdditionalGuardedFolders []string
-    // Value indicating the behavior of Adobe Reader from creating child processes. Possible values are: userDefined, enable, auditMode, warn, notConfigured.
+    // Possible values of Defender PUA Protection
     defenderAdobeReaderLaunchChildProcess *DefenderProtectionType
-    // Value indicating use of advanced protection against ransomeware. Possible values are: userDefined, enable, auditMode, warn, notConfigured.
+    // Possible values of Defender PUA Protection
     defenderAdvancedRansomewareProtectionType *DefenderProtectionType
     // Allows or disallows Windows Defender Behavior Monitoring functionality.
     defenderAllowBehaviorMonitoring *bool
@@ -87,7 +87,7 @@ type Windows10EndpointProtectionConfiguration struct {
     defenderAttackSurfaceReductionExcludedPaths []string
     // Allows or disallows user access to the Windows Defender UI. If disallowed, all Windows Defender notifications will also be suppressed.
     defenderBlockEndUserAccess *bool
-    // Value indicating the behavior of Block persistence through WMI event subscription. Possible values are: userDefined, block, auditMode, warn, disable.
+    // Possible values of Defender Attack Surface Reduction Rules
     defenderBlockPersistenceThroughWmiType *DefenderAttackSurfaceType
     // This policy setting allows you to manage whether a check for new virus and spyware definitions will occur before running a scan.
     defenderCheckForSignaturesBeforeRunningScan *bool
@@ -123,9 +123,9 @@ type Windows10EndpointProtectionConfiguration struct {
     defenderDisableScanRemovableDrivesDuringFullScan *bool
     // Allows or disallows Windows Defender Script Scanning functionality.
     defenderDisableScanScriptsLoadedInInternetExplorer *bool
-    // Value indicating if execution of executable content (exe, dll, ps, js, vbs, etc) should be dropped from email (webmail/mail-client). Possible values are: userDefined, enable, auditMode, warn, notConfigured.
+    // Possible values of Defender PUA Protection
     defenderEmailContentExecution *DefenderProtectionType
-    // Value indicating if execution of executable content (exe, dll, ps, js, vbs, etc) should be dropped from email (webmail/mail-client). Possible values are: userDefined, block, auditMode, warn, disable.
+    // Possible values of Defender Attack Surface Reduction Rules
     defenderEmailContentExecutionType *DefenderAttackSurfaceType
     // This policy setting allows you to enable or disable low CPU priority for scheduled scans.
     defenderEnableLowCpuPriority *bool
@@ -143,35 +143,35 @@ type Windows10EndpointProtectionConfiguration struct {
     defenderFilesAndFoldersToExclude []string
     // List of paths to exe that are allowed to access protected folders
     defenderGuardedFoldersAllowedAppPaths []string
-    // Value indicating the behavior of protected folders. Possible values are: userDefined, enable, auditMode, blockDiskModification, auditDiskModification.
+    // Possible values of Folder Protection
     defenderGuardMyFoldersType *FolderProtectionType
-    // Value indicating the behavior of NetworkProtection. Possible values are: userDefined, enable, auditMode, warn, notConfigured.
+    // Possible values of Defender PUA Protection
     defenderNetworkProtectionType *DefenderProtectionType
-    // Value indicating the behavior of Office applications/macros creating or launching executable content. Possible values are: userDefined, enable, auditMode, warn, notConfigured.
+    // Possible values of Defender PUA Protection
     defenderOfficeAppsExecutableContentCreationOrLaunch *DefenderProtectionType
-    // Value indicating the behavior of Office applications/macros creating or launching executable content. Possible values are: userDefined, block, auditMode, warn, disable.
+    // Possible values of Defender Attack Surface Reduction Rules
     defenderOfficeAppsExecutableContentCreationOrLaunchType *DefenderAttackSurfaceType
-    // Value indicating the behavior of Office application launching child processes. Possible values are: userDefined, enable, auditMode, warn, notConfigured.
+    // Possible values of Defender PUA Protection
     defenderOfficeAppsLaunchChildProcess *DefenderProtectionType
-    // Value indicating the behavior of Office application launching child processes. Possible values are: userDefined, block, auditMode, warn, disable.
+    // Possible values of Defender Attack Surface Reduction Rules
     defenderOfficeAppsLaunchChildProcessType *DefenderAttackSurfaceType
-    // Value indicating the behavior of  Office applications injecting into other processes. Possible values are: userDefined, enable, auditMode, warn, notConfigured.
+    // Possible values of Defender PUA Protection
     defenderOfficeAppsOtherProcessInjection *DefenderProtectionType
-    // Value indicating the behavior of Office applications injecting into other processes. Possible values are: userDefined, block, auditMode, warn, disable.
+    // Possible values of Defender Attack Surface Reduction Rules
     defenderOfficeAppsOtherProcessInjectionType *DefenderAttackSurfaceType
-    // Value indicating the behavior of Office communication applications, including Microsoft Outlook, from creating child processes. Possible values are: userDefined, enable, auditMode, warn, notConfigured.
+    // Possible values of Defender PUA Protection
     defenderOfficeCommunicationAppsLaunchChildProcess *DefenderProtectionType
-    // Value indicating the behavior of Win32 imports from Macro code in Office. Possible values are: userDefined, enable, auditMode, warn, notConfigured.
+    // Possible values of Defender PUA Protection
     defenderOfficeMacroCodeAllowWin32Imports *DefenderProtectionType
-    // Value indicating the behavior of Win32 imports from Macro code in Office. Possible values are: userDefined, block, auditMode, warn, disable.
+    // Possible values of Defender Attack Surface Reduction Rules
     defenderOfficeMacroCodeAllowWin32ImportsType *DefenderAttackSurfaceType
     // Added in Windows 10, version 1607. Specifies the level of detection for potentially unwanted applications (PUAs). Windows Defender alerts you when potentially unwanted software is being downloaded or attempts to install itself on your computer. Possible values are: userDefined, enable, auditMode, warn, notConfigured.
     defenderPotentiallyUnwantedAppAction *DefenderProtectionType
-    // Value indicating if credential stealing from the Windows local security authority subsystem is permitted. Possible values are: userDefined, enable, auditMode, warn, notConfigured.
+    // Possible values of Defender PUA Protection
     defenderPreventCredentialStealingType *DefenderProtectionType
-    // Value indicating response to process creations originating from PSExec and WMI commands. Possible values are: userDefined, enable, auditMode, warn, notConfigured.
+    // Possible values of Defender PUA Protection
     defenderProcessCreation *DefenderProtectionType
-    // Value indicating response to process creations originating from PSExec and WMI commands. Possible values are: userDefined, block, auditMode, warn, disable.
+    // Possible values of Defender Attack Surface Reduction Rules
     defenderProcessCreationType *DefenderAttackSurfaceType
     // Processes to exclude from scans and real time protection.
     defenderProcessesToExclude []string
@@ -187,13 +187,13 @@ type Windows10EndpointProtectionConfiguration struct {
     defenderScheduledScanDay *WeeklySchedule
     // Selects the time of day that the Windows Defender scan should run.
     defenderScheduledScanTime *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.TimeOnly
-    // Value indicating the behavior of js/vbs executing payload downloaded from Internet. Possible values are: userDefined, enable, auditMode, warn, notConfigured.
+    // Possible values of Defender PUA Protection
     defenderScriptDownloadedPayloadExecution *DefenderProtectionType
-    // Value indicating the behavior of js/vbs executing payload downloaded from Internet. Possible values are: userDefined, block, auditMode, warn, disable.
+    // Possible values of Defender Attack Surface Reduction Rules
     defenderScriptDownloadedPayloadExecutionType *DefenderAttackSurfaceType
-    // Value indicating the behavior of obfuscated js/vbs/ps/macro code. Possible values are: userDefined, enable, auditMode, warn, notConfigured.
+    // Possible values of Defender PUA Protection
     defenderScriptObfuscatedMacroCode *DefenderProtectionType
-    // Value indicating the behavior of obfuscated js/vbs/ps/macro code. Possible values are: userDefined, block, auditMode, warn, disable.
+    // Possible values of Defender Attack Surface Reduction Rules
     defenderScriptObfuscatedMacroCodeType *DefenderAttackSurfaceType
     // Indicates whether or not to block user from overriding Exploit Protection settings.
     defenderSecurityCenterBlockExploitProtectionOverride *bool
@@ -229,9 +229,9 @@ type Windows10EndpointProtectionConfiguration struct {
     defenderSecurityCenterHelpPhone *string
     // The help portal URL this is displayed to users.
     defenderSecurityCenterHelpURL *string
-    // Configure where to display IT contact information to end users. Possible values are: notConfigured, displayInAppAndInNotifications, displayOnlyInApp, displayOnlyInNotifications.
+    // Possible values for defenderSecurityCenterITContactDisplay
     defenderSecurityCenterITContactDisplay *DefenderSecurityCenterITContactDisplayType
-    // Notifications to show from the displayed areas of app. Possible values are: notConfigured, blockNoncriticalNotifications, blockAllNotifications.
+    // Possible values for defenderSecurityCenterNotificationsFromApp
     defenderSecurityCenterNotificationsFromApp *DefenderSecurityCenterNotificationsFromAppType
     // The company name that is displayed to the users.
     defenderSecurityCenterOrganizationDisplayName *string
@@ -239,29 +239,29 @@ type Windows10EndpointProtectionConfiguration struct {
     defenderSignatureUpdateIntervalInHours *int32
     // Checks for the user consent level in Windows Defender to send data. Possible values are: sendSafeSamplesAutomatically, alwaysPrompt, neverSend, sendAllSamplesAutomatically.
     defenderSubmitSamplesConsentType *DefenderSubmitSamplesConsentType
-    // Value indicating response to executables that don't meet a prevalence, age, or trusted list criteria. Possible values are: userDefined, enable, auditMode, warn, notConfigured.
+    // Possible values of Defender PUA Protection
     defenderUntrustedExecutable *DefenderProtectionType
-    // Value indicating response to executables that don't meet a prevalence, age, or trusted list criteria. Possible values are: userDefined, block, auditMode, warn, disable.
+    // Possible values of Defender Attack Surface Reduction Rules
     defenderUntrustedExecutableType *DefenderAttackSurfaceType
-    // Value indicating response to untrusted and unsigned processes that run from USB. Possible values are: userDefined, enable, auditMode, warn, notConfigured.
+    // Possible values of Defender PUA Protection
     defenderUntrustedUSBProcess *DefenderProtectionType
-    // Value indicating response to untrusted and unsigned processes that run from USB. Possible values are: userDefined, block, auditMode, warn, disable.
+    // Possible values of Defender Attack Surface Reduction Rules
     defenderUntrustedUSBProcessType *DefenderAttackSurfaceType
     // This property will be deprecated in May 2019 and will be replaced with property DeviceGuardSecureBootWithDMA. Specifies whether Platform Security Level is enabled at next reboot.
     deviceGuardEnableSecureBootWithDMA *bool
     // Turns On Virtualization Based Security(VBS).
     deviceGuardEnableVirtualizationBasedSecurity *bool
-    // Allows the IT admin to configure the launch of System Guard. Possible values are: notConfigured, enabled, disabled.
+    // Possible values of a property
     deviceGuardLaunchSystemGuard *Enablement
-    // Turn on Credential Guard when Platform Security Level with Secure Boot and Virtualization Based Security are both enabled. Possible values are: notConfigured, enableWithUEFILock, enableWithoutUEFILock, disable.
+    // Possible values of Credential Guard settings.
     deviceGuardLocalSystemAuthorityCredentialGuardSettings *DeviceGuardLocalSystemAuthorityCredentialGuardType
-    // Specifies whether Platform Security Level is enabled at next reboot. Possible values are: notConfigured, withoutDMA, withDMA.
+    // Possible values of Secure Boot with DMA
     deviceGuardSecureBootWithDMA *SecureBootWithDMAType
-    // This policy is intended to provide additional security against external DMA capable devices. It allows for more control over the enumeration of external DMA capable devices incompatible with DMA Remapping/device memory isolation and sandboxing. This policy only takes effect when Kernel DMA Protection is supported and enabled by the system firmware. Kernel DMA Protection is a platform feature that cannot be controlled via policy or by end user. It has to be supported by the system at the time of manufacturing. To check if the system supports Kernel DMA Protection, please check the Kernel DMA Protection field in the Summary page of MSINFO32.exe. Possible values are: deviceDefault, blockAll, allowAll.
+    // Possible values of the DmaGuardDeviceEnumerationPolicy.
     dmaGuardDeviceEnumerationPolicy *DmaGuardDeviceEnumerationPolicyType
     // Blocks stateful FTP connections to the device
     firewallBlockStatefulFTP *bool
-    // Specify how the certificate revocation list is to be enforced. Possible values are: deviceDefault, none, attempt, require.
+    // Possible values for firewallCertificateRevocationListCheckMethod
     firewallCertificateRevocationListCheckMethod *FirewallCertificateRevocationListCheckMethodType
     // Configures the idle timeout for security associations, in seconds, from 300 to 3600 inclusive. This is the period after which security associations will expire and be deleted. Valid values 300 to 3600
     firewallIdleTimeoutForSecurityAssociationInSeconds *int32
@@ -277,9 +277,9 @@ type Windows10EndpointProtectionConfiguration struct {
     firewallIPSecExemptionsNone *bool
     // If an authentication set is not fully supported by a keying module, direct the module to ignore only unsupported authentication suites rather than the entire set
     firewallMergeKeyingModuleSettings *bool
-    // Configures how packet queueing should be applied in the tunnel gateway scenario. Possible values are: deviceDefault, disabled, queueInbound, queueOutbound, queueBoth.
+    // Possible values for firewallPacketQueueingMethod
     firewallPacketQueueingMethod *FirewallPacketQueueingMethodType
-    // Select the preshared key encoding to be used. Possible values are: deviceDefault, none, utF8.
+    // Possible values for firewallPreSharedKeyEncodingMethod
     firewallPreSharedKeyEncodingMethod *FirewallPreSharedKeyEncodingMethodType
     // Configures the firewall profile settings for domain networks
     firewallProfileDomain WindowsFirewallNetworkProfileable
@@ -289,13 +289,13 @@ type Windows10EndpointProtectionConfiguration struct {
     firewallProfilePublic WindowsFirewallNetworkProfileable
     // Configures the firewall rule settings. This collection can contain a maximum of 150 elements.
     firewallRules []WindowsFirewallRuleable
-    // This security setting determines which challenge/response authentication protocol is used for network logons. Possible values are: lmAndNltm, lmNtlmAndNtlmV2, lmAndNtlmOnly, lmAndNtlmV2, lmNtlmV2AndNotLm, lmNtlmV2AndNotLmOrNtm.
+    // Possible values for LanManagerAuthenticationLevel
     lanManagerAuthenticationLevel *LanManagerAuthenticationLevel
     // If enabled,the SMB client will allow insecure guest logons. If not configured, the SMB client will reject insecure guest logons.
     lanManagerWorkstationDisableInsecureGuestLogons *bool
     // Define a different account name to be associated with the security identifier (SID) for the account 'Administrator'.
     localSecurityOptionsAdministratorAccountName *string
-    // Define the behavior of the elevation prompt for admins in Admin Approval Mode. Possible values are: notConfigured, elevateWithoutPrompting, promptForCredentialsOnTheSecureDesktop, promptForConsentOnTheSecureDesktop, promptForCredentials, promptForConsent, promptForConsentForNonWindowsBinaries.
+    // Possible values for LocalSecurityOptionsAdministratorElevationPromptBehavior
     localSecurityOptionsAdministratorElevationPromptBehavior *LocalSecurityOptionsAdministratorElevationPromptBehaviorType
     // This security setting determines whether to allows anonymous users to perform certain activities, such as enumerating the names of domain accounts and network shares.
     localSecurityOptionsAllowAnonymousEnumerationOfSAMAccountsAndShares *bool
@@ -345,7 +345,7 @@ type Windows10EndpointProtectionConfiguration struct {
     localSecurityOptionsDoNotRequireCtrlAltDel *bool
     // This security setting determines if, at the next password change, the LAN Manager (LM) hash value for the new password is stored. It’s not stored by default.
     localSecurityOptionsDoNotStoreLANManagerHashValueOnNextPasswordChange *bool
-    // Define who is allowed to format and eject removable NTFS media. Possible values are: notConfigured, administrators, administratorsAndPowerUsers, administratorsAndInteractiveUsers.
+    // Possible values for LocalSecurityOptionsFormatAndEjectOfRemovableMediaAllowedUser
     localSecurityOptionsFormatAndEjectOfRemovableMediaAllowedUser *LocalSecurityOptionsFormatAndEjectOfRemovableMediaAllowedUserType
     // Define a different account name to be associated with the security identifier (SID) for the account 'Guest'.
     localSecurityOptionsGuestAccountName *string
@@ -353,9 +353,9 @@ type Windows10EndpointProtectionConfiguration struct {
     localSecurityOptionsHideLastSignedInUser *bool
     // Do not display the username of the person signing in to this device after credentials are entered and before the device’s desktop is shown.
     localSecurityOptionsHideUsernameAtSignIn *bool
-    // Configure the user information that is displayed when the session is locked. If not configured, user display name, domain and username are shown. Possible values are: notConfigured, administrators, administratorsAndPowerUsers, administratorsAndInteractiveUsers.
+    // Possible values for LocalSecurityOptionsInformationDisplayedOnLockScreen
     localSecurityOptionsInformationDisplayedOnLockScreen *LocalSecurityOptionsInformationDisplayedOnLockScreenType
-    // Configure the user information that is displayed when the session is locked. If not configured, user display name, domain and username are shown. Possible values are: notConfigured, userDisplayNameDomainUser, userDisplayNameOnly, doNotDisplayUser.
+    // Possible values for LocalSecurityOptionsInformationShownOnLockScreenType
     localSecurityOptionsInformationShownOnLockScreen *LocalSecurityOptionsInformationShownOnLockScreenType
     // Set message text for users attempting to log in.
     localSecurityOptionsLogOnMessageText *string
@@ -365,17 +365,17 @@ type Windows10EndpointProtectionConfiguration struct {
     localSecurityOptionsMachineInactivityLimit *int32
     // Define maximum minutes of inactivity on the interactive desktop’s login screen until the screen saver runs. Valid values 0 to 9999
     localSecurityOptionsMachineInactivityLimitInMinutes *int32
-    // This security setting allows a client to require the negotiation of 128-bit encryption and/or NTLMv2 session security. Possible values are: none, requireNtmlV2SessionSecurity, require128BitEncryption, ntlmV2And128BitEncryption.
+    // Possible values for LocalSecurityOptionsMinimumSessionSecurity
     localSecurityOptionsMinimumSessionSecurityForNtlmSspBasedClients *LocalSecurityOptionsMinimumSessionSecurity
-    // This security setting allows a server to require the negotiation of 128-bit encryption and/or NTLMv2 session security. Possible values are: none, requireNtmlV2SessionSecurity, require128BitEncryption, ntlmV2And128BitEncryption.
+    // Possible values for LocalSecurityOptionsMinimumSessionSecurity
     localSecurityOptionsMinimumSessionSecurityForNtlmSspBasedServers *LocalSecurityOptionsMinimumSessionSecurity
     // Enforce PKI certification path validation for a given executable file before it is permitted to run.
     localSecurityOptionsOnlyElevateSignedExecutables *bool
     // By default, this security setting restricts anonymous access to shares and pipes to the settings for named pipes that can be accessed anonymously and Shares that can be accessed anonymously
     localSecurityOptionsRestrictAnonymousAccessToNamedPipesAndShares *bool
-    // This security setting determines what happens when the smart card for a logged-on user is removed from the smart card reader. Possible values are: noAction, lockWorkstation, forceLogoff, disconnectRemoteDesktopSession.
+    // Possible values for LocalSecurityOptionsSmartCardRemovalBehaviorType
     localSecurityOptionsSmartCardRemovalBehavior *LocalSecurityOptionsSmartCardRemovalBehaviorType
-    // Define the behavior of the elevation prompt for standard users. Possible values are: notConfigured, automaticallyDenyElevationRequests, promptForCredentialsOnTheSecureDesktop, promptForCredentials.
+    // Possible values for LocalSecurityOptionsStandardUserElevationPromptBehavior
     localSecurityOptionsStandardUserElevationPromptBehavior *LocalSecurityOptionsStandardUserElevationPromptBehaviorType
     // Enable all elevation requests to go to the interactive user's desktop rather than the secure desktop. Prompt behavior policy settings for admins and standard users are used.
     localSecurityOptionsSwitchToSecureDesktopWhenPromptingForElevation *bool
@@ -447,17 +447,17 @@ type Windows10EndpointProtectionConfiguration struct {
     userRightsRestoreData DeviceManagementUserRightsSettingable
     // This user right determines which users can take ownership of any securable object in the system, including Active Directory objects, files and folders, printers, registry keys, processes, and threads. Only states NotConfigured and Allowed are supported.
     userRightsTakeOwnership DeviceManagementUserRightsSettingable
-    // Configure windows defender TamperProtection settings. Possible values are: notConfigured, enable, disable.
+    // Defender TamperProtection setting options
     windowsDefenderTamperProtection *WindowsDefenderTamperProtectionOptions
-    // This setting determines whether the Accessory management service's start type is Automatic(2), Manual(3), Disabled(4). Default: Manual. Possible values are: manual, automatic, disabled.
+    // Possible values of xbox service start type
     xboxServicesAccessoryManagementServiceStartupMode *ServiceStartType
     // This setting determines whether xbox game save is enabled (1) or disabled (0).
     xboxServicesEnableXboxGameSaveTask *bool
-    // This setting determines whether Live Auth Manager service's start type is Automatic(2), Manual(3), Disabled(4). Default: Manual. Possible values are: manual, automatic, disabled.
+    // Possible values of xbox service start type
     xboxServicesLiveAuthManagerServiceStartupMode *ServiceStartType
-    // This setting determines whether Live Game save service's start type is Automatic(2), Manual(3), Disabled(4). Default: Manual. Possible values are: manual, automatic, disabled.
+    // Possible values of xbox service start type
     xboxServicesLiveGameSaveServiceStartupMode *ServiceStartType
-    // This setting determines whether Networking service's start type is Automatic(2), Manual(3), Disabled(4). Default: Manual. Possible values are: manual, automatic, disabled.
+    // Possible values of xbox service start type
     xboxServicesLiveNetworkingServiceStartupMode *ServiceStartType
 }
 // NewWindows10EndpointProtectionConfiguration instantiates a new Windows10EndpointProtectionConfiguration and sets the default values.
@@ -535,7 +535,7 @@ func (m *Windows10EndpointProtectionConfiguration) GetApplicationGuardAllowVirtu
         return m.applicationGuardAllowVirtualGPU
     }
 }
-// GetApplicationGuardBlockClipboardSharing gets the applicationGuardBlockClipboardSharing property value. Block clipboard to share data from Host to Container, or from Container to Host, or both ways, or neither ways. Possible values are: notConfigured, blockBoth, blockHostToContainer, blockContainerToHost, blockNone.
+// GetApplicationGuardBlockClipboardSharing gets the applicationGuardBlockClipboardSharing property value. Possible values for applicationGuardBlockClipboardSharingType
 func (m *Windows10EndpointProtectionConfiguration) GetApplicationGuardBlockClipboardSharing()(*ApplicationGuardBlockClipboardSharingType) {
     if m == nil {
         return nil
@@ -543,7 +543,7 @@ func (m *Windows10EndpointProtectionConfiguration) GetApplicationGuardBlockClipb
         return m.applicationGuardBlockClipboardSharing
     }
 }
-// GetApplicationGuardBlockFileTransfer gets the applicationGuardBlockFileTransfer property value. Block clipboard to transfer image file, text file or neither of them. Possible values are: notConfigured, blockImageAndTextFile, blockImageFile, blockNone, blockTextFile.
+// GetApplicationGuardBlockFileTransfer gets the applicationGuardBlockFileTransfer property value. Possible values for applicationGuardBlockFileTransfer
 func (m *Windows10EndpointProtectionConfiguration) GetApplicationGuardBlockFileTransfer()(*ApplicationGuardBlockFileTransferType) {
     if m == nil {
         return nil
@@ -575,7 +575,7 @@ func (m *Windows10EndpointProtectionConfiguration) GetApplicationGuardEnabled()(
         return m.applicationGuardEnabled
     }
 }
-// GetApplicationGuardEnabledOptions gets the applicationGuardEnabledOptions property value. Enable Windows Defender Application Guard for newer Windows builds. Possible values are: notConfigured, enabledForEdge, enabledForOffice, enabledForEdgeAndOffice.
+// GetApplicationGuardEnabledOptions gets the applicationGuardEnabledOptions property value. Possible values for ApplicationGuardEnabledOptions
 func (m *Windows10EndpointProtectionConfiguration) GetApplicationGuardEnabledOptions()(*ApplicationGuardEnabledOptions) {
     if m == nil {
         return nil
@@ -591,7 +591,7 @@ func (m *Windows10EndpointProtectionConfiguration) GetApplicationGuardForceAudit
         return m.applicationGuardForceAuditing
     }
 }
-// GetAppLockerApplicationControl gets the appLockerApplicationControl property value. Enables the Admin to choose what types of app to allow on devices. Possible values are: notConfigured, enforceComponentsAndStoreApps, auditComponentsAndStoreApps, enforceComponentsStoreAppsAndSmartlocker, auditComponentsStoreAppsAndSmartlocker.
+// GetAppLockerApplicationControl gets the appLockerApplicationControl property value. Possible values of AppLocker Application Control Types
 func (m *Windows10EndpointProtectionConfiguration) GetAppLockerApplicationControl()(*AppLockerApplicationControlType) {
     if m == nil {
         return nil
@@ -639,7 +639,7 @@ func (m *Windows10EndpointProtectionConfiguration) GetBitLockerFixedDrivePolicy(
         return m.bitLockerFixedDrivePolicy
     }
 }
-// GetBitLockerRecoveryPasswordRotation gets the bitLockerRecoveryPasswordRotation property value. This setting initiates a client-driven recovery password rotation after an OS drive recovery (either by using bootmgr or WinRE). Possible values are: notConfigured, disabled, enabledForAzureAd, enabledForAzureAdAndHybrid.
+// GetBitLockerRecoveryPasswordRotation gets the bitLockerRecoveryPasswordRotation property value. BitLocker recovery password rotation type
 func (m *Windows10EndpointProtectionConfiguration) GetBitLockerRecoveryPasswordRotation()(*BitLockerRecoveryPasswordRotationType) {
     if m == nil {
         return nil
@@ -671,7 +671,7 @@ func (m *Windows10EndpointProtectionConfiguration) GetDefenderAdditionalGuardedF
         return m.defenderAdditionalGuardedFolders
     }
 }
-// GetDefenderAdobeReaderLaunchChildProcess gets the defenderAdobeReaderLaunchChildProcess property value. Value indicating the behavior of Adobe Reader from creating child processes. Possible values are: userDefined, enable, auditMode, warn, notConfigured.
+// GetDefenderAdobeReaderLaunchChildProcess gets the defenderAdobeReaderLaunchChildProcess property value. Possible values of Defender PUA Protection
 func (m *Windows10EndpointProtectionConfiguration) GetDefenderAdobeReaderLaunchChildProcess()(*DefenderProtectionType) {
     if m == nil {
         return nil
@@ -679,7 +679,7 @@ func (m *Windows10EndpointProtectionConfiguration) GetDefenderAdobeReaderLaunchC
         return m.defenderAdobeReaderLaunchChildProcess
     }
 }
-// GetDefenderAdvancedRansomewareProtectionType gets the defenderAdvancedRansomewareProtectionType property value. Value indicating use of advanced protection against ransomeware. Possible values are: userDefined, enable, auditMode, warn, notConfigured.
+// GetDefenderAdvancedRansomewareProtectionType gets the defenderAdvancedRansomewareProtectionType property value. Possible values of Defender PUA Protection
 func (m *Windows10EndpointProtectionConfiguration) GetDefenderAdvancedRansomewareProtectionType()(*DefenderProtectionType) {
     if m == nil {
         return nil
@@ -791,7 +791,7 @@ func (m *Windows10EndpointProtectionConfiguration) GetDefenderBlockEndUserAccess
         return m.defenderBlockEndUserAccess
     }
 }
-// GetDefenderBlockPersistenceThroughWmiType gets the defenderBlockPersistenceThroughWmiType property value. Value indicating the behavior of Block persistence through WMI event subscription. Possible values are: userDefined, block, auditMode, warn, disable.
+// GetDefenderBlockPersistenceThroughWmiType gets the defenderBlockPersistenceThroughWmiType property value. Possible values of Defender Attack Surface Reduction Rules
 func (m *Windows10EndpointProtectionConfiguration) GetDefenderBlockPersistenceThroughWmiType()(*DefenderAttackSurfaceType) {
     if m == nil {
         return nil
@@ -935,7 +935,7 @@ func (m *Windows10EndpointProtectionConfiguration) GetDefenderDisableScanScripts
         return m.defenderDisableScanScriptsLoadedInInternetExplorer
     }
 }
-// GetDefenderEmailContentExecution gets the defenderEmailContentExecution property value. Value indicating if execution of executable content (exe, dll, ps, js, vbs, etc) should be dropped from email (webmail/mail-client). Possible values are: userDefined, enable, auditMode, warn, notConfigured.
+// GetDefenderEmailContentExecution gets the defenderEmailContentExecution property value. Possible values of Defender PUA Protection
 func (m *Windows10EndpointProtectionConfiguration) GetDefenderEmailContentExecution()(*DefenderProtectionType) {
     if m == nil {
         return nil
@@ -943,7 +943,7 @@ func (m *Windows10EndpointProtectionConfiguration) GetDefenderEmailContentExecut
         return m.defenderEmailContentExecution
     }
 }
-// GetDefenderEmailContentExecutionType gets the defenderEmailContentExecutionType property value. Value indicating if execution of executable content (exe, dll, ps, js, vbs, etc) should be dropped from email (webmail/mail-client). Possible values are: userDefined, block, auditMode, warn, disable.
+// GetDefenderEmailContentExecutionType gets the defenderEmailContentExecutionType property value. Possible values of Defender Attack Surface Reduction Rules
 func (m *Windows10EndpointProtectionConfiguration) GetDefenderEmailContentExecutionType()(*DefenderAttackSurfaceType) {
     if m == nil {
         return nil
@@ -1015,7 +1015,7 @@ func (m *Windows10EndpointProtectionConfiguration) GetDefenderGuardedFoldersAllo
         return m.defenderGuardedFoldersAllowedAppPaths
     }
 }
-// GetDefenderGuardMyFoldersType gets the defenderGuardMyFoldersType property value. Value indicating the behavior of protected folders. Possible values are: userDefined, enable, auditMode, blockDiskModification, auditDiskModification.
+// GetDefenderGuardMyFoldersType gets the defenderGuardMyFoldersType property value. Possible values of Folder Protection
 func (m *Windows10EndpointProtectionConfiguration) GetDefenderGuardMyFoldersType()(*FolderProtectionType) {
     if m == nil {
         return nil
@@ -1023,7 +1023,7 @@ func (m *Windows10EndpointProtectionConfiguration) GetDefenderGuardMyFoldersType
         return m.defenderGuardMyFoldersType
     }
 }
-// GetDefenderNetworkProtectionType gets the defenderNetworkProtectionType property value. Value indicating the behavior of NetworkProtection. Possible values are: userDefined, enable, auditMode, warn, notConfigured.
+// GetDefenderNetworkProtectionType gets the defenderNetworkProtectionType property value. Possible values of Defender PUA Protection
 func (m *Windows10EndpointProtectionConfiguration) GetDefenderNetworkProtectionType()(*DefenderProtectionType) {
     if m == nil {
         return nil
@@ -1031,7 +1031,7 @@ func (m *Windows10EndpointProtectionConfiguration) GetDefenderNetworkProtectionT
         return m.defenderNetworkProtectionType
     }
 }
-// GetDefenderOfficeAppsExecutableContentCreationOrLaunch gets the defenderOfficeAppsExecutableContentCreationOrLaunch property value. Value indicating the behavior of Office applications/macros creating or launching executable content. Possible values are: userDefined, enable, auditMode, warn, notConfigured.
+// GetDefenderOfficeAppsExecutableContentCreationOrLaunch gets the defenderOfficeAppsExecutableContentCreationOrLaunch property value. Possible values of Defender PUA Protection
 func (m *Windows10EndpointProtectionConfiguration) GetDefenderOfficeAppsExecutableContentCreationOrLaunch()(*DefenderProtectionType) {
     if m == nil {
         return nil
@@ -1039,7 +1039,7 @@ func (m *Windows10EndpointProtectionConfiguration) GetDefenderOfficeAppsExecutab
         return m.defenderOfficeAppsExecutableContentCreationOrLaunch
     }
 }
-// GetDefenderOfficeAppsExecutableContentCreationOrLaunchType gets the defenderOfficeAppsExecutableContentCreationOrLaunchType property value. Value indicating the behavior of Office applications/macros creating or launching executable content. Possible values are: userDefined, block, auditMode, warn, disable.
+// GetDefenderOfficeAppsExecutableContentCreationOrLaunchType gets the defenderOfficeAppsExecutableContentCreationOrLaunchType property value. Possible values of Defender Attack Surface Reduction Rules
 func (m *Windows10EndpointProtectionConfiguration) GetDefenderOfficeAppsExecutableContentCreationOrLaunchType()(*DefenderAttackSurfaceType) {
     if m == nil {
         return nil
@@ -1047,7 +1047,7 @@ func (m *Windows10EndpointProtectionConfiguration) GetDefenderOfficeAppsExecutab
         return m.defenderOfficeAppsExecutableContentCreationOrLaunchType
     }
 }
-// GetDefenderOfficeAppsLaunchChildProcess gets the defenderOfficeAppsLaunchChildProcess property value. Value indicating the behavior of Office application launching child processes. Possible values are: userDefined, enable, auditMode, warn, notConfigured.
+// GetDefenderOfficeAppsLaunchChildProcess gets the defenderOfficeAppsLaunchChildProcess property value. Possible values of Defender PUA Protection
 func (m *Windows10EndpointProtectionConfiguration) GetDefenderOfficeAppsLaunchChildProcess()(*DefenderProtectionType) {
     if m == nil {
         return nil
@@ -1055,7 +1055,7 @@ func (m *Windows10EndpointProtectionConfiguration) GetDefenderOfficeAppsLaunchCh
         return m.defenderOfficeAppsLaunchChildProcess
     }
 }
-// GetDefenderOfficeAppsLaunchChildProcessType gets the defenderOfficeAppsLaunchChildProcessType property value. Value indicating the behavior of Office application launching child processes. Possible values are: userDefined, block, auditMode, warn, disable.
+// GetDefenderOfficeAppsLaunchChildProcessType gets the defenderOfficeAppsLaunchChildProcessType property value. Possible values of Defender Attack Surface Reduction Rules
 func (m *Windows10EndpointProtectionConfiguration) GetDefenderOfficeAppsLaunchChildProcessType()(*DefenderAttackSurfaceType) {
     if m == nil {
         return nil
@@ -1063,7 +1063,7 @@ func (m *Windows10EndpointProtectionConfiguration) GetDefenderOfficeAppsLaunchCh
         return m.defenderOfficeAppsLaunchChildProcessType
     }
 }
-// GetDefenderOfficeAppsOtherProcessInjection gets the defenderOfficeAppsOtherProcessInjection property value. Value indicating the behavior of  Office applications injecting into other processes. Possible values are: userDefined, enable, auditMode, warn, notConfigured.
+// GetDefenderOfficeAppsOtherProcessInjection gets the defenderOfficeAppsOtherProcessInjection property value. Possible values of Defender PUA Protection
 func (m *Windows10EndpointProtectionConfiguration) GetDefenderOfficeAppsOtherProcessInjection()(*DefenderProtectionType) {
     if m == nil {
         return nil
@@ -1071,7 +1071,7 @@ func (m *Windows10EndpointProtectionConfiguration) GetDefenderOfficeAppsOtherPro
         return m.defenderOfficeAppsOtherProcessInjection
     }
 }
-// GetDefenderOfficeAppsOtherProcessInjectionType gets the defenderOfficeAppsOtherProcessInjectionType property value. Value indicating the behavior of Office applications injecting into other processes. Possible values are: userDefined, block, auditMode, warn, disable.
+// GetDefenderOfficeAppsOtherProcessInjectionType gets the defenderOfficeAppsOtherProcessInjectionType property value. Possible values of Defender Attack Surface Reduction Rules
 func (m *Windows10EndpointProtectionConfiguration) GetDefenderOfficeAppsOtherProcessInjectionType()(*DefenderAttackSurfaceType) {
     if m == nil {
         return nil
@@ -1079,7 +1079,7 @@ func (m *Windows10EndpointProtectionConfiguration) GetDefenderOfficeAppsOtherPro
         return m.defenderOfficeAppsOtherProcessInjectionType
     }
 }
-// GetDefenderOfficeCommunicationAppsLaunchChildProcess gets the defenderOfficeCommunicationAppsLaunchChildProcess property value. Value indicating the behavior of Office communication applications, including Microsoft Outlook, from creating child processes. Possible values are: userDefined, enable, auditMode, warn, notConfigured.
+// GetDefenderOfficeCommunicationAppsLaunchChildProcess gets the defenderOfficeCommunicationAppsLaunchChildProcess property value. Possible values of Defender PUA Protection
 func (m *Windows10EndpointProtectionConfiguration) GetDefenderOfficeCommunicationAppsLaunchChildProcess()(*DefenderProtectionType) {
     if m == nil {
         return nil
@@ -1087,7 +1087,7 @@ func (m *Windows10EndpointProtectionConfiguration) GetDefenderOfficeCommunicatio
         return m.defenderOfficeCommunicationAppsLaunchChildProcess
     }
 }
-// GetDefenderOfficeMacroCodeAllowWin32Imports gets the defenderOfficeMacroCodeAllowWin32Imports property value. Value indicating the behavior of Win32 imports from Macro code in Office. Possible values are: userDefined, enable, auditMode, warn, notConfigured.
+// GetDefenderOfficeMacroCodeAllowWin32Imports gets the defenderOfficeMacroCodeAllowWin32Imports property value. Possible values of Defender PUA Protection
 func (m *Windows10EndpointProtectionConfiguration) GetDefenderOfficeMacroCodeAllowWin32Imports()(*DefenderProtectionType) {
     if m == nil {
         return nil
@@ -1095,7 +1095,7 @@ func (m *Windows10EndpointProtectionConfiguration) GetDefenderOfficeMacroCodeAll
         return m.defenderOfficeMacroCodeAllowWin32Imports
     }
 }
-// GetDefenderOfficeMacroCodeAllowWin32ImportsType gets the defenderOfficeMacroCodeAllowWin32ImportsType property value. Value indicating the behavior of Win32 imports from Macro code in Office. Possible values are: userDefined, block, auditMode, warn, disable.
+// GetDefenderOfficeMacroCodeAllowWin32ImportsType gets the defenderOfficeMacroCodeAllowWin32ImportsType property value. Possible values of Defender Attack Surface Reduction Rules
 func (m *Windows10EndpointProtectionConfiguration) GetDefenderOfficeMacroCodeAllowWin32ImportsType()(*DefenderAttackSurfaceType) {
     if m == nil {
         return nil
@@ -1111,7 +1111,7 @@ func (m *Windows10EndpointProtectionConfiguration) GetDefenderPotentiallyUnwante
         return m.defenderPotentiallyUnwantedAppAction
     }
 }
-// GetDefenderPreventCredentialStealingType gets the defenderPreventCredentialStealingType property value. Value indicating if credential stealing from the Windows local security authority subsystem is permitted. Possible values are: userDefined, enable, auditMode, warn, notConfigured.
+// GetDefenderPreventCredentialStealingType gets the defenderPreventCredentialStealingType property value. Possible values of Defender PUA Protection
 func (m *Windows10EndpointProtectionConfiguration) GetDefenderPreventCredentialStealingType()(*DefenderProtectionType) {
     if m == nil {
         return nil
@@ -1119,7 +1119,7 @@ func (m *Windows10EndpointProtectionConfiguration) GetDefenderPreventCredentialS
         return m.defenderPreventCredentialStealingType
     }
 }
-// GetDefenderProcessCreation gets the defenderProcessCreation property value. Value indicating response to process creations originating from PSExec and WMI commands. Possible values are: userDefined, enable, auditMode, warn, notConfigured.
+// GetDefenderProcessCreation gets the defenderProcessCreation property value. Possible values of Defender PUA Protection
 func (m *Windows10EndpointProtectionConfiguration) GetDefenderProcessCreation()(*DefenderProtectionType) {
     if m == nil {
         return nil
@@ -1127,7 +1127,7 @@ func (m *Windows10EndpointProtectionConfiguration) GetDefenderProcessCreation()(
         return m.defenderProcessCreation
     }
 }
-// GetDefenderProcessCreationType gets the defenderProcessCreationType property value. Value indicating response to process creations originating from PSExec and WMI commands. Possible values are: userDefined, block, auditMode, warn, disable.
+// GetDefenderProcessCreationType gets the defenderProcessCreationType property value. Possible values of Defender Attack Surface Reduction Rules
 func (m *Windows10EndpointProtectionConfiguration) GetDefenderProcessCreationType()(*DefenderAttackSurfaceType) {
     if m == nil {
         return nil
@@ -1191,7 +1191,7 @@ func (m *Windows10EndpointProtectionConfiguration) GetDefenderScheduledScanTime(
         return m.defenderScheduledScanTime
     }
 }
-// GetDefenderScriptDownloadedPayloadExecution gets the defenderScriptDownloadedPayloadExecution property value. Value indicating the behavior of js/vbs executing payload downloaded from Internet. Possible values are: userDefined, enable, auditMode, warn, notConfigured.
+// GetDefenderScriptDownloadedPayloadExecution gets the defenderScriptDownloadedPayloadExecution property value. Possible values of Defender PUA Protection
 func (m *Windows10EndpointProtectionConfiguration) GetDefenderScriptDownloadedPayloadExecution()(*DefenderProtectionType) {
     if m == nil {
         return nil
@@ -1199,7 +1199,7 @@ func (m *Windows10EndpointProtectionConfiguration) GetDefenderScriptDownloadedPa
         return m.defenderScriptDownloadedPayloadExecution
     }
 }
-// GetDefenderScriptDownloadedPayloadExecutionType gets the defenderScriptDownloadedPayloadExecutionType property value. Value indicating the behavior of js/vbs executing payload downloaded from Internet. Possible values are: userDefined, block, auditMode, warn, disable.
+// GetDefenderScriptDownloadedPayloadExecutionType gets the defenderScriptDownloadedPayloadExecutionType property value. Possible values of Defender Attack Surface Reduction Rules
 func (m *Windows10EndpointProtectionConfiguration) GetDefenderScriptDownloadedPayloadExecutionType()(*DefenderAttackSurfaceType) {
     if m == nil {
         return nil
@@ -1207,7 +1207,7 @@ func (m *Windows10EndpointProtectionConfiguration) GetDefenderScriptDownloadedPa
         return m.defenderScriptDownloadedPayloadExecutionType
     }
 }
-// GetDefenderScriptObfuscatedMacroCode gets the defenderScriptObfuscatedMacroCode property value. Value indicating the behavior of obfuscated js/vbs/ps/macro code. Possible values are: userDefined, enable, auditMode, warn, notConfigured.
+// GetDefenderScriptObfuscatedMacroCode gets the defenderScriptObfuscatedMacroCode property value. Possible values of Defender PUA Protection
 func (m *Windows10EndpointProtectionConfiguration) GetDefenderScriptObfuscatedMacroCode()(*DefenderProtectionType) {
     if m == nil {
         return nil
@@ -1215,7 +1215,7 @@ func (m *Windows10EndpointProtectionConfiguration) GetDefenderScriptObfuscatedMa
         return m.defenderScriptObfuscatedMacroCode
     }
 }
-// GetDefenderScriptObfuscatedMacroCodeType gets the defenderScriptObfuscatedMacroCodeType property value. Value indicating the behavior of obfuscated js/vbs/ps/macro code. Possible values are: userDefined, block, auditMode, warn, disable.
+// GetDefenderScriptObfuscatedMacroCodeType gets the defenderScriptObfuscatedMacroCodeType property value. Possible values of Defender Attack Surface Reduction Rules
 func (m *Windows10EndpointProtectionConfiguration) GetDefenderScriptObfuscatedMacroCodeType()(*DefenderAttackSurfaceType) {
     if m == nil {
         return nil
@@ -1359,7 +1359,7 @@ func (m *Windows10EndpointProtectionConfiguration) GetDefenderSecurityCenterHelp
         return m.defenderSecurityCenterHelpURL
     }
 }
-// GetDefenderSecurityCenterITContactDisplay gets the defenderSecurityCenterITContactDisplay property value. Configure where to display IT contact information to end users. Possible values are: notConfigured, displayInAppAndInNotifications, displayOnlyInApp, displayOnlyInNotifications.
+// GetDefenderSecurityCenterITContactDisplay gets the defenderSecurityCenterITContactDisplay property value. Possible values for defenderSecurityCenterITContactDisplay
 func (m *Windows10EndpointProtectionConfiguration) GetDefenderSecurityCenterITContactDisplay()(*DefenderSecurityCenterITContactDisplayType) {
     if m == nil {
         return nil
@@ -1367,7 +1367,7 @@ func (m *Windows10EndpointProtectionConfiguration) GetDefenderSecurityCenterITCo
         return m.defenderSecurityCenterITContactDisplay
     }
 }
-// GetDefenderSecurityCenterNotificationsFromApp gets the defenderSecurityCenterNotificationsFromApp property value. Notifications to show from the displayed areas of app. Possible values are: notConfigured, blockNoncriticalNotifications, blockAllNotifications.
+// GetDefenderSecurityCenterNotificationsFromApp gets the defenderSecurityCenterNotificationsFromApp property value. Possible values for defenderSecurityCenterNotificationsFromApp
 func (m *Windows10EndpointProtectionConfiguration) GetDefenderSecurityCenterNotificationsFromApp()(*DefenderSecurityCenterNotificationsFromAppType) {
     if m == nil {
         return nil
@@ -1399,7 +1399,7 @@ func (m *Windows10EndpointProtectionConfiguration) GetDefenderSubmitSamplesConse
         return m.defenderSubmitSamplesConsentType
     }
 }
-// GetDefenderUntrustedExecutable gets the defenderUntrustedExecutable property value. Value indicating response to executables that don't meet a prevalence, age, or trusted list criteria. Possible values are: userDefined, enable, auditMode, warn, notConfigured.
+// GetDefenderUntrustedExecutable gets the defenderUntrustedExecutable property value. Possible values of Defender PUA Protection
 func (m *Windows10EndpointProtectionConfiguration) GetDefenderUntrustedExecutable()(*DefenderProtectionType) {
     if m == nil {
         return nil
@@ -1407,7 +1407,7 @@ func (m *Windows10EndpointProtectionConfiguration) GetDefenderUntrustedExecutabl
         return m.defenderUntrustedExecutable
     }
 }
-// GetDefenderUntrustedExecutableType gets the defenderUntrustedExecutableType property value. Value indicating response to executables that don't meet a prevalence, age, or trusted list criteria. Possible values are: userDefined, block, auditMode, warn, disable.
+// GetDefenderUntrustedExecutableType gets the defenderUntrustedExecutableType property value. Possible values of Defender Attack Surface Reduction Rules
 func (m *Windows10EndpointProtectionConfiguration) GetDefenderUntrustedExecutableType()(*DefenderAttackSurfaceType) {
     if m == nil {
         return nil
@@ -1415,7 +1415,7 @@ func (m *Windows10EndpointProtectionConfiguration) GetDefenderUntrustedExecutabl
         return m.defenderUntrustedExecutableType
     }
 }
-// GetDefenderUntrustedUSBProcess gets the defenderUntrustedUSBProcess property value. Value indicating response to untrusted and unsigned processes that run from USB. Possible values are: userDefined, enable, auditMode, warn, notConfigured.
+// GetDefenderUntrustedUSBProcess gets the defenderUntrustedUSBProcess property value. Possible values of Defender PUA Protection
 func (m *Windows10EndpointProtectionConfiguration) GetDefenderUntrustedUSBProcess()(*DefenderProtectionType) {
     if m == nil {
         return nil
@@ -1423,7 +1423,7 @@ func (m *Windows10EndpointProtectionConfiguration) GetDefenderUntrustedUSBProces
         return m.defenderUntrustedUSBProcess
     }
 }
-// GetDefenderUntrustedUSBProcessType gets the defenderUntrustedUSBProcessType property value. Value indicating response to untrusted and unsigned processes that run from USB. Possible values are: userDefined, block, auditMode, warn, disable.
+// GetDefenderUntrustedUSBProcessType gets the defenderUntrustedUSBProcessType property value. Possible values of Defender Attack Surface Reduction Rules
 func (m *Windows10EndpointProtectionConfiguration) GetDefenderUntrustedUSBProcessType()(*DefenderAttackSurfaceType) {
     if m == nil {
         return nil
@@ -1447,7 +1447,7 @@ func (m *Windows10EndpointProtectionConfiguration) GetDeviceGuardEnableVirtualiz
         return m.deviceGuardEnableVirtualizationBasedSecurity
     }
 }
-// GetDeviceGuardLaunchSystemGuard gets the deviceGuardLaunchSystemGuard property value. Allows the IT admin to configure the launch of System Guard. Possible values are: notConfigured, enabled, disabled.
+// GetDeviceGuardLaunchSystemGuard gets the deviceGuardLaunchSystemGuard property value. Possible values of a property
 func (m *Windows10EndpointProtectionConfiguration) GetDeviceGuardLaunchSystemGuard()(*Enablement) {
     if m == nil {
         return nil
@@ -1455,7 +1455,7 @@ func (m *Windows10EndpointProtectionConfiguration) GetDeviceGuardLaunchSystemGua
         return m.deviceGuardLaunchSystemGuard
     }
 }
-// GetDeviceGuardLocalSystemAuthorityCredentialGuardSettings gets the deviceGuardLocalSystemAuthorityCredentialGuardSettings property value. Turn on Credential Guard when Platform Security Level with Secure Boot and Virtualization Based Security are both enabled. Possible values are: notConfigured, enableWithUEFILock, enableWithoutUEFILock, disable.
+// GetDeviceGuardLocalSystemAuthorityCredentialGuardSettings gets the deviceGuardLocalSystemAuthorityCredentialGuardSettings property value. Possible values of Credential Guard settings.
 func (m *Windows10EndpointProtectionConfiguration) GetDeviceGuardLocalSystemAuthorityCredentialGuardSettings()(*DeviceGuardLocalSystemAuthorityCredentialGuardType) {
     if m == nil {
         return nil
@@ -1463,7 +1463,7 @@ func (m *Windows10EndpointProtectionConfiguration) GetDeviceGuardLocalSystemAuth
         return m.deviceGuardLocalSystemAuthorityCredentialGuardSettings
     }
 }
-// GetDeviceGuardSecureBootWithDMA gets the deviceGuardSecureBootWithDMA property value. Specifies whether Platform Security Level is enabled at next reboot. Possible values are: notConfigured, withoutDMA, withDMA.
+// GetDeviceGuardSecureBootWithDMA gets the deviceGuardSecureBootWithDMA property value. Possible values of Secure Boot with DMA
 func (m *Windows10EndpointProtectionConfiguration) GetDeviceGuardSecureBootWithDMA()(*SecureBootWithDMAType) {
     if m == nil {
         return nil
@@ -1471,7 +1471,7 @@ func (m *Windows10EndpointProtectionConfiguration) GetDeviceGuardSecureBootWithD
         return m.deviceGuardSecureBootWithDMA
     }
 }
-// GetDmaGuardDeviceEnumerationPolicy gets the dmaGuardDeviceEnumerationPolicy property value. This policy is intended to provide additional security against external DMA capable devices. It allows for more control over the enumeration of external DMA capable devices incompatible with DMA Remapping/device memory isolation and sandboxing. This policy only takes effect when Kernel DMA Protection is supported and enabled by the system firmware. Kernel DMA Protection is a platform feature that cannot be controlled via policy or by end user. It has to be supported by the system at the time of manufacturing. To check if the system supports Kernel DMA Protection, please check the Kernel DMA Protection field in the Summary page of MSINFO32.exe. Possible values are: deviceDefault, blockAll, allowAll.
+// GetDmaGuardDeviceEnumerationPolicy gets the dmaGuardDeviceEnumerationPolicy property value. Possible values of the DmaGuardDeviceEnumerationPolicy.
 func (m *Windows10EndpointProtectionConfiguration) GetDmaGuardDeviceEnumerationPolicy()(*DmaGuardDeviceEnumerationPolicyType) {
     if m == nil {
         return nil
@@ -3784,7 +3784,7 @@ func (m *Windows10EndpointProtectionConfiguration) GetFirewallBlockStatefulFTP()
         return m.firewallBlockStatefulFTP
     }
 }
-// GetFirewallCertificateRevocationListCheckMethod gets the firewallCertificateRevocationListCheckMethod property value. Specify how the certificate revocation list is to be enforced. Possible values are: deviceDefault, none, attempt, require.
+// GetFirewallCertificateRevocationListCheckMethod gets the firewallCertificateRevocationListCheckMethod property value. Possible values for firewallCertificateRevocationListCheckMethod
 func (m *Windows10EndpointProtectionConfiguration) GetFirewallCertificateRevocationListCheckMethod()(*FirewallCertificateRevocationListCheckMethodType) {
     if m == nil {
         return nil
@@ -3848,7 +3848,7 @@ func (m *Windows10EndpointProtectionConfiguration) GetFirewallMergeKeyingModuleS
         return m.firewallMergeKeyingModuleSettings
     }
 }
-// GetFirewallPacketQueueingMethod gets the firewallPacketQueueingMethod property value. Configures how packet queueing should be applied in the tunnel gateway scenario. Possible values are: deviceDefault, disabled, queueInbound, queueOutbound, queueBoth.
+// GetFirewallPacketQueueingMethod gets the firewallPacketQueueingMethod property value. Possible values for firewallPacketQueueingMethod
 func (m *Windows10EndpointProtectionConfiguration) GetFirewallPacketQueueingMethod()(*FirewallPacketQueueingMethodType) {
     if m == nil {
         return nil
@@ -3856,7 +3856,7 @@ func (m *Windows10EndpointProtectionConfiguration) GetFirewallPacketQueueingMeth
         return m.firewallPacketQueueingMethod
     }
 }
-// GetFirewallPreSharedKeyEncodingMethod gets the firewallPreSharedKeyEncodingMethod property value. Select the preshared key encoding to be used. Possible values are: deviceDefault, none, utF8.
+// GetFirewallPreSharedKeyEncodingMethod gets the firewallPreSharedKeyEncodingMethod property value. Possible values for firewallPreSharedKeyEncodingMethod
 func (m *Windows10EndpointProtectionConfiguration) GetFirewallPreSharedKeyEncodingMethod()(*FirewallPreSharedKeyEncodingMethodType) {
     if m == nil {
         return nil
@@ -3896,7 +3896,7 @@ func (m *Windows10EndpointProtectionConfiguration) GetFirewallRules()([]WindowsF
         return m.firewallRules
     }
 }
-// GetLanManagerAuthenticationLevel gets the lanManagerAuthenticationLevel property value. This security setting determines which challenge/response authentication protocol is used for network logons. Possible values are: lmAndNltm, lmNtlmAndNtlmV2, lmAndNtlmOnly, lmAndNtlmV2, lmNtlmV2AndNotLm, lmNtlmV2AndNotLmOrNtm.
+// GetLanManagerAuthenticationLevel gets the lanManagerAuthenticationLevel property value. Possible values for LanManagerAuthenticationLevel
 func (m *Windows10EndpointProtectionConfiguration) GetLanManagerAuthenticationLevel()(*LanManagerAuthenticationLevel) {
     if m == nil {
         return nil
@@ -3920,7 +3920,7 @@ func (m *Windows10EndpointProtectionConfiguration) GetLocalSecurityOptionsAdmini
         return m.localSecurityOptionsAdministratorAccountName
     }
 }
-// GetLocalSecurityOptionsAdministratorElevationPromptBehavior gets the localSecurityOptionsAdministratorElevationPromptBehavior property value. Define the behavior of the elevation prompt for admins in Admin Approval Mode. Possible values are: notConfigured, elevateWithoutPrompting, promptForCredentialsOnTheSecureDesktop, promptForConsentOnTheSecureDesktop, promptForCredentials, promptForConsent, promptForConsentForNonWindowsBinaries.
+// GetLocalSecurityOptionsAdministratorElevationPromptBehavior gets the localSecurityOptionsAdministratorElevationPromptBehavior property value. Possible values for LocalSecurityOptionsAdministratorElevationPromptBehavior
 func (m *Windows10EndpointProtectionConfiguration) GetLocalSecurityOptionsAdministratorElevationPromptBehavior()(*LocalSecurityOptionsAdministratorElevationPromptBehaviorType) {
     if m == nil {
         return nil
@@ -4120,7 +4120,7 @@ func (m *Windows10EndpointProtectionConfiguration) GetLocalSecurityOptionsDoNotS
         return m.localSecurityOptionsDoNotStoreLANManagerHashValueOnNextPasswordChange
     }
 }
-// GetLocalSecurityOptionsFormatAndEjectOfRemovableMediaAllowedUser gets the localSecurityOptionsFormatAndEjectOfRemovableMediaAllowedUser property value. Define who is allowed to format and eject removable NTFS media. Possible values are: notConfigured, administrators, administratorsAndPowerUsers, administratorsAndInteractiveUsers.
+// GetLocalSecurityOptionsFormatAndEjectOfRemovableMediaAllowedUser gets the localSecurityOptionsFormatAndEjectOfRemovableMediaAllowedUser property value. Possible values for LocalSecurityOptionsFormatAndEjectOfRemovableMediaAllowedUser
 func (m *Windows10EndpointProtectionConfiguration) GetLocalSecurityOptionsFormatAndEjectOfRemovableMediaAllowedUser()(*LocalSecurityOptionsFormatAndEjectOfRemovableMediaAllowedUserType) {
     if m == nil {
         return nil
@@ -4152,7 +4152,7 @@ func (m *Windows10EndpointProtectionConfiguration) GetLocalSecurityOptionsHideUs
         return m.localSecurityOptionsHideUsernameAtSignIn
     }
 }
-// GetLocalSecurityOptionsInformationDisplayedOnLockScreen gets the localSecurityOptionsInformationDisplayedOnLockScreen property value. Configure the user information that is displayed when the session is locked. If not configured, user display name, domain and username are shown. Possible values are: notConfigured, administrators, administratorsAndPowerUsers, administratorsAndInteractiveUsers.
+// GetLocalSecurityOptionsInformationDisplayedOnLockScreen gets the localSecurityOptionsInformationDisplayedOnLockScreen property value. Possible values for LocalSecurityOptionsInformationDisplayedOnLockScreen
 func (m *Windows10EndpointProtectionConfiguration) GetLocalSecurityOptionsInformationDisplayedOnLockScreen()(*LocalSecurityOptionsInformationDisplayedOnLockScreenType) {
     if m == nil {
         return nil
@@ -4160,7 +4160,7 @@ func (m *Windows10EndpointProtectionConfiguration) GetLocalSecurityOptionsInform
         return m.localSecurityOptionsInformationDisplayedOnLockScreen
     }
 }
-// GetLocalSecurityOptionsInformationShownOnLockScreen gets the localSecurityOptionsInformationShownOnLockScreen property value. Configure the user information that is displayed when the session is locked. If not configured, user display name, domain and username are shown. Possible values are: notConfigured, userDisplayNameDomainUser, userDisplayNameOnly, doNotDisplayUser.
+// GetLocalSecurityOptionsInformationShownOnLockScreen gets the localSecurityOptionsInformationShownOnLockScreen property value. Possible values for LocalSecurityOptionsInformationShownOnLockScreenType
 func (m *Windows10EndpointProtectionConfiguration) GetLocalSecurityOptionsInformationShownOnLockScreen()(*LocalSecurityOptionsInformationShownOnLockScreenType) {
     if m == nil {
         return nil
@@ -4200,7 +4200,7 @@ func (m *Windows10EndpointProtectionConfiguration) GetLocalSecurityOptionsMachin
         return m.localSecurityOptionsMachineInactivityLimitInMinutes
     }
 }
-// GetLocalSecurityOptionsMinimumSessionSecurityForNtlmSspBasedClients gets the localSecurityOptionsMinimumSessionSecurityForNtlmSspBasedClients property value. This security setting allows a client to require the negotiation of 128-bit encryption and/or NTLMv2 session security. Possible values are: none, requireNtmlV2SessionSecurity, require128BitEncryption, ntlmV2And128BitEncryption.
+// GetLocalSecurityOptionsMinimumSessionSecurityForNtlmSspBasedClients gets the localSecurityOptionsMinimumSessionSecurityForNtlmSspBasedClients property value. Possible values for LocalSecurityOptionsMinimumSessionSecurity
 func (m *Windows10EndpointProtectionConfiguration) GetLocalSecurityOptionsMinimumSessionSecurityForNtlmSspBasedClients()(*LocalSecurityOptionsMinimumSessionSecurity) {
     if m == nil {
         return nil
@@ -4208,7 +4208,7 @@ func (m *Windows10EndpointProtectionConfiguration) GetLocalSecurityOptionsMinimu
         return m.localSecurityOptionsMinimumSessionSecurityForNtlmSspBasedClients
     }
 }
-// GetLocalSecurityOptionsMinimumSessionSecurityForNtlmSspBasedServers gets the localSecurityOptionsMinimumSessionSecurityForNtlmSspBasedServers property value. This security setting allows a server to require the negotiation of 128-bit encryption and/or NTLMv2 session security. Possible values are: none, requireNtmlV2SessionSecurity, require128BitEncryption, ntlmV2And128BitEncryption.
+// GetLocalSecurityOptionsMinimumSessionSecurityForNtlmSspBasedServers gets the localSecurityOptionsMinimumSessionSecurityForNtlmSspBasedServers property value. Possible values for LocalSecurityOptionsMinimumSessionSecurity
 func (m *Windows10EndpointProtectionConfiguration) GetLocalSecurityOptionsMinimumSessionSecurityForNtlmSspBasedServers()(*LocalSecurityOptionsMinimumSessionSecurity) {
     if m == nil {
         return nil
@@ -4232,7 +4232,7 @@ func (m *Windows10EndpointProtectionConfiguration) GetLocalSecurityOptionsRestri
         return m.localSecurityOptionsRestrictAnonymousAccessToNamedPipesAndShares
     }
 }
-// GetLocalSecurityOptionsSmartCardRemovalBehavior gets the localSecurityOptionsSmartCardRemovalBehavior property value. This security setting determines what happens when the smart card for a logged-on user is removed from the smart card reader. Possible values are: noAction, lockWorkstation, forceLogoff, disconnectRemoteDesktopSession.
+// GetLocalSecurityOptionsSmartCardRemovalBehavior gets the localSecurityOptionsSmartCardRemovalBehavior property value. Possible values for LocalSecurityOptionsSmartCardRemovalBehaviorType
 func (m *Windows10EndpointProtectionConfiguration) GetLocalSecurityOptionsSmartCardRemovalBehavior()(*LocalSecurityOptionsSmartCardRemovalBehaviorType) {
     if m == nil {
         return nil
@@ -4240,7 +4240,7 @@ func (m *Windows10EndpointProtectionConfiguration) GetLocalSecurityOptionsSmartC
         return m.localSecurityOptionsSmartCardRemovalBehavior
     }
 }
-// GetLocalSecurityOptionsStandardUserElevationPromptBehavior gets the localSecurityOptionsStandardUserElevationPromptBehavior property value. Define the behavior of the elevation prompt for standard users. Possible values are: notConfigured, automaticallyDenyElevationRequests, promptForCredentialsOnTheSecureDesktop, promptForCredentials.
+// GetLocalSecurityOptionsStandardUserElevationPromptBehavior gets the localSecurityOptionsStandardUserElevationPromptBehavior property value. Possible values for LocalSecurityOptionsStandardUserElevationPromptBehavior
 func (m *Windows10EndpointProtectionConfiguration) GetLocalSecurityOptionsStandardUserElevationPromptBehavior()(*LocalSecurityOptionsStandardUserElevationPromptBehaviorType) {
     if m == nil {
         return nil
@@ -4528,7 +4528,7 @@ func (m *Windows10EndpointProtectionConfiguration) GetUserRightsTakeOwnership()(
         return m.userRightsTakeOwnership
     }
 }
-// GetWindowsDefenderTamperProtection gets the windowsDefenderTamperProtection property value. Configure windows defender TamperProtection settings. Possible values are: notConfigured, enable, disable.
+// GetWindowsDefenderTamperProtection gets the windowsDefenderTamperProtection property value. Defender TamperProtection setting options
 func (m *Windows10EndpointProtectionConfiguration) GetWindowsDefenderTamperProtection()(*WindowsDefenderTamperProtectionOptions) {
     if m == nil {
         return nil
@@ -4536,7 +4536,7 @@ func (m *Windows10EndpointProtectionConfiguration) GetWindowsDefenderTamperProte
         return m.windowsDefenderTamperProtection
     }
 }
-// GetXboxServicesAccessoryManagementServiceStartupMode gets the xboxServicesAccessoryManagementServiceStartupMode property value. This setting determines whether the Accessory management service's start type is Automatic(2), Manual(3), Disabled(4). Default: Manual. Possible values are: manual, automatic, disabled.
+// GetXboxServicesAccessoryManagementServiceStartupMode gets the xboxServicesAccessoryManagementServiceStartupMode property value. Possible values of xbox service start type
 func (m *Windows10EndpointProtectionConfiguration) GetXboxServicesAccessoryManagementServiceStartupMode()(*ServiceStartType) {
     if m == nil {
         return nil
@@ -4552,7 +4552,7 @@ func (m *Windows10EndpointProtectionConfiguration) GetXboxServicesEnableXboxGame
         return m.xboxServicesEnableXboxGameSaveTask
     }
 }
-// GetXboxServicesLiveAuthManagerServiceStartupMode gets the xboxServicesLiveAuthManagerServiceStartupMode property value. This setting determines whether Live Auth Manager service's start type is Automatic(2), Manual(3), Disabled(4). Default: Manual. Possible values are: manual, automatic, disabled.
+// GetXboxServicesLiveAuthManagerServiceStartupMode gets the xboxServicesLiveAuthManagerServiceStartupMode property value. Possible values of xbox service start type
 func (m *Windows10EndpointProtectionConfiguration) GetXboxServicesLiveAuthManagerServiceStartupMode()(*ServiceStartType) {
     if m == nil {
         return nil
@@ -4560,7 +4560,7 @@ func (m *Windows10EndpointProtectionConfiguration) GetXboxServicesLiveAuthManage
         return m.xboxServicesLiveAuthManagerServiceStartupMode
     }
 }
-// GetXboxServicesLiveGameSaveServiceStartupMode gets the xboxServicesLiveGameSaveServiceStartupMode property value. This setting determines whether Live Game save service's start type is Automatic(2), Manual(3), Disabled(4). Default: Manual. Possible values are: manual, automatic, disabled.
+// GetXboxServicesLiveGameSaveServiceStartupMode gets the xboxServicesLiveGameSaveServiceStartupMode property value. Possible values of xbox service start type
 func (m *Windows10EndpointProtectionConfiguration) GetXboxServicesLiveGameSaveServiceStartupMode()(*ServiceStartType) {
     if m == nil {
         return nil
@@ -4568,7 +4568,7 @@ func (m *Windows10EndpointProtectionConfiguration) GetXboxServicesLiveGameSaveSe
         return m.xboxServicesLiveGameSaveServiceStartupMode
     }
 }
-// GetXboxServicesLiveNetworkingServiceStartupMode gets the xboxServicesLiveNetworkingServiceStartupMode property value. This setting determines whether Networking service's start type is Automatic(2), Manual(3), Disabled(4). Default: Manual. Possible values are: manual, automatic, disabled.
+// GetXboxServicesLiveNetworkingServiceStartupMode gets the xboxServicesLiveNetworkingServiceStartupMode property value. Possible values of xbox service start type
 func (m *Windows10EndpointProtectionConfiguration) GetXboxServicesLiveNetworkingServiceStartupMode()(*ServiceStartType) {
     if m == nil {
         return nil
@@ -6053,13 +6053,13 @@ func (m *Windows10EndpointProtectionConfiguration) SetApplicationGuardAllowVirtu
         m.applicationGuardAllowVirtualGPU = value
     }
 }
-// SetApplicationGuardBlockClipboardSharing sets the applicationGuardBlockClipboardSharing property value. Block clipboard to share data from Host to Container, or from Container to Host, or both ways, or neither ways. Possible values are: notConfigured, blockBoth, blockHostToContainer, blockContainerToHost, blockNone.
+// SetApplicationGuardBlockClipboardSharing sets the applicationGuardBlockClipboardSharing property value. Possible values for applicationGuardBlockClipboardSharingType
 func (m *Windows10EndpointProtectionConfiguration) SetApplicationGuardBlockClipboardSharing(value *ApplicationGuardBlockClipboardSharingType)() {
     if m != nil {
         m.applicationGuardBlockClipboardSharing = value
     }
 }
-// SetApplicationGuardBlockFileTransfer sets the applicationGuardBlockFileTransfer property value. Block clipboard to transfer image file, text file or neither of them. Possible values are: notConfigured, blockImageAndTextFile, blockImageFile, blockNone, blockTextFile.
+// SetApplicationGuardBlockFileTransfer sets the applicationGuardBlockFileTransfer property value. Possible values for applicationGuardBlockFileTransfer
 func (m *Windows10EndpointProtectionConfiguration) SetApplicationGuardBlockFileTransfer(value *ApplicationGuardBlockFileTransferType)() {
     if m != nil {
         m.applicationGuardBlockFileTransfer = value
@@ -6083,7 +6083,7 @@ func (m *Windows10EndpointProtectionConfiguration) SetApplicationGuardEnabled(va
         m.applicationGuardEnabled = value
     }
 }
-// SetApplicationGuardEnabledOptions sets the applicationGuardEnabledOptions property value. Enable Windows Defender Application Guard for newer Windows builds. Possible values are: notConfigured, enabledForEdge, enabledForOffice, enabledForEdgeAndOffice.
+// SetApplicationGuardEnabledOptions sets the applicationGuardEnabledOptions property value. Possible values for ApplicationGuardEnabledOptions
 func (m *Windows10EndpointProtectionConfiguration) SetApplicationGuardEnabledOptions(value *ApplicationGuardEnabledOptions)() {
     if m != nil {
         m.applicationGuardEnabledOptions = value
@@ -6095,7 +6095,7 @@ func (m *Windows10EndpointProtectionConfiguration) SetApplicationGuardForceAudit
         m.applicationGuardForceAuditing = value
     }
 }
-// SetAppLockerApplicationControl sets the appLockerApplicationControl property value. Enables the Admin to choose what types of app to allow on devices. Possible values are: notConfigured, enforceComponentsAndStoreApps, auditComponentsAndStoreApps, enforceComponentsStoreAppsAndSmartlocker, auditComponentsStoreAppsAndSmartlocker.
+// SetAppLockerApplicationControl sets the appLockerApplicationControl property value. Possible values of AppLocker Application Control Types
 func (m *Windows10EndpointProtectionConfiguration) SetAppLockerApplicationControl(value *AppLockerApplicationControlType)() {
     if m != nil {
         m.appLockerApplicationControl = value
@@ -6131,7 +6131,7 @@ func (m *Windows10EndpointProtectionConfiguration) SetBitLockerFixedDrivePolicy(
         m.bitLockerFixedDrivePolicy = value
     }
 }
-// SetBitLockerRecoveryPasswordRotation sets the bitLockerRecoveryPasswordRotation property value. This setting initiates a client-driven recovery password rotation after an OS drive recovery (either by using bootmgr or WinRE). Possible values are: notConfigured, disabled, enabledForAzureAd, enabledForAzureAdAndHybrid.
+// SetBitLockerRecoveryPasswordRotation sets the bitLockerRecoveryPasswordRotation property value. BitLocker recovery password rotation type
 func (m *Windows10EndpointProtectionConfiguration) SetBitLockerRecoveryPasswordRotation(value *BitLockerRecoveryPasswordRotationType)() {
     if m != nil {
         m.bitLockerRecoveryPasswordRotation = value
@@ -6155,13 +6155,13 @@ func (m *Windows10EndpointProtectionConfiguration) SetDefenderAdditionalGuardedF
         m.defenderAdditionalGuardedFolders = value
     }
 }
-// SetDefenderAdobeReaderLaunchChildProcess sets the defenderAdobeReaderLaunchChildProcess property value. Value indicating the behavior of Adobe Reader from creating child processes. Possible values are: userDefined, enable, auditMode, warn, notConfigured.
+// SetDefenderAdobeReaderLaunchChildProcess sets the defenderAdobeReaderLaunchChildProcess property value. Possible values of Defender PUA Protection
 func (m *Windows10EndpointProtectionConfiguration) SetDefenderAdobeReaderLaunchChildProcess(value *DefenderProtectionType)() {
     if m != nil {
         m.defenderAdobeReaderLaunchChildProcess = value
     }
 }
-// SetDefenderAdvancedRansomewareProtectionType sets the defenderAdvancedRansomewareProtectionType property value. Value indicating use of advanced protection against ransomeware. Possible values are: userDefined, enable, auditMode, warn, notConfigured.
+// SetDefenderAdvancedRansomewareProtectionType sets the defenderAdvancedRansomewareProtectionType property value. Possible values of Defender PUA Protection
 func (m *Windows10EndpointProtectionConfiguration) SetDefenderAdvancedRansomewareProtectionType(value *DefenderProtectionType)() {
     if m != nil {
         m.defenderAdvancedRansomewareProtectionType = value
@@ -6245,7 +6245,7 @@ func (m *Windows10EndpointProtectionConfiguration) SetDefenderBlockEndUserAccess
         m.defenderBlockEndUserAccess = value
     }
 }
-// SetDefenderBlockPersistenceThroughWmiType sets the defenderBlockPersistenceThroughWmiType property value. Value indicating the behavior of Block persistence through WMI event subscription. Possible values are: userDefined, block, auditMode, warn, disable.
+// SetDefenderBlockPersistenceThroughWmiType sets the defenderBlockPersistenceThroughWmiType property value. Possible values of Defender Attack Surface Reduction Rules
 func (m *Windows10EndpointProtectionConfiguration) SetDefenderBlockPersistenceThroughWmiType(value *DefenderAttackSurfaceType)() {
     if m != nil {
         m.defenderBlockPersistenceThroughWmiType = value
@@ -6353,13 +6353,13 @@ func (m *Windows10EndpointProtectionConfiguration) SetDefenderDisableScanScripts
         m.defenderDisableScanScriptsLoadedInInternetExplorer = value
     }
 }
-// SetDefenderEmailContentExecution sets the defenderEmailContentExecution property value. Value indicating if execution of executable content (exe, dll, ps, js, vbs, etc) should be dropped from email (webmail/mail-client). Possible values are: userDefined, enable, auditMode, warn, notConfigured.
+// SetDefenderEmailContentExecution sets the defenderEmailContentExecution property value. Possible values of Defender PUA Protection
 func (m *Windows10EndpointProtectionConfiguration) SetDefenderEmailContentExecution(value *DefenderProtectionType)() {
     if m != nil {
         m.defenderEmailContentExecution = value
     }
 }
-// SetDefenderEmailContentExecutionType sets the defenderEmailContentExecutionType property value. Value indicating if execution of executable content (exe, dll, ps, js, vbs, etc) should be dropped from email (webmail/mail-client). Possible values are: userDefined, block, auditMode, warn, disable.
+// SetDefenderEmailContentExecutionType sets the defenderEmailContentExecutionType property value. Possible values of Defender Attack Surface Reduction Rules
 func (m *Windows10EndpointProtectionConfiguration) SetDefenderEmailContentExecutionType(value *DefenderAttackSurfaceType)() {
     if m != nil {
         m.defenderEmailContentExecutionType = value
@@ -6413,67 +6413,67 @@ func (m *Windows10EndpointProtectionConfiguration) SetDefenderGuardedFoldersAllo
         m.defenderGuardedFoldersAllowedAppPaths = value
     }
 }
-// SetDefenderGuardMyFoldersType sets the defenderGuardMyFoldersType property value. Value indicating the behavior of protected folders. Possible values are: userDefined, enable, auditMode, blockDiskModification, auditDiskModification.
+// SetDefenderGuardMyFoldersType sets the defenderGuardMyFoldersType property value. Possible values of Folder Protection
 func (m *Windows10EndpointProtectionConfiguration) SetDefenderGuardMyFoldersType(value *FolderProtectionType)() {
     if m != nil {
         m.defenderGuardMyFoldersType = value
     }
 }
-// SetDefenderNetworkProtectionType sets the defenderNetworkProtectionType property value. Value indicating the behavior of NetworkProtection. Possible values are: userDefined, enable, auditMode, warn, notConfigured.
+// SetDefenderNetworkProtectionType sets the defenderNetworkProtectionType property value. Possible values of Defender PUA Protection
 func (m *Windows10EndpointProtectionConfiguration) SetDefenderNetworkProtectionType(value *DefenderProtectionType)() {
     if m != nil {
         m.defenderNetworkProtectionType = value
     }
 }
-// SetDefenderOfficeAppsExecutableContentCreationOrLaunch sets the defenderOfficeAppsExecutableContentCreationOrLaunch property value. Value indicating the behavior of Office applications/macros creating or launching executable content. Possible values are: userDefined, enable, auditMode, warn, notConfigured.
+// SetDefenderOfficeAppsExecutableContentCreationOrLaunch sets the defenderOfficeAppsExecutableContentCreationOrLaunch property value. Possible values of Defender PUA Protection
 func (m *Windows10EndpointProtectionConfiguration) SetDefenderOfficeAppsExecutableContentCreationOrLaunch(value *DefenderProtectionType)() {
     if m != nil {
         m.defenderOfficeAppsExecutableContentCreationOrLaunch = value
     }
 }
-// SetDefenderOfficeAppsExecutableContentCreationOrLaunchType sets the defenderOfficeAppsExecutableContentCreationOrLaunchType property value. Value indicating the behavior of Office applications/macros creating or launching executable content. Possible values are: userDefined, block, auditMode, warn, disable.
+// SetDefenderOfficeAppsExecutableContentCreationOrLaunchType sets the defenderOfficeAppsExecutableContentCreationOrLaunchType property value. Possible values of Defender Attack Surface Reduction Rules
 func (m *Windows10EndpointProtectionConfiguration) SetDefenderOfficeAppsExecutableContentCreationOrLaunchType(value *DefenderAttackSurfaceType)() {
     if m != nil {
         m.defenderOfficeAppsExecutableContentCreationOrLaunchType = value
     }
 }
-// SetDefenderOfficeAppsLaunchChildProcess sets the defenderOfficeAppsLaunchChildProcess property value. Value indicating the behavior of Office application launching child processes. Possible values are: userDefined, enable, auditMode, warn, notConfigured.
+// SetDefenderOfficeAppsLaunchChildProcess sets the defenderOfficeAppsLaunchChildProcess property value. Possible values of Defender PUA Protection
 func (m *Windows10EndpointProtectionConfiguration) SetDefenderOfficeAppsLaunchChildProcess(value *DefenderProtectionType)() {
     if m != nil {
         m.defenderOfficeAppsLaunchChildProcess = value
     }
 }
-// SetDefenderOfficeAppsLaunchChildProcessType sets the defenderOfficeAppsLaunchChildProcessType property value. Value indicating the behavior of Office application launching child processes. Possible values are: userDefined, block, auditMode, warn, disable.
+// SetDefenderOfficeAppsLaunchChildProcessType sets the defenderOfficeAppsLaunchChildProcessType property value. Possible values of Defender Attack Surface Reduction Rules
 func (m *Windows10EndpointProtectionConfiguration) SetDefenderOfficeAppsLaunchChildProcessType(value *DefenderAttackSurfaceType)() {
     if m != nil {
         m.defenderOfficeAppsLaunchChildProcessType = value
     }
 }
-// SetDefenderOfficeAppsOtherProcessInjection sets the defenderOfficeAppsOtherProcessInjection property value. Value indicating the behavior of  Office applications injecting into other processes. Possible values are: userDefined, enable, auditMode, warn, notConfigured.
+// SetDefenderOfficeAppsOtherProcessInjection sets the defenderOfficeAppsOtherProcessInjection property value. Possible values of Defender PUA Protection
 func (m *Windows10EndpointProtectionConfiguration) SetDefenderOfficeAppsOtherProcessInjection(value *DefenderProtectionType)() {
     if m != nil {
         m.defenderOfficeAppsOtherProcessInjection = value
     }
 }
-// SetDefenderOfficeAppsOtherProcessInjectionType sets the defenderOfficeAppsOtherProcessInjectionType property value. Value indicating the behavior of Office applications injecting into other processes. Possible values are: userDefined, block, auditMode, warn, disable.
+// SetDefenderOfficeAppsOtherProcessInjectionType sets the defenderOfficeAppsOtherProcessInjectionType property value. Possible values of Defender Attack Surface Reduction Rules
 func (m *Windows10EndpointProtectionConfiguration) SetDefenderOfficeAppsOtherProcessInjectionType(value *DefenderAttackSurfaceType)() {
     if m != nil {
         m.defenderOfficeAppsOtherProcessInjectionType = value
     }
 }
-// SetDefenderOfficeCommunicationAppsLaunchChildProcess sets the defenderOfficeCommunicationAppsLaunchChildProcess property value. Value indicating the behavior of Office communication applications, including Microsoft Outlook, from creating child processes. Possible values are: userDefined, enable, auditMode, warn, notConfigured.
+// SetDefenderOfficeCommunicationAppsLaunchChildProcess sets the defenderOfficeCommunicationAppsLaunchChildProcess property value. Possible values of Defender PUA Protection
 func (m *Windows10EndpointProtectionConfiguration) SetDefenderOfficeCommunicationAppsLaunchChildProcess(value *DefenderProtectionType)() {
     if m != nil {
         m.defenderOfficeCommunicationAppsLaunchChildProcess = value
     }
 }
-// SetDefenderOfficeMacroCodeAllowWin32Imports sets the defenderOfficeMacroCodeAllowWin32Imports property value. Value indicating the behavior of Win32 imports from Macro code in Office. Possible values are: userDefined, enable, auditMode, warn, notConfigured.
+// SetDefenderOfficeMacroCodeAllowWin32Imports sets the defenderOfficeMacroCodeAllowWin32Imports property value. Possible values of Defender PUA Protection
 func (m *Windows10EndpointProtectionConfiguration) SetDefenderOfficeMacroCodeAllowWin32Imports(value *DefenderProtectionType)() {
     if m != nil {
         m.defenderOfficeMacroCodeAllowWin32Imports = value
     }
 }
-// SetDefenderOfficeMacroCodeAllowWin32ImportsType sets the defenderOfficeMacroCodeAllowWin32ImportsType property value. Value indicating the behavior of Win32 imports from Macro code in Office. Possible values are: userDefined, block, auditMode, warn, disable.
+// SetDefenderOfficeMacroCodeAllowWin32ImportsType sets the defenderOfficeMacroCodeAllowWin32ImportsType property value. Possible values of Defender Attack Surface Reduction Rules
 func (m *Windows10EndpointProtectionConfiguration) SetDefenderOfficeMacroCodeAllowWin32ImportsType(value *DefenderAttackSurfaceType)() {
     if m != nil {
         m.defenderOfficeMacroCodeAllowWin32ImportsType = value
@@ -6485,19 +6485,19 @@ func (m *Windows10EndpointProtectionConfiguration) SetDefenderPotentiallyUnwante
         m.defenderPotentiallyUnwantedAppAction = value
     }
 }
-// SetDefenderPreventCredentialStealingType sets the defenderPreventCredentialStealingType property value. Value indicating if credential stealing from the Windows local security authority subsystem is permitted. Possible values are: userDefined, enable, auditMode, warn, notConfigured.
+// SetDefenderPreventCredentialStealingType sets the defenderPreventCredentialStealingType property value. Possible values of Defender PUA Protection
 func (m *Windows10EndpointProtectionConfiguration) SetDefenderPreventCredentialStealingType(value *DefenderProtectionType)() {
     if m != nil {
         m.defenderPreventCredentialStealingType = value
     }
 }
-// SetDefenderProcessCreation sets the defenderProcessCreation property value. Value indicating response to process creations originating from PSExec and WMI commands. Possible values are: userDefined, enable, auditMode, warn, notConfigured.
+// SetDefenderProcessCreation sets the defenderProcessCreation property value. Possible values of Defender PUA Protection
 func (m *Windows10EndpointProtectionConfiguration) SetDefenderProcessCreation(value *DefenderProtectionType)() {
     if m != nil {
         m.defenderProcessCreation = value
     }
 }
-// SetDefenderProcessCreationType sets the defenderProcessCreationType property value. Value indicating response to process creations originating from PSExec and WMI commands. Possible values are: userDefined, block, auditMode, warn, disable.
+// SetDefenderProcessCreationType sets the defenderProcessCreationType property value. Possible values of Defender Attack Surface Reduction Rules
 func (m *Windows10EndpointProtectionConfiguration) SetDefenderProcessCreationType(value *DefenderAttackSurfaceType)() {
     if m != nil {
         m.defenderProcessCreationType = value
@@ -6545,25 +6545,25 @@ func (m *Windows10EndpointProtectionConfiguration) SetDefenderScheduledScanTime(
         m.defenderScheduledScanTime = value
     }
 }
-// SetDefenderScriptDownloadedPayloadExecution sets the defenderScriptDownloadedPayloadExecution property value. Value indicating the behavior of js/vbs executing payload downloaded from Internet. Possible values are: userDefined, enable, auditMode, warn, notConfigured.
+// SetDefenderScriptDownloadedPayloadExecution sets the defenderScriptDownloadedPayloadExecution property value. Possible values of Defender PUA Protection
 func (m *Windows10EndpointProtectionConfiguration) SetDefenderScriptDownloadedPayloadExecution(value *DefenderProtectionType)() {
     if m != nil {
         m.defenderScriptDownloadedPayloadExecution = value
     }
 }
-// SetDefenderScriptDownloadedPayloadExecutionType sets the defenderScriptDownloadedPayloadExecutionType property value. Value indicating the behavior of js/vbs executing payload downloaded from Internet. Possible values are: userDefined, block, auditMode, warn, disable.
+// SetDefenderScriptDownloadedPayloadExecutionType sets the defenderScriptDownloadedPayloadExecutionType property value. Possible values of Defender Attack Surface Reduction Rules
 func (m *Windows10EndpointProtectionConfiguration) SetDefenderScriptDownloadedPayloadExecutionType(value *DefenderAttackSurfaceType)() {
     if m != nil {
         m.defenderScriptDownloadedPayloadExecutionType = value
     }
 }
-// SetDefenderScriptObfuscatedMacroCode sets the defenderScriptObfuscatedMacroCode property value. Value indicating the behavior of obfuscated js/vbs/ps/macro code. Possible values are: userDefined, enable, auditMode, warn, notConfigured.
+// SetDefenderScriptObfuscatedMacroCode sets the defenderScriptObfuscatedMacroCode property value. Possible values of Defender PUA Protection
 func (m *Windows10EndpointProtectionConfiguration) SetDefenderScriptObfuscatedMacroCode(value *DefenderProtectionType)() {
     if m != nil {
         m.defenderScriptObfuscatedMacroCode = value
     }
 }
-// SetDefenderScriptObfuscatedMacroCodeType sets the defenderScriptObfuscatedMacroCodeType property value. Value indicating the behavior of obfuscated js/vbs/ps/macro code. Possible values are: userDefined, block, auditMode, warn, disable.
+// SetDefenderScriptObfuscatedMacroCodeType sets the defenderScriptObfuscatedMacroCodeType property value. Possible values of Defender Attack Surface Reduction Rules
 func (m *Windows10EndpointProtectionConfiguration) SetDefenderScriptObfuscatedMacroCodeType(value *DefenderAttackSurfaceType)() {
     if m != nil {
         m.defenderScriptObfuscatedMacroCodeType = value
@@ -6671,13 +6671,13 @@ func (m *Windows10EndpointProtectionConfiguration) SetDefenderSecurityCenterHelp
         m.defenderSecurityCenterHelpURL = value
     }
 }
-// SetDefenderSecurityCenterITContactDisplay sets the defenderSecurityCenterITContactDisplay property value. Configure where to display IT contact information to end users. Possible values are: notConfigured, displayInAppAndInNotifications, displayOnlyInApp, displayOnlyInNotifications.
+// SetDefenderSecurityCenterITContactDisplay sets the defenderSecurityCenterITContactDisplay property value. Possible values for defenderSecurityCenterITContactDisplay
 func (m *Windows10EndpointProtectionConfiguration) SetDefenderSecurityCenterITContactDisplay(value *DefenderSecurityCenterITContactDisplayType)() {
     if m != nil {
         m.defenderSecurityCenterITContactDisplay = value
     }
 }
-// SetDefenderSecurityCenterNotificationsFromApp sets the defenderSecurityCenterNotificationsFromApp property value. Notifications to show from the displayed areas of app. Possible values are: notConfigured, blockNoncriticalNotifications, blockAllNotifications.
+// SetDefenderSecurityCenterNotificationsFromApp sets the defenderSecurityCenterNotificationsFromApp property value. Possible values for defenderSecurityCenterNotificationsFromApp
 func (m *Windows10EndpointProtectionConfiguration) SetDefenderSecurityCenterNotificationsFromApp(value *DefenderSecurityCenterNotificationsFromAppType)() {
     if m != nil {
         m.defenderSecurityCenterNotificationsFromApp = value
@@ -6701,25 +6701,25 @@ func (m *Windows10EndpointProtectionConfiguration) SetDefenderSubmitSamplesConse
         m.defenderSubmitSamplesConsentType = value
     }
 }
-// SetDefenderUntrustedExecutable sets the defenderUntrustedExecutable property value. Value indicating response to executables that don't meet a prevalence, age, or trusted list criteria. Possible values are: userDefined, enable, auditMode, warn, notConfigured.
+// SetDefenderUntrustedExecutable sets the defenderUntrustedExecutable property value. Possible values of Defender PUA Protection
 func (m *Windows10EndpointProtectionConfiguration) SetDefenderUntrustedExecutable(value *DefenderProtectionType)() {
     if m != nil {
         m.defenderUntrustedExecutable = value
     }
 }
-// SetDefenderUntrustedExecutableType sets the defenderUntrustedExecutableType property value. Value indicating response to executables that don't meet a prevalence, age, or trusted list criteria. Possible values are: userDefined, block, auditMode, warn, disable.
+// SetDefenderUntrustedExecutableType sets the defenderUntrustedExecutableType property value. Possible values of Defender Attack Surface Reduction Rules
 func (m *Windows10EndpointProtectionConfiguration) SetDefenderUntrustedExecutableType(value *DefenderAttackSurfaceType)() {
     if m != nil {
         m.defenderUntrustedExecutableType = value
     }
 }
-// SetDefenderUntrustedUSBProcess sets the defenderUntrustedUSBProcess property value. Value indicating response to untrusted and unsigned processes that run from USB. Possible values are: userDefined, enable, auditMode, warn, notConfigured.
+// SetDefenderUntrustedUSBProcess sets the defenderUntrustedUSBProcess property value. Possible values of Defender PUA Protection
 func (m *Windows10EndpointProtectionConfiguration) SetDefenderUntrustedUSBProcess(value *DefenderProtectionType)() {
     if m != nil {
         m.defenderUntrustedUSBProcess = value
     }
 }
-// SetDefenderUntrustedUSBProcessType sets the defenderUntrustedUSBProcessType property value. Value indicating response to untrusted and unsigned processes that run from USB. Possible values are: userDefined, block, auditMode, warn, disable.
+// SetDefenderUntrustedUSBProcessType sets the defenderUntrustedUSBProcessType property value. Possible values of Defender Attack Surface Reduction Rules
 func (m *Windows10EndpointProtectionConfiguration) SetDefenderUntrustedUSBProcessType(value *DefenderAttackSurfaceType)() {
     if m != nil {
         m.defenderUntrustedUSBProcessType = value
@@ -6737,25 +6737,25 @@ func (m *Windows10EndpointProtectionConfiguration) SetDeviceGuardEnableVirtualiz
         m.deviceGuardEnableVirtualizationBasedSecurity = value
     }
 }
-// SetDeviceGuardLaunchSystemGuard sets the deviceGuardLaunchSystemGuard property value. Allows the IT admin to configure the launch of System Guard. Possible values are: notConfigured, enabled, disabled.
+// SetDeviceGuardLaunchSystemGuard sets the deviceGuardLaunchSystemGuard property value. Possible values of a property
 func (m *Windows10EndpointProtectionConfiguration) SetDeviceGuardLaunchSystemGuard(value *Enablement)() {
     if m != nil {
         m.deviceGuardLaunchSystemGuard = value
     }
 }
-// SetDeviceGuardLocalSystemAuthorityCredentialGuardSettings sets the deviceGuardLocalSystemAuthorityCredentialGuardSettings property value. Turn on Credential Guard when Platform Security Level with Secure Boot and Virtualization Based Security are both enabled. Possible values are: notConfigured, enableWithUEFILock, enableWithoutUEFILock, disable.
+// SetDeviceGuardLocalSystemAuthorityCredentialGuardSettings sets the deviceGuardLocalSystemAuthorityCredentialGuardSettings property value. Possible values of Credential Guard settings.
 func (m *Windows10EndpointProtectionConfiguration) SetDeviceGuardLocalSystemAuthorityCredentialGuardSettings(value *DeviceGuardLocalSystemAuthorityCredentialGuardType)() {
     if m != nil {
         m.deviceGuardLocalSystemAuthorityCredentialGuardSettings = value
     }
 }
-// SetDeviceGuardSecureBootWithDMA sets the deviceGuardSecureBootWithDMA property value. Specifies whether Platform Security Level is enabled at next reboot. Possible values are: notConfigured, withoutDMA, withDMA.
+// SetDeviceGuardSecureBootWithDMA sets the deviceGuardSecureBootWithDMA property value. Possible values of Secure Boot with DMA
 func (m *Windows10EndpointProtectionConfiguration) SetDeviceGuardSecureBootWithDMA(value *SecureBootWithDMAType)() {
     if m != nil {
         m.deviceGuardSecureBootWithDMA = value
     }
 }
-// SetDmaGuardDeviceEnumerationPolicy sets the dmaGuardDeviceEnumerationPolicy property value. This policy is intended to provide additional security against external DMA capable devices. It allows for more control over the enumeration of external DMA capable devices incompatible with DMA Remapping/device memory isolation and sandboxing. This policy only takes effect when Kernel DMA Protection is supported and enabled by the system firmware. Kernel DMA Protection is a platform feature that cannot be controlled via policy or by end user. It has to be supported by the system at the time of manufacturing. To check if the system supports Kernel DMA Protection, please check the Kernel DMA Protection field in the Summary page of MSINFO32.exe. Possible values are: deviceDefault, blockAll, allowAll.
+// SetDmaGuardDeviceEnumerationPolicy sets the dmaGuardDeviceEnumerationPolicy property value. Possible values of the DmaGuardDeviceEnumerationPolicy.
 func (m *Windows10EndpointProtectionConfiguration) SetDmaGuardDeviceEnumerationPolicy(value *DmaGuardDeviceEnumerationPolicyType)() {
     if m != nil {
         m.dmaGuardDeviceEnumerationPolicy = value
@@ -6767,7 +6767,7 @@ func (m *Windows10EndpointProtectionConfiguration) SetFirewallBlockStatefulFTP(v
         m.firewallBlockStatefulFTP = value
     }
 }
-// SetFirewallCertificateRevocationListCheckMethod sets the firewallCertificateRevocationListCheckMethod property value. Specify how the certificate revocation list is to be enforced. Possible values are: deviceDefault, none, attempt, require.
+// SetFirewallCertificateRevocationListCheckMethod sets the firewallCertificateRevocationListCheckMethod property value. Possible values for firewallCertificateRevocationListCheckMethod
 func (m *Windows10EndpointProtectionConfiguration) SetFirewallCertificateRevocationListCheckMethod(value *FirewallCertificateRevocationListCheckMethodType)() {
     if m != nil {
         m.firewallCertificateRevocationListCheckMethod = value
@@ -6815,13 +6815,13 @@ func (m *Windows10EndpointProtectionConfiguration) SetFirewallMergeKeyingModuleS
         m.firewallMergeKeyingModuleSettings = value
     }
 }
-// SetFirewallPacketQueueingMethod sets the firewallPacketQueueingMethod property value. Configures how packet queueing should be applied in the tunnel gateway scenario. Possible values are: deviceDefault, disabled, queueInbound, queueOutbound, queueBoth.
+// SetFirewallPacketQueueingMethod sets the firewallPacketQueueingMethod property value. Possible values for firewallPacketQueueingMethod
 func (m *Windows10EndpointProtectionConfiguration) SetFirewallPacketQueueingMethod(value *FirewallPacketQueueingMethodType)() {
     if m != nil {
         m.firewallPacketQueueingMethod = value
     }
 }
-// SetFirewallPreSharedKeyEncodingMethod sets the firewallPreSharedKeyEncodingMethod property value. Select the preshared key encoding to be used. Possible values are: deviceDefault, none, utF8.
+// SetFirewallPreSharedKeyEncodingMethod sets the firewallPreSharedKeyEncodingMethod property value. Possible values for firewallPreSharedKeyEncodingMethod
 func (m *Windows10EndpointProtectionConfiguration) SetFirewallPreSharedKeyEncodingMethod(value *FirewallPreSharedKeyEncodingMethodType)() {
     if m != nil {
         m.firewallPreSharedKeyEncodingMethod = value
@@ -6851,7 +6851,7 @@ func (m *Windows10EndpointProtectionConfiguration) SetFirewallRules(value []Wind
         m.firewallRules = value
     }
 }
-// SetLanManagerAuthenticationLevel sets the lanManagerAuthenticationLevel property value. This security setting determines which challenge/response authentication protocol is used for network logons. Possible values are: lmAndNltm, lmNtlmAndNtlmV2, lmAndNtlmOnly, lmAndNtlmV2, lmNtlmV2AndNotLm, lmNtlmV2AndNotLmOrNtm.
+// SetLanManagerAuthenticationLevel sets the lanManagerAuthenticationLevel property value. Possible values for LanManagerAuthenticationLevel
 func (m *Windows10EndpointProtectionConfiguration) SetLanManagerAuthenticationLevel(value *LanManagerAuthenticationLevel)() {
     if m != nil {
         m.lanManagerAuthenticationLevel = value
@@ -6869,7 +6869,7 @@ func (m *Windows10EndpointProtectionConfiguration) SetLocalSecurityOptionsAdmini
         m.localSecurityOptionsAdministratorAccountName = value
     }
 }
-// SetLocalSecurityOptionsAdministratorElevationPromptBehavior sets the localSecurityOptionsAdministratorElevationPromptBehavior property value. Define the behavior of the elevation prompt for admins in Admin Approval Mode. Possible values are: notConfigured, elevateWithoutPrompting, promptForCredentialsOnTheSecureDesktop, promptForConsentOnTheSecureDesktop, promptForCredentials, promptForConsent, promptForConsentForNonWindowsBinaries.
+// SetLocalSecurityOptionsAdministratorElevationPromptBehavior sets the localSecurityOptionsAdministratorElevationPromptBehavior property value. Possible values for LocalSecurityOptionsAdministratorElevationPromptBehavior
 func (m *Windows10EndpointProtectionConfiguration) SetLocalSecurityOptionsAdministratorElevationPromptBehavior(value *LocalSecurityOptionsAdministratorElevationPromptBehaviorType)() {
     if m != nil {
         m.localSecurityOptionsAdministratorElevationPromptBehavior = value
@@ -7019,7 +7019,7 @@ func (m *Windows10EndpointProtectionConfiguration) SetLocalSecurityOptionsDoNotS
         m.localSecurityOptionsDoNotStoreLANManagerHashValueOnNextPasswordChange = value
     }
 }
-// SetLocalSecurityOptionsFormatAndEjectOfRemovableMediaAllowedUser sets the localSecurityOptionsFormatAndEjectOfRemovableMediaAllowedUser property value. Define who is allowed to format and eject removable NTFS media. Possible values are: notConfigured, administrators, administratorsAndPowerUsers, administratorsAndInteractiveUsers.
+// SetLocalSecurityOptionsFormatAndEjectOfRemovableMediaAllowedUser sets the localSecurityOptionsFormatAndEjectOfRemovableMediaAllowedUser property value. Possible values for LocalSecurityOptionsFormatAndEjectOfRemovableMediaAllowedUser
 func (m *Windows10EndpointProtectionConfiguration) SetLocalSecurityOptionsFormatAndEjectOfRemovableMediaAllowedUser(value *LocalSecurityOptionsFormatAndEjectOfRemovableMediaAllowedUserType)() {
     if m != nil {
         m.localSecurityOptionsFormatAndEjectOfRemovableMediaAllowedUser = value
@@ -7043,13 +7043,13 @@ func (m *Windows10EndpointProtectionConfiguration) SetLocalSecurityOptionsHideUs
         m.localSecurityOptionsHideUsernameAtSignIn = value
     }
 }
-// SetLocalSecurityOptionsInformationDisplayedOnLockScreen sets the localSecurityOptionsInformationDisplayedOnLockScreen property value. Configure the user information that is displayed when the session is locked. If not configured, user display name, domain and username are shown. Possible values are: notConfigured, administrators, administratorsAndPowerUsers, administratorsAndInteractiveUsers.
+// SetLocalSecurityOptionsInformationDisplayedOnLockScreen sets the localSecurityOptionsInformationDisplayedOnLockScreen property value. Possible values for LocalSecurityOptionsInformationDisplayedOnLockScreen
 func (m *Windows10EndpointProtectionConfiguration) SetLocalSecurityOptionsInformationDisplayedOnLockScreen(value *LocalSecurityOptionsInformationDisplayedOnLockScreenType)() {
     if m != nil {
         m.localSecurityOptionsInformationDisplayedOnLockScreen = value
     }
 }
-// SetLocalSecurityOptionsInformationShownOnLockScreen sets the localSecurityOptionsInformationShownOnLockScreen property value. Configure the user information that is displayed when the session is locked. If not configured, user display name, domain and username are shown. Possible values are: notConfigured, userDisplayNameDomainUser, userDisplayNameOnly, doNotDisplayUser.
+// SetLocalSecurityOptionsInformationShownOnLockScreen sets the localSecurityOptionsInformationShownOnLockScreen property value. Possible values for LocalSecurityOptionsInformationShownOnLockScreenType
 func (m *Windows10EndpointProtectionConfiguration) SetLocalSecurityOptionsInformationShownOnLockScreen(value *LocalSecurityOptionsInformationShownOnLockScreenType)() {
     if m != nil {
         m.localSecurityOptionsInformationShownOnLockScreen = value
@@ -7079,13 +7079,13 @@ func (m *Windows10EndpointProtectionConfiguration) SetLocalSecurityOptionsMachin
         m.localSecurityOptionsMachineInactivityLimitInMinutes = value
     }
 }
-// SetLocalSecurityOptionsMinimumSessionSecurityForNtlmSspBasedClients sets the localSecurityOptionsMinimumSessionSecurityForNtlmSspBasedClients property value. This security setting allows a client to require the negotiation of 128-bit encryption and/or NTLMv2 session security. Possible values are: none, requireNtmlV2SessionSecurity, require128BitEncryption, ntlmV2And128BitEncryption.
+// SetLocalSecurityOptionsMinimumSessionSecurityForNtlmSspBasedClients sets the localSecurityOptionsMinimumSessionSecurityForNtlmSspBasedClients property value. Possible values for LocalSecurityOptionsMinimumSessionSecurity
 func (m *Windows10EndpointProtectionConfiguration) SetLocalSecurityOptionsMinimumSessionSecurityForNtlmSspBasedClients(value *LocalSecurityOptionsMinimumSessionSecurity)() {
     if m != nil {
         m.localSecurityOptionsMinimumSessionSecurityForNtlmSspBasedClients = value
     }
 }
-// SetLocalSecurityOptionsMinimumSessionSecurityForNtlmSspBasedServers sets the localSecurityOptionsMinimumSessionSecurityForNtlmSspBasedServers property value. This security setting allows a server to require the negotiation of 128-bit encryption and/or NTLMv2 session security. Possible values are: none, requireNtmlV2SessionSecurity, require128BitEncryption, ntlmV2And128BitEncryption.
+// SetLocalSecurityOptionsMinimumSessionSecurityForNtlmSspBasedServers sets the localSecurityOptionsMinimumSessionSecurityForNtlmSspBasedServers property value. Possible values for LocalSecurityOptionsMinimumSessionSecurity
 func (m *Windows10EndpointProtectionConfiguration) SetLocalSecurityOptionsMinimumSessionSecurityForNtlmSspBasedServers(value *LocalSecurityOptionsMinimumSessionSecurity)() {
     if m != nil {
         m.localSecurityOptionsMinimumSessionSecurityForNtlmSspBasedServers = value
@@ -7103,13 +7103,13 @@ func (m *Windows10EndpointProtectionConfiguration) SetLocalSecurityOptionsRestri
         m.localSecurityOptionsRestrictAnonymousAccessToNamedPipesAndShares = value
     }
 }
-// SetLocalSecurityOptionsSmartCardRemovalBehavior sets the localSecurityOptionsSmartCardRemovalBehavior property value. This security setting determines what happens when the smart card for a logged-on user is removed from the smart card reader. Possible values are: noAction, lockWorkstation, forceLogoff, disconnectRemoteDesktopSession.
+// SetLocalSecurityOptionsSmartCardRemovalBehavior sets the localSecurityOptionsSmartCardRemovalBehavior property value. Possible values for LocalSecurityOptionsSmartCardRemovalBehaviorType
 func (m *Windows10EndpointProtectionConfiguration) SetLocalSecurityOptionsSmartCardRemovalBehavior(value *LocalSecurityOptionsSmartCardRemovalBehaviorType)() {
     if m != nil {
         m.localSecurityOptionsSmartCardRemovalBehavior = value
     }
 }
-// SetLocalSecurityOptionsStandardUserElevationPromptBehavior sets the localSecurityOptionsStandardUserElevationPromptBehavior property value. Define the behavior of the elevation prompt for standard users. Possible values are: notConfigured, automaticallyDenyElevationRequests, promptForCredentialsOnTheSecureDesktop, promptForCredentials.
+// SetLocalSecurityOptionsStandardUserElevationPromptBehavior sets the localSecurityOptionsStandardUserElevationPromptBehavior property value. Possible values for LocalSecurityOptionsStandardUserElevationPromptBehavior
 func (m *Windows10EndpointProtectionConfiguration) SetLocalSecurityOptionsStandardUserElevationPromptBehavior(value *LocalSecurityOptionsStandardUserElevationPromptBehaviorType)() {
     if m != nil {
         m.localSecurityOptionsStandardUserElevationPromptBehavior = value
@@ -7325,13 +7325,13 @@ func (m *Windows10EndpointProtectionConfiguration) SetUserRightsTakeOwnership(va
         m.userRightsTakeOwnership = value
     }
 }
-// SetWindowsDefenderTamperProtection sets the windowsDefenderTamperProtection property value. Configure windows defender TamperProtection settings. Possible values are: notConfigured, enable, disable.
+// SetWindowsDefenderTamperProtection sets the windowsDefenderTamperProtection property value. Defender TamperProtection setting options
 func (m *Windows10EndpointProtectionConfiguration) SetWindowsDefenderTamperProtection(value *WindowsDefenderTamperProtectionOptions)() {
     if m != nil {
         m.windowsDefenderTamperProtection = value
     }
 }
-// SetXboxServicesAccessoryManagementServiceStartupMode sets the xboxServicesAccessoryManagementServiceStartupMode property value. This setting determines whether the Accessory management service's start type is Automatic(2), Manual(3), Disabled(4). Default: Manual. Possible values are: manual, automatic, disabled.
+// SetXboxServicesAccessoryManagementServiceStartupMode sets the xboxServicesAccessoryManagementServiceStartupMode property value. Possible values of xbox service start type
 func (m *Windows10EndpointProtectionConfiguration) SetXboxServicesAccessoryManagementServiceStartupMode(value *ServiceStartType)() {
     if m != nil {
         m.xboxServicesAccessoryManagementServiceStartupMode = value
@@ -7343,19 +7343,19 @@ func (m *Windows10EndpointProtectionConfiguration) SetXboxServicesEnableXboxGame
         m.xboxServicesEnableXboxGameSaveTask = value
     }
 }
-// SetXboxServicesLiveAuthManagerServiceStartupMode sets the xboxServicesLiveAuthManagerServiceStartupMode property value. This setting determines whether Live Auth Manager service's start type is Automatic(2), Manual(3), Disabled(4). Default: Manual. Possible values are: manual, automatic, disabled.
+// SetXboxServicesLiveAuthManagerServiceStartupMode sets the xboxServicesLiveAuthManagerServiceStartupMode property value. Possible values of xbox service start type
 func (m *Windows10EndpointProtectionConfiguration) SetXboxServicesLiveAuthManagerServiceStartupMode(value *ServiceStartType)() {
     if m != nil {
         m.xboxServicesLiveAuthManagerServiceStartupMode = value
     }
 }
-// SetXboxServicesLiveGameSaveServiceStartupMode sets the xboxServicesLiveGameSaveServiceStartupMode property value. This setting determines whether Live Game save service's start type is Automatic(2), Manual(3), Disabled(4). Default: Manual. Possible values are: manual, automatic, disabled.
+// SetXboxServicesLiveGameSaveServiceStartupMode sets the xboxServicesLiveGameSaveServiceStartupMode property value. Possible values of xbox service start type
 func (m *Windows10EndpointProtectionConfiguration) SetXboxServicesLiveGameSaveServiceStartupMode(value *ServiceStartType)() {
     if m != nil {
         m.xboxServicesLiveGameSaveServiceStartupMode = value
     }
 }
-// SetXboxServicesLiveNetworkingServiceStartupMode sets the xboxServicesLiveNetworkingServiceStartupMode property value. This setting determines whether Networking service's start type is Automatic(2), Manual(3), Disabled(4). Default: Manual. Possible values are: manual, automatic, disabled.
+// SetXboxServicesLiveNetworkingServiceStartupMode sets the xboxServicesLiveNetworkingServiceStartupMode property value. Possible values of xbox service start type
 func (m *Windows10EndpointProtectionConfiguration) SetXboxServicesLiveNetworkingServiceStartupMode(value *ServiceStartType)() {
     if m != nil {
         m.xboxServicesLiveNetworkingServiceStartupMode = value

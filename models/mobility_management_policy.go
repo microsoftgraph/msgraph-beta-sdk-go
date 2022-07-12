@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// MobilityManagementPolicy provides operations to manage the collection of mobilityManagementPolicy entities.
+// MobilityManagementPolicy 
 type MobilityManagementPolicy struct {
     Entity
     // Indicates the user scope of the mobility management policy. Possible values are: none, all, selected.
@@ -24,7 +24,7 @@ type MobilityManagementPolicy struct {
     // Terms of Use URL of the mobility management application.
     termsOfUseUrl *string
 }
-// NewMobilityManagementPolicy instantiates a new mobilityManagementPolicy and sets the default values.
+// NewMobilityManagementPolicy instantiates a new MobilityManagementPolicy and sets the default values.
 func NewMobilityManagementPolicy()(*MobilityManagementPolicy) {
     m := &MobilityManagementPolicy{
         Entity: *NewEntity(),

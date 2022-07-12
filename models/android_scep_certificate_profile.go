@@ -7,11 +7,11 @@ import (
 // AndroidScepCertificateProfile 
 type AndroidScepCertificateProfile struct {
     AndroidCertificateProfileBase
-    // SCEP Hash Algorithm. Possible values are: sha1, sha2.
+    // Hash Algorithm Options.
     hashAlgorithm *HashAlgorithms
-    // SCEP Key Size. Possible values are: size1024, size2048, size4096.
+    // Key Size Options.
     keySize *KeySize
-    // SCEP Key Usage. Possible values are: keyEncipherment, digitalSignature.
+    // Key Usage Options.
     keyUsage *KeyUsages
     // Certificate state for devices. This collection can contain a maximum of 2147483647 elements.
     managedDeviceCertificateStates []ManagedDeviceCertificateStateable
@@ -116,7 +116,7 @@ func (m *AndroidScepCertificateProfile) GetFieldDeserializers()(map[string]func(
     }
     return res
 }
-// GetHashAlgorithm gets the hashAlgorithm property value. SCEP Hash Algorithm. Possible values are: sha1, sha2.
+// GetHashAlgorithm gets the hashAlgorithm property value. Hash Algorithm Options.
 func (m *AndroidScepCertificateProfile) GetHashAlgorithm()(*HashAlgorithms) {
     if m == nil {
         return nil
@@ -124,7 +124,7 @@ func (m *AndroidScepCertificateProfile) GetHashAlgorithm()(*HashAlgorithms) {
         return m.hashAlgorithm
     }
 }
-// GetKeySize gets the keySize property value. SCEP Key Size. Possible values are: size1024, size2048, size4096.
+// GetKeySize gets the keySize property value. Key Size Options.
 func (m *AndroidScepCertificateProfile) GetKeySize()(*KeySize) {
     if m == nil {
         return nil
@@ -132,7 +132,7 @@ func (m *AndroidScepCertificateProfile) GetKeySize()(*KeySize) {
         return m.keySize
     }
 }
-// GetKeyUsage gets the keyUsage property value. SCEP Key Usage. Possible values are: keyEncipherment, digitalSignature.
+// GetKeyUsage gets the keyUsage property value. Key Usage Options.
 func (m *AndroidScepCertificateProfile) GetKeyUsage()(*KeyUsages) {
     if m == nil {
         return nil
@@ -229,19 +229,19 @@ func (m *AndroidScepCertificateProfile) Serialize(writer i878a80d2330e89d2689638
     }
     return nil
 }
-// SetHashAlgorithm sets the hashAlgorithm property value. SCEP Hash Algorithm. Possible values are: sha1, sha2.
+// SetHashAlgorithm sets the hashAlgorithm property value. Hash Algorithm Options.
 func (m *AndroidScepCertificateProfile) SetHashAlgorithm(value *HashAlgorithms)() {
     if m != nil {
         m.hashAlgorithm = value
     }
 }
-// SetKeySize sets the keySize property value. SCEP Key Size. Possible values are: size1024, size2048, size4096.
+// SetKeySize sets the keySize property value. Key Size Options.
 func (m *AndroidScepCertificateProfile) SetKeySize(value *KeySize)() {
     if m != nil {
         m.keySize = value
     }
 }
-// SetKeyUsage sets the keyUsage property value. SCEP Key Usage. Possible values are: keyEncipherment, digitalSignature.
+// SetKeyUsage sets the keyUsage property value. Key Usage Options.
 func (m *AndroidScepCertificateProfile) SetKeyUsage(value *KeyUsages)() {
     if m != nil {
         m.keyUsage = value

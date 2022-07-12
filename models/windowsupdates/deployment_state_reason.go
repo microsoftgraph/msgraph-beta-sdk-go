@@ -8,7 +8,7 @@ import (
 type DeploymentStateReason struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
-    // Specifies a reason for the deployment state. Possible values are: scheduledByOfferWindow, offeringByRequest, pausedByRequest, pausedByMonitoring. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: faultedByContentOutdated. Read-only.
+    // The value property
     value *DeploymentStateReasonValue
 }
 // NewDeploymentStateReason instantiates a new deploymentStateReason and sets the default values.
@@ -45,7 +45,7 @@ func (m *DeploymentStateReason) GetFieldDeserializers()(map[string]func(i878a80d
     }
     return res
 }
-// GetValue gets the value property value. Specifies a reason for the deployment state. Possible values are: scheduledByOfferWindow, offeringByRequest, pausedByRequest, pausedByMonitoring. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: faultedByContentOutdated. Read-only.
+// GetValue gets the value property value. The value property
 func (m *DeploymentStateReason) GetValue()(*DeploymentStateReasonValue) {
     if m == nil {
         return nil
@@ -76,7 +76,7 @@ func (m *DeploymentStateReason) SetAdditionalData(value map[string]interface{})(
         m.additionalData = value
     }
 }
-// SetValue sets the value property value. Specifies a reason for the deployment state. Possible values are: scheduledByOfferWindow, offeringByRequest, pausedByRequest, pausedByMonitoring. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: faultedByContentOutdated. Read-only.
+// SetValue sets the value property value. The value property
 func (m *DeploymentStateReason) SetValue(value *DeploymentStateReasonValue)() {
     if m != nil {
         m.value = value

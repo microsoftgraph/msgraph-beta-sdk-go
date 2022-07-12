@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the deviceManagement singleton.
+// Provides operations to manage the collection of activityStatistics entities.
 type NotificationTemplateBrandingOptions int
 
 const (
@@ -16,10 +16,12 @@ const (
     INCLUDECONTACTINFORMATION_NOTIFICATIONTEMPLATEBRANDINGOPTIONS
     // Include Company Portal Link.
     INCLUDECOMPANYPORTALLINK_NOTIFICATIONTEMPLATEBRANDINGOPTIONS
+    // Include Device Details.
+    INCLUDEDEVICEDETAILS_NOTIFICATIONTEMPLATEBRANDINGOPTIONS
 )
 
 func (i NotificationTemplateBrandingOptions) String() string {
-    return []string{"none", "includeCompanyLogo", "includeCompanyName", "includeContactInformation", "includeCompanyPortalLink"}[i]
+    return []string{"none", "includeCompanyLogo", "includeCompanyName", "includeContactInformation", "includeCompanyPortalLink", "includeDeviceDetails"}[i]
 }
 func ParseNotificationTemplateBrandingOptions(v string) (interface{}, error) {
     result := NONE_NOTIFICATIONTEMPLATEBRANDINGOPTIONS
@@ -34,6 +36,8 @@ func ParseNotificationTemplateBrandingOptions(v string) (interface{}, error) {
             result = INCLUDECONTACTINFORMATION_NOTIFICATIONTEMPLATEBRANDINGOPTIONS
         case "includeCompanyPortalLink":
             result = INCLUDECOMPANYPORTALLINK_NOTIFICATIONTEMPLATEBRANDINGOPTIONS
+        case "includeDeviceDetails":
+            result = INCLUDEDEVICEDETAILS_NOTIFICATIONTEMPLATEBRANDINGOPTIONS
         default:
             return 0, errors.New("Unknown NotificationTemplateBrandingOptions value: " + v)
     }

@@ -4,19 +4,19 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// CredentialUsageSummary provides operations to call the getCredentialUsageSummary method.
+// CredentialUsageSummary 
 type CredentialUsageSummary struct {
     Entity
-    // Represents the authentication method that the user used. Possible values are:email, mobileSMS, mobileCall, officePhone, securityQuestion (only used for self-service password reset), appNotification, appCode, alternateMobileCall (supported only in registration), fido, appPassword, unknownFutureValue.
+    // The authMethod property
     authMethod *UsageAuthMethod
     // Provides the count of failed resets or registration data.
     failureActivityCount *int64
-    // Defines the feature to report. Possible values are: registration, reset, unknownFutureValue.
+    // The feature property
     feature *FeatureType
     // Provides the count of successful registrations or resets.
     successfulActivityCount *int64
 }
-// NewCredentialUsageSummary instantiates a new credentialUsageSummary and sets the default values.
+// NewCredentialUsageSummary instantiates a new CredentialUsageSummary and sets the default values.
 func NewCredentialUsageSummary()(*CredentialUsageSummary) {
     m := &CredentialUsageSummary{
         Entity: *NewEntity(),
@@ -27,7 +27,7 @@ func NewCredentialUsageSummary()(*CredentialUsageSummary) {
 func CreateCredentialUsageSummaryFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCredentialUsageSummary(), nil
 }
-// GetAuthMethod gets the authMethod property value. Represents the authentication method that the user used. Possible values are:email, mobileSMS, mobileCall, officePhone, securityQuestion (only used for self-service password reset), appNotification, appCode, alternateMobileCall (supported only in registration), fido, appPassword, unknownFutureValue.
+// GetAuthMethod gets the authMethod property value. The authMethod property
 func (m *CredentialUsageSummary) GetAuthMethod()(*UsageAuthMethod) {
     if m == nil {
         return nil
@@ -43,7 +43,7 @@ func (m *CredentialUsageSummary) GetFailureActivityCount()(*int64) {
         return m.failureActivityCount
     }
 }
-// GetFeature gets the feature property value. Defines the feature to report. Possible values are: registration, reset, unknownFutureValue.
+// GetFeature gets the feature property value. The feature property
 func (m *CredentialUsageSummary) GetFeature()(*FeatureType) {
     if m == nil {
         return nil
@@ -138,7 +138,7 @@ func (m *CredentialUsageSummary) Serialize(writer i878a80d2330e89d26896388a3f487
     }
     return nil
 }
-// SetAuthMethod sets the authMethod property value. Represents the authentication method that the user used. Possible values are:email, mobileSMS, mobileCall, officePhone, securityQuestion (only used for self-service password reset), appNotification, appCode, alternateMobileCall (supported only in registration), fido, appPassword, unknownFutureValue.
+// SetAuthMethod sets the authMethod property value. The authMethod property
 func (m *CredentialUsageSummary) SetAuthMethod(value *UsageAuthMethod)() {
     if m != nil {
         m.authMethod = value
@@ -150,7 +150,7 @@ func (m *CredentialUsageSummary) SetFailureActivityCount(value *int64)() {
         m.failureActivityCount = value
     }
 }
-// SetFeature sets the feature property value. Defines the feature to report. Possible values are: registration, reset, unknownFutureValue.
+// SetFeature sets the feature property value. The feature property
 func (m *CredentialUsageSummary) SetFeature(value *FeatureType)() {
     if m != nil {
         m.feature = value

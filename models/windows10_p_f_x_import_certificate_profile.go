@@ -7,7 +7,7 @@ import (
 // Windows10PFXImportCertificateProfile 
 type Windows10PFXImportCertificateProfile struct {
     DeviceConfiguration
-    // Not yet documented. Possible values are: useTpmKspOtherwiseUseSoftwareKsp, useTpmKspOtherwiseFail, usePassportForWorkKspOtherwiseFail, useSoftwareKsp.
+    // Key Storage Provider (KSP) Import Options.
     keyStorageProvider *KeyStorageProviderOption
 }
 // NewWindows10PFXImportCertificateProfile instantiates a new Windows10PFXImportCertificateProfile and sets the default values.
@@ -36,7 +36,7 @@ func (m *Windows10PFXImportCertificateProfile) GetFieldDeserializers()(map[strin
     }
     return res
 }
-// GetKeyStorageProvider gets the keyStorageProvider property value. Not yet documented. Possible values are: useTpmKspOtherwiseUseSoftwareKsp, useTpmKspOtherwiseFail, usePassportForWorkKspOtherwiseFail, useSoftwareKsp.
+// GetKeyStorageProvider gets the keyStorageProvider property value. Key Storage Provider (KSP) Import Options.
 func (m *Windows10PFXImportCertificateProfile) GetKeyStorageProvider()(*KeyStorageProviderOption) {
     if m == nil {
         return nil
@@ -59,7 +59,7 @@ func (m *Windows10PFXImportCertificateProfile) Serialize(writer i878a80d2330e89d
     }
     return nil
 }
-// SetKeyStorageProvider sets the keyStorageProvider property value. Not yet documented. Possible values are: useTpmKspOtherwiseUseSoftwareKsp, useTpmKspOtherwiseFail, usePassportForWorkKspOtherwiseFail, useSoftwareKsp.
+// SetKeyStorageProvider sets the keyStorageProvider property value. Key Storage Provider (KSP) Import Options.
 func (m *Windows10PFXImportCertificateProfile) SetKeyStorageProvider(value *KeyStorageProviderOption)() {
     if m != nil {
         m.keyStorageProvider = value

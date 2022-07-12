@@ -22,7 +22,7 @@ type Qna struct {
     languageTags []string
     // List of devices and operating systems able to view this qna. Possible values are: unknown, android, androidForWork, ios, macOS, windowsPhone81, windowsPhone81AndLater, windows10AndLater, androidWorkProfile, androidASOP.
     platforms []string
-    // State of the qna. Possible values are: published, draft, excluded, or unknownFutureValue.
+    // The state property
     state *AnswerState
     // Variations of a qna for different countries or devices. Use when you need to show different content to users based on their device, country/region, or both. The date and group settings will apply to all variations.
     targetedVariations []AnswerVariantable
@@ -205,7 +205,7 @@ func (m *Qna) GetPlatforms()([]string) {
         return m.platforms
     }
 }
-// GetState gets the state property value. State of the qna. Possible values are: published, draft, excluded, or unknownFutureValue.
+// GetState gets the state property value. The state property
 func (m *Qna) GetState()(*AnswerState) {
     if m == nil {
         return nil
@@ -330,7 +330,7 @@ func (m *Qna) SetPlatforms(value []string)() {
         m.platforms = value
     }
 }
-// SetState sets the state property value. State of the qna. Possible values are: published, draft, excluded, or unknownFutureValue.
+// SetState sets the state property value. The state property
 func (m *Qna) SetState(value *AnswerState)() {
     if m != nil {
         m.state = value

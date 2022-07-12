@@ -8,7 +8,7 @@ import (
 // WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus contains properties for the deployment state of a WindowsDefenderApplicationControl supplemental policy for a device.
 type WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus struct {
     Entity
-    // The deployment state of the policy. Possible values are: unknown, success, tokenError, notAuthorizedByToken, policyNotFound.
+    // Enum values for the various WindowsDefenderApplicationControl supplemental policy deployment statuses.
     deploymentStatus *WindowsDefenderApplicationControlSupplementalPolicyStatuses
     // Device ID.
     deviceId *string
@@ -40,7 +40,7 @@ func NewWindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus()(*W
 func CreateWindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus(), nil
 }
-// GetDeploymentStatus gets the deploymentStatus property value. The deployment state of the policy. Possible values are: unknown, success, tokenError, notAuthorizedByToken, policyNotFound.
+// GetDeploymentStatus gets the deploymentStatus property value. Enum values for the various WindowsDefenderApplicationControl supplemental policy deployment statuses.
 func (m *WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus) GetDeploymentStatus()(*WindowsDefenderApplicationControlSupplementalPolicyStatuses) {
     if m == nil {
         return nil
@@ -294,7 +294,7 @@ func (m *WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus) Se
     }
     return nil
 }
-// SetDeploymentStatus sets the deploymentStatus property value. The deployment state of the policy. Possible values are: unknown, success, tokenError, notAuthorizedByToken, policyNotFound.
+// SetDeploymentStatus sets the deploymentStatus property value. Enum values for the various WindowsDefenderApplicationControl supplemental policy deployment statuses.
 func (m *WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus) SetDeploymentStatus(value *WindowsDefenderApplicationControlSupplementalPolicyStatuses)() {
     if m != nil {
         m.deploymentStatus = value

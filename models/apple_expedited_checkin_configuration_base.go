@@ -15,6 +15,8 @@ func NewAppleExpeditedCheckinConfigurationBase()(*AppleExpeditedCheckinConfigura
     m := &AppleExpeditedCheckinConfigurationBase{
         DeviceConfiguration: *NewDeviceConfiguration(),
     }
+    typeValue := "#microsoft.graph.appleExpeditedCheckinConfigurationBase";
+    m.SetType(&typeValue);
     return m
 }
 // CreateAppleExpeditedCheckinConfigurationBaseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

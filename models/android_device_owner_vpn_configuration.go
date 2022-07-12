@@ -11,7 +11,7 @@ type AndroidDeviceOwnerVpnConfiguration struct {
     alwaysOn *bool
     // If always-on VPN connection is enabled, whether or not to lock network traffic when that VPN is disconnected.
     alwaysOnLockdown *bool
-    // Connection type. Possible values are: ciscoAnyConnect, pulseSecure, f5EdgeClient, dellSonicWallMobileConnect, checkPointCapsuleVpn, citrix, microsoftTunnel, netMotionMobility, microsoftProtect.
+    // Android VPN connection type.
     connectionType *AndroidVpnConnectionType
     // Custom data to define key/value pairs specific to a VPN provider. This collection can contain a maximum of 25 elements.
     customData []KeyValueable
@@ -57,7 +57,7 @@ func (m *AndroidDeviceOwnerVpnConfiguration) GetAlwaysOnLockdown()(*bool) {
         return m.alwaysOnLockdown
     }
 }
-// GetConnectionType gets the connectionType property value. Connection type. Possible values are: ciscoAnyConnect, pulseSecure, f5EdgeClient, dellSonicWallMobileConnect, checkPointCapsuleVpn, citrix, microsoftTunnel, netMotionMobility, microsoftProtect.
+// GetConnectionType gets the connectionType property value. Android VPN connection type.
 func (m *AndroidDeviceOwnerVpnConfiguration) GetConnectionType()(*AndroidVpnConnectionType) {
     if m == nil {
         return nil
@@ -359,7 +359,7 @@ func (m *AndroidDeviceOwnerVpnConfiguration) SetAlwaysOnLockdown(value *bool)() 
         m.alwaysOnLockdown = value
     }
 }
-// SetConnectionType sets the connectionType property value. Connection type. Possible values are: ciscoAnyConnect, pulseSecure, f5EdgeClient, dellSonicWallMobileConnect, checkPointCapsuleVpn, citrix, microsoftTunnel, netMotionMobility, microsoftProtect.
+// SetConnectionType sets the connectionType property value. Android VPN connection type.
 func (m *AndroidDeviceOwnerVpnConfiguration) SetConnectionType(value *AndroidVpnConnectionType)() {
     if m != nil {
         m.connectionType = value

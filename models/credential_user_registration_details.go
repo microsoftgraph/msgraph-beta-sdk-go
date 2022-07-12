@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// CredentialUserRegistrationDetails provides operations to manage the reportRoot singleton.
+// CredentialUserRegistrationDetails 
 type CredentialUserRegistrationDetails struct {
     Entity
     // Represents the authentication method that the user has registered. Possible values are: email, mobilePhone, officePhone,  securityQuestion (only used for self-service password reset), appNotification,  appCode, alternateMobilePhone (supported only in registration),  fido,  appPassword,  unknownFutureValue.
@@ -22,7 +22,7 @@ type CredentialUserRegistrationDetails struct {
     // Provides the user principal name of the corresponding user.
     userPrincipalName *string
 }
-// NewCredentialUserRegistrationDetails instantiates a new credentialUserRegistrationDetails and sets the default values.
+// NewCredentialUserRegistrationDetails instantiates a new CredentialUserRegistrationDetails and sets the default values.
 func NewCredentialUserRegistrationDetails()(*CredentialUserRegistrationDetails) {
     m := &CredentialUserRegistrationDetails{
         Entity: *NewEntity(),

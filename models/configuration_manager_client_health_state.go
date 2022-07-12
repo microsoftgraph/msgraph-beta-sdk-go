@@ -13,7 +13,7 @@ type ConfigurationManagerClientHealthState struct {
     errorCode *int32
     // Datetime for last sync with configuration manager management point.
     lastSyncDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // Current configuration manager client state. Possible values are: unknown, installed, healthy, installFailed, updateFailed, communicationError.
+    // Configuration manager client state
     state *ConfigurationManagerClientState
 }
 // NewConfigurationManagerClientHealthState instantiates a new configurationManagerClientHealthState and sets the default values.
@@ -86,7 +86,7 @@ func (m *ConfigurationManagerClientHealthState) GetLastSyncDateTime()(*i33607480
         return m.lastSyncDateTime
     }
 }
-// GetState gets the state property value. Current configuration manager client state. Possible values are: unknown, installed, healthy, installFailed, updateFailed, communicationError.
+// GetState gets the state property value. Configuration manager client state
 func (m *ConfigurationManagerClientHealthState) GetState()(*ConfigurationManagerClientState) {
     if m == nil {
         return nil
@@ -141,7 +141,7 @@ func (m *ConfigurationManagerClientHealthState) SetLastSyncDateTime(value *i3360
         m.lastSyncDateTime = value
     }
 }
-// SetState sets the state property value. Current configuration manager client state. Possible values are: unknown, installed, healthy, installFailed, updateFailed, communicationError.
+// SetState sets the state property value. Configuration manager client state
 func (m *ConfigurationManagerClientHealthState) SetState(value *ConfigurationManagerClientState)() {
     if m != nil {
         m.state = value

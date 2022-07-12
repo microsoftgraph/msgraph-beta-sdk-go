@@ -13,7 +13,7 @@ type IosEnterpriseWiFiConfiguration struct {
     derivedCredentialSettings DeviceManagementDerivedCredentialSettingsable
     // EAP-FAST Configuration Option when EAP-FAST is the selected EAP Type. Possible values are: noProtectedAccessCredential, useProtectedAccessCredential, useProtectedAccessCredentialAndProvision, useProtectedAccessCredentialAndProvisionAnonymously.
     eapFastConfiguration *EapFastConfiguration
-    // Extensible Authentication Protocol (EAP). Indicates the type of EAP protocol set on the Wi-Fi endpoint (router). Possible values are: eapTls, leap, eapSim, eapTtls, peap, eapFast, teap.
+    // Extensible Authentication Protocol (EAP) configuration types.
     eapType *EapType
     // Identity Certificate for client authentication when EAP Type is configured to EAP-TLS, EAP-TTLS (with Certificate Authentication), or PEAP (with Certificate Authentication).
     identityCertificateForClientAuthentication IosCertificateProfileBaseable
@@ -65,7 +65,7 @@ func (m *IosEnterpriseWiFiConfiguration) GetEapFastConfiguration()(*EapFastConfi
         return m.eapFastConfiguration
     }
 }
-// GetEapType gets the eapType property value. Extensible Authentication Protocol (EAP). Indicates the type of EAP protocol set on the Wi-Fi endpoint (router). Possible values are: eapTls, leap, eapSim, eapTtls, peap, eapFast, teap.
+// GetEapType gets the eapType property value. Extensible Authentication Protocol (EAP) configuration types.
 func (m *IosEnterpriseWiFiConfiguration) GetEapType()(*EapType) {
     if m == nil {
         return nil
@@ -352,7 +352,7 @@ func (m *IosEnterpriseWiFiConfiguration) SetEapFastConfiguration(value *EapFastC
         m.eapFastConfiguration = value
     }
 }
-// SetEapType sets the eapType property value. Extensible Authentication Protocol (EAP). Indicates the type of EAP protocol set on the Wi-Fi endpoint (router). Possible values are: eapTls, leap, eapSim, eapTtls, peap, eapFast, teap.
+// SetEapType sets the eapType property value. Extensible Authentication Protocol (EAP) configuration types.
 func (m *IosEnterpriseWiFiConfiguration) SetEapType(value *EapType)() {
     if m != nil {
         m.eapType = value

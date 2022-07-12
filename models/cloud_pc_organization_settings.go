@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// CloudPcOrganizationSettings provides operations to manage the deviceManagement singleton.
+// CloudPcOrganizationSettings 
 type CloudPcOrganizationSettings struct {
     Entity
     // The version of the operating system (OS) to provision on Cloud PCs. The possible values are: windows10, windows11, unknownFutureValue.
@@ -14,7 +14,7 @@ type CloudPcOrganizationSettings struct {
     // Represents the Cloud PC organization settings for a tenant. A tenant has only one cloudPcOrganizationSettings object. The default language value en-US.
     windowsSettings CloudPcWindowsSettingsable
 }
-// NewCloudPcOrganizationSettings instantiates a new cloudPcOrganizationSettings and sets the default values.
+// NewCloudPcOrganizationSettings instantiates a new CloudPcOrganizationSettings and sets the default values.
 func NewCloudPcOrganizationSettings()(*CloudPcOrganizationSettings) {
     m := &CloudPcOrganizationSettings{
         Entity: *NewEntity(),

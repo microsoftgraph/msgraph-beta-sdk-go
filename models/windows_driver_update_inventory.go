@@ -10,9 +10,9 @@ type WindowsDriverUpdateInventory struct {
     Entity
     // The number of devices for which this driver is applicable.
     applicableDeviceCount *int32
-    // The approval status for this driver. Possible values are: needsReview, declined, approved, suspended.
+    // An enum type to represent approval status of a driver.
     approvalStatus *DriverApprovalStatus
-    // The category for this driver. Possible values are: recommended, previouslyApproved, other.
+    // An enum type to represent which category a driver belongs to.
     category *DriverCategory
     // The date time when a driver should be deployed if approvalStatus is approved.
     deployDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
@@ -46,7 +46,7 @@ func (m *WindowsDriverUpdateInventory) GetApplicableDeviceCount()(*int32) {
         return m.applicableDeviceCount
     }
 }
-// GetApprovalStatus gets the approvalStatus property value. The approval status for this driver. Possible values are: needsReview, declined, approved, suspended.
+// GetApprovalStatus gets the approvalStatus property value. An enum type to represent approval status of a driver.
 func (m *WindowsDriverUpdateInventory) GetApprovalStatus()(*DriverApprovalStatus) {
     if m == nil {
         return nil
@@ -54,7 +54,7 @@ func (m *WindowsDriverUpdateInventory) GetApprovalStatus()(*DriverApprovalStatus
         return m.approvalStatus
     }
 }
-// GetCategory gets the category property value. The category for this driver. Possible values are: recommended, previouslyApproved, other.
+// GetCategory gets the category property value. An enum type to represent which category a driver belongs to.
 func (m *WindowsDriverUpdateInventory) GetCategory()(*DriverCategory) {
     if m == nil {
         return nil
@@ -275,13 +275,13 @@ func (m *WindowsDriverUpdateInventory) SetApplicableDeviceCount(value *int32)() 
         m.applicableDeviceCount = value
     }
 }
-// SetApprovalStatus sets the approvalStatus property value. The approval status for this driver. Possible values are: needsReview, declined, approved, suspended.
+// SetApprovalStatus sets the approvalStatus property value. An enum type to represent approval status of a driver.
 func (m *WindowsDriverUpdateInventory) SetApprovalStatus(value *DriverApprovalStatus)() {
     if m != nil {
         m.approvalStatus = value
     }
 }
-// SetCategory sets the category property value. The category for this driver. Possible values are: recommended, previouslyApproved, other.
+// SetCategory sets the category property value. An enum type to represent which category a driver belongs to.
 func (m *WindowsDriverUpdateInventory) SetCategory(value *DriverCategory)() {
     if m != nil {
         m.category = value

@@ -8,7 +8,7 @@ import (
 type DelegatedAdminAccessContainer struct {
     // The identifier of the access container (for example, a security group). For 'securityGroup' access containers, this must be a valid ID of an Azure AD security group in the Microsoft partner's tenant.
     accessContainerId *string
-    // The type of access container (for example, security group) that will be assigned one or more roles through a delegated admin relationship. The possible values are: securityGroup, unknownFutureValue.
+    // The accessContainerType property
     accessContainerType *DelegatedAdminAccessContainerType
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
@@ -32,7 +32,7 @@ func (m *DelegatedAdminAccessContainer) GetAccessContainerId()(*string) {
         return m.accessContainerId
     }
 }
-// GetAccessContainerType gets the accessContainerType property value. The type of access container (for example, security group) that will be assigned one or more roles through a delegated admin relationship. The possible values are: securityGroup, unknownFutureValue.
+// GetAccessContainerType gets the accessContainerType property value. The accessContainerType property
 func (m *DelegatedAdminAccessContainer) GetAccessContainerType()(*DelegatedAdminAccessContainerType) {
     if m == nil {
         return nil
@@ -102,7 +102,7 @@ func (m *DelegatedAdminAccessContainer) SetAccessContainerId(value *string)() {
         m.accessContainerId = value
     }
 }
-// SetAccessContainerType sets the accessContainerType property value. The type of access container (for example, security group) that will be assigned one or more roles through a delegated admin relationship. The possible values are: securityGroup, unknownFutureValue.
+// SetAccessContainerType sets the accessContainerType property value. The accessContainerType property
 func (m *DelegatedAdminAccessContainer) SetAccessContainerType(value *DelegatedAdminAccessContainerType)() {
     if m != nil {
         m.accessContainerType = value

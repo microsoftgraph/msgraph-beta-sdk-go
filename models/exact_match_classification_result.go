@@ -13,7 +13,7 @@ type ExactMatchClassificationResult struct {
     // The errors property
     errors []ClassificationErrorable
 }
-// NewExactMatchClassificationResult instantiates a new ExactMatchClassificationResult and sets the default values.
+// NewExactMatchClassificationResult instantiates a new exactMatchClassificationResult and sets the default values.
 func NewExactMatchClassificationResult()(*ExactMatchClassificationResult) {
     m := &ExactMatchClassificationResult{
     }

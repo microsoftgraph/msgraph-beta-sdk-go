@@ -7,7 +7,7 @@ import (
 // WindowsPhone81VpnConfiguration 
 type WindowsPhone81VpnConfiguration struct {
     Windows81VpnConfiguration
-    // Authentication method. Possible values are: certificate, usernameAndPassword, sharedSecret, derivedCredential, azureAD.
+    // VPN Authentication Method.
     authenticationMethod *VpnAuthenticationMethod
     // Bypass VPN on company Wi-Fi.
     bypassVpnOnCompanyWifi *bool
@@ -31,7 +31,7 @@ func NewWindowsPhone81VpnConfiguration()(*WindowsPhone81VpnConfiguration) {
 func CreateWindowsPhone81VpnConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWindowsPhone81VpnConfiguration(), nil
 }
-// GetAuthenticationMethod gets the authenticationMethod property value. Authentication method. Possible values are: certificate, usernameAndPassword, sharedSecret, derivedCredential, azureAD.
+// GetAuthenticationMethod gets the authenticationMethod property value. VPN Authentication Method.
 func (m *WindowsPhone81VpnConfiguration) GetAuthenticationMethod()(*VpnAuthenticationMethod) {
     if m == nil {
         return nil
@@ -193,7 +193,7 @@ func (m *WindowsPhone81VpnConfiguration) Serialize(writer i878a80d2330e89d268963
     }
     return nil
 }
-// SetAuthenticationMethod sets the authenticationMethod property value. Authentication method. Possible values are: certificate, usernameAndPassword, sharedSecret, derivedCredential, azureAD.
+// SetAuthenticationMethod sets the authenticationMethod property value. VPN Authentication Method.
 func (m *WindowsPhone81VpnConfiguration) SetAuthenticationMethod(value *VpnAuthenticationMethod)() {
     if m != nil {
         m.authenticationMethod = value

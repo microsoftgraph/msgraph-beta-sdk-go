@@ -19,13 +19,13 @@ type IosEasEmailProfileConfiguration struct {
     blockSyncingRecentlyUsedEmailAddresses *bool
     // Tenant level settings for the Derived Credentials to be used for authentication.
     derivedCredentialSettings DeviceManagementDerivedCredentialSettingsable
-    // Duration of time email should be synced back to. . Possible values are: userDefined, oneDay, threeDays, oneWeek, twoWeeks, oneMonth, unlimited.
+    // Possible values for email sync duration.
     durationOfEmailToSync *EmailSyncDuration
     // Exchange data to sync. Possible values are: none, calendars, contacts, email, notes, reminders.
     easServices *EasServices
     // Allow users to change sync settings.
     easServicesUserOverrideEnabled *bool
-    // Email attribute that is picked from AAD and injected into this profile before installing on the device. Possible values are: userPrincipalName, primarySmtpAddress.
+    // Possible values for username source or email source.
     emailAddressSource *UserEmailSource
     // Encryption Certificate type for this Email profile. Possible values are: none, certificate, derivedCredential.
     encryptionCertificateType *EmailCertificateType
@@ -121,7 +121,7 @@ func (m *IosEasEmailProfileConfiguration) GetDerivedCredentialSettings()(DeviceM
         return m.derivedCredentialSettings
     }
 }
-// GetDurationOfEmailToSync gets the durationOfEmailToSync property value. Duration of time email should be synced back to. . Possible values are: userDefined, oneDay, threeDays, oneWeek, twoWeeks, oneMonth, unlimited.
+// GetDurationOfEmailToSync gets the durationOfEmailToSync property value. Possible values for email sync duration.
 func (m *IosEasEmailProfileConfiguration) GetDurationOfEmailToSync()(*EmailSyncDuration) {
     if m == nil {
         return nil
@@ -145,7 +145,7 @@ func (m *IosEasEmailProfileConfiguration) GetEasServicesUserOverrideEnabled()(*b
         return m.easServicesUserOverrideEnabled
     }
 }
-// GetEmailAddressSource gets the emailAddressSource property value. Email attribute that is picked from AAD and injected into this profile before installing on the device. Possible values are: userPrincipalName, primarySmtpAddress.
+// GetEmailAddressSource gets the emailAddressSource property value. Possible values for username source or email source.
 func (m *IosEasEmailProfileConfiguration) GetEmailAddressSource()(*UserEmailSource) {
     if m == nil {
         return nil
@@ -776,7 +776,7 @@ func (m *IosEasEmailProfileConfiguration) SetDerivedCredentialSettings(value Dev
         m.derivedCredentialSettings = value
     }
 }
-// SetDurationOfEmailToSync sets the durationOfEmailToSync property value. Duration of time email should be synced back to. . Possible values are: userDefined, oneDay, threeDays, oneWeek, twoWeeks, oneMonth, unlimited.
+// SetDurationOfEmailToSync sets the durationOfEmailToSync property value. Possible values for email sync duration.
 func (m *IosEasEmailProfileConfiguration) SetDurationOfEmailToSync(value *EmailSyncDuration)() {
     if m != nil {
         m.durationOfEmailToSync = value
@@ -794,7 +794,7 @@ func (m *IosEasEmailProfileConfiguration) SetEasServicesUserOverrideEnabled(valu
         m.easServicesUserOverrideEnabled = value
     }
 }
-// SetEmailAddressSource sets the emailAddressSource property value. Email attribute that is picked from AAD and injected into this profile before installing on the device. Possible values are: userPrincipalName, primarySmtpAddress.
+// SetEmailAddressSource sets the emailAddressSource property value. Possible values for username source or email source.
 func (m *IosEasEmailProfileConfiguration) SetEmailAddressSource(value *UserEmailSource)() {
     if m != nil {
         m.emailAddressSource = value

@@ -11,7 +11,7 @@ type TenantAttachRBACState struct {
     // Indicates whether the tenant is enabled for Tenant Attach with role management.  TRUE if enabled, FALSE if the Tenant Attach with rolemanagement is disabled.
     enabled *bool
 }
-// NewTenantAttachRBACState instantiates a new TenantAttachRBACState and sets the default values.
+// NewTenantAttachRBACState instantiates a new tenantAttachRBACState and sets the default values.
 func NewTenantAttachRBACState()(*TenantAttachRBACState) {
     m := &TenantAttachRBACState{
     }

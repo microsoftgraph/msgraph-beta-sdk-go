@@ -8,16 +8,67 @@ import (
 type DeviceManagementConstraint struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
+    // The type property
+    type_escaped *string
 }
 // NewDeviceManagementConstraint instantiates a new deviceManagementConstraint and sets the default values.
 func NewDeviceManagementConstraint()(*DeviceManagementConstraint) {
     m := &DeviceManagementConstraint{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    typeValue := "#microsoft.graph.deviceManagementConstraint";
+    m.SetType(&typeValue);
     return m
 }
 // CreateDeviceManagementConstraintFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateDeviceManagementConstraintFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+    if parseNode != nil {
+        mappingValueNode, err := parseNode.GetChildNode("@odata.type")
+        if err != nil {
+            return nil, err
+        }
+        if mappingValueNode != nil {
+            mappingValue, err := mappingValueNode.GetStringValue()
+            if err != nil {
+                return nil, err
+            }
+            if mappingValue != nil {
+                mappingStr := *mappingValue
+                switch mappingStr {
+                    case "#microsoft.graph.deviceManagementEnumConstraint":
+                        return NewDeviceManagementEnumConstraint(), nil
+                    case "#microsoft.graph.deviceManagementIntentSettingSecretConstraint":
+                        return NewDeviceManagementIntentSettingSecretConstraint(), nil
+                    case "#microsoft.graph.deviceManagementSettingAbstractImplementationConstraint":
+                        return NewDeviceManagementSettingAbstractImplementationConstraint(), nil
+                    case "#microsoft.graph.deviceManagementSettingAppConstraint":
+                        return NewDeviceManagementSettingAppConstraint(), nil
+                    case "#microsoft.graph.deviceManagementSettingBooleanConstraint":
+                        return NewDeviceManagementSettingBooleanConstraint(), nil
+                    case "#microsoft.graph.deviceManagementSettingCollectionConstraint":
+                        return NewDeviceManagementSettingCollectionConstraint(), nil
+                    case "#microsoft.graph.deviceManagementSettingEnrollmentTypeConstraint":
+                        return NewDeviceManagementSettingEnrollmentTypeConstraint(), nil
+                    case "#microsoft.graph.deviceManagementSettingFileConstraint":
+                        return NewDeviceManagementSettingFileConstraint(), nil
+                    case "#microsoft.graph.deviceManagementSettingIntegerConstraint":
+                        return NewDeviceManagementSettingIntegerConstraint(), nil
+                    case "#microsoft.graph.deviceManagementSettingProfileConstraint":
+                        return NewDeviceManagementSettingProfileConstraint(), nil
+                    case "#microsoft.graph.deviceManagementSettingRegexConstraint":
+                        return NewDeviceManagementSettingRegexConstraint(), nil
+                    case "#microsoft.graph.deviceManagementSettingRequiredConstraint":
+                        return NewDeviceManagementSettingRequiredConstraint(), nil
+                    case "#microsoft.graph.deviceManagementSettingSddlConstraint":
+                        return NewDeviceManagementSettingSddlConstraint(), nil
+                    case "#microsoft.graph.deviceManagementSettingStringLengthConstraint":
+                        return NewDeviceManagementSettingStringLengthConstraint(), nil
+                    case "#microsoft.graph.deviceManagementSettingXmlConstraint":
+                        return NewDeviceManagementSettingXmlConstraint(), nil
+                }
+            }
+        }
+    }
     return NewDeviceManagementConstraint(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -31,10 +82,34 @@ func (m *DeviceManagementConstraint) GetAdditionalData()(map[string]interface{})
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceManagementConstraint) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetType(val)
+        }
+        return nil
+    }
     return res
+}
+// GetType gets the type property value. The type property
+func (m *DeviceManagementConstraint) GetType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
+    }
 }
 // Serialize serializes information the current object
 func (m *DeviceManagementConstraint) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
+    {
+        err := writer.WriteStringValue("type", m.GetType())
+        if err != nil {
+            return err
+        }
+    }
     {
         err := writer.WriteAdditionalData(m.GetAdditionalData())
         if err != nil {
@@ -47,5 +122,11 @@ func (m *DeviceManagementConstraint) Serialize(writer i878a80d2330e89d26896388a3
 func (m *DeviceManagementConstraint) SetAdditionalData(value map[string]interface{})() {
     if m != nil {
         m.additionalData = value
+    }
+}
+// SetType sets the type property value. The type property
+func (m *DeviceManagementConstraint) SetType(value *string)() {
+    if m != nil {
+        m.type_escaped = value
     }
 }

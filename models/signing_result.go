@@ -13,7 +13,7 @@ type SigningResult struct {
     // The signingKeyId property
     signingKeyId *string
 }
-// NewSigningResult instantiates a new SigningResult and sets the default values.
+// NewSigningResult instantiates a new signingResult and sets the default values.
 func NewSigningResult()(*SigningResult) {
     m := &SigningResult{
     }

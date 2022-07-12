@@ -12,7 +12,7 @@ type DeviceManagementConfigurationPolicyTemplateReference struct {
     templateDisplayName *string
     // Template Display Version of the referenced Template. This property is read-only.
     templateDisplayVersion *string
-    // Template Family of the referenced Template. This property is read-only. Possible values are: none, endpointSecurityAntivirus, endpointSecurityDiskEncryption, endpointSecurityFirewall, endpointSecurityEndpointDetectionAndResponse, endpointSecurityAttackSurfaceReduction, endpointSecurityAccountProtection, endpointSecurityApplicationControl, baseline.
+    // Describes the TemplateFamily for the Template entity
     templateFamily *DeviceManagementConfigurationTemplateFamily
     // Template id
     templateId *string
@@ -97,7 +97,7 @@ func (m *DeviceManagementConfigurationPolicyTemplateReference) GetTemplateDispla
         return m.templateDisplayVersion
     }
 }
-// GetTemplateFamily gets the templateFamily property value. Template Family of the referenced Template. This property is read-only. Possible values are: none, endpointSecurityAntivirus, endpointSecurityDiskEncryption, endpointSecurityFirewall, endpointSecurityEndpointDetectionAndResponse, endpointSecurityAttackSurfaceReduction, endpointSecurityAccountProtection, endpointSecurityApplicationControl, baseline.
+// GetTemplateFamily gets the templateFamily property value. Describes the TemplateFamily for the Template entity
 func (m *DeviceManagementConfigurationPolicyTemplateReference) GetTemplateFamily()(*DeviceManagementConfigurationTemplateFamily) {
     if m == nil {
         return nil
@@ -166,7 +166,7 @@ func (m *DeviceManagementConfigurationPolicyTemplateReference) SetTemplateDispla
         m.templateDisplayVersion = value
     }
 }
-// SetTemplateFamily sets the templateFamily property value. Template Family of the referenced Template. This property is read-only. Possible values are: none, endpointSecurityAntivirus, endpointSecurityDiskEncryption, endpointSecurityFirewall, endpointSecurityEndpointDetectionAndResponse, endpointSecurityAttackSurfaceReduction, endpointSecurityAccountProtection, endpointSecurityApplicationControl, baseline.
+// SetTemplateFamily sets the templateFamily property value. Describes the TemplateFamily for the Template entity
 func (m *DeviceManagementConfigurationPolicyTemplateReference) SetTemplateFamily(value *DeviceManagementConfigurationTemplateFamily)() {
     if m != nil {
         m.templateFamily = value

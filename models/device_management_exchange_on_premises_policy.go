@@ -11,7 +11,7 @@ type DeviceManagementExchangeOnPremisesPolicy struct {
     accessRules []DeviceManagementExchangeAccessRuleable
     // The Exchange on premises conditional access settings. On premises conditional access will require devices to be both enrolled and compliant for mail access
     conditionalAccessSettings OnPremisesConditionalAccessSettingsable
-    // Default access state in Exchange. This rule applies globally to the entire Exchange organization. Possible values are: none, allow, block, quarantine.
+    // Access Level in Exchange.
     defaultAccessLevel *DeviceManagementExchangeAccessLevel
     // The list of device classes known to Exchange
     knownDeviceClasses []DeviceManagementExchangeDeviceClassable
@@ -45,7 +45,7 @@ func (m *DeviceManagementExchangeOnPremisesPolicy) GetConditionalAccessSettings(
         return m.conditionalAccessSettings
     }
 }
-// GetDefaultAccessLevel gets the defaultAccessLevel property value. Default access state in Exchange. This rule applies globally to the entire Exchange organization. Possible values are: none, allow, block, quarantine.
+// GetDefaultAccessLevel gets the defaultAccessLevel property value. Access Level in Exchange.
 func (m *DeviceManagementExchangeOnPremisesPolicy) GetDefaultAccessLevel()(*DeviceManagementExchangeAccessLevel) {
     if m == nil {
         return nil
@@ -191,7 +191,7 @@ func (m *DeviceManagementExchangeOnPremisesPolicy) SetConditionalAccessSettings(
         m.conditionalAccessSettings = value
     }
 }
-// SetDefaultAccessLevel sets the defaultAccessLevel property value. Default access state in Exchange. This rule applies globally to the entire Exchange organization. Possible values are: none, allow, block, quarantine.
+// SetDefaultAccessLevel sets the defaultAccessLevel property value. Access Level in Exchange.
 func (m *DeviceManagementExchangeOnPremisesPolicy) SetDefaultAccessLevel(value *DeviceManagementExchangeAccessLevel)() {
     if m != nil {
         m.defaultAccessLevel = value

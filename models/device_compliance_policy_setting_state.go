@@ -24,7 +24,7 @@ type DeviceCompliancePolicySettingState struct {
     settingName *string
     // Contributing policies
     sources []SettingSourceable
-    // The compliance state of the setting. Possible values are: unknown, notApplicable, compliant, remediated, nonCompliant, error, conflict, notAssigned.
+    // The state property
     state *ComplianceStatus
     // UserEmail
     userEmail *string
@@ -257,7 +257,7 @@ func (m *DeviceCompliancePolicySettingState) GetSources()([]SettingSourceable) {
         return m.sources
     }
 }
-// GetState gets the state property value. The compliance state of the setting. Possible values are: unknown, notApplicable, compliant, remediated, nonCompliant, error, conflict, notAssigned.
+// GetState gets the state property value. The state property
 func (m *DeviceCompliancePolicySettingState) GetState()(*ComplianceStatus) {
     if m == nil {
         return nil
@@ -444,7 +444,7 @@ func (m *DeviceCompliancePolicySettingState) SetSources(value []SettingSourceabl
         m.sources = value
     }
 }
-// SetState sets the state property value. The compliance state of the setting. Possible values are: unknown, notApplicable, compliant, remediated, nonCompliant, error, conflict, notAssigned.
+// SetState sets the state property value. The state property
 func (m *DeviceCompliancePolicySettingState) SetState(value *ComplianceStatus)() {
     if m != nil {
         m.state = value

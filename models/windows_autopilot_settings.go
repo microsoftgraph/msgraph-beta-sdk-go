@@ -5,14 +5,14 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// WindowsAutopilotSettings the windowsAutopilotSettings resource represents a Windows Autopilot Account to sync data with Windows device data sync service.
+// WindowsAutopilotSettings 
 type WindowsAutopilotSettings struct {
     Entity
     // Last data sync date time with DDS service.
     lastManualSyncTriggerDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Last data sync date time with DDS service.
     lastSyncDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // Indicates the status of sync with Device data sync (DDS) service. Possible values are: unknown, inProgress, completed, failed.
+    // The syncStatus property
     syncStatus *WindowsAutopilotSyncStatus
 }
 // NewWindowsAutopilotSettings instantiates a new windowsAutopilotSettings and sets the default values.
@@ -77,7 +77,7 @@ func (m *WindowsAutopilotSettings) GetLastSyncDateTime()(*i336074805fc853987abe6
         return m.lastSyncDateTime
     }
 }
-// GetSyncStatus gets the syncStatus property value. Indicates the status of sync with Device data sync (DDS) service. Possible values are: unknown, inProgress, completed, failed.
+// GetSyncStatus gets the syncStatus property value. The syncStatus property
 func (m *WindowsAutopilotSettings) GetSyncStatus()(*WindowsAutopilotSyncStatus) {
     if m == nil {
         return nil
@@ -124,7 +124,7 @@ func (m *WindowsAutopilotSettings) SetLastSyncDateTime(value *i336074805fc853987
         m.lastSyncDateTime = value
     }
 }
-// SetSyncStatus sets the syncStatus property value. Indicates the status of sync with Device data sync (DDS) service. Possible values are: unknown, inProgress, completed, failed.
+// SetSyncStatus sets the syncStatus property value. The syncStatus property
 func (m *WindowsAutopilotSettings) SetSyncStatus(value *WindowsAutopilotSyncStatus)() {
     if m != nil {
         m.syncStatus = value

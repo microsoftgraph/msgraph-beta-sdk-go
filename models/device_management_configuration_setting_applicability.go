@@ -10,22 +10,47 @@ type DeviceManagementConfigurationSettingApplicability struct {
     additionalData map[string]interface{}
     // description of the setting
     description *string
-    // Device Mode that setting can be applied on. Possible values are: none, kiosk.
+    // Describes applicability for the mode the device is in
     deviceMode *DeviceManagementConfigurationDeviceMode
-    // Platform setting can be applied on. Possible values are: none, android, iOS, macOS, windows10X, windows10, linux, unknownFutureValue.
+    // Supported platform types.
     platform *DeviceManagementConfigurationPlatforms
-    // Which technology channels this setting can be deployed through. Possible values are: none, mdm, windows10XManagement, configManager, appleRemoteManagement, microsoftSense, exchangeOnline, linuxMdm, unknownFutureValue.
+    // Describes which technology this setting can be deployed with
     technologies *DeviceManagementConfigurationTechnologies
+    // The type property
+    type_escaped *string
 }
 // NewDeviceManagementConfigurationSettingApplicability instantiates a new deviceManagementConfigurationSettingApplicability and sets the default values.
 func NewDeviceManagementConfigurationSettingApplicability()(*DeviceManagementConfigurationSettingApplicability) {
     m := &DeviceManagementConfigurationSettingApplicability{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    typeValue := "#microsoft.graph.deviceManagementConfigurationSettingApplicability";
+    m.SetType(&typeValue);
     return m
 }
 // CreateDeviceManagementConfigurationSettingApplicabilityFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateDeviceManagementConfigurationSettingApplicabilityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+    if parseNode != nil {
+        mappingValueNode, err := parseNode.GetChildNode("@odata.type")
+        if err != nil {
+            return nil, err
+        }
+        if mappingValueNode != nil {
+            mappingValue, err := mappingValueNode.GetStringValue()
+            if err != nil {
+                return nil, err
+            }
+            if mappingValue != nil {
+                mappingStr := *mappingValue
+                switch mappingStr {
+                    case "#microsoft.graph.deviceManagementConfigurationExchangeOnlineSettingApplicability":
+                        return NewDeviceManagementConfigurationExchangeOnlineSettingApplicability(), nil
+                    case "#microsoft.graph.deviceManagementConfigurationWindowsSettingApplicability":
+                        return NewDeviceManagementConfigurationWindowsSettingApplicability(), nil
+                }
+            }
+        }
+    }
     return NewDeviceManagementConfigurationSettingApplicability(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -44,7 +69,7 @@ func (m *DeviceManagementConfigurationSettingApplicability) GetDescription()(*st
         return m.description
     }
 }
-// GetDeviceMode gets the deviceMode property value. Device Mode that setting can be applied on. Possible values are: none, kiosk.
+// GetDeviceMode gets the deviceMode property value. Describes applicability for the mode the device is in
 func (m *DeviceManagementConfigurationSettingApplicability) GetDeviceMode()(*DeviceManagementConfigurationDeviceMode) {
     if m == nil {
         return nil
@@ -95,9 +120,19 @@ func (m *DeviceManagementConfigurationSettingApplicability) GetFieldDeserializer
         }
         return nil
     }
+    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetType(val)
+        }
+        return nil
+    }
     return res
 }
-// GetPlatform gets the platform property value. Platform setting can be applied on. Possible values are: none, android, iOS, macOS, windows10X, windows10, linux, unknownFutureValue.
+// GetPlatform gets the platform property value. Supported platform types.
 func (m *DeviceManagementConfigurationSettingApplicability) GetPlatform()(*DeviceManagementConfigurationPlatforms) {
     if m == nil {
         return nil
@@ -105,12 +140,20 @@ func (m *DeviceManagementConfigurationSettingApplicability) GetPlatform()(*Devic
         return m.platform
     }
 }
-// GetTechnologies gets the technologies property value. Which technology channels this setting can be deployed through. Possible values are: none, mdm, windows10XManagement, configManager, appleRemoteManagement, microsoftSense, exchangeOnline, linuxMdm, unknownFutureValue.
+// GetTechnologies gets the technologies property value. Describes which technology this setting can be deployed with
 func (m *DeviceManagementConfigurationSettingApplicability) GetTechnologies()(*DeviceManagementConfigurationTechnologies) {
     if m == nil {
         return nil
     } else {
         return m.technologies
+    }
+}
+// GetType gets the type property value. The type property
+func (m *DeviceManagementConfigurationSettingApplicability) GetType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
     }
 }
 // Serialize serializes information the current object
@@ -143,6 +186,12 @@ func (m *DeviceManagementConfigurationSettingApplicability) Serialize(writer i87
         }
     }
     {
+        err := writer.WriteStringValue("type", m.GetType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err := writer.WriteAdditionalData(m.GetAdditionalData())
         if err != nil {
             return err
@@ -162,21 +211,27 @@ func (m *DeviceManagementConfigurationSettingApplicability) SetDescription(value
         m.description = value
     }
 }
-// SetDeviceMode sets the deviceMode property value. Device Mode that setting can be applied on. Possible values are: none, kiosk.
+// SetDeviceMode sets the deviceMode property value. Describes applicability for the mode the device is in
 func (m *DeviceManagementConfigurationSettingApplicability) SetDeviceMode(value *DeviceManagementConfigurationDeviceMode)() {
     if m != nil {
         m.deviceMode = value
     }
 }
-// SetPlatform sets the platform property value. Platform setting can be applied on. Possible values are: none, android, iOS, macOS, windows10X, windows10, linux, unknownFutureValue.
+// SetPlatform sets the platform property value. Supported platform types.
 func (m *DeviceManagementConfigurationSettingApplicability) SetPlatform(value *DeviceManagementConfigurationPlatforms)() {
     if m != nil {
         m.platform = value
     }
 }
-// SetTechnologies sets the technologies property value. Which technology channels this setting can be deployed through. Possible values are: none, mdm, windows10XManagement, configManager, appleRemoteManagement, microsoftSense, exchangeOnline, linuxMdm, unknownFutureValue.
+// SetTechnologies sets the technologies property value. Describes which technology this setting can be deployed with
 func (m *DeviceManagementConfigurationSettingApplicability) SetTechnologies(value *DeviceManagementConfigurationTechnologies)() {
     if m != nil {
         m.technologies = value
+    }
+}
+// SetType sets the type property value. The type property
+func (m *DeviceManagementConfigurationSettingApplicability) SetType(value *string)() {
+    if m != nil {
+        m.type_escaped = value
     }
 }

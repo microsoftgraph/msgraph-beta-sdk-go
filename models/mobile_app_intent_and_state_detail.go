@@ -14,9 +14,9 @@ type MobileAppIntentAndStateDetail struct {
     displayName *string
     // Human readable version of the application
     displayVersion *string
-    // The install state of the app. Possible values are: installed, failed, notInstalled, uninstallFailed, pendingInstall, unknown, notApplicable.
+    // A list of possible states for application status on an individual device. When devices contact the Intune service and find targeted application enforcement intent, the status of the enforcement is recorded and becomes accessible in the Graph API. Since the application status is identified during device interaction with the Intune service, status records do not immediately appear upon application group assignment; it is created only after the assignment is evaluated in the service and devices start receiving the policy during check-ins.
     installState *ResultantAppState
-    // Mobile App Intent. Possible values are: available, notAvailable, requiredInstall, requiredUninstall, requiredAndAvailableInstall, availableInstallWithoutEnrollment, exclude.
+    // Indicates the status of the mobile app on the device.
     mobileAppIntent *MobileAppIntent
     // The supported platforms for the app.
     supportedDeviceTypes []MobileAppSupportedDeviceTypeable
@@ -133,7 +133,7 @@ func (m *MobileAppIntentAndStateDetail) GetFieldDeserializers()(map[string]func(
     }
     return res
 }
-// GetInstallState gets the installState property value. The install state of the app. Possible values are: installed, failed, notInstalled, uninstallFailed, pendingInstall, unknown, notApplicable.
+// GetInstallState gets the installState property value. A list of possible states for application status on an individual device. When devices contact the Intune service and find targeted application enforcement intent, the status of the enforcement is recorded and becomes accessible in the Graph API. Since the application status is identified during device interaction with the Intune service, status records do not immediately appear upon application group assignment; it is created only after the assignment is evaluated in the service and devices start receiving the policy during check-ins.
 func (m *MobileAppIntentAndStateDetail) GetInstallState()(*ResultantAppState) {
     if m == nil {
         return nil
@@ -141,7 +141,7 @@ func (m *MobileAppIntentAndStateDetail) GetInstallState()(*ResultantAppState) {
         return m.installState
     }
 }
-// GetMobileAppIntent gets the mobileAppIntent property value. Mobile App Intent. Possible values are: available, notAvailable, requiredInstall, requiredUninstall, requiredAndAvailableInstall, availableInstallWithoutEnrollment, exclude.
+// GetMobileAppIntent gets the mobileAppIntent property value. Indicates the status of the mobile app on the device.
 func (m *MobileAppIntentAndStateDetail) GetMobileAppIntent()(*MobileAppIntent) {
     if m == nil {
         return nil
@@ -233,13 +233,13 @@ func (m *MobileAppIntentAndStateDetail) SetDisplayVersion(value *string)() {
         m.displayVersion = value
     }
 }
-// SetInstallState sets the installState property value. The install state of the app. Possible values are: installed, failed, notInstalled, uninstallFailed, pendingInstall, unknown, notApplicable.
+// SetInstallState sets the installState property value. A list of possible states for application status on an individual device. When devices contact the Intune service and find targeted application enforcement intent, the status of the enforcement is recorded and becomes accessible in the Graph API. Since the application status is identified during device interaction with the Intune service, status records do not immediately appear upon application group assignment; it is created only after the assignment is evaluated in the service and devices start receiving the policy during check-ins.
 func (m *MobileAppIntentAndStateDetail) SetInstallState(value *ResultantAppState)() {
     if m != nil {
         m.installState = value
     }
 }
-// SetMobileAppIntent sets the mobileAppIntent property value. Mobile App Intent. Possible values are: available, notAvailable, requiredInstall, requiredUninstall, requiredAndAvailableInstall, availableInstallWithoutEnrollment, exclude.
+// SetMobileAppIntent sets the mobileAppIntent property value. Indicates the status of the mobile app on the device.
 func (m *MobileAppIntentAndStateDetail) SetMobileAppIntent(value *MobileAppIntent)() {
     if m != nil {
         m.mobileAppIntent = value

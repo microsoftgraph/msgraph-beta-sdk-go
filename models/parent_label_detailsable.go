@@ -16,6 +16,7 @@ type ParentLabelDetailsable interface {
     GetParent()(ParentLabelDetailsable)
     GetSensitivity()(*int32)
     GetTooltip()(*string)
+    GetType()(*string)
     SetColor(value *string)()
     SetDescription(value *string)()
     SetId(value *string)()
@@ -24,4 +25,5 @@ type ParentLabelDetailsable interface {
     SetParent(value ParentLabelDetailsable)()
     SetSensitivity(value *int32)()
     SetTooltip(value *string)()
+    SetType(value *string)()
 }

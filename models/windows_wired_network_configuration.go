@@ -23,7 +23,7 @@ type WindowsWiredNetworkConfiguration struct {
     disableUserPromptForServerValidation *bool
     // Specify the number of seconds to wait before sending an EAPOL (Extensible Authentication Protocol over LAN) Start message. Valid range 1-3600.
     eapolStartPeriodInSeconds *int32
-    // Extensible Authentication Protocol (EAP). Indicates the type of EAP protocol set on the Wi-Fi endpoint (router). Possible values are: eapTls, leap, eapSim, eapTtls, peap, eapFast, teap. Possible values are: eapTls, leap, eapSim, eapTtls, peap, eapFast, teap.
+    // Extensible Authentication Protocol (EAP) configuration types.
     eapType *EapType
     // When TRUE, the automatic configuration service for wired networks requires the use of 802.1X for port authentication. When FALSE, 802.1X is not required. Default value is FALSE.
     enforce8021X *bool
@@ -131,7 +131,7 @@ func (m *WindowsWiredNetworkConfiguration) GetEapolStartPeriodInSeconds()(*int32
         return m.eapolStartPeriodInSeconds
     }
 }
-// GetEapType gets the eapType property value. Extensible Authentication Protocol (EAP). Indicates the type of EAP protocol set on the Wi-Fi endpoint (router). Possible values are: eapTls, leap, eapSim, eapTtls, peap, eapFast, teap. Possible values are: eapTls, leap, eapSim, eapTtls, peap, eapFast, teap.
+// GetEapType gets the eapType property value. Extensible Authentication Protocol (EAP) configuration types.
 func (m *WindowsWiredNetworkConfiguration) GetEapType()(*EapType) {
     if m == nil {
         return nil
@@ -721,7 +721,7 @@ func (m *WindowsWiredNetworkConfiguration) SetEapolStartPeriodInSeconds(value *i
         m.eapolStartPeriodInSeconds = value
     }
 }
-// SetEapType sets the eapType property value. Extensible Authentication Protocol (EAP). Indicates the type of EAP protocol set on the Wi-Fi endpoint (router). Possible values are: eapTls, leap, eapSim, eapTtls, peap, eapFast, teap. Possible values are: eapTls, leap, eapSim, eapTtls, peap, eapFast, teap.
+// SetEapType sets the eapType property value. Extensible Authentication Protocol (EAP) configuration types.
 func (m *WindowsWiredNetworkConfiguration) SetEapType(value *EapType)() {
     if m != nil {
         m.eapType = value

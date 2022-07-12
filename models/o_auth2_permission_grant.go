@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// OAuth2PermissionGrant provides operations to manage the collection of administrativeUnit entities.
+// OAuth2PermissionGrant 
 type OAuth2PermissionGrant struct {
     Entity
     // The id of the client service principal for the application which is authorized to act on behalf of a signed-in user when accessing an API. Required. Supports $filter (eq only).
@@ -23,7 +23,7 @@ type OAuth2PermissionGrant struct {
     // Currently, the start time value is ignored, but a value is required when creating an oAuth2PermissionGrant. Required.
     startTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
 }
-// NewOAuth2PermissionGrant instantiates a new oAuth2PermissionGrant and sets the default values.
+// NewOAuth2PermissionGrant instantiates a new OAuth2PermissionGrant and sets the default values.
 func NewOAuth2PermissionGrant()(*OAuth2PermissionGrant) {
     m := &OAuth2PermissionGrant{
         Entity: *NewEntity(),

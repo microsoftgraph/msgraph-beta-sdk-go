@@ -18,7 +18,7 @@ type ChannelsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// ChannelsRequestBuilderGetQueryParameters get channels from teamwork
+// ChannelsRequestBuilderGetQueryParameters the channels those are either shared with this deleted team or created in this deleted team.
 type ChannelsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -80,11 +80,11 @@ func NewChannelsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26337
 func (m *ChannelsRequestBuilder) Count()(*i0ef4595d1d67413bb28d43e2174a358b9b9aae2a31c4b51d605ffc9f84ae38bb.CountRequestBuilder) {
     return i0ef4595d1d67413bb28d43e2174a358b9b9aae2a31c4b51d605ffc9f84ae38bb.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation get channels from teamwork
+// CreateGetRequestInformation the channels those are either shared with this deleted team or created in this deleted team.
 func (m *ChannelsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration get channels from teamwork
+// CreateGetRequestInformationWithRequestConfiguration the channels those are either shared with this deleted team or created in this deleted team.
 func (m *ChannelsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *ChannelsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -118,7 +118,7 @@ func (m *ChannelsRequestBuilder) CreatePostRequestInformationWithRequestConfigur
     }
     return requestInfo, nil
 }
-// Get get channels from teamwork
+// Get the channels those are either shared with this deleted team or created in this deleted team.
 func (m *ChannelsRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ChannelCollectionResponseable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
@@ -126,7 +126,7 @@ func (m *ChannelsRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697
 func (m *ChannelsRequestBuilder) GetAllMessages()(*ib12fd64aea5536c3893953bb6698b4cbf8336b2c610c6ce8768e63d1d07003bf.GetAllMessagesRequestBuilder) {
     return ib12fd64aea5536c3893953bb6698b4cbf8336b2c610c6ce8768e63d1d07003bf.NewGetAllMessagesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// GetWithRequestConfigurationAndResponseHandler get channels from teamwork
+// GetWithRequestConfigurationAndResponseHandler the channels those are either shared with this deleted team or created in this deleted team.
 func (m *ChannelsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *ChannelsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ChannelCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

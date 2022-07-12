@@ -22,7 +22,7 @@ type DeviceManagementCachedReportConfiguration struct {
     reportName *string
     // Columns selected from the report
     select_escaped []string
-    // Status of the cached report. Possible values are: unknown, notStarted, inProgress, completed, failed.
+    // Possible statuses associated with a generated report
     status *DeviceManagementReportStatus
 }
 // NewDeviceManagementCachedReportConfiguration instantiates a new deviceManagementCachedReportConfiguration and sets the default values.
@@ -185,7 +185,7 @@ func (m *DeviceManagementCachedReportConfiguration) GetSelect()([]string) {
         return m.select_escaped
     }
 }
-// GetStatus gets the status property value. Status of the cached report. Possible values are: unknown, notStarted, inProgress, completed, failed.
+// GetStatus gets the status property value. Possible statuses associated with a generated report
 func (m *DeviceManagementCachedReportConfiguration) GetStatus()(*DeviceManagementReportStatus) {
     if m == nil {
         return nil
@@ -292,7 +292,7 @@ func (m *DeviceManagementCachedReportConfiguration) SetSelect(value []string)() 
         m.select_escaped = value
     }
 }
-// SetStatus sets the status property value. Status of the cached report. Possible values are: unknown, notStarted, inProgress, completed, failed.
+// SetStatus sets the status property value. Possible statuses associated with a generated report
 func (m *DeviceManagementCachedReportConfiguration) SetStatus(value *DeviceManagementReportStatus)() {
     if m != nil {
         m.status = value

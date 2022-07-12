@@ -5,15 +5,19 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
-// ExternalConnection provides operations to manage the collection of externalConnection entities.
+// ExternalConnection 
 type ExternalConnection struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
+    // The complianceSettings property
+    complianceSettings ComplianceSettingsable
     // Specifies additional application IDs that are allowed to manage the connection and to index content in the connection. Optional.
     configuration Configurationable
     // The Teams App ID. Optional.
     connectorId *string
     // Description of the connection displayed in the Microsoft 365 admin center. Optional.
     description *string
+    // The enabledContentExperiences property
+    enabledContentExperiences *ContentExperienceType
     // The groups property
     groups []ExternalGroupable
     // The number of items ingested into a connection. This value is refreshed every 15 minutes. If the connection state is draft, then ingestedItemsCount will be null.
@@ -33,7 +37,7 @@ type ExternalConnection struct {
     // Indicates the current state of the connection. Possible values are draft, ready, obsolete, and limitExceeded. Required.
     state *ConnectionState
 }
-// NewExternalConnection instantiates a new externalConnection and sets the default values.
+// NewExternalConnection instantiates a new ExternalConnection and sets the default values.
 func NewExternalConnection()(*ExternalConnection) {
     m := &ExternalConnection{
         Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),
@@ -43,6 +47,14 @@ func NewExternalConnection()(*ExternalConnection) {
 // CreateExternalConnectionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateExternalConnectionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewExternalConnection(), nil
+}
+// GetComplianceSettings gets the complianceSettings property value. The complianceSettings property
+func (m *ExternalConnection) GetComplianceSettings()(ComplianceSettingsable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.complianceSettings
+    }
 }
 // GetConfiguration gets the configuration property value. Specifies additional application IDs that are allowed to manage the connection and to index content in the connection. Optional.
 func (m *ExternalConnection) GetConfiguration()(Configurationable) {
@@ -68,9 +80,27 @@ func (m *ExternalConnection) GetDescription()(*string) {
         return m.description
     }
 }
+// GetEnabledContentExperiences gets the enabledContentExperiences property value. The enabledContentExperiences property
+func (m *ExternalConnection) GetEnabledContentExperiences()(*ContentExperienceType) {
+    if m == nil {
+        return nil
+    } else {
+        return m.enabledContentExperiences
+    }
+}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ExternalConnection) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
+    res["complianceSettings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateComplianceSettingsFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetComplianceSettings(val.(ComplianceSettingsable))
+        }
+        return nil
+    }
     res["configuration"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateConfigurationFromDiscriminatorValue)
         if err != nil {
@@ -98,6 +128,16 @@ func (m *ExternalConnection) GetFieldDeserializers()(map[string]func(i878a80d233
         }
         if val != nil {
             m.SetDescription(val)
+        }
+        return nil
+    }
+    res["enabledContentExperiences"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseContentExperienceType)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetEnabledContentExperiences(val.(*ContentExperienceType))
         }
         return nil
     }
@@ -284,6 +324,12 @@ func (m *ExternalConnection) Serialize(writer i878a80d2330e89d26896388a3f487eef2
         return err
     }
     {
+        err = writer.WriteObjectValue("complianceSettings", m.GetComplianceSettings())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteObjectValue("configuration", m.GetConfiguration())
         if err != nil {
             return err
@@ -297,6 +343,13 @@ func (m *ExternalConnection) Serialize(writer i878a80d2330e89d26896388a3f487eef2
     }
     {
         err = writer.WriteStringValue("description", m.GetDescription())
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetEnabledContentExperiences() != nil {
+        cast := (*m.GetEnabledContentExperiences()).String()
+        err = writer.WriteStringValue("enabledContentExperiences", &cast)
         if err != nil {
             return err
         }
@@ -370,6 +423,12 @@ func (m *ExternalConnection) Serialize(writer i878a80d2330e89d26896388a3f487eef2
     }
     return nil
 }
+// SetComplianceSettings sets the complianceSettings property value. The complianceSettings property
+func (m *ExternalConnection) SetComplianceSettings(value ComplianceSettingsable)() {
+    if m != nil {
+        m.complianceSettings = value
+    }
+}
 // SetConfiguration sets the configuration property value. Specifies additional application IDs that are allowed to manage the connection and to index content in the connection. Optional.
 func (m *ExternalConnection) SetConfiguration(value Configurationable)() {
     if m != nil {
@@ -386,6 +445,12 @@ func (m *ExternalConnection) SetConnectorId(value *string)() {
 func (m *ExternalConnection) SetDescription(value *string)() {
     if m != nil {
         m.description = value
+    }
+}
+// SetEnabledContentExperiences sets the enabledContentExperiences property value. The enabledContentExperiences property
+func (m *ExternalConnection) SetEnabledContentExperiences(value *ContentExperienceType)() {
+    if m != nil {
+        m.enabledContentExperiences = value
     }
 }
 // SetGroups sets the groups property value. The groups property

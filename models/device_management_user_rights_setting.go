@@ -10,7 +10,7 @@ type DeviceManagementUserRightsSetting struct {
     additionalData map[string]interface{}
     // Representing a collection of local users or groups which will be set on device if the state of this setting is Allowed. This collection can contain a maximum of 500 elements.
     localUsersOrGroups []DeviceManagementUserRightsLocalUserOrGroupable
-    // Representing the current state of this user rights setting. Possible values are: notConfigured, blocked, allowed.
+    // State Management Setting.
     state *StateManagementSetting
 }
 // NewDeviceManagementUserRightsSetting instantiates a new deviceManagementUserRightsSetting and sets the default values.
@@ -69,7 +69,7 @@ func (m *DeviceManagementUserRightsSetting) GetLocalUsersOrGroups()([]DeviceMana
         return m.localUsersOrGroups
     }
 }
-// GetState gets the state property value. Representing the current state of this user rights setting. Possible values are: notConfigured, blocked, allowed.
+// GetState gets the state property value. State Management Setting.
 func (m *DeviceManagementUserRightsSetting) GetState()(*StateManagementSetting) {
     if m == nil {
         return nil
@@ -116,7 +116,7 @@ func (m *DeviceManagementUserRightsSetting) SetLocalUsersOrGroups(value []Device
         m.localUsersOrGroups = value
     }
 }
-// SetState sets the state property value. Representing the current state of this user rights setting. Possible values are: notConfigured, blocked, allowed.
+// SetState sets the state property value. State Management Setting.
 func (m *DeviceManagementUserRightsSetting) SetState(value *StateManagementSetting)() {
     if m != nil {
         m.state = value

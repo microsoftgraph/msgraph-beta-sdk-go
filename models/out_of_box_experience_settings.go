@@ -8,7 +8,7 @@ import (
 type OutOfBoxExperienceSettings struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
-    // AAD join authentication type. Possible values are: singleUser, shared.
+    // The deviceUsageType property
     deviceUsageType *WindowsDeviceUsageType
     // If set to true, then the user can't start over with different account, on company sign-in
     hideEscapeLink *bool
@@ -18,7 +18,7 @@ type OutOfBoxExperienceSettings struct {
     hidePrivacySettings *bool
     // If set, then skip the keyboard selection page if Language and Region are set
     skipKeyboardSelectionPage *bool
-    // Type of user. Possible values are: administrator, standard.
+    // The userType property
     userType *WindowsUserType
 }
 // NewOutOfBoxExperienceSettings instantiates a new outOfBoxExperienceSettings and sets the default values.
@@ -40,7 +40,7 @@ func (m *OutOfBoxExperienceSettings) GetAdditionalData()(map[string]interface{})
         return m.additionalData
     }
 }
-// GetDeviceUsageType gets the deviceUsageType property value. AAD join authentication type. Possible values are: singleUser, shared.
+// GetDeviceUsageType gets the deviceUsageType property value. The deviceUsageType property
 func (m *OutOfBoxExperienceSettings) GetDeviceUsageType()(*WindowsDeviceUsageType) {
     if m == nil {
         return nil
@@ -145,7 +145,7 @@ func (m *OutOfBoxExperienceSettings) GetSkipKeyboardSelectionPage()(*bool) {
         return m.skipKeyboardSelectionPage
     }
 }
-// GetUserType gets the userType property value. Type of user. Possible values are: administrator, standard.
+// GetUserType gets the userType property value. The userType property
 func (m *OutOfBoxExperienceSettings) GetUserType()(*WindowsUserType) {
     if m == nil {
         return nil
@@ -207,7 +207,7 @@ func (m *OutOfBoxExperienceSettings) SetAdditionalData(value map[string]interfac
         m.additionalData = value
     }
 }
-// SetDeviceUsageType sets the deviceUsageType property value. AAD join authentication type. Possible values are: singleUser, shared.
+// SetDeviceUsageType sets the deviceUsageType property value. The deviceUsageType property
 func (m *OutOfBoxExperienceSettings) SetDeviceUsageType(value *WindowsDeviceUsageType)() {
     if m != nil {
         m.deviceUsageType = value
@@ -237,7 +237,7 @@ func (m *OutOfBoxExperienceSettings) SetSkipKeyboardSelectionPage(value *bool)()
         m.skipKeyboardSelectionPage = value
     }
 }
-// SetUserType sets the userType property value. Type of user. Possible values are: administrator, standard.
+// SetUserType sets the userType property value. The userType property
 func (m *OutOfBoxExperienceSettings) SetUserType(value *WindowsUserType)() {
     if m != nil {
         m.userType = value

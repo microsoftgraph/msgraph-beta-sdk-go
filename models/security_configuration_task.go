@@ -7,11 +7,11 @@ import (
 // SecurityConfigurationTask 
 type SecurityConfigurationTask struct {
     DeviceAppManagementTask
-    // The applicable platform. Possible values are: unknown, macOS, windows10AndLater, windows10AndWindowsServer.
+    // The endpoint security configuration applicable platform.
     applicablePlatform *EndpointSecurityConfigurationApplicablePlatform
-    // The endpoint security policy type. Possible values are: unknown, antivirus, diskEncryption, firewall, endpointDetectionAndResponse, attackSurfaceReduction, accountProtection.
+    // The endpoint security policy type.
     endpointSecurityPolicy *EndpointSecurityConfigurationType
-    // The endpoint security policy profile. Possible values are: unknown, antivirus, windowsSecurity, bitLocker, fileVault, firewall, firewallRules, endpointDetectionAndResponse, deviceControl, appAndBrowserIsolation, exploitProtection, webProtection, applicationControl, attackSurfaceReductionRules, accountProtection.
+    // The endpoint security policy profile type.
     endpointSecurityPolicyProfile *EndpointSecurityConfigurationProfileType
     // Information about the mitigation.
     insights *string
@@ -33,7 +33,7 @@ func NewSecurityConfigurationTask()(*SecurityConfigurationTask) {
 func CreateSecurityConfigurationTaskFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewSecurityConfigurationTask(), nil
 }
-// GetApplicablePlatform gets the applicablePlatform property value. The applicable platform. Possible values are: unknown, macOS, windows10AndLater, windows10AndWindowsServer.
+// GetApplicablePlatform gets the applicablePlatform property value. The endpoint security configuration applicable platform.
 func (m *SecurityConfigurationTask) GetApplicablePlatform()(*EndpointSecurityConfigurationApplicablePlatform) {
     if m == nil {
         return nil
@@ -41,7 +41,7 @@ func (m *SecurityConfigurationTask) GetApplicablePlatform()(*EndpointSecurityCon
         return m.applicablePlatform
     }
 }
-// GetEndpointSecurityPolicy gets the endpointSecurityPolicy property value. The endpoint security policy type. Possible values are: unknown, antivirus, diskEncryption, firewall, endpointDetectionAndResponse, attackSurfaceReduction, accountProtection.
+// GetEndpointSecurityPolicy gets the endpointSecurityPolicy property value. The endpoint security policy type.
 func (m *SecurityConfigurationTask) GetEndpointSecurityPolicy()(*EndpointSecurityConfigurationType) {
     if m == nil {
         return nil
@@ -49,7 +49,7 @@ func (m *SecurityConfigurationTask) GetEndpointSecurityPolicy()(*EndpointSecurit
         return m.endpointSecurityPolicy
     }
 }
-// GetEndpointSecurityPolicyProfile gets the endpointSecurityPolicyProfile property value. The endpoint security policy profile. Possible values are: unknown, antivirus, windowsSecurity, bitLocker, fileVault, firewall, firewallRules, endpointDetectionAndResponse, deviceControl, appAndBrowserIsolation, exploitProtection, webProtection, applicationControl, attackSurfaceReductionRules, accountProtection.
+// GetEndpointSecurityPolicyProfile gets the endpointSecurityPolicyProfile property value. The endpoint security policy profile type.
 func (m *SecurityConfigurationTask) GetEndpointSecurityPolicyProfile()(*EndpointSecurityConfigurationProfileType) {
     if m == nil {
         return nil
@@ -233,19 +233,19 @@ func (m *SecurityConfigurationTask) Serialize(writer i878a80d2330e89d26896388a3f
     }
     return nil
 }
-// SetApplicablePlatform sets the applicablePlatform property value. The applicable platform. Possible values are: unknown, macOS, windows10AndLater, windows10AndWindowsServer.
+// SetApplicablePlatform sets the applicablePlatform property value. The endpoint security configuration applicable platform.
 func (m *SecurityConfigurationTask) SetApplicablePlatform(value *EndpointSecurityConfigurationApplicablePlatform)() {
     if m != nil {
         m.applicablePlatform = value
     }
 }
-// SetEndpointSecurityPolicy sets the endpointSecurityPolicy property value. The endpoint security policy type. Possible values are: unknown, antivirus, diskEncryption, firewall, endpointDetectionAndResponse, attackSurfaceReduction, accountProtection.
+// SetEndpointSecurityPolicy sets the endpointSecurityPolicy property value. The endpoint security policy type.
 func (m *SecurityConfigurationTask) SetEndpointSecurityPolicy(value *EndpointSecurityConfigurationType)() {
     if m != nil {
         m.endpointSecurityPolicy = value
     }
 }
-// SetEndpointSecurityPolicyProfile sets the endpointSecurityPolicyProfile property value. The endpoint security policy profile. Possible values are: unknown, antivirus, windowsSecurity, bitLocker, fileVault, firewall, firewallRules, endpointDetectionAndResponse, deviceControl, appAndBrowserIsolation, exploitProtection, webProtection, applicationControl, attackSurfaceReductionRules, accountProtection.
+// SetEndpointSecurityPolicyProfile sets the endpointSecurityPolicyProfile property value. The endpoint security policy profile type.
 func (m *SecurityConfigurationTask) SetEndpointSecurityPolicyProfile(value *EndpointSecurityConfigurationProfileType)() {
     if m != nil {
         m.endpointSecurityPolicyProfile = value

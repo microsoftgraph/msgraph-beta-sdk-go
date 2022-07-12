@@ -27,7 +27,7 @@ type DeviceManagementSettingDefinition struct {
     keywords []string
     // Placeholder text as an example of valid input
     placeholderText *string
-    // The data type of the value. Possible values are: integer, boolean, string, complex, collection, abstractComplex.
+    // The valueType property
     valueType *DeviceManangementIntentValueType
 }
 // NewDeviceManagementSettingDefinition instantiates a new deviceManagementSettingDefinition and sets the default values.
@@ -35,6 +35,8 @@ func NewDeviceManagementSettingDefinition()(*DeviceManagementSettingDefinition) 
     m := &DeviceManagementSettingDefinition{
         Entity: *NewEntity(),
     }
+    typeValue := "#microsoft.graph.deviceManagementSettingDefinition";
+    m.SetType(&typeValue);
     return m
 }
 // CreateDeviceManagementSettingDefinitionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -271,7 +273,7 @@ func (m *DeviceManagementSettingDefinition) GetPlaceholderText()(*string) {
         return m.placeholderText
     }
 }
-// GetValueType gets the valueType property value. The data type of the value. Possible values are: integer, boolean, string, complex, collection, abstractComplex.
+// GetValueType gets the valueType property value. The valueType property
 func (m *DeviceManagementSettingDefinition) GetValueType()(*DeviceManangementIntentValueType) {
     if m == nil {
         return nil
@@ -422,7 +424,7 @@ func (m *DeviceManagementSettingDefinition) SetPlaceholderText(value *string)() 
         m.placeholderText = value
     }
 }
-// SetValueType sets the valueType property value. The data type of the value. Possible values are: integer, boolean, string, complex, collection, abstractComplex.
+// SetValueType sets the valueType property value. The valueType property
 func (m *DeviceManagementSettingDefinition) SetValueType(value *DeviceManangementIntentValueType)() {
     if m != nil {
         m.valueType = value

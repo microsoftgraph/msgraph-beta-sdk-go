@@ -21,7 +21,7 @@ type IosUpdateConfiguration struct {
     isEnabled *bool
     // Days in week for which active hours are configured. This collection can contain a maximum of 7 elements.
     scheduledInstallDays []string
-    // Update schedule type. Possible values are: updateOutsideOfActiveHours, alwaysUpdate, updateDuringTimeWindows, updateOutsideOfTimeWindows.
+    // Update schedule type for iOS software updates.
     updateScheduleType *IosSoftwareUpdateScheduleType
     // UTC Time Offset indicated in minutes
     utcTimeOffsetInMinutes *int32
@@ -196,7 +196,7 @@ func (m *IosUpdateConfiguration) GetScheduledInstallDays()([]string) {
         return m.scheduledInstallDays
     }
 }
-// GetUpdateScheduleType gets the updateScheduleType property value. Update schedule type. Possible values are: updateOutsideOfActiveHours, alwaysUpdate, updateDuringTimeWindows, updateOutsideOfTimeWindows.
+// GetUpdateScheduleType gets the updateScheduleType property value. Update schedule type for iOS software updates.
 func (m *IosUpdateConfiguration) GetUpdateScheduleType()(*IosSoftwareUpdateScheduleType) {
     if m == nil {
         return nil
@@ -321,7 +321,7 @@ func (m *IosUpdateConfiguration) SetScheduledInstallDays(value []string)() {
         m.scheduledInstallDays = value
     }
 }
-// SetUpdateScheduleType sets the updateScheduleType property value. Update schedule type. Possible values are: updateOutsideOfActiveHours, alwaysUpdate, updateDuringTimeWindows, updateOutsideOfTimeWindows.
+// SetUpdateScheduleType sets the updateScheduleType property value. Update schedule type for iOS software updates.
 func (m *IosUpdateConfiguration) SetUpdateScheduleType(value *IosSoftwareUpdateScheduleType)() {
     if m != nil {
         m.updateScheduleType = value

@@ -19,7 +19,6 @@ type PrivilegedRoleAssignmentRequestable interface {
     GetStatus()(*string)
     GetTicketNumber()(*string)
     GetTicketSystem()(*string)
-    GetType()(*string)
     GetUserId()(*string)
     SetAssignmentState(value *string)()
     SetDuration(value *string)()
@@ -31,6 +30,5 @@ type PrivilegedRoleAssignmentRequestable interface {
     SetStatus(value *string)()
     SetTicketNumber(value *string)()
     SetTicketSystem(value *string)()
-    SetType(value *string)()
     SetUserId(value *string)()
 }

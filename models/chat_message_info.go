@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ChatMessageInfo provides operations to manage the collection of administrativeUnit entities.
+// ChatMessageInfo 
 type ChatMessageInfo struct {
     Entity
     // Body of the chatMessage. This will still contain markers for @mentions and attachments even though the object does not return @mentions and attachments.
@@ -18,7 +18,7 @@ type ChatMessageInfo struct {
     from ChatMessageFromIdentitySetable
     // If set to true, the original message has been deleted.
     isDeleted *bool
-    // The type of chat message. The possible values are: message, unknownFutureValue, systemEventMessage.
+    // The messageType property
     messageType *ChatMessageType
 }
 // NewChatMessageInfo instantiates a new chatMessageInfo and sets the default values.
@@ -137,7 +137,7 @@ func (m *ChatMessageInfo) GetIsDeleted()(*bool) {
         return m.isDeleted
     }
 }
-// GetMessageType gets the messageType property value. The type of chat message. The possible values are: message, unknownFutureValue, systemEventMessage.
+// GetMessageType gets the messageType property value. The messageType property
 func (m *ChatMessageInfo) GetMessageType()(*ChatMessageType) {
     if m == nil {
         return nil
@@ -220,7 +220,7 @@ func (m *ChatMessageInfo) SetIsDeleted(value *bool)() {
         m.isDeleted = value
     }
 }
-// SetMessageType sets the messageType property value. The type of chat message. The possible values are: message, unknownFutureValue, systemEventMessage.
+// SetMessageType sets the messageType property value. The messageType property
 func (m *ChatMessageInfo) SetMessageType(value *ChatMessageType)() {
     if m != nil {
         m.messageType = value

@@ -8,7 +8,7 @@ import (
 type MacOSSystemExtensionTypeMapping struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
-    // Gets or sets the allowed macOS system extension types. Possible values are: driverExtensionsAllowed, networkExtensionsAllowed, endpointSecurityExtensionsAllowed.
+    // Flag enum representing the allowed macOS system extension types.
     allowedTypes *MacOSSystemExtensionType
     // Gets or sets the team identifier used to sign the system extension.
     teamIdentifier *string
@@ -32,7 +32,7 @@ func (m *MacOSSystemExtensionTypeMapping) GetAdditionalData()(map[string]interfa
         return m.additionalData
     }
 }
-// GetAllowedTypes gets the allowedTypes property value. Gets or sets the allowed macOS system extension types. Possible values are: driverExtensionsAllowed, networkExtensionsAllowed, endpointSecurityExtensionsAllowed.
+// GetAllowedTypes gets the allowedTypes property value. Flag enum representing the allowed macOS system extension types.
 func (m *MacOSSystemExtensionTypeMapping) GetAllowedTypes()(*MacOSSystemExtensionType) {
     if m == nil {
         return nil
@@ -102,7 +102,7 @@ func (m *MacOSSystemExtensionTypeMapping) SetAdditionalData(value map[string]int
         m.additionalData = value
     }
 }
-// SetAllowedTypes sets the allowedTypes property value. Gets or sets the allowed macOS system extension types. Possible values are: driverExtensionsAllowed, networkExtensionsAllowed, endpointSecurityExtensionsAllowed.
+// SetAllowedTypes sets the allowedTypes property value. Flag enum representing the allowed macOS system extension types.
 func (m *MacOSSystemExtensionTypeMapping) SetAllowedTypes(value *MacOSSystemExtensionType)() {
     if m != nil {
         m.allowedTypes = value

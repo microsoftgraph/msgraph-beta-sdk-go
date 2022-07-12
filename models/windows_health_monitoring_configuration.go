@@ -7,11 +7,11 @@ import (
 // WindowsHealthMonitoringConfiguration 
 type WindowsHealthMonitoringConfiguration struct {
     DeviceConfiguration
-    // Enables device health monitoring on the device. Possible values are: notConfigured, enabled, disabled.
+    // Possible values of a property
     allowDeviceHealthMonitoring *Enablement
     // Specifies custom set of events collected from the device where health monitoring is enabled
     configDeviceHealthMonitoringCustomScope *string
-    // Specifies set of events collected from the device where health monitoring is enabled. Possible values are: undefined, healthMonitoring, bootPerformance, windowsUpdates.
+    // Device health monitoring scope
     configDeviceHealthMonitoringScope *WindowsHealthMonitoringScope
 }
 // NewWindowsHealthMonitoringConfiguration instantiates a new WindowsHealthMonitoringConfiguration and sets the default values.
@@ -25,7 +25,7 @@ func NewWindowsHealthMonitoringConfiguration()(*WindowsHealthMonitoringConfigura
 func CreateWindowsHealthMonitoringConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWindowsHealthMonitoringConfiguration(), nil
 }
-// GetAllowDeviceHealthMonitoring gets the allowDeviceHealthMonitoring property value. Enables device health monitoring on the device. Possible values are: notConfigured, enabled, disabled.
+// GetAllowDeviceHealthMonitoring gets the allowDeviceHealthMonitoring property value. Possible values of a property
 func (m *WindowsHealthMonitoringConfiguration) GetAllowDeviceHealthMonitoring()(*Enablement) {
     if m == nil {
         return nil
@@ -41,7 +41,7 @@ func (m *WindowsHealthMonitoringConfiguration) GetConfigDeviceHealthMonitoringCu
         return m.configDeviceHealthMonitoringCustomScope
     }
 }
-// GetConfigDeviceHealthMonitoringScope gets the configDeviceHealthMonitoringScope property value. Specifies set of events collected from the device where health monitoring is enabled. Possible values are: undefined, healthMonitoring, bootPerformance, windowsUpdates.
+// GetConfigDeviceHealthMonitoringScope gets the configDeviceHealthMonitoringScope property value. Device health monitoring scope
 func (m *WindowsHealthMonitoringConfiguration) GetConfigDeviceHealthMonitoringScope()(*WindowsHealthMonitoringScope) {
     if m == nil {
         return nil
@@ -112,7 +112,7 @@ func (m *WindowsHealthMonitoringConfiguration) Serialize(writer i878a80d2330e89d
     }
     return nil
 }
-// SetAllowDeviceHealthMonitoring sets the allowDeviceHealthMonitoring property value. Enables device health monitoring on the device. Possible values are: notConfigured, enabled, disabled.
+// SetAllowDeviceHealthMonitoring sets the allowDeviceHealthMonitoring property value. Possible values of a property
 func (m *WindowsHealthMonitoringConfiguration) SetAllowDeviceHealthMonitoring(value *Enablement)() {
     if m != nil {
         m.allowDeviceHealthMonitoring = value
@@ -124,7 +124,7 @@ func (m *WindowsHealthMonitoringConfiguration) SetConfigDeviceHealthMonitoringCu
         m.configDeviceHealthMonitoringCustomScope = value
     }
 }
-// SetConfigDeviceHealthMonitoringScope sets the configDeviceHealthMonitoringScope property value. Specifies set of events collected from the device where health monitoring is enabled. Possible values are: undefined, healthMonitoring, bootPerformance, windowsUpdates.
+// SetConfigDeviceHealthMonitoringScope sets the configDeviceHealthMonitoringScope property value. Device health monitoring scope
 func (m *WindowsHealthMonitoringConfiguration) SetConfigDeviceHealthMonitoringScope(value *WindowsHealthMonitoringScope)() {
     if m != nil {
         m.configDeviceHealthMonitoringScope = value

@@ -9,7 +9,7 @@ import (
 type SyncPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
-    // The syncType property
+    // The type of Exchange Connector sync requested.
     syncType *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementExchangeConnectorSyncType
 }
 // NewSyncPostRequestBody instantiates a new syncPostRequestBody and sets the default values.
@@ -46,7 +46,7 @@ func (m *SyncPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d23
     }
     return res
 }
-// GetSyncType gets the syncType property value. The syncType property
+// GetSyncType gets the syncType property value. The type of Exchange Connector sync requested.
 func (m *SyncPostRequestBody) GetSyncType()(*ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementExchangeConnectorSyncType) {
     if m == nil {
         return nil
@@ -77,7 +77,7 @@ func (m *SyncPostRequestBody) SetAdditionalData(value map[string]interface{})() 
         m.additionalData = value
     }
 }
-// SetSyncType sets the syncType property value. The syncType property
+// SetSyncType sets the syncType property value. The type of Exchange Connector sync requested.
 func (m *SyncPostRequestBody) SetSyncType(value *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementExchangeConnectorSyncType)() {
     if m != nil {
         m.syncType = value

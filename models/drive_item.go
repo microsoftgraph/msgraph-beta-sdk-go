@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DriveItem provides operations to manage the collection of administrativeUnit entities.
+// DriveItem 
 type DriveItem struct {
     BaseItem
     // The list of recent activities that took place on this item.

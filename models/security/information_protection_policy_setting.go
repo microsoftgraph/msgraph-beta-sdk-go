@@ -5,7 +5,7 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
-// InformationProtectionPolicySetting provides operations to manage the collection of administrativeUnit entities.
+// InformationProtectionPolicySetting 
 type InformationProtectionPolicySetting struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
     // The defaultLabelId property

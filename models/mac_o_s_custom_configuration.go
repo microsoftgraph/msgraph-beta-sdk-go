@@ -7,7 +7,7 @@ import (
 // MacOSCustomConfiguration 
 type MacOSCustomConfiguration struct {
     DeviceConfiguration
-    // Indicates the channel used to deploy the configuration profile. Available choices are DeviceChannel, UserChannel. Possible values are: deviceChannel, userChannel.
+    // Indicates the channel used to deploy the configuration profile. Available choices are DeviceChannel, UserChannel
     deploymentChannel *AppleDeploymentChannel
     // Payload. (UTF8 encoded byte array)
     payload []byte
@@ -27,7 +27,7 @@ func NewMacOSCustomConfiguration()(*MacOSCustomConfiguration) {
 func CreateMacOSCustomConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewMacOSCustomConfiguration(), nil
 }
-// GetDeploymentChannel gets the deploymentChannel property value. Indicates the channel used to deploy the configuration profile. Available choices are DeviceChannel, UserChannel. Possible values are: deviceChannel, userChannel.
+// GetDeploymentChannel gets the deploymentChannel property value. Indicates the channel used to deploy the configuration profile. Available choices are DeviceChannel, UserChannel
 func (m *MacOSCustomConfiguration) GetDeploymentChannel()(*AppleDeploymentChannel) {
     if m == nil {
         return nil
@@ -137,7 +137,7 @@ func (m *MacOSCustomConfiguration) Serialize(writer i878a80d2330e89d26896388a3f4
     }
     return nil
 }
-// SetDeploymentChannel sets the deploymentChannel property value. Indicates the channel used to deploy the configuration profile. Available choices are DeviceChannel, UserChannel. Possible values are: deviceChannel, userChannel.
+// SetDeploymentChannel sets the deploymentChannel property value. Indicates the channel used to deploy the configuration profile. Available choices are DeviceChannel, UserChannel
 func (m *MacOSCustomConfiguration) SetDeploymentChannel(value *AppleDeploymentChannel)() {
     if m != nil {
         m.deploymentChannel = value

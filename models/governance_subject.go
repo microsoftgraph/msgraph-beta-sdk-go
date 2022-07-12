@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// GovernanceSubject provides operations to manage the collection of governanceResource entities.
+// GovernanceSubject 
 type GovernanceSubject struct {
     Entity
     // The display name of the subject.
@@ -13,8 +13,6 @@ type GovernanceSubject struct {
     email *string
     // The principal name of the user subject. If the subject is in other types, it is empty.
     principalName *string
-    // The type of the subject. The value can be User, Group, and ServicePrincipal.
-    type_escaped *string
 }
 // NewGovernanceSubject instantiates a new governanceSubject and sets the default values.
 func NewGovernanceSubject()(*GovernanceSubject) {
@@ -76,16 +74,6 @@ func (m *GovernanceSubject) GetFieldDeserializers()(map[string]func(i878a80d2330
         }
         return nil
     }
-    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetType(val)
-        }
-        return nil
-    }
     return res
 }
 // GetPrincipalName gets the principalName property value. The principal name of the user subject. If the subject is in other types, it is empty.
@@ -94,14 +82,6 @@ func (m *GovernanceSubject) GetPrincipalName()(*string) {
         return nil
     } else {
         return m.principalName
-    }
-}
-// GetType gets the type property value. The type of the subject. The value can be User, Group, and ServicePrincipal.
-func (m *GovernanceSubject) GetType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.type_escaped
     }
 }
 // Serialize serializes information the current object
@@ -128,12 +108,6 @@ func (m *GovernanceSubject) Serialize(writer i878a80d2330e89d26896388a3f487eef27
             return err
         }
     }
-    {
-        err = writer.WriteStringValue("type", m.GetType())
-        if err != nil {
-            return err
-        }
-    }
     return nil
 }
 // SetDisplayName sets the displayName property value. The display name of the subject.
@@ -152,11 +126,5 @@ func (m *GovernanceSubject) SetEmail(value *string)() {
 func (m *GovernanceSubject) SetPrincipalName(value *string)() {
     if m != nil {
         m.principalName = value
-    }
-}
-// SetType sets the type property value. The type of the subject. The value can be User, Group, and ServicePrincipal.
-func (m *GovernanceSubject) SetType(value *string)() {
-    if m != nil {
-        m.type_escaped = value
     }
 }

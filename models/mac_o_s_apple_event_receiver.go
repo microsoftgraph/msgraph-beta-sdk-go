@@ -14,7 +14,7 @@ type MacOSAppleEventReceiver struct {
     codeRequirement *string
     // Bundle ID of the app or file path of the process or executable that receives the Apple Event.
     identifier *string
-    // Use bundle ID for an app or path for a process or executable that receives the Apple Event. Possible values are: bundleID, path.
+    // Process identifier types for MacOS Privacy Preferences
     identifierType *MacOSProcessIdentifierType
 }
 // NewMacOSAppleEventReceiver instantiates a new macOSAppleEventReceiver and sets the default values.
@@ -105,7 +105,7 @@ func (m *MacOSAppleEventReceiver) GetIdentifier()(*string) {
         return m.identifier
     }
 }
-// GetIdentifierType gets the identifierType property value. Use bundle ID for an app or path for a process or executable that receives the Apple Event. Possible values are: bundleID, path.
+// GetIdentifierType gets the identifierType property value. Process identifier types for MacOS Privacy Preferences
 func (m *MacOSAppleEventReceiver) GetIdentifierType()(*MacOSProcessIdentifierType) {
     if m == nil {
         return nil
@@ -172,7 +172,7 @@ func (m *MacOSAppleEventReceiver) SetIdentifier(value *string)() {
         m.identifier = value
     }
 }
-// SetIdentifierType sets the identifierType property value. Use bundle ID for an app or path for a process or executable that receives the Apple Event. Possible values are: bundleID, path.
+// SetIdentifierType sets the identifierType property value. Process identifier types for MacOS Privacy Preferences
 func (m *MacOSAppleEventReceiver) SetIdentifierType(value *MacOSProcessIdentifierType)() {
     if m != nil {
         m.identifierType = value

@@ -7,7 +7,7 @@ import (
 // TargetedManagedAppConfiguration 
 type TargetedManagedAppConfiguration struct {
     ManagedAppConfiguration
-    // Public Apps selection: group or individual
+    // Indicates a collection of apps to target which can be one of several pre-defined lists of apps or a manually selected list of apps
     appGroupType *TargetedManagedAppGroupType
     // List of apps to which the policy is deployed.
     apps []ManagedMobileAppable
@@ -31,7 +31,7 @@ func NewTargetedManagedAppConfiguration()(*TargetedManagedAppConfiguration) {
 func CreateTargetedManagedAppConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewTargetedManagedAppConfiguration(), nil
 }
-// GetAppGroupType gets the appGroupType property value. Public Apps selection: group or individual
+// GetAppGroupType gets the appGroupType property value. Indicates a collection of apps to target which can be one of several pre-defined lists of apps or a manually selected list of apps
 func (m *TargetedManagedAppConfiguration) GetAppGroupType()(*TargetedManagedAppGroupType) {
     if m == nil {
         return nil
@@ -205,7 +205,7 @@ func (m *TargetedManagedAppConfiguration) Serialize(writer i878a80d2330e89d26896
     }
     return nil
 }
-// SetAppGroupType sets the appGroupType property value. Public Apps selection: group or individual
+// SetAppGroupType sets the appGroupType property value. Indicates a collection of apps to target which can be one of several pre-defined lists of apps or a manually selected list of apps
 func (m *TargetedManagedAppConfiguration) SetAppGroupType(value *TargetedManagedAppGroupType)() {
     if m != nil {
         m.appGroupType = value
