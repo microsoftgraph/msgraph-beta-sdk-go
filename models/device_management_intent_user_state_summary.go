@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DeviceManagementIntentUserStateSummary entity that represents user state summary for an intent
+// DeviceManagementIntentUserStateSummary 
 type DeviceManagementIntentUserStateSummary struct {
     Entity
     // Number of users in conflict

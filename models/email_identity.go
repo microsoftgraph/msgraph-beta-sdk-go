@@ -4,13 +4,13 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// EmailIdentity provides operations to manage the security singleton.
+// EmailIdentity 
 type EmailIdentity struct {
     Identity
     // Email address of the user.
     email *string
 }
-// NewEmailIdentity instantiates a new emailIdentity and sets the default values.
+// NewEmailIdentity instantiates a new EmailIdentity and sets the default values.
 func NewEmailIdentity()(*EmailIdentity) {
     m := &EmailIdentity{
         Identity: *NewIdentity(),

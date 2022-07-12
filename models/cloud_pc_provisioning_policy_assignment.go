@@ -4,13 +4,13 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// CloudPcProvisioningPolicyAssignment provides operations to manage the deviceManagement singleton.
+// CloudPcProvisioningPolicyAssignment 
 type CloudPcProvisioningPolicyAssignment struct {
     Entity
     // The assignment target for the provisioning policy. Currently, the only target supported for this policy is a user group. For details, see cloudPcManagementGroupAssignmentTarget.
     target CloudPcManagementAssignmentTargetable
 }
-// NewCloudPcProvisioningPolicyAssignment instantiates a new cloudPcProvisioningPolicyAssignment and sets the default values.
+// NewCloudPcProvisioningPolicyAssignment instantiates a new CloudPcProvisioningPolicyAssignment and sets the default values.
 func NewCloudPcProvisioningPolicyAssignment()(*CloudPcProvisioningPolicyAssignment) {
     m := &CloudPcProvisioningPolicyAssignment{
         Entity: *NewEntity(),

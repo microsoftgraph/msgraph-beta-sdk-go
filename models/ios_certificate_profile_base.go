@@ -7,7 +7,7 @@ import (
 // IosCertificateProfileBase 
 type IosCertificateProfileBase struct {
     IosCertificateProfile
-    // Scale for the Certificate Validity Period. Possible values are: days, months, years.
+    // Certificate Validity Period Options.
     certificateValidityPeriodScale *CertificateValidityPeriodScale
     // Value for the Certificate Validity Period.
     certificateValidityPeriodValue *int32
@@ -15,7 +15,7 @@ type IosCertificateProfileBase struct {
     renewalThresholdPercentage *int32
     // Certificate Subject Alternative Name type. Possible values are: none, emailAddress, userPrincipalName, customAzureADAttribute, domainNameService, universalResourceIdentifier.
     subjectAlternativeNameType *SubjectAlternativeNameType
-    // Certificate Subject Name Format. Possible values are: commonName, commonNameAsEmail, custom, commonNameIncludingEmail, commonNameAsIMEI, commonNameAsSerialNumber.
+    // Subject Name Format Options for Apple devices.
     subjectNameFormat *AppleSubjectNameFormat
 }
 // NewIosCertificateProfileBase instantiates a new IosCertificateProfileBase and sets the default values.
@@ -23,6 +23,8 @@ func NewIosCertificateProfileBase()(*IosCertificateProfileBase) {
     m := &IosCertificateProfileBase{
         IosCertificateProfile: *NewIosCertificateProfile(),
     }
+    typeValue := "#microsoft.graph.iosCertificateProfileBase";
+    m.SetType(&typeValue);
     return m
 }
 // CreateIosCertificateProfileBaseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -50,7 +52,7 @@ func CreateIosCertificateProfileBaseFromDiscriminatorValue(parseNode i878a80d233
     }
     return NewIosCertificateProfileBase(), nil
 }
-// GetCertificateValidityPeriodScale gets the certificateValidityPeriodScale property value. Scale for the Certificate Validity Period. Possible values are: days, months, years.
+// GetCertificateValidityPeriodScale gets the certificateValidityPeriodScale property value. Certificate Validity Period Options.
 func (m *IosCertificateProfileBase) GetCertificateValidityPeriodScale()(*CertificateValidityPeriodScale) {
     if m == nil {
         return nil
@@ -137,7 +139,7 @@ func (m *IosCertificateProfileBase) GetSubjectAlternativeNameType()(*SubjectAlte
         return m.subjectAlternativeNameType
     }
 }
-// GetSubjectNameFormat gets the subjectNameFormat property value. Certificate Subject Name Format. Possible values are: commonName, commonNameAsEmail, custom, commonNameIncludingEmail, commonNameAsIMEI, commonNameAsSerialNumber.
+// GetSubjectNameFormat gets the subjectNameFormat property value. Subject Name Format Options for Apple devices.
 func (m *IosCertificateProfileBase) GetSubjectNameFormat()(*AppleSubjectNameFormat) {
     if m == nil {
         return nil
@@ -186,7 +188,7 @@ func (m *IosCertificateProfileBase) Serialize(writer i878a80d2330e89d26896388a3f
     }
     return nil
 }
-// SetCertificateValidityPeriodScale sets the certificateValidityPeriodScale property value. Scale for the Certificate Validity Period. Possible values are: days, months, years.
+// SetCertificateValidityPeriodScale sets the certificateValidityPeriodScale property value. Certificate Validity Period Options.
 func (m *IosCertificateProfileBase) SetCertificateValidityPeriodScale(value *CertificateValidityPeriodScale)() {
     if m != nil {
         m.certificateValidityPeriodScale = value
@@ -210,7 +212,7 @@ func (m *IosCertificateProfileBase) SetSubjectAlternativeNameType(value *Subject
         m.subjectAlternativeNameType = value
     }
 }
-// SetSubjectNameFormat sets the subjectNameFormat property value. Certificate Subject Name Format. Possible values are: commonName, commonNameAsEmail, custom, commonNameIncludingEmail, commonNameAsIMEI, commonNameAsSerialNumber.
+// SetSubjectNameFormat sets the subjectNameFormat property value. Subject Name Format Options for Apple devices.
 func (m *IosCertificateProfileBase) SetSubjectNameFormat(value *AppleSubjectNameFormat)() {
     if m != nil {
         m.subjectNameFormat = value

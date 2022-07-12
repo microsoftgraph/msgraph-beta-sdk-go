@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// BaseTask provides operations to manage the collection of administrativeUnit entities.
+// BaseTask provides operations to manage the collection of activityStatistics entities.
 type BaseTask struct {
     Entity
     // The date and time when the task was last modified. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2020 would look like this: '2020-01-01T00:00:00Z'.
@@ -22,7 +22,7 @@ type BaseTask struct {
     dueDateTime DateTimeTimeZoneable
     // The collection of open extensions defined for the task .
     extensions []Extensionable
-    // The importance of the task. Possible values are: low, normal, high.  The possible values are: low, normal, high.
+    // The importance property
     importance *Importance
     // The date and time when the task was last modified. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2020 would look like this: '2020-01-01T00:00:00Z'.
     lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
@@ -34,7 +34,7 @@ type BaseTask struct {
     recurrence PatternedRecurrenceable
     // The date in the specified time zone when the task is to begin.
     startDateTime DateTimeTimeZoneable
-    // Indicates the state or progress of the task. Possible values are: notStarted, inProgress, completed,unknownFutureValue.
+    // The status property
     status *TaskStatus_v2
     // The task body in text format that typically contains information about the task.
     textBody *string
@@ -46,6 +46,8 @@ func NewBaseTask()(*BaseTask) {
     m := &BaseTask{
         Entity: *NewEntity(),
     }
+    typeValue := "#microsoft.graph.baseTask";
+    m.SetType(&typeValue);
     return m
 }
 // CreateBaseTaskFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -304,7 +306,7 @@ func (m *BaseTask) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
     }
     return res
 }
-// GetImportance gets the importance property value. The importance of the task. Possible values are: low, normal, high.  The possible values are: low, normal, high.
+// GetImportance gets the importance property value. The importance property
 func (m *BaseTask) GetImportance()(*Importance) {
     if m == nil {
         return nil
@@ -352,7 +354,7 @@ func (m *BaseTask) GetStartDateTime()(DateTimeTimeZoneable) {
         return m.startDateTime
     }
 }
-// GetStatus gets the status property value. Indicates the state or progress of the task. Possible values are: notStarted, inProgress, completed,unknownFutureValue.
+// GetStatus gets the status property value. The status property
 func (m *BaseTask) GetStatus()(*TaskStatus_v2) {
     if m == nil {
         return nil
@@ -536,7 +538,7 @@ func (m *BaseTask) SetExtensions(value []Extensionable)() {
         m.extensions = value
     }
 }
-// SetImportance sets the importance property value. The importance of the task. Possible values are: low, normal, high.  The possible values are: low, normal, high.
+// SetImportance sets the importance property value. The importance property
 func (m *BaseTask) SetImportance(value *Importance)() {
     if m != nil {
         m.importance = value
@@ -572,7 +574,7 @@ func (m *BaseTask) SetStartDateTime(value DateTimeTimeZoneable)() {
         m.startDateTime = value
     }
 }
-// SetStatus sets the status property value. Indicates the state or progress of the task. Possible values are: notStarted, inProgress, completed,unknownFutureValue.
+// SetStatus sets the status property value. The status property
 func (m *BaseTask) SetStatus(value *TaskStatus_v2)() {
     if m != nil {
         m.status = value

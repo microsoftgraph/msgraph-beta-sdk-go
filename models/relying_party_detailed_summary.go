@@ -4,12 +4,12 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// RelyingPartyDetailedSummary provides operations to call the getRelyingPartyDetailedSummary method.
+// RelyingPartyDetailedSummary 
 type RelyingPartyDetailedSummary struct {
     Entity
     // Number of failed sign in on Active Directory Federation Service in the period specified.
     failedSignInCount *int64
-    // Indication of whether the application can be moved to Azure AD or require more investigation. Possible values are: ready, needsReview, additionalStepsRequired, unknownFutureValue.
+    // The migrationStatus property
     migrationStatus *MigrationStatus
     // Specifies all the validations check done on applications configuration details to evaluate if the application is ready to be moved to Azure AD.
     migrationValidationDetails []KeyValuePairable
@@ -30,7 +30,7 @@ type RelyingPartyDetailedSummary struct {
     // Number of unique users that have signed into the application.
     uniqueUserCount *int64
 }
-// NewRelyingPartyDetailedSummary instantiates a new relyingPartyDetailedSummary and sets the default values.
+// NewRelyingPartyDetailedSummary instantiates a new RelyingPartyDetailedSummary and sets the default values.
 func NewRelyingPartyDetailedSummary()(*RelyingPartyDetailedSummary) {
     m := &RelyingPartyDetailedSummary{
         Entity: *NewEntity(),
@@ -172,7 +172,7 @@ func (m *RelyingPartyDetailedSummary) GetFieldDeserializers()(map[string]func(i8
     }
     return res
 }
-// GetMigrationStatus gets the migrationStatus property value. Indication of whether the application can be moved to Azure AD or require more investigation. Possible values are: ready, needsReview, additionalStepsRequired, unknownFutureValue.
+// GetMigrationStatus gets the migrationStatus property value. The migrationStatus property
 func (m *RelyingPartyDetailedSummary) GetMigrationStatus()(*MigrationStatus) {
     if m == nil {
         return nil
@@ -337,7 +337,7 @@ func (m *RelyingPartyDetailedSummary) SetFailedSignInCount(value *int64)() {
         m.failedSignInCount = value
     }
 }
-// SetMigrationStatus sets the migrationStatus property value. Indication of whether the application can be moved to Azure AD or require more investigation. Possible values are: ready, needsReview, additionalStepsRequired, unknownFutureValue.
+// SetMigrationStatus sets the migrationStatus property value. The migrationStatus property
 func (m *RelyingPartyDetailedSummary) SetMigrationStatus(value *MigrationStatus)() {
     if m != nil {
         m.migrationStatus = value

@@ -16,7 +16,7 @@ type EmbeddedSIMDeviceState struct {
     lastSyncDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The time the embedded SIM device status was last modified. Updated service side.
     modifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The state of the profile operation applied to the device. Possible values are: notEvaluated, failed, installing, installed, deleting, error, deleted, removedByUser.
+    // Describes the various states for an embedded SIM activation code.
     state *EmbeddedSIMDeviceStateValue
     // String description of the provisioning state.
     stateDetails *string
@@ -153,7 +153,7 @@ func (m *EmbeddedSIMDeviceState) GetModifiedDateTime()(*i336074805fc853987abe6f7
         return m.modifiedDateTime
     }
 }
-// GetState gets the state property value. The state of the profile operation applied to the device. Possible values are: notEvaluated, failed, installing, installed, deleting, error, deleted, removedByUser.
+// GetState gets the state property value. Describes the various states for an embedded SIM activation code.
 func (m *EmbeddedSIMDeviceState) GetState()(*EmbeddedSIMDeviceStateValue) {
     if m == nil {
         return nil
@@ -266,7 +266,7 @@ func (m *EmbeddedSIMDeviceState) SetModifiedDateTime(value *i336074805fc853987ab
         m.modifiedDateTime = value
     }
 }
-// SetState sets the state property value. The state of the profile operation applied to the device. Possible values are: notEvaluated, failed, installing, installed, deleting, error, deleted, removedByUser.
+// SetState sets the state property value. Describes the various states for an embedded SIM activation code.
 func (m *EmbeddedSIMDeviceState) SetState(value *EmbeddedSIMDeviceStateValue)() {
     if m != nil {
         m.state = value

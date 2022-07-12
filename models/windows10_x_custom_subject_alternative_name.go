@@ -10,7 +10,7 @@ type Windows10XCustomSubjectAlternativeName struct {
     additionalData map[string]interface{}
     // Custom SAN Name
     name *string
-    // Custom SAN Type. Possible values are: none, emailAddress, userPrincipalName, customAzureADAttribute, domainNameService, universalResourceIdentifier.
+    // Subject Alternative Name Options.
     sanType *SubjectAlternativeNameType
 }
 // NewWindows10XCustomSubjectAlternativeName instantiates a new windows10XCustomSubjectAlternativeName and sets the default values.
@@ -65,7 +65,7 @@ func (m *Windows10XCustomSubjectAlternativeName) GetName()(*string) {
         return m.name
     }
 }
-// GetSanType gets the sanType property value. Custom SAN Type. Possible values are: none, emailAddress, userPrincipalName, customAzureADAttribute, domainNameService, universalResourceIdentifier.
+// GetSanType gets the sanType property value. Subject Alternative Name Options.
 func (m *Windows10XCustomSubjectAlternativeName) GetSanType()(*SubjectAlternativeNameType) {
     if m == nil {
         return nil
@@ -108,7 +108,7 @@ func (m *Windows10XCustomSubjectAlternativeName) SetName(value *string)() {
         m.name = value
     }
 }
-// SetSanType sets the sanType property value. Custom SAN Type. Possible values are: none, emailAddress, userPrincipalName, customAzureADAttribute, domainNameService, universalResourceIdentifier.
+// SetSanType sets the sanType property value. Subject Alternative Name Options.
 func (m *Windows10XCustomSubjectAlternativeName) SetSanType(value *SubjectAlternativeNameType)() {
     if m != nil {
         m.sanType = value

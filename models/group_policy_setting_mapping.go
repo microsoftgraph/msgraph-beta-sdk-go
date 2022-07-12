@@ -23,7 +23,7 @@ type GroupPolicySettingMapping struct {
     mdmMinimumOSVersion *int32
     // The MDM CSP URI this group policy setting maps to.
     mdmSettingUri *string
-    // Indicates if the setting is supported in Mdm or not. Possible values are: unknown, supported, unsupported, deprecated.
+    // Mdm Support Status of the setting.
     mdmSupportedState *MdmSupportedState
     // Parent Id of the group policy setting.
     parentId *string
@@ -37,9 +37,9 @@ type GroupPolicySettingMapping struct {
     settingDisplayValueType *string
     // The name of this group policy setting.
     settingName *string
-    // The scope of the setting. Possible values are: unknown, device, user.
+    // Scope of the group policy setting.
     settingScope *GroupPolicySettingScope
-    // The setting type (security or admx) of the Group Policy. Possible values are: unknown, policy, account, securityOptions, userRightsAssignment, auditSetting, windowsFirewallSettings, appLockerRuleCollection, dataSourcesSettings, devicesSettings, driveMapSettings, environmentVariables, filesSettings, folderOptions, folders, iniFiles, internetOptions, localUsersAndGroups, networkOptions, networkShares, ntServices, powerOptions, printers, regionalOptionsSettings, registrySettings, scheduledTasks, shortcutSettings, startMenuSettings.
+    // Setting type of the group policy.
     settingType *GroupPolicySettingType
     // The value of this group policy setting.
     settingValue *string
@@ -336,7 +336,7 @@ func (m *GroupPolicySettingMapping) GetMdmSettingUri()(*string) {
         return m.mdmSettingUri
     }
 }
-// GetMdmSupportedState gets the mdmSupportedState property value. Indicates if the setting is supported in Mdm or not. Possible values are: unknown, supported, unsupported, deprecated.
+// GetMdmSupportedState gets the mdmSupportedState property value. Mdm Support Status of the setting.
 func (m *GroupPolicySettingMapping) GetMdmSupportedState()(*MdmSupportedState) {
     if m == nil {
         return nil
@@ -392,7 +392,7 @@ func (m *GroupPolicySettingMapping) GetSettingName()(*string) {
         return m.settingName
     }
 }
-// GetSettingScope gets the settingScope property value. The scope of the setting. Possible values are: unknown, device, user.
+// GetSettingScope gets the settingScope property value. Scope of the group policy setting.
 func (m *GroupPolicySettingMapping) GetSettingScope()(*GroupPolicySettingScope) {
     if m == nil {
         return nil
@@ -400,7 +400,7 @@ func (m *GroupPolicySettingMapping) GetSettingScope()(*GroupPolicySettingScope) 
         return m.settingScope
     }
 }
-// GetSettingType gets the settingType property value. The setting type (security or admx) of the Group Policy. Possible values are: unknown, policy, account, securityOptions, userRightsAssignment, auditSetting, windowsFirewallSettings, appLockerRuleCollection, dataSourcesSettings, devicesSettings, driveMapSettings, environmentVariables, filesSettings, folderOptions, folders, iniFiles, internetOptions, localUsersAndGroups, networkOptions, networkShares, ntServices, powerOptions, printers, regionalOptionsSettings, registrySettings, scheduledTasks, shortcutSettings, startMenuSettings.
+// GetSettingType gets the settingType property value. Setting type of the group policy.
 func (m *GroupPolicySettingMapping) GetSettingType()(*GroupPolicySettingType) {
     if m == nil {
         return nil
@@ -611,7 +611,7 @@ func (m *GroupPolicySettingMapping) SetMdmSettingUri(value *string)() {
         m.mdmSettingUri = value
     }
 }
-// SetMdmSupportedState sets the mdmSupportedState property value. Indicates if the setting is supported in Mdm or not. Possible values are: unknown, supported, unsupported, deprecated.
+// SetMdmSupportedState sets the mdmSupportedState property value. Mdm Support Status of the setting.
 func (m *GroupPolicySettingMapping) SetMdmSupportedState(value *MdmSupportedState)() {
     if m != nil {
         m.mdmSupportedState = value
@@ -653,13 +653,13 @@ func (m *GroupPolicySettingMapping) SetSettingName(value *string)() {
         m.settingName = value
     }
 }
-// SetSettingScope sets the settingScope property value. The scope of the setting. Possible values are: unknown, device, user.
+// SetSettingScope sets the settingScope property value. Scope of the group policy setting.
 func (m *GroupPolicySettingMapping) SetSettingScope(value *GroupPolicySettingScope)() {
     if m != nil {
         m.settingScope = value
     }
 }
-// SetSettingType sets the settingType property value. The setting type (security or admx) of the Group Policy. Possible values are: unknown, policy, account, securityOptions, userRightsAssignment, auditSetting, windowsFirewallSettings, appLockerRuleCollection, dataSourcesSettings, devicesSettings, driveMapSettings, environmentVariables, filesSettings, folderOptions, folders, iniFiles, internetOptions, localUsersAndGroups, networkOptions, networkShares, ntServices, powerOptions, printers, regionalOptionsSettings, registrySettings, scheduledTasks, shortcutSettings, startMenuSettings.
+// SetSettingType sets the settingType property value. Setting type of the group policy.
 func (m *GroupPolicySettingMapping) SetSettingType(value *GroupPolicySettingType)() {
     if m != nil {
         m.settingType = value

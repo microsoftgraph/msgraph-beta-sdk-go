@@ -10,7 +10,7 @@ type DeviceAppManagementTask struct {
     Entity
     // The name or email of the admin this task is assigned to.
     assignedTo *string
-    // The category. Possible values are: unknown, advancedThreatProtection.
+    // Device app management task category.
     category *DeviceAppManagementTaskCategory
     // The created date.
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
@@ -24,9 +24,9 @@ type DeviceAppManagementTask struct {
     displayName *string
     // The due date.
     dueDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The priority. Possible values are: none, high, low.
+    // Device app management task priority.
     priority *DeviceAppManagementTaskPriority
-    // The status. Possible values are: unknown, pending, active, completed, rejected.
+    // Device app management task status.
     status *DeviceAppManagementTaskStatus
 }
 // NewDeviceAppManagementTask instantiates a new deviceAppManagementTask and sets the default values.
@@ -34,6 +34,8 @@ func NewDeviceAppManagementTask()(*DeviceAppManagementTask) {
     m := &DeviceAppManagementTask{
         Entity: *NewEntity(),
     }
+    typeValue := "#microsoft.graph.deviceAppManagementTask";
+    m.SetType(&typeValue);
     return m
 }
 // CreateDeviceAppManagementTaskFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -71,7 +73,7 @@ func (m *DeviceAppManagementTask) GetAssignedTo()(*string) {
         return m.assignedTo
     }
 }
-// GetCategory gets the category property value. The category. Possible values are: unknown, advancedThreatProtection.
+// GetCategory gets the category property value. Device app management task category.
 func (m *DeviceAppManagementTask) GetCategory()(*DeviceAppManagementTaskCategory) {
     if m == nil {
         return nil
@@ -232,7 +234,7 @@ func (m *DeviceAppManagementTask) GetFieldDeserializers()(map[string]func(i878a8
     }
     return res
 }
-// GetPriority gets the priority property value. The priority. Possible values are: none, high, low.
+// GetPriority gets the priority property value. Device app management task priority.
 func (m *DeviceAppManagementTask) GetPriority()(*DeviceAppManagementTaskPriority) {
     if m == nil {
         return nil
@@ -240,7 +242,7 @@ func (m *DeviceAppManagementTask) GetPriority()(*DeviceAppManagementTaskPriority
         return m.priority
     }
 }
-// GetStatus gets the status property value. The status. Possible values are: unknown, pending, active, completed, rejected.
+// GetStatus gets the status property value. Device app management task status.
 func (m *DeviceAppManagementTask) GetStatus()(*DeviceAppManagementTaskStatus) {
     if m == nil {
         return nil
@@ -325,7 +327,7 @@ func (m *DeviceAppManagementTask) SetAssignedTo(value *string)() {
         m.assignedTo = value
     }
 }
-// SetCategory sets the category property value. The category. Possible values are: unknown, advancedThreatProtection.
+// SetCategory sets the category property value. Device app management task category.
 func (m *DeviceAppManagementTask) SetCategory(value *DeviceAppManagementTaskCategory)() {
     if m != nil {
         m.category = value
@@ -367,13 +369,13 @@ func (m *DeviceAppManagementTask) SetDueDateTime(value *i336074805fc853987abe6f7
         m.dueDateTime = value
     }
 }
-// SetPriority sets the priority property value. The priority. Possible values are: none, high, low.
+// SetPriority sets the priority property value. Device app management task priority.
 func (m *DeviceAppManagementTask) SetPriority(value *DeviceAppManagementTaskPriority)() {
     if m != nil {
         m.priority = value
     }
 }
-// SetStatus sets the status property value. The status. Possible values are: unknown, pending, active, completed, rejected.
+// SetStatus sets the status property value. Device app management task status.
 func (m *DeviceAppManagementTask) SetStatus(value *DeviceAppManagementTaskStatus)() {
     if m != nil {
         m.status = value

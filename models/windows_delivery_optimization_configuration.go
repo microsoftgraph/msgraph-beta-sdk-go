@@ -17,7 +17,7 @@ type WindowsDeliveryOptimizationConfiguration struct {
     cacheServerForegroundDownloadFallbackToHttpDelayInSeconds *int32
     // Specifies cache servers host names.
     cacheServerHostNames []string
-    // Specifies the download method that delivery optimization can use to manage network bandwidth consumption for large content distribution scenarios. Possible values are: userDefined, httpOnly, httpWithPeeringNat, httpWithPeeringPrivateGroup, httpWithInternetPeering, simpleDownload, bypassMode.
+    // Delivery optimization mode for peer distribution
     deliveryOptimizationMode *WindowsDeliveryOptimizationMode
     // Specifies number of seconds to delay an HTTP source in a foreground download that is allowed to use peer-to-peer (0-86400). Valid values 0 to 86400
     foregroundDownloadFromHttpDelayInSeconds *int64
@@ -37,9 +37,9 @@ type WindowsDeliveryOptimizationConfiguration struct {
     minimumRamAllowedToPeerInGigabytes *int32
     // Specifies the drive that Delivery Optimization should use for its cache.
     modifyCacheLocation *string
-    // Specifies to restrict peer selection via selected option.
+    // Values to restrict peer selection by.
     restrictPeerSelectionBy *DeliveryOptimizationRestrictPeerSelectionByOptions
-    // Specifies whether the device is allowed to participate in Peer Caching while connected via VPN to the domain network.
+    // Possible values of a property
     vpnPeerCaching *Enablement
 }
 // NewWindowsDeliveryOptimizationConfiguration instantiates a new WindowsDeliveryOptimizationConfiguration and sets the default values.
@@ -93,7 +93,7 @@ func (m *WindowsDeliveryOptimizationConfiguration) GetCacheServerHostNames()([]s
         return m.cacheServerHostNames
     }
 }
-// GetDeliveryOptimizationMode gets the deliveryOptimizationMode property value. Specifies the download method that delivery optimization can use to manage network bandwidth consumption for large content distribution scenarios. Possible values are: userDefined, httpOnly, httpWithPeeringNat, httpWithPeeringPrivateGroup, httpWithInternetPeering, simpleDownload, bypassMode.
+// GetDeliveryOptimizationMode gets the deliveryOptimizationMode property value. Delivery optimization mode for peer distribution
 func (m *WindowsDeliveryOptimizationConfiguration) GetDeliveryOptimizationMode()(*WindowsDeliveryOptimizationMode) {
     if m == nil {
         return nil
@@ -352,7 +352,7 @@ func (m *WindowsDeliveryOptimizationConfiguration) GetModifyCacheLocation()(*str
         return m.modifyCacheLocation
     }
 }
-// GetRestrictPeerSelectionBy gets the restrictPeerSelectionBy property value. Specifies to restrict peer selection via selected option.
+// GetRestrictPeerSelectionBy gets the restrictPeerSelectionBy property value. Values to restrict peer selection by.
 func (m *WindowsDeliveryOptimizationConfiguration) GetRestrictPeerSelectionBy()(*DeliveryOptimizationRestrictPeerSelectionByOptions) {
     if m == nil {
         return nil
@@ -360,7 +360,7 @@ func (m *WindowsDeliveryOptimizationConfiguration) GetRestrictPeerSelectionBy()(
         return m.restrictPeerSelectionBy
     }
 }
-// GetVpnPeerCaching gets the vpnPeerCaching property value. Specifies whether the device is allowed to participate in Peer Caching while connected via VPN to the domain network.
+// GetVpnPeerCaching gets the vpnPeerCaching property value. Possible values of a property
 func (m *WindowsDeliveryOptimizationConfiguration) GetVpnPeerCaching()(*Enablement) {
     if m == nil {
         return nil
@@ -511,7 +511,7 @@ func (m *WindowsDeliveryOptimizationConfiguration) SetCacheServerHostNames(value
         m.cacheServerHostNames = value
     }
 }
-// SetDeliveryOptimizationMode sets the deliveryOptimizationMode property value. Specifies the download method that delivery optimization can use to manage network bandwidth consumption for large content distribution scenarios. Possible values are: userDefined, httpOnly, httpWithPeeringNat, httpWithPeeringPrivateGroup, httpWithInternetPeering, simpleDownload, bypassMode.
+// SetDeliveryOptimizationMode sets the deliveryOptimizationMode property value. Delivery optimization mode for peer distribution
 func (m *WindowsDeliveryOptimizationConfiguration) SetDeliveryOptimizationMode(value *WindowsDeliveryOptimizationMode)() {
     if m != nil {
         m.deliveryOptimizationMode = value
@@ -571,13 +571,13 @@ func (m *WindowsDeliveryOptimizationConfiguration) SetModifyCacheLocation(value 
         m.modifyCacheLocation = value
     }
 }
-// SetRestrictPeerSelectionBy sets the restrictPeerSelectionBy property value. Specifies to restrict peer selection via selected option.
+// SetRestrictPeerSelectionBy sets the restrictPeerSelectionBy property value. Values to restrict peer selection by.
 func (m *WindowsDeliveryOptimizationConfiguration) SetRestrictPeerSelectionBy(value *DeliveryOptimizationRestrictPeerSelectionByOptions)() {
     if m != nil {
         m.restrictPeerSelectionBy = value
     }
 }
-// SetVpnPeerCaching sets the vpnPeerCaching property value. Specifies whether the device is allowed to participate in Peer Caching while connected via VPN to the domain network.
+// SetVpnPeerCaching sets the vpnPeerCaching property value. Possible values of a property
 func (m *WindowsDeliveryOptimizationConfiguration) SetVpnPeerCaching(value *Enablement)() {
     if m != nil {
         m.vpnPeerCaching = value

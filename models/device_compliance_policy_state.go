@@ -9,13 +9,13 @@ type DeviceCompliancePolicyState struct {
     Entity
     // The name of the policy for this policyBase
     displayName *string
-    // Platform type that the policy applies to
+    // Supported platform types for policies.
     platformType *PolicyPlatformType
     // Count of how many setting a policy holds
     settingCount *int32
     // The settingStates property
     settingStates []DeviceCompliancePolicySettingStateable
-    // The compliance state of the policy
+    // The state property
     state *ComplianceStatus
     // User unique identifier, must be Guid
     userId *string
@@ -132,7 +132,7 @@ func (m *DeviceCompliancePolicyState) GetFieldDeserializers()(map[string]func(i8
     }
     return res
 }
-// GetPlatformType gets the platformType property value. Platform type that the policy applies to
+// GetPlatformType gets the platformType property value. Supported platform types for policies.
 func (m *DeviceCompliancePolicyState) GetPlatformType()(*PolicyPlatformType) {
     if m == nil {
         return nil
@@ -156,7 +156,7 @@ func (m *DeviceCompliancePolicyState) GetSettingStates()([]DeviceCompliancePolic
         return m.settingStates
     }
 }
-// GetState gets the state property value. The compliance state of the policy
+// GetState gets the state property value. The state property
 func (m *DeviceCompliancePolicyState) GetState()(*ComplianceStatus) {
     if m == nil {
         return nil
@@ -256,7 +256,7 @@ func (m *DeviceCompliancePolicyState) SetDisplayName(value *string)() {
         m.displayName = value
     }
 }
-// SetPlatformType sets the platformType property value. Platform type that the policy applies to
+// SetPlatformType sets the platformType property value. Supported platform types for policies.
 func (m *DeviceCompliancePolicyState) SetPlatformType(value *PolicyPlatformType)() {
     if m != nil {
         m.platformType = value
@@ -274,7 +274,7 @@ func (m *DeviceCompliancePolicyState) SetSettingStates(value []DeviceComplianceP
         m.settingStates = value
     }
 }
-// SetState sets the state property value. The compliance state of the policy
+// SetState sets the state property value. The state property
 func (m *DeviceCompliancePolicyState) SetState(value *ComplianceStatus)() {
     if m != nil {
         m.state = value

@@ -12,7 +12,7 @@ type DeviceManagementApplicabilityRuleOsEdition struct {
     name *string
     // Applicability rule OS edition type.
     osEditionTypes []string
-    // Applicability Rule type. Possible values are: include, exclude.
+    // Supported Applicability rule types for Device Configuration
     ruleType *DeviceManagementApplicabilityRuleType
 }
 // NewDeviceManagementApplicabilityRuleOsEdition instantiates a new deviceManagementApplicabilityRuleOsEdition and sets the default values.
@@ -89,7 +89,7 @@ func (m *DeviceManagementApplicabilityRuleOsEdition) GetOsEditionTypes()([]strin
         return m.osEditionTypes
     }
 }
-// GetRuleType gets the ruleType property value. Applicability Rule type. Possible values are: include, exclude.
+// GetRuleType gets the ruleType property value. Supported Applicability rule types for Device Configuration
 func (m *DeviceManagementApplicabilityRuleOsEdition) GetRuleType()(*DeviceManagementApplicabilityRuleType) {
     if m == nil {
         return nil
@@ -144,7 +144,7 @@ func (m *DeviceManagementApplicabilityRuleOsEdition) SetOsEditionTypes(value []s
         m.osEditionTypes = value
     }
 }
-// SetRuleType sets the ruleType property value. Applicability Rule type. Possible values are: include, exclude.
+// SetRuleType sets the ruleType property value. Supported Applicability rule types for Device Configuration
 func (m *DeviceManagementApplicabilityRuleOsEdition) SetRuleType(value *DeviceManagementApplicabilityRuleType)() {
     if m != nil {
         m.ruleType = value

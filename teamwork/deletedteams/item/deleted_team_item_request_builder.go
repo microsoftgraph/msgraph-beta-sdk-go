@@ -24,7 +24,7 @@ type DeletedTeamItemRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// DeletedTeamItemRequestBuilderGetQueryParameters get deletedTeams from teamwork
+// DeletedTeamItemRequestBuilderGetQueryParameters a collection of deleted teams.
 type DeletedTeamItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -97,11 +97,11 @@ func (m *DeletedTeamItemRequestBuilder) CreateDeleteRequestInformationWithReques
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation get deletedTeams from teamwork
+// CreateGetRequestInformation a collection of deleted teams.
 func (m *DeletedTeamItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration get deletedTeams from teamwork
+// CreateGetRequestInformationWithRequestConfiguration a collection of deleted teams.
 func (m *DeletedTeamItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *DeletedTeamItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -154,11 +154,11 @@ func (m *DeletedTeamItemRequestBuilder) DeleteWithRequestConfigurationAndRespons
     }
     return nil
 }
-// Get get deletedTeams from teamwork
+// Get a collection of deleted teams.
 func (m *DeletedTeamItemRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeletedTeamable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler get deletedTeams from teamwork
+// GetWithRequestConfigurationAndResponseHandler a collection of deleted teams.
 func (m *DeletedTeamItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *DeletedTeamItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeletedTeamable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

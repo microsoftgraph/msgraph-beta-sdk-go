@@ -7,11 +7,11 @@ import (
 // AndroidWorkProfileEasEmailProfileBase 
 type AndroidWorkProfileEasEmailProfileBase struct {
     DeviceConfiguration
-    // Authentication method for Exchange ActiveSync. Possible values are: usernameAndPassword, certificate, derivedCredential.
+    // Exchange Active Sync authentication method.
     authenticationMethod *EasAuthenticationMethod
-    // Duration of time email should be synced to. Possible values are: userDefined, oneDay, threeDays, oneWeek, twoWeeks, oneMonth, unlimited.
+    // Possible values for email sync duration.
     durationOfEmailToSync *EmailSyncDuration
-    // Email attribute that is picked from AAD and injected into this profile before installing on the device. Possible values are: userPrincipalName, primarySmtpAddress.
+    // Possible values for username source or email source.
     emailAddressSource *UserEmailSource
     // Exchange location (URL) that the mail app connects to.
     hostName *string
@@ -19,7 +19,7 @@ type AndroidWorkProfileEasEmailProfileBase struct {
     identityCertificate AndroidWorkProfileCertificateProfileBaseable
     // Indicates whether or not to use SSL.
     requireSsl *bool
-    // Username attribute that is picked from AAD and injected into this profile before installing on the device. Possible values are: username, userPrincipalName, samAccountName, primarySmtpAddress.
+    // Android username source.
     usernameSource *AndroidUsernameSource
 }
 // NewAndroidWorkProfileEasEmailProfileBase instantiates a new AndroidWorkProfileEasEmailProfileBase and sets the default values.
@@ -27,6 +27,8 @@ func NewAndroidWorkProfileEasEmailProfileBase()(*AndroidWorkProfileEasEmailProfi
     m := &AndroidWorkProfileEasEmailProfileBase{
         DeviceConfiguration: *NewDeviceConfiguration(),
     }
+    typeValue := "#microsoft.graph.androidWorkProfileEasEmailProfileBase";
+    m.SetType(&typeValue);
     return m
 }
 // CreateAndroidWorkProfileEasEmailProfileBaseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -54,7 +56,7 @@ func CreateAndroidWorkProfileEasEmailProfileBaseFromDiscriminatorValue(parseNode
     }
     return NewAndroidWorkProfileEasEmailProfileBase(), nil
 }
-// GetAuthenticationMethod gets the authenticationMethod property value. Authentication method for Exchange ActiveSync. Possible values are: usernameAndPassword, certificate, derivedCredential.
+// GetAuthenticationMethod gets the authenticationMethod property value. Exchange Active Sync authentication method.
 func (m *AndroidWorkProfileEasEmailProfileBase) GetAuthenticationMethod()(*EasAuthenticationMethod) {
     if m == nil {
         return nil
@@ -62,7 +64,7 @@ func (m *AndroidWorkProfileEasEmailProfileBase) GetAuthenticationMethod()(*EasAu
         return m.authenticationMethod
     }
 }
-// GetDurationOfEmailToSync gets the durationOfEmailToSync property value. Duration of time email should be synced to. Possible values are: userDefined, oneDay, threeDays, oneWeek, twoWeeks, oneMonth, unlimited.
+// GetDurationOfEmailToSync gets the durationOfEmailToSync property value. Possible values for email sync duration.
 func (m *AndroidWorkProfileEasEmailProfileBase) GetDurationOfEmailToSync()(*EmailSyncDuration) {
     if m == nil {
         return nil
@@ -70,7 +72,7 @@ func (m *AndroidWorkProfileEasEmailProfileBase) GetDurationOfEmailToSync()(*Emai
         return m.durationOfEmailToSync
     }
 }
-// GetEmailAddressSource gets the emailAddressSource property value. Email attribute that is picked from AAD and injected into this profile before installing on the device. Possible values are: userPrincipalName, primarySmtpAddress.
+// GetEmailAddressSource gets the emailAddressSource property value. Possible values for username source or email source.
 func (m *AndroidWorkProfileEasEmailProfileBase) GetEmailAddressSource()(*UserEmailSource) {
     if m == nil {
         return nil
@@ -177,7 +179,7 @@ func (m *AndroidWorkProfileEasEmailProfileBase) GetRequireSsl()(*bool) {
         return m.requireSsl
     }
 }
-// GetUsernameSource gets the usernameSource property value. Username attribute that is picked from AAD and injected into this profile before installing on the device. Possible values are: username, userPrincipalName, samAccountName, primarySmtpAddress.
+// GetUsernameSource gets the usernameSource property value. Android username source.
 func (m *AndroidWorkProfileEasEmailProfileBase) GetUsernameSource()(*AndroidUsernameSource) {
     if m == nil {
         return nil
@@ -239,19 +241,19 @@ func (m *AndroidWorkProfileEasEmailProfileBase) Serialize(writer i878a80d2330e89
     }
     return nil
 }
-// SetAuthenticationMethod sets the authenticationMethod property value. Authentication method for Exchange ActiveSync. Possible values are: usernameAndPassword, certificate, derivedCredential.
+// SetAuthenticationMethod sets the authenticationMethod property value. Exchange Active Sync authentication method.
 func (m *AndroidWorkProfileEasEmailProfileBase) SetAuthenticationMethod(value *EasAuthenticationMethod)() {
     if m != nil {
         m.authenticationMethod = value
     }
 }
-// SetDurationOfEmailToSync sets the durationOfEmailToSync property value. Duration of time email should be synced to. Possible values are: userDefined, oneDay, threeDays, oneWeek, twoWeeks, oneMonth, unlimited.
+// SetDurationOfEmailToSync sets the durationOfEmailToSync property value. Possible values for email sync duration.
 func (m *AndroidWorkProfileEasEmailProfileBase) SetDurationOfEmailToSync(value *EmailSyncDuration)() {
     if m != nil {
         m.durationOfEmailToSync = value
     }
 }
-// SetEmailAddressSource sets the emailAddressSource property value. Email attribute that is picked from AAD and injected into this profile before installing on the device. Possible values are: userPrincipalName, primarySmtpAddress.
+// SetEmailAddressSource sets the emailAddressSource property value. Possible values for username source or email source.
 func (m *AndroidWorkProfileEasEmailProfileBase) SetEmailAddressSource(value *UserEmailSource)() {
     if m != nil {
         m.emailAddressSource = value
@@ -275,7 +277,7 @@ func (m *AndroidWorkProfileEasEmailProfileBase) SetRequireSsl(value *bool)() {
         m.requireSsl = value
     }
 }
-// SetUsernameSource sets the usernameSource property value. Username attribute that is picked from AAD and injected into this profile before installing on the device. Possible values are: username, userPrincipalName, samAccountName, primarySmtpAddress.
+// SetUsernameSource sets the usernameSource property value. Android username source.
 func (m *AndroidWorkProfileEasEmailProfileBase) SetUsernameSource(value *AndroidUsernameSource)() {
     if m != nil {
         m.usernameSource = value

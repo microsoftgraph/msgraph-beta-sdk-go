@@ -13,7 +13,7 @@ type CloudPcLaunchInfo struct {
     // The connect URL of the Cloud PC.
     cloudPcLaunchUrl *string
 }
-// NewCloudPcLaunchInfo instantiates a new CloudPcLaunchInfo and sets the default values.
+// NewCloudPcLaunchInfo instantiates a new cloudPcLaunchInfo and sets the default values.
 func NewCloudPcLaunchInfo()(*CloudPcLaunchInfo) {
     m := &CloudPcLaunchInfo{
     }

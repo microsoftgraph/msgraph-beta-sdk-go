@@ -4,11 +4,13 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Participant provides operations to manage the commsApplication singleton.
+// Participant provides operations to manage the collection of activityStatistics entities.
 type Participant struct {
     Entity
     // The info property
     info ParticipantInfoable
+    // The isIdentityAnonymized property
+    isIdentityAnonymized *bool
     // true if the participant is in lobby.
     isInLobby *bool
     // true if the participant is muted (client or server muted).
@@ -41,6 +43,16 @@ func (m *Participant) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
         }
         if val != nil {
             m.SetInfo(val.(ParticipantInfoable))
+        }
+        return nil
+    }
+    res["isIdentityAnonymized"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetIsIdentityAnonymized(val)
         }
         return nil
     }
@@ -108,6 +120,14 @@ func (m *Participant) GetInfo()(ParticipantInfoable) {
         return m.info
     }
 }
+// GetIsIdentityAnonymized gets the isIdentityAnonymized property value. The isIdentityAnonymized property
+func (m *Participant) GetIsIdentityAnonymized()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isIdentityAnonymized
+    }
+}
 // GetIsInLobby gets the isInLobby property value. true if the participant is in lobby.
 func (m *Participant) GetIsInLobby()(*bool) {
     if m == nil {
@@ -161,6 +181,12 @@ func (m *Participant) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
         }
     }
     {
+        err = writer.WriteBoolValue("isIdentityAnonymized", m.GetIsIdentityAnonymized())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteBoolValue("isInLobby", m.GetIsInLobby())
         if err != nil {
             return err
@@ -200,6 +226,12 @@ func (m *Participant) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
 func (m *Participant) SetInfo(value ParticipantInfoable)() {
     if m != nil {
         m.info = value
+    }
+}
+// SetIsIdentityAnonymized sets the isIdentityAnonymized property value. The isIdentityAnonymized property
+func (m *Participant) SetIsIdentityAnonymized(value *bool)() {
+    if m != nil {
+        m.isIdentityAnonymized = value
     }
 }
 // SetIsInLobby sets the isInLobby property value. true if the participant is in lobby.

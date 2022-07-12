@@ -10,7 +10,7 @@ type WindowsInformationProtectionWipeAction struct {
     Entity
     // Last checkin time of the device that was targeted by this wipe action.
     lastCheckInDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // Wipe action status. Possible values are: none, pending, canceled, active, done, failed, notSupported.
+    // The status property
     status *ActionState
     // Targeted device Mac address.
     targetedDeviceMacAddress *string
@@ -105,7 +105,7 @@ func (m *WindowsInformationProtectionWipeAction) GetLastCheckInDateTime()(*i3360
         return m.lastCheckInDateTime
     }
 }
-// GetStatus gets the status property value. Wipe action status. Possible values are: none, pending, canceled, active, done, failed, notSupported.
+// GetStatus gets the status property value. The status property
 func (m *WindowsInformationProtectionWipeAction) GetStatus()(*ActionState) {
     if m == nil {
         return nil
@@ -196,7 +196,7 @@ func (m *WindowsInformationProtectionWipeAction) SetLastCheckInDateTime(value *i
         m.lastCheckInDateTime = value
     }
 }
-// SetStatus sets the status property value. Wipe action status. Possible values are: none, pending, canceled, active, done, failed, notSupported.
+// SetStatus sets the status property value. The status property
 func (m *WindowsInformationProtectionWipeAction) SetStatus(value *ActionState)() {
     if m != nil {
         m.status = value

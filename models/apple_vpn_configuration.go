@@ -9,11 +9,11 @@ type AppleVpnConfiguration struct {
     DeviceConfiguration
     // Associated Domains
     associatedDomains []string
-    // Authentication method for this VPN connection. Possible values are: certificate, usernameAndPassword, sharedSecret, derivedCredential, azureAD.
+    // VPN Authentication Method.
     authenticationMethod *VpnAuthenticationMethod
     // Connection name displayed to the user.
     connectionName *string
-    // Connection type. Possible values are: ciscoAnyConnect, pulseSecure, f5EdgeClient, dellSonicWallMobileConnect, checkPointCapsuleVpn, customVpn, ciscoIPSec, citrix, ciscoAnyConnectV2, paloAltoGlobalProtect, zscalerPrivateAccess, f5Access2018, citrixSso, paloAltoGlobalProtectV2, ikEv2, alwaysOn, microsoftTunnel, netMotionMobility, microsoftProtect.
+    // Apple VPN connection type.
     connectionType *AppleVpnConnectionType
     // Custom data when connection type is set to Custom VPN. Use this field to enable functionality not supported by Intune, but available in your VPN solution. Contact your VPN vendor to learn how to add these key/value pairs. This collection can contain a maximum of 25 elements.
     customData []KeyValueable
@@ -57,6 +57,8 @@ func NewAppleVpnConfiguration()(*AppleVpnConfiguration) {
     m := &AppleVpnConfiguration{
         DeviceConfiguration: *NewDeviceConfiguration(),
     }
+    typeValue := "#microsoft.graph.appleVpnConfiguration";
+    m.SetType(&typeValue);
     return m
 }
 // CreateAppleVpnConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -92,7 +94,7 @@ func (m *AppleVpnConfiguration) GetAssociatedDomains()([]string) {
         return m.associatedDomains
     }
 }
-// GetAuthenticationMethod gets the authenticationMethod property value. Authentication method for this VPN connection. Possible values are: certificate, usernameAndPassword, sharedSecret, derivedCredential, azureAD.
+// GetAuthenticationMethod gets the authenticationMethod property value. VPN Authentication Method.
 func (m *AppleVpnConfiguration) GetAuthenticationMethod()(*VpnAuthenticationMethod) {
     if m == nil {
         return nil
@@ -108,7 +110,7 @@ func (m *AppleVpnConfiguration) GetConnectionName()(*string) {
         return m.connectionName
     }
 }
-// GetConnectionType gets the connectionType property value. Connection type. Possible values are: ciscoAnyConnect, pulseSecure, f5EdgeClient, dellSonicWallMobileConnect, checkPointCapsuleVpn, customVpn, ciscoIPSec, citrix, ciscoAnyConnectV2, paloAltoGlobalProtect, zscalerPrivateAccess, f5Access2018, citrixSso, paloAltoGlobalProtectV2, ikEv2, alwaysOn, microsoftTunnel, netMotionMobility, microsoftProtect.
+// GetConnectionType gets the connectionType property value. Apple VPN connection type.
 func (m *AppleVpnConfiguration) GetConnectionType()(*AppleVpnConnectionType) {
     if m == nil {
         return nil
@@ -670,7 +672,7 @@ func (m *AppleVpnConfiguration) SetAssociatedDomains(value []string)() {
         m.associatedDomains = value
     }
 }
-// SetAuthenticationMethod sets the authenticationMethod property value. Authentication method for this VPN connection. Possible values are: certificate, usernameAndPassword, sharedSecret, derivedCredential, azureAD.
+// SetAuthenticationMethod sets the authenticationMethod property value. VPN Authentication Method.
 func (m *AppleVpnConfiguration) SetAuthenticationMethod(value *VpnAuthenticationMethod)() {
     if m != nil {
         m.authenticationMethod = value
@@ -682,7 +684,7 @@ func (m *AppleVpnConfiguration) SetConnectionName(value *string)() {
         m.connectionName = value
     }
 }
-// SetConnectionType sets the connectionType property value. Connection type. Possible values are: ciscoAnyConnect, pulseSecure, f5EdgeClient, dellSonicWallMobileConnect, checkPointCapsuleVpn, customVpn, ciscoIPSec, citrix, ciscoAnyConnectV2, paloAltoGlobalProtect, zscalerPrivateAccess, f5Access2018, citrixSso, paloAltoGlobalProtectV2, ikEv2, alwaysOn, microsoftTunnel, netMotionMobility, microsoftProtect.
+// SetConnectionType sets the connectionType property value. Apple VPN connection type.
 func (m *AppleVpnConfiguration) SetConnectionType(value *AppleVpnConnectionType)() {
     if m != nil {
         m.connectionType = value

@@ -51,7 +51,6 @@ type Eventable interface {
     GetStart()(DateTimeTimeZoneable)
     GetSubject()(*string)
     GetTransactionId()(*string)
-    GetType()(*EventType)
     GetUid()(*string)
     GetWebLink()(*string)
     SetAllowNewTimeProposals(value *bool)()
@@ -96,7 +95,6 @@ type Eventable interface {
     SetStart(value DateTimeTimeZoneable)()
     SetSubject(value *string)()
     SetTransactionId(value *string)()
-    SetType(value *EventType)()
     SetUid(value *string)()
     SetWebLink(value *string)()
 }

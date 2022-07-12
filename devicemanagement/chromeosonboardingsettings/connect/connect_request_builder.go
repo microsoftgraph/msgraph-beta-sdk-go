@@ -42,11 +42,11 @@ func NewConnectRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371
     return NewConnectRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatePostRequestInformation invoke action connect
-func (m *ConnectRequestBuilder) CreatePostRequestInformation(body ConnectPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ConnectRequestBuilder) CreatePostRequestInformation(body ChromeOSOnboardingStatusPostRequestBodyable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePostRequestInformationWithRequestConfiguration(body, nil);
 }
 // CreatePostRequestInformationWithRequestConfiguration invoke action connect
-func (m *ConnectRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ConnectPostRequestBodyable, requestConfiguration *ConnectRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ConnectRequestBuilder) CreatePostRequestInformationWithRequestConfiguration(body ChromeOSOnboardingStatusPostRequestBodyable, requestConfiguration *ConnectRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
     requestInfo.PathParameters = m.pathParameters
@@ -60,11 +60,11 @@ func (m *ConnectRequestBuilder) CreatePostRequestInformationWithRequestConfigura
     return requestInfo, nil
 }
 // Post invoke action connect
-func (m *ConnectRequestBuilder) Post(body ConnectPostRequestBodyable)(*ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ChromeOSOnboardingStatus, error) {
+func (m *ConnectRequestBuilder) Post(body ChromeOSOnboardingStatusPostRequestBodyable)(*ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ChromeOSOnboardingStatus, error) {
     return m.PostWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
 // PostWithRequestConfigurationAndResponseHandler invoke action connect
-func (m *ConnectRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ConnectPostRequestBodyable, requestConfiguration *ConnectRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(*ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ChromeOSOnboardingStatus, error) {
+func (m *ConnectRequestBuilder) PostWithRequestConfigurationAndResponseHandler(body ChromeOSOnboardingStatusPostRequestBodyable, requestConfiguration *ConnectRequestBuilderPostRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(*ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ChromeOSOnboardingStatus, error) {
     requestInfo, err := m.CreatePostRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {
         return nil, err

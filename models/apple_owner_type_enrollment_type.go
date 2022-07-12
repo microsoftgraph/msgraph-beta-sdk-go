@@ -8,9 +8,9 @@ import (
 type AppleOwnerTypeEnrollmentType struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
-    // The enrollment type. Possible values are: unknown, device, user.
+    // The enrollmentType property
     enrollmentType *AppleUserInitiatedEnrollmentType
-    // The owner type. Possible values are: unknown, company, personal.
+    // Owner type of device.
     ownerType *ManagedDeviceOwnerType
 }
 // NewAppleOwnerTypeEnrollmentType instantiates a new appleOwnerTypeEnrollmentType and sets the default values.
@@ -32,7 +32,7 @@ func (m *AppleOwnerTypeEnrollmentType) GetAdditionalData()(map[string]interface{
         return m.additionalData
     }
 }
-// GetEnrollmentType gets the enrollmentType property value. The enrollment type. Possible values are: unknown, device, user.
+// GetEnrollmentType gets the enrollmentType property value. The enrollmentType property
 func (m *AppleOwnerTypeEnrollmentType) GetEnrollmentType()(*AppleUserInitiatedEnrollmentType) {
     if m == nil {
         return nil
@@ -65,7 +65,7 @@ func (m *AppleOwnerTypeEnrollmentType) GetFieldDeserializers()(map[string]func(i
     }
     return res
 }
-// GetOwnerType gets the ownerType property value. The owner type. Possible values are: unknown, company, personal.
+// GetOwnerType gets the ownerType property value. Owner type of device.
 func (m *AppleOwnerTypeEnrollmentType) GetOwnerType()(*ManagedDeviceOwnerType) {
     if m == nil {
         return nil
@@ -103,13 +103,13 @@ func (m *AppleOwnerTypeEnrollmentType) SetAdditionalData(value map[string]interf
         m.additionalData = value
     }
 }
-// SetEnrollmentType sets the enrollmentType property value. The enrollment type. Possible values are: unknown, device, user.
+// SetEnrollmentType sets the enrollmentType property value. The enrollmentType property
 func (m *AppleOwnerTypeEnrollmentType) SetEnrollmentType(value *AppleUserInitiatedEnrollmentType)() {
     if m != nil {
         m.enrollmentType = value
     }
 }
-// SetOwnerType sets the ownerType property value. The owner type. Possible values are: unknown, company, personal.
+// SetOwnerType sets the ownerType property value. Owner type of device.
 func (m *AppleOwnerTypeEnrollmentType) SetOwnerType(value *ManagedDeviceOwnerType)() {
     if m != nil {
         m.ownerType = value

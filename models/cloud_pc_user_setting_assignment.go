@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// CloudPcUserSettingAssignment provides operations to manage the deviceManagement singleton.
+// CloudPcUserSettingAssignment 
 type CloudPcUserSettingAssignment struct {
     Entity
     // The date and time this assignment was created. The Timestamp type represents the date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 looks like this: '2014-01-01T00:00:00Z'.
@@ -13,7 +13,7 @@ type CloudPcUserSettingAssignment struct {
     // The assignment target for the user setting. Currently, the only target supported for this user setting is a user group. For details, see cloudPcManagementGroupAssignmentTarget.
     target CloudPcManagementAssignmentTargetable
 }
-// NewCloudPcUserSettingAssignment instantiates a new cloudPcUserSettingAssignment and sets the default values.
+// NewCloudPcUserSettingAssignment instantiates a new CloudPcUserSettingAssignment and sets the default values.
 func NewCloudPcUserSettingAssignment()(*CloudPcUserSettingAssignment) {
     m := &CloudPcUserSettingAssignment{
         Entity: *NewEntity(),

@@ -14,7 +14,7 @@ type DeviceCustomAttributeShellScript struct {
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The name of the custom attribute.
     customAttributeName *string
-    // The expected type of the custom attribute's value. Possible values are: integer, string, dateTime.
+    // Represents the expected type for a macOS custom attribute script value.
     customAttributeType *DeviceCustomAttributeValueType
     // Optional description for the device management script.
     description *string
@@ -30,7 +30,7 @@ type DeviceCustomAttributeShellScript struct {
     lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // List of Scope Tag IDs for this PowerShellScript instance.
     roleScopeTagIds []string
-    // Indicates the type of execution context. Possible values are: system, user.
+    // Indicates the type of execution context the app runs in.
     runAsAccount *RunAsAccountType
     // Run summary for device management script.
     runSummary DeviceManagementScriptRunSummaryable
@@ -74,7 +74,7 @@ func (m *DeviceCustomAttributeShellScript) GetCustomAttributeName()(*string) {
         return m.customAttributeName
     }
 }
-// GetCustomAttributeType gets the customAttributeType property value. The expected type of the custom attribute's value. Possible values are: integer, string, dateTime.
+// GetCustomAttributeType gets the customAttributeType property value. Represents the expected type for a macOS custom attribute script value.
 func (m *DeviceCustomAttributeShellScript) GetCustomAttributeType()(*DeviceCustomAttributeValueType) {
     if m == nil {
         return nil
@@ -313,7 +313,7 @@ func (m *DeviceCustomAttributeShellScript) GetRoleScopeTagIds()([]string) {
         return m.roleScopeTagIds
     }
 }
-// GetRunAsAccount gets the runAsAccount property value. Indicates the type of execution context. Possible values are: system, user.
+// GetRunAsAccount gets the runAsAccount property value. Indicates the type of execution context the app runs in.
 func (m *DeviceCustomAttributeShellScript) GetRunAsAccount()(*RunAsAccountType) {
     if m == nil {
         return nil
@@ -479,7 +479,7 @@ func (m *DeviceCustomAttributeShellScript) SetCustomAttributeName(value *string)
         m.customAttributeName = value
     }
 }
-// SetCustomAttributeType sets the customAttributeType property value. The expected type of the custom attribute's value. Possible values are: integer, string, dateTime.
+// SetCustomAttributeType sets the customAttributeType property value. Represents the expected type for a macOS custom attribute script value.
 func (m *DeviceCustomAttributeShellScript) SetCustomAttributeType(value *DeviceCustomAttributeValueType)() {
     if m != nil {
         m.customAttributeType = value
@@ -527,7 +527,7 @@ func (m *DeviceCustomAttributeShellScript) SetRoleScopeTagIds(value []string)() 
         m.roleScopeTagIds = value
     }
 }
-// SetRunAsAccount sets the runAsAccount property value. Indicates the type of execution context. Possible values are: system, user.
+// SetRunAsAccount sets the runAsAccount property value. Indicates the type of execution context the app runs in.
 func (m *DeviceCustomAttributeShellScript) SetRunAsAccount(value *RunAsAccountType)() {
     if m != nil {
         m.runAsAccount = value

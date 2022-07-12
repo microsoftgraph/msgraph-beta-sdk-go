@@ -14,9 +14,9 @@ type MacOSSoftwareUpdateStateSummary struct {
     lastUpdatedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Product key of the software update.
     productKey *string
-    // State of the software update. Possible values are: success, downloading, downloaded, installing, idle, available, scheduled, downloadFailed, downloadInsufficientSpace, downloadInsufficientPower, downloadInsufficientNetwork, installInsufficientSpace, installInsufficientPower, installFailed, commandFailed.
+    // MacOS Software Update State
     state *MacOSSoftwareUpdateState
-    // Software update category. Possible values are: critical, configurationDataFile, firmware, other.
+    // MacOS Software Update Category
     updateCategory *MacOSSoftwareUpdateCategory
     // Version of the software update
     updateVersion *string
@@ -121,7 +121,7 @@ func (m *MacOSSoftwareUpdateStateSummary) GetProductKey()(*string) {
         return m.productKey
     }
 }
-// GetState gets the state property value. State of the software update. Possible values are: success, downloading, downloaded, installing, idle, available, scheduled, downloadFailed, downloadInsufficientSpace, downloadInsufficientPower, downloadInsufficientNetwork, installInsufficientSpace, installInsufficientPower, installFailed, commandFailed.
+// GetState gets the state property value. MacOS Software Update State
 func (m *MacOSSoftwareUpdateStateSummary) GetState()(*MacOSSoftwareUpdateState) {
     if m == nil {
         return nil
@@ -129,7 +129,7 @@ func (m *MacOSSoftwareUpdateStateSummary) GetState()(*MacOSSoftwareUpdateState) 
         return m.state
     }
 }
-// GetUpdateCategory gets the updateCategory property value. Software update category. Possible values are: critical, configurationDataFile, firmware, other.
+// GetUpdateCategory gets the updateCategory property value. MacOS Software Update Category
 func (m *MacOSSoftwareUpdateStateSummary) GetUpdateCategory()(*MacOSSoftwareUpdateCategory) {
     if m == nil {
         return nil
@@ -209,13 +209,13 @@ func (m *MacOSSoftwareUpdateStateSummary) SetProductKey(value *string)() {
         m.productKey = value
     }
 }
-// SetState sets the state property value. State of the software update. Possible values are: success, downloading, downloaded, installing, idle, available, scheduled, downloadFailed, downloadInsufficientSpace, downloadInsufficientPower, downloadInsufficientNetwork, installInsufficientSpace, installInsufficientPower, installFailed, commandFailed.
+// SetState sets the state property value. MacOS Software Update State
 func (m *MacOSSoftwareUpdateStateSummary) SetState(value *MacOSSoftwareUpdateState)() {
     if m != nil {
         m.state = value
     }
 }
-// SetUpdateCategory sets the updateCategory property value. Software update category. Possible values are: critical, configurationDataFile, firmware, other.
+// SetUpdateCategory sets the updateCategory property value. MacOS Software Update Category
 func (m *MacOSSoftwareUpdateStateSummary) SetUpdateCategory(value *MacOSSoftwareUpdateCategory)() {
     if m != nil {
         m.updateCategory = value

@@ -10,7 +10,7 @@ type DeviceHealthScriptDeviceState struct {
     Entity
     // A list of the assignment filter ids used for health script applicability evaluation
     assignmentFilterIds []string
-    // Detection state from the lastest device health script execution. Possible values are: unknown, success, fail, scriptError, pending, notApplicable.
+    // Indicates the type of execution status of the device management script.
     detectionState *RunState
     // The next timestamp of when the device health script is expected to execute
     expectedStateUpdateDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
@@ -30,7 +30,7 @@ type DeviceHealthScriptDeviceState struct {
     preRemediationDetectionScriptOutput *string
     // Error output of the remediation script
     remediationScriptError *string
-    // Remediation state from the lastest device health script execution. Possible values are: unknown, skipped, success, remediationFailed, scriptError.
+    // Indicates the type of execution status of the device management script.
     remediationState *RemediationState
 }
 // NewDeviceHealthScriptDeviceState instantiates a new deviceHealthScriptDeviceState and sets the default values.
@@ -52,7 +52,7 @@ func (m *DeviceHealthScriptDeviceState) GetAssignmentFilterIds()([]string) {
         return m.assignmentFilterIds
     }
 }
-// GetDetectionState gets the detectionState property value. Detection state from the lastest device health script execution. Possible values are: unknown, success, fail, scriptError, pending, notApplicable.
+// GetDetectionState gets the detectionState property value. Indicates the type of execution status of the device management script.
 func (m *DeviceHealthScriptDeviceState) GetDetectionState()(*RunState) {
     if m == nil {
         return nil
@@ -261,7 +261,7 @@ func (m *DeviceHealthScriptDeviceState) GetRemediationScriptError()(*string) {
         return m.remediationScriptError
     }
 }
-// GetRemediationState gets the remediationState property value. Remediation state from the lastest device health script execution. Possible values are: unknown, skipped, success, remediationFailed, scriptError.
+// GetRemediationState gets the remediationState property value. Indicates the type of execution status of the device management script.
 func (m *DeviceHealthScriptDeviceState) GetRemediationState()(*RemediationState) {
     if m == nil {
         return nil
@@ -357,7 +357,7 @@ func (m *DeviceHealthScriptDeviceState) SetAssignmentFilterIds(value []string)()
         m.assignmentFilterIds = value
     }
 }
-// SetDetectionState sets the detectionState property value. Detection state from the lastest device health script execution. Possible values are: unknown, success, fail, scriptError, pending, notApplicable.
+// SetDetectionState sets the detectionState property value. Indicates the type of execution status of the device management script.
 func (m *DeviceHealthScriptDeviceState) SetDetectionState(value *RunState)() {
     if m != nil {
         m.detectionState = value
@@ -417,7 +417,7 @@ func (m *DeviceHealthScriptDeviceState) SetRemediationScriptError(value *string)
         m.remediationScriptError = value
     }
 }
-// SetRemediationState sets the remediationState property value. Remediation state from the lastest device health script execution. Possible values are: unknown, skipped, success, remediationFailed, scriptError.
+// SetRemediationState sets the remediationState property value. Indicates the type of execution status of the device management script.
 func (m *DeviceHealthScriptDeviceState) SetRemediationState(value *RemediationState)() {
     if m != nil {
         m.remediationState = value

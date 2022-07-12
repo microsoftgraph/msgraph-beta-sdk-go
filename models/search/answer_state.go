@@ -2,7 +2,7 @@ package search
 import (
     "errors"
 )
-// Provides operations to manage the searchEntity singleton.
+// Provides operations to manage the collection of activityStatistics entities.
 type AnswerState int
 
 const (

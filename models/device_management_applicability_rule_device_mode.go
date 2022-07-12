@@ -8,11 +8,11 @@ import (
 type DeviceManagementApplicabilityRuleDeviceMode struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
-    // Applicability rule for device mode. Possible values are: standardConfiguration, sModeConfiguration.
+    // Windows 10 Device Mode type.
     deviceMode *Windows10DeviceModeType
     // Name for object.
     name *string
-    // Applicability Rule type. Possible values are: include, exclude.
+    // Supported Applicability rule types for Device Configuration
     ruleType *DeviceManagementApplicabilityRuleType
 }
 // NewDeviceManagementApplicabilityRuleDeviceMode instantiates a new deviceManagementApplicabilityRuleDeviceMode and sets the default values.
@@ -34,7 +34,7 @@ func (m *DeviceManagementApplicabilityRuleDeviceMode) GetAdditionalData()(map[st
         return m.additionalData
     }
 }
-// GetDeviceMode gets the deviceMode property value. Applicability rule for device mode. Possible values are: standardConfiguration, sModeConfiguration.
+// GetDeviceMode gets the deviceMode property value. Windows 10 Device Mode type.
 func (m *DeviceManagementApplicabilityRuleDeviceMode) GetDeviceMode()(*Windows10DeviceModeType) {
     if m == nil {
         return nil
@@ -85,7 +85,7 @@ func (m *DeviceManagementApplicabilityRuleDeviceMode) GetName()(*string) {
         return m.name
     }
 }
-// GetRuleType gets the ruleType property value. Applicability Rule type. Possible values are: include, exclude.
+// GetRuleType gets the ruleType property value. Supported Applicability rule types for Device Configuration
 func (m *DeviceManagementApplicabilityRuleDeviceMode) GetRuleType()(*DeviceManagementApplicabilityRuleType) {
     if m == nil {
         return nil
@@ -129,7 +129,7 @@ func (m *DeviceManagementApplicabilityRuleDeviceMode) SetAdditionalData(value ma
         m.additionalData = value
     }
 }
-// SetDeviceMode sets the deviceMode property value. Applicability rule for device mode. Possible values are: standardConfiguration, sModeConfiguration.
+// SetDeviceMode sets the deviceMode property value. Windows 10 Device Mode type.
 func (m *DeviceManagementApplicabilityRuleDeviceMode) SetDeviceMode(value *Windows10DeviceModeType)() {
     if m != nil {
         m.deviceMode = value
@@ -141,7 +141,7 @@ func (m *DeviceManagementApplicabilityRuleDeviceMode) SetName(value *string)() {
         m.name = value
     }
 }
-// SetRuleType sets the ruleType property value. Applicability Rule type. Possible values are: include, exclude.
+// SetRuleType sets the ruleType property value. Supported Applicability rule types for Device Configuration
 func (m *DeviceManagementApplicabilityRuleDeviceMode) SetRuleType(value *DeviceManagementApplicabilityRuleType)() {
     if m != nil {
         m.ruleType = value

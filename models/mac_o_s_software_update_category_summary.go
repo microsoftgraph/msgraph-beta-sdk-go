@@ -20,7 +20,7 @@ type MacOSSoftwareUpdateCategorySummary struct {
     successfulUpdateCount *int32
     // Number of total updates on the device
     totalUpdateCount *int32
-    // Software update type. Possible values are: critical, configurationDataFile, firmware, other.
+    // MacOS Software Update Category
     updateCategory *MacOSSoftwareUpdateCategory
     // Summary of the update states.
     updateStateSummaries []MacOSSoftwareUpdateStateSummaryable
@@ -185,7 +185,7 @@ func (m *MacOSSoftwareUpdateCategorySummary) GetTotalUpdateCount()(*int32) {
         return m.totalUpdateCount
     }
 }
-// GetUpdateCategory gets the updateCategory property value. Software update type. Possible values are: critical, configurationDataFile, firmware, other.
+// GetUpdateCategory gets the updateCategory property value. MacOS Software Update Category
 func (m *MacOSSoftwareUpdateCategorySummary) GetUpdateCategory()(*MacOSSoftwareUpdateCategory) {
     if m == nil {
         return nil
@@ -312,7 +312,7 @@ func (m *MacOSSoftwareUpdateCategorySummary) SetTotalUpdateCount(value *int32)()
         m.totalUpdateCount = value
     }
 }
-// SetUpdateCategory sets the updateCategory property value. Software update type. Possible values are: critical, configurationDataFile, firmware, other.
+// SetUpdateCategory sets the updateCategory property value. MacOS Software Update Category
 func (m *MacOSSoftwareUpdateCategorySummary) SetUpdateCategory(value *MacOSSoftwareUpdateCategory)() {
     if m != nil {
         m.updateCategory = value

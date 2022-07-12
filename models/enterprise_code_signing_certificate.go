@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// EnterpriseCodeSigningCertificate provides operations to manage the deviceAppManagement singleton.
+// EnterpriseCodeSigningCertificate provides operations to manage the collection of activityStatistics entities.
 type EnterpriseCodeSigningCertificate struct {
     Entity
     // The Windows Enterprise Code-Signing Certificate in the raw data format.
@@ -16,7 +16,7 @@ type EnterpriseCodeSigningCertificate struct {
     issuer *string
     // The Issuer Name for the cert.
     issuerName *string
-    // The Certificate Status Provisioned or not Provisioned. Possible values are: notProvisioned, provisioned.
+    // The status property
     status *CertificateStatus
     // The Subject Value for the cert.
     subject *string
@@ -153,7 +153,7 @@ func (m *EnterpriseCodeSigningCertificate) GetIssuerName()(*string) {
         return m.issuerName
     }
 }
-// GetStatus gets the status property value. The Certificate Status Provisioned or not Provisioned. Possible values are: notProvisioned, provisioned.
+// GetStatus gets the status property value. The status property
 func (m *EnterpriseCodeSigningCertificate) GetStatus()(*CertificateStatus) {
     if m == nil {
         return nil
@@ -266,7 +266,7 @@ func (m *EnterpriseCodeSigningCertificate) SetIssuerName(value *string)() {
         m.issuerName = value
     }
 }
-// SetStatus sets the status property value. The Certificate Status Provisioned or not Provisioned. Possible values are: notProvisioned, provisioned.
+// SetStatus sets the status property value. The status property
 func (m *EnterpriseCodeSigningCertificate) SetStatus(value *CertificateStatus)() {
     if m != nil {
         m.status = value

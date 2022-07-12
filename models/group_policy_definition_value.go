@@ -8,7 +8,7 @@ import (
 // GroupPolicyDefinitionValue the definition value entity stores the value for a single group policy definition.
 type GroupPolicyDefinitionValue struct {
     Entity
-    // Specifies how the value should be configured. This can be either as a Policy or as a Preference. Possible values are: policy, preference.
+    // Group Policy Configuration Type
     configurationType *GroupPolicyConfigurationType
     // The date and time the object was created.
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
@@ -32,7 +32,7 @@ func NewGroupPolicyDefinitionValue()(*GroupPolicyDefinitionValue) {
 func CreateGroupPolicyDefinitionValueFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewGroupPolicyDefinitionValue(), nil
 }
-// GetConfigurationType gets the configurationType property value. Specifies how the value should be configured. This can be either as a Policy or as a Preference. Possible values are: policy, preference.
+// GetConfigurationType gets the configurationType property value. Group Policy Configuration Type
 func (m *GroupPolicyDefinitionValue) GetConfigurationType()(*GroupPolicyConfigurationType) {
     if m == nil {
         return nil
@@ -198,7 +198,7 @@ func (m *GroupPolicyDefinitionValue) Serialize(writer i878a80d2330e89d26896388a3
     }
     return nil
 }
-// SetConfigurationType sets the configurationType property value. Specifies how the value should be configured. This can be either as a Policy or as a Preference. Possible values are: policy, preference.
+// SetConfigurationType sets the configurationType property value. Group Policy Configuration Type
 func (m *GroupPolicyDefinitionValue) SetConfigurationType(value *GroupPolicyConfigurationType)() {
     if m != nil {
         m.configurationType = value

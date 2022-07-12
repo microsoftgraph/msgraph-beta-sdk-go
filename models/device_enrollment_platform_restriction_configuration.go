@@ -9,7 +9,7 @@ type DeviceEnrollmentPlatformRestrictionConfiguration struct {
     DeviceEnrollmentConfiguration
     // Restrictions based on platform, platform operating system version, and device ownership
     platformRestriction DeviceEnrollmentPlatformRestrictionable
-    // Type of platform for which this restriction applies. Possible values are: allPlatforms, ios, windows, windowsPhone, android, androidForWork, mac.
+    // This enum indicates the platform type for which the enrollment restriction applies.
     platformType *EnrollmentRestrictionPlatformType
 }
 // NewDeviceEnrollmentPlatformRestrictionConfiguration instantiates a new DeviceEnrollmentPlatformRestrictionConfiguration and sets the default values.
@@ -56,7 +56,7 @@ func (m *DeviceEnrollmentPlatformRestrictionConfiguration) GetPlatformRestrictio
         return m.platformRestriction
     }
 }
-// GetPlatformType gets the platformType property value. Type of platform for which this restriction applies. Possible values are: allPlatforms, ios, windows, windowsPhone, android, androidForWork, mac.
+// GetPlatformType gets the platformType property value. This enum indicates the platform type for which the enrollment restriction applies.
 func (m *DeviceEnrollmentPlatformRestrictionConfiguration) GetPlatformType()(*EnrollmentRestrictionPlatformType) {
     if m == nil {
         return nil
@@ -91,7 +91,7 @@ func (m *DeviceEnrollmentPlatformRestrictionConfiguration) SetPlatformRestrictio
         m.platformRestriction = value
     }
 }
-// SetPlatformType sets the platformType property value. Type of platform for which this restriction applies. Possible values are: allPlatforms, ios, windows, windowsPhone, android, androidForWork, mac.
+// SetPlatformType sets the platformType property value. This enum indicates the platform type for which the enrollment restriction applies.
 func (m *DeviceEnrollmentPlatformRestrictionConfiguration) SetPlatformType(value *EnrollmentRestrictionPlatformType)() {
     if m != nil {
         m.platformType = value

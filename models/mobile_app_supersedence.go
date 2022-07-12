@@ -9,7 +9,7 @@ type MobileAppSupersedence struct {
     MobileAppRelationship
     // The total number of apps directly or indirectly superseded by the child app.
     supersededAppCount *int32
-    // The supersedence relationship type between the parent and child apps. Possible values are: update, replace.
+    // Indicates the supersedence type associated with a relationship between two mobile apps.
     supersedenceType *MobileAppSupersedenceType
     // The total number of apps directly or indirectly superseding the parent app.
     supersedingAppCount *int32
@@ -68,7 +68,7 @@ func (m *MobileAppSupersedence) GetSupersededAppCount()(*int32) {
         return m.supersededAppCount
     }
 }
-// GetSupersedenceType gets the supersedenceType property value. The supersedence relationship type between the parent and child apps. Possible values are: update, replace.
+// GetSupersedenceType gets the supersedenceType property value. Indicates the supersedence type associated with a relationship between two mobile apps.
 func (m *MobileAppSupersedence) GetSupersedenceType()(*MobileAppSupersedenceType) {
     if m == nil {
         return nil
@@ -117,7 +117,7 @@ func (m *MobileAppSupersedence) SetSupersededAppCount(value *int32)() {
         m.supersededAppCount = value
     }
 }
-// SetSupersedenceType sets the supersedenceType property value. The supersedence relationship type between the parent and child apps. Possible values are: update, replace.
+// SetSupersedenceType sets the supersedenceType property value. Indicates the supersedence type associated with a relationship between two mobile apps.
 func (m *MobileAppSupersedence) SetSupersedenceType(value *MobileAppSupersedenceType)() {
     if m != nil {
         m.supersedenceType = value

@@ -13,7 +13,7 @@ type SecurityBaselineState struct {
     securityBaselineTemplateId *string
     // The security baseline state for different settings for a device
     settingStates []SecurityBaselineSettingStateable
-    // Security baseline compliance state
+    // Security Baseline Compliance State
     state *SecurityBaselineComplianceState
     // User Principal Name
     userPrincipalName *string
@@ -112,7 +112,7 @@ func (m *SecurityBaselineState) GetSettingStates()([]SecurityBaselineSettingStat
         return m.settingStates
     }
 }
-// GetState gets the state property value. Security baseline compliance state
+// GetState gets the state property value. Security Baseline Compliance State
 func (m *SecurityBaselineState) GetState()(*SecurityBaselineComplianceState) {
     if m == nil {
         return nil
@@ -189,7 +189,7 @@ func (m *SecurityBaselineState) SetSettingStates(value []SecurityBaselineSetting
         m.settingStates = value
     }
 }
-// SetState sets the state property value. Security baseline compliance state
+// SetState sets the state property value. Security Baseline Compliance State
 func (m *SecurityBaselineState) SetState(value *SecurityBaselineComplianceState)() {
     if m != nil {
         m.state = value

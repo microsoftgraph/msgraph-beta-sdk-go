@@ -12,8 +12,10 @@ type AppListItemable interface {
     GetAppStoreUrl()(*string)
     GetName()(*string)
     GetPublisher()(*string)
+    GetType()(*string)
     SetAppId(value *string)()
     SetAppStoreUrl(value *string)()
     SetName(value *string)()
     SetPublisher(value *string)()
+    SetType(value *string)()
 }

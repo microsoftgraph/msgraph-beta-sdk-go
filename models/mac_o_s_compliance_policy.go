@@ -7,11 +7,11 @@ import (
 // MacOSCompliancePolicy 
 type MacOSCompliancePolicy struct {
     DeviceCompliancePolicy
-    // MDATP Require Mobile Threat Protection minimum risk level to report noncompliance. Possible values are: unavailable, secured, low, medium, high, notSet.
+    // Device threat protection levels for the Device Threat Protection API.
     advancedThreatProtectionRequiredSecurityLevel *DeviceThreatProtectionLevel
     // Require that devices have enabled device threat protection.
     deviceThreatProtectionEnabled *bool
-    // Require Mobile Threat Protection minimum risk level to report noncompliance. Possible values are: unavailable, secured, low, medium, high, notSet.
+    // Device threat protection levels for the Device Threat Protection API.
     deviceThreatProtectionRequiredSecurityLevel *DeviceThreatProtectionLevel
     // Corresponds to the 'Block all incoming connections' option.
     firewallBlockAllIncoming *bool
@@ -19,7 +19,7 @@ type MacOSCompliancePolicy struct {
     firewallEnabled *bool
     // Corresponds to 'Enable stealth mode.'
     firewallEnableStealthMode *bool
-    // System and Privacy setting that determines which download locations apps can be run from on a macOS device. Possible values are: notConfigured, macAppStore, macAppStoreAndIdentifiedDevelopers, anywhere.
+    // App source options for macOS Gatekeeper.
     gatekeeperAllowedAppSource *MacOSGatekeeperAppSources
     // Maximum MacOS build version.
     osMaximumBuildVersion *string
@@ -43,7 +43,7 @@ type MacOSCompliancePolicy struct {
     passwordPreviousPasswordBlockCount *int32
     // Whether or not to require a password.
     passwordRequired *bool
-    // The required password type. Possible values are: deviceDefault, alphanumeric, numeric.
+    // Possible values of required passwords.
     passwordRequiredType *RequiredPasswordType
     // Require encryption on Mac OS devices.
     storageRequireEncryption *bool
@@ -61,7 +61,7 @@ func NewMacOSCompliancePolicy()(*MacOSCompliancePolicy) {
 func CreateMacOSCompliancePolicyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewMacOSCompliancePolicy(), nil
 }
-// GetAdvancedThreatProtectionRequiredSecurityLevel gets the advancedThreatProtectionRequiredSecurityLevel property value. MDATP Require Mobile Threat Protection minimum risk level to report noncompliance. Possible values are: unavailable, secured, low, medium, high, notSet.
+// GetAdvancedThreatProtectionRequiredSecurityLevel gets the advancedThreatProtectionRequiredSecurityLevel property value. Device threat protection levels for the Device Threat Protection API.
 func (m *MacOSCompliancePolicy) GetAdvancedThreatProtectionRequiredSecurityLevel()(*DeviceThreatProtectionLevel) {
     if m == nil {
         return nil
@@ -77,7 +77,7 @@ func (m *MacOSCompliancePolicy) GetDeviceThreatProtectionEnabled()(*bool) {
         return m.deviceThreatProtectionEnabled
     }
 }
-// GetDeviceThreatProtectionRequiredSecurityLevel gets the deviceThreatProtectionRequiredSecurityLevel property value. Require Mobile Threat Protection minimum risk level to report noncompliance. Possible values are: unavailable, secured, low, medium, high, notSet.
+// GetDeviceThreatProtectionRequiredSecurityLevel gets the deviceThreatProtectionRequiredSecurityLevel property value. Device threat protection levels for the Device Threat Protection API.
 func (m *MacOSCompliancePolicy) GetDeviceThreatProtectionRequiredSecurityLevel()(*DeviceThreatProtectionLevel) {
     if m == nil {
         return nil
@@ -324,7 +324,7 @@ func (m *MacOSCompliancePolicy) GetFirewallEnableStealthMode()(*bool) {
         return m.firewallEnableStealthMode
     }
 }
-// GetGatekeeperAllowedAppSource gets the gatekeeperAllowedAppSource property value. System and Privacy setting that determines which download locations apps can be run from on a macOS device. Possible values are: notConfigured, macAppStore, macAppStoreAndIdentifiedDevelopers, anywhere.
+// GetGatekeeperAllowedAppSource gets the gatekeeperAllowedAppSource property value. App source options for macOS Gatekeeper.
 func (m *MacOSCompliancePolicy) GetGatekeeperAllowedAppSource()(*MacOSGatekeeperAppSources) {
     if m == nil {
         return nil
@@ -420,7 +420,7 @@ func (m *MacOSCompliancePolicy) GetPasswordRequired()(*bool) {
         return m.passwordRequired
     }
 }
-// GetPasswordRequiredType gets the passwordRequiredType property value. The required password type. Possible values are: deviceDefault, alphanumeric, numeric.
+// GetPasswordRequiredType gets the passwordRequiredType property value. Possible values of required passwords.
 func (m *MacOSCompliancePolicy) GetPasswordRequiredType()(*RequiredPasswordType) {
     if m == nil {
         return nil
@@ -582,7 +582,7 @@ func (m *MacOSCompliancePolicy) Serialize(writer i878a80d2330e89d26896388a3f487e
     }
     return nil
 }
-// SetAdvancedThreatProtectionRequiredSecurityLevel sets the advancedThreatProtectionRequiredSecurityLevel property value. MDATP Require Mobile Threat Protection minimum risk level to report noncompliance. Possible values are: unavailable, secured, low, medium, high, notSet.
+// SetAdvancedThreatProtectionRequiredSecurityLevel sets the advancedThreatProtectionRequiredSecurityLevel property value. Device threat protection levels for the Device Threat Protection API.
 func (m *MacOSCompliancePolicy) SetAdvancedThreatProtectionRequiredSecurityLevel(value *DeviceThreatProtectionLevel)() {
     if m != nil {
         m.advancedThreatProtectionRequiredSecurityLevel = value
@@ -594,7 +594,7 @@ func (m *MacOSCompliancePolicy) SetDeviceThreatProtectionEnabled(value *bool)() 
         m.deviceThreatProtectionEnabled = value
     }
 }
-// SetDeviceThreatProtectionRequiredSecurityLevel sets the deviceThreatProtectionRequiredSecurityLevel property value. Require Mobile Threat Protection minimum risk level to report noncompliance. Possible values are: unavailable, secured, low, medium, high, notSet.
+// SetDeviceThreatProtectionRequiredSecurityLevel sets the deviceThreatProtectionRequiredSecurityLevel property value. Device threat protection levels for the Device Threat Protection API.
 func (m *MacOSCompliancePolicy) SetDeviceThreatProtectionRequiredSecurityLevel(value *DeviceThreatProtectionLevel)() {
     if m != nil {
         m.deviceThreatProtectionRequiredSecurityLevel = value
@@ -618,7 +618,7 @@ func (m *MacOSCompliancePolicy) SetFirewallEnableStealthMode(value *bool)() {
         m.firewallEnableStealthMode = value
     }
 }
-// SetGatekeeperAllowedAppSource sets the gatekeeperAllowedAppSource property value. System and Privacy setting that determines which download locations apps can be run from on a macOS device. Possible values are: notConfigured, macAppStore, macAppStoreAndIdentifiedDevelopers, anywhere.
+// SetGatekeeperAllowedAppSource sets the gatekeeperAllowedAppSource property value. App source options for macOS Gatekeeper.
 func (m *MacOSCompliancePolicy) SetGatekeeperAllowedAppSource(value *MacOSGatekeeperAppSources)() {
     if m != nil {
         m.gatekeeperAllowedAppSource = value
@@ -690,7 +690,7 @@ func (m *MacOSCompliancePolicy) SetPasswordRequired(value *bool)() {
         m.passwordRequired = value
     }
 }
-// SetPasswordRequiredType sets the passwordRequiredType property value. The required password type. Possible values are: deviceDefault, alphanumeric, numeric.
+// SetPasswordRequiredType sets the passwordRequiredType property value. Possible values of required passwords.
 func (m *MacOSCompliancePolicy) SetPasswordRequiredType(value *RequiredPasswordType)() {
     if m != nil {
         m.passwordRequiredType = value

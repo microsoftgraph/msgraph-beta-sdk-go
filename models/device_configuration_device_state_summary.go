@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DeviceConfigurationDeviceStateSummary provides operations to manage the deviceManagement singleton.
+// DeviceConfigurationDeviceStateSummary 
 type DeviceConfigurationDeviceStateSummary struct {
     Entity
     // Number of compliant devices
@@ -22,7 +22,7 @@ type DeviceConfigurationDeviceStateSummary struct {
     // Number of unknown devices
     unknownDeviceCount *int32
 }
-// NewDeviceConfigurationDeviceStateSummary instantiates a new deviceConfigurationDeviceStateSummary and sets the default values.
+// NewDeviceConfigurationDeviceStateSummary instantiates a new DeviceConfigurationDeviceStateSummary and sets the default values.
 func NewDeviceConfigurationDeviceStateSummary()(*DeviceConfigurationDeviceStateSummary) {
     m := &DeviceConfigurationDeviceStateSummary{
         Entity: *NewEntity(),

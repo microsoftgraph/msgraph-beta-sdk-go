@@ -11,13 +11,11 @@ type CloudPcServicePlanable interface {
     GetDisplayName()(*string)
     GetRamInGB()(*int32)
     GetStorageInGB()(*int32)
-    GetType()(*CloudPcServicePlanType)
     GetUserProfileInGB()(*int32)
     GetVCpuCount()(*int32)
     SetDisplayName(value *string)()
     SetRamInGB(value *int32)()
     SetStorageInGB(value *int32)()
-    SetType(value *CloudPcServicePlanType)()
     SetUserProfileInGB(value *int32)()
     SetVCpuCount(value *int32)()
 }

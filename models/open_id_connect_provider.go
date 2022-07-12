@@ -13,9 +13,9 @@ type OpenIdConnectProvider struct {
     domainHint *string
     // The URL for the metadata document of the OpenID Connect identity provider. Every OpenID Connect identity provider describes a metadata document that contains most of the information required to perform sign-in. This includes information such as the URLs to use and the location of the service's public signing keys. The OpenID Connect metadata document is always located at an endpoint that ends in .well-known/openid-configuration . For the OpenID Connect identity provider you are looking to add, you will need to provide the metadata URL. It is a required property and is read only after creation.
     metadataUrl *string
-    // The response mode defines the method that should be used to send the data back from the custom identity provider to Azure AD B2C. The following response modes can be used: form_post, query. query response mode means the code or token is returned as a query parameter. form_post response mode is recommended for the best security. The response is transmitted via the HTTP POST method, with the code or token being encoded in the body using the application/x-www-form-urlencoded format. It is a required property.
+    // The responseMode property
     responseMode *OpenIdConnectResponseMode
-    // response type describes what kind of information is sent back in the initial call to the authorization_endpoint of the custom identity provider. The following response types can be used: code , id_token , token. It is a required property.
+    // The responseType property
     responseType *OpenIdConnectResponseTypes
     // Scope defines the information and permissions you are looking to gather from your custom identity provider. OpenID Connect requests must contain the openid scope value in order to receive the ID token from the identity provider. Without the ID token, users are not able to sign in to Azure AD B2C using the custom identity provider. Other scopes can be appended separated by space. For more details about the scope limitations see RFC6749 Section 3.3. It is a required property.
     scope *string
@@ -120,7 +120,7 @@ func (m *OpenIdConnectProvider) GetMetadataUrl()(*string) {
         return m.metadataUrl
     }
 }
-// GetResponseMode gets the responseMode property value. The response mode defines the method that should be used to send the data back from the custom identity provider to Azure AD B2C. The following response modes can be used: form_post, query. query response mode means the code or token is returned as a query parameter. form_post response mode is recommended for the best security. The response is transmitted via the HTTP POST method, with the code or token being encoded in the body using the application/x-www-form-urlencoded format. It is a required property.
+// GetResponseMode gets the responseMode property value. The responseMode property
 func (m *OpenIdConnectProvider) GetResponseMode()(*OpenIdConnectResponseMode) {
     if m == nil {
         return nil
@@ -128,7 +128,7 @@ func (m *OpenIdConnectProvider) GetResponseMode()(*OpenIdConnectResponseMode) {
         return m.responseMode
     }
 }
-// GetResponseType gets the responseType property value. response type describes what kind of information is sent back in the initial call to the authorization_endpoint of the custom identity provider. The following response types can be used: code , id_token , token. It is a required property.
+// GetResponseType gets the responseType property value. The responseType property
 func (m *OpenIdConnectProvider) GetResponseType()(*OpenIdConnectResponseTypes) {
     if m == nil {
         return nil
@@ -208,13 +208,13 @@ func (m *OpenIdConnectProvider) SetMetadataUrl(value *string)() {
         m.metadataUrl = value
     }
 }
-// SetResponseMode sets the responseMode property value. The response mode defines the method that should be used to send the data back from the custom identity provider to Azure AD B2C. The following response modes can be used: form_post, query. query response mode means the code or token is returned as a query parameter. form_post response mode is recommended for the best security. The response is transmitted via the HTTP POST method, with the code or token being encoded in the body using the application/x-www-form-urlencoded format. It is a required property.
+// SetResponseMode sets the responseMode property value. The responseMode property
 func (m *OpenIdConnectProvider) SetResponseMode(value *OpenIdConnectResponseMode)() {
     if m != nil {
         m.responseMode = value
     }
 }
-// SetResponseType sets the responseType property value. response type describes what kind of information is sent back in the initial call to the authorization_endpoint of the custom identity provider. The following response types can be used: code , id_token , token. It is a required property.
+// SetResponseType sets the responseType property value. The responseType property
 func (m *OpenIdConnectProvider) SetResponseType(value *OpenIdConnectResponseTypes)() {
     if m != nil {
         m.responseType = value

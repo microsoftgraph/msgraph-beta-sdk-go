@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the deviceManagement singleton.
+// Provides operations to manage the collection of activityStatistics entities.
 type ComanagementEligibleType int
 
 const (

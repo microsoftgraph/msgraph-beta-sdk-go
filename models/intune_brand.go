@@ -30,7 +30,7 @@ type IntuneBrand struct {
     disableClientTelemetry *bool
     // Company/organization name that is displayed to end users.
     displayName *string
-    // Customized device enrollment flow displayed to the end user . Possible values are: availableWithPrompts, availableWithoutPrompts, unavailable.
+    // Options available for enrollment flow customization
     enrollmentAvailability *EnrollmentAvailabilityOptions
     // Boolean that represents whether the adminsistrator has disabled the 'Factory Reset' action on corporate owned devices.
     isFactoryResetDisabled *bool
@@ -170,7 +170,7 @@ func (m *IntuneBrand) GetDisplayName()(*string) {
         return m.displayName
     }
 }
-// GetEnrollmentAvailability gets the enrollmentAvailability property value. Customized device enrollment flow displayed to the end user . Possible values are: availableWithPrompts, availableWithoutPrompts, unavailable.
+// GetEnrollmentAvailability gets the enrollmentAvailability property value. Options available for enrollment flow customization
 func (m *IntuneBrand) GetEnrollmentAvailability()(*EnrollmentAvailabilityOptions) {
     if m == nil {
         return nil
@@ -830,7 +830,7 @@ func (m *IntuneBrand) SetDisplayName(value *string)() {
         m.displayName = value
     }
 }
-// SetEnrollmentAvailability sets the enrollmentAvailability property value. Customized device enrollment flow displayed to the end user . Possible values are: availableWithPrompts, availableWithoutPrompts, unavailable.
+// SetEnrollmentAvailability sets the enrollmentAvailability property value. Options available for enrollment flow customization
 func (m *IntuneBrand) SetEnrollmentAvailability(value *EnrollmentAvailabilityOptions)() {
     if m != nil {
         m.enrollmentAvailability = value

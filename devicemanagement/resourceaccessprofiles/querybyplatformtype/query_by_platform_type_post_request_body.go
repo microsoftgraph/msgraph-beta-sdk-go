@@ -9,7 +9,7 @@ import (
 type QueryByPlatformTypePostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
-    // The platformType property
+    // Supported platform types for policies.
     platformType *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PolicyPlatformType
 }
 // NewQueryByPlatformTypePostRequestBody instantiates a new queryByPlatformTypePostRequestBody and sets the default values.
@@ -46,7 +46,7 @@ func (m *QueryByPlatformTypePostRequestBody) GetFieldDeserializers()(map[string]
     }
     return res
 }
-// GetPlatformType gets the platformType property value. The platformType property
+// GetPlatformType gets the platformType property value. Supported platform types for policies.
 func (m *QueryByPlatformTypePostRequestBody) GetPlatformType()(*ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PolicyPlatformType) {
     if m == nil {
         return nil
@@ -77,7 +77,7 @@ func (m *QueryByPlatformTypePostRequestBody) SetAdditionalData(value map[string]
         m.additionalData = value
     }
 }
-// SetPlatformType sets the platformType property value. The platformType property
+// SetPlatformType sets the platformType property value. Supported platform types for policies.
 func (m *QueryByPlatformTypePostRequestBody) SetPlatformType(value *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PolicyPlatformType)() {
     if m != nil {
         m.platformType = value

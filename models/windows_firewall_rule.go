@@ -6,7 +6,7 @@ import (
 
 // WindowsFirewallRule a rule controlling traffic through the Windows Firewall.
 type WindowsFirewallRule struct {
-    // The action the rule enforces. If not specified, the default is Allowed. Possible values are: notConfigured, blocked, allowed.
+    // State Management Setting.
     action *StateManagementSetting
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
@@ -14,11 +14,11 @@ type WindowsFirewallRule struct {
     description *string
     // The display name of the rule. Does not need to be unique.
     displayName *string
-    // Indicates whether edge traversal is enabled or disabled for this rule. The EdgeTraversal setting indicates that specific inbound traffic is allowed to tunnel through NATs and other edge devices using the Teredo tunneling technology. In order for this setting to work correctly, the application or service with the inbound firewall rule needs to support IPv6. The primary application of this setting allows listeners on the host to be globally addressable through a Teredo IPv6 address. New rules have the EdgeTraversal property disabled by default. Possible values are: notConfigured, blocked, allowed.
+    // State Management Setting.
     edgeTraversal *StateManagementSetting
     // The full file path of an app that's affected by the firewall rule.
     filePath *string
-    // The interface types of the rule. Possible values are: notConfigured, remoteAccess, wireless, lan.
+    // Flags representing firewall rule interface types.
     interfaceTypes *WindowsFirewallRuleInterfaceTypes
     // List of local addresses covered by the rule. Default is any address. Valid tokens include:'' indicates any local address. If present, this must be the only token included.A subnet can be specified using either the subnet mask or network prefix notation. If neither a subnet mask nor a network prefix is specified, the subnet mask defaults to 255.255.255.255.A valid IPv6 address.An IPv4 address range in the format of 'start address - end address' with no spaces included.An IPv6 address range in the format of 'start address - end address' with no spaces included.
     localAddressRanges []string
@@ -28,7 +28,7 @@ type WindowsFirewallRule struct {
     localUserAuthorizations *string
     // The package family name of a Microsoft Store application that's affected by the firewall rule.
     packageFamilyName *string
-    // Specifies the profiles to which the rule belongs. If not specified, the default is All. Possible values are: notConfigured, domain, private, public.
+    // Flags representing which network profile types apply to a firewall rule.
     profileTypes *WindowsFirewallRuleNetworkProfileTypes
     // 0-255 number representing the IP protocol (TCP = 6, UDP = 17). If not specified, the default is All. Valid values 0 to 255
     protocol *int32
@@ -38,7 +38,7 @@ type WindowsFirewallRule struct {
     remotePortRanges []string
     // The name used in cases when a service, not an application, is sending or receiving traffic.
     serviceName *string
-    // The traffic direction that the rule is enabled for. If not specified, the default is Out. Possible values are: notConfigured, out, in.
+    // Firewall rule traffic directions.
     trafficDirection *WindowsFirewallRuleTrafficDirectionType
 }
 // NewWindowsFirewallRule instantiates a new windowsFirewallRule and sets the default values.
@@ -52,7 +52,7 @@ func NewWindowsFirewallRule()(*WindowsFirewallRule) {
 func CreateWindowsFirewallRuleFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWindowsFirewallRule(), nil
 }
-// GetAction gets the action property value. The action the rule enforces. If not specified, the default is Allowed. Possible values are: notConfigured, blocked, allowed.
+// GetAction gets the action property value. State Management Setting.
 func (m *WindowsFirewallRule) GetAction()(*StateManagementSetting) {
     if m == nil {
         return nil
@@ -84,7 +84,7 @@ func (m *WindowsFirewallRule) GetDisplayName()(*string) {
         return m.displayName
     }
 }
-// GetEdgeTraversal gets the edgeTraversal property value. Indicates whether edge traversal is enabled or disabled for this rule. The EdgeTraversal setting indicates that specific inbound traffic is allowed to tunnel through NATs and other edge devices using the Teredo tunneling technology. In order for this setting to work correctly, the application or service with the inbound firewall rule needs to support IPv6. The primary application of this setting allows listeners on the host to be globally addressable through a Teredo IPv6 address. New rules have the EdgeTraversal property disabled by default. Possible values are: notConfigured, blocked, allowed.
+// GetEdgeTraversal gets the edgeTraversal property value. State Management Setting.
 func (m *WindowsFirewallRule) GetEdgeTraversal()(*StateManagementSetting) {
     if m == nil {
         return nil
@@ -281,7 +281,7 @@ func (m *WindowsFirewallRule) GetFilePath()(*string) {
         return m.filePath
     }
 }
-// GetInterfaceTypes gets the interfaceTypes property value. The interface types of the rule. Possible values are: notConfigured, remoteAccess, wireless, lan.
+// GetInterfaceTypes gets the interfaceTypes property value. Flags representing firewall rule interface types.
 func (m *WindowsFirewallRule) GetInterfaceTypes()(*WindowsFirewallRuleInterfaceTypes) {
     if m == nil {
         return nil
@@ -321,7 +321,7 @@ func (m *WindowsFirewallRule) GetPackageFamilyName()(*string) {
         return m.packageFamilyName
     }
 }
-// GetProfileTypes gets the profileTypes property value. Specifies the profiles to which the rule belongs. If not specified, the default is All. Possible values are: notConfigured, domain, private, public.
+// GetProfileTypes gets the profileTypes property value. Flags representing which network profile types apply to a firewall rule.
 func (m *WindowsFirewallRule) GetProfileTypes()(*WindowsFirewallRuleNetworkProfileTypes) {
     if m == nil {
         return nil
@@ -361,7 +361,7 @@ func (m *WindowsFirewallRule) GetServiceName()(*string) {
         return m.serviceName
     }
 }
-// GetTrafficDirection gets the trafficDirection property value. The traffic direction that the rule is enabled for. If not specified, the default is Out. Possible values are: notConfigured, out, in.
+// GetTrafficDirection gets the trafficDirection property value. Firewall rule traffic directions.
 func (m *WindowsFirewallRule) GetTrafficDirection()(*WindowsFirewallRuleTrafficDirectionType) {
     if m == nil {
         return nil
@@ -480,7 +480,7 @@ func (m *WindowsFirewallRule) Serialize(writer i878a80d2330e89d26896388a3f487eef
     }
     return nil
 }
-// SetAction sets the action property value. The action the rule enforces. If not specified, the default is Allowed. Possible values are: notConfigured, blocked, allowed.
+// SetAction sets the action property value. State Management Setting.
 func (m *WindowsFirewallRule) SetAction(value *StateManagementSetting)() {
     if m != nil {
         m.action = value
@@ -504,7 +504,7 @@ func (m *WindowsFirewallRule) SetDisplayName(value *string)() {
         m.displayName = value
     }
 }
-// SetEdgeTraversal sets the edgeTraversal property value. Indicates whether edge traversal is enabled or disabled for this rule. The EdgeTraversal setting indicates that specific inbound traffic is allowed to tunnel through NATs and other edge devices using the Teredo tunneling technology. In order for this setting to work correctly, the application or service with the inbound firewall rule needs to support IPv6. The primary application of this setting allows listeners on the host to be globally addressable through a Teredo IPv6 address. New rules have the EdgeTraversal property disabled by default. Possible values are: notConfigured, blocked, allowed.
+// SetEdgeTraversal sets the edgeTraversal property value. State Management Setting.
 func (m *WindowsFirewallRule) SetEdgeTraversal(value *StateManagementSetting)() {
     if m != nil {
         m.edgeTraversal = value
@@ -516,7 +516,7 @@ func (m *WindowsFirewallRule) SetFilePath(value *string)() {
         m.filePath = value
     }
 }
-// SetInterfaceTypes sets the interfaceTypes property value. The interface types of the rule. Possible values are: notConfigured, remoteAccess, wireless, lan.
+// SetInterfaceTypes sets the interfaceTypes property value. Flags representing firewall rule interface types.
 func (m *WindowsFirewallRule) SetInterfaceTypes(value *WindowsFirewallRuleInterfaceTypes)() {
     if m != nil {
         m.interfaceTypes = value
@@ -546,7 +546,7 @@ func (m *WindowsFirewallRule) SetPackageFamilyName(value *string)() {
         m.packageFamilyName = value
     }
 }
-// SetProfileTypes sets the profileTypes property value. Specifies the profiles to which the rule belongs. If not specified, the default is All. Possible values are: notConfigured, domain, private, public.
+// SetProfileTypes sets the profileTypes property value. Flags representing which network profile types apply to a firewall rule.
 func (m *WindowsFirewallRule) SetProfileTypes(value *WindowsFirewallRuleNetworkProfileTypes)() {
     if m != nil {
         m.profileTypes = value
@@ -576,7 +576,7 @@ func (m *WindowsFirewallRule) SetServiceName(value *string)() {
         m.serviceName = value
     }
 }
-// SetTrafficDirection sets the trafficDirection property value. The traffic direction that the rule is enabled for. If not specified, the default is Out. Possible values are: notConfigured, out, in.
+// SetTrafficDirection sets the trafficDirection property value. Firewall rule traffic directions.
 func (m *WindowsFirewallRule) SetTrafficDirection(value *WindowsFirewallRuleTrafficDirectionType)() {
     if m != nil {
         m.trafficDirection = value

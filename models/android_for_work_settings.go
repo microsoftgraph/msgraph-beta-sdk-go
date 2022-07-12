@@ -5,18 +5,18 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AndroidForWorkSettings settings for Android For Work.
+// AndroidForWorkSettings 
 type AndroidForWorkSettings struct {
     Entity
-    // Bind status of the tenant with the Google EMM API. Possible values are: notBound, bound, boundAndValidated, unbinding.
+    // Bind status of the tenant with the Google EMM API
     bindStatus *AndroidForWorkBindStatus
     // Indicates if this account is flighting for Android Device Owner Management with CloudDPC.
     deviceOwnerManagementEnabled *bool
-    // Indicates which users can enroll devices in Android for Work device management. Possible values are: none, all, targeted, targetedAsEnrollmentRestrictions.
+    // Android for Work device management targeting type for the account
     enrollmentTarget *AndroidForWorkEnrollmentTarget
     // Last completion time for app sync
     lastAppSyncDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // Last application sync result. Possible values are: success, credentialsNotValid, androidForWorkApiError, managementServiceError, unknownError, none.
+    // Sync status of the tenant with the Google EMM API
     lastAppSyncStatus *AndroidForWorkSyncStatus
     // Last modification time for Android for Work settings
     lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
@@ -27,7 +27,7 @@ type AndroidForWorkSettings struct {
     // Specifies which AAD groups can enroll devices in Android for Work device management if enrollmentTarget is set to 'Targeted'
     targetGroupIds []string
 }
-// NewAndroidForWorkSettings instantiates a new androidForWorkSettings and sets the default values.
+// NewAndroidForWorkSettings instantiates a new AndroidForWorkSettings and sets the default values.
 func NewAndroidForWorkSettings()(*AndroidForWorkSettings) {
     m := &AndroidForWorkSettings{
         Entity: *NewEntity(),
@@ -38,7 +38,7 @@ func NewAndroidForWorkSettings()(*AndroidForWorkSettings) {
 func CreateAndroidForWorkSettingsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAndroidForWorkSettings(), nil
 }
-// GetBindStatus gets the bindStatus property value. Bind status of the tenant with the Google EMM API. Possible values are: notBound, bound, boundAndValidated, unbinding.
+// GetBindStatus gets the bindStatus property value. Bind status of the tenant with the Google EMM API
 func (m *AndroidForWorkSettings) GetBindStatus()(*AndroidForWorkBindStatus) {
     if m == nil {
         return nil
@@ -54,7 +54,7 @@ func (m *AndroidForWorkSettings) GetDeviceOwnerManagementEnabled()(*bool) {
         return m.deviceOwnerManagementEnabled
     }
 }
-// GetEnrollmentTarget gets the enrollmentTarget property value. Indicates which users can enroll devices in Android for Work device management. Possible values are: none, all, targeted, targetedAsEnrollmentRestrictions.
+// GetEnrollmentTarget gets the enrollmentTarget property value. Android for Work device management targeting type for the account
 func (m *AndroidForWorkSettings) GetEnrollmentTarget()(*AndroidForWorkEnrollmentTarget) {
     if m == nil {
         return nil
@@ -169,7 +169,7 @@ func (m *AndroidForWorkSettings) GetLastAppSyncDateTime()(*i336074805fc853987abe
         return m.lastAppSyncDateTime
     }
 }
-// GetLastAppSyncStatus gets the lastAppSyncStatus property value. Last application sync result. Possible values are: success, credentialsNotValid, androidForWorkApiError, managementServiceError, unknownError, none.
+// GetLastAppSyncStatus gets the lastAppSyncStatus property value. Sync status of the tenant with the Google EMM API
 func (m *AndroidForWorkSettings) GetLastAppSyncStatus()(*AndroidForWorkSyncStatus) {
     if m == nil {
         return nil
@@ -274,7 +274,7 @@ func (m *AndroidForWorkSettings) Serialize(writer i878a80d2330e89d26896388a3f487
     }
     return nil
 }
-// SetBindStatus sets the bindStatus property value. Bind status of the tenant with the Google EMM API. Possible values are: notBound, bound, boundAndValidated, unbinding.
+// SetBindStatus sets the bindStatus property value. Bind status of the tenant with the Google EMM API
 func (m *AndroidForWorkSettings) SetBindStatus(value *AndroidForWorkBindStatus)() {
     if m != nil {
         m.bindStatus = value
@@ -286,7 +286,7 @@ func (m *AndroidForWorkSettings) SetDeviceOwnerManagementEnabled(value *bool)() 
         m.deviceOwnerManagementEnabled = value
     }
 }
-// SetEnrollmentTarget sets the enrollmentTarget property value. Indicates which users can enroll devices in Android for Work device management. Possible values are: none, all, targeted, targetedAsEnrollmentRestrictions.
+// SetEnrollmentTarget sets the enrollmentTarget property value. Android for Work device management targeting type for the account
 func (m *AndroidForWorkSettings) SetEnrollmentTarget(value *AndroidForWorkEnrollmentTarget)() {
     if m != nil {
         m.enrollmentTarget = value
@@ -298,7 +298,7 @@ func (m *AndroidForWorkSettings) SetLastAppSyncDateTime(value *i336074805fc85398
         m.lastAppSyncDateTime = value
     }
 }
-// SetLastAppSyncStatus sets the lastAppSyncStatus property value. Last application sync result. Possible values are: success, credentialsNotValid, androidForWorkApiError, managementServiceError, unknownError, none.
+// SetLastAppSyncStatus sets the lastAppSyncStatus property value. Sync status of the tenant with the Google EMM API
 func (m *AndroidForWorkSettings) SetLastAppSyncStatus(value *AndroidForWorkSyncStatus)() {
     if m != nil {
         m.lastAppSyncStatus = value

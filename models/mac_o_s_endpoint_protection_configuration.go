@@ -7,11 +7,11 @@ import (
 // MacOSEndpointProtectionConfiguration 
 type MacOSEndpointProtectionConfiguration struct {
     DeviceConfiguration
-    // Determines whether or not to enable automatic file sample submission for Microsoft Defender Advanced Threat Protection on macOS. Possible values are: notConfigured, enabled, disabled.
+    // Possible values of a property
     advancedThreatProtectionAutomaticSampleSubmission *Enablement
-    // Determines whether or not to enable cloud-delivered protection for Microsoft Defender Advanced Threat Protection on macOS. Possible values are: notConfigured, enabled, disabled.
+    // Possible values of a property
     advancedThreatProtectionCloudDelivered *Enablement
-    // Determines whether or not to enable diagnostic and usage data collection for Microsoft Defender Advanced Threat Protection on macOS. Possible values are: notConfigured, enabled, disabled.
+    // Possible values of a property
     advancedThreatProtectionDiagnosticDataCollection *Enablement
     // A list of file extensions to exclude from antivirus scanning for Microsoft Defender Advanced Threat Protection on macOS.
     advancedThreatProtectionExcludedExtensions []string
@@ -21,7 +21,7 @@ type MacOSEndpointProtectionConfiguration struct {
     advancedThreatProtectionExcludedFolders []string
     // A list of process names to exclude from antivirus scanning for Microsoft Defender Advanced Threat Protection on macOS.
     advancedThreatProtectionExcludedProcesses []string
-    // Determines whether or not to enable real-time protection for Microsoft Defender Advanced Threat Protection on macOS. Possible values are: notConfigured, enabled, disabled.
+    // Possible values of a property
     advancedThreatProtectionRealTime *Enablement
     // Optional. If set to true, the user can defer the enabling of FileVault until they sign out.
     fileVaultAllowDeferralUntilSignOut *bool
@@ -41,7 +41,7 @@ type MacOSEndpointProtectionConfiguration struct {
     fileVaultPersonalRecoveryKeyHelpMessage *string
     // Optional. If selected recovery key type(s) include PersonalRecoveryKey, the frequency to rotate that key, in months.
     fileVaultPersonalRecoveryKeyRotationInMonths *int32
-    // Required if FileVault is enabled, determines the type(s) of recovery key to use. . Possible values are: notConfigured, institutionalRecoveryKey, personalRecoveryKey.
+    // Recovery key types for macOS FileVault
     fileVaultSelectedRecoveryKeyTypes *MacOSFileVaultRecoveryKeyTypes
     // List of applications with firewall settings. Firewall settings for applications not on this list are determined by the user. This collection can contain a maximum of 500 elements.
     firewallApplications []MacOSFirewallApplicationable
@@ -51,7 +51,7 @@ type MacOSEndpointProtectionConfiguration struct {
     firewallEnabled *bool
     // Corresponds to 'Enable stealth mode.'
     firewallEnableStealthMode *bool
-    // System and Privacy setting that determines which download locations apps can be run from on a macOS device. Possible values are: notConfigured, macAppStore, macAppStoreAndIdentifiedDevelopers, anywhere.
+    // App source options for macOS Gatekeeper.
     gatekeeperAllowedAppSource *MacOSGatekeeperAppSources
     // If set to true, the user override for Gatekeeper will be disabled.
     gatekeeperBlockOverride *bool
@@ -67,7 +67,7 @@ func NewMacOSEndpointProtectionConfiguration()(*MacOSEndpointProtectionConfigura
 func CreateMacOSEndpointProtectionConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewMacOSEndpointProtectionConfiguration(), nil
 }
-// GetAdvancedThreatProtectionAutomaticSampleSubmission gets the advancedThreatProtectionAutomaticSampleSubmission property value. Determines whether or not to enable automatic file sample submission for Microsoft Defender Advanced Threat Protection on macOS. Possible values are: notConfigured, enabled, disabled.
+// GetAdvancedThreatProtectionAutomaticSampleSubmission gets the advancedThreatProtectionAutomaticSampleSubmission property value. Possible values of a property
 func (m *MacOSEndpointProtectionConfiguration) GetAdvancedThreatProtectionAutomaticSampleSubmission()(*Enablement) {
     if m == nil {
         return nil
@@ -75,7 +75,7 @@ func (m *MacOSEndpointProtectionConfiguration) GetAdvancedThreatProtectionAutoma
         return m.advancedThreatProtectionAutomaticSampleSubmission
     }
 }
-// GetAdvancedThreatProtectionCloudDelivered gets the advancedThreatProtectionCloudDelivered property value. Determines whether or not to enable cloud-delivered protection for Microsoft Defender Advanced Threat Protection on macOS. Possible values are: notConfigured, enabled, disabled.
+// GetAdvancedThreatProtectionCloudDelivered gets the advancedThreatProtectionCloudDelivered property value. Possible values of a property
 func (m *MacOSEndpointProtectionConfiguration) GetAdvancedThreatProtectionCloudDelivered()(*Enablement) {
     if m == nil {
         return nil
@@ -83,7 +83,7 @@ func (m *MacOSEndpointProtectionConfiguration) GetAdvancedThreatProtectionCloudD
         return m.advancedThreatProtectionCloudDelivered
     }
 }
-// GetAdvancedThreatProtectionDiagnosticDataCollection gets the advancedThreatProtectionDiagnosticDataCollection property value. Determines whether or not to enable diagnostic and usage data collection for Microsoft Defender Advanced Threat Protection on macOS. Possible values are: notConfigured, enabled, disabled.
+// GetAdvancedThreatProtectionDiagnosticDataCollection gets the advancedThreatProtectionDiagnosticDataCollection property value. Possible values of a property
 func (m *MacOSEndpointProtectionConfiguration) GetAdvancedThreatProtectionDiagnosticDataCollection()(*Enablement) {
     if m == nil {
         return nil
@@ -123,7 +123,7 @@ func (m *MacOSEndpointProtectionConfiguration) GetAdvancedThreatProtectionExclud
         return m.advancedThreatProtectionExcludedProcesses
     }
 }
-// GetAdvancedThreatProtectionRealTime gets the advancedThreatProtectionRealTime property value. Determines whether or not to enable real-time protection for Microsoft Defender Advanced Threat Protection on macOS. Possible values are: notConfigured, enabled, disabled.
+// GetAdvancedThreatProtectionRealTime gets the advancedThreatProtectionRealTime property value. Possible values of a property
 func (m *MacOSEndpointProtectionConfiguration) GetAdvancedThreatProtectionRealTime()(*Enablement) {
     if m == nil {
         return nil
@@ -468,7 +468,7 @@ func (m *MacOSEndpointProtectionConfiguration) GetFileVaultPersonalRecoveryKeyRo
         return m.fileVaultPersonalRecoveryKeyRotationInMonths
     }
 }
-// GetFileVaultSelectedRecoveryKeyTypes gets the fileVaultSelectedRecoveryKeyTypes property value. Required if FileVault is enabled, determines the type(s) of recovery key to use. . Possible values are: notConfigured, institutionalRecoveryKey, personalRecoveryKey.
+// GetFileVaultSelectedRecoveryKeyTypes gets the fileVaultSelectedRecoveryKeyTypes property value. Recovery key types for macOS FileVault
 func (m *MacOSEndpointProtectionConfiguration) GetFileVaultSelectedRecoveryKeyTypes()(*MacOSFileVaultRecoveryKeyTypes) {
     if m == nil {
         return nil
@@ -508,7 +508,7 @@ func (m *MacOSEndpointProtectionConfiguration) GetFirewallEnableStealthMode()(*b
         return m.firewallEnableStealthMode
     }
 }
-// GetGatekeeperAllowedAppSource gets the gatekeeperAllowedAppSource property value. System and Privacy setting that determines which download locations apps can be run from on a macOS device. Possible values are: notConfigured, macAppStore, macAppStoreAndIdentifiedDevelopers, anywhere.
+// GetGatekeeperAllowedAppSource gets the gatekeeperAllowedAppSource property value. App source options for macOS Gatekeeper.
 func (m *MacOSEndpointProtectionConfiguration) GetGatekeeperAllowedAppSource()(*MacOSGatekeeperAppSources) {
     if m == nil {
         return nil
@@ -686,19 +686,19 @@ func (m *MacOSEndpointProtectionConfiguration) Serialize(writer i878a80d2330e89d
     }
     return nil
 }
-// SetAdvancedThreatProtectionAutomaticSampleSubmission sets the advancedThreatProtectionAutomaticSampleSubmission property value. Determines whether or not to enable automatic file sample submission for Microsoft Defender Advanced Threat Protection on macOS. Possible values are: notConfigured, enabled, disabled.
+// SetAdvancedThreatProtectionAutomaticSampleSubmission sets the advancedThreatProtectionAutomaticSampleSubmission property value. Possible values of a property
 func (m *MacOSEndpointProtectionConfiguration) SetAdvancedThreatProtectionAutomaticSampleSubmission(value *Enablement)() {
     if m != nil {
         m.advancedThreatProtectionAutomaticSampleSubmission = value
     }
 }
-// SetAdvancedThreatProtectionCloudDelivered sets the advancedThreatProtectionCloudDelivered property value. Determines whether or not to enable cloud-delivered protection for Microsoft Defender Advanced Threat Protection on macOS. Possible values are: notConfigured, enabled, disabled.
+// SetAdvancedThreatProtectionCloudDelivered sets the advancedThreatProtectionCloudDelivered property value. Possible values of a property
 func (m *MacOSEndpointProtectionConfiguration) SetAdvancedThreatProtectionCloudDelivered(value *Enablement)() {
     if m != nil {
         m.advancedThreatProtectionCloudDelivered = value
     }
 }
-// SetAdvancedThreatProtectionDiagnosticDataCollection sets the advancedThreatProtectionDiagnosticDataCollection property value. Determines whether or not to enable diagnostic and usage data collection for Microsoft Defender Advanced Threat Protection on macOS. Possible values are: notConfigured, enabled, disabled.
+// SetAdvancedThreatProtectionDiagnosticDataCollection sets the advancedThreatProtectionDiagnosticDataCollection property value. Possible values of a property
 func (m *MacOSEndpointProtectionConfiguration) SetAdvancedThreatProtectionDiagnosticDataCollection(value *Enablement)() {
     if m != nil {
         m.advancedThreatProtectionDiagnosticDataCollection = value
@@ -728,7 +728,7 @@ func (m *MacOSEndpointProtectionConfiguration) SetAdvancedThreatProtectionExclud
         m.advancedThreatProtectionExcludedProcesses = value
     }
 }
-// SetAdvancedThreatProtectionRealTime sets the advancedThreatProtectionRealTime property value. Determines whether or not to enable real-time protection for Microsoft Defender Advanced Threat Protection on macOS. Possible values are: notConfigured, enabled, disabled.
+// SetAdvancedThreatProtectionRealTime sets the advancedThreatProtectionRealTime property value. Possible values of a property
 func (m *MacOSEndpointProtectionConfiguration) SetAdvancedThreatProtectionRealTime(value *Enablement)() {
     if m != nil {
         m.advancedThreatProtectionRealTime = value
@@ -788,7 +788,7 @@ func (m *MacOSEndpointProtectionConfiguration) SetFileVaultPersonalRecoveryKeyRo
         m.fileVaultPersonalRecoveryKeyRotationInMonths = value
     }
 }
-// SetFileVaultSelectedRecoveryKeyTypes sets the fileVaultSelectedRecoveryKeyTypes property value. Required if FileVault is enabled, determines the type(s) of recovery key to use. . Possible values are: notConfigured, institutionalRecoveryKey, personalRecoveryKey.
+// SetFileVaultSelectedRecoveryKeyTypes sets the fileVaultSelectedRecoveryKeyTypes property value. Recovery key types for macOS FileVault
 func (m *MacOSEndpointProtectionConfiguration) SetFileVaultSelectedRecoveryKeyTypes(value *MacOSFileVaultRecoveryKeyTypes)() {
     if m != nil {
         m.fileVaultSelectedRecoveryKeyTypes = value
@@ -818,7 +818,7 @@ func (m *MacOSEndpointProtectionConfiguration) SetFirewallEnableStealthMode(valu
         m.firewallEnableStealthMode = value
     }
 }
-// SetGatekeeperAllowedAppSource sets the gatekeeperAllowedAppSource property value. System and Privacy setting that determines which download locations apps can be run from on a macOS device. Possible values are: notConfigured, macAppStore, macAppStoreAndIdentifiedDevelopers, anywhere.
+// SetGatekeeperAllowedAppSource sets the gatekeeperAllowedAppSource property value. App source options for macOS Gatekeeper.
 func (m *MacOSEndpointProtectionConfiguration) SetGatekeeperAllowedAppSource(value *MacOSGatekeeperAppSources)() {
     if m != nil {
         m.gatekeeperAllowedAppSource = value

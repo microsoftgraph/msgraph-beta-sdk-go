@@ -15,7 +15,7 @@ type UserExperienceAnalyticsDeviceScores struct {
     deviceName *string
     // The user experience analytics device score. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
     endpointAnalyticsScore *float64
-    // The health state of the user experience analytics device. Possible values are: unknown, insufficientData, needsAttention, meetingGoals.
+    // The healthStatus property
     healthStatus *UserExperienceAnalyticsHealthState
     // The user experience analytics device manufacturer.
     manufacturer *string
@@ -164,7 +164,7 @@ func (m *UserExperienceAnalyticsDeviceScores) GetFieldDeserializers()(map[string
     }
     return res
 }
-// GetHealthStatus gets the healthStatus property value. The health state of the user experience analytics device. Possible values are: unknown, insufficientData, needsAttention, meetingGoals.
+// GetHealthStatus gets the healthStatus property value. The healthStatus property
 func (m *UserExperienceAnalyticsDeviceScores) GetHealthStatus()(*UserExperienceAnalyticsHealthState) {
     if m == nil {
         return nil
@@ -291,7 +291,7 @@ func (m *UserExperienceAnalyticsDeviceScores) SetEndpointAnalyticsScore(value *f
         m.endpointAnalyticsScore = value
     }
 }
-// SetHealthStatus sets the healthStatus property value. The health state of the user experience analytics device. Possible values are: unknown, insufficientData, needsAttention, meetingGoals.
+// SetHealthStatus sets the healthStatus property value. The healthStatus property
 func (m *UserExperienceAnalyticsDeviceScores) SetHealthStatus(value *UserExperienceAnalyticsHealthState)() {
     if m != nil {
         m.healthStatus = value

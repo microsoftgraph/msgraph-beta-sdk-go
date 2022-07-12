@@ -11,6 +11,7 @@ import (
     i23a63a02c83d28d72ce351404f7169106e8b8114b7d9d0ca4052db2a624e6273 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/virtualendpoint/usersettings"
     i5b2233e79dc3147871fe57df3812d50c932074cfced41065bb12f77e2edec21e "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/virtualendpoint/auditevents"
     i641f590b75b18bc875786f11f8c01028ef7a86284da618ffc6636c5f70071b7c "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/virtualendpoint/geteffectivepermissions"
+    i8d3de0aa309e67af3900939f40971eff6bb1f2ef4f7cece48df22e29e1c1a98e "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/virtualendpoint/externalpartnersettings"
     ic615011cfc05f9e79dc505191df45c19871dc563dfe317f14f5eb7e21000fc23 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/virtualendpoint/onpremisesconnections"
     id4ffcadce3c6a0158b09f7c80fb182d7adea4c0b1e976947864d2f4a6310302e "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/virtualendpoint/organizationsettings"
     idd9e805dd9b76881e3c848aa7cbb09327538706813b2808dfeb729d75afef079 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/virtualendpoint/supportedregions"
@@ -26,6 +27,7 @@ import (
     ia3bcb5abfa0df15f63e2a6fa1f06bcbd43b05fc488a36754660b8c694246fe0b "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/virtualendpoint/deviceimages/item"
     ia7d6e357762433a03086487f037283652587e5519e4f5513185ee9e97e7426e9 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/virtualendpoint/galleryimages/item"
     ic14d63ed61f1b60b506fcd81a146444ab96691619c2ac32f274b0793b622f23f "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/virtualendpoint/cloudpcs/item"
+    ief38e332ba0a8567dc33c08d7a4374b2469b756d157cd9dda5252926cfc5109d "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/virtualendpoint/externalpartnersettings/item"
 )
 
 // VirtualEndpointRequestBuilder provides operations to manage the virtualEndpoint property of the microsoft.graph.deviceManagement entity.
@@ -203,6 +205,21 @@ func (m *VirtualEndpointRequestBuilder) DeviceImagesById(id string)(*ia3bcb5abfa
         urlTplParams["cloudPcDeviceImage%2Did"] = id
     }
     return ia3bcb5abfa0df15f63e2a6fa1f06bcbd43b05fc488a36754660b8c694246fe0b.NewCloudPcDeviceImageItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+}
+// ExternalPartnerSettings the externalPartnerSettings property
+func (m *VirtualEndpointRequestBuilder) ExternalPartnerSettings()(*i8d3de0aa309e67af3900939f40971eff6bb1f2ef4f7cece48df22e29e1c1a98e.ExternalPartnerSettingsRequestBuilder) {
+    return i8d3de0aa309e67af3900939f40971eff6bb1f2ef4f7cece48df22e29e1c1a98e.NewExternalPartnerSettingsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// ExternalPartnerSettingsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.virtualEndpoint.externalPartnerSettings.item collection
+func (m *VirtualEndpointRequestBuilder) ExternalPartnerSettingsById(id string)(*ief38e332ba0a8567dc33c08d7a4374b2469b756d157cd9dda5252926cfc5109d.CloudPcExternalPartnerSettingItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
+    }
+    if id != "" {
+        urlTplParams["cloudPcExternalPartnerSetting%2Did"] = id
+    }
+    return ief38e332ba0a8567dc33c08d7a4374b2469b756d157cd9dda5252926cfc5109d.NewCloudPcExternalPartnerSettingItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // GalleryImages the galleryImages property
 func (m *VirtualEndpointRequestBuilder) GalleryImages()(*i13cfcdf74101f5bb07fbf44e4337504d9adaa93a962b4588144742689f3e6c49.GalleryImagesRequestBuilder) {

@@ -7,7 +7,7 @@ import (
 // AndroidCertificateProfileBase 
 type AndroidCertificateProfileBase struct {
     DeviceConfiguration
-    // Scale for the Certificate Validity Period. Possible values are: days, months, years.
+    // Certificate Validity Period Options.
     certificateValidityPeriodScale *CertificateValidityPeriodScale
     // Value for the Certificate Validity Period.
     certificateValidityPeriodValue *int32
@@ -17,9 +17,9 @@ type AndroidCertificateProfileBase struct {
     renewalThresholdPercentage *int32
     // Trusted Root Certificate.
     rootCertificate AndroidTrustedRootCertificateable
-    // Certificate Subject Alternative Name Type. Possible values are: none, emailAddress, userPrincipalName, customAzureADAttribute, domainNameService, universalResourceIdentifier.
+    // Subject Alternative Name Options.
     subjectAlternativeNameType *SubjectAlternativeNameType
-    // Certificate Subject Name Format. Possible values are: commonName, commonNameIncludingEmail, commonNameAsEmail, custom, commonNameAsIMEI, commonNameAsSerialNumber, commonNameAsAadDeviceId, commonNameAsIntuneDeviceId, commonNameAsDurableDeviceId.
+    // Subject Name Format Options.
     subjectNameFormat *SubjectNameFormat
 }
 // NewAndroidCertificateProfileBase instantiates a new AndroidCertificateProfileBase and sets the default values.
@@ -27,6 +27,8 @@ func NewAndroidCertificateProfileBase()(*AndroidCertificateProfileBase) {
     m := &AndroidCertificateProfileBase{
         DeviceConfiguration: *NewDeviceConfiguration(),
     }
+    typeValue := "#microsoft.graph.androidCertificateProfileBase";
+    m.SetType(&typeValue);
     return m
 }
 // CreateAndroidCertificateProfileBaseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -58,7 +60,7 @@ func CreateAndroidCertificateProfileBaseFromDiscriminatorValue(parseNode i878a80
     }
     return NewAndroidCertificateProfileBase(), nil
 }
-// GetCertificateValidityPeriodScale gets the certificateValidityPeriodScale property value. Scale for the Certificate Validity Period. Possible values are: days, months, years.
+// GetCertificateValidityPeriodScale gets the certificateValidityPeriodScale property value. Certificate Validity Period Options.
 func (m *AndroidCertificateProfileBase) GetCertificateValidityPeriodScale()(*CertificateValidityPeriodScale) {
     if m == nil {
         return nil
@@ -177,7 +179,7 @@ func (m *AndroidCertificateProfileBase) GetRootCertificate()(AndroidTrustedRootC
         return m.rootCertificate
     }
 }
-// GetSubjectAlternativeNameType gets the subjectAlternativeNameType property value. Certificate Subject Alternative Name Type. Possible values are: none, emailAddress, userPrincipalName, customAzureADAttribute, domainNameService, universalResourceIdentifier.
+// GetSubjectAlternativeNameType gets the subjectAlternativeNameType property value. Subject Alternative Name Options.
 func (m *AndroidCertificateProfileBase) GetSubjectAlternativeNameType()(*SubjectAlternativeNameType) {
     if m == nil {
         return nil
@@ -185,7 +187,7 @@ func (m *AndroidCertificateProfileBase) GetSubjectAlternativeNameType()(*Subject
         return m.subjectAlternativeNameType
     }
 }
-// GetSubjectNameFormat gets the subjectNameFormat property value. Certificate Subject Name Format. Possible values are: commonName, commonNameIncludingEmail, commonNameAsEmail, custom, commonNameAsIMEI, commonNameAsSerialNumber, commonNameAsAadDeviceId, commonNameAsIntuneDeviceId, commonNameAsDurableDeviceId.
+// GetSubjectNameFormat gets the subjectNameFormat property value. Subject Name Format Options.
 func (m *AndroidCertificateProfileBase) GetSubjectNameFormat()(*SubjectNameFormat) {
     if m == nil {
         return nil
@@ -250,7 +252,7 @@ func (m *AndroidCertificateProfileBase) Serialize(writer i878a80d2330e89d2689638
     }
     return nil
 }
-// SetCertificateValidityPeriodScale sets the certificateValidityPeriodScale property value. Scale for the Certificate Validity Period. Possible values are: days, months, years.
+// SetCertificateValidityPeriodScale sets the certificateValidityPeriodScale property value. Certificate Validity Period Options.
 func (m *AndroidCertificateProfileBase) SetCertificateValidityPeriodScale(value *CertificateValidityPeriodScale)() {
     if m != nil {
         m.certificateValidityPeriodScale = value
@@ -280,13 +282,13 @@ func (m *AndroidCertificateProfileBase) SetRootCertificate(value AndroidTrustedR
         m.rootCertificate = value
     }
 }
-// SetSubjectAlternativeNameType sets the subjectAlternativeNameType property value. Certificate Subject Alternative Name Type. Possible values are: none, emailAddress, userPrincipalName, customAzureADAttribute, domainNameService, universalResourceIdentifier.
+// SetSubjectAlternativeNameType sets the subjectAlternativeNameType property value. Subject Alternative Name Options.
 func (m *AndroidCertificateProfileBase) SetSubjectAlternativeNameType(value *SubjectAlternativeNameType)() {
     if m != nil {
         m.subjectAlternativeNameType = value
     }
 }
-// SetSubjectNameFormat sets the subjectNameFormat property value. Certificate Subject Name Format. Possible values are: commonName, commonNameIncludingEmail, commonNameAsEmail, custom, commonNameAsIMEI, commonNameAsSerialNumber, commonNameAsAadDeviceId, commonNameAsIntuneDeviceId, commonNameAsDurableDeviceId.
+// SetSubjectNameFormat sets the subjectNameFormat property value. Subject Name Format Options.
 func (m *AndroidCertificateProfileBase) SetSubjectNameFormat(value *SubjectNameFormat)() {
     if m != nil {
         m.subjectNameFormat = value

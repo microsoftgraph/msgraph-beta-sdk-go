@@ -33,7 +33,7 @@ type IosDeviceFeaturesConfiguration struct {
     singleSignOnExtensionPkinitCertificate IosCertificateProfileBaseable
     // The Kerberos login settings that enable apps on receiving devices to authenticate smoothly.
     singleSignOnSettings IosSingleSignOnSettingsable
-    // A wallpaper display location specifier. Possible values are: notConfigured, lockScreen, homeScreen, lockAndHomeScreens.
+    // An enum type for wallpaper display location specifier.
     wallpaperDisplayLocation *IosWallpaperDisplayLocation
     // A wallpaper image must be in either PNG or JPEG format. It requires a supervised device with iOS 8 or later version.
     wallpaperImage MimeContentable
@@ -320,7 +320,7 @@ func (m *IosDeviceFeaturesConfiguration) GetSingleSignOnSettings()(IosSingleSign
         return m.singleSignOnSettings
     }
 }
-// GetWallpaperDisplayLocation gets the wallpaperDisplayLocation property value. A wallpaper display location specifier. Possible values are: notConfigured, lockScreen, homeScreen, lockAndHomeScreens.
+// GetWallpaperDisplayLocation gets the wallpaperDisplayLocation property value. An enum type for wallpaper display location specifier.
 func (m *IosDeviceFeaturesConfiguration) GetWallpaperDisplayLocation()(*IosWallpaperDisplayLocation) {
     if m == nil {
         return nil
@@ -525,7 +525,7 @@ func (m *IosDeviceFeaturesConfiguration) SetSingleSignOnSettings(value IosSingle
         m.singleSignOnSettings = value
     }
 }
-// SetWallpaperDisplayLocation sets the wallpaperDisplayLocation property value. A wallpaper display location specifier. Possible values are: notConfigured, lockScreen, homeScreen, lockAndHomeScreens.
+// SetWallpaperDisplayLocation sets the wallpaperDisplayLocation property value. An enum type for wallpaper display location specifier.
 func (m *IosDeviceFeaturesConfiguration) SetWallpaperDisplayLocation(value *IosWallpaperDisplayLocation)() {
     if m != nil {
         m.wallpaperDisplayLocation = value

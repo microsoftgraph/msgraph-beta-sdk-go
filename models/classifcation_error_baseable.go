@@ -12,8 +12,10 @@ type ClassifcationErrorBaseable interface {
     GetInnerError()(ClassificationInnerErrorable)
     GetMessage()(*string)
     GetTarget()(*string)
+    GetType()(*string)
     SetCode(value *string)()
     SetInnerError(value ClassificationInnerErrorable)()
     SetMessage(value *string)()
     SetTarget(value *string)()
+    SetType(value *string)()
 }

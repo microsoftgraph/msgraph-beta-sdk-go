@@ -4,16 +4,16 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DeviceManagementDerivedCredentialSettings entity that describes tenant level settings for derived credentials
+// DeviceManagementDerivedCredentialSettings 
 type DeviceManagementDerivedCredentialSettings struct {
     Entity
     // The display name for the profile.
     displayName *string
     // The URL that will be accessible to end users as they retrieve a derived credential using the Company Portal.
     helpUrl *string
-    // The derived credential provider to use.
+    // Supported values for the derived credential issuer.
     issuer *DeviceManagementDerivedCredentialIssuer
-    // The methods used to inform the end user to open Company Portal to deliver Wi-Fi, VPN, or email profiles that use certificates to the device.
+    // Supported values for the notification type to use.
     notificationType *DeviceManagementDerivedCredentialNotificationType
     // The nominal percentage of time before certificate renewal is initiated by the client.
     renewalThresholdPercentage *int32
@@ -100,7 +100,7 @@ func (m *DeviceManagementDerivedCredentialSettings) GetHelpUrl()(*string) {
         return m.helpUrl
     }
 }
-// GetIssuer gets the issuer property value. The derived credential provider to use.
+// GetIssuer gets the issuer property value. Supported values for the derived credential issuer.
 func (m *DeviceManagementDerivedCredentialSettings) GetIssuer()(*DeviceManagementDerivedCredentialIssuer) {
     if m == nil {
         return nil
@@ -108,7 +108,7 @@ func (m *DeviceManagementDerivedCredentialSettings) GetIssuer()(*DeviceManagemen
         return m.issuer
     }
 }
-// GetNotificationType gets the notificationType property value. The methods used to inform the end user to open Company Portal to deliver Wi-Fi, VPN, or email profiles that use certificates to the device.
+// GetNotificationType gets the notificationType property value. Supported values for the notification type to use.
 func (m *DeviceManagementDerivedCredentialSettings) GetNotificationType()(*DeviceManagementDerivedCredentialNotificationType) {
     if m == nil {
         return nil
@@ -176,13 +176,13 @@ func (m *DeviceManagementDerivedCredentialSettings) SetHelpUrl(value *string)() 
         m.helpUrl = value
     }
 }
-// SetIssuer sets the issuer property value. The derived credential provider to use.
+// SetIssuer sets the issuer property value. Supported values for the derived credential issuer.
 func (m *DeviceManagementDerivedCredentialSettings) SetIssuer(value *DeviceManagementDerivedCredentialIssuer)() {
     if m != nil {
         m.issuer = value
     }
 }
-// SetNotificationType sets the notificationType property value. The methods used to inform the end user to open Company Portal to deliver Wi-Fi, VPN, or email profiles that use certificates to the device.
+// SetNotificationType sets the notificationType property value. Supported values for the notification type to use.
 func (m *DeviceManagementDerivedCredentialSettings) SetNotificationType(value *DeviceManagementDerivedCredentialNotificationType)() {
     if m != nil {
         m.notificationType = value

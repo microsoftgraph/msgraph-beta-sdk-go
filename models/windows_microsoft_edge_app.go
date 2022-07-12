@@ -7,7 +7,7 @@ import (
 // WindowsMicrosoftEdgeApp 
 type WindowsMicrosoftEdgeApp struct {
     MobileApp
-    // The channel to install on target devices. Possible values are: dev, beta, stable.
+    // The enum to specify the channels for Microsoft Edge apps.
     channel *MicrosoftEdgeChannel
     // The language locale to use when the Edge app displays text to the user.
     displayLanguageLocale *string
@@ -23,7 +23,7 @@ func NewWindowsMicrosoftEdgeApp()(*WindowsMicrosoftEdgeApp) {
 func CreateWindowsMicrosoftEdgeAppFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWindowsMicrosoftEdgeApp(), nil
 }
-// GetChannel gets the channel property value. The channel to install on target devices. Possible values are: dev, beta, stable.
+// GetChannel gets the channel property value. The enum to specify the channels for Microsoft Edge apps.
 func (m *WindowsMicrosoftEdgeApp) GetChannel()(*MicrosoftEdgeChannel) {
     if m == nil {
         return nil
@@ -85,7 +85,7 @@ func (m *WindowsMicrosoftEdgeApp) Serialize(writer i878a80d2330e89d26896388a3f48
     }
     return nil
 }
-// SetChannel sets the channel property value. The channel to install on target devices. Possible values are: dev, beta, stable.
+// SetChannel sets the channel property value. The enum to specify the channels for Microsoft Edge apps.
 func (m *WindowsMicrosoftEdgeApp) SetChannel(value *MicrosoftEdgeChannel)() {
     if m != nil {
         m.channel = value

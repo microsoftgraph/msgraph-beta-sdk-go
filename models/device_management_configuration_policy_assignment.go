@@ -7,7 +7,7 @@ import (
 // DeviceManagementConfigurationPolicyAssignment the DeviceManagementConfigurationPolicyAssignment entity assigns a specific DeviceManagementConfigurationPolicy to an AAD group.
 type DeviceManagementConfigurationPolicyAssignment struct {
     Entity
-    // The assignment source for the device compliance policy, direct or parcel/policySet. Possible values are: direct, policySets.
+    // Represents source of assignment.
     source *DeviceAndAppManagementAssignmentSource
     // The identifier of the source of the assignment.
     sourceId *string
@@ -60,7 +60,7 @@ func (m *DeviceManagementConfigurationPolicyAssignment) GetFieldDeserializers()(
     }
     return res
 }
-// GetSource gets the source property value. The assignment source for the device compliance policy, direct or parcel/policySet. Possible values are: direct, policySets.
+// GetSource gets the source property value. Represents source of assignment.
 func (m *DeviceManagementConfigurationPolicyAssignment) GetSource()(*DeviceAndAppManagementAssignmentSource) {
     if m == nil {
         return nil
@@ -111,7 +111,7 @@ func (m *DeviceManagementConfigurationPolicyAssignment) Serialize(writer i878a80
     }
     return nil
 }
-// SetSource sets the source property value. The assignment source for the device compliance policy, direct or parcel/policySet. Possible values are: direct, policySets.
+// SetSource sets the source property value. Represents source of assignment.
 func (m *DeviceManagementConfigurationPolicyAssignment) SetSource(value *DeviceAndAppManagementAssignmentSource)() {
     if m != nil {
         m.source = value

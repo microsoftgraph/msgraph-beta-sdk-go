@@ -13,7 +13,7 @@ type SynchronizationSchedule struct {
     expiration *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The interval between synchronization iterations.
     interval *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration
-    // Possible values are: Active, Disabled.
+    // The state property
     state *SynchronizationScheduleState
 }
 // NewSynchronizationSchedule instantiates a new synchronizationSchedule and sets the default values.
@@ -86,7 +86,7 @@ func (m *SynchronizationSchedule) GetInterval()(*i878a80d2330e89d26896388a3f487e
         return m.interval
     }
 }
-// GetState gets the state property value. Possible values are: Active, Disabled.
+// GetState gets the state property value. The state property
 func (m *SynchronizationSchedule) GetState()(*SynchronizationScheduleState) {
     if m == nil {
         return nil
@@ -141,7 +141,7 @@ func (m *SynchronizationSchedule) SetInterval(value *i878a80d2330e89d26896388a3f
         m.interval = value
     }
 }
-// SetState sets the state property value. Possible values are: Active, Disabled.
+// SetState sets the state property value. The state property
 func (m *SynchronizationSchedule) SetState(value *SynchronizationScheduleState)() {
     if m != nil {
         m.state = value

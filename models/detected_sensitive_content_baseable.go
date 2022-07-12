@@ -12,10 +12,12 @@ type DetectedSensitiveContentBaseable interface {
     GetDisplayName()(*string)
     GetId()(*string)
     GetRecommendedConfidence()(*int32)
+    GetType()(*string)
     GetUniqueCount()(*int32)
     SetConfidence(value *int32)()
     SetDisplayName(value *string)()
     SetId(value *string)()
     SetRecommendedConfidence(value *int32)()
+    SetType(value *string)()
     SetUniqueCount(value *int32)()
 }

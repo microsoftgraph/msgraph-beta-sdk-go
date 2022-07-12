@@ -12,7 +12,7 @@ type IosEduCertificateSettings struct {
     certFileName *string
     // PKCS Certificate Template Name.
     certificateTemplateName *string
-    // Scale for the Certificate Validity Period. Possible values are: days, months, years.
+    // Certificate Validity Period Options.
     certificateValidityPeriodScale *CertificateValidityPeriodScale
     // Value for the Certificate Validity Period.
     certificateValidityPeriodValue *int32
@@ -60,7 +60,7 @@ func (m *IosEduCertificateSettings) GetCertificateTemplateName()(*string) {
         return m.certificateTemplateName
     }
 }
-// GetCertificateValidityPeriodScale gets the certificateValidityPeriodScale property value. Scale for the Certificate Validity Period. Possible values are: days, months, years.
+// GetCertificateValidityPeriodScale gets the certificateValidityPeriodScale property value. Certificate Validity Period Options.
 func (m *IosEduCertificateSettings) GetCertificateValidityPeriodScale()(*CertificateValidityPeriodScale) {
     if m == nil {
         return nil
@@ -270,7 +270,7 @@ func (m *IosEduCertificateSettings) SetCertificateTemplateName(value *string)() 
         m.certificateTemplateName = value
     }
 }
-// SetCertificateValidityPeriodScale sets the certificateValidityPeriodScale property value. Scale for the Certificate Validity Period. Possible values are: days, months, years.
+// SetCertificateValidityPeriodScale sets the certificateValidityPeriodScale property value. Certificate Validity Period Options.
 func (m *IosEduCertificateSettings) SetCertificateValidityPeriodScale(value *CertificateValidityPeriodScale)() {
     if m != nil {
         m.certificateValidityPeriodScale = value

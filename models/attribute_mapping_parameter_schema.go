@@ -14,7 +14,7 @@ type AttributeMappingParameterSchema struct {
     name *string
     // true if the parameter is required; otherwise false.
     required *bool
-    // Possible values are: Boolean, Binary, Reference, Integer, String. Default is String.
+    // The type property
     type_escaped *AttributeType
 }
 // NewAttributeMappingParameterSchema instantiates a new attributeMappingParameterSchema and sets the default values.
@@ -105,7 +105,7 @@ func (m *AttributeMappingParameterSchema) GetRequired()(*bool) {
         return m.required
     }
 }
-// GetType gets the type property value. Possible values are: Boolean, Binary, Reference, Integer, String. Default is String.
+// GetType gets the type property value. The type property
 func (m *AttributeMappingParameterSchema) GetType()(*AttributeType) {
     if m == nil {
         return nil
@@ -172,7 +172,7 @@ func (m *AttributeMappingParameterSchema) SetRequired(value *bool)() {
         m.required = value
     }
 }
-// SetType sets the type property value. Possible values are: Boolean, Binary, Reference, Integer, String. Default is String.
+// SetType sets the type property value. The type property
 func (m *AttributeMappingParameterSchema) SetType(value *AttributeType)() {
     if m != nil {
         m.type_escaped = value

@@ -14,7 +14,7 @@ type SecurityBaselineDeviceState struct {
     lastReportedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Intune device id
     managedDeviceId *string
-    // Security baseline compliance state. Possible values are: unknown, secure, notApplicable, notSecure, error, conflict.
+    // Security Baseline Compliance State
     state *SecurityBaselineComplianceState
     // User Principal Name
     userPrincipalName *string
@@ -109,7 +109,7 @@ func (m *SecurityBaselineDeviceState) GetManagedDeviceId()(*string) {
         return m.managedDeviceId
     }
 }
-// GetState gets the state property value. Security baseline compliance state. Possible values are: unknown, secure, notApplicable, notSecure, error, conflict.
+// GetState gets the state property value. Security Baseline Compliance State
 func (m *SecurityBaselineDeviceState) GetState()(*SecurityBaselineComplianceState) {
     if m == nil {
         return nil
@@ -182,7 +182,7 @@ func (m *SecurityBaselineDeviceState) SetManagedDeviceId(value *string)() {
         m.managedDeviceId = value
     }
 }
-// SetState sets the state property value. Security baseline compliance state. Possible values are: unknown, secure, notApplicable, notSecure, error, conflict.
+// SetState sets the state property value. Security Baseline Compliance State
 func (m *SecurityBaselineDeviceState) SetState(value *SecurityBaselineComplianceState)() {
     if m != nil {
         m.state = value

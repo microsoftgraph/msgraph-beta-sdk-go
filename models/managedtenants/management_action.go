@@ -5,10 +5,10 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
-// ManagementAction provides operations to manage the tenantRelationship singleton.
+// ManagementAction provides operations to manage the collection of activityStatistics entities.
 type ManagementAction struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
-    // The category for the management action. Possible values are: custom, devices, identity, unknownFutureValue. Optional. Read-only.
+    // The category property
     category *ManagementCategory
     // The description for the management action. Optional. Read-only.
     description *string
@@ -32,7 +32,7 @@ func NewManagementAction()(*ManagementAction) {
 func CreateManagementActionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewManagementAction(), nil
 }
-// GetCategory gets the category property value. The category for the management action. Possible values are: custom, devices, identity, unknownFutureValue. Optional. Read-only.
+// GetCategory gets the category property value. The category property
 func (m *ManagementAction) GetCategory()(*ManagementCategory) {
     if m == nil {
         return nil
@@ -198,7 +198,7 @@ func (m *ManagementAction) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
     }
     return nil
 }
-// SetCategory sets the category property value. The category for the management action. Possible values are: custom, devices, identity, unknownFutureValue. Optional. Read-only.
+// SetCategory sets the category property value. The category property
 func (m *ManagementAction) SetCategory(value *ManagementCategory)() {
     if m != nil {
         m.category = value

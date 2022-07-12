@@ -16,7 +16,6 @@ type Commandable interface {
     GetPostBackUri()(*string)
     GetResponsepayload()(PayloadResponseable)
     GetStatus()(*string)
-    GetType()(*string)
     SetAppServiceName(value *string)()
     SetError(value *string)()
     SetPackageFamilyName(value *string)()
@@ -25,5 +24,4 @@ type Commandable interface {
     SetPostBackUri(value *string)()
     SetResponsepayload(value PayloadResponseable)()
     SetStatus(value *string)()
-    SetType(value *string)()
 }

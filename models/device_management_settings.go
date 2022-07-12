@@ -10,7 +10,7 @@ type DeviceManagementSettings struct {
     additionalData map[string]interface{}
     // The property to determine if Android device administrator enrollment is enabled for this account.
     androidDeviceAdministratorEnrollmentEnabled *bool
-    // The Derived Credential Provider to use for this account. Possible values are: notConfigured, entrustDataCard, purebred, xTec, intercede.
+    // Provider type for Derived Credentials.
     derivedCredentialProvider *DerivedCredentialProviderType
     // The Derived Credential Provider self-service URI.
     derivedCredentialUrl *string
@@ -62,7 +62,7 @@ func (m *DeviceManagementSettings) GetAndroidDeviceAdministratorEnrollmentEnable
         return m.androidDeviceAdministratorEnrollmentEnabled
     }
 }
-// GetDerivedCredentialProvider gets the derivedCredentialProvider property value. The Derived Credential Provider to use for this account. Possible values are: notConfigured, entrustDataCard, purebred, xTec, intercede.
+// GetDerivedCredentialProvider gets the derivedCredentialProvider property value. Provider type for Derived Credentials.
 func (m *DeviceManagementSettings) GetDerivedCredentialProvider()(*DerivedCredentialProviderType) {
     if m == nil {
         return nil
@@ -394,7 +394,7 @@ func (m *DeviceManagementSettings) SetAndroidDeviceAdministratorEnrollmentEnable
         m.androidDeviceAdministratorEnrollmentEnabled = value
     }
 }
-// SetDerivedCredentialProvider sets the derivedCredentialProvider property value. The Derived Credential Provider to use for this account. Possible values are: notConfigured, entrustDataCard, purebred, xTec, intercede.
+// SetDerivedCredentialProvider sets the derivedCredentialProvider property value. Provider type for Derived Credentials.
 func (m *DeviceManagementSettings) SetDerivedCredentialProvider(value *DerivedCredentialProviderType)() {
     if m != nil {
         m.derivedCredentialProvider = value

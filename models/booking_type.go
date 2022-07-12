@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of place entities.
+// Provides operations to manage the collection of accessReview entities.
 type BookingType int
 
 const (

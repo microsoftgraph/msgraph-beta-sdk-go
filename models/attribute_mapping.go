@@ -12,9 +12,9 @@ type AttributeMapping struct {
     defaultValue *string
     // For internal use only.
     exportMissingReferences *bool
-    // Defines when this attribute should be exported to the target directory. Possible values are: FlowWhenChanged and FlowAlways. Default is FlowWhenChanged.
+    // The flowBehavior property
     flowBehavior *AttributeFlowBehavior
-    // Defines when this attribute should be updated in the target directory. Possible values are: Always (default), ObjectAddOnly (only when new object is created), MultiValueAddOnly (only when the change is adding new values to a multi-valued attribute).
+    // The flowType property
     flowType *AttributeFlowType
     // If higher than 0, this attribute will be used to perform an initial match of the objects between source and target directories. The synchronization engine will try to find the matching object using attribute with lowest value of matching priority first. If not found, the attribute with the next matching priority will be used, and so on a until match is found or no more matching attributes are left. Only attributes that are expected to have unique values, such as email, should be used as matching attributes.
     matchingPriority *int32
@@ -133,7 +133,7 @@ func (m *AttributeMapping) GetFieldDeserializers()(map[string]func(i878a80d2330e
     }
     return res
 }
-// GetFlowBehavior gets the flowBehavior property value. Defines when this attribute should be exported to the target directory. Possible values are: FlowWhenChanged and FlowAlways. Default is FlowWhenChanged.
+// GetFlowBehavior gets the flowBehavior property value. The flowBehavior property
 func (m *AttributeMapping) GetFlowBehavior()(*AttributeFlowBehavior) {
     if m == nil {
         return nil
@@ -141,7 +141,7 @@ func (m *AttributeMapping) GetFlowBehavior()(*AttributeFlowBehavior) {
         return m.flowBehavior
     }
 }
-// GetFlowType gets the flowType property value. Defines when this attribute should be updated in the target directory. Possible values are: Always (default), ObjectAddOnly (only when new object is created), MultiValueAddOnly (only when the change is adding new values to a multi-valued attribute).
+// GetFlowType gets the flowType property value. The flowType property
 func (m *AttributeMapping) GetFlowType()(*AttributeFlowType) {
     if m == nil {
         return nil
@@ -245,13 +245,13 @@ func (m *AttributeMapping) SetExportMissingReferences(value *bool)() {
         m.exportMissingReferences = value
     }
 }
-// SetFlowBehavior sets the flowBehavior property value. Defines when this attribute should be exported to the target directory. Possible values are: FlowWhenChanged and FlowAlways. Default is FlowWhenChanged.
+// SetFlowBehavior sets the flowBehavior property value. The flowBehavior property
 func (m *AttributeMapping) SetFlowBehavior(value *AttributeFlowBehavior)() {
     if m != nil {
         m.flowBehavior = value
     }
 }
-// SetFlowType sets the flowType property value. Defines when this attribute should be updated in the target directory. Possible values are: Always (default), ObjectAddOnly (only when new object is created), MultiValueAddOnly (only when the change is adding new values to a multi-valued attribute).
+// SetFlowType sets the flowType property value. The flowType property
 func (m *AttributeMapping) SetFlowType(value *AttributeFlowType)() {
     if m != nil {
         m.flowType = value

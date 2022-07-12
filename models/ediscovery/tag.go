@@ -6,7 +6,7 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
-// Tag provides operations to manage the compliance singleton.
+// Tag 
 type Tag struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
     // Indicates whether a single or multiple child tags can be associated with a document. Possible values are: One, Many.  This value controls whether the UX presents the tags as checkboxes or a radio button group.
@@ -24,7 +24,7 @@ type Tag struct {
     // Returns the parent tag of the specified tag.
     parent Tagable
 }
-// NewTag instantiates a new tag and sets the default values.
+// NewTag instantiates a new Tag and sets the default values.
 func NewTag()(*Tag) {
     m := &Tag{
         Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),

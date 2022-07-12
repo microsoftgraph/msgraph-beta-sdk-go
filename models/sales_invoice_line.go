@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// SalesInvoiceLine provides operations to manage the financials singleton.
+// SalesInvoiceLine 
 type SalesInvoiceLine struct {
     Entity
     // The account property
@@ -56,7 +56,7 @@ type SalesInvoiceLine struct {
     // The unitPrice property
     unitPrice *float64
 }
-// NewSalesInvoiceLine instantiates a new salesInvoiceLine and sets the default values.
+// NewSalesInvoiceLine instantiates a new SalesInvoiceLine and sets the default values.
 func NewSalesInvoiceLine()(*SalesInvoiceLine) {
     m := &SalesInvoiceLine{
         Entity: *NewEntity(),

@@ -9,15 +9,15 @@ type AndroidEasEmailProfileConfiguration struct {
     DeviceConfiguration
     // Exchange ActiveSync account name, displayed to users as name of EAS (this) profile.
     accountName *string
-    // Authentication method for Exchange ActiveSync. Possible values are: usernameAndPassword, certificate, derivedCredential.
+    // Exchange Active Sync authentication method.
     authenticationMethod *EasAuthenticationMethod
     // Custom domain name value used while generating an email profile before installing on the device.
     customDomainName *string
-    // Duration of time email should be synced to. Possible values are: userDefined, oneDay, threeDays, oneWeek, twoWeeks, oneMonth, unlimited.
+    // Possible values for email sync duration.
     durationOfEmailToSync *EmailSyncDuration
-    // Email attribute that is picked from AAD and injected into this profile before installing on the device. Possible values are: userPrincipalName, primarySmtpAddress.
+    // Possible values for username source or email source.
     emailAddressSource *UserEmailSource
-    // Email sync schedule. Possible values are: userDefined, asMessagesArrive, manual, fifteenMinutes, thirtyMinutes, sixtyMinutes, basedOnMyUsage.
+    // Possible values for email sync schedule.
     emailSyncSchedule *EmailSyncSchedule
     // Exchange location (URL) that the native mail app connects to.
     hostName *string
@@ -39,7 +39,7 @@ type AndroidEasEmailProfileConfiguration struct {
     syncTasks *bool
     // UserDomainname attribute that is picked from AAD and injected into this profile before installing on the device. Possible values are: fullDomainName, netBiosDomainName.
     userDomainNameSource *DomainNameSource
-    // Username attribute that is picked from AAD and injected into this profile before installing on the device. Possible values are: username, userPrincipalName, samAccountName, primarySmtpAddress.
+    // Android username source.
     usernameSource *AndroidUsernameSource
 }
 // NewAndroidEasEmailProfileConfiguration instantiates a new AndroidEasEmailProfileConfiguration and sets the default values.
@@ -61,7 +61,7 @@ func (m *AndroidEasEmailProfileConfiguration) GetAccountName()(*string) {
         return m.accountName
     }
 }
-// GetAuthenticationMethod gets the authenticationMethod property value. Authentication method for Exchange ActiveSync. Possible values are: usernameAndPassword, certificate, derivedCredential.
+// GetAuthenticationMethod gets the authenticationMethod property value. Exchange Active Sync authentication method.
 func (m *AndroidEasEmailProfileConfiguration) GetAuthenticationMethod()(*EasAuthenticationMethod) {
     if m == nil {
         return nil
@@ -77,7 +77,7 @@ func (m *AndroidEasEmailProfileConfiguration) GetCustomDomainName()(*string) {
         return m.customDomainName
     }
 }
-// GetDurationOfEmailToSync gets the durationOfEmailToSync property value. Duration of time email should be synced to. Possible values are: userDefined, oneDay, threeDays, oneWeek, twoWeeks, oneMonth, unlimited.
+// GetDurationOfEmailToSync gets the durationOfEmailToSync property value. Possible values for email sync duration.
 func (m *AndroidEasEmailProfileConfiguration) GetDurationOfEmailToSync()(*EmailSyncDuration) {
     if m == nil {
         return nil
@@ -85,7 +85,7 @@ func (m *AndroidEasEmailProfileConfiguration) GetDurationOfEmailToSync()(*EmailS
         return m.durationOfEmailToSync
     }
 }
-// GetEmailAddressSource gets the emailAddressSource property value. Email attribute that is picked from AAD and injected into this profile before installing on the device. Possible values are: userPrincipalName, primarySmtpAddress.
+// GetEmailAddressSource gets the emailAddressSource property value. Possible values for username source or email source.
 func (m *AndroidEasEmailProfileConfiguration) GetEmailAddressSource()(*UserEmailSource) {
     if m == nil {
         return nil
@@ -93,7 +93,7 @@ func (m *AndroidEasEmailProfileConfiguration) GetEmailAddressSource()(*UserEmail
         return m.emailAddressSource
     }
 }
-// GetEmailSyncSchedule gets the emailSyncSchedule property value. Email sync schedule. Possible values are: userDefined, asMessagesArrive, manual, fifteenMinutes, thirtyMinutes, sixtyMinutes, basedOnMyUsage.
+// GetEmailSyncSchedule gets the emailSyncSchedule property value. Possible values for email sync schedule.
 func (m *AndroidEasEmailProfileConfiguration) GetEmailSyncSchedule()(*EmailSyncSchedule) {
     if m == nil {
         return nil
@@ -356,7 +356,7 @@ func (m *AndroidEasEmailProfileConfiguration) GetUserDomainNameSource()(*DomainN
         return m.userDomainNameSource
     }
 }
-// GetUsernameSource gets the usernameSource property value. Username attribute that is picked from AAD and injected into this profile before installing on the device. Possible values are: username, userPrincipalName, samAccountName, primarySmtpAddress.
+// GetUsernameSource gets the usernameSource property value. Android username source.
 func (m *AndroidEasEmailProfileConfiguration) GetUsernameSource()(*AndroidUsernameSource) {
     if m == nil {
         return nil
@@ -486,7 +486,7 @@ func (m *AndroidEasEmailProfileConfiguration) SetAccountName(value *string)() {
         m.accountName = value
     }
 }
-// SetAuthenticationMethod sets the authenticationMethod property value. Authentication method for Exchange ActiveSync. Possible values are: usernameAndPassword, certificate, derivedCredential.
+// SetAuthenticationMethod sets the authenticationMethod property value. Exchange Active Sync authentication method.
 func (m *AndroidEasEmailProfileConfiguration) SetAuthenticationMethod(value *EasAuthenticationMethod)() {
     if m != nil {
         m.authenticationMethod = value
@@ -498,19 +498,19 @@ func (m *AndroidEasEmailProfileConfiguration) SetCustomDomainName(value *string)
         m.customDomainName = value
     }
 }
-// SetDurationOfEmailToSync sets the durationOfEmailToSync property value. Duration of time email should be synced to. Possible values are: userDefined, oneDay, threeDays, oneWeek, twoWeeks, oneMonth, unlimited.
+// SetDurationOfEmailToSync sets the durationOfEmailToSync property value. Possible values for email sync duration.
 func (m *AndroidEasEmailProfileConfiguration) SetDurationOfEmailToSync(value *EmailSyncDuration)() {
     if m != nil {
         m.durationOfEmailToSync = value
     }
 }
-// SetEmailAddressSource sets the emailAddressSource property value. Email attribute that is picked from AAD and injected into this profile before installing on the device. Possible values are: userPrincipalName, primarySmtpAddress.
+// SetEmailAddressSource sets the emailAddressSource property value. Possible values for username source or email source.
 func (m *AndroidEasEmailProfileConfiguration) SetEmailAddressSource(value *UserEmailSource)() {
     if m != nil {
         m.emailAddressSource = value
     }
 }
-// SetEmailSyncSchedule sets the emailSyncSchedule property value. Email sync schedule. Possible values are: userDefined, asMessagesArrive, manual, fifteenMinutes, thirtyMinutes, sixtyMinutes, basedOnMyUsage.
+// SetEmailSyncSchedule sets the emailSyncSchedule property value. Possible values for email sync schedule.
 func (m *AndroidEasEmailProfileConfiguration) SetEmailSyncSchedule(value *EmailSyncSchedule)() {
     if m != nil {
         m.emailSyncSchedule = value
@@ -576,7 +576,7 @@ func (m *AndroidEasEmailProfileConfiguration) SetUserDomainNameSource(value *Dom
         m.userDomainNameSource = value
     }
 }
-// SetUsernameSource sets the usernameSource property value. Username attribute that is picked from AAD and injected into this profile before installing on the device. Possible values are: username, userPrincipalName, samAccountName, primarySmtpAddress.
+// SetUsernameSource sets the usernameSource property value. Android username source.
 func (m *AndroidEasEmailProfileConfiguration) SetUsernameSource(value *AndroidUsernameSource)() {
     if m != nil {
         m.usernameSource = value

@@ -13,9 +13,11 @@ type AccessPackageQuestionable interface {
     GetIsRequired()(*bool)
     GetSequence()(*int32)
     GetText()(AccessPackageLocalizedContentable)
+    GetType()(*string)
     SetId(value *string)()
     SetIsAnswerEditable(value *bool)()
     SetIsRequired(value *bool)()
     SetSequence(value *int32)()
     SetText(value AccessPackageLocalizedContentable)()
+    SetType(value *string)()
 }

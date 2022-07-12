@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// GroupPolicyDefinitionFile the entity represents an ADMX (Administrative Template) XML file. The ADMX file contains a collection of group policy definitions and their locations by category path. The group policy definition file also contains the languages supported as determined by the language dependent ADML (Administrative Template) language files.
+// GroupPolicyDefinitionFile 
 type GroupPolicyDefinitionFile struct {
     Entity
     // The group policy definitions associated with the file.
@@ -20,7 +20,7 @@ type GroupPolicyDefinitionFile struct {
     languageCodes []string
     // The date and time the entity was last modified.
     lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // Specifies the type of group policy. Possible values are: admxBacked, admxIngested.
+    // Type of Group Policy File or Definition.
     policyType *GroupPolicyType
     // The revision version associated with the file.
     revision *string
@@ -34,6 +34,8 @@ func NewGroupPolicyDefinitionFile()(*GroupPolicyDefinitionFile) {
     m := &GroupPolicyDefinitionFile{
         Entity: *NewEntity(),
     }
+    typeValue := "#microsoft.graph.groupPolicyDefinitionFile";
+    m.SetType(&typeValue);
     return m
 }
 // CreateGroupPolicyDefinitionFileFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -220,7 +222,7 @@ func (m *GroupPolicyDefinitionFile) GetLastModifiedDateTime()(*i336074805fc85398
         return m.lastModifiedDateTime
     }
 }
-// GetPolicyType gets the policyType property value. Specifies the type of group policy. Possible values are: admxBacked, admxIngested.
+// GetPolicyType gets the policyType property value. Type of Group Policy File or Definition.
 func (m *GroupPolicyDefinitionFile) GetPolicyType()(*GroupPolicyType) {
     if m == nil {
         return nil
@@ -361,7 +363,7 @@ func (m *GroupPolicyDefinitionFile) SetLastModifiedDateTime(value *i336074805fc8
         m.lastModifiedDateTime = value
     }
 }
-// SetPolicyType sets the policyType property value. Specifies the type of group policy. Possible values are: admxBacked, admxIngested.
+// SetPolicyType sets the policyType property value. Type of Group Policy File or Definition.
 func (m *GroupPolicyDefinitionFile) SetPolicyType(value *GroupPolicyType)() {
     if m != nil {
         m.policyType = value

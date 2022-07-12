@@ -11,7 +11,7 @@ type AndroidDeviceOwnerEnterpriseWiFiConfiguration struct {
     authenticationMethod *WiFiAuthenticationMethod
     // Tenant level settings for the Derived Credentials to be used for authentication.
     derivedCredentialSettings DeviceManagementDerivedCredentialSettingsable
-    // Indicates the type of EAP protocol set on the Wi-Fi endpoint (router). Possible values are: eapTls, eapTtls, peap.
+    // Extensible Authentication Protocol (EAP) Configuration Types.
     eapType *AndroidEapType
     // Identity Certificate for client authentication when EAP Type is configured to EAP-TLS, EAP-TTLS (with Certificate Authentication), or PEAP (with Certificate Authentication). This is the certificate presented by client to the Wi-Fi endpoint. The authentication server sitting behind the Wi-Fi endpoint must accept this certificate to successfully establish a Wi-Fi connection.
     identityCertificateForClientAuthentication AndroidDeviceOwnerCertificateProfileBaseable
@@ -53,7 +53,7 @@ func (m *AndroidDeviceOwnerEnterpriseWiFiConfiguration) GetDerivedCredentialSett
         return m.derivedCredentialSettings
     }
 }
-// GetEapType gets the eapType property value. Indicates the type of EAP protocol set on the Wi-Fi endpoint (router). Possible values are: eapTls, eapTtls, peap.
+// GetEapType gets the eapType property value. Extensible Authentication Protocol (EAP) Configuration Types.
 func (m *AndroidDeviceOwnerEnterpriseWiFiConfiguration) GetEapType()(*AndroidEapType) {
     if m == nil {
         return nil
@@ -286,7 +286,7 @@ func (m *AndroidDeviceOwnerEnterpriseWiFiConfiguration) SetDerivedCredentialSett
         m.derivedCredentialSettings = value
     }
 }
-// SetEapType sets the eapType property value. Indicates the type of EAP protocol set on the Wi-Fi endpoint (router). Possible values are: eapTls, eapTtls, peap.
+// SetEapType sets the eapType property value. Extensible Authentication Protocol (EAP) Configuration Types.
 func (m *AndroidDeviceOwnerEnterpriseWiFiConfiguration) SetEapType(value *AndroidEapType)() {
     if m != nil {
         m.eapType = value

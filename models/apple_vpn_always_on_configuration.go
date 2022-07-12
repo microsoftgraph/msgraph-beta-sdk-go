@@ -22,7 +22,7 @@ type AppleVpnAlwaysOnConfiguration struct {
     natKeepAliveIntervalInSeconds *int32
     // Enable hardware offloading of NAT keepalive signals when the device is asleep
     natKeepAliveOffloadEnable *bool
-    // Determines what connections the specific tunnel configuration applies to. Possible values are: wifiAndCellular, cellular, wifi.
+    // The type of tunnels that will be present to the VPN client for configuration
     tunnelConfiguration *VpnTunnelConfigurationType
     // Allow the user to toggle the VPN configuration using the UI
     userToggleEnabled *bool
@@ -209,7 +209,7 @@ func (m *AppleVpnAlwaysOnConfiguration) GetNatKeepAliveOffloadEnable()(*bool) {
         return m.natKeepAliveOffloadEnable
     }
 }
-// GetTunnelConfiguration gets the tunnelConfiguration property value. Determines what connections the specific tunnel configuration applies to. Possible values are: wifiAndCellular, cellular, wifi.
+// GetTunnelConfiguration gets the tunnelConfiguration property value. The type of tunnels that will be present to the VPN client for configuration
 func (m *AppleVpnAlwaysOnConfiguration) GetTunnelConfiguration()(*VpnTunnelConfigurationType) {
     if m == nil {
         return nil
@@ -355,7 +355,7 @@ func (m *AppleVpnAlwaysOnConfiguration) SetNatKeepAliveOffloadEnable(value *bool
         m.natKeepAliveOffloadEnable = value
     }
 }
-// SetTunnelConfiguration sets the tunnelConfiguration property value. Determines what connections the specific tunnel configuration applies to. Possible values are: wifiAndCellular, cellular, wifi.
+// SetTunnelConfiguration sets the tunnelConfiguration property value. The type of tunnels that will be present to the VPN client for configuration
 func (m *AppleVpnAlwaysOnConfiguration) SetTunnelConfiguration(value *VpnTunnelConfigurationType)() {
     if m != nil {
         m.tunnelConfiguration = value

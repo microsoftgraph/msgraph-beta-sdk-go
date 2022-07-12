@@ -16,13 +16,13 @@ type DeviceComplianceSettingState struct {
     deviceModel *string
     // The Device Name that is being reported
     deviceName *string
-    // Device platform type. Possible values are: desktop, windowsRT, winMO6, nokia, windowsPhone, mac, winCE, winEmbedded, iPhone, iPad, iPod, android, iSocConsumer, unix, macMDM, holoLens, surfaceHub, androidForWork, androidEnterprise, windows10x, androidnGMS, cloudPC, blackberry, palm, unknown.
+    // Device type.
     platformType *DeviceType
     // The setting class name and property name.
     setting *string
     // The Setting Name that is being reported
     settingName *string
-    // The compliance state of the setting. Possible values are: unknown, notApplicable, compliant, remediated, nonCompliant, error, conflict, notAssigned.
+    // The state property
     state *ComplianceStatus
     // The User email address that is being reported
     userEmail *string
@@ -201,7 +201,7 @@ func (m *DeviceComplianceSettingState) GetFieldDeserializers()(map[string]func(i
     }
     return res
 }
-// GetPlatformType gets the platformType property value. Device platform type. Possible values are: desktop, windowsRT, winMO6, nokia, windowsPhone, mac, winCE, winEmbedded, iPhone, iPad, iPod, android, iSocConsumer, unix, macMDM, holoLens, surfaceHub, androidForWork, androidEnterprise, windows10x, androidnGMS, cloudPC, blackberry, palm, unknown.
+// GetPlatformType gets the platformType property value. Device type.
 func (m *DeviceComplianceSettingState) GetPlatformType()(*DeviceType) {
     if m == nil {
         return nil
@@ -225,7 +225,7 @@ func (m *DeviceComplianceSettingState) GetSettingName()(*string) {
         return m.settingName
     }
 }
-// GetState gets the state property value. The compliance state of the setting. Possible values are: unknown, notApplicable, compliant, remediated, nonCompliant, error, conflict, notAssigned.
+// GetState gets the state property value. The state property
 func (m *DeviceComplianceSettingState) GetState()(*ComplianceStatus) {
     if m == nil {
         return nil
@@ -371,7 +371,7 @@ func (m *DeviceComplianceSettingState) SetDeviceName(value *string)() {
         m.deviceName = value
     }
 }
-// SetPlatformType sets the platformType property value. Device platform type. Possible values are: desktop, windowsRT, winMO6, nokia, windowsPhone, mac, winCE, winEmbedded, iPhone, iPad, iPod, android, iSocConsumer, unix, macMDM, holoLens, surfaceHub, androidForWork, androidEnterprise, windows10x, androidnGMS, cloudPC, blackberry, palm, unknown.
+// SetPlatformType sets the platformType property value. Device type.
 func (m *DeviceComplianceSettingState) SetPlatformType(value *DeviceType)() {
     if m != nil {
         m.platformType = value
@@ -389,7 +389,7 @@ func (m *DeviceComplianceSettingState) SetSettingName(value *string)() {
         m.settingName = value
     }
 }
-// SetState sets the state property value. The compliance state of the setting. Possible values are: unknown, notApplicable, compliant, remediated, nonCompliant, error, conflict, notAssigned.
+// SetState sets the state property value. The state property
 func (m *DeviceComplianceSettingState) SetState(value *ComplianceStatus)() {
     if m != nil {
         m.state = value

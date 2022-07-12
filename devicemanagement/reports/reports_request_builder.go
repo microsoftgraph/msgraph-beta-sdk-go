@@ -61,6 +61,7 @@ import (
     if7f28186646455aa9e0df362fc86fe6afcf4c8f20b7f65732c9e4126cdc6c8e0 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/reports/getwindowsqualityupdatealertsummaryreport"
     if876c79e09c00c1578bab3da9f4fcb0cc6d4ae3f9b2e792a2412130b488fcdc0 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/reports/getuserinstallstatusreport"
     if8e67aebead4149dc709bc45370408435c48c5beafd2a598a3552c78692904c1 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/reports/getconfigurationsettingnoncompliancereport"
+    ifd91eed2e9e34bace676422bed143e114cf0500c85fd495dbb81c9d6c7393570 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/reports/getnoncompliantdevicesandsettingsreport"
     i2bf9ce7fb7bd0fa9fc75119c61d3de5e2e31a446f3ebba40eaf7f289544d9943 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/reports/cachedreportconfigurations/item"
     if607fcbf4c23ed3b14db77b88b46a29896a853e746acfffd003d215b0fb83a02 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/reports/exportjobs/item"
 )
@@ -377,6 +378,10 @@ func (m *ReportsRequestBuilder) GetHistoricalReport()(*ib6f9fa86536428e22220c67d
 // GetMalwareSummaryReport the getMalwareSummaryReport property
 func (m *ReportsRequestBuilder) GetMalwareSummaryReport()(*i08ed1bcbc2935e740bb1a75a82536d462055f7eb6c3b9f8c54f292796af881e9.GetMalwareSummaryReportRequestBuilder) {
     return i08ed1bcbc2935e740bb1a75a82536d462055f7eb6c3b9f8c54f292796af881e9.NewGetMalwareSummaryReportRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// GetNoncompliantDevicesAndSettingsReport the getNoncompliantDevicesAndSettingsReport property
+func (m *ReportsRequestBuilder) GetNoncompliantDevicesAndSettingsReport()(*ifd91eed2e9e34bace676422bed143e114cf0500c85fd495dbb81c9d6c7393570.GetNoncompliantDevicesAndSettingsReportRequestBuilder) {
+    return ifd91eed2e9e34bace676422bed143e114cf0500c85fd495dbb81c9d6c7393570.NewGetNoncompliantDevicesAndSettingsReportRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // GetPolicyNonComplianceMetadata the getPolicyNonComplianceMetadata property
 func (m *ReportsRequestBuilder) GetPolicyNonComplianceMetadata()(*i2cbf3d93d72f9416ce29a9ac2774ddf6c3cceadcccbd462303a2ff5215c59622.GetPolicyNonComplianceMetadataRequestBuilder) {

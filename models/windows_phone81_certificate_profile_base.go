@@ -4,22 +4,22 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// WindowsPhone81CertificateProfileBase base Windows Phone 8.1+ certificate profile.
+// WindowsPhone81CertificateProfileBase 
 type WindowsPhone81CertificateProfileBase struct {
     DeviceConfiguration
-    // Scale for the Certificate Validity Period. Possible values are: days, months, years.
+    // Certificate Validity Period Options.
     certificateValidityPeriodScale *CertificateValidityPeriodScale
     // Value for the Certificate Validtiy Period.
     certificateValidityPeriodValue *int32
     // Extended Key Usage (EKU) settings. This collection can contain a maximum of 500 elements.
     extendedKeyUsages []ExtendedKeyUsageable
-    // Key Storage Provider (KSP). Possible values are: useTpmKspOtherwiseUseSoftwareKsp, useTpmKspOtherwiseFail, usePassportForWorkKspOtherwiseFail, useSoftwareKsp.
+    // Key Storage Provider (KSP) Import Options.
     keyStorageProvider *KeyStorageProviderOption
     // Certificate renewal threshold percentage.
     renewalThresholdPercentage *int32
-    // Certificate Subject Alternative Name Type. Possible values are: none, emailAddress, userPrincipalName, customAzureADAttribute, domainNameService, universalResourceIdentifier.
+    // Subject Alternative Name Options.
     subjectAlternativeNameType *SubjectAlternativeNameType
-    // Certificate Subject Name Format. Possible values are: commonName, commonNameIncludingEmail, commonNameAsEmail, custom, commonNameAsIMEI, commonNameAsSerialNumber, commonNameAsAadDeviceId, commonNameAsIntuneDeviceId, commonNameAsDurableDeviceId.
+    // Subject Name Format Options.
     subjectNameFormat *SubjectNameFormat
 }
 // NewWindowsPhone81CertificateProfileBase instantiates a new windowsPhone81CertificateProfileBase and sets the default values.
@@ -27,6 +27,8 @@ func NewWindowsPhone81CertificateProfileBase()(*WindowsPhone81CertificateProfile
     m := &WindowsPhone81CertificateProfileBase{
         DeviceConfiguration: *NewDeviceConfiguration(),
     }
+    typeValue := "#microsoft.graph.windowsPhone81CertificateProfileBase";
+    m.SetType(&typeValue);
     return m
 }
 // CreateWindowsPhone81CertificateProfileBaseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -52,7 +54,7 @@ func CreateWindowsPhone81CertificateProfileBaseFromDiscriminatorValue(parseNode 
     }
     return NewWindowsPhone81CertificateProfileBase(), nil
 }
-// GetCertificateValidityPeriodScale gets the certificateValidityPeriodScale property value. Scale for the Certificate Validity Period. Possible values are: days, months, years.
+// GetCertificateValidityPeriodScale gets the certificateValidityPeriodScale property value. Certificate Validity Period Options.
 func (m *WindowsPhone81CertificateProfileBase) GetCertificateValidityPeriodScale()(*CertificateValidityPeriodScale) {
     if m == nil {
         return nil
@@ -155,7 +157,7 @@ func (m *WindowsPhone81CertificateProfileBase) GetFieldDeserializers()(map[strin
     }
     return res
 }
-// GetKeyStorageProvider gets the keyStorageProvider property value. Key Storage Provider (KSP). Possible values are: useTpmKspOtherwiseUseSoftwareKsp, useTpmKspOtherwiseFail, usePassportForWorkKspOtherwiseFail, useSoftwareKsp.
+// GetKeyStorageProvider gets the keyStorageProvider property value. Key Storage Provider (KSP) Import Options.
 func (m *WindowsPhone81CertificateProfileBase) GetKeyStorageProvider()(*KeyStorageProviderOption) {
     if m == nil {
         return nil
@@ -171,7 +173,7 @@ func (m *WindowsPhone81CertificateProfileBase) GetRenewalThresholdPercentage()(*
         return m.renewalThresholdPercentage
     }
 }
-// GetSubjectAlternativeNameType gets the subjectAlternativeNameType property value. Certificate Subject Alternative Name Type. Possible values are: none, emailAddress, userPrincipalName, customAzureADAttribute, domainNameService, universalResourceIdentifier.
+// GetSubjectAlternativeNameType gets the subjectAlternativeNameType property value. Subject Alternative Name Options.
 func (m *WindowsPhone81CertificateProfileBase) GetSubjectAlternativeNameType()(*SubjectAlternativeNameType) {
     if m == nil {
         return nil
@@ -179,7 +181,7 @@ func (m *WindowsPhone81CertificateProfileBase) GetSubjectAlternativeNameType()(*
         return m.subjectAlternativeNameType
     }
 }
-// GetSubjectNameFormat gets the subjectNameFormat property value. Certificate Subject Name Format. Possible values are: commonName, commonNameIncludingEmail, commonNameAsEmail, custom, commonNameAsIMEI, commonNameAsSerialNumber, commonNameAsAadDeviceId, commonNameAsIntuneDeviceId, commonNameAsDurableDeviceId.
+// GetSubjectNameFormat gets the subjectNameFormat property value. Subject Name Format Options.
 func (m *WindowsPhone81CertificateProfileBase) GetSubjectNameFormat()(*SubjectNameFormat) {
     if m == nil {
         return nil
@@ -245,7 +247,7 @@ func (m *WindowsPhone81CertificateProfileBase) Serialize(writer i878a80d2330e89d
     }
     return nil
 }
-// SetCertificateValidityPeriodScale sets the certificateValidityPeriodScale property value. Scale for the Certificate Validity Period. Possible values are: days, months, years.
+// SetCertificateValidityPeriodScale sets the certificateValidityPeriodScale property value. Certificate Validity Period Options.
 func (m *WindowsPhone81CertificateProfileBase) SetCertificateValidityPeriodScale(value *CertificateValidityPeriodScale)() {
     if m != nil {
         m.certificateValidityPeriodScale = value
@@ -263,7 +265,7 @@ func (m *WindowsPhone81CertificateProfileBase) SetExtendedKeyUsages(value []Exte
         m.extendedKeyUsages = value
     }
 }
-// SetKeyStorageProvider sets the keyStorageProvider property value. Key Storage Provider (KSP). Possible values are: useTpmKspOtherwiseUseSoftwareKsp, useTpmKspOtherwiseFail, usePassportForWorkKspOtherwiseFail, useSoftwareKsp.
+// SetKeyStorageProvider sets the keyStorageProvider property value. Key Storage Provider (KSP) Import Options.
 func (m *WindowsPhone81CertificateProfileBase) SetKeyStorageProvider(value *KeyStorageProviderOption)() {
     if m != nil {
         m.keyStorageProvider = value
@@ -275,13 +277,13 @@ func (m *WindowsPhone81CertificateProfileBase) SetRenewalThresholdPercentage(val
         m.renewalThresholdPercentage = value
     }
 }
-// SetSubjectAlternativeNameType sets the subjectAlternativeNameType property value. Certificate Subject Alternative Name Type. Possible values are: none, emailAddress, userPrincipalName, customAzureADAttribute, domainNameService, universalResourceIdentifier.
+// SetSubjectAlternativeNameType sets the subjectAlternativeNameType property value. Subject Alternative Name Options.
 func (m *WindowsPhone81CertificateProfileBase) SetSubjectAlternativeNameType(value *SubjectAlternativeNameType)() {
     if m != nil {
         m.subjectAlternativeNameType = value
     }
 }
-// SetSubjectNameFormat sets the subjectNameFormat property value. Certificate Subject Name Format. Possible values are: commonName, commonNameIncludingEmail, commonNameAsEmail, custom, commonNameAsIMEI, commonNameAsSerialNumber, commonNameAsAadDeviceId, commonNameAsIntuneDeviceId, commonNameAsDurableDeviceId.
+// SetSubjectNameFormat sets the subjectNameFormat property value. Subject Name Format Options.
 func (m *WindowsPhone81CertificateProfileBase) SetSubjectNameFormat(value *SubjectNameFormat)() {
     if m != nil {
         m.subjectNameFormat = value

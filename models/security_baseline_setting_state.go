@@ -21,7 +21,7 @@ type SecurityBaselineSettingState struct {
     settingName *string
     // The policies that contribute to this setting instance
     sourcePolicies []SettingSourceable
-    // The compliance state of the security baseline setting
+    // Security Baseline Compliance State
     state *SecurityBaselineComplianceState
 }
 // NewSecurityBaselineSettingState instantiates a new securityBaselineSettingState and sets the default values.
@@ -184,7 +184,7 @@ func (m *SecurityBaselineSettingState) GetSourcePolicies()([]SettingSourceable) 
         return m.sourcePolicies
     }
 }
-// GetState gets the state property value. The compliance state of the security baseline setting
+// GetState gets the state property value. Security Baseline Compliance State
 func (m *SecurityBaselineSettingState) GetState()(*SecurityBaselineComplianceState) {
     if m == nil {
         return nil
@@ -299,7 +299,7 @@ func (m *SecurityBaselineSettingState) SetSourcePolicies(value []SettingSourceab
         m.sourcePolicies = value
     }
 }
-// SetState sets the state property value. The compliance state of the security baseline setting
+// SetState sets the state property value. Security Baseline Compliance State
 func (m *SecurityBaselineSettingState) SetState(value *SecurityBaselineComplianceState)() {
     if m != nil {
         m.state = value

@@ -28,7 +28,7 @@ type UserExperienceAnalyticsDeviceStartupHistory struct {
     operatingSystemVersion *string
     // The user experience analytics responsive desktop time in milliseconds.
     responsiveDesktopTimeInMs *int32
-    // OS restart category. Possible values are: unknown, restartWithUpdate, restartWithoutUpdate, blueScreen, shutdownWithUpdate, shutdownWithoutUpdate, longPowerButtonPress, bootError, update.
+    // Operating System restart category
     restartCategory *UserExperienceAnalyticsOperatingSystemRestartCategory
     // OS restart fault bucket. The fault bucket is used to find additional information about a system crash.
     restartFaultBucket *string
@@ -297,7 +297,7 @@ func (m *UserExperienceAnalyticsDeviceStartupHistory) GetResponsiveDesktopTimeIn
         return m.responsiveDesktopTimeInMs
     }
 }
-// GetRestartCategory gets the restartCategory property value. OS restart category. Possible values are: unknown, restartWithUpdate, restartWithoutUpdate, blueScreen, shutdownWithUpdate, shutdownWithoutUpdate, longPowerButtonPress, bootError, update.
+// GetRestartCategory gets the restartCategory property value. Operating System restart category
 func (m *UserExperienceAnalyticsDeviceStartupHistory) GetRestartCategory()(*UserExperienceAnalyticsOperatingSystemRestartCategory) {
     if m == nil {
         return nil
@@ -510,7 +510,7 @@ func (m *UserExperienceAnalyticsDeviceStartupHistory) SetResponsiveDesktopTimeIn
         m.responsiveDesktopTimeInMs = value
     }
 }
-// SetRestartCategory sets the restartCategory property value. OS restart category. Possible values are: unknown, restartWithUpdate, restartWithoutUpdate, blueScreen, shutdownWithUpdate, shutdownWithoutUpdate, longPowerButtonPress, bootError, update.
+// SetRestartCategory sets the restartCategory property value. Operating System restart category
 func (m *UserExperienceAnalyticsDeviceStartupHistory) SetRestartCategory(value *UserExperienceAnalyticsOperatingSystemRestartCategory)() {
     if m != nil {
         m.restartCategory = value

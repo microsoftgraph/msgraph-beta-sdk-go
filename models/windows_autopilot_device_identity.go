@@ -18,9 +18,9 @@ type WindowsAutopilotDeviceIdentity struct {
     deploymentProfile WindowsAutopilotDeploymentProfileable
     // Profile set time of the Windows autopilot device.
     deploymentProfileAssignedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // Profile assignment detailed status of the Windows autopilot device. Possible values are: none, hardwareRequirementsNotMet, surfaceHubProfileNotSupported, holoLensProfileNotSupported, windowsPcProfileNotSupported, surfaceHub2SProfileNotSupported, unknownFutureValue.
+    // The deploymentProfileAssignmentDetailedStatus property
     deploymentProfileAssignmentDetailedStatus *WindowsAutopilotProfileAssignmentDetailedStatus
-    // Profile assignment status of the Windows autopilot device. Possible values are: unknown, assignedInSync, assignedOutOfSync, assignedUnkownSyncState, notAssigned, pending, failed.
+    // The deploymentProfileAssignmentStatus property
     deploymentProfileAssignmentStatus *WindowsAutopilotProfileAssignmentStatus
     // Surface Hub Device Account Password
     deviceAccountPassword *string
@@ -30,7 +30,7 @@ type WindowsAutopilotDeviceIdentity struct {
     deviceFriendlyName *string
     // Display Name
     displayName *string
-    // Intune enrollment state of the Windows autopilot device. Possible values are: unknown, enrolled, pendingReset, failed, notContacted, blocked.
+    // The enrollmentState property
     enrollmentState *EnrollmentState
     // Group Tag of the Windows autopilot device.
     groupTag *string
@@ -48,7 +48,7 @@ type WindowsAutopilotDeviceIdentity struct {
     productKey *string
     // Purchase Order Identifier of the Windows autopilot device.
     purchaseOrderIdentifier *string
-    // Device Remediation State. Possible values are: unknown, noRemediationRequired, automaticRemediationRequired, manualRemediationRequired, unknownFutureValue.
+    // Device remediation status, indicating whether or not hardware has been changed for an Autopilot-registered device.
     remediationState *WindowsAutopilotDeviceRemediationState
     // RemediationState set time of Autopilot device.
     remediationStateLastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
@@ -114,7 +114,7 @@ func (m *WindowsAutopilotDeviceIdentity) GetDeploymentProfileAssignedDateTime()(
         return m.deploymentProfileAssignedDateTime
     }
 }
-// GetDeploymentProfileAssignmentDetailedStatus gets the deploymentProfileAssignmentDetailedStatus property value. Profile assignment detailed status of the Windows autopilot device. Possible values are: none, hardwareRequirementsNotMet, surfaceHubProfileNotSupported, holoLensProfileNotSupported, windowsPcProfileNotSupported, surfaceHub2SProfileNotSupported, unknownFutureValue.
+// GetDeploymentProfileAssignmentDetailedStatus gets the deploymentProfileAssignmentDetailedStatus property value. The deploymentProfileAssignmentDetailedStatus property
 func (m *WindowsAutopilotDeviceIdentity) GetDeploymentProfileAssignmentDetailedStatus()(*WindowsAutopilotProfileAssignmentDetailedStatus) {
     if m == nil {
         return nil
@@ -122,7 +122,7 @@ func (m *WindowsAutopilotDeviceIdentity) GetDeploymentProfileAssignmentDetailedS
         return m.deploymentProfileAssignmentDetailedStatus
     }
 }
-// GetDeploymentProfileAssignmentStatus gets the deploymentProfileAssignmentStatus property value. Profile assignment status of the Windows autopilot device. Possible values are: unknown, assignedInSync, assignedOutOfSync, assignedUnkownSyncState, notAssigned, pending, failed.
+// GetDeploymentProfileAssignmentStatus gets the deploymentProfileAssignmentStatus property value. The deploymentProfileAssignmentStatus property
 func (m *WindowsAutopilotDeviceIdentity) GetDeploymentProfileAssignmentStatus()(*WindowsAutopilotProfileAssignmentStatus) {
     if m == nil {
         return nil
@@ -162,7 +162,7 @@ func (m *WindowsAutopilotDeviceIdentity) GetDisplayName()(*string) {
         return m.displayName
     }
 }
-// GetEnrollmentState gets the enrollmentState property value. Intune enrollment state of the Windows autopilot device. Possible values are: unknown, enrolled, pendingReset, failed, notContacted, blocked.
+// GetEnrollmentState gets the enrollmentState property value. The enrollmentState property
 func (m *WindowsAutopilotDeviceIdentity) GetEnrollmentState()(*EnrollmentState) {
     if m == nil {
         return nil
@@ -509,7 +509,7 @@ func (m *WindowsAutopilotDeviceIdentity) GetPurchaseOrderIdentifier()(*string) {
         return m.purchaseOrderIdentifier
     }
 }
-// GetRemediationState gets the remediationState property value. Device Remediation State. Possible values are: unknown, noRemediationRequired, automaticRemediationRequired, manualRemediationRequired, unknownFutureValue.
+// GetRemediationState gets the remediationState property value. Device remediation status, indicating whether or not hardware has been changed for an Autopilot-registered device.
 func (m *WindowsAutopilotDeviceIdentity) GetRemediationState()(*WindowsAutopilotDeviceRemediationState) {
     if m == nil {
         return nil
@@ -769,13 +769,13 @@ func (m *WindowsAutopilotDeviceIdentity) SetDeploymentProfileAssignedDateTime(va
         m.deploymentProfileAssignedDateTime = value
     }
 }
-// SetDeploymentProfileAssignmentDetailedStatus sets the deploymentProfileAssignmentDetailedStatus property value. Profile assignment detailed status of the Windows autopilot device. Possible values are: none, hardwareRequirementsNotMet, surfaceHubProfileNotSupported, holoLensProfileNotSupported, windowsPcProfileNotSupported, surfaceHub2SProfileNotSupported, unknownFutureValue.
+// SetDeploymentProfileAssignmentDetailedStatus sets the deploymentProfileAssignmentDetailedStatus property value. The deploymentProfileAssignmentDetailedStatus property
 func (m *WindowsAutopilotDeviceIdentity) SetDeploymentProfileAssignmentDetailedStatus(value *WindowsAutopilotProfileAssignmentDetailedStatus)() {
     if m != nil {
         m.deploymentProfileAssignmentDetailedStatus = value
     }
 }
-// SetDeploymentProfileAssignmentStatus sets the deploymentProfileAssignmentStatus property value. Profile assignment status of the Windows autopilot device. Possible values are: unknown, assignedInSync, assignedOutOfSync, assignedUnkownSyncState, notAssigned, pending, failed.
+// SetDeploymentProfileAssignmentStatus sets the deploymentProfileAssignmentStatus property value. The deploymentProfileAssignmentStatus property
 func (m *WindowsAutopilotDeviceIdentity) SetDeploymentProfileAssignmentStatus(value *WindowsAutopilotProfileAssignmentStatus)() {
     if m != nil {
         m.deploymentProfileAssignmentStatus = value
@@ -805,7 +805,7 @@ func (m *WindowsAutopilotDeviceIdentity) SetDisplayName(value *string)() {
         m.displayName = value
     }
 }
-// SetEnrollmentState sets the enrollmentState property value. Intune enrollment state of the Windows autopilot device. Possible values are: unknown, enrolled, pendingReset, failed, notContacted, blocked.
+// SetEnrollmentState sets the enrollmentState property value. The enrollmentState property
 func (m *WindowsAutopilotDeviceIdentity) SetEnrollmentState(value *EnrollmentState)() {
     if m != nil {
         m.enrollmentState = value
@@ -859,7 +859,7 @@ func (m *WindowsAutopilotDeviceIdentity) SetPurchaseOrderIdentifier(value *strin
         m.purchaseOrderIdentifier = value
     }
 }
-// SetRemediationState sets the remediationState property value. Device Remediation State. Possible values are: unknown, noRemediationRequired, automaticRemediationRequired, manualRemediationRequired, unknownFutureValue.
+// SetRemediationState sets the remediationState property value. Device remediation status, indicating whether or not hardware has been changed for an Autopilot-registered device.
 func (m *WindowsAutopilotDeviceIdentity) SetRemediationState(value *WindowsAutopilotDeviceRemediationState)() {
     if m != nil {
         m.remediationState = value

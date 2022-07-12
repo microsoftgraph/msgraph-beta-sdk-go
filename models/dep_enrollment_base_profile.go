@@ -51,6 +51,8 @@ func NewDepEnrollmentBaseProfile()(*DepEnrollmentBaseProfile) {
     m := &DepEnrollmentBaseProfile{
         EnrollmentProfile: *NewEnrollmentProfile(),
     }
+    typeValue := "#microsoft.graph.depEnrollmentBaseProfile";
+    m.SetType(&typeValue);
     return m
 }
 // CreateDepEnrollmentBaseProfileFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to call the getAzureADLicenseUsage method.
+// Provides operations to manage the collection of activityStatistics entities.
 type AzureADLicenseType int
 
 const (

@@ -19,6 +19,8 @@ func NewDeviceManagementConfigurationSettingGroupDefinition()(*DeviceManagementC
     m := &DeviceManagementConfigurationSettingGroupDefinition{
         DeviceManagementConfigurationSettingDefinition: *NewDeviceManagementConfigurationSettingDefinition(),
     }
+    typeValue := "#microsoft.graph.deviceManagementConfigurationSettingGroupDefinition";
+    m.SetType(&typeValue);
     return m
 }
 // CreateDeviceManagementConfigurationSettingGroupDefinitionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

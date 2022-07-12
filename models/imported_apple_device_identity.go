@@ -12,9 +12,9 @@ type ImportedAppleDeviceIdentity struct {
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The description of the device
     description *string
-    // Apple device discovery source. Possible values are: unknown, adminImport, deviceEnrollmentProgram.
+    // The discoverySource property
     discoverySource *DiscoverySource
-    // The state of the device in Intune. Possible values are: unknown, enrolled, pendingReset, failed, notContacted, blocked.
+    // The enrollmentState property
     enrollmentState *EnrollmentState
     // Indicates if the device is deleted from Apple Business Manager
     isDeleted *bool
@@ -22,7 +22,7 @@ type ImportedAppleDeviceIdentity struct {
     isSupervised *bool
     // Last Contacted Date Time of the device
     lastContactedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The platform of the Device. Possible values are: unknown, ios, android, windows, windowsMobile, macOS.
+    // The platform property
     platform *Platform
     // The time enrollment profile was assigned to the device
     requestedEnrollmentProfileAssignmentDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
@@ -36,6 +36,8 @@ func NewImportedAppleDeviceIdentity()(*ImportedAppleDeviceIdentity) {
     m := &ImportedAppleDeviceIdentity{
         Entity: *NewEntity(),
     }
+    typeValue := "#microsoft.graph.importedAppleDeviceIdentity";
+    m.SetType(&typeValue);
     return m
 }
 // CreateImportedAppleDeviceIdentityFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -77,7 +79,7 @@ func (m *ImportedAppleDeviceIdentity) GetDescription()(*string) {
         return m.description
     }
 }
-// GetDiscoverySource gets the discoverySource property value. Apple device discovery source. Possible values are: unknown, adminImport, deviceEnrollmentProgram.
+// GetDiscoverySource gets the discoverySource property value. The discoverySource property
 func (m *ImportedAppleDeviceIdentity) GetDiscoverySource()(*DiscoverySource) {
     if m == nil {
         return nil
@@ -85,7 +87,7 @@ func (m *ImportedAppleDeviceIdentity) GetDiscoverySource()(*DiscoverySource) {
         return m.discoverySource
     }
 }
-// GetEnrollmentState gets the enrollmentState property value. The state of the device in Intune. Possible values are: unknown, enrolled, pendingReset, failed, notContacted, blocked.
+// GetEnrollmentState gets the enrollmentState property value. The enrollmentState property
 func (m *ImportedAppleDeviceIdentity) GetEnrollmentState()(*EnrollmentState) {
     if m == nil {
         return nil
@@ -232,7 +234,7 @@ func (m *ImportedAppleDeviceIdentity) GetLastContactedDateTime()(*i336074805fc85
         return m.lastContactedDateTime
     }
 }
-// GetPlatform gets the platform property value. The platform of the Device. Possible values are: unknown, ios, android, windows, windowsMobile, macOS.
+// GetPlatform gets the platform property value. The platform property
 func (m *ImportedAppleDeviceIdentity) GetPlatform()(*Platform) {
     if m == nil {
         return nil
@@ -353,13 +355,13 @@ func (m *ImportedAppleDeviceIdentity) SetDescription(value *string)() {
         m.description = value
     }
 }
-// SetDiscoverySource sets the discoverySource property value. Apple device discovery source. Possible values are: unknown, adminImport, deviceEnrollmentProgram.
+// SetDiscoverySource sets the discoverySource property value. The discoverySource property
 func (m *ImportedAppleDeviceIdentity) SetDiscoverySource(value *DiscoverySource)() {
     if m != nil {
         m.discoverySource = value
     }
 }
-// SetEnrollmentState sets the enrollmentState property value. The state of the device in Intune. Possible values are: unknown, enrolled, pendingReset, failed, notContacted, blocked.
+// SetEnrollmentState sets the enrollmentState property value. The enrollmentState property
 func (m *ImportedAppleDeviceIdentity) SetEnrollmentState(value *EnrollmentState)() {
     if m != nil {
         m.enrollmentState = value
@@ -383,7 +385,7 @@ func (m *ImportedAppleDeviceIdentity) SetLastContactedDateTime(value *i336074805
         m.lastContactedDateTime = value
     }
 }
-// SetPlatform sets the platform property value. The platform of the Device. Possible values are: unknown, ios, android, windows, windowsMobile, macOS.
+// SetPlatform sets the platform property value. The platform property
 func (m *ImportedAppleDeviceIdentity) SetPlatform(value *Platform)() {
     if m != nil {
         m.platform = value

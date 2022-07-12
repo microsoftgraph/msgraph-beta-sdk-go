@@ -6,7 +6,7 @@ import (
 
 // ConfigurationManagerAction parameter for action triggerConfigurationManagerAction
 type ConfigurationManagerAction struct {
-    // The action type to trigger on Configuration Manager client. Possible values are: refreshMachinePolicy, refreshUserPolicy, wakeUpClient, appEvaluation, quickScan, fullScan, windowsDefenderUpdateSignatures.
+    // Action type on Configuration Manager client
     action *ConfigurationManagerActionType
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
@@ -22,7 +22,7 @@ func NewConfigurationManagerAction()(*ConfigurationManagerAction) {
 func CreateConfigurationManagerActionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewConfigurationManagerAction(), nil
 }
-// GetAction gets the action property value. The action type to trigger on Configuration Manager client. Possible values are: refreshMachinePolicy, refreshUserPolicy, wakeUpClient, appEvaluation, quickScan, fullScan, windowsDefenderUpdateSignatures.
+// GetAction gets the action property value. Action type on Configuration Manager client
 func (m *ConfigurationManagerAction) GetAction()(*ConfigurationManagerActionType) {
     if m == nil {
         return nil
@@ -70,7 +70,7 @@ func (m *ConfigurationManagerAction) Serialize(writer i878a80d2330e89d26896388a3
     }
     return nil
 }
-// SetAction sets the action property value. The action type to trigger on Configuration Manager client. Possible values are: refreshMachinePolicy, refreshUserPolicy, wakeUpClient, appEvaluation, quickScan, fullScan, windowsDefenderUpdateSignatures.
+// SetAction sets the action property value. Action type on Configuration Manager client
 func (m *ConfigurationManagerAction) SetAction(value *ConfigurationManagerActionType)() {
     if m != nil {
         m.action = value

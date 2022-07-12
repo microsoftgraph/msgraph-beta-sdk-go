@@ -10,7 +10,7 @@ type DeviceManagementAutopilotEvent struct {
     Entity
     // Time spent in user ESP.
     accountSetupDuration *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration
-    // Deployment status for the enrollment status page account setup phase. Possible values are: unknown, success, inProgress, failure, successWithTimeout, notAttempted, disabled.
+    // The accountSetupStatus property
     accountSetupStatus *WindowsAutopilotDeploymentState
     // Autopilot deployment duration including enrollment.
     deploymentDuration *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration
@@ -18,7 +18,7 @@ type DeviceManagementAutopilotEvent struct {
     deploymentEndDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Deployment start time.
     deploymentStartDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // Deployment state like Success, Failure, InProgress, SuccessWithTimeout. Possible values are: unknown, success, inProgress, failure, successWithTimeout, notAttempted, disabled.
+    // The deploymentState property
     deploymentState *WindowsAutopilotDeploymentState
     // Total deployment duration from enrollment to Desktop screen.
     deploymentTotalDuration *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration
@@ -32,15 +32,15 @@ type DeviceManagementAutopilotEvent struct {
     deviceSerialNumber *string
     // Time spent in device ESP.
     deviceSetupDuration *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration
-    // Deployment status for the enrollment status page device setup phase. Possible values are: unknown, success, inProgress, failure, successWithTimeout, notAttempted, disabled.
+    // The deviceSetupStatus property
     deviceSetupStatus *WindowsAutopilotDeploymentState
     // Enrollment failure details.
     enrollmentFailureDetails *string
     // Device enrollment start date.
     enrollmentStartDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // Enrollment state like Enrolled, Failed. Possible values are: unknown, enrolled, pendingReset, failed, notContacted, blocked.
+    // The enrollmentState property
     enrollmentState *EnrollmentState
-    // Enrollment type. Possible values are: unknown, azureADJoinedWithAutopilotProfile, offlineDomainJoined, azureADJoinedUsingDeviceAuthWithAutopilotProfile, azureADJoinedUsingDeviceAuthWithoutAutopilotProfile, azureADJoinedWithOfflineAutopilotProfile, azureADJoinedWithWhiteGlove, offlineDomainJoinedWithWhiteGlove, offlineDomainJoinedWithOfflineAutopilotProfile.
+    // The enrollmentType property
     enrollmentType *WindowsAutopilotEnrollmentType
     // Time when the event occurred .
     eventDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
@@ -82,7 +82,7 @@ func (m *DeviceManagementAutopilotEvent) GetAccountSetupDuration()(*i878a80d2330
         return m.accountSetupDuration
     }
 }
-// GetAccountSetupStatus gets the accountSetupStatus property value. Deployment status for the enrollment status page account setup phase. Possible values are: unknown, success, inProgress, failure, successWithTimeout, notAttempted, disabled.
+// GetAccountSetupStatus gets the accountSetupStatus property value. The accountSetupStatus property
 func (m *DeviceManagementAutopilotEvent) GetAccountSetupStatus()(*WindowsAutopilotDeploymentState) {
     if m == nil {
         return nil
@@ -114,7 +114,7 @@ func (m *DeviceManagementAutopilotEvent) GetDeploymentStartDateTime()(*i33607480
         return m.deploymentStartDateTime
     }
 }
-// GetDeploymentState gets the deploymentState property value. Deployment state like Success, Failure, InProgress, SuccessWithTimeout. Possible values are: unknown, success, inProgress, failure, successWithTimeout, notAttempted, disabled.
+// GetDeploymentState gets the deploymentState property value. The deploymentState property
 func (m *DeviceManagementAutopilotEvent) GetDeploymentState()(*WindowsAutopilotDeploymentState) {
     if m == nil {
         return nil
@@ -170,7 +170,7 @@ func (m *DeviceManagementAutopilotEvent) GetDeviceSetupDuration()(*i878a80d2330e
         return m.deviceSetupDuration
     }
 }
-// GetDeviceSetupStatus gets the deviceSetupStatus property value. Deployment status for the enrollment status page device setup phase. Possible values are: unknown, success, inProgress, failure, successWithTimeout, notAttempted, disabled.
+// GetDeviceSetupStatus gets the deviceSetupStatus property value. The deviceSetupStatus property
 func (m *DeviceManagementAutopilotEvent) GetDeviceSetupStatus()(*WindowsAutopilotDeploymentState) {
     if m == nil {
         return nil
@@ -194,7 +194,7 @@ func (m *DeviceManagementAutopilotEvent) GetEnrollmentStartDateTime()(*i33607480
         return m.enrollmentStartDateTime
     }
 }
-// GetEnrollmentState gets the enrollmentState property value. Enrollment state like Enrolled, Failed. Possible values are: unknown, enrolled, pendingReset, failed, notContacted, blocked.
+// GetEnrollmentState gets the enrollmentState property value. The enrollmentState property
 func (m *DeviceManagementAutopilotEvent) GetEnrollmentState()(*EnrollmentState) {
     if m == nil {
         return nil
@@ -202,7 +202,7 @@ func (m *DeviceManagementAutopilotEvent) GetEnrollmentState()(*EnrollmentState) 
         return m.enrollmentState
     }
 }
-// GetEnrollmentType gets the enrollmentType property value. Enrollment type. Possible values are: unknown, azureADJoinedWithAutopilotProfile, offlineDomainJoined, azureADJoinedUsingDeviceAuthWithAutopilotProfile, azureADJoinedUsingDeviceAuthWithoutAutopilotProfile, azureADJoinedWithOfflineAutopilotProfile, azureADJoinedWithWhiteGlove, offlineDomainJoinedWithWhiteGlove, offlineDomainJoinedWithOfflineAutopilotProfile.
+// GetEnrollmentType gets the enrollmentType property value. The enrollmentType property
 func (m *DeviceManagementAutopilotEvent) GetEnrollmentType()(*WindowsAutopilotEnrollmentType) {
     if m == nil {
         return nil
@@ -754,7 +754,7 @@ func (m *DeviceManagementAutopilotEvent) SetAccountSetupDuration(value *i878a80d
         m.accountSetupDuration = value
     }
 }
-// SetAccountSetupStatus sets the accountSetupStatus property value. Deployment status for the enrollment status page account setup phase. Possible values are: unknown, success, inProgress, failure, successWithTimeout, notAttempted, disabled.
+// SetAccountSetupStatus sets the accountSetupStatus property value. The accountSetupStatus property
 func (m *DeviceManagementAutopilotEvent) SetAccountSetupStatus(value *WindowsAutopilotDeploymentState)() {
     if m != nil {
         m.accountSetupStatus = value
@@ -778,7 +778,7 @@ func (m *DeviceManagementAutopilotEvent) SetDeploymentStartDateTime(value *i3360
         m.deploymentStartDateTime = value
     }
 }
-// SetDeploymentState sets the deploymentState property value. Deployment state like Success, Failure, InProgress, SuccessWithTimeout. Possible values are: unknown, success, inProgress, failure, successWithTimeout, notAttempted, disabled.
+// SetDeploymentState sets the deploymentState property value. The deploymentState property
 func (m *DeviceManagementAutopilotEvent) SetDeploymentState(value *WindowsAutopilotDeploymentState)() {
     if m != nil {
         m.deploymentState = value
@@ -820,7 +820,7 @@ func (m *DeviceManagementAutopilotEvent) SetDeviceSetupDuration(value *i878a80d2
         m.deviceSetupDuration = value
     }
 }
-// SetDeviceSetupStatus sets the deviceSetupStatus property value. Deployment status for the enrollment status page device setup phase. Possible values are: unknown, success, inProgress, failure, successWithTimeout, notAttempted, disabled.
+// SetDeviceSetupStatus sets the deviceSetupStatus property value. The deviceSetupStatus property
 func (m *DeviceManagementAutopilotEvent) SetDeviceSetupStatus(value *WindowsAutopilotDeploymentState)() {
     if m != nil {
         m.deviceSetupStatus = value
@@ -838,13 +838,13 @@ func (m *DeviceManagementAutopilotEvent) SetEnrollmentStartDateTime(value *i3360
         m.enrollmentStartDateTime = value
     }
 }
-// SetEnrollmentState sets the enrollmentState property value. Enrollment state like Enrolled, Failed. Possible values are: unknown, enrolled, pendingReset, failed, notContacted, blocked.
+// SetEnrollmentState sets the enrollmentState property value. The enrollmentState property
 func (m *DeviceManagementAutopilotEvent) SetEnrollmentState(value *EnrollmentState)() {
     if m != nil {
         m.enrollmentState = value
     }
 }
-// SetEnrollmentType sets the enrollmentType property value. Enrollment type. Possible values are: unknown, azureADJoinedWithAutopilotProfile, offlineDomainJoined, azureADJoinedUsingDeviceAuthWithAutopilotProfile, azureADJoinedUsingDeviceAuthWithoutAutopilotProfile, azureADJoinedWithOfflineAutopilotProfile, azureADJoinedWithWhiteGlove, offlineDomainJoinedWithWhiteGlove, offlineDomainJoinedWithOfflineAutopilotProfile.
+// SetEnrollmentType sets the enrollmentType property value. The enrollmentType property
 func (m *DeviceManagementAutopilotEvent) SetEnrollmentType(value *WindowsAutopilotEnrollmentType)() {
     if m != nil {
         m.enrollmentType = value

@@ -4,12 +4,12 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// RemoteAssistanceSettings remote assistance settings for the account
+// RemoteAssistanceSettings 
 type RemoteAssistanceSettings struct {
     Entity
     // Indicates if sessions to unenrolled devices are allowed for the account. This setting is configurable by the admin. Default value is false.
     allowSessionsToUnenrolledDevices *bool
-    // The current state of remote assistance for the account. Possible values are: disabled, enabled. This setting is configurable by the admin. Remote assistance settings that have not yet been configured by the admin have a disabled state. Returned by default. Possible values are: disabled, enabled.
+    // State of remote assistance for the account
     remoteAssistanceState *RemoteAssistanceState
 }
 // NewRemoteAssistanceSettings instantiates a new remoteAssistanceSettings and sets the default values.
@@ -56,7 +56,7 @@ func (m *RemoteAssistanceSettings) GetFieldDeserializers()(map[string]func(i878a
     }
     return res
 }
-// GetRemoteAssistanceState gets the remoteAssistanceState property value. The current state of remote assistance for the account. Possible values are: disabled, enabled. This setting is configurable by the admin. Remote assistance settings that have not yet been configured by the admin have a disabled state. Returned by default. Possible values are: disabled, enabled.
+// GetRemoteAssistanceState gets the remoteAssistanceState property value. State of remote assistance for the account
 func (m *RemoteAssistanceSettings) GetRemoteAssistanceState()(*RemoteAssistanceState) {
     if m == nil {
         return nil
@@ -91,7 +91,7 @@ func (m *RemoteAssistanceSettings) SetAllowSessionsToUnenrolledDevices(value *bo
         m.allowSessionsToUnenrolledDevices = value
     }
 }
-// SetRemoteAssistanceState sets the remoteAssistanceState property value. The current state of remote assistance for the account. Possible values are: disabled, enabled. This setting is configurable by the admin. Remote assistance settings that have not yet been configured by the admin have a disabled state. Returned by default. Possible values are: disabled, enabled.
+// SetRemoteAssistanceState sets the remoteAssistanceState property value. State of remote assistance for the account
 func (m *RemoteAssistanceSettings) SetRemoteAssistanceState(value *RemoteAssistanceState)() {
     if m != nil {
         m.remoteAssistanceState = value

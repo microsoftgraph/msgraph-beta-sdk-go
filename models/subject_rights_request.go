@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// SubjectRightsRequest provides operations to manage the privacy singleton.
+// SubjectRightsRequest 
 type SubjectRightsRequest struct {
     Entity
     // Identity that the request is assigned to.
@@ -58,10 +58,8 @@ type SubjectRightsRequest struct {
     status *SubjectRightsRequestStatus
     // Information about the Microsoft Teams team that was created for the request.
     team Teamable
-    // The type of the request. Possible values are: export, delete, access, tagForAction, unknownFutureValue.
-    type_escaped *SubjectRightsRequestType
 }
-// NewSubjectRightsRequest instantiates a new subjectRightsRequest and sets the default values.
+// NewSubjectRightsRequest instantiates a new SubjectRightsRequest and sets the default values.
 func NewSubjectRightsRequest()(*SubjectRightsRequest) {
     m := &SubjectRightsRequest{
         Entity: *NewEntity(),
@@ -421,16 +419,6 @@ func (m *SubjectRightsRequest) GetFieldDeserializers()(map[string]func(i878a80d2
         }
         return nil
     }
-    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseSubjectRightsRequestType)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetType(val.(*SubjectRightsRequestType))
-        }
-        return nil
-    }
     return res
 }
 // GetHistory gets the history property value. Collection of history change events.
@@ -551,14 +539,6 @@ func (m *SubjectRightsRequest) GetTeam()(Teamable) {
         return nil
     } else {
         return m.team
-    }
-}
-// GetType gets the type property value. The type of the request. Possible values are: export, delete, access, tagForAction, unknownFutureValue.
-func (m *SubjectRightsRequest) GetType()(*SubjectRightsRequestType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.type_escaped
     }
 }
 // Serialize serializes information the current object
@@ -731,13 +711,6 @@ func (m *SubjectRightsRequest) Serialize(writer i878a80d2330e89d26896388a3f487ee
             return err
         }
     }
-    if m.GetType() != nil {
-        cast := (*m.GetType()).String()
-        err = writer.WriteStringValue("type", &cast)
-        if err != nil {
-            return err
-        }
-    }
     return nil
 }
 // SetAssignedTo sets the assignedTo property value. Identity that the request is assigned to.
@@ -888,11 +861,5 @@ func (m *SubjectRightsRequest) SetStatus(value *SubjectRightsRequestStatus)() {
 func (m *SubjectRightsRequest) SetTeam(value Teamable)() {
     if m != nil {
         m.team = value
-    }
-}
-// SetType sets the type property value. The type of the request. Possible values are: export, delete, access, tagForAction, unknownFutureValue.
-func (m *SubjectRightsRequest) SetType(value *SubjectRightsRequestType)() {
-    if m != nil {
-        m.type_escaped = value
     }
 }

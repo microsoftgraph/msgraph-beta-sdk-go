@@ -7,11 +7,11 @@ import (
 // AndroidWorkProfileCompliancePolicy 
 type AndroidWorkProfileCompliancePolicy struct {
     DeviceCompliancePolicy
-    // MDATP Require Mobile Threat Protection minimum risk level to report noncompliance. Possible values are: unavailable, secured, low, medium, high, notSet.
+    // Device threat protection levels for the Device Threat Protection API.
     advancedThreatProtectionRequiredSecurityLevel *DeviceThreatProtectionLevel
     // Require that devices have enabled device threat protection.
     deviceThreatProtectionEnabled *bool
-    // Require Mobile Threat Protection minimum risk level to report noncompliance. Possible values are: unavailable, secured, low, medium, high, notSet.
+    // Device threat protection levels for the Device Threat Protection API.
     deviceThreatProtectionRequiredSecurityLevel *DeviceThreatProtectionLevel
     // Minimum Android security patch level.
     minAndroidSecurityPatchLevel *string
@@ -29,7 +29,7 @@ type AndroidWorkProfileCompliancePolicy struct {
     passwordPreviousPasswordBlockCount *int32
     // Require a password to unlock device.
     passwordRequired *bool
-    // Type of characters in password. Possible values are: deviceDefault, alphabetic, alphanumeric, alphanumericWithSymbols, lowSecurityBiometric, numeric, numericComplex, any.
+    // Android required password type.
     passwordRequiredType *AndroidRequiredPasswordType
     // Number of sign-in failures allowed before factory reset. Valid values 1 to 16
     passwordSignInFailureCountBeforeFactoryReset *int32
@@ -41,7 +41,7 @@ type AndroidWorkProfileCompliancePolicy struct {
     securityPreventInstallAppsFromUnknownSources *bool
     // Require the device to pass the Company Portal client app runtime integrity check.
     securityRequireCompanyPortalAppIntegrity *bool
-    // Require a specific SafetyNet evaluation type for compliance. Possible values are: basic, hardwareBacked.
+    // An enum representing the Android SafetyNet attestation evaluation types.
     securityRequiredAndroidSafetyNetEvaluationType *AndroidSafetyNetEvaluationType
     // Require Google Play Services to be installed and enabled on the device.
     securityRequireGooglePlayServices *bool
@@ -67,7 +67,7 @@ func NewAndroidWorkProfileCompliancePolicy()(*AndroidWorkProfileCompliancePolicy
 func CreateAndroidWorkProfileCompliancePolicyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAndroidWorkProfileCompliancePolicy(), nil
 }
-// GetAdvancedThreatProtectionRequiredSecurityLevel gets the advancedThreatProtectionRequiredSecurityLevel property value. MDATP Require Mobile Threat Protection minimum risk level to report noncompliance. Possible values are: unavailable, secured, low, medium, high, notSet.
+// GetAdvancedThreatProtectionRequiredSecurityLevel gets the advancedThreatProtectionRequiredSecurityLevel property value. Device threat protection levels for the Device Threat Protection API.
 func (m *AndroidWorkProfileCompliancePolicy) GetAdvancedThreatProtectionRequiredSecurityLevel()(*DeviceThreatProtectionLevel) {
     if m == nil {
         return nil
@@ -83,7 +83,7 @@ func (m *AndroidWorkProfileCompliancePolicy) GetDeviceThreatProtectionEnabled()(
         return m.deviceThreatProtectionEnabled
     }
 }
-// GetDeviceThreatProtectionRequiredSecurityLevel gets the deviceThreatProtectionRequiredSecurityLevel property value. Require Mobile Threat Protection minimum risk level to report noncompliance. Possible values are: unavailable, secured, low, medium, high, notSet.
+// GetDeviceThreatProtectionRequiredSecurityLevel gets the deviceThreatProtectionRequiredSecurityLevel property value. Device threat protection levels for the Device Threat Protection API.
 func (m *AndroidWorkProfileCompliancePolicy) GetDeviceThreatProtectionRequiredSecurityLevel()(*DeviceThreatProtectionLevel) {
     if m == nil {
         return nil
@@ -400,7 +400,7 @@ func (m *AndroidWorkProfileCompliancePolicy) GetPasswordRequired()(*bool) {
         return m.passwordRequired
     }
 }
-// GetPasswordRequiredType gets the passwordRequiredType property value. Type of characters in password. Possible values are: deviceDefault, alphabetic, alphanumeric, alphanumericWithSymbols, lowSecurityBiometric, numeric, numericComplex, any.
+// GetPasswordRequiredType gets the passwordRequiredType property value. Android required password type.
 func (m *AndroidWorkProfileCompliancePolicy) GetPasswordRequiredType()(*AndroidRequiredPasswordType) {
     if m == nil {
         return nil
@@ -448,7 +448,7 @@ func (m *AndroidWorkProfileCompliancePolicy) GetSecurityRequireCompanyPortalAppI
         return m.securityRequireCompanyPortalAppIntegrity
     }
 }
-// GetSecurityRequiredAndroidSafetyNetEvaluationType gets the securityRequiredAndroidSafetyNetEvaluationType property value. Require a specific SafetyNet evaluation type for compliance. Possible values are: basic, hardwareBacked.
+// GetSecurityRequiredAndroidSafetyNetEvaluationType gets the securityRequiredAndroidSafetyNetEvaluationType property value. An enum representing the Android SafetyNet attestation evaluation types.
 func (m *AndroidWorkProfileCompliancePolicy) GetSecurityRequiredAndroidSafetyNetEvaluationType()(*AndroidSafetyNetEvaluationType) {
     if m == nil {
         return nil
@@ -660,7 +660,7 @@ func (m *AndroidWorkProfileCompliancePolicy) Serialize(writer i878a80d2330e89d26
     }
     return nil
 }
-// SetAdvancedThreatProtectionRequiredSecurityLevel sets the advancedThreatProtectionRequiredSecurityLevel property value. MDATP Require Mobile Threat Protection minimum risk level to report noncompliance. Possible values are: unavailable, secured, low, medium, high, notSet.
+// SetAdvancedThreatProtectionRequiredSecurityLevel sets the advancedThreatProtectionRequiredSecurityLevel property value. Device threat protection levels for the Device Threat Protection API.
 func (m *AndroidWorkProfileCompliancePolicy) SetAdvancedThreatProtectionRequiredSecurityLevel(value *DeviceThreatProtectionLevel)() {
     if m != nil {
         m.advancedThreatProtectionRequiredSecurityLevel = value
@@ -672,7 +672,7 @@ func (m *AndroidWorkProfileCompliancePolicy) SetDeviceThreatProtectionEnabled(va
         m.deviceThreatProtectionEnabled = value
     }
 }
-// SetDeviceThreatProtectionRequiredSecurityLevel sets the deviceThreatProtectionRequiredSecurityLevel property value. Require Mobile Threat Protection minimum risk level to report noncompliance. Possible values are: unavailable, secured, low, medium, high, notSet.
+// SetDeviceThreatProtectionRequiredSecurityLevel sets the deviceThreatProtectionRequiredSecurityLevel property value. Device threat protection levels for the Device Threat Protection API.
 func (m *AndroidWorkProfileCompliancePolicy) SetDeviceThreatProtectionRequiredSecurityLevel(value *DeviceThreatProtectionLevel)() {
     if m != nil {
         m.deviceThreatProtectionRequiredSecurityLevel = value
@@ -726,7 +726,7 @@ func (m *AndroidWorkProfileCompliancePolicy) SetPasswordRequired(value *bool)() 
         m.passwordRequired = value
     }
 }
-// SetPasswordRequiredType sets the passwordRequiredType property value. Type of characters in password. Possible values are: deviceDefault, alphabetic, alphanumeric, alphanumericWithSymbols, lowSecurityBiometric, numeric, numericComplex, any.
+// SetPasswordRequiredType sets the passwordRequiredType property value. Android required password type.
 func (m *AndroidWorkProfileCompliancePolicy) SetPasswordRequiredType(value *AndroidRequiredPasswordType)() {
     if m != nil {
         m.passwordRequiredType = value
@@ -762,7 +762,7 @@ func (m *AndroidWorkProfileCompliancePolicy) SetSecurityRequireCompanyPortalAppI
         m.securityRequireCompanyPortalAppIntegrity = value
     }
 }
-// SetSecurityRequiredAndroidSafetyNetEvaluationType sets the securityRequiredAndroidSafetyNetEvaluationType property value. Require a specific SafetyNet evaluation type for compliance. Possible values are: basic, hardwareBacked.
+// SetSecurityRequiredAndroidSafetyNetEvaluationType sets the securityRequiredAndroidSafetyNetEvaluationType property value. An enum representing the Android SafetyNet attestation evaluation types.
 func (m *AndroidWorkProfileCompliancePolicy) SetSecurityRequiredAndroidSafetyNetEvaluationType(value *AndroidSafetyNetEvaluationType)() {
     if m != nil {
         m.securityRequiredAndroidSafetyNetEvaluationType = value

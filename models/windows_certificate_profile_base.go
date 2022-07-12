@@ -7,17 +7,17 @@ import (
 // WindowsCertificateProfileBase 
 type WindowsCertificateProfileBase struct {
     DeviceConfiguration
-    // Scale for the Certificate Validity Period. Possible values are: days, months, years.
+    // Certificate Validity Period Options.
     certificateValidityPeriodScale *CertificateValidityPeriodScale
     // Value for the Certificate Validity Period
     certificateValidityPeriodValue *int32
-    // Key Storage Provider (KSP). Possible values are: useTpmKspOtherwiseUseSoftwareKsp, useTpmKspOtherwiseFail, usePassportForWorkKspOtherwiseFail, useSoftwareKsp.
+    // Key Storage Provider (KSP) Import Options.
     keyStorageProvider *KeyStorageProviderOption
     // Certificate renewal threshold percentage. Valid values 1 to 99
     renewalThresholdPercentage *int32
     // Certificate Subject Alternative Name Type. Possible values are: none, emailAddress, userPrincipalName, customAzureADAttribute, domainNameService, universalResourceIdentifier.
     subjectAlternativeNameType *SubjectAlternativeNameType
-    // Certificate Subject Name Format. Possible values are: commonName, commonNameIncludingEmail, commonNameAsEmail, custom, commonNameAsIMEI, commonNameAsSerialNumber, commonNameAsAadDeviceId, commonNameAsIntuneDeviceId, commonNameAsDurableDeviceId.
+    // Subject Name Format Options.
     subjectNameFormat *SubjectNameFormat
 }
 // NewWindowsCertificateProfileBase instantiates a new WindowsCertificateProfileBase and sets the default values.
@@ -25,6 +25,8 @@ func NewWindowsCertificateProfileBase()(*WindowsCertificateProfileBase) {
     m := &WindowsCertificateProfileBase{
         DeviceConfiguration: *NewDeviceConfiguration(),
     }
+    typeValue := "#microsoft.graph.windowsCertificateProfileBase";
+    m.SetType(&typeValue);
     return m
 }
 // CreateWindowsCertificateProfileBaseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -56,7 +58,7 @@ func CreateWindowsCertificateProfileBaseFromDiscriminatorValue(parseNode i878a80
     }
     return NewWindowsCertificateProfileBase(), nil
 }
-// GetCertificateValidityPeriodScale gets the certificateValidityPeriodScale property value. Scale for the Certificate Validity Period. Possible values are: days, months, years.
+// GetCertificateValidityPeriodScale gets the certificateValidityPeriodScale property value. Certificate Validity Period Options.
 func (m *WindowsCertificateProfileBase) GetCertificateValidityPeriodScale()(*CertificateValidityPeriodScale) {
     if m == nil {
         return nil
@@ -137,7 +139,7 @@ func (m *WindowsCertificateProfileBase) GetFieldDeserializers()(map[string]func(
     }
     return res
 }
-// GetKeyStorageProvider gets the keyStorageProvider property value. Key Storage Provider (KSP). Possible values are: useTpmKspOtherwiseUseSoftwareKsp, useTpmKspOtherwiseFail, usePassportForWorkKspOtherwiseFail, useSoftwareKsp.
+// GetKeyStorageProvider gets the keyStorageProvider property value. Key Storage Provider (KSP) Import Options.
 func (m *WindowsCertificateProfileBase) GetKeyStorageProvider()(*KeyStorageProviderOption) {
     if m == nil {
         return nil
@@ -161,7 +163,7 @@ func (m *WindowsCertificateProfileBase) GetSubjectAlternativeNameType()(*Subject
         return m.subjectAlternativeNameType
     }
 }
-// GetSubjectNameFormat gets the subjectNameFormat property value. Certificate Subject Name Format. Possible values are: commonName, commonNameIncludingEmail, commonNameAsEmail, custom, commonNameAsIMEI, commonNameAsSerialNumber, commonNameAsAadDeviceId, commonNameAsIntuneDeviceId, commonNameAsDurableDeviceId.
+// GetSubjectNameFormat gets the subjectNameFormat property value. Subject Name Format Options.
 func (m *WindowsCertificateProfileBase) GetSubjectNameFormat()(*SubjectNameFormat) {
     if m == nil {
         return nil
@@ -217,7 +219,7 @@ func (m *WindowsCertificateProfileBase) Serialize(writer i878a80d2330e89d2689638
     }
     return nil
 }
-// SetCertificateValidityPeriodScale sets the certificateValidityPeriodScale property value. Scale for the Certificate Validity Period. Possible values are: days, months, years.
+// SetCertificateValidityPeriodScale sets the certificateValidityPeriodScale property value. Certificate Validity Period Options.
 func (m *WindowsCertificateProfileBase) SetCertificateValidityPeriodScale(value *CertificateValidityPeriodScale)() {
     if m != nil {
         m.certificateValidityPeriodScale = value
@@ -229,7 +231,7 @@ func (m *WindowsCertificateProfileBase) SetCertificateValidityPeriodValue(value 
         m.certificateValidityPeriodValue = value
     }
 }
-// SetKeyStorageProvider sets the keyStorageProvider property value. Key Storage Provider (KSP). Possible values are: useTpmKspOtherwiseUseSoftwareKsp, useTpmKspOtherwiseFail, usePassportForWorkKspOtherwiseFail, useSoftwareKsp.
+// SetKeyStorageProvider sets the keyStorageProvider property value. Key Storage Provider (KSP) Import Options.
 func (m *WindowsCertificateProfileBase) SetKeyStorageProvider(value *KeyStorageProviderOption)() {
     if m != nil {
         m.keyStorageProvider = value
@@ -247,7 +249,7 @@ func (m *WindowsCertificateProfileBase) SetSubjectAlternativeNameType(value *Sub
         m.subjectAlternativeNameType = value
     }
 }
-// SetSubjectNameFormat sets the subjectNameFormat property value. Certificate Subject Name Format. Possible values are: commonName, commonNameIncludingEmail, commonNameAsEmail, custom, commonNameAsIMEI, commonNameAsSerialNumber, commonNameAsAadDeviceId, commonNameAsIntuneDeviceId, commonNameAsDurableDeviceId.
+// SetSubjectNameFormat sets the subjectNameFormat property value. Subject Name Format Options.
 func (m *WindowsCertificateProfileBase) SetSubjectNameFormat(value *SubjectNameFormat)() {
     if m != nil {
         m.subjectNameFormat = value

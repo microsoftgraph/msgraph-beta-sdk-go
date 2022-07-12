@@ -10,7 +10,7 @@ type VpnTrafficRule struct {
     additionalData map[string]interface{}
     // App identifier, if this traffic rule is triggered by an app.
     appId *string
-    // App type, if this traffic rule is triggered by an app. Possible values are: none, desktop, universal.
+    // Indicates the type of app that a VPN traffic rule is associated with.
     appType *VpnTrafficRuleAppType
     // Claims associated with this traffic rule.
     claims *string
@@ -26,7 +26,7 @@ type VpnTrafficRule struct {
     remoteAddressRanges []IPv4Rangeable
     // Remote port range can be set only when protocol is either TCP or UDP (6 or 17). This collection can contain a maximum of 500 elements.
     remotePortRanges []NumberRangeable
-    // When app triggered, indicates whether to enable split tunneling along this route. Possible values are: none, splitTunnel, forceTunnel.
+    // Specifies the routing policy for a VPN traffic rule.
     routingPolicyType *VpnTrafficRuleRoutingPolicyType
 }
 // NewVpnTrafficRule instantiates a new vpnTrafficRule and sets the default values.
@@ -56,7 +56,7 @@ func (m *VpnTrafficRule) GetAppId()(*string) {
         return m.appId
     }
 }
-// GetAppType gets the appType property value. App type, if this traffic rule is triggered by an app. Possible values are: none, desktop, universal.
+// GetAppType gets the appType property value. Indicates the type of app that a VPN traffic rule is associated with.
 func (m *VpnTrafficRule) GetAppType()(*VpnTrafficRuleAppType) {
     if m == nil {
         return nil
@@ -241,7 +241,7 @@ func (m *VpnTrafficRule) GetRemotePortRanges()([]NumberRangeable) {
         return m.remotePortRanges
     }
 }
-// GetRoutingPolicyType gets the routingPolicyType property value. When app triggered, indicates whether to enable split tunneling along this route. Possible values are: none, splitTunnel, forceTunnel.
+// GetRoutingPolicyType gets the routingPolicyType property value. Specifies the routing policy for a VPN traffic rule.
 func (m *VpnTrafficRule) GetRoutingPolicyType()(*VpnTrafficRuleRoutingPolicyType) {
     if m == nil {
         return nil
@@ -349,7 +349,7 @@ func (m *VpnTrafficRule) SetAppId(value *string)() {
         m.appId = value
     }
 }
-// SetAppType sets the appType property value. App type, if this traffic rule is triggered by an app. Possible values are: none, desktop, universal.
+// SetAppType sets the appType property value. Indicates the type of app that a VPN traffic rule is associated with.
 func (m *VpnTrafficRule) SetAppType(value *VpnTrafficRuleAppType)() {
     if m != nil {
         m.appType = value
@@ -397,7 +397,7 @@ func (m *VpnTrafficRule) SetRemotePortRanges(value []NumberRangeable)() {
         m.remotePortRanges = value
     }
 }
-// SetRoutingPolicyType sets the routingPolicyType property value. When app triggered, indicates whether to enable split tunneling along this route. Possible values are: none, splitTunnel, forceTunnel.
+// SetRoutingPolicyType sets the routingPolicyType property value. Specifies the routing policy for a VPN traffic rule.
 func (m *VpnTrafficRule) SetRoutingPolicyType(value *VpnTrafficRuleRoutingPolicyType)() {
     if m != nil {
         m.routingPolicyType = value

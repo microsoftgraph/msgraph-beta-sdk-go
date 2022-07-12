@@ -20,7 +20,7 @@ type CloudPcAuditActor struct {
     remoteUserId *string
     // Service Principal Name (SPN).
     servicePrincipalName *string
-    // The actor type. Possible values include ItPro, Application, Partner and Unknown.
+    // The type property
     type_escaped *CloudPcAuditActorType
     // Azure AD user ID.
     userId *string
@@ -221,7 +221,7 @@ func (m *CloudPcAuditActor) GetServicePrincipalName()(*string) {
         return m.servicePrincipalName
     }
 }
-// GetType gets the type property value. The actor type. Possible values include ItPro, Application, Partner and Unknown.
+// GetType gets the type property value. The type property
 func (m *CloudPcAuditActor) GetType()(*CloudPcAuditActorType) {
     if m == nil {
         return nil
@@ -384,7 +384,7 @@ func (m *CloudPcAuditActor) SetServicePrincipalName(value *string)() {
         m.servicePrincipalName = value
     }
 }
-// SetType sets the type property value. The actor type. Possible values include ItPro, Application, Partner and Unknown.
+// SetType sets the type property value. The type property
 func (m *CloudPcAuditActor) SetType(value *CloudPcAuditActorType)() {
     if m != nil {
         m.type_escaped = value

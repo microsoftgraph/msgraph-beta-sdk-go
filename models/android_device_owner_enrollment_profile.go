@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AndroidDeviceOwnerEnrollmentProfile enrollment Profile used to enroll Android Enterprise devices using Google's Cloud Management.
+// AndroidDeviceOwnerEnrollmentProfile 
 type AndroidDeviceOwnerEnrollmentProfile struct {
     Entity
     // Tenant GUID the enrollment profile belongs to.
@@ -18,9 +18,9 @@ type AndroidDeviceOwnerEnrollmentProfile struct {
     displayName *string
     // Total number of Android devices that have enrolled using this enrollment profile.
     enrolledDeviceCount *int32
-    // The enrollment mode of devices that use this enrollment profile. Possible values are: corporateOwnedDedicatedDevice, corporateOwnedFullyManaged, corporateOwnedWorkProfile, corporateOwnedAOSPUserlessDevice, corporateOwnedAOSPUserAssociatedDevice.
+    // The enrollment mode for an enrollment profile.
     enrollmentMode *AndroidDeviceOwnerEnrollmentMode
-    // The enrollment token type for an enrollment profile. Possible values are: default, corporateOwnedDedicatedDeviceWithAzureADSharedMode.
+    // The enrollment token type for an enrollment profile.
     enrollmentTokenType *AndroidDeviceOwnerEnrollmentTokenType
     // Total number of AOSP devices that have enrolled using the current token.
     enrollmentTokenUsageCount *int32
@@ -42,12 +42,12 @@ type AndroidDeviceOwnerEnrollmentProfile struct {
     wifiHidden *bool
     // String that contains the wi-fi login password
     wifiPassword *string
-    // String that contains the wi-fi security type. Possible values are: none, wpa, wep.
+    // This enum represents Wi-Fi Security Types for Android Device Owner AOSP Scenarios.
     wifiSecurityType *AospWifiSecurityType
     // String that contains the wi-fi login ssid
     wifiSsid *string
 }
-// NewAndroidDeviceOwnerEnrollmentProfile instantiates a new androidDeviceOwnerEnrollmentProfile and sets the default values.
+// NewAndroidDeviceOwnerEnrollmentProfile instantiates a new AndroidDeviceOwnerEnrollmentProfile and sets the default values.
 func NewAndroidDeviceOwnerEnrollmentProfile()(*AndroidDeviceOwnerEnrollmentProfile) {
     m := &AndroidDeviceOwnerEnrollmentProfile{
         Entity: *NewEntity(),
@@ -98,7 +98,7 @@ func (m *AndroidDeviceOwnerEnrollmentProfile) GetEnrolledDeviceCount()(*int32) {
         return m.enrolledDeviceCount
     }
 }
-// GetEnrollmentMode gets the enrollmentMode property value. The enrollment mode of devices that use this enrollment profile. Possible values are: corporateOwnedDedicatedDevice, corporateOwnedFullyManaged, corporateOwnedWorkProfile, corporateOwnedAOSPUserlessDevice, corporateOwnedAOSPUserAssociatedDevice.
+// GetEnrollmentMode gets the enrollmentMode property value. The enrollment mode for an enrollment profile.
 func (m *AndroidDeviceOwnerEnrollmentProfile) GetEnrollmentMode()(*AndroidDeviceOwnerEnrollmentMode) {
     if m == nil {
         return nil
@@ -106,7 +106,7 @@ func (m *AndroidDeviceOwnerEnrollmentProfile) GetEnrollmentMode()(*AndroidDevice
         return m.enrollmentMode
     }
 }
-// GetEnrollmentTokenType gets the enrollmentTokenType property value. The enrollment token type for an enrollment profile. Possible values are: default, corporateOwnedDedicatedDeviceWithAzureADSharedMode.
+// GetEnrollmentTokenType gets the enrollmentTokenType property value. The enrollment token type for an enrollment profile.
 func (m *AndroidDeviceOwnerEnrollmentProfile) GetEnrollmentTokenType()(*AndroidDeviceOwnerEnrollmentTokenType) {
     if m == nil {
         return nil
@@ -393,7 +393,7 @@ func (m *AndroidDeviceOwnerEnrollmentProfile) GetWifiPassword()(*string) {
         return m.wifiPassword
     }
 }
-// GetWifiSecurityType gets the wifiSecurityType property value. String that contains the wi-fi security type. Possible values are: none, wpa, wep.
+// GetWifiSecurityType gets the wifiSecurityType property value. This enum represents Wi-Fi Security Types for Android Device Owner AOSP Scenarios.
 func (m *AndroidDeviceOwnerEnrollmentProfile) GetWifiSecurityType()(*AospWifiSecurityType) {
     if m == nil {
         return nil
@@ -564,13 +564,13 @@ func (m *AndroidDeviceOwnerEnrollmentProfile) SetEnrolledDeviceCount(value *int3
         m.enrolledDeviceCount = value
     }
 }
-// SetEnrollmentMode sets the enrollmentMode property value. The enrollment mode of devices that use this enrollment profile. Possible values are: corporateOwnedDedicatedDevice, corporateOwnedFullyManaged, corporateOwnedWorkProfile, corporateOwnedAOSPUserlessDevice, corporateOwnedAOSPUserAssociatedDevice.
+// SetEnrollmentMode sets the enrollmentMode property value. The enrollment mode for an enrollment profile.
 func (m *AndroidDeviceOwnerEnrollmentProfile) SetEnrollmentMode(value *AndroidDeviceOwnerEnrollmentMode)() {
     if m != nil {
         m.enrollmentMode = value
     }
 }
-// SetEnrollmentTokenType sets the enrollmentTokenType property value. The enrollment token type for an enrollment profile. Possible values are: default, corporateOwnedDedicatedDeviceWithAzureADSharedMode.
+// SetEnrollmentTokenType sets the enrollmentTokenType property value. The enrollment token type for an enrollment profile.
 func (m *AndroidDeviceOwnerEnrollmentProfile) SetEnrollmentTokenType(value *AndroidDeviceOwnerEnrollmentTokenType)() {
     if m != nil {
         m.enrollmentTokenType = value
@@ -636,7 +636,7 @@ func (m *AndroidDeviceOwnerEnrollmentProfile) SetWifiPassword(value *string)() {
         m.wifiPassword = value
     }
 }
-// SetWifiSecurityType sets the wifiSecurityType property value. String that contains the wi-fi security type. Possible values are: none, wpa, wep.
+// SetWifiSecurityType sets the wifiSecurityType property value. This enum represents Wi-Fi Security Types for Android Device Owner AOSP Scenarios.
 func (m *AndroidDeviceOwnerEnrollmentProfile) SetWifiSecurityType(value *AospWifiSecurityType)() {
     if m != nil {
         m.wifiSecurityType = value

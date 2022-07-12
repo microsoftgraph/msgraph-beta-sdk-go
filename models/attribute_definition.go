@@ -22,7 +22,7 @@ type AttributeDefinition struct {
     metadata []MetadataEntryable
     // true if an attribute can have multiple values. Default is false.
     multivalued *bool
-    // An attribute's mutability. Possible values are:  ReadWrite, ReadOnly, Immutable, WriteOnly. Default is ReadWrite.
+    // The mutability property
     mutability *Mutability
     // Name of the attribute. Must be unique within the object definition. Not nullable.
     name *string
@@ -30,7 +30,7 @@ type AttributeDefinition struct {
     referencedObjects []ReferencedObjectable
     // true if attribute is required. Object can not be created if any of the required attributes are missing. If during synchronization, the required attribute has no value, the default value will be used. If default the value was not set, synchronization will record an error.
     required *bool
-    // Attribute value type. Possible values are: String, Integer, Reference, Binary, Boolean,DateTime. Default is String.
+    // The type property
     type_escaped *AttributeType
 }
 // NewAttributeDefinition instantiates a new attributeDefinition and sets the default values.
@@ -245,7 +245,7 @@ func (m *AttributeDefinition) GetMultivalued()(*bool) {
         return m.multivalued
     }
 }
-// GetMutability gets the mutability property value. An attribute's mutability. Possible values are:  ReadWrite, ReadOnly, Immutable, WriteOnly. Default is ReadWrite.
+// GetMutability gets the mutability property value. The mutability property
 func (m *AttributeDefinition) GetMutability()(*Mutability) {
     if m == nil {
         return nil
@@ -277,7 +277,7 @@ func (m *AttributeDefinition) GetRequired()(*bool) {
         return m.required
     }
 }
-// GetType gets the type property value. Attribute value type. Possible values are: String, Integer, Reference, Binary, Boolean,DateTime. Default is String.
+// GetType gets the type property value. The type property
 func (m *AttributeDefinition) GetType()(*AttributeType) {
     if m == nil {
         return nil
@@ -429,7 +429,7 @@ func (m *AttributeDefinition) SetMultivalued(value *bool)() {
         m.multivalued = value
     }
 }
-// SetMutability sets the mutability property value. An attribute's mutability. Possible values are:  ReadWrite, ReadOnly, Immutable, WriteOnly. Default is ReadWrite.
+// SetMutability sets the mutability property value. The mutability property
 func (m *AttributeDefinition) SetMutability(value *Mutability)() {
     if m != nil {
         m.mutability = value
@@ -453,7 +453,7 @@ func (m *AttributeDefinition) SetRequired(value *bool)() {
         m.required = value
     }
 }
-// SetType sets the type property value. Attribute value type. Possible values are: String, Integer, Reference, Binary, Boolean,DateTime. Default is String.
+// SetType sets the type property value. The type property
 func (m *AttributeDefinition) SetType(value *AttributeType)() {
     if m != nil {
         m.type_escaped = value

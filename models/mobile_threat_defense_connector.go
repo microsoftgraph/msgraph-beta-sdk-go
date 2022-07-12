@@ -32,7 +32,7 @@ type MobileThreatDefenseConnector struct {
     macEnabled *bool
     // When TRUE, configuration profile management via Microsoft Defender for Endpoint is enabled. When FALSE, configuration profile management via Microsoft Defender for Endpoint is disabled.
     microsoftDefenderForEndpointAttachEnabled *bool
-    // Data Sync Partner state for this account. Possible values are: unavailable, available, enabled, unresponsive.
+    // Partner state of this tenant.
     partnerState *MobileThreatPartnerTenantState
     // Get or Set days the per tenant tolerance to unresponsiveness for this partner integration
     partnerUnresponsivenessThresholdInDays *int32
@@ -325,7 +325,7 @@ func (m *MobileThreatDefenseConnector) GetMicrosoftDefenderForEndpointAttachEnab
         return m.microsoftDefenderForEndpointAttachEnabled
     }
 }
-// GetPartnerState gets the partnerState property value. Data Sync Partner state for this account. Possible values are: unavailable, available, enabled, unresponsive.
+// GetPartnerState gets the partnerState property value. Partner state of this tenant.
 func (m *MobileThreatDefenseConnector) GetPartnerState()(*MobileThreatPartnerTenantState) {
     if m == nil {
         return nil
@@ -548,7 +548,7 @@ func (m *MobileThreatDefenseConnector) SetMicrosoftDefenderForEndpointAttachEnab
         m.microsoftDefenderForEndpointAttachEnabled = value
     }
 }
-// SetPartnerState sets the partnerState property value. Data Sync Partner state for this account. Possible values are: unavailable, available, enabled, unresponsive.
+// SetPartnerState sets the partnerState property value. Partner state of this tenant.
 func (m *MobileThreatDefenseConnector) SetPartnerState(value *MobileThreatPartnerTenantState)() {
     if m != nil {
         m.partnerState = value

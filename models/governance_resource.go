@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// GovernanceResource provides operations to manage the collection of governanceResource entities.
+// GovernanceResource 
 type GovernanceResource struct {
     Entity
     // The display name of the resource.
@@ -28,10 +28,8 @@ type GovernanceResource struct {
     roleSettings []GovernanceRoleSettingable
     // The status of a given resource. For example, it could represent whether the resource is locked or not (values: Active/Locked). Note: This property may be extended in the future to support more scenarios.
     status *string
-    // Required. Resource type. For example, for Azure resources, the type could be 'Subscription', 'ResourceGroup', 'Microsoft.Sql/server', etc.
-    type_escaped *string
 }
-// NewGovernanceResource instantiates a new governanceResource and sets the default values.
+// NewGovernanceResource instantiates a new GovernanceResource and sets the default values.
 func NewGovernanceResource()(*GovernanceResource) {
     m := &GovernanceResource{
         Entity: *NewEntity(),
@@ -177,16 +175,6 @@ func (m *GovernanceResource) GetFieldDeserializers()(map[string]func(i878a80d233
         }
         return nil
     }
-    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetType(val)
-        }
-        return nil
-    }
     return res
 }
 // GetParent gets the parent property value. Read-only. The parent resource. for pimforazurerbac scenario, it can represent the subscription the resource belongs to.
@@ -251,14 +239,6 @@ func (m *GovernanceResource) GetStatus()(*string) {
         return nil
     } else {
         return m.status
-    }
-}
-// GetType gets the type property value. Required. Resource type. For example, for Azure resources, the type could be 'Subscription', 'ResourceGroup', 'Microsoft.Sql/server', etc.
-func (m *GovernanceResource) GetType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.type_escaped
     }
 }
 // Serialize serializes information the current object
@@ -343,12 +323,6 @@ func (m *GovernanceResource) Serialize(writer i878a80d2330e89d26896388a3f487eef2
             return err
         }
     }
-    {
-        err = writer.WriteStringValue("type", m.GetType())
-        if err != nil {
-            return err
-        }
-    }
     return nil
 }
 // SetDisplayName sets the displayName property value. The display name of the resource.
@@ -409,11 +383,5 @@ func (m *GovernanceResource) SetRoleSettings(value []GovernanceRoleSettingable)(
 func (m *GovernanceResource) SetStatus(value *string)() {
     if m != nil {
         m.status = value
-    }
-}
-// SetType sets the type property value. Required. Resource type. For example, for Azure resources, the type could be 'Subscription', 'ResourceGroup', 'Microsoft.Sql/server', etc.
-func (m *GovernanceResource) SetType(value *string)() {
-    if m != nil {
-        m.type_escaped = value
     }
 }

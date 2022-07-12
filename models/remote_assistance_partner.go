@@ -14,7 +14,7 @@ type RemoteAssistancePartner struct {
     lastConnectionDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // When the OnboardingStatus is Onboarding, This is the date time when the onboarding request expires.
     onboardingRequestExpiryDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // A friendly description of the current TeamViewer connector status. Possible values are: notOnboarded, onboarding, onboarded.
+    // The current TeamViewer connector status
     onboardingStatus *RemoteAssistanceOnboardingStatus
     // URL of the partner's onboarding portal, where an administrator can configure their Remote Assistance service.
     onboardingUrl *string
@@ -109,7 +109,7 @@ func (m *RemoteAssistancePartner) GetOnboardingRequestExpiryDateTime()(*i3360748
         return m.onboardingRequestExpiryDateTime
     }
 }
-// GetOnboardingStatus gets the onboardingStatus property value. A friendly description of the current TeamViewer connector status. Possible values are: notOnboarded, onboarding, onboarded.
+// GetOnboardingStatus gets the onboardingStatus property value. The current TeamViewer connector status
 func (m *RemoteAssistancePartner) GetOnboardingStatus()(*RemoteAssistanceOnboardingStatus) {
     if m == nil {
         return nil
@@ -182,7 +182,7 @@ func (m *RemoteAssistancePartner) SetOnboardingRequestExpiryDateTime(value *i336
         m.onboardingRequestExpiryDateTime = value
     }
 }
-// SetOnboardingStatus sets the onboardingStatus property value. A friendly description of the current TeamViewer connector status. Possible values are: notOnboarded, onboarding, onboarded.
+// SetOnboardingStatus sets the onboardingStatus property value. The current TeamViewer connector status
 func (m *RemoteAssistancePartner) SetOnboardingStatus(value *RemoteAssistanceOnboardingStatus)() {
     if m != nil {
         m.onboardingStatus = value

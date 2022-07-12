@@ -9,13 +9,13 @@ import (
 type PropertyRule struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
-    // Specifies the operations to be performed during evaluation of a single propertyRule, where property and a string from the values collection are the respective operands. Possible values are: null, equals, notEquals, contains, notContains, lessThan, greaterThan, startsWith, unknownFutureValue. Required.
+    // The operation property
     operation *RuleOperation
     // The property from the externalItem schema. Required.
     property *string
     // A collection with one or many strings. The specified string(s) will be matched with the specified property using the specified operation. Required.
     values []string
-    // The join operator for evaluating multiple propertyRules. For example, if and is specified, then all propertyRules must be true for the propertyRule to be true. Possible values are: or, and. Required.
+    // The valuesJoinedBy property
     valuesJoinedBy *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BinaryOperator
 }
 // NewPropertyRule instantiates a new propertyRule and sets the default values.
@@ -86,7 +86,7 @@ func (m *PropertyRule) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
     }
     return res
 }
-// GetOperation gets the operation property value. Specifies the operations to be performed during evaluation of a single propertyRule, where property and a string from the values collection are the respective operands. Possible values are: null, equals, notEquals, contains, notContains, lessThan, greaterThan, startsWith, unknownFutureValue. Required.
+// GetOperation gets the operation property value. The operation property
 func (m *PropertyRule) GetOperation()(*RuleOperation) {
     if m == nil {
         return nil
@@ -110,7 +110,7 @@ func (m *PropertyRule) GetValues()([]string) {
         return m.values
     }
 }
-// GetValuesJoinedBy gets the valuesJoinedBy property value. The join operator for evaluating multiple propertyRules. For example, if and is specified, then all propertyRules must be true for the propertyRule to be true. Possible values are: or, and. Required.
+// GetValuesJoinedBy gets the valuesJoinedBy property value. The valuesJoinedBy property
 func (m *PropertyRule) GetValuesJoinedBy()(*ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BinaryOperator) {
     if m == nil {
         return nil
@@ -160,7 +160,7 @@ func (m *PropertyRule) SetAdditionalData(value map[string]interface{})() {
         m.additionalData = value
     }
 }
-// SetOperation sets the operation property value. Specifies the operations to be performed during evaluation of a single propertyRule, where property and a string from the values collection are the respective operands. Possible values are: null, equals, notEquals, contains, notContains, lessThan, greaterThan, startsWith, unknownFutureValue. Required.
+// SetOperation sets the operation property value. The operation property
 func (m *PropertyRule) SetOperation(value *RuleOperation)() {
     if m != nil {
         m.operation = value
@@ -178,7 +178,7 @@ func (m *PropertyRule) SetValues(value []string)() {
         m.values = value
     }
 }
-// SetValuesJoinedBy sets the valuesJoinedBy property value. The join operator for evaluating multiple propertyRules. For example, if and is specified, then all propertyRules must be true for the propertyRule to be true. Possible values are: or, and. Required.
+// SetValuesJoinedBy sets the valuesJoinedBy property value. The valuesJoinedBy property
 func (m *PropertyRule) SetValuesJoinedBy(value *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BinaryOperator)() {
     if m != nil {
         m.valuesJoinedBy = value

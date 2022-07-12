@@ -11,7 +11,7 @@ type SuggestedEnrollmentLimit struct {
     // The suggested enrollment limit within a day
     suggestedDailyLimit *int32
 }
-// NewSuggestedEnrollmentLimit instantiates a new SuggestedEnrollmentLimit and sets the default values.
+// NewSuggestedEnrollmentLimit instantiates a new suggestedEnrollmentLimit and sets the default values.
 func NewSuggestedEnrollmentLimit()(*SuggestedEnrollmentLimit) {
     m := &SuggestedEnrollmentLimit{
     }

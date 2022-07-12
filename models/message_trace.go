@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// MessageTrace provides operations to manage the collection of messageTrace entities.
+// MessageTrace 
 type MessageTrace struct {
     Entity
     // The destinationIPAddress property
@@ -25,7 +25,7 @@ type MessageTrace struct {
     // The subject property
     subject *string
 }
-// NewMessageTrace instantiates a new messageTrace and sets the default values.
+// NewMessageTrace instantiates a new MessageTrace and sets the default values.
 func NewMessageTrace()(*MessageTrace) {
     m := &MessageTrace{
         Entity: *NewEntity(),

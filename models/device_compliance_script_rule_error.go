@@ -4,13 +4,13 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DeviceComplianceScriptRuleError provides operations to call the validateComplianceScript method.
+// DeviceComplianceScriptRuleError 
 type DeviceComplianceScriptRuleError struct {
     DeviceComplianceScriptError
     // Setting name for the rule with error.
     settingName *string
 }
-// NewDeviceComplianceScriptRuleError instantiates a new deviceComplianceScriptRuleError and sets the default values.
+// NewDeviceComplianceScriptRuleError instantiates a new DeviceComplianceScriptRuleError and sets the default values.
 func NewDeviceComplianceScriptRuleError()(*DeviceComplianceScriptRuleError) {
     m := &DeviceComplianceScriptRuleError{
         DeviceComplianceScriptError: *NewDeviceComplianceScriptError(),

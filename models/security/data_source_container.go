@@ -6,7 +6,7 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
-// DataSourceContainer provides operations to manage the security singleton.
+// DataSourceContainer provides operations to manage the collection of activityStatistics entities.
 type DataSourceContainer struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
     // Created date and time of the dataSourceContainer entity.
@@ -27,6 +27,8 @@ func NewDataSourceContainer()(*DataSourceContainer) {
     m := &DataSourceContainer{
         Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),
     }
+    typeValue := "#microsoft.graph.security.dataSourceContainer";
+    m.SetType(&typeValue);
     return m
 }
 // CreateDataSourceContainerFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -7,7 +7,7 @@ import (
 // MobileAppPolicySetItem 
 type MobileAppPolicySetItem struct {
     PolicySetItem
-    // Install intent of the MobileAppPolicySetItem. Possible values are: available, required, uninstall, availableWithoutEnrollment.
+    // Possible values for the install intent chosen by the admin.
     intent *InstallIntent
     // Settings of the MobileAppPolicySetItem.
     settings MobileAppAssignmentSettingsable
@@ -48,7 +48,7 @@ func (m *MobileAppPolicySetItem) GetFieldDeserializers()(map[string]func(i878a80
     }
     return res
 }
-// GetIntent gets the intent property value. Install intent of the MobileAppPolicySetItem. Possible values are: available, required, uninstall, availableWithoutEnrollment.
+// GetIntent gets the intent property value. Possible values for the install intent chosen by the admin.
 func (m *MobileAppPolicySetItem) GetIntent()(*InstallIntent) {
     if m == nil {
         return nil
@@ -85,7 +85,7 @@ func (m *MobileAppPolicySetItem) Serialize(writer i878a80d2330e89d26896388a3f487
     }
     return nil
 }
-// SetIntent sets the intent property value. Install intent of the MobileAppPolicySetItem. Possible values are: available, required, uninstall, availableWithoutEnrollment.
+// SetIntent sets the intent property value. Possible values for the install intent chosen by the admin.
 func (m *MobileAppPolicySetItem) SetIntent(value *InstallIntent)() {
     if m != nil {
         m.intent = value

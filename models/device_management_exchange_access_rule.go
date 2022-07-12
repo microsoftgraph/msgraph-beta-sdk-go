@@ -6,7 +6,7 @@ import (
 
 // DeviceManagementExchangeAccessRule device Access Rules in Exchange.
 type DeviceManagementExchangeAccessRule struct {
-    // Access Level for Exchange granted by this rule. Possible values are: none, allow, block, quarantine.
+    // Access Level in Exchange.
     accessLevel *DeviceManagementExchangeAccessLevel
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
@@ -24,7 +24,7 @@ func NewDeviceManagementExchangeAccessRule()(*DeviceManagementExchangeAccessRule
 func CreateDeviceManagementExchangeAccessRuleFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDeviceManagementExchangeAccessRule(), nil
 }
-// GetAccessLevel gets the accessLevel property value. Access Level for Exchange granted by this rule. Possible values are: none, allow, block, quarantine.
+// GetAccessLevel gets the accessLevel property value. Access Level in Exchange.
 func (m *DeviceManagementExchangeAccessRule) GetAccessLevel()(*DeviceManagementExchangeAccessLevel) {
     if m == nil {
         return nil
@@ -96,7 +96,7 @@ func (m *DeviceManagementExchangeAccessRule) Serialize(writer i878a80d2330e89d26
     }
     return nil
 }
-// SetAccessLevel sets the accessLevel property value. Access Level for Exchange granted by this rule. Possible values are: none, allow, block, quarantine.
+// SetAccessLevel sets the accessLevel property value. Access Level in Exchange.
 func (m *DeviceManagementExchangeAccessRule) SetAccessLevel(value *DeviceManagementExchangeAccessLevel)() {
     if m != nil {
         m.accessLevel = value

@@ -11,7 +11,7 @@ type SetScheduledRetireStatePostRequestBody struct {
     additionalData map[string]interface{}
     // The managedDeviceIds property
     managedDeviceIds []string
-    // The state property
+    // Cancel or confirm scheduled retire 
     state *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ScheduledRetireState
 }
 // NewSetScheduledRetireStatePostRequestBody instantiates a new setScheduledRetireStatePostRequestBody and sets the default values.
@@ -70,7 +70,7 @@ func (m *SetScheduledRetireStatePostRequestBody) GetManagedDeviceIds()([]string)
         return m.managedDeviceIds
     }
 }
-// GetState gets the state property value. The state property
+// GetState gets the state property value. Cancel or confirm scheduled retire 
 func (m *SetScheduledRetireStatePostRequestBody) GetState()(*ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ScheduledRetireState) {
     if m == nil {
         return nil
@@ -113,7 +113,7 @@ func (m *SetScheduledRetireStatePostRequestBody) SetManagedDeviceIds(value []str
         m.managedDeviceIds = value
     }
 }
-// SetState sets the state property value. The state property
+// SetState sets the state property value. Cancel or confirm scheduled retire 
 func (m *SetScheduledRetireStatePostRequestBody) SetState(value *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ScheduledRetireState)() {
     if m != nil {
         m.state = value

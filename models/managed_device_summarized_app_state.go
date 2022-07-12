@@ -10,7 +10,7 @@ type ManagedDeviceSummarizedAppState struct {
     additionalData map[string]interface{}
     // DeviceId of device represented by this object
     deviceId *string
-    // runState for the object. Possible values are: unknown, success, fail, scriptError, pending, notApplicable.
+    // Indicates the type of execution status of the device management script.
     summarizedAppState *RunState
 }
 // NewManagedDeviceSummarizedAppState instantiates a new managedDeviceSummarizedAppState and sets the default values.
@@ -65,7 +65,7 @@ func (m *ManagedDeviceSummarizedAppState) GetFieldDeserializers()(map[string]fun
     }
     return res
 }
-// GetSummarizedAppState gets the summarizedAppState property value. runState for the object. Possible values are: unknown, success, fail, scriptError, pending, notApplicable.
+// GetSummarizedAppState gets the summarizedAppState property value. Indicates the type of execution status of the device management script.
 func (m *ManagedDeviceSummarizedAppState) GetSummarizedAppState()(*RunState) {
     if m == nil {
         return nil
@@ -108,7 +108,7 @@ func (m *ManagedDeviceSummarizedAppState) SetDeviceId(value *string)() {
         m.deviceId = value
     }
 }
-// SetSummarizedAppState sets the summarizedAppState property value. runState for the object. Possible values are: unknown, success, fail, scriptError, pending, notApplicable.
+// SetSummarizedAppState sets the summarizedAppState property value. Indicates the type of execution status of the device management script.
 func (m *ManagedDeviceSummarizedAppState) SetSummarizedAppState(value *RunState)() {
     if m != nil {
         m.summarizedAppState = value

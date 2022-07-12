@@ -21,7 +21,7 @@ type ConfigManagerPolicySummary struct {
     // The number of devices targeted by the policy.
     targetedDeviceCount *int32
 }
-// NewConfigManagerPolicySummary instantiates a new ConfigManagerPolicySummary and sets the default values.
+// NewConfigManagerPolicySummary instantiates a new configManagerPolicySummary and sets the default values.
 func NewConfigManagerPolicySummary()(*ConfigManagerPolicySummary) {
     m := &ConfigManagerPolicySummary{
     }

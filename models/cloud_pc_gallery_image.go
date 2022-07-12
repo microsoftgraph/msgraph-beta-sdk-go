@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// CloudPcGalleryImage provides operations to manage the deviceManagement singleton.
+// CloudPcGalleryImage 
 type CloudPcGalleryImage struct {
     Entity
     // The official display name of the gallery image. Read-only.
@@ -32,7 +32,7 @@ type CloudPcGalleryImage struct {
     // The status of the gallery image on the Cloud PC. Possible values are: supported, supportedWithWarning, notSupported, unknownFutureValue. Read-only.
     status *CloudPcGalleryImageStatus
 }
-// NewCloudPcGalleryImage instantiates a new cloudPcGalleryImage and sets the default values.
+// NewCloudPcGalleryImage instantiates a new CloudPcGalleryImage and sets the default values.
 func NewCloudPcGalleryImage()(*CloudPcGalleryImage) {
     m := &CloudPcGalleryImage{
         Entity: *NewEntity(),

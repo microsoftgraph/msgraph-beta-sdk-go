@@ -11,7 +11,7 @@ type VerificationResult struct {
     // The signatureValid property
     signatureValid *bool
 }
-// NewVerificationResult instantiates a new VerificationResult and sets the default values.
+// NewVerificationResult instantiates a new verificationResult and sets the default values.
 func NewVerificationResult()(*VerificationResult) {
     m := &VerificationResult{
     }

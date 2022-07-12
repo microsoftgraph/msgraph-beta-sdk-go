@@ -22,7 +22,7 @@ type TransitiveMemberOfRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// TransitiveMemberOfRequestBuilderGetQueryParameters get transitiveMemberOf from users
+// TransitiveMemberOfRequestBuilderGetQueryParameters the groups, including nested groups, and directory roles that a user is a member of. Nullable.
 type TransitiveMemberOfRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -77,11 +77,11 @@ func NewTransitiveMemberOfRequestBuilder(rawUrl string, requestAdapter i2ae4187f
 func (m *TransitiveMemberOfRequestBuilder) Count()(*i1dac8c4fe0461c7469025e3f54442a35c26f21fa28f5099658ef8caa006e654c.CountRequestBuilder) {
     return i1dac8c4fe0461c7469025e3f54442a35c26f21fa28f5099658ef8caa006e654c.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation get transitiveMemberOf from users
+// CreateGetRequestInformation the groups, including nested groups, and directory roles that a user is a member of. Nullable.
 func (m *TransitiveMemberOfRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration get transitiveMemberOf from users
+// CreateGetRequestInformationWithRequestConfiguration the groups, including nested groups, and directory roles that a user is a member of. Nullable.
 func (m *TransitiveMemberOfRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *TransitiveMemberOfRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -101,11 +101,11 @@ func (m *TransitiveMemberOfRequestBuilder) CreateGetRequestInformationWithReques
 func (m *TransitiveMemberOfRequestBuilder) Device()(*i1870c3dfd2fdbfbc7712af600ccc47fd24dd2efa681364e3fa8dd2ca286d2b9a.DeviceRequestBuilder) {
     return i1870c3dfd2fdbfbc7712af600ccc47fd24dd2efa681364e3fa8dd2ca286d2b9a.NewDeviceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Get get transitiveMemberOf from users
+// Get the groups, including nested groups, and directory roles that a user is a member of. Nullable.
 func (m *TransitiveMemberOfRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectCollectionResponseable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler get transitiveMemberOf from users
+// GetWithRequestConfigurationAndResponseHandler the groups, including nested groups, and directory roles that a user is a member of. Nullable.
 func (m *TransitiveMemberOfRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *TransitiveMemberOfRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

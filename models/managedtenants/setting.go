@@ -16,7 +16,7 @@ type Setting struct {
     overwriteAllowed *bool
     // The settingId property
     settingId *string
-    // The data type for the setting. Possible values are: string, integer, boolean, guid, stringCollection, integerCollection, booleanCollection, guidCollection, unknownFutureValue. Required. Read-only.
+    // The valueType property
     valueType *ManagementParameterValueType
 }
 // NewSetting instantiates a new setting and sets the default values.
@@ -125,7 +125,7 @@ func (m *Setting) GetSettingId()(*string) {
         return m.settingId
     }
 }
-// GetValueType gets the valueType property value. The data type for the setting. Possible values are: string, integer, boolean, guid, stringCollection, integerCollection, booleanCollection, guidCollection, unknownFutureValue. Required. Read-only.
+// GetValueType gets the valueType property value. The valueType property
 func (m *Setting) GetValueType()(*ManagementParameterValueType) {
     if m == nil {
         return nil
@@ -204,7 +204,7 @@ func (m *Setting) SetSettingId(value *string)() {
         m.settingId = value
     }
 }
-// SetValueType sets the valueType property value. The data type for the setting. Possible values are: string, integer, boolean, guid, stringCollection, integerCollection, booleanCollection, guidCollection, unknownFutureValue. Required. Read-only.
+// SetValueType sets the valueType property value. The valueType property
 func (m *Setting) SetValueType(value *ManagementParameterValueType)() {
     if m != nil {
         m.valueType = value

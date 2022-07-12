@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// TeamworkDeviceHealth provides operations to manage the teamwork singleton.
+// TeamworkDeviceHealth 
 type TeamworkDeviceHealth struct {
     Entity
     // The connection property
@@ -27,7 +27,7 @@ type TeamworkDeviceHealth struct {
     // Software updates available for the device.
     softwareUpdateHealth TeamworkSoftwareUpdateHealthable
 }
-// NewTeamworkDeviceHealth instantiates a new teamworkDeviceHealth and sets the default values.
+// NewTeamworkDeviceHealth instantiates a new TeamworkDeviceHealth and sets the default values.
 func NewTeamworkDeviceHealth()(*TeamworkDeviceHealth) {
     m := &TeamworkDeviceHealth{
         Entity: *NewEntity(),

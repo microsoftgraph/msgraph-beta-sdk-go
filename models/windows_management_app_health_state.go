@@ -12,7 +12,7 @@ type WindowsManagementAppHealthState struct {
     deviceName *string
     // Windows 10 OS version of the device on which Windows management app is installed.
     deviceOSVersion *string
-    // Windows management app health state. Possible values are: unknown, healthy, unhealthy.
+    // Indicates health state of the Windows management app.
     healthState *HealthState
     // Windows management app installed version.
     installedVersion *string
@@ -101,7 +101,7 @@ func (m *WindowsManagementAppHealthState) GetFieldDeserializers()(map[string]fun
     }
     return res
 }
-// GetHealthState gets the healthState property value. Windows management app health state. Possible values are: unknown, healthy, unhealthy.
+// GetHealthState gets the healthState property value. Indicates health state of the Windows management app.
 func (m *WindowsManagementAppHealthState) GetHealthState()(*HealthState) {
     if m == nil {
         return nil
@@ -176,7 +176,7 @@ func (m *WindowsManagementAppHealthState) SetDeviceOSVersion(value *string)() {
         m.deviceOSVersion = value
     }
 }
-// SetHealthState sets the healthState property value. Windows management app health state. Possible values are: unknown, healthy, unhealthy.
+// SetHealthState sets the healthState property value. Indicates health state of the Windows management app.
 func (m *WindowsManagementAppHealthState) SetHealthState(value *HealthState)() {
     if m != nil {
         m.healthState = value

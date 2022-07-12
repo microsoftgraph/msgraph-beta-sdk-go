@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// BookingAppointment represents a booked appointment of a service by a customer in a business.
+// BookingAppointment 
 type BookingAppointment struct {
     Entity
     // Additional information that is sent to the customer when an appointment is confirmed.
@@ -39,7 +39,7 @@ type BookingAppointment struct {
     invoiceDate DateTimeTimeZoneable
     // The ID of the invoice.
     invoiceId *string
-    // The status of the invoice. Possible values are: draft, reviewing, open, canceled, paid, corrective.
+    // The invoiceStatus property
     invoiceStatus *BookingInvoiceStatus
     // The URL of the invoice in Microsoft Bookings.
     invoiceUrl *string
@@ -59,7 +59,7 @@ type BookingAppointment struct {
     preBuffer *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration
     // The regular price for an appointment for the specified bookingService.
     price *float64
-    // A setting to provide flexibility for the pricing structure of services. Possible values are: undefined, fixedPrice, startingAt, hourly, free, priceVaries, callUs, notSet, unknownFutureValue.
+    // Represents the type of pricing of a booking service.
     priceType *BookingPriceType
     // The collection of customer reminders sent for this appointment. The value of this property is available only when reading this bookingAppointment by its ID.
     reminders []BookingReminderable
@@ -80,7 +80,7 @@ type BookingAppointment struct {
     // The start property
     start DateTimeTimeZoneable
 }
-// NewBookingAppointment instantiates a new bookingAppointment and sets the default values.
+// NewBookingAppointment instantiates a new BookingAppointment and sets the default values.
 func NewBookingAppointment()(*BookingAppointment) {
     m := &BookingAppointment{
         Entity: *NewEntity(),
@@ -596,7 +596,7 @@ func (m *BookingAppointment) GetInvoiceId()(*string) {
         return m.invoiceId
     }
 }
-// GetInvoiceStatus gets the invoiceStatus property value. The status of the invoice. Possible values are: draft, reviewing, open, canceled, paid, corrective.
+// GetInvoiceStatus gets the invoiceStatus property value. The invoiceStatus property
 func (m *BookingAppointment) GetInvoiceStatus()(*BookingInvoiceStatus) {
     if m == nil {
         return nil
@@ -676,7 +676,7 @@ func (m *BookingAppointment) GetPrice()(*float64) {
         return m.price
     }
 }
-// GetPriceType gets the priceType property value. A setting to provide flexibility for the pricing structure of services. Possible values are: undefined, fixedPrice, startingAt, hourly, free, priceVaries, callUs, notSet, unknownFutureValue.
+// GetPriceType gets the priceType property value. Represents the type of pricing of a booking service.
 func (m *BookingAppointment) GetPriceType()(*BookingPriceType) {
     if m == nil {
         return nil
@@ -1086,7 +1086,7 @@ func (m *BookingAppointment) SetInvoiceId(value *string)() {
         m.invoiceId = value
     }
 }
-// SetInvoiceStatus sets the invoiceStatus property value. The status of the invoice. Possible values are: draft, reviewing, open, canceled, paid, corrective.
+// SetInvoiceStatus sets the invoiceStatus property value. The invoiceStatus property
 func (m *BookingAppointment) SetInvoiceStatus(value *BookingInvoiceStatus)() {
     if m != nil {
         m.invoiceStatus = value
@@ -1146,7 +1146,7 @@ func (m *BookingAppointment) SetPrice(value *float64)() {
         m.price = value
     }
 }
-// SetPriceType sets the priceType property value. A setting to provide flexibility for the pricing structure of services. Possible values are: undefined, fixedPrice, startingAt, hourly, free, priceVaries, callUs, notSet, unknownFutureValue.
+// SetPriceType sets the priceType property value. Represents the type of pricing of a booking service.
 func (m *BookingAppointment) SetPriceType(value *BookingPriceType)() {
     if m != nil {
         m.priceType = value

@@ -9,7 +9,7 @@ type DeviceConfigurationAssignment struct {
     Entity
     // The admin intent to apply or remove the profile. Possible values are: apply, remove.
     intent *DeviceConfigAssignmentIntent
-    // The assignment source for the device configuration, direct or parcel/policySet. This property is read-only. Possible values are: direct, policySets.
+    // Represents source of assignment.
     source *DeviceAndAppManagementAssignmentSource
     // The identifier of the source of the assignment. This property is read-only.
     sourceId *string
@@ -80,7 +80,7 @@ func (m *DeviceConfigurationAssignment) GetIntent()(*DeviceConfigAssignmentInten
         return m.intent
     }
 }
-// GetSource gets the source property value. The assignment source for the device configuration, direct or parcel/policySet. This property is read-only. Possible values are: direct, policySets.
+// GetSource gets the source property value. Represents source of assignment.
 func (m *DeviceConfigurationAssignment) GetSource()(*DeviceAndAppManagementAssignmentSource) {
     if m == nil {
         return nil
@@ -144,7 +144,7 @@ func (m *DeviceConfigurationAssignment) SetIntent(value *DeviceConfigAssignmentI
         m.intent = value
     }
 }
-// SetSource sets the source property value. The assignment source for the device configuration, direct or parcel/policySet. This property is read-only. Possible values are: direct, policySets.
+// SetSource sets the source property value. Represents source of assignment.
 func (m *DeviceConfigurationAssignment) SetSource(value *DeviceAndAppManagementAssignmentSource)() {
     if m != nil {
         m.source = value

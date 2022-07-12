@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Office365GroupsActivityStorage provides operations to call the getOffice365GroupsActivityStorage method.
+// Office365GroupsActivityStorage 
 type Office365GroupsActivityStorage struct {
     Entity
     // The storage used in group mailbox.
@@ -18,7 +18,7 @@ type Office365GroupsActivityStorage struct {
     // The storage used in SharePoint document library.
     siteStorageUsedInBytes *int64
 }
-// NewOffice365GroupsActivityStorage instantiates a new office365GroupsActivityStorage and sets the default values.
+// NewOffice365GroupsActivityStorage instantiates a new Office365GroupsActivityStorage and sets the default values.
 func NewOffice365GroupsActivityStorage()(*Office365GroupsActivityStorage) {
     m := &Office365GroupsActivityStorage{
         Entity: *NewEntity(),

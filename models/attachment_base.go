@@ -5,16 +5,16 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AttachmentBase provides operations to manage the collection of administrativeUnit entities.
+// AttachmentBase provides operations to manage the collection of accessReview entities.
 type AttachmentBase struct {
     Entity
-    // The contentType property
+    // The MIME type.
     contentType *string
-    // The lastModifiedDateTime property
+    // The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
     lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The name property
+    // The display name of the attachment. This does not need to be the actual file name.
     name *string
-    // The size property
+    // The length of the attachment in bytes.
     size *int32
 }
 // NewAttachmentBase instantiates a new attachmentBase and sets the default values.
@@ -22,6 +22,8 @@ func NewAttachmentBase()(*AttachmentBase) {
     m := &AttachmentBase{
         Entity: *NewEntity(),
     }
+    typeValue := "#microsoft.graph.attachmentBase";
+    m.SetType(&typeValue);
     return m
 }
 // CreateAttachmentBaseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -47,7 +49,7 @@ func CreateAttachmentBaseFromDiscriminatorValue(parseNode i878a80d2330e89d268963
     }
     return NewAttachmentBase(), nil
 }
-// GetContentType gets the contentType property value. The contentType property
+// GetContentType gets the contentType property value. The MIME type.
 func (m *AttachmentBase) GetContentType()(*string) {
     if m == nil {
         return nil
@@ -100,7 +102,7 @@ func (m *AttachmentBase) GetFieldDeserializers()(map[string]func(i878a80d2330e89
     }
     return res
 }
-// GetLastModifiedDateTime gets the lastModifiedDateTime property value. The lastModifiedDateTime property
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *AttachmentBase) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -108,7 +110,7 @@ func (m *AttachmentBase) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3a
         return m.lastModifiedDateTime
     }
 }
-// GetName gets the name property value. The name property
+// GetName gets the name property value. The display name of the attachment. This does not need to be the actual file name.
 func (m *AttachmentBase) GetName()(*string) {
     if m == nil {
         return nil
@@ -116,7 +118,7 @@ func (m *AttachmentBase) GetName()(*string) {
         return m.name
     }
 }
-// GetSize gets the size property value. The size property
+// GetSize gets the size property value. The length of the attachment in bytes.
 func (m *AttachmentBase) GetSize()(*int32) {
     if m == nil {
         return nil
@@ -156,25 +158,25 @@ func (m *AttachmentBase) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
     }
     return nil
 }
-// SetContentType sets the contentType property value. The contentType property
+// SetContentType sets the contentType property value. The MIME type.
 func (m *AttachmentBase) SetContentType(value *string)() {
     if m != nil {
         m.contentType = value
     }
 }
-// SetLastModifiedDateTime sets the lastModifiedDateTime property value. The lastModifiedDateTime property
+// SetLastModifiedDateTime sets the lastModifiedDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *AttachmentBase) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     if m != nil {
         m.lastModifiedDateTime = value
     }
 }
-// SetName sets the name property value. The name property
+// SetName sets the name property value. The display name of the attachment. This does not need to be the actual file name.
 func (m *AttachmentBase) SetName(value *string)() {
     if m != nil {
         m.name = value
     }
 }
-// SetSize sets the size property value. The size property
+// SetSize sets the size property value. The length of the attachment in bytes.
 func (m *AttachmentBase) SetSize(value *int32)() {
     if m != nil {
         m.size = value

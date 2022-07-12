@@ -7,7 +7,7 @@ import (
 // AndroidDeviceOwnerCertificateProfileBase 
 type AndroidDeviceOwnerCertificateProfileBase struct {
     DeviceConfiguration
-    // Scale for the Certificate Validity Period. Possible values are: days, months, years.
+    // Certificate Validity Period Options.
     certificateValidityPeriodScale *CertificateValidityPeriodScale
     // Value for the Certificate Validity Period.
     certificateValidityPeriodValue *int32
@@ -27,6 +27,8 @@ func NewAndroidDeviceOwnerCertificateProfileBase()(*AndroidDeviceOwnerCertificat
     m := &AndroidDeviceOwnerCertificateProfileBase{
         DeviceConfiguration: *NewDeviceConfiguration(),
     }
+    typeValue := "#microsoft.graph.androidDeviceOwnerCertificateProfileBase";
+    m.SetType(&typeValue);
     return m
 }
 // CreateAndroidDeviceOwnerCertificateProfileBaseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -56,7 +58,7 @@ func CreateAndroidDeviceOwnerCertificateProfileBaseFromDiscriminatorValue(parseN
     }
     return NewAndroidDeviceOwnerCertificateProfileBase(), nil
 }
-// GetCertificateValidityPeriodScale gets the certificateValidityPeriodScale property value. Scale for the Certificate Validity Period. Possible values are: days, months, years.
+// GetCertificateValidityPeriodScale gets the certificateValidityPeriodScale property value. Certificate Validity Period Options.
 func (m *AndroidDeviceOwnerCertificateProfileBase) GetCertificateValidityPeriodScale()(*CertificateValidityPeriodScale) {
     if m == nil {
         return nil
@@ -248,7 +250,7 @@ func (m *AndroidDeviceOwnerCertificateProfileBase) Serialize(writer i878a80d2330
     }
     return nil
 }
-// SetCertificateValidityPeriodScale sets the certificateValidityPeriodScale property value. Scale for the Certificate Validity Period. Possible values are: days, months, years.
+// SetCertificateValidityPeriodScale sets the certificateValidityPeriodScale property value. Certificate Validity Period Options.
 func (m *AndroidDeviceOwnerCertificateProfileBase) SetCertificateValidityPeriodScale(value *CertificateValidityPeriodScale)() {
     if m != nil {
         m.certificateValidityPeriodScale = value

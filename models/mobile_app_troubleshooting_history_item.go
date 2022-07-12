@@ -13,16 +13,47 @@ type MobileAppTroubleshootingHistoryItem struct {
     occurrenceDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Object containing detailed information about the error and its remediation.
     troubleshootingErrorDetails DeviceManagementTroubleshootingErrorDetailsable
+    // The type property
+    type_escaped *string
 }
 // NewMobileAppTroubleshootingHistoryItem instantiates a new mobileAppTroubleshootingHistoryItem and sets the default values.
 func NewMobileAppTroubleshootingHistoryItem()(*MobileAppTroubleshootingHistoryItem) {
     m := &MobileAppTroubleshootingHistoryItem{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    typeValue := "#microsoft.graph.mobileAppTroubleshootingHistoryItem";
+    m.SetType(&typeValue);
     return m
 }
 // CreateMobileAppTroubleshootingHistoryItemFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateMobileAppTroubleshootingHistoryItemFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+    if parseNode != nil {
+        mappingValueNode, err := parseNode.GetChildNode("@odata.type")
+        if err != nil {
+            return nil, err
+        }
+        if mappingValueNode != nil {
+            mappingValue, err := mappingValueNode.GetStringValue()
+            if err != nil {
+                return nil, err
+            }
+            if mappingValue != nil {
+                mappingStr := *mappingValue
+                switch mappingStr {
+                    case "#microsoft.graph.mobileAppTroubleshootingAppPolicyCreationHistory":
+                        return NewMobileAppTroubleshootingAppPolicyCreationHistory(), nil
+                    case "#microsoft.graph.mobileAppTroubleshootingAppStateHistory":
+                        return NewMobileAppTroubleshootingAppStateHistory(), nil
+                    case "#microsoft.graph.mobileAppTroubleshootingAppTargetHistory":
+                        return NewMobileAppTroubleshootingAppTargetHistory(), nil
+                    case "#microsoft.graph.mobileAppTroubleshootingAppUpdateHistory":
+                        return NewMobileAppTroubleshootingAppUpdateHistory(), nil
+                    case "#microsoft.graph.mobileAppTroubleshootingDeviceCheckinHistory":
+                        return NewMobileAppTroubleshootingDeviceCheckinHistory(), nil
+                }
+            }
+        }
+    }
     return NewMobileAppTroubleshootingHistoryItem(), nil
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -56,6 +87,16 @@ func (m *MobileAppTroubleshootingHistoryItem) GetFieldDeserializers()(map[string
         }
         return nil
     }
+    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetOccurrenceDateTime gets the occurrenceDateTime property value. Time when the history item occurred.
@@ -74,6 +115,14 @@ func (m *MobileAppTroubleshootingHistoryItem) GetTroubleshootingErrorDetails()(D
         return m.troubleshootingErrorDetails
     }
 }
+// GetType gets the type property value. The type property
+func (m *MobileAppTroubleshootingHistoryItem) GetType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
+    }
+}
 // Serialize serializes information the current object
 func (m *MobileAppTroubleshootingHistoryItem) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
@@ -84,6 +133,12 @@ func (m *MobileAppTroubleshootingHistoryItem) Serialize(writer i878a80d2330e89d2
     }
     {
         err := writer.WriteObjectValue("troubleshootingErrorDetails", m.GetTroubleshootingErrorDetails())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("type", m.GetType())
         if err != nil {
             return err
         }
@@ -112,5 +167,11 @@ func (m *MobileAppTroubleshootingHistoryItem) SetOccurrenceDateTime(value *i3360
 func (m *MobileAppTroubleshootingHistoryItem) SetTroubleshootingErrorDetails(value DeviceManagementTroubleshootingErrorDetailsable)() {
     if m != nil {
         m.troubleshootingErrorDetails = value
+    }
+}
+// SetType sets the type property value. The type property
+func (m *MobileAppTroubleshootingHistoryItem) SetType(value *string)() {
+    if m != nil {
+        m.type_escaped = value
     }
 }

@@ -15,7 +15,7 @@ type WarrantyOffer struct {
     endDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Warranty offer start date
     startDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // Warranty offer type. Possible values are: unknown, manufacturer, contractual, unknownFutureValue.
+    // Models and Manufactures meatadata for managed devices in the account
     type_escaped *WarrantyType
 }
 // NewWarrantyOffer instantiates a new warrantyOffer and sets the default values.
@@ -106,7 +106,7 @@ func (m *WarrantyOffer) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f
         return m.startDateTime
     }
 }
-// GetType gets the type property value. Warranty offer type. Possible values are: unknown, manufacturer, contractual, unknownFutureValue.
+// GetType gets the type property value. Models and Manufactures meatadata for managed devices in the account
 func (m *WarrantyOffer) GetType()(*WarrantyType) {
     if m == nil {
         return nil
@@ -173,7 +173,7 @@ func (m *WarrantyOffer) SetStartDateTime(value *i336074805fc853987abe6f7fe3ad97a
         m.startDateTime = value
     }
 }
-// SetType sets the type property value. Warranty offer type. Possible values are: unknown, manufacturer, contractual, unknownFutureValue.
+// SetType sets the type property value. Models and Manufactures meatadata for managed devices in the account
 func (m *WarrantyOffer) SetType(value *WarrantyType)() {
     if m != nil {
         m.type_escaped = value

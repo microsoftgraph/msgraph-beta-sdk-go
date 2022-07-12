@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ManagedDeviceCertificateState provides operations to manage the deviceManagement singleton.
+// ManagedDeviceCertificateState provides operations to manage the collection of accessReview entities.
 type ManagedDeviceCertificateState struct {
     Entity
     // Extended key usage
@@ -16,29 +16,29 @@ type ManagedDeviceCertificateState struct {
     certificateExpirationDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Issuance date
     certificateIssuanceDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // Issuance State. Possible values are: unknown, challengeIssued, challengeIssueFailed, requestCreationFailed, requestSubmitFailed, challengeValidationSucceeded, challengeValidationFailed, issueFailed, issuePending, issued, responseProcessingFailed, responsePending, enrollmentSucceeded, enrollmentNotNeeded, revoked, removedFromCollection, renewVerified, installFailed, installed, deleteFailed, deleted, renewalRequested, requested.
+    // Certificate Issuance State Options.
     certificateIssuanceState *CertificateIssuanceStates
     // Issuer
     certificateIssuer *string
     // Key length
     certificateKeyLength *int32
-    // Key Storage Provider. Possible values are: useTpmKspOtherwiseUseSoftwareKsp, useTpmKspOtherwiseFail, usePassportForWorkKspOtherwiseFail, useSoftwareKsp.
+    // Key Storage Provider (KSP) Import Options.
     certificateKeyStorageProvider *KeyStorageProviderOption
-    // Key usage. Possible values are: keyEncipherment, digitalSignature.
+    // Key Usage Options.
     certificateKeyUsage *KeyUsages
     // Last certificate issuance state change
     certificateLastIssuanceStateChangedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Certificate profile display name
     certificateProfileDisplayName *string
-    // Revoke status. Possible values are: none, pending, issued, failed, revoked.
+    // Certificate Revocation Status.
     certificateRevokeStatus *CertificateRevocationStatus
     // Serial number
     certificateSerialNumber *string
-    // Subject alternative name format. Possible values are: none, emailAddress, userPrincipalName, customAzureADAttribute, domainNameService, universalResourceIdentifier.
+    // Subject Alternative Name Options.
     certificateSubjectAlternativeNameFormat *SubjectAlternativeNameType
     // Subject alternative name format string for custom formats
     certificateSubjectAlternativeNameFormatString *string
-    // Subject name format. Possible values are: commonName, commonNameIncludingEmail, commonNameAsEmail, custom, commonNameAsIMEI, commonNameAsSerialNumber, commonNameAsAadDeviceId, commonNameAsIntuneDeviceId, commonNameAsDurableDeviceId.
+    // Subject Name Format Options.
     certificateSubjectNameFormat *SubjectNameFormat
     // Subject name format string for custom subject name formats
     certificateSubjectNameFormatString *string
@@ -46,11 +46,11 @@ type ManagedDeviceCertificateState struct {
     certificateThumbprint *string
     // Validity period
     certificateValidityPeriod *int32
-    // Validity period units. Possible values are: days, months, years.
+    // Certificate Validity Period Options.
     certificateValidityPeriodUnits *CertificateValidityPeriodScale
     // Device display name
     deviceDisplayName *string
-    // Device platform. Possible values are: android, androidForWork, iOS, macOS, windowsPhone81, windows81AndLater, windows10AndLater, androidWorkProfile, unknown, androidAOSP.
+    // Supported platform types.
     devicePlatform *DevicePlatformType
     // Last certificate issuance state change
     lastCertificateStateChangeDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
@@ -100,7 +100,7 @@ func (m *ManagedDeviceCertificateState) GetCertificateIssuanceDateTime()(*i33607
         return m.certificateIssuanceDateTime
     }
 }
-// GetCertificateIssuanceState gets the certificateIssuanceState property value. Issuance State. Possible values are: unknown, challengeIssued, challengeIssueFailed, requestCreationFailed, requestSubmitFailed, challengeValidationSucceeded, challengeValidationFailed, issueFailed, issuePending, issued, responseProcessingFailed, responsePending, enrollmentSucceeded, enrollmentNotNeeded, revoked, removedFromCollection, renewVerified, installFailed, installed, deleteFailed, deleted, renewalRequested, requested.
+// GetCertificateIssuanceState gets the certificateIssuanceState property value. Certificate Issuance State Options.
 func (m *ManagedDeviceCertificateState) GetCertificateIssuanceState()(*CertificateIssuanceStates) {
     if m == nil {
         return nil
@@ -124,7 +124,7 @@ func (m *ManagedDeviceCertificateState) GetCertificateKeyLength()(*int32) {
         return m.certificateKeyLength
     }
 }
-// GetCertificateKeyStorageProvider gets the certificateKeyStorageProvider property value. Key Storage Provider. Possible values are: useTpmKspOtherwiseUseSoftwareKsp, useTpmKspOtherwiseFail, usePassportForWorkKspOtherwiseFail, useSoftwareKsp.
+// GetCertificateKeyStorageProvider gets the certificateKeyStorageProvider property value. Key Storage Provider (KSP) Import Options.
 func (m *ManagedDeviceCertificateState) GetCertificateKeyStorageProvider()(*KeyStorageProviderOption) {
     if m == nil {
         return nil
@@ -132,7 +132,7 @@ func (m *ManagedDeviceCertificateState) GetCertificateKeyStorageProvider()(*KeyS
         return m.certificateKeyStorageProvider
     }
 }
-// GetCertificateKeyUsage gets the certificateKeyUsage property value. Key usage. Possible values are: keyEncipherment, digitalSignature.
+// GetCertificateKeyUsage gets the certificateKeyUsage property value. Key Usage Options.
 func (m *ManagedDeviceCertificateState) GetCertificateKeyUsage()(*KeyUsages) {
     if m == nil {
         return nil
@@ -156,7 +156,7 @@ func (m *ManagedDeviceCertificateState) GetCertificateProfileDisplayName()(*stri
         return m.certificateProfileDisplayName
     }
 }
-// GetCertificateRevokeStatus gets the certificateRevokeStatus property value. Revoke status. Possible values are: none, pending, issued, failed, revoked.
+// GetCertificateRevokeStatus gets the certificateRevokeStatus property value. Certificate Revocation Status.
 func (m *ManagedDeviceCertificateState) GetCertificateRevokeStatus()(*CertificateRevocationStatus) {
     if m == nil {
         return nil
@@ -172,7 +172,7 @@ func (m *ManagedDeviceCertificateState) GetCertificateSerialNumber()(*string) {
         return m.certificateSerialNumber
     }
 }
-// GetCertificateSubjectAlternativeNameFormat gets the certificateSubjectAlternativeNameFormat property value. Subject alternative name format. Possible values are: none, emailAddress, userPrincipalName, customAzureADAttribute, domainNameService, universalResourceIdentifier.
+// GetCertificateSubjectAlternativeNameFormat gets the certificateSubjectAlternativeNameFormat property value. Subject Alternative Name Options.
 func (m *ManagedDeviceCertificateState) GetCertificateSubjectAlternativeNameFormat()(*SubjectAlternativeNameType) {
     if m == nil {
         return nil
@@ -188,7 +188,7 @@ func (m *ManagedDeviceCertificateState) GetCertificateSubjectAlternativeNameForm
         return m.certificateSubjectAlternativeNameFormatString
     }
 }
-// GetCertificateSubjectNameFormat gets the certificateSubjectNameFormat property value. Subject name format. Possible values are: commonName, commonNameIncludingEmail, commonNameAsEmail, custom, commonNameAsIMEI, commonNameAsSerialNumber, commonNameAsAadDeviceId, commonNameAsIntuneDeviceId, commonNameAsDurableDeviceId.
+// GetCertificateSubjectNameFormat gets the certificateSubjectNameFormat property value. Subject Name Format Options.
 func (m *ManagedDeviceCertificateState) GetCertificateSubjectNameFormat()(*SubjectNameFormat) {
     if m == nil {
         return nil
@@ -220,7 +220,7 @@ func (m *ManagedDeviceCertificateState) GetCertificateValidityPeriod()(*int32) {
         return m.certificateValidityPeriod
     }
 }
-// GetCertificateValidityPeriodUnits gets the certificateValidityPeriodUnits property value. Validity period units. Possible values are: days, months, years.
+// GetCertificateValidityPeriodUnits gets the certificateValidityPeriodUnits property value. Certificate Validity Period Options.
 func (m *ManagedDeviceCertificateState) GetCertificateValidityPeriodUnits()(*CertificateValidityPeriodScale) {
     if m == nil {
         return nil
@@ -236,7 +236,7 @@ func (m *ManagedDeviceCertificateState) GetDeviceDisplayName()(*string) {
         return m.deviceDisplayName
     }
 }
-// GetDevicePlatform gets the devicePlatform property value. Device platform. Possible values are: android, androidForWork, iOS, macOS, windowsPhone81, windows81AndLater, windows10AndLater, androidWorkProfile, unknown, androidAOSP.
+// GetDevicePlatform gets the devicePlatform property value. Supported platform types.
 func (m *ManagedDeviceCertificateState) GetDevicePlatform()(*DevicePlatformType) {
     if m == nil {
         return nil
@@ -689,7 +689,7 @@ func (m *ManagedDeviceCertificateState) SetCertificateIssuanceDateTime(value *i3
         m.certificateIssuanceDateTime = value
     }
 }
-// SetCertificateIssuanceState sets the certificateIssuanceState property value. Issuance State. Possible values are: unknown, challengeIssued, challengeIssueFailed, requestCreationFailed, requestSubmitFailed, challengeValidationSucceeded, challengeValidationFailed, issueFailed, issuePending, issued, responseProcessingFailed, responsePending, enrollmentSucceeded, enrollmentNotNeeded, revoked, removedFromCollection, renewVerified, installFailed, installed, deleteFailed, deleted, renewalRequested, requested.
+// SetCertificateIssuanceState sets the certificateIssuanceState property value. Certificate Issuance State Options.
 func (m *ManagedDeviceCertificateState) SetCertificateIssuanceState(value *CertificateIssuanceStates)() {
     if m != nil {
         m.certificateIssuanceState = value
@@ -707,13 +707,13 @@ func (m *ManagedDeviceCertificateState) SetCertificateKeyLength(value *int32)() 
         m.certificateKeyLength = value
     }
 }
-// SetCertificateKeyStorageProvider sets the certificateKeyStorageProvider property value. Key Storage Provider. Possible values are: useTpmKspOtherwiseUseSoftwareKsp, useTpmKspOtherwiseFail, usePassportForWorkKspOtherwiseFail, useSoftwareKsp.
+// SetCertificateKeyStorageProvider sets the certificateKeyStorageProvider property value. Key Storage Provider (KSP) Import Options.
 func (m *ManagedDeviceCertificateState) SetCertificateKeyStorageProvider(value *KeyStorageProviderOption)() {
     if m != nil {
         m.certificateKeyStorageProvider = value
     }
 }
-// SetCertificateKeyUsage sets the certificateKeyUsage property value. Key usage. Possible values are: keyEncipherment, digitalSignature.
+// SetCertificateKeyUsage sets the certificateKeyUsage property value. Key Usage Options.
 func (m *ManagedDeviceCertificateState) SetCertificateKeyUsage(value *KeyUsages)() {
     if m != nil {
         m.certificateKeyUsage = value
@@ -731,7 +731,7 @@ func (m *ManagedDeviceCertificateState) SetCertificateProfileDisplayName(value *
         m.certificateProfileDisplayName = value
     }
 }
-// SetCertificateRevokeStatus sets the certificateRevokeStatus property value. Revoke status. Possible values are: none, pending, issued, failed, revoked.
+// SetCertificateRevokeStatus sets the certificateRevokeStatus property value. Certificate Revocation Status.
 func (m *ManagedDeviceCertificateState) SetCertificateRevokeStatus(value *CertificateRevocationStatus)() {
     if m != nil {
         m.certificateRevokeStatus = value
@@ -743,7 +743,7 @@ func (m *ManagedDeviceCertificateState) SetCertificateSerialNumber(value *string
         m.certificateSerialNumber = value
     }
 }
-// SetCertificateSubjectAlternativeNameFormat sets the certificateSubjectAlternativeNameFormat property value. Subject alternative name format. Possible values are: none, emailAddress, userPrincipalName, customAzureADAttribute, domainNameService, universalResourceIdentifier.
+// SetCertificateSubjectAlternativeNameFormat sets the certificateSubjectAlternativeNameFormat property value. Subject Alternative Name Options.
 func (m *ManagedDeviceCertificateState) SetCertificateSubjectAlternativeNameFormat(value *SubjectAlternativeNameType)() {
     if m != nil {
         m.certificateSubjectAlternativeNameFormat = value
@@ -755,7 +755,7 @@ func (m *ManagedDeviceCertificateState) SetCertificateSubjectAlternativeNameForm
         m.certificateSubjectAlternativeNameFormatString = value
     }
 }
-// SetCertificateSubjectNameFormat sets the certificateSubjectNameFormat property value. Subject name format. Possible values are: commonName, commonNameIncludingEmail, commonNameAsEmail, custom, commonNameAsIMEI, commonNameAsSerialNumber, commonNameAsAadDeviceId, commonNameAsIntuneDeviceId, commonNameAsDurableDeviceId.
+// SetCertificateSubjectNameFormat sets the certificateSubjectNameFormat property value. Subject Name Format Options.
 func (m *ManagedDeviceCertificateState) SetCertificateSubjectNameFormat(value *SubjectNameFormat)() {
     if m != nil {
         m.certificateSubjectNameFormat = value
@@ -779,7 +779,7 @@ func (m *ManagedDeviceCertificateState) SetCertificateValidityPeriod(value *int3
         m.certificateValidityPeriod = value
     }
 }
-// SetCertificateValidityPeriodUnits sets the certificateValidityPeriodUnits property value. Validity period units. Possible values are: days, months, years.
+// SetCertificateValidityPeriodUnits sets the certificateValidityPeriodUnits property value. Certificate Validity Period Options.
 func (m *ManagedDeviceCertificateState) SetCertificateValidityPeriodUnits(value *CertificateValidityPeriodScale)() {
     if m != nil {
         m.certificateValidityPeriodUnits = value
@@ -791,7 +791,7 @@ func (m *ManagedDeviceCertificateState) SetDeviceDisplayName(value *string)() {
         m.deviceDisplayName = value
     }
 }
-// SetDevicePlatform sets the devicePlatform property value. Device platform. Possible values are: android, androidForWork, iOS, macOS, windowsPhone81, windows81AndLater, windows10AndLater, androidWorkProfile, unknown, androidAOSP.
+// SetDevicePlatform sets the devicePlatform property value. Supported platform types.
 func (m *ManagedDeviceCertificateState) SetDevicePlatform(value *DevicePlatformType)() {
     if m != nil {
         m.devicePlatform = value

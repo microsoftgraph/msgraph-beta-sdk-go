@@ -24,7 +24,7 @@ type MacOsVppApp struct {
     totalLicenseCount *int32
     // The number of VPP licenses in use.
     usedLicenseCount *int32
-    // The type of volume purchase program which the given Apple Volume Purchase Program Token is associated with. Possible values are: business, education. Possible values are: business, education.
+    // Possible types of an Apple Volume Purchase Program token.
     vppTokenAccountType *VppTokenAccountType
     // The Apple Id associated with the given Apple Volume Purchase Program Token.
     vppTokenAppleId *string
@@ -241,7 +241,7 @@ func (m *MacOsVppApp) GetUsedLicenseCount()(*int32) {
         return m.usedLicenseCount
     }
 }
-// GetVppTokenAccountType gets the vppTokenAccountType property value. The type of volume purchase program which the given Apple Volume Purchase Program Token is associated with. Possible values are: business, education. Possible values are: business, education.
+// GetVppTokenAccountType gets the vppTokenAccountType property value. Possible types of an Apple Volume Purchase Program token.
 func (m *MacOsVppApp) GetVppTokenAccountType()(*VppTokenAccountType) {
     if m == nil {
         return nil
@@ -410,7 +410,7 @@ func (m *MacOsVppApp) SetUsedLicenseCount(value *int32)() {
         m.usedLicenseCount = value
     }
 }
-// SetVppTokenAccountType sets the vppTokenAccountType property value. The type of volume purchase program which the given Apple Volume Purchase Program Token is associated with. Possible values are: business, education. Possible values are: business, education.
+// SetVppTokenAccountType sets the vppTokenAccountType property value. Possible types of an Apple Volume Purchase Program token.
 func (m *MacOsVppApp) SetVppTokenAccountType(value *VppTokenAccountType)() {
     if m != nil {
         m.vppTokenAccountType = value

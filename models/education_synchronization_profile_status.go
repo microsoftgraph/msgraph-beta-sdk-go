@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// EducationSynchronizationProfileStatus provides operations to manage the educationRoot singleton.
+// EducationSynchronizationProfileStatus 
 type EducationSynchronizationProfileStatus struct {
     Entity
     // Number of errors during synchronization.
@@ -19,7 +19,7 @@ type EducationSynchronizationProfileStatus struct {
     // Status message for the current profile's synchronization stage.
     statusMessage *string
 }
-// NewEducationSynchronizationProfileStatus instantiates a new educationSynchronizationProfileStatus and sets the default values.
+// NewEducationSynchronizationProfileStatus instantiates a new EducationSynchronizationProfileStatus and sets the default values.
 func NewEducationSynchronizationProfileStatus()(*EducationSynchronizationProfileStatus) {
     m := &EducationSynchronizationProfileStatus{
         Entity: *NewEntity(),

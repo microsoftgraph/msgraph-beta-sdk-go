@@ -9,9 +9,9 @@ type IosManagedAppProtection struct {
     TargetedManagedAppProtection
     // Semicolon seperated list of device models allowed, as a string, for the managed app to work.
     allowedIosDeviceModels *string
-    // Defines a managed app behavior, either block or wipe, if the specified device model is not allowed. Possible values are: block, wipe, warn.
+    // An admin initiated action to be applied on a managed app.
     appActionIfIosDeviceModelNotAllowed *ManagedAppRemediationAction
-    // Type of encryption which should be used for data in a managed app. Possible values are: useDeviceSettings, afterDeviceRestart, whenDeviceLockedExceptOpenFiles, whenDeviceLocked.
+    // Represents the level to which app data is encrypted for managed apps
     appDataEncryptionType *ManagedAppDataEncryptionType
     // List of apps to which the policy is deployed.
     apps []ManagedMobileAppable
@@ -63,7 +63,7 @@ func (m *IosManagedAppProtection) GetAllowedIosDeviceModels()(*string) {
         return m.allowedIosDeviceModels
     }
 }
-// GetAppActionIfIosDeviceModelNotAllowed gets the appActionIfIosDeviceModelNotAllowed property value. Defines a managed app behavior, either block or wipe, if the specified device model is not allowed. Possible values are: block, wipe, warn.
+// GetAppActionIfIosDeviceModelNotAllowed gets the appActionIfIosDeviceModelNotAllowed property value. An admin initiated action to be applied on a managed app.
 func (m *IosManagedAppProtection) GetAppActionIfIosDeviceModelNotAllowed()(*ManagedAppRemediationAction) {
     if m == nil {
         return nil
@@ -71,7 +71,7 @@ func (m *IosManagedAppProtection) GetAppActionIfIosDeviceModelNotAllowed()(*Mana
         return m.appActionIfIosDeviceModelNotAllowed
     }
 }
-// GetAppDataEncryptionType gets the appDataEncryptionType property value. Type of encryption which should be used for data in a managed app. Possible values are: useDeviceSettings, afterDeviceRestart, whenDeviceLockedExceptOpenFiles, whenDeviceLocked.
+// GetAppDataEncryptionType gets the appDataEncryptionType property value. Represents the level to which app data is encrypted for managed apps
 func (m *IosManagedAppProtection) GetAppDataEncryptionType()(*ManagedAppDataEncryptionType) {
     if m == nil {
         return nil
@@ -532,13 +532,13 @@ func (m *IosManagedAppProtection) SetAllowedIosDeviceModels(value *string)() {
         m.allowedIosDeviceModels = value
     }
 }
-// SetAppActionIfIosDeviceModelNotAllowed sets the appActionIfIosDeviceModelNotAllowed property value. Defines a managed app behavior, either block or wipe, if the specified device model is not allowed. Possible values are: block, wipe, warn.
+// SetAppActionIfIosDeviceModelNotAllowed sets the appActionIfIosDeviceModelNotAllowed property value. An admin initiated action to be applied on a managed app.
 func (m *IosManagedAppProtection) SetAppActionIfIosDeviceModelNotAllowed(value *ManagedAppRemediationAction)() {
     if m != nil {
         m.appActionIfIosDeviceModelNotAllowed = value
     }
 }
-// SetAppDataEncryptionType sets the appDataEncryptionType property value. Type of encryption which should be used for data in a managed app. Possible values are: useDeviceSettings, afterDeviceRestart, whenDeviceLockedExceptOpenFiles, whenDeviceLocked.
+// SetAppDataEncryptionType sets the appDataEncryptionType property value. Represents the level to which app data is encrypted for managed apps
 func (m *IosManagedAppProtection) SetAppDataEncryptionType(value *ManagedAppDataEncryptionType)() {
     if m != nil {
         m.appDataEncryptionType = value

@@ -8,7 +8,7 @@ import (
 type WindowsPackageInformation struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
-    // The Windows architecture for which this app can run on. Possible values are: none, x86, x64, arm, neutral, arm64.
+    // Contains properties for Windows architecture.
     applicableArchitecture *WindowsArchitecture
     // The Display Name.
     displayName *string
@@ -42,7 +42,7 @@ func (m *WindowsPackageInformation) GetAdditionalData()(map[string]interface{}) 
         return m.additionalData
     }
 }
-// GetApplicableArchitecture gets the applicableArchitecture property value. The Windows architecture for which this app can run on. Possible values are: none, x86, x64, arm, neutral, arm64.
+// GetApplicableArchitecture gets the applicableArchitecture property value. Contains properties for Windows architecture.
 func (m *WindowsPackageInformation) GetApplicableArchitecture()(*WindowsArchitecture) {
     if m == nil {
         return nil
@@ -232,7 +232,7 @@ func (m *WindowsPackageInformation) SetAdditionalData(value map[string]interface
         m.additionalData = value
     }
 }
-// SetApplicableArchitecture sets the applicableArchitecture property value. The Windows architecture for which this app can run on. Possible values are: none, x86, x64, arm, neutral, arm64.
+// SetApplicableArchitecture sets the applicableArchitecture property value. Contains properties for Windows architecture.
 func (m *WindowsPackageInformation) SetApplicableArchitecture(value *WindowsArchitecture)() {
     if m != nil {
         m.applicableArchitecture = value

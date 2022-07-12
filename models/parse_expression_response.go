@@ -19,7 +19,7 @@ type ParseExpressionResponse struct {
     // true if the expression was parsed successfully.
     parsingSucceeded *bool
 }
-// NewParseExpressionResponse instantiates a new ParseExpressionResponse and sets the default values.
+// NewParseExpressionResponse instantiates a new parseExpressionResponse and sets the default values.
 func NewParseExpressionResponse()(*ParseExpressionResponse) {
     m := &ParseExpressionResponse{
     }

@@ -7,7 +7,7 @@ import (
 // DeviceManagementComplianceActionItem scheduled Action for Rule
 type DeviceManagementComplianceActionItem struct {
     Entity
-    // What action to take. Possible values are: noAction, notification, block, retire, wipe, removeResourceAccessProfiles, pushNotification, remoteLock.
+    // Scheduled Action Type Enum
     actionType *DeviceManagementComplianceActionType
     // Number of hours to wait till the action will be enforced. Valid values 0 to 8760
     gracePeriodHours *int32
@@ -27,7 +27,7 @@ func NewDeviceManagementComplianceActionItem()(*DeviceManagementComplianceAction
 func CreateDeviceManagementComplianceActionItemFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDeviceManagementComplianceActionItem(), nil
 }
-// GetActionType gets the actionType property value. What action to take. Possible values are: noAction, notification, block, retire, wipe, removeResourceAccessProfiles, pushNotification, remoteLock.
+// GetActionType gets the actionType property value. Scheduled Action Type Enum
 func (m *DeviceManagementComplianceActionItem) GetActionType()(*DeviceManagementComplianceActionType) {
     if m == nil {
         return nil
@@ -141,7 +141,7 @@ func (m *DeviceManagementComplianceActionItem) Serialize(writer i878a80d2330e89d
     }
     return nil
 }
-// SetActionType sets the actionType property value. What action to take. Possible values are: noAction, notification, block, retire, wipe, removeResourceAccessProfiles, pushNotification, remoteLock.
+// SetActionType sets the actionType property value. Scheduled Action Type Enum
 func (m *DeviceManagementComplianceActionItem) SetActionType(value *DeviceManagementComplianceActionType)() {
     if m != nil {
         m.actionType = value

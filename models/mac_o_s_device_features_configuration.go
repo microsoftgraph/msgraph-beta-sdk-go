@@ -33,7 +33,7 @@ type MacOSDeviceFeaturesConfiguration struct {
     contentCachingBlockDeletion *bool
     // A list of custom IP ranges content caches will use to listen for clients. This collection can contain a maximum of 500 elements.
     contentCachingClientListenRanges []IpRangeable
-    // Determines the method in which content caching servers will listen for clients. Possible values are: notConfigured, clientsInLocalNetwork, clientsWithSamePublicIpAddress, clientsInCustomLocalNetworks, clientsInCustomLocalNetworksWithFallback.
+    // Determines which clients a content cache will serve.
     contentCachingClientPolicy *MacOSContentCachingClientPolicy
     // The path to the directory used to store cached content. The value must be (or end with) /Library/Application Support/Apple/AssetCache/Data
     contentCachingDataPath *string
@@ -51,13 +51,13 @@ type MacOSDeviceFeaturesConfiguration struct {
     contentCachingMaxSizeBytes *int64
     // A list of IP addresses representing parent content caches.
     contentCachingParents []string
-    // Determines the method in which content caching servers will select parents if multiple are present. Possible values are: notConfigured, roundRobin, firstAvailable, urlPathHash, random, stickyAvailable.
+    // Determines how content caches select a parent cache.
     contentCachingParentSelectionPolicy *MacOSContentCachingParentSelectionPolicy
     // A list of custom IP ranges content caches will use to query for content from peers caches. This collection can contain a maximum of 500 elements.
     contentCachingPeerFilterRanges []IpRangeable
     // A list of custom IP ranges content caches will use to listen for peer caches. This collection can contain a maximum of 500 elements.
     contentCachingPeerListenRanges []IpRangeable
-    // Determines the method in which content caches peer with other caches. Possible values are: notConfigured, peersInLocalNetwork, peersWithSamePublicIpAddress, peersInCustomLocalNetworks.
+    // Determines which content caches other content caches will peer with.
     contentCachingPeerPolicy *MacOSContentCachingPeerPolicy
     // Sets the port used for content caching. If the value is 0, a random available port will be selected. Valid values 0 to 65535
     contentCachingPort *int32
@@ -65,7 +65,7 @@ type MacOSDeviceFeaturesConfiguration struct {
     contentCachingPublicRanges []IpRangeable
     // Display content caching alerts as system notifications.
     contentCachingShowAlerts *bool
-    // Determines what type of content is allowed to be cached by Apple's content caching service. Possible values are: notConfigured, userContentOnly, sharedContentOnly.
+    // Indicates the type of content allowed to be cached by Apple's content caching service.
     contentCachingType *MacOSContentCachingType
     // Custom text to be displayed on the login window.
     loginWindowText *string
@@ -207,7 +207,7 @@ func (m *MacOSDeviceFeaturesConfiguration) GetContentCachingClientListenRanges()
         return m.contentCachingClientListenRanges
     }
 }
-// GetContentCachingClientPolicy gets the contentCachingClientPolicy property value. Determines the method in which content caching servers will listen for clients. Possible values are: notConfigured, clientsInLocalNetwork, clientsWithSamePublicIpAddress, clientsInCustomLocalNetworks, clientsInCustomLocalNetworksWithFallback.
+// GetContentCachingClientPolicy gets the contentCachingClientPolicy property value. Determines which clients a content cache will serve.
 func (m *MacOSDeviceFeaturesConfiguration) GetContentCachingClientPolicy()(*MacOSContentCachingClientPolicy) {
     if m == nil {
         return nil
@@ -279,7 +279,7 @@ func (m *MacOSDeviceFeaturesConfiguration) GetContentCachingParents()([]string) 
         return m.contentCachingParents
     }
 }
-// GetContentCachingParentSelectionPolicy gets the contentCachingParentSelectionPolicy property value. Determines the method in which content caching servers will select parents if multiple are present. Possible values are: notConfigured, roundRobin, firstAvailable, urlPathHash, random, stickyAvailable.
+// GetContentCachingParentSelectionPolicy gets the contentCachingParentSelectionPolicy property value. Determines how content caches select a parent cache.
 func (m *MacOSDeviceFeaturesConfiguration) GetContentCachingParentSelectionPolicy()(*MacOSContentCachingParentSelectionPolicy) {
     if m == nil {
         return nil
@@ -303,7 +303,7 @@ func (m *MacOSDeviceFeaturesConfiguration) GetContentCachingPeerListenRanges()([
         return m.contentCachingPeerListenRanges
     }
 }
-// GetContentCachingPeerPolicy gets the contentCachingPeerPolicy property value. Determines the method in which content caches peer with other caches. Possible values are: notConfigured, peersInLocalNetwork, peersWithSamePublicIpAddress, peersInCustomLocalNetworks.
+// GetContentCachingPeerPolicy gets the contentCachingPeerPolicy property value. Determines which content caches other content caches will peer with.
 func (m *MacOSDeviceFeaturesConfiguration) GetContentCachingPeerPolicy()(*MacOSContentCachingPeerPolicy) {
     if m == nil {
         return nil
@@ -335,7 +335,7 @@ func (m *MacOSDeviceFeaturesConfiguration) GetContentCachingShowAlerts()(*bool) 
         return m.contentCachingShowAlerts
     }
 }
-// GetContentCachingType gets the contentCachingType property value. Determines what type of content is allowed to be cached by Apple's content caching service. Possible values are: notConfigured, userContentOnly, sharedContentOnly.
+// GetContentCachingType gets the contentCachingType property value. Indicates the type of content allowed to be cached by Apple's content caching service.
 func (m *MacOSDeviceFeaturesConfiguration) GetContentCachingType()(*MacOSContentCachingType) {
     if m == nil {
         return nil
@@ -1266,7 +1266,7 @@ func (m *MacOSDeviceFeaturesConfiguration) SetContentCachingClientListenRanges(v
         m.contentCachingClientListenRanges = value
     }
 }
-// SetContentCachingClientPolicy sets the contentCachingClientPolicy property value. Determines the method in which content caching servers will listen for clients. Possible values are: notConfigured, clientsInLocalNetwork, clientsWithSamePublicIpAddress, clientsInCustomLocalNetworks, clientsInCustomLocalNetworksWithFallback.
+// SetContentCachingClientPolicy sets the contentCachingClientPolicy property value. Determines which clients a content cache will serve.
 func (m *MacOSDeviceFeaturesConfiguration) SetContentCachingClientPolicy(value *MacOSContentCachingClientPolicy)() {
     if m != nil {
         m.contentCachingClientPolicy = value
@@ -1320,7 +1320,7 @@ func (m *MacOSDeviceFeaturesConfiguration) SetContentCachingParents(value []stri
         m.contentCachingParents = value
     }
 }
-// SetContentCachingParentSelectionPolicy sets the contentCachingParentSelectionPolicy property value. Determines the method in which content caching servers will select parents if multiple are present. Possible values are: notConfigured, roundRobin, firstAvailable, urlPathHash, random, stickyAvailable.
+// SetContentCachingParentSelectionPolicy sets the contentCachingParentSelectionPolicy property value. Determines how content caches select a parent cache.
 func (m *MacOSDeviceFeaturesConfiguration) SetContentCachingParentSelectionPolicy(value *MacOSContentCachingParentSelectionPolicy)() {
     if m != nil {
         m.contentCachingParentSelectionPolicy = value
@@ -1338,7 +1338,7 @@ func (m *MacOSDeviceFeaturesConfiguration) SetContentCachingPeerListenRanges(val
         m.contentCachingPeerListenRanges = value
     }
 }
-// SetContentCachingPeerPolicy sets the contentCachingPeerPolicy property value. Determines the method in which content caches peer with other caches. Possible values are: notConfigured, peersInLocalNetwork, peersWithSamePublicIpAddress, peersInCustomLocalNetworks.
+// SetContentCachingPeerPolicy sets the contentCachingPeerPolicy property value. Determines which content caches other content caches will peer with.
 func (m *MacOSDeviceFeaturesConfiguration) SetContentCachingPeerPolicy(value *MacOSContentCachingPeerPolicy)() {
     if m != nil {
         m.contentCachingPeerPolicy = value
@@ -1362,7 +1362,7 @@ func (m *MacOSDeviceFeaturesConfiguration) SetContentCachingShowAlerts(value *bo
         m.contentCachingShowAlerts = value
     }
 }
-// SetContentCachingType sets the contentCachingType property value. Determines what type of content is allowed to be cached by Apple's content caching service. Possible values are: notConfigured, userContentOnly, sharedContentOnly.
+// SetContentCachingType sets the contentCachingType property value. Indicates the type of content allowed to be cached by Apple's content caching service.
 func (m *MacOSDeviceFeaturesConfiguration) SetContentCachingType(value *MacOSContentCachingType)() {
     if m != nil {
         m.contentCachingType = value

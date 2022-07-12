@@ -21,6 +21,7 @@ import (
     i1c97679a2593f53f0d56c8ca04b6129e80fb9633559094ab0a4b44e77ab52bba "github.com/microsoftgraph/msgraph-beta-sdk-go/reports/getteamsuseractivityusercountswithperiod"
     i1db07755998954593b7fa5949e7cf86000be094a324a5936d567e29944523e34 "github.com/microsoftgraph/msgraph-beta-sdk-go/reports/getmailboxusagedetailwithperiod"
     i1f6b0d46fc4b338b7b612e7abff7bb8e48704a3d9c51a3b2122ebc3e77b54fab "github.com/microsoftgraph/msgraph-beta-sdk-go/reports/getoffice365groupsactivitystoragewithperiod"
+    i20411aa1178b819cb7161434d3582faa5a8429cc93bee06b3c270d266d7eb4e8 "github.com/microsoftgraph/msgraph-beta-sdk-go/reports/security"
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
     i23ae3dadc25e31a369068a3ac3cd7ff57c8b4823dcea9650bd4b312d6f57e7e4 "github.com/microsoftgraph/msgraph-beta-sdk-go/reports/getyammeractivityusercountswithperiod"
     i24783836c67f3cbffe50d47dcbcb2588e9de66ffd8f9a5c8da53fa898e5e9446 "github.com/microsoftgraph/msgraph-beta-sdk-go/reports/manageddeviceenrollmentabandonmentdetailswithskipwithtopwithfilterwithskiptoken"
@@ -927,6 +928,10 @@ func (m *ReportsRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(
         return err
     }
     return nil
+}
+// Security the security property
+func (m *ReportsRequestBuilder) Security()(*i20411aa1178b819cb7161434d3582faa5a8429cc93bee06b3c270d266d7eb4e8.SecurityRequestBuilder) {
+    return i20411aa1178b819cb7161434d3582faa5a8429cc93bee06b3c270d266d7eb4e8.NewSecurityRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // UserCredentialUsageDetails the userCredentialUsageDetails property
 func (m *ReportsRequestBuilder) UserCredentialUsageDetails()(*ie1a7217ebe434d381aad98ca8c1e72bdf39d5d523e00d2462f814224c339246b.UserCredentialUsageDetailsRequestBuilder) {

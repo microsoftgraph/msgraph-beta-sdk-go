@@ -7,11 +7,11 @@ import (
 // WindowsManagedAppProtection 
 type WindowsManagedAppProtection struct {
     ManagedAppPolicy
-    // Indicates the sources from which data is allowed to be transferred. Some possible values are allApps or none. Possible values are: allApps, none.
+    // Data can be transferred from/to these classes of apps
     allowedInboundDataTransferSources *WindowsManagedAppDataTransferLevel
-    // Indicates the level to which the clipboard may be shared across org & non-org resources. Some possible values are anyDestinationAnySource or none. Possible values are: anyDestinationAnySource, none.
+    // Represents the level to which the device's clipboard may be shared between apps
     allowedOutboundClipboardSharingLevel *WindowsManagedAppClipboardSharingLevel
-    // Indicates the destinations to which data is allowed to be transferred. Some possible values are allApps or none. Possible values are: allApps, none.
+    // Data can be transferred from/to these classes of apps
     allowedOutboundDataTransferDestinations *WindowsManagedAppDataTransferLevel
     // If set, it will specify what action to take in the case where the user is unable to checkin because their authentication token is invalid. This happens when the user is deleted or disabled in AAD. Some possible values are block or wipe. If this property is not set, no action will be taken. Possible values are: block, wipe, warn.
     appActionIfUnableToAuthenticateUser *ManagedAppRemediationAction
@@ -23,7 +23,7 @@ type WindowsManagedAppProtection struct {
     deployedAppCount *int32
     // When TRUE, indicates that the policy is deployed to some inclusion groups. When FALSE, indicates that the policy is not deployed to any inclusion groups. Default value is FALSE.
     isAssigned *bool
-    // Maximum allowed device threat level, as reported by the Mobile Threat Defense app. Possible values are: notConfigured, secured, low, medium, high.
+    // The maxium threat level allowed for an app to be compliant.
     maximumAllowedDeviceThreatLevel *ManagedAppDeviceThreatLevel
     // Versions bigger than the specified version will block the managed app from accessing company data. For example: '8.1.0' or '13.1.1'.
     maximumRequiredOsVersion *string
@@ -47,7 +47,7 @@ type WindowsManagedAppProtection struct {
     minimumWipeOsVersion *string
     // Versions less than the specified version will wipe the managed app and the associated company data. For example: '8.1.0' or '13.1.1'.
     minimumWipeSdkVersion *string
-    // Determines what action to take if the mobile threat defense threat threshold isn't met. Some possible values are block or wipe. Warn isn't a supported value for this property. Possible values are: block, wipe, warn.
+    // An admin initiated action to be applied on a managed app.
     mobileThreatDefenseRemediationAction *ManagedAppRemediationAction
     // The period after which access is checked when the device is not connected to the internet. For example, PT5M indicates that the interval is 5 minutes in duration. A timespan value of PT0S indicates that access will be blocked immediately when the device is not connected to the internet.
     periodOfflineBeforeAccessCheck *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration
@@ -67,7 +67,7 @@ func NewWindowsManagedAppProtection()(*WindowsManagedAppProtection) {
 func CreateWindowsManagedAppProtectionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWindowsManagedAppProtection(), nil
 }
-// GetAllowedInboundDataTransferSources gets the allowedInboundDataTransferSources property value. Indicates the sources from which data is allowed to be transferred. Some possible values are allApps or none. Possible values are: allApps, none.
+// GetAllowedInboundDataTransferSources gets the allowedInboundDataTransferSources property value. Data can be transferred from/to these classes of apps
 func (m *WindowsManagedAppProtection) GetAllowedInboundDataTransferSources()(*WindowsManagedAppDataTransferLevel) {
     if m == nil {
         return nil
@@ -75,7 +75,7 @@ func (m *WindowsManagedAppProtection) GetAllowedInboundDataTransferSources()(*Wi
         return m.allowedInboundDataTransferSources
     }
 }
-// GetAllowedOutboundClipboardSharingLevel gets the allowedOutboundClipboardSharingLevel property value. Indicates the level to which the clipboard may be shared across org & non-org resources. Some possible values are anyDestinationAnySource or none. Possible values are: anyDestinationAnySource, none.
+// GetAllowedOutboundClipboardSharingLevel gets the allowedOutboundClipboardSharingLevel property value. Represents the level to which the device's clipboard may be shared between apps
 func (m *WindowsManagedAppProtection) GetAllowedOutboundClipboardSharingLevel()(*WindowsManagedAppClipboardSharingLevel) {
     if m == nil {
         return nil
@@ -83,7 +83,7 @@ func (m *WindowsManagedAppProtection) GetAllowedOutboundClipboardSharingLevel()(
         return m.allowedOutboundClipboardSharingLevel
     }
 }
-// GetAllowedOutboundDataTransferDestinations gets the allowedOutboundDataTransferDestinations property value. Indicates the destinations to which data is allowed to be transferred. Some possible values are allApps or none. Possible values are: allApps, none.
+// GetAllowedOutboundDataTransferDestinations gets the allowedOutboundDataTransferDestinations property value. Data can be transferred from/to these classes of apps
 func (m *WindowsManagedAppProtection) GetAllowedOutboundDataTransferDestinations()(*WindowsManagedAppDataTransferLevel) {
     if m == nil {
         return nil
@@ -384,7 +384,7 @@ func (m *WindowsManagedAppProtection) GetIsAssigned()(*bool) {
         return m.isAssigned
     }
 }
-// GetMaximumAllowedDeviceThreatLevel gets the maximumAllowedDeviceThreatLevel property value. Maximum allowed device threat level, as reported by the Mobile Threat Defense app. Possible values are: notConfigured, secured, low, medium, high.
+// GetMaximumAllowedDeviceThreatLevel gets the maximumAllowedDeviceThreatLevel property value. The maxium threat level allowed for an app to be compliant.
 func (m *WindowsManagedAppProtection) GetMaximumAllowedDeviceThreatLevel()(*ManagedAppDeviceThreatLevel) {
     if m == nil {
         return nil
@@ -480,7 +480,7 @@ func (m *WindowsManagedAppProtection) GetMinimumWipeSdkVersion()(*string) {
         return m.minimumWipeSdkVersion
     }
 }
-// GetMobileThreatDefenseRemediationAction gets the mobileThreatDefenseRemediationAction property value. Determines what action to take if the mobile threat defense threat threshold isn't met. Some possible values are block or wipe. Warn isn't a supported value for this property. Possible values are: block, wipe, warn.
+// GetMobileThreatDefenseRemediationAction gets the mobileThreatDefenseRemediationAction property value. An admin initiated action to be applied on a managed app.
 func (m *WindowsManagedAppProtection) GetMobileThreatDefenseRemediationAction()(*ManagedAppRemediationAction) {
     if m == nil {
         return nil
@@ -678,19 +678,19 @@ func (m *WindowsManagedAppProtection) Serialize(writer i878a80d2330e89d26896388a
     }
     return nil
 }
-// SetAllowedInboundDataTransferSources sets the allowedInboundDataTransferSources property value. Indicates the sources from which data is allowed to be transferred. Some possible values are allApps or none. Possible values are: allApps, none.
+// SetAllowedInboundDataTransferSources sets the allowedInboundDataTransferSources property value. Data can be transferred from/to these classes of apps
 func (m *WindowsManagedAppProtection) SetAllowedInboundDataTransferSources(value *WindowsManagedAppDataTransferLevel)() {
     if m != nil {
         m.allowedInboundDataTransferSources = value
     }
 }
-// SetAllowedOutboundClipboardSharingLevel sets the allowedOutboundClipboardSharingLevel property value. Indicates the level to which the clipboard may be shared across org & non-org resources. Some possible values are anyDestinationAnySource or none. Possible values are: anyDestinationAnySource, none.
+// SetAllowedOutboundClipboardSharingLevel sets the allowedOutboundClipboardSharingLevel property value. Represents the level to which the device's clipboard may be shared between apps
 func (m *WindowsManagedAppProtection) SetAllowedOutboundClipboardSharingLevel(value *WindowsManagedAppClipboardSharingLevel)() {
     if m != nil {
         m.allowedOutboundClipboardSharingLevel = value
     }
 }
-// SetAllowedOutboundDataTransferDestinations sets the allowedOutboundDataTransferDestinations property value. Indicates the destinations to which data is allowed to be transferred. Some possible values are allApps or none. Possible values are: allApps, none.
+// SetAllowedOutboundDataTransferDestinations sets the allowedOutboundDataTransferDestinations property value. Data can be transferred from/to these classes of apps
 func (m *WindowsManagedAppProtection) SetAllowedOutboundDataTransferDestinations(value *WindowsManagedAppDataTransferLevel)() {
     if m != nil {
         m.allowedOutboundDataTransferDestinations = value
@@ -726,7 +726,7 @@ func (m *WindowsManagedAppProtection) SetIsAssigned(value *bool)() {
         m.isAssigned = value
     }
 }
-// SetMaximumAllowedDeviceThreatLevel sets the maximumAllowedDeviceThreatLevel property value. Maximum allowed device threat level, as reported by the Mobile Threat Defense app. Possible values are: notConfigured, secured, low, medium, high.
+// SetMaximumAllowedDeviceThreatLevel sets the maximumAllowedDeviceThreatLevel property value. The maxium threat level allowed for an app to be compliant.
 func (m *WindowsManagedAppProtection) SetMaximumAllowedDeviceThreatLevel(value *ManagedAppDeviceThreatLevel)() {
     if m != nil {
         m.maximumAllowedDeviceThreatLevel = value
@@ -798,7 +798,7 @@ func (m *WindowsManagedAppProtection) SetMinimumWipeSdkVersion(value *string)() 
         m.minimumWipeSdkVersion = value
     }
 }
-// SetMobileThreatDefenseRemediationAction sets the mobileThreatDefenseRemediationAction property value. Determines what action to take if the mobile threat defense threat threshold isn't met. Some possible values are block or wipe. Warn isn't a supported value for this property. Possible values are: block, wipe, warn.
+// SetMobileThreatDefenseRemediationAction sets the mobileThreatDefenseRemediationAction property value. An admin initiated action to be applied on a managed app.
 func (m *WindowsManagedAppProtection) SetMobileThreatDefenseRemediationAction(value *ManagedAppRemediationAction)() {
     if m != nil {
         m.mobileThreatDefenseRemediationAction = value

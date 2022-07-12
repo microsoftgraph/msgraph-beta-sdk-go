@@ -8,7 +8,7 @@ import (
 type ManagementTemplateDetailedInfo struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
-    // The management category for the management template. Possible values are: custom, devices, identity, unknownFutureValue. Required. Read-only.
+    // The category property
     category *ManagementCategory
     // The display name for the management template. Required. Read-only.
     displayName *string
@@ -36,7 +36,7 @@ func (m *ManagementTemplateDetailedInfo) GetAdditionalData()(map[string]interfac
         return m.additionalData
     }
 }
-// GetCategory gets the category property value. The management category for the management template. Possible values are: custom, devices, identity, unknownFutureValue. Required. Read-only.
+// GetCategory gets the category property value. The category property
 func (m *ManagementTemplateDetailedInfo) GetCategory()(*ManagementCategory) {
     if m == nil {
         return nil
@@ -154,7 +154,7 @@ func (m *ManagementTemplateDetailedInfo) SetAdditionalData(value map[string]inte
         m.additionalData = value
     }
 }
-// SetCategory sets the category property value. The management category for the management template. Possible values are: custom, devices, identity, unknownFutureValue. Required. Read-only.
+// SetCategory sets the category property value. The category property
 func (m *ManagementTemplateDetailedInfo) SetCategory(value *ManagementCategory)() {
     if m != nil {
         m.category = value

@@ -5,15 +5,17 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
-// UpdatableAsset provides operations to manage the admin singleton.
+// UpdatableAsset 
 type UpdatableAsset struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
 }
-// NewUpdatableAsset instantiates a new updatableAsset and sets the default values.
+// NewUpdatableAsset instantiates a new UpdatableAsset and sets the default values.
 func NewUpdatableAsset()(*UpdatableAsset) {
     m := &UpdatableAsset{
         Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),
     }
+    typeValue := "#microsoft.graph.windowsUpdates.updatableAsset";
+    m.SetType(&typeValue);
     return m
 }
 // CreateUpdatableAssetFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

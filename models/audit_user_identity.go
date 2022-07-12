@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AuditUserIdentity provides operations to manage the auditLogRoot singleton.
+// AuditUserIdentity 
 type AuditUserIdentity struct {
     UserIdentity
     // For user sign ins, the identifier of the tenant that the user is a member of.
@@ -12,7 +12,7 @@ type AuditUserIdentity struct {
     // For user sign ins, the name of the tenant that the user is a member of. Only populated in cases where the home tenant has provided affirmative consent to Azure AD to show the tenant content.
     homeTenantName *string
 }
-// NewAuditUserIdentity instantiates a new auditUserIdentity and sets the default values.
+// NewAuditUserIdentity instantiates a new AuditUserIdentity and sets the default values.
 func NewAuditUserIdentity()(*AuditUserIdentity) {
     m := &AuditUserIdentity{
         UserIdentity: *NewUserIdentity(),

@@ -5,11 +5,13 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// CloudPC provides operations to manage the collection of administrativeUnit entities.
+// CloudPC 
 type CloudPC struct {
     Entity
     // The Azure Active Directory (Azure AD) device ID of the Cloud PC.
     aadDeviceId *string
+    // The connectivityResult property
+    connectivityResult CloudPcConnectivityResultable
     // The display name of the Cloud PC.
     displayName *string
     // The date and time when the grace period ends and reprovisioning/deprovisioning happens. Required only if the status is inGracePeriod. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
@@ -40,7 +42,7 @@ type CloudPC struct {
     servicePlanName *string
     // The service plan type of the Cloud PC.
     servicePlanType *CloudPcServicePlanType
-    // The status of the Cloud PC. Possible values are: notProvisioned, provisioning, provisioned, upgrading, inGracePeriod, deprovisioning, failed, restoring.
+    // The status property
     status *CloudPcStatus
     // The details of the Cloud PC status.
     statusDetails CloudPcStatusDetailsable
@@ -49,7 +51,7 @@ type CloudPC struct {
     // The user principal name (UPN) of the user assigned to the Cloud PC.
     userPrincipalName *string
 }
-// NewCloudPC instantiates a new cloudPC and sets the default values.
+// NewCloudPC instantiates a new CloudPC and sets the default values.
 func NewCloudPC()(*CloudPC) {
     m := &CloudPC{
         Entity: *NewEntity(),
@@ -66,6 +68,14 @@ func (m *CloudPC) GetAadDeviceId()(*string) {
         return nil
     } else {
         return m.aadDeviceId
+    }
+}
+// GetConnectivityResult gets the connectivityResult property value. The connectivityResult property
+func (m *CloudPC) GetConnectivityResult()(CloudPcConnectivityResultable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.connectivityResult
     }
 }
 // GetDisplayName gets the displayName property value. The display name of the Cloud PC.
@@ -86,6 +96,16 @@ func (m *CloudPC) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
         }
         if val != nil {
             m.SetAadDeviceId(val)
+        }
+        return nil
+    }
+    res["connectivityResult"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateCloudPcConnectivityResultFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetConnectivityResult(val.(CloudPcConnectivityResultable))
         }
         return nil
     }
@@ -393,7 +413,7 @@ func (m *CloudPC) GetServicePlanType()(*CloudPcServicePlanType) {
         return m.servicePlanType
     }
 }
-// GetStatus gets the status property value. The status of the Cloud PC. Possible values are: notProvisioned, provisioning, provisioned, upgrading, inGracePeriod, deprovisioning, failed, restoring.
+// GetStatus gets the status property value. The status property
 func (m *CloudPC) GetStatus()(*CloudPcStatus) {
     if m == nil {
         return nil
@@ -433,6 +453,12 @@ func (m *CloudPC) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
     }
     {
         err = writer.WriteStringValue("aadDeviceId", m.GetAadDeviceId())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteObjectValue("connectivityResult", m.GetConnectivityResult())
         if err != nil {
             return err
         }
@@ -563,6 +589,12 @@ func (m *CloudPC) SetAadDeviceId(value *string)() {
         m.aadDeviceId = value
     }
 }
+// SetConnectivityResult sets the connectivityResult property value. The connectivityResult property
+func (m *CloudPC) SetConnectivityResult(value CloudPcConnectivityResultable)() {
+    if m != nil {
+        m.connectivityResult = value
+    }
+}
 // SetDisplayName sets the displayName property value. The display name of the Cloud PC.
 func (m *CloudPC) SetDisplayName(value *string)() {
     if m != nil {
@@ -653,7 +685,7 @@ func (m *CloudPC) SetServicePlanType(value *CloudPcServicePlanType)() {
         m.servicePlanType = value
     }
 }
-// SetStatus sets the status property value. The status of the Cloud PC. Possible values are: notProvisioned, provisioning, provisioned, upgrading, inGracePeriod, deprovisioning, failed, restoring.
+// SetStatus sets the status property value. The status property
 func (m *CloudPC) SetStatus(value *CloudPcStatus)() {
     if m != nil {
         m.status = value

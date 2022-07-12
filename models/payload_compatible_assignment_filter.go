@@ -7,7 +7,7 @@ import (
 // PayloadCompatibleAssignmentFilter 
 type PayloadCompatibleAssignmentFilter struct {
     DeviceAndAppManagementAssignmentFilter
-    // PayloadType of the Assignment Filter. Possible values are: notSet, enrollmentRestrictions.
+    // Represents the payload type AssignmentFilter is being assigned to.
     payloadType *AssignmentFilterPayloadType
 }
 // NewPayloadCompatibleAssignmentFilter instantiates a new PayloadCompatibleAssignmentFilter and sets the default values.
@@ -36,7 +36,7 @@ func (m *PayloadCompatibleAssignmentFilter) GetFieldDeserializers()(map[string]f
     }
     return res
 }
-// GetPayloadType gets the payloadType property value. PayloadType of the Assignment Filter. Possible values are: notSet, enrollmentRestrictions.
+// GetPayloadType gets the payloadType property value. Represents the payload type AssignmentFilter is being assigned to.
 func (m *PayloadCompatibleAssignmentFilter) GetPayloadType()(*AssignmentFilterPayloadType) {
     if m == nil {
         return nil
@@ -59,7 +59,7 @@ func (m *PayloadCompatibleAssignmentFilter) Serialize(writer i878a80d2330e89d268
     }
     return nil
 }
-// SetPayloadType sets the payloadType property value. PayloadType of the Assignment Filter. Possible values are: notSet, enrollmentRestrictions.
+// SetPayloadType sets the payloadType property value. Represents the payload type AssignmentFilter is being assigned to.
 func (m *PayloadCompatibleAssignmentFilter) SetPayloadType(value *AssignmentFilterPayloadType)() {
     if m != nil {
         m.payloadType = value

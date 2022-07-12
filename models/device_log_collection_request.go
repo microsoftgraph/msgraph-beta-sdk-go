@@ -10,7 +10,7 @@ type DeviceLogCollectionRequest struct {
     additionalData map[string]interface{}
     // The unique identifier
     id *string
-    // The template type that is sent with the collection request. Possible values are: predefined.
+    // Enum for the template type used for collecting logs
     templateType *DeviceLogCollectionTemplateType
 }
 // NewDeviceLogCollectionRequest instantiates a new deviceLogCollectionRequest and sets the default values.
@@ -65,7 +65,7 @@ func (m *DeviceLogCollectionRequest) GetId()(*string) {
         return m.id
     }
 }
-// GetTemplateType gets the templateType property value. The template type that is sent with the collection request. Possible values are: predefined.
+// GetTemplateType gets the templateType property value. Enum for the template type used for collecting logs
 func (m *DeviceLogCollectionRequest) GetTemplateType()(*DeviceLogCollectionTemplateType) {
     if m == nil {
         return nil
@@ -108,7 +108,7 @@ func (m *DeviceLogCollectionRequest) SetId(value *string)() {
         m.id = value
     }
 }
-// SetTemplateType sets the templateType property value. The template type that is sent with the collection request. Possible values are: predefined.
+// SetTemplateType sets the templateType property value. Enum for the template type used for collecting logs
 func (m *DeviceLogCollectionRequest) SetTemplateType(value *DeviceLogCollectionTemplateType)() {
     if m != nil {
         m.templateType = value

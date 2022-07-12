@@ -7,7 +7,7 @@ import (
 // VpnConfiguration 
 type VpnConfiguration struct {
     DeviceConfiguration
-    // Authentication method. Possible values are: certificate, usernameAndPassword, sharedSecret, derivedCredential, azureAD.
+    // VPN Authentication Method.
     authenticationMethod *VpnAuthenticationMethod
     // Connection name displayed to the user.
     connectionName *string
@@ -23,6 +23,8 @@ func NewVpnConfiguration()(*VpnConfiguration) {
     m := &VpnConfiguration{
         DeviceConfiguration: *NewDeviceConfiguration(),
     }
+    typeValue := "#microsoft.graph.vpnConfiguration";
+    m.SetType(&typeValue);
     return m
 }
 // CreateVpnConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -48,7 +50,7 @@ func CreateVpnConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d2689
     }
     return NewVpnConfiguration(), nil
 }
-// GetAuthenticationMethod gets the authenticationMethod property value. Authentication method. Possible values are: certificate, usernameAndPassword, sharedSecret, derivedCredential, azureAD.
+// GetAuthenticationMethod gets the authenticationMethod property value. VPN Authentication Method.
 func (m *VpnConfiguration) GetAuthenticationMethod()(*VpnAuthenticationMethod) {
     if m == nil {
         return nil
@@ -190,7 +192,7 @@ func (m *VpnConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
     }
     return nil
 }
-// SetAuthenticationMethod sets the authenticationMethod property value. Authentication method. Possible values are: certificate, usernameAndPassword, sharedSecret, derivedCredential, azureAD.
+// SetAuthenticationMethod sets the authenticationMethod property value. VPN Authentication Method.
 func (m *VpnConfiguration) SetAuthenticationMethod(value *VpnAuthenticationMethod)() {
     if m != nil {
         m.authenticationMethod = value

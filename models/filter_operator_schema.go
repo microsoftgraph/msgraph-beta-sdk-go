@@ -4,17 +4,17 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// FilterOperatorSchema provides operations to call the filterOperators method.
+// FilterOperatorSchema 
 type FilterOperatorSchema struct {
     Entity
-    // Arity of the operator. Possible values are: Binary, Unary. The default is Binary.
+    // The arity property
     arity *ScopeOperatorType
-    // Possible values are: All, Any. Applies only to multivalued attributes. All means that all values must satisfy the condition. Any means that at least one value has to satisfy the condition. The default is All.
+    // The multivaluedComparisonType property
     multivaluedComparisonType *ScopeOperatorMultiValuedComparisonType
     // Attribute types supported by the operator. Possible values are: Boolean, Binary, Reference, Integer, String.
     supportedAttributeTypes []string
 }
-// NewFilterOperatorSchema instantiates a new filterOperatorSchema and sets the default values.
+// NewFilterOperatorSchema instantiates a new FilterOperatorSchema and sets the default values.
 func NewFilterOperatorSchema()(*FilterOperatorSchema) {
     m := &FilterOperatorSchema{
         Entity: *NewEntity(),
@@ -25,7 +25,7 @@ func NewFilterOperatorSchema()(*FilterOperatorSchema) {
 func CreateFilterOperatorSchemaFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewFilterOperatorSchema(), nil
 }
-// GetArity gets the arity property value. Arity of the operator. Possible values are: Binary, Unary. The default is Binary.
+// GetArity gets the arity property value. The arity property
 func (m *FilterOperatorSchema) GetArity()(*ScopeOperatorType) {
     if m == nil {
         return nil
@@ -72,7 +72,7 @@ func (m *FilterOperatorSchema) GetFieldDeserializers()(map[string]func(i878a80d2
     }
     return res
 }
-// GetMultivaluedComparisonType gets the multivaluedComparisonType property value. Possible values are: All, Any. Applies only to multivalued attributes. All means that all values must satisfy the condition. Any means that at least one value has to satisfy the condition. The default is All.
+// GetMultivaluedComparisonType gets the multivaluedComparisonType property value. The multivaluedComparisonType property
 func (m *FilterOperatorSchema) GetMultivaluedComparisonType()(*ScopeOperatorMultiValuedComparisonType) {
     if m == nil {
         return nil
@@ -116,13 +116,13 @@ func (m *FilterOperatorSchema) Serialize(writer i878a80d2330e89d26896388a3f487ee
     }
     return nil
 }
-// SetArity sets the arity property value. Arity of the operator. Possible values are: Binary, Unary. The default is Binary.
+// SetArity sets the arity property value. The arity property
 func (m *FilterOperatorSchema) SetArity(value *ScopeOperatorType)() {
     if m != nil {
         m.arity = value
     }
 }
-// SetMultivaluedComparisonType sets the multivaluedComparisonType property value. Possible values are: All, Any. Applies only to multivalued attributes. All means that all values must satisfy the condition. Any means that at least one value has to satisfy the condition. The default is All.
+// SetMultivaluedComparisonType sets the multivaluedComparisonType property value. The multivaluedComparisonType property
 func (m *FilterOperatorSchema) SetMultivaluedComparisonType(value *ScopeOperatorMultiValuedComparisonType)() {
     if m != nil {
         m.multivaluedComparisonType = value
