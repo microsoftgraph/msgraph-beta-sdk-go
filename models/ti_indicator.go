@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// TiIndicator 
+// TiIndicator provides operations to manage the collection of accessReviewDecision entities.
 type TiIndicator struct {
     Entity
     // The action to apply if the indicator is matched from within the targetProduct security tool. Possible values are: unknown, allow, block, alert. Required.
@@ -125,7 +125,7 @@ type TiIndicator struct {
     // The userAgent property
     userAgent *string
 }
-// NewTiIndicator instantiates a new TiIndicator and sets the default values.
+// NewTiIndicator instantiates a new tiIndicator and sets the default values.
 func NewTiIndicator()(*TiIndicator) {
     m := &TiIndicator{
         Entity: *NewEntity(),

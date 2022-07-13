@@ -23,6 +23,8 @@ type AccessPackageSubject struct {
     onPremisesSecurityIdentifier *string
     // The principal name, if known, of the subject.
     principalName *string
+    // The subjectLifecycle property
+    subjectLifecycle *AccessPackageSubjectLifecycle
 }
 // NewAccessPackageSubject instantiates a new accessPackageSubject and sets the default values.
 func NewAccessPackageSubject()(*AccessPackageSubject) {
@@ -158,6 +160,16 @@ func (m *AccessPackageSubject) GetFieldDeserializers()(map[string]func(i878a80d2
         }
         return nil
     }
+    res["subjectLifecycle"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseAccessPackageSubjectLifecycle)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetSubjectLifecycle(val.(*AccessPackageSubjectLifecycle))
+        }
+        return nil
+    }
     return res
 }
 // GetObjectId gets the objectId property value. The object identifier of the subject. null if the subject is not yet a user in the tenant.
@@ -182,6 +194,14 @@ func (m *AccessPackageSubject) GetPrincipalName()(*string) {
         return nil
     } else {
         return m.principalName
+    }
+}
+// GetSubjectLifecycle gets the subjectLifecycle property value. The subjectLifecycle property
+func (m *AccessPackageSubject) GetSubjectLifecycle()(*AccessPackageSubjectLifecycle) {
+    if m == nil {
+        return nil
+    } else {
+        return m.subjectLifecycle
     }
 }
 // Serialize serializes information the current object
@@ -238,6 +258,13 @@ func (m *AccessPackageSubject) Serialize(writer i878a80d2330e89d26896388a3f487ee
             return err
         }
     }
+    if m.GetSubjectLifecycle() != nil {
+        cast := (*m.GetSubjectLifecycle()).String()
+        err = writer.WriteStringValue("subjectLifecycle", &cast)
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetAltSecId sets the altSecId property value. The altSecId property
@@ -286,5 +313,11 @@ func (m *AccessPackageSubject) SetOnPremisesSecurityIdentifier(value *string)() 
 func (m *AccessPackageSubject) SetPrincipalName(value *string)() {
     if m != nil {
         m.principalName = value
+    }
+}
+// SetSubjectLifecycle sets the subjectLifecycle property value. The subjectLifecycle property
+func (m *AccessPackageSubject) SetSubjectLifecycle(value *AccessPackageSubjectLifecycle)() {
+    if m != nil {
+        m.subjectLifecycle = value
     }
 }

@@ -23,8 +23,8 @@ func NewCustomCalloutExtension()(*CustomCalloutExtension) {
     m := &CustomCalloutExtension{
         Entity: *NewEntity(),
     }
-    typeValue := "#microsoft.graph.customCalloutExtension";
-    m.SetType(&typeValue);
+    odatatypeValue := "#microsoft.graph.customCalloutExtension";
+    m.SetOdatatype(&odatatypeValue);
     return m
 }
 // CreateCustomCalloutExtensionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

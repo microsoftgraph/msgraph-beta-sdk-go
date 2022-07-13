@@ -27,8 +27,8 @@ func NewAndroidWorkProfileCertificateProfileBase()(*AndroidWorkProfileCertificat
     m := &AndroidWorkProfileCertificateProfileBase{
         DeviceConfiguration: *NewDeviceConfiguration(),
     }
-    typeValue := "#microsoft.graph.androidWorkProfileCertificateProfileBase";
-    m.SetType(&typeValue);
+    odatatypeValue := "#microsoft.graph.androidWorkProfileCertificateProfileBase";
+    m.SetOdatatype(&odatatypeValue);
     return m
 }
 // CreateAndroidWorkProfileCertificateProfileBaseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

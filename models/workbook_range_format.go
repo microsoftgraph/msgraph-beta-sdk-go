@@ -26,7 +26,7 @@ type WorkbookRangeFormat struct {
     // Indicates if Excel wraps the text in the object. A null value indicates that the entire range doesn't have uniform wrap setting
     wrapText *bool
 }
-// NewWorkbookRangeFormat instantiates a new WorkbookRangeFormat and sets the default values.
+// NewWorkbookRangeFormat instantiates a new workbookRangeFormat and sets the default values.
 func NewWorkbookRangeFormat()(*WorkbookRangeFormat) {
     m := &WorkbookRangeFormat{
         Entity: *NewEntity(),

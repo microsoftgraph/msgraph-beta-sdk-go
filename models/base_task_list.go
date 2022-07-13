@@ -19,8 +19,8 @@ func NewBaseTaskList()(*BaseTaskList) {
     m := &BaseTaskList{
         Entity: *NewEntity(),
     }
-    typeValue := "#microsoft.graph.baseTaskList";
-    m.SetType(&typeValue);
+    odatatypeValue := "#microsoft.graph.baseTaskList";
+    m.SetOdatatype(&odatatypeValue);
     return m
 }
 // CreateBaseTaskListFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

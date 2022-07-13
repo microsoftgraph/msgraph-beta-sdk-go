@@ -34,8 +34,8 @@ func NewRiskyServicePrincipal()(*RiskyServicePrincipal) {
     m := &RiskyServicePrincipal{
         Entity: *NewEntity(),
     }
-    typeValue := "#microsoft.graph.riskyServicePrincipal";
-    m.SetType(&typeValue);
+    odatatypeValue := "#microsoft.graph.riskyServicePrincipal";
+    m.SetOdatatype(&odatatypeValue);
     return m
 }
 // CreateRiskyServicePrincipalFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

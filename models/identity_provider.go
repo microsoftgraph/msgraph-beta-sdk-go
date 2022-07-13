@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// IdentityProvider provides operations to manage the collection of activityStatistics entities.
+// IdentityProvider 
 type IdentityProvider struct {
     Entity
     // The client ID for the application obtained when registering the application with the identity provider. This is a required field.  Required. Not nullable.
@@ -14,7 +14,7 @@ type IdentityProvider struct {
     // The display name of the identity provider. Not nullable.
     name *string
 }
-// NewIdentityProvider instantiates a new identityProvider and sets the default values.
+// NewIdentityProvider instantiates a new IdentityProvider and sets the default values.
 func NewIdentityProvider()(*IdentityProvider) {
     m := &IdentityProvider{
         Entity: *NewEntity(),

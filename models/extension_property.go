@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ExtensionProperty provides operations to manage the collection of accessReview entities.
+// ExtensionProperty 
 type ExtensionProperty struct {
     DirectoryObject
     // Display name of the application object on which this extension property is defined. Read-only.
@@ -18,7 +18,7 @@ type ExtensionProperty struct {
     // Following values are supported. Not nullable. UserGroupOrganizationDeviceApplication
     targetObjects []string
 }
-// NewExtensionProperty instantiates a new extensionProperty and sets the default values.
+// NewExtensionProperty instantiates a new ExtensionProperty and sets the default values.
 func NewExtensionProperty()(*ExtensionProperty) {
     m := &ExtensionProperty{
         DirectoryObject: *NewDirectoryObject(),

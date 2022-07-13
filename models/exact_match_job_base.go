@@ -24,8 +24,8 @@ func NewExactMatchJobBase()(*ExactMatchJobBase) {
     m := &ExactMatchJobBase{
         Entity: *NewEntity(),
     }
-    typeValue := "#microsoft.graph.exactMatchJobBase";
-    m.SetType(&typeValue);
+    odatatypeValue := "#microsoft.graph.exactMatchJobBase";
+    m.SetOdatatype(&odatatypeValue);
     return m
 }
 // CreateExactMatchJobBaseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

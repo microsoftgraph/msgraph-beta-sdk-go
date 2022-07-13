@@ -22,7 +22,7 @@ type ExternalIdentitiesPolicyRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ExternalIdentitiesPolicyRequestBuilderGetQueryParameters get externalIdentitiesPolicy from policies
+// ExternalIdentitiesPolicyRequestBuilderGetQueryParameters represents the tenant-wide policy that controls whether external users can leave an Azure AD tenant via self-service controls.
 type ExternalIdentitiesPolicyRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -80,11 +80,11 @@ func (m *ExternalIdentitiesPolicyRequestBuilder) CreateDeleteRequestInformationW
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation get externalIdentitiesPolicy from policies
+// CreateGetRequestInformation represents the tenant-wide policy that controls whether external users can leave an Azure AD tenant via self-service controls.
 func (m *ExternalIdentitiesPolicyRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration get externalIdentitiesPolicy from policies
+// CreateGetRequestInformationWithRequestConfiguration represents the tenant-wide policy that controls whether external users can leave an Azure AD tenant via self-service controls.
 func (m *ExternalIdentitiesPolicyRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *ExternalIdentitiesPolicyRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -137,11 +137,11 @@ func (m *ExternalIdentitiesPolicyRequestBuilder) DeleteWithRequestConfigurationA
     }
     return nil
 }
-// Get get externalIdentitiesPolicy from policies
+// Get represents the tenant-wide policy that controls whether external users can leave an Azure AD tenant via self-service controls.
 func (m *ExternalIdentitiesPolicyRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ExternalIdentitiesPolicyable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler get externalIdentitiesPolicy from policies
+// GetWithRequestConfigurationAndResponseHandler represents the tenant-wide policy that controls whether external users can leave an Azure AD tenant via self-service controls.
 func (m *ExternalIdentitiesPolicyRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *ExternalIdentitiesPolicyRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ExternalIdentitiesPolicyable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

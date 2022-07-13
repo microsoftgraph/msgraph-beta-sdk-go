@@ -24,8 +24,8 @@ func NewWindowsKioskAppBase()(*WindowsKioskAppBase) {
     m := &WindowsKioskAppBase{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    typeValue := "#microsoft.graph.windowsKioskAppBase";
-    m.SetType(&typeValue);
+    odatatypeValue := "#microsoft.graph.windowsKioskAppBase";
+    m.SetType(&odatatypeValue);
     return m
 }
 // CreateWindowsKioskAppBaseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -122,7 +122,7 @@ func (m *WindowsKioskAppBase) GetFieldDeserializers()(map[string]func(i878a80d23
         }
         return nil
     }
-    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -150,7 +150,7 @@ func (m *WindowsKioskAppBase) GetStartLayoutTileSize()(*WindowsAppStartLayoutTil
         return m.startLayoutTileSize
     }
 }
-// GetType gets the type property value. The type property
+// GetType gets the @odata.type property value. The type property
 func (m *WindowsKioskAppBase) GetType()(*string) {
     if m == nil {
         return nil
@@ -187,7 +187,7 @@ func (m *WindowsKioskAppBase) Serialize(writer i878a80d2330e89d26896388a3f487eef
         }
     }
     {
-        err := writer.WriteStringValue("type", m.GetType())
+        err := writer.WriteStringValue("@odata.type", m.GetType())
         if err != nil {
             return err
         }
@@ -230,7 +230,7 @@ func (m *WindowsKioskAppBase) SetStartLayoutTileSize(value *WindowsAppStartLayou
         m.startLayoutTileSize = value
     }
 }
-// SetType sets the type property value. The type property
+// SetType sets the @odata.type property value. The type property
 func (m *WindowsKioskAppBase) SetType(value *string)() {
     if m != nil {
         m.type_escaped = value

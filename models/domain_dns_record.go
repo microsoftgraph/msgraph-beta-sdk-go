@@ -23,8 +23,8 @@ func NewDomainDnsRecord()(*DomainDnsRecord) {
     m := &DomainDnsRecord{
         Entity: *NewEntity(),
     }
-    typeValue := "#microsoft.graph.domainDnsRecord";
-    m.SetType(&typeValue);
+    odatatypeValue := "#microsoft.graph.domainDnsRecord";
+    m.SetOdatatype(&odatatypeValue);
     return m
 }
 // CreateDomainDnsRecordFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -10,7 +10,7 @@ type AdminReportSettings struct {
     // The displayConcealedNames property
     displayConcealedNames *bool
 }
-// NewAdminReportSettings instantiates a new AdminReportSettings and sets the default values.
+// NewAdminReportSettings instantiates a new adminReportSettings and sets the default values.
 func NewAdminReportSettings()(*AdminReportSettings) {
     m := &AdminReportSettings{
         Entity: *NewEntity(),

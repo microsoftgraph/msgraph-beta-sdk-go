@@ -16,6 +16,7 @@ type AccessPackageSubjectable interface {
     GetObjectId()(*string)
     GetOnPremisesSecurityIdentifier()(*string)
     GetPrincipalName()(*string)
+    GetSubjectLifecycle()(*AccessPackageSubjectLifecycle)
     SetAltSecId(value *string)()
     SetConnectedOrganization(value ConnectedOrganizationable)()
     SetConnectedOrganizationId(value *string)()
@@ -24,4 +25,5 @@ type AccessPackageSubjectable interface {
     SetObjectId(value *string)()
     SetOnPremisesSecurityIdentifier(value *string)()
     SetPrincipalName(value *string)()
+    SetSubjectLifecycle(value *AccessPackageSubjectLifecycle)()
 }

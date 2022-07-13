@@ -19,8 +19,8 @@ func NewOfficeGraphInsights()(*OfficeGraphInsights) {
     m := &OfficeGraphInsights{
         Entity: *NewEntity(),
     }
-    typeValue := "#microsoft.graph.officeGraphInsights";
-    m.SetType(&typeValue);
+    odatatypeValue := "#microsoft.graph.officeGraphInsights";
+    m.SetOdatatype(&odatatypeValue);
     return m
 }
 // CreateOfficeGraphInsightsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

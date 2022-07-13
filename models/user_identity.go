@@ -17,8 +17,8 @@ func NewUserIdentity()(*UserIdentity) {
     m := &UserIdentity{
         Identity: *NewIdentity(),
     }
-    typeValue := "#microsoft.graph.userIdentity";
-    m.SetType(&typeValue);
+    odatatypeValue := "#microsoft.graph.userIdentity";
+    m.SetOdatatype(&odatatypeValue);
     return m
 }
 // CreateUserIdentityFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

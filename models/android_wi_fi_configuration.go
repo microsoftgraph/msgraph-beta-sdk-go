@@ -23,8 +23,8 @@ func NewAndroidWiFiConfiguration()(*AndroidWiFiConfiguration) {
     m := &AndroidWiFiConfiguration{
         DeviceConfiguration: *NewDeviceConfiguration(),
     }
-    typeValue := "#microsoft.graph.androidWiFiConfiguration";
-    m.SetType(&typeValue);
+    odatatypeValue := "#microsoft.graph.androidWiFiConfiguration";
+    m.SetOdatatype(&odatatypeValue);
     return m
 }
 // CreateAndroidWiFiConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

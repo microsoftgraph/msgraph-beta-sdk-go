@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DelegatedAdminRelationshipOperation provides operations to manage the collection of accessReview entities.
+// DelegatedAdminRelationshipOperation provides operations to manage the collection of accessReviewDecision entities.
 type DelegatedAdminRelationshipOperation struct {
     Entity
     // The time in ISO 8601 format and in UTC time when the long-running operation was created. Read-only.

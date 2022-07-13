@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ActivityStatistics provides operations to manage the collection of activityStatistics entities.
+// ActivityStatistics provides operations to manage the collection of accessReviewDecision entities.
 type ActivityStatistics struct {
     Entity
     // The type of activity for which statistics are returned. The possible values are: call, chat, email, focus, and meeting.
@@ -23,8 +23,8 @@ func NewActivityStatistics()(*ActivityStatistics) {
     m := &ActivityStatistics{
         Entity: *NewEntity(),
     }
-    typeValue := "#microsoft.graph.activityStatistics";
-    m.SetType(&typeValue);
+    odatatypeValue := "#microsoft.graph.activityStatistics";
+    m.SetOdatatype(&odatatypeValue);
     return m
 }
 // CreateActivityStatisticsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

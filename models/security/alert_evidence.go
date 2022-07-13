@@ -29,8 +29,8 @@ func NewAlertEvidence()(*AlertEvidence) {
     m := &AlertEvidence{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    typeValue := "#microsoft.graph.security.alertEvidence";
-    m.SetType(&typeValue);
+    odatatypeValue := "#microsoft.graph.security.alertEvidence";
+    m.SetType(&odatatypeValue);
     return m
 }
 // CreateAlertEvidenceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -159,7 +159,7 @@ func (m *AlertEvidence) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         }
         return nil
     }
-    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -213,7 +213,7 @@ func (m *AlertEvidence) GetTags()([]string) {
         return m.tags
     }
 }
-// GetType gets the type property value. The type property
+// GetType gets the @odata.type property value. The type property
 func (m *AlertEvidence) GetType()(*string) {
     if m == nil {
         return nil
@@ -263,7 +263,7 @@ func (m *AlertEvidence) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
         }
     }
     {
-        err := writer.WriteStringValue("type", m.GetType())
+        err := writer.WriteStringValue("@odata.type", m.GetType())
         if err != nil {
             return err
         }
@@ -319,7 +319,7 @@ func (m *AlertEvidence) SetTags(value []string)() {
         m.tags = value
     }
 }
-// SetType sets the type property value. The type property
+// SetType sets the @odata.type property value. The type property
 func (m *AlertEvidence) SetType(value *string)() {
     if m != nil {
         m.type_escaped = value

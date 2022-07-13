@@ -29,8 +29,8 @@ func NewOfficeClientConfiguration()(*OfficeClientConfiguration) {
     m := &OfficeClientConfiguration{
         Entity: *NewEntity(),
     }
-    typeValue := "#microsoft.graph.officeClientConfiguration";
-    m.SetType(&typeValue);
+    odatatypeValue := "#microsoft.graph.officeClientConfiguration";
+    m.SetOdatatype(&odatatypeValue);
     return m
 }
 // CreateOfficeClientConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

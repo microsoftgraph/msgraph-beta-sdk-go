@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// TodoTask provides operations to manage the collection of accessReview entities.
+// TodoTask provides operations to manage the collection of accessReviewDecision entities.
 type TodoTask struct {
     Entity
     // A collection of file attachments for the task.
@@ -42,7 +42,7 @@ type TodoTask struct {
     recurrence PatternedRecurrenceable
     // The date and time for a reminder alert of the task to occur.
     reminderDateTime DateTimeTimeZoneable
-    // The startDateTime property
+    // The date in the specified time zone at which the task is scheduled to start.
     startDateTime DateTimeTimeZoneable
     // The status property
     status *TaskStatus
@@ -425,7 +425,7 @@ func (m *TodoTask) GetReminderDateTime()(DateTimeTimeZoneable) {
         return m.reminderDateTime
     }
 }
-// GetStartDateTime gets the startDateTime property value. The startDateTime property
+// GetStartDateTime gets the startDateTime property value. The date in the specified time zone at which the task is scheduled to start.
 func (m *TodoTask) GetStartDateTime()(DateTimeTimeZoneable) {
     if m == nil {
         return nil
@@ -701,7 +701,7 @@ func (m *TodoTask) SetReminderDateTime(value DateTimeTimeZoneable)() {
         m.reminderDateTime = value
     }
 }
-// SetStartDateTime sets the startDateTime property value. The startDateTime property
+// SetStartDateTime sets the startDateTime property value. The date in the specified time zone at which the task is scheduled to start.
 func (m *TodoTask) SetStartDateTime(value DateTimeTimeZoneable)() {
     if m != nil {
         m.startDateTime = value

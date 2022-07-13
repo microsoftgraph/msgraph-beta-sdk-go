@@ -15,6 +15,7 @@ type ApplicationTemplateable interface {
     GetInformationalUrls()(InformationalUrlsable)
     GetLogoUrl()(*string)
     GetPublisher()(*string)
+    GetSupportedClaimConfiguration()(SupportedClaimConfigurationable)
     GetSupportedProvisioningTypes()([]string)
     GetSupportedSingleSignOnModes()([]string)
     SetCategories(value []string)()
@@ -24,6 +25,7 @@ type ApplicationTemplateable interface {
     SetInformationalUrls(value InformationalUrlsable)()
     SetLogoUrl(value *string)()
     SetPublisher(value *string)()
+    SetSupportedClaimConfiguration(value SupportedClaimConfigurationable)()
     SetSupportedProvisioningTypes(value []string)()
     SetSupportedSingleSignOnModes(value []string)()
 }

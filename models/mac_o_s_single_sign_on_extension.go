@@ -13,8 +13,8 @@ func NewMacOSSingleSignOnExtension()(*MacOSSingleSignOnExtension) {
     m := &MacOSSingleSignOnExtension{
         SingleSignOnExtension: *NewSingleSignOnExtension(),
     }
-    typeValue := "#microsoft.graph.macOSSingleSignOnExtension";
-    m.SetType(&typeValue);
+    odatatypeValue := "#microsoft.graph.macOSSingleSignOnExtension";
+    m.SetOdatatype(&odatatypeValue);
     return m
 }
 // CreateMacOSSingleSignOnExtensionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -25,8 +25,8 @@ func NewRoleAssignment()(*RoleAssignment) {
     m := &RoleAssignment{
         Entity: *NewEntity(),
     }
-    typeValue := "#microsoft.graph.roleAssignment";
-    m.SetType(&typeValue);
+    odatatypeValue := "#microsoft.graph.roleAssignment";
+    m.SetOdatatype(&odatatypeValue);
     return m
 }
 // CreateRoleAssignmentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

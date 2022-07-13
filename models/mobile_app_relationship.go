@@ -23,8 +23,8 @@ func NewMobileAppRelationship()(*MobileAppRelationship) {
     m := &MobileAppRelationship{
         Entity: *NewEntity(),
     }
-    typeValue := "#microsoft.graph.mobileAppRelationship";
-    m.SetType(&typeValue);
+    odatatypeValue := "#microsoft.graph.mobileAppRelationship";
+    m.SetOdatatype(&odatatypeValue);
     return m
 }
 // CreateMobileAppRelationshipFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

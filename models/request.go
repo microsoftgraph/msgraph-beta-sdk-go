@@ -26,8 +26,8 @@ func NewRequest()(*Request) {
     m := &Request{
         Entity: *NewEntity(),
     }
-    typeValue := "#microsoft.graph.request";
-    m.SetType(&typeValue);
+    odatatypeValue := "#microsoft.graph.request";
+    m.SetOdatatype(&odatatypeValue);
     return m
 }
 // CreateRequestFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

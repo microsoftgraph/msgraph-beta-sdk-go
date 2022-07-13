@@ -21,6 +21,8 @@ type ApplicationTemplate struct {
     logoUrl *string
     // The name of the publisher for this application.
     publisher *string
+    // The supportedClaimConfiguration property
+    supportedClaimConfiguration SupportedClaimConfigurationable
     // The list of provisioning modes supported by this application. The only valid value is sync.
     supportedProvisioningTypes []string
     // The list of single sign-on modes supported by this application. The supported values are oidc, password, saml, and notSupported.
@@ -138,6 +140,16 @@ func (m *ApplicationTemplate) GetFieldDeserializers()(map[string]func(i878a80d23
         }
         return nil
     }
+    res["supportedClaimConfiguration"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateSupportedClaimConfigurationFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetSupportedClaimConfiguration(val.(SupportedClaimConfigurationable))
+        }
+        return nil
+    }
     res["supportedProvisioningTypes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
@@ -198,6 +210,14 @@ func (m *ApplicationTemplate) GetPublisher()(*string) {
         return nil
     } else {
         return m.publisher
+    }
+}
+// GetSupportedClaimConfiguration gets the supportedClaimConfiguration property value. The supportedClaimConfiguration property
+func (m *ApplicationTemplate) GetSupportedClaimConfiguration()(SupportedClaimConfigurationable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.supportedClaimConfiguration
     }
 }
 // GetSupportedProvisioningTypes gets the supportedProvisioningTypes property value. The list of provisioning modes supported by this application. The only valid value is sync.
@@ -264,6 +284,12 @@ func (m *ApplicationTemplate) Serialize(writer i878a80d2330e89d26896388a3f487eef
             return err
         }
     }
+    {
+        err = writer.WriteObjectValue("supportedClaimConfiguration", m.GetSupportedClaimConfiguration())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetSupportedProvisioningTypes() != nil {
         err = writer.WriteCollectionOfStringValues("supportedProvisioningTypes", m.GetSupportedProvisioningTypes())
         if err != nil {
@@ -318,6 +344,12 @@ func (m *ApplicationTemplate) SetLogoUrl(value *string)() {
 func (m *ApplicationTemplate) SetPublisher(value *string)() {
     if m != nil {
         m.publisher = value
+    }
+}
+// SetSupportedClaimConfiguration sets the supportedClaimConfiguration property value. The supportedClaimConfiguration property
+func (m *ApplicationTemplate) SetSupportedClaimConfiguration(value SupportedClaimConfigurationable)() {
+    if m != nil {
+        m.supportedClaimConfiguration = value
     }
 }
 // SetSupportedProvisioningTypes sets the supportedProvisioningTypes property value. The list of provisioning modes supported by this application. The only valid value is sync.

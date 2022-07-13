@@ -23,8 +23,8 @@ func NewWindows81VpnConfiguration()(*Windows81VpnConfiguration) {
     m := &Windows81VpnConfiguration{
         WindowsVpnConfiguration: *NewWindowsVpnConfiguration(),
     }
-    typeValue := "#microsoft.graph.windows81VpnConfiguration";
-    m.SetType(&typeValue);
+    odatatypeValue := "#microsoft.graph.windows81VpnConfiguration";
+    m.SetOdatatype(&odatatypeValue);
     return m
 }
 // CreateWindows81VpnConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

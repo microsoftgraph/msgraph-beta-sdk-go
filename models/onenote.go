@@ -20,7 +20,7 @@ type Onenote struct {
     // The sections in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
     sections []OnenoteSectionable
 }
-// NewOnenote instantiates a new onenote and sets the default values.
+// NewOnenote instantiates a new Onenote and sets the default values.
 func NewOnenote()(*Onenote) {
     m := &Onenote{
         Entity: *NewEntity(),

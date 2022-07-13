@@ -22,8 +22,8 @@ func NewExactMatchDataStoreBase()(*ExactMatchDataStoreBase) {
     m := &ExactMatchDataStoreBase{
         Entity: *NewEntity(),
     }
-    typeValue := "#microsoft.graph.exactMatchDataStoreBase";
-    m.SetType(&typeValue);
+    odatatypeValue := "#microsoft.graph.exactMatchDataStoreBase";
+    m.SetOdatatype(&odatatypeValue);
     return m
 }
 // CreateExactMatchDataStoreBaseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

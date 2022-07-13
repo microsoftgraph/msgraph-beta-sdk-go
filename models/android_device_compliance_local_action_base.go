@@ -15,8 +15,8 @@ func NewAndroidDeviceComplianceLocalActionBase()(*AndroidDeviceComplianceLocalAc
     m := &AndroidDeviceComplianceLocalActionBase{
         Entity: *NewEntity(),
     }
-    typeValue := "#microsoft.graph.androidDeviceComplianceLocalActionBase";
-    m.SetType(&typeValue);
+    odatatypeValue := "#microsoft.graph.androidDeviceComplianceLocalActionBase";
+    m.SetOdatatype(&odatatypeValue);
     return m
 }
 // CreateAndroidDeviceComplianceLocalActionBaseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

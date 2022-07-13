@@ -30,8 +30,8 @@ func NewImportedDeviceIdentity()(*ImportedDeviceIdentity) {
     m := &ImportedDeviceIdentity{
         Entity: *NewEntity(),
     }
-    typeValue := "#microsoft.graph.importedDeviceIdentity";
-    m.SetType(&typeValue);
+    odatatypeValue := "#microsoft.graph.importedDeviceIdentity";
+    m.SetOdatatype(&odatatypeValue);
     return m
 }
 // CreateImportedDeviceIdentityFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

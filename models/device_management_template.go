@@ -38,8 +38,8 @@ func NewDeviceManagementTemplate()(*DeviceManagementTemplate) {
     m := &DeviceManagementTemplate{
         Entity: *NewEntity(),
     }
-    typeValue := "#microsoft.graph.deviceManagementTemplate";
-    m.SetType(&typeValue);
+    odatatypeValue := "#microsoft.graph.deviceManagementTemplate";
+    m.SetOdatatype(&odatatypeValue);
     return m
 }
 // CreateDeviceManagementTemplateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

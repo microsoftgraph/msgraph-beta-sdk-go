@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DeviceAndAppManagementAssignmentFilter a class containing the properties used for Assignment Filter.
+// DeviceAndAppManagementAssignmentFilter 
 type DeviceAndAppManagementAssignmentFilter struct {
     Entity
     // Creation time of the Assignment Filter.
@@ -23,13 +23,13 @@ type DeviceAndAppManagementAssignmentFilter struct {
     // Rule definition of the Assignment Filter.
     rule *string
 }
-// NewDeviceAndAppManagementAssignmentFilter instantiates a new deviceAndAppManagementAssignmentFilter and sets the default values.
+// NewDeviceAndAppManagementAssignmentFilter instantiates a new DeviceAndAppManagementAssignmentFilter and sets the default values.
 func NewDeviceAndAppManagementAssignmentFilter()(*DeviceAndAppManagementAssignmentFilter) {
     m := &DeviceAndAppManagementAssignmentFilter{
         Entity: *NewEntity(),
     }
-    typeValue := "#microsoft.graph.deviceAndAppManagementAssignmentFilter";
-    m.SetType(&typeValue);
+    odatatypeValue := "#microsoft.graph.deviceAndAppManagementAssignmentFilter";
+    m.SetOdatatype(&odatatypeValue);
     return m
 }
 // CreateDeviceAndAppManagementAssignmentFilterFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

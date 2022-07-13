@@ -27,8 +27,8 @@ func NewAndroidForWorkEasEmailProfileBase()(*AndroidForWorkEasEmailProfileBase) 
     m := &AndroidForWorkEasEmailProfileBase{
         DeviceConfiguration: *NewDeviceConfiguration(),
     }
-    typeValue := "#microsoft.graph.androidForWorkEasEmailProfileBase";
-    m.SetType(&typeValue);
+    odatatypeValue := "#microsoft.graph.androidForWorkEasEmailProfileBase";
+    m.SetOdatatype(&odatatypeValue);
     return m
 }
 // CreateAndroidForWorkEasEmailProfileBaseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

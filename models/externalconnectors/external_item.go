@@ -5,7 +5,7 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
-// ExternalItem 
+// ExternalItem provides operations to manage the collection of accessReviewDecision entities.
 type ExternalItem struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
     // An array of access control entries. Each entry specifies the access granted to a user or group. Required.
@@ -15,7 +15,7 @@ type ExternalItem struct {
     // A property bag with the properties of the item. The properties MUST conform to the schema defined for the externalConnection. Required.
     properties Propertiesable
 }
-// NewExternalItem instantiates a new ExternalItem and sets the default values.
+// NewExternalItem instantiates a new externalItem and sets the default values.
 func NewExternalItem()(*ExternalItem) {
     m := &ExternalItem{
         Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),

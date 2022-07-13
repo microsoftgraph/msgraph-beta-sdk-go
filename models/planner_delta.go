@@ -4,17 +4,17 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// PlannerDelta provides operations to manage the collection of accessReview entities.
+// PlannerDelta 
 type PlannerDelta struct {
     Entity
 }
-// NewPlannerDelta instantiates a new plannerDelta and sets the default values.
+// NewPlannerDelta instantiates a new PlannerDelta and sets the default values.
 func NewPlannerDelta()(*PlannerDelta) {
     m := &PlannerDelta{
         Entity: *NewEntity(),
     }
-    typeValue := "#microsoft.graph.plannerDelta";
-    m.SetType(&typeValue);
+    odatatypeValue := "#microsoft.graph.plannerDelta";
+    m.SetOdatatype(&odatatypeValue);
     return m
 }
 // CreatePlannerDeltaFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

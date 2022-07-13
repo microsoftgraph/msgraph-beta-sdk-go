@@ -18,8 +18,8 @@ func NewDeviceManagementConfigurationSettingValue()(*DeviceManagementConfigurati
     m := &DeviceManagementConfigurationSettingValue{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    typeValue := "#microsoft.graph.deviceManagementConfigurationSettingValue";
-    m.SetType(&typeValue);
+    odatatypeValue := "#microsoft.graph.deviceManagementConfigurationSettingValue";
+    m.SetType(&odatatypeValue);
     return m
 }
 // CreateDeviceManagementConfigurationSettingValueFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -70,7 +70,7 @@ func (m *DeviceManagementConfigurationSettingValue) GetFieldDeserializers()(map[
         }
         return nil
     }
-    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -90,7 +90,7 @@ func (m *DeviceManagementConfigurationSettingValue) GetSettingValueTemplateRefer
         return m.settingValueTemplateReference
     }
 }
-// GetType gets the type property value. The type property
+// GetType gets the @odata.type property value. The type property
 func (m *DeviceManagementConfigurationSettingValue) GetType()(*string) {
     if m == nil {
         return nil
@@ -107,7 +107,7 @@ func (m *DeviceManagementConfigurationSettingValue) Serialize(writer i878a80d233
         }
     }
     {
-        err := writer.WriteStringValue("type", m.GetType())
+        err := writer.WriteStringValue("@odata.type", m.GetType())
         if err != nil {
             return err
         }
@@ -132,7 +132,7 @@ func (m *DeviceManagementConfigurationSettingValue) SetSettingValueTemplateRefer
         m.settingValueTemplateReference = value
     }
 }
-// SetType sets the type property value. The type property
+// SetType sets the @odata.type property value. The type property
 func (m *DeviceManagementConfigurationSettingValue) SetType(value *string)() {
     if m != nil {
         m.type_escaped = value
