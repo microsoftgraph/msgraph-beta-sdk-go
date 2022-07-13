@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// FederatedIdentityCredential provides operations to manage the collection of accessReview entities.
+// FederatedIdentityCredential 
 type FederatedIdentityCredential struct {
     Entity
     // Lists the audiences that can appear in the external token. This field is mandatory, and defaults to 'api://AzureADTokenExchange'. It says what Microsoft identity platform should accept in the aud claim in the incoming token. This value represents Azure AD in your external identity provider and has no fixed value across identity providers - you may need to create a new application registration in your identity provider to serve as the audience of this token. Required.
@@ -18,7 +18,7 @@ type FederatedIdentityCredential struct {
     // Required. The identifier of the external software workload within the external identity provider. Like the audience value, it has no fixed format, as each identity provider uses their own - sometimes a GUID, sometimes a colon delimited identifier, sometimes arbitrary strings. The value here must match the sub claim within the token presented to Azure AD. The combination of issuer and subject must be unique on the app. Supports $filter (eq).
     subject *string
 }
-// NewFederatedIdentityCredential instantiates a new federatedIdentityCredential and sets the default values.
+// NewFederatedIdentityCredential instantiates a new FederatedIdentityCredential and sets the default values.
 func NewFederatedIdentityCredential()(*FederatedIdentityCredential) {
     m := &FederatedIdentityCredential{
         Entity: *NewEntity(),

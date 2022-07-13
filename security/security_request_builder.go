@@ -4,6 +4,7 @@ import (
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
     i0c676084c053b74ed3a3133cb01b5e628a094e0413da8590be1ed0afd08d166f "github.com/microsoftgraph/msgraph-beta-sdk-go/security/triggertypes"
+    i0df2000278766f4e13bb6be9bde05e5eb0c186391a4a2cb9f634d92117307226 "github.com/microsoftgraph/msgraph-beta-sdk-go/security/threatsubmission"
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
     i29dbe885802105b8f24e18a3ad45a4baf47a032bed4a97cc90638ac720b35332 "github.com/microsoftgraph/msgraph-beta-sdk-go/security/subjectrightsrequests"
     i2d37e58be29c573dea772021cbc16fb5110ad11503c90334105692cd58482307 "github.com/microsoftgraph/msgraph-beta-sdk-go/security/securescorecontrolprofiles"
@@ -385,6 +386,10 @@ func (m *SecurityRequestBuilder) SubjectRightsRequestsById(id string)(*i9fe89cbe
         urlTplParams["subjectRightsRequest%2Did"] = id
     }
     return i9fe89cbebebc9e8421ea4e1df57c4ac03af0de51d9dea1f1d0ba1d6023c52df0.NewSubjectRightsRequestItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+}
+// ThreatSubmission the threatSubmission property
+func (m *SecurityRequestBuilder) ThreatSubmission()(*i0df2000278766f4e13bb6be9bde05e5eb0c186391a4a2cb9f634d92117307226.ThreatSubmissionRequestBuilder) {
+    return i0df2000278766f4e13bb6be9bde05e5eb0c186391a4a2cb9f634d92117307226.NewThreatSubmissionRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // TiIndicators the tiIndicators property
 func (m *SecurityRequestBuilder) TiIndicators()(*i81ba5cba60c873845066ad89e2c6fe67a50b8f628aaa18e17de96216c62d64f4.TiIndicatorsRequestBuilder) {

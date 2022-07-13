@@ -27,8 +27,8 @@ func NewAndroidCertificateProfileBase()(*AndroidCertificateProfileBase) {
     m := &AndroidCertificateProfileBase{
         DeviceConfiguration: *NewDeviceConfiguration(),
     }
-    typeValue := "#microsoft.graph.androidCertificateProfileBase";
-    m.SetType(&typeValue);
+    odatatypeValue := "#microsoft.graph.androidCertificateProfileBase";
+    m.SetType(&odatatypeValue);
     return m
 }
 // CreateAndroidCertificateProfileBaseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

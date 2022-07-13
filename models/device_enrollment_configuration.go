@@ -32,8 +32,8 @@ func NewDeviceEnrollmentConfiguration()(*DeviceEnrollmentConfiguration) {
     m := &DeviceEnrollmentConfiguration{
         Entity: *NewEntity(),
     }
-    typeValue := "#microsoft.graph.deviceEnrollmentConfiguration";
-    m.SetType(&typeValue);
+    odatatypeValue := "#microsoft.graph.deviceEnrollmentConfiguration";
+    m.SetType(&odatatypeValue);
     return m
 }
 // CreateDeviceEnrollmentConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

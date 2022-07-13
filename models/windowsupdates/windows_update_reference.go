@@ -13,8 +13,8 @@ func NewWindowsUpdateReference()(*WindowsUpdateReference) {
     m := &WindowsUpdateReference{
         SoftwareUpdateReference: *NewSoftwareUpdateReference(),
     }
-    typeValue := "#microsoft.graph.windowsUpdates.windowsUpdateReference";
-    m.SetType(&typeValue);
+    odatatypeValue := "#microsoft.graph.windowsUpdates.windowsUpdateReference";
+    m.SetType(&odatatypeValue);
     return m
 }
 // CreateWindowsUpdateReferenceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

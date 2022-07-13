@@ -23,8 +23,8 @@ func NewActivityStatistics()(*ActivityStatistics) {
     m := &ActivityStatistics{
         Entity: *NewEntity(),
     }
-    typeValue := "#microsoft.graph.activityStatistics";
-    m.SetType(&typeValue);
+    odatatypeValue := "#microsoft.graph.activityStatistics";
+    m.SetType(&odatatypeValue);
     return m
 }
 // CreateActivityStatisticsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

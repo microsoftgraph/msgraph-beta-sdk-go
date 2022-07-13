@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Group provides operations to manage the collection of accessReview entities.
+// Group provides operations to manage the collection of accessReviewDecision entities.
 type Group struct {
     DirectoryObject
     // The list of users or groups that are allowed to create post's or calendar events in this group. If this list is non-empty then only users or groups listed here are allowed to post.
@@ -82,8 +82,6 @@ type Group struct {
     mailEnabled *bool
     // The mail alias for the group, unique for Microsoft 365 groups in the organization. Maximum length is 64 characters. This property can contain only characters in the ASCII character set 0 - 127 except the following: @ () / [] ' ; : . <> , SPACE. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith).
     mailNickname *string
-    // The mdmAppId property
-    mdmAppId *string
     // Groups and administrative units that this group is a member of. HTTP Methods: GET (supported for all groups). Read-only. Nullable. Supports $expand.
     memberOf []DirectoryObjectable
     // Direct members of this group, who can be users, devices, other groups, or service principals. Supports the List members, Add member, and Remove member operations. Nullable. Supports $expand including nested $select. For example, /groups?$filter=startsWith(displayName,'Role')&$select=id,displayName&$expand=members($select=id,userPrincipalName,displayName).
@@ -779,16 +777,6 @@ func (m *Group) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388
         }
         return nil
     }
-    res["mdmAppId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetMdmAppId(val)
-        }
-        return nil
-    }
     res["memberOf"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateDirectoryObjectFromDiscriminatorValue)
         if err != nil {
@@ -1383,14 +1371,6 @@ func (m *Group) GetMailNickname()(*string) {
         return nil
     } else {
         return m.mailNickname
-    }
-}
-// GetMdmAppId gets the mdmAppId property value. The mdmAppId property
-func (m *Group) GetMdmAppId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.mdmAppId
     }
 }
 // GetMemberOf gets the memberOf property value. Groups and administrative units that this group is a member of. HTTP Methods: GET (supported for all groups). Read-only. Nullable. Supports $expand.
@@ -1994,12 +1974,6 @@ func (m *Group) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c4
             return err
         }
     }
-    {
-        err = writer.WriteStringValue("mdmAppId", m.GetMdmAppId())
-        if err != nil {
-            return err
-        }
-    }
     if m.GetMemberOf() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetMemberOf()))
         for i, v := range m.GetMemberOf() {
@@ -2520,12 +2494,6 @@ func (m *Group) SetMailEnabled(value *bool)() {
 func (m *Group) SetMailNickname(value *string)() {
     if m != nil {
         m.mailNickname = value
-    }
-}
-// SetMdmAppId sets the mdmAppId property value. The mdmAppId property
-func (m *Group) SetMdmAppId(value *string)() {
-    if m != nil {
-        m.mdmAppId = value
     }
 }
 // SetMemberOf sets the memberOf property value. Groups and administrative units that this group is a member of. HTTP Methods: GET (supported for all groups). Read-only. Nullable. Supports $expand.

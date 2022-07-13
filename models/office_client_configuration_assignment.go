@@ -4,13 +4,13 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// OfficeClientConfigurationAssignment 
+// OfficeClientConfigurationAssignment provides operations to manage the collection of accessReviewDecision entities.
 type OfficeClientConfigurationAssignment struct {
     Entity
     // The target assignment defined by the admin.
     target OfficeConfigurationAssignmentTargetable
 }
-// NewOfficeClientConfigurationAssignment instantiates a new OfficeClientConfigurationAssignment and sets the default values.
+// NewOfficeClientConfigurationAssignment instantiates a new officeClientConfigurationAssignment and sets the default values.
 func NewOfficeClientConfigurationAssignment()(*OfficeClientConfigurationAssignment) {
     m := &OfficeClientConfigurationAssignment{
         Entity: *NewEntity(),

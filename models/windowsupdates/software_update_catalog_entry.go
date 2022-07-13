@@ -13,8 +13,8 @@ func NewSoftwareUpdateCatalogEntry()(*SoftwareUpdateCatalogEntry) {
     m := &SoftwareUpdateCatalogEntry{
         CatalogEntry: *NewCatalogEntry(),
     }
-    typeValue := "#microsoft.graph.windowsUpdates.softwareUpdateCatalogEntry";
-    m.SetType(&typeValue);
+    odatatypeValue := "#microsoft.graph.windowsUpdates.softwareUpdateCatalogEntry";
+    m.SetType(&odatatypeValue);
     return m
 }
 // CreateSoftwareUpdateCatalogEntryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

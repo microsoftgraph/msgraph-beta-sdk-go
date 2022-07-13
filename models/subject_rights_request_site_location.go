@@ -16,8 +16,8 @@ func NewSubjectRightsRequestSiteLocation()(*SubjectRightsRequestSiteLocation) {
     m := &SubjectRightsRequestSiteLocation{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    typeValue := "#microsoft.graph.subjectRightsRequestSiteLocation";
-    m.SetType(&typeValue);
+    odatatypeValue := "#microsoft.graph.subjectRightsRequestSiteLocation";
+    m.SetType(&odatatypeValue);
     return m
 }
 // CreateSubjectRightsRequestSiteLocationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -56,7 +56,7 @@ func (m *SubjectRightsRequestSiteLocation) GetAdditionalData()(map[string]interf
 // GetFieldDeserializers the deserialization information for the current model
 func (m *SubjectRightsRequestSiteLocation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -68,7 +68,7 @@ func (m *SubjectRightsRequestSiteLocation) GetFieldDeserializers()(map[string]fu
     }
     return res
 }
-// GetType gets the type property value. The type property
+// GetType gets the @odata.type property value. The type property
 func (m *SubjectRightsRequestSiteLocation) GetType()(*string) {
     if m == nil {
         return nil
@@ -79,7 +79,7 @@ func (m *SubjectRightsRequestSiteLocation) GetType()(*string) {
 // Serialize serializes information the current object
 func (m *SubjectRightsRequestSiteLocation) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
-        err := writer.WriteStringValue("type", m.GetType())
+        err := writer.WriteStringValue("@odata.type", m.GetType())
         if err != nil {
             return err
         }
@@ -98,7 +98,7 @@ func (m *SubjectRightsRequestSiteLocation) SetAdditionalData(value map[string]in
         m.additionalData = value
     }
 }
-// SetType sets the type property value. The type property
+// SetType sets the @odata.type property value. The type property
 func (m *SubjectRightsRequestSiteLocation) SetType(value *string)() {
     if m != nil {
         m.type_escaped = value

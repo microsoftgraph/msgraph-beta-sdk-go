@@ -21,8 +21,8 @@ func NewPrintUsage()(*PrintUsage) {
     m := &PrintUsage{
         Entity: *NewEntity(),
     }
-    typeValue := "#microsoft.graph.printUsage";
-    m.SetType(&typeValue);
+    odatatypeValue := "#microsoft.graph.printUsage";
+    m.SetType(&odatatypeValue);
     return m
 }
 // CreatePrintUsageFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

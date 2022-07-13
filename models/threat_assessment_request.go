@@ -30,8 +30,8 @@ func NewThreatAssessmentRequest()(*ThreatAssessmentRequest) {
     m := &ThreatAssessmentRequest{
         Entity: *NewEntity(),
     }
-    typeValue := "#microsoft.graph.threatAssessmentRequest";
-    m.SetType(&typeValue);
+    odatatypeValue := "#microsoft.graph.threatAssessmentRequest";
+    m.SetType(&odatatypeValue);
     return m
 }
 // CreateThreatAssessmentRequestFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

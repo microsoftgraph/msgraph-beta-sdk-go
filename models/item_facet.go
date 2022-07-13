@@ -30,8 +30,8 @@ func NewItemFacet()(*ItemFacet) {
     m := &ItemFacet{
         Entity: *NewEntity(),
     }
-    typeValue := "#microsoft.graph.itemFacet";
-    m.SetType(&typeValue);
+    odatatypeValue := "#microsoft.graph.itemFacet";
+    m.SetType(&odatatypeValue);
     return m
 }
 // CreateItemFacetFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

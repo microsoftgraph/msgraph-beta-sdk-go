@@ -14,7 +14,7 @@ type Synchronization struct {
     // Pre-configured synchronization settings for a particular application.
     templates []SynchronizationTemplateable
 }
-// NewSynchronization instantiates a new synchronization and sets the default values.
+// NewSynchronization instantiates a new Synchronization and sets the default values.
 func NewSynchronization()(*Synchronization) {
     m := &Synchronization{
         Entity: *NewEntity(),

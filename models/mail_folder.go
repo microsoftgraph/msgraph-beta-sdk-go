@@ -39,8 +39,8 @@ func NewMailFolder()(*MailFolder) {
     m := &MailFolder{
         Entity: *NewEntity(),
     }
-    typeValue := "#microsoft.graph.mailFolder";
-    m.SetType(&typeValue);
+    odatatypeValue := "#microsoft.graph.mailFolder";
+    m.SetType(&odatatypeValue);
     return m
 }
 // CreateMailFolderFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

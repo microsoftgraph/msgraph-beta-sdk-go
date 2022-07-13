@@ -18,8 +18,8 @@ func NewDlpActionInfo()(*DlpActionInfo) {
     m := &DlpActionInfo{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    typeValue := "#microsoft.graph.dlpActionInfo";
-    m.SetType(&typeValue);
+    odatatypeValue := "#microsoft.graph.dlpActionInfo";
+    m.SetType(&odatatypeValue);
     return m
 }
 // CreateDlpActionInfoFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -78,7 +78,7 @@ func (m *DlpActionInfo) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         }
         return nil
     }
-    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -90,7 +90,7 @@ func (m *DlpActionInfo) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
     }
     return res
 }
-// GetType gets the type property value. The type property
+// GetType gets the @odata.type property value. The type property
 func (m *DlpActionInfo) GetType()(*string) {
     if m == nil {
         return nil
@@ -108,7 +108,7 @@ func (m *DlpActionInfo) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
         }
     }
     {
-        err := writer.WriteStringValue("type", m.GetType())
+        err := writer.WriteStringValue("@odata.type", m.GetType())
         if err != nil {
             return err
         }
@@ -133,7 +133,7 @@ func (m *DlpActionInfo) SetAdditionalData(value map[string]interface{})() {
         m.additionalData = value
     }
 }
-// SetType sets the type property value. The type property
+// SetType sets the @odata.type property value. The type property
 func (m *DlpActionInfo) SetType(value *string)() {
     if m != nil {
         m.type_escaped = value

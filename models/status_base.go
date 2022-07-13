@@ -18,8 +18,8 @@ func NewStatusBase()(*StatusBase) {
     m := &StatusBase{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    typeValue := "#microsoft.graph.statusBase";
-    m.SetType(&typeValue);
+    odatatypeValue := "#microsoft.graph.statusBase";
+    m.SetType(&odatatypeValue);
     return m
 }
 // CreateStatusBaseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -66,7 +66,7 @@ func (m *StatusBase) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
         }
         return nil
     }
-    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -86,7 +86,7 @@ func (m *StatusBase) GetStatus()(*ProvisioningResult) {
         return m.status
     }
 }
-// GetType gets the type property value. The type property
+// GetType gets the @odata.type property value. The type property
 func (m *StatusBase) GetType()(*string) {
     if m == nil {
         return nil
@@ -104,7 +104,7 @@ func (m *StatusBase) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
         }
     }
     {
-        err := writer.WriteStringValue("type", m.GetType())
+        err := writer.WriteStringValue("@odata.type", m.GetType())
         if err != nil {
             return err
         }
@@ -129,7 +129,7 @@ func (m *StatusBase) SetStatus(value *ProvisioningResult)() {
         m.status = value
     }
 }
-// SetType sets the type property value. The type property
+// SetType sets the @odata.type property value. The type property
 func (m *StatusBase) SetType(value *string)() {
     if m != nil {
         m.type_escaped = value

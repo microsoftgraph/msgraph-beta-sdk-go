@@ -27,8 +27,8 @@ func NewWindowsPhone81CertificateProfileBase()(*WindowsPhone81CertificateProfile
     m := &WindowsPhone81CertificateProfileBase{
         DeviceConfiguration: *NewDeviceConfiguration(),
     }
-    typeValue := "#microsoft.graph.windowsPhone81CertificateProfileBase";
-    m.SetType(&typeValue);
+    odatatypeValue := "#microsoft.graph.windowsPhone81CertificateProfileBase";
+    m.SetType(&odatatypeValue);
     return m
 }
 // CreateWindowsPhone81CertificateProfileBaseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

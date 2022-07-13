@@ -20,8 +20,8 @@ func NewNamedLocation()(*NamedLocation) {
     m := &NamedLocation{
         Entity: *NewEntity(),
     }
-    typeValue := "#microsoft.graph.namedLocation";
-    m.SetType(&typeValue);
+    odatatypeValue := "#microsoft.graph.namedLocation";
+    m.SetType(&odatatypeValue);
     return m
 }
 // CreateNamedLocationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// TaxArea provides operations to manage the collection of activityStatistics entities.
+// TaxArea 
 type TaxArea struct {
     Entity
     // The code property
@@ -17,7 +17,7 @@ type TaxArea struct {
     // The taxType property
     taxType *string
 }
-// NewTaxArea instantiates a new taxArea and sets the default values.
+// NewTaxArea instantiates a new TaxArea and sets the default values.
 func NewTaxArea()(*TaxArea) {
     m := &TaxArea{
         Entity: *NewEntity(),

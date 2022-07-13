@@ -16,8 +16,8 @@ func NewDeliveryOptimizationBandwidth()(*DeliveryOptimizationBandwidth) {
     m := &DeliveryOptimizationBandwidth{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    typeValue := "#microsoft.graph.deliveryOptimizationBandwidth";
-    m.SetType(&typeValue);
+    odatatypeValue := "#microsoft.graph.deliveryOptimizationBandwidth";
+    m.SetType(&odatatypeValue);
     return m
 }
 // CreateDeliveryOptimizationBandwidthFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -58,7 +58,7 @@ func (m *DeliveryOptimizationBandwidth) GetAdditionalData()(map[string]interface
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeliveryOptimizationBandwidth) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -70,7 +70,7 @@ func (m *DeliveryOptimizationBandwidth) GetFieldDeserializers()(map[string]func(
     }
     return res
 }
-// GetType gets the type property value. The type property
+// GetType gets the @odata.type property value. The type property
 func (m *DeliveryOptimizationBandwidth) GetType()(*string) {
     if m == nil {
         return nil
@@ -81,7 +81,7 @@ func (m *DeliveryOptimizationBandwidth) GetType()(*string) {
 // Serialize serializes information the current object
 func (m *DeliveryOptimizationBandwidth) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
-        err := writer.WriteStringValue("type", m.GetType())
+        err := writer.WriteStringValue("@odata.type", m.GetType())
         if err != nil {
             return err
         }
@@ -100,7 +100,7 @@ func (m *DeliveryOptimizationBandwidth) SetAdditionalData(value map[string]inter
         m.additionalData = value
     }
 }
-// SetType sets the type property value. The type property
+// SetType sets the @odata.type property value. The type property
 func (m *DeliveryOptimizationBandwidth) SetType(value *string)() {
     if m != nil {
         m.type_escaped = value

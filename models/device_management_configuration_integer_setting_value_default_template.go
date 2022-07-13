@@ -16,8 +16,8 @@ func NewDeviceManagementConfigurationIntegerSettingValueDefaultTemplate()(*Devic
     m := &DeviceManagementConfigurationIntegerSettingValueDefaultTemplate{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    typeValue := "#microsoft.graph.deviceManagementConfigurationIntegerSettingValueDefaultTemplate";
-    m.SetType(&typeValue);
+    odatatypeValue := "#microsoft.graph.deviceManagementConfigurationIntegerSettingValueDefaultTemplate";
+    m.SetType(&odatatypeValue);
     return m
 }
 // CreateDeviceManagementConfigurationIntegerSettingValueDefaultTemplateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -54,7 +54,7 @@ func (m *DeviceManagementConfigurationIntegerSettingValueDefaultTemplate) GetAdd
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceManagementConfigurationIntegerSettingValueDefaultTemplate) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -66,7 +66,7 @@ func (m *DeviceManagementConfigurationIntegerSettingValueDefaultTemplate) GetFie
     }
     return res
 }
-// GetType gets the type property value. The type property
+// GetType gets the @odata.type property value. The type property
 func (m *DeviceManagementConfigurationIntegerSettingValueDefaultTemplate) GetType()(*string) {
     if m == nil {
         return nil
@@ -77,7 +77,7 @@ func (m *DeviceManagementConfigurationIntegerSettingValueDefaultTemplate) GetTyp
 // Serialize serializes information the current object
 func (m *DeviceManagementConfigurationIntegerSettingValueDefaultTemplate) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
-        err := writer.WriteStringValue("type", m.GetType())
+        err := writer.WriteStringValue("@odata.type", m.GetType())
         if err != nil {
             return err
         }
@@ -96,7 +96,7 @@ func (m *DeviceManagementConfigurationIntegerSettingValueDefaultTemplate) SetAdd
         m.additionalData = value
     }
 }
-// SetType sets the type property value. The type property
+// SetType sets the @odata.type property value. The type property
 func (m *DeviceManagementConfigurationIntegerSettingValueDefaultTemplate) SetType(value *string)() {
     if m != nil {
         m.type_escaped = value

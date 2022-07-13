@@ -46,8 +46,8 @@ func NewBaseTask()(*BaseTask) {
     m := &BaseTask{
         Entity: *NewEntity(),
     }
-    typeValue := "#microsoft.graph.baseTask";
-    m.SetType(&typeValue);
+    odatatypeValue := "#microsoft.graph.baseTask";
+    m.SetType(&odatatypeValue);
     return m
 }
 // CreateBaseTaskFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

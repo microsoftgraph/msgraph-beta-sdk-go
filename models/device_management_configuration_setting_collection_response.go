@@ -41,7 +41,7 @@ func (m *DeviceManagementConfigurationSettingCollectionResponse) GetFieldDeseria
             return err
         }
         if val != nil {
-            m.SetOdatanextLink(val)
+            m.SetNextLink(val)
         }
         return nil
     }
@@ -61,8 +61,8 @@ func (m *DeviceManagementConfigurationSettingCollectionResponse) GetFieldDeseria
     }
     return res
 }
-// GetOdatanextLink gets the @odata.nextLink property value. The nextLink property
-func (m *DeviceManagementConfigurationSettingCollectionResponse) GetOdatanextLink()(*string) {
+// GetNextLink gets the @odata.nextLink property value. The nextLink property
+func (m *DeviceManagementConfigurationSettingCollectionResponse) GetNextLink()(*string) {
     if m == nil {
         return nil
     } else {
@@ -80,7 +80,7 @@ func (m *DeviceManagementConfigurationSettingCollectionResponse) GetValue()([]De
 // Serialize serializes information the current object
 func (m *DeviceManagementConfigurationSettingCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
-        err := writer.WriteStringValue("@odata.nextLink", m.GetOdatanextLink())
+        err := writer.WriteStringValue("@odata.nextLink", m.GetNextLink())
         if err != nil {
             return err
         }
@@ -109,8 +109,8 @@ func (m *DeviceManagementConfigurationSettingCollectionResponse) SetAdditionalDa
         m.additionalData = value
     }
 }
-// SetOdatanextLink sets the @odata.nextLink property value. The nextLink property
-func (m *DeviceManagementConfigurationSettingCollectionResponse) SetOdatanextLink(value *string)() {
+// SetNextLink sets the @odata.nextLink property value. The nextLink property
+func (m *DeviceManagementConfigurationSettingCollectionResponse) SetNextLink(value *string)() {
     if m != nil {
         m.nextLink = value
     }

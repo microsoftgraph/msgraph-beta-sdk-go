@@ -41,7 +41,7 @@ func (m *SecurityBaselineStateCollectionResponse) GetFieldDeserializers()(map[st
             return err
         }
         if val != nil {
-            m.SetOdatanextLink(val)
+            m.SetNextLink(val)
         }
         return nil
     }
@@ -61,8 +61,8 @@ func (m *SecurityBaselineStateCollectionResponse) GetFieldDeserializers()(map[st
     }
     return res
 }
-// GetOdatanextLink gets the @odata.nextLink property value. The nextLink property
-func (m *SecurityBaselineStateCollectionResponse) GetOdatanextLink()(*string) {
+// GetNextLink gets the @odata.nextLink property value. The nextLink property
+func (m *SecurityBaselineStateCollectionResponse) GetNextLink()(*string) {
     if m == nil {
         return nil
     } else {
@@ -80,7 +80,7 @@ func (m *SecurityBaselineStateCollectionResponse) GetValue()([]SecurityBaselineS
 // Serialize serializes information the current object
 func (m *SecurityBaselineStateCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
-        err := writer.WriteStringValue("@odata.nextLink", m.GetOdatanextLink())
+        err := writer.WriteStringValue("@odata.nextLink", m.GetNextLink())
         if err != nil {
             return err
         }
@@ -109,8 +109,8 @@ func (m *SecurityBaselineStateCollectionResponse) SetAdditionalData(value map[st
         m.additionalData = value
     }
 }
-// SetOdatanextLink sets the @odata.nextLink property value. The nextLink property
-func (m *SecurityBaselineStateCollectionResponse) SetOdatanextLink(value *string)() {
+// SetNextLink sets the @odata.nextLink property value. The nextLink property
+func (m *SecurityBaselineStateCollectionResponse) SetNextLink(value *string)() {
     if m != nil {
         m.nextLink = value
     }

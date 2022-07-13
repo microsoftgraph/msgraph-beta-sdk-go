@@ -23,8 +23,8 @@ func NewMacOSCertificateProfileBase()(*MacOSCertificateProfileBase) {
     m := &MacOSCertificateProfileBase{
         DeviceConfiguration: *NewDeviceConfiguration(),
     }
-    typeValue := "#microsoft.graph.macOSCertificateProfileBase";
-    m.SetType(&typeValue);
+    odatatypeValue := "#microsoft.graph.macOSCertificateProfileBase";
+    m.SetType(&odatatypeValue);
     return m
 }
 // CreateMacOSCertificateProfileBaseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

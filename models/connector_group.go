@@ -20,7 +20,7 @@ type ConnectorGroup struct {
     // The region the connectorGroup is assigned to and will optimize traffic for. This region can only be set if no connectors or applications are assigned to the connectorGroup. The possible values are: nam (for North America), eur (for Europe), aus (for Australia), asia (for Asia), ind (for India), and unknownFutureValue.
     region *ConnectorGroupRegion
 }
-// NewConnectorGroup instantiates a new connectorGroup and sets the default values.
+// NewConnectorGroup instantiates a new ConnectorGroup and sets the default values.
 func NewConnectorGroup()(*ConnectorGroup) {
     m := &ConnectorGroup{
         Entity: *NewEntity(),

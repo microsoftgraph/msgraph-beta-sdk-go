@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// NdesConnector entity which represents an OnPrem Ndes connector.
+// NdesConnector 
 type NdesConnector struct {
     Entity
     // The friendly name of the Ndes Connector.
@@ -15,7 +15,7 @@ type NdesConnector struct {
     // The current status of the Ndes Connector.
     state *NdesConnectorState
 }
-// NewNdesConnector instantiates a new ndesConnector and sets the default values.
+// NewNdesConnector instantiates a new NdesConnector and sets the default values.
 func NewNdesConnector()(*NdesConnector) {
     m := &NdesConnector{
         Entity: *NewEntity(),
