@@ -16,7 +16,7 @@ type PrivilegedRole struct {
     // The summary information for this role. Read-only. Nullable.
     summary PrivilegedRoleSummaryable
 }
-// NewPrivilegedRole instantiates a new PrivilegedRole and sets the default values.
+// NewPrivilegedRole instantiates a new privilegedRole and sets the default values.
 func NewPrivilegedRole()(*PrivilegedRole) {
     m := &PrivilegedRole{
         Entity: *NewEntity(),

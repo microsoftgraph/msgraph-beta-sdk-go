@@ -17,8 +17,8 @@ func NewMeetingRegistrationBase()(*MeetingRegistrationBase) {
     m := &MeetingRegistrationBase{
         Entity: *NewEntity(),
     }
-    typeValue := "#microsoft.graph.meetingRegistrationBase";
-    m.SetType(&typeValue);
+    odatatypeValue := "#microsoft.graph.meetingRegistrationBase";
+    m.SetType(&odatatypeValue);
     return m
 }
 // CreateMeetingRegistrationBaseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

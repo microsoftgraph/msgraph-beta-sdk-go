@@ -20,8 +20,8 @@ func NewCallOptions()(*CallOptions) {
     m := &CallOptions{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    typeValue := "#microsoft.graph.callOptions";
-    m.SetType(&typeValue);
+    odatatypeValue := "#microsoft.graph.callOptions";
+    m.SetType(&odatatypeValue);
     return m
 }
 // CreateCallOptionsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -80,7 +80,7 @@ func (m *CallOptions) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
         }
         return nil
     }
-    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -108,7 +108,7 @@ func (m *CallOptions) GetIsContentSharingNotificationEnabled()(*bool) {
         return m.isContentSharingNotificationEnabled
     }
 }
-// GetType gets the type property value. The type property
+// GetType gets the @odata.type property value. The type property
 func (m *CallOptions) GetType()(*string) {
     if m == nil {
         return nil
@@ -131,7 +131,7 @@ func (m *CallOptions) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
         }
     }
     {
-        err := writer.WriteStringValue("type", m.GetType())
+        err := writer.WriteStringValue("@odata.type", m.GetType())
         if err != nil {
             return err
         }
@@ -162,7 +162,7 @@ func (m *CallOptions) SetIsContentSharingNotificationEnabled(value *bool)() {
         m.isContentSharingNotificationEnabled = value
     }
 }
-// SetType sets the type property value. The type property
+// SetType sets the @odata.type property value. The type property
 func (m *CallOptions) SetType(value *string)() {
     if m != nil {
         m.type_escaped = value

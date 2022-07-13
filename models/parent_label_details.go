@@ -32,8 +32,8 @@ func NewParentLabelDetails()(*ParentLabelDetails) {
     m := &ParentLabelDetails{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    typeValue := "#microsoft.graph.parentLabelDetails";
-    m.SetType(&typeValue);
+    odatatypeValue := "#microsoft.graph.parentLabelDetails";
+    m.SetType(&odatatypeValue);
     return m
 }
 // CreateParentLabelDetailsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -166,7 +166,7 @@ func (m *ParentLabelDetails) GetFieldDeserializers()(map[string]func(i878a80d233
         }
         return nil
     }
-    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -226,7 +226,7 @@ func (m *ParentLabelDetails) GetTooltip()(*string) {
         return m.tooltip
     }
 }
-// GetType gets the type property value. The type property
+// GetType gets the @odata.type property value. The type property
 func (m *ParentLabelDetails) GetType()(*string) {
     if m == nil {
         return nil
@@ -285,7 +285,7 @@ func (m *ParentLabelDetails) Serialize(writer i878a80d2330e89d26896388a3f487eef2
         }
     }
     {
-        err := writer.WriteStringValue("type", m.GetType())
+        err := writer.WriteStringValue("@odata.type", m.GetType())
         if err != nil {
             return err
         }
@@ -352,7 +352,7 @@ func (m *ParentLabelDetails) SetTooltip(value *string)() {
         m.tooltip = value
     }
 }
-// SetType sets the type property value. The type property
+// SetType sets the @odata.type property value. The type property
 func (m *ParentLabelDetails) SetType(value *string)() {
     if m != nil {
         m.type_escaped = value

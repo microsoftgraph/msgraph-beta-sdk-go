@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// PurchaseInvoiceLine 
+// PurchaseInvoiceLine provides operations to manage the collection of accessReviewDecision entities.
 type PurchaseInvoiceLine struct {
     Entity
     // The account property
@@ -54,7 +54,7 @@ type PurchaseInvoiceLine struct {
     // The unitCost property
     unitCost *float64
 }
-// NewPurchaseInvoiceLine instantiates a new PurchaseInvoiceLine and sets the default values.
+// NewPurchaseInvoiceLine instantiates a new purchaseInvoiceLine and sets the default values.
 func NewPurchaseInvoiceLine()(*PurchaseInvoiceLine) {
     m := &PurchaseInvoiceLine{
         Entity: *NewEntity(),

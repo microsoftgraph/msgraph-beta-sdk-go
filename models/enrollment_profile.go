@@ -25,8 +25,8 @@ func NewEnrollmentProfile()(*EnrollmentProfile) {
     m := &EnrollmentProfile{
         Entity: *NewEntity(),
     }
-    typeValue := "#microsoft.graph.enrollmentProfile";
-    m.SetType(&typeValue);
+    odatatypeValue := "#microsoft.graph.enrollmentProfile";
+    m.SetType(&odatatypeValue);
     return m
 }
 // CreateEnrollmentProfileFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

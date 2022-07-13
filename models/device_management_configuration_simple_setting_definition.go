@@ -21,8 +21,8 @@ func NewDeviceManagementConfigurationSimpleSettingDefinition()(*DeviceManagement
     m := &DeviceManagementConfigurationSimpleSettingDefinition{
         DeviceManagementConfigurationSettingDefinition: *NewDeviceManagementConfigurationSettingDefinition(),
     }
-    typeValue := "#microsoft.graph.deviceManagementConfigurationSimpleSettingDefinition";
-    m.SetType(&typeValue);
+    odatatypeValue := "#microsoft.graph.deviceManagementConfigurationSimpleSettingDefinition";
+    m.SetType(&odatatypeValue);
     return m
 }
 // CreateDeviceManagementConfigurationSimpleSettingDefinitionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

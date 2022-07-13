@@ -25,8 +25,8 @@ func NewWindowsCertificateProfileBase()(*WindowsCertificateProfileBase) {
     m := &WindowsCertificateProfileBase{
         DeviceConfiguration: *NewDeviceConfiguration(),
     }
-    typeValue := "#microsoft.graph.windowsCertificateProfileBase";
-    m.SetType(&typeValue);
+    odatatypeValue := "#microsoft.graph.windowsCertificateProfileBase";
+    m.SetType(&odatatypeValue);
     return m
 }
 // CreateWindowsCertificateProfileBaseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

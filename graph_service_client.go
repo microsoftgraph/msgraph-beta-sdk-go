@@ -23,6 +23,7 @@ import (
     i20702653f98186060bd39b9fe8136743eafc0ddaa43435e527665ac75229a33a "github.com/microsoftgraph/msgraph-beta-sdk-go/identity"
     i2130b9a37453c245bc87d9a83666a92560714fc5bb3c0f5a77e999639d2f4e45 "github.com/microsoftgraph/msgraph-beta-sdk-go/appcatalogs"
     i22f037221f506c5b5751f13095cc17caaf248e93588f883123c452cb4f1ec6a9 "github.com/microsoftgraph/msgraph-beta-sdk-go/payloadresponse"
+    i231953b44a7f4aace0800ccf375537d423e6f60e82f2a6552d9613626e39aba5 "github.com/microsoftgraph/msgraph-beta-sdk-go/threatsubmission"
     i24b998459b0fbcdc6fbd83b90048a098ff6bbdcdaff773a2886f5cf8b3d5545e "github.com/microsoftgraph/msgraph-beta-sdk-go/riskdetections"
     i2817c6849b286be20c56215e039110b08a4109a12669579f4597fbab6f720ed9 "github.com/microsoftgraph/msgraph-beta-sdk-go/sites"
     i29b3182886b8fc3d309db2628f3911e671f6745e9fdab71d07cdeb487c4453ad "github.com/microsoftgraph/msgraph-beta-sdk-go/connections"
@@ -1469,6 +1470,10 @@ func (m *GraphServiceClient) TenantRelationships()(*id5c2ef977a00dd1757d258dbbbf
 // TermStore the termStore property
 func (m *GraphServiceClient) TermStore()(*i98a1471d41b15330865bc87691830281af9ecf479bfc797e54f02448790b1e4e.TermStoreRequestBuilder) {
     return i98a1471d41b15330865bc87691830281af9ecf479bfc797e54f02448790b1e4e.NewTermStoreRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// ThreatSubmission the threatSubmission property
+func (m *GraphServiceClient) ThreatSubmission()(*i231953b44a7f4aace0800ccf375537d423e6f60e82f2a6552d9613626e39aba5.ThreatSubmissionRequestBuilder) {
+    return i231953b44a7f4aace0800ccf375537d423e6f60e82f2a6552d9613626e39aba5.NewThreatSubmissionRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // TrustFramework the trustFramework property
 func (m *GraphServiceClient) TrustFramework()(*i312c0a09d8ded5436957205a14adfc7e2facbcc6f26ef9872a5b5eb79228375f.TrustFrameworkRequestBuilder) {

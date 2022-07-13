@@ -36,7 +36,7 @@ type PolicyRoot struct {
     deviceRegistrationPolicy DeviceRegistrationPolicyable
     // The directoryRoleAccessReviewPolicy property
     directoryRoleAccessReviewPolicy DirectoryRoleAccessReviewPolicyable
-    // The externalIdentitiesPolicy property
+    // Represents the tenant-wide policy that controls whether external users can leave an Azure AD tenant via self-service controls.
     externalIdentitiesPolicy ExternalIdentitiesPolicyable
     // The feature rollout policy associated with a directory object.
     featureRolloutPolicies []FeatureRolloutPolicyable
@@ -192,7 +192,7 @@ func (m *PolicyRoot) GetDirectoryRoleAccessReviewPolicy()(DirectoryRoleAccessRev
         return m.directoryRoleAccessReviewPolicy
     }
 }
-// GetExternalIdentitiesPolicy gets the externalIdentitiesPolicy property value. The externalIdentitiesPolicy property
+// GetExternalIdentitiesPolicy gets the externalIdentitiesPolicy property value. Represents the tenant-wide policy that controls whether external users can leave an Azure AD tenant via self-service controls.
 func (m *PolicyRoot) GetExternalIdentitiesPolicy()(ExternalIdentitiesPolicyable) {
     if m == nil {
         return nil
@@ -929,7 +929,7 @@ func (m *PolicyRoot) SetDirectoryRoleAccessReviewPolicy(value DirectoryRoleAcces
         m.directoryRoleAccessReviewPolicy = value
     }
 }
-// SetExternalIdentitiesPolicy sets the externalIdentitiesPolicy property value. The externalIdentitiesPolicy property
+// SetExternalIdentitiesPolicy sets the externalIdentitiesPolicy property value. Represents the tenant-wide policy that controls whether external users can leave an Azure AD tenant via self-service controls.
 func (m *PolicyRoot) SetExternalIdentitiesPolicy(value ExternalIdentitiesPolicyable)() {
     if m != nil {
         m.externalIdentitiesPolicy = value

@@ -23,8 +23,8 @@ func NewDetectedSensitiveContent()(*DetectedSensitiveContent) {
     m := &DetectedSensitiveContent{
         DetectedSensitiveContentBase: *NewDetectedSensitiveContentBase(),
     }
-    typeValue := "#microsoft.graph.detectedSensitiveContent";
-    m.SetType(&typeValue);
+    odatatypeValue := "#microsoft.graph.detectedSensitiveContent";
+    m.SetType(&odatatypeValue);
     return m
 }
 // CreateDetectedSensitiveContentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

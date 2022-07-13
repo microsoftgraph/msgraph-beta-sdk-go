@@ -134,8 +134,8 @@ func NewSignIn()(*SignIn) {
     m := &SignIn{
         Entity: *NewEntity(),
     }
-    typeValue := "#microsoft.graph.signIn";
-    m.SetType(&typeValue);
+    odatatypeValue := "#microsoft.graph.signIn";
+    m.SetType(&odatatypeValue);
     return m
 }
 // CreateSignInFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -41,7 +41,7 @@ func (m *OfficeClientConfigurationAssignmentCollectionResponse) GetFieldDeserial
             return err
         }
         if val != nil {
-            m.SetOdatanextLink(val)
+            m.SetNextLink(val)
         }
         return nil
     }
@@ -61,8 +61,8 @@ func (m *OfficeClientConfigurationAssignmentCollectionResponse) GetFieldDeserial
     }
     return res
 }
-// GetOdatanextLink gets the @odata.nextLink property value. The nextLink property
-func (m *OfficeClientConfigurationAssignmentCollectionResponse) GetOdatanextLink()(*string) {
+// GetNextLink gets the @odata.nextLink property value. The nextLink property
+func (m *OfficeClientConfigurationAssignmentCollectionResponse) GetNextLink()(*string) {
     if m == nil {
         return nil
     } else {
@@ -80,7 +80,7 @@ func (m *OfficeClientConfigurationAssignmentCollectionResponse) GetValue()([]Off
 // Serialize serializes information the current object
 func (m *OfficeClientConfigurationAssignmentCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
-        err := writer.WriteStringValue("@odata.nextLink", m.GetOdatanextLink())
+        err := writer.WriteStringValue("@odata.nextLink", m.GetNextLink())
         if err != nil {
             return err
         }
@@ -109,8 +109,8 @@ func (m *OfficeClientConfigurationAssignmentCollectionResponse) SetAdditionalDat
         m.additionalData = value
     }
 }
-// SetOdatanextLink sets the @odata.nextLink property value. The nextLink property
-func (m *OfficeClientConfigurationAssignmentCollectionResponse) SetOdatanextLink(value *string)() {
+// SetNextLink sets the @odata.nextLink property value. The nextLink property
+func (m *OfficeClientConfigurationAssignmentCollectionResponse) SetNextLink(value *string)() {
     if m != nil {
         m.nextLink = value
     }

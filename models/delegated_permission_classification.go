@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DelegatedPermissionClassification 
+// DelegatedPermissionClassification provides operations to manage the collection of accessReviewDecision entities.
 type DelegatedPermissionClassification struct {
     Entity
     // The classification value being given. Possible value: low. Does not support $filter.
@@ -14,7 +14,7 @@ type DelegatedPermissionClassification struct {
     // The claim value (value) for the delegated permission listed in the publishedPermissionScopes collection of the servicePrincipal. Does not support $filter.
     permissionName *string
 }
-// NewDelegatedPermissionClassification instantiates a new DelegatedPermissionClassification and sets the default values.
+// NewDelegatedPermissionClassification instantiates a new delegatedPermissionClassification and sets the default values.
 func NewDelegatedPermissionClassification()(*DelegatedPermissionClassification) {
     m := &DelegatedPermissionClassification{
         Entity: *NewEntity(),

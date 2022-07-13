@@ -12,13 +12,13 @@ type IdentityUserFlow struct {
     // The userFlowTypeVersion property
     userFlowTypeVersion *float32
 }
-// NewIdentityUserFlow instantiates a new identityUserFlow and sets the default values.
+// NewIdentityUserFlow instantiates a new IdentityUserFlow and sets the default values.
 func NewIdentityUserFlow()(*IdentityUserFlow) {
     m := &IdentityUserFlow{
         Entity: *NewEntity(),
     }
-    typeValue := "#microsoft.graph.identityUserFlow";
-    m.SetType(&typeValue);
+    odatatypeValue := "#microsoft.graph.identityUserFlow";
+    m.SetType(&odatatypeValue);
     return m
 }
 // CreateIdentityUserFlowFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

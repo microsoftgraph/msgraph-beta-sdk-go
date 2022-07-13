@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// PolicyBase provides operations to manage the collection of accessReview entities.
+// PolicyBase provides operations to manage the collection of accessReviewDecision entities.
 type PolicyBase struct {
     DirectoryObject
     // Description for this policy. Required.
@@ -17,8 +17,8 @@ func NewPolicyBase()(*PolicyBase) {
     m := &PolicyBase{
         DirectoryObject: *NewDirectoryObject(),
     }
-    typeValue := "#microsoft.graph.policyBase";
-    m.SetType(&typeValue);
+    odatatypeValue := "#microsoft.graph.policyBase";
+    m.SetType(&odatatypeValue);
     return m
 }
 // CreatePolicyBaseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

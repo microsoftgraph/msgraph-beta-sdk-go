@@ -18,7 +18,7 @@ type B2xIdentityUserFlow struct {
     // The userFlowIdentityProviders property
     userFlowIdentityProviders []IdentityProviderBaseable
 }
-// NewB2xIdentityUserFlow instantiates a new B2xIdentityUserFlow and sets the default values.
+// NewB2xIdentityUserFlow instantiates a new b2xIdentityUserFlow and sets the default values.
 func NewB2xIdentityUserFlow()(*B2xIdentityUserFlow) {
     m := &B2xIdentityUserFlow{
         IdentityUserFlow: *NewIdentityUserFlow(),

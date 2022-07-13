@@ -14,7 +14,7 @@ type AccessReviewPolicy struct {
     // If true, group owners can create and manage access reviews on groups they own.
     isGroupOwnerManagementEnabled *bool
 }
-// NewAccessReviewPolicy instantiates a new AccessReviewPolicy and sets the default values.
+// NewAccessReviewPolicy instantiates a new accessReviewPolicy and sets the default values.
 func NewAccessReviewPolicy()(*AccessReviewPolicy) {
     m := &AccessReviewPolicy{
         Entity: *NewEntity(),

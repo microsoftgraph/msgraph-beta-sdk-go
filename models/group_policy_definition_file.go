@@ -34,8 +34,8 @@ func NewGroupPolicyDefinitionFile()(*GroupPolicyDefinitionFile) {
     m := &GroupPolicyDefinitionFile{
         Entity: *NewEntity(),
     }
-    typeValue := "#microsoft.graph.groupPolicyDefinitionFile";
-    m.SetType(&typeValue);
+    odatatypeValue := "#microsoft.graph.groupPolicyDefinitionFile";
+    m.SetType(&odatatypeValue);
     return m
 }
 // CreateGroupPolicyDefinitionFileFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

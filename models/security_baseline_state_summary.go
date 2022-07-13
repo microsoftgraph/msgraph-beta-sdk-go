@@ -25,8 +25,8 @@ func NewSecurityBaselineStateSummary()(*SecurityBaselineStateSummary) {
     m := &SecurityBaselineStateSummary{
         Entity: *NewEntity(),
     }
-    typeValue := "#microsoft.graph.securityBaselineStateSummary";
-    m.SetType(&typeValue);
+    odatatypeValue := "#microsoft.graph.securityBaselineStateSummary";
+    m.SetType(&odatatypeValue);
     return m
 }
 // CreateSecurityBaselineStateSummaryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

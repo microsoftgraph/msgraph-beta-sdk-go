@@ -26,8 +26,8 @@ func NewAccessPackageQuestion()(*AccessPackageQuestion) {
     m := &AccessPackageQuestion{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    typeValue := "#microsoft.graph.accessPackageQuestion";
-    m.SetType(&typeValue);
+    odatatypeValue := "#microsoft.graph.accessPackageQuestion";
+    m.SetType(&odatatypeValue);
     return m
 }
 // CreateAccessPackageQuestionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -116,7 +116,7 @@ func (m *AccessPackageQuestion) GetFieldDeserializers()(map[string]func(i878a80d
         }
         return nil
     }
-    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
@@ -168,7 +168,7 @@ func (m *AccessPackageQuestion) GetText()(AccessPackageLocalizedContentable) {
         return m.text
     }
 }
-// GetType gets the type property value. The type property
+// GetType gets the @odata.type property value. The type property
 func (m *AccessPackageQuestion) GetType()(*string) {
     if m == nil {
         return nil
@@ -209,7 +209,7 @@ func (m *AccessPackageQuestion) Serialize(writer i878a80d2330e89d26896388a3f487e
         }
     }
     {
-        err := writer.WriteStringValue("type", m.GetType())
+        err := writer.WriteStringValue("@odata.type", m.GetType())
         if err != nil {
             return err
         }
@@ -258,7 +258,7 @@ func (m *AccessPackageQuestion) SetText(value AccessPackageLocalizedContentable)
         m.text = value
     }
 }
-// SetType sets the type property value. The type property
+// SetType sets the @odata.type property value. The type property
 func (m *AccessPackageQuestion) SetType(value *string)() {
     if m != nil {
         m.type_escaped = value
