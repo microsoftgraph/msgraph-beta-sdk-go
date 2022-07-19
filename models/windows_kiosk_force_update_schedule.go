@@ -13,6 +13,8 @@ type WindowsKioskForceUpdateSchedule struct {
     dayofMonth *int32
     // The dayofWeek property
     dayofWeek *DayOfWeek
+    // The OdataType property
+    odataType *string
     // Possible values for App update on Windows10 recurrence.
     recurrence *Windows10AppsUpdateRecurrence
     // If true, runs the task immediately if StartDateTime is in the past, else, runs at the next recurrence.
@@ -25,6 +27,8 @@ func NewWindowsKioskForceUpdateSchedule()(*WindowsKioskForceUpdateSchedule) {
     m := &WindowsKioskForceUpdateSchedule{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.windowsKioskForceUpdateSchedule";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateWindowsKioskForceUpdateScheduleFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -78,6 +82,16 @@ func (m *WindowsKioskForceUpdateSchedule) GetFieldDeserializers()(map[string]fun
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["recurrence"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseWindows10AppsUpdateRecurrence)
         if err != nil {
@@ -109,6 +123,14 @@ func (m *WindowsKioskForceUpdateSchedule) GetFieldDeserializers()(map[string]fun
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *WindowsKioskForceUpdateSchedule) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
 }
 // GetRecurrence gets the recurrence property value. Possible values for App update on Windows10 recurrence.
 func (m *WindowsKioskForceUpdateSchedule) GetRecurrence()(*Windows10AppsUpdateRecurrence) {
@@ -145,6 +167,12 @@ func (m *WindowsKioskForceUpdateSchedule) Serialize(writer i878a80d2330e89d26896
     if m.GetDayofWeek() != nil {
         cast := (*m.GetDayofWeek()).String()
         err := writer.WriteStringValue("dayofWeek", &cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -192,6 +220,12 @@ func (m *WindowsKioskForceUpdateSchedule) SetDayofMonth(value *int32)() {
 func (m *WindowsKioskForceUpdateSchedule) SetDayofWeek(value *DayOfWeek)() {
     if m != nil {
         m.dayofWeek = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *WindowsKioskForceUpdateSchedule) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetRecurrence sets the recurrence property value. Possible values for App update on Windows10 recurrence.

@@ -10,6 +10,8 @@ type StringKeyStringValuePair struct {
     additionalData map[string]interface{}
     // Key.
     key *string
+    // The OdataType property
+    odataType *string
     // Value.
     value *string
 }
@@ -18,6 +20,8 @@ func NewStringKeyStringValuePair()(*StringKeyStringValuePair) {
     m := &StringKeyStringValuePair{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.stringKeyStringValuePair";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateStringKeyStringValuePairFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -45,6 +49,16 @@ func (m *StringKeyStringValuePair) GetFieldDeserializers()(map[string]func(i878a
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -65,6 +79,14 @@ func (m *StringKeyStringValuePair) GetKey()(*string) {
         return m.key
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *StringKeyStringValuePair) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetValue gets the value property value. Value.
 func (m *StringKeyStringValuePair) GetValue()(*string) {
     if m == nil {
@@ -77,6 +99,12 @@ func (m *StringKeyStringValuePair) GetValue()(*string) {
 func (m *StringKeyStringValuePair) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("key", m.GetKey())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -105,6 +133,12 @@ func (m *StringKeyStringValuePair) SetAdditionalData(value map[string]interface{
 func (m *StringKeyStringValuePair) SetKey(value *string)() {
     if m != nil {
         m.key = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *StringKeyStringValuePair) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetValue sets the value property value. Value.

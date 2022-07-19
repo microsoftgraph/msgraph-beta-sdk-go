@@ -16,6 +16,8 @@ type ConfigManagerPolicySummary struct {
     failedDeviceCount *int32
     // The number of devices evaluated to be noncompliant by the policy.
     nonCompliantDeviceCount *int32
+    // The OdataType property
+    odataType *string
     // The number of devices that have acknowledged the policy but are pending evaluation.
     pendingDeviceCount *int32
     // The number of devices targeted by the policy.
@@ -26,6 +28,8 @@ func NewConfigManagerPolicySummary()(*ConfigManagerPolicySummary) {
     m := &ConfigManagerPolicySummary{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.configManagerPolicySummary";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateConfigManagerPolicySummaryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -107,6 +111,16 @@ func (m *ConfigManagerPolicySummary) GetFieldDeserializers()(map[string]func(i87
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["pendingDeviceCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
@@ -135,6 +149,14 @@ func (m *ConfigManagerPolicySummary) GetNonCompliantDeviceCount()(*int32) {
         return nil
     } else {
         return m.nonCompliantDeviceCount
+    }
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *ConfigManagerPolicySummary) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
     }
 }
 // GetPendingDeviceCount gets the pendingDeviceCount property value. The number of devices that have acknowledged the policy but are pending evaluation.
@@ -175,6 +197,12 @@ func (m *ConfigManagerPolicySummary) Serialize(writer i878a80d2330e89d26896388a3
     }
     {
         err := writer.WriteInt32Value("nonCompliantDeviceCount", m.GetNonCompliantDeviceCount())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -227,6 +255,12 @@ func (m *ConfigManagerPolicySummary) SetFailedDeviceCount(value *int32)() {
 func (m *ConfigManagerPolicySummary) SetNonCompliantDeviceCount(value *int32)() {
     if m != nil {
         m.nonCompliantDeviceCount = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *ConfigManagerPolicySummary) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetPendingDeviceCount sets the pendingDeviceCount property value. The number of devices that have acknowledged the policy but are pending evaluation.

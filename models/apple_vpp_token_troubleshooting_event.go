@@ -15,6 +15,8 @@ func NewAppleVppTokenTroubleshootingEvent()(*AppleVppTokenTroubleshootingEvent) 
     m := &AppleVppTokenTroubleshootingEvent{
         DeviceManagementTroubleshootingEvent: *NewDeviceManagementTroubleshootingEvent(),
     }
+    odataTypeValue := "#microsoft.graph.appleVppTokenTroubleshootingEvent";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAppleVppTokenTroubleshootingEventFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

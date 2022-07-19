@@ -34,6 +34,7 @@ type SubjectRightsRequestable interface {
     GetStages()([]SubjectRightsRequestStageDetailable)
     GetStatus()(*SubjectRightsRequestStatus)
     GetTeam()(Teamable)
+    GetType()(*SubjectRightsRequestType)
     SetAssignedTo(value Identityable)()
     SetClosedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetContentQuery(value *string)()
@@ -59,4 +60,5 @@ type SubjectRightsRequestable interface {
     SetStages(value []SubjectRightsRequestStageDetailable)()
     SetStatus(value *SubjectRightsRequestStatus)()
     SetTeam(value Teamable)()
+    SetType(value *SubjectRightsRequestType)()
 }

@@ -82,7 +82,7 @@ func NewPrivilegedSignupStatusRequestBuilder(rawUrl string, requestAdapter i2ae4
     urlParams["request-raw-url"] = rawUrl
     return NewPrivilegedSignupStatusRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *PrivilegedSignupStatusRequestBuilder) Count()(*id44dae2f191b15a24754b7171e85d2ba201233b96e37c2e42c8cad8b291e85ff.CountRequestBuilder) {
     return id44dae2f191b15a24754b7171e85d2ba201233b96e37c2e42c8cad8b291e85ff.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

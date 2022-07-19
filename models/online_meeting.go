@@ -76,6 +76,8 @@ func NewOnlineMeeting()(*OnlineMeeting) {
     m := &OnlineMeeting{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.onlineMeeting";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateOnlineMeetingFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

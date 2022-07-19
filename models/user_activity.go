@@ -42,6 +42,8 @@ func NewUserActivity()(*UserActivity) {
     m := &UserActivity{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.userActivity";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateUserActivityFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -72,7 +72,7 @@ func NewUserAttributeAssignmentsRequestBuilder(rawUrl string, requestAdapter i2a
     urlParams["request-raw-url"] = rawUrl
     return NewUserAttributeAssignmentsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *UserAttributeAssignmentsRequestBuilder) Count()(*if08a0a222aa8d9addb9ddccf3a99dc785072e2c13936aa264c6c9b644121ad26.CountRequestBuilder) {
     return if08a0a222aa8d9addb9ddccf3a99dc785072e2c13936aa264c6c9b644121ad26.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

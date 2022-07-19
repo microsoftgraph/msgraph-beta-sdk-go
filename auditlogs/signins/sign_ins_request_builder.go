@@ -80,7 +80,7 @@ func NewSignInsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371
     urlParams["request-raw-url"] = rawUrl
     return NewSignInsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *SignInsRequestBuilder) Count()(*i5653e33c82683fa7dacb28a1228bc06acb2bc9c6f1d0280a2d5559607e137677.CountRequestBuilder) {
     return i5653e33c82683fa7dacb28a1228bc06acb2bc9c6f1d0280a2d5559607e137677.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

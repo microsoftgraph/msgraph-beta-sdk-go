@@ -10,6 +10,8 @@ type CompanyPortalBlockedAction struct {
     action *CompanyPortalAction
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
+    // The OdataType property
+    odataType *string
     // Owner type of device.
     ownerType *OwnerType
     // Supported platform types.
@@ -20,6 +22,8 @@ func NewCompanyPortalBlockedAction()(*CompanyPortalBlockedAction) {
     m := &CompanyPortalBlockedAction{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.companyPortalBlockedAction";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateCompanyPortalBlockedActionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -55,6 +59,16 @@ func (m *CompanyPortalBlockedAction) GetFieldDeserializers()(map[string]func(i87
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["ownerType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseOwnerType)
         if err != nil {
@@ -77,6 +91,14 @@ func (m *CompanyPortalBlockedAction) GetFieldDeserializers()(map[string]func(i87
     }
     return res
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *CompanyPortalBlockedAction) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetOwnerType gets the ownerType property value. Owner type of device.
 func (m *CompanyPortalBlockedAction) GetOwnerType()(*OwnerType) {
     if m == nil {
@@ -98,6 +120,12 @@ func (m *CompanyPortalBlockedAction) Serialize(writer i878a80d2330e89d26896388a3
     if m.GetAction() != nil {
         cast := (*m.GetAction()).String()
         err := writer.WriteStringValue("action", &cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -134,6 +162,12 @@ func (m *CompanyPortalBlockedAction) SetAction(value *CompanyPortalAction)() {
 func (m *CompanyPortalBlockedAction) SetAdditionalData(value map[string]interface{})() {
     if m != nil {
         m.additionalData = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *CompanyPortalBlockedAction) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetOwnerType sets the ownerType property value. Owner type of device.

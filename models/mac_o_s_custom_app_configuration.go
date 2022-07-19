@@ -19,6 +19,8 @@ func NewMacOSCustomAppConfiguration()(*MacOSCustomAppConfiguration) {
     m := &MacOSCustomAppConfiguration{
         DeviceConfiguration: *NewDeviceConfiguration(),
     }
+    odataTypeValue := "#microsoft.graph.macOSCustomAppConfiguration";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateMacOSCustomAppConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

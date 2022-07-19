@@ -14,20 +14,20 @@ type AccessPackageQuestion struct {
     isAnswerEditable *bool
     // Whether the requestor is required to supply an answer or not.
     isRequired *bool
+    // The OdataType property
+    odataType *string
     // Relative position of this question when displaying a list of questions to the requestor.
     sequence *int32
     // The text of the question to show to the requestor.
     text AccessPackageLocalizedContentable
-    // The type property
-    type_escaped *string
 }
 // NewAccessPackageQuestion instantiates a new accessPackageQuestion and sets the default values.
 func NewAccessPackageQuestion()(*AccessPackageQuestion) {
     m := &AccessPackageQuestion{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odatatypeValue := "#microsoft.graph.accessPackageQuestion";
-    m.SetType(&odatatypeValue);
+    odataTypeValue := "#microsoft.graph.accessPackageQuestion";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAccessPackageQuestionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -96,6 +96,16 @@ func (m *AccessPackageQuestion) GetFieldDeserializers()(map[string]func(i878a80d
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["sequence"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
@@ -113,16 +123,6 @@ func (m *AccessPackageQuestion) GetFieldDeserializers()(map[string]func(i878a80d
         }
         if val != nil {
             m.SetText(val.(AccessPackageLocalizedContentable))
-        }
-        return nil
-    }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetType(val)
         }
         return nil
     }
@@ -152,6 +152,14 @@ func (m *AccessPackageQuestion) GetIsRequired()(*bool) {
         return m.isRequired
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *AccessPackageQuestion) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetSequence gets the sequence property value. Relative position of this question when displaying a list of questions to the requestor.
 func (m *AccessPackageQuestion) GetSequence()(*int32) {
     if m == nil {
@@ -166,14 +174,6 @@ func (m *AccessPackageQuestion) GetText()(AccessPackageLocalizedContentable) {
         return nil
     } else {
         return m.text
-    }
-}
-// GetType gets the @odata.type property value. The type property
-func (m *AccessPackageQuestion) GetType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.type_escaped
     }
 }
 // Serialize serializes information the current object
@@ -197,6 +197,12 @@ func (m *AccessPackageQuestion) Serialize(writer i878a80d2330e89d26896388a3f487e
         }
     }
     {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err := writer.WriteInt32Value("sequence", m.GetSequence())
         if err != nil {
             return err
@@ -204,12 +210,6 @@ func (m *AccessPackageQuestion) Serialize(writer i878a80d2330e89d26896388a3f487e
     }
     {
         err := writer.WriteObjectValue("text", m.GetText())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err := writer.WriteStringValue("@odata.type", m.GetType())
         if err != nil {
             return err
         }
@@ -246,6 +246,12 @@ func (m *AccessPackageQuestion) SetIsRequired(value *bool)() {
         m.isRequired = value
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *AccessPackageQuestion) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
+    }
+}
 // SetSequence sets the sequence property value. Relative position of this question when displaying a list of questions to the requestor.
 func (m *AccessPackageQuestion) SetSequence(value *int32)() {
     if m != nil {
@@ -256,11 +262,5 @@ func (m *AccessPackageQuestion) SetSequence(value *int32)() {
 func (m *AccessPackageQuestion) SetText(value AccessPackageLocalizedContentable)() {
     if m != nil {
         m.text = value
-    }
-}
-// SetType sets the @odata.type property value. The type property
-func (m *AccessPackageQuestion) SetType(value *string)() {
-    if m != nil {
-        m.type_escaped = value
     }
 }

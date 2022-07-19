@@ -15,6 +15,8 @@ func NewMacOSVpnConfiguration()(*MacOSVpnConfiguration) {
     m := &MacOSVpnConfiguration{
         AppleVpnConfiguration: *NewAppleVpnConfiguration(),
     }
+    odataTypeValue := "#microsoft.graph.macOSVpnConfiguration";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateMacOSVpnConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

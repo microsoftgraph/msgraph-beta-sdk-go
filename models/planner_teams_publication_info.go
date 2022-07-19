@@ -11,6 +11,8 @@ type PlannerTeamsPublicationInfo struct {
     additionalData map[string]interface{}
     // The date and time when this task was last modified by the publication process. Read-only.
     lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
+    // The OdataType property
+    odataType *string
     // The identifier of the publication. Read-only.
     publicationId *string
     // The identifier of the plannerPlan this task was originally placed in. Read-only.
@@ -25,6 +27,8 @@ func NewPlannerTeamsPublicationInfo()(*PlannerTeamsPublicationInfo) {
     m := &PlannerTeamsPublicationInfo{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.plannerTeamsPublicationInfo";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreatePlannerTeamsPublicationInfoFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -49,6 +53,16 @@ func (m *PlannerTeamsPublicationInfo) GetFieldDeserializers()(map[string]func(i8
         }
         if val != nil {
             m.SetLastModifiedDateTime(val)
+        }
+        return nil
+    }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
         }
         return nil
     }
@@ -102,6 +116,14 @@ func (m *PlannerTeamsPublicationInfo) GetLastModifiedDateTime()(*i336074805fc853
         return m.lastModifiedDateTime
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *PlannerTeamsPublicationInfo) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetPublicationId gets the publicationId property value. The identifier of the publication. Read-only.
 func (m *PlannerTeamsPublicationInfo) GetPublicationId()(*string) {
     if m == nil {
@@ -138,6 +160,12 @@ func (m *PlannerTeamsPublicationInfo) GetPublishingTeamName()(*string) {
 func (m *PlannerTeamsPublicationInfo) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
         err := writer.WriteTimeValue("lastModifiedDateTime", m.GetLastModifiedDateTime())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -184,6 +212,12 @@ func (m *PlannerTeamsPublicationInfo) SetAdditionalData(value map[string]interfa
 func (m *PlannerTeamsPublicationInfo) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     if m != nil {
         m.lastModifiedDateTime = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *PlannerTeamsPublicationInfo) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetPublicationId sets the publicationId property value. The identifier of the publication. Read-only.

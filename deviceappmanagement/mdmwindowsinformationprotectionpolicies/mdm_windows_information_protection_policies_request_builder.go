@@ -71,7 +71,7 @@ func NewMdmWindowsInformationProtectionPoliciesRequestBuilder(rawUrl string, req
     urlParams["request-raw-url"] = rawUrl
     return NewMdmWindowsInformationProtectionPoliciesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *MdmWindowsInformationProtectionPoliciesRequestBuilder) Count()(*ifc6fca424d2fce33bd51c77e17bc106cfef5325f7e72318232be6188af43400f.CountRequestBuilder) {
     return ifc6fca424d2fce33bd51c77e17bc106cfef5325f7e72318232be6188af43400f.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

@@ -25,6 +25,8 @@ func NewWebAccount()(*WebAccount) {
     m := &WebAccount{
         ItemFacet: *NewItemFacet(),
     }
+    odataTypeValue := "#microsoft.graph.webAccount";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateWebAccountFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

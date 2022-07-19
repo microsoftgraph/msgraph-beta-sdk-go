@@ -15,6 +15,8 @@ func NewDeliveryOptimizationGroupIdCustom()(*DeliveryOptimizationGroupIdCustom) 
     m := &DeliveryOptimizationGroupIdCustom{
         DeliveryOptimizationGroupIdSource: *NewDeliveryOptimizationGroupIdSource(),
     }
+    odataTypeValue := "#microsoft.graph.deliveryOptimizationGroupIdCustom";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDeliveryOptimizationGroupIdCustomFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

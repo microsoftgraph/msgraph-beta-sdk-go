@@ -17,6 +17,8 @@ func NewFileClassificationRequest()(*FileClassificationRequest) {
     m := &FileClassificationRequest{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.fileClassificationRequest";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateFileClassificationRequestFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

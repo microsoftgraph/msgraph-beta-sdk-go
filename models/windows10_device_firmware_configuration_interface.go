@@ -55,6 +55,8 @@ func NewWindows10DeviceFirmwareConfigurationInterface()(*Windows10DeviceFirmware
     m := &Windows10DeviceFirmwareConfigurationInterface{
         DeviceConfiguration: *NewDeviceConfiguration(),
     }
+    odataTypeValue := "#microsoft.graph.windows10DeviceFirmwareConfigurationInterface";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateWindows10DeviceFirmwareConfigurationInterfaceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -9,11 +9,13 @@ import (
 type SubmissionAdminReview struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
-    // The reviewBy property
+    // The OdataType property
+    odataType *string
+    // Specifies who reviewed the email. The identification is an email ID or other identity strings.
     reviewBy *string
-    // The reviewDateTime property
+    // Specifies the date time when the review occurred.
     reviewDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The reviewResult property
+    // Specifies what the review result was. The possible values are: notJunk, spam, phishing, malware, allowedByPolicy, blockedByPolicy, spoof, unknown, noResultAvailable, and unknownFutureValue.
     reviewResult *SubmissionResultCategory
 }
 // NewSubmissionAdminReview instantiates a new submissionAdminReview and sets the default values.
@@ -21,6 +23,8 @@ func NewSubmissionAdminReview()(*SubmissionAdminReview) {
     m := &SubmissionAdminReview{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.security.submissionAdminReview";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateSubmissionAdminReviewFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -38,6 +42,16 @@ func (m *SubmissionAdminReview) GetAdditionalData()(map[string]interface{}) {
 // GetFieldDeserializers the deserialization information for the current model
 func (m *SubmissionAdminReview) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["reviewBy"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -70,7 +84,15 @@ func (m *SubmissionAdminReview) GetFieldDeserializers()(map[string]func(i878a80d
     }
     return res
 }
-// GetReviewBy gets the reviewBy property value. The reviewBy property
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *SubmissionAdminReview) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
+// GetReviewBy gets the reviewBy property value. Specifies who reviewed the email. The identification is an email ID or other identity strings.
 func (m *SubmissionAdminReview) GetReviewBy()(*string) {
     if m == nil {
         return nil
@@ -78,7 +100,7 @@ func (m *SubmissionAdminReview) GetReviewBy()(*string) {
         return m.reviewBy
     }
 }
-// GetReviewDateTime gets the reviewDateTime property value. The reviewDateTime property
+// GetReviewDateTime gets the reviewDateTime property value. Specifies the date time when the review occurred.
 func (m *SubmissionAdminReview) GetReviewDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -86,7 +108,7 @@ func (m *SubmissionAdminReview) GetReviewDateTime()(*i336074805fc853987abe6f7fe3
         return m.reviewDateTime
     }
 }
-// GetReviewResult gets the reviewResult property value. The reviewResult property
+// GetReviewResult gets the reviewResult property value. Specifies what the review result was. The possible values are: notJunk, spam, phishing, malware, allowedByPolicy, blockedByPolicy, spoof, unknown, noResultAvailable, and unknownFutureValue.
 func (m *SubmissionAdminReview) GetReviewResult()(*SubmissionResultCategory) {
     if m == nil {
         return nil
@@ -96,6 +118,12 @@ func (m *SubmissionAdminReview) GetReviewResult()(*SubmissionResultCategory) {
 }
 // Serialize serializes information the current object
 func (m *SubmissionAdminReview) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     {
         err := writer.WriteStringValue("reviewBy", m.GetReviewBy())
         if err != nil {
@@ -129,19 +157,25 @@ func (m *SubmissionAdminReview) SetAdditionalData(value map[string]interface{})(
         m.additionalData = value
     }
 }
-// SetReviewBy sets the reviewBy property value. The reviewBy property
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *SubmissionAdminReview) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
+    }
+}
+// SetReviewBy sets the reviewBy property value. Specifies who reviewed the email. The identification is an email ID or other identity strings.
 func (m *SubmissionAdminReview) SetReviewBy(value *string)() {
     if m != nil {
         m.reviewBy = value
     }
 }
-// SetReviewDateTime sets the reviewDateTime property value. The reviewDateTime property
+// SetReviewDateTime sets the reviewDateTime property value. Specifies the date time when the review occurred.
 func (m *SubmissionAdminReview) SetReviewDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     if m != nil {
         m.reviewDateTime = value
     }
 }
-// SetReviewResult sets the reviewResult property value. The reviewResult property
+// SetReviewResult sets the reviewResult property value. Specifies what the review result was. The possible values are: notJunk, spam, phishing, malware, allowedByPolicy, blockedByPolicy, spoof, unknown, noResultAvailable, and unknownFutureValue.
 func (m *SubmissionAdminReview) SetReviewResult(value *SubmissionResultCategory)() {
     if m != nil {
         m.reviewResult = value

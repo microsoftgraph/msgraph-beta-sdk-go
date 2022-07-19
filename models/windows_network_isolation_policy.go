@@ -24,12 +24,16 @@ type WindowsNetworkIsolationPolicy struct {
     enterpriseProxyServersAreAuthoritative *bool
     // List of domain names that can used for work or personal resource.
     neutralDomainResources []string
+    // The OdataType property
+    odataType *string
 }
 // NewWindowsNetworkIsolationPolicy instantiates a new windowsNetworkIsolationPolicy and sets the default values.
 func NewWindowsNetworkIsolationPolicy()(*WindowsNetworkIsolationPolicy) {
     m := &WindowsNetworkIsolationPolicy{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.windowsNetworkIsolationPolicy";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateWindowsNetworkIsolationPolicyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -207,6 +211,16 @@ func (m *WindowsNetworkIsolationPolicy) GetFieldDeserializers()(map[string]func(
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetNeutralDomainResources gets the neutralDomainResources property value. List of domain names that can used for work or personal resource.
@@ -215,6 +229,14 @@ func (m *WindowsNetworkIsolationPolicy) GetNeutralDomainResources()([]string) {
         return nil
     } else {
         return m.neutralDomainResources
+    }
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *WindowsNetworkIsolationPolicy) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
     }
 }
 // Serialize serializes information the current object
@@ -271,6 +293,12 @@ func (m *WindowsNetworkIsolationPolicy) Serialize(writer i878a80d2330e89d2689638
     }
     if m.GetNeutralDomainResources() != nil {
         err := writer.WriteCollectionOfStringValues("neutralDomainResources", m.GetNeutralDomainResources())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -335,5 +363,11 @@ func (m *WindowsNetworkIsolationPolicy) SetEnterpriseProxyServersAreAuthoritativ
 func (m *WindowsNetworkIsolationPolicy) SetNeutralDomainResources(value []string)() {
     if m != nil {
         m.neutralDomainResources = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *WindowsNetworkIsolationPolicy) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }

@@ -21,6 +21,7 @@ type GovernanceRoleAssignmentRequestable interface {
     GetStatus()(GovernanceRoleAssignmentRequestStatusable)
     GetSubject()(GovernanceSubjectable)
     GetSubjectId()(*string)
+    GetType()(*string)
     SetAssignmentState(value *string)()
     SetLinkedEligibleRoleAssignmentId(value *string)()
     SetReason(value *string)()
@@ -33,4 +34,5 @@ type GovernanceRoleAssignmentRequestable interface {
     SetStatus(value GovernanceRoleAssignmentRequestStatusable)()
     SetSubject(value GovernanceSubjectable)()
     SetSubjectId(value *string)()
+    SetType(value *string)()
 }

@@ -52,6 +52,8 @@ func NewVendor_escaped()(*Vendor_escaped) {
     m := &Vendor_escaped{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.vendor";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateVendor_escapedFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

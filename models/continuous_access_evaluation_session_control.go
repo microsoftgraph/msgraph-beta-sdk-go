@@ -10,12 +10,16 @@ type ContinuousAccessEvaluationSessionControl struct {
     additionalData map[string]interface{}
     // Specifies continuous access evaluation settings. The possible values are: strictEnforcement, disabled, unknownFutureValue.
     mode *ContinuousAccessEvaluationMode
+    // The OdataType property
+    odataType *string
 }
 // NewContinuousAccessEvaluationSessionControl instantiates a new continuousAccessEvaluationSessionControl and sets the default values.
 func NewContinuousAccessEvaluationSessionControl()(*ContinuousAccessEvaluationSessionControl) {
     m := &ContinuousAccessEvaluationSessionControl{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.continuousAccessEvaluationSessionControl";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateContinuousAccessEvaluationSessionControlFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -43,6 +47,16 @@ func (m *ContinuousAccessEvaluationSessionControl) GetFieldDeserializers()(map[s
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetMode gets the mode property value. Specifies continuous access evaluation settings. The possible values are: strictEnforcement, disabled, unknownFutureValue.
@@ -53,11 +67,25 @@ func (m *ContinuousAccessEvaluationSessionControl) GetMode()(*ContinuousAccessEv
         return m.mode
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *ContinuousAccessEvaluationSessionControl) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // Serialize serializes information the current object
 func (m *ContinuousAccessEvaluationSessionControl) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     if m.GetMode() != nil {
         cast := (*m.GetMode()).String()
         err := writer.WriteStringValue("mode", &cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -80,5 +108,11 @@ func (m *ContinuousAccessEvaluationSessionControl) SetAdditionalData(value map[s
 func (m *ContinuousAccessEvaluationSessionControl) SetMode(value *ContinuousAccessEvaluationMode)() {
     if m != nil {
         m.mode = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *ContinuousAccessEvaluationSessionControl) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }

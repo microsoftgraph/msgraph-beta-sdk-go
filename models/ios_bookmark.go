@@ -12,6 +12,8 @@ type IosBookmark struct {
     bookmarkFolder *string
     // The display name of the bookmark
     displayName *string
+    // The OdataType property
+    odataType *string
     // URL allowed to access
     url *string
 }
@@ -20,6 +22,8 @@ func NewIosBookmark()(*IosBookmark) {
     m := &IosBookmark{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.iosBookmark";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateIosBookmarkFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -73,6 +77,16 @@ func (m *IosBookmark) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["url"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -84,6 +98,14 @@ func (m *IosBookmark) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *IosBookmark) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
 }
 // GetUrl gets the url property value. URL allowed to access
 func (m *IosBookmark) GetUrl()(*string) {
@@ -103,6 +125,12 @@ func (m *IosBookmark) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
     }
     {
         err := writer.WriteStringValue("displayName", m.GetDisplayName())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -137,6 +165,12 @@ func (m *IosBookmark) SetBookmarkFolder(value *string)() {
 func (m *IosBookmark) SetDisplayName(value *string)() {
     if m != nil {
         m.displayName = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *IosBookmark) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetUrl sets the url property value. URL allowed to access

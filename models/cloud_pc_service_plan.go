@@ -13,6 +13,8 @@ type CloudPcServicePlan struct {
     ramInGB *int32
     // The size of the OS Disk in GB. Read-only.
     storageInGB *int32
+    // The type of the service plan. Possible values are: enterprise, business, unknownFutureValue. Read-only.
+    type_escaped *CloudPcServicePlanType
     // The size of the user profile disk in GB. Read-only.
     userProfileInGB *int32
     // The number of vCPUs. Read-only.
@@ -23,6 +25,8 @@ func NewCloudPcServicePlan()(*CloudPcServicePlan) {
     m := &CloudPcServicePlan{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.cloudPcServicePlan";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateCloudPcServicePlanFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -70,6 +74,16 @@ func (m *CloudPcServicePlan) GetFieldDeserializers()(map[string]func(i878a80d233
         }
         return nil
     }
+    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseCloudPcServicePlanType)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetType(val.(*CloudPcServicePlanType))
+        }
+        return nil
+    }
     res["userProfileInGB"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
@@ -106,6 +120,14 @@ func (m *CloudPcServicePlan) GetStorageInGB()(*int32) {
         return nil
     } else {
         return m.storageInGB
+    }
+}
+// GetType gets the type property value. The type of the service plan. Possible values are: enterprise, business, unknownFutureValue. Read-only.
+func (m *CloudPcServicePlan) GetType()(*CloudPcServicePlanType) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
     }
 }
 // GetUserProfileInGB gets the userProfileInGB property value. The size of the user profile disk in GB. Read-only.
@@ -148,6 +170,13 @@ func (m *CloudPcServicePlan) Serialize(writer i878a80d2330e89d26896388a3f487eef2
             return err
         }
     }
+    if m.GetType() != nil {
+        cast := (*m.GetType()).String()
+        err = writer.WriteStringValue("type", &cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteInt32Value("userProfileInGB", m.GetUserProfileInGB())
         if err != nil {
@@ -178,6 +207,12 @@ func (m *CloudPcServicePlan) SetRamInGB(value *int32)() {
 func (m *CloudPcServicePlan) SetStorageInGB(value *int32)() {
     if m != nil {
         m.storageInGB = value
+    }
+}
+// SetType sets the type property value. The type of the service plan. Possible values are: enterprise, business, unknownFutureValue. Read-only.
+func (m *CloudPcServicePlan) SetType(value *CloudPcServicePlanType)() {
+    if m != nil {
+        m.type_escaped = value
     }
 }
 // SetUserProfileInGB sets the userProfileInGB property value. The size of the user profile disk in GB. Read-only.

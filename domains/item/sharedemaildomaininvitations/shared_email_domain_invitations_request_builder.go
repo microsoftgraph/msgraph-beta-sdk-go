@@ -70,7 +70,7 @@ func NewSharedEmailDomainInvitationsRequestBuilder(rawUrl string, requestAdapter
     urlParams["request-raw-url"] = rawUrl
     return NewSharedEmailDomainInvitationsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *SharedEmailDomainInvitationsRequestBuilder) Count()(*i61a8df8f16bcd634d9c531bb6cab2d9b4c13bb055af4043ca4307b32747fcc5c.CountRequestBuilder) {
     return i61a8df8f16bcd634d9c531bb6cab2d9b4c13bb055af4043ca4307b32747fcc5c.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

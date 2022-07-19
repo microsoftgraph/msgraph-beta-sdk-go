@@ -11,9 +11,11 @@ type ExpressionEvaluationDetailsable interface {
     GetExpression()(*string)
     GetExpressionEvaluationDetails()([]ExpressionEvaluationDetailsable)
     GetExpressionResult()(*bool)
+    GetOdataType()(*string)
     GetPropertyToEvaluate()(PropertyToEvaluateable)
     SetExpression(value *string)()
     SetExpressionEvaluationDetails(value []ExpressionEvaluationDetailsable)()
     SetExpressionResult(value *bool)()
+    SetOdataType(value *string)()
     SetPropertyToEvaluate(value PropertyToEvaluateable)()
 }

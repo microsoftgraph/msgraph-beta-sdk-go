@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// SalesInvoiceLine provides operations to manage the collection of accessReviewDecision entities.
+// SalesInvoiceLine 
 type SalesInvoiceLine struct {
     Entity
     // The account property
@@ -56,11 +56,13 @@ type SalesInvoiceLine struct {
     // The unitPrice property
     unitPrice *float64
 }
-// NewSalesInvoiceLine instantiates a new salesInvoiceLine and sets the default values.
+// NewSalesInvoiceLine instantiates a new SalesInvoiceLine and sets the default values.
 func NewSalesInvoiceLine()(*SalesInvoiceLine) {
     m := &SalesInvoiceLine{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.salesInvoiceLine";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateSalesInvoiceLineFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

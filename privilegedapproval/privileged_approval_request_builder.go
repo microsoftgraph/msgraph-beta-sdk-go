@@ -71,7 +71,7 @@ func NewPrivilegedApprovalRequestBuilder(rawUrl string, requestAdapter i2ae4187f
     urlParams["request-raw-url"] = rawUrl
     return NewPrivilegedApprovalRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *PrivilegedApprovalRequestBuilder) Count()(*i3ee2086b7b798093b788263bb79127a00debee9e39e3058dac01e80bba4c4ba0.CountRequestBuilder) {
     return i3ee2086b7b798093b788263bb79127a00debee9e39e3058dac01e80bba4c4ba0.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

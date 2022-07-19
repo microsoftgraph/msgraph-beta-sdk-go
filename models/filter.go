@@ -14,12 +14,16 @@ type Filter struct {
     groups []FilterGroupable
     // *Experimental* Filter group set used to filter out objects at the early stage of reading them from the directory. If an object doesn't satisfy this filter it will not be processed further. Important to understand is that if an object used to satisfy this filter at a given moment, and then the object or the filter was changed so that filter is no longer satisfied, such object will NOT get de-provisioned. An object is considered in scope if ANY of the groups in the collection is evaluated to true.
     inputFilterGroups []FilterGroupable
+    // The OdataType property
+    odataType *string
 }
 // NewFilter instantiates a new filter and sets the default values.
 func NewFilter()(*Filter) {
     m := &Filter{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.filter";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateFilterFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -87,6 +91,16 @@ func (m *Filter) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689638
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetGroups gets the groups property value. Filter group set used to decide whether given object is in scope for provisioning. This is the filter which should be used in most cases. If an object used to satisfy this filter at a given moment, and then the object or the filter was changed so that filter is not satisfied any longer, such object will get de-provisioned'. An object is considered in scope if ANY of the groups in the collection is evaluated to true.
@@ -103,6 +117,14 @@ func (m *Filter) GetInputFilterGroups()([]FilterGroupable) {
         return nil
     } else {
         return m.inputFilterGroups
+    }
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *Filter) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
     }
 }
 // Serialize serializes information the current object
@@ -138,6 +160,12 @@ func (m *Filter) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c
         }
     }
     {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err := writer.WriteAdditionalData(m.GetAdditionalData())
         if err != nil {
             return err
@@ -167,5 +195,11 @@ func (m *Filter) SetGroups(value []FilterGroupable)() {
 func (m *Filter) SetInputFilterGroups(value []FilterGroupable)() {
     if m != nil {
         m.inputFilterGroups = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *Filter) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }

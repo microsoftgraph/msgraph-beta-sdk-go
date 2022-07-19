@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DeviceConfiguration device Configuration.
+// DeviceConfiguration 
 type DeviceConfiguration struct {
     Entity
     // The list of assignments for the device configuration profile.
@@ -43,13 +43,13 @@ type DeviceConfiguration struct {
     // Version of the device configuration.
     version *int32
 }
-// NewDeviceConfiguration instantiates a new deviceConfiguration and sets the default values.
+// NewDeviceConfiguration instantiates a new DeviceConfiguration and sets the default values.
 func NewDeviceConfiguration()(*DeviceConfiguration) {
     m := &DeviceConfiguration{
         Entity: *NewEntity(),
     }
-    odatatypeValue := "#microsoft.graph.deviceConfiguration";
-    m.SetType(&odatatypeValue);
+    odataTypeValue := "#microsoft.graph.deviceConfiguration";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDeviceConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -75,22 +75,46 @@ func CreateDeviceConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d2
                         return NewAndroidDeviceOwnerCertificateProfileBase(), nil
                     case "#microsoft.graph.androidDeviceOwnerDerivedCredentialAuthenticationConfiguration":
                         return NewAndroidDeviceOwnerDerivedCredentialAuthenticationConfiguration(), nil
+                    case "#microsoft.graph.androidDeviceOwnerEnterpriseWiFiConfiguration":
+                        return NewAndroidDeviceOwnerEnterpriseWiFiConfiguration(), nil
                     case "#microsoft.graph.androidDeviceOwnerGeneralDeviceConfiguration":
                         return NewAndroidDeviceOwnerGeneralDeviceConfiguration(), nil
+                    case "#microsoft.graph.androidDeviceOwnerImportedPFXCertificateProfile":
+                        return NewAndroidDeviceOwnerImportedPFXCertificateProfile(), nil
+                    case "#microsoft.graph.androidDeviceOwnerPkcsCertificateProfile":
+                        return NewAndroidDeviceOwnerPkcsCertificateProfile(), nil
+                    case "#microsoft.graph.androidDeviceOwnerScepCertificateProfile":
+                        return NewAndroidDeviceOwnerScepCertificateProfile(), nil
                     case "#microsoft.graph.androidDeviceOwnerTrustedRootCertificate":
                         return NewAndroidDeviceOwnerTrustedRootCertificate(), nil
+                    case "#microsoft.graph.androidDeviceOwnerVpnConfiguration":
+                        return NewAndroidDeviceOwnerVpnConfiguration(), nil
                     case "#microsoft.graph.androidDeviceOwnerWiFiConfiguration":
                         return NewAndroidDeviceOwnerWiFiConfiguration(), nil
                     case "#microsoft.graph.androidEasEmailProfileConfiguration":
                         return NewAndroidEasEmailProfileConfiguration(), nil
+                    case "#microsoft.graph.androidEnterpriseWiFiConfiguration":
+                        return NewAndroidEnterpriseWiFiConfiguration(), nil
                     case "#microsoft.graph.androidForWorkCertificateProfileBase":
                         return NewAndroidForWorkCertificateProfileBase(), nil
                     case "#microsoft.graph.androidForWorkCustomConfiguration":
                         return NewAndroidForWorkCustomConfiguration(), nil
                     case "#microsoft.graph.androidForWorkEasEmailProfileBase":
                         return NewAndroidForWorkEasEmailProfileBase(), nil
+                    case "#microsoft.graph.androidForWorkEnterpriseWiFiConfiguration":
+                        return NewAndroidForWorkEnterpriseWiFiConfiguration(), nil
                     case "#microsoft.graph.androidForWorkGeneralDeviceConfiguration":
                         return NewAndroidForWorkGeneralDeviceConfiguration(), nil
+                    case "#microsoft.graph.androidForWorkGmailEasConfiguration":
+                        return NewAndroidForWorkGmailEasConfiguration(), nil
+                    case "#microsoft.graph.androidForWorkImportedPFXCertificateProfile":
+                        return NewAndroidForWorkImportedPFXCertificateProfile(), nil
+                    case "#microsoft.graph.androidForWorkNineWorkEasConfiguration":
+                        return NewAndroidForWorkNineWorkEasConfiguration(), nil
+                    case "#microsoft.graph.androidForWorkPkcsCertificateProfile":
+                        return NewAndroidForWorkPkcsCertificateProfile(), nil
+                    case "#microsoft.graph.androidForWorkScepCertificateProfile":
+                        return NewAndroidForWorkScepCertificateProfile(), nil
                     case "#microsoft.graph.androidForWorkTrustedRootCertificate":
                         return NewAndroidForWorkTrustedRootCertificate(), nil
                     case "#microsoft.graph.androidForWorkVpnConfiguration":
@@ -99,8 +123,14 @@ func CreateDeviceConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d2
                         return NewAndroidForWorkWiFiConfiguration(), nil
                     case "#microsoft.graph.androidGeneralDeviceConfiguration":
                         return NewAndroidGeneralDeviceConfiguration(), nil
+                    case "#microsoft.graph.androidImportedPFXCertificateProfile":
+                        return NewAndroidImportedPFXCertificateProfile(), nil
                     case "#microsoft.graph.androidOmaCpConfiguration":
                         return NewAndroidOmaCpConfiguration(), nil
+                    case "#microsoft.graph.androidPkcsCertificateProfile":
+                        return NewAndroidPkcsCertificateProfile(), nil
+                    case "#microsoft.graph.androidScepCertificateProfile":
+                        return NewAndroidScepCertificateProfile(), nil
                     case "#microsoft.graph.androidTrustedRootCertificate":
                         return NewAndroidTrustedRootCertificate(), nil
                     case "#microsoft.graph.androidVpnConfiguration":
@@ -113,8 +143,18 @@ func CreateDeviceConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d2
                         return NewAndroidWorkProfileCustomConfiguration(), nil
                     case "#microsoft.graph.androidWorkProfileEasEmailProfileBase":
                         return NewAndroidWorkProfileEasEmailProfileBase(), nil
+                    case "#microsoft.graph.androidWorkProfileEnterpriseWiFiConfiguration":
+                        return NewAndroidWorkProfileEnterpriseWiFiConfiguration(), nil
                     case "#microsoft.graph.androidWorkProfileGeneralDeviceConfiguration":
                         return NewAndroidWorkProfileGeneralDeviceConfiguration(), nil
+                    case "#microsoft.graph.androidWorkProfileGmailEasConfiguration":
+                        return NewAndroidWorkProfileGmailEasConfiguration(), nil
+                    case "#microsoft.graph.androidWorkProfileNineWorkEasConfiguration":
+                        return NewAndroidWorkProfileNineWorkEasConfiguration(), nil
+                    case "#microsoft.graph.androidWorkProfilePkcsCertificateProfile":
+                        return NewAndroidWorkProfilePkcsCertificateProfile(), nil
+                    case "#microsoft.graph.androidWorkProfileScepCertificateProfile":
+                        return NewAndroidWorkProfileScepCertificateProfile(), nil
                     case "#microsoft.graph.androidWorkProfileTrustedRootCertificate":
                         return NewAndroidWorkProfileTrustedRootCertificate(), nil
                     case "#microsoft.graph.androidWorkProfileVpnConfiguration":
@@ -125,6 +165,12 @@ func CreateDeviceConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d2
                         return NewAospDeviceOwnerCertificateProfileBase(), nil
                     case "#microsoft.graph.aospDeviceOwnerDeviceConfiguration":
                         return NewAospDeviceOwnerDeviceConfiguration(), nil
+                    case "#microsoft.graph.aospDeviceOwnerEnterpriseWiFiConfiguration":
+                        return NewAospDeviceOwnerEnterpriseWiFiConfiguration(), nil
+                    case "#microsoft.graph.aospDeviceOwnerPkcsCertificateProfile":
+                        return NewAospDeviceOwnerPkcsCertificateProfile(), nil
+                    case "#microsoft.graph.aospDeviceOwnerScepCertificateProfile":
+                        return NewAospDeviceOwnerScepCertificateProfile(), nil
                     case "#microsoft.graph.aospDeviceOwnerTrustedRootCertificate":
                         return NewAospDeviceOwnerTrustedRootCertificate(), nil
                     case "#microsoft.graph.aospDeviceOwnerWiFiConfiguration":
@@ -141,20 +187,40 @@ func CreateDeviceConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d2
                         return NewEditionUpgradeConfiguration(), nil
                     case "#microsoft.graph.iosCertificateProfile":
                         return NewIosCertificateProfile(), nil
+                    case "#microsoft.graph.iosCertificateProfileBase":
+                        return NewIosCertificateProfileBase(), nil
                     case "#microsoft.graph.iosCustomConfiguration":
                         return NewIosCustomConfiguration(), nil
                     case "#microsoft.graph.iosDerivedCredentialAuthenticationConfiguration":
                         return NewIosDerivedCredentialAuthenticationConfiguration(), nil
+                    case "#microsoft.graph.iosDeviceFeaturesConfiguration":
+                        return NewIosDeviceFeaturesConfiguration(), nil
+                    case "#microsoft.graph.iosEasEmailProfileConfiguration":
+                        return NewIosEasEmailProfileConfiguration(), nil
                     case "#microsoft.graph.iosEducationDeviceConfiguration":
                         return NewIosEducationDeviceConfiguration(), nil
                     case "#microsoft.graph.iosEduDeviceConfiguration":
                         return NewIosEduDeviceConfiguration(), nil
+                    case "#microsoft.graph.iosEnterpriseWiFiConfiguration":
+                        return NewIosEnterpriseWiFiConfiguration(), nil
+                    case "#microsoft.graph.iosExpeditedCheckinConfiguration":
+                        return NewIosExpeditedCheckinConfiguration(), nil
                     case "#microsoft.graph.iosGeneralDeviceConfiguration":
                         return NewIosGeneralDeviceConfiguration(), nil
+                    case "#microsoft.graph.iosikEv2VpnConfiguration":
+                        return NewIosikEv2VpnConfiguration(), nil
+                    case "#microsoft.graph.iosImportedPFXCertificateProfile":
+                        return NewIosImportedPFXCertificateProfile(), nil
+                    case "#microsoft.graph.iosPkcsCertificateProfile":
+                        return NewIosPkcsCertificateProfile(), nil
+                    case "#microsoft.graph.iosScepCertificateProfile":
+                        return NewIosScepCertificateProfile(), nil
                     case "#microsoft.graph.iosTrustedRootCertificate":
                         return NewIosTrustedRootCertificate(), nil
                     case "#microsoft.graph.iosUpdateConfiguration":
                         return NewIosUpdateConfiguration(), nil
+                    case "#microsoft.graph.iosVpnConfiguration":
+                        return NewIosVpnConfiguration(), nil
                     case "#microsoft.graph.iosWiFiConfiguration":
                         return NewIosWiFiConfiguration(), nil
                     case "#microsoft.graph.macOSCertificateProfileBase":
@@ -163,16 +229,28 @@ func CreateDeviceConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d2
                         return NewMacOSCustomAppConfiguration(), nil
                     case "#microsoft.graph.macOSCustomConfiguration":
                         return NewMacOSCustomConfiguration(), nil
+                    case "#microsoft.graph.macOSDeviceFeaturesConfiguration":
+                        return NewMacOSDeviceFeaturesConfiguration(), nil
                     case "#microsoft.graph.macOSEndpointProtectionConfiguration":
                         return NewMacOSEndpointProtectionConfiguration(), nil
+                    case "#microsoft.graph.macOSEnterpriseWiFiConfiguration":
+                        return NewMacOSEnterpriseWiFiConfiguration(), nil
                     case "#microsoft.graph.macOSExtensionsConfiguration":
                         return NewMacOSExtensionsConfiguration(), nil
                     case "#microsoft.graph.macOSGeneralDeviceConfiguration":
                         return NewMacOSGeneralDeviceConfiguration(), nil
+                    case "#microsoft.graph.macOSImportedPFXCertificateProfile":
+                        return NewMacOSImportedPFXCertificateProfile(), nil
+                    case "#microsoft.graph.macOSPkcsCertificateProfile":
+                        return NewMacOSPkcsCertificateProfile(), nil
+                    case "#microsoft.graph.macOSScepCertificateProfile":
+                        return NewMacOSScepCertificateProfile(), nil
                     case "#microsoft.graph.macOSSoftwareUpdateConfiguration":
                         return NewMacOSSoftwareUpdateConfiguration(), nil
                     case "#microsoft.graph.macOSTrustedRootCertificate":
                         return NewMacOSTrustedRootCertificate(), nil
+                    case "#microsoft.graph.macOSVpnConfiguration":
+                        return NewMacOSVpnConfiguration(), nil
                     case "#microsoft.graph.macOSWiFiConfiguration":
                         return NewMacOSWiFiConfiguration(), nil
                     case "#microsoft.graph.macOSWiredNetworkConfiguration":
@@ -183,28 +261,44 @@ func CreateDeviceConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d2
                         return NewUnsupportedDeviceConfiguration(), nil
                     case "#microsoft.graph.vpnConfiguration":
                         return NewVpnConfiguration(), nil
+                    case "#microsoft.graph.windows10CertificateProfileBase":
+                        return NewWindows10CertificateProfileBase(), nil
                     case "#microsoft.graph.windows10CustomConfiguration":
                         return NewWindows10CustomConfiguration(), nil
                     case "#microsoft.graph.windows10DeviceFirmwareConfigurationInterface":
                         return NewWindows10DeviceFirmwareConfigurationInterface(), nil
+                    case "#microsoft.graph.windows10EasEmailProfileConfiguration":
+                        return NewWindows10EasEmailProfileConfiguration(), nil
                     case "#microsoft.graph.windows10EndpointProtectionConfiguration":
                         return NewWindows10EndpointProtectionConfiguration(), nil
                     case "#microsoft.graph.windows10EnterpriseModernAppManagementConfiguration":
                         return NewWindows10EnterpriseModernAppManagementConfiguration(), nil
                     case "#microsoft.graph.windows10GeneralConfiguration":
                         return NewWindows10GeneralConfiguration(), nil
+                    case "#microsoft.graph.windows10ImportedPFXCertificateProfile":
+                        return NewWindows10ImportedPFXCertificateProfile(), nil
                     case "#microsoft.graph.windows10NetworkBoundaryConfiguration":
                         return NewWindows10NetworkBoundaryConfiguration(), nil
                     case "#microsoft.graph.windows10PFXImportCertificateProfile":
                         return NewWindows10PFXImportCertificateProfile(), nil
+                    case "#microsoft.graph.windows10PkcsCertificateProfile":
+                        return NewWindows10PkcsCertificateProfile(), nil
                     case "#microsoft.graph.windows10SecureAssessmentConfiguration":
                         return NewWindows10SecureAssessmentConfiguration(), nil
                     case "#microsoft.graph.windows10TeamGeneralConfiguration":
                         return NewWindows10TeamGeneralConfiguration(), nil
+                    case "#microsoft.graph.windows10VpnConfiguration":
+                        return NewWindows10VpnConfiguration(), nil
+                    case "#microsoft.graph.windows81CertificateProfileBase":
+                        return NewWindows81CertificateProfileBase(), nil
                     case "#microsoft.graph.windows81GeneralConfiguration":
                         return NewWindows81GeneralConfiguration(), nil
+                    case "#microsoft.graph.windows81SCEPCertificateProfile":
+                        return NewWindows81SCEPCertificateProfile(), nil
                     case "#microsoft.graph.windows81TrustedRootCertificate":
                         return NewWindows81TrustedRootCertificate(), nil
+                    case "#microsoft.graph.windows81VpnConfiguration":
+                        return NewWindows81VpnConfiguration(), nil
                     case "#microsoft.graph.windows81WifiImportConfiguration":
                         return NewWindows81WifiImportConfiguration(), nil
                     case "#microsoft.graph.windowsCertificateProfileBase":
@@ -227,14 +321,24 @@ func CreateDeviceConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d2
                         return NewWindowsPhone81CustomConfiguration(), nil
                     case "#microsoft.graph.windowsPhone81GeneralConfiguration":
                         return NewWindowsPhone81GeneralConfiguration(), nil
+                    case "#microsoft.graph.windowsPhone81ImportedPFXCertificateProfile":
+                        return NewWindowsPhone81ImportedPFXCertificateProfile(), nil
+                    case "#microsoft.graph.windowsPhone81SCEPCertificateProfile":
+                        return NewWindowsPhone81SCEPCertificateProfile(), nil
                     case "#microsoft.graph.windowsPhone81TrustedRootCertificate":
                         return NewWindowsPhone81TrustedRootCertificate(), nil
+                    case "#microsoft.graph.windowsPhone81VpnConfiguration":
+                        return NewWindowsPhone81VpnConfiguration(), nil
+                    case "#microsoft.graph.windowsPhoneEASEmailProfileConfiguration":
+                        return NewWindowsPhoneEASEmailProfileConfiguration(), nil
                     case "#microsoft.graph.windowsUpdateForBusinessConfiguration":
                         return NewWindowsUpdateForBusinessConfiguration(), nil
                     case "#microsoft.graph.windowsVpnConfiguration":
                         return NewWindowsVpnConfiguration(), nil
                     case "#microsoft.graph.windowsWifiConfiguration":
                         return NewWindowsWifiConfiguration(), nil
+                    case "#microsoft.graph.windowsWifiEnterpriseEAPConfiguration":
+                        return NewWindowsWifiEnterpriseEAPConfiguration(), nil
                     case "#microsoft.graph.windowsWiredNetworkConfiguration":
                         return NewWindowsWiredNetworkConfiguration(), nil
                 }

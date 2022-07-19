@@ -22,20 +22,20 @@ type AccessReviewSettings struct {
     justificationRequiredOnApproval *bool
     // Indicates whether sending mails to reviewers and the review creator is enabled.
     mailNotificationsEnabled *bool
+    // The OdataType property
+    odataType *string
     // Detailed settings for recurrence.
     recurrenceSettings AccessReviewRecurrenceSettingsable
     // Indicates whether sending reminder emails to reviewers is enabled.
     remindersEnabled *bool
-    // The type property
-    type_escaped *string
 }
 // NewAccessReviewSettings instantiates a new accessReviewSettings and sets the default values.
 func NewAccessReviewSettings()(*AccessReviewSettings) {
     m := &AccessReviewSettings{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odatatypeValue := "#microsoft.graph.accessReviewSettings";
-    m.SetType(&odatatypeValue);
+    odataTypeValue := "#microsoft.graph.accessReviewSettings";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAccessReviewSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -182,6 +182,16 @@ func (m *AccessReviewSettings) GetFieldDeserializers()(map[string]func(i878a80d2
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["recurrenceSettings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateAccessReviewRecurrenceSettingsFromDiscriminatorValue)
         if err != nil {
@@ -199,16 +209,6 @@ func (m *AccessReviewSettings) GetFieldDeserializers()(map[string]func(i878a80d2
         }
         if val != nil {
             m.SetRemindersEnabled(val)
-        }
-        return nil
-    }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetType(val)
         }
         return nil
     }
@@ -230,6 +230,14 @@ func (m *AccessReviewSettings) GetMailNotificationsEnabled()(*bool) {
         return m.mailNotificationsEnabled
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *AccessReviewSettings) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetRecurrenceSettings gets the recurrenceSettings property value. Detailed settings for recurrence.
 func (m *AccessReviewSettings) GetRecurrenceSettings()(AccessReviewRecurrenceSettingsable) {
     if m == nil {
@@ -244,14 +252,6 @@ func (m *AccessReviewSettings) GetRemindersEnabled()(*bool) {
         return nil
     } else {
         return m.remindersEnabled
-    }
-}
-// GetType gets the @odata.type property value. The type property
-func (m *AccessReviewSettings) GetType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.type_escaped
     }
 }
 // Serialize serializes information the current object
@@ -299,6 +299,12 @@ func (m *AccessReviewSettings) Serialize(writer i878a80d2330e89d26896388a3f487ee
         }
     }
     {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err := writer.WriteObjectValue("recurrenceSettings", m.GetRecurrenceSettings())
         if err != nil {
             return err
@@ -306,12 +312,6 @@ func (m *AccessReviewSettings) Serialize(writer i878a80d2330e89d26896388a3f487ee
     }
     {
         err := writer.WriteBoolValue("remindersEnabled", m.GetRemindersEnabled())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err := writer.WriteStringValue("@odata.type", m.GetType())
         if err != nil {
             return err
         }
@@ -372,6 +372,12 @@ func (m *AccessReviewSettings) SetMailNotificationsEnabled(value *bool)() {
         m.mailNotificationsEnabled = value
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *AccessReviewSettings) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
+    }
+}
 // SetRecurrenceSettings sets the recurrenceSettings property value. Detailed settings for recurrence.
 func (m *AccessReviewSettings) SetRecurrenceSettings(value AccessReviewRecurrenceSettingsable)() {
     if m != nil {
@@ -382,11 +388,5 @@ func (m *AccessReviewSettings) SetRecurrenceSettings(value AccessReviewRecurrenc
 func (m *AccessReviewSettings) SetRemindersEnabled(value *bool)() {
     if m != nil {
         m.remindersEnabled = value
-    }
-}
-// SetType sets the @odata.type property value. The type property
-func (m *AccessReviewSettings) SetType(value *string)() {
-    if m != nil {
-        m.type_escaped = value
     }
 }

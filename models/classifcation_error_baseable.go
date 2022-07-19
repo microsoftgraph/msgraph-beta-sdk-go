@@ -11,11 +11,11 @@ type ClassifcationErrorBaseable interface {
     GetCode()(*string)
     GetInnerError()(ClassificationInnerErrorable)
     GetMessage()(*string)
+    GetOdataType()(*string)
     GetTarget()(*string)
-    GetType()(*string)
     SetCode(value *string)()
     SetInnerError(value ClassificationInnerErrorable)()
     SetMessage(value *string)()
+    SetOdataType(value *string)()
     SetTarget(value *string)()
-    SetType(value *string)()
 }

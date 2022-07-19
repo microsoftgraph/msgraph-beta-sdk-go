@@ -10,6 +10,8 @@ type UserRegistrationFeatureCount struct {
     additionalData map[string]interface{}
     // The feature property
     feature *AuthenticationMethodFeature
+    // The OdataType property
+    odataType *string
     // Number of users.
     userCount *int64
 }
@@ -18,6 +20,8 @@ func NewUserRegistrationFeatureCount()(*UserRegistrationFeatureCount) {
     m := &UserRegistrationFeatureCount{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.userRegistrationFeatureCount";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateUserRegistrationFeatureCountFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -53,6 +57,16 @@ func (m *UserRegistrationFeatureCount) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["userCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt64Value()
         if err != nil {
@@ -64,6 +78,14 @@ func (m *UserRegistrationFeatureCount) GetFieldDeserializers()(map[string]func(i
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *UserRegistrationFeatureCount) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
 }
 // GetUserCount gets the userCount property value. Number of users.
 func (m *UserRegistrationFeatureCount) GetUserCount()(*int64) {
@@ -78,6 +100,12 @@ func (m *UserRegistrationFeatureCount) Serialize(writer i878a80d2330e89d26896388
     if m.GetFeature() != nil {
         cast := (*m.GetFeature()).String()
         err := writer.WriteStringValue("feature", &cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -106,6 +134,12 @@ func (m *UserRegistrationFeatureCount) SetAdditionalData(value map[string]interf
 func (m *UserRegistrationFeatureCount) SetFeature(value *AuthenticationMethodFeature)() {
     if m != nil {
         m.feature = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *UserRegistrationFeatureCount) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetUserCount sets the userCount property value. Number of users.

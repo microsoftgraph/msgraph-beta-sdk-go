@@ -10,6 +10,8 @@ type AccessPackageLocalizedText struct {
     additionalData map[string]interface{}
     // The ISO code for the intended language. Required.
     languageCode *string
+    // The OdataType property
+    odataType *string
     // The text in the specific language. Required.
     text *string
 }
@@ -18,6 +20,8 @@ func NewAccessPackageLocalizedText()(*AccessPackageLocalizedText) {
     m := &AccessPackageLocalizedText{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.accessPackageLocalizedText";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAccessPackageLocalizedTextFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -45,6 +49,16 @@ func (m *AccessPackageLocalizedText) GetFieldDeserializers()(map[string]func(i87
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["text"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -65,6 +79,14 @@ func (m *AccessPackageLocalizedText) GetLanguageCode()(*string) {
         return m.languageCode
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *AccessPackageLocalizedText) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetText gets the text property value. The text in the specific language. Required.
 func (m *AccessPackageLocalizedText) GetText()(*string) {
     if m == nil {
@@ -77,6 +99,12 @@ func (m *AccessPackageLocalizedText) GetText()(*string) {
 func (m *AccessPackageLocalizedText) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("languageCode", m.GetLanguageCode())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -105,6 +133,12 @@ func (m *AccessPackageLocalizedText) SetAdditionalData(value map[string]interfac
 func (m *AccessPackageLocalizedText) SetLanguageCode(value *string)() {
     if m != nil {
         m.languageCode = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *AccessPackageLocalizedText) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetText sets the text property value. The text in the specific language. Required.

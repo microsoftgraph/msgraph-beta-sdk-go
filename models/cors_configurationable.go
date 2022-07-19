@@ -12,10 +12,12 @@ type CorsConfigurationable interface {
     GetAllowedMethods()([]string)
     GetAllowedOrigins()([]string)
     GetMaxAgeInSeconds()(*int32)
+    GetOdataType()(*string)
     GetResource()(*string)
     SetAllowedHeaders(value []string)()
     SetAllowedMethods(value []string)()
     SetAllowedOrigins(value []string)()
     SetMaxAgeInSeconds(value *int32)()
+    SetOdataType(value *string)()
     SetResource(value *string)()
 }

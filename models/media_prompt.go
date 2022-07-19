@@ -17,6 +17,8 @@ func NewMediaPrompt()(*MediaPrompt) {
     m := &MediaPrompt{
         Prompt: *NewPrompt(),
     }
+    odataTypeValue := "#microsoft.graph.mediaPrompt";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateMediaPromptFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

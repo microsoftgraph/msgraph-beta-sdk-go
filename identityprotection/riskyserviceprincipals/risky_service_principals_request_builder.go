@@ -76,7 +76,7 @@ func NewRiskyServicePrincipalsRequestBuilder(rawUrl string, requestAdapter i2ae4
     urlParams["request-raw-url"] = rawUrl
     return NewRiskyServicePrincipalsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *RiskyServicePrincipalsRequestBuilder) Count()(*ib48ad338b29836e614d9379952d94ca511eae67832181629704a82189ddf853c.CountRequestBuilder) {
     return ib48ad338b29836e614d9379952d94ca511eae67832181629704a82189ddf853c.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

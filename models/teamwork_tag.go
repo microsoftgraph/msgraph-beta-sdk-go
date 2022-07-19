@@ -25,6 +25,8 @@ func NewTeamworkTag()(*TeamworkTag) {
     m := &TeamworkTag{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.teamworkTag";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateTeamworkTagFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -70,7 +70,7 @@ func NewEmployeesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2633
     urlParams["request-raw-url"] = rawUrl
     return NewEmployeesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *EmployeesRequestBuilder) Count()(*i5b4219d4aa5e36047d46abc4a7b660afbf3e89d0d328d318d22c90badda15324.CountRequestBuilder) {
     return i5b4219d4aa5e36047d46abc4a7b660afbf3e89d0d328d318d22c90badda15324.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

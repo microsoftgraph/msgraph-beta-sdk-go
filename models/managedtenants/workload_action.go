@@ -18,6 +18,8 @@ type WorkloadAction struct {
     displayName *string
     // The licenses property
     licenses []string
+    // The OdataType property
+    odataType *string
     // The service associated with workload action. Optional. Read-only.
     service *string
     // The collection of settings associated with the workload action. Optional. Read-only.
@@ -28,6 +30,8 @@ func NewWorkloadAction()(*WorkloadAction) {
     m := &WorkloadAction{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.managedTenants.workloadAction";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateWorkloadActionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -131,6 +135,16 @@ func (m *WorkloadAction) GetFieldDeserializers()(map[string]func(i878a80d2330e89
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["service"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -163,6 +177,14 @@ func (m *WorkloadAction) GetLicenses()([]string) {
         return nil
     } else {
         return m.licenses
+    }
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *WorkloadAction) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
     }
 }
 // GetService gets the service property value. The service associated with workload action. Optional. Read-only.
@@ -210,6 +232,12 @@ func (m *WorkloadAction) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
     }
     if m.GetLicenses() != nil {
         err := writer.WriteCollectionOfStringValues("licenses", m.GetLicenses())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -272,6 +300,12 @@ func (m *WorkloadAction) SetDisplayName(value *string)() {
 func (m *WorkloadAction) SetLicenses(value []string)() {
     if m != nil {
         m.licenses = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *WorkloadAction) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetService sets the service property value. The service associated with workload action. Optional. Read-only.

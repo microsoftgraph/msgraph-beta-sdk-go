@@ -11,9 +11,11 @@ type AttachmentInfoable interface {
     GetAttachmentType()(*AttachmentType)
     GetContentType()(*string)
     GetName()(*string)
+    GetOdataType()(*string)
     GetSize()(*int64)
     SetAttachmentType(value *AttachmentType)()
     SetContentType(value *string)()
     SetName(value *string)()
+    SetOdataType(value *string)()
     SetSize(value *int64)()
 }

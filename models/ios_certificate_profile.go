@@ -13,8 +13,8 @@ func NewIosCertificateProfile()(*IosCertificateProfile) {
     m := &IosCertificateProfile{
         DeviceConfiguration: *NewDeviceConfiguration(),
     }
-    odatatypeValue := "#microsoft.graph.iosCertificateProfile";
-    m.SetType(&odatatypeValue);
+    odataTypeValue := "#microsoft.graph.iosCertificateProfile";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateIosCertificateProfileFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -36,6 +36,10 @@ func CreateIosCertificateProfileFromDiscriminatorValue(parseNode i878a80d2330e89
                         return NewIosCertificateProfileBase(), nil
                     case "#microsoft.graph.iosImportedPFXCertificateProfile":
                         return NewIosImportedPFXCertificateProfile(), nil
+                    case "#microsoft.graph.iosPkcsCertificateProfile":
+                        return NewIosPkcsCertificateProfile(), nil
+                    case "#microsoft.graph.iosScepCertificateProfile":
+                        return NewIosScepCertificateProfile(), nil
                 }
             }
         }

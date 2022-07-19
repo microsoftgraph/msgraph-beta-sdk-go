@@ -12,6 +12,8 @@ type TeamworkSoftwareUpdateStatus struct {
     availableVersion *string
     // The current software version.
     currentVersion *string
+    // The OdataType property
+    odataType *string
     // The update status of the software. The possible values are: unknown, latest, updateAvailable, unknownFutureValue.
     softwareFreshness *TeamworkSoftwareFreshness
 }
@@ -20,6 +22,8 @@ func NewTeamworkSoftwareUpdateStatus()(*TeamworkSoftwareUpdateStatus) {
     m := &TeamworkSoftwareUpdateStatus{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.teamworkSoftwareUpdateStatus";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateTeamworkSoftwareUpdateStatusFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -73,6 +77,16 @@ func (m *TeamworkSoftwareUpdateStatus) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["softwareFreshness"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseTeamworkSoftwareFreshness)
         if err != nil {
@@ -84,6 +98,14 @@ func (m *TeamworkSoftwareUpdateStatus) GetFieldDeserializers()(map[string]func(i
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *TeamworkSoftwareUpdateStatus) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
 }
 // GetSoftwareFreshness gets the softwareFreshness property value. The update status of the software. The possible values are: unknown, latest, updateAvailable, unknownFutureValue.
 func (m *TeamworkSoftwareUpdateStatus) GetSoftwareFreshness()(*TeamworkSoftwareFreshness) {
@@ -103,6 +125,12 @@ func (m *TeamworkSoftwareUpdateStatus) Serialize(writer i878a80d2330e89d26896388
     }
     {
         err := writer.WriteStringValue("currentVersion", m.GetCurrentVersion())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -138,6 +166,12 @@ func (m *TeamworkSoftwareUpdateStatus) SetAvailableVersion(value *string)() {
 func (m *TeamworkSoftwareUpdateStatus) SetCurrentVersion(value *string)() {
     if m != nil {
         m.currentVersion = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *TeamworkSoftwareUpdateStatus) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetSoftwareFreshness sets the softwareFreshness property value. The update status of the software. The possible values are: unknown, latest, updateAvailable, unknownFutureValue.

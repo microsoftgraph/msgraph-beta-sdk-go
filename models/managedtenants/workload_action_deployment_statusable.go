@@ -17,6 +17,7 @@ type WorkloadActionDeploymentStatusable interface {
     GetIncludeAllUsers()(*bool)
     GetIncludeGroups()([]string)
     GetLastDeploymentDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetOdataType()(*string)
     GetStatus()(*WorkloadActionStatus)
     SetActionId(value *string)()
     SetDeployedPolicyId(value *string)()
@@ -25,5 +26,6 @@ type WorkloadActionDeploymentStatusable interface {
     SetIncludeAllUsers(value *bool)()
     SetIncludeGroups(value []string)()
     SetLastDeploymentDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetOdataType(value *string)()
     SetStatus(value *WorkloadActionStatus)()
 }

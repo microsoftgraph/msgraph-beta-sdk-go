@@ -13,8 +13,8 @@ func NewExtension()(*Extension) {
     m := &Extension{
         Entity: *NewEntity(),
     }
-    odatatypeValue := "#microsoft.graph.extension";
-    m.SetType(&odatatypeValue);
+    odataTypeValue := "#microsoft.graph.extension";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateExtensionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

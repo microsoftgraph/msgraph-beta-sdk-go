@@ -23,6 +23,8 @@ func NewOffice365GroupsActivityGroupCounts()(*Office365GroupsActivityGroupCounts
     m := &Office365GroupsActivityGroupCounts{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.office365GroupsActivityGroupCounts";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateOffice365GroupsActivityGroupCountsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

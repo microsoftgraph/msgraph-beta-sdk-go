@@ -38,6 +38,8 @@ func NewAdvancedThreatProtectionOnboardingDeviceSettingState()(*AdvancedThreatPr
     m := &AdvancedThreatProtectionOnboardingDeviceSettingState{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.advancedThreatProtectionOnboardingDeviceSettingState";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAdvancedThreatProtectionOnboardingDeviceSettingStateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

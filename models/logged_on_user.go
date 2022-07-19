@@ -11,6 +11,8 @@ type LoggedOnUser struct {
     additionalData map[string]interface{}
     // Date time when user logs on
     lastLogOnDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
+    // The OdataType property
+    odataType *string
     // User id
     userId *string
 }
@@ -19,6 +21,8 @@ func NewLoggedOnUser()(*LoggedOnUser) {
     m := &LoggedOnUser{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.loggedOnUser";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateLoggedOnUserFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -46,6 +50,16 @@ func (m *LoggedOnUser) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["userId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -66,6 +80,14 @@ func (m *LoggedOnUser) GetLastLogOnDateTime()(*i336074805fc853987abe6f7fe3ad97a6
         return m.lastLogOnDateTime
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *LoggedOnUser) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetUserId gets the userId property value. User id
 func (m *LoggedOnUser) GetUserId()(*string) {
     if m == nil {
@@ -78,6 +100,12 @@ func (m *LoggedOnUser) GetUserId()(*string) {
 func (m *LoggedOnUser) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
         err := writer.WriteTimeValue("lastLogOnDateTime", m.GetLastLogOnDateTime())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -106,6 +134,12 @@ func (m *LoggedOnUser) SetAdditionalData(value map[string]interface{})() {
 func (m *LoggedOnUser) SetLastLogOnDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     if m != nil {
         m.lastLogOnDateTime = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *LoggedOnUser) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetUserId sets the userId property value. User id

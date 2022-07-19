@@ -70,7 +70,7 @@ func NewThreatAssessmentRequestsRequestBuilder(rawUrl string, requestAdapter i2a
     urlParams["request-raw-url"] = rawUrl
     return NewThreatAssessmentRequestsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *ThreatAssessmentRequestsRequestBuilder) Count()(*i9705827fee318f05559de86da7e34a42b30f06c3b1a6983b662861fcb0bdc78b.CountRequestBuilder) {
     return i9705827fee318f05559de86da7e34a42b30f06c3b1a6983b662861fcb0bdc78b.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

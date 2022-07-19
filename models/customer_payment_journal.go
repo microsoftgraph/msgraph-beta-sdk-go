@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// CustomerPaymentJournal provides operations to manage the collection of accessReviewDecision entities.
+// CustomerPaymentJournal 
 type CustomerPaymentJournal struct {
     Entity
     // The account property
@@ -23,11 +23,13 @@ type CustomerPaymentJournal struct {
     // The lastModifiedDateTime property
     lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
 }
-// NewCustomerPaymentJournal instantiates a new customerPaymentJournal and sets the default values.
+// NewCustomerPaymentJournal instantiates a new CustomerPaymentJournal and sets the default values.
 func NewCustomerPaymentJournal()(*CustomerPaymentJournal) {
     m := &CustomerPaymentJournal{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.customerPaymentJournal";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateCustomerPaymentJournalFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

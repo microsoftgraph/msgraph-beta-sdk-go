@@ -63,7 +63,7 @@ func NewBundlesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371
     urlParams["request-raw-url"] = rawUrl
     return NewBundlesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *BundlesRequestBuilder) Count()(*ib3748385f0515197782190875cb4fe0926e885a7b235f49d11d9d081247624b6.CountRequestBuilder) {
     return ib3748385f0515197782190875cb4fe0926e885a7b235f49d11d9d081247624b6.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

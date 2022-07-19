@@ -13,6 +13,8 @@ func NewSubjectRightsRequestAllMailboxLocation()(*SubjectRightsRequestAllMailbox
     m := &SubjectRightsRequestAllMailboxLocation{
         SubjectRightsRequestMailboxLocation: *NewSubjectRightsRequestMailboxLocation(),
     }
+    odataTypeValue := "#microsoft.graph.subjectRightsRequestAllMailboxLocation";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateSubjectRightsRequestAllMailboxLocationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

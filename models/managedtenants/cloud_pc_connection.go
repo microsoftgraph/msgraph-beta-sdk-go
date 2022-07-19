@@ -6,7 +6,7 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
-// CloudPcConnection provides operations to manage the collection of accessReviewDecision entities.
+// CloudPcConnection provides operations to manage the collection of accessReview entities.
 type CloudPcConnection struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
     // The display name of the cloud PC connection. Required. Read-only.
@@ -25,6 +25,8 @@ func NewCloudPcConnection()(*CloudPcConnection) {
     m := &CloudPcConnection{
         Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.managedTenants.cloudPcConnection";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateCloudPcConnectionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

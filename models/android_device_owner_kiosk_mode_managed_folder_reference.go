@@ -17,6 +17,8 @@ func NewAndroidDeviceOwnerKioskModeManagedFolderReference()(*AndroidDeviceOwnerK
     m := &AndroidDeviceOwnerKioskModeManagedFolderReference{
         AndroidDeviceOwnerKioskModeHomeScreenItem: *NewAndroidDeviceOwnerKioskModeHomeScreenItem(),
     }
+    odataTypeValue := "#microsoft.graph.androidDeviceOwnerKioskModeManagedFolderReference";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAndroidDeviceOwnerKioskModeManagedFolderReferenceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -13,6 +13,8 @@ func NewIosLobAppProvisioningConfigurationPolicySetItem()(*IosLobAppProvisioning
     m := &IosLobAppProvisioningConfigurationPolicySetItem{
         PolicySetItem: *NewPolicySetItem(),
     }
+    odataTypeValue := "#microsoft.graph.iosLobAppProvisioningConfigurationPolicySetItem";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateIosLobAppProvisioningConfigurationPolicySetItemFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

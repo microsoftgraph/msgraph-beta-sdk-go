@@ -14,10 +14,12 @@ type BroadcastMeetingSettingsable interface {
     GetIsQuestionAndAnswerEnabled()(*bool)
     GetIsRecordingEnabled()(*bool)
     GetIsVideoOnDemandEnabled()(*bool)
+    GetOdataType()(*string)
     SetAllowedAudience(value *BroadcastMeetingAudience)()
     SetCaptions(value BroadcastMeetingCaptionSettingsable)()
     SetIsAttendeeReportEnabled(value *bool)()
     SetIsQuestionAndAnswerEnabled(value *bool)()
     SetIsRecordingEnabled(value *bool)()
     SetIsVideoOnDemandEnabled(value *bool)()
+    SetOdataType(value *string)()
 }

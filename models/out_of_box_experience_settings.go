@@ -16,6 +16,8 @@ type OutOfBoxExperienceSettings struct {
     hideEULA *bool
     // Show or hide privacy settings to user
     hidePrivacySettings *bool
+    // The OdataType property
+    odataType *string
     // If set, then skip the keyboard selection page if Language and Region are set
     skipKeyboardSelectionPage *bool
     // The userType property
@@ -26,6 +28,8 @@ func NewOutOfBoxExperienceSettings()(*OutOfBoxExperienceSettings) {
     m := &OutOfBoxExperienceSettings{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.outOfBoxExperienceSettings";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateOutOfBoxExperienceSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -91,6 +95,16 @@ func (m *OutOfBoxExperienceSettings) GetFieldDeserializers()(map[string]func(i87
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["skipKeyboardSelectionPage"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
@@ -137,6 +151,14 @@ func (m *OutOfBoxExperienceSettings) GetHidePrivacySettings()(*bool) {
         return m.hidePrivacySettings
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *OutOfBoxExperienceSettings) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetSkipKeyboardSelectionPage gets the skipKeyboardSelectionPage property value. If set, then skip the keyboard selection page if Language and Region are set
 func (m *OutOfBoxExperienceSettings) GetSkipKeyboardSelectionPage()(*bool) {
     if m == nil {
@@ -176,6 +198,12 @@ func (m *OutOfBoxExperienceSettings) Serialize(writer i878a80d2330e89d26896388a3
     }
     {
         err := writer.WriteBoolValue("hidePrivacySettings", m.GetHidePrivacySettings())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -229,6 +257,12 @@ func (m *OutOfBoxExperienceSettings) SetHideEULA(value *bool)() {
 func (m *OutOfBoxExperienceSettings) SetHidePrivacySettings(value *bool)() {
     if m != nil {
         m.hidePrivacySettings = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *OutOfBoxExperienceSettings) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetSkipKeyboardSelectionPage sets the skipKeyboardSelectionPage property value. If set, then skip the keyboard selection page if Language and Region are set

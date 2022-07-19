@@ -10,6 +10,8 @@ type CloudPcUserRoleScopeTagInfo struct {
     additionalData map[string]interface{}
     // Scope tag display name.
     displayName *string
+    // The OdataType property
+    odataType *string
     // Scope tag ID.
     roleScopeTagId *string
 }
@@ -18,6 +20,8 @@ func NewCloudPcUserRoleScopeTagInfo()(*CloudPcUserRoleScopeTagInfo) {
     m := &CloudPcUserRoleScopeTagInfo{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.cloudPcUserRoleScopeTagInfo";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateCloudPcUserRoleScopeTagInfoFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -53,6 +57,16 @@ func (m *CloudPcUserRoleScopeTagInfo) GetFieldDeserializers()(map[string]func(i8
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["roleScopeTagId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -64,6 +78,14 @@ func (m *CloudPcUserRoleScopeTagInfo) GetFieldDeserializers()(map[string]func(i8
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *CloudPcUserRoleScopeTagInfo) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
 }
 // GetRoleScopeTagId gets the roleScopeTagId property value. Scope tag ID.
 func (m *CloudPcUserRoleScopeTagInfo) GetRoleScopeTagId()(*string) {
@@ -77,6 +99,12 @@ func (m *CloudPcUserRoleScopeTagInfo) GetRoleScopeTagId()(*string) {
 func (m *CloudPcUserRoleScopeTagInfo) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("displayName", m.GetDisplayName())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -105,6 +133,12 @@ func (m *CloudPcUserRoleScopeTagInfo) SetAdditionalData(value map[string]interfa
 func (m *CloudPcUserRoleScopeTagInfo) SetDisplayName(value *string)() {
     if m != nil {
         m.displayName = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *CloudPcUserRoleScopeTagInfo) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetRoleScopeTagId sets the roleScopeTagId property value. Scope tag ID.

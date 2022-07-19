@@ -70,7 +70,7 @@ func NewApprovalWorkflowProvidersRequestBuilder(rawUrl string, requestAdapter i2
     urlParams["request-raw-url"] = rawUrl
     return NewApprovalWorkflowProvidersRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *ApprovalWorkflowProvidersRequestBuilder) Count()(*i4da8e5530d04315c6033a01ca82c4df8ed83bd41e66c491404b5a83c801ace83.CountRequestBuilder) {
     return i4da8e5530d04315c6033a01ca82c4df8ed83bd41e66c491404b5a83c801ace83.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

@@ -14,10 +14,12 @@ type DeviceManagementSettingComparisonable interface {
     GetDisplayName()(*string)
     GetId()(*string)
     GetNewValueJson()(*string)
+    GetOdataType()(*string)
     SetComparisonResult(value *DeviceManagementComparisonResult)()
     SetCurrentValueJson(value *string)()
     SetDefinitionId(value *string)()
     SetDisplayName(value *string)()
     SetId(value *string)()
     SetNewValueJson(value *string)()
+    SetOdataType(value *string)()
 }

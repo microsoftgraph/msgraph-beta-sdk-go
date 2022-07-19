@@ -21,6 +21,8 @@ type SynchronizationStatus struct {
     lastSuccessfulExecution SynchronizationTaskExecutionable
     // Details of the last execution of the job, which exported objects into the target directory.
     lastSuccessfulExecutionWithExports SynchronizationTaskExecutionable
+    // The OdataType property
+    odataType *string
     // Details of the progress of a job toward completion.
     progress []SynchronizationProgressable
     // If job is in quarantine, quarantine details.
@@ -39,6 +41,8 @@ func NewSynchronizationStatus()(*SynchronizationStatus) {
     m := &SynchronizationStatus{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.synchronizationStatus";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateSynchronizationStatusFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -140,6 +144,16 @@ func (m *SynchronizationStatus) GetFieldDeserializers()(map[string]func(i878a80d
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["progress"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateSynchronizationProgressFromDiscriminatorValue)
         if err != nil {
@@ -234,6 +248,14 @@ func (m *SynchronizationStatus) GetLastSuccessfulExecutionWithExports()(Synchron
         return m.lastSuccessfulExecutionWithExports
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *SynchronizationStatus) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetProgress gets the progress property value. Details of the progress of a job toward completion.
 func (m *SynchronizationStatus) GetProgress()([]SynchronizationProgressable) {
     if m == nil {
@@ -317,6 +339,12 @@ func (m *SynchronizationStatus) Serialize(writer i878a80d2330e89d26896388a3f487e
     }
     {
         err := writer.WriteObjectValue("lastSuccessfulExecutionWithExports", m.GetLastSuccessfulExecutionWithExports())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -413,6 +441,12 @@ func (m *SynchronizationStatus) SetLastSuccessfulExecution(value Synchronization
 func (m *SynchronizationStatus) SetLastSuccessfulExecutionWithExports(value SynchronizationTaskExecutionable)() {
     if m != nil {
         m.lastSuccessfulExecutionWithExports = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *SynchronizationStatus) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetProgress sets the progress property value. Details of the progress of a job toward completion.

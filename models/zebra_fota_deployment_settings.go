@@ -31,6 +31,8 @@ type ZebraFotaDeploymentSettings struct {
     installRuleWindowEndTime *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.TimeOnly
     // Time of day (00:00:00 - 23:30:00) when installation should begin. The time is expressed in a 24-hour format, as hh:mm, and is in the device time zone. Default - 00:00:00. Respected for all values of update type, including AUTO.
     installRuleWindowStartTime *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.TimeOnly
+    // The OdataType property
+    odataType *string
     // Maximum 28 days. Default is 28 days. Sequence of dates are: 1) Download start date. 2) Install start date. 3) Schedule end date. If any of the values are not provided, the date provided in the preceding step of the sequence is used. If no values are provided, the string value of the current UTC is used.
     scheduleDurationInDays *int32
     // Represents various schedule modes for Zebra FOTA deployment.
@@ -45,6 +47,8 @@ func NewZebraFotaDeploymentSettings()(*ZebraFotaDeploymentSettings) {
     m := &ZebraFotaDeploymentSettings{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.zebraFotaDeploymentSettings";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateZebraFotaDeploymentSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -212,6 +216,16 @@ func (m *ZebraFotaDeploymentSettings) GetFieldDeserializers()(map[string]func(i8
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["scheduleDurationInDays"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
@@ -300,6 +314,14 @@ func (m *ZebraFotaDeploymentSettings) GetInstallRuleWindowStartTime()(*i878a80d2
         return nil
     } else {
         return m.installRuleWindowStartTime
+    }
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *ZebraFotaDeploymentSettings) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
     }
 }
 // GetScheduleDurationInDays gets the scheduleDurationInDays property value. Maximum 28 days. Default is 28 days. Sequence of dates are: 1) Download start date. 2) Install start date. 3) Schedule end date. If any of the values are not provided, the date provided in the preceding step of the sequence is used. If no values are provided, the string value of the current UTC is used.
@@ -399,6 +421,12 @@ func (m *ZebraFotaDeploymentSettings) Serialize(writer i878a80d2330e89d26896388a
     }
     {
         err := writer.WriteTimeOnlyValue("installRuleWindowStartTime", m.GetInstallRuleWindowStartTime())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -507,6 +535,12 @@ func (m *ZebraFotaDeploymentSettings) SetInstallRuleWindowEndTime(value *i878a80
 func (m *ZebraFotaDeploymentSettings) SetInstallRuleWindowStartTime(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.TimeOnly)() {
     if m != nil {
         m.installRuleWindowStartTime = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *ZebraFotaDeploymentSettings) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetScheduleDurationInDays sets the scheduleDurationInDays property value. Maximum 28 days. Default is 28 days. Sequence of dates are: 1) Download start date. 2) Install start date. 3) Schedule end date. If any of the values are not provided, the date provided in the preceding step of the sequence is used. If no values are provided, the string value of the current UTC is used.

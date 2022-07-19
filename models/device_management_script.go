@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DeviceManagementScript 
+// DeviceManagementScript intune will provide customer the ability to run their Powershell scripts on the enrolled windows 10 Azure Active Directory joined devices. The script can be run once or periodically.
 type DeviceManagementScript struct {
     Entity
     // The list of group assignments for the device management script.
@@ -39,11 +39,13 @@ type DeviceManagementScript struct {
     // List of run states for this script across all users.
     userRunStates []DeviceManagementScriptUserStateable
 }
-// NewDeviceManagementScript instantiates a new DeviceManagementScript and sets the default values.
+// NewDeviceManagementScript instantiates a new deviceManagementScript and sets the default values.
 func NewDeviceManagementScript()(*DeviceManagementScript) {
     m := &DeviceManagementScript{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.deviceManagementScript";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDeviceManagementScriptFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

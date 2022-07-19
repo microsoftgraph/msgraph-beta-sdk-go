@@ -33,6 +33,8 @@ func NewWindowsPhoneEASEmailProfileConfiguration()(*WindowsPhoneEASEmailProfileC
     m := &WindowsPhoneEASEmailProfileConfiguration{
         EasEmailProfileConfigurationBase: *NewEasEmailProfileConfigurationBase(),
     }
+    odataTypeValue := "#microsoft.graph.windowsPhoneEASEmailProfileConfiguration";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateWindowsPhoneEASEmailProfileConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -10,6 +10,8 @@ type IosVpnSecurityAssociationParameters struct {
     additionalData map[string]interface{}
     // Lifetime (minutes)
     lifetimeInMinutes *int32
+    // The OdataType property
+    odataType *string
     // Diffie-Hellman Group
     securityDiffieHellmanGroup *int32
     // Encryption algorithm. Possible values are: aes256, des, tripleDes, aes128, aes128Gcm, aes256Gcm, aes192, aes192Gcm, chaCha20Poly1305.
@@ -22,6 +24,8 @@ func NewIosVpnSecurityAssociationParameters()(*IosVpnSecurityAssociationParamete
     m := &IosVpnSecurityAssociationParameters{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.iosVpnSecurityAssociationParameters";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateIosVpnSecurityAssociationParametersFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -46,6 +50,16 @@ func (m *IosVpnSecurityAssociationParameters) GetFieldDeserializers()(map[string
         }
         if val != nil {
             m.SetLifetimeInMinutes(val)
+        }
+        return nil
+    }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
         }
         return nil
     }
@@ -89,6 +103,14 @@ func (m *IosVpnSecurityAssociationParameters) GetLifetimeInMinutes()(*int32) {
         return m.lifetimeInMinutes
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *IosVpnSecurityAssociationParameters) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetSecurityDiffieHellmanGroup gets the securityDiffieHellmanGroup property value. Diffie-Hellman Group
 func (m *IosVpnSecurityAssociationParameters) GetSecurityDiffieHellmanGroup()(*int32) {
     if m == nil {
@@ -117,6 +139,12 @@ func (m *IosVpnSecurityAssociationParameters) GetSecurityIntegrityAlgorithm()(*V
 func (m *IosVpnSecurityAssociationParameters) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
         err := writer.WriteInt32Value("lifetimeInMinutes", m.GetLifetimeInMinutes())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -159,6 +187,12 @@ func (m *IosVpnSecurityAssociationParameters) SetAdditionalData(value map[string
 func (m *IosVpnSecurityAssociationParameters) SetLifetimeInMinutes(value *int32)() {
     if m != nil {
         m.lifetimeInMinutes = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *IosVpnSecurityAssociationParameters) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetSecurityDiffieHellmanGroup sets the securityDiffieHellmanGroup property value. Diffie-Hellman Group

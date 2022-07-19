@@ -20,8 +20,8 @@ func NewGroupPolicyPresentation()(*GroupPolicyPresentation) {
     m := &GroupPolicyPresentation{
         Entity: *NewEntity(),
     }
-    odatatypeValue := "#microsoft.graph.groupPolicyPresentation";
-    m.SetType(&odatatypeValue);
+    odataTypeValue := "#microsoft.graph.groupPolicyPresentation";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateGroupPolicyPresentationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -33,7 +33,7 @@ func NewEducationCategoryItemRequestBuilder(rawUrl string, requestAdapter i2ae41
     urlParams["request-raw-url"] = rawUrl
     return NewEducationCategoryItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Ref the ref property
+// Ref the Ref property
 func (m *EducationCategoryItemRequestBuilder) Ref()(*i770f660b6f7bfb49607d89b4617c5943cd654314b40ebf01c236dae3470a3f69.RefRequestBuilder) {
     return i770f660b6f7bfb49607d89b4617c5943cd654314b40ebf01c236dae3470a3f69.NewRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

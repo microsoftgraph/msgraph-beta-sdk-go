@@ -15,6 +15,8 @@ func NewDocument()(*Document) {
     m := &Document{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.document";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDocumentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

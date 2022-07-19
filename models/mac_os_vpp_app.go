@@ -38,6 +38,8 @@ func NewMacOsVppApp()(*MacOsVppApp) {
     m := &MacOsVppApp{
         MobileApp: *NewMobileApp(),
     }
+    odataTypeValue := "#microsoft.graph.macOsVppApp";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateMacOsVppAppFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -12,6 +12,8 @@ type IpCategory struct {
     description *string
     // The name property
     name *string
+    // The OdataType property
+    odataType *string
     // The vendor property
     vendor_escaped *string
 }
@@ -20,6 +22,8 @@ func NewIpCategory()(*IpCategory) {
     m := &IpCategory{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.ipCategory";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateIpCategoryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -65,6 +69,16 @@ func (m *IpCategory) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["vendor"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -85,6 +99,14 @@ func (m *IpCategory) GetName()(*string) {
         return m.name
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *IpCategory) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetVendor gets the vendor property value. The vendor property
 func (m *IpCategory) GetVendor()(*string) {
     if m == nil {
@@ -103,6 +125,12 @@ func (m *IpCategory) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
     }
     {
         err := writer.WriteStringValue("name", m.GetName())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -137,6 +165,12 @@ func (m *IpCategory) SetDescription(value *string)() {
 func (m *IpCategory) SetName(value *string)() {
     if m != nil {
         m.name = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *IpCategory) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetVendor sets the vendor property value. The vendor property

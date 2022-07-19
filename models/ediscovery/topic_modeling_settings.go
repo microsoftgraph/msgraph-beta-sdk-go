@@ -14,6 +14,8 @@ type TopicModelingSettings struct {
     ignoreNumbers *bool
     // Indicates whether themes is enabled for the case.
     isEnabled *bool
+    // The OdataType property
+    odataType *string
     // To learn more, see Maximum number of themes.
     topicCount *int32
 }
@@ -22,6 +24,8 @@ func NewTopicModelingSettings()(*TopicModelingSettings) {
     m := &TopicModelingSettings{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.ediscovery.topicModelingSettings";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateTopicModelingSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -77,6 +81,16 @@ func (m *TopicModelingSettings) GetFieldDeserializers()(map[string]func(i878a80d
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["topicCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
@@ -105,6 +119,14 @@ func (m *TopicModelingSettings) GetIsEnabled()(*bool) {
         return m.isEnabled
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *TopicModelingSettings) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetTopicCount gets the topicCount property value. To learn more, see Maximum number of themes.
 func (m *TopicModelingSettings) GetTopicCount()(*int32) {
     if m == nil {
@@ -129,6 +151,12 @@ func (m *TopicModelingSettings) Serialize(writer i878a80d2330e89d26896388a3f487e
     }
     {
         err := writer.WriteBoolValue("isEnabled", m.GetIsEnabled())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -169,6 +197,12 @@ func (m *TopicModelingSettings) SetIgnoreNumbers(value *bool)() {
 func (m *TopicModelingSettings) SetIsEnabled(value *bool)() {
     if m != nil {
         m.isEnabled = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *TopicModelingSettings) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetTopicCount sets the topicCount property value. To learn more, see Maximum number of themes.

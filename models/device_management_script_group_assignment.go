@@ -15,6 +15,8 @@ func NewDeviceManagementScriptGroupAssignment()(*DeviceManagementScriptGroupAssi
     m := &DeviceManagementScriptGroupAssignment{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.deviceManagementScriptGroupAssignment";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDeviceManagementScriptGroupAssignmentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -25,6 +25,8 @@ type RetireScheduledManagedDevice struct {
     managedDeviceName *string
     // Management agent type.
     managementAgent *ManagementAgentType
+    // The OdataType property
+    odataType *string
     // Owner type of device.
     ownerType *ManagedDeviceOwnerType
     // Managed Device Retire After DateTime
@@ -37,6 +39,8 @@ func NewRetireScheduledManagedDevice()(*RetireScheduledManagedDevice) {
     m := &RetireScheduledManagedDevice{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.retireScheduledManagedDevice";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateRetireScheduledManagedDeviceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -166,6 +170,16 @@ func (m *RetireScheduledManagedDevice) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["ownerType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseManagedDeviceOwnerType)
         if err != nil {
@@ -232,6 +246,14 @@ func (m *RetireScheduledManagedDevice) GetManagementAgent()(*ManagementAgentType
         return nil
     } else {
         return m.managementAgent
+    }
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *RetireScheduledManagedDevice) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
     }
 }
 // GetOwnerType gets the ownerType property value. Owner type of device.
@@ -307,6 +329,12 @@ func (m *RetireScheduledManagedDevice) Serialize(writer i878a80d2330e89d26896388
     if m.GetManagementAgent() != nil {
         cast := (*m.GetManagementAgent()).String()
         err := writer.WriteStringValue("managementAgent", &cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -390,6 +418,12 @@ func (m *RetireScheduledManagedDevice) SetManagedDeviceName(value *string)() {
 func (m *RetireScheduledManagedDevice) SetManagementAgent(value *ManagementAgentType)() {
     if m != nil {
         m.managementAgent = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *RetireScheduledManagedDevice) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetOwnerType sets the ownerType property value. Owner type of device.

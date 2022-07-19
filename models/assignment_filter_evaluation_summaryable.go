@@ -17,6 +17,7 @@ type AssignmentFilterEvaluationSummaryable interface {
     GetAssignmentFilterTypeAndEvaluationResults()([]AssignmentFilterTypeAndEvaluationResultable)
     GetEvaluationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetEvaluationResult()(*AssignmentFilterEvaluationResult)
+    GetOdataType()(*string)
     SetAssignmentFilterDisplayName(value *string)()
     SetAssignmentFilterId(value *string)()
     SetAssignmentFilterLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
@@ -25,4 +26,5 @@ type AssignmentFilterEvaluationSummaryable interface {
     SetAssignmentFilterTypeAndEvaluationResults(value []AssignmentFilterTypeAndEvaluationResultable)()
     SetEvaluationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetEvaluationResult(value *AssignmentFilterEvaluationResult)()
+    SetOdataType(value *string)()
 }

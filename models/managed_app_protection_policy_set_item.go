@@ -15,6 +15,8 @@ func NewManagedAppProtectionPolicySetItem()(*ManagedAppProtectionPolicySetItem) 
     m := &ManagedAppProtectionPolicySetItem{
         PolicySetItem: *NewPolicySetItem(),
     }
+    odataTypeValue := "#microsoft.graph.managedAppProtectionPolicySetItem";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateManagedAppProtectionPolicySetItemFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

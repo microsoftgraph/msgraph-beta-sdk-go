@@ -23,12 +23,16 @@ type LogonUser struct {
     logonId *string
     // Collection of the logon types observed for the logged on user from when first to last seen. Possible values are: unknown, interactive, remoteInteractive, network, batch, service.
     logonTypes []string
+    // The OdataType property
+    odataType *string
 }
 // NewLogonUser instantiates a new logonUser and sets the default values.
 func NewLogonUser()(*LogonUser) {
     m := &LogonUser{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.logonUser";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateLogonUserFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -144,6 +148,16 @@ func (m *LogonUser) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetFirstSeenDateTime gets the firstSeenDateTime property value. DateTime at which the earliest logon by this user account occurred (provider-determined period). The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
@@ -176,6 +190,14 @@ func (m *LogonUser) GetLogonTypes()([]string) {
         return nil
     } else {
         return m.logonTypes
+    }
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *LogonUser) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
     }
 }
 // Serialize serializes information the current object
@@ -219,6 +241,12 @@ func (m *LogonUser) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
     }
     if m.GetLogonTypes() != nil {
         err := writer.WriteCollectionOfStringValues("logonTypes", m.GetLogonTypes())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -277,5 +305,11 @@ func (m *LogonUser) SetLogonId(value *string)() {
 func (m *LogonUser) SetLogonTypes(value []string)() {
     if m != nil {
         m.logonTypes = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *LogonUser) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }

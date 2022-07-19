@@ -36,6 +36,8 @@ func NewAccessPackageResourceEnvironment()(*AccessPackageResourceEnvironment) {
     m := &AccessPackageResourceEnvironment{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.accessPackageResourceEnvironment";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAccessPackageResourceEnvironmentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

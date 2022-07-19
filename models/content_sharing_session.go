@@ -13,6 +13,8 @@ func NewContentSharingSession()(*ContentSharingSession) {
     m := &ContentSharingSession{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.contentSharingSession";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateContentSharingSessionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

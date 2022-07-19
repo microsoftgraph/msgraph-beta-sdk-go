@@ -10,6 +10,8 @@ type WindowsKioskProfile struct {
     additionalData map[string]interface{}
     // The app base class used to identify the application info for the kiosk configuration
     appConfiguration WindowsKioskAppConfigurationable
+    // The OdataType property
+    odataType *string
     // Key of the entity.
     profileId *string
     // This is a friendly name used to identify a group of applications, the layout of these apps on the start menu and the users to whom this kiosk configuration is assigned.
@@ -22,6 +24,8 @@ func NewWindowsKioskProfile()(*WindowsKioskProfile) {
     m := &WindowsKioskProfile{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.windowsKioskProfile";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateWindowsKioskProfileFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -54,6 +58,16 @@ func (m *WindowsKioskProfile) GetFieldDeserializers()(map[string]func(i878a80d23
         }
         if val != nil {
             m.SetAppConfiguration(val.(WindowsKioskAppConfigurationable))
+        }
+        return nil
+    }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
         }
         return nil
     }
@@ -93,6 +107,14 @@ func (m *WindowsKioskProfile) GetFieldDeserializers()(map[string]func(i878a80d23
     }
     return res
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *WindowsKioskProfile) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetProfileId gets the profileId property value. Key of the entity.
 func (m *WindowsKioskProfile) GetProfileId()(*string) {
     if m == nil {
@@ -121,6 +143,12 @@ func (m *WindowsKioskProfile) GetUserAccountsConfiguration()([]WindowsKioskUsera
 func (m *WindowsKioskProfile) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
         err := writer.WriteObjectValue("appConfiguration", m.GetAppConfiguration())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -165,6 +193,12 @@ func (m *WindowsKioskProfile) SetAdditionalData(value map[string]interface{})() 
 func (m *WindowsKioskProfile) SetAppConfiguration(value WindowsKioskAppConfigurationable)() {
     if m != nil {
         m.appConfiguration = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *WindowsKioskProfile) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetProfileId sets the profileId property value. Key of the entity.

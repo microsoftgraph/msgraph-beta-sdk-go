@@ -10,6 +10,8 @@ type TranslationPreferences struct {
     additionalData map[string]interface{}
     // Translation override behavior for languages, if any.Returned by default.
     languageOverrides []TranslationLanguageOverrideable
+    // The OdataType property
+    odataType *string
     // The user's preferred translation behavior.Returned by default. Not nullable.
     translationBehavior *TranslationBehavior
     // The list of languages the user does not need translated. This is computed from the authoringLanguages collection in regionalAndLanguageSettings, and the languageOverrides collection in translationPreferences. The list specifies neutral culture values that include the language code without any country or region association. For example, it would specify 'fr' for the neutral French culture, but not 'fr-FR' for the French culture in France. Returned by default. Read only.
@@ -20,6 +22,8 @@ func NewTranslationPreferences()(*TranslationPreferences) {
     m := &TranslationPreferences{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.translationPreferences";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateTranslationPreferencesFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -48,6 +52,16 @@ func (m *TranslationPreferences) GetFieldDeserializers()(map[string]func(i878a80
                 res[i] = v.(TranslationLanguageOverrideable)
             }
             m.SetLanguageOverrides(res)
+        }
+        return nil
+    }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
         }
         return nil
     }
@@ -85,6 +99,14 @@ func (m *TranslationPreferences) GetLanguageOverrides()([]TranslationLanguageOve
         return m.languageOverrides
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *TranslationPreferences) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetTranslationBehavior gets the translationBehavior property value. The user's preferred translation behavior.Returned by default. Not nullable.
 func (m *TranslationPreferences) GetTranslationBehavior()(*TranslationBehavior) {
     if m == nil {
@@ -109,6 +131,12 @@ func (m *TranslationPreferences) Serialize(writer i878a80d2330e89d26896388a3f487
             cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
         }
         err := writer.WriteCollectionOfObjectValues("languageOverrides", cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -144,6 +172,12 @@ func (m *TranslationPreferences) SetAdditionalData(value map[string]interface{})
 func (m *TranslationPreferences) SetLanguageOverrides(value []TranslationLanguageOverrideable)() {
     if m != nil {
         m.languageOverrides = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *TranslationPreferences) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetTranslationBehavior sets the translationBehavior property value. The user's preferred translation behavior.Returned by default. Not nullable.

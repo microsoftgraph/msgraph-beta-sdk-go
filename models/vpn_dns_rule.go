@@ -12,6 +12,8 @@ type VpnDnsRule struct {
     autoTrigger *bool
     // Name.
     name *string
+    // The OdataType property
+    odataType *string
     // Keep this rule active even when the VPN is not connected: Default False
     persistent *bool
     // Proxy Server Uri.
@@ -24,6 +26,8 @@ func NewVpnDnsRule()(*VpnDnsRule) {
     m := &VpnDnsRule{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.vpnDnsRule";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateVpnDnsRuleFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -66,6 +70,16 @@ func (m *VpnDnsRule) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
         }
         if val != nil {
             m.SetName(val)
+        }
+        return nil
+    }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
         }
         return nil
     }
@@ -113,6 +127,14 @@ func (m *VpnDnsRule) GetName()(*string) {
         return m.name
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *VpnDnsRule) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetPersistent gets the persistent property value. Keep this rule active even when the VPN is not connected: Default False
 func (m *VpnDnsRule) GetPersistent()(*bool) {
     if m == nil {
@@ -147,6 +169,12 @@ func (m *VpnDnsRule) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
     }
     {
         err := writer.WriteStringValue("name", m.GetName())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -193,6 +221,12 @@ func (m *VpnDnsRule) SetAutoTrigger(value *bool)() {
 func (m *VpnDnsRule) SetName(value *string)() {
     if m != nil {
         m.name = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *VpnDnsRule) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetPersistent sets the persistent property value. Keep this rule active even when the VPN is not connected: Default False

@@ -10,6 +10,8 @@ type AppleOwnerTypeEnrollmentType struct {
     additionalData map[string]interface{}
     // The enrollmentType property
     enrollmentType *AppleUserInitiatedEnrollmentType
+    // The OdataType property
+    odataType *string
     // Owner type of device.
     ownerType *ManagedDeviceOwnerType
 }
@@ -18,6 +20,8 @@ func NewAppleOwnerTypeEnrollmentType()(*AppleOwnerTypeEnrollmentType) {
     m := &AppleOwnerTypeEnrollmentType{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.appleOwnerTypeEnrollmentType";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAppleOwnerTypeEnrollmentTypeFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -53,6 +57,16 @@ func (m *AppleOwnerTypeEnrollmentType) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["ownerType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseManagedDeviceOwnerType)
         if err != nil {
@@ -64,6 +78,14 @@ func (m *AppleOwnerTypeEnrollmentType) GetFieldDeserializers()(map[string]func(i
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *AppleOwnerTypeEnrollmentType) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
 }
 // GetOwnerType gets the ownerType property value. Owner type of device.
 func (m *AppleOwnerTypeEnrollmentType) GetOwnerType()(*ManagedDeviceOwnerType) {
@@ -78,6 +100,12 @@ func (m *AppleOwnerTypeEnrollmentType) Serialize(writer i878a80d2330e89d26896388
     if m.GetEnrollmentType() != nil {
         cast := (*m.GetEnrollmentType()).String()
         err := writer.WriteStringValue("enrollmentType", &cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -107,6 +135,12 @@ func (m *AppleOwnerTypeEnrollmentType) SetAdditionalData(value map[string]interf
 func (m *AppleOwnerTypeEnrollmentType) SetEnrollmentType(value *AppleUserInitiatedEnrollmentType)() {
     if m != nil {
         m.enrollmentType = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *AppleOwnerTypeEnrollmentType) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetOwnerType sets the ownerType property value. Owner type of device.

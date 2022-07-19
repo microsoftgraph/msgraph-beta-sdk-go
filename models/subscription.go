@@ -44,6 +44,8 @@ func NewSubscription()(*Subscription) {
     m := &Subscription{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.subscription";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateSubscriptionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

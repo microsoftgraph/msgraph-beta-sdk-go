@@ -18,6 +18,8 @@ type IosNotificationSettings struct {
     bundleID *string
     // Indicates whether notifications are allowed for this app.
     enabled *bool
+    // The OdataType property
+    odataType *string
     // Determines when notification previews are visible on an iOS device. Previews can include things like text (from Messages and Mail) and invitation details (from Calendar). When configured, it will override the user's defined preview settings.
     previewVisibility *IosNotificationPreviewVisibility
     // Publisher to be associated with the bundleID.
@@ -34,6 +36,8 @@ func NewIosNotificationSettings()(*IosNotificationSettings) {
     m := &IosNotificationSettings{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.iosNotificationSettings";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateIosNotificationSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -141,6 +145,16 @@ func (m *IosNotificationSettings) GetFieldDeserializers()(map[string]func(i878a8
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["previewVisibility"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseIosNotificationPreviewVisibility)
         if err != nil {
@@ -192,6 +206,14 @@ func (m *IosNotificationSettings) GetFieldDeserializers()(map[string]func(i878a8
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *IosNotificationSettings) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
 }
 // GetPreviewVisibility gets the previewVisibility property value. Determines when notification previews are visible on an iOS device. Previews can include things like text (from Messages and Mail) and invitation details (from Calendar). When configured, it will override the user's defined preview settings.
 func (m *IosNotificationSettings) GetPreviewVisibility()(*IosNotificationPreviewVisibility) {
@@ -262,6 +284,12 @@ func (m *IosNotificationSettings) Serialize(writer i878a80d2330e89d26896388a3f48
     }
     {
         err := writer.WriteBoolValue("enabled", m.GetEnabled())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -339,6 +367,12 @@ func (m *IosNotificationSettings) SetBundleID(value *string)() {
 func (m *IosNotificationSettings) SetEnabled(value *bool)() {
     if m != nil {
         m.enabled = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *IosNotificationSettings) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetPreviewVisibility sets the previewVisibility property value. Determines when notification previews are visible on an iOS device. Previews can include things like text (from Messages and Mail) and invitation details (from Calendar). When configured, it will override the user's defined preview settings.

@@ -10,6 +10,8 @@ type AccessReviewRecurrenceSettings struct {
     additionalData map[string]interface{}
     // The duration in days for recurrence.
     durationInDays *int32
+    // The OdataType property
+    odataType *string
     // The count of recurrences, if the value of recurrenceEndType is occurrences, or 0 otherwise.
     recurrenceCount *int32
     // How the recurrence ends. Possible values: never, endBy, occurrences, or recurrenceCount. If it is never, then there is no explicit end of the recurrence series. If it is endBy, then the recurrence ends at a certain date. If it is occurrences, then the series ends after recurrenceCount instances of the review have completed.
@@ -22,6 +24,8 @@ func NewAccessReviewRecurrenceSettings()(*AccessReviewRecurrenceSettings) {
     m := &AccessReviewRecurrenceSettings{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.accessReviewRecurrenceSettings";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAccessReviewRecurrenceSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -57,6 +61,16 @@ func (m *AccessReviewRecurrenceSettings) GetFieldDeserializers()(map[string]func
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["recurrenceCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
@@ -89,6 +103,14 @@ func (m *AccessReviewRecurrenceSettings) GetFieldDeserializers()(map[string]func
     }
     return res
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *AccessReviewRecurrenceSettings) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetRecurrenceCount gets the recurrenceCount property value. The count of recurrences, if the value of recurrenceEndType is occurrences, or 0 otherwise.
 func (m *AccessReviewRecurrenceSettings) GetRecurrenceCount()(*int32) {
     if m == nil {
@@ -117,6 +139,12 @@ func (m *AccessReviewRecurrenceSettings) GetRecurrenceType()(*string) {
 func (m *AccessReviewRecurrenceSettings) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
         err := writer.WriteInt32Value("durationInDays", m.GetDurationInDays())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -157,6 +185,12 @@ func (m *AccessReviewRecurrenceSettings) SetAdditionalData(value map[string]inte
 func (m *AccessReviewRecurrenceSettings) SetDurationInDays(value *int32)() {
     if m != nil {
         m.durationInDays = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *AccessReviewRecurrenceSettings) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetRecurrenceCount sets the recurrenceCount property value. The count of recurrences, if the value of recurrenceEndType is occurrences, or 0 otherwise.

@@ -10,6 +10,8 @@ type TeamworkLoginStatus struct {
     additionalData map[string]interface{}
     // Information about the Exchange connection.
     exchangeConnection TeamworkConnectionable
+    // The OdataType property
+    odataType *string
     // Information about the Skype for Business connection.
     skypeConnection TeamworkConnectionable
     // Information about the Teams connection.
@@ -20,6 +22,8 @@ func NewTeamworkLoginStatus()(*TeamworkLoginStatus) {
     m := &TeamworkLoginStatus{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.teamworkLoginStatus";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateTeamworkLoginStatusFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -55,6 +59,16 @@ func (m *TeamworkLoginStatus) GetFieldDeserializers()(map[string]func(i878a80d23
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["skypeConnection"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateTeamworkConnectionFromDiscriminatorValue)
         if err != nil {
@@ -77,6 +91,14 @@ func (m *TeamworkLoginStatus) GetFieldDeserializers()(map[string]func(i878a80d23
     }
     return res
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *TeamworkLoginStatus) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetSkypeConnection gets the skypeConnection property value. Information about the Skype for Business connection.
 func (m *TeamworkLoginStatus) GetSkypeConnection()(TeamworkConnectionable) {
     if m == nil {
@@ -97,6 +119,12 @@ func (m *TeamworkLoginStatus) GetTeamsConnection()(TeamworkConnectionable) {
 func (m *TeamworkLoginStatus) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
         err := writer.WriteObjectValue("exchangeConnection", m.GetExchangeConnection())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -131,6 +159,12 @@ func (m *TeamworkLoginStatus) SetAdditionalData(value map[string]interface{})() 
 func (m *TeamworkLoginStatus) SetExchangeConnection(value TeamworkConnectionable)() {
     if m != nil {
         m.exchangeConnection = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *TeamworkLoginStatus) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetSkypeConnection sets the skypeConnection property value. Information about the Skype for Business connection.

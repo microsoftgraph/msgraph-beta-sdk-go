@@ -10,6 +10,8 @@ type RenameAction struct {
     additionalData map[string]interface{}
     // The new name of the item.
     newName *string
+    // The OdataType property
+    odataType *string
     // The previous name of the item.
     oldName *string
 }
@@ -18,6 +20,8 @@ func NewRenameAction()(*RenameAction) {
     m := &RenameAction{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.renameAction";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateRenameActionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -45,6 +49,16 @@ func (m *RenameAction) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["oldName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -65,6 +79,14 @@ func (m *RenameAction) GetNewName()(*string) {
         return m.newName
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *RenameAction) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetOldName gets the oldName property value. The previous name of the item.
 func (m *RenameAction) GetOldName()(*string) {
     if m == nil {
@@ -77,6 +99,12 @@ func (m *RenameAction) GetOldName()(*string) {
 func (m *RenameAction) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("newName", m.GetNewName())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -105,6 +133,12 @@ func (m *RenameAction) SetAdditionalData(value map[string]interface{})() {
 func (m *RenameAction) SetNewName(value *string)() {
     if m != nil {
         m.newName = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *RenameAction) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetOldName sets the oldName property value. The previous name of the item.

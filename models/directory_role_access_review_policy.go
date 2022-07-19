@@ -15,6 +15,8 @@ func NewDirectoryRoleAccessReviewPolicy()(*DirectoryRoleAccessReviewPolicy) {
     m := &DirectoryRoleAccessReviewPolicy{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.directoryRoleAccessReviewPolicy";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDirectoryRoleAccessReviewPolicyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

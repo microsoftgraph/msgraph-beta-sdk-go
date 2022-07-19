@@ -15,6 +15,8 @@ func NewRemoveWatermarkAction()(*RemoveWatermarkAction) {
     m := &RemoveWatermarkAction{
         InformationProtectionAction: *NewInformationProtectionAction(),
     }
+    odataTypeValue := "#microsoft.graph.security.removeWatermarkAction";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateRemoveWatermarkActionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -10,6 +10,8 @@ type AndroidDeviceOwnerKioskModeAppPositionItem struct {
     additionalData map[string]interface{}
     // Represents an item on the Android Device Owner Managed Home Screen (application, weblink or folder
     item AndroidDeviceOwnerKioskModeHomeScreenItemable
+    // The OdataType property
+    odataType *string
     // Position of the item on the grid. Valid values 0 to 9999999
     position *int32
 }
@@ -18,6 +20,8 @@ func NewAndroidDeviceOwnerKioskModeAppPositionItem()(*AndroidDeviceOwnerKioskMod
     m := &AndroidDeviceOwnerKioskModeAppPositionItem{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.androidDeviceOwnerKioskModeAppPositionItem";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAndroidDeviceOwnerKioskModeAppPositionItemFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -45,6 +49,16 @@ func (m *AndroidDeviceOwnerKioskModeAppPositionItem) GetFieldDeserializers()(map
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["position"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
@@ -65,6 +79,14 @@ func (m *AndroidDeviceOwnerKioskModeAppPositionItem) GetItem()(AndroidDeviceOwne
         return m.item
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *AndroidDeviceOwnerKioskModeAppPositionItem) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetPosition gets the position property value. Position of the item on the grid. Valid values 0 to 9999999
 func (m *AndroidDeviceOwnerKioskModeAppPositionItem) GetPosition()(*int32) {
     if m == nil {
@@ -77,6 +99,12 @@ func (m *AndroidDeviceOwnerKioskModeAppPositionItem) GetPosition()(*int32) {
 func (m *AndroidDeviceOwnerKioskModeAppPositionItem) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
         err := writer.WriteObjectValue("item", m.GetItem())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -105,6 +133,12 @@ func (m *AndroidDeviceOwnerKioskModeAppPositionItem) SetAdditionalData(value map
 func (m *AndroidDeviceOwnerKioskModeAppPositionItem) SetItem(value AndroidDeviceOwnerKioskModeHomeScreenItemable)() {
     if m != nil {
         m.item = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *AndroidDeviceOwnerKioskModeAppPositionItem) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetPosition sets the position property value. Position of the item on the grid. Valid values 0 to 9999999

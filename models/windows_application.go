@@ -8,6 +8,8 @@ import (
 type WindowsApplication struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
+    // The OdataType property
+    odataType *string
     // The package security identifier that Microsoft has assigned the application. Optional. Read-only.
     packageSid *string
     // Specifies the URLs where user tokens are sent for sign-in or the redirect URIs where OAuth 2.0 authorization codes and access tokens are sent. Only available for applications that support the PersonalMicrosoftAccount signInAudience.
@@ -18,6 +20,8 @@ func NewWindowsApplication()(*WindowsApplication) {
     m := &WindowsApplication{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.windowsApplication";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateWindowsApplicationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -35,6 +39,16 @@ func (m *WindowsApplication) GetAdditionalData()(map[string]interface{}) {
 // GetFieldDeserializers the deserialization information for the current model
 func (m *WindowsApplication) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["packageSid"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -61,6 +75,14 @@ func (m *WindowsApplication) GetFieldDeserializers()(map[string]func(i878a80d233
     }
     return res
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *WindowsApplication) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetPackageSid gets the packageSid property value. The package security identifier that Microsoft has assigned the application. Optional. Read-only.
 func (m *WindowsApplication) GetPackageSid()(*string) {
     if m == nil {
@@ -79,6 +101,12 @@ func (m *WindowsApplication) GetRedirectUris()([]string) {
 }
 // Serialize serializes information the current object
 func (m *WindowsApplication) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     {
         err := writer.WriteStringValue("packageSid", m.GetPackageSid())
         if err != nil {
@@ -103,6 +131,12 @@ func (m *WindowsApplication) Serialize(writer i878a80d2330e89d26896388a3f487eef2
 func (m *WindowsApplication) SetAdditionalData(value map[string]interface{})() {
     if m != nil {
         m.additionalData = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *WindowsApplication) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetPackageSid sets the packageSid property value. The package security identifier that Microsoft has assigned the application. Optional. Read-only.

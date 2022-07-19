@@ -70,7 +70,7 @@ func NewDeviceManagementTroubleshootingEventsRequestBuilder(rawUrl string, reque
     urlParams["request-raw-url"] = rawUrl
     return NewDeviceManagementTroubleshootingEventsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *DeviceManagementTroubleshootingEventsRequestBuilder) Count()(*ieb8f9f1ab3be1608847a7847f857b33d8584288bd733f91c39f2a3a7c0a48de0.CountRequestBuilder) {
     return ieb8f9f1ab3be1608847a7847f857b33d8584288bd733f91c39f2a3a7c0a48de0.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

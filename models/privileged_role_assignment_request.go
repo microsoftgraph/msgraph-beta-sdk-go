@@ -28,14 +28,18 @@ type PrivilegedRoleAssignmentRequest struct {
     ticketNumber *string
     // The ticketSystem for the role assignment.
     ticketSystem *string
+    // Representing the type of the operation on the role assignment. The value can be AdminAdd: Administrators add users to roles;UserAdd: Users add role assignments.
+    type_escaped *string
     // The id of the user.
     userId *string
 }
-// NewPrivilegedRoleAssignmentRequest instantiates a new privilegedRoleAssignmentRequest and sets the default values.
+// NewPrivilegedRoleAssignmentRequest instantiates a new PrivilegedRoleAssignmentRequest and sets the default values.
 func NewPrivilegedRoleAssignmentRequest()(*PrivilegedRoleAssignmentRequest) {
     m := &PrivilegedRoleAssignmentRequest{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.privilegedRoleAssignmentRequest";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreatePrivilegedRoleAssignmentRequestFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -161,6 +165,16 @@ func (m *PrivilegedRoleAssignmentRequest) GetFieldDeserializers()(map[string]fun
         }
         return nil
     }
+    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetType(val)
+        }
+        return nil
+    }
     res["userId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -235,6 +249,14 @@ func (m *PrivilegedRoleAssignmentRequest) GetTicketSystem()(*string) {
         return nil
     } else {
         return m.ticketSystem
+    }
+}
+// GetType gets the type property value. Representing the type of the operation on the role assignment. The value can be AdminAdd: Administrators add users to roles;UserAdd: Users add role assignments.
+func (m *PrivilegedRoleAssignmentRequest) GetType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
     }
 }
 // GetUserId gets the userId property value. The id of the user.
@@ -312,6 +334,12 @@ func (m *PrivilegedRoleAssignmentRequest) Serialize(writer i878a80d2330e89d26896
         }
     }
     {
+        err = writer.WriteStringValue("type", m.GetType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("userId", m.GetUserId())
         if err != nil {
             return err
@@ -377,6 +405,12 @@ func (m *PrivilegedRoleAssignmentRequest) SetTicketNumber(value *string)() {
 func (m *PrivilegedRoleAssignmentRequest) SetTicketSystem(value *string)() {
     if m != nil {
         m.ticketSystem = value
+    }
+}
+// SetType sets the type property value. Representing the type of the operation on the role assignment. The value can be AdminAdd: Administrators add users to roles;UserAdd: Users add role assignments.
+func (m *PrivilegedRoleAssignmentRequest) SetType(value *string)() {
+    if m != nil {
+        m.type_escaped = value
     }
 }
 // SetUserId sets the userId property value. The id of the user.

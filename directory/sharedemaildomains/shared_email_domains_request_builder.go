@@ -70,7 +70,7 @@ func NewSharedEmailDomainsRequestBuilder(rawUrl string, requestAdapter i2ae4187f
     urlParams["request-raw-url"] = rawUrl
     return NewSharedEmailDomainsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *SharedEmailDomainsRequestBuilder) Count()(*i9ec635530a9afb8ab5342f2d19179705ab350d65e43673044be6e0f805f94c74.CountRequestBuilder) {
     return i9ec635530a9afb8ab5342f2d19179705ab350d65e43673044be6e0f805f94c74.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

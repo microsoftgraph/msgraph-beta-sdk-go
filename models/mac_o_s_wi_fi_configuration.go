@@ -33,8 +33,8 @@ func NewMacOSWiFiConfiguration()(*MacOSWiFiConfiguration) {
     m := &MacOSWiFiConfiguration{
         DeviceConfiguration: *NewDeviceConfiguration(),
     }
-    odatatypeValue := "#microsoft.graph.macOSWiFiConfiguration";
-    m.SetType(&odatatypeValue);
+    odataTypeValue := "#microsoft.graph.macOSWiFiConfiguration";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateMacOSWiFiConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

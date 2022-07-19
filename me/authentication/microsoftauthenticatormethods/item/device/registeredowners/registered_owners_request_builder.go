@@ -67,7 +67,7 @@ func NewRegisteredOwnersRequestBuilder(rawUrl string, requestAdapter i2ae4187f7d
     urlParams["request-raw-url"] = rawUrl
     return NewRegisteredOwnersRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *RegisteredOwnersRequestBuilder) Count()(*i77c283c700dff0d48b263fd17023a60db469bbb01b63253bed16d4b721985a4e.CountRequestBuilder) {
     return i77c283c700dff0d48b263fd17023a60db469bbb01b63253bed16d4b721985a4e.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -115,7 +115,7 @@ func (m *RegisteredOwnersRequestBuilder) GetWithRequestConfigurationAndResponseH
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectCollectionResponseable), nil
 }
-// Ref the ref property
+// Ref the Ref property
 func (m *RegisteredOwnersRequestBuilder) Ref()(*i6a3e6f8eccb4003d0f7cf1470b9236fdd653473d1de14ee8bd9e98b8d0d19111.RefRequestBuilder) {
     return i6a3e6f8eccb4003d0f7cf1470b9236fdd653473d1de14ee8bd9e98b8d0d19111.NewRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

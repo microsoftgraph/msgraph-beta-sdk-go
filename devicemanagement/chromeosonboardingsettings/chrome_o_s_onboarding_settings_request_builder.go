@@ -76,7 +76,7 @@ func NewChromeOSOnboardingSettingsRequestBuilder(rawUrl string, requestAdapter i
     urlParams["request-raw-url"] = rawUrl
     return NewChromeOSOnboardingSettingsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *ChromeOSOnboardingSettingsRequestBuilder) Count()(*i03210ad32b09351152234b83ec305c89c9e57ede5b483a4b11073f1d5356f1ce.CountRequestBuilder) {
     return i03210ad32b09351152234b83ec305c89c9e57ede5b483a4b11073f1d5356f1ce.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

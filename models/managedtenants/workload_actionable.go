@@ -13,6 +13,7 @@ type WorkloadActionable interface {
     GetDescription()(*string)
     GetDisplayName()(*string)
     GetLicenses()([]string)
+    GetOdataType()(*string)
     GetService()(*string)
     GetSettings()([]Settingable)
     SetActionId(value *string)()
@@ -20,6 +21,7 @@ type WorkloadActionable interface {
     SetDescription(value *string)()
     SetDisplayName(value *string)()
     SetLicenses(value []string)()
+    SetOdataType(value *string)()
     SetService(value *string)()
     SetSettings(value []Settingable)()
 }

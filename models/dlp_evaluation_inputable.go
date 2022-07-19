@@ -11,9 +11,9 @@ type DlpEvaluationInputable interface {
     GetAccessScope()(*AccessScope)
     GetCurrentLabel()(CurrentLabelable)
     GetDiscoveredSensitiveTypes()([]DiscoveredSensitiveTypeable)
-    GetType()(*string)
+    GetOdataType()(*string)
     SetAccessScope(value *AccessScope)()
     SetCurrentLabel(value CurrentLabelable)()
     SetDiscoveredSensitiveTypes(value []DiscoveredSensitiveTypeable)()
-    SetType(value *string)()
+    SetOdataType(value *string)()
 }

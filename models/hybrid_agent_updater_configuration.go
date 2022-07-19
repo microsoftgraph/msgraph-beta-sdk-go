@@ -13,6 +13,8 @@ type HybridAgentUpdaterConfiguration struct {
     allowUpdateConfigurationOverride *bool
     // The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
     deferUpdateDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
+    // The OdataType property
+    odataType *string
     // The updateWindow property
     updateWindow UpdateWindowable
 }
@@ -21,6 +23,8 @@ func NewHybridAgentUpdaterConfiguration()(*HybridAgentUpdaterConfiguration) {
     m := &HybridAgentUpdaterConfiguration{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.hybridAgentUpdaterConfiguration";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateHybridAgentUpdaterConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -74,6 +78,16 @@ func (m *HybridAgentUpdaterConfiguration) GetFieldDeserializers()(map[string]fun
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["updateWindow"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateUpdateWindowFromDiscriminatorValue)
         if err != nil {
@@ -85,6 +99,14 @@ func (m *HybridAgentUpdaterConfiguration) GetFieldDeserializers()(map[string]fun
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *HybridAgentUpdaterConfiguration) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
 }
 // GetUpdateWindow gets the updateWindow property value. The updateWindow property
 func (m *HybridAgentUpdaterConfiguration) GetUpdateWindow()(UpdateWindowable) {
@@ -104,6 +126,12 @@ func (m *HybridAgentUpdaterConfiguration) Serialize(writer i878a80d2330e89d26896
     }
     {
         err := writer.WriteTimeValue("deferUpdateDateTime", m.GetDeferUpdateDateTime())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -138,6 +166,12 @@ func (m *HybridAgentUpdaterConfiguration) SetAllowUpdateConfigurationOverride(va
 func (m *HybridAgentUpdaterConfiguration) SetDeferUpdateDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     if m != nil {
         m.deferUpdateDateTime = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *HybridAgentUpdaterConfiguration) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetUpdateWindow sets the updateWindow property value. The updateWindow property

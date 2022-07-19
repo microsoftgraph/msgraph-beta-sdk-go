@@ -33,7 +33,7 @@ func NewTokenLifetimePolicyItemRequestBuilder(rawUrl string, requestAdapter i2ae
     urlParams["request-raw-url"] = rawUrl
     return NewTokenLifetimePolicyItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Ref the ref property
+// Ref the Ref property
 func (m *TokenLifetimePolicyItemRequestBuilder) Ref()(*i250a9348e72a99486f82fad818d8875d90b681431fe0a7c4e91f7303fdb5e212.RefRequestBuilder) {
     return i250a9348e72a99486f82fad818d8875d90b681431fe0a7c4e91f7303fdb5e212.NewRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

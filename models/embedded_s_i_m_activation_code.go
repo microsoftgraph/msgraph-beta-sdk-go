@@ -12,6 +12,8 @@ type EmbeddedSIMActivationCode struct {
     integratedCircuitCardIdentifier *string
     // The MatchingIdentifier (MatchingID) as specified in the GSMA Association SGP.22 RSP Technical Specification section 4.1.
     matchingIdentifier *string
+    // The OdataType property
+    odataType *string
     // The fully qualified domain name of the SM-DP+ server as specified in the GSM Association SPG .22 RSP Technical Specification.
     smdpPlusServerAddress *string
 }
@@ -20,6 +22,8 @@ func NewEmbeddedSIMActivationCode()(*EmbeddedSIMActivationCode) {
     m := &EmbeddedSIMActivationCode{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.embeddedSIMActivationCode";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateEmbeddedSIMActivationCodeFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -57,6 +61,16 @@ func (m *EmbeddedSIMActivationCode) GetFieldDeserializers()(map[string]func(i878
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["smdpPlusServerAddress"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -85,6 +99,14 @@ func (m *EmbeddedSIMActivationCode) GetMatchingIdentifier()(*string) {
         return m.matchingIdentifier
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *EmbeddedSIMActivationCode) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetSmdpPlusServerAddress gets the smdpPlusServerAddress property value. The fully qualified domain name of the SM-DP+ server as specified in the GSM Association SPG .22 RSP Technical Specification.
 func (m *EmbeddedSIMActivationCode) GetSmdpPlusServerAddress()(*string) {
     if m == nil {
@@ -103,6 +125,12 @@ func (m *EmbeddedSIMActivationCode) Serialize(writer i878a80d2330e89d26896388a3f
     }
     {
         err := writer.WriteStringValue("matchingIdentifier", m.GetMatchingIdentifier())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -137,6 +165,12 @@ func (m *EmbeddedSIMActivationCode) SetIntegratedCircuitCardIdentifier(value *st
 func (m *EmbeddedSIMActivationCode) SetMatchingIdentifier(value *string)() {
     if m != nil {
         m.matchingIdentifier = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *EmbeddedSIMActivationCode) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetSmdpPlusServerAddress sets the smdpPlusServerAddress property value. The fully qualified domain name of the SM-DP+ server as specified in the GSM Association SPG .22 RSP Technical Specification.

@@ -10,6 +10,8 @@ type BufferEncryptionResult struct {
     additionalData map[string]interface{}
     // The encryptedBuffer property
     encryptedBuffer []byte
+    // The OdataType property
+    odataType *string
     // The publishingLicense property
     publishingLicense []byte
 }
@@ -18,6 +20,8 @@ func NewBufferEncryptionResult()(*BufferEncryptionResult) {
     m := &BufferEncryptionResult{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.bufferEncryptionResult";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateBufferEncryptionResultFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -53,6 +57,16 @@ func (m *BufferEncryptionResult) GetFieldDeserializers()(map[string]func(i878a80
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["publishingLicense"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetByteArrayValue()
         if err != nil {
@@ -64,6 +78,14 @@ func (m *BufferEncryptionResult) GetFieldDeserializers()(map[string]func(i878a80
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *BufferEncryptionResult) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
 }
 // GetPublishingLicense gets the publishingLicense property value. The publishingLicense property
 func (m *BufferEncryptionResult) GetPublishingLicense()([]byte) {
@@ -77,6 +99,12 @@ func (m *BufferEncryptionResult) GetPublishingLicense()([]byte) {
 func (m *BufferEncryptionResult) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
         err := writer.WriteByteArrayValue("encryptedBuffer", m.GetEncryptedBuffer())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -105,6 +133,12 @@ func (m *BufferEncryptionResult) SetAdditionalData(value map[string]interface{})
 func (m *BufferEncryptionResult) SetEncryptedBuffer(value []byte)() {
     if m != nil {
         m.encryptedBuffer = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *BufferEncryptionResult) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetPublishingLicense sets the publishingLicense property value. The publishingLicense property

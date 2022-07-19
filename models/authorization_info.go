@@ -10,12 +10,16 @@ type AuthorizationInfo struct {
     additionalData map[string]interface{}
     // The certificateUserIds property
     certificateUserIds []string
+    // The OdataType property
+    odataType *string
 }
 // NewAuthorizationInfo instantiates a new authorizationInfo and sets the default values.
 func NewAuthorizationInfo()(*AuthorizationInfo) {
     m := &AuthorizationInfo{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.authorizationInfo";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAuthorizationInfoFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -55,12 +59,36 @@ func (m *AuthorizationInfo) GetFieldDeserializers()(map[string]func(i878a80d2330
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *AuthorizationInfo) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
 }
 // Serialize serializes information the current object
 func (m *AuthorizationInfo) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     if m.GetCertificateUserIds() != nil {
         err := writer.WriteCollectionOfStringValues("certificateUserIds", m.GetCertificateUserIds())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -83,5 +111,11 @@ func (m *AuthorizationInfo) SetAdditionalData(value map[string]interface{})() {
 func (m *AuthorizationInfo) SetCertificateUserIds(value []string)() {
     if m != nil {
         m.certificateUserIds = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *AuthorizationInfo) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }

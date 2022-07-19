@@ -10,6 +10,8 @@ type VpnRoute struct {
     additionalData map[string]interface{}
     // Destination prefix (IPv4/v6 address).
     destinationPrefix *string
+    // The OdataType property
+    odataType *string
     // Prefix size. (1-32). Valid values 1 to 32
     prefixSize *int32
 }
@@ -18,6 +20,8 @@ func NewVpnRoute()(*VpnRoute) {
     m := &VpnRoute{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.vpnRoute";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateVpnRouteFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -53,6 +57,16 @@ func (m *VpnRoute) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["prefixSize"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
@@ -64,6 +78,14 @@ func (m *VpnRoute) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *VpnRoute) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
 }
 // GetPrefixSize gets the prefixSize property value. Prefix size. (1-32). Valid values 1 to 32
 func (m *VpnRoute) GetPrefixSize()(*int32) {
@@ -77,6 +99,12 @@ func (m *VpnRoute) GetPrefixSize()(*int32) {
 func (m *VpnRoute) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("destinationPrefix", m.GetDestinationPrefix())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -105,6 +133,12 @@ func (m *VpnRoute) SetAdditionalData(value map[string]interface{})() {
 func (m *VpnRoute) SetDestinationPrefix(value *string)() {
     if m != nil {
         m.destinationPrefix = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *VpnRoute) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetPrefixSize sets the prefixSize property value. Prefix size. (1-32). Valid values 1 to 32

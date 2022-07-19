@@ -34,6 +34,8 @@ type WindowsFirewallNetworkProfile struct {
     incomingTrafficBlocked *bool
     // Configures the firewall to allow incoming traffic pursuant to other policy settings. When IncomingTrafficRequired and IncomingTrafficBlocked are both true, IncomingTrafficBlocked takes priority.
     incomingTrafficRequired *bool
+    // The OdataType property
+    odataType *string
     // Configures the firewall to block all outgoing connections by default. When OutboundConnectionsRequired and OutboundConnectionsBlocked are both true, OutboundConnectionsBlocked takes priority. This setting will get applied to Windows releases version 1809 and above.
     outboundConnectionsBlocked *bool
     // Configures the firewall to allow all outgoing connections by default. When OutboundConnectionsRequired and OutboundConnectionsBlocked are both true, OutboundConnectionsBlocked takes priority. This setting will get applied to Windows releases version 1809 and above.
@@ -60,6 +62,8 @@ func NewWindowsFirewallNetworkProfile()(*WindowsFirewallNetworkProfile) {
     m := &WindowsFirewallNetworkProfile{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.windowsFirewallNetworkProfile";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateWindowsFirewallNetworkProfileFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -239,6 +243,16 @@ func (m *WindowsFirewallNetworkProfile) GetFieldDeserializers()(map[string]func(
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["outboundConnectionsBlocked"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
@@ -413,6 +427,14 @@ func (m *WindowsFirewallNetworkProfile) GetIncomingTrafficRequired()(*bool) {
         return m.incomingTrafficRequired
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *WindowsFirewallNetworkProfile) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetOutboundConnectionsBlocked gets the outboundConnectionsBlocked property value. Configures the firewall to block all outgoing connections by default. When OutboundConnectionsRequired and OutboundConnectionsBlocked are both true, OutboundConnectionsBlocked takes priority. This setting will get applied to Windows releases version 1809 and above.
 func (m *WindowsFirewallNetworkProfile) GetOutboundConnectionsBlocked()(*bool) {
     if m == nil {
@@ -575,6 +597,12 @@ func (m *WindowsFirewallNetworkProfile) Serialize(writer i878a80d2330e89d2689638
         }
     }
     {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err := writer.WriteBoolValue("outboundConnectionsBlocked", m.GetOutboundConnectionsBlocked())
         if err != nil {
             return err
@@ -724,6 +752,12 @@ func (m *WindowsFirewallNetworkProfile) SetIncomingTrafficBlocked(value *bool)()
 func (m *WindowsFirewallNetworkProfile) SetIncomingTrafficRequired(value *bool)() {
     if m != nil {
         m.incomingTrafficRequired = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *WindowsFirewallNetworkProfile) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetOutboundConnectionsBlocked sets the outboundConnectionsBlocked property value. Configures the firewall to block all outgoing connections by default. When OutboundConnectionsRequired and OutboundConnectionsBlocked are both true, OutboundConnectionsBlocked takes priority. This setting will get applied to Windows releases version 1809 and above.

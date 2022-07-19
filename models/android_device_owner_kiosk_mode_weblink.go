@@ -17,6 +17,8 @@ func NewAndroidDeviceOwnerKioskModeWeblink()(*AndroidDeviceOwnerKioskModeWeblink
     m := &AndroidDeviceOwnerKioskModeWeblink{
         AndroidDeviceOwnerKioskModeFolderItem: *NewAndroidDeviceOwnerKioskModeFolderItem(),
     }
+    odataTypeValue := "#microsoft.graph.androidDeviceOwnerKioskModeWeblink";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAndroidDeviceOwnerKioskModeWeblinkFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

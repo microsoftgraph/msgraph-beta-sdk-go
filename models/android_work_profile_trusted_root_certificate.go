@@ -17,6 +17,8 @@ func NewAndroidWorkProfileTrustedRootCertificate()(*AndroidWorkProfileTrustedRoo
     m := &AndroidWorkProfileTrustedRootCertificate{
         DeviceConfiguration: *NewDeviceConfiguration(),
     }
+    odataTypeValue := "#microsoft.graph.androidWorkProfileTrustedRootCertificate";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAndroidWorkProfileTrustedRootCertificateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

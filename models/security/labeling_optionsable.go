@@ -12,8 +12,10 @@ type LabelingOptionsable interface {
     GetDowngradeJustification()(DowngradeJustificationable)
     GetExtendedProperties()([]KeyValuePairable)
     GetLabelId()(*string)
+    GetOdataType()(*string)
     SetAssignmentMethod(value *AssignmentMethod)()
     SetDowngradeJustification(value DowngradeJustificationable)()
     SetExtendedProperties(value []KeyValuePairable)()
     SetLabelId(value *string)()
+    SetOdataType(value *string)()
 }

@@ -70,7 +70,7 @@ func NewDailyPrintUsageSummariesByPrinterRequestBuilder(rawUrl string, requestAd
     urlParams["request-raw-url"] = rawUrl
     return NewDailyPrintUsageSummariesByPrinterRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *DailyPrintUsageSummariesByPrinterRequestBuilder) Count()(*i4a7e2ba00efb8ec3898830a58cf60eee79f1ce9769ea62cc4274572d5454ba5d.CountRequestBuilder) {
     return i4a7e2ba00efb8ec3898830a58cf60eee79f1ce9769ea62cc4274572d5454ba5d.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

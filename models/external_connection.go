@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ExternalConnection 
+// ExternalConnection provides operations to manage the collection of accessReview entities.
 type ExternalConnection struct {
     Entity
     // The configuration property
@@ -24,11 +24,13 @@ type ExternalConnection struct {
     // The state property
     state *ConnectionState
 }
-// NewExternalConnection instantiates a new ExternalConnection and sets the default values.
+// NewExternalConnection instantiates a new externalConnection and sets the default values.
 func NewExternalConnection()(*ExternalConnection) {
     m := &ExternalConnection{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.externalConnection";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateExternalConnectionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

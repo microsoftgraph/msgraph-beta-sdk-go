@@ -17,6 +17,8 @@ func NewTenantRelationship()(*TenantRelationship) {
     m := &TenantRelationship{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.tenantRelationship";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateTenantRelationshipFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

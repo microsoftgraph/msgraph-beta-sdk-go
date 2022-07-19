@@ -74,7 +74,7 @@ func NewExternalSponsorsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7d
     urlParams["request-raw-url"] = rawUrl
     return NewExternalSponsorsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *ExternalSponsorsRequestBuilder) Count()(*ia5d241124c155a82f1bc6c8974c36dc96711ea7783bcefab7e9d2a8a28d882df.CountRequestBuilder) {
     return ia5d241124c155a82f1bc6c8974c36dc96711ea7783bcefab7e9d2a8a28d882df.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -164,7 +164,7 @@ func (m *ExternalSponsorsRequestBuilder) PostWithRequestConfigurationAndResponse
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectable), nil
 }
-// Ref the ref property
+// Ref the Ref property
 func (m *ExternalSponsorsRequestBuilder) Ref()(*i66ed94612eb80575e321bc56844adac51dd5d430875ab95fe35a0053af1d12cc.RefRequestBuilder) {
     return i66ed94612eb80575e321bc56844adac51dd5d430875ab95fe35a0053af1d12cc.NewRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

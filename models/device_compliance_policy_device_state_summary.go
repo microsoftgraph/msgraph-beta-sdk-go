@@ -26,11 +26,13 @@ type DeviceCompliancePolicyDeviceStateSummary struct {
     // Number of unknown devices
     unknownDeviceCount *int32
 }
-// NewDeviceCompliancePolicyDeviceStateSummary instantiates a new deviceCompliancePolicyDeviceStateSummary and sets the default values.
+// NewDeviceCompliancePolicyDeviceStateSummary instantiates a new DeviceCompliancePolicyDeviceStateSummary and sets the default values.
 func NewDeviceCompliancePolicyDeviceStateSummary()(*DeviceCompliancePolicyDeviceStateSummary) {
     m := &DeviceCompliancePolicyDeviceStateSummary{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.deviceCompliancePolicyDeviceStateSummary";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDeviceCompliancePolicyDeviceStateSummaryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

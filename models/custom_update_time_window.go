@@ -12,6 +12,8 @@ type CustomUpdateTimeWindow struct {
     endDay *DayOfWeek
     // End time of the time window
     endTime *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.TimeOnly
+    // The OdataType property
+    odataType *string
     // The startDay property
     startDay *DayOfWeek
     // Start time of the time window
@@ -22,6 +24,8 @@ func NewCustomUpdateTimeWindow()(*CustomUpdateTimeWindow) {
     m := &CustomUpdateTimeWindow{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.customUpdateTimeWindow";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateCustomUpdateTimeWindowFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -75,6 +79,16 @@ func (m *CustomUpdateTimeWindow) GetFieldDeserializers()(map[string]func(i878a80
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["startDay"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseDayOfWeek)
         if err != nil {
@@ -96,6 +110,14 @@ func (m *CustomUpdateTimeWindow) GetFieldDeserializers()(map[string]func(i878a80
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *CustomUpdateTimeWindow) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
 }
 // GetStartDay gets the startDay property value. The startDay property
 func (m *CustomUpdateTimeWindow) GetStartDay()(*DayOfWeek) {
@@ -124,6 +146,12 @@ func (m *CustomUpdateTimeWindow) Serialize(writer i878a80d2330e89d26896388a3f487
     }
     {
         err := writer.WriteTimeOnlyValue("endTime", m.GetEndTime())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -165,6 +193,12 @@ func (m *CustomUpdateTimeWindow) SetEndDay(value *DayOfWeek)() {
 func (m *CustomUpdateTimeWindow) SetEndTime(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.TimeOnly)() {
     if m != nil {
         m.endTime = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *CustomUpdateTimeWindow) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetStartDay sets the startDay property value. The startDay property

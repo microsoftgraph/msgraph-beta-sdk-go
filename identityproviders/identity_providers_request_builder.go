@@ -75,7 +75,7 @@ func NewIdentityProvidersRequestBuilder(rawUrl string, requestAdapter i2ae4187f7
     urlParams["request-raw-url"] = rawUrl
     return NewIdentityProvidersRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *IdentityProvidersRequestBuilder) Count()(*i6da072465659f87fce1db6cc021d30d3a32538d3f4b2d01ce3477e73019f60a8.CountRequestBuilder) {
     return i6da072465659f87fce1db6cc021d30d3a32538d3f4b2d01ce3477e73019f60a8.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

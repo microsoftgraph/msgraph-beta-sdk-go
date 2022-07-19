@@ -33,11 +33,13 @@ type TeamworkDeviceConfiguration struct {
     // The Teams client configuration. Applicable only for Teams Rooms-enabled devices.
     teamsClientConfiguration TeamworkTeamsClientConfigurationable
 }
-// NewTeamworkDeviceConfiguration instantiates a new teamworkDeviceConfiguration and sets the default values.
+// NewTeamworkDeviceConfiguration instantiates a new TeamworkDeviceConfiguration and sets the default values.
 func NewTeamworkDeviceConfiguration()(*TeamworkDeviceConfiguration) {
     m := &TeamworkDeviceConfiguration{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.teamworkDeviceConfiguration";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateTeamworkDeviceConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

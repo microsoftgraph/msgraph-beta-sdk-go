@@ -4,6 +4,7 @@ import (
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
+    i0853d278ab36be8628eb824cda3062a667bc9eae8e6d729f54513994fc053dca "github.com/microsoftgraph/msgraph-beta-sdk-go/identitygovernance/entitlementmanagement/subjects"
     i0d1afe57eb8a36b53e5129a0b937776c5fcca08608b49a51664fbd3159daa08a "github.com/microsoftgraph/msgraph-beta-sdk-go/identitygovernance/entitlementmanagement/accesspackageresourceenvironments"
     i288a3763f785b246d1da17397590bd077e283e82acf56e8c177d923272c52724 "github.com/microsoftgraph/msgraph-beta-sdk-go/identitygovernance/entitlementmanagement/accesspackageassignments"
     i3d425a2bba157a442f755259375e0a18ff87074e6c0ec53bac6d292a43602107 "github.com/microsoftgraph/msgraph-beta-sdk-go/identitygovernance/entitlementmanagement/connectedorganizations"
@@ -18,6 +19,7 @@ import (
     ieba606bbb218a20cbd99e9bc1e380a2e15b31da11df8da17e8bcdbcf42633d86 "github.com/microsoftgraph/msgraph-beta-sdk-go/identitygovernance/entitlementmanagement/accesspackageresourcerequests"
     if86a04543e04099c6faebfb83f2509f6287141cd5f4ff9c77352a589372a8f17 "github.com/microsoftgraph/msgraph-beta-sdk-go/identitygovernance/entitlementmanagement/accesspackageresources"
     i259297720910df1e18cab41eaf6e93c6e506e2f6ead7e552913518ba4de7df35 "github.com/microsoftgraph/msgraph-beta-sdk-go/identitygovernance/entitlementmanagement/accesspackageassignmentpolicies/item"
+    i2e7ef9a8ec2b913b75870ed15c53574b606714d508a7defd8dd58d613febe33d "github.com/microsoftgraph/msgraph-beta-sdk-go/identitygovernance/entitlementmanagement/subjects/item"
     i46b0d052826008fb4b9e2de18eaadb28b08fda0c4481c35e9fdf6c08800480a1 "github.com/microsoftgraph/msgraph-beta-sdk-go/identitygovernance/entitlementmanagement/accesspackageassignmentresourceroles/item"
     i6733f0715c511b6a99e8e8280d52d93704622cda212a0d03f6340a8c98c403e5 "github.com/microsoftgraph/msgraph-beta-sdk-go/identitygovernance/entitlementmanagement/connectedorganizations/item"
     i73885afb0012ccafe2d98c7ad3770430abc8b68787e78c60063bf998dee8be11 "github.com/microsoftgraph/msgraph-beta-sdk-go/identitygovernance/entitlementmanagement/accesspackageresourcerolescopes/item"
@@ -385,4 +387,19 @@ func (m *EntitlementManagementRequestBuilder) PatchWithRequestConfigurationAndRe
 // Settings the settings property
 func (m *EntitlementManagementRequestBuilder) Settings()(*i8d110cb2de6a3e3af2c3ad8f85fecae6316e989d5010ae9071a62d837f70c4f9.SettingsRequestBuilder) {
     return i8d110cb2de6a3e3af2c3ad8f85fecae6316e989d5010ae9071a62d837f70c4f9.NewSettingsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// Subjects the subjects property
+func (m *EntitlementManagementRequestBuilder) Subjects()(*i0853d278ab36be8628eb824cda3062a667bc9eae8e6d729f54513994fc053dca.SubjectsRequestBuilder) {
+    return i0853d278ab36be8628eb824cda3062a667bc9eae8e6d729f54513994fc053dca.NewSubjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// SubjectsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.identityGovernance.entitlementManagement.subjects.item collection
+func (m *EntitlementManagementRequestBuilder) SubjectsById(id string)(*i2e7ef9a8ec2b913b75870ed15c53574b606714d508a7defd8dd58d613febe33d.AccessPackageSubjectItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
+    }
+    if id != "" {
+        urlTplParams["accessPackageSubject%2Did"] = id
+    }
+    return i2e7ef9a8ec2b913b75870ed15c53574b606714d508a7defd8dd58d613febe33d.NewAccessPackageSubjectItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }

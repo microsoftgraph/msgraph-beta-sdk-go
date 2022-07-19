@@ -14,6 +14,8 @@ type UserAccount struct {
     azureAdUserId *string
     // The domainName property
     domainName *string
+    // The OdataType property
+    odataType *string
     // The userPrincipalName property
     userPrincipalName *string
     // The userSid property
@@ -24,6 +26,8 @@ func NewUserAccount()(*UserAccount) {
     m := &UserAccount{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.security.userAccount";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateUserAccountFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -95,6 +99,16 @@ func (m *UserAccount) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["userPrincipalName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -116,6 +130,14 @@ func (m *UserAccount) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *UserAccount) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
 }
 // GetUserPrincipalName gets the userPrincipalName property value. The userPrincipalName property
 func (m *UserAccount) GetUserPrincipalName()(*string) {
@@ -149,6 +171,12 @@ func (m *UserAccount) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
     }
     {
         err := writer.WriteStringValue("domainName", m.GetDomainName())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -195,6 +223,12 @@ func (m *UserAccount) SetAzureAdUserId(value *string)() {
 func (m *UserAccount) SetDomainName(value *string)() {
     if m != nil {
         m.domainName = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *UserAccount) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetUserPrincipalName sets the userPrincipalName property value. The userPrincipalName property

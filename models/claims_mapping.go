@@ -14,6 +14,8 @@ type ClaimsMapping struct {
     email *string
     // The claim that provides the first name of the user.
     givenName *string
+    // The OdataType property
+    odataType *string
     // The claim that provides the last name of the user.
     surname *string
     // The claim that provides the unique identifier for the signed-in user. It is a required propoerty.
@@ -24,6 +26,8 @@ func NewClaimsMapping()(*ClaimsMapping) {
     m := &ClaimsMapping{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.claimsMapping";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateClaimsMappingFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -87,6 +91,16 @@ func (m *ClaimsMapping) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["surname"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -115,6 +129,14 @@ func (m *ClaimsMapping) GetGivenName()(*string) {
         return nil
     } else {
         return m.givenName
+    }
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *ClaimsMapping) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
     }
 }
 // GetSurname gets the surname property value. The claim that provides the last name of the user.
@@ -149,6 +171,12 @@ func (m *ClaimsMapping) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
     }
     {
         err := writer.WriteStringValue("givenName", m.GetGivenName())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -195,6 +223,12 @@ func (m *ClaimsMapping) SetEmail(value *string)() {
 func (m *ClaimsMapping) SetGivenName(value *string)() {
     if m != nil {
         m.givenName = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *ClaimsMapping) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetSurname sets the surname property value. The claim that provides the last name of the user.

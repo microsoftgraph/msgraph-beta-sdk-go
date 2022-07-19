@@ -4,6 +4,7 @@ import (
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
+    i07c48a046d198fee04cb59c89f46c2edd4e503ffc4beb0e8867dc011e79377f4 "github.com/microsoftgraph/msgraph-beta-sdk-go/rolemanagement/directory/roledefinitions/item/assignedprincipalswithtransitivewithdirectoryscopetypewithdirectoryscopeid"
     ifaf77d5ae135aea51db2bbae1173c33b8fc3167888a432dc62b5a0113173ce3a "github.com/microsoftgraph/msgraph-beta-sdk-go/rolemanagement/directory/roledefinitions/item/inheritspermissionsfrom"
     i8ecfa16c52894e44bb461e7c08ef3386d762b546ef55959bfffbff3585e33939 "github.com/microsoftgraph/msgraph-beta-sdk-go/rolemanagement/directory/roledefinitions/item/inheritspermissionsfrom/item"
 )
@@ -46,6 +47,10 @@ type UnifiedRoleDefinitionItemRequestBuilderPatchRequestConfiguration struct {
     Headers map[string]string
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
+}
+// AssignedPrincipalsWithTransitiveWithDirectoryScopeTypeWithDirectoryScopeId provides operations to call the assignedPrincipals method.
+func (m *UnifiedRoleDefinitionItemRequestBuilder) AssignedPrincipalsWithTransitiveWithDirectoryScopeTypeWithDirectoryScopeId()(*i07c48a046d198fee04cb59c89f46c2edd4e503ffc4beb0e8867dc011e79377f4.AssignedPrincipalsWithTransitiveWithDirectoryScopeTypeWithDirectoryScopeIdRequestBuilder) {
+    return i07c48a046d198fee04cb59c89f46c2edd4e503ffc4beb0e8867dc011e79377f4.NewAssignedPrincipalsWithTransitiveWithDirectoryScopeTypeWithDirectoryScopeIdRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // NewUnifiedRoleDefinitionItemRequestBuilderInternal instantiates a new UnifiedRoleDefinitionItemRequestBuilder and sets the default values.
 func NewUnifiedRoleDefinitionItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*UnifiedRoleDefinitionItemRequestBuilder) {

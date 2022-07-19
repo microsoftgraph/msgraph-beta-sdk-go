@@ -10,11 +10,13 @@ type VppTokenLicenseSummaryable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetAppleId()(*string)
     GetAvailableLicenseCount()(*int32)
+    GetOdataType()(*string)
     GetOrganizationName()(*string)
     GetUsedLicenseCount()(*int32)
     GetVppTokenId()(*string)
     SetAppleId(value *string)()
     SetAvailableLicenseCount(value *int32)()
+    SetOdataType(value *string)()
     SetOrganizationName(value *string)()
     SetUsedLicenseCount(value *int32)()
     SetVppTokenId(value *string)()

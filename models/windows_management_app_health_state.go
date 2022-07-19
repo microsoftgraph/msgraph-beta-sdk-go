@@ -24,6 +24,8 @@ func NewWindowsManagementAppHealthState()(*WindowsManagementAppHealthState) {
     m := &WindowsManagementAppHealthState{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.windowsManagementAppHealthState";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateWindowsManagementAppHealthStateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

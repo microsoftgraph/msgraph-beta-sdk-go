@@ -9,11 +9,13 @@ import (
 type DisplayTemplate struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
-    // The text identifier for the display template; for example, contosoTickets.
+    // The text identifier for the display template; for example, contosoTickets. Maximum 16 characters. Only alphanumeric characters allowed.
     id *string
     // The layout property
     layout ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Jsonable
-    // Defines the priority of a display template. A display template with priority 1 is evaluated before a template with priority 4. Gaps in priority values are supported.
+    // The OdataType property
+    odataType *string
+    // Defines the priority of a display template. A display template with priority 1 is evaluated before a template with priority 4. Gaps in priority values are supported. Must be positive value.
     priority *int32
     // Specifies additional rules for selecting this display template based on the item schema. Optional.
     rules []PropertyRuleable
@@ -23,6 +25,8 @@ func NewDisplayTemplate()(*DisplayTemplate) {
     m := &DisplayTemplate{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.externalConnectors.displayTemplate";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDisplayTemplateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -60,6 +64,16 @@ func (m *DisplayTemplate) GetFieldDeserializers()(map[string]func(i878a80d2330e8
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["priority"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
@@ -86,7 +100,7 @@ func (m *DisplayTemplate) GetFieldDeserializers()(map[string]func(i878a80d2330e8
     }
     return res
 }
-// GetId gets the id property value. The text identifier for the display template; for example, contosoTickets.
+// GetId gets the id property value. The text identifier for the display template; for example, contosoTickets. Maximum 16 characters. Only alphanumeric characters allowed.
 func (m *DisplayTemplate) GetId()(*string) {
     if m == nil {
         return nil
@@ -102,7 +116,15 @@ func (m *DisplayTemplate) GetLayout()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697c
         return m.layout
     }
 }
-// GetPriority gets the priority property value. Defines the priority of a display template. A display template with priority 1 is evaluated before a template with priority 4. Gaps in priority values are supported.
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *DisplayTemplate) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
+// GetPriority gets the priority property value. Defines the priority of a display template. A display template with priority 1 is evaluated before a template with priority 4. Gaps in priority values are supported. Must be positive value.
 func (m *DisplayTemplate) GetPriority()(*int32) {
     if m == nil {
         return nil
@@ -128,6 +150,12 @@ func (m *DisplayTemplate) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
     }
     {
         err := writer.WriteObjectValue("layout", m.GetLayout())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -162,7 +190,7 @@ func (m *DisplayTemplate) SetAdditionalData(value map[string]interface{})() {
         m.additionalData = value
     }
 }
-// SetId sets the id property value. The text identifier for the display template; for example, contosoTickets.
+// SetId sets the id property value. The text identifier for the display template; for example, contosoTickets. Maximum 16 characters. Only alphanumeric characters allowed.
 func (m *DisplayTemplate) SetId(value *string)() {
     if m != nil {
         m.id = value
@@ -174,7 +202,13 @@ func (m *DisplayTemplate) SetLayout(value ie233ee762e29b4ba6970aa2a2efce4b7fde11
         m.layout = value
     }
 }
-// SetPriority sets the priority property value. Defines the priority of a display template. A display template with priority 1 is evaluated before a template with priority 4. Gaps in priority values are supported.
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *DisplayTemplate) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
+    }
+}
+// SetPriority sets the priority property value. Defines the priority of a display template. A display template with priority 1 is evaluated before a template with priority 4. Gaps in priority values are supported. Must be positive value.
 func (m *DisplayTemplate) SetPriority(value *int32)() {
     if m != nil {
         m.priority = value

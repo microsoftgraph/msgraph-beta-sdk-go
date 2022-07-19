@@ -21,6 +21,8 @@ type IosVppAppRevokeLicensesActionResult struct {
     lastUpdatedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // DeviceId associated with the action.
     managedDeviceId *string
+    // The OdataType property
+    odataType *string
     // Time the action was initiated
     startDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // A count of the number of licenses for which revoke was attempted.
@@ -33,6 +35,8 @@ func NewIosVppAppRevokeLicensesActionResult()(*IosVppAppRevokeLicensesActionResu
     m := &IosVppAppRevokeLicensesActionResult{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.iosVppAppRevokeLicensesActionResult";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateIosVppAppRevokeLicensesActionResultFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -142,6 +146,16 @@ func (m *IosVppAppRevokeLicensesActionResult) GetFieldDeserializers()(map[string
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["startDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
@@ -188,6 +202,14 @@ func (m *IosVppAppRevokeLicensesActionResult) GetManagedDeviceId()(*string) {
         return nil
     } else {
         return m.managedDeviceId
+    }
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *IosVppAppRevokeLicensesActionResult) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
     }
 }
 // GetStartDateTime gets the startDateTime property value. Time the action was initiated
@@ -250,6 +272,12 @@ func (m *IosVppAppRevokeLicensesActionResult) Serialize(writer i878a80d2330e89d2
     }
     {
         err := writer.WriteStringValue("managedDeviceId", m.GetManagedDeviceId())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -320,6 +348,12 @@ func (m *IosVppAppRevokeLicensesActionResult) SetLastUpdatedDateTime(value *i336
 func (m *IosVppAppRevokeLicensesActionResult) SetManagedDeviceId(value *string)() {
     if m != nil {
         m.managedDeviceId = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *IosVppAppRevokeLicensesActionResult) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetStartDateTime sets the startDateTime property value. Time the action was initiated

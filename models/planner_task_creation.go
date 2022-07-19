@@ -8,6 +8,8 @@ import (
 type PlannerTaskCreation struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
+    // The OdataType property
+    odataType *string
     // Information about the publication process that created this task. null value indicates that the task was not created by a publication process.
     teamsPublicationInfo PlannerTeamsPublicationInfoable
 }
@@ -16,6 +18,8 @@ func NewPlannerTaskCreation()(*PlannerTaskCreation) {
     m := &PlannerTaskCreation{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.plannerTaskCreation";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreatePlannerTaskCreationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -33,6 +37,16 @@ func (m *PlannerTaskCreation) GetAdditionalData()(map[string]interface{}) {
 // GetFieldDeserializers the deserialization information for the current model
 func (m *PlannerTaskCreation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["teamsPublicationInfo"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreatePlannerTeamsPublicationInfoFromDiscriminatorValue)
         if err != nil {
@@ -45,6 +59,14 @@ func (m *PlannerTaskCreation) GetFieldDeserializers()(map[string]func(i878a80d23
     }
     return res
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *PlannerTaskCreation) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetTeamsPublicationInfo gets the teamsPublicationInfo property value. Information about the publication process that created this task. null value indicates that the task was not created by a publication process.
 func (m *PlannerTaskCreation) GetTeamsPublicationInfo()(PlannerTeamsPublicationInfoable) {
     if m == nil {
@@ -55,6 +77,12 @@ func (m *PlannerTaskCreation) GetTeamsPublicationInfo()(PlannerTeamsPublicationI
 }
 // Serialize serializes information the current object
 func (m *PlannerTaskCreation) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     {
         err := writer.WriteObjectValue("teamsPublicationInfo", m.GetTeamsPublicationInfo())
         if err != nil {
@@ -73,6 +101,12 @@ func (m *PlannerTaskCreation) Serialize(writer i878a80d2330e89d26896388a3f487eef
 func (m *PlannerTaskCreation) SetAdditionalData(value map[string]interface{})() {
     if m != nil {
         m.additionalData = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *PlannerTaskCreation) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetTeamsPublicationInfo sets the teamsPublicationInfo property value. Information about the publication process that created this task. null value indicates that the task was not created by a publication process.

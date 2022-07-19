@@ -74,7 +74,7 @@ func NewUpdatableAssetsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7da
     urlParams["request-raw-url"] = rawUrl
     return NewUpdatableAssetsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *UpdatableAssetsRequestBuilder) Count()(*ibf8eb5ac9b044029fa9545b3e41a68440c40e3423a43368a9196b474051989b5.CountRequestBuilder) {
     return ibf8eb5ac9b044029fa9545b3e41a68440c40e3423a43368a9196b474051989b5.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

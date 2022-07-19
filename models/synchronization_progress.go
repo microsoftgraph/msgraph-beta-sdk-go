@@ -11,6 +11,8 @@ type SynchronizationProgress struct {
     additionalData map[string]interface{}
     // The numerator of a progress ratio; the number of units of changes already processed.
     completedUnits *int64
+    // The OdataType property
+    odataType *string
     // The time of a progress observation as an offset in minutes from UTC.
     progressObservationDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The denominator of a progress ratio; a number of units of changes to be processed to accomplish synchronization.
@@ -23,6 +25,8 @@ func NewSynchronizationProgress()(*SynchronizationProgress) {
     m := &SynchronizationProgress{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.synchronizationProgress";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateSynchronizationProgressFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -58,6 +62,16 @@ func (m *SynchronizationProgress) GetFieldDeserializers()(map[string]func(i878a8
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["progressObservationDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
@@ -90,6 +104,14 @@ func (m *SynchronizationProgress) GetFieldDeserializers()(map[string]func(i878a8
     }
     return res
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *SynchronizationProgress) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetProgressObservationDateTime gets the progressObservationDateTime property value. The time of a progress observation as an offset in minutes from UTC.
 func (m *SynchronizationProgress) GetProgressObservationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
@@ -118,6 +140,12 @@ func (m *SynchronizationProgress) GetUnits()(*string) {
 func (m *SynchronizationProgress) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
         err := writer.WriteInt64Value("completedUnits", m.GetCompletedUnits())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -158,6 +186,12 @@ func (m *SynchronizationProgress) SetAdditionalData(value map[string]interface{}
 func (m *SynchronizationProgress) SetCompletedUnits(value *int64)() {
     if m != nil {
         m.completedUnits = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *SynchronizationProgress) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetProgressObservationDateTime sets the progressObservationDateTime property value. The time of a progress observation as an offset in minutes from UTC.

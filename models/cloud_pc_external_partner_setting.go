@@ -24,6 +24,8 @@ func NewCloudPcExternalPartnerSetting()(*CloudPcExternalPartnerSetting) {
     m := &CloudPcExternalPartnerSetting{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.cloudPcExternalPartnerSetting";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateCloudPcExternalPartnerSettingFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

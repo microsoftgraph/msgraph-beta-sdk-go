@@ -15,12 +15,16 @@ type InformationProtectionContentLabel struct {
     creationDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Details on the label that is currently applied to the file.
     label LabelDetailsable
+    // The OdataType property
+    odataType *string
 }
 // NewInformationProtectionContentLabel instantiates a new informationProtectionContentLabel and sets the default values.
 func NewInformationProtectionContentLabel()(*InformationProtectionContentLabel) {
     m := &InformationProtectionContentLabel{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.informationProtectionContentLabel";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateInformationProtectionContentLabelFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -84,6 +88,16 @@ func (m *InformationProtectionContentLabel) GetFieldDeserializers()(map[string]f
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetLabel gets the label property value. Details on the label that is currently applied to the file.
@@ -92,6 +106,14 @@ func (m *InformationProtectionContentLabel) GetLabel()(LabelDetailsable) {
         return nil
     } else {
         return m.label
+    }
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *InformationProtectionContentLabel) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
     }
 }
 // Serialize serializes information the current object
@@ -111,6 +133,12 @@ func (m *InformationProtectionContentLabel) Serialize(writer i878a80d2330e89d268
     }
     {
         err := writer.WriteObjectValue("label", m.GetLabel())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -145,5 +173,11 @@ func (m *InformationProtectionContentLabel) SetCreationDateTime(value *i33607480
 func (m *InformationProtectionContentLabel) SetLabel(value LabelDetailsable)() {
     if m != nil {
         m.label = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *InformationProtectionContentLabel) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }

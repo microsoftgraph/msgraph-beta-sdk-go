@@ -19,6 +19,8 @@ func NewAndroidForWorkNineWorkEasConfiguration()(*AndroidForWorkNineWorkEasConfi
     m := &AndroidForWorkNineWorkEasConfiguration{
         AndroidForWorkEasEmailProfileBase: *NewAndroidForWorkEasEmailProfileBase(),
     }
+    odataTypeValue := "#microsoft.graph.androidForWorkNineWorkEasConfiguration";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAndroidForWorkNineWorkEasConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

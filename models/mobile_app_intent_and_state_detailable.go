@@ -13,11 +13,13 @@ type MobileAppIntentAndStateDetailable interface {
     GetDisplayVersion()(*string)
     GetInstallState()(*ResultantAppState)
     GetMobileAppIntent()(*MobileAppIntent)
+    GetOdataType()(*string)
     GetSupportedDeviceTypes()([]MobileAppSupportedDeviceTypeable)
     SetApplicationId(value *string)()
     SetDisplayName(value *string)()
     SetDisplayVersion(value *string)()
     SetInstallState(value *ResultantAppState)()
     SetMobileAppIntent(value *MobileAppIntent)()
+    SetOdataType(value *string)()
     SetSupportedDeviceTypes(value []MobileAppSupportedDeviceTypeable)()
 }

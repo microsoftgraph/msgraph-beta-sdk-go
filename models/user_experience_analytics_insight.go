@@ -10,6 +10,8 @@ type UserExperienceAnalyticsInsight struct {
     additionalData map[string]interface{}
     // The unique identifier of the user experience analytics insight.
     insightId *string
+    // The OdataType property
+    odataType *string
     // The severity property
     severity *UserExperienceAnalyticsInsightSeverity
     // The unique identifier of the user experience analytics insight.
@@ -22,6 +24,8 @@ func NewUserExperienceAnalyticsInsight()(*UserExperienceAnalyticsInsight) {
     m := &UserExperienceAnalyticsInsight{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.userExperienceAnalyticsInsight";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateUserExperienceAnalyticsInsightFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -46,6 +50,16 @@ func (m *UserExperienceAnalyticsInsight) GetFieldDeserializers()(map[string]func
         }
         if val != nil {
             m.SetInsightId(val)
+        }
+        return nil
+    }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
         }
         return nil
     }
@@ -93,6 +107,14 @@ func (m *UserExperienceAnalyticsInsight) GetInsightId()(*string) {
         return m.insightId
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *UserExperienceAnalyticsInsight) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetSeverity gets the severity property value. The severity property
 func (m *UserExperienceAnalyticsInsight) GetSeverity()(*UserExperienceAnalyticsInsightSeverity) {
     if m == nil {
@@ -121,6 +143,12 @@ func (m *UserExperienceAnalyticsInsight) GetValues()([]UserExperienceAnalyticsIn
 func (m *UserExperienceAnalyticsInsight) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("insightId", m.GetInsightId())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -166,6 +194,12 @@ func (m *UserExperienceAnalyticsInsight) SetAdditionalData(value map[string]inte
 func (m *UserExperienceAnalyticsInsight) SetInsightId(value *string)() {
     if m != nil {
         m.insightId = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *UserExperienceAnalyticsInsight) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetSeverity sets the severity property value. The severity property

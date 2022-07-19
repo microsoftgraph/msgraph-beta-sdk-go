@@ -12,12 +12,16 @@ type TeamworkHardwareHealth struct {
     computeHealth TeamworkPeripheralHealthable
     // The health details about the HDMI ingest of a device.
     hdmiIngestHealth TeamworkPeripheralHealthable
+    // The OdataType property
+    odataType *string
 }
 // NewTeamworkHardwareHealth instantiates a new teamworkHardwareHealth and sets the default values.
 func NewTeamworkHardwareHealth()(*TeamworkHardwareHealth) {
     m := &TeamworkHardwareHealth{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.teamworkHardwareHealth";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateTeamworkHardwareHealthFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -63,6 +67,16 @@ func (m *TeamworkHardwareHealth) GetFieldDeserializers()(map[string]func(i878a80
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetHdmiIngestHealth gets the hdmiIngestHealth property value. The health details about the HDMI ingest of a device.
@@ -71,6 +85,14 @@ func (m *TeamworkHardwareHealth) GetHdmiIngestHealth()(TeamworkPeripheralHealtha
         return nil
     } else {
         return m.hdmiIngestHealth
+    }
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *TeamworkHardwareHealth) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
     }
 }
 // Serialize serializes information the current object
@@ -83,6 +105,12 @@ func (m *TeamworkHardwareHealth) Serialize(writer i878a80d2330e89d26896388a3f487
     }
     {
         err := writer.WriteObjectValue("hdmiIngestHealth", m.GetHdmiIngestHealth())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -111,5 +139,11 @@ func (m *TeamworkHardwareHealth) SetComputeHealth(value TeamworkPeripheralHealth
 func (m *TeamworkHardwareHealth) SetHdmiIngestHealth(value TeamworkPeripheralHealthable)() {
     if m != nil {
         m.hdmiIngestHealth = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *TeamworkHardwareHealth) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }

@@ -13,6 +13,8 @@ func NewProtectAdhocAction()(*ProtectAdhocAction) {
     m := &ProtectAdhocAction{
         InformationProtectionAction: *NewInformationProtectionAction(),
     }
+    odataTypeValue := "#microsoft.graph.security.protectAdhocAction";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateProtectAdhocActionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

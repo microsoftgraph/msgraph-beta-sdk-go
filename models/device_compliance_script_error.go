@@ -14,16 +14,16 @@ type DeviceComplianceScriptError struct {
     deviceComplianceScriptRulesValidationError *DeviceComplianceScriptRulesValidationError
     // Error message.
     message *string
-    // The type property
-    type_escaped *string
+    // The OdataType property
+    odataType *string
 }
 // NewDeviceComplianceScriptError instantiates a new deviceComplianceScriptError and sets the default values.
 func NewDeviceComplianceScriptError()(*DeviceComplianceScriptError) {
     m := &DeviceComplianceScriptError{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odatatypeValue := "#microsoft.graph.deviceComplianceScriptError";
-    m.SetType(&odatatypeValue);
+    odataTypeValue := "#microsoft.graph.deviceComplianceScriptError";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDeviceComplianceScriptErrorFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -112,7 +112,7 @@ func (m *DeviceComplianceScriptError) GetFieldDeserializers()(map[string]func(i8
             return err
         }
         if val != nil {
-            m.SetType(val)
+            m.SetOdataType(val)
         }
         return nil
     }
@@ -126,12 +126,12 @@ func (m *DeviceComplianceScriptError) GetMessage()(*string) {
         return m.message
     }
 }
-// GetType gets the @odata.type property value. The type property
-func (m *DeviceComplianceScriptError) GetType()(*string) {
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *DeviceComplianceScriptError) GetOdataType()(*string) {
     if m == nil {
         return nil
     } else {
-        return m.type_escaped
+        return m.odataType
     }
 }
 // Serialize serializes information the current object
@@ -157,7 +157,7 @@ func (m *DeviceComplianceScriptError) Serialize(writer i878a80d2330e89d26896388a
         }
     }
     {
-        err := writer.WriteStringValue("@odata.type", m.GetType())
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -194,9 +194,9 @@ func (m *DeviceComplianceScriptError) SetMessage(value *string)() {
         m.message = value
     }
 }
-// SetType sets the @odata.type property value. The type property
-func (m *DeviceComplianceScriptError) SetType(value *string)() {
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *DeviceComplianceScriptError) SetOdataType(value *string)() {
     if m != nil {
-        m.type_escaped = value
+        m.odataType = value
     }
 }

@@ -69,7 +69,7 @@ func NewChildFoldersRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2
     urlParams["request-raw-url"] = rawUrl
     return NewChildFoldersRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *ChildFoldersRequestBuilder) Count()(*ief621387aa2e54a37a0d220123a58940d48e34167bddee38029a63db1c626c70.CountRequestBuilder) {
     return ief621387aa2e54a37a0d220123a58940d48e34167bddee38029a63db1c626c70.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

@@ -12,6 +12,8 @@ type AndroidDeviceOwnerSystemUpdateFreezePeriod struct {
     endDay *int32
     // The month of the end date of the freeze period. Valid values 1 to 12
     endMonth *int32
+    // The OdataType property
+    odataType *string
     // The day of the start date of the freeze period. Valid values 1 to 31
     startDay *int32
     // The month of the start date of the freeze period. Valid values 1 to 12
@@ -22,6 +24,8 @@ func NewAndroidDeviceOwnerSystemUpdateFreezePeriod()(*AndroidDeviceOwnerSystemUp
     m := &AndroidDeviceOwnerSystemUpdateFreezePeriod{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.androidDeviceOwnerSystemUpdateFreezePeriod";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAndroidDeviceOwnerSystemUpdateFreezePeriodFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -75,6 +79,16 @@ func (m *AndroidDeviceOwnerSystemUpdateFreezePeriod) GetFieldDeserializers()(map
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["startDay"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
@@ -96,6 +110,14 @@ func (m *AndroidDeviceOwnerSystemUpdateFreezePeriod) GetFieldDeserializers()(map
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *AndroidDeviceOwnerSystemUpdateFreezePeriod) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
 }
 // GetStartDay gets the startDay property value. The day of the start date of the freeze period. Valid values 1 to 31
 func (m *AndroidDeviceOwnerSystemUpdateFreezePeriod) GetStartDay()(*int32) {
@@ -123,6 +145,12 @@ func (m *AndroidDeviceOwnerSystemUpdateFreezePeriod) Serialize(writer i878a80d23
     }
     {
         err := writer.WriteInt32Value("endMonth", m.GetEndMonth())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -163,6 +191,12 @@ func (m *AndroidDeviceOwnerSystemUpdateFreezePeriod) SetEndDay(value *int32)() {
 func (m *AndroidDeviceOwnerSystemUpdateFreezePeriod) SetEndMonth(value *int32)() {
     if m != nil {
         m.endMonth = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *AndroidDeviceOwnerSystemUpdateFreezePeriod) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetStartDay sets the startDay property value. The day of the start date of the freeze period. Valid values 1 to 31

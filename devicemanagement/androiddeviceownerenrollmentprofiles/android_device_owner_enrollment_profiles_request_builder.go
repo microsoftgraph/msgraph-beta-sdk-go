@@ -70,7 +70,7 @@ func NewAndroidDeviceOwnerEnrollmentProfilesRequestBuilder(rawUrl string, reques
     urlParams["request-raw-url"] = rawUrl
     return NewAndroidDeviceOwnerEnrollmentProfilesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *AndroidDeviceOwnerEnrollmentProfilesRequestBuilder) Count()(*if3e47a4c3ed1fc4dfebf9b74086292143f3656394a7e39f4245c54036c423cec.CountRequestBuilder) {
     return if3e47a4c3ed1fc4dfebf9b74086292143f3656394a7e39f4245c54036c423cec.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

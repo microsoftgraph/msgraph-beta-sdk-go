@@ -11,7 +11,9 @@ type VpnServerable interface {
     GetAddress()(*string)
     GetDescription()(*string)
     GetIsDefaultServer()(*bool)
+    GetOdataType()(*string)
     SetAddress(value *string)()
     SetDescription(value *string)()
     SetIsDefaultServer(value *bool)()
+    SetOdataType(value *string)()
 }

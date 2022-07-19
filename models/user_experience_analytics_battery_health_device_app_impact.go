@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// UserExperienceAnalyticsBatteryHealthDeviceAppImpact 
+// UserExperienceAnalyticsBatteryHealthDeviceAppImpact the user experience analytics battery health device app impact entity contains battery usage related information at an app level for a given device.
 type UserExperienceAnalyticsBatteryHealthDeviceAppImpact struct {
     Entity
     // User friendly display name for the app. Eg: Outlook
@@ -20,11 +20,13 @@ type UserExperienceAnalyticsBatteryHealthDeviceAppImpact struct {
     // true if the user had active interaction with the app.
     isForegroundApp *bool
 }
-// NewUserExperienceAnalyticsBatteryHealthDeviceAppImpact instantiates a new UserExperienceAnalyticsBatteryHealthDeviceAppImpact and sets the default values.
+// NewUserExperienceAnalyticsBatteryHealthDeviceAppImpact instantiates a new userExperienceAnalyticsBatteryHealthDeviceAppImpact and sets the default values.
 func NewUserExperienceAnalyticsBatteryHealthDeviceAppImpact()(*UserExperienceAnalyticsBatteryHealthDeviceAppImpact) {
     m := &UserExperienceAnalyticsBatteryHealthDeviceAppImpact{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.userExperienceAnalyticsBatteryHealthDeviceAppImpact";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateUserExperienceAnalyticsBatteryHealthDeviceAppImpactFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -71,7 +71,7 @@ func NewIosManagedAppProtectionsRequestBuilder(rawUrl string, requestAdapter i2a
     urlParams["request-raw-url"] = rawUrl
     return NewIosManagedAppProtectionsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *IosManagedAppProtectionsRequestBuilder) Count()(*i714f5cdac6c17be27e7f218c1afff3ceb2db34e8c35e6fddbbcfc20b0ac8ae9b.CountRequestBuilder) {
     return i714f5cdac6c17be27e7f218c1afff3ceb2db34e8c35e6fddbbcfc20b0ac8ae9b.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

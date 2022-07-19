@@ -10,6 +10,8 @@ type CustomQuestionAnswer struct {
     additionalData map[string]interface{}
     // Display name of the custom registration question. Read-only.
     displayName *string
+    // The OdataType property
+    odataType *string
     // ID the custom registration question. Read-only.
     questionId *string
     // Answer to the custom registration question.
@@ -20,6 +22,8 @@ func NewCustomQuestionAnswer()(*CustomQuestionAnswer) {
     m := &CustomQuestionAnswer{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.customQuestionAnswer";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateCustomQuestionAnswerFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -55,6 +59,16 @@ func (m *CustomQuestionAnswer) GetFieldDeserializers()(map[string]func(i878a80d2
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["questionId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -77,6 +91,14 @@ func (m *CustomQuestionAnswer) GetFieldDeserializers()(map[string]func(i878a80d2
     }
     return res
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *CustomQuestionAnswer) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetQuestionId gets the questionId property value. ID the custom registration question. Read-only.
 func (m *CustomQuestionAnswer) GetQuestionId()(*string) {
     if m == nil {
@@ -97,6 +119,12 @@ func (m *CustomQuestionAnswer) GetValue()(*string) {
 func (m *CustomQuestionAnswer) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("displayName", m.GetDisplayName())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -131,6 +159,12 @@ func (m *CustomQuestionAnswer) SetAdditionalData(value map[string]interface{})()
 func (m *CustomQuestionAnswer) SetDisplayName(value *string)() {
     if m != nil {
         m.displayName = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *CustomQuestionAnswer) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetQuestionId sets the questionId property value. ID the custom registration question. Read-only.

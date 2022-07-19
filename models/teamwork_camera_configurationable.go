@@ -11,7 +11,9 @@ type TeamworkCameraConfigurationable interface {
     GetCameras()([]TeamworkPeripheralable)
     GetContentCameraConfiguration()(TeamworkContentCameraConfigurationable)
     GetDefaultContentCamera()(TeamworkPeripheralable)
+    GetOdataType()(*string)
     SetCameras(value []TeamworkPeripheralable)()
     SetContentCameraConfiguration(value TeamworkContentCameraConfigurationable)()
     SetDefaultContentCamera(value TeamworkPeripheralable)()
+    SetOdataType(value *string)()
 }

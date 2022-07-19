@@ -14,6 +14,8 @@ type DeviceManagementApplicabilityRuleOsVersion struct {
     minOSVersion *string
     // Name for object.
     name *string
+    // The OdataType property
+    odataType *string
     // Supported Applicability rule types for Device Configuration
     ruleType *DeviceManagementApplicabilityRuleType
 }
@@ -22,6 +24,8 @@ func NewDeviceManagementApplicabilityRuleOsVersion()(*DeviceManagementApplicabil
     m := &DeviceManagementApplicabilityRuleOsVersion{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.deviceManagementApplicabilityRuleOsVersion";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDeviceManagementApplicabilityRuleOsVersionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -69,6 +73,16 @@ func (m *DeviceManagementApplicabilityRuleOsVersion) GetFieldDeserializers()(map
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["ruleType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseDeviceManagementApplicabilityRuleType)
         if err != nil {
@@ -105,6 +119,14 @@ func (m *DeviceManagementApplicabilityRuleOsVersion) GetName()(*string) {
         return m.name
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *DeviceManagementApplicabilityRuleOsVersion) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetRuleType gets the ruleType property value. Supported Applicability rule types for Device Configuration
 func (m *DeviceManagementApplicabilityRuleOsVersion) GetRuleType()(*DeviceManagementApplicabilityRuleType) {
     if m == nil {
@@ -129,6 +151,12 @@ func (m *DeviceManagementApplicabilityRuleOsVersion) Serialize(writer i878a80d23
     }
     {
         err := writer.WriteStringValue("name", m.GetName())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -170,6 +198,12 @@ func (m *DeviceManagementApplicabilityRuleOsVersion) SetMinOSVersion(value *stri
 func (m *DeviceManagementApplicabilityRuleOsVersion) SetName(value *string)() {
     if m != nil {
         m.name = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *DeviceManagementApplicabilityRuleOsVersion) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetRuleType sets the ruleType property value. Supported Applicability rule types for Device Configuration

@@ -12,6 +12,8 @@ type TeamworkOnPremisesCalendarSyncConfiguration struct {
     domain *string
     // The domain and username of the console device, for example, Seattle/RanierConf.
     domainUserName *string
+    // The OdataType property
+    odataType *string
     // The Simple Mail Transfer Protocol (SMTP) address of the user account. This is only required if a different user principal name (UPN) is used to sign in to Exchange other than Microsoft Teams and Skype for Business. This is a common scenario in a hybrid environment where an on-premises Exchange server is used.
     smtpAddress *string
 }
@@ -20,6 +22,8 @@ func NewTeamworkOnPremisesCalendarSyncConfiguration()(*TeamworkOnPremisesCalenda
     m := &TeamworkOnPremisesCalendarSyncConfiguration{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.teamworkOnPremisesCalendarSyncConfiguration";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateTeamworkOnPremisesCalendarSyncConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -73,6 +77,16 @@ func (m *TeamworkOnPremisesCalendarSyncConfiguration) GetFieldDeserializers()(ma
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["smtpAddress"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -84,6 +98,14 @@ func (m *TeamworkOnPremisesCalendarSyncConfiguration) GetFieldDeserializers()(ma
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *TeamworkOnPremisesCalendarSyncConfiguration) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
 }
 // GetSmtpAddress gets the smtpAddress property value. The Simple Mail Transfer Protocol (SMTP) address of the user account. This is only required if a different user principal name (UPN) is used to sign in to Exchange other than Microsoft Teams and Skype for Business. This is a common scenario in a hybrid environment where an on-premises Exchange server is used.
 func (m *TeamworkOnPremisesCalendarSyncConfiguration) GetSmtpAddress()(*string) {
@@ -103,6 +125,12 @@ func (m *TeamworkOnPremisesCalendarSyncConfiguration) Serialize(writer i878a80d2
     }
     {
         err := writer.WriteStringValue("domainUserName", m.GetDomainUserName())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -137,6 +165,12 @@ func (m *TeamworkOnPremisesCalendarSyncConfiguration) SetDomain(value *string)()
 func (m *TeamworkOnPremisesCalendarSyncConfiguration) SetDomainUserName(value *string)() {
     if m != nil {
         m.domainUserName = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *TeamworkOnPremisesCalendarSyncConfiguration) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetSmtpAddress sets the smtpAddress property value. The Simple Mail Transfer Protocol (SMTP) address of the user account. This is only required if a different user principal name (UPN) is used to sign in to Exchange other than Microsoft Teams and Skype for Business. This is a common scenario in a hybrid environment where an on-premises Exchange server is used.

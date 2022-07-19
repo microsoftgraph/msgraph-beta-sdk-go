@@ -14,6 +14,7 @@ type IdentityContainerable interface {
     GetConditionalAccess()(ConditionalAccessRootable)
     GetContinuousAccessEvaluationPolicy()(ContinuousAccessEvaluationPolicyable)
     GetIdentityProviders()([]IdentityProviderBaseable)
+    GetOdataType()(*string)
     GetUserFlowAttributes()([]IdentityUserFlowAttributeable)
     GetUserFlows()([]IdentityUserFlowable)
     SetApiConnectors(value []IdentityApiConnectorable)()
@@ -22,6 +23,7 @@ type IdentityContainerable interface {
     SetConditionalAccess(value ConditionalAccessRootable)()
     SetContinuousAccessEvaluationPolicy(value ContinuousAccessEvaluationPolicyable)()
     SetIdentityProviders(value []IdentityProviderBaseable)()
+    SetOdataType(value *string)()
     SetUserFlowAttributes(value []IdentityUserFlowAttributeable)()
     SetUserFlows(value []IdentityUserFlowable)()
 }

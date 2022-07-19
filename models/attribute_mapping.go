@@ -18,6 +18,8 @@ type AttributeMapping struct {
     flowType *AttributeFlowType
     // If higher than 0, this attribute will be used to perform an initial match of the objects between source and target directories. The synchronization engine will try to find the matching object using attribute with lowest value of matching priority first. If not found, the attribute with the next matching priority will be used, and so on a until match is found or no more matching attributes are left. Only attributes that are expected to have unique values, such as email, should be used as matching attributes.
     matchingPriority *int32
+    // The OdataType property
+    odataType *string
     // Defines how a value should be extracted (or transformed) from the source object.
     source AttributeMappingSourceable
     // Name of the attribute on the target object.
@@ -28,6 +30,8 @@ func NewAttributeMapping()(*AttributeMapping) {
     m := &AttributeMapping{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.attributeMapping";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAttributeMappingFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -111,6 +115,16 @@ func (m *AttributeMapping) GetFieldDeserializers()(map[string]func(i878a80d2330e
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["source"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateAttributeMappingSourceFromDiscriminatorValue)
         if err != nil {
@@ -155,6 +169,14 @@ func (m *AttributeMapping) GetMatchingPriority()(*int32) {
         return nil
     } else {
         return m.matchingPriority
+    }
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *AttributeMapping) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
     }
 }
 // GetSource gets the source property value. Defines how a value should be extracted (or transformed) from the source object.
@@ -203,6 +225,12 @@ func (m *AttributeMapping) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
     }
     {
         err := writer.WriteInt32Value("matchingPriority", m.GetMatchingPriority())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -261,6 +289,12 @@ func (m *AttributeMapping) SetFlowType(value *AttributeFlowType)() {
 func (m *AttributeMapping) SetMatchingPriority(value *int32)() {
     if m != nil {
         m.matchingPriority = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *AttributeMapping) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetSource sets the source property value. Defines how a value should be extracted (or transformed) from the source object.

@@ -19,6 +19,8 @@ type CertificateConnectorSetting struct {
     lastConnectorConnectionTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Version of last uploaded certificate connector
     lastUploadVersion *int64
+    // The OdataType property
+    odataType *string
     // Certificate connector status
     status *int32
 }
@@ -27,6 +29,8 @@ func NewCertificateConnectorSetting()(*CertificateConnectorSetting) {
     m := &CertificateConnectorSetting{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.certificateConnectorSetting";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateCertificateConnectorSettingFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -118,6 +122,16 @@ func (m *CertificateConnectorSetting) GetFieldDeserializers()(map[string]func(i8
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["status"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
@@ -144,6 +158,14 @@ func (m *CertificateConnectorSetting) GetLastUploadVersion()(*int64) {
         return nil
     } else {
         return m.lastUploadVersion
+    }
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *CertificateConnectorSetting) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
     }
 }
 // GetStatus gets the status property value. Certificate connector status
@@ -182,6 +204,12 @@ func (m *CertificateConnectorSetting) Serialize(writer i878a80d2330e89d26896388a
     }
     {
         err := writer.WriteInt64Value("lastUploadVersion", m.GetLastUploadVersion())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -234,6 +262,12 @@ func (m *CertificateConnectorSetting) SetLastConnectorConnectionTime(value *i336
 func (m *CertificateConnectorSetting) SetLastUploadVersion(value *int64)() {
     if m != nil {
         m.lastUploadVersion = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *CertificateConnectorSetting) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetStatus sets the status property value. Certificate connector status

@@ -70,7 +70,7 @@ func NewCustomAccessPackageWorkflowExtensionsRequestBuilder(rawUrl string, reque
     urlParams["request-raw-url"] = rawUrl
     return NewCustomAccessPackageWorkflowExtensionsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *CustomAccessPackageWorkflowExtensionsRequestBuilder) Count()(*i12f2b60e2d40f6e43de210199d80a007c011921a02e987470fc3b95f2ef5cf23.CountRequestBuilder) {
     return i12f2b60e2d40f6e43de210199d80a007c011921a02e987470fc3b95f2ef5cf23.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

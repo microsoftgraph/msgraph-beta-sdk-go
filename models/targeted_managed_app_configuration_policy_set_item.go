@@ -13,6 +13,8 @@ func NewTargetedManagedAppConfigurationPolicySetItem()(*TargetedManagedAppConfig
     m := &TargetedManagedAppConfigurationPolicySetItem{
         PolicySetItem: *NewPolicySetItem(),
     }
+    odataTypeValue := "#microsoft.graph.targetedManagedAppConfigurationPolicySetItem";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateTargetedManagedAppConfigurationPolicySetItemFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

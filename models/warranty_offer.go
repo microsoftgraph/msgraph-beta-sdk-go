@@ -13,6 +13,8 @@ type WarrantyOffer struct {
     description *string
     // Warranty offer end date
     endDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
+    // The OdataType property
+    odataType *string
     // Warranty offer start date
     startDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Models and Manufactures meatadata for managed devices in the account
@@ -23,6 +25,8 @@ func NewWarrantyOffer()(*WarrantyOffer) {
     m := &WarrantyOffer{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.warrantyOffer";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateWarrantyOfferFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -76,6 +80,16 @@ func (m *WarrantyOffer) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["startDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
@@ -97,6 +111,14 @@ func (m *WarrantyOffer) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *WarrantyOffer) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
 }
 // GetStartDateTime gets the startDateTime property value. Warranty offer start date
 func (m *WarrantyOffer) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
@@ -124,6 +146,12 @@ func (m *WarrantyOffer) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
     }
     {
         err := writer.WriteTimeValue("endDateTime", m.GetEndDateTime())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -165,6 +193,12 @@ func (m *WarrantyOffer) SetDescription(value *string)() {
 func (m *WarrantyOffer) SetEndDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     if m != nil {
         m.endDateTime = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *WarrantyOffer) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetStartDateTime sets the startDateTime property value. Warranty offer start date

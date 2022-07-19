@@ -11,11 +11,13 @@ type TeamworkActivePeripheralsable interface {
     GetCommunicationSpeaker()(TeamworkPeripheralable)
     GetContentCamera()(TeamworkPeripheralable)
     GetMicrophone()(TeamworkPeripheralable)
+    GetOdataType()(*string)
     GetRoomCamera()(TeamworkPeripheralable)
     GetSpeaker()(TeamworkPeripheralable)
     SetCommunicationSpeaker(value TeamworkPeripheralable)()
     SetContentCamera(value TeamworkPeripheralable)()
     SetMicrophone(value TeamworkPeripheralable)()
+    SetOdataType(value *string)()
     SetRoomCamera(value TeamworkPeripheralable)()
     SetSpeaker(value TeamworkPeripheralable)()
 }

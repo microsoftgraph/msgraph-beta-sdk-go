@@ -19,12 +19,16 @@ type CloudPcConnectivityEvent struct {
     eventType *CloudPcConnectivityEventType
     // The message property
     message *string
+    // The OdataType property
+    odataType *string
 }
 // NewCloudPcConnectivityEvent instantiates a new cloudPcConnectivityEvent and sets the default values.
 func NewCloudPcConnectivityEvent()(*CloudPcConnectivityEvent) {
     m := &CloudPcConnectivityEvent{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.cloudPcConnectivityEvent";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateCloudPcConnectivityEventFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -124,6 +128,16 @@ func (m *CloudPcConnectivityEvent) GetFieldDeserializers()(map[string]func(i878a
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetMessage gets the message property value. The message property
@@ -132,6 +146,14 @@ func (m *CloudPcConnectivityEvent) GetMessage()(*string) {
         return nil
     } else {
         return m.message
+    }
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *CloudPcConnectivityEvent) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
     }
 }
 // Serialize serializes information the current object
@@ -164,6 +186,12 @@ func (m *CloudPcConnectivityEvent) Serialize(writer i878a80d2330e89d26896388a3f4
     }
     {
         err := writer.WriteStringValue("message", m.GetMessage())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -210,5 +238,11 @@ func (m *CloudPcConnectivityEvent) SetEventType(value *CloudPcConnectivityEventT
 func (m *CloudPcConnectivityEvent) SetMessage(value *string)() {
     if m != nil {
         m.message = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *CloudPcConnectivityEvent) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }

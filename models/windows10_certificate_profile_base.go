@@ -13,8 +13,8 @@ func NewWindows10CertificateProfileBase()(*Windows10CertificateProfileBase) {
     m := &Windows10CertificateProfileBase{
         WindowsCertificateProfileBase: *NewWindowsCertificateProfileBase(),
     }
-    odatatypeValue := "#microsoft.graph.windows10CertificateProfileBase";
-    m.SetType(&odatatypeValue);
+    odataTypeValue := "#microsoft.graph.windows10CertificateProfileBase";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateWindows10CertificateProfileBaseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

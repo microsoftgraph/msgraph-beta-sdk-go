@@ -68,7 +68,7 @@ func NewExtensionsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263
     urlParams["request-raw-url"] = rawUrl
     return NewExtensionsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *ExtensionsRequestBuilder) Count()(*i366bd9478478332410efba74e0296f2bd8959a97660f83ad9ee81aa3027a5462.CountRequestBuilder) {
     return i366bd9478478332410efba74e0296f2bd8959a97660f83ad9ee81aa3027a5462.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

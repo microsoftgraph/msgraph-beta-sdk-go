@@ -70,7 +70,7 @@ func NewMicrosoftTunnelServerLogCollectionResponsesRequestBuilder(rawUrl string,
     urlParams["request-raw-url"] = rawUrl
     return NewMicrosoftTunnelServerLogCollectionResponsesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *MicrosoftTunnelServerLogCollectionResponsesRequestBuilder) Count()(*i307c2cf1dc84881d3e50c1bff7a4834a4a49d30624bea3171bdc6e9b8cc85799.CountRequestBuilder) {
     return i307c2cf1dc84881d3e50c1bff7a4834a4a49d30624bea3171bdc6e9b8cc85799.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

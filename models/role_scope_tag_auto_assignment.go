@@ -15,6 +15,8 @@ func NewRoleScopeTagAutoAssignment()(*RoleScopeTagAutoAssignment) {
     m := &RoleScopeTagAutoAssignment{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.roleScopeTagAutoAssignment";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateRoleScopeTagAutoAssignmentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

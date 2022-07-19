@@ -12,12 +12,16 @@ type ExactMatchClassificationResult struct {
     classification []ExactMatchDetectedSensitiveContentable
     // The errors property
     errors []ClassificationErrorable
+    // The OdataType property
+    odataType *string
 }
 // NewExactMatchClassificationResult instantiates a new exactMatchClassificationResult and sets the default values.
 func NewExactMatchClassificationResult()(*ExactMatchClassificationResult) {
     m := &ExactMatchClassificationResult{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.exactMatchClassificationResult";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateExactMatchClassificationResultFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -79,7 +83,25 @@ func (m *ExactMatchClassificationResult) GetFieldDeserializers()(map[string]func
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *ExactMatchClassificationResult) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
 }
 // Serialize serializes information the current object
 func (m *ExactMatchClassificationResult) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -99,6 +121,12 @@ func (m *ExactMatchClassificationResult) Serialize(writer i878a80d2330e89d268963
             cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
         }
         err := writer.WriteCollectionOfObjectValues("errors", cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -127,5 +155,11 @@ func (m *ExactMatchClassificationResult) SetClassification(value []ExactMatchDet
 func (m *ExactMatchClassificationResult) SetErrors(value []ClassificationErrorable)() {
     if m != nil {
         m.errors = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *ExactMatchClassificationResult) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }

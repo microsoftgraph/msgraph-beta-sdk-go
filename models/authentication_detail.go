@@ -19,6 +19,8 @@ type AuthenticationDetail struct {
     authenticationStepRequirement *string
     // Details about why the step succeeded or failed. For examples, user is blocked, fraud code entered, no phone input - timed out, phone unreachable, or claim in token.
     authenticationStepResultDetail *string
+    // The OdataType property
+    odataType *string
     // Indicates the status of the authentication step. Possible values: succeeded, failed.
     succeeded *bool
 }
@@ -27,6 +29,8 @@ func NewAuthenticationDetail()(*AuthenticationDetail) {
     m := &AuthenticationDetail{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.authenticationDetail";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAuthenticationDetailFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -134,6 +138,16 @@ func (m *AuthenticationDetail) GetFieldDeserializers()(map[string]func(i878a80d2
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["succeeded"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
@@ -145,6 +159,14 @@ func (m *AuthenticationDetail) GetFieldDeserializers()(map[string]func(i878a80d2
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *AuthenticationDetail) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
 }
 // GetSucceeded gets the succeeded property value. Indicates the status of the authentication step. Possible values: succeeded, failed.
 func (m *AuthenticationDetail) GetSucceeded()(*bool) {
@@ -182,6 +204,12 @@ func (m *AuthenticationDetail) Serialize(writer i878a80d2330e89d26896388a3f487ee
     }
     {
         err := writer.WriteStringValue("authenticationStepResultDetail", m.GetAuthenticationStepResultDetail())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -234,6 +262,12 @@ func (m *AuthenticationDetail) SetAuthenticationStepRequirement(value *string)()
 func (m *AuthenticationDetail) SetAuthenticationStepResultDetail(value *string)() {
     if m != nil {
         m.authenticationStepResultDetail = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *AuthenticationDetail) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetSucceeded sets the succeeded property value. Indicates the status of the authentication step. Possible values: succeeded, failed.

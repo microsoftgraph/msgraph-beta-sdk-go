@@ -70,7 +70,7 @@ func NewManagementTemplateCollectionsRequestBuilder(rawUrl string, requestAdapte
     urlParams["request-raw-url"] = rawUrl
     return NewManagementTemplateCollectionsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *ManagementTemplateCollectionsRequestBuilder) Count()(*i021e30fd0fff92a7bef157054025feb857df7e416e214f7eac42b0f2e118c30e.CountRequestBuilder) {
     return i021e30fd0fff92a7bef157054025feb857df7e416e214f7eac42b0f2e118c30e.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

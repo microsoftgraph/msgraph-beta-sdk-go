@@ -19,6 +19,8 @@ func NewDirectorySetting()(*DirectorySetting) {
     m := &DirectorySetting{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.directorySetting";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDirectorySettingFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

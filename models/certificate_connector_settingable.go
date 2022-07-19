@@ -14,11 +14,13 @@ type CertificateConnectorSettingable interface {
     GetEnrollmentError()(*string)
     GetLastConnectorConnectionTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetLastUploadVersion()(*int64)
+    GetOdataType()(*string)
     GetStatus()(*int32)
     SetCertExpiryTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetConnectorVersion(value *string)()
     SetEnrollmentError(value *string)()
     SetLastConnectorConnectionTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetLastUploadVersion(value *int64)()
+    SetOdataType(value *string)()
     SetStatus(value *int32)()
 }

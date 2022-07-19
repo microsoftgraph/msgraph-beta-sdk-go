@@ -71,7 +71,7 @@ func NewCalendarViewRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2
     urlParams["request-raw-url"] = rawUrl
     return NewCalendarViewRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *CalendarViewRequestBuilder) Count()(*ie041eab24a97ed932e1d6b2a4d949067a5cf7bd9ef7bf7e6720197b2d1423537.CountRequestBuilder) {
     return ie041eab24a97ed932e1d6b2a4d949067a5cf7bd9ef7bf7e6720197b2d1423537.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

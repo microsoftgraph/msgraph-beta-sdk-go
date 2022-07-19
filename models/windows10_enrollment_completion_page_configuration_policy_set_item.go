@@ -15,6 +15,8 @@ func NewWindows10EnrollmentCompletionPageConfigurationPolicySetItem()(*Windows10
     m := &Windows10EnrollmentCompletionPageConfigurationPolicySetItem{
         PolicySetItem: *NewPolicySetItem(),
     }
+    odataTypeValue := "#microsoft.graph.windows10EnrollmentCompletionPageConfigurationPolicySetItem";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateWindows10EnrollmentCompletionPageConfigurationPolicySetItemFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

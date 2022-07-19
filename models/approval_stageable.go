@@ -13,11 +13,13 @@ type ApprovalStageable interface {
     GetEscalationTimeInMinutes()(*int32)
     GetIsApproverJustificationRequired()(*bool)
     GetIsEscalationEnabled()(*bool)
+    GetOdataType()(*string)
     GetPrimaryApprovers()([]UserSetable)
     SetApprovalStageTimeOutInDays(value *int32)()
     SetEscalationApprovers(value []UserSetable)()
     SetEscalationTimeInMinutes(value *int32)()
     SetIsApproverJustificationRequired(value *bool)()
     SetIsEscalationEnabled(value *bool)()
+    SetOdataType(value *string)()
     SetPrimaryApprovers(value []UserSetable)()
 }

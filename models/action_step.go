@@ -10,6 +10,8 @@ type ActionStep struct {
     actionUrl ActionUrlable
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
+    // The OdataType property
+    odataType *string
     // The stepNumber property
     stepNumber *int64
     // The text property
@@ -20,6 +22,8 @@ func NewActionStep()(*ActionStep) {
     m := &ActionStep{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.actionStep";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateActionStepFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -55,6 +59,16 @@ func (m *ActionStep) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["stepNumber"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt64Value()
         if err != nil {
@@ -77,6 +91,14 @@ func (m *ActionStep) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
     }
     return res
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *ActionStep) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetStepNumber gets the stepNumber property value. The stepNumber property
 func (m *ActionStep) GetStepNumber()(*int64) {
     if m == nil {
@@ -97,6 +119,12 @@ func (m *ActionStep) GetText()(*string) {
 func (m *ActionStep) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
         err := writer.WriteObjectValue("actionUrl", m.GetActionUrl())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -131,6 +159,12 @@ func (m *ActionStep) SetActionUrl(value ActionUrlable)() {
 func (m *ActionStep) SetAdditionalData(value map[string]interface{})() {
     if m != nil {
         m.additionalData = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *ActionStep) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetStepNumber sets the stepNumber property value. The stepNumber property

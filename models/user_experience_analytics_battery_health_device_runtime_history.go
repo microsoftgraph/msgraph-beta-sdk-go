@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistory 
+// UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistory the user experience analytics battery health runtime history entity contains the trend of runtime of a device over a period of 30 days
 type UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistory struct {
     Entity
     // The unique identifier of the device, Intune DeviceID or SCCM device id.
@@ -14,11 +14,13 @@ type UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistory struct {
     // The datetime for the instance of runtime history.
     runtimeDateTime *string
 }
-// NewUserExperienceAnalyticsBatteryHealthDeviceRuntimeHistory instantiates a new UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistory and sets the default values.
+// NewUserExperienceAnalyticsBatteryHealthDeviceRuntimeHistory instantiates a new userExperienceAnalyticsBatteryHealthDeviceRuntimeHistory and sets the default values.
 func NewUserExperienceAnalyticsBatteryHealthDeviceRuntimeHistory()(*UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistory) {
     m := &UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistory{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.userExperienceAnalyticsBatteryHealthDeviceRuntimeHistory";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateUserExperienceAnalyticsBatteryHealthDeviceRuntimeHistoryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

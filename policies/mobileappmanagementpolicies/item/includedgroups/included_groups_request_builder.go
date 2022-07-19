@@ -64,7 +64,7 @@ func NewIncludedGroupsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7dae
     urlParams["request-raw-url"] = rawUrl
     return NewIncludedGroupsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *IncludedGroupsRequestBuilder) Count()(*ic5b7d6629b4a5c986e3a9357b5228149ea2d4a33d343593c8d1d7ec0756e4fb4.CountRequestBuilder) {
     return ic5b7d6629b4a5c986e3a9357b5228149ea2d4a33d343593c8d1d7ec0756e4fb4.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -108,7 +108,7 @@ func (m *IncludedGroupsRequestBuilder) GetWithRequestConfigurationAndResponseHan
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GroupCollectionResponseable), nil
 }
-// Ref the ref property
+// Ref the Ref property
 func (m *IncludedGroupsRequestBuilder) Ref()(*i9430413a1b7030b897ed8a84222cdccd426ad2331aa0dba541d783c8e21e98c7.RefRequestBuilder) {
     return i9430413a1b7030b897ed8a84222cdccd426ad2331aa0dba541d783c8e21e98c7.NewRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

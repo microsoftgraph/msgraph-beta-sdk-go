@@ -62,6 +62,8 @@ func NewManagedDeviceCertificateState()(*ManagedDeviceCertificateState) {
     m := &ManagedDeviceCertificateState{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.managedDeviceCertificateState";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateManagedDeviceCertificateStateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

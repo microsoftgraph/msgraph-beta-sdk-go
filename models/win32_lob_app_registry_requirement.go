@@ -21,6 +21,8 @@ func NewWin32LobAppRegistryRequirement()(*Win32LobAppRegistryRequirement) {
     m := &Win32LobAppRegistryRequirement{
         Win32LobAppRequirement: *NewWin32LobAppRequirement(),
     }
+    odataTypeValue := "#microsoft.graph.win32LobAppRegistryRequirement";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateWin32LobAppRegistryRequirementFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

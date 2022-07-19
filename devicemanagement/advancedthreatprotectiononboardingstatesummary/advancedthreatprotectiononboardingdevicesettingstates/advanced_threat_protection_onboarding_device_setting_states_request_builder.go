@@ -70,7 +70,7 @@ func NewAdvancedThreatProtectionOnboardingDeviceSettingStatesRequestBuilder(rawU
     urlParams["request-raw-url"] = rawUrl
     return NewAdvancedThreatProtectionOnboardingDeviceSettingStatesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *AdvancedThreatProtectionOnboardingDeviceSettingStatesRequestBuilder) Count()(*ib3d3306963652e8f6a68207aa230c25a6347f5703dfe7f75558ed78bca438b09.CountRequestBuilder) {
     return ib3d3306963652e8f6a68207aa230c25a6347f5703dfe7f75558ed78bca438b09.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

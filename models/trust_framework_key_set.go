@@ -15,6 +15,8 @@ func NewTrustFrameworkKeySet()(*TrustFrameworkKeySet) {
     m := &TrustFrameworkKeySet{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.trustFrameworkKeySet";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateTrustFrameworkKeySetFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

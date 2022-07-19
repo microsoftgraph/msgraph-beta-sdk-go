@@ -17,6 +17,8 @@ func NewMobileAppPolicySetItem()(*MobileAppPolicySetItem) {
     m := &MobileAppPolicySetItem{
         PolicySetItem: *NewPolicySetItem(),
     }
+    odataTypeValue := "#microsoft.graph.mobileAppPolicySetItem";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateMobileAppPolicySetItemFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -70,7 +70,7 @@ func NewRecommendedSettingsRequestBuilder(rawUrl string, requestAdapter i2ae4187
     urlParams["request-raw-url"] = rawUrl
     return NewRecommendedSettingsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *RecommendedSettingsRequestBuilder) Count()(*ie579dc3dc5fd76ef70d14a460ad848b9fb7ca10dc0d986bc6680f6707887806e.CountRequestBuilder) {
     return ie579dc3dc5fd76ef70d14a460ad848b9fb7ca10dc0d986bc6680f6707887806e.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

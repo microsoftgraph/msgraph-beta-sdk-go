@@ -74,7 +74,7 @@ func NewExclusionsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263
     urlParams["request-raw-url"] = rawUrl
     return NewExclusionsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *ExclusionsRequestBuilder) Count()(*i09062f21d18bbad1807519431d48aac001991e078b5e4967de26f777128549c4.CountRequestBuilder) {
     return i09062f21d18bbad1807519431d48aac001991e078b5e4967de26f777128549c4.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

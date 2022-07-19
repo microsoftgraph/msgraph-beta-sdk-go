@@ -14,6 +14,8 @@ type ExpressionEvaluationDetails struct {
     expressionEvaluationDetails []ExpressionEvaluationDetailsable
     // Represents the value of the result of the current expression.
     expressionResult *bool
+    // The OdataType property
+    odataType *string
     // Defines the name of the property and the value of that property.
     propertyToEvaluate PropertyToEvaluateable
 }
@@ -22,6 +24,8 @@ func NewExpressionEvaluationDetails()(*ExpressionEvaluationDetails) {
     m := &ExpressionEvaluationDetails{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.expressionEvaluationDetails";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateExpressionEvaluationDetailsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -97,6 +101,16 @@ func (m *ExpressionEvaluationDetails) GetFieldDeserializers()(map[string]func(i8
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["propertyToEvaluate"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreatePropertyToEvaluateFromDiscriminatorValue)
         if err != nil {
@@ -108,6 +122,14 @@ func (m *ExpressionEvaluationDetails) GetFieldDeserializers()(map[string]func(i8
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *ExpressionEvaluationDetails) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
 }
 // GetPropertyToEvaluate gets the propertyToEvaluate property value. Defines the name of the property and the value of that property.
 func (m *ExpressionEvaluationDetails) GetPropertyToEvaluate()(PropertyToEvaluateable) {
@@ -137,6 +159,12 @@ func (m *ExpressionEvaluationDetails) Serialize(writer i878a80d2330e89d26896388a
     }
     {
         err := writer.WriteBoolValue("expressionResult", m.GetExpressionResult())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -177,6 +205,12 @@ func (m *ExpressionEvaluationDetails) SetExpressionEvaluationDetails(value []Exp
 func (m *ExpressionEvaluationDetails) SetExpressionResult(value *bool)() {
     if m != nil {
         m.expressionResult = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *ExpressionEvaluationDetails) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetPropertyToEvaluate sets the propertyToEvaluate property value. Defines the name of the property and the value of that property.

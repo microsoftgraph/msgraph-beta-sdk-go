@@ -17,6 +17,8 @@ type AttackSimulationSimulationUserCoverage struct {
     compromisedCount *int32
     // Date and time of latest attack simulation and training campaign that the user was included in.
     latestSimulationDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
+    // The OdataType property
+    odataType *string
     // Number of attack simulation and training campaigns that the user was included in.
     simulationCount *int32
 }
@@ -25,6 +27,8 @@ func NewAttackSimulationSimulationUserCoverage()(*AttackSimulationSimulationUser
     m := &AttackSimulationSimulationUserCoverage{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.attackSimulationSimulationUserCoverage";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAttackSimulationSimulationUserCoverageFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -106,6 +110,16 @@ func (m *AttackSimulationSimulationUserCoverage) GetFieldDeserializers()(map[str
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["simulationCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
@@ -124,6 +138,14 @@ func (m *AttackSimulationSimulationUserCoverage) GetLatestSimulationDateTime()(*
         return nil
     } else {
         return m.latestSimulationDateTime
+    }
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *AttackSimulationSimulationUserCoverage) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
     }
 }
 // GetSimulationCount gets the simulationCount property value. Number of attack simulation and training campaigns that the user was included in.
@@ -156,6 +178,12 @@ func (m *AttackSimulationSimulationUserCoverage) Serialize(writer i878a80d2330e8
     }
     {
         err := writer.WriteTimeValue("latestSimulationDateTime", m.GetLatestSimulationDateTime())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -202,6 +230,12 @@ func (m *AttackSimulationSimulationUserCoverage) SetCompromisedCount(value *int3
 func (m *AttackSimulationSimulationUserCoverage) SetLatestSimulationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     if m != nil {
         m.latestSimulationDateTime = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *AttackSimulationSimulationUserCoverage) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetSimulationCount sets the simulationCount property value. Number of attack simulation and training campaigns that the user was included in.

@@ -22,12 +22,16 @@ type WindowsPackageInformation struct {
     identityVersion *string
     // The value for the minimum applicable operating system.
     minimumSupportedOperatingSystem WindowsMinimumOperatingSystemable
+    // The OdataType property
+    odataType *string
 }
 // NewWindowsPackageInformation instantiates a new windowsPackageInformation and sets the default values.
 func NewWindowsPackageInformation()(*WindowsPackageInformation) {
     m := &WindowsPackageInformation{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.windowsPackageInformation";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateWindowsPackageInformationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -131,6 +135,16 @@ func (m *WindowsPackageInformation) GetFieldDeserializers()(map[string]func(i878
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetIdentityName gets the identityName property value. The Identity Name.
@@ -171,6 +185,14 @@ func (m *WindowsPackageInformation) GetMinimumSupportedOperatingSystem()(Windows
         return nil
     } else {
         return m.minimumSupportedOperatingSystem
+    }
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *WindowsPackageInformation) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
     }
 }
 // Serialize serializes information the current object
@@ -214,6 +236,12 @@ func (m *WindowsPackageInformation) Serialize(writer i878a80d2330e89d26896388a3f
     }
     {
         err := writer.WriteObjectValue("minimumSupportedOperatingSystem", m.GetMinimumSupportedOperatingSystem())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -272,5 +300,11 @@ func (m *WindowsPackageInformation) SetIdentityVersion(value *string)() {
 func (m *WindowsPackageInformation) SetMinimumSupportedOperatingSystem(value WindowsMinimumOperatingSystemable)() {
     if m != nil {
         m.minimumSupportedOperatingSystem = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *WindowsPackageInformation) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }

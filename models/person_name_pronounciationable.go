@@ -13,9 +13,11 @@ type PersonNamePronounciationable interface {
     GetLast()(*string)
     GetMaiden()(*string)
     GetMiddle()(*string)
+    GetOdataType()(*string)
     SetDisplayName(value *string)()
     SetFirst(value *string)()
     SetLast(value *string)()
     SetMaiden(value *string)()
     SetMiddle(value *string)()
+    SetOdataType(value *string)()
 }

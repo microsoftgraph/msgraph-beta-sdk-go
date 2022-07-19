@@ -26,6 +26,8 @@ func NewAccount()(*Account) {
     m := &Account{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.account";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAccountFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

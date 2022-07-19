@@ -10,6 +10,7 @@ type BitLockerSystemDrivePolicyable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetEncryptionMethod()(*BitLockerEncryptionMethod)
     GetMinimumPinLength()(*int32)
+    GetOdataType()(*string)
     GetPrebootRecoveryEnableMessageAndUrl()(*bool)
     GetPrebootRecoveryMessage()(*string)
     GetPrebootRecoveryUrl()(*string)
@@ -22,6 +23,7 @@ type BitLockerSystemDrivePolicyable interface {
     GetStartupAuthenticationTpmUsage()(*ConfigurationUsage)
     SetEncryptionMethod(value *BitLockerEncryptionMethod)()
     SetMinimumPinLength(value *int32)()
+    SetOdataType(value *string)()
     SetPrebootRecoveryEnableMessageAndUrl(value *bool)()
     SetPrebootRecoveryMessage(value *string)()
     SetPrebootRecoveryUrl(value *string)()

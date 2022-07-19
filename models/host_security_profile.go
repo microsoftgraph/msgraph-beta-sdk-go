@@ -50,6 +50,8 @@ func NewHostSecurityProfile()(*HostSecurityProfile) {
     m := &HostSecurityProfile{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.hostSecurityProfile";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateHostSecurityProfileFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

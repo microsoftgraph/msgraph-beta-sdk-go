@@ -70,7 +70,7 @@ func NewExchangeOnPremisesPoliciesRequestBuilder(rawUrl string, requestAdapter i
     urlParams["request-raw-url"] = rawUrl
     return NewExchangeOnPremisesPoliciesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *ExchangeOnPremisesPoliciesRequestBuilder) Count()(*i1105fa13edbeeb004a105470412ccbb8eb540897e5380a073239d6ad5930a726.CountRequestBuilder) {
     return i1105fa13edbeeb004a105470412ccbb8eb540897e5380a073239d6ad5930a726.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

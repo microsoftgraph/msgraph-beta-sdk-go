@@ -70,7 +70,7 @@ func NewCustomSecurityAttributeDefinitionsRequestBuilder(rawUrl string, requestA
     urlParams["request-raw-url"] = rawUrl
     return NewCustomSecurityAttributeDefinitionsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *CustomSecurityAttributeDefinitionsRequestBuilder) Count()(*i7881d098081159f8dd879036c95922e703023ab5eebf3c6961fb1bdf1831b11d.CountRequestBuilder) {
     return i7881d098081159f8dd879036c95922e703023ab5eebf3c6961fb1bdf1831b11d.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

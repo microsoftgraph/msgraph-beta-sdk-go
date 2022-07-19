@@ -15,6 +15,8 @@ func NewCallActivityStatistics()(*CallActivityStatistics) {
     m := &CallActivityStatistics{
         ActivityStatistics: *NewActivityStatistics(),
     }
+    odataTypeValue := "#microsoft.graph.callActivityStatistics";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateCallActivityStatisticsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

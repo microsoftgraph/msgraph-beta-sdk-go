@@ -13,6 +13,8 @@ func NewPersonExtension()(*PersonExtension) {
     m := &PersonExtension{
         Extension: *NewExtension(),
     }
+    odataTypeValue := "#microsoft.graph.personExtension";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreatePersonExtensionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

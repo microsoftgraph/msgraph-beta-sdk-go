@@ -28,6 +28,8 @@ func NewCartToClassAssociation()(*CartToClassAssociation) {
     m := &CartToClassAssociation{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.cartToClassAssociation";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateCartToClassAssociationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

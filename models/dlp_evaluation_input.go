@@ -14,16 +14,16 @@ type DlpEvaluationInput struct {
     currentLabel CurrentLabelable
     // The discoveredSensitiveTypes property
     discoveredSensitiveTypes []DiscoveredSensitiveTypeable
-    // The type property
-    type_escaped *string
+    // The OdataType property
+    odataType *string
 }
 // NewDlpEvaluationInput instantiates a new dlpEvaluationInput and sets the default values.
 func NewDlpEvaluationInput()(*DlpEvaluationInput) {
     m := &DlpEvaluationInput{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odatatypeValue := "#microsoft.graph.dlpEvaluationInput";
-    m.SetType(&odatatypeValue);
+    odataTypeValue := "#microsoft.graph.dlpEvaluationInput";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDlpEvaluationInputFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -124,18 +124,18 @@ func (m *DlpEvaluationInput) GetFieldDeserializers()(map[string]func(i878a80d233
             return err
         }
         if val != nil {
-            m.SetType(val)
+            m.SetOdataType(val)
         }
         return nil
     }
     return res
 }
-// GetType gets the @odata.type property value. The type property
-func (m *DlpEvaluationInput) GetType()(*string) {
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *DlpEvaluationInput) GetOdataType()(*string) {
     if m == nil {
         return nil
     } else {
-        return m.type_escaped
+        return m.odataType
     }
 }
 // Serialize serializes information the current object
@@ -164,7 +164,7 @@ func (m *DlpEvaluationInput) Serialize(writer i878a80d2330e89d26896388a3f487eef2
         }
     }
     {
-        err := writer.WriteStringValue("@odata.type", m.GetType())
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -201,9 +201,9 @@ func (m *DlpEvaluationInput) SetDiscoveredSensitiveTypes(value []DiscoveredSensi
         m.discoveredSensitiveTypes = value
     }
 }
-// SetType sets the @odata.type property value. The type property
-func (m *DlpEvaluationInput) SetType(value *string)() {
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *DlpEvaluationInput) SetOdataType(value *string)() {
     if m != nil {
-        m.type_escaped = value
+        m.odataType = value
     }
 }

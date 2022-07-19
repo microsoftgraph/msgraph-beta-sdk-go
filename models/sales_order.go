@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// SalesOrder 
+// SalesOrder provides operations to manage the collection of accessReview entities.
 type SalesOrder struct {
     Entity
     // The billingPostalAddress property
@@ -79,11 +79,13 @@ type SalesOrder struct {
     // The totalTaxAmount property
     totalTaxAmount *float64
 }
-// NewSalesOrder instantiates a new SalesOrder and sets the default values.
+// NewSalesOrder instantiates a new salesOrder and sets the default values.
 func NewSalesOrder()(*SalesOrder) {
     m := &SalesOrder{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.salesOrder";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateSalesOrderFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

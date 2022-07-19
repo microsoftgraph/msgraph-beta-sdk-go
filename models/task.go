@@ -13,6 +13,8 @@ func NewTask()(*Task) {
     m := &Task{
         BaseTask: *NewBaseTask(),
     }
+    odataTypeValue := "#microsoft.graph.task";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateTaskFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

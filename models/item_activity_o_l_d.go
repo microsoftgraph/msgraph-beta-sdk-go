@@ -23,6 +23,8 @@ func NewItemActivityOLD()(*ItemActivityOLD) {
     m := &ItemActivityOLD{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.itemActivityOLD";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateItemActivityOLDFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

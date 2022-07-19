@@ -12,6 +12,8 @@ type PostalAddressType struct {
     city *string
     // The countryLetterCode property
     countryLetterCode *string
+    // The OdataType property
+    odataType *string
     // The postalCode property
     postalCode *string
     // The state property
@@ -24,6 +26,8 @@ func NewPostalAddressType()(*PostalAddressType) {
     m := &PostalAddressType{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.postalAddressType";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreatePostalAddressTypeFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -77,6 +81,16 @@ func (m *PostalAddressType) GetFieldDeserializers()(map[string]func(i878a80d2330
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["postalCode"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -108,6 +122,14 @@ func (m *PostalAddressType) GetFieldDeserializers()(map[string]func(i878a80d2330
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *PostalAddressType) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
 }
 // GetPostalCode gets the postalCode property value. The postalCode property
 func (m *PostalAddressType) GetPostalCode()(*string) {
@@ -143,6 +165,12 @@ func (m *PostalAddressType) Serialize(writer i878a80d2330e89d26896388a3f487eef27
     }
     {
         err := writer.WriteStringValue("countryLetterCode", m.GetCountryLetterCode())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -189,6 +217,12 @@ func (m *PostalAddressType) SetCity(value *string)() {
 func (m *PostalAddressType) SetCountryLetterCode(value *string)() {
     if m != nil {
         m.countryLetterCode = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *PostalAddressType) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetPostalCode sets the postalCode property value. The postalCode property

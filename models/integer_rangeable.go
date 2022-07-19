@@ -11,9 +11,11 @@ type IntegerRangeable interface {
     GetEnd()(*int64)
     GetMaximum()(*int64)
     GetMinimum()(*int64)
+    GetOdataType()(*string)
     GetStart()(*int64)
     SetEnd(value *int64)()
     SetMaximum(value *int64)()
     SetMinimum(value *int64)()
+    SetOdataType(value *string)()
     SetStart(value *int64)()
 }

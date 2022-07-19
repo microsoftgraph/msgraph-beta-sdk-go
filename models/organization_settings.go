@@ -21,6 +21,8 @@ func NewOrganizationSettings()(*OrganizationSettings) {
     m := &OrganizationSettings{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.organizationSettings";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateOrganizationSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

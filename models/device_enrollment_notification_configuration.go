@@ -23,6 +23,8 @@ func NewDeviceEnrollmentNotificationConfiguration()(*DeviceEnrollmentNotificatio
     m := &DeviceEnrollmentNotificationConfiguration{
         DeviceEnrollmentConfiguration: *NewDeviceEnrollmentConfiguration(),
     }
+    odataTypeValue := "#microsoft.graph.deviceEnrollmentNotificationConfiguration";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDeviceEnrollmentNotificationConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

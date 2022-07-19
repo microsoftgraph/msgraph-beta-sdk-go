@@ -14,6 +14,8 @@ type PasswordSingleSignOnField struct {
     defaultLabel *string
     // Id used to identity the field type. This is an internal id and possible values are param_1, param_2, param_userName, param_password.
     fieldId *string
+    // The OdataType property
+    odataType *string
     // Type of the credential. The values can be text, password.
     type_escaped *string
 }
@@ -22,6 +24,8 @@ func NewPasswordSingleSignOnField()(*PasswordSingleSignOnField) {
     m := &PasswordSingleSignOnField{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.passwordSingleSignOnField";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreatePasswordSingleSignOnFieldFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -85,6 +89,16 @@ func (m *PasswordSingleSignOnField) GetFieldDeserializers()(map[string]func(i878
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -103,6 +117,14 @@ func (m *PasswordSingleSignOnField) GetFieldId()(*string) {
         return nil
     } else {
         return m.fieldId
+    }
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *PasswordSingleSignOnField) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
     }
 }
 // GetType gets the type property value. Type of the credential. The values can be text, password.
@@ -129,6 +151,12 @@ func (m *PasswordSingleSignOnField) Serialize(writer i878a80d2330e89d26896388a3f
     }
     {
         err := writer.WriteStringValue("fieldId", m.GetFieldId())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -169,6 +197,12 @@ func (m *PasswordSingleSignOnField) SetDefaultLabel(value *string)() {
 func (m *PasswordSingleSignOnField) SetFieldId(value *string)() {
     if m != nil {
         m.fieldId = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *PasswordSingleSignOnField) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetType sets the type property value. Type of the credential. The values can be text, password.

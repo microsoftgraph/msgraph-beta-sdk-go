@@ -7,7 +7,7 @@ import (
 // FileUrlThreatSubmission 
 type FileUrlThreatSubmission struct {
     FileThreatSubmission
-    // The fileUrl property
+    // It specifies the URL of the file which needs to be submitted.
     fileUrl *string
 }
 // NewFileUrlThreatSubmission instantiates a new FileUrlThreatSubmission and sets the default values.
@@ -15,6 +15,8 @@ func NewFileUrlThreatSubmission()(*FileUrlThreatSubmission) {
     m := &FileUrlThreatSubmission{
         FileThreatSubmission: *NewFileThreatSubmission(),
     }
+    odataTypeValue := "#microsoft.graph.security.fileUrlThreatSubmission";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateFileUrlThreatSubmissionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -36,7 +38,7 @@ func (m *FileUrlThreatSubmission) GetFieldDeserializers()(map[string]func(i878a8
     }
     return res
 }
-// GetFileUrl gets the fileUrl property value. The fileUrl property
+// GetFileUrl gets the fileUrl property value. It specifies the URL of the file which needs to be submitted.
 func (m *FileUrlThreatSubmission) GetFileUrl()(*string) {
     if m == nil {
         return nil
@@ -58,7 +60,7 @@ func (m *FileUrlThreatSubmission) Serialize(writer i878a80d2330e89d26896388a3f48
     }
     return nil
 }
-// SetFileUrl sets the fileUrl property value. The fileUrl property
+// SetFileUrl sets the fileUrl property value. It specifies the URL of the file which needs to be submitted.
 func (m *FileUrlThreatSubmission) SetFileUrl(value *string)() {
     if m != nil {
         m.fileUrl = value

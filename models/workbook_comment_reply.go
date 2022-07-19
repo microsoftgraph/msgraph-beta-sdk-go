@@ -17,6 +17,8 @@ func NewWorkbookCommentReply()(*WorkbookCommentReply) {
     m := &WorkbookCommentReply{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.workbookCommentReply";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateWorkbookCommentReplyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

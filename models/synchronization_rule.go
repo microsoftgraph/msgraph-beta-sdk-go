@@ -18,6 +18,8 @@ type SynchronizationRule struct {
     name *string
     // Collection of object mappings supported by the rule. Tells the synchronization engine which objects should be synchronized.
     objectMappings []ObjectMappingable
+    // The OdataType property
+    odataType *string
     // Priority relative to other rules in the synchronizationSchema. Rules with the lowest priority number will be processed first.
     priority *int32
     // Name of the source directory. Must match one of the directory definitions in synchronizationSchema.
@@ -30,6 +32,8 @@ func NewSynchronizationRule()(*SynchronizationRule) {
     m := &SynchronizationRule{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.synchronizationRule";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateSynchronizationRuleFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -113,6 +117,16 @@ func (m *SynchronizationRule) GetFieldDeserializers()(map[string]func(i878a80d23
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["priority"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
@@ -175,6 +189,14 @@ func (m *SynchronizationRule) GetObjectMappings()([]ObjectMappingable) {
         return nil
     } else {
         return m.objectMappings
+    }
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *SynchronizationRule) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
     }
 }
 // GetPriority gets the priority property value. Priority relative to other rules in the synchronizationSchema. Rules with the lowest priority number will be processed first.
@@ -242,6 +264,12 @@ func (m *SynchronizationRule) Serialize(writer i878a80d2330e89d26896388a3f487eef
         }
     }
     {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err := writer.WriteInt32Value("priority", m.GetPriority())
         if err != nil {
             return err
@@ -301,6 +329,12 @@ func (m *SynchronizationRule) SetName(value *string)() {
 func (m *SynchronizationRule) SetObjectMappings(value []ObjectMappingable)() {
     if m != nil {
         m.objectMappings = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *SynchronizationRule) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetPriority sets the priority property value. Priority relative to other rules in the synchronizationSchema. Rules with the lowest priority number will be processed first.

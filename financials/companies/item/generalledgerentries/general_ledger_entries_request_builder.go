@@ -70,7 +70,7 @@ func NewGeneralLedgerEntriesRequestBuilder(rawUrl string, requestAdapter i2ae418
     urlParams["request-raw-url"] = rawUrl
     return NewGeneralLedgerEntriesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *GeneralLedgerEntriesRequestBuilder) Count()(*ief9ddd2fc7efc4229153d95747c96ebc6c5cfd3be461cb1403683c05e1d7634a.CountRequestBuilder) {
     return ief9ddd2fc7efc4229153d95747c96ebc6c5cfd3be461cb1403683c05e1d7634a.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

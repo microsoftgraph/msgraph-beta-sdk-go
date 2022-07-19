@@ -11,7 +11,9 @@ type AndroidDeviceOwnerKioskModeManagedFolderable interface {
     GetFolderIdentifier()(*string)
     GetFolderName()(*string)
     GetItems()([]AndroidDeviceOwnerKioskModeFolderItemable)
+    GetOdataType()(*string)
     SetFolderIdentifier(value *string)()
     SetFolderName(value *string)()
     SetItems(value []AndroidDeviceOwnerKioskModeFolderItemable)()
+    SetOdataType(value *string)()
 }

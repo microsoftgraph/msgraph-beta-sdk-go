@@ -70,7 +70,7 @@ func NewIntuneBrandingProfilesRequestBuilder(rawUrl string, requestAdapter i2ae4
     urlParams["request-raw-url"] = rawUrl
     return NewIntuneBrandingProfilesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *IntuneBrandingProfilesRequestBuilder) Count()(*ibc4521e442cd40960f06dcc2ced6e7ec58ffe23ba97abfe18b70a3053be7b53d.CountRequestBuilder) {
     return ibc4521e442cd40960f06dcc2ced6e7ec58ffe23ba97abfe18b70a3053be7b53d.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

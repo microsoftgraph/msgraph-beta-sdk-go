@@ -10,6 +10,8 @@ type AndroidEnrollmentCompanyCode struct {
     additionalData map[string]interface{}
     // Enrollment Token used by the User to enroll their device.
     enrollmentToken *string
+    // The OdataType property
+    odataType *string
     // String used to generate a QR code for the token.
     qrCodeContent *string
     // Generated QR code for the token.
@@ -20,6 +22,8 @@ func NewAndroidEnrollmentCompanyCode()(*AndroidEnrollmentCompanyCode) {
     m := &AndroidEnrollmentCompanyCode{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.androidEnrollmentCompanyCode";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAndroidEnrollmentCompanyCodeFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -55,6 +59,16 @@ func (m *AndroidEnrollmentCompanyCode) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["qrCodeContent"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -77,6 +91,14 @@ func (m *AndroidEnrollmentCompanyCode) GetFieldDeserializers()(map[string]func(i
     }
     return res
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *AndroidEnrollmentCompanyCode) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetQrCodeContent gets the qrCodeContent property value. String used to generate a QR code for the token.
 func (m *AndroidEnrollmentCompanyCode) GetQrCodeContent()(*string) {
     if m == nil {
@@ -97,6 +119,12 @@ func (m *AndroidEnrollmentCompanyCode) GetQrCodeImage()(MimeContentable) {
 func (m *AndroidEnrollmentCompanyCode) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("enrollmentToken", m.GetEnrollmentToken())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -131,6 +159,12 @@ func (m *AndroidEnrollmentCompanyCode) SetAdditionalData(value map[string]interf
 func (m *AndroidEnrollmentCompanyCode) SetEnrollmentToken(value *string)() {
     if m != nil {
         m.enrollmentToken = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *AndroidEnrollmentCompanyCode) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetQrCodeContent sets the qrCodeContent property value. String used to generate a QR code for the token.

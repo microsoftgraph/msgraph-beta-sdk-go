@@ -18,6 +18,8 @@ type ObjectMapping struct {
     metadata []MetadataEntryable
     // Human-friendly name of the object mapping.
     name *string
+    // The OdataType property
+    odataType *string
     // Defines a filter to be used when deciding whether a given object should be provisioned. For example, you might want to only provision users that are located in the US.
     scope Filterable
     // Name of the object in the source directory. Must match the object name from the source directory definition.
@@ -30,6 +32,8 @@ func NewObjectMapping()(*ObjectMapping) {
     m := &ObjectMapping{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.objectMapping";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateObjectMappingFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -121,6 +125,16 @@ func (m *ObjectMapping) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["scope"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateFilterFromDiscriminatorValue)
         if err != nil {
@@ -175,6 +189,14 @@ func (m *ObjectMapping) GetName()(*string) {
         return nil
     } else {
         return m.name
+    }
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *ObjectMapping) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
     }
 }
 // GetScope gets the scope property value. Defines a filter to be used when deciding whether a given object should be provisioned. For example, you might want to only provision users that are located in the US.
@@ -243,6 +265,12 @@ func (m *ObjectMapping) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
         }
     }
     {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err := writer.WriteObjectValue("scope", m.GetScope())
         if err != nil {
             return err
@@ -302,6 +330,12 @@ func (m *ObjectMapping) SetMetadata(value []MetadataEntryable)() {
 func (m *ObjectMapping) SetName(value *string)() {
     if m != nil {
         m.name = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *ObjectMapping) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetScope sets the scope property value. Defines a filter to be used when deciding whether a given object should be provisioned. For example, you might want to only provision users that are located in the US.

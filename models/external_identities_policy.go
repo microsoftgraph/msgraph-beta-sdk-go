@@ -17,6 +17,8 @@ func NewExternalIdentitiesPolicy()(*ExternalIdentitiesPolicy) {
     m := &ExternalIdentitiesPolicy{
         PolicyBase: *NewPolicyBase(),
     }
+    odataTypeValue := "#microsoft.graph.externalIdentitiesPolicy";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateExternalIdentitiesPolicyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

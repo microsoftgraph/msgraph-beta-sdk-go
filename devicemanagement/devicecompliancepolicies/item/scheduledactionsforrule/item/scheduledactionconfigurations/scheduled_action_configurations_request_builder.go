@@ -70,7 +70,7 @@ func NewScheduledActionConfigurationsRequestBuilder(rawUrl string, requestAdapte
     urlParams["request-raw-url"] = rawUrl
     return NewScheduledActionConfigurationsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *ScheduledActionConfigurationsRequestBuilder) Count()(*i954d37055bf12ed1cfd40ce08781294687f7bd3a73fd8741ca7760db5c5deaf1.CountRequestBuilder) {
     return i954d37055bf12ed1cfd40ce08781294687f7bd3a73fd8741ca7760db5c5deaf1.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

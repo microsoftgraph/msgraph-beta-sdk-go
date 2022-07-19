@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DeviceManagementReusablePolicySetting 
+// DeviceManagementReusablePolicySetting graph model for a reusable setting
 type DeviceManagementReusablePolicySetting struct {
     Entity
     // reusable setting creation date and time. This property is read-only.
@@ -27,11 +27,13 @@ type DeviceManagementReusablePolicySetting struct {
     // version number for reusable setting. Valid values 0 to 2147483647. This property is read-only.
     version *int32
 }
-// NewDeviceManagementReusablePolicySetting instantiates a new DeviceManagementReusablePolicySetting and sets the default values.
+// NewDeviceManagementReusablePolicySetting instantiates a new deviceManagementReusablePolicySetting and sets the default values.
 func NewDeviceManagementReusablePolicySetting()(*DeviceManagementReusablePolicySetting) {
     m := &DeviceManagementReusablePolicySetting{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.deviceManagementReusablePolicySetting";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDeviceManagementReusablePolicySettingFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

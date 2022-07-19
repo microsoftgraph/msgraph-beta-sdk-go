@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// UsageRight 
+// UsageRight provides operations to manage the collection of accessReview entities.
 type UsageRight struct {
     Entity
     // Product id corresponding to the usage right.
@@ -14,11 +14,13 @@ type UsageRight struct {
     // The state property
     state *UsageRightState
 }
-// NewUsageRight instantiates a new UsageRight and sets the default values.
+// NewUsageRight instantiates a new usageRight and sets the default values.
 func NewUsageRight()(*UsageRight) {
     m := &UsageRight{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.usageRight";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateUsageRightFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

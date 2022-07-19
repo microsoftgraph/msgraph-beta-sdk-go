@@ -70,7 +70,7 @@ func NewBusinessFlowsWithRequestsAwaitingMyDecisionRequestBuilder(rawUrl string,
     urlParams["request-raw-url"] = rawUrl
     return NewBusinessFlowsWithRequestsAwaitingMyDecisionRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *BusinessFlowsWithRequestsAwaitingMyDecisionRequestBuilder) Count()(*ia2a47d39f7acac39501993a83b159182bff063cd1d8626dbfb39cc2ce12693b0.CountRequestBuilder) {
     return ia2a47d39f7acac39501993a83b159182bff063cd1d8626dbfb39cc2ce12693b0.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

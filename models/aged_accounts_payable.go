@@ -33,6 +33,8 @@ func NewAgedAccountsPayable()(*AgedAccountsPayable) {
     m := &AgedAccountsPayable{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.agedAccountsPayable";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAgedAccountsPayableFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

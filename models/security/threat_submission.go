@@ -6,28 +6,28 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
-// ThreatSubmission provides operations to manage the collection of activityStatistics entities.
+// ThreatSubmission provides operations to manage the collection of accessReviewDecision entities.
 type ThreatSubmission struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
-    // The adminReview property
+    // Specifies the admin review property which constitutes of who reviewed the user submission, when and what was it identified as.
     adminReview SubmissionAdminReviewable
     // The category property
     category *SubmissionCategory
-    // The clientSource property
+    // Specifies the source of the submission. The possible values are: microsoft,  other and unkownFutureValue.
     clientSource *SubmissionClientSource
-    // The contentType property
+    // Specifies the type of content being submitted. The possible values are: email, url, file, app and unkownFutureValue.
     contentType *SubmissionContentType
-    // The createdBy property
+    // Specifies who submitted the email as a threat. Supports $filter = createdBy/email eq 'value'.
     createdBy SubmissionUserIdentityable
-    // The createdDateTime property
+    // Specifies when the threat submission was created. Supports $filter = createdDateTime ge 2022-01-01T00:00:00Z and createdDateTime lt 2022-01-02T00:00:00Z.
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The result property
+    // Specifies the result of the analysis performed by Microsoft.
     result SubmissionResultable
-    // The source property
+    // Specifies the role of the submitter. Supports $filter = source eq 'value'. The possible values are: administrator,  user and unkownFutureValue.
     source *SubmissionSource
-    // The status property
+    // Indicates whether the threat submission has been analyzed by Microsoft. Supports $filter = status eq 'value'. The possible values are: notStarted, running, succeeded, failed, skipped and unkownFutureValue.
     status *LongRunningOperationStatus
-    // The tenantId property
+    // Indicates the tenant id of the submitter. Not required when created using a POST operation. It is extracted from the token of the post API call.
     tenantId *string
 }
 // NewThreatSubmission instantiates a new threatSubmission and sets the default values.
@@ -35,8 +35,8 @@ func NewThreatSubmission()(*ThreatSubmission) {
     m := &ThreatSubmission{
         Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),
     }
-    odatatypeValue := "#microsoft.graph.security.threatSubmission";
-    m.SetType(&odatatypeValue);
+    odataTypeValue := "#microsoft.graph.security.threatSubmission";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateThreatSubmissionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -54,10 +54,18 @@ func CreateThreatSubmissionFromDiscriminatorValue(parseNode i878a80d2330e89d2689
             if mappingValue != nil {
                 mappingStr := *mappingValue
                 switch mappingStr {
+                    case "#microsoft.graph.security.emailContentThreatSubmission":
+                        return NewEmailContentThreatSubmission(), nil
                     case "#microsoft.graph.security.emailThreatSubmission":
                         return NewEmailThreatSubmission(), nil
+                    case "#microsoft.graph.security.emailUrlThreatSubmission":
+                        return NewEmailUrlThreatSubmission(), nil
+                    case "#microsoft.graph.security.fileContentThreatSubmission":
+                        return NewFileContentThreatSubmission(), nil
                     case "#microsoft.graph.security.fileThreatSubmission":
                         return NewFileThreatSubmission(), nil
+                    case "#microsoft.graph.security.fileUrlThreatSubmission":
+                        return NewFileUrlThreatSubmission(), nil
                     case "#microsoft.graph.security.urlThreatSubmission":
                         return NewUrlThreatSubmission(), nil
                 }
@@ -66,7 +74,7 @@ func CreateThreatSubmissionFromDiscriminatorValue(parseNode i878a80d2330e89d2689
     }
     return NewThreatSubmission(), nil
 }
-// GetAdminReview gets the adminReview property value. The adminReview property
+// GetAdminReview gets the adminReview property value. Specifies the admin review property which constitutes of who reviewed the user submission, when and what was it identified as.
 func (m *ThreatSubmission) GetAdminReview()(SubmissionAdminReviewable) {
     if m == nil {
         return nil
@@ -82,7 +90,7 @@ func (m *ThreatSubmission) GetCategory()(*SubmissionCategory) {
         return m.category
     }
 }
-// GetClientSource gets the clientSource property value. The clientSource property
+// GetClientSource gets the clientSource property value. Specifies the source of the submission. The possible values are: microsoft,  other and unkownFutureValue.
 func (m *ThreatSubmission) GetClientSource()(*SubmissionClientSource) {
     if m == nil {
         return nil
@@ -90,7 +98,7 @@ func (m *ThreatSubmission) GetClientSource()(*SubmissionClientSource) {
         return m.clientSource
     }
 }
-// GetContentType gets the contentType property value. The contentType property
+// GetContentType gets the contentType property value. Specifies the type of content being submitted. The possible values are: email, url, file, app and unkownFutureValue.
 func (m *ThreatSubmission) GetContentType()(*SubmissionContentType) {
     if m == nil {
         return nil
@@ -98,7 +106,7 @@ func (m *ThreatSubmission) GetContentType()(*SubmissionContentType) {
         return m.contentType
     }
 }
-// GetCreatedBy gets the createdBy property value. The createdBy property
+// GetCreatedBy gets the createdBy property value. Specifies who submitted the email as a threat. Supports $filter = createdBy/email eq 'value'.
 func (m *ThreatSubmission) GetCreatedBy()(SubmissionUserIdentityable) {
     if m == nil {
         return nil
@@ -106,7 +114,7 @@ func (m *ThreatSubmission) GetCreatedBy()(SubmissionUserIdentityable) {
         return m.createdBy
     }
 }
-// GetCreatedDateTime gets the createdDateTime property value. The createdDateTime property
+// GetCreatedDateTime gets the createdDateTime property value. Specifies when the threat submission was created. Supports $filter = createdDateTime ge 2022-01-01T00:00:00Z and createdDateTime lt 2022-01-02T00:00:00Z.
 func (m *ThreatSubmission) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -219,7 +227,7 @@ func (m *ThreatSubmission) GetFieldDeserializers()(map[string]func(i878a80d2330e
     }
     return res
 }
-// GetResult gets the result property value. The result property
+// GetResult gets the result property value. Specifies the result of the analysis performed by Microsoft.
 func (m *ThreatSubmission) GetResult()(SubmissionResultable) {
     if m == nil {
         return nil
@@ -227,7 +235,7 @@ func (m *ThreatSubmission) GetResult()(SubmissionResultable) {
         return m.result
     }
 }
-// GetSource gets the source property value. The source property
+// GetSource gets the source property value. Specifies the role of the submitter. Supports $filter = source eq 'value'. The possible values are: administrator,  user and unkownFutureValue.
 func (m *ThreatSubmission) GetSource()(*SubmissionSource) {
     if m == nil {
         return nil
@@ -235,7 +243,7 @@ func (m *ThreatSubmission) GetSource()(*SubmissionSource) {
         return m.source
     }
 }
-// GetStatus gets the status property value. The status property
+// GetStatus gets the status property value. Indicates whether the threat submission has been analyzed by Microsoft. Supports $filter = status eq 'value'. The possible values are: notStarted, running, succeeded, failed, skipped and unkownFutureValue.
 func (m *ThreatSubmission) GetStatus()(*LongRunningOperationStatus) {
     if m == nil {
         return nil
@@ -243,7 +251,7 @@ func (m *ThreatSubmission) GetStatus()(*LongRunningOperationStatus) {
         return m.status
     }
 }
-// GetTenantId gets the tenantId property value. The tenantId property
+// GetTenantId gets the tenantId property value. Indicates the tenant id of the submitter. Not required when created using a POST operation. It is extracted from the token of the post API call.
 func (m *ThreatSubmission) GetTenantId()(*string) {
     if m == nil {
         return nil
@@ -324,7 +332,7 @@ func (m *ThreatSubmission) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
     }
     return nil
 }
-// SetAdminReview sets the adminReview property value. The adminReview property
+// SetAdminReview sets the adminReview property value. Specifies the admin review property which constitutes of who reviewed the user submission, when and what was it identified as.
 func (m *ThreatSubmission) SetAdminReview(value SubmissionAdminReviewable)() {
     if m != nil {
         m.adminReview = value
@@ -336,49 +344,49 @@ func (m *ThreatSubmission) SetCategory(value *SubmissionCategory)() {
         m.category = value
     }
 }
-// SetClientSource sets the clientSource property value. The clientSource property
+// SetClientSource sets the clientSource property value. Specifies the source of the submission. The possible values are: microsoft,  other and unkownFutureValue.
 func (m *ThreatSubmission) SetClientSource(value *SubmissionClientSource)() {
     if m != nil {
         m.clientSource = value
     }
 }
-// SetContentType sets the contentType property value. The contentType property
+// SetContentType sets the contentType property value. Specifies the type of content being submitted. The possible values are: email, url, file, app and unkownFutureValue.
 func (m *ThreatSubmission) SetContentType(value *SubmissionContentType)() {
     if m != nil {
         m.contentType = value
     }
 }
-// SetCreatedBy sets the createdBy property value. The createdBy property
+// SetCreatedBy sets the createdBy property value. Specifies who submitted the email as a threat. Supports $filter = createdBy/email eq 'value'.
 func (m *ThreatSubmission) SetCreatedBy(value SubmissionUserIdentityable)() {
     if m != nil {
         m.createdBy = value
     }
 }
-// SetCreatedDateTime sets the createdDateTime property value. The createdDateTime property
+// SetCreatedDateTime sets the createdDateTime property value. Specifies when the threat submission was created. Supports $filter = createdDateTime ge 2022-01-01T00:00:00Z and createdDateTime lt 2022-01-02T00:00:00Z.
 func (m *ThreatSubmission) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     if m != nil {
         m.createdDateTime = value
     }
 }
-// SetResult sets the result property value. The result property
+// SetResult sets the result property value. Specifies the result of the analysis performed by Microsoft.
 func (m *ThreatSubmission) SetResult(value SubmissionResultable)() {
     if m != nil {
         m.result = value
     }
 }
-// SetSource sets the source property value. The source property
+// SetSource sets the source property value. Specifies the role of the submitter. Supports $filter = source eq 'value'. The possible values are: administrator,  user and unkownFutureValue.
 func (m *ThreatSubmission) SetSource(value *SubmissionSource)() {
     if m != nil {
         m.source = value
     }
 }
-// SetStatus sets the status property value. The status property
+// SetStatus sets the status property value. Indicates whether the threat submission has been analyzed by Microsoft. Supports $filter = status eq 'value'. The possible values are: notStarted, running, succeeded, failed, skipped and unkownFutureValue.
 func (m *ThreatSubmission) SetStatus(value *LongRunningOperationStatus)() {
     if m != nil {
         m.status = value
     }
 }
-// SetTenantId sets the tenantId property value. The tenantId property
+// SetTenantId sets the tenantId property value. Indicates the tenant id of the submitter. Not required when created using a POST operation. It is extracted from the token of the post API call.
 func (m *ThreatSubmission) SetTenantId(value *string)() {
     if m != nil {
         m.tenantId = value

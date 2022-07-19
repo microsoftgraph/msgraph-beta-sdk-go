@@ -40,6 +40,8 @@ type IntuneBrand struct {
     landingPageCustomizedImage MimeContentable
     // Logo image displayed in Company Portal apps which have a light background behind the logo.
     lightBackgroundLogo MimeContentable
+    // The OdataType property
+    odataType *string
     // Display name of the company/organization’s IT helpdesk site.
     onlineSupportSiteName *string
     // URL to the company/organization’s IT helpdesk site.
@@ -68,6 +70,8 @@ func NewIntuneBrand()(*IntuneBrand) {
     m := &IntuneBrand{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.intuneBrand";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateIntuneBrandFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -345,6 +349,16 @@ func (m *IntuneBrand) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["onlineSupportSiteName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -491,6 +505,14 @@ func (m *IntuneBrand) GetLightBackgroundLogo()(MimeContentable) {
         return nil
     } else {
         return m.lightBackgroundLogo
+    }
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *IntuneBrand) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
     }
 }
 // GetOnlineSupportSiteName gets the onlineSupportSiteName property value. Display name of the company/organization’s IT helpdesk site.
@@ -685,6 +707,12 @@ func (m *IntuneBrand) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
         }
     }
     {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err := writer.WriteStringValue("onlineSupportSiteName", m.GetOnlineSupportSiteName())
         if err != nil {
             return err
@@ -858,6 +886,12 @@ func (m *IntuneBrand) SetLandingPageCustomizedImage(value MimeContentable)() {
 func (m *IntuneBrand) SetLightBackgroundLogo(value MimeContentable)() {
     if m != nil {
         m.lightBackgroundLogo = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *IntuneBrand) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetOnlineSupportSiteName sets the onlineSupportSiteName property value. Display name of the company/organization’s IT helpdesk site.

@@ -12,12 +12,16 @@ type Media struct {
     isTranscriptionShown *bool
     // Information about the source of media. Read-only.
     mediaSource MediaSourceable
+    // The OdataType property
+    odataType *string
 }
 // NewMedia instantiates a new media and sets the default values.
 func NewMedia()(*Media) {
     m := &Media{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.media";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateMediaFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -55,6 +59,16 @@ func (m *Media) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetIsTranscriptionShown gets the isTranscriptionShown property value. If a file has a transcript, this setting controls if the closed captions / transcription for the media file should be shown to people during viewing. Read-Write.
@@ -73,6 +87,14 @@ func (m *Media) GetMediaSource()(MediaSourceable) {
         return m.mediaSource
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *Media) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // Serialize serializes information the current object
 func (m *Media) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
@@ -83,6 +105,12 @@ func (m *Media) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c4
     }
     {
         err := writer.WriteObjectValue("mediaSource", m.GetMediaSource())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -111,5 +139,11 @@ func (m *Media) SetIsTranscriptionShown(value *bool)() {
 func (m *Media) SetMediaSource(value MediaSourceable)() {
     if m != nil {
         m.mediaSource = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *Media) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }

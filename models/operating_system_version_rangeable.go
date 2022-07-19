@@ -11,7 +11,9 @@ type OperatingSystemVersionRangeable interface {
     GetDescription()(*string)
     GetHighestVersion()(*string)
     GetLowestVersion()(*string)
+    GetOdataType()(*string)
     SetDescription(value *string)()
     SetHighestVersion(value *string)()
     SetLowestVersion(value *string)()
+    SetOdataType(value *string)()
 }

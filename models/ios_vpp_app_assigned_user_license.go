@@ -13,6 +13,8 @@ func NewIosVppAppAssignedUserLicense()(*IosVppAppAssignedUserLicense) {
     m := &IosVppAppAssignedUserLicense{
         IosVppAppAssignedLicense: *NewIosVppAppAssignedLicense(),
     }
+    odataTypeValue := "#microsoft.graph.iosVppAppAssignedUserLicense";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateIosVppAppAssignedUserLicenseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -13,11 +13,13 @@ type CryptographySuiteable interface {
     GetDhGroup()(*DiffieHellmanGroup)
     GetEncryptionMethod()(*VpnEncryptionAlgorithmType)
     GetIntegrityCheckMethod()(*VpnIntegrityAlgorithmType)
+    GetOdataType()(*string)
     GetPfsGroup()(*PerfectForwardSecrecyGroup)
     SetAuthenticationTransformConstants(value *AuthenticationTransformConstant)()
     SetCipherTransformConstants(value *VpnEncryptionAlgorithmType)()
     SetDhGroup(value *DiffieHellmanGroup)()
     SetEncryptionMethod(value *VpnEncryptionAlgorithmType)()
     SetIntegrityCheckMethod(value *VpnIntegrityAlgorithmType)()
+    SetOdataType(value *string)()
     SetPfsGroup(value *PerfectForwardSecrecyGroup)()
 }

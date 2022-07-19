@@ -70,7 +70,7 @@ func NewDerivedCredentialsRequestBuilder(rawUrl string, requestAdapter i2ae4187f
     urlParams["request-raw-url"] = rawUrl
     return NewDerivedCredentialsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *DerivedCredentialsRequestBuilder) Count()(*i04e197e85583baa85285fe15d0ace213e1eb2b7effe68bbfca36a93328945318.CountRequestBuilder) {
     return i04e197e85583baa85285fe15d0ace213e1eb2b7effe68bbfca36a93328945318.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

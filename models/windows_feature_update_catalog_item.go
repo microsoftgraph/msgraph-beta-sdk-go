@@ -15,6 +15,8 @@ func NewWindowsFeatureUpdateCatalogItem()(*WindowsFeatureUpdateCatalogItem) {
     m := &WindowsFeatureUpdateCatalogItem{
         WindowsUpdateCatalogItem: *NewWindowsUpdateCatalogItem(),
     }
+    odataTypeValue := "#microsoft.graph.windowsFeatureUpdateCatalogItem";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateWindowsFeatureUpdateCatalogItemFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

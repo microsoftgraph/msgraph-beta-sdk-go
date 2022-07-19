@@ -11,7 +11,9 @@ type MeetingCapabilityable interface {
     GetAllowAnonymousUsersToDialOut()(*bool)
     GetAllowAnonymousUsersToStartMeeting()(*bool)
     GetAutoAdmittedUsers()(*AutoAdmittedUsersType)
+    GetOdataType()(*string)
     SetAllowAnonymousUsersToDialOut(value *bool)()
     SetAllowAnonymousUsersToStartMeeting(value *bool)()
     SetAutoAdmittedUsers(value *AutoAdmittedUsersType)()
+    SetOdataType(value *string)()
 }

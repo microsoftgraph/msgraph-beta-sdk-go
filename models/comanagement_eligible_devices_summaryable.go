@@ -13,9 +13,11 @@ type ComanagementEligibleDevicesSummaryable interface {
     GetEligibleCount()(*int32)
     GetIneligibleCount()(*int32)
     GetNeedsOsUpdateCount()(*int32)
+    GetOdataType()(*string)
     SetComanagedCount(value *int32)()
     SetEligibleButNotAzureAdJoinedCount(value *int32)()
     SetEligibleCount(value *int32)()
     SetIneligibleCount(value *int32)()
     SetNeedsOsUpdateCount(value *int32)()
+    SetOdataType(value *string)()
 }

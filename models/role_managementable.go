@@ -12,8 +12,10 @@ type RoleManagementable interface {
     GetDeviceManagement()(RbacApplicationMultipleable)
     GetDirectory()(RbacApplicationable)
     GetEntitlementManagement()(RbacApplicationable)
+    GetOdataType()(*string)
     SetCloudPC(value RbacApplicationMultipleable)()
     SetDeviceManagement(value RbacApplicationMultipleable)()
     SetDirectory(value RbacApplicationable)()
     SetEntitlementManagement(value RbacApplicationable)()
+    SetOdataType(value *string)()
 }

@@ -91,7 +91,7 @@ func (m *ConnectorGroupRequestBuilder) GetWithRequestConfigurationAndResponseHan
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ConnectorGroupable), nil
 }
-// Ref the ref property
+// Ref the Ref property
 func (m *ConnectorGroupRequestBuilder) Ref()(*i078ea6e1f5b18ba78715c9e80e0de994a591985e12c627f0fa959431f324e7ee.RefRequestBuilder) {
     return i078ea6e1f5b18ba78715c9e80e0de994a591985e12c627f0fa959431f324e7ee.NewRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

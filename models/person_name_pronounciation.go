@@ -18,12 +18,16 @@ type PersonNamePronounciation struct {
     maiden *string
     // The middle property
     middle *string
+    // The OdataType property
+    odataType *string
 }
 // NewPersonNamePronounciation instantiates a new personNamePronounciation and sets the default values.
 func NewPersonNamePronounciation()(*PersonNamePronounciation) {
     m := &PersonNamePronounciation{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.personNamePronounciation";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreatePersonNamePronounciationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -99,6 +103,16 @@ func (m *PersonNamePronounciation) GetFieldDeserializers()(map[string]func(i878a
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetFirst gets the first property value. The first property
@@ -133,6 +147,14 @@ func (m *PersonNamePronounciation) GetMiddle()(*string) {
         return m.middle
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *PersonNamePronounciation) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // Serialize serializes information the current object
 func (m *PersonNamePronounciation) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
@@ -161,6 +183,12 @@ func (m *PersonNamePronounciation) Serialize(writer i878a80d2330e89d26896388a3f4
     }
     {
         err := writer.WriteStringValue("middle", m.GetMiddle())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -207,5 +235,11 @@ func (m *PersonNamePronounciation) SetMaiden(value *string)() {
 func (m *PersonNamePronounciation) SetMiddle(value *string)() {
     if m != nil {
         m.middle = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *PersonNamePronounciation) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }

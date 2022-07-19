@@ -13,6 +13,8 @@ func NewDeviceManagementSettingSddlConstraint()(*DeviceManagementSettingSddlCons
     m := &DeviceManagementSettingSddlConstraint{
         DeviceManagementConstraint: *NewDeviceManagementConstraint(),
     }
+    odataTypeValue := "#microsoft.graph.deviceManagementSettingSddlConstraint";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDeviceManagementSettingSddlConstraintFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

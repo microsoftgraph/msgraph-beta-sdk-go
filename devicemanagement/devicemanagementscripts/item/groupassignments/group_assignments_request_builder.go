@@ -70,7 +70,7 @@ func NewGroupAssignmentsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7d
     urlParams["request-raw-url"] = rawUrl
     return NewGroupAssignmentsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *GroupAssignmentsRequestBuilder) Count()(*i1f9adb577c11a275de57bef69866cf44c20d032b1e2e7556ed6107bfce631ea3.CountRequestBuilder) {
     return i1f9adb577c11a275de57bef69866cf44c20d032b1e2e7556ed6107bfce631ea3.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

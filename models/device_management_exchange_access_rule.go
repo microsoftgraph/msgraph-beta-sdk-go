@@ -12,12 +12,16 @@ type DeviceManagementExchangeAccessRule struct {
     additionalData map[string]interface{}
     // Device Class which will be impacted by this rule.
     deviceClass DeviceManagementExchangeDeviceClassable
+    // The OdataType property
+    odataType *string
 }
 // NewDeviceManagementExchangeAccessRule instantiates a new deviceManagementExchangeAccessRule and sets the default values.
 func NewDeviceManagementExchangeAccessRule()(*DeviceManagementExchangeAccessRule) {
     m := &DeviceManagementExchangeAccessRule{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.deviceManagementExchangeAccessRule";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDeviceManagementExchangeAccessRuleFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -71,7 +75,25 @@ func (m *DeviceManagementExchangeAccessRule) GetFieldDeserializers()(map[string]
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *DeviceManagementExchangeAccessRule) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
 }
 // Serialize serializes information the current object
 func (m *DeviceManagementExchangeAccessRule) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -84,6 +106,12 @@ func (m *DeviceManagementExchangeAccessRule) Serialize(writer i878a80d2330e89d26
     }
     {
         err := writer.WriteObjectValue("deviceClass", m.GetDeviceClass())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -112,5 +140,11 @@ func (m *DeviceManagementExchangeAccessRule) SetAdditionalData(value map[string]
 func (m *DeviceManagementExchangeAccessRule) SetDeviceClass(value DeviceManagementExchangeDeviceClassable)() {
     if m != nil {
         m.deviceClass = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *DeviceManagementExchangeAccessRule) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }

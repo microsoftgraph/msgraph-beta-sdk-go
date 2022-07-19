@@ -12,11 +12,13 @@ type TenantAllowBlockListEntryResultable interface {
     GetEntryType()(*TenantAllowBlockListEntryType)
     GetExpirationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetIdentity()(*string)
+    GetOdataType()(*string)
     GetStatus()(*LongRunningOperationStatus)
     GetValue()(*string)
     SetEntryType(value *TenantAllowBlockListEntryType)()
     SetExpirationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetIdentity(value *string)()
+    SetOdataType(value *string)()
     SetStatus(value *LongRunningOperationStatus)()
     SetValue(value *string)()
 }

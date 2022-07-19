@@ -65,7 +65,7 @@ func NewDirectReportsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee
     urlParams["request-raw-url"] = rawUrl
     return NewDirectReportsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *DirectReportsRequestBuilder) Count()(*i5ade3638dbba6ac266f2dda17987395d97e7a5882de39f8bf13ebaa3a074dbcc.CountRequestBuilder) {
     return i5ade3638dbba6ac266f2dda17987395d97e7a5882de39f8bf13ebaa3a074dbcc.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

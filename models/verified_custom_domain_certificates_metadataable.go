@@ -12,11 +12,13 @@ type VerifiedCustomDomainCertificatesMetadataable interface {
     GetExpiryDate()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetIssueDate()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetIssuerName()(*string)
+    GetOdataType()(*string)
     GetSubjectName()(*string)
     GetThumbprint()(*string)
     SetExpiryDate(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetIssueDate(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetIssuerName(value *string)()
+    SetOdataType(value *string)()
     SetSubjectName(value *string)()
     SetThumbprint(value *string)()
 }

@@ -7,7 +7,7 @@ import (
 // FileThreatSubmission 
 type FileThreatSubmission struct {
     ThreatSubmission
-    // The fileName property
+    // It specifies the file name to be submitted.
     fileName *string
 }
 // NewFileThreatSubmission instantiates a new FileThreatSubmission and sets the default values.
@@ -15,8 +15,8 @@ func NewFileThreatSubmission()(*FileThreatSubmission) {
     m := &FileThreatSubmission{
         ThreatSubmission: *NewThreatSubmission(),
     }
-    odatatypeValue := "#microsoft.graph.security.fileThreatSubmission";
-    m.SetType(&odatatypeValue);
+    odataTypeValue := "#microsoft.graph.security.fileThreatSubmission";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateFileThreatSubmissionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -59,7 +59,7 @@ func (m *FileThreatSubmission) GetFieldDeserializers()(map[string]func(i878a80d2
     }
     return res
 }
-// GetFileName gets the fileName property value. The fileName property
+// GetFileName gets the fileName property value. It specifies the file name to be submitted.
 func (m *FileThreatSubmission) GetFileName()(*string) {
     if m == nil {
         return nil
@@ -81,7 +81,7 @@ func (m *FileThreatSubmission) Serialize(writer i878a80d2330e89d26896388a3f487ee
     }
     return nil
 }
-// SetFileName sets the fileName property value. The fileName property
+// SetFileName sets the fileName property value. It specifies the file name to be submitted.
 func (m *FileThreatSubmission) SetFileName(value *string)() {
     if m != nil {
         m.fileName = value

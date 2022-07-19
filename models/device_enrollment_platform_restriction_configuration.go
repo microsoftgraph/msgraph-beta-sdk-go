@@ -17,6 +17,8 @@ func NewDeviceEnrollmentPlatformRestrictionConfiguration()(*DeviceEnrollmentPlat
     m := &DeviceEnrollmentPlatformRestrictionConfiguration{
         DeviceEnrollmentConfiguration: *NewDeviceEnrollmentConfiguration(),
     }
+    odataTypeValue := "#microsoft.graph.deviceEnrollmentPlatformRestrictionConfiguration";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDeviceEnrollmentPlatformRestrictionConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

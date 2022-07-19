@@ -71,7 +71,7 @@ func NewWindowsAutopilotDeploymentProfilesRequestBuilder(rawUrl string, requestA
     urlParams["request-raw-url"] = rawUrl
     return NewWindowsAutopilotDeploymentProfilesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *WindowsAutopilotDeploymentProfilesRequestBuilder) Count()(*i061aa266e677c87fd3e19f56a6b194f1fa946735eef0e8ca883b5432d037899d.CountRequestBuilder) {
     return i061aa266e677c87fd3e19f56a6b194f1fa946735eef0e8ca883b5432d037899d.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

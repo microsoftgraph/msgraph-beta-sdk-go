@@ -63,7 +63,7 @@ func NewRoleScopeTagsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee
     urlParams["request-raw-url"] = rawUrl
     return NewRoleScopeTagsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *RoleScopeTagsRequestBuilder) Count()(*i139146da0492d764026e1a728824c5b2908fd1125d875f0b000bac6a21d3e305.CountRequestBuilder) {
     return i139146da0492d764026e1a728824c5b2908fd1125d875f0b000bac6a21d3e305.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

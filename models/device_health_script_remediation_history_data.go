@@ -12,6 +12,8 @@ type DeviceHealthScriptRemediationHistoryData struct {
     date *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly
     // The number of devices that were found to have no issue by the device health script.
     noIssueDeviceCount *int32
+    // The OdataType property
+    odataType *string
     // The number of devices remediated by the device health script.
     remediatedDeviceCount *int32
 }
@@ -20,6 +22,8 @@ func NewDeviceHealthScriptRemediationHistoryData()(*DeviceHealthScriptRemediatio
     m := &DeviceHealthScriptRemediationHistoryData{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.deviceHealthScriptRemediationHistoryData";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDeviceHealthScriptRemediationHistoryDataFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -65,6 +69,16 @@ func (m *DeviceHealthScriptRemediationHistoryData) GetFieldDeserializers()(map[s
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["remediatedDeviceCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
@@ -85,6 +99,14 @@ func (m *DeviceHealthScriptRemediationHistoryData) GetNoIssueDeviceCount()(*int3
         return m.noIssueDeviceCount
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *DeviceHealthScriptRemediationHistoryData) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetRemediatedDeviceCount gets the remediatedDeviceCount property value. The number of devices remediated by the device health script.
 func (m *DeviceHealthScriptRemediationHistoryData) GetRemediatedDeviceCount()(*int32) {
     if m == nil {
@@ -103,6 +125,12 @@ func (m *DeviceHealthScriptRemediationHistoryData) Serialize(writer i878a80d2330
     }
     {
         err := writer.WriteInt32Value("noIssueDeviceCount", m.GetNoIssueDeviceCount())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -137,6 +165,12 @@ func (m *DeviceHealthScriptRemediationHistoryData) SetDate(value *i878a80d2330e8
 func (m *DeviceHealthScriptRemediationHistoryData) SetNoIssueDeviceCount(value *int32)() {
     if m != nil {
         m.noIssueDeviceCount = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *DeviceHealthScriptRemediationHistoryData) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetRemediatedDeviceCount sets the remediatedDeviceCount property value. The number of devices remediated by the device health script.

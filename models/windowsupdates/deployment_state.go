@@ -8,6 +8,8 @@ import (
 type DeploymentState struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
+    // The OdataType property
+    odataType *string
     // Specifies the reasons the deployment has its state value. Read-only.
     reasons []DeploymentStateReasonable
     // The requestedValue property
@@ -20,6 +22,8 @@ func NewDeploymentState()(*DeploymentState) {
     m := &DeploymentState{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.windowsUpdates.deploymentState";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDeploymentStateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -37,6 +41,16 @@ func (m *DeploymentState) GetAdditionalData()(map[string]interface{}) {
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeploymentState) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["reasons"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateDeploymentStateReasonFromDiscriminatorValue)
         if err != nil {
@@ -73,6 +87,14 @@ func (m *DeploymentState) GetFieldDeserializers()(map[string]func(i878a80d2330e8
     }
     return res
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *DeploymentState) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetReasons gets the reasons property value. Specifies the reasons the deployment has its state value. Read-only.
 func (m *DeploymentState) GetReasons()([]DeploymentStateReasonable) {
     if m == nil {
@@ -99,6 +121,12 @@ func (m *DeploymentState) GetValue()(*DeploymentStateValue) {
 }
 // Serialize serializes information the current object
 func (m *DeploymentState) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetReasons() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetReasons()))
         for i, v := range m.GetReasons() {
@@ -135,6 +163,12 @@ func (m *DeploymentState) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
 func (m *DeploymentState) SetAdditionalData(value map[string]interface{})() {
     if m != nil {
         m.additionalData = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *DeploymentState) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetReasons sets the reasons property value. Specifies the reasons the deployment has its state value. Read-only.

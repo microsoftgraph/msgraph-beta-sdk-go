@@ -70,7 +70,7 @@ func NewMicrosoftTunnelConfigurationsRequestBuilder(rawUrl string, requestAdapte
     urlParams["request-raw-url"] = rawUrl
     return NewMicrosoftTunnelConfigurationsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *MicrosoftTunnelConfigurationsRequestBuilder) Count()(*ic69e82f51194189c829558100992f1151226555ae4e1853337a18aa15423ad97.CountRequestBuilder) {
     return ic69e82f51194189c829558100992f1151226555ae4e1853337a18aa15423ad97.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

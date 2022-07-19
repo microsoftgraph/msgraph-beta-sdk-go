@@ -7,7 +7,7 @@ import (
 // AdminReportSettings 
 type AdminReportSettings struct {
     Entity
-    // The displayConcealedNames property
+    // If set to true, all reports will conceal user information such as usernames, groups, and sites. If false, all reports will show identifiable information. This property represents a setting in the Microsoft 365 admin center. Required.
     displayConcealedNames *bool
 }
 // NewAdminReportSettings instantiates a new adminReportSettings and sets the default values.
@@ -15,13 +15,15 @@ func NewAdminReportSettings()(*AdminReportSettings) {
     m := &AdminReportSettings{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.adminReportSettings";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAdminReportSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateAdminReportSettingsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAdminReportSettings(), nil
 }
-// GetDisplayConcealedNames gets the displayConcealedNames property value. The displayConcealedNames property
+// GetDisplayConcealedNames gets the displayConcealedNames property value. If set to true, all reports will conceal user information such as usernames, groups, and sites. If false, all reports will show identifiable information. This property represents a setting in the Microsoft 365 admin center. Required.
 func (m *AdminReportSettings) GetDisplayConcealedNames()(*bool) {
     if m == nil {
         return nil
@@ -58,7 +60,7 @@ func (m *AdminReportSettings) Serialize(writer i878a80d2330e89d26896388a3f487eef
     }
     return nil
 }
-// SetDisplayConcealedNames sets the displayConcealedNames property value. The displayConcealedNames property
+// SetDisplayConcealedNames sets the displayConcealedNames property value. If set to true, all reports will conceal user information such as usernames, groups, and sites. If false, all reports will show identifiable information. This property represents a setting in the Microsoft 365 admin center. Required.
 func (m *AdminReportSettings) SetDisplayConcealedNames(value *bool)() {
     if m != nil {
         m.displayConcealedNames = value

@@ -17,6 +17,8 @@ func NewRegistryKeyEvidence()(*RegistryKeyEvidence) {
     m := &RegistryKeyEvidence{
         AlertEvidence: *NewAlertEvidence(),
     }
+    odataTypeValue := "#microsoft.graph.security.registryKeyEvidence";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateRegistryKeyEvidenceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

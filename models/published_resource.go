@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// PublishedResource provides operations to manage the collection of activityStatistics entities.
+// PublishedResource provides operations to manage the collection of accessReviewDecision entities.
 type PublishedResource struct {
     Entity
     // List of onPremisesAgentGroups that a publishedResource is assigned to. Read-only. Nullable.
@@ -21,6 +21,8 @@ func NewPublishedResource()(*PublishedResource) {
     m := &PublishedResource{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.publishedResource";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreatePublishedResourceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

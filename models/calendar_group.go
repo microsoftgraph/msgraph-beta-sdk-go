@@ -21,6 +21,8 @@ func NewCalendarGroup()(*CalendarGroup) {
     m := &CalendarGroup{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.calendarGroup";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateCalendarGroupFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -57,8 +57,8 @@ func NewAppleVpnConfiguration()(*AppleVpnConfiguration) {
     m := &AppleVpnConfiguration{
         DeviceConfiguration: *NewDeviceConfiguration(),
     }
-    odatatypeValue := "#microsoft.graph.appleVpnConfiguration";
-    m.SetType(&odatatypeValue);
+    odataTypeValue := "#microsoft.graph.appleVpnConfiguration";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAppleVpnConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -76,6 +76,8 @@ func CreateAppleVpnConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89
             if mappingValue != nil {
                 mappingStr := *mappingValue
                 switch mappingStr {
+                    case "#microsoft.graph.iosikEv2VpnConfiguration":
+                        return NewIosikEv2VpnConfiguration(), nil
                     case "#microsoft.graph.iosVpnConfiguration":
                         return NewIosVpnConfiguration(), nil
                     case "#microsoft.graph.macOSVpnConfiguration":

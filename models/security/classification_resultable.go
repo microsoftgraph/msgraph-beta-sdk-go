@@ -10,8 +10,10 @@ type ClassificationResultable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetConfidenceLevel()(*int32)
     GetCount()(*int32)
+    GetOdataType()(*string)
     GetSensitiveTypeId()(*string)
     SetConfidenceLevel(value *int32)()
     SetCount(value *int32)()
+    SetOdataType(value *string)()
     SetSensitiveTypeId(value *string)()
 }

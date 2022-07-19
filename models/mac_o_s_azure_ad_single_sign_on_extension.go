@@ -19,6 +19,8 @@ func NewMacOSAzureAdSingleSignOnExtension()(*MacOSAzureAdSingleSignOnExtension) 
     m := &MacOSAzureAdSingleSignOnExtension{
         MacOSSingleSignOnExtension: *NewMacOSSingleSignOnExtension(),
     }
+    odataTypeValue := "#microsoft.graph.macOSAzureAdSingleSignOnExtension";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateMacOSAzureAdSingleSignOnExtensionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -10,11 +10,13 @@ type ClassificationError struct {
     // The details property
     details []ClassifcationErrorBaseable
 }
-// NewClassificationError instantiates a new classificationError and sets the default values.
+// NewClassificationError instantiates a new ClassificationError and sets the default values.
 func NewClassificationError()(*ClassificationError) {
     m := &ClassificationError{
         ClassifcationErrorBase: *NewClassifcationErrorBase(),
     }
+    odataTypeValue := "#microsoft.graph.classificationError";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateClassificationErrorFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -15,8 +15,8 @@ func NewTenantRelationshipAccessPolicyBase()(*TenantRelationshipAccessPolicyBase
     m := &TenantRelationshipAccessPolicyBase{
         PolicyBase: *NewPolicyBase(),
     }
-    odatatypeValue := "#microsoft.graph.tenantRelationshipAccessPolicyBase";
-    m.SetType(&odatatypeValue);
+    odataTypeValue := "#microsoft.graph.tenantRelationshipAccessPolicyBase";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateTenantRelationshipAccessPolicyBaseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

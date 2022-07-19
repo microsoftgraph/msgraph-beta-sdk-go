@@ -19,6 +19,8 @@ func NewDeviceManagementConfigurationPolicyAssignment()(*DeviceManagementConfigu
     m := &DeviceManagementConfigurationPolicyAssignment{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.deviceManagementConfigurationPolicyAssignment";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDeviceManagementConfigurationPolicyAssignmentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

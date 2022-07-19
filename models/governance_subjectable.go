@@ -11,7 +11,9 @@ type GovernanceSubjectable interface {
     GetDisplayName()(*string)
     GetEmail()(*string)
     GetPrincipalName()(*string)
+    GetType()(*string)
     SetDisplayName(value *string)()
     SetEmail(value *string)()
     SetPrincipalName(value *string)()
+    SetType(value *string)()
 }

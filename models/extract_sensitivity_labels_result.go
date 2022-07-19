@@ -10,12 +10,16 @@ type ExtractSensitivityLabelsResult struct {
     additionalData map[string]interface{}
     // List of sensitivity labels assigned to a file.
     labels []SensitivityLabelAssignmentable
+    // The OdataType property
+    odataType *string
 }
 // NewExtractSensitivityLabelsResult instantiates a new extractSensitivityLabelsResult and sets the default values.
 func NewExtractSensitivityLabelsResult()(*ExtractSensitivityLabelsResult) {
     m := &ExtractSensitivityLabelsResult{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.extractSensitivityLabelsResult";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateExtractSensitivityLabelsResultFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -47,6 +51,16 @@ func (m *ExtractSensitivityLabelsResult) GetFieldDeserializers()(map[string]func
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetLabels gets the labels property value. List of sensitivity labels assigned to a file.
@@ -57,6 +71,14 @@ func (m *ExtractSensitivityLabelsResult) GetLabels()([]SensitivityLabelAssignmen
         return m.labels
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *ExtractSensitivityLabelsResult) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // Serialize serializes information the current object
 func (m *ExtractSensitivityLabelsResult) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     if m.GetLabels() != nil {
@@ -65,6 +87,12 @@ func (m *ExtractSensitivityLabelsResult) Serialize(writer i878a80d2330e89d268963
             cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
         }
         err := writer.WriteCollectionOfObjectValues("labels", cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -87,5 +115,11 @@ func (m *ExtractSensitivityLabelsResult) SetAdditionalData(value map[string]inte
 func (m *ExtractSensitivityLabelsResult) SetLabels(value []SensitivityLabelAssignmentable)() {
     if m != nil {
         m.labels = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *ExtractSensitivityLabelsResult) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }

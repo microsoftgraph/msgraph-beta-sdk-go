@@ -70,7 +70,7 @@ func NewB2xUserFlowsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2
     urlParams["request-raw-url"] = rawUrl
     return NewB2xUserFlowsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *B2xUserFlowsRequestBuilder) Count()(*i2ef9196611770f44d749c6c1b49d551906658b716192b1363950185f89808a1b.CountRequestBuilder) {
     return i2ef9196611770f44d749c6c1b49d551906658b716192b1363950185f89808a1b.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

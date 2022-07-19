@@ -30,6 +30,8 @@ func NewMeetingRegistration()(*MeetingRegistration) {
     m := &MeetingRegistration{
         MeetingRegistrationBase: *NewMeetingRegistrationBase(),
     }
+    odataTypeValue := "#microsoft.graph.meetingRegistration";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateMeetingRegistrationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

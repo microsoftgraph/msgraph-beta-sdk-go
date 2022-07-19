@@ -8,6 +8,8 @@ import (
 type UserRegistrationFeatureSummary struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
+    // The OdataType property
+    odataType *string
     // Total number of users accounts, excluding those that are blocked
     totalUserCount *int64
     // Number of users registered or capable for Multi-Factor Authentication, Self-Service Password Reset and Passwordless Authentication.
@@ -22,6 +24,8 @@ func NewUserRegistrationFeatureSummary()(*UserRegistrationFeatureSummary) {
     m := &UserRegistrationFeatureSummary{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.userRegistrationFeatureSummary";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateUserRegistrationFeatureSummaryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -39,6 +43,16 @@ func (m *UserRegistrationFeatureSummary) GetAdditionalData()(map[string]interfac
 // GetFieldDeserializers the deserialization information for the current model
 func (m *UserRegistrationFeatureSummary) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["totalUserCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt64Value()
         if err != nil {
@@ -85,6 +99,14 @@ func (m *UserRegistrationFeatureSummary) GetFieldDeserializers()(map[string]func
     }
     return res
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *UserRegistrationFeatureSummary) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetTotalUserCount gets the totalUserCount property value. Total number of users accounts, excluding those that are blocked
 func (m *UserRegistrationFeatureSummary) GetTotalUserCount()(*int64) {
     if m == nil {
@@ -119,6 +141,12 @@ func (m *UserRegistrationFeatureSummary) GetUserTypes()(*IncludedUserTypes) {
 }
 // Serialize serializes information the current object
 func (m *UserRegistrationFeatureSummary) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     {
         err := writer.WriteInt64Value("totalUserCount", m.GetTotalUserCount())
         if err != nil {
@@ -161,6 +189,12 @@ func (m *UserRegistrationFeatureSummary) Serialize(writer i878a80d2330e89d268963
 func (m *UserRegistrationFeatureSummary) SetAdditionalData(value map[string]interface{})() {
     if m != nil {
         m.additionalData = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *UserRegistrationFeatureSummary) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetTotalUserCount sets the totalUserCount property value. Total number of users accounts, excluding those that are blocked

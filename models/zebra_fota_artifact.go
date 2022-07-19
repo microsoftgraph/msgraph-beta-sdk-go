@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ZebraFotaArtifact 
+// ZebraFotaArtifact describes a single artifact for a specific device model.
 type ZebraFotaArtifact struct {
     Entity
     // The version of the Board Support Package.
@@ -18,11 +18,13 @@ type ZebraFotaArtifact struct {
     // Artifact release notes URL.
     releaseNotesUrl *string
 }
-// NewZebraFotaArtifact instantiates a new ZebraFotaArtifact and sets the default values.
+// NewZebraFotaArtifact instantiates a new zebraFotaArtifact and sets the default values.
 func NewZebraFotaArtifact()(*ZebraFotaArtifact) {
     m := &ZebraFotaArtifact{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.zebraFotaArtifact";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateZebraFotaArtifactFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

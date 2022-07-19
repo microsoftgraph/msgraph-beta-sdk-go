@@ -70,7 +70,7 @@ func NewAndroidManagedStoreAppConfigurationSchemasRequestBuilder(rawUrl string, 
     urlParams["request-raw-url"] = rawUrl
     return NewAndroidManagedStoreAppConfigurationSchemasRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *AndroidManagedStoreAppConfigurationSchemasRequestBuilder) Count()(*i50046ad7f0c0dc69b9a80160b1a8e94717b6c54b629503f2ca0036aa3d95523e.CountRequestBuilder) {
     return i50046ad7f0c0dc69b9a80160b1a8e94717b6c54b629503f2ca0036aa3d95523e.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

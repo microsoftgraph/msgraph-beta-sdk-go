@@ -15,8 +15,8 @@ func NewBookingNamedEntity()(*BookingNamedEntity) {
     m := &BookingNamedEntity{
         Entity: *NewEntity(),
     }
-    odatatypeValue := "#microsoft.graph.bookingNamedEntity";
-    m.SetType(&odatatypeValue);
+    odataTypeValue := "#microsoft.graph.bookingNamedEntity";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateBookingNamedEntityFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -36,10 +36,14 @@ func CreateBookingNamedEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26
                 switch mappingStr {
                     case "#microsoft.graph.bookingBusiness":
                         return NewBookingBusiness(), nil
+                    case "#microsoft.graph.bookingCustomer":
+                        return NewBookingCustomer(), nil
                     case "#microsoft.graph.bookingPerson":
                         return NewBookingPerson(), nil
                     case "#microsoft.graph.bookingService":
                         return NewBookingService(), nil
+                    case "#microsoft.graph.bookingStaffMember":
+                        return NewBookingStaffMember(), nil
                 }
             }
         }

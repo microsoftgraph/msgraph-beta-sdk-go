@@ -17,6 +17,8 @@ func NewAndroidImportedPFXCertificateProfile()(*AndroidImportedPFXCertificatePro
     m := &AndroidImportedPFXCertificateProfile{
         AndroidCertificateProfileBase: *NewAndroidCertificateProfileBase(),
     }
+    odataTypeValue := "#microsoft.graph.androidImportedPFXCertificateProfile";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAndroidImportedPFXCertificateProfileFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

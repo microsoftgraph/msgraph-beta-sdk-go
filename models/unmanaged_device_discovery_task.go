@@ -15,6 +15,8 @@ func NewUnmanagedDeviceDiscoveryTask()(*UnmanagedDeviceDiscoveryTask) {
     m := &UnmanagedDeviceDiscoveryTask{
         DeviceAppManagementTask: *NewDeviceAppManagementTask(),
     }
+    odataTypeValue := "#microsoft.graph.unmanagedDeviceDiscoveryTask";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateUnmanagedDeviceDiscoveryTaskFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

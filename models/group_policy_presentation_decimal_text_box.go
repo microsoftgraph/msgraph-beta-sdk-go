@@ -25,6 +25,8 @@ func NewGroupPolicyPresentationDecimalTextBox()(*GroupPolicyPresentationDecimalT
     m := &GroupPolicyPresentationDecimalTextBox{
         GroupPolicyPresentation: *NewGroupPolicyPresentation(),
     }
+    odataTypeValue := "#microsoft.graph.groupPolicyPresentationDecimalTextBox";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateGroupPolicyPresentationDecimalTextBoxFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

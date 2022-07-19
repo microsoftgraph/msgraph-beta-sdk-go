@@ -11,9 +11,11 @@ type SharedAppleDeviceUserable interface {
     GetDataQuota()(*int64)
     GetDataToSync()(*bool)
     GetDataUsed()(*int64)
+    GetOdataType()(*string)
     GetUserPrincipalName()(*string)
     SetDataQuota(value *int64)()
     SetDataToSync(value *bool)()
     SetDataUsed(value *int64)()
+    SetOdataType(value *string)()
     SetUserPrincipalName(value *string)()
 }

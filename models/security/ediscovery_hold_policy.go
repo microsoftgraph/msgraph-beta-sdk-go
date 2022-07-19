@@ -13,9 +13,9 @@ type EdiscoveryHoldPolicy struct {
     errors []string
     // Indicates whether the hold is enabled and actively holding content.
     isEnabled *bool
-    // The siteSources property
+    // Data sources that represent SharePoint sites.
     siteSources []SiteSourceable
-    // The userSources property
+    // Data sources that represent Exchange mailboxes.
     userSources []UserSourceable
 }
 // NewEdiscoveryHoldPolicy instantiates a new EdiscoveryHoldPolicy and sets the default values.
@@ -23,6 +23,8 @@ func NewEdiscoveryHoldPolicy()(*EdiscoveryHoldPolicy) {
     m := &EdiscoveryHoldPolicy{
         PolicyBase: *NewPolicyBase(),
     }
+    odataTypeValue := "#microsoft.graph.security.ediscoveryHoldPolicy";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateEdiscoveryHoldPolicyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -120,7 +122,7 @@ func (m *EdiscoveryHoldPolicy) GetIsEnabled()(*bool) {
         return m.isEnabled
     }
 }
-// GetSiteSources gets the siteSources property value. The siteSources property
+// GetSiteSources gets the siteSources property value. Data sources that represent SharePoint sites.
 func (m *EdiscoveryHoldPolicy) GetSiteSources()([]SiteSourceable) {
     if m == nil {
         return nil
@@ -128,7 +130,7 @@ func (m *EdiscoveryHoldPolicy) GetSiteSources()([]SiteSourceable) {
         return m.siteSources
     }
 }
-// GetUserSources gets the userSources property value. The userSources property
+// GetUserSources gets the userSources property value. Data sources that represent Exchange mailboxes.
 func (m *EdiscoveryHoldPolicy) GetUserSources()([]UserSourceable) {
     if m == nil {
         return nil
@@ -200,13 +202,13 @@ func (m *EdiscoveryHoldPolicy) SetIsEnabled(value *bool)() {
         m.isEnabled = value
     }
 }
-// SetSiteSources sets the siteSources property value. The siteSources property
+// SetSiteSources sets the siteSources property value. Data sources that represent SharePoint sites.
 func (m *EdiscoveryHoldPolicy) SetSiteSources(value []SiteSourceable)() {
     if m != nil {
         m.siteSources = value
     }
 }
-// SetUserSources sets the userSources property value. The userSources property
+// SetUserSources sets the userSources property value. Data sources that represent Exchange mailboxes.
 func (m *EdiscoveryHoldPolicy) SetUserSources(value []UserSourceable)() {
     if m != nil {
         m.userSources = value

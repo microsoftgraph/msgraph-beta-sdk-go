@@ -13,6 +13,8 @@ func NewBlockAccessAction()(*BlockAccessAction) {
     m := &BlockAccessAction{
         DlpActionInfo: *NewDlpActionInfo(),
     }
+    odataTypeValue := "#microsoft.graph.blockAccessAction";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateBlockAccessActionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

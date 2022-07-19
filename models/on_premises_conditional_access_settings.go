@@ -16,11 +16,13 @@ type OnPremisesConditionalAccessSettings struct {
     // Override the default access rule when allowing a device to ensure access is granted.
     overrideDefaultRule *bool
 }
-// NewOnPremisesConditionalAccessSettings instantiates a new OnPremisesConditionalAccessSettings and sets the default values.
+// NewOnPremisesConditionalAccessSettings instantiates a new onPremisesConditionalAccessSettings and sets the default values.
 func NewOnPremisesConditionalAccessSettings()(*OnPremisesConditionalAccessSettings) {
     m := &OnPremisesConditionalAccessSettings{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.onPremisesConditionalAccessSettings";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateOnPremisesConditionalAccessSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

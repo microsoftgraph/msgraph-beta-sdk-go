@@ -16,6 +16,8 @@ type TeamworkPeripheralsHealth struct {
     displayHealthCollection []TeamworkPeripheralHealthable
     // The health details about the microphone.
     microphoneHealth TeamworkPeripheralHealthable
+    // The OdataType property
+    odataType *string
     // The health details about the room camera.
     roomCameraHealth TeamworkPeripheralHealthable
     // The health details about the speaker.
@@ -26,6 +28,8 @@ func NewTeamworkPeripheralsHealth()(*TeamworkPeripheralsHealth) {
     m := &TeamworkPeripheralsHealth{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.teamworkPeripheralsHealth";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateTeamworkPeripheralsHealthFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -111,6 +115,16 @@ func (m *TeamworkPeripheralsHealth) GetFieldDeserializers()(map[string]func(i878
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["roomCameraHealth"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateTeamworkPeripheralHealthFromDiscriminatorValue)
         if err != nil {
@@ -139,6 +153,14 @@ func (m *TeamworkPeripheralsHealth) GetMicrophoneHealth()(TeamworkPeripheralHeal
         return nil
     } else {
         return m.microphoneHealth
+    }
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *TeamworkPeripheralsHealth) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
     }
 }
 // GetRoomCameraHealth gets the roomCameraHealth property value. The health details about the room camera.
@@ -183,6 +205,12 @@ func (m *TeamworkPeripheralsHealth) Serialize(writer i878a80d2330e89d26896388a3f
     }
     {
         err := writer.WriteObjectValue("microphoneHealth", m.GetMicrophoneHealth())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -235,6 +263,12 @@ func (m *TeamworkPeripheralsHealth) SetDisplayHealthCollection(value []TeamworkP
 func (m *TeamworkPeripheralsHealth) SetMicrophoneHealth(value TeamworkPeripheralHealthable)() {
     if m != nil {
         m.microphoneHealth = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *TeamworkPeripheralsHealth) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetRoomCameraHealth sets the roomCameraHealth property value. The health details about the room camera.

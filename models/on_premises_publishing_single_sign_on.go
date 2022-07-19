@@ -10,6 +10,8 @@ type OnPremisesPublishingSingleSignOn struct {
     additionalData map[string]interface{}
     // The Kerberos Constrained Delegation settings for applications that use Integrated Window Authentication.
     kerberosSignOnSettings KerberosSignOnSettingsable
+    // The OdataType property
+    odataType *string
     // The preferred single-sign on mode for the application. Possible values are: none, onPremisesKerberos, aadHeaderBased,pingHeaderBased.
     singleSignOnMode *SingleSignOnMode
 }
@@ -18,6 +20,8 @@ func NewOnPremisesPublishingSingleSignOn()(*OnPremisesPublishingSingleSignOn) {
     m := &OnPremisesPublishingSingleSignOn{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.onPremisesPublishingSingleSignOn";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateOnPremisesPublishingSingleSignOnFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -45,6 +49,16 @@ func (m *OnPremisesPublishingSingleSignOn) GetFieldDeserializers()(map[string]fu
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["singleSignOnMode"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseSingleSignOnMode)
         if err != nil {
@@ -65,6 +79,14 @@ func (m *OnPremisesPublishingSingleSignOn) GetKerberosSignOnSettings()(KerberosS
         return m.kerberosSignOnSettings
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *OnPremisesPublishingSingleSignOn) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetSingleSignOnMode gets the singleSignOnMode property value. The preferred single-sign on mode for the application. Possible values are: none, onPremisesKerberos, aadHeaderBased,pingHeaderBased.
 func (m *OnPremisesPublishingSingleSignOn) GetSingleSignOnMode()(*SingleSignOnMode) {
     if m == nil {
@@ -77,6 +99,12 @@ func (m *OnPremisesPublishingSingleSignOn) GetSingleSignOnMode()(*SingleSignOnMo
 func (m *OnPremisesPublishingSingleSignOn) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
         err := writer.WriteObjectValue("kerberosSignOnSettings", m.GetKerberosSignOnSettings())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -106,6 +134,12 @@ func (m *OnPremisesPublishingSingleSignOn) SetAdditionalData(value map[string]in
 func (m *OnPremisesPublishingSingleSignOn) SetKerberosSignOnSettings(value KerberosSignOnSettingsable)() {
     if m != nil {
         m.kerberosSignOnSettings = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *OnPremisesPublishingSingleSignOn) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetSingleSignOnMode sets the singleSignOnMode property value. The preferred single-sign on mode for the application. Possible values are: none, onPremisesKerberos, aadHeaderBased,pingHeaderBased.

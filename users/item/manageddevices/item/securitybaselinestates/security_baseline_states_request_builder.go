@@ -70,7 +70,7 @@ func NewSecurityBaselineStatesRequestBuilder(rawUrl string, requestAdapter i2ae4
     urlParams["request-raw-url"] = rawUrl
     return NewSecurityBaselineStatesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *SecurityBaselineStatesRequestBuilder) Count()(*if2803c5f69d35aa31f8fe6f80f1f8cbcae164ba261852351cfbf8688274d602c.CountRequestBuilder) {
     return if2803c5f69d35aa31f8fe6f80f1f8cbcae164ba261852351cfbf8688274d602c.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

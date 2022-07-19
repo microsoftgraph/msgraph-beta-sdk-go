@@ -17,6 +17,8 @@ func NewAndroidDeviceComplianceLocalActionLockDeviceWithPasscode()(*AndroidDevic
     m := &AndroidDeviceComplianceLocalActionLockDeviceWithPasscode{
         AndroidDeviceComplianceLocalActionBase: *NewAndroidDeviceComplianceLocalActionBase(),
     }
+    odataTypeValue := "#microsoft.graph.androidDeviceComplianceLocalActionLockDeviceWithPasscode";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAndroidDeviceComplianceLocalActionLockDeviceWithPasscodeFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

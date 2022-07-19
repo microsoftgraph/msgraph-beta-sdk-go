@@ -12,12 +12,16 @@ type SimulationEventsContent struct {
     compromisedRate *float64
     // List of simulation events in an attack simulation and training campaign.
     events []SimulationEventable
+    // The OdataType property
+    odataType *string
 }
 // NewSimulationEventsContent instantiates a new simulationEventsContent and sets the default values.
 func NewSimulationEventsContent()(*SimulationEventsContent) {
     m := &SimulationEventsContent{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.simulationEventsContent";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateSimulationEventsContentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -75,7 +79,25 @@ func (m *SimulationEventsContent) GetFieldDeserializers()(map[string]func(i878a8
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *SimulationEventsContent) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
 }
 // Serialize serializes information the current object
 func (m *SimulationEventsContent) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -91,6 +113,12 @@ func (m *SimulationEventsContent) Serialize(writer i878a80d2330e89d26896388a3f48
             cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
         }
         err := writer.WriteCollectionOfObjectValues("events", cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -119,5 +147,11 @@ func (m *SimulationEventsContent) SetCompromisedRate(value *float64)() {
 func (m *SimulationEventsContent) SetEvents(value []SimulationEventable)() {
     if m != nil {
         m.events = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *SimulationEventsContent) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }

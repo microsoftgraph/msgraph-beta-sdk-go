@@ -13,6 +13,8 @@ func NewAddLargeGalleryViewOperation()(*AddLargeGalleryViewOperation) {
     m := &AddLargeGalleryViewOperation{
         CommsOperation: *NewCommsOperation(),
     }
+    odataTypeValue := "#microsoft.graph.addLargeGalleryViewOperation";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAddLargeGalleryViewOperationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -15,9 +15,9 @@ type DeviceManagementConfigurationStringSettingValueDefinition struct {
     inputValidationSchema *string
     // Specifies whether the setting needs to be treated as a secret. Settings marked as yes will be encrypted in transit and at rest and will be displayed as asterisks when represented in the UX.
     isSecret *bool
-    // Maximum length of string. Valid values 0 to 87516
+    // Maximum length of string
     maximumLength *int64
-    // Minimum length of string. Valid values 0 to 87516
+    // Minimum length of string
     minimumLength *int64
 }
 // NewDeviceManagementConfigurationStringSettingValueDefinition instantiates a new DeviceManagementConfigurationStringSettingValueDefinition and sets the default values.
@@ -25,6 +25,8 @@ func NewDeviceManagementConfigurationStringSettingValueDefinition()(*DeviceManag
     m := &DeviceManagementConfigurationStringSettingValueDefinition{
         DeviceManagementConfigurationSettingValueDefinition: *NewDeviceManagementConfigurationSettingValueDefinition(),
     }
+    odataTypeValue := "#microsoft.graph.deviceManagementConfigurationStringSettingValueDefinition";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDeviceManagementConfigurationStringSettingValueDefinitionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -132,7 +134,7 @@ func (m *DeviceManagementConfigurationStringSettingValueDefinition) GetIsSecret(
         return m.isSecret
     }
 }
-// GetMaximumLength gets the maximumLength property value. Maximum length of string. Valid values 0 to 87516
+// GetMaximumLength gets the maximumLength property value. Maximum length of string
 func (m *DeviceManagementConfigurationStringSettingValueDefinition) GetMaximumLength()(*int64) {
     if m == nil {
         return nil
@@ -140,7 +142,7 @@ func (m *DeviceManagementConfigurationStringSettingValueDefinition) GetMaximumLe
         return m.maximumLength
     }
 }
-// GetMinimumLength gets the minimumLength property value. Minimum length of string. Valid values 0 to 87516
+// GetMinimumLength gets the minimumLength property value. Minimum length of string
 func (m *DeviceManagementConfigurationStringSettingValueDefinition) GetMinimumLength()(*int64) {
     if m == nil {
         return nil
@@ -217,13 +219,13 @@ func (m *DeviceManagementConfigurationStringSettingValueDefinition) SetIsSecret(
         m.isSecret = value
     }
 }
-// SetMaximumLength sets the maximumLength property value. Maximum length of string. Valid values 0 to 87516
+// SetMaximumLength sets the maximumLength property value. Maximum length of string
 func (m *DeviceManagementConfigurationStringSettingValueDefinition) SetMaximumLength(value *int64)() {
     if m != nil {
         m.maximumLength = value
     }
 }
-// SetMinimumLength sets the minimumLength property value. Minimum length of string. Valid values 0 to 87516
+// SetMinimumLength sets the minimumLength property value. Minimum length of string
 func (m *DeviceManagementConfigurationStringSettingValueDefinition) SetMinimumLength(value *int64)() {
     if m != nil {
         m.minimumLength = value

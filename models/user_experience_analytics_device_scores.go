@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// UserExperienceAnalyticsDeviceScores 
+// UserExperienceAnalyticsDeviceScores the user experience analytics device scores entity consolidates the various endpoint analytics scores.
 type UserExperienceAnalyticsDeviceScores struct {
     Entity
     // The user experience analytics device app reliability score. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
@@ -26,11 +26,13 @@ type UserExperienceAnalyticsDeviceScores struct {
     // The user experience analytics device work From anywhere score. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
     workFromAnywhereScore *float64
 }
-// NewUserExperienceAnalyticsDeviceScores instantiates a new UserExperienceAnalyticsDeviceScores and sets the default values.
+// NewUserExperienceAnalyticsDeviceScores instantiates a new userExperienceAnalyticsDeviceScores and sets the default values.
 func NewUserExperienceAnalyticsDeviceScores()(*UserExperienceAnalyticsDeviceScores) {
     m := &UserExperienceAnalyticsDeviceScores{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.userExperienceAnalyticsDeviceScores";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateUserExperienceAnalyticsDeviceScoresFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

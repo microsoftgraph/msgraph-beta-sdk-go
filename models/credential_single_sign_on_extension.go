@@ -23,6 +23,8 @@ func NewCredentialSingleSignOnExtension()(*CredentialSingleSignOnExtension) {
     m := &CredentialSingleSignOnExtension{
         SingleSignOnExtension: *NewSingleSignOnExtension(),
     }
+    odataTypeValue := "#microsoft.graph.credentialSingleSignOnExtension";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateCredentialSingleSignOnExtensionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -70,7 +70,7 @@ func NewDrivesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371c
     urlParams["request-raw-url"] = rawUrl
     return NewDrivesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *DrivesRequestBuilder) Count()(*i555c0f9ee7f4c998689f94d87fc314f574b3ddf8f45ca452d773fbf84a4103c0.CountRequestBuilder) {
     return i555c0f9ee7f4c998689f94d87fc314f574b3ddf8f45ca452d773fbf84a4103c0.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

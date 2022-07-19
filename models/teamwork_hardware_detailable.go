@@ -11,11 +11,13 @@ type TeamworkHardwareDetailable interface {
     GetMacAddresses()([]string)
     GetManufacturer()(*string)
     GetModel()(*string)
+    GetOdataType()(*string)
     GetSerialNumber()(*string)
     GetUniqueId()(*string)
     SetMacAddresses(value []string)()
     SetManufacturer(value *string)()
     SetModel(value *string)()
+    SetOdataType(value *string)()
     SetSerialNumber(value *string)()
     SetUniqueId(value *string)()
 }

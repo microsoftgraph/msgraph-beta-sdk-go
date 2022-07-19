@@ -12,8 +12,10 @@ type OnPremisesApplicationSegmentable interface {
     GetCorsConfigurations()([]CorsConfigurationable)
     GetExternalUrl()(*string)
     GetInternalUrl()(*string)
+    GetOdataType()(*string)
     SetAlternateUrl(value *string)()
     SetCorsConfigurations(value []CorsConfigurationable)()
     SetExternalUrl(value *string)()
     SetInternalUrl(value *string)()
+    SetOdataType(value *string)()
 }

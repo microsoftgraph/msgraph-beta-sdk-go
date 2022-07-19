@@ -19,6 +19,8 @@ type CloudPcRemoteActionResult struct {
     lastUpdatedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The ID of the Intune managed device on which the remote action is performed. Read-only.
     managedDeviceId *string
+    // The OdataType property
+    odataType *string
     // Time the action was initiated. The Timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 appears as '2014-01-01T00:00:00Z'.
     startDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The details of the Cloud PC status.
@@ -29,6 +31,8 @@ func NewCloudPcRemoteActionResult()(*CloudPcRemoteActionResult) {
     m := &CloudPcRemoteActionResult{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.cloudPcRemoteActionResult";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateCloudPcRemoteActionResultFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -120,6 +124,16 @@ func (m *CloudPcRemoteActionResult) GetFieldDeserializers()(map[string]func(i878
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["startDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
@@ -156,6 +170,14 @@ func (m *CloudPcRemoteActionResult) GetManagedDeviceId()(*string) {
         return nil
     } else {
         return m.managedDeviceId
+    }
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *CloudPcRemoteActionResult) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
     }
 }
 // GetStartDateTime gets the startDateTime property value. Time the action was initiated. The Timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 appears as '2014-01-01T00:00:00Z'.
@@ -203,6 +225,12 @@ func (m *CloudPcRemoteActionResult) Serialize(writer i878a80d2330e89d26896388a3f
     }
     {
         err := writer.WriteStringValue("managedDeviceId", m.GetManagedDeviceId())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -261,6 +289,12 @@ func (m *CloudPcRemoteActionResult) SetLastUpdatedDateTime(value *i336074805fc85
 func (m *CloudPcRemoteActionResult) SetManagedDeviceId(value *string)() {
     if m != nil {
         m.managedDeviceId = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *CloudPcRemoteActionResult) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetStartDateTime sets the startDateTime property value. Time the action was initiated. The Timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 appears as '2014-01-01T00:00:00Z'.

@@ -12,6 +12,8 @@ type RiskUserActivity struct {
     detail *RiskDetail
     // The eventTypes property
     eventTypes []string
+    // The OdataType property
+    odataType *string
     // The type of risk event detected.
     riskEventTypes []string
 }
@@ -20,6 +22,8 @@ func NewRiskUserActivity()(*RiskUserActivity) {
     m := &RiskUserActivity{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.riskUserActivity";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateRiskUserActivityFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -77,6 +81,16 @@ func (m *RiskUserActivity) GetFieldDeserializers()(map[string]func(i878a80d2330e
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["riskEventTypes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
@@ -92,6 +106,14 @@ func (m *RiskUserActivity) GetFieldDeserializers()(map[string]func(i878a80d2330e
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *RiskUserActivity) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
 }
 // GetRiskEventTypes gets the riskEventTypes property value. The type of risk event detected.
 func (m *RiskUserActivity) GetRiskEventTypes()([]string) {
@@ -112,6 +134,12 @@ func (m *RiskUserActivity) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
     }
     if m.GetEventTypes() != nil {
         err := writer.WriteCollectionOfStringValues("eventTypes", m.GetEventTypes())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -146,6 +174,12 @@ func (m *RiskUserActivity) SetDetail(value *RiskDetail)() {
 func (m *RiskUserActivity) SetEventTypes(value []string)() {
     if m != nil {
         m.eventTypes = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *RiskUserActivity) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetRiskEventTypes sets the riskEventTypes property value. The type of risk event detected.

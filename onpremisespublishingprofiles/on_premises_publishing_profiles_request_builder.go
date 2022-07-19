@@ -70,7 +70,7 @@ func NewOnPremisesPublishingProfilesRequestBuilder(rawUrl string, requestAdapter
     urlParams["request-raw-url"] = rawUrl
     return NewOnPremisesPublishingProfilesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *OnPremisesPublishingProfilesRequestBuilder) Count()(*i0d4f1a40c979b37fb11ef1ee8e6a75829bb8bc1bd64247d1a6d5fc9eb0193157.CountRequestBuilder) {
     return i0d4f1a40c979b37fb11ef1ee8e6a75829bb8bc1bd64247d1a6d5fc9eb0193157.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

@@ -12,6 +12,8 @@ type SecurityProviderStatus struct {
     enabled *bool
     // The endpoint property
     endpoint *string
+    // The OdataType property
+    odataType *string
     // The provider property
     provider *string
     // The region property
@@ -24,6 +26,8 @@ func NewSecurityProviderStatus()(*SecurityProviderStatus) {
     m := &SecurityProviderStatus{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.securityProviderStatus";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateSecurityProviderStatusFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -77,6 +81,16 @@ func (m *SecurityProviderStatus) GetFieldDeserializers()(map[string]func(i878a80
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["provider"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -108,6 +122,14 @@ func (m *SecurityProviderStatus) GetFieldDeserializers()(map[string]func(i878a80
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *SecurityProviderStatus) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
 }
 // GetProvider gets the provider property value. The provider property
 func (m *SecurityProviderStatus) GetProvider()(*string) {
@@ -143,6 +165,12 @@ func (m *SecurityProviderStatus) Serialize(writer i878a80d2330e89d26896388a3f487
     }
     {
         err := writer.WriteStringValue("endpoint", m.GetEndpoint())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -189,6 +217,12 @@ func (m *SecurityProviderStatus) SetEnabled(value *bool)() {
 func (m *SecurityProviderStatus) SetEndpoint(value *string)() {
     if m != nil {
         m.endpoint = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *SecurityProviderStatus) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetProvider sets the provider property value. The provider property

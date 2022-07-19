@@ -14,12 +14,16 @@ type EvaluateDynamicMembershipResult struct {
     membershipRuleEvaluationDetails ExpressionEvaluationDetailsable
     // The value is true if the user or device is a member of the group. The value can also be true if a membership rule was provided and the user or device passes the rule evaluation; otherwise false.
     membershipRuleEvaluationResult *bool
+    // The OdataType property
+    odataType *string
 }
 // NewEvaluateDynamicMembershipResult instantiates a new evaluateDynamicMembershipResult and sets the default values.
 func NewEvaluateDynamicMembershipResult()(*EvaluateDynamicMembershipResult) {
     m := &EvaluateDynamicMembershipResult{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.evaluateDynamicMembershipResult";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateEvaluateDynamicMembershipResultFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -67,6 +71,16 @@ func (m *EvaluateDynamicMembershipResult) GetFieldDeserializers()(map[string]fun
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetMembershipRule gets the membershipRule property value. If a group ID is provided, the value is the membership rule for the group. If a group ID is not provided, the value is the membership rule that was provided as a parameter. For more information, see Dynamic membership rules for groups in Azure Active Directory.
@@ -93,6 +107,14 @@ func (m *EvaluateDynamicMembershipResult) GetMembershipRuleEvaluationResult()(*b
         return m.membershipRuleEvaluationResult
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *EvaluateDynamicMembershipResult) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // Serialize serializes information the current object
 func (m *EvaluateDynamicMembershipResult) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
@@ -109,6 +131,12 @@ func (m *EvaluateDynamicMembershipResult) Serialize(writer i878a80d2330e89d26896
     }
     {
         err := writer.WriteBoolValue("membershipRuleEvaluationResult", m.GetMembershipRuleEvaluationResult())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -143,5 +171,11 @@ func (m *EvaluateDynamicMembershipResult) SetMembershipRuleEvaluationDetails(val
 func (m *EvaluateDynamicMembershipResult) SetMembershipRuleEvaluationResult(value *bool)() {
     if m != nil {
         m.membershipRuleEvaluationResult = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *EvaluateDynamicMembershipResult) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }

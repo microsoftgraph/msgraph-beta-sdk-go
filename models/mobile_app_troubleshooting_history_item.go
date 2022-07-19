@@ -11,18 +11,18 @@ type MobileAppTroubleshootingHistoryItem struct {
     additionalData map[string]interface{}
     // Time when the history item occurred.
     occurrenceDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
+    // The OdataType property
+    odataType *string
     // Object containing detailed information about the error and its remediation.
     troubleshootingErrorDetails DeviceManagementTroubleshootingErrorDetailsable
-    // The type property
-    type_escaped *string
 }
 // NewMobileAppTroubleshootingHistoryItem instantiates a new mobileAppTroubleshootingHistoryItem and sets the default values.
 func NewMobileAppTroubleshootingHistoryItem()(*MobileAppTroubleshootingHistoryItem) {
     m := &MobileAppTroubleshootingHistoryItem{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odatatypeValue := "#microsoft.graph.mobileAppTroubleshootingHistoryItem";
-    m.SetType(&odatatypeValue);
+    odataTypeValue := "#microsoft.graph.mobileAppTroubleshootingHistoryItem";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateMobileAppTroubleshootingHistoryItemFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -77,6 +77,16 @@ func (m *MobileAppTroubleshootingHistoryItem) GetFieldDeserializers()(map[string
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["troubleshootingErrorDetails"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateDeviceManagementTroubleshootingErrorDetailsFromDiscriminatorValue)
         if err != nil {
@@ -84,16 +94,6 @@ func (m *MobileAppTroubleshootingHistoryItem) GetFieldDeserializers()(map[string
         }
         if val != nil {
             m.SetTroubleshootingErrorDetails(val.(DeviceManagementTroubleshootingErrorDetailsable))
-        }
-        return nil
-    }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetType(val)
         }
         return nil
     }
@@ -107,20 +107,20 @@ func (m *MobileAppTroubleshootingHistoryItem) GetOccurrenceDateTime()(*i33607480
         return m.occurrenceDateTime
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *MobileAppTroubleshootingHistoryItem) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetTroubleshootingErrorDetails gets the troubleshootingErrorDetails property value. Object containing detailed information about the error and its remediation.
 func (m *MobileAppTroubleshootingHistoryItem) GetTroubleshootingErrorDetails()(DeviceManagementTroubleshootingErrorDetailsable) {
     if m == nil {
         return nil
     } else {
         return m.troubleshootingErrorDetails
-    }
-}
-// GetType gets the @odata.type property value. The type property
-func (m *MobileAppTroubleshootingHistoryItem) GetType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.type_escaped
     }
 }
 // Serialize serializes information the current object
@@ -132,13 +132,13 @@ func (m *MobileAppTroubleshootingHistoryItem) Serialize(writer i878a80d2330e89d2
         }
     }
     {
-        err := writer.WriteObjectValue("troubleshootingErrorDetails", m.GetTroubleshootingErrorDetails())
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
     }
     {
-        err := writer.WriteStringValue("@odata.type", m.GetType())
+        err := writer.WriteObjectValue("troubleshootingErrorDetails", m.GetTroubleshootingErrorDetails())
         if err != nil {
             return err
         }
@@ -163,15 +163,15 @@ func (m *MobileAppTroubleshootingHistoryItem) SetOccurrenceDateTime(value *i3360
         m.occurrenceDateTime = value
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *MobileAppTroubleshootingHistoryItem) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
+    }
+}
 // SetTroubleshootingErrorDetails sets the troubleshootingErrorDetails property value. Object containing detailed information about the error and its remediation.
 func (m *MobileAppTroubleshootingHistoryItem) SetTroubleshootingErrorDetails(value DeviceManagementTroubleshootingErrorDetailsable)() {
     if m != nil {
         m.troubleshootingErrorDetails = value
-    }
-}
-// SetType sets the @odata.type property value. The type property
-func (m *MobileAppTroubleshootingHistoryItem) SetType(value *string)() {
-    if m != nil {
-        m.type_escaped = value
     }
 }

@@ -23,6 +23,8 @@ func NewProtectOnlineMeetingAction()(*ProtectOnlineMeetingAction) {
     m := &ProtectOnlineMeetingAction{
         LabelActionBase: *NewLabelActionBase(),
     }
+    odataTypeValue := "#microsoft.graph.protectOnlineMeetingAction";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateProtectOnlineMeetingActionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

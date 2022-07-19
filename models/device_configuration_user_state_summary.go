@@ -22,11 +22,13 @@ type DeviceConfigurationUserStateSummary struct {
     // Number of unknown users
     unknownUserCount *int32
 }
-// NewDeviceConfigurationUserStateSummary instantiates a new DeviceConfigurationUserStateSummary and sets the default values.
+// NewDeviceConfigurationUserStateSummary instantiates a new deviceConfigurationUserStateSummary and sets the default values.
 func NewDeviceConfigurationUserStateSummary()(*DeviceConfigurationUserStateSummary) {
     m := &DeviceConfigurationUserStateSummary{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.deviceConfigurationUserStateSummary";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDeviceConfigurationUserStateSummaryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

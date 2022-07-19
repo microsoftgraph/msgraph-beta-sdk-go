@@ -34,6 +34,8 @@ func NewPolicySet()(*PolicySet) {
     m := &PolicySet{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.policySet";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreatePolicySetFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

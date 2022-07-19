@@ -281,6 +281,8 @@ func NewAndroidDeviceOwnerGeneralDeviceConfiguration()(*AndroidDeviceOwnerGenera
     m := &AndroidDeviceOwnerGeneralDeviceConfiguration{
         DeviceConfiguration: *NewDeviceConfiguration(),
     }
+    odataTypeValue := "#microsoft.graph.androidDeviceOwnerGeneralDeviceConfiguration";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAndroidDeviceOwnerGeneralDeviceConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

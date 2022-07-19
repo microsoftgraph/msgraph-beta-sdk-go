@@ -15,6 +15,8 @@ func NewInvokeUserFlowListener()(*InvokeUserFlowListener) {
     m := &InvokeUserFlowListener{
         AuthenticationListener: *NewAuthenticationListener(),
     }
+    odataTypeValue := "#microsoft.graph.invokeUserFlowListener";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateInvokeUserFlowListenerFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

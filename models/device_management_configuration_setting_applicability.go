@@ -12,20 +12,20 @@ type DeviceManagementConfigurationSettingApplicability struct {
     description *string
     // Describes applicability for the mode the device is in
     deviceMode *DeviceManagementConfigurationDeviceMode
+    // The OdataType property
+    odataType *string
     // Supported platform types.
     platform *DeviceManagementConfigurationPlatforms
     // Describes which technology this setting can be deployed with
     technologies *DeviceManagementConfigurationTechnologies
-    // The type property
-    type_escaped *string
 }
 // NewDeviceManagementConfigurationSettingApplicability instantiates a new deviceManagementConfigurationSettingApplicability and sets the default values.
 func NewDeviceManagementConfigurationSettingApplicability()(*DeviceManagementConfigurationSettingApplicability) {
     m := &DeviceManagementConfigurationSettingApplicability{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odatatypeValue := "#microsoft.graph.deviceManagementConfigurationSettingApplicability";
-    m.SetType(&odatatypeValue);
+    odataTypeValue := "#microsoft.graph.deviceManagementConfigurationSettingApplicability";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDeviceManagementConfigurationSettingApplicabilityFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -100,6 +100,16 @@ func (m *DeviceManagementConfigurationSettingApplicability) GetFieldDeserializer
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["platform"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseDeviceManagementConfigurationPlatforms)
         if err != nil {
@@ -120,17 +130,15 @@ func (m *DeviceManagementConfigurationSettingApplicability) GetFieldDeserializer
         }
         return nil
     }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetType(val)
-        }
-        return nil
-    }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *DeviceManagementConfigurationSettingApplicability) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
 }
 // GetPlatform gets the platform property value. Supported platform types.
 func (m *DeviceManagementConfigurationSettingApplicability) GetPlatform()(*DeviceManagementConfigurationPlatforms) {
@@ -148,14 +156,6 @@ func (m *DeviceManagementConfigurationSettingApplicability) GetTechnologies()(*D
         return m.technologies
     }
 }
-// GetType gets the @odata.type property value. The type property
-func (m *DeviceManagementConfigurationSettingApplicability) GetType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.type_escaped
-    }
-}
 // Serialize serializes information the current object
 func (m *DeviceManagementConfigurationSettingApplicability) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
@@ -171,6 +171,12 @@ func (m *DeviceManagementConfigurationSettingApplicability) Serialize(writer i87
             return err
         }
     }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetPlatform() != nil {
         cast := (*m.GetPlatform()).String()
         err := writer.WriteStringValue("platform", &cast)
@@ -181,12 +187,6 @@ func (m *DeviceManagementConfigurationSettingApplicability) Serialize(writer i87
     if m.GetTechnologies() != nil {
         cast := (*m.GetTechnologies()).String()
         err := writer.WriteStringValue("technologies", &cast)
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err := writer.WriteStringValue("@odata.type", m.GetType())
         if err != nil {
             return err
         }
@@ -217,6 +217,12 @@ func (m *DeviceManagementConfigurationSettingApplicability) SetDeviceMode(value 
         m.deviceMode = value
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *DeviceManagementConfigurationSettingApplicability) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
+    }
+}
 // SetPlatform sets the platform property value. Supported platform types.
 func (m *DeviceManagementConfigurationSettingApplicability) SetPlatform(value *DeviceManagementConfigurationPlatforms)() {
     if m != nil {
@@ -227,11 +233,5 @@ func (m *DeviceManagementConfigurationSettingApplicability) SetPlatform(value *D
 func (m *DeviceManagementConfigurationSettingApplicability) SetTechnologies(value *DeviceManagementConfigurationTechnologies)() {
     if m != nil {
         m.technologies = value
-    }
-}
-// SetType sets the @odata.type property value. The type property
-func (m *DeviceManagementConfigurationSettingApplicability) SetType(value *string)() {
-    if m != nil {
-        m.type_escaped = value
     }
 }

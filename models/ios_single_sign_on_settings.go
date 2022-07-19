@@ -18,12 +18,16 @@ type IosSingleSignOnSettings struct {
     kerberosPrincipalName *string
     // A Kerberos realm name. Case sensitive.
     kerberosRealm *string
+    // The OdataType property
+    odataType *string
 }
 // NewIosSingleSignOnSettings instantiates a new iosSingleSignOnSettings and sets the default values.
 func NewIosSingleSignOnSettings()(*IosSingleSignOnSettings) {
     m := &IosSingleSignOnSettings{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.iosSingleSignOnSettings";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateIosSingleSignOnSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -123,6 +127,16 @@ func (m *IosSingleSignOnSettings) GetFieldDeserializers()(map[string]func(i878a8
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetKerberosPrincipalName gets the kerberosPrincipalName property value. A Kerberos principal name. If not provided, the user is prompted for one during profile installation.
@@ -139,6 +153,14 @@ func (m *IosSingleSignOnSettings) GetKerberosRealm()(*string) {
         return nil
     } else {
         return m.kerberosRealm
+    }
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *IosSingleSignOnSettings) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
     }
 }
 // Serialize serializes information the current object
@@ -173,6 +195,12 @@ func (m *IosSingleSignOnSettings) Serialize(writer i878a80d2330e89d26896388a3f48
     }
     {
         err := writer.WriteStringValue("kerberosRealm", m.GetKerberosRealm())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -219,5 +247,11 @@ func (m *IosSingleSignOnSettings) SetKerberosPrincipalName(value *string)() {
 func (m *IosSingleSignOnSettings) SetKerberosRealm(value *string)() {
     if m != nil {
         m.kerberosRealm = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *IosSingleSignOnSettings) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }

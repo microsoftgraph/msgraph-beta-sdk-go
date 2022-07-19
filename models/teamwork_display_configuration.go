@@ -18,12 +18,16 @@ type TeamworkDisplayConfiguration struct {
     isContentDuplicationAllowed *bool
     // True if dual display mode is enabled. If isDualDisplayModeEnabled is true, then the content will be displayed on both front of room screens instead of just the one screen, when it is shared via the HDMI ingest module on the Microsoft Teams Rooms device. Applicable only for Teams Rooms devices.
     isDualDisplayModeEnabled *bool
+    // The OdataType property
+    odataType *string
 }
 // NewTeamworkDisplayConfiguration instantiates a new teamworkDisplayConfiguration and sets the default values.
 func NewTeamworkDisplayConfiguration()(*TeamworkDisplayConfiguration) {
     m := &TeamworkDisplayConfiguration{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.teamworkDisplayConfiguration";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateTeamworkDisplayConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -111,6 +115,16 @@ func (m *TeamworkDisplayConfiguration) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetInBuiltDisplayScreenConfiguration gets the inBuiltDisplayScreenConfiguration property value. Configuration for the inbuilt display. Not applicable for Teams Rooms devices.
@@ -135,6 +149,14 @@ func (m *TeamworkDisplayConfiguration) GetIsDualDisplayModeEnabled()(*bool) {
         return nil
     } else {
         return m.isDualDisplayModeEnabled
+    }
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *TeamworkDisplayConfiguration) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
     }
 }
 // Serialize serializes information the current object
@@ -169,6 +191,12 @@ func (m *TeamworkDisplayConfiguration) Serialize(writer i878a80d2330e89d26896388
     }
     {
         err := writer.WriteBoolValue("isDualDisplayModeEnabled", m.GetIsDualDisplayModeEnabled())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -215,5 +243,11 @@ func (m *TeamworkDisplayConfiguration) SetIsContentDuplicationAllowed(value *boo
 func (m *TeamworkDisplayConfiguration) SetIsDualDisplayModeEnabled(value *bool)() {
     if m != nil {
         m.isDualDisplayModeEnabled = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *TeamworkDisplayConfiguration) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }

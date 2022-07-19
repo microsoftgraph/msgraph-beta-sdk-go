@@ -10,6 +10,8 @@ type DelegatedAdminRelationshipCustomerParticipant struct {
     additionalData map[string]interface{}
     // The display name of the customer tenant as set by Azure AD. Read only
     displayName *string
+    // The OdataType property
+    odataType *string
     // The Azure AD-assigned tenant ID of the customer tenant.
     tenantId *string
 }
@@ -18,6 +20,8 @@ func NewDelegatedAdminRelationshipCustomerParticipant()(*DelegatedAdminRelations
     m := &DelegatedAdminRelationshipCustomerParticipant{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.delegatedAdminRelationshipCustomerParticipant";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDelegatedAdminRelationshipCustomerParticipantFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -53,6 +57,16 @@ func (m *DelegatedAdminRelationshipCustomerParticipant) GetFieldDeserializers()(
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["tenantId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -64,6 +78,14 @@ func (m *DelegatedAdminRelationshipCustomerParticipant) GetFieldDeserializers()(
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *DelegatedAdminRelationshipCustomerParticipant) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
 }
 // GetTenantId gets the tenantId property value. The Azure AD-assigned tenant ID of the customer tenant.
 func (m *DelegatedAdminRelationshipCustomerParticipant) GetTenantId()(*string) {
@@ -77,6 +99,12 @@ func (m *DelegatedAdminRelationshipCustomerParticipant) GetTenantId()(*string) {
 func (m *DelegatedAdminRelationshipCustomerParticipant) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("displayName", m.GetDisplayName())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -105,6 +133,12 @@ func (m *DelegatedAdminRelationshipCustomerParticipant) SetAdditionalData(value 
 func (m *DelegatedAdminRelationshipCustomerParticipant) SetDisplayName(value *string)() {
     if m != nil {
         m.displayName = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *DelegatedAdminRelationshipCustomerParticipant) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetTenantId sets the tenantId property value. The Azure AD-assigned tenant ID of the customer tenant.

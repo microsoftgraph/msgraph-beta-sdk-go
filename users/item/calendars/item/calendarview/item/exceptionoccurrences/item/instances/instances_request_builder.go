@@ -67,7 +67,7 @@ func NewInstancesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2633
     urlParams["request-raw-url"] = rawUrl
     return NewInstancesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *InstancesRequestBuilder) Count()(*i495667ab456645362fcb15f886c7c3b867a4464298f72b8b293135198896eba2.CountRequestBuilder) {
     return i495667ab456645362fcb15f886c7c3b867a4464298f72b8b293135198896eba2.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

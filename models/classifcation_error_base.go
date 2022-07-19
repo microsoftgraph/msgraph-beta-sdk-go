@@ -14,18 +14,18 @@ type ClassifcationErrorBase struct {
     innerError ClassificationInnerErrorable
     // The message property
     message *string
+    // The OdataType property
+    odataType *string
     // The target property
     target *string
-    // The type property
-    type_escaped *string
 }
 // NewClassifcationErrorBase instantiates a new classifcationErrorBase and sets the default values.
 func NewClassifcationErrorBase()(*ClassifcationErrorBase) {
     m := &ClassifcationErrorBase{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odatatypeValue := "#microsoft.graph.classifcationErrorBase";
-    m.SetType(&odatatypeValue);
+    odataTypeValue := "#microsoft.graph.classifcationErrorBase";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateClassifcationErrorBaseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -100,6 +100,16 @@ func (m *ClassifcationErrorBase) GetFieldDeserializers()(map[string]func(i878a80
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["target"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -107,16 +117,6 @@ func (m *ClassifcationErrorBase) GetFieldDeserializers()(map[string]func(i878a80
         }
         if val != nil {
             m.SetTarget(val)
-        }
-        return nil
-    }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetType(val)
         }
         return nil
     }
@@ -138,20 +138,20 @@ func (m *ClassifcationErrorBase) GetMessage()(*string) {
         return m.message
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *ClassifcationErrorBase) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetTarget gets the target property value. The target property
 func (m *ClassifcationErrorBase) GetTarget()(*string) {
     if m == nil {
         return nil
     } else {
         return m.target
-    }
-}
-// GetType gets the @odata.type property value. The type property
-func (m *ClassifcationErrorBase) GetType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.type_escaped
     }
 }
 // Serialize serializes information the current object
@@ -175,13 +175,13 @@ func (m *ClassifcationErrorBase) Serialize(writer i878a80d2330e89d26896388a3f487
         }
     }
     {
-        err := writer.WriteStringValue("target", m.GetTarget())
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
     }
     {
-        err := writer.WriteStringValue("@odata.type", m.GetType())
+        err := writer.WriteStringValue("target", m.GetTarget())
         if err != nil {
             return err
         }
@@ -218,15 +218,15 @@ func (m *ClassifcationErrorBase) SetMessage(value *string)() {
         m.message = value
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *ClassifcationErrorBase) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
+    }
+}
 // SetTarget sets the target property value. The target property
 func (m *ClassifcationErrorBase) SetTarget(value *string)() {
     if m != nil {
         m.target = value
-    }
-}
-// SetType sets the @odata.type property value. The type property
-func (m *ClassifcationErrorBase) SetType(value *string)() {
-    if m != nil {
-        m.type_escaped = value
     }
 }

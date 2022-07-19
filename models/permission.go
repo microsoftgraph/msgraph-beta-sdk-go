@@ -36,6 +36,8 @@ func NewPermission()(*Permission) {
     m := &Permission{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.permission";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreatePermissionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

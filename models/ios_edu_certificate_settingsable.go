@@ -14,6 +14,7 @@ type IosEduCertificateSettingsable interface {
     GetCertificateValidityPeriodValue()(*int32)
     GetCertificationAuthority()(*string)
     GetCertificationAuthorityName()(*string)
+    GetOdataType()(*string)
     GetRenewalThresholdPercentage()(*int32)
     GetTrustedRootCertificate()([]byte)
     SetCertFileName(value *string)()
@@ -22,6 +23,7 @@ type IosEduCertificateSettingsable interface {
     SetCertificateValidityPeriodValue(value *int32)()
     SetCertificationAuthority(value *string)()
     SetCertificationAuthorityName(value *string)()
+    SetOdataType(value *string)()
     SetRenewalThresholdPercentage(value *int32)()
     SetTrustedRootCertificate(value []byte)()
 }

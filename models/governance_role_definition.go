@@ -25,6 +25,8 @@ func NewGovernanceRoleDefinition()(*GovernanceRoleDefinition) {
     m := &GovernanceRoleDefinition{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.governanceRoleDefinition";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateGovernanceRoleDefinitionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

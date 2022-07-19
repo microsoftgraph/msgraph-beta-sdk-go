@@ -48,6 +48,8 @@ func NewGroupPolicyDefinition()(*GroupPolicyDefinition) {
     m := &GroupPolicyDefinition{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.groupPolicyDefinition";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateGroupPolicyDefinitionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// SitePage provides operations to manage the collection of accessReviewDecision entities.
+// SitePage provides operations to manage the collection of accessReview entities.
 type SitePage struct {
     BaseItem
     // The content type of the page.
@@ -23,6 +23,8 @@ func NewSitePage()(*SitePage) {
     m := &SitePage{
         BaseItem: *NewBaseItem(),
     }
+    odataTypeValue := "#microsoft.graph.sitePage";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateSitePageFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

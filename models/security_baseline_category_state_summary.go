@@ -15,6 +15,8 @@ func NewSecurityBaselineCategoryStateSummary()(*SecurityBaselineCategoryStateSum
     m := &SecurityBaselineCategoryStateSummary{
         SecurityBaselineStateSummary: *NewSecurityBaselineStateSummary(),
     }
+    odataTypeValue := "#microsoft.graph.securityBaselineCategoryStateSummary";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateSecurityBaselineCategoryStateSummaryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

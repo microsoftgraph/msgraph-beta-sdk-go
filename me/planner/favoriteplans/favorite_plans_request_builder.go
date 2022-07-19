@@ -63,7 +63,7 @@ func NewFavoritePlansRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee
     urlParams["request-raw-url"] = rawUrl
     return NewFavoritePlansRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *FavoritePlansRequestBuilder) Count()(*i71f9e0ea1107902f89fdfd500065dd12a96faf3bea1deaec8833342e92447d32.CountRequestBuilder) {
     return i71f9e0ea1107902f89fdfd500065dd12a96faf3bea1deaec8833342e92447d32.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

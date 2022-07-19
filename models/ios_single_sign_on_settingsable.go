@@ -13,9 +13,11 @@ type IosSingleSignOnSettingsable interface {
     GetDisplayName()(*string)
     GetKerberosPrincipalName()(*string)
     GetKerberosRealm()(*string)
+    GetOdataType()(*string)
     SetAllowedAppsList(value []AppListItemable)()
     SetAllowedUrls(value []string)()
     SetDisplayName(value *string)()
     SetKerberosPrincipalName(value *string)()
     SetKerberosRealm(value *string)()
+    SetOdataType(value *string)()
 }

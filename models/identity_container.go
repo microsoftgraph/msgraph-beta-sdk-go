@@ -20,6 +20,8 @@ type IdentityContainer struct {
     continuousAccessEvaluationPolicy ContinuousAccessEvaluationPolicyable
     // Represents entry point for identity provider base.
     identityProviders []IdentityProviderBaseable
+    // The OdataType property
+    odataType *string
     // Represents entry point for identity userflow attributes.
     userFlowAttributes []IdentityUserFlowAttributeable
     // The userFlows property
@@ -30,6 +32,8 @@ func NewIdentityContainer()(*IdentityContainer) {
     m := &IdentityContainer{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.identityContainer";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateIdentityContainerFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -163,6 +167,16 @@ func (m *IdentityContainer) GetFieldDeserializers()(map[string]func(i878a80d2330
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["userFlowAttributes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateIdentityUserFlowAttributeFromDiscriminatorValue)
         if err != nil {
@@ -199,6 +213,14 @@ func (m *IdentityContainer) GetIdentityProviders()([]IdentityProviderBaseable) {
         return nil
     } else {
         return m.identityProviders
+    }
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *IdentityContainer) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
     }
 }
 // GetUserFlowAttributes gets the userFlowAttributes property value. Represents entry point for identity userflow attributes.
@@ -271,6 +293,12 @@ func (m *IdentityContainer) Serialize(writer i878a80d2330e89d26896388a3f487eef27
             return err
         }
     }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetUserFlowAttributes() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetUserFlowAttributes()))
         for i, v := range m.GetUserFlowAttributes() {
@@ -339,6 +367,12 @@ func (m *IdentityContainer) SetContinuousAccessEvaluationPolicy(value Continuous
 func (m *IdentityContainer) SetIdentityProviders(value []IdentityProviderBaseable)() {
     if m != nil {
         m.identityProviders = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *IdentityContainer) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetUserFlowAttributes sets the userFlowAttributes property value. Represents entry point for identity userflow attributes.

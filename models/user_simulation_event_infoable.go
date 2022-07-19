@@ -13,10 +13,12 @@ type UserSimulationEventInfoable interface {
     GetEventDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetEventName()(*string)
     GetIpAddress()(*string)
+    GetOdataType()(*string)
     GetOsPlatformDeviceDetails()(*string)
     SetBrowser(value *string)()
     SetEventDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetEventName(value *string)()
     SetIpAddress(value *string)()
+    SetOdataType(value *string)()
     SetOsPlatformDeviceDetails(value *string)()
 }

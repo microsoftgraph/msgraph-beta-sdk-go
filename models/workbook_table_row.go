@@ -17,6 +17,8 @@ func NewWorkbookTableRow()(*WorkbookTableRow) {
     m := &WorkbookTableRow{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.workbookTableRow";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateWorkbookTableRowFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

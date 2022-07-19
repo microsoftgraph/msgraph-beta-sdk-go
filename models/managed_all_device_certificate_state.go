@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ManagedAllDeviceCertificateState 
+// ManagedAllDeviceCertificateState provides operations to manage the collection of accessReview entities.
 type ManagedAllDeviceCertificateState struct {
     Entity
     // Certificate expiry date
@@ -33,11 +33,13 @@ type ManagedAllDeviceCertificateState struct {
     // User principal name
     userPrincipalName *string
 }
-// NewManagedAllDeviceCertificateState instantiates a new ManagedAllDeviceCertificateState and sets the default values.
+// NewManagedAllDeviceCertificateState instantiates a new managedAllDeviceCertificateState and sets the default values.
 func NewManagedAllDeviceCertificateState()(*ManagedAllDeviceCertificateState) {
     m := &ManagedAllDeviceCertificateState{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.managedAllDeviceCertificateState";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateManagedAllDeviceCertificateStateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

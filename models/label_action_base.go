@@ -10,16 +10,16 @@ type LabelActionBase struct {
     additionalData map[string]interface{}
     // The name property
     name *string
-    // The type property
-    type_escaped *string
+    // The OdataType property
+    odataType *string
 }
 // NewLabelActionBase instantiates a new labelActionBase and sets the default values.
 func NewLabelActionBase()(*LabelActionBase) {
     m := &LabelActionBase{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odatatypeValue := "#microsoft.graph.labelActionBase";
-    m.SetType(&odatatypeValue);
+    odataTypeValue := "#microsoft.graph.labelActionBase";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateLabelActionBaseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -37,8 +37,18 @@ func CreateLabelActionBaseFromDiscriminatorValue(parseNode i878a80d2330e89d26896
             if mappingValue != nil {
                 mappingStr := *mappingValue
                 switch mappingStr {
+                    case "#microsoft.graph.addFooter":
+                        return NewAddFooter(), nil
+                    case "#microsoft.graph.addHeader":
+                        return NewAddHeader(), nil
+                    case "#microsoft.graph.addWatermark":
+                        return NewAddWatermark(), nil
                     case "#microsoft.graph.encryptContent":
                         return NewEncryptContent(), nil
+                    case "#microsoft.graph.encryptWithTemplate":
+                        return NewEncryptWithTemplate(), nil
+                    case "#microsoft.graph.encryptWithUserDefinedRights":
+                        return NewEncryptWithUserDefinedRights(), nil
                     case "#microsoft.graph.markContent":
                         return NewMarkContent(), nil
                     case "#microsoft.graph.protectGroup":
@@ -80,7 +90,7 @@ func (m *LabelActionBase) GetFieldDeserializers()(map[string]func(i878a80d2330e8
             return err
         }
         if val != nil {
-            m.SetType(val)
+            m.SetOdataType(val)
         }
         return nil
     }
@@ -94,12 +104,12 @@ func (m *LabelActionBase) GetName()(*string) {
         return m.name
     }
 }
-// GetType gets the @odata.type property value. The type property
-func (m *LabelActionBase) GetType()(*string) {
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *LabelActionBase) GetOdataType()(*string) {
     if m == nil {
         return nil
     } else {
-        return m.type_escaped
+        return m.odataType
     }
 }
 // Serialize serializes information the current object
@@ -111,7 +121,7 @@ func (m *LabelActionBase) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
         }
     }
     {
-        err := writer.WriteStringValue("@odata.type", m.GetType())
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -136,9 +146,9 @@ func (m *LabelActionBase) SetName(value *string)() {
         m.name = value
     }
 }
-// SetType sets the @odata.type property value. The type property
-func (m *LabelActionBase) SetType(value *string)() {
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *LabelActionBase) SetOdataType(value *string)() {
     if m != nil {
-        m.type_escaped = value
+        m.odataType = value
     }
 }

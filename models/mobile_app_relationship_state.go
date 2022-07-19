@@ -17,6 +17,8 @@ type MobileAppRelationshipState struct {
     installState *ResultantAppState
     // Enum indicating additional details regarding why an application has a particular install state.
     installStateDetail *ResultantAppStateDetail
+    // The OdataType property
+    odataType *string
     // The collection of source mobile app's ids.
     sourceIds []string
     // The related target app's display name.
@@ -31,6 +33,8 @@ func NewMobileAppRelationshipState()(*MobileAppRelationshipState) {
     m := &MobileAppRelationshipState{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.mobileAppRelationshipState";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateMobileAppRelationshipStateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -104,6 +108,16 @@ func (m *MobileAppRelationshipState) GetFieldDeserializers()(map[string]func(i87
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["sourceIds"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
@@ -166,6 +180,14 @@ func (m *MobileAppRelationshipState) GetInstallStateDetail()(*ResultantAppStateD
         return m.installStateDetail
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *MobileAppRelationshipState) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetSourceIds gets the sourceIds property value. The collection of source mobile app's ids.
 func (m *MobileAppRelationshipState) GetSourceIds()([]string) {
     if m == nil {
@@ -222,6 +244,12 @@ func (m *MobileAppRelationshipState) Serialize(writer i878a80d2330e89d26896388a3
     if m.GetInstallStateDetail() != nil {
         cast := (*m.GetInstallStateDetail()).String()
         err := writer.WriteStringValue("installStateDetail", &cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -286,6 +314,12 @@ func (m *MobileAppRelationshipState) SetInstallState(value *ResultantAppState)()
 func (m *MobileAppRelationshipState) SetInstallStateDetail(value *ResultantAppStateDetail)() {
     if m != nil {
         m.installStateDetail = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *MobileAppRelationshipState) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetSourceIds sets the sourceIds property value. The collection of source mobile app's ids.

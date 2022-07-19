@@ -27,6 +27,8 @@ func NewCredentialUserRegistrationDetails()(*CredentialUserRegistrationDetails) 
     m := &CredentialUserRegistrationDetails{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.credentialUserRegistrationDetails";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateCredentialUserRegistrationDetailsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

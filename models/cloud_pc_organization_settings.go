@@ -19,6 +19,8 @@ func NewCloudPcOrganizationSettings()(*CloudPcOrganizationSettings) {
     m := &CloudPcOrganizationSettings{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.cloudPcOrganizationSettings";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateCloudPcOrganizationSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

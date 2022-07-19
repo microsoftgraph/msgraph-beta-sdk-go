@@ -18,8 +18,8 @@ func NewQualityUpdateReference()(*QualityUpdateReference) {
     m := &QualityUpdateReference{
         WindowsUpdateReference: *NewWindowsUpdateReference(),
     }
-    odatatypeValue := "#microsoft.graph.windowsUpdates.qualityUpdateReference";
-    m.SetType(&odatatypeValue);
+    odataTypeValue := "#microsoft.graph.windowsUpdates.qualityUpdateReference";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateQualityUpdateReferenceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

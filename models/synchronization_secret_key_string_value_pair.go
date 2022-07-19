@@ -10,6 +10,8 @@ type SynchronizationSecretKeyStringValuePair struct {
     additionalData map[string]interface{}
     // The key property
     key *SynchronizationSecret
+    // The OdataType property
+    odataType *string
     // The value of the secret.
     value *string
 }
@@ -18,6 +20,8 @@ func NewSynchronizationSecretKeyStringValuePair()(*SynchronizationSecretKeyStrin
     m := &SynchronizationSecretKeyStringValuePair{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.synchronizationSecretKeyStringValuePair";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateSynchronizationSecretKeyStringValuePairFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -45,6 +49,16 @@ func (m *SynchronizationSecretKeyStringValuePair) GetFieldDeserializers()(map[st
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -65,6 +79,14 @@ func (m *SynchronizationSecretKeyStringValuePair) GetKey()(*SynchronizationSecre
         return m.key
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *SynchronizationSecretKeyStringValuePair) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetValue gets the value property value. The value of the secret.
 func (m *SynchronizationSecretKeyStringValuePair) GetValue()(*string) {
     if m == nil {
@@ -78,6 +100,12 @@ func (m *SynchronizationSecretKeyStringValuePair) Serialize(writer i878a80d2330e
     if m.GetKey() != nil {
         cast := (*m.GetKey()).String()
         err := writer.WriteStringValue("key", &cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -106,6 +134,12 @@ func (m *SynchronizationSecretKeyStringValuePair) SetAdditionalData(value map[st
 func (m *SynchronizationSecretKeyStringValuePair) SetKey(value *SynchronizationSecret)() {
     if m != nil {
         m.key = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *SynchronizationSecretKeyStringValuePair) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetValue sets the value property value. The value of the secret.

@@ -70,7 +70,7 @@ func NewQnasRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1
     urlParams["request-raw-url"] = rawUrl
     return NewQnasRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *QnasRequestBuilder) Count()(*ida4fefffebeed6ab2de08831de0be07bb869686cf2f1f448687b924116459c0d.CountRequestBuilder) {
     return ida4fefffebeed6ab2de08831de0be07bb869686cf2f1f448687b924116459c0d.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

@@ -10,11 +10,13 @@ type AttributeMappingFunctionSchema struct {
     // Collection of function parameters.
     parameters []AttributeMappingParameterSchemaable
 }
-// NewAttributeMappingFunctionSchema instantiates a new attributeMappingFunctionSchema and sets the default values.
+// NewAttributeMappingFunctionSchema instantiates a new AttributeMappingFunctionSchema and sets the default values.
 func NewAttributeMappingFunctionSchema()(*AttributeMappingFunctionSchema) {
     m := &AttributeMappingFunctionSchema{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.attributeMappingFunctionSchema";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAttributeMappingFunctionSchemaFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

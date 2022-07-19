@@ -18,11 +18,13 @@ type WindowsDomainJoinConfiguration struct {
     // Organizational unit (OU) where the computer account will be created. If this parameter is NULL, the well known computer object container will be used as published in the domain.
     organizationalUnit *string
 }
-// NewWindowsDomainJoinConfiguration instantiates a new windowsDomainJoinConfiguration and sets the default values.
+// NewWindowsDomainJoinConfiguration instantiates a new WindowsDomainJoinConfiguration and sets the default values.
 func NewWindowsDomainJoinConfiguration()(*WindowsDomainJoinConfiguration) {
     m := &WindowsDomainJoinConfiguration{
         DeviceConfiguration: *NewDeviceConfiguration(),
     }
+    odataTypeValue := "#microsoft.graph.windowsDomainJoinConfiguration";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateWindowsDomainJoinConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

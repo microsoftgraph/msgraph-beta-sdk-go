@@ -12,10 +12,12 @@ type SubmissionResultable interface {
     GetDetail()(*SubmissionResultDetail)
     GetDetectedFiles()([]SubmissionDetectedFileable)
     GetDetectedUrls()([]string)
+    GetOdataType()(*string)
     GetUserMailboxSetting()(*UserMailboxSetting)
     SetCategory(value *SubmissionResultCategory)()
     SetDetail(value *SubmissionResultDetail)()
     SetDetectedFiles(value []SubmissionDetectedFileable)()
     SetDetectedUrls(value []string)()
+    SetOdataType(value *string)()
     SetUserMailboxSetting(value *UserMailboxSetting)()
 }

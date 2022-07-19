@@ -71,7 +71,7 @@ func NewMigratableToRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2
     urlParams["request-raw-url"] = rawUrl
     return NewMigratableToRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *MigratableToRequestBuilder) Count()(*i317eafdb013de05d888bdbd95f28e6f96471803444bc934c779c7fe005030312.CountRequestBuilder) {
     return i317eafdb013de05d888bdbd95f28e6f96471803444bc934c779c7fe005030312.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

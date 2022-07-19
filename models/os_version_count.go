@@ -13,6 +13,8 @@ type OsVersionCount struct {
     deviceCount *int32
     // The Timestamp of the last update for the device count in UTC
     lastUpdateDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
+    // The OdataType property
+    odataType *string
     // OS version
     osVersion *string
 }
@@ -21,6 +23,8 @@ func NewOsVersionCount()(*OsVersionCount) {
     m := &OsVersionCount{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.osVersionCount";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateOsVersionCountFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -66,6 +70,16 @@ func (m *OsVersionCount) GetFieldDeserializers()(map[string]func(i878a80d2330e89
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["osVersion"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -86,6 +100,14 @@ func (m *OsVersionCount) GetLastUpdateDateTime()(*i336074805fc853987abe6f7fe3ad9
         return m.lastUpdateDateTime
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *OsVersionCount) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetOsVersion gets the osVersion property value. OS version
 func (m *OsVersionCount) GetOsVersion()(*string) {
     if m == nil {
@@ -104,6 +126,12 @@ func (m *OsVersionCount) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
     }
     {
         err := writer.WriteTimeValue("lastUpdateDateTime", m.GetLastUpdateDateTime())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -138,6 +166,12 @@ func (m *OsVersionCount) SetDeviceCount(value *int32)() {
 func (m *OsVersionCount) SetLastUpdateDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     if m != nil {
         m.lastUpdateDateTime = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *OsVersionCount) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetOsVersion sets the osVersion property value. OS version

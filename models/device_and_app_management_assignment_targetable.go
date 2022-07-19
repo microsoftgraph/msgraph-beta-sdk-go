@@ -10,8 +10,8 @@ type DeviceAndAppManagementAssignmentTargetable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetDeviceAndAppManagementAssignmentFilterId()(*string)
     GetDeviceAndAppManagementAssignmentFilterType()(*DeviceAndAppManagementAssignmentFilterType)
-    GetType()(*string)
+    GetOdataType()(*string)
     SetDeviceAndAppManagementAssignmentFilterId(value *string)()
     SetDeviceAndAppManagementAssignmentFilterType(value *DeviceAndAppManagementAssignmentFilterType)()
-    SetType(value *string)()
+    SetOdataType(value *string)()
 }

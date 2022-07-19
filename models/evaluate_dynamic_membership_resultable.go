@@ -11,7 +11,9 @@ type EvaluateDynamicMembershipResultable interface {
     GetMembershipRule()(*string)
     GetMembershipRuleEvaluationDetails()(ExpressionEvaluationDetailsable)
     GetMembershipRuleEvaluationResult()(*bool)
+    GetOdataType()(*string)
     SetMembershipRule(value *string)()
     SetMembershipRuleEvaluationDetails(value ExpressionEvaluationDetailsable)()
     SetMembershipRuleEvaluationResult(value *bool)()
+    SetOdataType(value *string)()
 }

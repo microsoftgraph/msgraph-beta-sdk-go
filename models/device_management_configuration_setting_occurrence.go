@@ -12,12 +12,16 @@ type DeviceManagementConfigurationSettingOccurrence struct {
     maxDeviceOccurrence *int32
     // Minimum times setting can be set on device. A MinDeviceOccurrence of 0 means setting is optional
     minDeviceOccurrence *int32
+    // The OdataType property
+    odataType *string
 }
 // NewDeviceManagementConfigurationSettingOccurrence instantiates a new deviceManagementConfigurationSettingOccurrence and sets the default values.
 func NewDeviceManagementConfigurationSettingOccurrence()(*DeviceManagementConfigurationSettingOccurrence) {
     m := &DeviceManagementConfigurationSettingOccurrence{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.deviceManagementConfigurationSettingOccurrence";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDeviceManagementConfigurationSettingOccurrenceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -55,6 +59,16 @@ func (m *DeviceManagementConfigurationSettingOccurrence) GetFieldDeserializers()
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetMaxDeviceOccurrence gets the maxDeviceOccurrence property value. Maximum times setting can be set on device.
@@ -73,6 +87,14 @@ func (m *DeviceManagementConfigurationSettingOccurrence) GetMinDeviceOccurrence(
         return m.minDeviceOccurrence
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *DeviceManagementConfigurationSettingOccurrence) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // Serialize serializes information the current object
 func (m *DeviceManagementConfigurationSettingOccurrence) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
@@ -83,6 +105,12 @@ func (m *DeviceManagementConfigurationSettingOccurrence) Serialize(writer i878a8
     }
     {
         err := writer.WriteInt32Value("minDeviceOccurrence", m.GetMinDeviceOccurrence())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -111,5 +139,11 @@ func (m *DeviceManagementConfigurationSettingOccurrence) SetMaxDeviceOccurrence(
 func (m *DeviceManagementConfigurationSettingOccurrence) SetMinDeviceOccurrence(value *int32)() {
     if m != nil {
         m.minDeviceOccurrence = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *DeviceManagementConfigurationSettingOccurrence) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }

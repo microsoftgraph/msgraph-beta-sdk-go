@@ -74,7 +74,7 @@ func NewTiIndicatorsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2
     urlParams["request-raw-url"] = rawUrl
     return NewTiIndicatorsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *TiIndicatorsRequestBuilder) Count()(*i16222b62e050bff07e47b4d54715cd2b8242e600345080f1bf21dd94b9cbf876.CountRequestBuilder) {
     return i16222b62e050bff07e47b4d54715cd2b8242e600345080f1bf21dd94b9cbf876.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

@@ -12,10 +12,12 @@ type SensitiveContentLocationable interface {
     GetEvidences()([]SensitiveContentEvidenceable)
     GetIdMatch()(*string)
     GetLength()(*int32)
+    GetOdataType()(*string)
     GetOffset()(*int32)
     SetConfidence(value *int32)()
     SetEvidences(value []SensitiveContentEvidenceable)()
     SetIdMatch(value *string)()
     SetLength(value *int32)()
+    SetOdataType(value *string)()
     SetOffset(value *int32)()
 }

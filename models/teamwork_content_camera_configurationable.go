@@ -11,7 +11,9 @@ type TeamworkContentCameraConfigurationable interface {
     GetIsContentCameraInverted()(*bool)
     GetIsContentCameraOptional()(*bool)
     GetIsContentEnhancementEnabled()(*bool)
+    GetOdataType()(*string)
     SetIsContentCameraInverted(value *bool)()
     SetIsContentCameraOptional(value *bool)()
     SetIsContentEnhancementEnabled(value *bool)()
+    SetOdataType(value *string)()
 }

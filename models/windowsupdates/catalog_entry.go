@@ -21,8 +21,8 @@ func NewCatalogEntry()(*CatalogEntry) {
     m := &CatalogEntry{
         Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),
     }
-    odatatypeValue := "#microsoft.graph.windowsUpdates.catalogEntry";
-    m.SetType(&odatatypeValue);
+    odataTypeValue := "#microsoft.graph.windowsUpdates.catalogEntry";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateCatalogEntryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -40,6 +40,10 @@ func CreateCatalogEntryFromDiscriminatorValue(parseNode i878a80d2330e89d26896388
             if mappingValue != nil {
                 mappingStr := *mappingValue
                 switch mappingStr {
+                    case "#microsoft.graph.windowsUpdates.featureUpdateCatalogEntry":
+                        return NewFeatureUpdateCatalogEntry(), nil
+                    case "#microsoft.graph.windowsUpdates.qualityUpdateCatalogEntry":
+                        return NewQualityUpdateCatalogEntry(), nil
                     case "#microsoft.graph.windowsUpdates.softwareUpdateCatalogEntry":
                         return NewSoftwareUpdateCatalogEntry(), nil
                 }

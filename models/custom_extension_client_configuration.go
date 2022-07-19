@@ -8,6 +8,8 @@ import (
 type CustomExtensionClientConfiguration struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
+    // The OdataType property
+    odataType *string
     // The max duration in milliseconds that Azure AD will wait for a response from the logic app before it shuts down the connection. The valid range is between 200 and 2000 milliseconds. Default duration is 1000.
     timeoutInMilliseconds *int32
 }
@@ -16,6 +18,8 @@ func NewCustomExtensionClientConfiguration()(*CustomExtensionClientConfiguration
     m := &CustomExtensionClientConfiguration{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.customExtensionClientConfiguration";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateCustomExtensionClientConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -33,6 +37,16 @@ func (m *CustomExtensionClientConfiguration) GetAdditionalData()(map[string]inte
 // GetFieldDeserializers the deserialization information for the current model
 func (m *CustomExtensionClientConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["timeoutInMilliseconds"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
@@ -45,6 +59,14 @@ func (m *CustomExtensionClientConfiguration) GetFieldDeserializers()(map[string]
     }
     return res
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *CustomExtensionClientConfiguration) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetTimeoutInMilliseconds gets the timeoutInMilliseconds property value. The max duration in milliseconds that Azure AD will wait for a response from the logic app before it shuts down the connection. The valid range is between 200 and 2000 milliseconds. Default duration is 1000.
 func (m *CustomExtensionClientConfiguration) GetTimeoutInMilliseconds()(*int32) {
     if m == nil {
@@ -55,6 +77,12 @@ func (m *CustomExtensionClientConfiguration) GetTimeoutInMilliseconds()(*int32) 
 }
 // Serialize serializes information the current object
 func (m *CustomExtensionClientConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     {
         err := writer.WriteInt32Value("timeoutInMilliseconds", m.GetTimeoutInMilliseconds())
         if err != nil {
@@ -73,6 +101,12 @@ func (m *CustomExtensionClientConfiguration) Serialize(writer i878a80d2330e89d26
 func (m *CustomExtensionClientConfiguration) SetAdditionalData(value map[string]interface{})() {
     if m != nil {
         m.additionalData = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *CustomExtensionClientConfiguration) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetTimeoutInMilliseconds sets the timeoutInMilliseconds property value. The max duration in milliseconds that Azure AD will wait for a response from the logic app before it shuts down the connection. The valid range is between 200 and 2000 milliseconds. Default duration is 1000.

@@ -15,6 +15,8 @@ type UserTrainingStatusInfo struct {
     completionDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Display name of the assigned training.
     displayName *string
+    // The OdataType property
+    odataType *string
     // Status of the training assigned to the user. Possible values are: unknown, assigned, inProgress, completed, overdue, unknownFutureValue.
     trainingStatus *TrainingStatus
 }
@@ -23,6 +25,8 @@ func NewUserTrainingStatusInfo()(*UserTrainingStatusInfo) {
     m := &UserTrainingStatusInfo{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.userTrainingStatusInfo";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateUserTrainingStatusInfoFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -94,6 +98,16 @@ func (m *UserTrainingStatusInfo) GetFieldDeserializers()(map[string]func(i878a80
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["trainingStatus"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseTrainingStatus)
         if err != nil {
@@ -105,6 +119,14 @@ func (m *UserTrainingStatusInfo) GetFieldDeserializers()(map[string]func(i878a80
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *UserTrainingStatusInfo) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
 }
 // GetTrainingStatus gets the trainingStatus property value. Status of the training assigned to the user. Possible values are: unknown, assigned, inProgress, completed, overdue, unknownFutureValue.
 func (m *UserTrainingStatusInfo) GetTrainingStatus()(*TrainingStatus) {
@@ -130,6 +152,12 @@ func (m *UserTrainingStatusInfo) Serialize(writer i878a80d2330e89d26896388a3f487
     }
     {
         err := writer.WriteStringValue("displayName", m.GetDisplayName())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -171,6 +199,12 @@ func (m *UserTrainingStatusInfo) SetCompletionDateTime(value *i336074805fc853987
 func (m *UserTrainingStatusInfo) SetDisplayName(value *string)() {
     if m != nil {
         m.displayName = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *UserTrainingStatusInfo) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetTrainingStatus sets the trainingStatus property value. Status of the training assigned to the user. Possible values are: unknown, assigned, inProgress, completed, overdue, unknownFutureValue.

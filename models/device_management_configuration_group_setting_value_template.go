@@ -10,6 +10,8 @@ type DeviceManagementConfigurationGroupSettingValueTemplate struct {
     additionalData map[string]interface{}
     // Group setting value children
     children []DeviceManagementConfigurationSettingInstanceTemplateable
+    // The OdataType property
+    odataType *string
     // Setting Value Template Id
     settingValueTemplateId *string
 }
@@ -18,6 +20,8 @@ func NewDeviceManagementConfigurationGroupSettingValueTemplate()(*DeviceManageme
     m := &DeviceManagementConfigurationGroupSettingValueTemplate{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.deviceManagementConfigurationGroupSettingValueTemplate";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDeviceManagementConfigurationGroupSettingValueTemplateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -57,6 +61,16 @@ func (m *DeviceManagementConfigurationGroupSettingValueTemplate) GetFieldDeseria
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["settingValueTemplateId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -68,6 +82,14 @@ func (m *DeviceManagementConfigurationGroupSettingValueTemplate) GetFieldDeseria
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *DeviceManagementConfigurationGroupSettingValueTemplate) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
 }
 // GetSettingValueTemplateId gets the settingValueTemplateId property value. Setting Value Template Id
 func (m *DeviceManagementConfigurationGroupSettingValueTemplate) GetSettingValueTemplateId()(*string) {
@@ -85,6 +107,12 @@ func (m *DeviceManagementConfigurationGroupSettingValueTemplate) Serialize(write
             cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
         }
         err := writer.WriteCollectionOfObjectValues("children", cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -113,6 +141,12 @@ func (m *DeviceManagementConfigurationGroupSettingValueTemplate) SetAdditionalDa
 func (m *DeviceManagementConfigurationGroupSettingValueTemplate) SetChildren(value []DeviceManagementConfigurationSettingInstanceTemplateable)() {
     if m != nil {
         m.children = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *DeviceManagementConfigurationGroupSettingValueTemplate) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetSettingValueTemplateId sets the settingValueTemplateId property value. Setting Value Template Id

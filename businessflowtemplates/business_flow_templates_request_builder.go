@@ -70,7 +70,7 @@ func NewBusinessFlowTemplatesRequestBuilder(rawUrl string, requestAdapter i2ae41
     urlParams["request-raw-url"] = rawUrl
     return NewBusinessFlowTemplatesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *BusinessFlowTemplatesRequestBuilder) Count()(*if38055a66c74250af2d6857bbb847959d1717e9025d0d0f368e5d26f8614f86b.CountRequestBuilder) {
     return if38055a66c74250af2d6857bbb847959d1717e9025d0d0f368e5d26f8614f86b.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

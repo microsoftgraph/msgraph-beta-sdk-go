@@ -27,6 +27,8 @@ type UnmanagedDevice struct {
     manufacturer *string
     // Model.
     model *string
+    // The OdataType property
+    odataType *string
     // Operating system.
     os *string
     // Operating system version.
@@ -37,6 +39,8 @@ func NewUnmanagedDevice()(*UnmanagedDevice) {
     m := &UnmanagedDevice{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.unmanagedDevice";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateUnmanagedDeviceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -160,6 +164,16 @@ func (m *UnmanagedDevice) GetFieldDeserializers()(map[string]func(i878a80d2330e8
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["os"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -238,6 +252,14 @@ func (m *UnmanagedDevice) GetModel()(*string) {
         return m.model
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *UnmanagedDevice) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetOs gets the os property value. Operating system.
 func (m *UnmanagedDevice) GetOs()(*string) {
     if m == nil {
@@ -306,6 +328,12 @@ func (m *UnmanagedDevice) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
     }
     {
         err := writer.WriteStringValue("model", m.GetModel())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -388,6 +416,12 @@ func (m *UnmanagedDevice) SetManufacturer(value *string)() {
 func (m *UnmanagedDevice) SetModel(value *string)() {
     if m != nil {
         m.model = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *UnmanagedDevice) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetOs sets the os property value. Operating system.

@@ -26,6 +26,8 @@ func NewConversation()(*Conversation) {
     m := &Conversation{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.conversation";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateConversationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

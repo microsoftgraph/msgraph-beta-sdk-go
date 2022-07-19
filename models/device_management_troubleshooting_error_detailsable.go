@@ -11,11 +11,13 @@ type DeviceManagementTroubleshootingErrorDetailsable interface {
     GetContext()(*string)
     GetFailure()(*string)
     GetFailureDetails()(*string)
+    GetOdataType()(*string)
     GetRemediation()(*string)
     GetResources()([]DeviceManagementTroubleshootingErrorResourceable)
     SetContext(value *string)()
     SetFailure(value *string)()
     SetFailureDetails(value *string)()
+    SetOdataType(value *string)()
     SetRemediation(value *string)()
     SetResources(value []DeviceManagementTroubleshootingErrorResourceable)()
 }

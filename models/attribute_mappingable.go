@@ -13,6 +13,7 @@ type AttributeMappingable interface {
     GetFlowBehavior()(*AttributeFlowBehavior)
     GetFlowType()(*AttributeFlowType)
     GetMatchingPriority()(*int32)
+    GetOdataType()(*string)
     GetSource()(AttributeMappingSourceable)
     GetTargetAttributeName()(*string)
     SetDefaultValue(value *string)()
@@ -20,6 +21,7 @@ type AttributeMappingable interface {
     SetFlowBehavior(value *AttributeFlowBehavior)()
     SetFlowType(value *AttributeFlowType)()
     SetMatchingPriority(value *int32)()
+    SetOdataType(value *string)()
     SetSource(value AttributeMappingSourceable)()
     SetTargetAttributeName(value *string)()
 }

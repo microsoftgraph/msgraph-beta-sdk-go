@@ -40,6 +40,8 @@ func NewIpSecurityProfile()(*IpSecurityProfile) {
     m := &IpSecurityProfile{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.ipSecurityProfile";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateIpSecurityProfileFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

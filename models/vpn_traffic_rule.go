@@ -20,6 +20,8 @@ type VpnTrafficRule struct {
     localPortRanges []NumberRangeable
     // Name.
     name *string
+    // The OdataType property
+    odataType *string
     // Protocols (0-255). Valid values 0 to 255
     protocols *int32
     // Remote address range. This collection can contain a maximum of 500 elements.
@@ -34,6 +36,8 @@ func NewVpnTrafficRule()(*VpnTrafficRule) {
     m := &VpnTrafficRule{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.vpnTrafficRule";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateVpnTrafficRuleFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -143,6 +147,16 @@ func (m *VpnTrafficRule) GetFieldDeserializers()(map[string]func(i878a80d2330e89
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["protocols"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
@@ -215,6 +229,14 @@ func (m *VpnTrafficRule) GetName()(*string) {
         return nil
     } else {
         return m.name
+    }
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *VpnTrafficRule) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
     }
 }
 // GetProtocols gets the protocols property value. Protocols (0-255). Valid values 0 to 255
@@ -292,6 +314,12 @@ func (m *VpnTrafficRule) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
     }
     {
         err := writer.WriteStringValue("name", m.GetName())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -377,6 +405,12 @@ func (m *VpnTrafficRule) SetLocalPortRanges(value []NumberRangeable)() {
 func (m *VpnTrafficRule) SetName(value *string)() {
     if m != nil {
         m.name = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *VpnTrafficRule) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetProtocols sets the protocols property value. Protocols (0-255). Valid values 0 to 255

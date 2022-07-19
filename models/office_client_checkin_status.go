@@ -21,6 +21,8 @@ type OfficeClientCheckinStatus struct {
     devicePlatformVersion *string
     // Error message if any associated for the last checkin.
     errorMessage *string
+    // The OdataType property
+    odataType *string
     // User identifier using the device.
     userId *string
     // User principal name using the device.
@@ -33,6 +35,8 @@ func NewOfficeClientCheckinStatus()(*OfficeClientCheckinStatus) {
     m := &OfficeClientCheckinStatus{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.officeClientCheckinStatus";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateOfficeClientCheckinStatusFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -162,6 +166,16 @@ func (m *OfficeClientCheckinStatus) GetFieldDeserializers()(map[string]func(i878
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["userId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -193,6 +207,14 @@ func (m *OfficeClientCheckinStatus) GetFieldDeserializers()(map[string]func(i878
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *OfficeClientCheckinStatus) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
 }
 // GetUserId gets the userId property value. User identifier using the device.
 func (m *OfficeClientCheckinStatus) GetUserId()(*string) {
@@ -252,6 +274,12 @@ func (m *OfficeClientCheckinStatus) Serialize(writer i878a80d2330e89d26896388a3f
     }
     {
         err := writer.WriteStringValue("errorMessage", m.GetErrorMessage())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -322,6 +350,12 @@ func (m *OfficeClientCheckinStatus) SetDevicePlatformVersion(value *string)() {
 func (m *OfficeClientCheckinStatus) SetErrorMessage(value *string)() {
     if m != nil {
         m.errorMessage = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *OfficeClientCheckinStatus) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetUserId sets the userId property value. User identifier using the device.

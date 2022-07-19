@@ -10,16 +10,16 @@ type MeetingInfo struct {
     additionalData map[string]interface{}
     // The allowConversationWithoutHost property
     allowConversationWithoutHost *bool
-    // The type property
-    type_escaped *string
+    // The OdataType property
+    odataType *string
 }
 // NewMeetingInfo instantiates a new meetingInfo and sets the default values.
 func NewMeetingInfo()(*MeetingInfo) {
     m := &MeetingInfo{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odatatypeValue := "#microsoft.graph.meetingInfo";
-    m.SetType(&odatatypeValue);
+    odataTypeValue := "#microsoft.graph.meetingInfo";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateMeetingInfoFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -84,18 +84,18 @@ func (m *MeetingInfo) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
             return err
         }
         if val != nil {
-            m.SetType(val)
+            m.SetOdataType(val)
         }
         return nil
     }
     return res
 }
-// GetType gets the @odata.type property value. The type property
-func (m *MeetingInfo) GetType()(*string) {
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *MeetingInfo) GetOdataType()(*string) {
     if m == nil {
         return nil
     } else {
-        return m.type_escaped
+        return m.odataType
     }
 }
 // Serialize serializes information the current object
@@ -107,7 +107,7 @@ func (m *MeetingInfo) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
         }
     }
     {
-        err := writer.WriteStringValue("@odata.type", m.GetType())
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -132,9 +132,9 @@ func (m *MeetingInfo) SetAllowConversationWithoutHost(value *bool)() {
         m.allowConversationWithoutHost = value
     }
 }
-// SetType sets the @odata.type property value. The type property
-func (m *MeetingInfo) SetType(value *string)() {
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *MeetingInfo) SetOdataType(value *string)() {
     if m != nil {
-        m.type_escaped = value
+        m.odataType = value
     }
 }

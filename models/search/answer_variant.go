@@ -15,6 +15,8 @@ type AnswerVariant struct {
     displayName *string
     // The languageTag property
     languageTag *string
+    // The OdataType property
+    odataType *string
     // The platform property
     platform *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DevicePlatformType
     // Answer variation URL link. When users click this answer variation in search results, they will go to this URL.
@@ -25,6 +27,8 @@ func NewAnswerVariant()(*AnswerVariant) {
     m := &AnswerVariant{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.search.answerVariant";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAnswerVariantFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -88,6 +92,16 @@ func (m *AnswerVariant) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["platform"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ParseDevicePlatformType)
         if err != nil {
@@ -116,6 +130,14 @@ func (m *AnswerVariant) GetLanguageTag()(*string) {
         return nil
     } else {
         return m.languageTag
+    }
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *AnswerVariant) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
     }
 }
 // GetPlatform gets the platform property value. The platform property
@@ -150,6 +172,12 @@ func (m *AnswerVariant) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
     }
     {
         err := writer.WriteStringValue("languageTag", m.GetLanguageTag())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -197,6 +225,12 @@ func (m *AnswerVariant) SetDisplayName(value *string)() {
 func (m *AnswerVariant) SetLanguageTag(value *string)() {
     if m != nil {
         m.languageTag = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *AnswerVariant) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetPlatform sets the platform property value. The platform property

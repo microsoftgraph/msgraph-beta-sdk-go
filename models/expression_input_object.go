@@ -10,6 +10,8 @@ type ExpressionInputObject struct {
     additionalData map[string]interface{}
     // Definition of the test object.
     definition ObjectDefinitionable
+    // The OdataType property
+    odataType *string
     // Property values of the test object.
     properties []StringKeyObjectValuePairable
 }
@@ -18,6 +20,8 @@ func NewExpressionInputObject()(*ExpressionInputObject) {
     m := &ExpressionInputObject{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.expressionInputObject";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateExpressionInputObjectFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -53,6 +57,16 @@ func (m *ExpressionInputObject) GetFieldDeserializers()(map[string]func(i878a80d
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["properties"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateStringKeyObjectValuePairFromDiscriminatorValue)
         if err != nil {
@@ -69,6 +83,14 @@ func (m *ExpressionInputObject) GetFieldDeserializers()(map[string]func(i878a80d
     }
     return res
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *ExpressionInputObject) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetProperties gets the properties property value. Property values of the test object.
 func (m *ExpressionInputObject) GetProperties()([]StringKeyObjectValuePairable) {
     if m == nil {
@@ -81,6 +103,12 @@ func (m *ExpressionInputObject) GetProperties()([]StringKeyObjectValuePairable) 
 func (m *ExpressionInputObject) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
         err := writer.WriteObjectValue("definition", m.GetDefinition())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -113,6 +141,12 @@ func (m *ExpressionInputObject) SetAdditionalData(value map[string]interface{})(
 func (m *ExpressionInputObject) SetDefinition(value ObjectDefinitionable)() {
     if m != nil {
         m.definition = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *ExpressionInputObject) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetProperties sets the properties property value. Property values of the test object.

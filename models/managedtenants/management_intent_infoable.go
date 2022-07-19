@@ -11,7 +11,9 @@ type ManagementIntentInfoable interface {
     GetManagementIntentDisplayName()(*string)
     GetManagementIntentId()(*string)
     GetManagementTemplates()([]ManagementTemplateDetailedInfoable)
+    GetOdataType()(*string)
     SetManagementIntentDisplayName(value *string)()
     SetManagementIntentId(value *string)()
     SetManagementTemplates(value []ManagementTemplateDetailedInfoable)()
+    SetOdataType(value *string)()
 }

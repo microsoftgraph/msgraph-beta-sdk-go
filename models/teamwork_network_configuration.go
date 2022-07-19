@@ -20,6 +20,8 @@ type TeamworkNetworkConfiguration struct {
     isDhcpEnabled *bool
     // True if the PC port is enabled.
     isPCPortEnabled *bool
+    // The OdataType property
+    odataType *string
     // A primary DNS is the first point of contact for a device that translates the hostname into an IP address.
     primaryDns *string
     // A secondary DNS is used when the primary DNS is not available.
@@ -32,6 +34,8 @@ func NewTeamworkNetworkConfiguration()(*TeamworkNetworkConfiguration) {
     m := &TeamworkNetworkConfiguration{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.teamworkNetworkConfiguration";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateTeamworkNetworkConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -125,6 +129,16 @@ func (m *TeamworkNetworkConfiguration) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["primaryDns"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -189,6 +203,14 @@ func (m *TeamworkNetworkConfiguration) GetIsPCPortEnabled()(*bool) {
         return m.isPCPortEnabled
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *TeamworkNetworkConfiguration) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetPrimaryDns gets the primaryDns property value. A primary DNS is the first point of contact for a device that translates the hostname into an IP address.
 func (m *TeamworkNetworkConfiguration) GetPrimaryDns()(*string) {
     if m == nil {
@@ -247,6 +269,12 @@ func (m *TeamworkNetworkConfiguration) Serialize(writer i878a80d2330e89d26896388
     }
     {
         err := writer.WriteBoolValue("isPCPortEnabled", m.GetIsPCPortEnabled())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -317,6 +345,12 @@ func (m *TeamworkNetworkConfiguration) SetIsDhcpEnabled(value *bool)() {
 func (m *TeamworkNetworkConfiguration) SetIsPCPortEnabled(value *bool)() {
     if m != nil {
         m.isPCPortEnabled = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *TeamworkNetworkConfiguration) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetPrimaryDns sets the primaryDns property value. A primary DNS is the first point of contact for a device that translates the hostname into an IP address.

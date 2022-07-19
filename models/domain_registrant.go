@@ -10,6 +10,8 @@ type DomainRegistrant struct {
     additionalData map[string]interface{}
     // The countryOrRegionCode property
     countryOrRegionCode *string
+    // The OdataType property
+    odataType *string
     // The organization property
     organization *string
     // The url property
@@ -22,6 +24,8 @@ func NewDomainRegistrant()(*DomainRegistrant) {
     m := &DomainRegistrant{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.domainRegistrant";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDomainRegistrantFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -57,6 +61,16 @@ func (m *DomainRegistrant) GetFieldDeserializers()(map[string]func(i878a80d2330e
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["organization"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -89,6 +103,14 @@ func (m *DomainRegistrant) GetFieldDeserializers()(map[string]func(i878a80d2330e
     }
     return res
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *DomainRegistrant) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetOrganization gets the organization property value. The organization property
 func (m *DomainRegistrant) GetOrganization()(*string) {
     if m == nil {
@@ -117,6 +139,12 @@ func (m *DomainRegistrant) GetVendor()(*string) {
 func (m *DomainRegistrant) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("countryOrRegionCode", m.GetCountryOrRegionCode())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -157,6 +185,12 @@ func (m *DomainRegistrant) SetAdditionalData(value map[string]interface{})() {
 func (m *DomainRegistrant) SetCountryOrRegionCode(value *string)() {
     if m != nil {
         m.countryOrRegionCode = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *DomainRegistrant) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetOrganization sets the organization property value. The organization property

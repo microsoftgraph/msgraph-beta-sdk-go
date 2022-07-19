@@ -17,6 +17,7 @@ type AppliedConditionalAccessPolicyable interface {
     GetExcludeRulesSatisfied()([]ConditionalAccessRuleSatisfiedable)
     GetId()(*string)
     GetIncludeRulesSatisfied()([]ConditionalAccessRuleSatisfiedable)
+    GetOdataType()(*string)
     GetResult()(*AppliedConditionalAccessPolicyResult)
     GetSessionControlsNotSatisfied()([]string)
     SetAuthenticationStrength(value AuthenticationStrengthable)()
@@ -28,6 +29,7 @@ type AppliedConditionalAccessPolicyable interface {
     SetExcludeRulesSatisfied(value []ConditionalAccessRuleSatisfiedable)()
     SetId(value *string)()
     SetIncludeRulesSatisfied(value []ConditionalAccessRuleSatisfiedable)()
+    SetOdataType(value *string)()
     SetResult(value *AppliedConditionalAccessPolicyResult)()
     SetSessionControlsNotSatisfied(value []string)()
 }

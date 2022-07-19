@@ -13,6 +13,8 @@ func NewEdgeHomeButtonOpensNewTab()(*EdgeHomeButtonOpensNewTab) {
     m := &EdgeHomeButtonOpensNewTab{
         EdgeHomeButtonConfiguration: *NewEdgeHomeButtonConfiguration(),
     }
+    odataTypeValue := "#microsoft.graph.edgeHomeButtonOpensNewTab";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateEdgeHomeButtonOpensNewTabFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

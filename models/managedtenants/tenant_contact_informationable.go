@@ -11,11 +11,13 @@ type TenantContactInformationable interface {
     GetEmail()(*string)
     GetName()(*string)
     GetNotes()(*string)
+    GetOdataType()(*string)
     GetPhone()(*string)
     GetTitle()(*string)
     SetEmail(value *string)()
     SetName(value *string)()
     SetNotes(value *string)()
+    SetOdataType(value *string)()
     SetPhone(value *string)()
     SetTitle(value *string)()
 }

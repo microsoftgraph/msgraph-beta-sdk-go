@@ -19,6 +19,8 @@ func NewWorkbookChartSeries()(*WorkbookChartSeries) {
     m := &WorkbookChartSeries{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.workbookChartSeries";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateWorkbookChartSeriesFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

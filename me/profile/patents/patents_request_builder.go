@@ -70,7 +70,7 @@ func NewPatentsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371
     urlParams["request-raw-url"] = rawUrl
     return NewPatentsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *PatentsRequestBuilder) Count()(*if8384a92eccc54a2dd247d2032724a1fc6c5826156e2d8c2b2c85762c4f28fd4.CountRequestBuilder) {
     return if8384a92eccc54a2dd247d2032724a1fc6c5826156e2d8c2b2c85762c4f28fd4.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

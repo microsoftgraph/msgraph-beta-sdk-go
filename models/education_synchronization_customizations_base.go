@@ -8,16 +8,16 @@ import (
 type EducationSynchronizationCustomizationsBase struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
-    // The type property
-    type_escaped *string
+    // The OdataType property
+    odataType *string
 }
 // NewEducationSynchronizationCustomizationsBase instantiates a new educationSynchronizationCustomizationsBase and sets the default values.
 func NewEducationSynchronizationCustomizationsBase()(*EducationSynchronizationCustomizationsBase) {
     m := &EducationSynchronizationCustomizationsBase{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odatatypeValue := "#microsoft.graph.educationSynchronizationCustomizationsBase";
-    m.SetType(&odatatypeValue);
+    odataTypeValue := "#microsoft.graph.educationSynchronizationCustomizationsBase";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateEducationSynchronizationCustomizationsBaseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -60,24 +60,24 @@ func (m *EducationSynchronizationCustomizationsBase) GetFieldDeserializers()(map
             return err
         }
         if val != nil {
-            m.SetType(val)
+            m.SetOdataType(val)
         }
         return nil
     }
     return res
 }
-// GetType gets the @odata.type property value. The type property
-func (m *EducationSynchronizationCustomizationsBase) GetType()(*string) {
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *EducationSynchronizationCustomizationsBase) GetOdataType()(*string) {
     if m == nil {
         return nil
     } else {
-        return m.type_escaped
+        return m.odataType
     }
 }
 // Serialize serializes information the current object
 func (m *EducationSynchronizationCustomizationsBase) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
-        err := writer.WriteStringValue("@odata.type", m.GetType())
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -96,9 +96,9 @@ func (m *EducationSynchronizationCustomizationsBase) SetAdditionalData(value map
         m.additionalData = value
     }
 }
-// SetType sets the @odata.type property value. The type property
-func (m *EducationSynchronizationCustomizationsBase) SetType(value *string)() {
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *EducationSynchronizationCustomizationsBase) SetOdataType(value *string)() {
     if m != nil {
-        m.type_escaped = value
+        m.odataType = value
     }
 }

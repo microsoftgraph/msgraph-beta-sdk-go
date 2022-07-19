@@ -14,6 +14,8 @@ type TeamworkHardwareDetail struct {
     manufacturer *string
     // Devie model.
     model *string
+    // The OdataType property
+    odataType *string
     // Device serial number.
     serialNumber *string
     // The unique identifier for the device.
@@ -24,6 +26,8 @@ func NewTeamworkHardwareDetail()(*TeamworkHardwareDetail) {
     m := &TeamworkHardwareDetail{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.teamworkHardwareDetail";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateTeamworkHardwareDetailFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -75,6 +79,16 @@ func (m *TeamworkHardwareDetail) GetFieldDeserializers()(map[string]func(i878a80
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["serialNumber"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -121,6 +135,14 @@ func (m *TeamworkHardwareDetail) GetModel()(*string) {
         return m.model
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *TeamworkHardwareDetail) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetSerialNumber gets the serialNumber property value. Device serial number.
 func (m *TeamworkHardwareDetail) GetSerialNumber()(*string) {
     if m == nil {
@@ -153,6 +175,12 @@ func (m *TeamworkHardwareDetail) Serialize(writer i878a80d2330e89d26896388a3f487
     }
     {
         err := writer.WriteStringValue("model", m.GetModel())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -199,6 +227,12 @@ func (m *TeamworkHardwareDetail) SetManufacturer(value *string)() {
 func (m *TeamworkHardwareDetail) SetModel(value *string)() {
     if m != nil {
         m.model = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *TeamworkHardwareDetail) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetSerialNumber sets the serialNumber property value. Device serial number.

@@ -13,12 +13,16 @@ type TeamworkConnection struct {
     connectionStatus *TeamworkConnectionStatus
     // Time at which the state was last changed. For example, indicates connected since when the state is connected and disconnected since when the state is disconnected.
     lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
+    // The OdataType property
+    odataType *string
 }
 // NewTeamworkConnection instantiates a new teamworkConnection and sets the default values.
 func NewTeamworkConnection()(*TeamworkConnection) {
     m := &TeamworkConnection{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.teamworkConnection";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateTeamworkConnectionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -64,6 +68,16 @@ func (m *TeamworkConnection) GetFieldDeserializers()(map[string]func(i878a80d233
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. Time at which the state was last changed. For example, indicates connected since when the state is connected and disconnected since when the state is disconnected.
@@ -72,6 +86,14 @@ func (m *TeamworkConnection) GetLastModifiedDateTime()(*i336074805fc853987abe6f7
         return nil
     } else {
         return m.lastModifiedDateTime
+    }
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *TeamworkConnection) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
     }
 }
 // Serialize serializes information the current object
@@ -85,6 +107,12 @@ func (m *TeamworkConnection) Serialize(writer i878a80d2330e89d26896388a3f487eef2
     }
     {
         err := writer.WriteTimeValue("lastModifiedDateTime", m.GetLastModifiedDateTime())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -113,5 +141,11 @@ func (m *TeamworkConnection) SetConnectionStatus(value *TeamworkConnectionStatus
 func (m *TeamworkConnection) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     if m != nil {
         m.lastModifiedDateTime = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *TeamworkConnection) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }

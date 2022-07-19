@@ -91,6 +91,8 @@ func NewCompany()(*Company) {
     m := &Company{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.company";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateCompanyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

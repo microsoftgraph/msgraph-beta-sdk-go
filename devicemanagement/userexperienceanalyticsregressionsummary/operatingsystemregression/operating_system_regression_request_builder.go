@@ -70,7 +70,7 @@ func NewOperatingSystemRegressionRequestBuilder(rawUrl string, requestAdapter i2
     urlParams["request-raw-url"] = rawUrl
     return NewOperatingSystemRegressionRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *OperatingSystemRegressionRequestBuilder) Count()(*i5808947e5e1ac55ab5087a345bb4ed4868d3085b9bbcd203a005410d02a520f3.CountRequestBuilder) {
     return i5808947e5e1ac55ab5087a345bb4ed4868d3085b9bbcd203a005410d02a520f3.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

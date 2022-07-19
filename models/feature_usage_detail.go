@@ -19,12 +19,16 @@ type FeatureUsageDetail struct {
     licenseAssigned *AzureADLicenseType
     // The licenseRequired property
     licenseRequired *AzureADLicenseType
+    // The OdataType property
+    odataType *string
 }
 // NewFeatureUsageDetail instantiates a new featureUsageDetail and sets the default values.
 func NewFeatureUsageDetail()(*FeatureUsageDetail) {
     m := &FeatureUsageDetail{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.featureUsageDetail";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateFeatureUsageDetailFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -100,6 +104,16 @@ func (m *FeatureUsageDetail) GetFieldDeserializers()(map[string]func(i878a80d233
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetLastConfiguredDateTime gets the lastConfiguredDateTime property value. The lastConfiguredDateTime property
@@ -134,6 +148,14 @@ func (m *FeatureUsageDetail) GetLicenseRequired()(*AzureADLicenseType) {
         return m.licenseRequired
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *FeatureUsageDetail) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // Serialize serializes information the current object
 func (m *FeatureUsageDetail) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
@@ -164,6 +186,12 @@ func (m *FeatureUsageDetail) Serialize(writer i878a80d2330e89d26896388a3f487eef2
     if m.GetLicenseRequired() != nil {
         cast := (*m.GetLicenseRequired()).String()
         err := writer.WriteStringValue("licenseRequired", &cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -210,5 +238,11 @@ func (m *FeatureUsageDetail) SetLicenseAssigned(value *AzureADLicenseType)() {
 func (m *FeatureUsageDetail) SetLicenseRequired(value *AzureADLicenseType)() {
     if m != nil {
         m.licenseRequired = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *FeatureUsageDetail) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }

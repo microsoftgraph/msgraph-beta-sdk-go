@@ -63,7 +63,7 @@ func NewOauth2PermissionGrantsRequestBuilder(rawUrl string, requestAdapter i2ae4
     urlParams["request-raw-url"] = rawUrl
     return NewOauth2PermissionGrantsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *Oauth2PermissionGrantsRequestBuilder) Count()(*i557e849a2f0dd2eaebf1ec92e81131aa32362b3fc1d9b0e5e792f647ce7178cb.CountRequestBuilder) {
     return i557e849a2f0dd2eaebf1ec92e81131aa32362b3fc1d9b0e5e792f647ce7178cb.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

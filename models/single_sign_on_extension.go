@@ -8,16 +8,16 @@ import (
 type SingleSignOnExtension struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
-    // The type property
-    type_escaped *string
+    // The OdataType property
+    odataType *string
 }
 // NewSingleSignOnExtension instantiates a new singleSignOnExtension and sets the default values.
 func NewSingleSignOnExtension()(*SingleSignOnExtension) {
     m := &SingleSignOnExtension{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odatatypeValue := "#microsoft.graph.singleSignOnExtension";
-    m.SetType(&odatatypeValue);
+    odataTypeValue := "#microsoft.graph.singleSignOnExtension";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateSingleSignOnExtensionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -37,10 +37,26 @@ func CreateSingleSignOnExtensionFromDiscriminatorValue(parseNode i878a80d2330e89
                 switch mappingStr {
                     case "#microsoft.graph.credentialSingleSignOnExtension":
                         return NewCredentialSingleSignOnExtension(), nil
+                    case "#microsoft.graph.iosAzureAdSingleSignOnExtension":
+                        return NewIosAzureAdSingleSignOnExtension(), nil
+                    case "#microsoft.graph.iosCredentialSingleSignOnExtension":
+                        return NewIosCredentialSingleSignOnExtension(), nil
+                    case "#microsoft.graph.iosKerberosSingleSignOnExtension":
+                        return NewIosKerberosSingleSignOnExtension(), nil
+                    case "#microsoft.graph.iosRedirectSingleSignOnExtension":
+                        return NewIosRedirectSingleSignOnExtension(), nil
                     case "#microsoft.graph.iosSingleSignOnExtension":
                         return NewIosSingleSignOnExtension(), nil
                     case "#microsoft.graph.kerberosSingleSignOnExtension":
                         return NewKerberosSingleSignOnExtension(), nil
+                    case "#microsoft.graph.macOSAzureAdSingleSignOnExtension":
+                        return NewMacOSAzureAdSingleSignOnExtension(), nil
+                    case "#microsoft.graph.macOSCredentialSingleSignOnExtension":
+                        return NewMacOSCredentialSingleSignOnExtension(), nil
+                    case "#microsoft.graph.macOSKerberosSingleSignOnExtension":
+                        return NewMacOSKerberosSingleSignOnExtension(), nil
+                    case "#microsoft.graph.macOSRedirectSingleSignOnExtension":
+                        return NewMacOSRedirectSingleSignOnExtension(), nil
                     case "#microsoft.graph.macOSSingleSignOnExtension":
                         return NewMacOSSingleSignOnExtension(), nil
                     case "#microsoft.graph.redirectSingleSignOnExtension":
@@ -68,24 +84,24 @@ func (m *SingleSignOnExtension) GetFieldDeserializers()(map[string]func(i878a80d
             return err
         }
         if val != nil {
-            m.SetType(val)
+            m.SetOdataType(val)
         }
         return nil
     }
     return res
 }
-// GetType gets the @odata.type property value. The type property
-func (m *SingleSignOnExtension) GetType()(*string) {
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *SingleSignOnExtension) GetOdataType()(*string) {
     if m == nil {
         return nil
     } else {
-        return m.type_escaped
+        return m.odataType
     }
 }
 // Serialize serializes information the current object
 func (m *SingleSignOnExtension) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
-        err := writer.WriteStringValue("@odata.type", m.GetType())
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -104,9 +120,9 @@ func (m *SingleSignOnExtension) SetAdditionalData(value map[string]interface{})(
         m.additionalData = value
     }
 }
-// SetType sets the @odata.type property value. The type property
-func (m *SingleSignOnExtension) SetType(value *string)() {
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *SingleSignOnExtension) SetOdataType(value *string)() {
     if m != nil {
-        m.type_escaped = value
+        m.odataType = value
     }
 }

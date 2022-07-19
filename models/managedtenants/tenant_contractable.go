@@ -11,7 +11,9 @@ type TenantContractable interface {
     GetContractType()(*int32)
     GetDefaultDomainName()(*string)
     GetDisplayName()(*string)
+    GetOdataType()(*string)
     SetContractType(value *int32)()
     SetDefaultDomainName(value *string)()
     SetDisplayName(value *string)()
+    SetOdataType(value *string)()
 }

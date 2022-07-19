@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// UserExperienceAnalyticsDeviceStartupHistory 
+// UserExperienceAnalyticsDeviceStartupHistory the user experience analytics device startup history entity contains device boot performance history details.
 type UserExperienceAnalyticsDeviceStartupHistory struct {
     Entity
     // The user experience analytics device core boot time in milliseconds.
@@ -41,11 +41,13 @@ type UserExperienceAnalyticsDeviceStartupHistory struct {
     // The user experience analytics device total login time in milliseconds.
     totalLoginTimeInMs *int32
 }
-// NewUserExperienceAnalyticsDeviceStartupHistory instantiates a new UserExperienceAnalyticsDeviceStartupHistory and sets the default values.
+// NewUserExperienceAnalyticsDeviceStartupHistory instantiates a new userExperienceAnalyticsDeviceStartupHistory and sets the default values.
 func NewUserExperienceAnalyticsDeviceStartupHistory()(*UserExperienceAnalyticsDeviceStartupHistory) {
     m := &UserExperienceAnalyticsDeviceStartupHistory{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.userExperienceAnalyticsDeviceStartupHistory";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateUserExperienceAnalyticsDeviceStartupHistoryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

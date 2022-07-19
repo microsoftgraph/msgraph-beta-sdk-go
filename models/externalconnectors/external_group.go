@@ -5,7 +5,7 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
-// ExternalGroup provides operations to manage the collection of activityStatistics entities.
+// ExternalGroup provides operations to manage the collection of accessReview entities.
 type ExternalGroup struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
     // The description of the external group. Optional.
@@ -20,6 +20,8 @@ func NewExternalGroup()(*ExternalGroup) {
     m := &ExternalGroup{
         Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.externalConnectors.externalGroup";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateExternalGroupFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

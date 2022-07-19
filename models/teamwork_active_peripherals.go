@@ -14,6 +14,8 @@ type TeamworkActivePeripherals struct {
     contentCamera TeamworkPeripheralable
     // The microphone property
     microphone TeamworkPeripheralable
+    // The OdataType property
+    odataType *string
     // The roomCamera property
     roomCamera TeamworkPeripheralable
     // The speaker property
@@ -24,6 +26,8 @@ func NewTeamworkActivePeripherals()(*TeamworkActivePeripherals) {
     m := &TeamworkActivePeripherals{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.teamworkActivePeripherals";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateTeamworkActivePeripheralsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -87,6 +91,16 @@ func (m *TeamworkActivePeripherals) GetFieldDeserializers()(map[string]func(i878
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["roomCamera"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateTeamworkPeripheralFromDiscriminatorValue)
         if err != nil {
@@ -115,6 +129,14 @@ func (m *TeamworkActivePeripherals) GetMicrophone()(TeamworkPeripheralable) {
         return nil
     } else {
         return m.microphone
+    }
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *TeamworkActivePeripherals) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
     }
 }
 // GetRoomCamera gets the roomCamera property value. The roomCamera property
@@ -149,6 +171,12 @@ func (m *TeamworkActivePeripherals) Serialize(writer i878a80d2330e89d26896388a3f
     }
     {
         err := writer.WriteObjectValue("microphone", m.GetMicrophone())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -195,6 +223,12 @@ func (m *TeamworkActivePeripherals) SetContentCamera(value TeamworkPeripheralabl
 func (m *TeamworkActivePeripherals) SetMicrophone(value TeamworkPeripheralable)() {
     if m != nil {
         m.microphone = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *TeamworkActivePeripherals) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetRoomCamera sets the roomCamera property value. The roomCamera property

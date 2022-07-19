@@ -14,6 +14,8 @@ type ResponsibleSensitiveType struct {
     id *string
     // The name property
     name *string
+    // The OdataType property
+    odataType *string
     // The publisherName property
     publisherName *string
     // The rulePackageId property
@@ -26,6 +28,8 @@ func NewResponsibleSensitiveType()(*ResponsibleSensitiveType) {
     m := &ResponsibleSensitiveType{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.responsibleSensitiveType";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateResponsibleSensitiveTypeFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -81,6 +85,16 @@ func (m *ResponsibleSensitiveType) GetFieldDeserializers()(map[string]func(i878a
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["publisherName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -129,6 +143,14 @@ func (m *ResponsibleSensitiveType) GetName()(*string) {
         return m.name
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *ResponsibleSensitiveType) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetPublisherName gets the publisherName property value. The publisherName property
 func (m *ResponsibleSensitiveType) GetPublisherName()(*string) {
     if m == nil {
@@ -169,6 +191,12 @@ func (m *ResponsibleSensitiveType) Serialize(writer i878a80d2330e89d26896388a3f4
     }
     {
         err := writer.WriteStringValue("name", m.GetName())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -221,6 +249,12 @@ func (m *ResponsibleSensitiveType) SetId(value *string)() {
 func (m *ResponsibleSensitiveType) SetName(value *string)() {
     if m != nil {
         m.name = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *ResponsibleSensitiveType) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetPublisherName sets the publisherName property value. The publisherName property

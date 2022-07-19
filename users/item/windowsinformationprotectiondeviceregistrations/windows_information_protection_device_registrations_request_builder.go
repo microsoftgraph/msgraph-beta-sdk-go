@@ -63,7 +63,7 @@ func NewWindowsInformationProtectionDeviceRegistrationsRequestBuilder(rawUrl str
     urlParams["request-raw-url"] = rawUrl
     return NewWindowsInformationProtectionDeviceRegistrationsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *WindowsInformationProtectionDeviceRegistrationsRequestBuilder) Count()(*ie5f3e61745b669f3ca4dea6b6899946449850923cfd1c29919496e88c57f3f06.CountRequestBuilder) {
     return ie5f3e61745b669f3ca4dea6b6899946449850923cfd1c29919496e88c57f3f06.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

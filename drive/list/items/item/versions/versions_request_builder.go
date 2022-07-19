@@ -70,7 +70,7 @@ func NewVersionsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26337
     urlParams["request-raw-url"] = rawUrl
     return NewVersionsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *VersionsRequestBuilder) Count()(*id8663ed0feb30218f5999780e8ff8d8947b480d54f80aa5a222974ec0223807e.CountRequestBuilder) {
     return id8663ed0feb30218f5999780e8ff8d8947b480d54f80aa5a222974ec0223807e.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

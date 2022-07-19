@@ -15,11 +15,13 @@ type WindowsAutopilotSettings struct {
     // The syncStatus property
     syncStatus *WindowsAutopilotSyncStatus
 }
-// NewWindowsAutopilotSettings instantiates a new WindowsAutopilotSettings and sets the default values.
+// NewWindowsAutopilotSettings instantiates a new windowsAutopilotSettings and sets the default values.
 func NewWindowsAutopilotSettings()(*WindowsAutopilotSettings) {
     m := &WindowsAutopilotSettings{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.windowsAutopilotSettings";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateWindowsAutopilotSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -17,6 +17,8 @@ func NewProtectSite()(*ProtectSite) {
     m := &ProtectSite{
         LabelActionBase: *NewLabelActionBase(),
     }
+    odataTypeValue := "#microsoft.graph.protectSite";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateProtectSiteFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

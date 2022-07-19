@@ -19,6 +19,8 @@ func NewWindowsQualityUpdateCatalogItem()(*WindowsQualityUpdateCatalogItem) {
     m := &WindowsQualityUpdateCatalogItem{
         WindowsUpdateCatalogItem: *NewWindowsUpdateCatalogItem(),
     }
+    odataTypeValue := "#microsoft.graph.windowsQualityUpdateCatalogItem";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateWindowsQualityUpdateCatalogItemFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

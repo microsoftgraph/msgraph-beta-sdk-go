@@ -15,6 +15,8 @@ func NewPayloadCompatibleAssignmentFilter()(*PayloadCompatibleAssignmentFilter) 
     m := &PayloadCompatibleAssignmentFilter{
         DeviceAndAppManagementAssignmentFilter: *NewDeviceAndAppManagementAssignmentFilter(),
     }
+    odataTypeValue := "#microsoft.graph.payloadCompatibleAssignmentFilter";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreatePayloadCompatibleAssignmentFilterFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

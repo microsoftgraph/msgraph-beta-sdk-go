@@ -11,7 +11,9 @@ type Filterable interface {
     GetCategoryFilterGroups()([]FilterGroupable)
     GetGroups()([]FilterGroupable)
     GetInputFilterGroups()([]FilterGroupable)
+    GetOdataType()(*string)
     SetCategoryFilterGroups(value []FilterGroupable)()
     SetGroups(value []FilterGroupable)()
     SetInputFilterGroups(value []FilterGroupable)()
+    SetOdataType(value *string)()
 }

@@ -19,6 +19,8 @@ func NewDeviceManagementConfigurationRedirectSettingDefinition()(*DeviceManageme
     m := &DeviceManagementConfigurationRedirectSettingDefinition{
         DeviceManagementConfigurationSettingDefinition: *NewDeviceManagementConfigurationSettingDefinition(),
     }
+    odataTypeValue := "#microsoft.graph.deviceManagementConfigurationRedirectSettingDefinition";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDeviceManagementConfigurationRedirectSettingDefinitionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

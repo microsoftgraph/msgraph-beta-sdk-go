@@ -44,6 +44,7 @@ import (
     i453454978d87486fd201df62ea4b775c5b4907e2a36395fb6fb1e9060fc3f1bb "github.com/microsoftgraph/msgraph-beta-sdk-go/external"
     i48a68a7c83dc874f9d9fdf942afed70a34b11f92d6b2ccb439359753116f65cc "github.com/microsoftgraph/msgraph-beta-sdk-go/permissiongrants"
     i493c694f665c6b8116f1d28cef9c35839e2b3810e4a8c9f326bfc1b2caa30afa "github.com/microsoftgraph/msgraph-beta-sdk-go/agreements"
+    i4b923a0ffb143d5def24980fce5d55c68c9634d5b55c33bb0b3029ac68415dd1 "github.com/microsoftgraph/msgraph-beta-sdk-go/employeeexperience"
     i4cb6edb865a0e38bb1799dcb0c7881b92feed59596c1912cfe5e6142b61f9c91 "github.com/microsoftgraph/msgraph-beta-sdk-go/invitations"
     i531b1efd1768fd272d51921ff5812bdeba5b46e0eeec0e4c818250cb7116aed5 "github.com/microsoftgraph/msgraph-beta-sdk-go/identityproviders"
     i56ad7deac03a612015589ab4fade2313d6df08086c7ee8d46177fc8ddc5b0053 "github.com/microsoftgraph/msgraph-beta-sdk-go/messagerecipients"
@@ -730,6 +731,10 @@ func (m *GraphServiceClient) DrivesById(id string)(*ib8b674690e8be27a974ea55202f
 // Education the education property
 func (m *GraphServiceClient) Education()(*id90d135edac1f1a3e952db4ad985001105d2e7c0133f8cc410765eb1af789cc0.EducationRequestBuilder) {
     return id90d135edac1f1a3e952db4ad985001105d2e7c0133f8cc410765eb1af789cc0.NewEducationRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// EmployeeExperience the employeeExperience property
+func (m *GraphServiceClient) EmployeeExperience()(*i4b923a0ffb143d5def24980fce5d55c68c9634d5b55c33bb0b3029ac68415dd1.EmployeeExperienceRequestBuilder) {
+    return i4b923a0ffb143d5def24980fce5d55c68c9634d5b55c33bb0b3029ac68415dd1.NewEmployeeExperienceRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // External the external property
 func (m *GraphServiceClient) External()(*i453454978d87486fd201df62ea4b775c5b4907e2a36395fb6fb1e9060fc3f1bb.ExternalRequestBuilder) {

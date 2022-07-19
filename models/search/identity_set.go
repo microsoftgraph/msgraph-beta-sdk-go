@@ -12,6 +12,8 @@ type IdentitySet struct {
     application Identityable
     // The device property
     device Identityable
+    // The OdataType property
+    odataType *string
     // The user property
     user Identityable
 }
@@ -20,6 +22,8 @@ func NewIdentitySet()(*IdentitySet) {
     m := &IdentitySet{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.search.identitySet";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateIdentitySetFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -73,6 +77,16 @@ func (m *IdentitySet) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["user"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateIdentityFromDiscriminatorValue)
         if err != nil {
@@ -84,6 +98,14 @@ func (m *IdentitySet) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *IdentitySet) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
 }
 // GetUser gets the user property value. The user property
 func (m *IdentitySet) GetUser()(Identityable) {
@@ -103,6 +125,12 @@ func (m *IdentitySet) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
     }
     {
         err := writer.WriteObjectValue("device", m.GetDevice())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -137,6 +165,12 @@ func (m *IdentitySet) SetApplication(value Identityable)() {
 func (m *IdentitySet) SetDevice(value Identityable)() {
     if m != nil {
         m.device = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *IdentitySet) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetUser sets the user property value. The user property

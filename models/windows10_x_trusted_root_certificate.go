@@ -19,6 +19,8 @@ func NewWindows10XTrustedRootCertificate()(*Windows10XTrustedRootCertificate) {
     m := &Windows10XTrustedRootCertificate{
         DeviceManagementResourceAccessProfileBase: *NewDeviceManagementResourceAccessProfileBase(),
     }
+    odataTypeValue := "#microsoft.graph.windows10XTrustedRootCertificate";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateWindows10XTrustedRootCertificateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -70,7 +70,7 @@ func NewAgedAccountsReceivableRequestBuilder(rawUrl string, requestAdapter i2ae4
     urlParams["request-raw-url"] = rawUrl
     return NewAgedAccountsReceivableRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *AgedAccountsReceivableRequestBuilder) Count()(*i6ff5d563ca39606ef9a26bfcc30e7fccb36c5e5bf160c3c988252c61e4bf1ee0.CountRequestBuilder) {
     return i6ff5d563ca39606ef9a26bfcc30e7fccb36c5e5bf160c3c988252c61e4bf1ee0.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

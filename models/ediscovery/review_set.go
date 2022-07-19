@@ -23,6 +23,8 @@ func NewReviewSet()(*ReviewSet) {
     m := &ReviewSet{
         Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.ediscovery.reviewSet";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateReviewSetFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

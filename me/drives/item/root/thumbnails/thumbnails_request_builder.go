@@ -70,7 +70,7 @@ func NewThumbnailsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263
     urlParams["request-raw-url"] = rawUrl
     return NewThumbnailsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *ThumbnailsRequestBuilder) Count()(*ic57e4ad92f7cdab1ba2bcf4c4652e0b47e546e0d34c4bff67144e45cc3377fb7.CountRequestBuilder) {
     return ic57e4ad92f7cdab1ba2bcf4c4652e0b47e546e0d34c4bff67144e45cc3377fb7.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

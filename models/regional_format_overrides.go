@@ -16,6 +16,8 @@ type RegionalFormatOverrides struct {
     longDateFormat *string
     // The long time format to be used for displaying time.Returned by default.
     longTimeFormat *string
+    // The OdataType property
+    odataType *string
     // The short date time format to be used for displaying dates.Returned by default.
     shortDateFormat *string
     // The short time format to be used for displaying time.Returned by default.
@@ -28,6 +30,8 @@ func NewRegionalFormatOverrides()(*RegionalFormatOverrides) {
     m := &RegionalFormatOverrides{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.regionalFormatOverrides";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateRegionalFormatOverridesFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -93,6 +97,16 @@ func (m *RegionalFormatOverrides) GetFieldDeserializers()(map[string]func(i878a8
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["shortDateFormat"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -149,6 +163,14 @@ func (m *RegionalFormatOverrides) GetLongTimeFormat()(*string) {
         return m.longTimeFormat
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *RegionalFormatOverrides) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetShortDateFormat gets the shortDateFormat property value. The short date time format to be used for displaying dates.Returned by default.
 func (m *RegionalFormatOverrides) GetShortDateFormat()(*string) {
     if m == nil {
@@ -195,6 +217,12 @@ func (m *RegionalFormatOverrides) Serialize(writer i878a80d2330e89d26896388a3f48
     }
     {
         err := writer.WriteStringValue("longTimeFormat", m.GetLongTimeFormat())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -253,6 +281,12 @@ func (m *RegionalFormatOverrides) SetLongDateFormat(value *string)() {
 func (m *RegionalFormatOverrides) SetLongTimeFormat(value *string)() {
     if m != nil {
         m.longTimeFormat = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *RegionalFormatOverrides) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetShortDateFormat sets the shortDateFormat property value. The short date time format to be used for displaying dates.Returned by default.

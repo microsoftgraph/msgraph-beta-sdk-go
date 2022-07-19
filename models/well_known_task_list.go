@@ -15,6 +15,8 @@ func NewWellKnownTaskList()(*WellKnownTaskList) {
     m := &WellKnownTaskList{
         BaseTaskList: *NewBaseTaskList(),
     }
+    odataTypeValue := "#microsoft.graph.wellKnownTaskList";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateWellKnownTaskListFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

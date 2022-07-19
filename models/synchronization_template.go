@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// SynchronizationTemplate provides operations to manage the collection of activityStatistics entities.
+// SynchronizationTemplate provides operations to manage the collection of accessReview entities.
 type SynchronizationTemplate struct {
     Entity
     // Identifier of the application this template belongs to.
@@ -27,6 +27,8 @@ func NewSynchronizationTemplate()(*SynchronizationTemplate) {
     m := &SynchronizationTemplate{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.synchronizationTemplate";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateSynchronizationTemplateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

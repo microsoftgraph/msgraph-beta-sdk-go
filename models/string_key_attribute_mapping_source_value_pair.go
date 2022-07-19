@@ -10,6 +10,8 @@ type StringKeyAttributeMappingSourceValuePair struct {
     additionalData map[string]interface{}
     // The name of the parameter.
     key *string
+    // The OdataType property
+    odataType *string
     // The value of the parameter.
     value AttributeMappingSourceable
 }
@@ -18,6 +20,8 @@ func NewStringKeyAttributeMappingSourceValuePair()(*StringKeyAttributeMappingSou
     m := &StringKeyAttributeMappingSourceValuePair{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.stringKeyAttributeMappingSourceValuePair";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateStringKeyAttributeMappingSourceValuePairFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -45,6 +49,16 @@ func (m *StringKeyAttributeMappingSourceValuePair) GetFieldDeserializers()(map[s
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateAttributeMappingSourceFromDiscriminatorValue)
         if err != nil {
@@ -65,6 +79,14 @@ func (m *StringKeyAttributeMappingSourceValuePair) GetKey()(*string) {
         return m.key
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *StringKeyAttributeMappingSourceValuePair) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetValue gets the value property value. The value of the parameter.
 func (m *StringKeyAttributeMappingSourceValuePair) GetValue()(AttributeMappingSourceable) {
     if m == nil {
@@ -77,6 +99,12 @@ func (m *StringKeyAttributeMappingSourceValuePair) GetValue()(AttributeMappingSo
 func (m *StringKeyAttributeMappingSourceValuePair) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("key", m.GetKey())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -105,6 +133,12 @@ func (m *StringKeyAttributeMappingSourceValuePair) SetAdditionalData(value map[s
 func (m *StringKeyAttributeMappingSourceValuePair) SetKey(value *string)() {
     if m != nil {
         m.key = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *StringKeyAttributeMappingSourceValuePair) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetValue sets the value property value. The value of the parameter.

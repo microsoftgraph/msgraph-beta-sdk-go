@@ -15,6 +15,8 @@ func NewChatActivityStatistics()(*ChatActivityStatistics) {
     m := &ChatActivityStatistics{
         ActivityStatistics: *NewActivityStatistics(),
     }
+    odataTypeValue := "#microsoft.graph.chatActivityStatistics";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateChatActivityStatisticsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

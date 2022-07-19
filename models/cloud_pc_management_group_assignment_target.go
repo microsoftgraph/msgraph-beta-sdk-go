@@ -15,6 +15,8 @@ func NewCloudPcManagementGroupAssignmentTarget()(*CloudPcManagementGroupAssignme
     m := &CloudPcManagementGroupAssignmentTarget{
         CloudPcManagementAssignmentTarget: *NewCloudPcManagementAssignmentTarget(),
     }
+    odataTypeValue := "#microsoft.graph.cloudPcManagementGroupAssignmentTarget";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateCloudPcManagementGroupAssignmentTargetFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

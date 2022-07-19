@@ -14,12 +14,16 @@ type SynchronizationJobSubject struct {
     objectId *string
     // The type of the object to which a synchronizationJob is to be applied. Can be one of the following: user for synchronizing between Active Directory and Azure AD.User for synchronizing a user between Azure AD and a third-party application. Worker for synchronization a user between Workday and either Active Directory or Azure AD.Group for synchronizing a group between Azure AD and a third-party application.
     objectTypeName *string
+    // The OdataType property
+    odataType *string
 }
 // NewSynchronizationJobSubject instantiates a new synchronizationJobSubject and sets the default values.
 func NewSynchronizationJobSubject()(*SynchronizationJobSubject) {
     m := &SynchronizationJobSubject{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.synchronizationJobSubject";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateSynchronizationJobSubjectFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -67,6 +71,16 @@ func (m *SynchronizationJobSubject) GetFieldDeserializers()(map[string]func(i878
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetLinks gets the links property value. Principals that you would like to provision.
@@ -93,6 +107,14 @@ func (m *SynchronizationJobSubject) GetObjectTypeName()(*string) {
         return m.objectTypeName
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *SynchronizationJobSubject) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // Serialize serializes information the current object
 func (m *SynchronizationJobSubject) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
@@ -109,6 +131,12 @@ func (m *SynchronizationJobSubject) Serialize(writer i878a80d2330e89d26896388a3f
     }
     {
         err := writer.WriteStringValue("objectTypeName", m.GetObjectTypeName())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -143,5 +171,11 @@ func (m *SynchronizationJobSubject) SetObjectId(value *string)() {
 func (m *SynchronizationJobSubject) SetObjectTypeName(value *string)() {
     if m != nil {
         m.objectTypeName = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *SynchronizationJobSubject) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }

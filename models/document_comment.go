@@ -17,6 +17,8 @@ func NewDocumentComment()(*DocumentComment) {
     m := &DocumentComment{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.documentComment";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDocumentCommentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

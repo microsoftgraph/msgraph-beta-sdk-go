@@ -15,6 +15,8 @@ func NewUpdateManagementEnrollment()(*UpdateManagementEnrollment) {
     m := &UpdateManagementEnrollment{
         UpdatableAssetEnrollment: *NewUpdatableAssetEnrollment(),
     }
+    odataTypeValue := "#microsoft.graph.windowsUpdates.updateManagementEnrollment";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateUpdateManagementEnrollmentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

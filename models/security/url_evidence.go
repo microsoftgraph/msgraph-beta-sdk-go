@@ -15,6 +15,8 @@ func NewUrlEvidence()(*UrlEvidence) {
     m := &UrlEvidence{
         AlertEvidence: *NewAlertEvidence(),
     }
+    odataTypeValue := "#microsoft.graph.security.urlEvidence";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateUrlEvidenceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

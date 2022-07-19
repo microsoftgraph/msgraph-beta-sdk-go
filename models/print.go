@@ -10,6 +10,8 @@ type Print struct {
     additionalData map[string]interface{}
     // The list of available print connectors.
     connectors []PrintConnectorable
+    // The OdataType property
+    odataType *string
     // The list of print long running operations.
     operations []PrintOperationable
     // The list of printers registered in the tenant.
@@ -32,6 +34,8 @@ func NewPrint()(*Print) {
     m := &Print{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.print";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreatePrintFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -68,6 +72,16 @@ func (m *Print) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388
                 res[i] = v.(PrintConnectorable)
             }
             m.SetConnectors(res)
+        }
+        return nil
+    }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
         }
         return nil
     }
@@ -177,6 +191,14 @@ func (m *Print) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388
     }
     return res
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *Print) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetOperations gets the operations property value. The list of print long running operations.
 func (m *Print) GetOperations()([]PrintOperationable) {
     if m == nil {
@@ -249,6 +271,12 @@ func (m *Print) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c4
             cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
         }
         err := writer.WriteCollectionOfObjectValues("connectors", cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -343,6 +371,12 @@ func (m *Print) SetAdditionalData(value map[string]interface{})() {
 func (m *Print) SetConnectors(value []PrintConnectorable)() {
     if m != nil {
         m.connectors = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *Print) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetOperations sets the operations property value. The list of print long running operations.

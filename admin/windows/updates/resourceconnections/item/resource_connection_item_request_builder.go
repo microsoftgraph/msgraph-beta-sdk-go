@@ -22,7 +22,7 @@ type ResourceConnectionItemRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ResourceConnectionItemRequestBuilderGetQueryParameters get resourceConnections from admin
+// ResourceConnectionItemRequestBuilderGetQueryParameters service connections to external resources such as analytics workspaces.
 type ResourceConnectionItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -80,11 +80,11 @@ func (m *ResourceConnectionItemRequestBuilder) CreateDeleteRequestInformationWit
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation get resourceConnections from admin
+// CreateGetRequestInformation service connections to external resources such as analytics workspaces.
 func (m *ResourceConnectionItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration get resourceConnections from admin
+// CreateGetRequestInformationWithRequestConfiguration service connections to external resources such as analytics workspaces.
 func (m *ResourceConnectionItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *ResourceConnectionItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -137,11 +137,11 @@ func (m *ResourceConnectionItemRequestBuilder) DeleteWithRequestConfigurationAnd
     }
     return nil
 }
-// Get get resourceConnections from admin
+// Get service connections to external resources such as analytics workspaces.
 func (m *ResourceConnectionItemRequestBuilder) Get()(i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.ResourceConnectionable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler get resourceConnections from admin
+// GetWithRequestConfigurationAndResponseHandler service connections to external resources such as analytics workspaces.
 func (m *ResourceConnectionItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *ResourceConnectionItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.ResourceConnectionable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

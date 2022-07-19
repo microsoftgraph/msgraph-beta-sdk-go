@@ -10,6 +10,8 @@ type RoleAssignment struct {
     additionalData map[string]interface{}
     // The type of the admin relationship(s) associated with the role assignment. Possible values are: none, delegatedAdminPrivileges, unknownFutureValue, granularDelegatedAdminPrivileges, delegatedAndGranularDelegetedAdminPrivileges. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: granularDelegatedAdminPrivileges , delegatedAndGranularDelegetedAdminPrivileges.
     assignmentType *DelegatedPrivilegeStatus
+    // The OdataType property
+    odataType *string
     // The collection of roles assigned.
     roles []RoleDefinitionable
 }
@@ -18,6 +20,8 @@ func NewRoleAssignment()(*RoleAssignment) {
     m := &RoleAssignment{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.managedTenants.roleAssignment";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateRoleAssignmentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -53,6 +57,16 @@ func (m *RoleAssignment) GetFieldDeserializers()(map[string]func(i878a80d2330e89
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["roles"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateRoleDefinitionFromDiscriminatorValue)
         if err != nil {
@@ -69,6 +83,14 @@ func (m *RoleAssignment) GetFieldDeserializers()(map[string]func(i878a80d2330e89
     }
     return res
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *RoleAssignment) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetRoles gets the roles property value. The collection of roles assigned.
 func (m *RoleAssignment) GetRoles()([]RoleDefinitionable) {
     if m == nil {
@@ -82,6 +104,12 @@ func (m *RoleAssignment) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
     if m.GetAssignmentType() != nil {
         cast := (*m.GetAssignmentType()).String()
         err := writer.WriteStringValue("assignmentType", &cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -114,6 +142,12 @@ func (m *RoleAssignment) SetAdditionalData(value map[string]interface{})() {
 func (m *RoleAssignment) SetAssignmentType(value *DelegatedPrivilegeStatus)() {
     if m != nil {
         m.assignmentType = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *RoleAssignment) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetRoles sets the roles property value. The collection of roles assigned.

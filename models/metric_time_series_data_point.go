@@ -11,6 +11,8 @@ type MetricTimeSeriesDataPoint struct {
     additionalData map[string]interface{}
     // Time of the metric time series data point
     dateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
+    // The OdataType property
+    odataType *string
     // Value of the metric time series data point
     value *int64
 }
@@ -19,6 +21,8 @@ func NewMetricTimeSeriesDataPoint()(*MetricTimeSeriesDataPoint) {
     m := &MetricTimeSeriesDataPoint{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.metricTimeSeriesDataPoint";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateMetricTimeSeriesDataPointFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -54,6 +58,16 @@ func (m *MetricTimeSeriesDataPoint) GetFieldDeserializers()(map[string]func(i878
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt64Value()
         if err != nil {
@@ -65,6 +79,14 @@ func (m *MetricTimeSeriesDataPoint) GetFieldDeserializers()(map[string]func(i878
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *MetricTimeSeriesDataPoint) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
 }
 // GetValue gets the value property value. Value of the metric time series data point
 func (m *MetricTimeSeriesDataPoint) GetValue()(*int64) {
@@ -78,6 +100,12 @@ func (m *MetricTimeSeriesDataPoint) GetValue()(*int64) {
 func (m *MetricTimeSeriesDataPoint) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
         err := writer.WriteTimeValue("dateTime", m.GetDateTime())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -106,6 +134,12 @@ func (m *MetricTimeSeriesDataPoint) SetAdditionalData(value map[string]interface
 func (m *MetricTimeSeriesDataPoint) SetDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     if m != nil {
         m.dateTime = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *MetricTimeSeriesDataPoint) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetValue sets the value property value. Value of the metric time series data point

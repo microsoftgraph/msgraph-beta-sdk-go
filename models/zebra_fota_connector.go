@@ -19,11 +19,13 @@ type ZebraFotaConnector struct {
     // Represents various states for Zebra FOTA connector.
     state *ZebraFotaConnectorState
 }
-// NewZebraFotaConnector instantiates a new ZebraFotaConnector and sets the default values.
+// NewZebraFotaConnector instantiates a new zebraFotaConnector and sets the default values.
 func NewZebraFotaConnector()(*ZebraFotaConnector) {
     m := &ZebraFotaConnector{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.zebraFotaConnector";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateZebraFotaConnectorFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

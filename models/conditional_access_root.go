@@ -19,6 +19,8 @@ func NewConditionalAccessRoot()(*ConditionalAccessRoot) {
     m := &ConditionalAccessRoot{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.conditionalAccessRoot";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateConditionalAccessRootFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

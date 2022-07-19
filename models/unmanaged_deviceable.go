@@ -18,6 +18,7 @@ type UnmanagedDeviceable interface {
     GetMacAddress()(*string)
     GetManufacturer()(*string)
     GetModel()(*string)
+    GetOdataType()(*string)
     GetOs()(*string)
     GetOsVersion()(*string)
     SetDeviceName(value *string)()
@@ -29,6 +30,7 @@ type UnmanagedDeviceable interface {
     SetMacAddress(value *string)()
     SetManufacturer(value *string)()
     SetModel(value *string)()
+    SetOdataType(value *string)()
     SetOs(value *string)()
     SetOsVersion(value *string)()
 }

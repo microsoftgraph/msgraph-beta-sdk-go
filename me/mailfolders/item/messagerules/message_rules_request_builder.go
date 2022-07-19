@@ -66,7 +66,7 @@ func NewMessageRulesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2
     urlParams["request-raw-url"] = rawUrl
     return NewMessageRulesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *MessageRulesRequestBuilder) Count()(*ie3d72527901709630a51c621224ab3880cfc6611fa8d5648b1bacee3ce179b29.CountRequestBuilder) {
     return ie3d72527901709630a51c621224ab3880cfc6611fa8d5648b1bacee3ce179b29.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

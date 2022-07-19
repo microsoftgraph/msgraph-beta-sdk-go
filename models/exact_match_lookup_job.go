@@ -17,6 +17,8 @@ func NewExactMatchLookupJob()(*ExactMatchLookupJob) {
     m := &ExactMatchLookupJob{
         ExactMatchJobBase: *NewExactMatchJobBase(),
     }
+    odataTypeValue := "#microsoft.graph.exactMatchLookupJob";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateExactMatchLookupJobFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

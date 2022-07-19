@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// UserPFXCertificate 
+// UserPFXCertificate entity that encapsulates all information required for a user's PFX certificates.
 type UserPFXCertificate struct {
     Entity
     // Date/time when this PFX certificate was imported.
@@ -33,11 +33,13 @@ type UserPFXCertificate struct {
     // User Principal Name of the PFX certificate.
     userPrincipalName *string
 }
-// NewUserPFXCertificate instantiates a new UserPFXCertificate and sets the default values.
+// NewUserPFXCertificate instantiates a new userPFXCertificate and sets the default values.
 func NewUserPFXCertificate()(*UserPFXCertificate) {
     m := &UserPFXCertificate{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.userPFXCertificate";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateUserPFXCertificateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

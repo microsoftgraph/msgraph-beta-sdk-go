@@ -11,6 +11,8 @@ type KeyCredentialConfiguration struct {
     additionalData map[string]interface{}
     // The maxLifetime property
     maxLifetime *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration
+    // The OdataType property
+    odataType *string
     // Timestamp when the policy is enforced for all apps created on or after the specified date. For existing applications, the enforcement date would be back dated. To apply to all applications regardless of their creation date, this property would be null. Nullable.
     restrictForAppsCreatedAfterDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The type of restriction being applied. Possible values are asymmetricKeyLifetime, unknownFutureValue. Each value of restrictionType can be used only once per policy.
@@ -21,6 +23,8 @@ func NewKeyCredentialConfiguration()(*KeyCredentialConfiguration) {
     m := &KeyCredentialConfiguration{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.keyCredentialConfiguration";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateKeyCredentialConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -45,6 +49,16 @@ func (m *KeyCredentialConfiguration) GetFieldDeserializers()(map[string]func(i87
         }
         if val != nil {
             m.SetMaxLifetime(val)
+        }
+        return nil
+    }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
         }
         return nil
     }
@@ -78,6 +92,14 @@ func (m *KeyCredentialConfiguration) GetMaxLifetime()(*i878a80d2330e89d26896388a
         return m.maxLifetime
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *KeyCredentialConfiguration) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetRestrictForAppsCreatedAfterDateTime gets the restrictForAppsCreatedAfterDateTime property value. Timestamp when the policy is enforced for all apps created on or after the specified date. For existing applications, the enforcement date would be back dated. To apply to all applications regardless of their creation date, this property would be null. Nullable.
 func (m *KeyCredentialConfiguration) GetRestrictForAppsCreatedAfterDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
@@ -98,6 +120,12 @@ func (m *KeyCredentialConfiguration) GetRestrictionType()(*AppKeyCredentialRestr
 func (m *KeyCredentialConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
         err := writer.WriteISODurationValue("maxLifetime", m.GetMaxLifetime())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -133,6 +161,12 @@ func (m *KeyCredentialConfiguration) SetAdditionalData(value map[string]interfac
 func (m *KeyCredentialConfiguration) SetMaxLifetime(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)() {
     if m != nil {
         m.maxLifetime = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *KeyCredentialConfiguration) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetRestrictForAppsCreatedAfterDateTime sets the restrictForAppsCreatedAfterDateTime property value. Timestamp when the policy is enforced for all apps created on or after the specified date. For existing applications, the enforcement date would be back dated. To apply to all applications regardless of their creation date, this property would be null. Nullable.

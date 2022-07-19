@@ -18,22 +18,22 @@ type ParentLabelDetails struct {
     isActive *bool
     // The plaintext name of the label.
     name *string
+    // The OdataType property
+    odataType *string
     // The parent property
     parent ParentLabelDetailsable
     // The sensitivity value of the label, where lower is less sensitive.
     sensitivity *int32
     // The tooltip that should be displayed for the label in a user interface.
     tooltip *string
-    // The type property
-    type_escaped *string
 }
 // NewParentLabelDetails instantiates a new parentLabelDetails and sets the default values.
 func NewParentLabelDetails()(*ParentLabelDetails) {
     m := &ParentLabelDetails{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odatatypeValue := "#microsoft.graph.parentLabelDetails";
-    m.SetType(&odatatypeValue);
+    odataTypeValue := "#microsoft.graph.parentLabelDetails";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateParentLabelDetailsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -136,6 +136,16 @@ func (m *ParentLabelDetails) GetFieldDeserializers()(map[string]func(i878a80d233
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["parent"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateParentLabelDetailsFromDiscriminatorValue)
         if err != nil {
@@ -166,16 +176,6 @@ func (m *ParentLabelDetails) GetFieldDeserializers()(map[string]func(i878a80d233
         }
         return nil
     }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetType(val)
-        }
-        return nil
-    }
     return res
 }
 // GetId gets the id property value. The label ID is a globally unique identifier (GUID).
@@ -202,6 +202,14 @@ func (m *ParentLabelDetails) GetName()(*string) {
         return m.name
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *ParentLabelDetails) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetParent gets the parent property value. The parent property
 func (m *ParentLabelDetails) GetParent()(ParentLabelDetailsable) {
     if m == nil {
@@ -224,14 +232,6 @@ func (m *ParentLabelDetails) GetTooltip()(*string) {
         return nil
     } else {
         return m.tooltip
-    }
-}
-// GetType gets the @odata.type property value. The type property
-func (m *ParentLabelDetails) GetType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.type_escaped
     }
 }
 // Serialize serializes information the current object
@@ -267,6 +267,12 @@ func (m *ParentLabelDetails) Serialize(writer i878a80d2330e89d26896388a3f487eef2
         }
     }
     {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err := writer.WriteObjectValue("parent", m.GetParent())
         if err != nil {
             return err
@@ -280,12 +286,6 @@ func (m *ParentLabelDetails) Serialize(writer i878a80d2330e89d26896388a3f487eef2
     }
     {
         err := writer.WriteStringValue("tooltip", m.GetTooltip())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err := writer.WriteStringValue("@odata.type", m.GetType())
         if err != nil {
             return err
         }
@@ -334,6 +334,12 @@ func (m *ParentLabelDetails) SetName(value *string)() {
         m.name = value
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *ParentLabelDetails) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
+    }
+}
 // SetParent sets the parent property value. The parent property
 func (m *ParentLabelDetails) SetParent(value ParentLabelDetailsable)() {
     if m != nil {
@@ -350,11 +356,5 @@ func (m *ParentLabelDetails) SetSensitivity(value *int32)() {
 func (m *ParentLabelDetails) SetTooltip(value *string)() {
     if m != nil {
         m.tooltip = value
-    }
-}
-// SetType sets the @odata.type property value. The type property
-func (m *ParentLabelDetails) SetType(value *string)() {
-    if m != nil {
-        m.type_escaped = value
     }
 }

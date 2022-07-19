@@ -10,6 +10,8 @@ type DeviceManagementUserRightsSetting struct {
     additionalData map[string]interface{}
     // Representing a collection of local users or groups which will be set on device if the state of this setting is Allowed. This collection can contain a maximum of 500 elements.
     localUsersOrGroups []DeviceManagementUserRightsLocalUserOrGroupable
+    // The OdataType property
+    odataType *string
     // State Management Setting.
     state *StateManagementSetting
 }
@@ -18,6 +20,8 @@ func NewDeviceManagementUserRightsSetting()(*DeviceManagementUserRightsSetting) 
     m := &DeviceManagementUserRightsSetting{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.deviceManagementUserRightsSetting";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDeviceManagementUserRightsSettingFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -49,6 +53,16 @@ func (m *DeviceManagementUserRightsSetting) GetFieldDeserializers()(map[string]f
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["state"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseStateManagementSetting)
         if err != nil {
@@ -69,6 +83,14 @@ func (m *DeviceManagementUserRightsSetting) GetLocalUsersOrGroups()([]DeviceMana
         return m.localUsersOrGroups
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *DeviceManagementUserRightsSetting) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetState gets the state property value. State Management Setting.
 func (m *DeviceManagementUserRightsSetting) GetState()(*StateManagementSetting) {
     if m == nil {
@@ -85,6 +107,12 @@ func (m *DeviceManagementUserRightsSetting) Serialize(writer i878a80d2330e89d268
             cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
         }
         err := writer.WriteCollectionOfObjectValues("localUsersOrGroups", cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -114,6 +142,12 @@ func (m *DeviceManagementUserRightsSetting) SetAdditionalData(value map[string]i
 func (m *DeviceManagementUserRightsSetting) SetLocalUsersOrGroups(value []DeviceManagementUserRightsLocalUserOrGroupable)() {
     if m != nil {
         m.localUsersOrGroups = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *DeviceManagementUserRightsSetting) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetState sets the state property value. State Management Setting.

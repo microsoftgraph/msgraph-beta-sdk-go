@@ -51,6 +51,8 @@ func NewOffice365GroupsActivityDetail()(*Office365GroupsActivityDetail) {
     m := &Office365GroupsActivityDetail{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.office365GroupsActivityDetail";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateOffice365GroupsActivityDetailFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

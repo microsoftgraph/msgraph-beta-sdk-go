@@ -11,6 +11,8 @@ type AlertEvidence struct {
     additionalData map[string]interface{}
     // The createdDateTime property
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
+    // The OdataType property
+    odataType *string
     // The remediationStatus property
     remediationStatus *EvidenceRemediationStatus
     // The remediationStatusDetails property
@@ -19,8 +21,6 @@ type AlertEvidence struct {
     roles []string
     // The tags property
     tags []string
-    // The type property
-    type_escaped *string
     // The verdict property
     verdict *EvidenceVerdict
 }
@@ -29,8 +29,8 @@ func NewAlertEvidence()(*AlertEvidence) {
     m := &AlertEvidence{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odatatypeValue := "#microsoft.graph.security.alertEvidence";
-    m.SetType(&odatatypeValue);
+    odataTypeValue := "#microsoft.graph.security.alertEvidence";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAlertEvidenceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -111,6 +111,16 @@ func (m *AlertEvidence) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["remediationStatus"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseEvidenceRemediationStatus)
         if err != nil {
@@ -159,16 +169,6 @@ func (m *AlertEvidence) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         }
         return nil
     }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetType(val)
-        }
-        return nil
-    }
     res["verdict"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseEvidenceVerdict)
         if err != nil {
@@ -180,6 +180,14 @@ func (m *AlertEvidence) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *AlertEvidence) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
 }
 // GetRemediationStatus gets the remediationStatus property value. The remediationStatus property
 func (m *AlertEvidence) GetRemediationStatus()(*EvidenceRemediationStatus) {
@@ -213,14 +221,6 @@ func (m *AlertEvidence) GetTags()([]string) {
         return m.tags
     }
 }
-// GetType gets the @odata.type property value. The type property
-func (m *AlertEvidence) GetType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.type_escaped
-    }
-}
 // GetVerdict gets the verdict property value. The verdict property
 func (m *AlertEvidence) GetVerdict()(*EvidenceVerdict) {
     if m == nil {
@@ -233,6 +233,12 @@ func (m *AlertEvidence) GetVerdict()(*EvidenceVerdict) {
 func (m *AlertEvidence) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
         err := writer.WriteTimeValue("createdDateTime", m.GetCreatedDateTime())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -258,12 +264,6 @@ func (m *AlertEvidence) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
     }
     if m.GetTags() != nil {
         err := writer.WriteCollectionOfStringValues("tags", m.GetTags())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err := writer.WriteStringValue("@odata.type", m.GetType())
         if err != nil {
             return err
         }
@@ -295,6 +295,12 @@ func (m *AlertEvidence) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad9
         m.createdDateTime = value
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *AlertEvidence) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
+    }
+}
 // SetRemediationStatus sets the remediationStatus property value. The remediationStatus property
 func (m *AlertEvidence) SetRemediationStatus(value *EvidenceRemediationStatus)() {
     if m != nil {
@@ -317,12 +323,6 @@ func (m *AlertEvidence) SetRoles(value []string)() {
 func (m *AlertEvidence) SetTags(value []string)() {
     if m != nil {
         m.tags = value
-    }
-}
-// SetType sets the @odata.type property value. The type property
-func (m *AlertEvidence) SetType(value *string)() {
-    if m != nil {
-        m.type_escaped = value
     }
 }
 // SetVerdict sets the verdict property value. The verdict property

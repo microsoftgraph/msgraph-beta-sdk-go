@@ -19,6 +19,8 @@ func NewEncryptWithUserDefinedRights()(*EncryptWithUserDefinedRights) {
     m := &EncryptWithUserDefinedRights{
         EncryptContent: *NewEncryptContent(),
     }
+    odataTypeValue := "#microsoft.graph.encryptWithUserDefinedRights";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateEncryptWithUserDefinedRightsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

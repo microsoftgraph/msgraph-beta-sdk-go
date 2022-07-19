@@ -11,9 +11,11 @@ type ContentInfoable interface {
     GetContentFormat()(*string)
     GetIdentifier()(*string)
     GetMetadata()([]KeyValuePairable)
+    GetOdataType()(*string)
     GetState()(*ContentState)
     SetContentFormat(value *string)()
     SetIdentifier(value *string)()
     SetMetadata(value []KeyValuePairable)()
+    SetOdataType(value *string)()
     SetState(value *ContentState)()
 }

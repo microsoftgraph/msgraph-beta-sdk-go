@@ -23,6 +23,8 @@ func NewShift()(*Shift) {
     m := &Shift{
         ChangeTrackedEntity: *NewChangeTrackedEntity(),
     }
+    odataTypeValue := "#microsoft.graph.shift";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateShiftFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -12,11 +12,13 @@ type UserExperienceAnalyticsCategory struct {
     // The metric values for the user experience analytics category.
     metricValues []UserExperienceAnalyticsMetricable
 }
-// NewUserExperienceAnalyticsCategory instantiates a new UserExperienceAnalyticsCategory and sets the default values.
+// NewUserExperienceAnalyticsCategory instantiates a new userExperienceAnalyticsCategory and sets the default values.
 func NewUserExperienceAnalyticsCategory()(*UserExperienceAnalyticsCategory) {
     m := &UserExperienceAnalyticsCategory{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.userExperienceAnalyticsCategory";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateUserExperienceAnalyticsCategoryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

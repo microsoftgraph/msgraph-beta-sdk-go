@@ -91,7 +91,7 @@ func (m *ManagerRequestBuilder) GetWithRequestConfigurationAndResponseHandler(re
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectable), nil
 }
-// Ref the ref property
+// Ref the Ref property
 func (m *ManagerRequestBuilder) Ref()(*id92b8c81f110196b6d6c76fc33572834241d7e88ef5f13076a13a0a07f98054d.RefRequestBuilder) {
     return id92b8c81f110196b6d6c76fc33572834241d7e88ef5f13076a13a0a07f98054d.NewRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

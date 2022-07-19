@@ -12,12 +12,16 @@ type MacOSFirewallApplication struct {
     allowsIncomingConnections *bool
     // BundleId of the application.
     bundleId *string
+    // The OdataType property
+    odataType *string
 }
 // NewMacOSFirewallApplication instantiates a new macOSFirewallApplication and sets the default values.
 func NewMacOSFirewallApplication()(*MacOSFirewallApplication) {
     m := &MacOSFirewallApplication{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.macOSFirewallApplication";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateMacOSFirewallApplicationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -71,7 +75,25 @@ func (m *MacOSFirewallApplication) GetFieldDeserializers()(map[string]func(i878a
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *MacOSFirewallApplication) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
 }
 // Serialize serializes information the current object
 func (m *MacOSFirewallApplication) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -83,6 +105,12 @@ func (m *MacOSFirewallApplication) Serialize(writer i878a80d2330e89d26896388a3f4
     }
     {
         err := writer.WriteStringValue("bundleId", m.GetBundleId())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -111,5 +139,11 @@ func (m *MacOSFirewallApplication) SetAllowsIncomingConnections(value *bool)() {
 func (m *MacOSFirewallApplication) SetBundleId(value *string)() {
     if m != nil {
         m.bundleId = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *MacOSFirewallApplication) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }

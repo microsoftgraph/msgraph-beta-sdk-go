@@ -13,8 +13,8 @@ func NewDeviceManagementConfigurationSimpleSettingValue()(*DeviceManagementConfi
     m := &DeviceManagementConfigurationSimpleSettingValue{
         DeviceManagementConfigurationSettingValue: *NewDeviceManagementConfigurationSettingValue(),
     }
-    odatatypeValue := "#microsoft.graph.deviceManagementConfigurationSimpleSettingValue";
-    m.SetType(&odatatypeValue);
+    odataTypeValue := "#microsoft.graph.deviceManagementConfigurationSimpleSettingValue";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDeviceManagementConfigurationSimpleSettingValueFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -34,6 +34,8 @@ func CreateDeviceManagementConfigurationSimpleSettingValueFromDiscriminatorValue
                 switch mappingStr {
                     case "#microsoft.graph.deviceManagementConfigurationIntegerSettingValue":
                         return NewDeviceManagementConfigurationIntegerSettingValue(), nil
+                    case "#microsoft.graph.deviceManagementConfigurationReferenceSettingValue":
+                        return NewDeviceManagementConfigurationReferenceSettingValue(), nil
                     case "#microsoft.graph.deviceManagementConfigurationSecretSettingValue":
                         return NewDeviceManagementConfigurationSecretSettingValue(), nil
                     case "#microsoft.graph.deviceManagementConfigurationStringSettingValue":

@@ -70,7 +70,7 @@ func NewBookingCurrenciesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7
     urlParams["request-raw-url"] = rawUrl
     return NewBookingCurrenciesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *BookingCurrenciesRequestBuilder) Count()(*i9126c3b602961c13565449f07a5f60925e0c7f39549ff3cc7b20defdda3ed01f.CountRequestBuilder) {
     return i9126c3b602961c13565449f07a5f60925e0c7f39549ff3cc7b20defdda3ed01f.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

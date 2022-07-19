@@ -70,7 +70,7 @@ func NewFido2MethodsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2
     urlParams["request-raw-url"] = rawUrl
     return NewFido2MethodsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *Fido2MethodsRequestBuilder) Count()(*i24d8d042c34e6c85fd6d9165b1a6f89bcb1c0adbd2b3e47c9b6fa49a5377c685.CountRequestBuilder) {
     return i24d8d042c34e6c85fd6d9165b1a6f89bcb1c0adbd2b3e47c9b6fa49a5377c685.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

@@ -70,7 +70,7 @@ func NewInstalledAppsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee
     urlParams["request-raw-url"] = rawUrl
     return NewInstalledAppsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *InstalledAppsRequestBuilder) Count()(*icd63f0e36a13c3a6948cb45690f2851368c151bbcea6886ebfe7ac3bad4bcd6f.CountRequestBuilder) {
     return icd63f0e36a13c3a6948cb45690f2851368c151bbcea6886ebfe7ac3bad4bcd6f.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

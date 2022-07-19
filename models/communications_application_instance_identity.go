@@ -17,6 +17,8 @@ func NewCommunicationsApplicationInstanceIdentity()(*CommunicationsApplicationIn
     m := &CommunicationsApplicationInstanceIdentity{
         Identity: *NewIdentity(),
     }
+    odataTypeValue := "#microsoft.graph.communicationsApplicationInstanceIdentity";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateCommunicationsApplicationInstanceIdentityFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

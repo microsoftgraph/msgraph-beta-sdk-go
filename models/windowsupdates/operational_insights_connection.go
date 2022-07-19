@@ -7,11 +7,11 @@ import (
 // OperationalInsightsConnection 
 type OperationalInsightsConnection struct {
     ResourceConnection
-    // The azureResourceGroupName property
+    // The name of the Azure resource group that contains the Log Analytics workspace.
     azureResourceGroupName *string
-    // The azureSubscriptionId property
+    // The Azure subscription ID that contains the Log Analytics workspace.
     azureSubscriptionId *string
-    // The workspaceName property
+    // The name of the Log Analytics workspace.
     workspaceName *string
 }
 // NewOperationalInsightsConnection instantiates a new OperationalInsightsConnection and sets the default values.
@@ -19,13 +19,15 @@ func NewOperationalInsightsConnection()(*OperationalInsightsConnection) {
     m := &OperationalInsightsConnection{
         ResourceConnection: *NewResourceConnection(),
     }
+    odataTypeValue := "#microsoft.graph.windowsUpdates.operationalInsightsConnection";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateOperationalInsightsConnectionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateOperationalInsightsConnectionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewOperationalInsightsConnection(), nil
 }
-// GetAzureResourceGroupName gets the azureResourceGroupName property value. The azureResourceGroupName property
+// GetAzureResourceGroupName gets the azureResourceGroupName property value. The name of the Azure resource group that contains the Log Analytics workspace.
 func (m *OperationalInsightsConnection) GetAzureResourceGroupName()(*string) {
     if m == nil {
         return nil
@@ -33,7 +35,7 @@ func (m *OperationalInsightsConnection) GetAzureResourceGroupName()(*string) {
         return m.azureResourceGroupName
     }
 }
-// GetAzureSubscriptionId gets the azureSubscriptionId property value. The azureSubscriptionId property
+// GetAzureSubscriptionId gets the azureSubscriptionId property value. The Azure subscription ID that contains the Log Analytics workspace.
 func (m *OperationalInsightsConnection) GetAzureSubscriptionId()(*string) {
     if m == nil {
         return nil
@@ -76,7 +78,7 @@ func (m *OperationalInsightsConnection) GetFieldDeserializers()(map[string]func(
     }
     return res
 }
-// GetWorkspaceName gets the workspaceName property value. The workspaceName property
+// GetWorkspaceName gets the workspaceName property value. The name of the Log Analytics workspace.
 func (m *OperationalInsightsConnection) GetWorkspaceName()(*string) {
     if m == nil {
         return nil
@@ -110,19 +112,19 @@ func (m *OperationalInsightsConnection) Serialize(writer i878a80d2330e89d2689638
     }
     return nil
 }
-// SetAzureResourceGroupName sets the azureResourceGroupName property value. The azureResourceGroupName property
+// SetAzureResourceGroupName sets the azureResourceGroupName property value. The name of the Azure resource group that contains the Log Analytics workspace.
 func (m *OperationalInsightsConnection) SetAzureResourceGroupName(value *string)() {
     if m != nil {
         m.azureResourceGroupName = value
     }
 }
-// SetAzureSubscriptionId sets the azureSubscriptionId property value. The azureSubscriptionId property
+// SetAzureSubscriptionId sets the azureSubscriptionId property value. The Azure subscription ID that contains the Log Analytics workspace.
 func (m *OperationalInsightsConnection) SetAzureSubscriptionId(value *string)() {
     if m != nil {
         m.azureSubscriptionId = value
     }
 }
-// SetWorkspaceName sets the workspaceName property value. The workspaceName property
+// SetWorkspaceName sets the workspaceName property value. The name of the Log Analytics workspace.
 func (m *OperationalInsightsConnection) SetWorkspaceName(value *string)() {
     if m != nil {
         m.workspaceName = value

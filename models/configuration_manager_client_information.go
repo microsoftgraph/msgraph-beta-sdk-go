@@ -12,12 +12,16 @@ type ConfigurationManagerClientInformation struct {
     clientIdentifier *string
     // Configuration Manager Client blocked status from SCCM
     isBlocked *bool
+    // The OdataType property
+    odataType *string
 }
 // NewConfigurationManagerClientInformation instantiates a new configurationManagerClientInformation and sets the default values.
 func NewConfigurationManagerClientInformation()(*ConfigurationManagerClientInformation) {
     m := &ConfigurationManagerClientInformation{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.configurationManagerClientInformation";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateConfigurationManagerClientInformationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -63,6 +67,16 @@ func (m *ConfigurationManagerClientInformation) GetFieldDeserializers()(map[stri
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetIsBlocked gets the isBlocked property value. Configuration Manager Client blocked status from SCCM
@@ -71,6 +85,14 @@ func (m *ConfigurationManagerClientInformation) GetIsBlocked()(*bool) {
         return nil
     } else {
         return m.isBlocked
+    }
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *ConfigurationManagerClientInformation) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
     }
 }
 // Serialize serializes information the current object
@@ -83,6 +105,12 @@ func (m *ConfigurationManagerClientInformation) Serialize(writer i878a80d2330e89
     }
     {
         err := writer.WriteBoolValue("isBlocked", m.GetIsBlocked())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -111,5 +139,11 @@ func (m *ConfigurationManagerClientInformation) SetClientIdentifier(value *strin
 func (m *ConfigurationManagerClientInformation) SetIsBlocked(value *bool)() {
     if m != nil {
         m.isBlocked = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *ConfigurationManagerClientInformation) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }

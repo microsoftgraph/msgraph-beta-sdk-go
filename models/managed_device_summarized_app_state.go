@@ -10,6 +10,8 @@ type ManagedDeviceSummarizedAppState struct {
     additionalData map[string]interface{}
     // DeviceId of device represented by this object
     deviceId *string
+    // The OdataType property
+    odataType *string
     // Indicates the type of execution status of the device management script.
     summarizedAppState *RunState
 }
@@ -18,6 +20,8 @@ func NewManagedDeviceSummarizedAppState()(*ManagedDeviceSummarizedAppState) {
     m := &ManagedDeviceSummarizedAppState{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.managedDeviceSummarizedAppState";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateManagedDeviceSummarizedAppStateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -53,6 +57,16 @@ func (m *ManagedDeviceSummarizedAppState) GetFieldDeserializers()(map[string]fun
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["summarizedAppState"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseRunState)
         if err != nil {
@@ -64,6 +78,14 @@ func (m *ManagedDeviceSummarizedAppState) GetFieldDeserializers()(map[string]fun
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *ManagedDeviceSummarizedAppState) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
 }
 // GetSummarizedAppState gets the summarizedAppState property value. Indicates the type of execution status of the device management script.
 func (m *ManagedDeviceSummarizedAppState) GetSummarizedAppState()(*RunState) {
@@ -77,6 +99,12 @@ func (m *ManagedDeviceSummarizedAppState) GetSummarizedAppState()(*RunState) {
 func (m *ManagedDeviceSummarizedAppState) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("deviceId", m.GetDeviceId())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -106,6 +134,12 @@ func (m *ManagedDeviceSummarizedAppState) SetAdditionalData(value map[string]int
 func (m *ManagedDeviceSummarizedAppState) SetDeviceId(value *string)() {
     if m != nil {
         m.deviceId = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *ManagedDeviceSummarizedAppState) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetSummarizedAppState sets the summarizedAppState property value. Indicates the type of execution status of the device management script.

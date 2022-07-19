@@ -12,6 +12,8 @@ type ContentClassification struct {
     confidence *int32
     // The matches property
     matches []MatchLocationable
+    // The OdataType property
+    odataType *string
     // The sensitiveTypeId property
     sensitiveTypeId *string
     // The uniqueCount property
@@ -22,6 +24,8 @@ func NewContentClassification()(*ContentClassification) {
     m := &ContentClassification{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.contentClassification";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateContentClassificationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -71,6 +75,16 @@ func (m *ContentClassification) GetFieldDeserializers()(map[string]func(i878a80d
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["sensitiveTypeId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -99,6 +113,14 @@ func (m *ContentClassification) GetMatches()([]MatchLocationable) {
         return nil
     } else {
         return m.matches
+    }
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *ContentClassification) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
     }
 }
 // GetSensitiveTypeId gets the sensitiveTypeId property value. The sensitiveTypeId property
@@ -131,6 +153,12 @@ func (m *ContentClassification) Serialize(writer i878a80d2330e89d26896388a3f487e
             cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
         }
         err := writer.WriteCollectionOfObjectValues("matches", cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -171,6 +199,12 @@ func (m *ContentClassification) SetConfidence(value *int32)() {
 func (m *ContentClassification) SetMatches(value []MatchLocationable)() {
     if m != nil {
         m.matches = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *ContentClassification) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetSensitiveTypeId sets the sensitiveTypeId property value. The sensitiveTypeId property

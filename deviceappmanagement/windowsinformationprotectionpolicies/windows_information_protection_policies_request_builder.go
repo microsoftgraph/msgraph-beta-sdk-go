@@ -70,7 +70,7 @@ func NewWindowsInformationProtectionPoliciesRequestBuilder(rawUrl string, reques
     urlParams["request-raw-url"] = rawUrl
     return NewWindowsInformationProtectionPoliciesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *WindowsInformationProtectionPoliciesRequestBuilder) Count()(*iaffac38c80ea006d9adf055d206aa84d20222435abad7e674d4c977d3ae51dec.CountRequestBuilder) {
     return iaffac38c80ea006d9adf055d206aa84d20222435abad7e674d4c977d3ae51dec.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

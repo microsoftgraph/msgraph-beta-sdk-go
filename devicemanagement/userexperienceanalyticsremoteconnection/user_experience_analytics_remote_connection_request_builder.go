@@ -71,7 +71,7 @@ func NewUserExperienceAnalyticsRemoteConnectionRequestBuilder(rawUrl string, req
     urlParams["request-raw-url"] = rawUrl
     return NewUserExperienceAnalyticsRemoteConnectionRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *UserExperienceAnalyticsRemoteConnectionRequestBuilder) Count()(*if8a0e3aa0bca48dd078a7107c57405c3ea63e38e8191999aafbe5a6827be98f1.CountRequestBuilder) {
     return if8a0e3aa0bca48dd078a7107c57405c3ea63e38e8191999aafbe5a6827be98f1.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

@@ -10,6 +10,8 @@ type EventPropagationResult struct {
     additionalData map[string]interface{}
     // The name of the specific location in the workload associated with the event.
     location *string
+    // The OdataType property
+    odataType *string
     // The name of the workload associated with the event.
     serviceName *string
     // Indicates the status of the event creation request. The possible values are: none, inProcessing, failed, success.
@@ -22,6 +24,8 @@ func NewEventPropagationResult()(*EventPropagationResult) {
     m := &EventPropagationResult{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.security.eventPropagationResult";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateEventPropagationResultFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -46,6 +50,16 @@ func (m *EventPropagationResult) GetFieldDeserializers()(map[string]func(i878a80
         }
         if val != nil {
             m.SetLocation(val)
+        }
+        return nil
+    }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
         }
         return nil
     }
@@ -89,6 +103,14 @@ func (m *EventPropagationResult) GetLocation()(*string) {
         return m.location
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *EventPropagationResult) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetServiceName gets the serviceName property value. The name of the workload associated with the event.
 func (m *EventPropagationResult) GetServiceName()(*string) {
     if m == nil {
@@ -117,6 +139,12 @@ func (m *EventPropagationResult) GetStatusInformation()(*string) {
 func (m *EventPropagationResult) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("location", m.GetLocation())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -158,6 +186,12 @@ func (m *EventPropagationResult) SetAdditionalData(value map[string]interface{})
 func (m *EventPropagationResult) SetLocation(value *string)() {
     if m != nil {
         m.location = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *EventPropagationResult) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetServiceName sets the serviceName property value. The name of the workload associated with the event.

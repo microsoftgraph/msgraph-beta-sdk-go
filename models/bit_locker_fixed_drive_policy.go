@@ -10,6 +10,8 @@ type BitLockerFixedDrivePolicy struct {
     additionalData map[string]interface{}
     // Select the encryption method for fixed drives. Possible values are: aesCbc128, aesCbc256, xtsAes128, xtsAes256.
     encryptionMethod *BitLockerEncryptionMethod
+    // The OdataType property
+    odataType *string
     // This policy setting allows you to control how BitLocker-protected fixed data drives are recovered in the absence of the required credentials. This policy setting is applied when you turn on BitLocker.
     recoveryOptions BitLockerRecoveryOptionsable
     // This policy setting determines whether BitLocker protection is required for fixed data drives to be writable on a computer.
@@ -20,6 +22,8 @@ func NewBitLockerFixedDrivePolicy()(*BitLockerFixedDrivePolicy) {
     m := &BitLockerFixedDrivePolicy{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.bitLockerFixedDrivePolicy";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateBitLockerFixedDrivePolicyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -55,6 +59,16 @@ func (m *BitLockerFixedDrivePolicy) GetFieldDeserializers()(map[string]func(i878
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["recoveryOptions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateBitLockerRecoveryOptionsFromDiscriminatorValue)
         if err != nil {
@@ -77,6 +91,14 @@ func (m *BitLockerFixedDrivePolicy) GetFieldDeserializers()(map[string]func(i878
     }
     return res
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *BitLockerFixedDrivePolicy) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetRecoveryOptions gets the recoveryOptions property value. This policy setting allows you to control how BitLocker-protected fixed data drives are recovered in the absence of the required credentials. This policy setting is applied when you turn on BitLocker.
 func (m *BitLockerFixedDrivePolicy) GetRecoveryOptions()(BitLockerRecoveryOptionsable) {
     if m == nil {
@@ -98,6 +120,12 @@ func (m *BitLockerFixedDrivePolicy) Serialize(writer i878a80d2330e89d26896388a3f
     if m.GetEncryptionMethod() != nil {
         cast := (*m.GetEncryptionMethod()).String()
         err := writer.WriteStringValue("encryptionMethod", &cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -132,6 +160,12 @@ func (m *BitLockerFixedDrivePolicy) SetAdditionalData(value map[string]interface
 func (m *BitLockerFixedDrivePolicy) SetEncryptionMethod(value *BitLockerEncryptionMethod)() {
     if m != nil {
         m.encryptionMethod = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *BitLockerFixedDrivePolicy) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetRecoveryOptions sets the recoveryOptions property value. This policy setting allows you to control how BitLocker-protected fixed data drives are recovered in the absence of the required credentials. This policy setting is applied when you turn on BitLocker.

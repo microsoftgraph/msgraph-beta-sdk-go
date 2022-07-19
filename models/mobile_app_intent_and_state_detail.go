@@ -18,6 +18,8 @@ type MobileAppIntentAndStateDetail struct {
     installState *ResultantAppState
     // Indicates the status of the mobile app on the device.
     mobileAppIntent *MobileAppIntent
+    // The OdataType property
+    odataType *string
     // The supported platforms for the app.
     supportedDeviceTypes []MobileAppSupportedDeviceTypeable
 }
@@ -26,6 +28,8 @@ func NewMobileAppIntentAndStateDetail()(*MobileAppIntentAndStateDetail) {
     m := &MobileAppIntentAndStateDetail{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.mobileAppIntentAndStateDetail";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateMobileAppIntentAndStateDetailFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -117,6 +121,16 @@ func (m *MobileAppIntentAndStateDetail) GetFieldDeserializers()(map[string]func(
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["supportedDeviceTypes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateMobileAppSupportedDeviceTypeFromDiscriminatorValue)
         if err != nil {
@@ -147,6 +161,14 @@ func (m *MobileAppIntentAndStateDetail) GetMobileAppIntent()(*MobileAppIntent) {
         return nil
     } else {
         return m.mobileAppIntent
+    }
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *MobileAppIntentAndStateDetail) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
     }
 }
 // GetSupportedDeviceTypes gets the supportedDeviceTypes property value. The supported platforms for the app.
@@ -187,6 +209,12 @@ func (m *MobileAppIntentAndStateDetail) Serialize(writer i878a80d2330e89d2689638
     if m.GetMobileAppIntent() != nil {
         cast := (*m.GetMobileAppIntent()).String()
         err := writer.WriteStringValue("mobileAppIntent", &cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -243,6 +271,12 @@ func (m *MobileAppIntentAndStateDetail) SetInstallState(value *ResultantAppState
 func (m *MobileAppIntentAndStateDetail) SetMobileAppIntent(value *MobileAppIntent)() {
     if m != nil {
         m.mobileAppIntent = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *MobileAppIntentAndStateDetail) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetSupportedDeviceTypes sets the supportedDeviceTypes property value. The supported platforms for the app.

@@ -12,12 +12,16 @@ type GovernanceNotificationPolicy struct {
     enabledTemplateTypes []string
     // The notificationTemplates property
     notificationTemplates []GovernanceNotificationTemplateable
+    // The OdataType property
+    odataType *string
 }
 // NewGovernanceNotificationPolicy instantiates a new governanceNotificationPolicy and sets the default values.
 func NewGovernanceNotificationPolicy()(*GovernanceNotificationPolicy) {
     m := &GovernanceNotificationPolicy{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.governanceNotificationPolicy";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateGovernanceNotificationPolicyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -71,6 +75,16 @@ func (m *GovernanceNotificationPolicy) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetNotificationTemplates gets the notificationTemplates property value. The notificationTemplates property
@@ -79,6 +93,14 @@ func (m *GovernanceNotificationPolicy) GetNotificationTemplates()([]GovernanceNo
         return nil
     } else {
         return m.notificationTemplates
+    }
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *GovernanceNotificationPolicy) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
     }
 }
 // Serialize serializes information the current object
@@ -95,6 +117,12 @@ func (m *GovernanceNotificationPolicy) Serialize(writer i878a80d2330e89d26896388
             cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
         }
         err := writer.WriteCollectionOfObjectValues("notificationTemplates", cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -123,5 +151,11 @@ func (m *GovernanceNotificationPolicy) SetEnabledTemplateTypes(value []string)()
 func (m *GovernanceNotificationPolicy) SetNotificationTemplates(value []GovernanceNotificationTemplateable)() {
     if m != nil {
         m.notificationTemplates = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *GovernanceNotificationPolicy) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }

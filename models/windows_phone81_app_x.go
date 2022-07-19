@@ -29,8 +29,8 @@ func NewWindowsPhone81AppX()(*WindowsPhone81AppX) {
     m := &WindowsPhone81AppX{
         MobileLobApp: *NewMobileLobApp(),
     }
-    odatatypeValue := "#microsoft.graph.windowsPhone81AppX";
-    m.SetType(&odatatypeValue);
+    odataTypeValue := "#microsoft.graph.windowsPhone81AppX";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateWindowsPhone81AppXFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

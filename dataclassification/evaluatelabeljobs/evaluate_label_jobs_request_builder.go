@@ -70,7 +70,7 @@ func NewEvaluateLabelJobsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7
     urlParams["request-raw-url"] = rawUrl
     return NewEvaluateLabelJobsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *EvaluateLabelJobsRequestBuilder) Count()(*i58a56543b48be5fc2b3a9c8d0dbd753e01f386a158ba4f361da8f2818f19ba7f.CountRequestBuilder) {
     return i58a56543b48be5fc2b3a9c8d0dbd753e01f386a158ba4f361da8f2818f19ba7f.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

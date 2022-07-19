@@ -14,6 +14,8 @@ type TeamworkSoftwareUpdateHealth struct {
     companyPortalSoftwareUpdateStatus TeamworkSoftwareUpdateStatusable
     // The software update available for the firmware.
     firmwareSoftwareUpdateStatus TeamworkSoftwareUpdateStatusable
+    // The OdataType property
+    odataType *string
     // The software update available for the operating system.
     operatingSystemSoftwareUpdateStatus TeamworkSoftwareUpdateStatusable
     // The software update available for the partner agent.
@@ -26,6 +28,8 @@ func NewTeamworkSoftwareUpdateHealth()(*TeamworkSoftwareUpdateHealth) {
     m := &TeamworkSoftwareUpdateHealth{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.teamworkSoftwareUpdateHealth";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateTeamworkSoftwareUpdateHealthFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -89,6 +93,16 @@ func (m *TeamworkSoftwareUpdateHealth) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["operatingSystemSoftwareUpdateStatus"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateTeamworkSoftwareUpdateStatusFromDiscriminatorValue)
         if err != nil {
@@ -127,6 +141,14 @@ func (m *TeamworkSoftwareUpdateHealth) GetFirmwareSoftwareUpdateStatus()(Teamwor
         return nil
     } else {
         return m.firmwareSoftwareUpdateStatus
+    }
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *TeamworkSoftwareUpdateHealth) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
     }
 }
 // GetOperatingSystemSoftwareUpdateStatus gets the operatingSystemSoftwareUpdateStatus property value. The software update available for the operating system.
@@ -169,6 +191,12 @@ func (m *TeamworkSoftwareUpdateHealth) Serialize(writer i878a80d2330e89d26896388
     }
     {
         err := writer.WriteObjectValue("firmwareSoftwareUpdateStatus", m.GetFirmwareSoftwareUpdateStatus())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -221,6 +249,12 @@ func (m *TeamworkSoftwareUpdateHealth) SetCompanyPortalSoftwareUpdateStatus(valu
 func (m *TeamworkSoftwareUpdateHealth) SetFirmwareSoftwareUpdateStatus(value TeamworkSoftwareUpdateStatusable)() {
     if m != nil {
         m.firmwareSoftwareUpdateStatus = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *TeamworkSoftwareUpdateHealth) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetOperatingSystemSoftwareUpdateStatus sets the operatingSystemSoftwareUpdateStatus property value. The software update available for the operating system.

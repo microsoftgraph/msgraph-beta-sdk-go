@@ -5,7 +5,7 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
-// ManagementActionTenantDeploymentStatus provides operations to manage the collection of accessReviewDecision entities.
+// ManagementActionTenantDeploymentStatus provides operations to manage the collection of accessReview entities.
 type ManagementActionTenantDeploymentStatus struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
     // The collection of deployment status for each instance of a management action. Optional.
@@ -20,6 +20,8 @@ func NewManagementActionTenantDeploymentStatus()(*ManagementActionTenantDeployme
     m := &ManagementActionTenantDeploymentStatus{
         Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.managedTenants.managementActionTenantDeploymentStatus";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateManagementActionTenantDeploymentStatusFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

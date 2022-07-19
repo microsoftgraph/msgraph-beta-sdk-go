@@ -15,6 +15,8 @@ func NewTaskFileAttachment()(*TaskFileAttachment) {
     m := &TaskFileAttachment{
         AttachmentBase: *NewAttachmentBase(),
     }
+    odataTypeValue := "#microsoft.graph.taskFileAttachment";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateTaskFileAttachmentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

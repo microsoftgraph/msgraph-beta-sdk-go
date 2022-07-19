@@ -21,6 +21,8 @@ func NewUnsupportedGroupPolicyExtension()(*UnsupportedGroupPolicyExtension) {
     m := &UnsupportedGroupPolicyExtension{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.unsupportedGroupPolicyExtension";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateUnsupportedGroupPolicyExtensionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

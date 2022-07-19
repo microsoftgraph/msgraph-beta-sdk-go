@@ -12,6 +12,8 @@ type SynchronizationLinkedObjects struct {
     manager SynchronizationJobSubjectable
     // All group members that you would like to provision.
     members []SynchronizationJobSubjectable
+    // The OdataType property
+    odataType *string
     // The owners property
     owners []SynchronizationJobSubjectable
 }
@@ -20,6 +22,8 @@ func NewSynchronizationLinkedObjects()(*SynchronizationLinkedObjects) {
     m := &SynchronizationLinkedObjects{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.synchronizationLinkedObjects";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateSynchronizationLinkedObjectsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -61,6 +65,16 @@ func (m *SynchronizationLinkedObjects) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["owners"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateSynchronizationJobSubjectFromDiscriminatorValue)
         if err != nil {
@@ -93,6 +107,14 @@ func (m *SynchronizationLinkedObjects) GetMembers()([]SynchronizationJobSubjecta
         return m.members
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *SynchronizationLinkedObjects) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetOwners gets the owners property value. The owners property
 func (m *SynchronizationLinkedObjects) GetOwners()([]SynchronizationJobSubjectable) {
     if m == nil {
@@ -115,6 +137,12 @@ func (m *SynchronizationLinkedObjects) Serialize(writer i878a80d2330e89d26896388
             cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
         }
         err := writer.WriteCollectionOfObjectValues("members", cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -153,6 +181,12 @@ func (m *SynchronizationLinkedObjects) SetManager(value SynchronizationJobSubjec
 func (m *SynchronizationLinkedObjects) SetMembers(value []SynchronizationJobSubjectable)() {
     if m != nil {
         m.members = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *SynchronizationLinkedObjects) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetOwners sets the owners property value. The owners property

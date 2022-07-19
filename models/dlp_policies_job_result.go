@@ -15,12 +15,16 @@ type DlpPoliciesJobResult struct {
     evaluationDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The matchingRules property
     matchingRules []MatchingDlpRuleable
+    // The OdataType property
+    odataType *string
 }
 // NewDlpPoliciesJobResult instantiates a new dlpPoliciesJobResult and sets the default values.
 func NewDlpPoliciesJobResult()(*DlpPoliciesJobResult) {
     m := &DlpPoliciesJobResult{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.dlpPoliciesJobResult";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDlpPoliciesJobResultFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -88,6 +92,16 @@ func (m *DlpPoliciesJobResult) GetFieldDeserializers()(map[string]func(i878a80d2
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetMatchingRules gets the matchingRules property value. The matchingRules property
@@ -96,6 +110,14 @@ func (m *DlpPoliciesJobResult) GetMatchingRules()([]MatchingDlpRuleable) {
         return nil
     } else {
         return m.matchingRules
+    }
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *DlpPoliciesJobResult) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
     }
 }
 // Serialize serializes information the current object
@@ -118,6 +140,12 @@ func (m *DlpPoliciesJobResult) Serialize(writer i878a80d2330e89d26896388a3f487ee
             cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
         }
         err := writer.WriteCollectionOfObjectValues("matchingRules", cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -152,5 +180,11 @@ func (m *DlpPoliciesJobResult) SetEvaluationDateTime(value *i336074805fc853987ab
 func (m *DlpPoliciesJobResult) SetMatchingRules(value []MatchingDlpRuleable)() {
     if m != nil {
         m.matchingRules = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *DlpPoliciesJobResult) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }

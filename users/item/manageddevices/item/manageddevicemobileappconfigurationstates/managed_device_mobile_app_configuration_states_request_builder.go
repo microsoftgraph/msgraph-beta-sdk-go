@@ -70,7 +70,7 @@ func NewManagedDeviceMobileAppConfigurationStatesRequestBuilder(rawUrl string, r
     urlParams["request-raw-url"] = rawUrl
     return NewManagedDeviceMobileAppConfigurationStatesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *ManagedDeviceMobileAppConfigurationStatesRequestBuilder) Count()(*i29794549b4edc99f0791e5ccf586824b0e5deb1a2ce90da02f44e1a2bb6c6d53.CountRequestBuilder) {
     return i29794549b4edc99f0791e5ccf586824b0e5deb1a2ce90da02f44e1a2bb6c6d53.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

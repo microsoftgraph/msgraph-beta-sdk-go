@@ -17,6 +17,8 @@ func NewEncryptWithTemplate()(*EncryptWithTemplate) {
     m := &EncryptWithTemplate{
         EncryptContent: *NewEncryptContent(),
     }
+    odataTypeValue := "#microsoft.graph.encryptWithTemplate";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateEncryptWithTemplateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

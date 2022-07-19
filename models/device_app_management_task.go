@@ -34,8 +34,8 @@ func NewDeviceAppManagementTask()(*DeviceAppManagementTask) {
     m := &DeviceAppManagementTask{
         Entity: *NewEntity(),
     }
-    odatatypeValue := "#microsoft.graph.deviceAppManagementTask";
-    m.SetType(&odatatypeValue);
+    odataTypeValue := "#microsoft.graph.deviceAppManagementTask";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDeviceAppManagementTaskFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -15,6 +15,8 @@ func NewSubjectRightsRequestEnumeratedSiteLocation()(*SubjectRightsRequestEnumer
     m := &SubjectRightsRequestEnumeratedSiteLocation{
         SubjectRightsRequestSiteLocation: *NewSubjectRightsRequestSiteLocation(),
     }
+    odataTypeValue := "#microsoft.graph.subjectRightsRequestEnumeratedSiteLocation";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateSubjectRightsRequestEnumeratedSiteLocationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

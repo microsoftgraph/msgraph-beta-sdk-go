@@ -35,6 +35,8 @@ func NewRelyingPartyDetailedSummary()(*RelyingPartyDetailedSummary) {
     m := &RelyingPartyDetailedSummary{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.relyingPartyDetailedSummary";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateRelyingPartyDetailedSummaryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -19,6 +19,8 @@ func NewAccessReviewPolicy()(*AccessReviewPolicy) {
     m := &AccessReviewPolicy{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.accessReviewPolicy";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAccessReviewPolicyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

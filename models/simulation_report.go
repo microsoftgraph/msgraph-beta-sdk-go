@@ -8,6 +8,8 @@ import (
 type SimulationReport struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
+    // The OdataType property
+    odataType *string
     // Overview of an attack simulation and training campaign.
     overview SimulationReportOverviewable
     // Represents users of a tenant and their online actions in an attack simulation and training campaign.
@@ -18,6 +20,8 @@ func NewSimulationReport()(*SimulationReport) {
     m := &SimulationReport{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.simulationReport";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateSimulationReportFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -35,6 +39,16 @@ func (m *SimulationReport) GetAdditionalData()(map[string]interface{}) {
 // GetFieldDeserializers the deserialization information for the current model
 func (m *SimulationReport) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["overview"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateSimulationReportOverviewFromDiscriminatorValue)
         if err != nil {
@@ -61,6 +75,14 @@ func (m *SimulationReport) GetFieldDeserializers()(map[string]func(i878a80d2330e
     }
     return res
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *SimulationReport) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetOverview gets the overview property value. Overview of an attack simulation and training campaign.
 func (m *SimulationReport) GetOverview()(SimulationReportOverviewable) {
     if m == nil {
@@ -79,6 +101,12 @@ func (m *SimulationReport) GetSimulationUsers()([]UserSimulationDetailsable) {
 }
 // Serialize serializes information the current object
 func (m *SimulationReport) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     {
         err := writer.WriteObjectValue("overview", m.GetOverview())
         if err != nil {
@@ -107,6 +135,12 @@ func (m *SimulationReport) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
 func (m *SimulationReport) SetAdditionalData(value map[string]interface{})() {
     if m != nil {
         m.additionalData = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *SimulationReport) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetOverview sets the overview property value. Overview of an attack simulation and training campaign.

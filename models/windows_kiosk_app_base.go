@@ -14,18 +14,18 @@ type WindowsKioskAppBase struct {
     autoLaunch *bool
     // Represents the friendly name of an app
     name *string
+    // The OdataType property
+    odataType *string
     // The tile size of Windows app in the start layout.
     startLayoutTileSize *WindowsAppStartLayoutTileSize
-    // The type property
-    type_escaped *string
 }
 // NewWindowsKioskAppBase instantiates a new windowsKioskAppBase and sets the default values.
 func NewWindowsKioskAppBase()(*WindowsKioskAppBase) {
     m := &WindowsKioskAppBase{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odatatypeValue := "#microsoft.graph.windowsKioskAppBase";
-    m.SetType(&odatatypeValue);
+    odataTypeValue := "#microsoft.graph.windowsKioskAppBase";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateWindowsKioskAppBaseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -112,6 +112,16 @@ func (m *WindowsKioskAppBase) GetFieldDeserializers()(map[string]func(i878a80d23
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["startLayoutTileSize"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseWindowsAppStartLayoutTileSize)
         if err != nil {
@@ -119,16 +129,6 @@ func (m *WindowsKioskAppBase) GetFieldDeserializers()(map[string]func(i878a80d23
         }
         if val != nil {
             m.SetStartLayoutTileSize(val.(*WindowsAppStartLayoutTileSize))
-        }
-        return nil
-    }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetType(val)
         }
         return nil
     }
@@ -142,20 +142,20 @@ func (m *WindowsKioskAppBase) GetName()(*string) {
         return m.name
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *WindowsKioskAppBase) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetStartLayoutTileSize gets the startLayoutTileSize property value. The tile size of Windows app in the start layout.
 func (m *WindowsKioskAppBase) GetStartLayoutTileSize()(*WindowsAppStartLayoutTileSize) {
     if m == nil {
         return nil
     } else {
         return m.startLayoutTileSize
-    }
-}
-// GetType gets the @odata.type property value. The type property
-func (m *WindowsKioskAppBase) GetType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.type_escaped
     }
 }
 // Serialize serializes information the current object
@@ -179,15 +179,15 @@ func (m *WindowsKioskAppBase) Serialize(writer i878a80d2330e89d26896388a3f487eef
             return err
         }
     }
-    if m.GetStartLayoutTileSize() != nil {
-        cast := (*m.GetStartLayoutTileSize()).String()
-        err := writer.WriteStringValue("startLayoutTileSize", &cast)
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
     }
-    {
-        err := writer.WriteStringValue("@odata.type", m.GetType())
+    if m.GetStartLayoutTileSize() != nil {
+        cast := (*m.GetStartLayoutTileSize()).String()
+        err := writer.WriteStringValue("startLayoutTileSize", &cast)
         if err != nil {
             return err
         }
@@ -224,15 +224,15 @@ func (m *WindowsKioskAppBase) SetName(value *string)() {
         m.name = value
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *WindowsKioskAppBase) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
+    }
+}
 // SetStartLayoutTileSize sets the startLayoutTileSize property value. The tile size of Windows app in the start layout.
 func (m *WindowsKioskAppBase) SetStartLayoutTileSize(value *WindowsAppStartLayoutTileSize)() {
     if m != nil {
         m.startLayoutTileSize = value
-    }
-}
-// SetType sets the @odata.type property value. The type property
-func (m *WindowsKioskAppBase) SetType(value *string)() {
-    if m != nil {
-        m.type_escaped = value
     }
 }

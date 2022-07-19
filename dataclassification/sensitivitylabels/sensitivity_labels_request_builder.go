@@ -71,7 +71,7 @@ func NewSensitivityLabelsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7
     urlParams["request-raw-url"] = rawUrl
     return NewSensitivityLabelsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *SensitivityLabelsRequestBuilder) Count()(*i4b523cb744f8cb29dce2dbd263169af821cd4a4c089f86777007795afaa53bbe.CountRequestBuilder) {
     return i4b523cb744f8cb29dce2dbd263169af821cd4a4c089f86777007795afaa53bbe.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

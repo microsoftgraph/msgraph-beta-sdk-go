@@ -11,9 +11,11 @@ type PasswordSingleSignOnFieldable interface {
     GetCustomizedLabel()(*string)
     GetDefaultLabel()(*string)
     GetFieldId()(*string)
+    GetOdataType()(*string)
     GetType()(*string)
     SetCustomizedLabel(value *string)()
     SetDefaultLabel(value *string)()
     SetFieldId(value *string)()
+    SetOdataType(value *string)()
     SetType(value *string)()
 }

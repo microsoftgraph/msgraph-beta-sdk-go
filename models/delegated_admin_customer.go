@@ -19,6 +19,8 @@ func NewDelegatedAdminCustomer()(*DelegatedAdminCustomer) {
     m := &DelegatedAdminCustomer{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.delegatedAdminCustomer";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDelegatedAdminCustomerFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

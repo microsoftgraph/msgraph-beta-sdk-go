@@ -15,6 +15,7 @@ type DeviceManagementConfigurationOptionDefinitionable interface {
     GetHelpText()(*string)
     GetItemId()(*string)
     GetName()(*string)
+    GetOdataType()(*string)
     GetOptionValue()(DeviceManagementConfigurationSettingValueable)
     SetDependedOnBy(value []DeviceManagementConfigurationSettingDependedOnByable)()
     SetDependentOn(value []DeviceManagementConfigurationDependentOnable)()
@@ -23,5 +24,6 @@ type DeviceManagementConfigurationOptionDefinitionable interface {
     SetHelpText(value *string)()
     SetItemId(value *string)()
     SetName(value *string)()
+    SetOdataType(value *string)()
     SetOptionValue(value DeviceManagementConfigurationSettingValueable)()
 }

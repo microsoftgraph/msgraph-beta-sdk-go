@@ -21,6 +21,8 @@ func NewSensitivityPolicySettings()(*SensitivityPolicySettings) {
     m := &SensitivityPolicySettings{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.sensitivityPolicySettings";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateSensitivityPolicySettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

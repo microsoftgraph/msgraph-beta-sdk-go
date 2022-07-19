@@ -33,7 +33,7 @@ func NewIdentityProviderBaseItemRequestBuilder(rawUrl string, requestAdapter i2a
     urlParams["request-raw-url"] = rawUrl
     return NewIdentityProviderBaseItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Ref the ref property
+// Ref the Ref property
 func (m *IdentityProviderBaseItemRequestBuilder) Ref()(*ia7638efd20f31ff9afc35a82832d7c94c7d9c7329f6cda96449df7eb6f67de7e.RefRequestBuilder) {
     return ia7638efd20f31ff9afc35a82832d7c94c7d9c7329f6cda96449df7eb6f67de7e.NewRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

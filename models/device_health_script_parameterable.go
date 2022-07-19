@@ -12,10 +12,10 @@ type DeviceHealthScriptParameterable interface {
     GetDescription()(*string)
     GetIsRequired()(*bool)
     GetName()(*string)
-    GetType()(*string)
+    GetOdataType()(*string)
     SetApplyDefaultValueWhenNotAssigned(value *bool)()
     SetDescription(value *string)()
     SetIsRequired(value *bool)()
     SetName(value *string)()
-    SetType(value *string)()
+    SetOdataType(value *string)()
 }

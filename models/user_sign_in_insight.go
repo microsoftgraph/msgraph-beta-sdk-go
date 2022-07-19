@@ -16,6 +16,8 @@ func NewUserSignInInsight()(*UserSignInInsight) {
     m := &UserSignInInsight{
         GovernanceInsight: *NewGovernanceInsight(),
     }
+    odataTypeValue := "#microsoft.graph.userSignInInsight";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateUserSignInInsightFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

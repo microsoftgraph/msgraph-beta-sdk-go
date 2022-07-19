@@ -22,6 +22,8 @@ type AppleVpnAlwaysOnConfiguration struct {
     natKeepAliveIntervalInSeconds *int32
     // Enable hardware offloading of NAT keepalive signals when the device is asleep
     natKeepAliveOffloadEnable *bool
+    // The OdataType property
+    odataType *string
     // The type of tunnels that will be present to the VPN client for configuration
     tunnelConfiguration *VpnTunnelConfigurationType
     // Allow the user to toggle the VPN configuration using the UI
@@ -34,6 +36,8 @@ func NewAppleVpnAlwaysOnConfiguration()(*AppleVpnAlwaysOnConfiguration) {
     m := &AppleVpnAlwaysOnConfiguration{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.appleVpnAlwaysOnConfiguration";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAppleVpnAlwaysOnConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -161,6 +165,16 @@ func (m *AppleVpnAlwaysOnConfiguration) GetFieldDeserializers()(map[string]func(
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["tunnelConfiguration"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseVpnTunnelConfigurationType)
         if err != nil {
@@ -207,6 +221,14 @@ func (m *AppleVpnAlwaysOnConfiguration) GetNatKeepAliveOffloadEnable()(*bool) {
         return nil
     } else {
         return m.natKeepAliveOffloadEnable
+    }
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *AppleVpnAlwaysOnConfiguration) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
     }
 }
 // GetTunnelConfiguration gets the tunnelConfiguration property value. The type of tunnels that will be present to the VPN client for configuration
@@ -275,6 +297,12 @@ func (m *AppleVpnAlwaysOnConfiguration) Serialize(writer i878a80d2330e89d2689638
     }
     {
         err := writer.WriteBoolValue("natKeepAliveOffloadEnable", m.GetNatKeepAliveOffloadEnable())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -353,6 +381,12 @@ func (m *AppleVpnAlwaysOnConfiguration) SetNatKeepAliveIntervalInSeconds(value *
 func (m *AppleVpnAlwaysOnConfiguration) SetNatKeepAliveOffloadEnable(value *bool)() {
     if m != nil {
         m.natKeepAliveOffloadEnable = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *AppleVpnAlwaysOnConfiguration) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetTunnelConfiguration sets the tunnelConfiguration property value. The type of tunnels that will be present to the VPN client for configuration

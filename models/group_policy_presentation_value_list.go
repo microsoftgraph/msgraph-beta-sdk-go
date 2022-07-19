@@ -15,6 +15,8 @@ func NewGroupPolicyPresentationValueList()(*GroupPolicyPresentationValueList) {
     m := &GroupPolicyPresentationValueList{
         GroupPolicyPresentationValue: *NewGroupPolicyPresentationValue(),
     }
+    odataTypeValue := "#microsoft.graph.groupPolicyPresentationValueList";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateGroupPolicyPresentationValueListFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -71,7 +71,7 @@ func NewIosLobAppProvisioningConfigurationsRequestBuilder(rawUrl string, request
     urlParams["request-raw-url"] = rawUrl
     return NewIosLobAppProvisioningConfigurationsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *IosLobAppProvisioningConfigurationsRequestBuilder) Count()(*ia8831c95b7a0c8af06144645031c15784df3017700db5cffd72ec5f9443887d5.CountRequestBuilder) {
     return ia8831c95b7a0c8af06144645031c15784df3017700db5cffd72ec5f9443887d5.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

@@ -8,18 +8,18 @@ import (
 type DeviceManagementConfigurationSimpleSettingValueTemplate struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
+    // The OdataType property
+    odataType *string
     // Setting Value Template Id
     settingValueTemplateId *string
-    // The type property
-    type_escaped *string
 }
 // NewDeviceManagementConfigurationSimpleSettingValueTemplate instantiates a new deviceManagementConfigurationSimpleSettingValueTemplate and sets the default values.
 func NewDeviceManagementConfigurationSimpleSettingValueTemplate()(*DeviceManagementConfigurationSimpleSettingValueTemplate) {
     m := &DeviceManagementConfigurationSimpleSettingValueTemplate{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odatatypeValue := "#microsoft.graph.deviceManagementConfigurationSimpleSettingValueTemplate";
-    m.SetType(&odatatypeValue);
+    odataTypeValue := "#microsoft.graph.deviceManagementConfigurationSimpleSettingValueTemplate";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDeviceManagementConfigurationSimpleSettingValueTemplateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -58,6 +58,16 @@ func (m *DeviceManagementConfigurationSimpleSettingValueTemplate) GetAdditionalD
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceManagementConfigurationSimpleSettingValueTemplate) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["settingValueTemplateId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -68,17 +78,15 @@ func (m *DeviceManagementConfigurationSimpleSettingValueTemplate) GetFieldDeseri
         }
         return nil
     }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetType(val)
-        }
-        return nil
-    }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *DeviceManagementConfigurationSimpleSettingValueTemplate) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
 }
 // GetSettingValueTemplateId gets the settingValueTemplateId property value. Setting Value Template Id
 func (m *DeviceManagementConfigurationSimpleSettingValueTemplate) GetSettingValueTemplateId()(*string) {
@@ -88,24 +96,16 @@ func (m *DeviceManagementConfigurationSimpleSettingValueTemplate) GetSettingValu
         return m.settingValueTemplateId
     }
 }
-// GetType gets the @odata.type property value. The type property
-func (m *DeviceManagementConfigurationSimpleSettingValueTemplate) GetType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.type_escaped
-    }
-}
 // Serialize serializes information the current object
 func (m *DeviceManagementConfigurationSimpleSettingValueTemplate) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
-        err := writer.WriteStringValue("settingValueTemplateId", m.GetSettingValueTemplateId())
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
     }
     {
-        err := writer.WriteStringValue("@odata.type", m.GetType())
+        err := writer.WriteStringValue("settingValueTemplateId", m.GetSettingValueTemplateId())
         if err != nil {
             return err
         }
@@ -124,15 +124,15 @@ func (m *DeviceManagementConfigurationSimpleSettingValueTemplate) SetAdditionalD
         m.additionalData = value
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *DeviceManagementConfigurationSimpleSettingValueTemplate) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
+    }
+}
 // SetSettingValueTemplateId sets the settingValueTemplateId property value. Setting Value Template Id
 func (m *DeviceManagementConfigurationSimpleSettingValueTemplate) SetSettingValueTemplateId(value *string)() {
     if m != nil {
         m.settingValueTemplateId = value
-    }
-}
-// SetType sets the @odata.type property value. The type property
-func (m *DeviceManagementConfigurationSimpleSettingValueTemplate) SetType(value *string)() {
-    if m != nil {
-        m.type_escaped = value
     }
 }

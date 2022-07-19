@@ -70,7 +70,7 @@ func NewWindowsUpdateCatalogItemsRequestBuilder(rawUrl string, requestAdapter i2
     urlParams["request-raw-url"] = rawUrl
     return NewWindowsUpdateCatalogItemsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *WindowsUpdateCatalogItemsRequestBuilder) Count()(*i1174f9d0200ba86e0c8b61bb3ad81ae27b4cc31f5f4647212f42819ac5d7054c.CountRequestBuilder) {
     return i1174f9d0200ba86e0c8b61bb3ad81ae27b4cc31f5f4647212f42819ac5d7054c.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

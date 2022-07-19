@@ -29,6 +29,8 @@ type ArchivedPrintJob struct {
     duplexPageCount *int32
     // The archived print job's GUID. Read-only.
     id *string
+    // The OdataType property
+    odataType *string
     // The total number of pages that were printed. Read-only.
     pageCount *int32
     // The printer ID that the job was queued for. Read-only.
@@ -43,6 +45,8 @@ func NewArchivedPrintJob()(*ArchivedPrintJob) {
     m := &ArchivedPrintJob{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.archivedPrintJob";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateArchivedPrintJobFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -232,6 +236,16 @@ func (m *ArchivedPrintJob) GetFieldDeserializers()(map[string]func(i878a80d2330e
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["pageCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
@@ -280,6 +294,14 @@ func (m *ArchivedPrintJob) GetId()(*string) {
         return nil
     } else {
         return m.id
+    }
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *ArchivedPrintJob) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
     }
 }
 // GetPageCount gets the pageCount property value. The total number of pages that were printed. Read-only.
@@ -372,6 +394,12 @@ func (m *ArchivedPrintJob) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
     }
     {
         err := writer.WriteStringValue("id", m.GetId())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -473,6 +501,12 @@ func (m *ArchivedPrintJob) SetDuplexPageCount(value *int32)() {
 func (m *ArchivedPrintJob) SetId(value *string)() {
     if m != nil {
         m.id = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *ArchivedPrintJob) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetPageCount sets the pageCount property value. The total number of pages that were printed. Read-only.

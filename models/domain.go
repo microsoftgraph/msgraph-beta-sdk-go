@@ -45,6 +45,8 @@ func NewDomain()(*Domain) {
     m := &Domain{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.domain";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDomainFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

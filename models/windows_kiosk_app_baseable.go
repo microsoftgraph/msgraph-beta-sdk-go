@@ -11,11 +11,11 @@ type WindowsKioskAppBaseable interface {
     GetAppType()(*WindowsKioskAppType)
     GetAutoLaunch()(*bool)
     GetName()(*string)
+    GetOdataType()(*string)
     GetStartLayoutTileSize()(*WindowsAppStartLayoutTileSize)
-    GetType()(*string)
     SetAppType(value *WindowsKioskAppType)()
     SetAutoLaunch(value *bool)()
     SetName(value *string)()
+    SetOdataType(value *string)()
     SetStartLayoutTileSize(value *WindowsAppStartLayoutTileSize)()
-    SetType(value *string)()
 }

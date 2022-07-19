@@ -19,6 +19,8 @@ func NewGroupLifecyclePolicy()(*GroupLifecyclePolicy) {
     m := &GroupLifecyclePolicy{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.groupLifecyclePolicy";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateGroupLifecyclePolicyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -70,7 +70,7 @@ func NewCartToClassAssociationsRequestBuilder(rawUrl string, requestAdapter i2ae
     urlParams["request-raw-url"] = rawUrl
     return NewCartToClassAssociationsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *CartToClassAssociationsRequestBuilder) Count()(*i87870e7a4e95665fd47cb1889becbc2c7b4989356e17717fecd614db95d4f035.CountRequestBuilder) {
     return i87870e7a4e95665fd47cb1889becbc2c7b4989356e17717fecd614db95d4f035.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

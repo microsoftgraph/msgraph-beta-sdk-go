@@ -16,7 +16,7 @@ type UserSourcesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// UserSourcesRequestBuilderGetQueryParameters get userSources from security
+// UserSourcesRequestBuilderGetQueryParameters data sources that represent Exchange mailboxes.
 type UserSourcesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -70,15 +70,15 @@ func NewUserSourcesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26
     urlParams["request-raw-url"] = rawUrl
     return NewUserSourcesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *UserSourcesRequestBuilder) Count()(*i5e6dc09a80c5ba2901f0cf56f35ff3b87158523c7d427f6058142891502aa1da.CountRequestBuilder) {
     return i5e6dc09a80c5ba2901f0cf56f35ff3b87158523c7d427f6058142891502aa1da.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation get userSources from security
+// CreateGetRequestInformation data sources that represent Exchange mailboxes.
 func (m *UserSourcesRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration get userSources from security
+// CreateGetRequestInformationWithRequestConfiguration data sources that represent Exchange mailboxes.
 func (m *UserSourcesRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *UserSourcesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -112,11 +112,11 @@ func (m *UserSourcesRequestBuilder) CreatePostRequestInformationWithRequestConfi
     }
     return requestInfo, nil
 }
-// Get get userSources from security
+// Get data sources that represent Exchange mailboxes.
 func (m *UserSourcesRequestBuilder) Get()(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.UserSourceCollectionResponseable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler get userSources from security
+// GetWithRequestConfigurationAndResponseHandler data sources that represent Exchange mailboxes.
 func (m *UserSourcesRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *UserSourcesRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.UserSourceCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

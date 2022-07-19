@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// UserExperienceAnalyticsBaseline 
+// UserExperienceAnalyticsBaseline the user experience analytics baseline entity contains baseline values against which to compare the user experience analytics scores.
 type UserExperienceAnalyticsBaseline struct {
     Entity
     // The user experience analytics app health metrics.
@@ -29,11 +29,13 @@ type UserExperienceAnalyticsBaseline struct {
     // The user experience analytics work from anywhere metrics.
     workFromAnywhereMetrics UserExperienceAnalyticsCategoryable
 }
-// NewUserExperienceAnalyticsBaseline instantiates a new UserExperienceAnalyticsBaseline and sets the default values.
+// NewUserExperienceAnalyticsBaseline instantiates a new userExperienceAnalyticsBaseline and sets the default values.
 func NewUserExperienceAnalyticsBaseline()(*UserExperienceAnalyticsBaseline) {
     m := &UserExperienceAnalyticsBaseline{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.userExperienceAnalyticsBaseline";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateUserExperienceAnalyticsBaselineFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

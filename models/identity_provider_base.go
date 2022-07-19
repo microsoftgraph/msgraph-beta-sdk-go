@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// IdentityProviderBase provides operations to manage the collection of activityStatistics entities.
+// IdentityProviderBase provides operations to manage the collection of accessReview entities.
 type IdentityProviderBase struct {
     Entity
     // The display name of the identity provider.
@@ -15,8 +15,8 @@ func NewIdentityProviderBase()(*IdentityProviderBase) {
     m := &IdentityProviderBase{
         Entity: *NewEntity(),
     }
-    odatatypeValue := "#microsoft.graph.identityProviderBase";
-    m.SetType(&odatatypeValue);
+    odataTypeValue := "#microsoft.graph.identityProviderBase";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateIdentityProviderBaseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -38,8 +38,12 @@ func CreateIdentityProviderBaseFromDiscriminatorValue(parseNode i878a80d2330e89d
                         return NewAppleManagedIdentityProvider(), nil
                     case "#microsoft.graph.builtInIdentityProvider":
                         return NewBuiltInIdentityProvider(), nil
+                    case "#microsoft.graph.internalDomainFederation":
+                        return NewInternalDomainFederation(), nil
                     case "#microsoft.graph.openIdConnectIdentityProvider":
                         return NewOpenIdConnectIdentityProvider(), nil
+                    case "#microsoft.graph.samlOrWsFedExternalDomainFederation":
+                        return NewSamlOrWsFedExternalDomainFederation(), nil
                     case "#microsoft.graph.samlOrWsFedProvider":
                         return NewSamlOrWsFedProvider(), nil
                     case "#microsoft.graph.socialIdentityProvider":

@@ -17,6 +17,8 @@ func NewMacOSImportedPFXCertificateProfile()(*MacOSImportedPFXCertificateProfile
     m := &MacOSImportedPFXCertificateProfile{
         MacOSCertificateProfileBase: *NewMacOSCertificateProfileBase(),
     }
+    odataTypeValue := "#microsoft.graph.macOSImportedPFXCertificateProfile";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateMacOSImportedPFXCertificateProfileFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

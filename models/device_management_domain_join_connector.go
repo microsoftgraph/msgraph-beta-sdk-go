@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DeviceManagementDomainJoinConnector 
+// DeviceManagementDomainJoinConnector a Domain Join Connector is a connector that is responsible to allocate (and delete) machine account blobs
 type DeviceManagementDomainJoinConnector struct {
     Entity
     // The connector display name.
@@ -17,11 +17,13 @@ type DeviceManagementDomainJoinConnector struct {
     // The version of the connector.
     version *string
 }
-// NewDeviceManagementDomainJoinConnector instantiates a new DeviceManagementDomainJoinConnector and sets the default values.
+// NewDeviceManagementDomainJoinConnector instantiates a new deviceManagementDomainJoinConnector and sets the default values.
 func NewDeviceManagementDomainJoinConnector()(*DeviceManagementDomainJoinConnector) {
     m := &DeviceManagementDomainJoinConnector{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.deviceManagementDomainJoinConnector";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDeviceManagementDomainJoinConnectorFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

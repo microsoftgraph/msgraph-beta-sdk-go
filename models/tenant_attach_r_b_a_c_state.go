@@ -10,12 +10,16 @@ type TenantAttachRBACState struct {
     additionalData map[string]interface{}
     // Indicates whether the tenant is enabled for Tenant Attach with role management.  TRUE if enabled, FALSE if the Tenant Attach with rolemanagement is disabled.
     enabled *bool
+    // The OdataType property
+    odataType *string
 }
 // NewTenantAttachRBACState instantiates a new tenantAttachRBACState and sets the default values.
 func NewTenantAttachRBACState()(*TenantAttachRBACState) {
     m := &TenantAttachRBACState{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.tenantAttachRBACState";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateTenantAttachRBACStateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -51,12 +55,36 @@ func (m *TenantAttachRBACState) GetFieldDeserializers()(map[string]func(i878a80d
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *TenantAttachRBACState) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
 }
 // Serialize serializes information the current object
 func (m *TenantAttachRBACState) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
         err := writer.WriteBoolValue("enabled", m.GetEnabled())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -79,5 +107,11 @@ func (m *TenantAttachRBACState) SetAdditionalData(value map[string]interface{})(
 func (m *TenantAttachRBACState) SetEnabled(value *bool)() {
     if m != nil {
         m.enabled = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *TenantAttachRBACState) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }

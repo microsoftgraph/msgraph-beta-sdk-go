@@ -15,6 +15,8 @@ func NewWindows10VpnProxyServer()(*Windows10VpnProxyServer) {
     m := &Windows10VpnProxyServer{
         VpnProxyServer: *NewVpnProxyServer(),
     }
+    odataTypeValue := "#microsoft.graph.windows10VpnProxyServer";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateWindows10VpnProxyServerFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

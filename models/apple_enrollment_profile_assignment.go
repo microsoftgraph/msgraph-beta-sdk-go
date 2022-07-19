@@ -15,6 +15,8 @@ func NewAppleEnrollmentProfileAssignment()(*AppleEnrollmentProfileAssignment) {
     m := &AppleEnrollmentProfileAssignment{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.appleEnrollmentProfileAssignment";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAppleEnrollmentProfileAssignmentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

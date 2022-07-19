@@ -13,6 +13,8 @@ type ConfigurationManagerClientHealthState struct {
     errorCode *int32
     // Datetime for last sync with configuration manager management point.
     lastSyncDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
+    // The OdataType property
+    odataType *string
     // Configuration manager client state
     state *ConfigurationManagerClientState
 }
@@ -21,6 +23,8 @@ func NewConfigurationManagerClientHealthState()(*ConfigurationManagerClientHealt
     m := &ConfigurationManagerClientHealthState{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.configurationManagerClientHealthState";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateConfigurationManagerClientHealthStateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -66,6 +70,16 @@ func (m *ConfigurationManagerClientHealthState) GetFieldDeserializers()(map[stri
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["state"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseConfigurationManagerClientState)
         if err != nil {
@@ -86,6 +100,14 @@ func (m *ConfigurationManagerClientHealthState) GetLastSyncDateTime()(*i33607480
         return m.lastSyncDateTime
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *ConfigurationManagerClientHealthState) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetState gets the state property value. Configuration manager client state
 func (m *ConfigurationManagerClientHealthState) GetState()(*ConfigurationManagerClientState) {
     if m == nil {
@@ -104,6 +126,12 @@ func (m *ConfigurationManagerClientHealthState) Serialize(writer i878a80d2330e89
     }
     {
         err := writer.WriteTimeValue("lastSyncDateTime", m.GetLastSyncDateTime())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -139,6 +167,12 @@ func (m *ConfigurationManagerClientHealthState) SetErrorCode(value *int32)() {
 func (m *ConfigurationManagerClientHealthState) SetLastSyncDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     if m != nil {
         m.lastSyncDateTime = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *ConfigurationManagerClientHealthState) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetState sets the state property value. Configuration manager client state

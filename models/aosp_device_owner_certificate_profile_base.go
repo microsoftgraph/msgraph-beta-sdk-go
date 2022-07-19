@@ -27,8 +27,8 @@ func NewAospDeviceOwnerCertificateProfileBase()(*AospDeviceOwnerCertificateProfi
     m := &AospDeviceOwnerCertificateProfileBase{
         DeviceConfiguration: *NewDeviceConfiguration(),
     }
-    odatatypeValue := "#microsoft.graph.aospDeviceOwnerCertificateProfileBase";
-    m.SetType(&odatatypeValue);
+    odataTypeValue := "#microsoft.graph.aospDeviceOwnerCertificateProfileBase";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAospDeviceOwnerCertificateProfileBaseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

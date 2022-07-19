@@ -56,6 +56,8 @@ func NewWindowsProtectionState()(*WindowsProtectionState) {
     m := &WindowsProtectionState{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.windowsProtectionState";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateWindowsProtectionStateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

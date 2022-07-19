@@ -15,6 +15,8 @@ func NewWindowsUniversalAppXAppAssignmentSettings()(*WindowsUniversalAppXAppAssi
     m := &WindowsUniversalAppXAppAssignmentSettings{
         MobileAppAssignmentSettings: *NewMobileAppAssignmentSettings(),
     }
+    odataTypeValue := "#microsoft.graph.windowsUniversalAppXAppAssignmentSettings";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateWindowsUniversalAppXAppAssignmentSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

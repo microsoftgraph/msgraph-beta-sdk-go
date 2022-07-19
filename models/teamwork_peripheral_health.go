@@ -12,6 +12,8 @@ type TeamworkPeripheralHealth struct {
     connection TeamworkConnectionable
     // True if the peripheral is optional. Used for health computation.
     isOptional *bool
+    // The OdataType property
+    odataType *string
     // The peripheral property
     peripheral TeamworkPeripheralable
 }
@@ -20,6 +22,8 @@ func NewTeamworkPeripheralHealth()(*TeamworkPeripheralHealth) {
     m := &TeamworkPeripheralHealth{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.teamworkPeripheralHealth";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateTeamworkPeripheralHealthFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -65,6 +69,16 @@ func (m *TeamworkPeripheralHealth) GetFieldDeserializers()(map[string]func(i878a
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["peripheral"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateTeamworkPeripheralFromDiscriminatorValue)
         if err != nil {
@@ -85,6 +99,14 @@ func (m *TeamworkPeripheralHealth) GetIsOptional()(*bool) {
         return m.isOptional
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *TeamworkPeripheralHealth) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetPeripheral gets the peripheral property value. The peripheral property
 func (m *TeamworkPeripheralHealth) GetPeripheral()(TeamworkPeripheralable) {
     if m == nil {
@@ -103,6 +125,12 @@ func (m *TeamworkPeripheralHealth) Serialize(writer i878a80d2330e89d26896388a3f4
     }
     {
         err := writer.WriteBoolValue("isOptional", m.GetIsOptional())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -137,6 +165,12 @@ func (m *TeamworkPeripheralHealth) SetConnection(value TeamworkConnectionable)()
 func (m *TeamworkPeripheralHealth) SetIsOptional(value *bool)() {
     if m != nil {
         m.isOptional = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *TeamworkPeripheralHealth) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetPeripheral sets the peripheral property value. The peripheral property

@@ -71,7 +71,7 @@ func NewGroupPolicyMigrationReportsRequestBuilder(rawUrl string, requestAdapter 
     urlParams["request-raw-url"] = rawUrl
     return NewGroupPolicyMigrationReportsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *GroupPolicyMigrationReportsRequestBuilder) Count()(*if71ea97d767c5bf6d87359ea70d887651456c66fc1b43a3600e4a90f9468a396.CountRequestBuilder) {
     return if71ea97d767c5bf6d87359ea70d887651456c66fc1b43a3600e4a90f9468a396.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

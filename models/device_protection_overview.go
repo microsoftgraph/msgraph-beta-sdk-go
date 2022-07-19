@@ -14,6 +14,8 @@ type DeviceProtectionOverview struct {
     criticalFailuresDeviceCount *int32
     // Device with inactive threat agent count
     inactiveThreatAgentDeviceCount *int32
+    // The OdataType property
+    odataType *string
     // Pending full scan device count.
     pendingFullScanDeviceCount *int32
     // Pending manual steps device count.
@@ -36,6 +38,8 @@ func NewDeviceProtectionOverview()(*DeviceProtectionOverview) {
     m := &DeviceProtectionOverview{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.deviceProtectionOverview";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDeviceProtectionOverviewFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -96,6 +100,16 @@ func (m *DeviceProtectionOverview) GetFieldDeserializers()(map[string]func(i878a
         }
         if val != nil {
             m.SetInactiveThreatAgentDeviceCount(val)
+        }
+        return nil
+    }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
         }
         return nil
     }
@@ -189,6 +203,14 @@ func (m *DeviceProtectionOverview) GetInactiveThreatAgentDeviceCount()(*int32) {
         return m.inactiveThreatAgentDeviceCount
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *DeviceProtectionOverview) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetPendingFullScanDeviceCount gets the pendingFullScanDeviceCount property value. Pending full scan device count.
 func (m *DeviceProtectionOverview) GetPendingFullScanDeviceCount()(*int32) {
     if m == nil {
@@ -274,6 +296,12 @@ func (m *DeviceProtectionOverview) Serialize(writer i878a80d2330e89d26896388a3f4
         }
     }
     {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err := writer.WriteInt32Value("pendingFullScanDeviceCount", m.GetPendingFullScanDeviceCount())
         if err != nil {
             return err
@@ -351,6 +379,12 @@ func (m *DeviceProtectionOverview) SetCriticalFailuresDeviceCount(value *int32)(
 func (m *DeviceProtectionOverview) SetInactiveThreatAgentDeviceCount(value *int32)() {
     if m != nil {
         m.inactiveThreatAgentDeviceCount = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *DeviceProtectionOverview) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetPendingFullScanDeviceCount sets the pendingFullScanDeviceCount property value. Pending full scan device count.

@@ -15,6 +15,8 @@ type CloudPcReviewStatus struct {
     azureStorageAccountName *string
     // True if the Cloud PC is set to in review by the administrator.
     inReview *bool
+    // The OdataType property
+    odataType *string
     // The specific date and time of the Cloud PC snapshot that was taken and saved automatically, when the Cloud PC is set to in review. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 appears as 2014-01-01T00:00:00Z.
     restorePointDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The specific date and time when the Cloud PC was set to in review. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 appears as 2014-01-01T00:00:00Z.
@@ -31,6 +33,8 @@ func NewCloudPcReviewStatus()(*CloudPcReviewStatus) {
     m := &CloudPcReviewStatus{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.cloudPcReviewStatus";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateCloudPcReviewStatusFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -94,6 +98,16 @@ func (m *CloudPcReviewStatus) GetFieldDeserializers()(map[string]func(i878a80d23
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["restorePointDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
@@ -154,6 +168,14 @@ func (m *CloudPcReviewStatus) GetInReview()(*bool) {
         return m.inReview
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *CloudPcReviewStatus) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetRestorePointDateTime gets the restorePointDateTime property value. The specific date and time of the Cloud PC snapshot that was taken and saved automatically, when the Cloud PC is set to in review. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 appears as 2014-01-01T00:00:00Z.
 func (m *CloudPcReviewStatus) GetRestorePointDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
@@ -210,6 +232,12 @@ func (m *CloudPcReviewStatus) Serialize(writer i878a80d2330e89d26896388a3f487eef
     }
     {
         err := writer.WriteBoolValue("inReview", m.GetInReview())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -275,6 +303,12 @@ func (m *CloudPcReviewStatus) SetAzureStorageAccountName(value *string)() {
 func (m *CloudPcReviewStatus) SetInReview(value *bool)() {
     if m != nil {
         m.inReview = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *CloudPcReviewStatus) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetRestorePointDateTime sets the restorePointDateTime property value. The specific date and time of the Cloud PC snapshot that was taken and saved automatically, when the Cloud PC is set to in review. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 appears as 2014-01-01T00:00:00Z.

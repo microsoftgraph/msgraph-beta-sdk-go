@@ -25,6 +25,8 @@ func NewPersonAward()(*PersonAward) {
     m := &PersonAward{
         ItemFacet: *NewItemFacet(),
     }
+    odataTypeValue := "#microsoft.graph.personAward";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreatePersonAwardFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

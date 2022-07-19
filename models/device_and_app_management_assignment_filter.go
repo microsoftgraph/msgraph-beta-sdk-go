@@ -28,8 +28,8 @@ func NewDeviceAndAppManagementAssignmentFilter()(*DeviceAndAppManagementAssignme
     m := &DeviceAndAppManagementAssignmentFilter{
         Entity: *NewEntity(),
     }
-    odatatypeValue := "#microsoft.graph.deviceAndAppManagementAssignmentFilter";
-    m.SetType(&odatatypeValue);
+    odataTypeValue := "#microsoft.graph.deviceAndAppManagementAssignmentFilter";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDeviceAndAppManagementAssignmentFilterFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

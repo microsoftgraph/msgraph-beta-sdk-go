@@ -25,8 +25,8 @@ func NewWindowsCertificateProfileBase()(*WindowsCertificateProfileBase) {
     m := &WindowsCertificateProfileBase{
         DeviceConfiguration: *NewDeviceConfiguration(),
     }
-    odatatypeValue := "#microsoft.graph.windowsCertificateProfileBase";
-    m.SetType(&odatatypeValue);
+    odataTypeValue := "#microsoft.graph.windowsCertificateProfileBase";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateWindowsCertificateProfileBaseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -48,8 +48,12 @@ func CreateWindowsCertificateProfileBaseFromDiscriminatorValue(parseNode i878a80
                         return NewWindows10CertificateProfileBase(), nil
                     case "#microsoft.graph.windows10ImportedPFXCertificateProfile":
                         return NewWindows10ImportedPFXCertificateProfile(), nil
+                    case "#microsoft.graph.windows10PkcsCertificateProfile":
+                        return NewWindows10PkcsCertificateProfile(), nil
                     case "#microsoft.graph.windows81CertificateProfileBase":
                         return NewWindows81CertificateProfileBase(), nil
+                    case "#microsoft.graph.windows81SCEPCertificateProfile":
+                        return NewWindows81SCEPCertificateProfile(), nil
                     case "#microsoft.graph.windowsPhone81ImportedPFXCertificateProfile":
                         return NewWindowsPhone81ImportedPFXCertificateProfile(), nil
                 }

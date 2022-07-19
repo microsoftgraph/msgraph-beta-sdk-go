@@ -19,8 +19,8 @@ func NewWindowsVpnConfiguration()(*WindowsVpnConfiguration) {
     m := &WindowsVpnConfiguration{
         DeviceConfiguration: *NewDeviceConfiguration(),
     }
-    odatatypeValue := "#microsoft.graph.windowsVpnConfiguration";
-    m.SetType(&odatatypeValue);
+    odataTypeValue := "#microsoft.graph.windowsVpnConfiguration";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateWindowsVpnConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -42,6 +42,8 @@ func CreateWindowsVpnConfigurationFromDiscriminatorValue(parseNode i878a80d2330e
                         return NewWindows10VpnConfiguration(), nil
                     case "#microsoft.graph.windows81VpnConfiguration":
                         return NewWindows81VpnConfiguration(), nil
+                    case "#microsoft.graph.windowsPhone81VpnConfiguration":
+                        return NewWindowsPhone81VpnConfiguration(), nil
                 }
             }
         }

@@ -10,12 +10,16 @@ type AuthenticationSourceFilter struct {
     additionalData map[string]interface{}
     // Applications to include for evaluation of the authenticationListener. These applications trigger the associated action when used as the client application in the authentication flow. The application identifer is the application's client id.
     includeApplications []string
+    // The OdataType property
+    odataType *string
 }
 // NewAuthenticationSourceFilter instantiates a new authenticationSourceFilter and sets the default values.
 func NewAuthenticationSourceFilter()(*AuthenticationSourceFilter) {
     m := &AuthenticationSourceFilter{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.authenticationSourceFilter";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAuthenticationSourceFilterFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -47,6 +51,16 @@ func (m *AuthenticationSourceFilter) GetFieldDeserializers()(map[string]func(i87
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetIncludeApplications gets the includeApplications property value. Applications to include for evaluation of the authenticationListener. These applications trigger the associated action when used as the client application in the authentication flow. The application identifer is the application's client id.
@@ -57,10 +71,24 @@ func (m *AuthenticationSourceFilter) GetIncludeApplications()([]string) {
         return m.includeApplications
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *AuthenticationSourceFilter) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // Serialize serializes information the current object
 func (m *AuthenticationSourceFilter) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     if m.GetIncludeApplications() != nil {
         err := writer.WriteCollectionOfStringValues("includeApplications", m.GetIncludeApplications())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -83,5 +111,11 @@ func (m *AuthenticationSourceFilter) SetAdditionalData(value map[string]interfac
 func (m *AuthenticationSourceFilter) SetIncludeApplications(value []string)() {
     if m != nil {
         m.includeApplications = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *AuthenticationSourceFilter) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }

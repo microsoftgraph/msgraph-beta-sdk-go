@@ -11,11 +11,13 @@ type UserAccountable interface {
     GetAccountName()(*string)
     GetAzureAdUserId()(*string)
     GetDomainName()(*string)
+    GetOdataType()(*string)
     GetUserPrincipalName()(*string)
     GetUserSid()(*string)
     SetAccountName(value *string)()
     SetAzureAdUserId(value *string)()
     SetDomainName(value *string)()
+    SetOdataType(value *string)()
     SetUserPrincipalName(value *string)()
     SetUserSid(value *string)()
 }

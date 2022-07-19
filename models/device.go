@@ -95,11 +95,13 @@ type Device struct {
     // Represents the usage rights a device has been granted.
     usageRights []UsageRightable
 }
-// NewDevice instantiates a new device and sets the default values.
+// NewDevice instantiates a new Device and sets the default values.
 func NewDevice()(*Device) {
     m := &Device{
         DirectoryObject: *NewDirectoryObject(),
     }
+    odataTypeValue := "#microsoft.graph.device";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDeviceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

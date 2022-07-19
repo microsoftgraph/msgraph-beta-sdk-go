@@ -12,6 +12,8 @@ type CustomExtensionHandlerInstance struct {
     customExtensionId *string
     // The unique run ID for the logic app.
     externalCorrelationId *string
+    // The OdataType property
+    odataType *string
     // Indicates the stage of the request workflow when the access package custom extension runs. The possible values are: assignmentRequestCreated, assignmentRequestApproved, assignmentRequestGranted, assignmentRequestRemoved, assignmentFourteenDaysBeforeExpiration, assignmentOneDayBeforeExpiration, unknownFutureValue.
     stage *AccessPackageCustomExtensionStage
     // Status of the request to run the access package custom extension workflow that is associated with the logic app. The possible values are: requestSent, requestReceived, unknownFutureValue.
@@ -22,6 +24,8 @@ func NewCustomExtensionHandlerInstance()(*CustomExtensionHandlerInstance) {
     m := &CustomExtensionHandlerInstance{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.customExtensionHandlerInstance";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateCustomExtensionHandlerInstanceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -75,6 +79,16 @@ func (m *CustomExtensionHandlerInstance) GetFieldDeserializers()(map[string]func
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["stage"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseAccessPackageCustomExtensionStage)
         if err != nil {
@@ -96,6 +110,14 @@ func (m *CustomExtensionHandlerInstance) GetFieldDeserializers()(map[string]func
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *CustomExtensionHandlerInstance) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
 }
 // GetStage gets the stage property value. Indicates the stage of the request workflow when the access package custom extension runs. The possible values are: assignmentRequestCreated, assignmentRequestApproved, assignmentRequestGranted, assignmentRequestRemoved, assignmentFourteenDaysBeforeExpiration, assignmentOneDayBeforeExpiration, unknownFutureValue.
 func (m *CustomExtensionHandlerInstance) GetStage()(*AccessPackageCustomExtensionStage) {
@@ -123,6 +145,12 @@ func (m *CustomExtensionHandlerInstance) Serialize(writer i878a80d2330e89d268963
     }
     {
         err := writer.WriteStringValue("externalCorrelationId", m.GetExternalCorrelationId())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -165,6 +193,12 @@ func (m *CustomExtensionHandlerInstance) SetCustomExtensionId(value *string)() {
 func (m *CustomExtensionHandlerInstance) SetExternalCorrelationId(value *string)() {
     if m != nil {
         m.externalCorrelationId = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *CustomExtensionHandlerInstance) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetStage sets the stage property value. Indicates the stage of the request workflow when the access package custom extension runs. The possible values are: assignmentRequestCreated, assignmentRequestApproved, assignmentRequestGranted, assignmentRequestRemoved, assignmentFourteenDaysBeforeExpiration, assignmentOneDayBeforeExpiration, unknownFutureValue.

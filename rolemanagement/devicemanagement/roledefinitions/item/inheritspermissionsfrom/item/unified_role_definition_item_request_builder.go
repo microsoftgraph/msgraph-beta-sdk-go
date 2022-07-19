@@ -4,6 +4,7 @@ import (
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
+    i201f0afc47883c2b546d0b1feaf04914900b6665bfde1306b8c3aabcbf62dfc7 "github.com/microsoftgraph/msgraph-beta-sdk-go/rolemanagement/devicemanagement/roledefinitions/item/inheritspermissionsfrom/item/assignedprincipalswithtransitivewithdirectoryscopetypewithdirectoryscopeid"
 )
 
 // UnifiedRoleDefinitionItemRequestBuilder provides operations to manage the inheritsPermissionsFrom property of the microsoft.graph.unifiedRoleDefinition entity.
@@ -44,6 +45,10 @@ type UnifiedRoleDefinitionItemRequestBuilderPatchRequestConfiguration struct {
     Headers map[string]string
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
+}
+// AssignedPrincipalsWithTransitiveWithDirectoryScopeTypeWithDirectoryScopeId provides operations to call the assignedPrincipals method.
+func (m *UnifiedRoleDefinitionItemRequestBuilder) AssignedPrincipalsWithTransitiveWithDirectoryScopeTypeWithDirectoryScopeId()(*i201f0afc47883c2b546d0b1feaf04914900b6665bfde1306b8c3aabcbf62dfc7.AssignedPrincipalsWithTransitiveWithDirectoryScopeTypeWithDirectoryScopeIdRequestBuilder) {
+    return i201f0afc47883c2b546d0b1feaf04914900b6665bfde1306b8c3aabcbf62dfc7.NewAssignedPrincipalsWithTransitiveWithDirectoryScopeTypeWithDirectoryScopeIdRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // NewUnifiedRoleDefinitionItemRequestBuilderInternal instantiates a new UnifiedRoleDefinitionItemRequestBuilder and sets the default values.
 func NewUnifiedRoleDefinitionItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*UnifiedRoleDefinitionItemRequestBuilder) {

@@ -10,20 +10,20 @@ type DeploymentSettings struct {
     additionalData map[string]interface{}
     // Settings governing conditions to monitor and automated actions to take.
     monitoring MonitoringSettingsable
+    // The OdataType property
+    odataType *string
     // Settings governing how the content is rolled out.
     rollout RolloutSettingsable
     // Settings governing safeguard holds on offering content.
     safeguard SafeguardSettingsable
-    // The type property
-    type_escaped *string
 }
 // NewDeploymentSettings instantiates a new deploymentSettings and sets the default values.
 func NewDeploymentSettings()(*DeploymentSettings) {
     m := &DeploymentSettings{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odatatypeValue := "#microsoft.graph.windowsUpdates.deploymentSettings";
-    m.SetType(&odatatypeValue);
+    odataTypeValue := "#microsoft.graph.windowsUpdates.deploymentSettings";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDeploymentSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -70,6 +70,16 @@ func (m *DeploymentSettings) GetFieldDeserializers()(map[string]func(i878a80d233
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["rollout"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateRolloutSettingsFromDiscriminatorValue)
         if err != nil {
@@ -90,16 +100,6 @@ func (m *DeploymentSettings) GetFieldDeserializers()(map[string]func(i878a80d233
         }
         return nil
     }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetType(val)
-        }
-        return nil
-    }
     return res
 }
 // GetMonitoring gets the monitoring property value. Settings governing conditions to monitor and automated actions to take.
@@ -108,6 +108,14 @@ func (m *DeploymentSettings) GetMonitoring()(MonitoringSettingsable) {
         return nil
     } else {
         return m.monitoring
+    }
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *DeploymentSettings) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
     }
 }
 // GetRollout gets the rollout property value. Settings governing how the content is rolled out.
@@ -126,18 +134,16 @@ func (m *DeploymentSettings) GetSafeguard()(SafeguardSettingsable) {
         return m.safeguard
     }
 }
-// GetType gets the @odata.type property value. The type property
-func (m *DeploymentSettings) GetType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.type_escaped
-    }
-}
 // Serialize serializes information the current object
 func (m *DeploymentSettings) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
         err := writer.WriteObjectValue("monitoring", m.GetMonitoring())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -150,12 +156,6 @@ func (m *DeploymentSettings) Serialize(writer i878a80d2330e89d26896388a3f487eef2
     }
     {
         err := writer.WriteObjectValue("safeguard", m.GetSafeguard())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err := writer.WriteStringValue("@odata.type", m.GetType())
         if err != nil {
             return err
         }
@@ -180,6 +180,12 @@ func (m *DeploymentSettings) SetMonitoring(value MonitoringSettingsable)() {
         m.monitoring = value
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *DeploymentSettings) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
+    }
+}
 // SetRollout sets the rollout property value. Settings governing how the content is rolled out.
 func (m *DeploymentSettings) SetRollout(value RolloutSettingsable)() {
     if m != nil {
@@ -190,11 +196,5 @@ func (m *DeploymentSettings) SetRollout(value RolloutSettingsable)() {
 func (m *DeploymentSettings) SetSafeguard(value SafeguardSettingsable)() {
     if m != nil {
         m.safeguard = value
-    }
-}
-// SetType sets the @odata.type property value. The type property
-func (m *DeploymentSettings) SetType(value *string)() {
-    if m != nil {
-        m.type_escaped = value
     }
 }

@@ -12,16 +12,16 @@ type EducationSynchronizationConnectionSettings struct {
     clientId *string
     // Client secret to authenticate the connection to the provider.
     clientSecret *string
-    // The type property
-    type_escaped *string
+    // The OdataType property
+    odataType *string
 }
 // NewEducationSynchronizationConnectionSettings instantiates a new educationSynchronizationConnectionSettings and sets the default values.
 func NewEducationSynchronizationConnectionSettings()(*EducationSynchronizationConnectionSettings) {
     m := &EducationSynchronizationConnectionSettings{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odatatypeValue := "#microsoft.graph.educationSynchronizationConnectionSettings";
-    m.SetType(&odatatypeValue);
+    odataTypeValue := "#microsoft.graph.educationSynchronizationConnectionSettings";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateEducationSynchronizationConnectionSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -102,18 +102,18 @@ func (m *EducationSynchronizationConnectionSettings) GetFieldDeserializers()(map
             return err
         }
         if val != nil {
-            m.SetType(val)
+            m.SetOdataType(val)
         }
         return nil
     }
     return res
 }
-// GetType gets the @odata.type property value. The type property
-func (m *EducationSynchronizationConnectionSettings) GetType()(*string) {
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *EducationSynchronizationConnectionSettings) GetOdataType()(*string) {
     if m == nil {
         return nil
     } else {
-        return m.type_escaped
+        return m.odataType
     }
 }
 // Serialize serializes information the current object
@@ -131,7 +131,7 @@ func (m *EducationSynchronizationConnectionSettings) Serialize(writer i878a80d23
         }
     }
     {
-        err := writer.WriteStringValue("@odata.type", m.GetType())
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -162,9 +162,9 @@ func (m *EducationSynchronizationConnectionSettings) SetClientSecret(value *stri
         m.clientSecret = value
     }
 }
-// SetType sets the @odata.type property value. The type property
-func (m *EducationSynchronizationConnectionSettings) SetType(value *string)() {
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *EducationSynchronizationConnectionSettings) SetOdataType(value *string)() {
     if m != nil {
-        m.type_escaped = value
+        m.odataType = value
     }
 }

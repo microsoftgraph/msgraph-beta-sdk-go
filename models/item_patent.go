@@ -27,6 +27,8 @@ func NewItemPatent()(*ItemPatent) {
     m := &ItemPatent{
         ItemFacet: *NewItemFacet(),
     }
+    odataTypeValue := "#microsoft.graph.itemPatent";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateItemPatentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

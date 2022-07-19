@@ -12,12 +12,16 @@ type DriveItemSource struct {
     application *DriveItemSourceApplication
     // The external identifier for the drive item from the source.
     externalId *string
+    // The OdataType property
+    odataType *string
 }
 // NewDriveItemSource instantiates a new driveItemSource and sets the default values.
 func NewDriveItemSource()(*DriveItemSource) {
     m := &DriveItemSource{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.driveItemSource";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDriveItemSourceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -71,7 +75,25 @@ func (m *DriveItemSource) GetFieldDeserializers()(map[string]func(i878a80d2330e8
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *DriveItemSource) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
 }
 // Serialize serializes information the current object
 func (m *DriveItemSource) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -84,6 +106,12 @@ func (m *DriveItemSource) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
     }
     {
         err := writer.WriteStringValue("externalId", m.GetExternalId())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -112,5 +140,11 @@ func (m *DriveItemSource) SetApplication(value *DriveItemSourceApplication)() {
 func (m *DriveItemSource) SetExternalId(value *string)() {
     if m != nil {
         m.externalId = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *DriveItemSource) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }

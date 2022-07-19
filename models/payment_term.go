@@ -28,6 +28,8 @@ func NewPaymentTerm()(*PaymentTerm) {
     m := &PaymentTerm{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.paymentTerm";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreatePaymentTermFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

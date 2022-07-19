@@ -10,6 +10,8 @@ type TrustFramework struct {
     additionalData map[string]interface{}
     // The keySets property
     keySets []TrustFrameworkKeySetable
+    // The OdataType property
+    odataType *string
     // The policies property
     policies []TrustFrameworkPolicyable
 }
@@ -18,6 +20,8 @@ func NewTrustFramework()(*TrustFramework) {
     m := &TrustFramework{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.trustFramework";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateTrustFrameworkFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -49,6 +53,16 @@ func (m *TrustFramework) GetFieldDeserializers()(map[string]func(i878a80d2330e89
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["policies"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateTrustFrameworkPolicyFromDiscriminatorValue)
         if err != nil {
@@ -73,6 +87,14 @@ func (m *TrustFramework) GetKeySets()([]TrustFrameworkKeySetable) {
         return m.keySets
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *TrustFramework) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetPolicies gets the policies property value. The policies property
 func (m *TrustFramework) GetPolicies()([]TrustFrameworkPolicyable) {
     if m == nil {
@@ -89,6 +111,12 @@ func (m *TrustFramework) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
             cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
         }
         err := writer.WriteCollectionOfObjectValues("keySets", cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -121,6 +149,12 @@ func (m *TrustFramework) SetAdditionalData(value map[string]interface{})() {
 func (m *TrustFramework) SetKeySets(value []TrustFrameworkKeySetable)() {
     if m != nil {
         m.keySets = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *TrustFramework) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetPolicies sets the policies property value. The policies property

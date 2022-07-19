@@ -14,12 +14,16 @@ type TeamworkMicrophoneConfiguration struct {
     isMicrophoneOptional *bool
     // The microphones property
     microphones []TeamworkPeripheralable
+    // The OdataType property
+    odataType *string
 }
 // NewTeamworkMicrophoneConfiguration instantiates a new teamworkMicrophoneConfiguration and sets the default values.
 func NewTeamworkMicrophoneConfiguration()(*TeamworkMicrophoneConfiguration) {
     m := &TeamworkMicrophoneConfiguration{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.teamworkMicrophoneConfiguration";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateTeamworkMicrophoneConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -79,6 +83,16 @@ func (m *TeamworkMicrophoneConfiguration) GetFieldDeserializers()(map[string]fun
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetIsMicrophoneOptional gets the isMicrophoneOptional property value. True if the configured microphone is optional. False if the microphone is not optional and the health state of the device should be computed.
@@ -95,6 +109,14 @@ func (m *TeamworkMicrophoneConfiguration) GetMicrophones()([]TeamworkPeripherala
         return nil
     } else {
         return m.microphones
+    }
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *TeamworkMicrophoneConfiguration) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
     }
 }
 // Serialize serializes information the current object
@@ -117,6 +139,12 @@ func (m *TeamworkMicrophoneConfiguration) Serialize(writer i878a80d2330e89d26896
             cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
         }
         err := writer.WriteCollectionOfObjectValues("microphones", cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -151,5 +179,11 @@ func (m *TeamworkMicrophoneConfiguration) SetIsMicrophoneOptional(value *bool)()
 func (m *TeamworkMicrophoneConfiguration) SetMicrophones(value []TeamworkPeripheralable)() {
     if m != nil {
         m.microphones = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *TeamworkMicrophoneConfiguration) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }

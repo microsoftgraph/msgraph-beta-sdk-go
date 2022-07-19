@@ -30,11 +30,13 @@ type UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric struct {
     // The count of devices in an organization eligible for windows upgrade. Valid values -2147483648 to 2147483647
     upgradeEligibleDeviceCount *int32
 }
-// NewUserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric instantiates a new UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric and sets the default values.
+// NewUserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric instantiates a new userExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric and sets the default values.
 func NewUserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric()(*UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric) {
     m := &UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.userExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateUserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetricFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

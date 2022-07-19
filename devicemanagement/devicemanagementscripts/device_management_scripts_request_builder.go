@@ -71,7 +71,7 @@ func NewDeviceManagementScriptsRequestBuilder(rawUrl string, requestAdapter i2ae
     urlParams["request-raw-url"] = rawUrl
     return NewDeviceManagementScriptsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *DeviceManagementScriptsRequestBuilder) Count()(*if4ad84baad914e7a4e809d7c85fe277720da0040e268a47525f6eb39dc188f3f.CountRequestBuilder) {
     return if4ad84baad914e7a4e809d7c85fe277720da0040e268a47525f6eb39dc188f3f.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

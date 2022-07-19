@@ -24,6 +24,8 @@ type WorkloadActionDeploymentStatus struct {
     includeGroups []string
     // The date and time the workload action was last deployed. Optional.
     lastDeploymentDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
+    // The OdataType property
+    odataType *string
     // The status property
     status *WorkloadActionStatus
 }
@@ -32,6 +34,8 @@ func NewWorkloadActionDeploymentStatus()(*WorkloadActionDeploymentStatus) {
     m := &WorkloadActionDeploymentStatus{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.managedTenants.workloadActionDeploymentStatus";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateWorkloadActionDeploymentStatusFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -159,6 +163,16 @@ func (m *WorkloadActionDeploymentStatus) GetFieldDeserializers()(map[string]func
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["status"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseWorkloadActionStatus)
         if err != nil {
@@ -193,6 +207,14 @@ func (m *WorkloadActionDeploymentStatus) GetLastDeploymentDateTime()(*i336074805
         return nil
     } else {
         return m.lastDeploymentDateTime
+    }
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *WorkloadActionDeploymentStatus) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
     }
 }
 // GetStatus gets the status property value. The status property
@@ -243,6 +265,12 @@ func (m *WorkloadActionDeploymentStatus) Serialize(writer i878a80d2330e89d268963
     }
     {
         err := writer.WriteTimeValue("lastDeploymentDateTime", m.GetLastDeploymentDateTime())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -308,6 +336,12 @@ func (m *WorkloadActionDeploymentStatus) SetIncludeGroups(value []string)() {
 func (m *WorkloadActionDeploymentStatus) SetLastDeploymentDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     if m != nil {
         m.lastDeploymentDateTime = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *WorkloadActionDeploymentStatus) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetStatus sets the status property value. The status property

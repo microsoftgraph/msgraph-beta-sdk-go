@@ -29,6 +29,8 @@ func NewTimeCard()(*TimeCard) {
     m := &TimeCard{
         ChangeTrackedEntity: *NewChangeTrackedEntity(),
     }
+    odataTypeValue := "#microsoft.graph.timeCard";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateTimeCardFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

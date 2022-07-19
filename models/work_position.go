@@ -23,6 +23,8 @@ func NewWorkPosition()(*WorkPosition) {
     m := &WorkPosition{
         ItemFacet: *NewItemFacet(),
     }
+    odataTypeValue := "#microsoft.graph.workPosition";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateWorkPositionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

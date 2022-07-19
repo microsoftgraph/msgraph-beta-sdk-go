@@ -30,6 +30,8 @@ func NewMention()(*Mention) {
     m := &Mention{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.mention";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateMentionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

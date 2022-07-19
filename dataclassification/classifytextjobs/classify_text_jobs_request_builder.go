@@ -70,7 +70,7 @@ func NewClassifyTextJobsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7d
     urlParams["request-raw-url"] = rawUrl
     return NewClassifyTextJobsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *ClassifyTextJobsRequestBuilder) Count()(*ic5f66dd6ab3f6d1abf16bd30ed950efaf85c5a5ed5ed52351e4b835bb1139835.CountRequestBuilder) {
     return ic5f66dd6ab3f6d1abf16bd30ed950efaf85c5a5ed5ed52351e4b835bb1139835.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

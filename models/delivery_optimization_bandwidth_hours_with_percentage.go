@@ -17,6 +17,8 @@ func NewDeliveryOptimizationBandwidthHoursWithPercentage()(*DeliveryOptimization
     m := &DeliveryOptimizationBandwidthHoursWithPercentage{
         DeliveryOptimizationBandwidth: *NewDeliveryOptimizationBandwidth(),
     }
+    odataTypeValue := "#microsoft.graph.deliveryOptimizationBandwidthHoursWithPercentage";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDeliveryOptimizationBandwidthHoursWithPercentageFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

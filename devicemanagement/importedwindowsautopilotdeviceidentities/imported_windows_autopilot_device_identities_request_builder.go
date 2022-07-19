@@ -71,7 +71,7 @@ func NewImportedWindowsAutopilotDeviceIdentitiesRequestBuilder(rawUrl string, re
     urlParams["request-raw-url"] = rawUrl
     return NewImportedWindowsAutopilotDeviceIdentitiesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *ImportedWindowsAutopilotDeviceIdentitiesRequestBuilder) Count()(*i611aa4102282c0f13028b90d38cf1cff4567e84626f417e14f811917b4228636.CountRequestBuilder) {
     return i611aa4102282c0f13028b90d38cf1cff4567e84626f417e14f811917b4228636.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

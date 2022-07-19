@@ -17,6 +17,8 @@ func NewWorkbookPivotTable()(*WorkbookPivotTable) {
     m := &WorkbookPivotTable{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.workbookPivotTable";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateWorkbookPivotTableFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

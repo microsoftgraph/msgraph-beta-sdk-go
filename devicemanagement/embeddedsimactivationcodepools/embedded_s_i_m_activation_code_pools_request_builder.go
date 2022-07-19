@@ -70,7 +70,7 @@ func NewEmbeddedSIMActivationCodePoolsRequestBuilder(rawUrl string, requestAdapt
     urlParams["request-raw-url"] = rawUrl
     return NewEmbeddedSIMActivationCodePoolsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *EmbeddedSIMActivationCodePoolsRequestBuilder) Count()(*i5b6a0e4e1c159499fcdebdc8602ea414d540dfdf997a144dde5dd34928fc024a.CountRequestBuilder) {
     return i5b6a0e4e1c159499fcdebdc8602ea414d540dfdf997a144dde5dd34928fc024a.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

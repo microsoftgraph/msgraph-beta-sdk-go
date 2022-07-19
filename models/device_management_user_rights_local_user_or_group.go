@@ -12,6 +12,8 @@ type DeviceManagementUserRightsLocalUserOrGroup struct {
     description *string
     // The name of this local user or group.
     name *string
+    // The OdataType property
+    odataType *string
     // The security identifier of this local user or group (e.g. S-1-5-32-544).
     securityIdentifier *string
 }
@@ -20,6 +22,8 @@ func NewDeviceManagementUserRightsLocalUserOrGroup()(*DeviceManagementUserRights
     m := &DeviceManagementUserRightsLocalUserOrGroup{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.deviceManagementUserRightsLocalUserOrGroup";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDeviceManagementUserRightsLocalUserOrGroupFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -65,6 +69,16 @@ func (m *DeviceManagementUserRightsLocalUserOrGroup) GetFieldDeserializers()(map
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["securityIdentifier"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -85,6 +99,14 @@ func (m *DeviceManagementUserRightsLocalUserOrGroup) GetName()(*string) {
         return m.name
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *DeviceManagementUserRightsLocalUserOrGroup) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetSecurityIdentifier gets the securityIdentifier property value. The security identifier of this local user or group (e.g. S-1-5-32-544).
 func (m *DeviceManagementUserRightsLocalUserOrGroup) GetSecurityIdentifier()(*string) {
     if m == nil {
@@ -103,6 +125,12 @@ func (m *DeviceManagementUserRightsLocalUserOrGroup) Serialize(writer i878a80d23
     }
     {
         err := writer.WriteStringValue("name", m.GetName())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -137,6 +165,12 @@ func (m *DeviceManagementUserRightsLocalUserOrGroup) SetDescription(value *strin
 func (m *DeviceManagementUserRightsLocalUserOrGroup) SetName(value *string)() {
     if m != nil {
         m.name = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *DeviceManagementUserRightsLocalUserOrGroup) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetSecurityIdentifier sets the securityIdentifier property value. The security identifier of this local user or group (e.g. S-1-5-32-544).

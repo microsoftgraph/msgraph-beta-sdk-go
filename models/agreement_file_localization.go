@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AgreementFileLocalization provides operations to manage the collection of activityStatistics entities.
+// AgreementFileLocalization provides operations to manage the collection of accessReview entities.
 type AgreementFileLocalization struct {
     AgreementFileProperties
     // Read-only. Customized versions of the terms of use agreement in the Azure AD tenant.
@@ -15,6 +15,8 @@ func NewAgreementFileLocalization()(*AgreementFileLocalization) {
     m := &AgreementFileLocalization{
         AgreementFileProperties: *NewAgreementFileProperties(),
     }
+    odataTypeValue := "#microsoft.graph.agreementFileLocalization";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAgreementFileLocalizationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

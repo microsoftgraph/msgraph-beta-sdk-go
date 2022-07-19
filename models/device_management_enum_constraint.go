@@ -15,6 +15,8 @@ func NewDeviceManagementEnumConstraint()(*DeviceManagementEnumConstraint) {
     m := &DeviceManagementEnumConstraint{
         DeviceManagementConstraint: *NewDeviceManagementConstraint(),
     }
+    odataTypeValue := "#microsoft.graph.deviceManagementEnumConstraint";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDeviceManagementEnumConstraintFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

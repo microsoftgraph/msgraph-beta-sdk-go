@@ -16,6 +16,8 @@ type ManagedDeviceMobileAppConfigurationSettingState struct {
     errorDescription *string
     // Name of setting instance that is being reported.
     instanceDisplayName *string
+    // The OdataType property
+    odataType *string
     // The setting that is being reported
     setting *string
     // SettingInstanceId
@@ -40,6 +42,8 @@ func NewManagedDeviceMobileAppConfigurationSettingState()(*ManagedDeviceMobileAp
     m := &ManagedDeviceMobileAppConfigurationSettingState{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.managedDeviceMobileAppConfigurationSettingState";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateManagedDeviceMobileAppConfigurationSettingStateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -118,6 +122,16 @@ func (m *ManagedDeviceMobileAppConfigurationSettingState) GetFieldDeserializers(
         }
         if val != nil {
             m.SetInstanceDisplayName(val)
+        }
+        return nil
+    }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
         }
         return nil
     }
@@ -225,6 +239,14 @@ func (m *ManagedDeviceMobileAppConfigurationSettingState) GetInstanceDisplayName
         return m.instanceDisplayName
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *ManagedDeviceMobileAppConfigurationSettingState) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetSetting gets the setting property value. The setting that is being reported
 func (m *ManagedDeviceMobileAppConfigurationSettingState) GetSetting()(*string) {
     if m == nil {
@@ -324,6 +346,12 @@ func (m *ManagedDeviceMobileAppConfigurationSettingState) Serialize(writer i878a
         }
     }
     {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err := writer.WriteStringValue("setting", m.GetSetting())
         if err != nil {
             return err
@@ -418,6 +446,12 @@ func (m *ManagedDeviceMobileAppConfigurationSettingState) SetErrorDescription(va
 func (m *ManagedDeviceMobileAppConfigurationSettingState) SetInstanceDisplayName(value *string)() {
     if m != nil {
         m.instanceDisplayName = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *ManagedDeviceMobileAppConfigurationSettingState) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetSetting sets the setting property value. The setting that is being reported

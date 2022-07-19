@@ -21,6 +21,8 @@ func NewApplyLabelAction()(*ApplyLabelAction) {
     m := &ApplyLabelAction{
         InformationProtectionAction: *NewInformationProtectionAction(),
     }
+    odataTypeValue := "#microsoft.graph.applyLabelAction";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateApplyLabelActionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

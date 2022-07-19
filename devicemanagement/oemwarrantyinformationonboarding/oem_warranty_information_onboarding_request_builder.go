@@ -70,7 +70,7 @@ func NewOemWarrantyInformationOnboardingRequestBuilder(rawUrl string, requestAda
     urlParams["request-raw-url"] = rawUrl
     return NewOemWarrantyInformationOnboardingRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *OemWarrantyInformationOnboardingRequestBuilder) Count()(*ied819887080170f28238677d2c9192c8ead5d753f718c064b7761f23dbd1a16b.CountRequestBuilder) {
     return ied819887080170f28238677d2c9192c8ead5d753f718c064b7761f23dbd1a16b.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

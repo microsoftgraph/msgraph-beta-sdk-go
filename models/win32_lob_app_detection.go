@@ -8,16 +8,16 @@ import (
 type Win32LobAppDetection struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
-    // The type property
-    type_escaped *string
+    // The OdataType property
+    odataType *string
 }
 // NewWin32LobAppDetection instantiates a new win32LobAppDetection and sets the default values.
 func NewWin32LobAppDetection()(*Win32LobAppDetection) {
     m := &Win32LobAppDetection{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odatatypeValue := "#microsoft.graph.win32LobAppDetection";
-    m.SetType(&odatatypeValue);
+    odataTypeValue := "#microsoft.graph.win32LobAppDetection";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateWin32LobAppDetectionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -66,24 +66,24 @@ func (m *Win32LobAppDetection) GetFieldDeserializers()(map[string]func(i878a80d2
             return err
         }
         if val != nil {
-            m.SetType(val)
+            m.SetOdataType(val)
         }
         return nil
     }
     return res
 }
-// GetType gets the @odata.type property value. The type property
-func (m *Win32LobAppDetection) GetType()(*string) {
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *Win32LobAppDetection) GetOdataType()(*string) {
     if m == nil {
         return nil
     } else {
-        return m.type_escaped
+        return m.odataType
     }
 }
 // Serialize serializes information the current object
 func (m *Win32LobAppDetection) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
-        err := writer.WriteStringValue("@odata.type", m.GetType())
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -102,9 +102,9 @@ func (m *Win32LobAppDetection) SetAdditionalData(value map[string]interface{})()
         m.additionalData = value
     }
 }
-// SetType sets the @odata.type property value. The type property
-func (m *Win32LobAppDetection) SetType(value *string)() {
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *Win32LobAppDetection) SetOdataType(value *string)() {
     if m != nil {
-        m.type_escaped = value
+        m.odataType = value
     }
 }

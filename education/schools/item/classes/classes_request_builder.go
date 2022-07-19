@@ -64,7 +64,7 @@ func NewClassesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371
     urlParams["request-raw-url"] = rawUrl
     return NewClassesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *ClassesRequestBuilder) Count()(*i3d74e6f522ebcf67a89d51ffa78066eadb31a2c7d004b2f456cb012d97d17b3b.CountRequestBuilder) {
     return i3d74e6f522ebcf67a89d51ffa78066eadb31a2c7d004b2f456cb012d97d17b3b.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -108,7 +108,7 @@ func (m *ClassesRequestBuilder) GetWithRequestConfigurationAndResponseHandler(re
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationClassCollectionResponseable), nil
 }
-// Ref the ref property
+// Ref the Ref property
 func (m *ClassesRequestBuilder) Ref()(*i7ba770d75fbe90866aa3c61aae2e2b5d45a0abe947caad7545aab97ff401b277.RefRequestBuilder) {
     return i7ba770d75fbe90866aa3c61aae2e2b5d45a0abe947caad7545aab97ff401b277.NewRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

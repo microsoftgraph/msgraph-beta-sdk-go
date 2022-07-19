@@ -13,6 +13,8 @@ func NewWindowsKioskVisitor()(*WindowsKioskVisitor) {
     m := &WindowsKioskVisitor{
         WindowsKioskUser: *NewWindowsKioskUser(),
     }
+    odataTypeValue := "#microsoft.graph.windowsKioskVisitor";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateWindowsKioskVisitorFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

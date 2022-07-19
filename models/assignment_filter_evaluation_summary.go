@@ -25,12 +25,16 @@ type AssignmentFilterEvaluationSummary struct {
     evaluationDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Supported evaluation results for filter.
     evaluationResult *AssignmentFilterEvaluationResult
+    // The OdataType property
+    odataType *string
 }
 // NewAssignmentFilterEvaluationSummary instantiates a new assignmentFilterEvaluationSummary and sets the default values.
 func NewAssignmentFilterEvaluationSummary()(*AssignmentFilterEvaluationSummary) {
     m := &AssignmentFilterEvaluationSummary{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.assignmentFilterEvaluationSummary";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAssignmentFilterEvaluationSummaryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -196,7 +200,25 @@ func (m *AssignmentFilterEvaluationSummary) GetFieldDeserializers()(map[string]f
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *AssignmentFilterEvaluationSummary) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
 }
 // Serialize serializes information the current object
 func (m *AssignmentFilterEvaluationSummary) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -251,6 +273,12 @@ func (m *AssignmentFilterEvaluationSummary) Serialize(writer i878a80d2330e89d268
     if m.GetEvaluationResult() != nil {
         cast := (*m.GetEvaluationResult()).String()
         err := writer.WriteStringValue("evaluationResult", &cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -315,5 +343,11 @@ func (m *AssignmentFilterEvaluationSummary) SetEvaluationDateTime(value *i336074
 func (m *AssignmentFilterEvaluationSummary) SetEvaluationResult(value *AssignmentFilterEvaluationResult)() {
     if m != nil {
         m.evaluationResult = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *AssignmentFilterEvaluationSummary) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }

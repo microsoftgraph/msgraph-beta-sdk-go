@@ -70,7 +70,7 @@ func NewApplicationSignInDetailedSummaryRequestBuilder(rawUrl string, requestAda
     urlParams["request-raw-url"] = rawUrl
     return NewApplicationSignInDetailedSummaryRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *ApplicationSignInDetailedSummaryRequestBuilder) Count()(*i92ebba0e89c3613014ed17f6f0080154a4a6c08f9694be112ad48866fc3ac92e.CountRequestBuilder) {
     return i92ebba0e89c3613014ed17f6f0080154a4a6c08f9694be112ad48866fc3ac92e.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

@@ -10,6 +10,8 @@ type GroupPolicyPresentationDropdownListItem struct {
     additionalData map[string]interface{}
     // Localized display name for the drop-down list item.
     displayName *string
+    // The OdataType property
+    odataType *string
     // Associated value for the drop-down list item
     value *string
 }
@@ -18,6 +20,8 @@ func NewGroupPolicyPresentationDropdownListItem()(*GroupPolicyPresentationDropdo
     m := &GroupPolicyPresentationDropdownListItem{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.groupPolicyPresentationDropdownListItem";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateGroupPolicyPresentationDropdownListItemFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -53,6 +57,16 @@ func (m *GroupPolicyPresentationDropdownListItem) GetFieldDeserializers()(map[st
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -64,6 +78,14 @@ func (m *GroupPolicyPresentationDropdownListItem) GetFieldDeserializers()(map[st
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *GroupPolicyPresentationDropdownListItem) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
 }
 // GetValue gets the value property value. Associated value for the drop-down list item
 func (m *GroupPolicyPresentationDropdownListItem) GetValue()(*string) {
@@ -77,6 +99,12 @@ func (m *GroupPolicyPresentationDropdownListItem) GetValue()(*string) {
 func (m *GroupPolicyPresentationDropdownListItem) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("displayName", m.GetDisplayName())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -105,6 +133,12 @@ func (m *GroupPolicyPresentationDropdownListItem) SetAdditionalData(value map[st
 func (m *GroupPolicyPresentationDropdownListItem) SetDisplayName(value *string)() {
     if m != nil {
         m.displayName = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *GroupPolicyPresentationDropdownListItem) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetValue sets the value property value. Associated value for the drop-down list item

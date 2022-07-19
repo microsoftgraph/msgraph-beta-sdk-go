@@ -22,12 +22,16 @@ type WindowsEnrollmentStatusScreenSettings struct {
     hideInstallationProgress *bool
     // Set installation progress timeout in minutes
     installProgressTimeoutInMinutes *int32
+    // The OdataType property
+    odataType *string
 }
 // NewWindowsEnrollmentStatusScreenSettings instantiates a new windowsEnrollmentStatusScreenSettings and sets the default values.
 func NewWindowsEnrollmentStatusScreenSettings()(*WindowsEnrollmentStatusScreenSettings) {
     m := &WindowsEnrollmentStatusScreenSettings{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.windowsEnrollmentStatusScreenSettings";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateWindowsEnrollmentStatusScreenSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -155,6 +159,16 @@ func (m *WindowsEnrollmentStatusScreenSettings) GetFieldDeserializers()(map[stri
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetHideInstallationProgress gets the hideInstallationProgress property value. Show or hide installation progress to user
@@ -171,6 +185,14 @@ func (m *WindowsEnrollmentStatusScreenSettings) GetInstallProgressTimeoutInMinut
         return nil
     } else {
         return m.installProgressTimeoutInMinutes
+    }
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *WindowsEnrollmentStatusScreenSettings) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
     }
 }
 // Serialize serializes information the current object
@@ -213,6 +235,12 @@ func (m *WindowsEnrollmentStatusScreenSettings) Serialize(writer i878a80d2330e89
     }
     {
         err := writer.WriteInt32Value("installProgressTimeoutInMinutes", m.GetInstallProgressTimeoutInMinutes())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -271,5 +299,11 @@ func (m *WindowsEnrollmentStatusScreenSettings) SetHideInstallationProgress(valu
 func (m *WindowsEnrollmentStatusScreenSettings) SetInstallProgressTimeoutInMinutes(value *int32)() {
     if m != nil {
         m.installProgressTimeoutInMinutes = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *WindowsEnrollmentStatusScreenSettings) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }

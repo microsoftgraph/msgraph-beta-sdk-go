@@ -16,6 +16,8 @@ type TeamworkSpeakerConfiguration struct {
     isCommunicationSpeakerOptional *bool
     // True if the configured speaker is optional. Used to compute the health state if the speaker is not optional.
     isSpeakerOptional *bool
+    // The OdataType property
+    odataType *string
     // The speakers property
     speakers []TeamworkPeripheralable
 }
@@ -24,6 +26,8 @@ func NewTeamworkSpeakerConfiguration()(*TeamworkSpeakerConfiguration) {
     m := &TeamworkSpeakerConfiguration{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.teamworkSpeakerConfiguration";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateTeamworkSpeakerConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -97,6 +101,16 @@ func (m *TeamworkSpeakerConfiguration) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["speakers"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateTeamworkPeripheralFromDiscriminatorValue)
         if err != nil {
@@ -129,6 +143,14 @@ func (m *TeamworkSpeakerConfiguration) GetIsSpeakerOptional()(*bool) {
         return m.isSpeakerOptional
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *TeamworkSpeakerConfiguration) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetSpeakers gets the speakers property value. The speakers property
 func (m *TeamworkSpeakerConfiguration) GetSpeakers()([]TeamworkPeripheralable) {
     if m == nil {
@@ -159,6 +181,12 @@ func (m *TeamworkSpeakerConfiguration) Serialize(writer i878a80d2330e89d26896388
     }
     {
         err := writer.WriteBoolValue("isSpeakerOptional", m.GetIsSpeakerOptional())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -209,6 +237,12 @@ func (m *TeamworkSpeakerConfiguration) SetIsCommunicationSpeakerOptional(value *
 func (m *TeamworkSpeakerConfiguration) SetIsSpeakerOptional(value *bool)() {
     if m != nil {
         m.isSpeakerOptional = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *TeamworkSpeakerConfiguration) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetSpeakers sets the speakers property value. The speakers property

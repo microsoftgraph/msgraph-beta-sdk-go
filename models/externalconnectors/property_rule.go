@@ -9,6 +9,8 @@ import (
 type PropertyRule struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
+    // The OdataType property
+    odataType *string
     // The operation property
     operation *RuleOperation
     // The property from the externalItem schema. Required.
@@ -23,6 +25,8 @@ func NewPropertyRule()(*PropertyRule) {
     m := &PropertyRule{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.externalConnectors.propertyRule";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreatePropertyRuleFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -40,6 +44,16 @@ func (m *PropertyRule) GetAdditionalData()(map[string]interface{}) {
 // GetFieldDeserializers the deserialization information for the current model
 func (m *PropertyRule) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["operation"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseRuleOperation)
         if err != nil {
@@ -86,6 +100,14 @@ func (m *PropertyRule) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
     }
     return res
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *PropertyRule) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetOperation gets the operation property value. The operation property
 func (m *PropertyRule) GetOperation()(*RuleOperation) {
     if m == nil {
@@ -120,6 +142,12 @@ func (m *PropertyRule) GetValuesJoinedBy()(*ie233ee762e29b4ba6970aa2a2efce4b7fde
 }
 // Serialize serializes information the current object
 func (m *PropertyRule) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetOperation() != nil {
         cast := (*m.GetOperation()).String()
         err := writer.WriteStringValue("operation", &cast)
@@ -158,6 +186,12 @@ func (m *PropertyRule) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
 func (m *PropertyRule) SetAdditionalData(value map[string]interface{})() {
     if m != nil {
         m.additionalData = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *PropertyRule) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetOperation sets the operation property value. The operation property

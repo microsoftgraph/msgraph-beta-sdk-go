@@ -12,10 +12,12 @@ type TeamworkSpeakerConfigurationable interface {
     GetDefaultSpeaker()(TeamworkPeripheralable)
     GetIsCommunicationSpeakerOptional()(*bool)
     GetIsSpeakerOptional()(*bool)
+    GetOdataType()(*string)
     GetSpeakers()([]TeamworkPeripheralable)
     SetDefaultCommunicationSpeaker(value TeamworkPeripheralable)()
     SetDefaultSpeaker(value TeamworkPeripheralable)()
     SetIsCommunicationSpeakerOptional(value *bool)()
     SetIsSpeakerOptional(value *bool)()
+    SetOdataType(value *string)()
     SetSpeakers(value []TeamworkPeripheralable)()
 }

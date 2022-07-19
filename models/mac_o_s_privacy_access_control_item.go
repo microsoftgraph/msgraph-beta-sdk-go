@@ -36,6 +36,8 @@ type MacOSPrivacyAccessControlItem struct {
     identifierType *MacOSProcessIdentifierType
     // Possible values of a property
     mediaLibrary *Enablement
+    // The OdataType property
+    odataType *string
     // Possible values of a property
     photos *Enablement
     // Possible values of a property
@@ -66,6 +68,8 @@ func NewMacOSPrivacyAccessControlItem()(*MacOSPrivacyAccessControlItem) {
     m := &MacOSPrivacyAccessControlItem{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.macOSPrivacyAccessControlItem";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateMacOSPrivacyAccessControlItemFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -307,6 +311,16 @@ func (m *MacOSPrivacyAccessControlItem) GetFieldDeserializers()(map[string]func(
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["photos"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseEnablement)
         if err != nil {
@@ -459,6 +473,14 @@ func (m *MacOSPrivacyAccessControlItem) GetMediaLibrary()(*Enablement) {
         return nil
     } else {
         return m.mediaLibrary
+    }
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *MacOSPrivacyAccessControlItem) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
     }
 }
 // GetPhotos gets the photos property value. Possible values of a property
@@ -653,6 +675,12 @@ func (m *MacOSPrivacyAccessControlItem) Serialize(writer i878a80d2330e89d2689638
             return err
         }
     }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetPhotos() != nil {
         cast := (*m.GetPhotos()).String()
         err := writer.WriteStringValue("photos", &cast)
@@ -832,6 +860,12 @@ func (m *MacOSPrivacyAccessControlItem) SetIdentifierType(value *MacOSProcessIde
 func (m *MacOSPrivacyAccessControlItem) SetMediaLibrary(value *Enablement)() {
     if m != nil {
         m.mediaLibrary = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *MacOSPrivacyAccessControlItem) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetPhotos sets the photos property value. Possible values of a property

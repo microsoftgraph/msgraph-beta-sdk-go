@@ -28,6 +28,8 @@ func NewCloudPcUserSetting()(*CloudPcUserSetting) {
     m := &CloudPcUserSetting{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.cloudPcUserSetting";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateCloudPcUserSettingFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

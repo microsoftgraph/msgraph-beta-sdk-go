@@ -10,6 +10,8 @@ type DeviceLogCollectionRequest struct {
     additionalData map[string]interface{}
     // The unique identifier
     id *string
+    // The OdataType property
+    odataType *string
     // Enum for the template type used for collecting logs
     templateType *DeviceLogCollectionTemplateType
 }
@@ -18,6 +20,8 @@ func NewDeviceLogCollectionRequest()(*DeviceLogCollectionRequest) {
     m := &DeviceLogCollectionRequest{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.deviceLogCollectionRequest";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDeviceLogCollectionRequestFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -45,6 +49,16 @@ func (m *DeviceLogCollectionRequest) GetFieldDeserializers()(map[string]func(i87
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["templateType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseDeviceLogCollectionTemplateType)
         if err != nil {
@@ -65,6 +79,14 @@ func (m *DeviceLogCollectionRequest) GetId()(*string) {
         return m.id
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *DeviceLogCollectionRequest) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetTemplateType gets the templateType property value. Enum for the template type used for collecting logs
 func (m *DeviceLogCollectionRequest) GetTemplateType()(*DeviceLogCollectionTemplateType) {
     if m == nil {
@@ -77,6 +99,12 @@ func (m *DeviceLogCollectionRequest) GetTemplateType()(*DeviceLogCollectionTempl
 func (m *DeviceLogCollectionRequest) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("id", m.GetId())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -106,6 +134,12 @@ func (m *DeviceLogCollectionRequest) SetAdditionalData(value map[string]interfac
 func (m *DeviceLogCollectionRequest) SetId(value *string)() {
     if m != nil {
         m.id = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *DeviceLogCollectionRequest) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetTemplateType sets the templateType property value. Enum for the template type used for collecting logs

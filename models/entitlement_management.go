@@ -33,12 +33,16 @@ type EntitlementManagement struct {
     connectedOrganizations []ConnectedOrganizationable
     // Represents the settings that control the behavior of Azure AD entitlement management.
     settings EntitlementManagementSettingsable
+    // The subjects property
+    subjects []AccessPackageSubjectable
 }
 // NewEntitlementManagement instantiates a new EntitlementManagement and sets the default values.
 func NewEntitlementManagement()(*EntitlementManagement) {
     m := &EntitlementManagement{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.entitlementManagement";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateEntitlementManagementFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -322,6 +326,20 @@ func (m *EntitlementManagement) GetFieldDeserializers()(map[string]func(i878a80d
         }
         return nil
     }
+    res["subjects"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateAccessPackageSubjectFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]AccessPackageSubjectable, len(val))
+            for i, v := range val {
+                res[i] = v.(AccessPackageSubjectable)
+            }
+            m.SetSubjects(res)
+        }
+        return nil
+    }
     return res
 }
 // GetSettings gets the settings property value. Represents the settings that control the behavior of Azure AD entitlement management.
@@ -330,6 +348,14 @@ func (m *EntitlementManagement) GetSettings()(EntitlementManagementSettingsable)
         return nil
     } else {
         return m.settings
+    }
+}
+// GetSubjects gets the subjects property value. The subjects property
+func (m *EntitlementManagement) GetSubjects()([]AccessPackageSubjectable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.subjects
     }
 }
 // Serialize serializes information the current object
@@ -464,6 +490,16 @@ func (m *EntitlementManagement) Serialize(writer i878a80d2330e89d26896388a3f487e
             return err
         }
     }
+    if m.GetSubjects() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSubjects()))
+        for i, v := range m.GetSubjects() {
+            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+        }
+        err = writer.WriteCollectionOfObjectValues("subjects", cast)
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetAccessPackageAssignmentApprovals sets the accessPackageAssignmentApprovals property value. Approval stages for decisions associated with access package assignment requests.
@@ -542,5 +578,11 @@ func (m *EntitlementManagement) SetConnectedOrganizations(value []ConnectedOrgan
 func (m *EntitlementManagement) SetSettings(value EntitlementManagementSettingsable)() {
     if m != nil {
         m.settings = value
+    }
+}
+// SetSubjects sets the subjects property value. The subjects property
+func (m *EntitlementManagement) SetSubjects(value []AccessPackageSubjectable)() {
+    if m != nil {
+        m.subjects = value
     }
 }

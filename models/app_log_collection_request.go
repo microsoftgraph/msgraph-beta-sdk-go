@@ -22,6 +22,8 @@ func NewAppLogCollectionRequest()(*AppLogCollectionRequest) {
     m := &AppLogCollectionRequest{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.appLogCollectionRequest";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAppLogCollectionRequestFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

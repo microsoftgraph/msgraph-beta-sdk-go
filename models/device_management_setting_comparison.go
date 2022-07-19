@@ -20,12 +20,16 @@ type DeviceManagementSettingComparison struct {
     id *string
     // JSON representation of new template setting's value
     newValueJson *string
+    // The OdataType property
+    odataType *string
 }
 // NewDeviceManagementSettingComparison instantiates a new deviceManagementSettingComparison and sets the default values.
 func NewDeviceManagementSettingComparison()(*DeviceManagementSettingComparison) {
     m := &DeviceManagementSettingComparison{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.deviceManagementSettingComparison";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDeviceManagementSettingComparisonFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -135,6 +139,16 @@ func (m *DeviceManagementSettingComparison) GetFieldDeserializers()(map[string]f
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetId gets the id property value. The setting ID
@@ -151,6 +165,14 @@ func (m *DeviceManagementSettingComparison) GetNewValueJson()(*string) {
         return nil
     } else {
         return m.newValueJson
+    }
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *DeviceManagementSettingComparison) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
     }
 }
 // Serialize serializes information the current object
@@ -188,6 +210,12 @@ func (m *DeviceManagementSettingComparison) Serialize(writer i878a80d2330e89d268
     }
     {
         err := writer.WriteStringValue("newValueJson", m.GetNewValueJson())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -240,5 +268,11 @@ func (m *DeviceManagementSettingComparison) SetId(value *string)() {
 func (m *DeviceManagementSettingComparison) SetNewValueJson(value *string)() {
     if m != nil {
         m.newValueJson = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *DeviceManagementSettingComparison) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }

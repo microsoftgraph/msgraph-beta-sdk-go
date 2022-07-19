@@ -19,6 +19,8 @@ func NewPersonAnnotation()(*PersonAnnotation) {
     m := &PersonAnnotation{
         ItemFacet: *NewItemFacet(),
     }
+    odataTypeValue := "#microsoft.graph.personAnnotation";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreatePersonAnnotationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

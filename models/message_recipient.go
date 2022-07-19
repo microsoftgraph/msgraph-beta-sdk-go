@@ -19,6 +19,8 @@ func NewMessageRecipient()(*MessageRecipient) {
     m := &MessageRecipient{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.messageRecipient";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateMessageRecipientFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

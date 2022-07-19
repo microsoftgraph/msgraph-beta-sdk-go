@@ -33,6 +33,8 @@ func NewPersonCertification()(*PersonCertification) {
     m := &PersonCertification{
         ItemFacet: *NewItemFacet(),
     }
+    odataTypeValue := "#microsoft.graph.personCertification";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreatePersonCertificationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -10,6 +10,8 @@ type DeviceManagementTroubleshootingErrorResource struct {
     additionalData map[string]interface{}
     // The link to the web resource. Can contain any of the following formatters: {{UPN}}, {{DeviceGUID}}, {{UserGUID}}
     link *string
+    // The OdataType property
+    odataType *string
     // Not yet documented
     text *string
 }
@@ -18,6 +20,8 @@ func NewDeviceManagementTroubleshootingErrorResource()(*DeviceManagementTroubles
     m := &DeviceManagementTroubleshootingErrorResource{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.deviceManagementTroubleshootingErrorResource";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDeviceManagementTroubleshootingErrorResourceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -45,6 +49,16 @@ func (m *DeviceManagementTroubleshootingErrorResource) GetFieldDeserializers()(m
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["text"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -65,6 +79,14 @@ func (m *DeviceManagementTroubleshootingErrorResource) GetLink()(*string) {
         return m.link
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *DeviceManagementTroubleshootingErrorResource) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetText gets the text property value. Not yet documented
 func (m *DeviceManagementTroubleshootingErrorResource) GetText()(*string) {
     if m == nil {
@@ -77,6 +99,12 @@ func (m *DeviceManagementTroubleshootingErrorResource) GetText()(*string) {
 func (m *DeviceManagementTroubleshootingErrorResource) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("link", m.GetLink())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -105,6 +133,12 @@ func (m *DeviceManagementTroubleshootingErrorResource) SetAdditionalData(value m
 func (m *DeviceManagementTroubleshootingErrorResource) SetLink(value *string)() {
     if m != nil {
         m.link = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *DeviceManagementTroubleshootingErrorResource) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetText sets the text property value. Not yet documented

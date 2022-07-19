@@ -11,7 +11,9 @@ type MacOSAssociatedDomainsItemable interface {
     GetApplicationIdentifier()(*string)
     GetDirectDownloadsEnabled()(*bool)
     GetDomains()([]string)
+    GetOdataType()(*string)
     SetApplicationIdentifier(value *string)()
     SetDirectDownloadsEnabled(value *bool)()
     SetDomains(value []string)()
+    SetOdataType(value *string)()
 }

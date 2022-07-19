@@ -12,6 +12,8 @@ type InboundSharedUserProfile struct {
     displayName *string
     // The homeTenantId property
     homeTenantId *string
+    // The OdataType property
+    odataType *string
     // The userId property
     userId *string
     // The userPrincipalName property
@@ -22,6 +24,8 @@ func NewInboundSharedUserProfile()(*InboundSharedUserProfile) {
     m := &InboundSharedUserProfile{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.inboundSharedUserProfile";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateInboundSharedUserProfileFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -67,6 +71,16 @@ func (m *InboundSharedUserProfile) GetFieldDeserializers()(map[string]func(i878a
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["userId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -97,6 +111,14 @@ func (m *InboundSharedUserProfile) GetHomeTenantId()(*string) {
         return m.homeTenantId
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *InboundSharedUserProfile) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetUserId gets the userId property value. The userId property
 func (m *InboundSharedUserProfile) GetUserId()(*string) {
     if m == nil {
@@ -123,6 +145,12 @@ func (m *InboundSharedUserProfile) Serialize(writer i878a80d2330e89d26896388a3f4
     }
     {
         err := writer.WriteStringValue("homeTenantId", m.GetHomeTenantId())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -163,6 +191,12 @@ func (m *InboundSharedUserProfile) SetDisplayName(value *string)() {
 func (m *InboundSharedUserProfile) SetHomeTenantId(value *string)() {
     if m != nil {
         m.homeTenantId = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *InboundSharedUserProfile) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetUserId sets the userId property value. The userId property

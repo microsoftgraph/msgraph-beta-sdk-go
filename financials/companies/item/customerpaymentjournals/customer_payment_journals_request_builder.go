@@ -70,7 +70,7 @@ func NewCustomerPaymentJournalsRequestBuilder(rawUrl string, requestAdapter i2ae
     urlParams["request-raw-url"] = rawUrl
     return NewCustomerPaymentJournalsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *CustomerPaymentJournalsRequestBuilder) Count()(*ibb8f37299ad70e8f7996b8945e9c3b06358c138b13e2d1741dc73fee120c19f3.CountRequestBuilder) {
     return ibb8f37299ad70e8f7996b8945e9c3b06358c138b13e2d1741dc73fee120c19f3.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

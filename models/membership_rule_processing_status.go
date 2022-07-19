@@ -13,6 +13,8 @@ type MembershipRuleProcessingStatus struct {
     errorMessage *string
     // Most recent date and time when membership of a dynamic group was updated.  Optional. Read-only.
     lastMembershipUpdated *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
+    // The OdataType property
+    odataType *string
     // Current status of a dynamic group processing. Possible values are: NotStarted, Running, Succeeded, Failed, and UnknownFutureValue.  Required. Read-only.
     status *MembershipRuleProcessingStatusDetails
 }
@@ -21,6 +23,8 @@ func NewMembershipRuleProcessingStatus()(*MembershipRuleProcessingStatus) {
     m := &MembershipRuleProcessingStatus{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.membershipRuleProcessingStatus";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateMembershipRuleProcessingStatusFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -66,6 +70,16 @@ func (m *MembershipRuleProcessingStatus) GetFieldDeserializers()(map[string]func
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["status"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseMembershipRuleProcessingStatusDetails)
         if err != nil {
@@ -86,6 +100,14 @@ func (m *MembershipRuleProcessingStatus) GetLastMembershipUpdated()(*i336074805f
         return m.lastMembershipUpdated
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *MembershipRuleProcessingStatus) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetStatus gets the status property value. Current status of a dynamic group processing. Possible values are: NotStarted, Running, Succeeded, Failed, and UnknownFutureValue.  Required. Read-only.
 func (m *MembershipRuleProcessingStatus) GetStatus()(*MembershipRuleProcessingStatusDetails) {
     if m == nil {
@@ -104,6 +126,12 @@ func (m *MembershipRuleProcessingStatus) Serialize(writer i878a80d2330e89d268963
     }
     {
         err := writer.WriteTimeValue("lastMembershipUpdated", m.GetLastMembershipUpdated())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -139,6 +167,12 @@ func (m *MembershipRuleProcessingStatus) SetErrorMessage(value *string)() {
 func (m *MembershipRuleProcessingStatus) SetLastMembershipUpdated(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     if m != nil {
         m.lastMembershipUpdated = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *MembershipRuleProcessingStatus) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetStatus sets the status property value. Current status of a dynamic group processing. Possible values are: NotStarted, Running, Succeeded, Failed, and UnknownFutureValue.  Required. Read-only.

@@ -11,6 +11,8 @@ type RetentionEventStatus struct {
     additionalData map[string]interface{}
     // The error if the status is not successful.
     error ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PublicErrorable
+    // The OdataType property
+    odataType *string
     // The status of the distribution. The possible values are: pending, error, success, notAvaliable.
     status *EventStatusType
 }
@@ -19,6 +21,8 @@ func NewRetentionEventStatus()(*RetentionEventStatus) {
     m := &RetentionEventStatus{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.security.retentionEventStatus";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateRetentionEventStatusFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -54,6 +58,16 @@ func (m *RetentionEventStatus) GetFieldDeserializers()(map[string]func(i878a80d2
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["status"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseEventStatusType)
         if err != nil {
@@ -65,6 +79,14 @@ func (m *RetentionEventStatus) GetFieldDeserializers()(map[string]func(i878a80d2
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *RetentionEventStatus) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
 }
 // GetStatus gets the status property value. The status of the distribution. The possible values are: pending, error, success, notAvaliable.
 func (m *RetentionEventStatus) GetStatus()(*EventStatusType) {
@@ -78,6 +100,12 @@ func (m *RetentionEventStatus) GetStatus()(*EventStatusType) {
 func (m *RetentionEventStatus) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
         err := writer.WriteObjectValue("error", m.GetError())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -107,6 +135,12 @@ func (m *RetentionEventStatus) SetAdditionalData(value map[string]interface{})()
 func (m *RetentionEventStatus) SetError(value ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PublicErrorable)() {
     if m != nil {
         m.error = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *RetentionEventStatus) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetStatus sets the status property value. The status of the distribution. The possible values are: pending, error, success, notAvaliable.

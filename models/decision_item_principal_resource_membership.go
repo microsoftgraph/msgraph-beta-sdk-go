@@ -10,12 +10,16 @@ type DecisionItemPrincipalResourceMembership struct {
     additionalData map[string]interface{}
     // The membershipType property
     membershipType *DecisionItemPrincipalResourceMembershipType
+    // The OdataType property
+    odataType *string
 }
 // NewDecisionItemPrincipalResourceMembership instantiates a new decisionItemPrincipalResourceMembership and sets the default values.
 func NewDecisionItemPrincipalResourceMembership()(*DecisionItemPrincipalResourceMembership) {
     m := &DecisionItemPrincipalResourceMembership{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.decisionItemPrincipalResourceMembership";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDecisionItemPrincipalResourceMembershipFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -43,6 +47,16 @@ func (m *DecisionItemPrincipalResourceMembership) GetFieldDeserializers()(map[st
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetMembershipType gets the membershipType property value. The membershipType property
@@ -53,11 +67,25 @@ func (m *DecisionItemPrincipalResourceMembership) GetMembershipType()(*DecisionI
         return m.membershipType
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *DecisionItemPrincipalResourceMembership) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // Serialize serializes information the current object
 func (m *DecisionItemPrincipalResourceMembership) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     if m.GetMembershipType() != nil {
         cast := (*m.GetMembershipType()).String()
         err := writer.WriteStringValue("membershipType", &cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -80,5 +108,11 @@ func (m *DecisionItemPrincipalResourceMembership) SetAdditionalData(value map[st
 func (m *DecisionItemPrincipalResourceMembership) SetMembershipType(value *DecisionItemPrincipalResourceMembershipType)() {
     if m != nil {
         m.membershipType = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *DecisionItemPrincipalResourceMembership) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }

@@ -13,12 +13,16 @@ type WindowsDriverUpdateProfileInventorySyncStatus struct {
     driverInventorySyncState *WindowsDriverUpdateProfileInventorySyncState
     // The last successful sync date and time in UTC.
     lastSuccessfulSyncDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
+    // The OdataType property
+    odataType *string
 }
 // NewWindowsDriverUpdateProfileInventorySyncStatus instantiates a new windowsDriverUpdateProfileInventorySyncStatus and sets the default values.
 func NewWindowsDriverUpdateProfileInventorySyncStatus()(*WindowsDriverUpdateProfileInventorySyncStatus) {
     m := &WindowsDriverUpdateProfileInventorySyncStatus{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.windowsDriverUpdateProfileInventorySyncStatus";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateWindowsDriverUpdateProfileInventorySyncStatusFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -64,6 +68,16 @@ func (m *WindowsDriverUpdateProfileInventorySyncStatus) GetFieldDeserializers()(
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetLastSuccessfulSyncDateTime gets the lastSuccessfulSyncDateTime property value. The last successful sync date and time in UTC.
@@ -72,6 +86,14 @@ func (m *WindowsDriverUpdateProfileInventorySyncStatus) GetLastSuccessfulSyncDat
         return nil
     } else {
         return m.lastSuccessfulSyncDateTime
+    }
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *WindowsDriverUpdateProfileInventorySyncStatus) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
     }
 }
 // Serialize serializes information the current object
@@ -85,6 +107,12 @@ func (m *WindowsDriverUpdateProfileInventorySyncStatus) Serialize(writer i878a80
     }
     {
         err := writer.WriteTimeValue("lastSuccessfulSyncDateTime", m.GetLastSuccessfulSyncDateTime())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -113,5 +141,11 @@ func (m *WindowsDriverUpdateProfileInventorySyncStatus) SetDriverInventorySyncSt
 func (m *WindowsDriverUpdateProfileInventorySyncStatus) SetLastSuccessfulSyncDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     if m != nil {
         m.lastSuccessfulSyncDateTime = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *WindowsDriverUpdateProfileInventorySyncStatus) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }

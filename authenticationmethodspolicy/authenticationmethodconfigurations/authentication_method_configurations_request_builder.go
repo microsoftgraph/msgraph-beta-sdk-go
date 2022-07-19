@@ -70,7 +70,7 @@ func NewAuthenticationMethodConfigurationsRequestBuilder(rawUrl string, requestA
     urlParams["request-raw-url"] = rawUrl
     return NewAuthenticationMethodConfigurationsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *AuthenticationMethodConfigurationsRequestBuilder) Count()(*ia83ba9a698884b0877b317f4eff8469ba184d99713be7c5e0291b741e2b2308c.CountRequestBuilder) {
     return ia83ba9a698884b0877b317f4eff8469ba184d99713be7c5e0291b741e2b2308c.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

@@ -20,6 +20,8 @@ func NewVulnerableManagedDevice()(*VulnerableManagedDevice) {
     m := &VulnerableManagedDevice{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.vulnerableManagedDevice";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateVulnerableManagedDeviceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

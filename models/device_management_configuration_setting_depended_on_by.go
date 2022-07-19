@@ -10,6 +10,8 @@ type DeviceManagementConfigurationSettingDependedOnBy struct {
     additionalData map[string]interface{}
     // Identifier of child setting that is dependent on the current setting
     dependedOnBy *string
+    // The OdataType property
+    odataType *string
     // Value that determines if the child setting is required based on the parent setting's selection
     required *bool
 }
@@ -18,6 +20,8 @@ func NewDeviceManagementConfigurationSettingDependedOnBy()(*DeviceManagementConf
     m := &DeviceManagementConfigurationSettingDependedOnBy{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.deviceManagementConfigurationSettingDependedOnBy";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDeviceManagementConfigurationSettingDependedOnByFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -53,6 +57,16 @@ func (m *DeviceManagementConfigurationSettingDependedOnBy) GetFieldDeserializers
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["required"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
@@ -64,6 +78,14 @@ func (m *DeviceManagementConfigurationSettingDependedOnBy) GetFieldDeserializers
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *DeviceManagementConfigurationSettingDependedOnBy) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
 }
 // GetRequired gets the required property value. Value that determines if the child setting is required based on the parent setting's selection
 func (m *DeviceManagementConfigurationSettingDependedOnBy) GetRequired()(*bool) {
@@ -77,6 +99,12 @@ func (m *DeviceManagementConfigurationSettingDependedOnBy) GetRequired()(*bool) 
 func (m *DeviceManagementConfigurationSettingDependedOnBy) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("dependedOnBy", m.GetDependedOnBy())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -105,6 +133,12 @@ func (m *DeviceManagementConfigurationSettingDependedOnBy) SetAdditionalData(val
 func (m *DeviceManagementConfigurationSettingDependedOnBy) SetDependedOnBy(value *string)() {
     if m != nil {
         m.dependedOnBy = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *DeviceManagementConfigurationSettingDependedOnBy) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetRequired sets the required property value. Value that determines if the child setting is required based on the parent setting's selection

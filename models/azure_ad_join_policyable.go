@@ -12,8 +12,10 @@ type AzureAdJoinPolicyable interface {
     GetAllowedUsers()([]string)
     GetAppliesTo()(*PolicyScope)
     GetIsAdminConfigurable()(*bool)
+    GetOdataType()(*string)
     SetAllowedGroups(value []string)()
     SetAllowedUsers(value []string)()
     SetAppliesTo(value *PolicyScope)()
     SetIsAdminConfigurable(value *bool)()
+    SetOdataType(value *string)()
 }

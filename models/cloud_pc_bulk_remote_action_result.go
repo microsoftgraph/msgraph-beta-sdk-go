@@ -14,6 +14,8 @@ type CloudPcBulkRemoteActionResult struct {
     notFoundDeviceIds []string
     // A list of all the Intune managed device IDs that were identified as unsupported for the bulk action.
     notSupportedDeviceIds []string
+    // The OdataType property
+    odataType *string
     // A list of all the Intune managed device IDs that completed the bulk action successfully.
     successfulDeviceIds []string
 }
@@ -22,6 +24,8 @@ func NewCloudPcBulkRemoteActionResult()(*CloudPcBulkRemoteActionResult) {
     m := &CloudPcBulkRemoteActionResult{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.cloudPcBulkRemoteActionResult";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateCloudPcBulkRemoteActionResultFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -89,6 +93,16 @@ func (m *CloudPcBulkRemoteActionResult) GetFieldDeserializers()(map[string]func(
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["successfulDeviceIds"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
@@ -121,6 +135,14 @@ func (m *CloudPcBulkRemoteActionResult) GetNotSupportedDeviceIds()([]string) {
         return m.notSupportedDeviceIds
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *CloudPcBulkRemoteActionResult) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetSuccessfulDeviceIds gets the successfulDeviceIds property value. A list of all the Intune managed device IDs that completed the bulk action successfully.
 func (m *CloudPcBulkRemoteActionResult) GetSuccessfulDeviceIds()([]string) {
     if m == nil {
@@ -145,6 +167,12 @@ func (m *CloudPcBulkRemoteActionResult) Serialize(writer i878a80d2330e89d2689638
     }
     if m.GetNotSupportedDeviceIds() != nil {
         err := writer.WriteCollectionOfStringValues("notSupportedDeviceIds", m.GetNotSupportedDeviceIds())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -185,6 +213,12 @@ func (m *CloudPcBulkRemoteActionResult) SetNotFoundDeviceIds(value []string)() {
 func (m *CloudPcBulkRemoteActionResult) SetNotSupportedDeviceIds(value []string)() {
     if m != nil {
         m.notSupportedDeviceIds = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *CloudPcBulkRemoteActionResult) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetSuccessfulDeviceIds sets the successfulDeviceIds property value. A list of all the Intune managed device IDs that completed the bulk action successfully.

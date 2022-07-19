@@ -16,12 +16,16 @@ type OemWarranty struct {
     deviceConfigurationUrl *string
     // Device warranty page URL
     deviceWarrantyUrl *string
+    // The OdataType property
+    odataType *string
 }
 // NewOemWarranty instantiates a new oemWarranty and sets the default values.
 func NewOemWarranty()(*OemWarranty) {
     m := &OemWarranty{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.oemWarranty";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateOemWarrantyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -119,7 +123,25 @@ func (m *OemWarranty) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *OemWarranty) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
 }
 // Serialize serializes information the current object
 func (m *OemWarranty) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -151,6 +173,12 @@ func (m *OemWarranty) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
     }
     {
         err := writer.WriteStringValue("deviceWarrantyUrl", m.GetDeviceWarrantyUrl())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -191,5 +219,11 @@ func (m *OemWarranty) SetDeviceConfigurationUrl(value *string)() {
 func (m *OemWarranty) SetDeviceWarrantyUrl(value *string)() {
     if m != nil {
         m.deviceWarrantyUrl = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *OemWarranty) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }

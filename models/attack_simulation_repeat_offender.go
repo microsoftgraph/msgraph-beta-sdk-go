@@ -10,6 +10,8 @@ type AttackSimulationRepeatOffender struct {
     additionalData map[string]interface{}
     // User in an attack simulation and training campaign.
     attackSimulationUser AttackSimulationUserable
+    // The OdataType property
+    odataType *string
     // Number of repeat offences of the user in attack simulation and training campaigns.
     repeatOffenceCount *int32
 }
@@ -18,6 +20,8 @@ func NewAttackSimulationRepeatOffender()(*AttackSimulationRepeatOffender) {
     m := &AttackSimulationRepeatOffender{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.attackSimulationRepeatOffender";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAttackSimulationRepeatOffenderFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -53,6 +57,16 @@ func (m *AttackSimulationRepeatOffender) GetFieldDeserializers()(map[string]func
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["repeatOffenceCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
@@ -64,6 +78,14 @@ func (m *AttackSimulationRepeatOffender) GetFieldDeserializers()(map[string]func
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *AttackSimulationRepeatOffender) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
 }
 // GetRepeatOffenceCount gets the repeatOffenceCount property value. Number of repeat offences of the user in attack simulation and training campaigns.
 func (m *AttackSimulationRepeatOffender) GetRepeatOffenceCount()(*int32) {
@@ -77,6 +99,12 @@ func (m *AttackSimulationRepeatOffender) GetRepeatOffenceCount()(*int32) {
 func (m *AttackSimulationRepeatOffender) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
         err := writer.WriteObjectValue("attackSimulationUser", m.GetAttackSimulationUser())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -105,6 +133,12 @@ func (m *AttackSimulationRepeatOffender) SetAdditionalData(value map[string]inte
 func (m *AttackSimulationRepeatOffender) SetAttackSimulationUser(value AttackSimulationUserable)() {
     if m != nil {
         m.attackSimulationUser = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *AttackSimulationRepeatOffender) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetRepeatOffenceCount sets the repeatOffenceCount property value. Number of repeat offences of the user in attack simulation and training campaigns.

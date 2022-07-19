@@ -63,7 +63,7 @@ func NewAccessPackagesIncompatibleWithRequestBuilder(rawUrl string, requestAdapt
     urlParams["request-raw-url"] = rawUrl
     return NewAccessPackagesIncompatibleWithRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *AccessPackagesIncompatibleWithRequestBuilder) Count()(*i03db22f325fe7ad85762bf349761fd3a7742cd603b8ae97c142dbf22ab9fe38c.CountRequestBuilder) {
     return i03db22f325fe7ad85762bf349761fd3a7742cd603b8ae97c142dbf22ab9fe38c.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

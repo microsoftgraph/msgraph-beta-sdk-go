@@ -70,7 +70,7 @@ func NewRoleDefinitionsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7da
     urlParams["request-raw-url"] = rawUrl
     return NewRoleDefinitionsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *RoleDefinitionsRequestBuilder) Count()(*i4ed10b39b9c187a4611bad2c4fff7a06476b83f16450aee20235fd84e4faf3d0.CountRequestBuilder) {
     return i4ed10b39b9c187a4611bad2c4fff7a06476b83f16450aee20235fd84e4faf3d0.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

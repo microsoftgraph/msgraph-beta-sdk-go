@@ -13,6 +13,8 @@ func NewCaseIndexOperation()(*CaseIndexOperation) {
     m := &CaseIndexOperation{
         CaseOperation: *NewCaseOperation(),
     }
+    odataTypeValue := "#microsoft.graph.ediscovery.caseIndexOperation";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateCaseIndexOperationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

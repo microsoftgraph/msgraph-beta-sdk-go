@@ -15,6 +15,8 @@ func NewFeatureUpdateReference()(*FeatureUpdateReference) {
     m := &FeatureUpdateReference{
         WindowsUpdateReference: *NewWindowsUpdateReference(),
     }
+    odataTypeValue := "#microsoft.graph.windowsUpdates.featureUpdateReference";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateFeatureUpdateReferenceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -10,6 +10,8 @@ type MatchLocation struct {
     additionalData map[string]interface{}
     // The length property
     length *int32
+    // The OdataType property
+    odataType *string
     // The offset property
     offset *int32
 }
@@ -18,6 +20,8 @@ func NewMatchLocation()(*MatchLocation) {
     m := &MatchLocation{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.matchLocation";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateMatchLocationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -45,6 +49,16 @@ func (m *MatchLocation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["offset"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
@@ -65,6 +79,14 @@ func (m *MatchLocation) GetLength()(*int32) {
         return m.length
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *MatchLocation) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetOffset gets the offset property value. The offset property
 func (m *MatchLocation) GetOffset()(*int32) {
     if m == nil {
@@ -77,6 +99,12 @@ func (m *MatchLocation) GetOffset()(*int32) {
 func (m *MatchLocation) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
         err := writer.WriteInt32Value("length", m.GetLength())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -105,6 +133,12 @@ func (m *MatchLocation) SetAdditionalData(value map[string]interface{})() {
 func (m *MatchLocation) SetLength(value *int32)() {
     if m != nil {
         m.length = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *MatchLocation) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetOffset sets the offset property value. The offset property

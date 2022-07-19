@@ -70,7 +70,7 @@ func NewEnterpriseCodeSigningCertificatesRequestBuilder(rawUrl string, requestAd
     urlParams["request-raw-url"] = rawUrl
     return NewEnterpriseCodeSigningCertificatesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *EnterpriseCodeSigningCertificatesRequestBuilder) Count()(*iceba25b89d1cfd5608e708a877bfa6817365b074a14b81a68f705bb64900c7cf.CountRequestBuilder) {
     return iceba25b89d1cfd5608e708a877bfa6817365b074a14b81a68f705bb64900c7cf.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

@@ -10,6 +10,8 @@ type EducationSynchronizationLicenseAssignment struct {
     additionalData map[string]interface{}
     // The user role type to assign to license. Possible values are: student, teacher, faculty.
     appliesTo *EducationUserRole
+    // The OdataType property
+    odataType *string
     // Represents the SKU identifiers of the licenses to assign.
     skuIds []string
 }
@@ -18,6 +20,8 @@ func NewEducationSynchronizationLicenseAssignment()(*EducationSynchronizationLic
     m := &EducationSynchronizationLicenseAssignment{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.educationSynchronizationLicenseAssignment";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateEducationSynchronizationLicenseAssignmentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -53,6 +57,16 @@ func (m *EducationSynchronizationLicenseAssignment) GetFieldDeserializers()(map[
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["skuIds"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
@@ -69,6 +83,14 @@ func (m *EducationSynchronizationLicenseAssignment) GetFieldDeserializers()(map[
     }
     return res
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *EducationSynchronizationLicenseAssignment) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetSkuIds gets the skuIds property value. Represents the SKU identifiers of the licenses to assign.
 func (m *EducationSynchronizationLicenseAssignment) GetSkuIds()([]string) {
     if m == nil {
@@ -82,6 +104,12 @@ func (m *EducationSynchronizationLicenseAssignment) Serialize(writer i878a80d233
     if m.GetAppliesTo() != nil {
         cast := (*m.GetAppliesTo()).String()
         err := writer.WriteStringValue("appliesTo", &cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -110,6 +138,12 @@ func (m *EducationSynchronizationLicenseAssignment) SetAdditionalData(value map[
 func (m *EducationSynchronizationLicenseAssignment) SetAppliesTo(value *EducationUserRole)() {
     if m != nil {
         m.appliesTo = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *EducationSynchronizationLicenseAssignment) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetSkuIds sets the skuIds property value. Represents the SKU identifiers of the licenses to assign.

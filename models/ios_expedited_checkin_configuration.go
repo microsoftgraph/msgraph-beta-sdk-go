@@ -13,6 +13,8 @@ func NewIosExpeditedCheckinConfiguration()(*IosExpeditedCheckinConfiguration) {
     m := &IosExpeditedCheckinConfiguration{
         AppleExpeditedCheckinConfigurationBase: *NewAppleExpeditedCheckinConfigurationBase(),
     }
+    odataTypeValue := "#microsoft.graph.iosExpeditedCheckinConfiguration";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateIosExpeditedCheckinConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

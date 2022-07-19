@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// JournalLine provides operations to manage the collection of accessReviewDecision entities.
+// JournalLine 
 type JournalLine struct {
     Entity
     // The account property
@@ -33,11 +33,13 @@ type JournalLine struct {
     // The postingDate property
     postingDate *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly
 }
-// NewJournalLine instantiates a new journalLine and sets the default values.
+// NewJournalLine instantiates a new JournalLine and sets the default values.
 func NewJournalLine()(*JournalLine) {
     m := &JournalLine{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.journalLine";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateJournalLineFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

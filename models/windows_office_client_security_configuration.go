@@ -13,6 +13,8 @@ func NewWindowsOfficeClientSecurityConfiguration()(*WindowsOfficeClientSecurityC
     m := &WindowsOfficeClientSecurityConfiguration{
         OfficeClientConfiguration: *NewOfficeClientConfiguration(),
     }
+    odataTypeValue := "#microsoft.graph.windowsOfficeClientSecurityConfiguration";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateWindowsOfficeClientSecurityConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

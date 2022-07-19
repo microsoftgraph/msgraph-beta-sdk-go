@@ -70,7 +70,7 @@ func NewWindowsQualityUpdateProfilesRequestBuilder(rawUrl string, requestAdapter
     urlParams["request-raw-url"] = rawUrl
     return NewWindowsQualityUpdateProfilesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *WindowsQualityUpdateProfilesRequestBuilder) Count()(*ib401e775810c58438fb5c84bcd66d3f26763c18da059fec8f94eeecfc1398186.CountRequestBuilder) {
     return ib401e775810c58438fb5c84bcd66d3f26763c18da059fec8f94eeecfc1398186.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

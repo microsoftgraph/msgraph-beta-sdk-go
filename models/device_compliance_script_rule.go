@@ -14,6 +14,8 @@ type DeviceComplianceScriptRule struct {
     deviceComplianceScriptRuleDataType *DeviceComplianceScriptRuleDataType
     // Operator for rules.
     deviceComplianceScriptRulOperator *DeviceComplianceScriptRulOperator
+    // The OdataType property
+    odataType *string
     // Operand specified in the rule.
     operand *string
     // Operator for rules.
@@ -26,6 +28,8 @@ func NewDeviceComplianceScriptRule()(*DeviceComplianceScriptRule) {
     m := &DeviceComplianceScriptRule{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.deviceComplianceScriptRule";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDeviceComplianceScriptRuleFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -97,6 +101,16 @@ func (m *DeviceComplianceScriptRule) GetFieldDeserializers()(map[string]func(i87
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["operand"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -128,6 +142,14 @@ func (m *DeviceComplianceScriptRule) GetFieldDeserializers()(map[string]func(i87
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *DeviceComplianceScriptRule) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
 }
 // GetOperand gets the operand property value. Operand specified in the rule.
 func (m *DeviceComplianceScriptRule) GetOperand()(*string) {
@@ -172,6 +194,12 @@ func (m *DeviceComplianceScriptRule) Serialize(writer i878a80d2330e89d26896388a3
     if m.GetDeviceComplianceScriptRulOperator() != nil {
         cast := (*m.GetDeviceComplianceScriptRulOperator()).String()
         err := writer.WriteStringValue("deviceComplianceScriptRulOperator", &cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -225,6 +253,12 @@ func (m *DeviceComplianceScriptRule) SetDeviceComplianceScriptRuleDataType(value
 func (m *DeviceComplianceScriptRule) SetDeviceComplianceScriptRulOperator(value *DeviceComplianceScriptRulOperator)() {
     if m != nil {
         m.deviceComplianceScriptRulOperator = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *DeviceComplianceScriptRule) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetOperand sets the operand property value. Operand specified in the rule.

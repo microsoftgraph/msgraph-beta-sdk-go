@@ -70,7 +70,7 @@ func NewGroupPolicySettingMappingsRequestBuilder(rawUrl string, requestAdapter i
     urlParams["request-raw-url"] = rawUrl
     return NewGroupPolicySettingMappingsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *GroupPolicySettingMappingsRequestBuilder) Count()(*i226b8f8380117d76c0c94d2f0419a63fba373ed6e0daaefe0ca225f2de247bbc.CountRequestBuilder) {
     return i226b8f8380117d76c0c94d2f0419a63fba373ed6e0daaefe0ca225f2de247bbc.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

@@ -18,6 +18,8 @@ type CryptographySuite struct {
     encryptionMethod *VpnEncryptionAlgorithmType
     // Integrity Check Method. Possible values are: sha2_256, sha1_96, sha1_160, sha2_384, sha2_512, md5.
     integrityCheckMethod *VpnIntegrityAlgorithmType
+    // The OdataType property
+    odataType *string
     // Perfect Forward Secrecy Group. Possible values are: pfs1, pfs2, pfs2048, ecp256, ecp384, pfsMM, pfs24.
     pfsGroup *PerfectForwardSecrecyGroup
 }
@@ -26,6 +28,8 @@ func NewCryptographySuite()(*CryptographySuite) {
     m := &CryptographySuite{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.cryptographySuite";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateCryptographySuiteFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -125,6 +129,16 @@ func (m *CryptographySuite) GetFieldDeserializers()(map[string]func(i878a80d2330
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["pfsGroup"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParsePerfectForwardSecrecyGroup)
         if err != nil {
@@ -143,6 +157,14 @@ func (m *CryptographySuite) GetIntegrityCheckMethod()(*VpnIntegrityAlgorithmType
         return nil
     } else {
         return m.integrityCheckMethod
+    }
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *CryptographySuite) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
     }
 }
 // GetPfsGroup gets the pfsGroup property value. Perfect Forward Secrecy Group. Possible values are: pfs1, pfs2, pfs2048, ecp256, ecp384, pfsMM, pfs24.
@@ -186,6 +208,12 @@ func (m *CryptographySuite) Serialize(writer i878a80d2330e89d26896388a3f487eef27
     if m.GetIntegrityCheckMethod() != nil {
         cast := (*m.GetIntegrityCheckMethod()).String()
         err := writer.WriteStringValue("integrityCheckMethod", &cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -239,6 +267,12 @@ func (m *CryptographySuite) SetEncryptionMethod(value *VpnEncryptionAlgorithmTyp
 func (m *CryptographySuite) SetIntegrityCheckMethod(value *VpnIntegrityAlgorithmType)() {
     if m != nil {
         m.integrityCheckMethod = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *CryptographySuite) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetPfsGroup sets the pfsGroup property value. Perfect Forward Secrecy Group. Possible values are: pfs1, pfs2, pfs2048, ecp256, ecp384, pfsMM, pfs24.

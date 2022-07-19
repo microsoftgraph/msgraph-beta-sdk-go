@@ -14,12 +14,16 @@ type ManagementActionInfo struct {
     managementTemplateId *string
     // The managementTemplateVersion property
     managementTemplateVersion *int32
+    // The OdataType property
+    odataType *string
 }
 // NewManagementActionInfo instantiates a new managementActionInfo and sets the default values.
 func NewManagementActionInfo()(*ManagementActionInfo) {
     m := &ManagementActionInfo{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.managedTenants.managementActionInfo";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateManagementActionInfoFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -67,6 +71,16 @@ func (m *ManagementActionInfo) GetFieldDeserializers()(map[string]func(i878a80d2
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetManagementActionId gets the managementActionId property value. The identifier for the management action. Required. Read-only.
@@ -93,6 +107,14 @@ func (m *ManagementActionInfo) GetManagementTemplateVersion()(*int32) {
         return m.managementTemplateVersion
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *ManagementActionInfo) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // Serialize serializes information the current object
 func (m *ManagementActionInfo) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
@@ -109,6 +131,12 @@ func (m *ManagementActionInfo) Serialize(writer i878a80d2330e89d26896388a3f487ee
     }
     {
         err := writer.WriteInt32Value("managementTemplateVersion", m.GetManagementTemplateVersion())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -143,5 +171,11 @@ func (m *ManagementActionInfo) SetManagementTemplateId(value *string)() {
 func (m *ManagementActionInfo) SetManagementTemplateVersion(value *int32)() {
     if m != nil {
         m.managementTemplateVersion = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *ManagementActionInfo) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }

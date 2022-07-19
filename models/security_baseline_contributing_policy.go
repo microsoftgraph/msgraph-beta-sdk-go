@@ -10,6 +10,8 @@ type SecurityBaselineContributingPolicy struct {
     additionalData map[string]interface{}
     // Name of the policy
     displayName *string
+    // The OdataType property
+    odataType *string
     // Unique identifier of the policy
     sourceId *string
     // Authoring source of a policy
@@ -20,6 +22,8 @@ func NewSecurityBaselineContributingPolicy()(*SecurityBaselineContributingPolicy
     m := &SecurityBaselineContributingPolicy{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.securityBaselineContributingPolicy";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateSecurityBaselineContributingPolicyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -55,6 +59,16 @@ func (m *SecurityBaselineContributingPolicy) GetFieldDeserializers()(map[string]
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["sourceId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -77,6 +91,14 @@ func (m *SecurityBaselineContributingPolicy) GetFieldDeserializers()(map[string]
     }
     return res
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *SecurityBaselineContributingPolicy) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetSourceId gets the sourceId property value. Unique identifier of the policy
 func (m *SecurityBaselineContributingPolicy) GetSourceId()(*string) {
     if m == nil {
@@ -97,6 +119,12 @@ func (m *SecurityBaselineContributingPolicy) GetSourceType()(*SecurityBaselinePo
 func (m *SecurityBaselineContributingPolicy) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("displayName", m.GetDisplayName())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -132,6 +160,12 @@ func (m *SecurityBaselineContributingPolicy) SetAdditionalData(value map[string]
 func (m *SecurityBaselineContributingPolicy) SetDisplayName(value *string)() {
     if m != nil {
         m.displayName = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *SecurityBaselineContributingPolicy) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetSourceId sets the sourceId property value. Unique identifier of the policy

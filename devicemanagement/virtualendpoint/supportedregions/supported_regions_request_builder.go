@@ -70,7 +70,7 @@ func NewSupportedRegionsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7d
     urlParams["request-raw-url"] = rawUrl
     return NewSupportedRegionsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *SupportedRegionsRequestBuilder) Count()(*i99d8270aa92a7955338656bf8691c1f8186706d66f9ca611c79ba270548e1313.CountRequestBuilder) {
     return i99d8270aa92a7955338656bf8691c1f8186706d66f9ca611c79ba270548e1313.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

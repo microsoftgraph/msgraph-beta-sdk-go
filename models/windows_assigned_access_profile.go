@@ -25,6 +25,8 @@ func NewWindowsAssignedAccessProfile()(*WindowsAssignedAccessProfile) {
     m := &WindowsAssignedAccessProfile{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.windowsAssignedAccessProfile";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateWindowsAssignedAccessProfileFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

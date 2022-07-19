@@ -14,12 +14,16 @@ type Settings struct {
     hasLicense *bool
     // Specifies if the user opted out of MyAnalytics.
     hasOptedOut *bool
+    // The OdataType property
+    odataType *string
 }
 // NewSettings instantiates a new settings and sets the default values.
 func NewSettings()(*Settings) {
     m := &Settings{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.settings";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -67,6 +71,16 @@ func (m *Settings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetHasGraphMailbox gets the hasGraphMailbox property value. Specifies if the user's primary mailbox is hosted in the cloud and is enabled for Microsoft Graph.
@@ -93,6 +107,14 @@ func (m *Settings) GetHasOptedOut()(*bool) {
         return m.hasOptedOut
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *Settings) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // Serialize serializes information the current object
 func (m *Settings) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
@@ -109,6 +131,12 @@ func (m *Settings) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
     }
     {
         err := writer.WriteBoolValue("hasOptedOut", m.GetHasOptedOut())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -143,5 +171,11 @@ func (m *Settings) SetHasLicense(value *bool)() {
 func (m *Settings) SetHasOptedOut(value *bool)() {
     if m != nil {
         m.hasOptedOut = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *Settings) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }

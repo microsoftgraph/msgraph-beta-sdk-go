@@ -10,6 +10,8 @@ type DocumentSetVersionItem struct {
     additionalData map[string]interface{}
     // The unique identifier for the item.
     itemId *string
+    // The OdataType property
+    odataType *string
     // The title of the item.
     title *string
     // The version ID of the item.
@@ -20,6 +22,8 @@ func NewDocumentSetVersionItem()(*DocumentSetVersionItem) {
     m := &DocumentSetVersionItem{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.documentSetVersionItem";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDocumentSetVersionItemFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -44,6 +48,16 @@ func (m *DocumentSetVersionItem) GetFieldDeserializers()(map[string]func(i878a80
         }
         if val != nil {
             m.SetItemId(val)
+        }
+        return nil
+    }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
         }
         return nil
     }
@@ -77,6 +91,14 @@ func (m *DocumentSetVersionItem) GetItemId()(*string) {
         return m.itemId
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *DocumentSetVersionItem) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetTitle gets the title property value. The title of the item.
 func (m *DocumentSetVersionItem) GetTitle()(*string) {
     if m == nil {
@@ -97,6 +119,12 @@ func (m *DocumentSetVersionItem) GetVersionId()(*string) {
 func (m *DocumentSetVersionItem) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("itemId", m.GetItemId())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -131,6 +159,12 @@ func (m *DocumentSetVersionItem) SetAdditionalData(value map[string]interface{})
 func (m *DocumentSetVersionItem) SetItemId(value *string)() {
     if m != nil {
         m.itemId = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *DocumentSetVersionItem) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetTitle sets the title property value. The title of the item.

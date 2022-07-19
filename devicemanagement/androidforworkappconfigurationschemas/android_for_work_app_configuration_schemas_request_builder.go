@@ -70,7 +70,7 @@ func NewAndroidForWorkAppConfigurationSchemasRequestBuilder(rawUrl string, reque
     urlParams["request-raw-url"] = rawUrl
     return NewAndroidForWorkAppConfigurationSchemasRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *AndroidForWorkAppConfigurationSchemasRequestBuilder) Count()(*idf6491d66de81f5753db06b63da67cd4b5fde9c994a7d8ecd460f9d7832c0cc6.CountRequestBuilder) {
     return idf6491d66de81f5753db06b63da67cd4b5fde9c994a7d8ecd460f9d7832c0cc6.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

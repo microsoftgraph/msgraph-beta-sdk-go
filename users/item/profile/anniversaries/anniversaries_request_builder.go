@@ -70,7 +70,7 @@ func NewAnniversariesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee
     urlParams["request-raw-url"] = rawUrl
     return NewAnniversariesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *AnniversariesRequestBuilder) Count()(*id7bb722292a50ad28e66cf0518856c05aeda65f00cd0c6c4c9ecf34ba1658fdf.CountRequestBuilder) {
     return id7bb722292a50ad28e66cf0518856c05aeda65f00cd0c6c4c9ecf34ba1658fdf.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

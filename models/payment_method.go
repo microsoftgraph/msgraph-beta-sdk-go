@@ -20,6 +20,8 @@ func NewPaymentMethod()(*PaymentMethod) {
     m := &PaymentMethod{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.paymentMethod";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreatePaymentMethodFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

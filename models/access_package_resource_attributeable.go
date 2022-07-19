@@ -14,10 +14,12 @@ type AccessPackageResourceAttributeable interface {
     GetId()(*string)
     GetIsEditable()(*bool)
     GetIsPersistedOnAssignmentRemoval()(*bool)
+    GetOdataType()(*string)
     SetAttributeDestination(value AccessPackageResourceAttributeDestinationable)()
     SetAttributeName(value *string)()
     SetAttributeSource(value AccessPackageResourceAttributeSourceable)()
     SetId(value *string)()
     SetIsEditable(value *bool)()
     SetIsPersistedOnAssignmentRemoval(value *bool)()
+    SetOdataType(value *string)()
 }
