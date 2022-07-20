@@ -26,6 +26,8 @@ type WindowsFirewallRule struct {
     localPortRanges []string
     // Specifies the list of authorized local users for the app container. This is a string in Security Descriptor Definition Language (SDDL) format.
     localUserAuthorizations *string
+    // The OdataType property
+    odataType *string
     // The package family name of a Microsoft Store application that's affected by the firewall rule.
     packageFamilyName *string
     // Flags representing which network profile types apply to a firewall rule.
@@ -46,6 +48,8 @@ func NewWindowsFirewallRule()(*WindowsFirewallRule) {
     m := &WindowsFirewallRule{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.windowsFirewallRule";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateWindowsFirewallRuleFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -193,6 +197,16 @@ func (m *WindowsFirewallRule) GetFieldDeserializers()(map[string]func(i878a80d23
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["packageFamilyName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -313,6 +327,14 @@ func (m *WindowsFirewallRule) GetLocalUserAuthorizations()(*string) {
         return m.localUserAuthorizations
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *WindowsFirewallRule) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetPackageFamilyName gets the packageFamilyName property value. The package family name of a Microsoft Store application that's affected by the firewall rule.
 func (m *WindowsFirewallRule) GetPackageFamilyName()(*string) {
     if m == nil {
@@ -429,6 +451,12 @@ func (m *WindowsFirewallRule) Serialize(writer i878a80d2330e89d26896388a3f487eef
         }
     }
     {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err := writer.WriteStringValue("packageFamilyName", m.GetPackageFamilyName())
         if err != nil {
             return err
@@ -538,6 +566,12 @@ func (m *WindowsFirewallRule) SetLocalPortRanges(value []string)() {
 func (m *WindowsFirewallRule) SetLocalUserAuthorizations(value *string)() {
     if m != nil {
         m.localUserAuthorizations = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *WindowsFirewallRule) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetPackageFamilyName sets the packageFamilyName property value. The package family name of a Microsoft Store application that's affected by the firewall rule.

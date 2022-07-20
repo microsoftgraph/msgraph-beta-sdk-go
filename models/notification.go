@@ -28,6 +28,8 @@ func NewNotification()(*Notification) {
     m := &Notification{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.notification";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateNotificationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -25,6 +25,8 @@ func NewTenantSetupInfo()(*TenantSetupInfo) {
     m := &TenantSetupInfo{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.tenantSetupInfo";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateTenantSetupInfoFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

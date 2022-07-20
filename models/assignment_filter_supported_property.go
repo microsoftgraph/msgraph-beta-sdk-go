@@ -14,6 +14,8 @@ type AssignmentFilterSupportedProperty struct {
     isCollection *bool
     // Name of the property.
     name *string
+    // The OdataType property
+    odataType *string
     // Regex string to do validation on the property value.
     propertyRegexConstraint *string
     // List of all supported operators on this property.
@@ -26,6 +28,8 @@ func NewAssignmentFilterSupportedProperty()(*AssignmentFilterSupportedProperty) 
     m := &AssignmentFilterSupportedProperty{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.assignmentFilterSupportedProperty";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAssignmentFilterSupportedPropertyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -78,6 +82,16 @@ func (m *AssignmentFilterSupportedProperty) GetFieldDeserializers()(map[string]f
         }
         if val != nil {
             m.SetName(val)
+        }
+        return nil
+    }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
         }
         return nil
     }
@@ -137,6 +151,14 @@ func (m *AssignmentFilterSupportedProperty) GetName()(*string) {
         return m.name
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *AssignmentFilterSupportedProperty) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetPropertyRegexConstraint gets the propertyRegexConstraint property value. Regex string to do validation on the property value.
 func (m *AssignmentFilterSupportedProperty) GetPropertyRegexConstraint()(*string) {
     if m == nil {
@@ -177,6 +199,12 @@ func (m *AssignmentFilterSupportedProperty) Serialize(writer i878a80d2330e89d268
     }
     {
         err := writer.WriteStringValue("name", m.GetName())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -229,6 +257,12 @@ func (m *AssignmentFilterSupportedProperty) SetIsCollection(value *bool)() {
 func (m *AssignmentFilterSupportedProperty) SetName(value *string)() {
     if m != nil {
         m.name = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *AssignmentFilterSupportedProperty) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetPropertyRegexConstraint sets the propertyRegexConstraint property value. Regex string to do validation on the property value.

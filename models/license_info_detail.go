@@ -10,6 +10,8 @@ type LicenseInfoDetail struct {
     additionalData map[string]interface{}
     // The licenseType property
     licenseType *AzureADLicenseType
+    // The OdataType property
+    odataType *string
     // The totalAssignedCount property
     totalAssignedCount *int32
     // The totalLicenseCount property
@@ -22,6 +24,8 @@ func NewLicenseInfoDetail()(*LicenseInfoDetail) {
     m := &LicenseInfoDetail{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.licenseInfoDetail";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateLicenseInfoDetailFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -46,6 +50,16 @@ func (m *LicenseInfoDetail) GetFieldDeserializers()(map[string]func(i878a80d2330
         }
         if val != nil {
             m.SetLicenseType(val.(*AzureADLicenseType))
+        }
+        return nil
+    }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
         }
         return nil
     }
@@ -89,6 +103,14 @@ func (m *LicenseInfoDetail) GetLicenseType()(*AzureADLicenseType) {
         return m.licenseType
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *LicenseInfoDetail) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetTotalAssignedCount gets the totalAssignedCount property value. The totalAssignedCount property
 func (m *LicenseInfoDetail) GetTotalAssignedCount()(*int32) {
     if m == nil {
@@ -118,6 +140,12 @@ func (m *LicenseInfoDetail) Serialize(writer i878a80d2330e89d26896388a3f487eef27
     if m.GetLicenseType() != nil {
         cast := (*m.GetLicenseType()).String()
         err := writer.WriteStringValue("licenseType", &cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -158,6 +186,12 @@ func (m *LicenseInfoDetail) SetAdditionalData(value map[string]interface{})() {
 func (m *LicenseInfoDetail) SetLicenseType(value *AzureADLicenseType)() {
     if m != nil {
         m.licenseType = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *LicenseInfoDetail) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetTotalAssignedCount sets the totalAssignedCount property value. The totalAssignedCount property

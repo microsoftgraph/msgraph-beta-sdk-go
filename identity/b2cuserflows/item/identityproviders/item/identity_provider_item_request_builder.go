@@ -33,7 +33,7 @@ func NewIdentityProviderItemRequestBuilder(rawUrl string, requestAdapter i2ae418
     urlParams["request-raw-url"] = rawUrl
     return NewIdentityProviderItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Ref the ref property
+// Ref the Ref property
 func (m *IdentityProviderItemRequestBuilder) Ref()(*i38206d39ea5f422af2e9cd600d589c67ed3afc8b6dac7ef86b13c2c78850bddf.RefRequestBuilder) {
     return i38206d39ea5f422af2e9cd600d589c67ed3afc8b6dac7ef86b13c2c78850bddf.NewRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

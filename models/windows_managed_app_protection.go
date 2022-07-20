@@ -61,6 +61,8 @@ func NewWindowsManagedAppProtection()(*WindowsManagedAppProtection) {
     m := &WindowsManagedAppProtection{
         ManagedAppPolicy: *NewManagedAppPolicy(),
     }
+    odataTypeValue := "#microsoft.graph.windowsManagedAppProtection";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateWindowsManagedAppProtectionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

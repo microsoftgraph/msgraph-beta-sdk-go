@@ -12,6 +12,8 @@ type ChannelModerationSettings struct {
     allowNewMessageFromBots *bool
     // Indicates whether connectors are allowed to post messages.
     allowNewMessageFromConnectors *bool
+    // The OdataType property
+    odataType *string
     // Indicates who is allowed to reply to the teams channel. Possible values are: everyone, authorAndModerators, unknownFutureValue.
     replyRestriction *ReplyRestriction
     // Indicates who is allowed to post messages to teams channel. Possible values are: everyone, everyoneExceptGuests, moderators, unknownFutureValue.
@@ -22,6 +24,8 @@ func NewChannelModerationSettings()(*ChannelModerationSettings) {
     m := &ChannelModerationSettings{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.channelModerationSettings";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateChannelModerationSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -75,6 +79,16 @@ func (m *ChannelModerationSettings) GetFieldDeserializers()(map[string]func(i878
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["replyRestriction"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseReplyRestriction)
         if err != nil {
@@ -96,6 +110,14 @@ func (m *ChannelModerationSettings) GetFieldDeserializers()(map[string]func(i878
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *ChannelModerationSettings) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
 }
 // GetReplyRestriction gets the replyRestriction property value. Indicates who is allowed to reply to the teams channel. Possible values are: everyone, authorAndModerators, unknownFutureValue.
 func (m *ChannelModerationSettings) GetReplyRestriction()(*ReplyRestriction) {
@@ -123,6 +145,12 @@ func (m *ChannelModerationSettings) Serialize(writer i878a80d2330e89d26896388a3f
     }
     {
         err := writer.WriteBoolValue("allowNewMessageFromConnectors", m.GetAllowNewMessageFromConnectors())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -165,6 +193,12 @@ func (m *ChannelModerationSettings) SetAllowNewMessageFromBots(value *bool)() {
 func (m *ChannelModerationSettings) SetAllowNewMessageFromConnectors(value *bool)() {
     if m != nil {
         m.allowNewMessageFromConnectors = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *ChannelModerationSettings) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetReplyRestriction sets the replyRestriction property value. Indicates who is allowed to reply to the teams channel. Possible values are: everyone, authorAndModerators, unknownFutureValue.

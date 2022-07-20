@@ -7,7 +7,7 @@ import (
 // EmailContentThreatSubmission 
 type EmailContentThreatSubmission struct {
     EmailThreatSubmission
-    // The fileContent property
+    // Base64 encoded file content.
     fileContent *string
 }
 // NewEmailContentThreatSubmission instantiates a new EmailContentThreatSubmission and sets the default values.
@@ -15,6 +15,8 @@ func NewEmailContentThreatSubmission()(*EmailContentThreatSubmission) {
     m := &EmailContentThreatSubmission{
         EmailThreatSubmission: *NewEmailThreatSubmission(),
     }
+    odataTypeValue := "#microsoft.graph.security.emailContentThreatSubmission";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateEmailContentThreatSubmissionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -36,7 +38,7 @@ func (m *EmailContentThreatSubmission) GetFieldDeserializers()(map[string]func(i
     }
     return res
 }
-// GetFileContent gets the fileContent property value. The fileContent property
+// GetFileContent gets the fileContent property value. Base64 encoded file content.
 func (m *EmailContentThreatSubmission) GetFileContent()(*string) {
     if m == nil {
         return nil
@@ -58,7 +60,7 @@ func (m *EmailContentThreatSubmission) Serialize(writer i878a80d2330e89d26896388
     }
     return nil
 }
-// SetFileContent sets the fileContent property value. The fileContent property
+// SetFileContent sets the fileContent property value. Base64 encoded file content.
 func (m *EmailContentThreatSubmission) SetFileContent(value *string)() {
     if m != nil {
         m.fileContent = value

@@ -72,7 +72,7 @@ func NewNotebooksRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2633
     urlParams["request-raw-url"] = rawUrl
     return NewNotebooksRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *NotebooksRequestBuilder) Count()(*i19e59018d356110684d7b1f87f39ab0f94e288118dd13f9d1b0ef94a27c69c0d.CountRequestBuilder) {
     return i19e59018d356110684d7b1f87f39ab0f94e288118dd13f9d1b0ef94a27c69c0d.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

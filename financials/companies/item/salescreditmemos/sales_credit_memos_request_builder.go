@@ -70,7 +70,7 @@ func NewSalesCreditMemosRequestBuilder(rawUrl string, requestAdapter i2ae4187f7d
     urlParams["request-raw-url"] = rawUrl
     return NewSalesCreditMemosRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *SalesCreditMemosRequestBuilder) Count()(*ia900f94ddce36c893bb2a2923ec96eb28e638b88cde3ed83bb1d30821a9dffe9.CountRequestBuilder) {
     return ia900f94ddce36c893bb2a2923ec96eb28e638b88cde3ed83bb1d30821a9dffe9.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

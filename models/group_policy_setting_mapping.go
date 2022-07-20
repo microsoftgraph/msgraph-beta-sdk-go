@@ -53,6 +53,8 @@ func NewGroupPolicySettingMapping()(*GroupPolicySettingMapping) {
     m := &GroupPolicySettingMapping{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.groupPolicySettingMapping";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateGroupPolicySettingMappingFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

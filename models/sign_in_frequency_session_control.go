@@ -11,6 +11,8 @@ type SignInFrequencySessionControl struct {
     authenticationType *SignInFrequencyAuthenticationType
     // The possible values are timeBased, everyTime, unknownFutureValue.
     frequencyInterval *SignInFrequencyInterval
+    // Possible values are: days, hours, or null if frequencyInterval is everyTime .
+    type_escaped *SigninFrequencyType
     // The number of days or hours.
     value *int32
 }
@@ -19,6 +21,8 @@ func NewSignInFrequencySessionControl()(*SignInFrequencySessionControl) {
     m := &SignInFrequencySessionControl{
         ConditionalAccessSessionControl: *NewConditionalAccessSessionControl(),
     }
+    odataTypeValue := "#microsoft.graph.signInFrequencySessionControl";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateSignInFrequencySessionControlFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -56,6 +60,16 @@ func (m *SignInFrequencySessionControl) GetFieldDeserializers()(map[string]func(
         }
         return nil
     }
+    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseSigninFrequencyType)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetType(val.(*SigninFrequencyType))
+        }
+        return nil
+    }
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
@@ -74,6 +88,14 @@ func (m *SignInFrequencySessionControl) GetFrequencyInterval()(*SignInFrequencyI
         return nil
     } else {
         return m.frequencyInterval
+    }
+}
+// GetType gets the type property value. Possible values are: days, hours, or null if frequencyInterval is everyTime .
+func (m *SignInFrequencySessionControl) GetType()(*SigninFrequencyType) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
     }
 }
 // GetValue gets the value property value. The number of days or hours.
@@ -104,6 +126,13 @@ func (m *SignInFrequencySessionControl) Serialize(writer i878a80d2330e89d2689638
             return err
         }
     }
+    if m.GetType() != nil {
+        cast := (*m.GetType()).String()
+        err = writer.WriteStringValue("type", &cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteInt32Value("value", m.GetValue())
         if err != nil {
@@ -122,6 +151,12 @@ func (m *SignInFrequencySessionControl) SetAuthenticationType(value *SignInFrequ
 func (m *SignInFrequencySessionControl) SetFrequencyInterval(value *SignInFrequencyInterval)() {
     if m != nil {
         m.frequencyInterval = value
+    }
+}
+// SetType sets the type property value. Possible values are: days, hours, or null if frequencyInterval is everyTime .
+func (m *SignInFrequencySessionControl) SetType(value *SigninFrequencyType)() {
+    if m != nil {
+        m.type_escaped = value
     }
 }
 // SetValue sets the value property value. The number of days or hours.

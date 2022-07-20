@@ -31,11 +31,13 @@ type UserExperienceAnalyticsDeviceScope struct {
     // The unique identifier for a user device scope tag Id used for the creation of device scope configuration.
     valueObjectId *string
 }
-// NewUserExperienceAnalyticsDeviceScope instantiates a new UserExperienceAnalyticsDeviceScope and sets the default values.
+// NewUserExperienceAnalyticsDeviceScope instantiates a new userExperienceAnalyticsDeviceScope and sets the default values.
 func NewUserExperienceAnalyticsDeviceScope()(*UserExperienceAnalyticsDeviceScope) {
     m := &UserExperienceAnalyticsDeviceScope{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.userExperienceAnalyticsDeviceScope";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateUserExperienceAnalyticsDeviceScopeFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

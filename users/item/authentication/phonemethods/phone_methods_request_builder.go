@@ -70,7 +70,7 @@ func NewPhoneMethodsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2
     urlParams["request-raw-url"] = rawUrl
     return NewPhoneMethodsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *PhoneMethodsRequestBuilder) Count()(*i96e48cd5d3eecc8545b4329a91956d778616a5a0bea2327670f71e7ed998713a.CountRequestBuilder) {
     return i96e48cd5d3eecc8545b4329a91956d778616a5a0bea2327670f71e7ed998713a.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

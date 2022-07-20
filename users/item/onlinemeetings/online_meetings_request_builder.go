@@ -71,7 +71,7 @@ func NewOnlineMeetingsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7dae
     urlParams["request-raw-url"] = rawUrl
     return NewOnlineMeetingsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *OnlineMeetingsRequestBuilder) Count()(*id1b436cc765ed7317ff7cc69dafaa0629bf0e0ffd4077b26e573cf6970edccfb.CountRequestBuilder) {
     return id1b436cc765ed7317ff7cc69dafaa0629bf0e0ffd4077b26e573cf6970edccfb.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

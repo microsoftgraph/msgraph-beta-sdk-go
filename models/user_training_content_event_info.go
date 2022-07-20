@@ -15,6 +15,8 @@ type UserTrainingContentEventInfo struct {
     contentDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // IP address of the user for the training event.
     ipAddress *string
+    // The OdataType property
+    odataType *string
     // The operating system, platform, and device details of the user for the training event.
     osPlatformDeviceDetails *string
     // Potential improvement in security posture of the tenant after completion of the training by the user.
@@ -25,6 +27,8 @@ func NewUserTrainingContentEventInfo()(*UserTrainingContentEventInfo) {
     m := &UserTrainingContentEventInfo{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.userTrainingContentEventInfo";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateUserTrainingContentEventInfoFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -88,6 +92,16 @@ func (m *UserTrainingContentEventInfo) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["osPlatformDeviceDetails"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -116,6 +130,14 @@ func (m *UserTrainingContentEventInfo) GetIpAddress()(*string) {
         return nil
     } else {
         return m.ipAddress
+    }
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *UserTrainingContentEventInfo) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
     }
 }
 // GetOsPlatformDeviceDetails gets the osPlatformDeviceDetails property value. The operating system, platform, and device details of the user for the training event.
@@ -150,6 +172,12 @@ func (m *UserTrainingContentEventInfo) Serialize(writer i878a80d2330e89d26896388
     }
     {
         err := writer.WriteStringValue("ipAddress", m.GetIpAddress())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -196,6 +224,12 @@ func (m *UserTrainingContentEventInfo) SetContentDateTime(value *i336074805fc853
 func (m *UserTrainingContentEventInfo) SetIpAddress(value *string)() {
     if m != nil {
         m.ipAddress = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *UserTrainingContentEventInfo) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetOsPlatformDeviceDetails sets the osPlatformDeviceDetails property value. The operating system, platform, and device details of the user for the training event.

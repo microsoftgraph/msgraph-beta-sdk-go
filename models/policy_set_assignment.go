@@ -18,6 +18,8 @@ func NewPolicySetAssignment()(*PolicySetAssignment) {
     m := &PolicySetAssignment{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.policySetAssignment";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreatePolicySetAssignmentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

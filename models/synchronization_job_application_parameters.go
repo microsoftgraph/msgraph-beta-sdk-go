@@ -8,6 +8,8 @@ import (
 type SynchronizationJobApplicationParameters struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
+    // The OdataType property
+    odataType *string
     // The identifier of the synchronizationRule to be applied. This rule ID is defined in the schema for a given synchronization job or template.
     ruleId *string
     // The identifiers of one or more objects to which a synchronizationJob is to be applied.
@@ -18,6 +20,8 @@ func NewSynchronizationJobApplicationParameters()(*SynchronizationJobApplication
     m := &SynchronizationJobApplicationParameters{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.synchronizationJobApplicationParameters";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateSynchronizationJobApplicationParametersFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -35,6 +39,16 @@ func (m *SynchronizationJobApplicationParameters) GetAdditionalData()(map[string
 // GetFieldDeserializers the deserialization information for the current model
 func (m *SynchronizationJobApplicationParameters) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["ruleId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -61,6 +75,14 @@ func (m *SynchronizationJobApplicationParameters) GetFieldDeserializers()(map[st
     }
     return res
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *SynchronizationJobApplicationParameters) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetRuleId gets the ruleId property value. The identifier of the synchronizationRule to be applied. This rule ID is defined in the schema for a given synchronization job or template.
 func (m *SynchronizationJobApplicationParameters) GetRuleId()(*string) {
     if m == nil {
@@ -79,6 +101,12 @@ func (m *SynchronizationJobApplicationParameters) GetSubjects()([]Synchronizatio
 }
 // Serialize serializes information the current object
 func (m *SynchronizationJobApplicationParameters) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     {
         err := writer.WriteStringValue("ruleId", m.GetRuleId())
         if err != nil {
@@ -107,6 +135,12 @@ func (m *SynchronizationJobApplicationParameters) Serialize(writer i878a80d2330e
 func (m *SynchronizationJobApplicationParameters) SetAdditionalData(value map[string]interface{})() {
     if m != nil {
         m.additionalData = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *SynchronizationJobApplicationParameters) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetRuleId sets the ruleId property value. The identifier of the synchronizationRule to be applied. This rule ID is defined in the schema for a given synchronization job or template.

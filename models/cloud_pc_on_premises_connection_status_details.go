@@ -13,6 +13,8 @@ type CloudPcOnPremisesConnectionStatusDetails struct {
     endDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // All checks that are done on the connection.
     healthChecks []CloudPcOnPremisesConnectionHealthCheckable
+    // The OdataType property
+    odataType *string
     // The start time of the connection health check. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
     startDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
 }
@@ -21,6 +23,8 @@ func NewCloudPcOnPremisesConnectionStatusDetails()(*CloudPcOnPremisesConnectionS
     m := &CloudPcOnPremisesConnectionStatusDetails{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.cloudPcOnPremisesConnectionStatusDetails";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateCloudPcOnPremisesConnectionStatusDetailsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -70,6 +74,16 @@ func (m *CloudPcOnPremisesConnectionStatusDetails) GetFieldDeserializers()(map[s
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["startDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
@@ -88,6 +102,14 @@ func (m *CloudPcOnPremisesConnectionStatusDetails) GetHealthChecks()([]CloudPcOn
         return nil
     } else {
         return m.healthChecks
+    }
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *CloudPcOnPremisesConnectionStatusDetails) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
     }
 }
 // GetStartDateTime gets the startDateTime property value. The start time of the connection health check. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
@@ -112,6 +134,12 @@ func (m *CloudPcOnPremisesConnectionStatusDetails) Serialize(writer i878a80d2330
             cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
         }
         err := writer.WriteCollectionOfObjectValues("healthChecks", cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -146,6 +174,12 @@ func (m *CloudPcOnPremisesConnectionStatusDetails) SetEndDateTime(value *i336074
 func (m *CloudPcOnPremisesConnectionStatusDetails) SetHealthChecks(value []CloudPcOnPremisesConnectionHealthCheckable)() {
     if m != nil {
         m.healthChecks = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *CloudPcOnPremisesConnectionStatusDetails) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetStartDateTime sets the startDateTime property value. The start time of the connection health check. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.

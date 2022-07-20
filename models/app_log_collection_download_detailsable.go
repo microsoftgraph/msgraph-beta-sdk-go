@@ -11,7 +11,9 @@ type AppLogCollectionDownloadDetailsable interface {
     GetAppLogDecryptionAlgorithm()(*AppLogDecryptionAlgorithm)
     GetDecryptionKey()(*string)
     GetDownloadUrl()(*string)
+    GetOdataType()(*string)
     SetAppLogDecryptionAlgorithm(value *AppLogDecryptionAlgorithm)()
     SetDecryptionKey(value *string)()
     SetDownloadUrl(value *string)()
+    SetOdataType(value *string)()
 }

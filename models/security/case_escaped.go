@@ -6,7 +6,7 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
-// Case_escaped provides operations to manage the collection of activityStatistics entities.
+// Case_escaped provides operations to manage the collection of accessReviewDecision entities.
 type Case_escaped struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
     // The createdDateTime property
@@ -27,8 +27,8 @@ func NewCase_escaped()(*Case_escaped) {
     m := &Case_escaped{
         Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),
     }
-    odatatypeValue := "#microsoft.graph.security.case";
-    m.SetType(&odatatypeValue);
+    odataTypeValue := "#microsoft.graph.security.case";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateCase_escapedFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

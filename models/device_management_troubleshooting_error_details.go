@@ -14,6 +14,8 @@ type DeviceManagementTroubleshootingErrorDetails struct {
     failure *string
     // The detailed description of what went wrong.
     failureDetails *string
+    // The OdataType property
+    odataType *string
     // The detailed description of how to remediate this issue.
     remediation *string
     // Links to helpful documentation about this failure.
@@ -24,6 +26,8 @@ func NewDeviceManagementTroubleshootingErrorDetails()(*DeviceManagementTroublesh
     m := &DeviceManagementTroubleshootingErrorDetails{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.deviceManagementTroubleshootingErrorDetails";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDeviceManagementTroubleshootingErrorDetailsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -95,6 +99,16 @@ func (m *DeviceManagementTroubleshootingErrorDetails) GetFieldDeserializers()(ma
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["remediation"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -120,6 +134,14 @@ func (m *DeviceManagementTroubleshootingErrorDetails) GetFieldDeserializers()(ma
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *DeviceManagementTroubleshootingErrorDetails) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
 }
 // GetRemediation gets the remediation property value. The detailed description of how to remediate this issue.
 func (m *DeviceManagementTroubleshootingErrorDetails) GetRemediation()(*string) {
@@ -153,6 +175,12 @@ func (m *DeviceManagementTroubleshootingErrorDetails) Serialize(writer i878a80d2
     }
     {
         err := writer.WriteStringValue("failureDetails", m.GetFailureDetails())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -203,6 +231,12 @@ func (m *DeviceManagementTroubleshootingErrorDetails) SetFailure(value *string)(
 func (m *DeviceManagementTroubleshootingErrorDetails) SetFailureDetails(value *string)() {
     if m != nil {
         m.failureDetails = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *DeviceManagementTroubleshootingErrorDetails) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetRemediation sets the remediation property value. The detailed description of how to remediate this issue.

@@ -12,6 +12,8 @@ type UserExperienceAnalyticsAutopilotDevicesSummary struct {
     devicesNotAutopilotRegistered *int32
     // The count of intune devices not autopilot profile assigned.
     devicesWithoutAutopilotProfileAssigned *int32
+    // The OdataType property
+    odataType *string
     // The count of windows 10 devices that are Intune and Comanaged.
     totalWindows10DevicesWithoutTenantAttached *int32
 }
@@ -20,6 +22,8 @@ func NewUserExperienceAnalyticsAutopilotDevicesSummary()(*UserExperienceAnalytic
     m := &UserExperienceAnalyticsAutopilotDevicesSummary{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.userExperienceAnalyticsAutopilotDevicesSummary";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateUserExperienceAnalyticsAutopilotDevicesSummaryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -73,6 +77,16 @@ func (m *UserExperienceAnalyticsAutopilotDevicesSummary) GetFieldDeserializers()
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["totalWindows10DevicesWithoutTenantAttached"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
@@ -84,6 +98,14 @@ func (m *UserExperienceAnalyticsAutopilotDevicesSummary) GetFieldDeserializers()
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *UserExperienceAnalyticsAutopilotDevicesSummary) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
 }
 // GetTotalWindows10DevicesWithoutTenantAttached gets the totalWindows10DevicesWithoutTenantAttached property value. The count of windows 10 devices that are Intune and Comanaged.
 func (m *UserExperienceAnalyticsAutopilotDevicesSummary) GetTotalWindows10DevicesWithoutTenantAttached()(*int32) {
@@ -103,6 +125,12 @@ func (m *UserExperienceAnalyticsAutopilotDevicesSummary) Serialize(writer i878a8
     }
     {
         err := writer.WriteInt32Value("devicesWithoutAutopilotProfileAssigned", m.GetDevicesWithoutAutopilotProfileAssigned())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -137,6 +165,12 @@ func (m *UserExperienceAnalyticsAutopilotDevicesSummary) SetDevicesNotAutopilotR
 func (m *UserExperienceAnalyticsAutopilotDevicesSummary) SetDevicesWithoutAutopilotProfileAssigned(value *int32)() {
     if m != nil {
         m.devicesWithoutAutopilotProfileAssigned = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *UserExperienceAnalyticsAutopilotDevicesSummary) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetTotalWindows10DevicesWithoutTenantAttached sets the totalWindows10DevicesWithoutTenantAttached property value. The count of windows 10 devices that are Intune and Comanaged.

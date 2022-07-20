@@ -19,6 +19,8 @@ func NewAccessReviewInstanceDecisionItemServicePrincipalTarget()(*AccessReviewIn
     m := &AccessReviewInstanceDecisionItemServicePrincipalTarget{
         AccessReviewInstanceDecisionItemTarget: *NewAccessReviewInstanceDecisionItemTarget(),
     }
+    odataTypeValue := "#microsoft.graph.accessReviewInstanceDecisionItemServicePrincipalTarget";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAccessReviewInstanceDecisionItemServicePrincipalTargetFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

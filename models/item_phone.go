@@ -11,12 +11,16 @@ type ItemPhone struct {
     displayName *string
     // Phone number provided by the user.
     number *string
+    // The type property
+    type_escaped *PhoneType
 }
 // NewItemPhone instantiates a new ItemPhone and sets the default values.
 func NewItemPhone()(*ItemPhone) {
     m := &ItemPhone{
         ItemFacet: *NewItemFacet(),
     }
+    odataTypeValue := "#microsoft.graph.itemPhone";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateItemPhoneFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -54,6 +58,16 @@ func (m *ItemPhone) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
         }
         return nil
     }
+    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParsePhoneType)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetType(val.(*PhoneType))
+        }
+        return nil
+    }
     return res
 }
 // GetNumber gets the number property value. Phone number provided by the user.
@@ -62,6 +76,14 @@ func (m *ItemPhone) GetNumber()(*string) {
         return nil
     } else {
         return m.number
+    }
+}
+// GetType gets the type property value. The type property
+func (m *ItemPhone) GetType()(*PhoneType) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
     }
 }
 // Serialize serializes information the current object
@@ -82,6 +104,13 @@ func (m *ItemPhone) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
             return err
         }
     }
+    if m.GetType() != nil {
+        cast := (*m.GetType()).String()
+        err = writer.WriteStringValue("type", &cast)
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetDisplayName sets the displayName property value. Friendly name the user has assigned this phone number.
@@ -94,5 +123,11 @@ func (m *ItemPhone) SetDisplayName(value *string)() {
 func (m *ItemPhone) SetNumber(value *string)() {
     if m != nil {
         m.number = value
+    }
+}
+// SetType sets the type property value. The type property
+func (m *ItemPhone) SetType(value *PhoneType)() {
+    if m != nil {
+        m.type_escaped = value
     }
 }

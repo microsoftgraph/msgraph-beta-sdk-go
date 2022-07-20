@@ -71,7 +71,7 @@ func NewDirectoryRoleTemplatesRequestBuilder(rawUrl string, requestAdapter i2ae4
     urlParams["request-raw-url"] = rawUrl
     return NewDirectoryRoleTemplatesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *DirectoryRoleTemplatesRequestBuilder) Count()(*i3f8034c8f6f2b58468d7d887066b5af2d36cab6daa3877702f6e2742abf25509.CountRequestBuilder) {
     return i3f8034c8f6f2b58468d7d887066b5af2d36cab6daa3877702f6e2742abf25509.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

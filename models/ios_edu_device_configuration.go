@@ -19,6 +19,8 @@ func NewIosEduDeviceConfiguration()(*IosEduDeviceConfiguration) {
     m := &IosEduDeviceConfiguration{
         DeviceConfiguration: *NewDeviceConfiguration(),
     }
+    odataTypeValue := "#microsoft.graph.iosEduDeviceConfiguration";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateIosEduDeviceConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

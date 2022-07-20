@@ -20,6 +20,7 @@ type TeamworkSystemConfigurationable interface {
     GetLockPin()(*string)
     GetLoggingLevel()(*string)
     GetNetworkConfiguration()(TeamworkNetworkConfigurationable)
+    GetOdataType()(*string)
     SetDateTimeConfiguration(value TeamworkDateTimeConfigurationable)()
     SetDefaultPassword(value *string)()
     SetDeviceLockTimeout(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)()
@@ -32,4 +33,5 @@ type TeamworkSystemConfigurationable interface {
     SetLockPin(value *string)()
     SetLoggingLevel(value *string)()
     SetNetworkConfiguration(value TeamworkNetworkConfigurationable)()
+    SetOdataType(value *string)()
 }

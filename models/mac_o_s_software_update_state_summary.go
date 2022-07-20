@@ -26,6 +26,8 @@ func NewMacOSSoftwareUpdateStateSummary()(*MacOSSoftwareUpdateStateSummary) {
     m := &MacOSSoftwareUpdateStateSummary{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.macOSSoftwareUpdateStateSummary";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateMacOSSoftwareUpdateStateSummaryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -11,11 +11,13 @@ type OathTokenMetadataable interface {
     GetEnabled()(*bool)
     GetManufacturer()(*string)
     GetManufacturerProperties()([]KeyValueable)
+    GetOdataType()(*string)
     GetSerialNumber()(*string)
     GetTokenType()(*string)
     SetEnabled(value *bool)()
     SetManufacturer(value *string)()
     SetManufacturerProperties(value []KeyValueable)()
+    SetOdataType(value *string)()
     SetSerialNumber(value *string)()
     SetTokenType(value *string)()
 }

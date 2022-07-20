@@ -14,6 +14,8 @@ type ManagementTemplateDetailedInfo struct {
     displayName *string
     // The unique identifier for the management template. Required. Read-only.
     managementTemplateId *string
+    // The OdataType property
+    odataType *string
     // The version property
     version *int32
 }
@@ -22,6 +24,8 @@ func NewManagementTemplateDetailedInfo()(*ManagementTemplateDetailedInfo) {
     m := &ManagementTemplateDetailedInfo{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.managedTenants.managementTemplateDetailedInfo";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateManagementTemplateDetailedInfoFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -85,6 +89,16 @@ func (m *ManagementTemplateDetailedInfo) GetFieldDeserializers()(map[string]func
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["version"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
@@ -103,6 +117,14 @@ func (m *ManagementTemplateDetailedInfo) GetManagementTemplateId()(*string) {
         return nil
     } else {
         return m.managementTemplateId
+    }
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *ManagementTemplateDetailedInfo) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
     }
 }
 // GetVersion gets the version property value. The version property
@@ -130,6 +152,12 @@ func (m *ManagementTemplateDetailedInfo) Serialize(writer i878a80d2330e89d268963
     }
     {
         err := writer.WriteStringValue("managementTemplateId", m.GetManagementTemplateId())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -170,6 +198,12 @@ func (m *ManagementTemplateDetailedInfo) SetDisplayName(value *string)() {
 func (m *ManagementTemplateDetailedInfo) SetManagementTemplateId(value *string)() {
     if m != nil {
         m.managementTemplateId = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *ManagementTemplateDetailedInfo) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetVersion sets the version property value. The version property

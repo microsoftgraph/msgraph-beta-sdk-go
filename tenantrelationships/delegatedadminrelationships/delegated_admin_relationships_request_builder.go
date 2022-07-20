@@ -70,7 +70,7 @@ func NewDelegatedAdminRelationshipsRequestBuilder(rawUrl string, requestAdapter 
     urlParams["request-raw-url"] = rawUrl
     return NewDelegatedAdminRelationshipsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *DelegatedAdminRelationshipsRequestBuilder) Count()(*i7e168a519753dbcc911f4b8b1951c67958759e64523c016bc900f8ebc2a03e63.CountRequestBuilder) {
     return i7e168a519753dbcc911f4b8b1951c67958759e64523c016bc900f8ebc2a03e63.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

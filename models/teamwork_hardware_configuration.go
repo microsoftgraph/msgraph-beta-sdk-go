@@ -12,6 +12,8 @@ type TeamworkHardwareConfiguration struct {
     compute TeamworkPeripheralable
     // The hdmiIngest property
     hdmiIngest TeamworkPeripheralable
+    // The OdataType property
+    odataType *string
     // The CPU model on the device.
     processorModel *string
 }
@@ -20,6 +22,8 @@ func NewTeamworkHardwareConfiguration()(*TeamworkHardwareConfiguration) {
     m := &TeamworkHardwareConfiguration{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.teamworkHardwareConfiguration";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateTeamworkHardwareConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -65,6 +69,16 @@ func (m *TeamworkHardwareConfiguration) GetFieldDeserializers()(map[string]func(
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["processorModel"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -85,6 +99,14 @@ func (m *TeamworkHardwareConfiguration) GetHdmiIngest()(TeamworkPeripheralable) 
         return m.hdmiIngest
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *TeamworkHardwareConfiguration) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetProcessorModel gets the processorModel property value. The CPU model on the device.
 func (m *TeamworkHardwareConfiguration) GetProcessorModel()(*string) {
     if m == nil {
@@ -103,6 +125,12 @@ func (m *TeamworkHardwareConfiguration) Serialize(writer i878a80d2330e89d2689638
     }
     {
         err := writer.WriteObjectValue("hdmiIngest", m.GetHdmiIngest())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -137,6 +165,12 @@ func (m *TeamworkHardwareConfiguration) SetCompute(value TeamworkPeripheralable)
 func (m *TeamworkHardwareConfiguration) SetHdmiIngest(value TeamworkPeripheralable)() {
     if m != nil {
         m.hdmiIngest = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *TeamworkHardwareConfiguration) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetProcessorModel sets the processorModel property value. The CPU model on the device.

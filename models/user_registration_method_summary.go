@@ -8,6 +8,8 @@ import (
 type UserRegistrationMethodSummary struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
+    // The OdataType property
+    odataType *string
     // Total number of users in the tenant.
     totalUserCount *int64
     // Number of users registered for each authentication method.
@@ -22,6 +24,8 @@ func NewUserRegistrationMethodSummary()(*UserRegistrationMethodSummary) {
     m := &UserRegistrationMethodSummary{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.userRegistrationMethodSummary";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateUserRegistrationMethodSummaryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -39,6 +43,16 @@ func (m *UserRegistrationMethodSummary) GetAdditionalData()(map[string]interface
 // GetFieldDeserializers the deserialization information for the current model
 func (m *UserRegistrationMethodSummary) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["totalUserCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt64Value()
         if err != nil {
@@ -85,6 +99,14 @@ func (m *UserRegistrationMethodSummary) GetFieldDeserializers()(map[string]func(
     }
     return res
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *UserRegistrationMethodSummary) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetTotalUserCount gets the totalUserCount property value. Total number of users in the tenant.
 func (m *UserRegistrationMethodSummary) GetTotalUserCount()(*int64) {
     if m == nil {
@@ -119,6 +141,12 @@ func (m *UserRegistrationMethodSummary) GetUserTypes()(*IncludedUserTypes) {
 }
 // Serialize serializes information the current object
 func (m *UserRegistrationMethodSummary) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     {
         err := writer.WriteInt64Value("totalUserCount", m.GetTotalUserCount())
         if err != nil {
@@ -161,6 +189,12 @@ func (m *UserRegistrationMethodSummary) Serialize(writer i878a80d2330e89d2689638
 func (m *UserRegistrationMethodSummary) SetAdditionalData(value map[string]interface{})() {
     if m != nil {
         m.additionalData = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *UserRegistrationMethodSummary) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetTotalUserCount sets the totalUserCount property value. Total number of users in the tenant.

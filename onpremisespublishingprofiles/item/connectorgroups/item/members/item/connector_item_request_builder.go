@@ -33,7 +33,7 @@ func NewConnectorItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee
     urlParams["request-raw-url"] = rawUrl
     return NewConnectorItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Ref the ref property
+// Ref the Ref property
 func (m *ConnectorItemRequestBuilder) Ref()(*i827f6d4387b03580057ce94a8e380577fc5238383ad0c9d34c6d8868e4a8d15e.RefRequestBuilder) {
     return i827f6d4387b03580057ce94a8e380577fc5238383ad0c9d34c6d8868e4a8d15e.NewRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

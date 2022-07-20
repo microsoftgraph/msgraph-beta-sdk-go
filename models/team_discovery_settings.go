@@ -8,6 +8,8 @@ import (
 type TeamDiscoverySettings struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
+    // The OdataType property
+    odataType *string
     // If set to true, the team is visible via search and suggestions from the Teams client.
     showInTeamsSearchAndSuggestions *bool
 }
@@ -16,6 +18,8 @@ func NewTeamDiscoverySettings()(*TeamDiscoverySettings) {
     m := &TeamDiscoverySettings{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.teamDiscoverySettings";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateTeamDiscoverySettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -33,6 +37,16 @@ func (m *TeamDiscoverySettings) GetAdditionalData()(map[string]interface{}) {
 // GetFieldDeserializers the deserialization information for the current model
 func (m *TeamDiscoverySettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["showInTeamsSearchAndSuggestions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
@@ -45,6 +59,14 @@ func (m *TeamDiscoverySettings) GetFieldDeserializers()(map[string]func(i878a80d
     }
     return res
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *TeamDiscoverySettings) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetShowInTeamsSearchAndSuggestions gets the showInTeamsSearchAndSuggestions property value. If set to true, the team is visible via search and suggestions from the Teams client.
 func (m *TeamDiscoverySettings) GetShowInTeamsSearchAndSuggestions()(*bool) {
     if m == nil {
@@ -55,6 +77,12 @@ func (m *TeamDiscoverySettings) GetShowInTeamsSearchAndSuggestions()(*bool) {
 }
 // Serialize serializes information the current object
 func (m *TeamDiscoverySettings) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     {
         err := writer.WriteBoolValue("showInTeamsSearchAndSuggestions", m.GetShowInTeamsSearchAndSuggestions())
         if err != nil {
@@ -73,6 +101,12 @@ func (m *TeamDiscoverySettings) Serialize(writer i878a80d2330e89d26896388a3f487e
 func (m *TeamDiscoverySettings) SetAdditionalData(value map[string]interface{})() {
     if m != nil {
         m.additionalData = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *TeamDiscoverySettings) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetShowInTeamsSearchAndSuggestions sets the showInTeamsSearchAndSuggestions property value. If set to true, the team is visible via search and suggestions from the Teams client.

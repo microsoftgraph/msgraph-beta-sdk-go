@@ -13,6 +13,8 @@ func NewDeviceHealthScriptHourlySchedule()(*DeviceHealthScriptHourlySchedule) {
     m := &DeviceHealthScriptHourlySchedule{
         DeviceHealthScriptRunSchedule: *NewDeviceHealthScriptRunSchedule(),
     }
+    odataTypeValue := "#microsoft.graph.deviceHealthScriptHourlySchedule";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDeviceHealthScriptHourlyScheduleFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

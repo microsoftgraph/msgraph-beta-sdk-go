@@ -17,6 +17,8 @@ func NewAndroidManagedStoreAppAssignmentSettings()(*AndroidManagedStoreAppAssign
     m := &AndroidManagedStoreAppAssignmentSettings{
         MobileAppAssignmentSettings: *NewMobileAppAssignmentSettings(),
     }
+    odataTypeValue := "#microsoft.graph.androidManagedStoreAppAssignmentSettings";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAndroidManagedStoreAppAssignmentSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

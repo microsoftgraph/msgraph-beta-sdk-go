@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// BookingCustomer 
+// BookingCustomer represents a customer of the business.
 type BookingCustomer struct {
     BookingPerson
     // Addresses associated with the customer, including home, business and other addresses.
@@ -12,11 +12,13 @@ type BookingCustomer struct {
     // Phone numbers associated with the customer, including home, business and mobile numbers.
     phones []Phoneable
 }
-// NewBookingCustomer instantiates a new BookingCustomer and sets the default values.
+// NewBookingCustomer instantiates a new bookingCustomer and sets the default values.
 func NewBookingCustomer()(*BookingCustomer) {
     m := &BookingCustomer{
         BookingPerson: *NewBookingPerson(),
     }
+    odataTypeValue := "#microsoft.graph.bookingCustomer";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateBookingCustomerFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

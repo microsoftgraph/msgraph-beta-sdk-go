@@ -70,7 +70,7 @@ func NewPasswordlessMicrosoftAuthenticatorMethodsRequestBuilder(rawUrl string, r
     urlParams["request-raw-url"] = rawUrl
     return NewPasswordlessMicrosoftAuthenticatorMethodsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *PasswordlessMicrosoftAuthenticatorMethodsRequestBuilder) Count()(*i9265aa7b6a9721ed01e5afd8dc599669d2d72de8f0831449b61ba5f76c7e899d.CountRequestBuilder) {
     return i9265aa7b6a9721ed01e5afd8dc599669d2d72de8f0831449b61ba5f76c7e899d.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

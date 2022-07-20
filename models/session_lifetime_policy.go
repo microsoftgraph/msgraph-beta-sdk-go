@@ -12,12 +12,16 @@ type SessionLifetimePolicy struct {
     detail *string
     // If a conditional access session management policy required the user to authenticate in this sign-in event, this field describes the policy type that required authentication. The possible values are: rememberMultifactorAuthenticationOnTrustedDevices, tenantTokenLifetimePolicy, audienceTokenLifetimePolicy, signInFrequencyPeriodicReauthentication, ngcMfa, signInFrequencyEveryTime, unknownFutureValue.
     expirationRequirement *ExpirationRequirement
+    // The OdataType property
+    odataType *string
 }
 // NewSessionLifetimePolicy instantiates a new sessionLifetimePolicy and sets the default values.
 func NewSessionLifetimePolicy()(*SessionLifetimePolicy) {
     m := &SessionLifetimePolicy{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.sessionLifetimePolicy";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateSessionLifetimePolicyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -71,7 +75,25 @@ func (m *SessionLifetimePolicy) GetFieldDeserializers()(map[string]func(i878a80d
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *SessionLifetimePolicy) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
 }
 // Serialize serializes information the current object
 func (m *SessionLifetimePolicy) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -84,6 +106,12 @@ func (m *SessionLifetimePolicy) Serialize(writer i878a80d2330e89d26896388a3f487e
     if m.GetExpirationRequirement() != nil {
         cast := (*m.GetExpirationRequirement()).String()
         err := writer.WriteStringValue("expirationRequirement", &cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -112,5 +140,11 @@ func (m *SessionLifetimePolicy) SetDetail(value *string)() {
 func (m *SessionLifetimePolicy) SetExpirationRequirement(value *ExpirationRequirement)() {
     if m != nil {
         m.expirationRequirement = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *SessionLifetimePolicy) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }

@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AttributeSet provides operations to manage the collection of activityStatistics entities.
+// AttributeSet provides operations to manage the collection of accessReview entities.
 type AttributeSet struct {
     Entity
     // Description of the attribute set. Can be up to 128 characters long and include Unicode characters. Can be changed later.
@@ -17,6 +17,8 @@ func NewAttributeSet()(*AttributeSet) {
     m := &AttributeSet{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.attributeSet";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAttributeSetFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

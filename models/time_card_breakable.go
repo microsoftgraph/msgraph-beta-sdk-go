@@ -11,9 +11,11 @@ type TimeCardBreakable interface {
     GetBreakId()(*string)
     GetEnd()(TimeCardEventable)
     GetNotes()(ItemBodyable)
+    GetOdataType()(*string)
     GetStart()(TimeCardEventable)
     SetBreakId(value *string)()
     SetEnd(value TimeCardEventable)()
     SetNotes(value ItemBodyable)()
+    SetOdataType(value *string)()
     SetStart(value TimeCardEventable)()
 }

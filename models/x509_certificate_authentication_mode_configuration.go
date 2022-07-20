@@ -8,6 +8,8 @@ import (
 type X509CertificateAuthenticationModeConfiguration struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
+    // The OdataType property
+    odataType *string
     // Rules are configured in addition to the authentication mode to bind a specific x509CertificateRuleType to an x509CertificateAuthenticationMode. For example, bind the policyOID with identifier 1.32.132.343 to x509CertificateMultiFactor authentication mode.
     rules []X509CertificateRuleable
     // The type of strong authentication mode. The possible values are: x509CertificateSingleFactor, x509CertificateMultiFactor, unknownFutureValue.
@@ -18,6 +20,8 @@ func NewX509CertificateAuthenticationModeConfiguration()(*X509CertificateAuthent
     m := &X509CertificateAuthenticationModeConfiguration{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.x509CertificateAuthenticationModeConfiguration";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateX509CertificateAuthenticationModeConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -35,6 +39,16 @@ func (m *X509CertificateAuthenticationModeConfiguration) GetAdditionalData()(map
 // GetFieldDeserializers the deserialization information for the current model
 func (m *X509CertificateAuthenticationModeConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["rules"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateX509CertificateRuleFromDiscriminatorValue)
         if err != nil {
@@ -61,6 +75,14 @@ func (m *X509CertificateAuthenticationModeConfiguration) GetFieldDeserializers()
     }
     return res
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *X509CertificateAuthenticationModeConfiguration) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetRules gets the rules property value. Rules are configured in addition to the authentication mode to bind a specific x509CertificateRuleType to an x509CertificateAuthenticationMode. For example, bind the policyOID with identifier 1.32.132.343 to x509CertificateMultiFactor authentication mode.
 func (m *X509CertificateAuthenticationModeConfiguration) GetRules()([]X509CertificateRuleable) {
     if m == nil {
@@ -79,6 +101,12 @@ func (m *X509CertificateAuthenticationModeConfiguration) GetX509CertificateAuthe
 }
 // Serialize serializes information the current object
 func (m *X509CertificateAuthenticationModeConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetRules() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetRules()))
         for i, v := range m.GetRules() {
@@ -108,6 +136,12 @@ func (m *X509CertificateAuthenticationModeConfiguration) Serialize(writer i878a8
 func (m *X509CertificateAuthenticationModeConfiguration) SetAdditionalData(value map[string]interface{})() {
     if m != nil {
         m.additionalData = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *X509CertificateAuthenticationModeConfiguration) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetRules sets the rules property value. Rules are configured in addition to the authentication mode to bind a specific x509CertificateRuleType to an x509CertificateAuthenticationMode. For example, bind the policyOID with identifier 1.32.132.343 to x509CertificateMultiFactor authentication mode.

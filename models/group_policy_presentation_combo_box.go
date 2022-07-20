@@ -21,6 +21,8 @@ func NewGroupPolicyPresentationComboBox()(*GroupPolicyPresentationComboBox) {
     m := &GroupPolicyPresentationComboBox{
         GroupPolicyPresentation: *NewGroupPolicyPresentation(),
     }
+    odataTypeValue := "#microsoft.graph.groupPolicyPresentationComboBox";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateGroupPolicyPresentationComboBoxFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

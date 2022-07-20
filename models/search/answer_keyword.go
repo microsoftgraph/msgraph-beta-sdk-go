@@ -12,6 +12,8 @@ type AnswerKeyword struct {
     keywords []string
     // If true, indicates that the search term contains similar words to the keywords that should trigger the search answer.
     matchSimilarKeywords *bool
+    // The OdataType property
+    odataType *string
     // Unique keywords that will guarantee the search answer is triggered.
     reservedKeywords []string
 }
@@ -20,6 +22,8 @@ func NewAnswerKeyword()(*AnswerKeyword) {
     m := &AnswerKeyword{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.search.answerKeyword";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAnswerKeywordFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -61,6 +65,16 @@ func (m *AnswerKeyword) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["reservedKeywords"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
@@ -93,6 +107,14 @@ func (m *AnswerKeyword) GetMatchSimilarKeywords()(*bool) {
         return m.matchSimilarKeywords
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *AnswerKeyword) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetReservedKeywords gets the reservedKeywords property value. Unique keywords that will guarantee the search answer is triggered.
 func (m *AnswerKeyword) GetReservedKeywords()([]string) {
     if m == nil {
@@ -111,6 +133,12 @@ func (m *AnswerKeyword) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
     }
     {
         err := writer.WriteBoolValue("matchSimilarKeywords", m.GetMatchSimilarKeywords())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -145,6 +173,12 @@ func (m *AnswerKeyword) SetKeywords(value []string)() {
 func (m *AnswerKeyword) SetMatchSimilarKeywords(value *bool)() {
     if m != nil {
         m.matchSimilarKeywords = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *AnswerKeyword) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetReservedKeywords sets the reservedKeywords property value. Unique keywords that will guarantee the search answer is triggered.

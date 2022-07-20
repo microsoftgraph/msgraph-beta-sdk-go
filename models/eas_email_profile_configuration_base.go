@@ -21,8 +21,8 @@ func NewEasEmailProfileConfigurationBase()(*EasEmailProfileConfigurationBase) {
     m := &EasEmailProfileConfigurationBase{
         DeviceConfiguration: *NewDeviceConfiguration(),
     }
-    odatatypeValue := "#microsoft.graph.easEmailProfileConfigurationBase";
-    m.SetType(&odatatypeValue);
+    odataTypeValue := "#microsoft.graph.easEmailProfileConfigurationBase";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateEasEmailProfileConfigurationBaseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

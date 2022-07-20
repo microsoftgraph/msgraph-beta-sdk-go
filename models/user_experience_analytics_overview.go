@@ -10,11 +10,13 @@ type UserExperienceAnalyticsOverview struct {
     // The user experience analytics insights.
     insights []UserExperienceAnalyticsInsightable
 }
-// NewUserExperienceAnalyticsOverview instantiates a new UserExperienceAnalyticsOverview and sets the default values.
+// NewUserExperienceAnalyticsOverview instantiates a new userExperienceAnalyticsOverview and sets the default values.
 func NewUserExperienceAnalyticsOverview()(*UserExperienceAnalyticsOverview) {
     m := &UserExperienceAnalyticsOverview{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.userExperienceAnalyticsOverview";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateUserExperienceAnalyticsOverviewFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

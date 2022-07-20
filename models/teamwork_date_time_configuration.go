@@ -10,6 +10,8 @@ type TeamworkDateTimeConfiguration struct {
     additionalData map[string]interface{}
     // The date format for the device.
     dateFormat *string
+    // The OdataType property
+    odataType *string
     // The time of the day when the device is turned off.
     officeHoursEndTime *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.TimeOnly
     // The time of the day when the device is turned on.
@@ -24,6 +26,8 @@ func NewTeamworkDateTimeConfiguration()(*TeamworkDateTimeConfiguration) {
     m := &TeamworkDateTimeConfiguration{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.teamworkDateTimeConfiguration";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateTeamworkDateTimeConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -56,6 +60,16 @@ func (m *TeamworkDateTimeConfiguration) GetFieldDeserializers()(map[string]func(
         }
         if val != nil {
             m.SetDateFormat(val)
+        }
+        return nil
+    }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
         }
         return nil
     }
@@ -101,6 +115,14 @@ func (m *TeamworkDateTimeConfiguration) GetFieldDeserializers()(map[string]func(
     }
     return res
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *TeamworkDateTimeConfiguration) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetOfficeHoursEndTime gets the officeHoursEndTime property value. The time of the day when the device is turned off.
 func (m *TeamworkDateTimeConfiguration) GetOfficeHoursEndTime()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.TimeOnly) {
     if m == nil {
@@ -137,6 +159,12 @@ func (m *TeamworkDateTimeConfiguration) GetTimeZone()(*string) {
 func (m *TeamworkDateTimeConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("dateFormat", m.GetDateFormat())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -183,6 +211,12 @@ func (m *TeamworkDateTimeConfiguration) SetAdditionalData(value map[string]inter
 func (m *TeamworkDateTimeConfiguration) SetDateFormat(value *string)() {
     if m != nil {
         m.dateFormat = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *TeamworkDateTimeConfiguration) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetOfficeHoursEndTime sets the officeHoursEndTime property value. The time of the day when the device is turned off.

@@ -41,11 +41,13 @@ type Chat struct {
     // The URL for the chat in Microsoft Teams. The URL should be treated as an opaque blob, and not parsed. Read-only.
     webUrl *string
 }
-// NewChat instantiates a new Chat and sets the default values.
+// NewChat instantiates a new chat and sets the default values.
 func NewChat()(*Chat) {
     m := &Chat{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.chat";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateChatFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -23,6 +23,8 @@ func NewCalendarPermission()(*CalendarPermission) {
     m := &CalendarPermission{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.calendarPermission";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateCalendarPermissionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

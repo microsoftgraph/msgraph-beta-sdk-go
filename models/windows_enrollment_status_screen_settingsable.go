@@ -15,6 +15,7 @@ type WindowsEnrollmentStatusScreenSettingsable interface {
     GetCustomErrorMessage()(*string)
     GetHideInstallationProgress()(*bool)
     GetInstallProgressTimeoutInMinutes()(*int32)
+    GetOdataType()(*string)
     SetAllowDeviceUseBeforeProfileAndAppInstallComplete(value *bool)()
     SetAllowDeviceUseOnInstallFailure(value *bool)()
     SetAllowLogCollectionOnInstallFailure(value *bool)()
@@ -22,4 +23,5 @@ type WindowsEnrollmentStatusScreenSettingsable interface {
     SetCustomErrorMessage(value *string)()
     SetHideInstallationProgress(value *bool)()
     SetInstallProgressTimeoutInMinutes(value *int32)()
+    SetOdataType(value *string)()
 }

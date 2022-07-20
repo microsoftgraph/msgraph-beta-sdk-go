@@ -70,7 +70,7 @@ func NewFederationConfigurationRequestBuilder(rawUrl string, requestAdapter i2ae
     urlParams["request-raw-url"] = rawUrl
     return NewFederationConfigurationRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *FederationConfigurationRequestBuilder) Count()(*id870850ef5174af71604f883c640b113e53dfa198c6c5b449840479873c6d825.CountRequestBuilder) {
     return id870850ef5174af71604f883c640b113e53dfa198c6c5b449840479873c6d825.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

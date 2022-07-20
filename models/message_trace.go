@@ -30,6 +30,8 @@ func NewMessageTrace()(*MessageTrace) {
     m := &MessageTrace{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.messageTrace";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateMessageTraceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

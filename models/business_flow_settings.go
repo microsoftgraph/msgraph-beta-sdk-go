@@ -15,6 +15,8 @@ func NewBusinessFlowSettings()(*BusinessFlowSettings) {
     m := &BusinessFlowSettings{
         AccessReviewSettings: *NewAccessReviewSettings(),
     }
+    odataTypeValue := "#microsoft.graph.businessFlowSettings";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateBusinessFlowSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

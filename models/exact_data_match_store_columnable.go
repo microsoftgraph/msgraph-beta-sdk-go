@@ -12,8 +12,10 @@ type ExactDataMatchStoreColumnable interface {
     GetIsCaseInsensitive()(*bool)
     GetIsSearchable()(*bool)
     GetName()(*string)
+    GetOdataType()(*string)
     SetIgnoredDelimiters(value []string)()
     SetIsCaseInsensitive(value *bool)()
     SetIsSearchable(value *bool)()
     SetName(value *string)()
+    SetOdataType(value *string)()
 }

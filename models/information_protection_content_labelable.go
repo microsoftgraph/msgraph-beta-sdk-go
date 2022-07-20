@@ -12,7 +12,9 @@ type InformationProtectionContentLabelable interface {
     GetAssignmentMethod()(*AssignmentMethod)
     GetCreationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetLabel()(LabelDetailsable)
+    GetOdataType()(*string)
     SetAssignmentMethod(value *AssignmentMethod)()
     SetCreationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetLabel(value LabelDetailsable)()
+    SetOdataType(value *string)()
 }

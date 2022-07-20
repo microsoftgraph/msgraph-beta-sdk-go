@@ -10,6 +10,8 @@ type EvaluateLabelJobResultGroup struct {
     additionalData map[string]interface{}
     // The automatic property
     automatic EvaluateLabelJobResultable
+    // The OdataType property
+    odataType *string
     // The recommended property
     recommended EvaluateLabelJobResultable
 }
@@ -18,6 +20,8 @@ func NewEvaluateLabelJobResultGroup()(*EvaluateLabelJobResultGroup) {
     m := &EvaluateLabelJobResultGroup{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.evaluateLabelJobResultGroup";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateEvaluateLabelJobResultGroupFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -53,6 +57,16 @@ func (m *EvaluateLabelJobResultGroup) GetFieldDeserializers()(map[string]func(i8
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["recommended"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateEvaluateLabelJobResultFromDiscriminatorValue)
         if err != nil {
@@ -64,6 +78,14 @@ func (m *EvaluateLabelJobResultGroup) GetFieldDeserializers()(map[string]func(i8
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *EvaluateLabelJobResultGroup) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
 }
 // GetRecommended gets the recommended property value. The recommended property
 func (m *EvaluateLabelJobResultGroup) GetRecommended()(EvaluateLabelJobResultable) {
@@ -77,6 +99,12 @@ func (m *EvaluateLabelJobResultGroup) GetRecommended()(EvaluateLabelJobResultabl
 func (m *EvaluateLabelJobResultGroup) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
         err := writer.WriteObjectValue("automatic", m.GetAutomatic())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -105,6 +133,12 @@ func (m *EvaluateLabelJobResultGroup) SetAdditionalData(value map[string]interfa
 func (m *EvaluateLabelJobResultGroup) SetAutomatic(value EvaluateLabelJobResultable)() {
     if m != nil {
         m.automatic = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *EvaluateLabelJobResultGroup) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetRecommended sets the recommended property value. The recommended property

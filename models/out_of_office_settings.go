@@ -12,12 +12,16 @@ type OutOfOfficeSettings struct {
     isOutOfOffice *bool
     // The out of office message that the user configured on Outlook client (Automatic Replies (Out of Office)) or the Teams client (Schedule out of office).
     message *string
+    // The OdataType property
+    odataType *string
 }
 // NewOutOfOfficeSettings instantiates a new outOfOfficeSettings and sets the default values.
 func NewOutOfOfficeSettings()(*OutOfOfficeSettings) {
     m := &OutOfOfficeSettings{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.outOfOfficeSettings";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateOutOfOfficeSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -55,6 +59,16 @@ func (m *OutOfOfficeSettings) GetFieldDeserializers()(map[string]func(i878a80d23
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetIsOutOfOffice gets the isOutOfOffice property value. True if either:It is currently in the out of office time window configured on the Outlook or Teams client.There is currently an event on the user's calendar that's marked as Show as Out of OfficeOtherwise, false.
@@ -73,6 +87,14 @@ func (m *OutOfOfficeSettings) GetMessage()(*string) {
         return m.message
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *OutOfOfficeSettings) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // Serialize serializes information the current object
 func (m *OutOfOfficeSettings) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
@@ -83,6 +105,12 @@ func (m *OutOfOfficeSettings) Serialize(writer i878a80d2330e89d26896388a3f487eef
     }
     {
         err := writer.WriteStringValue("message", m.GetMessage())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -111,5 +139,11 @@ func (m *OutOfOfficeSettings) SetIsOutOfOffice(value *bool)() {
 func (m *OutOfOfficeSettings) SetMessage(value *string)() {
     if m != nil {
         m.message = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *OutOfOfficeSettings) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }

@@ -70,7 +70,7 @@ func NewGroupPolicyObjectFilesRequestBuilder(rawUrl string, requestAdapter i2ae4
     urlParams["request-raw-url"] = rawUrl
     return NewGroupPolicyObjectFilesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *GroupPolicyObjectFilesRequestBuilder) Count()(*i5b2adef82e9e5a993f1a01c9f048b1807d0335708c9e9153bc73c7a32ff5ef2f.CountRequestBuilder) {
     return i5b2adef82e9e5a993f1a01c9f048b1807d0335708c9e9153bc73c7a32ff5ef2f.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

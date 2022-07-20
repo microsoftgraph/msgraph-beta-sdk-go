@@ -17,6 +17,8 @@ func NewAndroidDeviceOwnerImportedPFXCertificateProfile()(*AndroidDeviceOwnerImp
     m := &AndroidDeviceOwnerImportedPFXCertificateProfile{
         AndroidDeviceOwnerCertificateProfileBase: *NewAndroidDeviceOwnerCertificateProfileBase(),
     }
+    odataTypeValue := "#microsoft.graph.androidDeviceOwnerImportedPFXCertificateProfile";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAndroidDeviceOwnerImportedPFXCertificateProfileFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

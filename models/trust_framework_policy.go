@@ -13,6 +13,8 @@ func NewTrustFrameworkPolicy()(*TrustFrameworkPolicy) {
     m := &TrustFrameworkPolicy{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.trustFrameworkPolicy";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateTrustFrameworkPolicyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

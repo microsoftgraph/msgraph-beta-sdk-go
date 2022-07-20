@@ -70,7 +70,7 @@ func NewMobilityManagementPoliciesRequestBuilder(rawUrl string, requestAdapter i
     urlParams["request-raw-url"] = rawUrl
     return NewMobilityManagementPoliciesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *MobilityManagementPoliciesRequestBuilder) Count()(*i9e809ca615d1881daa43580730b984811d4ab6738ba555ed32b7cfda3f0dab6e.CountRequestBuilder) {
     return i9e809ca615d1881daa43580730b984811d4ab6738ba555ed32b7cfda3f0dab6e.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

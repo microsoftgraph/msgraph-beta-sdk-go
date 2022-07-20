@@ -15,6 +15,8 @@ func NewDeliveryOptimizationMaxCacheSizeAbsolute()(*DeliveryOptimizationMaxCache
     m := &DeliveryOptimizationMaxCacheSizeAbsolute{
         DeliveryOptimizationMaxCacheSize: *NewDeliveryOptimizationMaxCacheSize(),
     }
+    odataTypeValue := "#microsoft.graph.deliveryOptimizationMaxCacheSizeAbsolute";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDeliveryOptimizationMaxCacheSizeAbsoluteFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -10,6 +10,8 @@ type BroadcastMeetingCaptionSettings struct {
     additionalData map[string]interface{}
     // Indicates whether caption is enabled for this Teams live event.
     isCaptionEnabled *bool
+    // The OdataType property
+    odataType *string
     // The spoken language.
     spokenLanguage *string
     // The translation languages (choose up to 6).
@@ -20,6 +22,8 @@ func NewBroadcastMeetingCaptionSettings()(*BroadcastMeetingCaptionSettings) {
     m := &BroadcastMeetingCaptionSettings{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.broadcastMeetingCaptionSettings";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateBroadcastMeetingCaptionSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -44,6 +48,16 @@ func (m *BroadcastMeetingCaptionSettings) GetFieldDeserializers()(map[string]fun
         }
         if val != nil {
             m.SetIsCaptionEnabled(val)
+        }
+        return nil
+    }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
         }
         return nil
     }
@@ -81,6 +95,14 @@ func (m *BroadcastMeetingCaptionSettings) GetIsCaptionEnabled()(*bool) {
         return m.isCaptionEnabled
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *BroadcastMeetingCaptionSettings) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetSpokenLanguage gets the spokenLanguage property value. The spoken language.
 func (m *BroadcastMeetingCaptionSettings) GetSpokenLanguage()(*string) {
     if m == nil {
@@ -101,6 +123,12 @@ func (m *BroadcastMeetingCaptionSettings) GetTranslationLanguages()([]string) {
 func (m *BroadcastMeetingCaptionSettings) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
         err := writer.WriteBoolValue("isCaptionEnabled", m.GetIsCaptionEnabled())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -135,6 +163,12 @@ func (m *BroadcastMeetingCaptionSettings) SetAdditionalData(value map[string]int
 func (m *BroadcastMeetingCaptionSettings) SetIsCaptionEnabled(value *bool)() {
     if m != nil {
         m.isCaptionEnabled = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *BroadcastMeetingCaptionSettings) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetSpokenLanguage sets the spokenLanguage property value. The spoken language.

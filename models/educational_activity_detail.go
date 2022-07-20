@@ -24,6 +24,8 @@ type EducationalActivityDetail struct {
     grade *string
     // Additional notes the user has provided.
     notes *string
+    // The OdataType property
+    odataType *string
     // Link to the degree or program page.
     webUrl *string
 }
@@ -32,6 +34,8 @@ func NewEducationalActivityDetail()(*EducationalActivityDetail) {
     m := &EducationalActivityDetail{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.educationalActivityDetail";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateEducationalActivityDetailFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -181,6 +185,16 @@ func (m *EducationalActivityDetail) GetFieldDeserializers()(map[string]func(i878
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["webUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -215,6 +229,14 @@ func (m *EducationalActivityDetail) GetNotes()(*string) {
         return nil
     } else {
         return m.notes
+    }
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *EducationalActivityDetail) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
     }
 }
 // GetWebUrl gets the webUrl property value. Link to the degree or program page.
@@ -271,6 +293,12 @@ func (m *EducationalActivityDetail) Serialize(writer i878a80d2330e89d26896388a3f
     }
     {
         err := writer.WriteStringValue("notes", m.GetNotes())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -341,6 +369,12 @@ func (m *EducationalActivityDetail) SetGrade(value *string)() {
 func (m *EducationalActivityDetail) SetNotes(value *string)() {
     if m != nil {
         m.notes = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *EducationalActivityDetail) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetWebUrl sets the webUrl property value. Link to the degree or program page.

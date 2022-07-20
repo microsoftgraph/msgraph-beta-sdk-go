@@ -31,6 +31,8 @@ func NewWindows10EasEmailProfileConfiguration()(*Windows10EasEmailProfileConfigu
     m := &Windows10EasEmailProfileConfiguration{
         EasEmailProfileConfigurationBase: *NewEasEmailProfileConfigurationBase(),
     }
+    odataTypeValue := "#microsoft.graph.windows10EasEmailProfileConfiguration";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateWindows10EasEmailProfileConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

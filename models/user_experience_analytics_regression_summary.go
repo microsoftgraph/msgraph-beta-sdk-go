@@ -14,11 +14,13 @@ type UserExperienceAnalyticsRegressionSummary struct {
     // The metric values for the user experience analytics operating system regression.
     operatingSystemRegression []UserExperienceAnalyticsMetricable
 }
-// NewUserExperienceAnalyticsRegressionSummary instantiates a new UserExperienceAnalyticsRegressionSummary and sets the default values.
+// NewUserExperienceAnalyticsRegressionSummary instantiates a new userExperienceAnalyticsRegressionSummary and sets the default values.
 func NewUserExperienceAnalyticsRegressionSummary()(*UserExperienceAnalyticsRegressionSummary) {
     m := &UserExperienceAnalyticsRegressionSummary{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.userExperienceAnalyticsRegressionSummary";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateUserExperienceAnalyticsRegressionSummaryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

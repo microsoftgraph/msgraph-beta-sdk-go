@@ -12,6 +12,8 @@ type RequestorSettings struct {
     additionalData map[string]interface{}
     // The users who are allowed to request on this policy, which can be singleUser, groupMembers, and connectedOrganizationMembers.
     allowedRequestors []UserSetable
+    // The OdataType property
+    odataType *string
     // Who can request. One of NoSubjects, SpecificDirectorySubjects, SpecificConnectedOrganizationSubjects, AllConfiguredConnectedOrganizationSubjects, AllExistingConnectedOrganizationSubjects, AllExistingDirectoryMemberUsers, AllExistingDirectorySubjects or AllExternalSubjects.
     scopeType *string
 }
@@ -20,6 +22,8 @@ func NewRequestorSettings()(*RequestorSettings) {
     m := &RequestorSettings{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.requestorSettings";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateRequestorSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -77,6 +81,16 @@ func (m *RequestorSettings) GetFieldDeserializers()(map[string]func(i878a80d2330
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["scopeType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -88,6 +102,14 @@ func (m *RequestorSettings) GetFieldDeserializers()(map[string]func(i878a80d2330
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *RequestorSettings) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
 }
 // GetScopeType gets the scopeType property value. Who can request. One of NoSubjects, SpecificDirectorySubjects, SpecificConnectedOrganizationSubjects, AllConfiguredConnectedOrganizationSubjects, AllExistingConnectedOrganizationSubjects, AllExistingDirectoryMemberUsers, AllExistingDirectorySubjects or AllExternalSubjects.
 func (m *RequestorSettings) GetScopeType()(*string) {
@@ -111,6 +133,12 @@ func (m *RequestorSettings) Serialize(writer i878a80d2330e89d26896388a3f487eef27
             cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
         }
         err := writer.WriteCollectionOfObjectValues("allowedRequestors", cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -145,6 +173,12 @@ func (m *RequestorSettings) SetAdditionalData(value map[string]interface{})() {
 func (m *RequestorSettings) SetAllowedRequestors(value []UserSetable)() {
     if m != nil {
         m.allowedRequestors = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *RequestorSettings) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetScopeType sets the scopeType property value. Who can request. One of NoSubjects, SpecificDirectorySubjects, SpecificConnectedOrganizationSubjects, AllConfiguredConnectedOrganizationSubjects, AllExistingConnectedOrganizationSubjects, AllExistingDirectoryMemberUsers, AllExistingDirectorySubjects or AllExternalSubjects.

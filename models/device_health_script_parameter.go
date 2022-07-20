@@ -16,16 +16,16 @@ type DeviceHealthScriptParameter struct {
     isRequired *bool
     // The name of the param
     name *string
-    // The type property
-    type_escaped *string
+    // The OdataType property
+    odataType *string
 }
 // NewDeviceHealthScriptParameter instantiates a new deviceHealthScriptParameter and sets the default values.
 func NewDeviceHealthScriptParameter()(*DeviceHealthScriptParameter) {
     m := &DeviceHealthScriptParameter{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odatatypeValue := "#microsoft.graph.deviceHealthScriptParameter";
-    m.SetType(&odatatypeValue);
+    odataTypeValue := "#microsoft.graph.deviceHealthScriptParameter";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDeviceHealthScriptParameterFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -128,7 +128,7 @@ func (m *DeviceHealthScriptParameter) GetFieldDeserializers()(map[string]func(i8
             return err
         }
         if val != nil {
-            m.SetType(val)
+            m.SetOdataType(val)
         }
         return nil
     }
@@ -150,12 +150,12 @@ func (m *DeviceHealthScriptParameter) GetName()(*string) {
         return m.name
     }
 }
-// GetType gets the @odata.type property value. The type property
-func (m *DeviceHealthScriptParameter) GetType()(*string) {
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *DeviceHealthScriptParameter) GetOdataType()(*string) {
     if m == nil {
         return nil
     } else {
-        return m.type_escaped
+        return m.odataType
     }
 }
 // Serialize serializes information the current object
@@ -185,7 +185,7 @@ func (m *DeviceHealthScriptParameter) Serialize(writer i878a80d2330e89d26896388a
         }
     }
     {
-        err := writer.WriteStringValue("@odata.type", m.GetType())
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -228,9 +228,9 @@ func (m *DeviceHealthScriptParameter) SetName(value *string)() {
         m.name = value
     }
 }
-// SetType sets the @odata.type property value. The type property
-func (m *DeviceHealthScriptParameter) SetType(value *string)() {
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *DeviceHealthScriptParameter) SetOdataType(value *string)() {
     if m != nil {
-        m.type_escaped = value
+        m.odataType = value
     }
 }

@@ -15,6 +15,8 @@ func NewDeviceHealthScriptBooleanParameter()(*DeviceHealthScriptBooleanParameter
     m := &DeviceHealthScriptBooleanParameter{
         DeviceHealthScriptParameter: *NewDeviceHealthScriptParameter(),
     }
+    odataTypeValue := "#microsoft.graph.deviceHealthScriptBooleanParameter";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDeviceHealthScriptBooleanParameterFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

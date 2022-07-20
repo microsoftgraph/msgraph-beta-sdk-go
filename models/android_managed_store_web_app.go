@@ -13,6 +13,8 @@ func NewAndroidManagedStoreWebApp()(*AndroidManagedStoreWebApp) {
     m := &AndroidManagedStoreWebApp{
         AndroidManagedStoreApp: *NewAndroidManagedStoreApp(),
     }
+    odataTypeValue := "#microsoft.graph.androidManagedStoreWebApp";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAndroidManagedStoreWebAppFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

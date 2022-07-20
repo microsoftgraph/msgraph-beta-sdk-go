@@ -11,7 +11,9 @@ type AssignedTrainingInfoable interface {
     GetAssignedUserCount()(*int32)
     GetCompletedUserCount()(*int32)
     GetDisplayName()(*string)
+    GetOdataType()(*string)
     SetAssignedUserCount(value *int32)()
     SetCompletedUserCount(value *int32)()
     SetDisplayName(value *string)()
+    SetOdataType(value *string)()
 }

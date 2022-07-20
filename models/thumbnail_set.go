@@ -21,6 +21,8 @@ func NewThumbnailSet()(*ThumbnailSet) {
     m := &ThumbnailSet{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.thumbnailSet";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateThumbnailSetFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

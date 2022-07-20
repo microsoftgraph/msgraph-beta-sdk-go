@@ -15,6 +15,8 @@ func NewAzureADDeviceRegistrationError()(*AzureADDeviceRegistrationError) {
     m := &AzureADDeviceRegistrationError{
         UpdatableAssetError: *NewUpdatableAssetError(),
     }
+    odataTypeValue := "#microsoft.graph.windowsUpdates.azureADDeviceRegistrationError";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAzureADDeviceRegistrationErrorFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

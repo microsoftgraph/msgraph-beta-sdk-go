@@ -12,12 +12,16 @@ type AssignmentFilterTypeAndEvaluationResult struct {
     assignmentFilterType *DeviceAndAppManagementAssignmentFilterType
     // Supported evaluation results for filter.
     evaluationResult *AssignmentFilterEvaluationResult
+    // The OdataType property
+    odataType *string
 }
 // NewAssignmentFilterTypeAndEvaluationResult instantiates a new assignmentFilterTypeAndEvaluationResult and sets the default values.
 func NewAssignmentFilterTypeAndEvaluationResult()(*AssignmentFilterTypeAndEvaluationResult) {
     m := &AssignmentFilterTypeAndEvaluationResult{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.assignmentFilterTypeAndEvaluationResult";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAssignmentFilterTypeAndEvaluationResultFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -71,7 +75,25 @@ func (m *AssignmentFilterTypeAndEvaluationResult) GetFieldDeserializers()(map[st
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *AssignmentFilterTypeAndEvaluationResult) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
 }
 // Serialize serializes information the current object
 func (m *AssignmentFilterTypeAndEvaluationResult) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -85,6 +107,12 @@ func (m *AssignmentFilterTypeAndEvaluationResult) Serialize(writer i878a80d2330e
     if m.GetEvaluationResult() != nil {
         cast := (*m.GetEvaluationResult()).String()
         err := writer.WriteStringValue("evaluationResult", &cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -113,5 +141,11 @@ func (m *AssignmentFilterTypeAndEvaluationResult) SetAssignmentFilterType(value 
 func (m *AssignmentFilterTypeAndEvaluationResult) SetEvaluationResult(value *AssignmentFilterEvaluationResult)() {
     if m != nil {
         m.evaluationResult = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *AssignmentFilterTypeAndEvaluationResult) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }

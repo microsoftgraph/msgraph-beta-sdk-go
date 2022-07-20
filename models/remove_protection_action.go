@@ -13,6 +13,8 @@ func NewRemoveProtectionAction()(*RemoveProtectionAction) {
     m := &RemoveProtectionAction{
         InformationProtectionAction: *NewInformationProtectionAction(),
     }
+    odataTypeValue := "#microsoft.graph.removeProtectionAction";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateRemoveProtectionActionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

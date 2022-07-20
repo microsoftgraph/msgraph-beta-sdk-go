@@ -10,6 +10,8 @@ type OfficeConfiguration struct {
     additionalData map[string]interface{}
     // List of office Client configuration.
     clientConfigurations []OfficeClientConfigurationable
+    // The OdataType property
+    odataType *string
     // List of office Client check-in status.
     tenantCheckinStatuses []OfficeClientCheckinStatusable
     // Entity that describes tenant check-in statues
@@ -20,6 +22,8 @@ func NewOfficeConfiguration()(*OfficeConfiguration) {
     m := &OfficeConfiguration{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.officeConfiguration";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateOfficeConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -59,6 +63,16 @@ func (m *OfficeConfiguration) GetFieldDeserializers()(map[string]func(i878a80d23
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["tenantCheckinStatuses"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateOfficeClientCheckinStatusFromDiscriminatorValue)
         if err != nil {
@@ -85,6 +99,14 @@ func (m *OfficeConfiguration) GetFieldDeserializers()(map[string]func(i878a80d23
     }
     return res
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *OfficeConfiguration) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetTenantCheckinStatuses gets the tenantCheckinStatuses property value. List of office Client check-in status.
 func (m *OfficeConfiguration) GetTenantCheckinStatuses()([]OfficeClientCheckinStatusable) {
     if m == nil {
@@ -109,6 +131,12 @@ func (m *OfficeConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef
             cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
         }
         err := writer.WriteCollectionOfObjectValues("clientConfigurations", cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -147,6 +175,12 @@ func (m *OfficeConfiguration) SetAdditionalData(value map[string]interface{})() 
 func (m *OfficeConfiguration) SetClientConfigurations(value []OfficeClientConfigurationable)() {
     if m != nil {
         m.clientConfigurations = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *OfficeConfiguration) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetTenantCheckinStatuses sets the tenantCheckinStatuses property value. List of office Client check-in status.

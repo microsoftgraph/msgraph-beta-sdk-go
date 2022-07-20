@@ -12,6 +12,8 @@ type DeviceEnrollmentPlatformRestriction struct {
     blockedManufacturers []string
     // Collection of blocked Skus.
     blockedSkus []string
+    // The OdataType property
+    odataType *string
     // Max OS version supported
     osMaximumVersion *string
     // Min OS version supported
@@ -26,6 +28,8 @@ func NewDeviceEnrollmentPlatformRestriction()(*DeviceEnrollmentPlatformRestricti
     m := &DeviceEnrollmentPlatformRestriction{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.deviceEnrollmentPlatformRestriction";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDeviceEnrollmentPlatformRestrictionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -87,6 +91,16 @@ func (m *DeviceEnrollmentPlatformRestriction) GetFieldDeserializers()(map[string
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["osMaximumVersion"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -128,6 +142,14 @@ func (m *DeviceEnrollmentPlatformRestriction) GetFieldDeserializers()(map[string
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *DeviceEnrollmentPlatformRestriction) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
 }
 // GetOsMaximumVersion gets the osMaximumVersion property value. Max OS version supported
 func (m *DeviceEnrollmentPlatformRestriction) GetOsMaximumVersion()(*string) {
@@ -171,6 +193,12 @@ func (m *DeviceEnrollmentPlatformRestriction) Serialize(writer i878a80d2330e89d2
     }
     if m.GetBlockedSkus() != nil {
         err := writer.WriteCollectionOfStringValues("blockedSkus", m.GetBlockedSkus())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -223,6 +251,12 @@ func (m *DeviceEnrollmentPlatformRestriction) SetBlockedManufacturers(value []st
 func (m *DeviceEnrollmentPlatformRestriction) SetBlockedSkus(value []string)() {
     if m != nil {
         m.blockedSkus = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *DeviceEnrollmentPlatformRestriction) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetOsMaximumVersion sets the osMaximumVersion property value. Max OS version supported

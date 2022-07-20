@@ -45,6 +45,8 @@ func NewAndroidWorkProfileVpnConfiguration()(*AndroidWorkProfileVpnConfiguration
     m := &AndroidWorkProfileVpnConfiguration{
         DeviceConfiguration: *NewDeviceConfiguration(),
     }
+    odataTypeValue := "#microsoft.graph.androidWorkProfileVpnConfiguration";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAndroidWorkProfileVpnConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -31,6 +31,8 @@ func NewWindows81SCEPCertificateProfile()(*Windows81SCEPCertificateProfile) {
     m := &Windows81SCEPCertificateProfile{
         Windows81CertificateProfileBase: *NewWindows81CertificateProfileBase(),
     }
+    odataTypeValue := "#microsoft.graph.windows81SCEPCertificateProfile";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateWindows81SCEPCertificateProfileFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

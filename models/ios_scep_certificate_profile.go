@@ -33,6 +33,8 @@ func NewIosScepCertificateProfile()(*IosScepCertificateProfile) {
     m := &IosScepCertificateProfile{
         IosCertificateProfileBase: *NewIosCertificateProfileBase(),
     }
+    odataTypeValue := "#microsoft.graph.iosScepCertificateProfile";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateIosScepCertificateProfileFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

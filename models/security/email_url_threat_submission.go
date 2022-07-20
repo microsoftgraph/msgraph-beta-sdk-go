@@ -7,7 +7,7 @@ import (
 // EmailUrlThreatSubmission 
 type EmailUrlThreatSubmission struct {
     EmailThreatSubmission
-    // The messageUrl property
+    // Specifies the url of the message to be submitted.
     messageUrl *string
 }
 // NewEmailUrlThreatSubmission instantiates a new EmailUrlThreatSubmission and sets the default values.
@@ -15,6 +15,8 @@ func NewEmailUrlThreatSubmission()(*EmailUrlThreatSubmission) {
     m := &EmailUrlThreatSubmission{
         EmailThreatSubmission: *NewEmailThreatSubmission(),
     }
+    odataTypeValue := "#microsoft.graph.security.emailUrlThreatSubmission";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateEmailUrlThreatSubmissionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -36,7 +38,7 @@ func (m *EmailUrlThreatSubmission) GetFieldDeserializers()(map[string]func(i878a
     }
     return res
 }
-// GetMessageUrl gets the messageUrl property value. The messageUrl property
+// GetMessageUrl gets the messageUrl property value. Specifies the url of the message to be submitted.
 func (m *EmailUrlThreatSubmission) GetMessageUrl()(*string) {
     if m == nil {
         return nil
@@ -58,7 +60,7 @@ func (m *EmailUrlThreatSubmission) Serialize(writer i878a80d2330e89d26896388a3f4
     }
     return nil
 }
-// SetMessageUrl sets the messageUrl property value. The messageUrl property
+// SetMessageUrl sets the messageUrl property value. Specifies the url of the message to be submitted.
 func (m *EmailUrlThreatSubmission) SetMessageUrl(value *string)() {
     if m != nil {
         m.messageUrl = value

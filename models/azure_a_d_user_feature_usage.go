@@ -28,6 +28,8 @@ func NewAzureADUserFeatureUsage()(*AzureADUserFeatureUsage) {
     m := &AzureADUserFeatureUsage{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.azureADUserFeatureUsage";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAzureADUserFeatureUsageFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -13,6 +13,8 @@ type ItemActivityTimeSet struct {
     lastRecordedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // When the activity was observed to take place.
     observedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
+    // The OdataType property
+    odataType *string
     // When the observation was recorded on the service.
     recordedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
 }
@@ -21,6 +23,8 @@ func NewItemActivityTimeSet()(*ItemActivityTimeSet) {
     m := &ItemActivityTimeSet{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.itemActivityTimeSet";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateItemActivityTimeSetFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -58,6 +62,16 @@ func (m *ItemActivityTimeSet) GetFieldDeserializers()(map[string]func(i878a80d23
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["recordedDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
@@ -86,6 +100,14 @@ func (m *ItemActivityTimeSet) GetObservedDateTime()(*i336074805fc853987abe6f7fe3
         return m.observedDateTime
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *ItemActivityTimeSet) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetRecordedDateTime gets the recordedDateTime property value. When the observation was recorded on the service.
 func (m *ItemActivityTimeSet) GetRecordedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
@@ -104,6 +126,12 @@ func (m *ItemActivityTimeSet) Serialize(writer i878a80d2330e89d26896388a3f487eef
     }
     {
         err := writer.WriteTimeValue("observedDateTime", m.GetObservedDateTime())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -138,6 +166,12 @@ func (m *ItemActivityTimeSet) SetLastRecordedDateTime(value *i336074805fc853987a
 func (m *ItemActivityTimeSet) SetObservedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     if m != nil {
         m.observedDateTime = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *ItemActivityTimeSet) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetRecordedDateTime sets the recordedDateTime property value. When the observation was recorded on the service.

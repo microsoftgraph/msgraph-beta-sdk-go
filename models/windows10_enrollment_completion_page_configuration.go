@@ -35,6 +35,8 @@ func NewWindows10EnrollmentCompletionPageConfiguration()(*Windows10EnrollmentCom
     m := &Windows10EnrollmentCompletionPageConfiguration{
         DeviceEnrollmentConfiguration: *NewDeviceEnrollmentConfiguration(),
     }
+    odataTypeValue := "#microsoft.graph.windows10EnrollmentCompletionPageConfiguration";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateWindows10EnrollmentCompletionPageConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

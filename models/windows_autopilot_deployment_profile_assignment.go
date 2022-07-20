@@ -19,6 +19,8 @@ func NewWindowsAutopilotDeploymentProfileAssignment()(*WindowsAutopilotDeploymen
     m := &WindowsAutopilotDeploymentProfileAssignment{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.windowsAutopilotDeploymentProfileAssignment";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateWindowsAutopilotDeploymentProfileAssignmentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

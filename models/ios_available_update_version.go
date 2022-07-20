@@ -11,6 +11,8 @@ type IosAvailableUpdateVersion struct {
     additionalData map[string]interface{}
     // The expiration date of the update.
     expirationDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
+    // The OdataType property
+    odataType *string
     // The posting date of the update.
     postingDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The version of the update.
@@ -23,6 +25,8 @@ func NewIosAvailableUpdateVersion()(*IosAvailableUpdateVersion) {
     m := &IosAvailableUpdateVersion{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.iosAvailableUpdateVersion";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateIosAvailableUpdateVersionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -55,6 +59,16 @@ func (m *IosAvailableUpdateVersion) GetFieldDeserializers()(map[string]func(i878
         }
         if val != nil {
             m.SetExpirationDateTime(val)
+        }
+        return nil
+    }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
         }
         return nil
     }
@@ -94,6 +108,14 @@ func (m *IosAvailableUpdateVersion) GetFieldDeserializers()(map[string]func(i878
     }
     return res
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *IosAvailableUpdateVersion) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetPostingDateTime gets the postingDateTime property value. The posting date of the update.
 func (m *IosAvailableUpdateVersion) GetPostingDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
@@ -122,6 +144,12 @@ func (m *IosAvailableUpdateVersion) GetSupportedDevices()([]string) {
 func (m *IosAvailableUpdateVersion) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
         err := writer.WriteTimeValue("expirationDateTime", m.GetExpirationDateTime())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -162,6 +190,12 @@ func (m *IosAvailableUpdateVersion) SetAdditionalData(value map[string]interface
 func (m *IosAvailableUpdateVersion) SetExpirationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     if m != nil {
         m.expirationDateTime = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *IosAvailableUpdateVersion) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetPostingDateTime sets the postingDateTime property value. The posting date of the update.

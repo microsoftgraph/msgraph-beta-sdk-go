@@ -14,10 +14,10 @@ type DetectedSensitiveContentBase struct {
     displayName *string
     // The id property
     id *string
+    // The OdataType property
+    odataType *string
     // The recommendedConfidence property
     recommendedConfidence *int32
-    // The type property
-    type_escaped *string
     // The uniqueCount property
     uniqueCount *int32
 }
@@ -26,8 +26,8 @@ func NewDetectedSensitiveContentBase()(*DetectedSensitiveContentBase) {
     m := &DetectedSensitiveContentBase{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odatatypeValue := "#microsoft.graph.detectedSensitiveContentBase";
-    m.SetType(&odatatypeValue);
+    odataTypeValue := "#microsoft.graph.detectedSensitiveContentBase";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDetectedSensitiveContentBaseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -49,6 +49,8 @@ func CreateDetectedSensitiveContentBaseFromDiscriminatorValue(parseNode i878a80d
                         return NewDetectedSensitiveContent(), nil
                     case "#microsoft.graph.exactMatchDetectedSensitiveContent":
                         return NewExactMatchDetectedSensitiveContent(), nil
+                    case "#microsoft.graph.machineLearningDetectedSensitiveContent":
+                        return NewMachineLearningDetectedSensitiveContent(), nil
                 }
             }
         }
@@ -112,6 +114,16 @@ func (m *DetectedSensitiveContentBase) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["recommendedConfidence"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
@@ -119,16 +131,6 @@ func (m *DetectedSensitiveContentBase) GetFieldDeserializers()(map[string]func(i
         }
         if val != nil {
             m.SetRecommendedConfidence(val)
-        }
-        return nil
-    }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetType(val)
         }
         return nil
     }
@@ -152,20 +154,20 @@ func (m *DetectedSensitiveContentBase) GetId()(*string) {
         return m.id
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *DetectedSensitiveContentBase) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetRecommendedConfidence gets the recommendedConfidence property value. The recommendedConfidence property
 func (m *DetectedSensitiveContentBase) GetRecommendedConfidence()(*int32) {
     if m == nil {
         return nil
     } else {
         return m.recommendedConfidence
-    }
-}
-// GetType gets the @odata.type property value. The type property
-func (m *DetectedSensitiveContentBase) GetType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.type_escaped
     }
 }
 // GetUniqueCount gets the uniqueCount property value. The uniqueCount property
@@ -197,13 +199,13 @@ func (m *DetectedSensitiveContentBase) Serialize(writer i878a80d2330e89d26896388
         }
     }
     {
-        err := writer.WriteInt32Value("recommendedConfidence", m.GetRecommendedConfidence())
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
     }
     {
-        err := writer.WriteStringValue("@odata.type", m.GetType())
+        err := writer.WriteInt32Value("recommendedConfidence", m.GetRecommendedConfidence())
         if err != nil {
             return err
         }
@@ -246,16 +248,16 @@ func (m *DetectedSensitiveContentBase) SetId(value *string)() {
         m.id = value
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *DetectedSensitiveContentBase) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
+    }
+}
 // SetRecommendedConfidence sets the recommendedConfidence property value. The recommendedConfidence property
 func (m *DetectedSensitiveContentBase) SetRecommendedConfidence(value *int32)() {
     if m != nil {
         m.recommendedConfidence = value
-    }
-}
-// SetType sets the @odata.type property value. The type property
-func (m *DetectedSensitiveContentBase) SetType(value *string)() {
-    if m != nil {
-        m.type_escaped = value
     }
 }
 // SetUniqueCount sets the uniqueCount property value. The uniqueCount property

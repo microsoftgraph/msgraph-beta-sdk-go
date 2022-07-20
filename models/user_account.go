@@ -13,6 +13,8 @@ type UserAccount struct {
     displayName *string
     // The lastSeenDateTime property
     lastSeenDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
+    // The OdataType property
+    odataType *string
     // The riskScore property
     riskScore *string
     // The service property
@@ -27,6 +29,8 @@ func NewUserAccount()(*UserAccount) {
     m := &UserAccount{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.userAccount";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateUserAccountFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -69,6 +73,16 @@ func (m *UserAccount) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
         }
         if val != nil {
             m.SetLastSeenDateTime(val)
+        }
+        return nil
+    }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
         }
         return nil
     }
@@ -122,6 +136,14 @@ func (m *UserAccount) GetLastSeenDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6
         return m.lastSeenDateTime
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *UserAccount) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetRiskScore gets the riskScore property value. The riskScore property
 func (m *UserAccount) GetRiskScore()(*string) {
     if m == nil {
@@ -164,6 +186,12 @@ func (m *UserAccount) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
     }
     {
         err := writer.WriteTimeValue("lastSeenDateTime", m.GetLastSeenDateTime())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -217,6 +245,12 @@ func (m *UserAccount) SetDisplayName(value *string)() {
 func (m *UserAccount) SetLastSeenDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     if m != nil {
         m.lastSeenDateTime = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *UserAccount) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetRiskScore sets the riskScore property value. The riskScore property

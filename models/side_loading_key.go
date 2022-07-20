@@ -23,6 +23,8 @@ func NewSideLoadingKey()(*SideLoadingKey) {
     m := &SideLoadingKey{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.sideLoadingKey";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateSideLoadingKeyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

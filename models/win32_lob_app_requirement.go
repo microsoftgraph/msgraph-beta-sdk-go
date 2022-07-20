@@ -10,18 +10,18 @@ type Win32LobAppRequirement struct {
     additionalData map[string]interface{}
     // The detection value
     detectionValue *string
+    // The OdataType property
+    odataType *string
     // Contains properties for detection operator.
     operator *Win32LobAppDetectionOperator
-    // The type property
-    type_escaped *string
 }
 // NewWin32LobAppRequirement instantiates a new win32LobAppRequirement and sets the default values.
 func NewWin32LobAppRequirement()(*Win32LobAppRequirement) {
     m := &Win32LobAppRequirement{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odatatypeValue := "#microsoft.graph.win32LobAppRequirement";
-    m.SetType(&odatatypeValue);
+    odataTypeValue := "#microsoft.graph.win32LobAppRequirement";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateWin32LobAppRequirementFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -80,6 +80,16 @@ func (m *Win32LobAppRequirement) GetFieldDeserializers()(map[string]func(i878a80
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["operator"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseWin32LobAppDetectionOperator)
         if err != nil {
@@ -90,17 +100,15 @@ func (m *Win32LobAppRequirement) GetFieldDeserializers()(map[string]func(i878a80
         }
         return nil
     }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetType(val)
-        }
-        return nil
-    }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *Win32LobAppRequirement) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
 }
 // GetOperator gets the operator property value. Contains properties for detection operator.
 func (m *Win32LobAppRequirement) GetOperator()(*Win32LobAppDetectionOperator) {
@@ -108,14 +116,6 @@ func (m *Win32LobAppRequirement) GetOperator()(*Win32LobAppDetectionOperator) {
         return nil
     } else {
         return m.operator
-    }
-}
-// GetType gets the @odata.type property value. The type property
-func (m *Win32LobAppRequirement) GetType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.type_escaped
     }
 }
 // Serialize serializes information the current object
@@ -126,15 +126,15 @@ func (m *Win32LobAppRequirement) Serialize(writer i878a80d2330e89d26896388a3f487
             return err
         }
     }
-    if m.GetOperator() != nil {
-        cast := (*m.GetOperator()).String()
-        err := writer.WriteStringValue("operator", &cast)
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
     }
-    {
-        err := writer.WriteStringValue("@odata.type", m.GetType())
+    if m.GetOperator() != nil {
+        cast := (*m.GetOperator()).String()
+        err := writer.WriteStringValue("operator", &cast)
         if err != nil {
             return err
         }
@@ -159,15 +159,15 @@ func (m *Win32LobAppRequirement) SetDetectionValue(value *string)() {
         m.detectionValue = value
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *Win32LobAppRequirement) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
+    }
+}
 // SetOperator sets the operator property value. Contains properties for detection operator.
 func (m *Win32LobAppRequirement) SetOperator(value *Win32LobAppDetectionOperator)() {
     if m != nil {
         m.operator = value
-    }
-}
-// SetType sets the @odata.type property value. The type property
-func (m *Win32LobAppRequirement) SetType(value *string)() {
-    if m != nil {
-        m.type_escaped = value
     }
 }

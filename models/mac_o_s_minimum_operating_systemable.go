@@ -8,6 +8,7 @@ import (
 type MacOSMinimumOperatingSystemable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetOdataType()(*string)
     GetV10_10()(*bool)
     GetV10_11()(*bool)
     GetV10_12()(*bool)
@@ -19,6 +20,7 @@ type MacOSMinimumOperatingSystemable interface {
     GetV10_9()(*bool)
     GetV11_0()(*bool)
     GetV12_0()(*bool)
+    SetOdataType(value *string)()
     SetV10_10(value *bool)()
     SetV10_11(value *bool)()
     SetV10_12(value *bool)()

@@ -70,7 +70,7 @@ func NewInheritsPermissionsFromRequestBuilder(rawUrl string, requestAdapter i2ae
     urlParams["request-raw-url"] = rawUrl
     return NewInheritsPermissionsFromRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *InheritsPermissionsFromRequestBuilder) Count()(*ie7dc53cdc4de5b7b90a6e432d3a48f83882d9433fe7a4169bd43e223fb6f7906.CountRequestBuilder) {
     return ie7dc53cdc4de5b7b90a6e432d3a48f83882d9433fe7a4169bd43e223fb6f7906.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

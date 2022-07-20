@@ -70,7 +70,7 @@ func NewUserExperienceAnalyticsDeviceStartupHistoryRequestBuilder(rawUrl string,
     urlParams["request-raw-url"] = rawUrl
     return NewUserExperienceAnalyticsDeviceStartupHistoryRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *UserExperienceAnalyticsDeviceStartupHistoryRequestBuilder) Count()(*if5710c9e035ffca73e71232f73c991cd5b51a00d7bb2183f9fa827e279f464bb.CountRequestBuilder) {
     return if5710c9e035ffca73e71232f73c991cd5b51a00d7bb2183f9fa827e279f464bb.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

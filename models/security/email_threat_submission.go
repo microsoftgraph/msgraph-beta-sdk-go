@@ -8,23 +8,23 @@ import (
 // EmailThreatSubmission 
 type EmailThreatSubmission struct {
     ThreatSubmission
-    // The attackSimulationInfo property
+    // If the email is phishing simulation, this field will not be null.
     attackSimulationInfo AttackSimulationInfoable
-    // The internetMessageId property
+    // Specifies the internet message id of the email being submitted. This information is present in the email header.
     internetMessageId *string
-    // The originalCategory property
+    // The original category of the submission. The possible values are: notJunk, spam, phishing, malware and unkownFutureValue.
     originalCategory *SubmissionCategory
-    // The receivedDateTime property
+    // Specifies the date and time stamp when the email was received.
     receivedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The recipientEmailAddress property
+    // Specifies the email address (in smtp format) of the recipient who received the email.
     recipientEmailAddress *string
-    // The sender property
+    // Specifies the email address of the sender.
     sender *string
-    // The senderIP property
+    // Specifies the IP address of the sender.
     senderIP *string
-    // The subject property
+    // Specifies the subject of the email .
     subject *string
-    // The tenantAllowOrBlockListAction property
+    // It is used to automatically add allows for the components such as URL, file, sender; which are deemed bad by Microsoft so that similar messages in the future can be allowed.
     tenantAllowOrBlockListAction TenantAllowOrBlockListActionable
 }
 // NewEmailThreatSubmission instantiates a new EmailThreatSubmission and sets the default values.
@@ -32,8 +32,8 @@ func NewEmailThreatSubmission()(*EmailThreatSubmission) {
     m := &EmailThreatSubmission{
         ThreatSubmission: *NewThreatSubmission(),
     }
-    odatatypeValue := "#microsoft.graph.security.emailThreatSubmission";
-    m.SetType(&odatatypeValue);
+    odataTypeValue := "#microsoft.graph.security.emailThreatSubmission";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateEmailThreatSubmissionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -61,7 +61,7 @@ func CreateEmailThreatSubmissionFromDiscriminatorValue(parseNode i878a80d2330e89
     }
     return NewEmailThreatSubmission(), nil
 }
-// GetAttackSimulationInfo gets the attackSimulationInfo property value. The attackSimulationInfo property
+// GetAttackSimulationInfo gets the attackSimulationInfo property value. If the email is phishing simulation, this field will not be null.
 func (m *EmailThreatSubmission) GetAttackSimulationInfo()(AttackSimulationInfoable) {
     if m == nil {
         return nil
@@ -164,7 +164,7 @@ func (m *EmailThreatSubmission) GetFieldDeserializers()(map[string]func(i878a80d
     }
     return res
 }
-// GetInternetMessageId gets the internetMessageId property value. The internetMessageId property
+// GetInternetMessageId gets the internetMessageId property value. Specifies the internet message id of the email being submitted. This information is present in the email header.
 func (m *EmailThreatSubmission) GetInternetMessageId()(*string) {
     if m == nil {
         return nil
@@ -172,7 +172,7 @@ func (m *EmailThreatSubmission) GetInternetMessageId()(*string) {
         return m.internetMessageId
     }
 }
-// GetOriginalCategory gets the originalCategory property value. The originalCategory property
+// GetOriginalCategory gets the originalCategory property value. The original category of the submission. The possible values are: notJunk, spam, phishing, malware and unkownFutureValue.
 func (m *EmailThreatSubmission) GetOriginalCategory()(*SubmissionCategory) {
     if m == nil {
         return nil
@@ -180,7 +180,7 @@ func (m *EmailThreatSubmission) GetOriginalCategory()(*SubmissionCategory) {
         return m.originalCategory
     }
 }
-// GetReceivedDateTime gets the receivedDateTime property value. The receivedDateTime property
+// GetReceivedDateTime gets the receivedDateTime property value. Specifies the date and time stamp when the email was received.
 func (m *EmailThreatSubmission) GetReceivedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -188,7 +188,7 @@ func (m *EmailThreatSubmission) GetReceivedDateTime()(*i336074805fc853987abe6f7f
         return m.receivedDateTime
     }
 }
-// GetRecipientEmailAddress gets the recipientEmailAddress property value. The recipientEmailAddress property
+// GetRecipientEmailAddress gets the recipientEmailAddress property value. Specifies the email address (in smtp format) of the recipient who received the email.
 func (m *EmailThreatSubmission) GetRecipientEmailAddress()(*string) {
     if m == nil {
         return nil
@@ -196,7 +196,7 @@ func (m *EmailThreatSubmission) GetRecipientEmailAddress()(*string) {
         return m.recipientEmailAddress
     }
 }
-// GetSender gets the sender property value. The sender property
+// GetSender gets the sender property value. Specifies the email address of the sender.
 func (m *EmailThreatSubmission) GetSender()(*string) {
     if m == nil {
         return nil
@@ -204,7 +204,7 @@ func (m *EmailThreatSubmission) GetSender()(*string) {
         return m.sender
     }
 }
-// GetSenderIP gets the senderIP property value. The senderIP property
+// GetSenderIP gets the senderIP property value. Specifies the IP address of the sender.
 func (m *EmailThreatSubmission) GetSenderIP()(*string) {
     if m == nil {
         return nil
@@ -212,7 +212,7 @@ func (m *EmailThreatSubmission) GetSenderIP()(*string) {
         return m.senderIP
     }
 }
-// GetSubject gets the subject property value. The subject property
+// GetSubject gets the subject property value. Specifies the subject of the email .
 func (m *EmailThreatSubmission) GetSubject()(*string) {
     if m == nil {
         return nil
@@ -220,7 +220,7 @@ func (m *EmailThreatSubmission) GetSubject()(*string) {
         return m.subject
     }
 }
-// GetTenantAllowOrBlockListAction gets the tenantAllowOrBlockListAction property value. The tenantAllowOrBlockListAction property
+// GetTenantAllowOrBlockListAction gets the tenantAllowOrBlockListAction property value. It is used to automatically add allows for the components such as URL, file, sender; which are deemed bad by Microsoft so that similar messages in the future can be allowed.
 func (m *EmailThreatSubmission) GetTenantAllowOrBlockListAction()(TenantAllowOrBlockListActionable) {
     if m == nil {
         return nil
@@ -291,55 +291,55 @@ func (m *EmailThreatSubmission) Serialize(writer i878a80d2330e89d26896388a3f487e
     }
     return nil
 }
-// SetAttackSimulationInfo sets the attackSimulationInfo property value. The attackSimulationInfo property
+// SetAttackSimulationInfo sets the attackSimulationInfo property value. If the email is phishing simulation, this field will not be null.
 func (m *EmailThreatSubmission) SetAttackSimulationInfo(value AttackSimulationInfoable)() {
     if m != nil {
         m.attackSimulationInfo = value
     }
 }
-// SetInternetMessageId sets the internetMessageId property value. The internetMessageId property
+// SetInternetMessageId sets the internetMessageId property value. Specifies the internet message id of the email being submitted. This information is present in the email header.
 func (m *EmailThreatSubmission) SetInternetMessageId(value *string)() {
     if m != nil {
         m.internetMessageId = value
     }
 }
-// SetOriginalCategory sets the originalCategory property value. The originalCategory property
+// SetOriginalCategory sets the originalCategory property value. The original category of the submission. The possible values are: notJunk, spam, phishing, malware and unkownFutureValue.
 func (m *EmailThreatSubmission) SetOriginalCategory(value *SubmissionCategory)() {
     if m != nil {
         m.originalCategory = value
     }
 }
-// SetReceivedDateTime sets the receivedDateTime property value. The receivedDateTime property
+// SetReceivedDateTime sets the receivedDateTime property value. Specifies the date and time stamp when the email was received.
 func (m *EmailThreatSubmission) SetReceivedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     if m != nil {
         m.receivedDateTime = value
     }
 }
-// SetRecipientEmailAddress sets the recipientEmailAddress property value. The recipientEmailAddress property
+// SetRecipientEmailAddress sets the recipientEmailAddress property value. Specifies the email address (in smtp format) of the recipient who received the email.
 func (m *EmailThreatSubmission) SetRecipientEmailAddress(value *string)() {
     if m != nil {
         m.recipientEmailAddress = value
     }
 }
-// SetSender sets the sender property value. The sender property
+// SetSender sets the sender property value. Specifies the email address of the sender.
 func (m *EmailThreatSubmission) SetSender(value *string)() {
     if m != nil {
         m.sender = value
     }
 }
-// SetSenderIP sets the senderIP property value. The senderIP property
+// SetSenderIP sets the senderIP property value. Specifies the IP address of the sender.
 func (m *EmailThreatSubmission) SetSenderIP(value *string)() {
     if m != nil {
         m.senderIP = value
     }
 }
-// SetSubject sets the subject property value. The subject property
+// SetSubject sets the subject property value. Specifies the subject of the email .
 func (m *EmailThreatSubmission) SetSubject(value *string)() {
     if m != nil {
         m.subject = value
     }
 }
-// SetTenantAllowOrBlockListAction sets the tenantAllowOrBlockListAction property value. The tenantAllowOrBlockListAction property
+// SetTenantAllowOrBlockListAction sets the tenantAllowOrBlockListAction property value. It is used to automatically add allows for the components such as URL, file, sender; which are deemed bad by Microsoft so that similar messages in the future can be allowed.
 func (m *EmailThreatSubmission) SetTenantAllowOrBlockListAction(value TenantAllowOrBlockListActionable)() {
     if m != nil {
         m.tenantAllowOrBlockListAction = value

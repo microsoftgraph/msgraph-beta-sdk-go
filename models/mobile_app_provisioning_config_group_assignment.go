@@ -15,6 +15,8 @@ func NewMobileAppProvisioningConfigGroupAssignment()(*MobileAppProvisioningConfi
     m := &MobileAppProvisioningConfigGroupAssignment{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.mobileAppProvisioningConfigGroupAssignment";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateMobileAppProvisioningConfigGroupAssignmentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

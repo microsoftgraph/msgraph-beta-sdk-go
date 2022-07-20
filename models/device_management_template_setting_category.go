@@ -15,6 +15,8 @@ func NewDeviceManagementTemplateSettingCategory()(*DeviceManagementTemplateSetti
     m := &DeviceManagementTemplateSettingCategory{
         DeviceManagementSettingCategory: *NewDeviceManagementSettingCategory(),
     }
+    odataTypeValue := "#microsoft.graph.deviceManagementTemplateSettingCategory";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDeviceManagementTemplateSettingCategoryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

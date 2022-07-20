@@ -13,6 +13,8 @@ func NewDeviceManagementScriptPolicySetItem()(*DeviceManagementScriptPolicySetIt
     m := &DeviceManagementScriptPolicySetItem{
         PolicySetItem: *NewPolicySetItem(),
     }
+    odataTypeValue := "#microsoft.graph.deviceManagementScriptPolicySetItem";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDeviceManagementScriptPolicySetItemFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -10,6 +10,8 @@ type RiskServicePrincipalActivity struct {
     additionalData map[string]interface{}
     // Details of the detected risk. Note: Details for this property are only available for Azure AD Premium P2 customers. P1 customers will be returned hidden. The possible values are: none, adminGeneratedTemporaryPassword, userPerformedSecuredPasswordChange, userPerformedSecuredPasswordReset, adminConfirmedSigninSafe, aiConfirmedSigninSafe, userPassedMFADrivenByRiskBasedPolicy, adminDismissedAllRiskForUser, adminConfirmedSigninCompromised, hidden,  adminConfirmedUserCompromised, unknownFutureValue, adminConfirmedServicePrincipalCompromised, adminDismissedAllRiskForServicePrincipal. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: adminConfirmedServicePrincipalCompromised , adminDismissedAllRiskForServicePrincipal.
     detail *RiskDetail
+    // The OdataType property
+    odataType *string
     // The riskEventTypes property
     riskEventTypes []string
 }
@@ -18,6 +20,8 @@ func NewRiskServicePrincipalActivity()(*RiskServicePrincipalActivity) {
     m := &RiskServicePrincipalActivity{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.riskServicePrincipalActivity";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateRiskServicePrincipalActivityFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -53,6 +57,16 @@ func (m *RiskServicePrincipalActivity) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["riskEventTypes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
@@ -69,6 +83,14 @@ func (m *RiskServicePrincipalActivity) GetFieldDeserializers()(map[string]func(i
     }
     return res
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *RiskServicePrincipalActivity) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetRiskEventTypes gets the riskEventTypes property value. The riskEventTypes property
 func (m *RiskServicePrincipalActivity) GetRiskEventTypes()([]string) {
     if m == nil {
@@ -82,6 +104,12 @@ func (m *RiskServicePrincipalActivity) Serialize(writer i878a80d2330e89d26896388
     if m.GetDetail() != nil {
         cast := (*m.GetDetail()).String()
         err := writer.WriteStringValue("detail", &cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -110,6 +138,12 @@ func (m *RiskServicePrincipalActivity) SetAdditionalData(value map[string]interf
 func (m *RiskServicePrincipalActivity) SetDetail(value *RiskDetail)() {
     if m != nil {
         m.detail = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *RiskServicePrincipalActivity) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetRiskEventTypes sets the riskEventTypes property value. The riskEventTypes property

@@ -11,6 +11,8 @@ type CloudPcConnectivityResult struct {
     additionalData map[string]interface{}
     // The failedHealthCheckItems property
     failedHealthCheckItems []CloudPcHealthCheckItemable
+    // The OdataType property
+    odataType *string
     // The status property
     status *CloudPcConnectivityStatus
     // The updatedDateTime property
@@ -21,6 +23,8 @@ func NewCloudPcConnectivityResult()(*CloudPcConnectivityResult) {
     m := &CloudPcConnectivityResult{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.cloudPcConnectivityResult";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateCloudPcConnectivityResultFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -60,6 +64,16 @@ func (m *CloudPcConnectivityResult) GetFieldDeserializers()(map[string]func(i878
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["status"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseCloudPcConnectivityStatus)
         if err != nil {
@@ -81,6 +95,14 @@ func (m *CloudPcConnectivityResult) GetFieldDeserializers()(map[string]func(i878
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *CloudPcConnectivityResult) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
 }
 // GetStatus gets the status property value. The status property
 func (m *CloudPcConnectivityResult) GetStatus()(*CloudPcConnectivityStatus) {
@@ -106,6 +128,12 @@ func (m *CloudPcConnectivityResult) Serialize(writer i878a80d2330e89d26896388a3f
             cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
         }
         err := writer.WriteCollectionOfObjectValues("failedHealthCheckItems", cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -141,6 +169,12 @@ func (m *CloudPcConnectivityResult) SetAdditionalData(value map[string]interface
 func (m *CloudPcConnectivityResult) SetFailedHealthCheckItems(value []CloudPcHealthCheckItemable)() {
     if m != nil {
         m.failedHealthCheckItems = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *CloudPcConnectivityResult) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetStatus sets the status property value. The status property

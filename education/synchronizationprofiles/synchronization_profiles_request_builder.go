@@ -70,7 +70,7 @@ func NewSynchronizationProfilesRequestBuilder(rawUrl string, requestAdapter i2ae
     urlParams["request-raw-url"] = rawUrl
     return NewSynchronizationProfilesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *SynchronizationProfilesRequestBuilder) Count()(*i923700aa900530b57d67c4ece645b4c786f7de1e0a36867efd98f11f0da43e2a.CountRequestBuilder) {
     return i923700aa900530b57d67c4ece645b4c786f7de1e0a36867efd98f11f0da43e2a.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

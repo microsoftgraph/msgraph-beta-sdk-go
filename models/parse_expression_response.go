@@ -14,6 +14,8 @@ type ParseExpressionResponse struct {
     evaluationResult []string
     // true if the evaluation was successful.
     evaluationSucceeded *bool
+    // The OdataType property
+    odataType *string
     // An attributeMappingSource object representing the parsed expression.
     parsedExpression AttributeMappingSourceable
     // true if the expression was parsed successfully.
@@ -24,6 +26,8 @@ func NewParseExpressionResponse()(*ParseExpressionResponse) {
     m := &ParseExpressionResponse{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.parseExpressionResponse";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateParseExpressionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -99,6 +103,16 @@ func (m *ParseExpressionResponse) GetFieldDeserializers()(map[string]func(i878a8
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["parsedExpression"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateAttributeMappingSourceFromDiscriminatorValue)
         if err != nil {
@@ -120,6 +134,14 @@ func (m *ParseExpressionResponse) GetFieldDeserializers()(map[string]func(i878a8
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *ParseExpressionResponse) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
 }
 // GetParsedExpression gets the parsedExpression property value. An attributeMappingSource object representing the parsed expression.
 func (m *ParseExpressionResponse) GetParsedExpression()(AttributeMappingSourceable) {
@@ -153,6 +175,12 @@ func (m *ParseExpressionResponse) Serialize(writer i878a80d2330e89d26896388a3f48
     }
     {
         err := writer.WriteBoolValue("evaluationSucceeded", m.GetEvaluationSucceeded())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -199,6 +227,12 @@ func (m *ParseExpressionResponse) SetEvaluationResult(value []string)() {
 func (m *ParseExpressionResponse) SetEvaluationSucceeded(value *bool)() {
     if m != nil {
         m.evaluationSucceeded = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *ParseExpressionResponse) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetParsedExpression sets the parsedExpression property value. An attributeMappingSource object representing the parsed expression.

@@ -12,6 +12,8 @@ type VppTokenLicenseSummary struct {
     appleId *string
     // The number of VPP licenses available.
     availableLicenseCount *int32
+    // The OdataType property
+    odataType *string
     // The organization associated with the Apple Volume Purchase Program Token.
     organizationName *string
     // The number of VPP licenses in use.
@@ -24,6 +26,8 @@ func NewVppTokenLicenseSummary()(*VppTokenLicenseSummary) {
     m := &VppTokenLicenseSummary{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.vppTokenLicenseSummary";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateVppTokenLicenseSummaryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -77,6 +81,16 @@ func (m *VppTokenLicenseSummary) GetFieldDeserializers()(map[string]func(i878a80
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["organizationName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -108,6 +122,14 @@ func (m *VppTokenLicenseSummary) GetFieldDeserializers()(map[string]func(i878a80
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *VppTokenLicenseSummary) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
 }
 // GetOrganizationName gets the organizationName property value. The organization associated with the Apple Volume Purchase Program Token.
 func (m *VppTokenLicenseSummary) GetOrganizationName()(*string) {
@@ -143,6 +165,12 @@ func (m *VppTokenLicenseSummary) Serialize(writer i878a80d2330e89d26896388a3f487
     }
     {
         err := writer.WriteInt32Value("availableLicenseCount", m.GetAvailableLicenseCount())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -189,6 +217,12 @@ func (m *VppTokenLicenseSummary) SetAppleId(value *string)() {
 func (m *VppTokenLicenseSummary) SetAvailableLicenseCount(value *int32)() {
     if m != nil {
         m.availableLicenseCount = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *VppTokenLicenseSummary) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetOrganizationName sets the organizationName property value. The organization associated with the Apple Volume Purchase Program Token.

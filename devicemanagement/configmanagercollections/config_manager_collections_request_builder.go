@@ -71,7 +71,7 @@ func NewConfigManagerCollectionsRequestBuilder(rawUrl string, requestAdapter i2a
     urlParams["request-raw-url"] = rawUrl
     return NewConfigManagerCollectionsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *ConfigManagerCollectionsRequestBuilder) Count()(*icfda34271ba2edd5634b2733ef892bd37f5621ea10c5c927d29e90f9666e7c4d.CountRequestBuilder) {
     return icfda34271ba2edd5634b2733ef892bd37f5621ea10c5c927d29e90f9666e7c4d.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

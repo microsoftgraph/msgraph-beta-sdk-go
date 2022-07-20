@@ -20,12 +20,16 @@ type JobResponseBase struct {
     status *string
     // The tenantId property
     tenantId *string
+    // The type property
+    type_escaped *string
 }
 // NewJobResponseBase instantiates a new JobResponseBase and sets the default values.
 func NewJobResponseBase()(*JobResponseBase) {
     m := &JobResponseBase{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.jobResponseBase";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateJobResponseBaseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -142,6 +146,16 @@ func (m *JobResponseBase) GetFieldDeserializers()(map[string]func(i878a80d2330e8
         }
         return nil
     }
+    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetStartDateTime gets the startDateTime property value. The startDateTime property
@@ -166,6 +180,14 @@ func (m *JobResponseBase) GetTenantId()(*string) {
         return nil
     } else {
         return m.tenantId
+    }
+}
+// GetType gets the type property value. The type property
+func (m *JobResponseBase) GetType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
     }
 }
 // Serialize serializes information the current object
@@ -210,6 +232,12 @@ func (m *JobResponseBase) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("type", m.GetType())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetCreationDateTime sets the creationDateTime property value. The creationDateTime property
@@ -246,5 +274,11 @@ func (m *JobResponseBase) SetStatus(value *string)() {
 func (m *JobResponseBase) SetTenantId(value *string)() {
     if m != nil {
         m.tenantId = value
+    }
+}
+// SetType sets the type property value. The type property
+func (m *JobResponseBase) SetType(value *string)() {
+    if m != nil {
+        m.type_escaped = value
     }
 }

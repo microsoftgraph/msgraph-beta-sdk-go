@@ -12,12 +12,16 @@ type DeviceManagementSettingDependency struct {
     constraints []DeviceManagementConstraintable
     // The setting definition ID of the setting depended on
     definitionId *string
+    // The OdataType property
+    odataType *string
 }
 // NewDeviceManagementSettingDependency instantiates a new deviceManagementSettingDependency and sets the default values.
 func NewDeviceManagementSettingDependency()(*DeviceManagementSettingDependency) {
     m := &DeviceManagementSettingDependency{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.deviceManagementSettingDependency";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDeviceManagementSettingDependencyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -75,7 +79,25 @@ func (m *DeviceManagementSettingDependency) GetFieldDeserializers()(map[string]f
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *DeviceManagementSettingDependency) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
 }
 // Serialize serializes information the current object
 func (m *DeviceManagementSettingDependency) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -91,6 +113,12 @@ func (m *DeviceManagementSettingDependency) Serialize(writer i878a80d2330e89d268
     }
     {
         err := writer.WriteStringValue("definitionId", m.GetDefinitionId())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -119,5 +147,11 @@ func (m *DeviceManagementSettingDependency) SetConstraints(value []DeviceManagem
 func (m *DeviceManagementSettingDependency) SetDefinitionId(value *string)() {
     if m != nil {
         m.definitionId = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *DeviceManagementSettingDependency) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }

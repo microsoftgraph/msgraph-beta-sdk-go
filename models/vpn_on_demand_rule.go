@@ -16,6 +16,8 @@ type VpnOnDemandRule struct {
     domainAction *VpnOnDemandRuleConnectionDomainAction
     // Domains (Only applicable when Action is evaluate connection).
     domains []string
+    // The OdataType property
+    odataType *string
     // Probe Required Url (Only applicable when Action is evaluate connection and DomainAction is connect if needed).
     probeRequiredUrl *string
     // A URL to probe. If this URL is successfully fetched (returning a 200 HTTP status code) without redirection, this rule matches.
@@ -28,6 +30,8 @@ func NewVpnOnDemandRule()(*VpnOnDemandRule) {
     m := &VpnOnDemandRule{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.vpnOnDemandRule";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateVpnOnDemandRuleFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -125,6 +129,16 @@ func (m *VpnOnDemandRule) GetFieldDeserializers()(map[string]func(i878a80d2330e8
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["probeRequiredUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -160,6 +174,14 @@ func (m *VpnOnDemandRule) GetFieldDeserializers()(map[string]func(i878a80d2330e8
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *VpnOnDemandRule) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
 }
 // GetProbeRequiredUrl gets the probeRequiredUrl property value. Probe Required Url (Only applicable when Action is evaluate connection and DomainAction is connect if needed).
 func (m *VpnOnDemandRule) GetProbeRequiredUrl()(*string) {
@@ -209,6 +231,12 @@ func (m *VpnOnDemandRule) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
     }
     if m.GetDomains() != nil {
         err := writer.WriteCollectionOfStringValues("domains", m.GetDomains())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -267,6 +295,12 @@ func (m *VpnOnDemandRule) SetDomainAction(value *VpnOnDemandRuleConnectionDomain
 func (m *VpnOnDemandRule) SetDomains(value []string)() {
     if m != nil {
         m.domains = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *VpnOnDemandRule) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetProbeRequiredUrl sets the probeRequiredUrl property value. Probe Required Url (Only applicable when Action is evaluate connection and DomainAction is connect if needed).

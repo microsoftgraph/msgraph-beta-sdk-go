@@ -15,6 +15,8 @@ func NewDeviceManagementSettingEnrollmentTypeConstraint()(*DeviceManagementSetti
     m := &DeviceManagementSettingEnrollmentTypeConstraint{
         DeviceManagementConstraint: *NewDeviceManagementConstraint(),
     }
+    odataTypeValue := "#microsoft.graph.deviceManagementSettingEnrollmentTypeConstraint";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDeviceManagementSettingEnrollmentTypeConstraintFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

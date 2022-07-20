@@ -12,12 +12,16 @@ type AndroidDeviceOwnerUserFacingMessage struct {
     defaultMessage *string
     // The list of <locale, message> pairs. This collection can contain a maximum of 500 elements.
     localizedMessages []KeyValuePairable
+    // The OdataType property
+    odataType *string
 }
 // NewAndroidDeviceOwnerUserFacingMessage instantiates a new androidDeviceOwnerUserFacingMessage and sets the default values.
 func NewAndroidDeviceOwnerUserFacingMessage()(*AndroidDeviceOwnerUserFacingMessage) {
     m := &AndroidDeviceOwnerUserFacingMessage{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.androidDeviceOwnerUserFacingMessage";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAndroidDeviceOwnerUserFacingMessageFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -67,6 +71,16 @@ func (m *AndroidDeviceOwnerUserFacingMessage) GetFieldDeserializers()(map[string
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetLocalizedMessages gets the localizedMessages property value. The list of <locale, message> pairs. This collection can contain a maximum of 500 elements.
@@ -75,6 +89,14 @@ func (m *AndroidDeviceOwnerUserFacingMessage) GetLocalizedMessages()([]KeyValueP
         return nil
     } else {
         return m.localizedMessages
+    }
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *AndroidDeviceOwnerUserFacingMessage) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
     }
 }
 // Serialize serializes information the current object
@@ -91,6 +113,12 @@ func (m *AndroidDeviceOwnerUserFacingMessage) Serialize(writer i878a80d2330e89d2
             cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
         }
         err := writer.WriteCollectionOfObjectValues("localizedMessages", cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -119,5 +147,11 @@ func (m *AndroidDeviceOwnerUserFacingMessage) SetDefaultMessage(value *string)()
 func (m *AndroidDeviceOwnerUserFacingMessage) SetLocalizedMessages(value []KeyValuePairable)() {
     if m != nil {
         m.localizedMessages = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *AndroidDeviceOwnerUserFacingMessage) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }

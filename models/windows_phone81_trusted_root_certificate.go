@@ -17,6 +17,8 @@ func NewWindowsPhone81TrustedRootCertificate()(*WindowsPhone81TrustedRootCertifi
     m := &WindowsPhone81TrustedRootCertificate{
         DeviceConfiguration: *NewDeviceConfiguration(),
     }
+    odataTypeValue := "#microsoft.graph.windowsPhone81TrustedRootCertificate";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateWindowsPhone81TrustedRootCertificateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -11,9 +11,11 @@ type ObjectDefinitionable interface {
     GetAttributes()([]AttributeDefinitionable)
     GetMetadata()([]MetadataEntryable)
     GetName()(*string)
+    GetOdataType()(*string)
     GetSupportedApis()([]string)
     SetAttributes(value []AttributeDefinitionable)()
     SetMetadata(value []MetadataEntryable)()
     SetName(value *string)()
+    SetOdataType(value *string)()
     SetSupportedApis(value []string)()
 }

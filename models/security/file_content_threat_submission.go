@@ -7,7 +7,7 @@ import (
 // FileContentThreatSubmission 
 type FileContentThreatSubmission struct {
     FileThreatSubmission
-    // The fileContent property
+    // It specifies the file content in base 64 format.
     fileContent *string
 }
 // NewFileContentThreatSubmission instantiates a new FileContentThreatSubmission and sets the default values.
@@ -15,6 +15,8 @@ func NewFileContentThreatSubmission()(*FileContentThreatSubmission) {
     m := &FileContentThreatSubmission{
         FileThreatSubmission: *NewFileThreatSubmission(),
     }
+    odataTypeValue := "#microsoft.graph.security.fileContentThreatSubmission";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateFileContentThreatSubmissionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -36,7 +38,7 @@ func (m *FileContentThreatSubmission) GetFieldDeserializers()(map[string]func(i8
     }
     return res
 }
-// GetFileContent gets the fileContent property value. The fileContent property
+// GetFileContent gets the fileContent property value. It specifies the file content in base 64 format.
 func (m *FileContentThreatSubmission) GetFileContent()(*string) {
     if m == nil {
         return nil
@@ -58,7 +60,7 @@ func (m *FileContentThreatSubmission) Serialize(writer i878a80d2330e89d26896388a
     }
     return nil
 }
-// SetFileContent sets the fileContent property value. The fileContent property
+// SetFileContent sets the fileContent property value. It specifies the file content in base 64 format.
 func (m *FileContentThreatSubmission) SetFileContent(value *string)() {
     if m != nil {
         m.fileContent = value

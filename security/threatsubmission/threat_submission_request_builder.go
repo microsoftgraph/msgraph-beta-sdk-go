@@ -30,7 +30,7 @@ type ThreatSubmissionRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ThreatSubmissionRequestBuilderGetQueryParameters get threatSubmission from security
+// ThreatSubmissionRequestBuilderGetQueryParameters a threat submission sent to Microsoft; for example, a suspicious email threat, URL threat, or file threat.
 type ThreatSubmissionRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -88,11 +88,11 @@ func (m *ThreatSubmissionRequestBuilder) CreateDeleteRequestInformationWithReque
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation get threatSubmission from security
+// CreateGetRequestInformation a threat submission sent to Microsoft; for example, a suspicious email threat, URL threat, or file threat.
 func (m *ThreatSubmissionRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration get threatSubmission from security
+// CreateGetRequestInformationWithRequestConfiguration a threat submission sent to Microsoft; for example, a suspicious email threat, URL threat, or file threat.
 func (m *ThreatSubmissionRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *ThreatSubmissionRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -190,11 +190,11 @@ func (m *ThreatSubmissionRequestBuilder) FileThreatsById(id string)(*iea4954cd26
     }
     return iea4954cd2624be64ac3de2ebf2b2820af5b41742fb51a218c4440447feabbb05.NewFileThreatSubmissionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Get get threatSubmission from security
+// Get a threat submission sent to Microsoft; for example, a suspicious email threat, URL threat, or file threat.
 func (m *ThreatSubmissionRequestBuilder) Get()(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.ThreatSubmissionRootable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler get threatSubmission from security
+// GetWithRequestConfigurationAndResponseHandler a threat submission sent to Microsoft; for example, a suspicious email threat, URL threat, or file threat.
 func (m *ThreatSubmissionRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *ThreatSubmissionRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.ThreatSubmissionRootable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

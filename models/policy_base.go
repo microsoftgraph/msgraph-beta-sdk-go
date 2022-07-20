@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// PolicyBase provides operations to manage the collection of accessReviewDecision entities.
+// PolicyBase provides operations to manage the collection of accessReview entities.
 type PolicyBase struct {
     DirectoryObject
     // Description for this policy. Required.
@@ -17,8 +17,8 @@ func NewPolicyBase()(*PolicyBase) {
     m := &PolicyBase{
         DirectoryObject: *NewDirectoryObject(),
     }
-    odatatypeValue := "#microsoft.graph.policyBase";
-    m.SetType(&odatatypeValue);
+    odataTypeValue := "#microsoft.graph.policyBase";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreatePolicyBaseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -36,12 +36,20 @@ func CreatePolicyBaseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3
             if mappingValue != nil {
                 mappingStr := *mappingValue
                 switch mappingStr {
+                    case "#microsoft.graph.activityBasedTimeoutPolicy":
+                        return NewActivityBasedTimeoutPolicy(), nil
                     case "#microsoft.graph.appManagementPolicy":
                         return NewAppManagementPolicy(), nil
                     case "#microsoft.graph.authorizationPolicy":
                         return NewAuthorizationPolicy(), nil
+                    case "#microsoft.graph.claimsMappingPolicy":
+                        return NewClaimsMappingPolicy(), nil
+                    case "#microsoft.graph.crossTenantAccessPolicy":
+                        return NewCrossTenantAccessPolicy(), nil
                     case "#microsoft.graph.externalIdentitiesPolicy":
                         return NewExternalIdentitiesPolicy(), nil
+                    case "#microsoft.graph.homeRealmDiscoveryPolicy":
+                        return NewHomeRealmDiscoveryPolicy(), nil
                     case "#microsoft.graph.identitySecurityDefaultsEnforcementPolicy":
                         return NewIdentitySecurityDefaultsEnforcementPolicy(), nil
                     case "#microsoft.graph.permissionGrantPolicy":
@@ -54,6 +62,10 @@ func CreatePolicyBaseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3
                         return NewTenantAppManagementPolicy(), nil
                     case "#microsoft.graph.tenantRelationshipAccessPolicyBase":
                         return NewTenantRelationshipAccessPolicyBase(), nil
+                    case "#microsoft.graph.tokenIssuancePolicy":
+                        return NewTokenIssuancePolicy(), nil
+                    case "#microsoft.graph.tokenLifetimePolicy":
+                        return NewTokenLifetimePolicy(), nil
                 }
             }
         }

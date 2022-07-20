@@ -13,6 +13,8 @@ func NewPayloadResponse()(*PayloadResponse) {
     m := &PayloadResponse{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.payloadResponse";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreatePayloadResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

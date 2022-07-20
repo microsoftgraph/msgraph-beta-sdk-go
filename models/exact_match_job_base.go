@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ExactMatchJobBase provides operations to manage the collection of accessReviewDecision entities.
+// ExactMatchJobBase provides operations to manage the collection of accessReview entities.
 type ExactMatchJobBase struct {
     Entity
     // The completionDateTime property
@@ -24,8 +24,8 @@ func NewExactMatchJobBase()(*ExactMatchJobBase) {
     m := &ExactMatchJobBase{
         Entity: *NewEntity(),
     }
-    odatatypeValue := "#microsoft.graph.exactMatchJobBase";
-    m.SetType(&odatatypeValue);
+    odataTypeValue := "#microsoft.graph.exactMatchJobBase";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateExactMatchJobBaseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -45,6 +45,8 @@ func CreateExactMatchJobBaseFromDiscriminatorValue(parseNode i878a80d2330e89d268
                 switch mappingStr {
                     case "#microsoft.graph.exactMatchLookupJob":
                         return NewExactMatchLookupJob(), nil
+                    case "#microsoft.graph.exactMatchSession":
+                        return NewExactMatchSession(), nil
                     case "#microsoft.graph.exactMatchSessionBase":
                         return NewExactMatchSessionBase(), nil
                 }

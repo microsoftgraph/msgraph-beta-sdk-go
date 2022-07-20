@@ -19,6 +19,8 @@ func NewProgram()(*Program) {
     m := &Program{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.program";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateProgramFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

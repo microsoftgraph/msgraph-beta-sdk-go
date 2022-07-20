@@ -70,7 +70,7 @@ func NewCloudAppSecurityProfilesRequestBuilder(rawUrl string, requestAdapter i2a
     urlParams["request-raw-url"] = rawUrl
     return NewCloudAppSecurityProfilesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *CloudAppSecurityProfilesRequestBuilder) Count()(*i1cfbd52510d232fe3be4fb1aa7b0e119dae106d6e6abb2e8b7703561f346f58e.CountRequestBuilder) {
     return i1cfbd52510d232fe3be4fb1aa7b0e119dae106d6e6abb2e8b7703561f346f58e.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

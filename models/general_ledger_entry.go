@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// GeneralLedgerEntry provides operations to manage the collection of accessReviewDecision entities.
+// GeneralLedgerEntry 
 type GeneralLedgerEntry struct {
     Entity
     // The account property
@@ -29,11 +29,13 @@ type GeneralLedgerEntry struct {
     // The postingDate property
     postingDate *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly
 }
-// NewGeneralLedgerEntry instantiates a new generalLedgerEntry and sets the default values.
+// NewGeneralLedgerEntry instantiates a new GeneralLedgerEntry and sets the default values.
 func NewGeneralLedgerEntry()(*GeneralLedgerEntry) {
     m := &GeneralLedgerEntry{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.generalLedgerEntry";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateGeneralLedgerEntryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

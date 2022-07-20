@@ -11,7 +11,9 @@ type TeamworkMicrophoneConfigurationable interface {
     GetDefaultMicrophone()(TeamworkPeripheralable)
     GetIsMicrophoneOptional()(*bool)
     GetMicrophones()([]TeamworkPeripheralable)
+    GetOdataType()(*string)
     SetDefaultMicrophone(value TeamworkPeripheralable)()
     SetIsMicrophoneOptional(value *bool)()
     SetMicrophones(value []TeamworkPeripheralable)()
+    SetOdataType(value *string)()
 }

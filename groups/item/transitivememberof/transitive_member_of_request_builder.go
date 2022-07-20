@@ -73,7 +73,7 @@ func NewTransitiveMemberOfRequestBuilder(rawUrl string, requestAdapter i2ae4187f
     urlParams["request-raw-url"] = rawUrl
     return NewTransitiveMemberOfRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *TransitiveMemberOfRequestBuilder) Count()(*ifc0c576c85f182a8c24de4d78ba2a4aaa8336be5a9e7f5e0ec0889151419c3af.CountRequestBuilder) {
     return ifc0c576c85f182a8c24de4d78ba2a4aaa8336be5a9e7f5e0ec0889151419c3af.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

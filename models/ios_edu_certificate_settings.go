@@ -20,6 +20,8 @@ type IosEduCertificateSettings struct {
     certificationAuthority *string
     // PKCS Certification Authority Name.
     certificationAuthorityName *string
+    // The OdataType property
+    odataType *string
     // Certificate renewal threshold percentage. Valid values 1 to 99
     renewalThresholdPercentage *int32
     // Trusted Root Certificate.
@@ -30,6 +32,8 @@ func NewIosEduCertificateSettings()(*IosEduCertificateSettings) {
     m := &IosEduCertificateSettings{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.iosEduCertificateSettings";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateIosEduCertificateSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -155,6 +159,16 @@ func (m *IosEduCertificateSettings) GetFieldDeserializers()(map[string]func(i878
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["renewalThresholdPercentage"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
@@ -176,6 +190,14 @@ func (m *IosEduCertificateSettings) GetFieldDeserializers()(map[string]func(i878
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *IosEduCertificateSettings) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
 }
 // GetRenewalThresholdPercentage gets the renewalThresholdPercentage property value. Certificate renewal threshold percentage. Valid values 1 to 99
 func (m *IosEduCertificateSettings) GetRenewalThresholdPercentage()(*int32) {
@@ -228,6 +250,12 @@ func (m *IosEduCertificateSettings) Serialize(writer i878a80d2330e89d26896388a3f
     }
     {
         err := writer.WriteStringValue("certificationAuthorityName", m.GetCertificationAuthorityName())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -292,6 +320,12 @@ func (m *IosEduCertificateSettings) SetCertificationAuthority(value *string)() {
 func (m *IosEduCertificateSettings) SetCertificationAuthorityName(value *string)() {
     if m != nil {
         m.certificationAuthorityName = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *IosEduCertificateSettings) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetRenewalThresholdPercentage sets the renewalThresholdPercentage property value. Certificate renewal threshold percentage. Valid values 1 to 99

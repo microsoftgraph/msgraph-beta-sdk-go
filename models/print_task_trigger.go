@@ -17,6 +17,8 @@ func NewPrintTaskTrigger()(*PrintTaskTrigger) {
     m := &PrintTaskTrigger{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.printTaskTrigger";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreatePrintTaskTriggerFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

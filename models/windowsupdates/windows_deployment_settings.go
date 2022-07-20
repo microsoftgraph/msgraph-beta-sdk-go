@@ -15,6 +15,8 @@ func NewWindowsDeploymentSettings()(*WindowsDeploymentSettings) {
     m := &WindowsDeploymentSettings{
         DeploymentSettings: *NewDeploymentSettings(),
     }
+    odataTypeValue := "#microsoft.graph.windowsUpdates.windowsDeploymentSettings";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateWindowsDeploymentSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

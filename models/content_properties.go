@@ -17,12 +17,16 @@ type ContentProperties struct {
     lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The metadata property
     metadata ContentMetadataable
+    // The OdataType property
+    odataType *string
 }
 // NewContentProperties instantiates a new contentProperties and sets the default values.
 func NewContentProperties()(*ContentProperties) {
     m := &ContentProperties{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.contentProperties";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateContentPropertiesFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -92,6 +96,16 @@ func (m *ContentProperties) GetFieldDeserializers()(map[string]func(i878a80d2330
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetLastModifiedBy gets the lastModifiedBy property value. The lastModifiedBy property
@@ -118,6 +132,14 @@ func (m *ContentProperties) GetMetadata()(ContentMetadataable) {
         return m.metadata
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *ContentProperties) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // Serialize serializes information the current object
 func (m *ContentProperties) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     if m.GetExtensions() != nil {
@@ -140,6 +162,12 @@ func (m *ContentProperties) Serialize(writer i878a80d2330e89d26896388a3f487eef27
     }
     {
         err := writer.WriteObjectValue("metadata", m.GetMetadata())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -180,5 +208,11 @@ func (m *ContentProperties) SetLastModifiedDateTime(value *i336074805fc853987abe
 func (m *ContentProperties) SetMetadata(value ContentMetadataable)() {
     if m != nil {
         m.metadata = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *ContentProperties) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }

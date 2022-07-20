@@ -70,7 +70,7 @@ func NewWorkbooksRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2633
     urlParams["request-raw-url"] = rawUrl
     return NewWorkbooksRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *WorkbooksRequestBuilder) Count()(*i5ad919390649acca976dd32cee353bc6addac4a39fb9be5acd8cdc42e54a1663.CountRequestBuilder) {
     return i5ad919390649acca976dd32cee353bc6addac4a39fb9be5acd8cdc42e54a1663.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

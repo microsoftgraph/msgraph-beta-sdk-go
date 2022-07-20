@@ -71,6 +71,8 @@ func NewDepIOSEnrollmentProfile()(*DepIOSEnrollmentProfile) {
     m := &DepIOSEnrollmentProfile{
         DepEnrollmentBaseProfile: *NewDepEnrollmentBaseProfile(),
     }
+    odataTypeValue := "#microsoft.graph.depIOSEnrollmentProfile";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDepIOSEnrollmentProfileFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

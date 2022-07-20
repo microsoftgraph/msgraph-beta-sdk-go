@@ -17,6 +17,8 @@ func NewDeviceManagementComplianceScheduledActionForRule()(*DeviceManagementComp
     m := &DeviceManagementComplianceScheduledActionForRule{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.deviceManagementComplianceScheduledActionForRule";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDeviceManagementComplianceScheduledActionForRuleFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

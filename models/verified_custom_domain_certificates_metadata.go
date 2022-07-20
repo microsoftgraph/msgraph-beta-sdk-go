@@ -15,6 +15,8 @@ type VerifiedCustomDomainCertificatesMetadata struct {
     issueDate *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The issuer name of the custom domain certificate.
     issuerName *string
+    // The OdataType property
+    odataType *string
     // The subject name of the custom domain certificate.
     subjectName *string
     // The thumbprint associated with the custom domain certificate.
@@ -25,6 +27,8 @@ func NewVerifiedCustomDomainCertificatesMetadata()(*VerifiedCustomDomainCertific
     m := &VerifiedCustomDomainCertificatesMetadata{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.verifiedCustomDomainCertificatesMetadata";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateVerifiedCustomDomainCertificatesMetadataFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -80,6 +84,16 @@ func (m *VerifiedCustomDomainCertificatesMetadata) GetFieldDeserializers()(map[s
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["subjectName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -118,6 +132,14 @@ func (m *VerifiedCustomDomainCertificatesMetadata) GetIssuerName()(*string) {
         return m.issuerName
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *VerifiedCustomDomainCertificatesMetadata) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetSubjectName gets the subjectName property value. The subject name of the custom domain certificate.
 func (m *VerifiedCustomDomainCertificatesMetadata) GetSubjectName()(*string) {
     if m == nil {
@@ -150,6 +172,12 @@ func (m *VerifiedCustomDomainCertificatesMetadata) Serialize(writer i878a80d2330
     }
     {
         err := writer.WriteStringValue("issuerName", m.GetIssuerName())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -196,6 +224,12 @@ func (m *VerifiedCustomDomainCertificatesMetadata) SetIssueDate(value *i33607480
 func (m *VerifiedCustomDomainCertificatesMetadata) SetIssuerName(value *string)() {
     if m != nil {
         m.issuerName = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *VerifiedCustomDomainCertificatesMetadata) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetSubjectName sets the subjectName property value. The subject name of the custom domain certificate.

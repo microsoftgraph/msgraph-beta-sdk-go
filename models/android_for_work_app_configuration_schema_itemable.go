@@ -15,6 +15,7 @@ type AndroidForWorkAppConfigurationSchemaItemable interface {
     GetDefaultStringValue()(*string)
     GetDescription()(*string)
     GetDisplayName()(*string)
+    GetOdataType()(*string)
     GetSchemaItemKey()(*string)
     GetSelections()([]KeyValuePairable)
     SetDataType(value *AndroidForWorkAppConfigurationSchemaItemDataType)()
@@ -24,6 +25,7 @@ type AndroidForWorkAppConfigurationSchemaItemable interface {
     SetDefaultStringValue(value *string)()
     SetDescription(value *string)()
     SetDisplayName(value *string)()
+    SetOdataType(value *string)()
     SetSchemaItemKey(value *string)()
     SetSelections(value []KeyValuePairable)()
 }

@@ -17,12 +17,16 @@ type ClassificationInnerError struct {
     code *string
     // The errorDateTime property
     errorDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
+    // The OdataType property
+    odataType *string
 }
 // NewClassificationInnerError instantiates a new classificationInnerError and sets the default values.
 func NewClassificationInnerError()(*ClassificationInnerError) {
     m := &ClassificationInnerError{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.classificationInnerError";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateClassificationInnerErrorFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -112,7 +116,25 @@ func (m *ClassificationInnerError) GetFieldDeserializers()(map[string]func(i878a
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *ClassificationInnerError) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
 }
 // Serialize serializes information the current object
 func (m *ClassificationInnerError) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -136,6 +158,12 @@ func (m *ClassificationInnerError) Serialize(writer i878a80d2330e89d26896388a3f4
     }
     {
         err := writer.WriteTimeValue("errorDateTime", m.GetErrorDateTime())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -176,5 +204,11 @@ func (m *ClassificationInnerError) SetCode(value *string)() {
 func (m *ClassificationInnerError) SetErrorDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     if m != nil {
         m.errorDateTime = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *ClassificationInnerError) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }

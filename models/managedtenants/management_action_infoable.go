@@ -11,7 +11,9 @@ type ManagementActionInfoable interface {
     GetManagementActionId()(*string)
     GetManagementTemplateId()(*string)
     GetManagementTemplateVersion()(*int32)
+    GetOdataType()(*string)
     SetManagementActionId(value *string)()
     SetManagementTemplateId(value *string)()
     SetManagementTemplateVersion(value *int32)()
+    SetOdataType(value *string)()
 }

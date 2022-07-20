@@ -20,6 +20,7 @@ type DeviceManagementSettingsable interface {
     GetEnhancedJailBreak()(*bool)
     GetIgnoreDevicesForUnsupportedSettingsEnabled()(*bool)
     GetIsScheduledActionEnabled()(*bool)
+    GetOdataType()(*string)
     GetSecureByDefault()(*bool)
     SetAndroidDeviceAdministratorEnrollmentEnabled(value *bool)()
     SetDerivedCredentialProvider(value *DerivedCredentialProviderType)()
@@ -33,5 +34,6 @@ type DeviceManagementSettingsable interface {
     SetEnhancedJailBreak(value *bool)()
     SetIgnoreDevicesForUnsupportedSettingsEnabled(value *bool)()
     SetIsScheduledActionEnabled(value *bool)()
+    SetOdataType(value *string)()
     SetSecureByDefault(value *bool)()
 }

@@ -15,6 +15,8 @@ func NewWindowsFeatureUpdateProfileAssignment()(*WindowsFeatureUpdateProfileAssi
     m := &WindowsFeatureUpdateProfileAssignment{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.windowsFeatureUpdateProfileAssignment";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateWindowsFeatureUpdateProfileAssignmentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -10,12 +10,16 @@ type UserExperienceAnalyticsCloudIdentityDevicesSummary struct {
     additionalData map[string]interface{}
     // The count of devices that are not cloud identity.
     deviceWithoutCloudIdentityCount *int32
+    // The OdataType property
+    odataType *string
 }
 // NewUserExperienceAnalyticsCloudIdentityDevicesSummary instantiates a new userExperienceAnalyticsCloudIdentityDevicesSummary and sets the default values.
 func NewUserExperienceAnalyticsCloudIdentityDevicesSummary()(*UserExperienceAnalyticsCloudIdentityDevicesSummary) {
     m := &UserExperienceAnalyticsCloudIdentityDevicesSummary{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.userExperienceAnalyticsCloudIdentityDevicesSummary";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateUserExperienceAnalyticsCloudIdentityDevicesSummaryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -51,12 +55,36 @@ func (m *UserExperienceAnalyticsCloudIdentityDevicesSummary) GetFieldDeserialize
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *UserExperienceAnalyticsCloudIdentityDevicesSummary) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
 }
 // Serialize serializes information the current object
 func (m *UserExperienceAnalyticsCloudIdentityDevicesSummary) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
         err := writer.WriteInt32Value("deviceWithoutCloudIdentityCount", m.GetDeviceWithoutCloudIdentityCount())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -79,5 +107,11 @@ func (m *UserExperienceAnalyticsCloudIdentityDevicesSummary) SetAdditionalData(v
 func (m *UserExperienceAnalyticsCloudIdentityDevicesSummary) SetDeviceWithoutCloudIdentityCount(value *int32)() {
     if m != nil {
         m.deviceWithoutCloudIdentityCount = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *UserExperienceAnalyticsCloudIdentityDevicesSummary) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }

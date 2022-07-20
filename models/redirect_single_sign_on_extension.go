@@ -21,6 +21,8 @@ func NewRedirectSingleSignOnExtension()(*RedirectSingleSignOnExtension) {
     m := &RedirectSingleSignOnExtension{
         SingleSignOnExtension: *NewSingleSignOnExtension(),
     }
+    odataTypeValue := "#microsoft.graph.redirectSingleSignOnExtension";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateRedirectSingleSignOnExtensionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -19,6 +19,8 @@ func NewWindows81WifiImportConfiguration()(*Windows81WifiImportConfiguration) {
     m := &Windows81WifiImportConfiguration{
         DeviceConfiguration: *NewDeviceConfiguration(),
     }
+    odataTypeValue := "#microsoft.graph.windows81WifiImportConfiguration";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateWindows81WifiImportConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

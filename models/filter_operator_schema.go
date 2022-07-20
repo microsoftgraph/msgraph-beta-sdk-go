@@ -14,11 +14,13 @@ type FilterOperatorSchema struct {
     // Attribute types supported by the operator. Possible values are: Boolean, Binary, Reference, Integer, String.
     supportedAttributeTypes []string
 }
-// NewFilterOperatorSchema instantiates a new filterOperatorSchema and sets the default values.
+// NewFilterOperatorSchema instantiates a new FilterOperatorSchema and sets the default values.
 func NewFilterOperatorSchema()(*FilterOperatorSchema) {
     m := &FilterOperatorSchema{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.filterOperatorSchema";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateFilterOperatorSchemaFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

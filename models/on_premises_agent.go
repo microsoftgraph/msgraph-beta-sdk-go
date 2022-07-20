@@ -23,6 +23,8 @@ func NewOnPremisesAgent()(*OnPremisesAgent) {
     m := &OnPremisesAgent{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.onPremisesAgent";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateOnPremisesAgentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

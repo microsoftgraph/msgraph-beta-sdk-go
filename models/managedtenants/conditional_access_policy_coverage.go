@@ -6,7 +6,7 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
-// ConditionalAccessPolicyCoverage provides operations to manage the collection of accessReviewDecision entities.
+// ConditionalAccessPolicyCoverage provides operations to manage the collection of accessReview entities.
 type ConditionalAccessPolicyCoverage struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
     // The state for the conditional access policy. Possible values are: enabled, disabled, enabledForReportingButNotEnforced. Required. Read-only.
@@ -23,6 +23,8 @@ func NewConditionalAccessPolicyCoverage()(*ConditionalAccessPolicyCoverage) {
     m := &ConditionalAccessPolicyCoverage{
         Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.managedTenants.conditionalAccessPolicyCoverage";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateConditionalAccessPolicyCoverageFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

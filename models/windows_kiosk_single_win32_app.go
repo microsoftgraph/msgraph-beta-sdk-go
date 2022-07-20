@@ -15,6 +15,8 @@ func NewWindowsKioskSingleWin32App()(*WindowsKioskSingleWin32App) {
     m := &WindowsKioskSingleWin32App{
         WindowsKioskAppConfiguration: *NewWindowsKioskAppConfiguration(),
     }
+    odataTypeValue := "#microsoft.graph.windowsKioskSingleWin32App";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateWindowsKioskSingleWin32AppFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -12,12 +12,16 @@ type MfaDetail struct {
     authDetail *string
     // Indicates the MFA Auth methods (SMS, Phone, Authenticator App are some of the value) for the corresponding sign-in activity when the MFA Required field is 'Yes'.
     authMethod *string
+    // The OdataType property
+    odataType *string
 }
 // NewMfaDetail instantiates a new mfaDetail and sets the default values.
 func NewMfaDetail()(*MfaDetail) {
     m := &MfaDetail{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.mfaDetail";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateMfaDetailFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -71,7 +75,25 @@ func (m *MfaDetail) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *MfaDetail) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
 }
 // Serialize serializes information the current object
 func (m *MfaDetail) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -83,6 +105,12 @@ func (m *MfaDetail) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
     }
     {
         err := writer.WriteStringValue("authMethod", m.GetAuthMethod())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -111,5 +139,11 @@ func (m *MfaDetail) SetAuthDetail(value *string)() {
 func (m *MfaDetail) SetAuthMethod(value *string)() {
     if m != nil {
         m.authMethod = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *MfaDetail) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }

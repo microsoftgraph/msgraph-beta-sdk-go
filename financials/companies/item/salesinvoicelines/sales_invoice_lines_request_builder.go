@@ -70,7 +70,7 @@ func NewSalesInvoiceLinesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7
     urlParams["request-raw-url"] = rawUrl
     return NewSalesInvoiceLinesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *SalesInvoiceLinesRequestBuilder) Count()(*ic4393f1c9e86d26c6987716e588c9362622f38684b8ddb3ce6fca18b105d8138.CountRequestBuilder) {
     return ic4393f1c9e86d26c6987716e588c9362622f38684b8ddb3ce6fca18b105d8138.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

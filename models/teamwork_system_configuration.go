@@ -32,12 +32,16 @@ type TeamworkSystemConfiguration struct {
     loggingLevel *string
     // The network configuration for the device.
     networkConfiguration TeamworkNetworkConfigurationable
+    // The OdataType property
+    odataType *string
 }
 // NewTeamworkSystemConfiguration instantiates a new teamworkSystemConfiguration and sets the default values.
 func NewTeamworkSystemConfiguration()(*TeamworkSystemConfiguration) {
     m := &TeamworkSystemConfiguration{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.teamworkSystemConfiguration";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateTeamworkSystemConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -199,6 +203,16 @@ func (m *TeamworkSystemConfiguration) GetFieldDeserializers()(map[string]func(i8
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetIsDeviceLockEnabled gets the isDeviceLockEnabled property value. True if the device lock is enabled.
@@ -273,6 +287,14 @@ func (m *TeamworkSystemConfiguration) GetNetworkConfiguration()(TeamworkNetworkC
         return m.networkConfiguration
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *TeamworkSystemConfiguration) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // Serialize serializes information the current object
 func (m *TeamworkSystemConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
@@ -343,6 +365,12 @@ func (m *TeamworkSystemConfiguration) Serialize(writer i878a80d2330e89d26896388a
     }
     {
         err := writer.WriteObjectValue("networkConfiguration", m.GetNetworkConfiguration())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -431,5 +459,11 @@ func (m *TeamworkSystemConfiguration) SetLoggingLevel(value *string)() {
 func (m *TeamworkSystemConfiguration) SetNetworkConfiguration(value TeamworkNetworkConfigurationable)() {
     if m != nil {
         m.networkConfiguration = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *TeamworkSystemConfiguration) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }

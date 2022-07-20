@@ -13,9 +13,11 @@ type TeamworkDisplayConfigurationable interface {
     GetInBuiltDisplayScreenConfiguration()(TeamworkDisplayScreenConfigurationable)
     GetIsContentDuplicationAllowed()(*bool)
     GetIsDualDisplayModeEnabled()(*bool)
+    GetOdataType()(*string)
     SetConfiguredDisplays(value []TeamworkConfiguredPeripheralable)()
     SetDisplayCount(value *int32)()
     SetInBuiltDisplayScreenConfiguration(value TeamworkDisplayScreenConfigurationable)()
     SetIsContentDuplicationAllowed(value *bool)()
     SetIsDualDisplayModeEnabled(value *bool)()
+    SetOdataType(value *string)()
 }

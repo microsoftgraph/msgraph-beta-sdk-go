@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ScopedRoleMembership 
+// ScopedRoleMembership provides operations to manage the collection of accessReview entities.
 type ScopedRoleMembership struct {
     Entity
     // Unique identifier for the administrative unit that the directory role is scoped to
@@ -14,11 +14,13 @@ type ScopedRoleMembership struct {
     // The roleMemberInfo property
     roleMemberInfo Identityable
 }
-// NewScopedRoleMembership instantiates a new ScopedRoleMembership and sets the default values.
+// NewScopedRoleMembership instantiates a new scopedRoleMembership and sets the default values.
 func NewScopedRoleMembership()(*ScopedRoleMembership) {
     m := &ScopedRoleMembership{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.scopedRoleMembership";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateScopedRoleMembershipFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

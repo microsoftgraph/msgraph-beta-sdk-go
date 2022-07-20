@@ -14,12 +14,16 @@ type MacOSAssociatedDomainsItem struct {
     directDownloadsEnabled *bool
     // The list of domains to associate.
     domains []string
+    // The OdataType property
+    odataType *string
 }
 // NewMacOSAssociatedDomainsItem instantiates a new macOSAssociatedDomainsItem and sets the default values.
 func NewMacOSAssociatedDomainsItem()(*MacOSAssociatedDomainsItem) {
     m := &MacOSAssociatedDomainsItem{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.macOSAssociatedDomainsItem";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateMacOSAssociatedDomainsItemFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -95,7 +99,25 @@ func (m *MacOSAssociatedDomainsItem) GetFieldDeserializers()(map[string]func(i87
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *MacOSAssociatedDomainsItem) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
 }
 // Serialize serializes information the current object
 func (m *MacOSAssociatedDomainsItem) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -113,6 +135,12 @@ func (m *MacOSAssociatedDomainsItem) Serialize(writer i878a80d2330e89d26896388a3
     }
     if m.GetDomains() != nil {
         err := writer.WriteCollectionOfStringValues("domains", m.GetDomains())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -147,5 +175,11 @@ func (m *MacOSAssociatedDomainsItem) SetDirectDownloadsEnabled(value *bool)() {
 func (m *MacOSAssociatedDomainsItem) SetDomains(value []string)() {
     if m != nil {
         m.domains = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *MacOSAssociatedDomainsItem) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }

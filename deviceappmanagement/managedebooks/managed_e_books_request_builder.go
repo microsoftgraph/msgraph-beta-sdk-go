@@ -70,7 +70,7 @@ func NewManagedEBooksRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee
     urlParams["request-raw-url"] = rawUrl
     return NewManagedEBooksRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *ManagedEBooksRequestBuilder) Count()(*i283d466bceba087a2573b82b2267181e5edf6728f4ebd5d171b7f0ea4109433b.CountRequestBuilder) {
     return i283d466bceba087a2573b82b2267181e5edf6728f4ebd5d171b7f0ea4109433b.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

@@ -25,8 +25,8 @@ func NewEnrollmentProfile()(*EnrollmentProfile) {
     m := &EnrollmentProfile{
         Entity: *NewEntity(),
     }
-    odatatypeValue := "#microsoft.graph.enrollmentProfile";
-    m.SetType(&odatatypeValue);
+    odataTypeValue := "#microsoft.graph.enrollmentProfile";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateEnrollmentProfileFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -48,6 +48,10 @@ func CreateEnrollmentProfileFromDiscriminatorValue(parseNode i878a80d2330e89d268
                         return NewDepEnrollmentBaseProfile(), nil
                     case "#microsoft.graph.depEnrollmentProfile":
                         return NewDepEnrollmentProfile(), nil
+                    case "#microsoft.graph.depIOSEnrollmentProfile":
+                        return NewDepIOSEnrollmentProfile(), nil
+                    case "#microsoft.graph.depMacOSEnrollmentProfile":
+                        return NewDepMacOSEnrollmentProfile(), nil
                 }
             }
         }

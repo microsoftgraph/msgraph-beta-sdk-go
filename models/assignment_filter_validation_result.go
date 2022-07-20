@@ -10,12 +10,16 @@ type AssignmentFilterValidationResult struct {
     additionalData map[string]interface{}
     // Indicator to valid or invalid rule.
     isValidRule *bool
+    // The OdataType property
+    odataType *string
 }
 // NewAssignmentFilterValidationResult instantiates a new assignmentFilterValidationResult and sets the default values.
 func NewAssignmentFilterValidationResult()(*AssignmentFilterValidationResult) {
     m := &AssignmentFilterValidationResult{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.assignmentFilterValidationResult";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAssignmentFilterValidationResultFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -43,6 +47,16 @@ func (m *AssignmentFilterValidationResult) GetFieldDeserializers()(map[string]fu
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetIsValidRule gets the isValidRule property value. Indicator to valid or invalid rule.
@@ -53,10 +67,24 @@ func (m *AssignmentFilterValidationResult) GetIsValidRule()(*bool) {
         return m.isValidRule
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *AssignmentFilterValidationResult) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // Serialize serializes information the current object
 func (m *AssignmentFilterValidationResult) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
         err := writer.WriteBoolValue("isValidRule", m.GetIsValidRule())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -79,5 +107,11 @@ func (m *AssignmentFilterValidationResult) SetAdditionalData(value map[string]in
 func (m *AssignmentFilterValidationResult) SetIsValidRule(value *bool)() {
     if m != nil {
         m.isValidRule = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *AssignmentFilterValidationResult) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }

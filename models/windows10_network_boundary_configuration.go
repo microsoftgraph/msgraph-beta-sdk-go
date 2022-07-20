@@ -15,6 +15,8 @@ func NewWindows10NetworkBoundaryConfiguration()(*Windows10NetworkBoundaryConfigu
     m := &Windows10NetworkBoundaryConfiguration{
         DeviceConfiguration: *NewDeviceConfiguration(),
     }
+    odataTypeValue := "#microsoft.graph.windows10NetworkBoundaryConfiguration";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateWindows10NetworkBoundaryConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

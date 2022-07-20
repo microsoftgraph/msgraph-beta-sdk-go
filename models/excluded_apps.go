@@ -20,6 +20,8 @@ type ExcludedApps struct {
     infoPath *bool
     // The value for if MS Office Skype for Business - Lync should be excluded or not.
     lync *bool
+    // The OdataType property
+    odataType *string
     // The value for if MS Office OneDrive should be excluded or not.
     oneDrive *bool
     // The value for if MS Office OneNote should be excluded or not.
@@ -44,6 +46,8 @@ func NewExcludedApps()(*ExcludedApps) {
     m := &ExcludedApps{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.excludedApps";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateExcludedAppsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -142,6 +146,16 @@ func (m *ExcludedApps) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
         }
         if val != nil {
             m.SetLync(val)
+        }
+        return nil
+    }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
         }
         return nil
     }
@@ -261,6 +275,14 @@ func (m *ExcludedApps) GetLync()(*bool) {
         return m.lync
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *ExcludedApps) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetOneDrive gets the oneDrive property value. The value for if MS Office OneDrive should be excluded or not.
 func (m *ExcludedApps) GetOneDrive()(*bool) {
     if m == nil {
@@ -372,6 +394,12 @@ func (m *ExcludedApps) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
         }
     }
     {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err := writer.WriteBoolValue("oneDrive", m.GetOneDrive())
         if err != nil {
             return err
@@ -473,6 +501,12 @@ func (m *ExcludedApps) SetInfoPath(value *bool)() {
 func (m *ExcludedApps) SetLync(value *bool)() {
     if m != nil {
         m.lync = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *ExcludedApps) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetOneDrive sets the oneDrive property value. The value for if MS Office OneDrive should be excluded or not.

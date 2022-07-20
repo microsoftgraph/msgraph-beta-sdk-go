@@ -12,8 +12,10 @@ type DiscoveredSensitiveTypeable interface {
     GetConfidence()(*int32)
     GetCount()(*int32)
     GetId()(*string)
+    GetOdataType()(*string)
     SetClassificationAttributes(value []ClassificationAttributeable)()
     SetConfidence(value *int32)()
     SetCount(value *int32)()
     SetId(value *string)()
+    SetOdataType(value *string)()
 }

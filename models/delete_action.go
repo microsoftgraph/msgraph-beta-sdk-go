@@ -12,12 +12,16 @@ type DeleteAction struct {
     name *string
     // File or Folder, depending on the type of the deleted item.
     objectType *string
+    // The OdataType property
+    odataType *string
 }
 // NewDeleteAction instantiates a new deleteAction and sets the default values.
 func NewDeleteAction()(*DeleteAction) {
     m := &DeleteAction{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.deleteAction";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDeleteActionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -55,6 +59,16 @@ func (m *DeleteAction) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetName gets the name property value. The name of the item that was deleted.
@@ -73,6 +87,14 @@ func (m *DeleteAction) GetObjectType()(*string) {
         return m.objectType
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *DeleteAction) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // Serialize serializes information the current object
 func (m *DeleteAction) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
@@ -83,6 +105,12 @@ func (m *DeleteAction) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
     }
     {
         err := writer.WriteStringValue("objectType", m.GetObjectType())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -111,5 +139,11 @@ func (m *DeleteAction) SetName(value *string)() {
 func (m *DeleteAction) SetObjectType(value *string)() {
     if m != nil {
         m.objectType = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *DeleteAction) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }

@@ -17,6 +17,8 @@ func NewGroupMembers()(*GroupMembers) {
     m := &GroupMembers{
         UserSet: *NewUserSet(),
     }
+    odataTypeValue := "#microsoft.graph.groupMembers";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateGroupMembersFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

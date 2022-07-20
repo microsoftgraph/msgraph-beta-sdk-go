@@ -23,6 +23,8 @@ func NewStatusDetails()(*StatusDetails) {
     m := &StatusDetails{
         StatusBase: *NewStatusBase(),
     }
+    odataTypeValue := "#microsoft.graph.statusDetails";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateStatusDetailsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

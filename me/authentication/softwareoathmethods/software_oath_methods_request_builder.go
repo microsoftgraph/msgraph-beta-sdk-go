@@ -70,7 +70,7 @@ func NewSoftwareOathMethodsRequestBuilder(rawUrl string, requestAdapter i2ae4187
     urlParams["request-raw-url"] = rawUrl
     return NewSoftwareOathMethodsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *SoftwareOathMethodsRequestBuilder) Count()(*i55d73ef1cff5f3d2fa76406706ef9d8755f2c2ec805c97c5308f988a88b9a36d.CountRequestBuilder) {
     return i55d73ef1cff5f3d2fa76406706ef9d8755f2c2ec805c97c5308f988a88b9a36d.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

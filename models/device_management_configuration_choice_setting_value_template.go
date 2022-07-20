@@ -10,6 +10,8 @@ type DeviceManagementConfigurationChoiceSettingValueTemplate struct {
     additionalData map[string]interface{}
     // Choice Setting Value Default Template.
     defaultValue DeviceManagementConfigurationChoiceSettingValueDefaultTemplateable
+    // The OdataType property
+    odataType *string
     // Recommended definition override.
     recommendedValueDefinition DeviceManagementConfigurationChoiceSettingValueDefinitionTemplateable
     // Required definition override.
@@ -22,6 +24,8 @@ func NewDeviceManagementConfigurationChoiceSettingValueTemplate()(*DeviceManagem
     m := &DeviceManagementConfigurationChoiceSettingValueTemplate{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.deviceManagementConfigurationChoiceSettingValueTemplate";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDeviceManagementConfigurationChoiceSettingValueTemplateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -57,6 +61,16 @@ func (m *DeviceManagementConfigurationChoiceSettingValueTemplate) GetFieldDeseri
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["recommendedValueDefinition"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateDeviceManagementConfigurationChoiceSettingValueDefinitionTemplateFromDiscriminatorValue)
         if err != nil {
@@ -89,6 +103,14 @@ func (m *DeviceManagementConfigurationChoiceSettingValueTemplate) GetFieldDeseri
     }
     return res
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *DeviceManagementConfigurationChoiceSettingValueTemplate) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetRecommendedValueDefinition gets the recommendedValueDefinition property value. Recommended definition override.
 func (m *DeviceManagementConfigurationChoiceSettingValueTemplate) GetRecommendedValueDefinition()(DeviceManagementConfigurationChoiceSettingValueDefinitionTemplateable) {
     if m == nil {
@@ -117,6 +139,12 @@ func (m *DeviceManagementConfigurationChoiceSettingValueTemplate) GetSettingValu
 func (m *DeviceManagementConfigurationChoiceSettingValueTemplate) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
         err := writer.WriteObjectValue("defaultValue", m.GetDefaultValue())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -157,6 +185,12 @@ func (m *DeviceManagementConfigurationChoiceSettingValueTemplate) SetAdditionalD
 func (m *DeviceManagementConfigurationChoiceSettingValueTemplate) SetDefaultValue(value DeviceManagementConfigurationChoiceSettingValueDefaultTemplateable)() {
     if m != nil {
         m.defaultValue = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *DeviceManagementConfigurationChoiceSettingValueTemplate) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetRecommendedValueDefinition sets the recommendedValueDefinition property value. Recommended definition override.

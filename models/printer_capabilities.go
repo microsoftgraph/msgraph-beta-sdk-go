@@ -44,6 +44,8 @@ type PrinterCapabilities struct {
     mediaTypes []string
     // The presentation directions supported by the printer. Supported values are described in the following table.
     multipageLayouts []string
+    // The OdataType property
+    odataType *string
     // The print orientations supported by the printer. Valid values are described in the following table.
     orientations []string
     // The printer's supported output bins (trays).
@@ -92,6 +94,8 @@ func NewPrinterCapabilities()(*PrinterCapabilities) {
     m := &PrinterCapabilities{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.printerCapabilities";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreatePrinterCapabilitiesFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -414,6 +418,16 @@ func (m *PrinterCapabilities) GetFieldDeserializers()(map[string]func(i878a80d23
                 res[i] = *(v.(*string))
             }
             m.SetMultipageLayouts(res)
+        }
+        return nil
+    }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
         }
         return nil
     }
@@ -773,6 +787,14 @@ func (m *PrinterCapabilities) GetMultipageLayouts()([]string) {
         return m.multipageLayouts
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *PrinterCapabilities) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetOrientations gets the orientations property value. The print orientations supported by the printer. Valid values are described in the following table.
 func (m *PrinterCapabilities) GetOrientations()([]string) {
     if m == nil {
@@ -1051,6 +1073,12 @@ func (m *PrinterCapabilities) Serialize(writer i878a80d2330e89d26896388a3f487eef
             return err
         }
     }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetOrientations() != nil {
         err := writer.WriteCollectionOfStringValues("orientations", m.GetOrientations())
         if err != nil {
@@ -1297,6 +1325,12 @@ func (m *PrinterCapabilities) SetMediaTypes(value []string)() {
 func (m *PrinterCapabilities) SetMultipageLayouts(value []string)() {
     if m != nil {
         m.multipageLayouts = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *PrinterCapabilities) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetOrientations sets the orientations property value. The print orientations supported by the printer. Valid values are described in the following table.

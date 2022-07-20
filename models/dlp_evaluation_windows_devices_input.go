@@ -17,6 +17,8 @@ func NewDlpEvaluationWindowsDevicesInput()(*DlpEvaluationWindowsDevicesInput) {
     m := &DlpEvaluationWindowsDevicesInput{
         DlpEvaluationInput: *NewDlpEvaluationInput(),
     }
+    odataTypeValue := "#microsoft.graph.dlpEvaluationWindowsDevicesInput";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDlpEvaluationWindowsDevicesInputFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

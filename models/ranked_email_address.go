@@ -10,6 +10,8 @@ type RankedEmailAddress struct {
     additionalData map[string]interface{}
     // The email address.
     address *string
+    // The OdataType property
+    odataType *string
     // The rank of the email address. A rank is used as a sort key, in relation to the other returned results. A higher rank value corresponds to a more relevant result. Relevance is determined by communication, collaboration, and business relationship signals.
     rank *float64
 }
@@ -18,6 +20,8 @@ func NewRankedEmailAddress()(*RankedEmailAddress) {
     m := &RankedEmailAddress{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.rankedEmailAddress";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateRankedEmailAddressFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -53,6 +57,16 @@ func (m *RankedEmailAddress) GetFieldDeserializers()(map[string]func(i878a80d233
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["rank"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetFloat64Value()
         if err != nil {
@@ -64,6 +78,14 @@ func (m *RankedEmailAddress) GetFieldDeserializers()(map[string]func(i878a80d233
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *RankedEmailAddress) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
 }
 // GetRank gets the rank property value. The rank of the email address. A rank is used as a sort key, in relation to the other returned results. A higher rank value corresponds to a more relevant result. Relevance is determined by communication, collaboration, and business relationship signals.
 func (m *RankedEmailAddress) GetRank()(*float64) {
@@ -77,6 +99,12 @@ func (m *RankedEmailAddress) GetRank()(*float64) {
 func (m *RankedEmailAddress) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("address", m.GetAddress())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -105,6 +133,12 @@ func (m *RankedEmailAddress) SetAdditionalData(value map[string]interface{})() {
 func (m *RankedEmailAddress) SetAddress(value *string)() {
     if m != nil {
         m.address = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *RankedEmailAddress) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetRank sets the rank property value. The rank of the email address. A rank is used as a sort key, in relation to the other returned results. A higher rank value corresponds to a more relevant result. Relevance is determined by communication, collaboration, and business relationship signals.

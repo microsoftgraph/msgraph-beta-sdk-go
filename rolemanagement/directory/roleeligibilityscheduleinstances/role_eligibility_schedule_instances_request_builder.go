@@ -71,7 +71,7 @@ func NewRoleEligibilityScheduleInstancesRequestBuilder(rawUrl string, requestAda
     urlParams["request-raw-url"] = rawUrl
     return NewRoleEligibilityScheduleInstancesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *RoleEligibilityScheduleInstancesRequestBuilder) Count()(*i41cb38140267d058a61b4eee44019c6e8d4d623df8cb010c4c96492e28c35d18.CountRequestBuilder) {
     return i41cb38140267d058a61b4eee44019c6e8d4d623df8cb010c4c96492e28c35d18.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

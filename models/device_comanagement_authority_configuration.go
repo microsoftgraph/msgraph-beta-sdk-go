@@ -19,6 +19,8 @@ func NewDeviceComanagementAuthorityConfiguration()(*DeviceComanagementAuthorityC
     m := &DeviceComanagementAuthorityConfiguration{
         DeviceEnrollmentConfiguration: *NewDeviceEnrollmentConfiguration(),
     }
+    odataTypeValue := "#microsoft.graph.deviceComanagementAuthorityConfiguration";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDeviceComanagementAuthorityConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

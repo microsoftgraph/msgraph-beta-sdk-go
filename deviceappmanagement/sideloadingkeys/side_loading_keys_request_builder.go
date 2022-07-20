@@ -70,7 +70,7 @@ func NewSideLoadingKeysRequestBuilder(rawUrl string, requestAdapter i2ae4187f7da
     urlParams["request-raw-url"] = rawUrl
     return NewSideLoadingKeysRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *SideLoadingKeysRequestBuilder) Count()(*i1a730cc908596e5eadc632bab2b63675b1b3bd571e5c79576caa4468ebb3f84f.CountRequestBuilder) {
     return i1a730cc908596e5eadc632bab2b63675b1b3bd571e5c79576caa4468ebb3f84f.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

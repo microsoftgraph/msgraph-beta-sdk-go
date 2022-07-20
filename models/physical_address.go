@@ -12,6 +12,8 @@ type PhysicalAddress struct {
     city *string
     // The country or region. It's a free-format string value, for example, 'United States'.
     countryOrRegion *string
+    // The OdataType property
+    odataType *string
     // The postal code.
     postalCode *string
     // The post office box number.
@@ -28,6 +30,8 @@ func NewPhysicalAddress()(*PhysicalAddress) {
     m := &PhysicalAddress{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.physicalAddress";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreatePhysicalAddressFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -78,6 +82,16 @@ func (m *PhysicalAddress) GetFieldDeserializers()(map[string]func(i878a80d2330e8
         }
         if val != nil {
             m.SetCountryOrRegion(val)
+        }
+        return nil
+    }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
         }
         return nil
     }
@@ -133,6 +147,14 @@ func (m *PhysicalAddress) GetFieldDeserializers()(map[string]func(i878a80d2330e8
     }
     return res
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *PhysicalAddress) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetPostalCode gets the postalCode property value. The postal code.
 func (m *PhysicalAddress) GetPostalCode()(*string) {
     if m == nil {
@@ -183,6 +205,12 @@ func (m *PhysicalAddress) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
     }
     {
         err := writer.WriteStringValue("countryOrRegion", m.GetCountryOrRegion())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -242,6 +270,12 @@ func (m *PhysicalAddress) SetCity(value *string)() {
 func (m *PhysicalAddress) SetCountryOrRegion(value *string)() {
     if m != nil {
         m.countryOrRegion = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *PhysicalAddress) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetPostalCode sets the postalCode property value. The postal code.

@@ -56,6 +56,8 @@ func NewCloudPC()(*CloudPC) {
     m := &CloudPC{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.cloudPC";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateCloudPCFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

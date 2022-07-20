@@ -12,6 +12,8 @@ type EducationFileSynchronizationVerificationMessage struct {
     description *string
     // The fileName property
     fileName *string
+    // The OdataType property
+    odataType *string
     // Type of the message. Possible values are: error, warning, information.
     type_escaped *string
 }
@@ -20,6 +22,8 @@ func NewEducationFileSynchronizationVerificationMessage()(*EducationFileSynchron
     m := &EducationFileSynchronizationVerificationMessage{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.educationFileSynchronizationVerificationMessage";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateEducationFileSynchronizationVerificationMessageFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -65,6 +69,16 @@ func (m *EducationFileSynchronizationVerificationMessage) GetFieldDeserializers(
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -85,6 +99,14 @@ func (m *EducationFileSynchronizationVerificationMessage) GetFileName()(*string)
         return m.fileName
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *EducationFileSynchronizationVerificationMessage) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetType gets the type property value. Type of the message. Possible values are: error, warning, information.
 func (m *EducationFileSynchronizationVerificationMessage) GetType()(*string) {
     if m == nil {
@@ -103,6 +125,12 @@ func (m *EducationFileSynchronizationVerificationMessage) Serialize(writer i878a
     }
     {
         err := writer.WriteStringValue("fileName", m.GetFileName())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -137,6 +165,12 @@ func (m *EducationFileSynchronizationVerificationMessage) SetDescription(value *
 func (m *EducationFileSynchronizationVerificationMessage) SetFileName(value *string)() {
     if m != nil {
         m.fileName = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *EducationFileSynchronizationVerificationMessage) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetType sets the type property value. Type of the message. Possible values are: error, warning, information.

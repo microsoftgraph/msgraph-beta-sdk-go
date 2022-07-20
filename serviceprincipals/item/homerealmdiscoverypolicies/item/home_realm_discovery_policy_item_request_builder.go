@@ -33,7 +33,7 @@ func NewHomeRealmDiscoveryPolicyItemRequestBuilder(rawUrl string, requestAdapter
     urlParams["request-raw-url"] = rawUrl
     return NewHomeRealmDiscoveryPolicyItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Ref the ref property
+// Ref the Ref property
 func (m *HomeRealmDiscoveryPolicyItemRequestBuilder) Ref()(*ibeac3ba6b888f46db18d69c8f17db9630a8f1ab21ebe30efa6e0f37fea42dae0.RefRequestBuilder) {
     return ibeac3ba6b888f46db18d69c8f17db9630a8f1ab21ebe30efa6e0f37fea42dae0.NewRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

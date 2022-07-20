@@ -14,12 +14,16 @@ type AssignedTrainingInfo struct {
     completedUserCount *int32
     // Display name of the training in an attack simulation and training campaign.
     displayName *string
+    // The OdataType property
+    odataType *string
 }
 // NewAssignedTrainingInfo instantiates a new assignedTrainingInfo and sets the default values.
 func NewAssignedTrainingInfo()(*AssignedTrainingInfo) {
     m := &AssignedTrainingInfo{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.assignedTrainingInfo";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAssignedTrainingInfoFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -91,7 +95,25 @@ func (m *AssignedTrainingInfo) GetFieldDeserializers()(map[string]func(i878a80d2
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *AssignedTrainingInfo) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
 }
 // Serialize serializes information the current object
 func (m *AssignedTrainingInfo) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -109,6 +131,12 @@ func (m *AssignedTrainingInfo) Serialize(writer i878a80d2330e89d26896388a3f487ee
     }
     {
         err := writer.WriteStringValue("displayName", m.GetDisplayName())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -143,5 +171,11 @@ func (m *AssignedTrainingInfo) SetCompletedUserCount(value *int32)() {
 func (m *AssignedTrainingInfo) SetDisplayName(value *string)() {
     if m != nil {
         m.displayName = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *AssignedTrainingInfo) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }

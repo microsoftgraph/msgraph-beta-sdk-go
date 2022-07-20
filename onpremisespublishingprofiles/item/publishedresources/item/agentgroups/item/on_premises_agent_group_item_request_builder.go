@@ -33,7 +33,7 @@ func NewOnPremisesAgentGroupItemRequestBuilder(rawUrl string, requestAdapter i2a
     urlParams["request-raw-url"] = rawUrl
     return NewOnPremisesAgentGroupItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Ref the ref property
+// Ref the Ref property
 func (m *OnPremisesAgentGroupItemRequestBuilder) Ref()(*ib735aacb5502acf80c3427d8b70116ed842f4f90fe71ee4fa28b7b548796d42e.RefRequestBuilder) {
     return ib735aacb5502acf80c3427d8b70116ed842f4f90fe71ee4fa28b7b548796d42e.NewRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

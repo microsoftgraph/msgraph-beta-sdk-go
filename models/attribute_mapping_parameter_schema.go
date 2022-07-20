@@ -12,6 +12,8 @@ type AttributeMappingParameterSchema struct {
     allowMultipleOccurrences *bool
     // Parameter name.
     name *string
+    // The OdataType property
+    odataType *string
     // true if the parameter is required; otherwise false.
     required *bool
     // The type property
@@ -22,6 +24,8 @@ func NewAttributeMappingParameterSchema()(*AttributeMappingParameterSchema) {
     m := &AttributeMappingParameterSchema{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.attributeMappingParameterSchema";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAttributeMappingParameterSchemaFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -67,6 +71,16 @@ func (m *AttributeMappingParameterSchema) GetFieldDeserializers()(map[string]fun
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["required"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
@@ -97,6 +111,14 @@ func (m *AttributeMappingParameterSchema) GetName()(*string) {
         return m.name
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *AttributeMappingParameterSchema) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetRequired gets the required property value. true if the parameter is required; otherwise false.
 func (m *AttributeMappingParameterSchema) GetRequired()(*bool) {
     if m == nil {
@@ -123,6 +145,12 @@ func (m *AttributeMappingParameterSchema) Serialize(writer i878a80d2330e89d26896
     }
     {
         err := writer.WriteStringValue("name", m.GetName())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -164,6 +192,12 @@ func (m *AttributeMappingParameterSchema) SetAllowMultipleOccurrences(value *boo
 func (m *AttributeMappingParameterSchema) SetName(value *string)() {
     if m != nil {
         m.name = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *AttributeMappingParameterSchema) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetRequired sets the required property value. true if the parameter is required; otherwise false.

@@ -12,7 +12,7 @@ type Updates struct {
     catalog Catalogable
     // Deployments created using the deployment service. Read-only.
     deployments []Deploymentable
-    // The resourceConnections property
+    // Service connections to external resources such as analytics workspaces.
     resourceConnections []ResourceConnectionable
     // Assets registered with the deployment service that can receive updates. Read-only.
     updatableAssets []UpdatableAssetable
@@ -22,6 +22,8 @@ func NewUpdates()(*Updates) {
     m := &Updates{
         Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.windowsUpdates.updates";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateUpdatesFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -101,7 +103,7 @@ func (m *Updates) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
     }
     return res
 }
-// GetResourceConnections gets the resourceConnections property value. The resourceConnections property
+// GetResourceConnections gets the resourceConnections property value. Service connections to external resources such as analytics workspaces.
 func (m *Updates) GetResourceConnections()([]ResourceConnectionable) {
     if m == nil {
         return nil
@@ -173,7 +175,7 @@ func (m *Updates) SetDeployments(value []Deploymentable)() {
         m.deployments = value
     }
 }
-// SetResourceConnections sets the resourceConnections property value. The resourceConnections property
+// SetResourceConnections sets the resourceConnections property value. Service connections to external resources such as analytics workspaces.
 func (m *Updates) SetResourceConnections(value []ResourceConnectionable)() {
     if m != nil {
         m.resourceConnections = value

@@ -13,12 +13,16 @@ type DeviceHealthScriptRemediationHistory struct {
     historyData []DeviceHealthScriptRemediationHistoryDataable
     // The date on which the results history is calculated for the healthscript.
     lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
+    // The OdataType property
+    odataType *string
 }
 // NewDeviceHealthScriptRemediationHistory instantiates a new deviceHealthScriptRemediationHistory and sets the default values.
 func NewDeviceHealthScriptRemediationHistory()(*DeviceHealthScriptRemediationHistory) {
     m := &DeviceHealthScriptRemediationHistory{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.deviceHealthScriptRemediationHistory";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDeviceHealthScriptRemediationHistoryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -60,6 +64,16 @@ func (m *DeviceHealthScriptRemediationHistory) GetFieldDeserializers()(map[strin
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetHistoryData gets the historyData property value. The number of devices remediated by the device health script on the given date.
@@ -78,6 +92,14 @@ func (m *DeviceHealthScriptRemediationHistory) GetLastModifiedDateTime()(*i33607
         return m.lastModifiedDateTime
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *DeviceHealthScriptRemediationHistory) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // Serialize serializes information the current object
 func (m *DeviceHealthScriptRemediationHistory) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     if m.GetHistoryData() != nil {
@@ -92,6 +114,12 @@ func (m *DeviceHealthScriptRemediationHistory) Serialize(writer i878a80d2330e89d
     }
     {
         err := writer.WriteTimeValue("lastModifiedDateTime", m.GetLastModifiedDateTime())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -120,5 +148,11 @@ func (m *DeviceHealthScriptRemediationHistory) SetHistoryData(value []DeviceHeal
 func (m *DeviceHealthScriptRemediationHistory) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     if m != nil {
         m.lastModifiedDateTime = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *DeviceHealthScriptRemediationHistory) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }

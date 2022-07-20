@@ -18,12 +18,16 @@ type TeamworkFeaturesConfiguration struct {
     isHideMeetingNamesEnabled *bool
     // True if sending logs and feedback is enabled.
     isSendLogsAndFeedbackEnabled *bool
+    // The OdataType property
+    odataType *string
 }
 // NewTeamworkFeaturesConfiguration instantiates a new teamworkFeaturesConfiguration and sets the default values.
 func NewTeamworkFeaturesConfiguration()(*TeamworkFeaturesConfiguration) {
     m := &TeamworkFeaturesConfiguration{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.teamworkFeaturesConfiguration";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateTeamworkFeaturesConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -99,6 +103,16 @@ func (m *TeamworkFeaturesConfiguration) GetFieldDeserializers()(map[string]func(
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetIsAutoScreenShareEnabled gets the isAutoScreenShareEnabled property value. True if auto screen shared is enabled.
@@ -133,6 +147,14 @@ func (m *TeamworkFeaturesConfiguration) GetIsSendLogsAndFeedbackEnabled()(*bool)
         return m.isSendLogsAndFeedbackEnabled
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *TeamworkFeaturesConfiguration) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // Serialize serializes information the current object
 func (m *TeamworkFeaturesConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
@@ -161,6 +183,12 @@ func (m *TeamworkFeaturesConfiguration) Serialize(writer i878a80d2330e89d2689638
     }
     {
         err := writer.WriteBoolValue("isSendLogsAndFeedbackEnabled", m.GetIsSendLogsAndFeedbackEnabled())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -207,5 +235,11 @@ func (m *TeamworkFeaturesConfiguration) SetIsHideMeetingNamesEnabled(value *bool
 func (m *TeamworkFeaturesConfiguration) SetIsSendLogsAndFeedbackEnabled(value *bool)() {
     if m != nil {
         m.isSendLogsAndFeedbackEnabled = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *TeamworkFeaturesConfiguration) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }

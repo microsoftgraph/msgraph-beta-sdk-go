@@ -10,6 +10,8 @@ type WebPart struct {
     additionalData map[string]interface{}
     // The required properties for the webPart (varies by webPart)
     data SitePageDataable
+    // The OdataType property
+    odataType *string
     // A unique identifier specifying the webPart type. Read-only.
     type_escaped *string
 }
@@ -18,6 +20,8 @@ func NewWebPart()(*WebPart) {
     m := &WebPart{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.webPart";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateWebPartFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -53,6 +57,16 @@ func (m *WebPart) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -64,6 +78,14 @@ func (m *WebPart) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *WebPart) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
 }
 // GetType gets the type property value. A unique identifier specifying the webPart type. Read-only.
 func (m *WebPart) GetType()(*string) {
@@ -77,6 +99,12 @@ func (m *WebPart) GetType()(*string) {
 func (m *WebPart) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
         err := writer.WriteObjectValue("data", m.GetData())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -105,6 +133,12 @@ func (m *WebPart) SetAdditionalData(value map[string]interface{})() {
 func (m *WebPart) SetData(value SitePageDataable)() {
     if m != nil {
         m.data = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *WebPart) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetType sets the type property value. A unique identifier specifying the webPart type. Read-only.

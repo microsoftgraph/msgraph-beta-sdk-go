@@ -61,6 +61,8 @@ func NewWindowsWiredNetworkConfiguration()(*WindowsWiredNetworkConfiguration) {
     m := &WindowsWiredNetworkConfiguration{
         DeviceConfiguration: *NewDeviceConfiguration(),
     }
+    odataTypeValue := "#microsoft.graph.windowsWiredNetworkConfiguration";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateWindowsWiredNetworkConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

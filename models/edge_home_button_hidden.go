@@ -13,6 +13,8 @@ func NewEdgeHomeButtonHidden()(*EdgeHomeButtonHidden) {
     m := &EdgeHomeButtonHidden{
         EdgeHomeButtonConfiguration: *NewEdgeHomeButtonConfiguration(),
     }
+    odataTypeValue := "#microsoft.graph.edgeHomeButtonHidden";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateEdgeHomeButtonHiddenFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

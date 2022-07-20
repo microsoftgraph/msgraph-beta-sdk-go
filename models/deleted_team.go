@@ -15,6 +15,8 @@ func NewDeletedTeam()(*DeletedTeam) {
     m := &DeletedTeam{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.deletedTeam";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDeletedTeamFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

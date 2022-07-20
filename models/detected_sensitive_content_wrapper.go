@@ -10,12 +10,16 @@ type DetectedSensitiveContentWrapper struct {
     additionalData map[string]interface{}
     // The classification property
     classification []DetectedSensitiveContentable
+    // The OdataType property
+    odataType *string
 }
 // NewDetectedSensitiveContentWrapper instantiates a new detectedSensitiveContentWrapper and sets the default values.
 func NewDetectedSensitiveContentWrapper()(*DetectedSensitiveContentWrapper) {
     m := &DetectedSensitiveContentWrapper{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.detectedSensitiveContentWrapper";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDetectedSensitiveContentWrapperFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -55,7 +59,25 @@ func (m *DetectedSensitiveContentWrapper) GetFieldDeserializers()(map[string]fun
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *DetectedSensitiveContentWrapper) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
 }
 // Serialize serializes information the current object
 func (m *DetectedSensitiveContentWrapper) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -65,6 +87,12 @@ func (m *DetectedSensitiveContentWrapper) Serialize(writer i878a80d2330e89d26896
             cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
         }
         err := writer.WriteCollectionOfObjectValues("classification", cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -87,5 +115,11 @@ func (m *DetectedSensitiveContentWrapper) SetAdditionalData(value map[string]int
 func (m *DetectedSensitiveContentWrapper) SetClassification(value []DetectedSensitiveContentable)() {
     if m != nil {
         m.classification = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *DetectedSensitiveContentWrapper) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }

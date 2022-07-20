@@ -16,6 +16,8 @@ type TemplateParameter struct {
     jsonAllowedValues *string
     // The default value for the template parameter represented by a serialized string of JSON. Required. Read-only.
     jsonDefaultValue *string
+    // The OdataType property
+    odataType *string
     // The valueType property
     valueType *ManagementParameterValueType
 }
@@ -24,6 +26,8 @@ func NewTemplateParameter()(*TemplateParameter) {
     m := &TemplateParameter{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.managedTenants.templateParameter";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateTemplateParameterFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -97,6 +101,16 @@ func (m *TemplateParameter) GetFieldDeserializers()(map[string]func(i878a80d2330
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["valueType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseManagementParameterValueType)
         if err != nil {
@@ -123,6 +137,14 @@ func (m *TemplateParameter) GetJsonDefaultValue()(*string) {
         return nil
     } else {
         return m.jsonDefaultValue
+    }
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *TemplateParameter) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
     }
 }
 // GetValueType gets the valueType property value. The valueType property
@@ -155,6 +177,12 @@ func (m *TemplateParameter) Serialize(writer i878a80d2330e89d26896388a3f487eef27
     }
     {
         err := writer.WriteStringValue("jsonDefaultValue", m.GetJsonDefaultValue())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -202,6 +230,12 @@ func (m *TemplateParameter) SetJsonAllowedValues(value *string)() {
 func (m *TemplateParameter) SetJsonDefaultValue(value *string)() {
     if m != nil {
         m.jsonDefaultValue = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *TemplateParameter) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetValueType sets the valueType property value. The valueType property

@@ -17,6 +17,8 @@ func NewAcronym()(*Acronym) {
     m := &Acronym{
         SearchAnswer: *NewSearchAnswer(),
     }
+    odataTypeValue := "#microsoft.graph.search.acronym";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAcronymFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -12,6 +12,8 @@ type UserExperienceAnalyticsCloudManagementDevicesSummary struct {
     coManagedDeviceCount *int32
     // The count of intune devices that are not autopilot registerd.
     intuneDeviceCount *int32
+    // The OdataType property
+    odataType *string
     // Total count of tenant attach devices.
     tenantAttachDeviceCount *int32
 }
@@ -20,6 +22,8 @@ func NewUserExperienceAnalyticsCloudManagementDevicesSummary()(*UserExperienceAn
     m := &UserExperienceAnalyticsCloudManagementDevicesSummary{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.userExperienceAnalyticsCloudManagementDevicesSummary";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateUserExperienceAnalyticsCloudManagementDevicesSummaryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -65,6 +69,16 @@ func (m *UserExperienceAnalyticsCloudManagementDevicesSummary) GetFieldDeseriali
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["tenantAttachDeviceCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
@@ -85,6 +99,14 @@ func (m *UserExperienceAnalyticsCloudManagementDevicesSummary) GetIntuneDeviceCo
         return m.intuneDeviceCount
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *UserExperienceAnalyticsCloudManagementDevicesSummary) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetTenantAttachDeviceCount gets the tenantAttachDeviceCount property value. Total count of tenant attach devices.
 func (m *UserExperienceAnalyticsCloudManagementDevicesSummary) GetTenantAttachDeviceCount()(*int32) {
     if m == nil {
@@ -103,6 +125,12 @@ func (m *UserExperienceAnalyticsCloudManagementDevicesSummary) Serialize(writer 
     }
     {
         err := writer.WriteInt32Value("intuneDeviceCount", m.GetIntuneDeviceCount())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -137,6 +165,12 @@ func (m *UserExperienceAnalyticsCloudManagementDevicesSummary) SetCoManagedDevic
 func (m *UserExperienceAnalyticsCloudManagementDevicesSummary) SetIntuneDeviceCount(value *int32)() {
     if m != nil {
         m.intuneDeviceCount = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *UserExperienceAnalyticsCloudManagementDevicesSummary) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetTenantAttachDeviceCount sets the tenantAttachDeviceCount property value. Total count of tenant attach devices.

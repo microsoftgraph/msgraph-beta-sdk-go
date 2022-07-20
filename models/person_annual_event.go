@@ -11,12 +11,16 @@ type PersonAnnualEvent struct {
     date *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly
     // The displayName property
     displayName *string
+    // The type property
+    type_escaped *PersonAnnualEventType
 }
 // NewPersonAnnualEvent instantiates a new PersonAnnualEvent and sets the default values.
 func NewPersonAnnualEvent()(*PersonAnnualEvent) {
     m := &PersonAnnualEvent{
         ItemFacet: *NewItemFacet(),
     }
+    odataTypeValue := "#microsoft.graph.personAnnualEvent";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreatePersonAnnualEventFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -62,7 +66,25 @@ func (m *PersonAnnualEvent) GetFieldDeserializers()(map[string]func(i878a80d2330
         }
         return nil
     }
+    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParsePersonAnnualEventType)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetType(val.(*PersonAnnualEventType))
+        }
+        return nil
+    }
     return res
+}
+// GetType gets the type property value. The type property
+func (m *PersonAnnualEvent) GetType()(*PersonAnnualEventType) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
+    }
 }
 // Serialize serializes information the current object
 func (m *PersonAnnualEvent) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -82,6 +104,13 @@ func (m *PersonAnnualEvent) Serialize(writer i878a80d2330e89d26896388a3f487eef27
             return err
         }
     }
+    if m.GetType() != nil {
+        cast := (*m.GetType()).String()
+        err = writer.WriteStringValue("type", &cast)
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetDate sets the date property value. The date property
@@ -94,5 +123,11 @@ func (m *PersonAnnualEvent) SetDate(value *i878a80d2330e89d26896388a3f487eef27b0
 func (m *PersonAnnualEvent) SetDisplayName(value *string)() {
     if m != nil {
         m.displayName = value
+    }
+}
+// SetType sets the type property value. The type property
+func (m *PersonAnnualEvent) SetType(value *PersonAnnualEventType)() {
+    if m != nil {
+        m.type_escaped = value
     }
 }

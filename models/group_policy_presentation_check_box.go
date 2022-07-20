@@ -15,6 +15,8 @@ func NewGroupPolicyPresentationCheckBox()(*GroupPolicyPresentationCheckBox) {
     m := &GroupPolicyPresentationCheckBox{
         GroupPolicyPresentation: *NewGroupPolicyPresentation(),
     }
+    odataTypeValue := "#microsoft.graph.groupPolicyPresentationCheckBox";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateGroupPolicyPresentationCheckBoxFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

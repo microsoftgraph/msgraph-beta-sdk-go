@@ -8,7 +8,9 @@ import (
 type Admin struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
-    // The reportSettings property
+    // The OdataType property
+    odataType *string
+    // A container for administrative resources to manage reports.
     reportSettings AdminReportSettingsable
     // A container for service communications resources. Read-only.
     serviceAnnouncement ServiceAnnouncementable
@@ -18,6 +20,8 @@ func NewAdmin()(*Admin) {
     m := &Admin{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.admin";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAdminFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -35,6 +39,16 @@ func (m *Admin) GetAdditionalData()(map[string]interface{}) {
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Admin) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["reportSettings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateAdminReportSettingsFromDiscriminatorValue)
         if err != nil {
@@ -57,7 +71,15 @@ func (m *Admin) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388
     }
     return res
 }
-// GetReportSettings gets the reportSettings property value. The reportSettings property
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *Admin) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
+// GetReportSettings gets the reportSettings property value. A container for administrative resources to manage reports.
 func (m *Admin) GetReportSettings()(AdminReportSettingsable) {
     if m == nil {
         return nil
@@ -75,6 +97,12 @@ func (m *Admin) GetServiceAnnouncement()(ServiceAnnouncementable) {
 }
 // Serialize serializes information the current object
 func (m *Admin) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     {
         err := writer.WriteObjectValue("reportSettings", m.GetReportSettings())
         if err != nil {
@@ -101,7 +129,13 @@ func (m *Admin) SetAdditionalData(value map[string]interface{})() {
         m.additionalData = value
     }
 }
-// SetReportSettings sets the reportSettings property value. The reportSettings property
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *Admin) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
+    }
+}
+// SetReportSettings sets the reportSettings property value. A container for administrative resources to manage reports.
 func (m *Admin) SetReportSettings(value AdminReportSettingsable)() {
     if m != nil {
         m.reportSettings = value

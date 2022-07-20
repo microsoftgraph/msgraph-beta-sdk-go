@@ -67,6 +67,8 @@ func NewIosEasEmailProfileConfiguration()(*IosEasEmailProfileConfiguration) {
     m := &IosEasEmailProfileConfiguration{
         EasEmailProfileConfigurationBase: *NewEasEmailProfileConfigurationBase(),
     }
+    odataTypeValue := "#microsoft.graph.iosEasEmailProfileConfiguration";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateIosEasEmailProfileConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

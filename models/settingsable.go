@@ -11,7 +11,9 @@ type Settingsable interface {
     GetHasGraphMailbox()(*bool)
     GetHasLicense()(*bool)
     GetHasOptedOut()(*bool)
+    GetOdataType()(*string)
     SetHasGraphMailbox(value *bool)()
     SetHasLicense(value *bool)()
     SetHasOptedOut(value *bool)()
+    SetOdataType(value *string)()
 }

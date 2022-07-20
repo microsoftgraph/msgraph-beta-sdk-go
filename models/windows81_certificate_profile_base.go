@@ -17,8 +17,8 @@ func NewWindows81CertificateProfileBase()(*Windows81CertificateProfileBase) {
     m := &Windows81CertificateProfileBase{
         WindowsCertificateProfileBase: *NewWindowsCertificateProfileBase(),
     }
-    odatatypeValue := "#microsoft.graph.windows81CertificateProfileBase";
-    m.SetType(&odatatypeValue);
+    odataTypeValue := "#microsoft.graph.windows81CertificateProfileBase";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateWindows81CertificateProfileBaseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -17,6 +17,8 @@ func NewCloudPcSubscription()(*CloudPcSubscription) {
     m := &CloudPcSubscription{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.cloudPcSubscription";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateCloudPcSubscriptionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

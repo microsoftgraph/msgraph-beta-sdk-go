@@ -42,6 +42,8 @@ func NewPrivilegedOperationEvent()(*PrivilegedOperationEvent) {
     m := &PrivilegedOperationEvent{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.privilegedOperationEvent";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreatePrivilegedOperationEventFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

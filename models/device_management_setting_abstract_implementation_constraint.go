@@ -15,6 +15,8 @@ func NewDeviceManagementSettingAbstractImplementationConstraint()(*DeviceManagem
     m := &DeviceManagementSettingAbstractImplementationConstraint{
         DeviceManagementConstraint: *NewDeviceManagementConstraint(),
     }
+    odataTypeValue := "#microsoft.graph.deviceManagementSettingAbstractImplementationConstraint";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDeviceManagementSettingAbstractImplementationConstraintFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

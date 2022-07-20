@@ -26,6 +26,8 @@ func NewGroupPolicyUploadedDefinitionFile()(*GroupPolicyUploadedDefinitionFile) 
     m := &GroupPolicyUploadedDefinitionFile{
         GroupPolicyDefinitionFile: *NewGroupPolicyDefinitionFile(),
     }
+    odataTypeValue := "#microsoft.graph.groupPolicyUploadedDefinitionFile";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateGroupPolicyUploadedDefinitionFileFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

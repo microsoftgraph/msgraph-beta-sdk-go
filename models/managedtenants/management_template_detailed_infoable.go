@@ -11,9 +11,11 @@ type ManagementTemplateDetailedInfoable interface {
     GetCategory()(*ManagementCategory)
     GetDisplayName()(*string)
     GetManagementTemplateId()(*string)
+    GetOdataType()(*string)
     GetVersion()(*int32)
     SetCategory(value *ManagementCategory)()
     SetDisplayName(value *string)()
     SetManagementTemplateId(value *string)()
+    SetOdataType(value *string)()
     SetVersion(value *int32)()
 }

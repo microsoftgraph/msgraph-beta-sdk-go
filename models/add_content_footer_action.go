@@ -27,6 +27,8 @@ func NewAddContentFooterAction()(*AddContentFooterAction) {
     m := &AddContentFooterAction{
         InformationProtectionAction: *NewInformationProtectionAction(),
     }
+    odataTypeValue := "#microsoft.graph.addContentFooterAction";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAddContentFooterActionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

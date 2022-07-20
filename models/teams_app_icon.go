@@ -17,6 +17,8 @@ func NewTeamsAppIcon()(*TeamsAppIcon) {
     m := &TeamsAppIcon{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.teamsAppIcon";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateTeamsAppIconFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

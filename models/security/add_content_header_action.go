@@ -27,6 +27,8 @@ func NewAddContentHeaderAction()(*AddContentHeaderAction) {
     m := &AddContentHeaderAction{
         InformationProtectionAction: *NewInformationProtectionAction(),
     }
+    odataTypeValue := "#microsoft.graph.security.addContentHeaderAction";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAddContentHeaderActionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

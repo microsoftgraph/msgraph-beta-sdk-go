@@ -39,6 +39,8 @@ func NewWindows10XSCEPCertificateProfile()(*Windows10XSCEPCertificateProfile) {
     m := &Windows10XSCEPCertificateProfile{
         Windows10XCertificateProfile: *NewWindows10XCertificateProfile(),
     }
+    odataTypeValue := "#microsoft.graph.windows10XSCEPCertificateProfile";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateWindows10XSCEPCertificateProfileFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

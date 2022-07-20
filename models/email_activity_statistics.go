@@ -19,6 +19,8 @@ func NewEmailActivityStatistics()(*EmailActivityStatistics) {
     m := &EmailActivityStatistics{
         ActivityStatistics: *NewActivityStatistics(),
     }
+    odataTypeValue := "#microsoft.graph.emailActivityStatistics";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateEmailActivityStatisticsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

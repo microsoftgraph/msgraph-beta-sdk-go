@@ -26,6 +26,8 @@ type AttributeDefinition struct {
     mutability *Mutability
     // Name of the attribute. Must be unique within the object definition. Not nullable.
     name *string
+    // The OdataType property
+    odataType *string
     // For attributes with reference type, lists referenced objects (for example, the manager attribute would list User as the referenced object).
     referencedObjects []ReferencedObjectable
     // true if attribute is required. Object can not be created if any of the required attributes are missing. If during synchronization, the required attribute has no value, the default value will be used. If default the value was not set, synchronization will record an error.
@@ -38,6 +40,8 @@ func NewAttributeDefinition()(*AttributeDefinition) {
     m := &AttributeDefinition{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.attributeDefinition";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAttributeDefinitionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -185,6 +189,16 @@ func (m *AttributeDefinition) GetFieldDeserializers()(map[string]func(i878a80d23
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["referencedObjects"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateReferencedObjectFromDiscriminatorValue)
         if err != nil {
@@ -259,6 +273,14 @@ func (m *AttributeDefinition) GetName()(*string) {
         return nil
     } else {
         return m.name
+    }
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *AttributeDefinition) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
     }
 }
 // GetReferencedObjects gets the referencedObjects property value. For attributes with reference type, lists referenced objects (for example, the manager attribute would list User as the referenced object).
@@ -346,6 +368,12 @@ func (m *AttributeDefinition) Serialize(writer i878a80d2330e89d26896388a3f487eef
     }
     {
         err := writer.WriteStringValue("name", m.GetName())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -439,6 +467,12 @@ func (m *AttributeDefinition) SetMutability(value *Mutability)() {
 func (m *AttributeDefinition) SetName(value *string)() {
     if m != nil {
         m.name = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *AttributeDefinition) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetReferencedObjects sets the referencedObjects property value. For attributes with reference type, lists referenced objects (for example, the manager attribute would list User as the referenced object).

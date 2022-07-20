@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ProfileCardProperty provides operations to manage the collection of accessReviewDecision entities.
+// ProfileCardProperty provides operations to manage the collection of accessReview entities.
 type ProfileCardProperty struct {
     Entity
     // Allows an administrator to set a custom display label for the directory property and localize it for the users in their tenant.
@@ -17,6 +17,8 @@ func NewProfileCardProperty()(*ProfileCardProperty) {
     m := &ProfileCardProperty{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.profileCardProperty";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateProfileCardPropertyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

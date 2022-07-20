@@ -70,7 +70,7 @@ func NewPrivilegedOperationEventsRequestBuilder(rawUrl string, requestAdapter i2
     urlParams["request-raw-url"] = rawUrl
     return NewPrivilegedOperationEventsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *PrivilegedOperationEventsRequestBuilder) Count()(*ib465632eeafe5c1fb5f95c4f0045f1d5a771a32b1a937d4bdefb5bcf19c10e08.CountRequestBuilder) {
     return ib465632eeafe5c1fb5f95c4f0045f1d5a771a32b1a937d4bdefb5bcf19c10e08.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

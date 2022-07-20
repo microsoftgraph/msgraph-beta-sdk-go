@@ -14,12 +14,16 @@ type CloudPcStatusDetails struct {
     code *string
     // The status message.
     message *string
+    // The OdataType property
+    odataType *string
 }
 // NewCloudPcStatusDetails instantiates a new cloudPcStatusDetails and sets the default values.
 func NewCloudPcStatusDetails()(*CloudPcStatusDetails) {
     m := &CloudPcStatusDetails{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.cloudPcStatusDetails";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateCloudPcStatusDetailsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -87,6 +91,16 @@ func (m *CloudPcStatusDetails) GetFieldDeserializers()(map[string]func(i878a80d2
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetMessage gets the message property value. The status message.
@@ -95,6 +109,14 @@ func (m *CloudPcStatusDetails) GetMessage()(*string) {
         return nil
     } else {
         return m.message
+    }
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *CloudPcStatusDetails) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
     }
 }
 // Serialize serializes information the current object
@@ -117,6 +139,12 @@ func (m *CloudPcStatusDetails) Serialize(writer i878a80d2330e89d26896388a3f487ee
     }
     {
         err := writer.WriteStringValue("message", m.GetMessage())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -151,5 +179,11 @@ func (m *CloudPcStatusDetails) SetCode(value *string)() {
 func (m *CloudPcStatusDetails) SetMessage(value *string)() {
     if m != nil {
         m.message = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *CloudPcStatusDetails) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }

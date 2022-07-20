@@ -13,9 +13,11 @@ type ConditionalAccessDevicesable interface {
     GetExcludeDeviceStates()([]string)
     GetIncludeDevices()([]string)
     GetIncludeDeviceStates()([]string)
+    GetOdataType()(*string)
     SetDeviceFilter(value ConditionalAccessFilterable)()
     SetExcludeDevices(value []string)()
     SetExcludeDeviceStates(value []string)()
     SetIncludeDevices(value []string)()
     SetIncludeDeviceStates(value []string)()
+    SetOdataType(value *string)()
 }

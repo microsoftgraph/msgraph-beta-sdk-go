@@ -10,6 +10,8 @@ type CommentAction struct {
     additionalData map[string]interface{}
     // If true, this activity was a reply to an existing comment thread.
     isReply *bool
+    // The OdataType property
+    odataType *string
     // The identity of the user who started the comment thread.
     parentAuthor IdentitySetable
     // The identities of the users participating in this comment thread.
@@ -20,6 +22,8 @@ func NewCommentAction()(*CommentAction) {
     m := &CommentAction{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.commentAction";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateCommentActionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -44,6 +48,16 @@ func (m *CommentAction) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         }
         if val != nil {
             m.SetIsReply(val)
+        }
+        return nil
+    }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
         }
         return nil
     }
@@ -81,6 +95,14 @@ func (m *CommentAction) GetIsReply()(*bool) {
         return m.isReply
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *CommentAction) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetParentAuthor gets the parentAuthor property value. The identity of the user who started the comment thread.
 func (m *CommentAction) GetParentAuthor()(IdentitySetable) {
     if m == nil {
@@ -101,6 +123,12 @@ func (m *CommentAction) GetParticipants()([]IdentitySetable) {
 func (m *CommentAction) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
         err := writer.WriteBoolValue("isReply", m.GetIsReply())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -139,6 +167,12 @@ func (m *CommentAction) SetAdditionalData(value map[string]interface{})() {
 func (m *CommentAction) SetIsReply(value *bool)() {
     if m != nil {
         m.isReply = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *CommentAction) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetParentAuthor sets the parentAuthor property value. The identity of the user who started the comment thread.

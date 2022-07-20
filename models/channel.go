@@ -42,6 +42,8 @@ func NewChannel()(*Channel) {
     m := &Channel{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.channel";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateChannelFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -18,6 +18,8 @@ func NewAzureADLicenseUsage()(*AzureADLicenseUsage) {
     m := &AzureADLicenseUsage{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.azureADLicenseUsage";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAzureADLicenseUsageFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

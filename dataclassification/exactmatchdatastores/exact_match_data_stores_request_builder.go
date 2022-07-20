@@ -70,7 +70,7 @@ func NewExactMatchDataStoresRequestBuilder(rawUrl string, requestAdapter i2ae418
     urlParams["request-raw-url"] = rawUrl
     return NewExactMatchDataStoresRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *ExactMatchDataStoresRequestBuilder) Count()(*i9e308df66e098e2b91026c8d21e6a26ccf11d5ca8e9eb541cdc18e2d79acf42e.CountRequestBuilder) {
     return i9e308df66e098e2b91026c8d21e6a26ccf11d5ca8e9eb541cdc18e2d79acf42e.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

@@ -70,7 +70,7 @@ func NewScheduledActionsForRuleRequestBuilder(rawUrl string, requestAdapter i2ae
     urlParams["request-raw-url"] = rawUrl
     return NewScheduledActionsForRuleRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *ScheduledActionsForRuleRequestBuilder) Count()(*i1a22f95d6b3396854b40306e4b4d530780257ceb81e9d8cab8c04ad3ae6645f8.CountRequestBuilder) {
     return i1a22f95d6b3396854b40306e4b4d530780257ceb81e9d8cab8c04ad3ae6645f8.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

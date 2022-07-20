@@ -10,16 +10,16 @@ type UserSet struct {
     additionalData map[string]interface{}
     // For a user in an approval stage, this property indicates whether the user is a backup fallback approver.
     isBackup *bool
-    // The type property
-    type_escaped *string
+    // The OdataType property
+    odataType *string
 }
 // NewUserSet instantiates a new userSet and sets the default values.
 func NewUserSet()(*UserSet) {
     m := &UserSet{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odatatypeValue := "#microsoft.graph.userSet";
-    m.SetType(&odatatypeValue);
+    odataTypeValue := "#microsoft.graph.userSet";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateUserSetFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -82,7 +82,7 @@ func (m *UserSet) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
             return err
         }
         if val != nil {
-            m.SetType(val)
+            m.SetOdataType(val)
         }
         return nil
     }
@@ -96,12 +96,12 @@ func (m *UserSet) GetIsBackup()(*bool) {
         return m.isBackup
     }
 }
-// GetType gets the @odata.type property value. The type property
-func (m *UserSet) GetType()(*string) {
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *UserSet) GetOdataType()(*string) {
     if m == nil {
         return nil
     } else {
-        return m.type_escaped
+        return m.odataType
     }
 }
 // Serialize serializes information the current object
@@ -113,7 +113,7 @@ func (m *UserSet) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
         }
     }
     {
-        err := writer.WriteStringValue("@odata.type", m.GetType())
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -138,9 +138,9 @@ func (m *UserSet) SetIsBackup(value *bool)() {
         m.isBackup = value
     }
 }
-// SetType sets the @odata.type property value. The type property
-func (m *UserSet) SetType(value *string)() {
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *UserSet) SetOdataType(value *string)() {
     if m != nil {
-        m.type_escaped = value
+        m.odataType = value
     }
 }

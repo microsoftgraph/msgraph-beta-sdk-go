@@ -6,7 +6,7 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
-// RetentionLabel provides operations to manage the collection of activityStatistics entities.
+// RetentionLabel provides operations to manage the collection of accessReviewDecision entities.
 type RetentionLabel struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
     // Specifies the action to take on a document with this label applied during the retention period. The possible values are: none, delete, startDispositionReview, unknownFutureValue.
@@ -47,6 +47,8 @@ func NewRetentionLabel()(*RetentionLabel) {
     m := &RetentionLabel{
         Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.security.retentionLabel";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateRetentionLabelFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

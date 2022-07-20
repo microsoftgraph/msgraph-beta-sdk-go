@@ -16,12 +16,16 @@ type AzureADRegistrationPolicy struct {
     appliesTo *PolicyScope
     // Specifies whether this policy scope is configurable by the admin. The default value is false. When an admin has enabled Intune (MEM) to manage devices, this property is set to false and appliesTo defaults to 1 (meaning all).
     isAdminConfigurable *bool
+    // The OdataType property
+    odataType *string
 }
 // NewAzureADRegistrationPolicy instantiates a new azureADRegistrationPolicy and sets the default values.
 func NewAzureADRegistrationPolicy()(*AzureADRegistrationPolicy) {
     m := &AzureADRegistrationPolicy{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.azureADRegistrationPolicy";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAzureADRegistrationPolicyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -111,6 +115,16 @@ func (m *AzureADRegistrationPolicy) GetFieldDeserializers()(map[string]func(i878
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetIsAdminConfigurable gets the isAdminConfigurable property value. Specifies whether this policy scope is configurable by the admin. The default value is false. When an admin has enabled Intune (MEM) to manage devices, this property is set to false and appliesTo defaults to 1 (meaning all).
@@ -119,6 +133,14 @@ func (m *AzureADRegistrationPolicy) GetIsAdminConfigurable()(*bool) {
         return nil
     } else {
         return m.isAdminConfigurable
+    }
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *AzureADRegistrationPolicy) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
     }
 }
 // Serialize serializes information the current object
@@ -144,6 +166,12 @@ func (m *AzureADRegistrationPolicy) Serialize(writer i878a80d2330e89d26896388a3f
     }
     {
         err := writer.WriteBoolValue("isAdminConfigurable", m.GetIsAdminConfigurable())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -184,5 +212,11 @@ func (m *AzureADRegistrationPolicy) SetAppliesTo(value *PolicyScope)() {
 func (m *AzureADRegistrationPolicy) SetIsAdminConfigurable(value *bool)() {
     if m != nil {
         m.isAdminConfigurable = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *AzureADRegistrationPolicy) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }

@@ -24,6 +24,8 @@ type AccessReviewScheduleSettings struct {
     justificationRequiredOnApproval *bool
     // Indicates whether emails are enabled or disabled. Default value is false.
     mailNotificationsEnabled *bool
+    // The OdataType property
+    odataType *string
     // Optional. Describes the types of insights that aid reviewers to make access review decisions. NOTE: If the stageSettings of the accessReviewScheduleDefinition object is defined, its recommendationInsightSettings setting will be used instead of the value of this property.
     recommendationInsightSettings []AccessReviewRecommendationInsightSettingable
     // Optional field. Indicates the period of inactivity (with respect to the start date of the review instance) that recommendations will be configured from. The recommendation will be to deny if the user is inactive during the look-back duration. For reviews of groups and Azure AD roles, any duration is accepted. For reviews of applications, 30 days is the maximum duration. If not specified, the duration is 30 days. NOTE: If the stageSettings of the accessReviewScheduleDefinition object is defined, its recommendationLookBackDuration setting will be used instead of the value of this property.
@@ -40,6 +42,8 @@ func NewAccessReviewScheduleSettings()(*AccessReviewScheduleSettings) {
     m := &AccessReviewScheduleSettings{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.accessReviewScheduleSettings";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAccessReviewScheduleSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -181,6 +185,16 @@ func (m *AccessReviewScheduleSettings) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["recommendationInsightSettings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateAccessReviewRecommendationInsightSettingFromDiscriminatorValue)
         if err != nil {
@@ -259,6 +273,14 @@ func (m *AccessReviewScheduleSettings) GetMailNotificationsEnabled()(*bool) {
         return nil
     } else {
         return m.mailNotificationsEnabled
+    }
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *AccessReviewScheduleSettings) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
     }
 }
 // GetRecommendationInsightSettings gets the recommendationInsightSettings property value. Optional. Describes the types of insights that aid reviewers to make access review decisions. NOTE: If the stageSettings of the accessReviewScheduleDefinition object is defined, its recommendationInsightSettings setting will be used instead of the value of this property.
@@ -351,6 +373,12 @@ func (m *AccessReviewScheduleSettings) Serialize(writer i878a80d2330e89d26896388
     }
     {
         err := writer.WriteBoolValue("mailNotificationsEnabled", m.GetMailNotificationsEnabled())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -449,6 +477,12 @@ func (m *AccessReviewScheduleSettings) SetJustificationRequiredOnApproval(value 
 func (m *AccessReviewScheduleSettings) SetMailNotificationsEnabled(value *bool)() {
     if m != nil {
         m.mailNotificationsEnabled = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *AccessReviewScheduleSettings) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetRecommendationInsightSettings sets the recommendationInsightSettings property value. Optional. Describes the types of insights that aid reviewers to make access review decisions. NOTE: If the stageSettings of the accessReviewScheduleDefinition object is defined, its recommendationInsightSettings setting will be used instead of the value of this property.

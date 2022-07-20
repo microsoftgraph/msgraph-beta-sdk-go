@@ -71,7 +71,7 @@ func NewResourceAccessProfilesRequestBuilder(rawUrl string, requestAdapter i2ae4
     urlParams["request-raw-url"] = rawUrl
     return NewResourceAccessProfilesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *ResourceAccessProfilesRequestBuilder) Count()(*ic797799502c717949364218e65e0f8dbd4122c0c934f8ae98af86c3c5a4ca526.CountRequestBuilder) {
     return ic797799502c717949364218e65e0f8dbd4122c0c934f8ae98af86c3c5a4ca526.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

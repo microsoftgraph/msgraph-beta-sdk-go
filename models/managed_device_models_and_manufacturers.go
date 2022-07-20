@@ -12,12 +12,16 @@ type ManagedDeviceModelsAndManufacturers struct {
     deviceManufacturers []string
     // List of Models for managed devices in the account
     deviceModels []string
+    // The OdataType property
+    odataType *string
 }
 // NewManagedDeviceModelsAndManufacturers instantiates a new managedDeviceModelsAndManufacturers and sets the default values.
 func NewManagedDeviceModelsAndManufacturers()(*ManagedDeviceModelsAndManufacturers) {
     m := &ManagedDeviceModelsAndManufacturers{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.managedDeviceModelsAndManufacturers";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateManagedDeviceModelsAndManufacturersFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -79,7 +83,25 @@ func (m *ManagedDeviceModelsAndManufacturers) GetFieldDeserializers()(map[string
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *ManagedDeviceModelsAndManufacturers) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
 }
 // Serialize serializes information the current object
 func (m *ManagedDeviceModelsAndManufacturers) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -91,6 +113,12 @@ func (m *ManagedDeviceModelsAndManufacturers) Serialize(writer i878a80d2330e89d2
     }
     if m.GetDeviceModels() != nil {
         err := writer.WriteCollectionOfStringValues("deviceModels", m.GetDeviceModels())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -119,5 +147,11 @@ func (m *ManagedDeviceModelsAndManufacturers) SetDeviceManufacturers(value []str
 func (m *ManagedDeviceModelsAndManufacturers) SetDeviceModels(value []string)() {
     if m != nil {
         m.deviceModels = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *ManagedDeviceModelsAndManufacturers) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }

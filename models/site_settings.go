@@ -10,6 +10,8 @@ type SiteSettings struct {
     additionalData map[string]interface{}
     // The language tag for the language used on this site.
     languageTag *string
+    // The OdataType property
+    odataType *string
     // Indicates the time offset for the time zone of the site from Coordinated Universal Time (UTC).
     timeZone *string
 }
@@ -18,6 +20,8 @@ func NewSiteSettings()(*SiteSettings) {
     m := &SiteSettings{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.siteSettings";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateSiteSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -45,6 +49,16 @@ func (m *SiteSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["timeZone"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -65,6 +79,14 @@ func (m *SiteSettings) GetLanguageTag()(*string) {
         return m.languageTag
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *SiteSettings) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetTimeZone gets the timeZone property value. Indicates the time offset for the time zone of the site from Coordinated Universal Time (UTC).
 func (m *SiteSettings) GetTimeZone()(*string) {
     if m == nil {
@@ -77,6 +99,12 @@ func (m *SiteSettings) GetTimeZone()(*string) {
 func (m *SiteSettings) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("languageTag", m.GetLanguageTag())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -105,6 +133,12 @@ func (m *SiteSettings) SetAdditionalData(value map[string]interface{})() {
 func (m *SiteSettings) SetLanguageTag(value *string)() {
     if m != nil {
         m.languageTag = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *SiteSettings) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetTimeZone sets the timeZone property value. Indicates the time offset for the time zone of the site from Coordinated Universal Time (UTC).

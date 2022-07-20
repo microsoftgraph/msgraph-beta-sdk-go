@@ -70,7 +70,7 @@ func NewUserExperienceAnalyticsImpactingProcessRequestBuilder(rawUrl string, req
     urlParams["request-raw-url"] = rawUrl
     return NewUserExperienceAnalyticsImpactingProcessRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *UserExperienceAnalyticsImpactingProcessRequestBuilder) Count()(*i935c140bdda15c3c74d5f0b1b4f3247c0b976aeaf671766bb294d4cf9df5bc4e.CountRequestBuilder) {
     return i935c140bdda15c3c74d5f0b1b4f3247c0b976aeaf671766bb294d4cf9df5bc4e.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

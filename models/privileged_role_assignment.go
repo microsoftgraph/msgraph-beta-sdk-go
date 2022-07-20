@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// PrivilegedRoleAssignment provides operations to manage the collection of activityStatistics entities.
+// PrivilegedRoleAssignment provides operations to manage the collection of accessReview entities.
 type PrivilegedRoleAssignment struct {
     Entity
     // The UTC DateTime when the temporary privileged role assignment will be expired. For permanent role assignment, the value is null.
@@ -26,6 +26,8 @@ func NewPrivilegedRoleAssignment()(*PrivilegedRoleAssignment) {
     m := &PrivilegedRoleAssignment{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.privilegedRoleAssignment";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreatePrivilegedRoleAssignmentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

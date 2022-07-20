@@ -15,6 +15,8 @@ type DeviceConfigurationTargetedUserAndDevice struct {
     deviceName *string
     // Last checkin time for this user/device pair.
     lastCheckinDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
+    // The OdataType property
+    odataType *string
     // The display name of the user in the checkin
     userDisplayName *string
     // The id of the user in the checkin.
@@ -27,6 +29,8 @@ func NewDeviceConfigurationTargetedUserAndDevice()(*DeviceConfigurationTargetedU
     m := &DeviceConfigurationTargetedUserAndDevice{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.deviceConfigurationTargetedUserAndDevice";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDeviceConfigurationTargetedUserAndDeviceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -90,6 +94,16 @@ func (m *DeviceConfigurationTargetedUserAndDevice) GetFieldDeserializers()(map[s
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["userDisplayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -128,6 +142,14 @@ func (m *DeviceConfigurationTargetedUserAndDevice) GetLastCheckinDateTime()(*i33
         return nil
     } else {
         return m.lastCheckinDateTime
+    }
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *DeviceConfigurationTargetedUserAndDevice) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
     }
 }
 // GetUserDisplayName gets the userDisplayName property value. The display name of the user in the checkin
@@ -170,6 +192,12 @@ func (m *DeviceConfigurationTargetedUserAndDevice) Serialize(writer i878a80d2330
     }
     {
         err := writer.WriteTimeValue("lastCheckinDateTime", m.GetLastCheckinDateTime())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -222,6 +250,12 @@ func (m *DeviceConfigurationTargetedUserAndDevice) SetDeviceName(value *string)(
 func (m *DeviceConfigurationTargetedUserAndDevice) SetLastCheckinDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     if m != nil {
         m.lastCheckinDateTime = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *DeviceConfigurationTargetedUserAndDevice) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetUserDisplayName sets the userDisplayName property value. The display name of the user in the checkin

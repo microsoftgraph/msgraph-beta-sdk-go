@@ -70,7 +70,7 @@ func NewClassifyFileJobsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7d
     urlParams["request-raw-url"] = rawUrl
     return NewClassifyFileJobsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *ClassifyFileJobsRequestBuilder) Count()(*i7747466098946293f6baf0a2a218dd76a90e83949c6557233c0fe697d3612c7b.CountRequestBuilder) {
     return i7747466098946293f6baf0a2a218dd76a90e83949c6557233c0fe697d3612c7b.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

@@ -10,6 +10,8 @@ type TranslationLanguageOverride struct {
     additionalData map[string]interface{}
     // The language to apply the override.Returned by default. Not nullable.
     languageTag *string
+    // The OdataType property
+    odataType *string
     // The translation override behavior for the language, if any.Returned by default. Not nullable.
     translationBehavior *TranslationBehavior
 }
@@ -18,6 +20,8 @@ func NewTranslationLanguageOverride()(*TranslationLanguageOverride) {
     m := &TranslationLanguageOverride{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.translationLanguageOverride";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateTranslationLanguageOverrideFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -45,6 +49,16 @@ func (m *TranslationLanguageOverride) GetFieldDeserializers()(map[string]func(i8
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["translationBehavior"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseTranslationBehavior)
         if err != nil {
@@ -65,6 +79,14 @@ func (m *TranslationLanguageOverride) GetLanguageTag()(*string) {
         return m.languageTag
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *TranslationLanguageOverride) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetTranslationBehavior gets the translationBehavior property value. The translation override behavior for the language, if any.Returned by default. Not nullable.
 func (m *TranslationLanguageOverride) GetTranslationBehavior()(*TranslationBehavior) {
     if m == nil {
@@ -77,6 +99,12 @@ func (m *TranslationLanguageOverride) GetTranslationBehavior()(*TranslationBehav
 func (m *TranslationLanguageOverride) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("languageTag", m.GetLanguageTag())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -106,6 +134,12 @@ func (m *TranslationLanguageOverride) SetAdditionalData(value map[string]interfa
 func (m *TranslationLanguageOverride) SetLanguageTag(value *string)() {
     if m != nil {
         m.languageTag = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *TranslationLanguageOverride) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetTranslationBehavior sets the translationBehavior property value. The translation override behavior for the language, if any.Returned by default. Not nullable.

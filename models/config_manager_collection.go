@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ConfigManagerCollection 
+// ConfigManagerCollection a ConfigManager defined collection of devices or users.
 type ConfigManagerCollection struct {
     Entity
     // The collection identifier in SCCM.
@@ -21,11 +21,13 @@ type ConfigManagerCollection struct {
     // The last modified date.
     lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
 }
-// NewConfigManagerCollection instantiates a new ConfigManagerCollection and sets the default values.
+// NewConfigManagerCollection instantiates a new configManagerCollection and sets the default values.
 func NewConfigManagerCollection()(*ConfigManagerCollection) {
     m := &ConfigManagerCollection{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.configManagerCollection";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateConfigManagerCollectionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

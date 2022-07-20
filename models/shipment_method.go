@@ -20,6 +20,8 @@ func NewShipmentMethod()(*ShipmentMethod) {
     m := &ShipmentMethod{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.shipmentMethod";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateShipmentMethodFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

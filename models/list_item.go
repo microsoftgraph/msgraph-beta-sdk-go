@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ListItem 
+// ListItem provides operations to manage the collection of accessReview entities.
 type ListItem struct {
     BaseItem
     // The list of recent activities that took place on this item.
@@ -31,6 +31,8 @@ func NewListItem()(*ListItem) {
     m := &ListItem{
         BaseItem: *NewBaseItem(),
     }
+    odataTypeValue := "#microsoft.graph.listItem";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateListItemFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

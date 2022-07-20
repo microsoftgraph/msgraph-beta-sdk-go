@@ -15,6 +15,8 @@ func NewRetentionDurationInDays()(*RetentionDurationInDays) {
     m := &RetentionDurationInDays{
         RetentionDuration: *NewRetentionDuration(),
     }
+    odataTypeValue := "#microsoft.graph.security.retentionDurationInDays";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateRetentionDurationInDaysFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

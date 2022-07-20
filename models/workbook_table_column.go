@@ -21,6 +21,8 @@ func NewWorkbookTableColumn()(*WorkbookTableColumn) {
     m := &WorkbookTableColumn{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.workbookTableColumn";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateWorkbookTableColumnFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

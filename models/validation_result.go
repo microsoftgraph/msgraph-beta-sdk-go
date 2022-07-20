@@ -10,6 +10,8 @@ type ValidationResult struct {
     additionalData map[string]interface{}
     // The string containing the reason for why the rule passed or not. Read-only. Not nullable.
     message *string
+    // The OdataType property
+    odataType *string
     // The string containing the name of the password validation rule that the action was validated against. Read-only. Not nullable.
     ruleName *string
     // Whether the password passed or failed the validation rule. Read-only. Not nullable.
@@ -20,6 +22,8 @@ func NewValidationResult()(*ValidationResult) {
     m := &ValidationResult{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.validationResult";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateValidationResultFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -44,6 +48,16 @@ func (m *ValidationResult) GetFieldDeserializers()(map[string]func(i878a80d2330e
         }
         if val != nil {
             m.SetMessage(val)
+        }
+        return nil
+    }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
         }
         return nil
     }
@@ -77,6 +91,14 @@ func (m *ValidationResult) GetMessage()(*string) {
         return m.message
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *ValidationResult) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetRuleName gets the ruleName property value. The string containing the name of the password validation rule that the action was validated against. Read-only. Not nullable.
 func (m *ValidationResult) GetRuleName()(*string) {
     if m == nil {
@@ -97,6 +119,12 @@ func (m *ValidationResult) GetValidationPassed()(*bool) {
 func (m *ValidationResult) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("message", m.GetMessage())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -131,6 +159,12 @@ func (m *ValidationResult) SetAdditionalData(value map[string]interface{})() {
 func (m *ValidationResult) SetMessage(value *string)() {
     if m != nil {
         m.message = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *ValidationResult) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetRuleName sets the ruleName property value. The string containing the name of the password validation rule that the action was validated against. Read-only. Not nullable.

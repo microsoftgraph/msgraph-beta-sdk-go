@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Item provides operations to manage the collection of accessReviewDecision entities.
+// Item 
 type Item struct {
     Entity
     // The baseUnitOfMeasureId property
@@ -36,16 +36,20 @@ type Item struct {
     taxGroupCode *string
     // The taxGroupId property
     taxGroupId *string
+    // The type property
+    type_escaped *string
     // The unitCost property
     unitCost *float64
     // The unitPrice property
     unitPrice *float64
 }
-// NewItem instantiates a new item and sets the default values.
+// NewItem instantiates a new Item and sets the default values.
 func NewItem()(*Item) {
     m := &Item{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.item";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateItemFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -223,6 +227,16 @@ func (m *Item) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a
         }
         return nil
     }
+    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetType(val)
+        }
+        return nil
+    }
     res["unitCost"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetFloat64Value()
         if err != nil {
@@ -331,6 +345,14 @@ func (m *Item) GetTaxGroupId()(*string) {
         return nil
     } else {
         return m.taxGroupId
+    }
+}
+// GetType gets the type property value. The type property
+func (m *Item) GetType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
     }
 }
 // GetUnitCost gets the unitCost property value. The unitCost property
@@ -444,6 +466,12 @@ func (m *Item) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c49
         }
     }
     {
+        err = writer.WriteStringValue("type", m.GetType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteFloat64Value("unitCost", m.GetUnitCost())
         if err != nil {
             return err
@@ -539,6 +567,12 @@ func (m *Item) SetTaxGroupCode(value *string)() {
 func (m *Item) SetTaxGroupId(value *string)() {
     if m != nil {
         m.taxGroupId = value
+    }
+}
+// SetType sets the type property value. The type property
+func (m *Item) SetType(value *string)() {
+    if m != nil {
+        m.type_escaped = value
     }
 }
 // SetUnitCost sets the unitCost property value. The unitCost property

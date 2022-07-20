@@ -70,7 +70,7 @@ func NewWindowsHelloForBusinessMethodsRequestBuilder(rawUrl string, requestAdapt
     urlParams["request-raw-url"] = rawUrl
     return NewWindowsHelloForBusinessMethodsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *WindowsHelloForBusinessMethodsRequestBuilder) Count()(*ie11455112354981d03b7819172c214663e4ba8de7c5cf9c62aae3900e3444ee3.CountRequestBuilder) {
     return ie11455112354981d03b7819172c214663e4ba8de7c5cf9c62aae3900e3444ee3.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

@@ -12,6 +12,8 @@ type TeamworkDeviceSoftwareVersions struct {
     adminAgentSoftwareVersion *string
     // The software version for the firmware running on the device.
     firmwareSoftwareVersion *string
+    // The OdataType property
+    odataType *string
     // The software version for the operating system on the device.
     operatingSystemSoftwareVersion *string
     // The software version for the partner agent running on the device.
@@ -24,6 +26,8 @@ func NewTeamworkDeviceSoftwareVersions()(*TeamworkDeviceSoftwareVersions) {
     m := &TeamworkDeviceSoftwareVersions{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.teamworkDeviceSoftwareVersions";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateTeamworkDeviceSoftwareVersionsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -69,6 +73,16 @@ func (m *TeamworkDeviceSoftwareVersions) GetFieldDeserializers()(map[string]func
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["operatingSystemSoftwareVersion"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -109,6 +123,14 @@ func (m *TeamworkDeviceSoftwareVersions) GetFirmwareSoftwareVersion()(*string) {
         return m.firmwareSoftwareVersion
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *TeamworkDeviceSoftwareVersions) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetOperatingSystemSoftwareVersion gets the operatingSystemSoftwareVersion property value. The software version for the operating system on the device.
 func (m *TeamworkDeviceSoftwareVersions) GetOperatingSystemSoftwareVersion()(*string) {
     if m == nil {
@@ -143,6 +165,12 @@ func (m *TeamworkDeviceSoftwareVersions) Serialize(writer i878a80d2330e89d268963
     }
     {
         err := writer.WriteStringValue("firmwareSoftwareVersion", m.GetFirmwareSoftwareVersion())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -189,6 +217,12 @@ func (m *TeamworkDeviceSoftwareVersions) SetAdminAgentSoftwareVersion(value *str
 func (m *TeamworkDeviceSoftwareVersions) SetFirmwareSoftwareVersion(value *string)() {
     if m != nil {
         m.firmwareSoftwareVersion = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *TeamworkDeviceSoftwareVersions) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetOperatingSystemSoftwareVersion sets the operatingSystemSoftwareVersion property value. The software version for the operating system on the device.

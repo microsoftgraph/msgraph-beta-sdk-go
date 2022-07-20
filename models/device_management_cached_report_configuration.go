@@ -30,6 +30,8 @@ func NewDeviceManagementCachedReportConfiguration()(*DeviceManagementCachedRepor
     m := &DeviceManagementCachedReportConfiguration{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.deviceManagementCachedReportConfiguration";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDeviceManagementCachedReportConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -47,6 +47,8 @@ func NewWindowsDeliveryOptimizationConfiguration()(*WindowsDeliveryOptimizationC
     m := &WindowsDeliveryOptimizationConfiguration{
         DeviceConfiguration: *NewDeviceConfiguration(),
     }
+    odataTypeValue := "#microsoft.graph.windowsDeliveryOptimizationConfiguration";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateWindowsDeliveryOptimizationConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

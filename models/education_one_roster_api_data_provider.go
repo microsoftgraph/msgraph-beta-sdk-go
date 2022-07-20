@@ -25,6 +25,8 @@ func NewEducationOneRosterApiDataProvider()(*EducationOneRosterApiDataProvider) 
     m := &EducationOneRosterApiDataProvider{
         EducationSynchronizationDataProvider: *NewEducationSynchronizationDataProvider(),
     }
+    odataTypeValue := "#microsoft.graph.educationOneRosterApiDataProvider";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateEducationOneRosterApiDataProviderFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

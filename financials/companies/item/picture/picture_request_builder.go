@@ -70,7 +70,7 @@ func NewPictureRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371
     urlParams["request-raw-url"] = rawUrl
     return NewPictureRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *PictureRequestBuilder) Count()(*ib7d5de7483d4599ddeb6caef6ed3c17dbc920a5af6a811f6df0a04a5328d8119.CountRequestBuilder) {
     return ib7d5de7483d4599ddeb6caef6ed3c17dbc920a5af6a811f6df0a04a5328d8119.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

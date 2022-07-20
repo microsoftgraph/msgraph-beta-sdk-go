@@ -66,7 +66,7 @@ func NewTaskFoldersRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26
     urlParams["request-raw-url"] = rawUrl
     return NewTaskFoldersRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *TaskFoldersRequestBuilder) Count()(*ic9ff0913db9062d6c495308f57d098b7e344ee4bfe660dccc04bd095982fe103.CountRequestBuilder) {
     return ic9ff0913db9062d6c495308f57d098b7e344ee4bfe660dccc04bd095982fe103.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

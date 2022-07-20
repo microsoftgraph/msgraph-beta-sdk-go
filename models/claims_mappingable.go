@@ -11,11 +11,13 @@ type ClaimsMappingable interface {
     GetDisplayName()(*string)
     GetEmail()(*string)
     GetGivenName()(*string)
+    GetOdataType()(*string)
     GetSurname()(*string)
     GetUserId()(*string)
     SetDisplayName(value *string)()
     SetEmail(value *string)()
     SetGivenName(value *string)()
+    SetOdataType(value *string)()
     SetSurname(value *string)()
     SetUserId(value *string)()
 }

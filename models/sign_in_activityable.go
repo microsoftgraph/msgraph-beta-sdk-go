@@ -13,8 +13,10 @@ type SignInActivityable interface {
     GetLastNonInteractiveSignInRequestId()(*string)
     GetLastSignInDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetLastSignInRequestId()(*string)
+    GetOdataType()(*string)
     SetLastNonInteractiveSignInDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetLastNonInteractiveSignInRequestId(value *string)()
     SetLastSignInDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetLastSignInRequestId(value *string)()
+    SetOdataType(value *string)()
 }

@@ -22,6 +22,8 @@ func NewPasswordlessMicrosoftAuthenticatorAuthenticationMethod()(*PasswordlessMi
     m := &PasswordlessMicrosoftAuthenticatorAuthenticationMethod{
         AuthenticationMethod: *NewAuthenticationMethod(),
     }
+    odataTypeValue := "#microsoft.graph.passwordlessMicrosoftAuthenticatorAuthenticationMethod";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreatePasswordlessMicrosoftAuthenticatorAuthenticationMethodFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

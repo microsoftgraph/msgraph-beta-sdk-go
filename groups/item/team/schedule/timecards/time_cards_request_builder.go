@@ -75,7 +75,7 @@ func NewTimeCardsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2633
     urlParams["request-raw-url"] = rawUrl
     return NewTimeCardsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *TimeCardsRequestBuilder) Count()(*i2bd0748b5b97385be16fac35c35d9f92feed8f8be3a8184684c8ebaa77797309.CountRequestBuilder) {
     return i2bd0748b5b97385be16fac35c35d9f92feed8f8be3a8184684c8ebaa77797309.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

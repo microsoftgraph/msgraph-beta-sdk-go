@@ -13,6 +13,8 @@ func NewGroupPeerOutlierRecommendationInsightSettings()(*GroupPeerOutlierRecomme
     m := &GroupPeerOutlierRecommendationInsightSettings{
         AccessReviewRecommendationInsightSetting: *NewAccessReviewRecommendationInsightSetting(),
     }
+    odataTypeValue := "#microsoft.graph.groupPeerOutlierRecommendationInsightSettings";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateGroupPeerOutlierRecommendationInsightSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

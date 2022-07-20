@@ -15,6 +15,8 @@ func NewAssignmentFilterEvaluationStatusDetails()(*AssignmentFilterEvaluationSta
     m := &AssignmentFilterEvaluationStatusDetails{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.assignmentFilterEvaluationStatusDetails";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAssignmentFilterEvaluationStatusDetailsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

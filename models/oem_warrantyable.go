@@ -12,8 +12,10 @@ type OemWarrantyable interface {
     GetBaseWarranties()([]WarrantyOfferable)
     GetDeviceConfigurationUrl()(*string)
     GetDeviceWarrantyUrl()(*string)
+    GetOdataType()(*string)
     SetAdditionalWarranties(value []WarrantyOfferable)()
     SetBaseWarranties(value []WarrantyOfferable)()
     SetDeviceConfigurationUrl(value *string)()
     SetDeviceWarrantyUrl(value *string)()
+    SetOdataType(value *string)()
 }

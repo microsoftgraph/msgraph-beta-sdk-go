@@ -12,11 +12,13 @@ type Tasks struct {
     // The task lists in the users mailbox.
     lists []BaseTaskListable
 }
-// NewTasks instantiates a new Tasks and sets the default values.
+// NewTasks instantiates a new tasks and sets the default values.
 func NewTasks()(*Tasks) {
     m := &Tasks{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.tasks";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateTasksFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

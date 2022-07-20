@@ -28,6 +28,8 @@ type TrustFrameworkKey struct {
     n *string
     // This value is a NumericDate as defined in RFC 7519 (A JSON numeric value representing the number of seconds from 1970-01-01T00:00:00Z UTC until the specified UTC date/time, ignoring leap seconds.)
     nbf *int64
+    // The OdataType property
+    odataType *string
     // RSA Key - first prime. Field cannot be read back.
     p *string
     // RSA Key - second prime. Field cannot be read back.
@@ -46,6 +48,8 @@ func NewTrustFrameworkKey()(*TrustFrameworkKey) {
     m := &TrustFrameworkKey{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.trustFrameworkKey";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateTrustFrameworkKeyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -203,6 +207,16 @@ func (m *TrustFrameworkKey) GetFieldDeserializers()(map[string]func(i878a80d2330
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["p"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -307,6 +321,14 @@ func (m *TrustFrameworkKey) GetNbf()(*int64) {
         return nil
     } else {
         return m.nbf
+    }
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *TrustFrameworkKey) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
     }
 }
 // GetP gets the p property value. RSA Key - first prime. Field cannot be read back.
@@ -420,6 +442,12 @@ func (m *TrustFrameworkKey) Serialize(writer i878a80d2330e89d26896388a3f487eef27
         }
     }
     {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err := writer.WriteStringValue("p", m.GetP())
         if err != nil {
             return err
@@ -527,6 +555,12 @@ func (m *TrustFrameworkKey) SetN(value *string)() {
 func (m *TrustFrameworkKey) SetNbf(value *int64)() {
     if m != nil {
         m.nbf = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *TrustFrameworkKey) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetP sets the p property value. RSA Key - first prime. Field cannot be read back.

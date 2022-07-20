@@ -15,6 +15,8 @@ func NewSingleValueLegacyExtendedProperty()(*SingleValueLegacyExtendedProperty) 
     m := &SingleValueLegacyExtendedProperty{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.singleValueLegacyExtendedProperty";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateSingleValueLegacyExtendedPropertyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

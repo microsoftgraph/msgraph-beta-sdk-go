@@ -15,6 +15,8 @@ func NewWindowsWebApp()(*WindowsWebApp) {
     m := &WindowsWebApp{
         MobileApp: *NewMobileApp(),
     }
+    odataTypeValue := "#microsoft.graph.windowsWebApp";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateWindowsWebAppFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

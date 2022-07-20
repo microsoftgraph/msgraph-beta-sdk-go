@@ -70,7 +70,7 @@ func NewIntentsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371
     urlParams["request-raw-url"] = rawUrl
     return NewIntentsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *IntentsRequestBuilder) Count()(*i1a270a5903902e31916c16c819750c3d7b6a59f588669b7583dfcc314985cf32.CountRequestBuilder) {
     return i1a270a5903902e31916c16c819750c3d7b6a59f588669b7583dfcc314985cf32.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

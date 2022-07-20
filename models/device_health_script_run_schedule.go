@@ -10,16 +10,16 @@ type DeviceHealthScriptRunSchedule struct {
     additionalData map[string]interface{}
     // The x value of every x hours for hourly schedule, every x days for Daily Schedule, every x weeks for weekly schedule, every x months for Monthly Schedule. Valid values 1 to 23
     interval *int32
-    // The type property
-    type_escaped *string
+    // The OdataType property
+    odataType *string
 }
 // NewDeviceHealthScriptRunSchedule instantiates a new deviceHealthScriptRunSchedule and sets the default values.
 func NewDeviceHealthScriptRunSchedule()(*DeviceHealthScriptRunSchedule) {
     m := &DeviceHealthScriptRunSchedule{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odatatypeValue := "#microsoft.graph.deviceHealthScriptRunSchedule";
-    m.SetType(&odatatypeValue);
+    odataTypeValue := "#microsoft.graph.deviceHealthScriptRunSchedule";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDeviceHealthScriptRunScheduleFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -37,8 +37,12 @@ func CreateDeviceHealthScriptRunScheduleFromDiscriminatorValue(parseNode i878a80
             if mappingValue != nil {
                 mappingStr := *mappingValue
                 switch mappingStr {
+                    case "#microsoft.graph.deviceHealthScriptDailySchedule":
+                        return NewDeviceHealthScriptDailySchedule(), nil
                     case "#microsoft.graph.deviceHealthScriptHourlySchedule":
                         return NewDeviceHealthScriptHourlySchedule(), nil
+                    case "#microsoft.graph.deviceHealthScriptRunOnceSchedule":
+                        return NewDeviceHealthScriptRunOnceSchedule(), nil
                     case "#microsoft.graph.deviceHealthScriptTimeSchedule":
                         return NewDeviceHealthScriptTimeSchedule(), nil
                 }
@@ -74,7 +78,7 @@ func (m *DeviceHealthScriptRunSchedule) GetFieldDeserializers()(map[string]func(
             return err
         }
         if val != nil {
-            m.SetType(val)
+            m.SetOdataType(val)
         }
         return nil
     }
@@ -88,12 +92,12 @@ func (m *DeviceHealthScriptRunSchedule) GetInterval()(*int32) {
         return m.interval
     }
 }
-// GetType gets the @odata.type property value. The type property
-func (m *DeviceHealthScriptRunSchedule) GetType()(*string) {
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *DeviceHealthScriptRunSchedule) GetOdataType()(*string) {
     if m == nil {
         return nil
     } else {
-        return m.type_escaped
+        return m.odataType
     }
 }
 // Serialize serializes information the current object
@@ -105,7 +109,7 @@ func (m *DeviceHealthScriptRunSchedule) Serialize(writer i878a80d2330e89d2689638
         }
     }
     {
-        err := writer.WriteStringValue("@odata.type", m.GetType())
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -130,9 +134,9 @@ func (m *DeviceHealthScriptRunSchedule) SetInterval(value *int32)() {
         m.interval = value
     }
 }
-// SetType sets the @odata.type property value. The type property
-func (m *DeviceHealthScriptRunSchedule) SetType(value *string)() {
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *DeviceHealthScriptRunSchedule) SetOdataType(value *string)() {
     if m != nil {
-        m.type_escaped = value
+        m.odataType = value
     }
 }

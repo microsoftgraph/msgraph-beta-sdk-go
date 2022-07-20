@@ -15,6 +15,7 @@ type CustomSecurityAttributeDefinitionable interface {
     GetIsSearchable()(*bool)
     GetName()(*string)
     GetStatus()(*string)
+    GetType()(*string)
     GetUsePreDefinedValuesOnly()(*bool)
     SetAllowedValues(value []AllowedValueable)()
     SetAttributeSet(value *string)()
@@ -23,5 +24,6 @@ type CustomSecurityAttributeDefinitionable interface {
     SetIsSearchable(value *bool)()
     SetName(value *string)()
     SetStatus(value *string)()
+    SetType(value *string)()
     SetUsePreDefinedValuesOnly(value *bool)()
 }

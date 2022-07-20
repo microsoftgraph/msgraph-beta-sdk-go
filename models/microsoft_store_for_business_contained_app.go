@@ -15,6 +15,8 @@ func NewMicrosoftStoreForBusinessContainedApp()(*MicrosoftStoreForBusinessContai
     m := &MicrosoftStoreForBusinessContainedApp{
         MobileContainedApp: *NewMobileContainedApp(),
     }
+    odataTypeValue := "#microsoft.graph.microsoftStoreForBusinessContainedApp";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateMicrosoftStoreForBusinessContainedAppFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

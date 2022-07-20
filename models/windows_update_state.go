@@ -32,6 +32,8 @@ func NewWindowsUpdateState()(*WindowsUpdateState) {
     m := &WindowsUpdateState{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.windowsUpdateState";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateWindowsUpdateStateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

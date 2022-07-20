@@ -70,7 +70,7 @@ func NewWindowsInformationProtectionWipeActionsRequestBuilder(rawUrl string, req
     urlParams["request-raw-url"] = rawUrl
     return NewWindowsInformationProtectionWipeActionsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *WindowsInformationProtectionWipeActionsRequestBuilder) Count()(*i36afe53cb0af59d3fc1458509022deef8945baf7304b3c51b9c1537d11a9dbce.CountRequestBuilder) {
     return i36afe53cb0af59d3fc1458509022deef8945baf7304b3c51b9c1537d11a9dbce.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

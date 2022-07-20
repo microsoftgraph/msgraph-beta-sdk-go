@@ -11,7 +11,9 @@ type TimeCardEntryable interface {
     GetBreaks()([]TimeCardBreakable)
     GetClockInEvent()(TimeCardEventable)
     GetClockOutEvent()(TimeCardEventable)
+    GetOdataType()(*string)
     SetBreaks(value []TimeCardBreakable)()
     SetClockInEvent(value TimeCardEventable)()
     SetClockOutEvent(value TimeCardEventable)()
+    SetOdataType(value *string)()
 }

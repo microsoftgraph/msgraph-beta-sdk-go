@@ -12,12 +12,16 @@ type DeviceManagementConfigurationIntegerSettingValueDefinitionTemplate struct {
     maxValue *int32
     // Integer Setting Minimum Value. Valid values -2147483648 to 2147483647
     minValue *int32
+    // The OdataType property
+    odataType *string
 }
 // NewDeviceManagementConfigurationIntegerSettingValueDefinitionTemplate instantiates a new deviceManagementConfigurationIntegerSettingValueDefinitionTemplate and sets the default values.
 func NewDeviceManagementConfigurationIntegerSettingValueDefinitionTemplate()(*DeviceManagementConfigurationIntegerSettingValueDefinitionTemplate) {
     m := &DeviceManagementConfigurationIntegerSettingValueDefinitionTemplate{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.deviceManagementConfigurationIntegerSettingValueDefinitionTemplate";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDeviceManagementConfigurationIntegerSettingValueDefinitionTemplateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -55,6 +59,16 @@ func (m *DeviceManagementConfigurationIntegerSettingValueDefinitionTemplate) Get
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetMaxValue gets the maxValue property value. Integer Setting Maximum Value. Valid values -2147483648 to 2147483647
@@ -73,6 +87,14 @@ func (m *DeviceManagementConfigurationIntegerSettingValueDefinitionTemplate) Get
         return m.minValue
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *DeviceManagementConfigurationIntegerSettingValueDefinitionTemplate) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // Serialize serializes information the current object
 func (m *DeviceManagementConfigurationIntegerSettingValueDefinitionTemplate) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
@@ -83,6 +105,12 @@ func (m *DeviceManagementConfigurationIntegerSettingValueDefinitionTemplate) Ser
     }
     {
         err := writer.WriteInt32Value("minValue", m.GetMinValue())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -111,5 +139,11 @@ func (m *DeviceManagementConfigurationIntegerSettingValueDefinitionTemplate) Set
 func (m *DeviceManagementConfigurationIntegerSettingValueDefinitionTemplate) SetMinValue(value *int32)() {
     if m != nil {
         m.minValue = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *DeviceManagementConfigurationIntegerSettingValueDefinitionTemplate) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }

@@ -25,6 +25,8 @@ func NewPersonInterest()(*PersonInterest) {
     m := &PersonInterest{
         ItemFacet: *NewItemFacet(),
     }
+    odataTypeValue := "#microsoft.graph.personInterest";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreatePersonInterestFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

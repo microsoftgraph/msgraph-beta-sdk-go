@@ -14,6 +14,8 @@ type TenantContactInformation struct {
     name *string
     // The notes associated with the contact. Optional
     notes *string
+    // The OdataType property
+    odataType *string
     // The phone number for the contact. Optional.
     phone *string
     // The title for the contact. Required.
@@ -24,6 +26,8 @@ func NewTenantContactInformation()(*TenantContactInformation) {
     m := &TenantContactInformation{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.managedTenants.tenantContactInformation";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateTenantContactInformationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -79,6 +83,16 @@ func (m *TenantContactInformation) GetFieldDeserializers()(map[string]func(i878a
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["phone"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -117,6 +131,14 @@ func (m *TenantContactInformation) GetNotes()(*string) {
         return m.notes
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *TenantContactInformation) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetPhone gets the phone property value. The phone number for the contact. Optional.
 func (m *TenantContactInformation) GetPhone()(*string) {
     if m == nil {
@@ -149,6 +171,12 @@ func (m *TenantContactInformation) Serialize(writer i878a80d2330e89d26896388a3f4
     }
     {
         err := writer.WriteStringValue("notes", m.GetNotes())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -195,6 +223,12 @@ func (m *TenantContactInformation) SetName(value *string)() {
 func (m *TenantContactInformation) SetNotes(value *string)() {
     if m != nil {
         m.notes = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *TenantContactInformation) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetPhone sets the phone property value. The phone number for the contact. Optional.

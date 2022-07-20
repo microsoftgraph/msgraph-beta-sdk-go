@@ -29,6 +29,8 @@ func NewMobilityManagementPolicy()(*MobilityManagementPolicy) {
     m := &MobilityManagementPolicy{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.mobilityManagementPolicy";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateMobilityManagementPolicyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

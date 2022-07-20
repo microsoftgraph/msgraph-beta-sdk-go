@@ -20,6 +20,8 @@ type ItemActionSet struct {
     mention MentionActionable
     // An item was moved.
     move MoveActionable
+    // The OdataType property
+    odataType *string
     // An item was renamed.
     rename RenameActionable
     // An item was restored.
@@ -34,6 +36,8 @@ func NewItemActionSet()(*ItemActionSet) {
     m := &ItemActionSet{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.itemActionSet";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateItemActionSetFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -143,6 +147,16 @@ func (m *ItemActionSet) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["rename"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateRenameActionFromDiscriminatorValue)
         if err != nil {
@@ -199,6 +213,14 @@ func (m *ItemActionSet) GetMove()(MoveActionable) {
         return nil
     } else {
         return m.move
+    }
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *ItemActionSet) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
     }
 }
 // GetRename gets the rename property value. An item was renamed.
@@ -267,6 +289,12 @@ func (m *ItemActionSet) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
     }
     {
         err := writer.WriteObjectValue("move", m.GetMove())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -343,6 +371,12 @@ func (m *ItemActionSet) SetMention(value MentionActionable)() {
 func (m *ItemActionSet) SetMove(value MoveActionable)() {
     if m != nil {
         m.move = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *ItemActionSet) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetRename sets the rename property value. An item was renamed.

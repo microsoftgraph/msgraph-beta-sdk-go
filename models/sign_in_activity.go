@@ -17,12 +17,16 @@ type SignInActivity struct {
     lastSignInDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Request identifier of the last interactive sign-in performed by this user.
     lastSignInRequestId *string
+    // The OdataType property
+    odataType *string
 }
 // NewSignInActivity instantiates a new signInActivity and sets the default values.
 func NewSignInActivity()(*SignInActivity) {
     m := &SignInActivity{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.signInActivity";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateSignInActivityFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -80,6 +84,16 @@ func (m *SignInActivity) GetFieldDeserializers()(map[string]func(i878a80d2330e89
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetLastNonInteractiveSignInDateTime gets the lastNonInteractiveSignInDateTime property value. The last non-interactive sign-in date for a specific user. You can use this field to calculate the last time a client signed in to the directory on behalf of a user. Because some users may use clients to access tenant resources rather than signing into your tenant directly, you can use the non-interactive sign-in date to along with lastSignInDateTime to identify inactive users. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is: '2014-01-01T00:00:00Z'. Azure AD maintains non-interactive sign-ins going back to May 2020. For more information about using the value of this property, see Manage inactive user accounts in Azure AD.
@@ -114,6 +128,14 @@ func (m *SignInActivity) GetLastSignInRequestId()(*string) {
         return m.lastSignInRequestId
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *SignInActivity) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // Serialize serializes information the current object
 func (m *SignInActivity) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
@@ -136,6 +158,12 @@ func (m *SignInActivity) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
     }
     {
         err := writer.WriteStringValue("lastSignInRequestId", m.GetLastSignInRequestId())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -176,5 +204,11 @@ func (m *SignInActivity) SetLastSignInDateTime(value *i336074805fc853987abe6f7fe
 func (m *SignInActivity) SetLastSignInRequestId(value *string)() {
     if m != nil {
         m.lastSignInRequestId = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *SignInActivity) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }

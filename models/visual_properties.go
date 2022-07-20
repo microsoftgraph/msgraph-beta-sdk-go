@@ -10,6 +10,8 @@ type VisualProperties struct {
     additionalData map[string]interface{}
     // The body of a visual user notification. Body is optional.
     body *string
+    // The OdataType property
+    odataType *string
     // The title of a visual user notification. This field is required for visual notification payloads.
     title *string
 }
@@ -18,6 +20,8 @@ func NewVisualProperties()(*VisualProperties) {
     m := &VisualProperties{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.visualProperties";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateVisualPropertiesFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -53,6 +57,16 @@ func (m *VisualProperties) GetFieldDeserializers()(map[string]func(i878a80d2330e
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["title"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -64,6 +78,14 @@ func (m *VisualProperties) GetFieldDeserializers()(map[string]func(i878a80d2330e
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *VisualProperties) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
 }
 // GetTitle gets the title property value. The title of a visual user notification. This field is required for visual notification payloads.
 func (m *VisualProperties) GetTitle()(*string) {
@@ -77,6 +99,12 @@ func (m *VisualProperties) GetTitle()(*string) {
 func (m *VisualProperties) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("body", m.GetBody())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -105,6 +133,12 @@ func (m *VisualProperties) SetAdditionalData(value map[string]interface{})() {
 func (m *VisualProperties) SetBody(value *string)() {
     if m != nil {
         m.body = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *VisualProperties) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetTitle sets the title property value. The title of a visual user notification. This field is required for visual notification payloads.

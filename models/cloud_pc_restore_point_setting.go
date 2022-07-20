@@ -10,6 +10,8 @@ type CloudPcRestorePointSetting struct {
     additionalData map[string]interface{}
     // The time interval in hours to take snapshots (restore points) of a Cloud PC automatically. Possible values are 4, 6, 12, 16, and 24. The default frequency is 12 hours.
     frequencyInHours *int32
+    // The OdataType property
+    odataType *string
     // If true, the user has the ability to use snapshots to restore Cloud PCs. If false, non-admin users cannot use snapshots to restore the Cloud PC.
     userRestoreEnabled *bool
 }
@@ -18,6 +20,8 @@ func NewCloudPcRestorePointSetting()(*CloudPcRestorePointSetting) {
     m := &CloudPcRestorePointSetting{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.cloudPcRestorePointSetting";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateCloudPcRestorePointSettingFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -45,6 +49,16 @@ func (m *CloudPcRestorePointSetting) GetFieldDeserializers()(map[string]func(i87
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["userRestoreEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
@@ -65,6 +79,14 @@ func (m *CloudPcRestorePointSetting) GetFrequencyInHours()(*int32) {
         return m.frequencyInHours
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *CloudPcRestorePointSetting) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetUserRestoreEnabled gets the userRestoreEnabled property value. If true, the user has the ability to use snapshots to restore Cloud PCs. If false, non-admin users cannot use snapshots to restore the Cloud PC.
 func (m *CloudPcRestorePointSetting) GetUserRestoreEnabled()(*bool) {
     if m == nil {
@@ -77,6 +99,12 @@ func (m *CloudPcRestorePointSetting) GetUserRestoreEnabled()(*bool) {
 func (m *CloudPcRestorePointSetting) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
         err := writer.WriteInt32Value("frequencyInHours", m.GetFrequencyInHours())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -105,6 +133,12 @@ func (m *CloudPcRestorePointSetting) SetAdditionalData(value map[string]interfac
 func (m *CloudPcRestorePointSetting) SetFrequencyInHours(value *int32)() {
     if m != nil {
         m.frequencyInHours = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *CloudPcRestorePointSetting) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetUserRestoreEnabled sets the userRestoreEnabled property value. If true, the user has the ability to use snapshots to restore Cloud PCs. If false, non-admin users cannot use snapshots to restore the Cloud PC.

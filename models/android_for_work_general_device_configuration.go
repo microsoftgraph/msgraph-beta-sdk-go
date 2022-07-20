@@ -97,6 +97,8 @@ func NewAndroidForWorkGeneralDeviceConfiguration()(*AndroidForWorkGeneralDeviceC
     m := &AndroidForWorkGeneralDeviceConfiguration{
         DeviceConfiguration: *NewDeviceConfiguration(),
     }
+    odataTypeValue := "#microsoft.graph.androidForWorkGeneralDeviceConfiguration";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAndroidForWorkGeneralDeviceConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -12,6 +12,8 @@ type Setting struct {
     displayName *string
     // The value for the setting serialized as string of JSON. Required. Read-only.
     jsonValue *string
+    // The OdataType property
+    odataType *string
     // A flag indicating whether the setting can be override existing configurations when applied. Required. Read-only.
     overwriteAllowed *bool
     // The settingId property
@@ -24,6 +26,8 @@ func NewSetting()(*Setting) {
     m := &Setting{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.managedTenants.setting";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateSettingFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -69,6 +73,16 @@ func (m *Setting) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["overwriteAllowed"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
@@ -109,6 +123,14 @@ func (m *Setting) GetJsonValue()(*string) {
         return m.jsonValue
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *Setting) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetOverwriteAllowed gets the overwriteAllowed property value. A flag indicating whether the setting can be override existing configurations when applied. Required. Read-only.
 func (m *Setting) GetOverwriteAllowed()(*bool) {
     if m == nil {
@@ -143,6 +165,12 @@ func (m *Setting) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
     }
     {
         err := writer.WriteStringValue("jsonValue", m.GetJsonValue())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -190,6 +218,12 @@ func (m *Setting) SetDisplayName(value *string)() {
 func (m *Setting) SetJsonValue(value *string)() {
     if m != nil {
         m.jsonValue = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *Setting) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetOverwriteAllowed sets the overwriteAllowed property value. A flag indicating whether the setting can be override existing configurations when applied. Required. Read-only.

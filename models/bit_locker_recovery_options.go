@@ -16,6 +16,8 @@ type BitLockerRecoveryOptions struct {
     enableRecoveryInformationSaveToStore *bool
     // Indicates whether or not to allow showing recovery options in BitLocker Setup Wizard for fixed or system disk.
     hideRecoveryOptions *bool
+    // The OdataType property
+    odataType *string
     // BitLockerRecoveryInformationType types
     recoveryInformationToStore *BitLockerRecoveryInformationType
     // Possible values of the ConfigurationUsage list.
@@ -28,6 +30,8 @@ func NewBitLockerRecoveryOptions()(*BitLockerRecoveryOptions) {
     m := &BitLockerRecoveryOptions{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.bitLockerRecoveryOptions";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateBitLockerRecoveryOptionsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -109,6 +113,16 @@ func (m *BitLockerRecoveryOptions) GetFieldDeserializers()(map[string]func(i878a
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["recoveryInformationToStore"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseBitLockerRecoveryInformationType)
         if err != nil {
@@ -147,6 +161,14 @@ func (m *BitLockerRecoveryOptions) GetHideRecoveryOptions()(*bool) {
         return nil
     } else {
         return m.hideRecoveryOptions
+    }
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *BitLockerRecoveryOptions) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
     }
 }
 // GetRecoveryInformationToStore gets the recoveryInformationToStore property value. BitLockerRecoveryInformationType types
@@ -195,6 +217,12 @@ func (m *BitLockerRecoveryOptions) Serialize(writer i878a80d2330e89d26896388a3f4
     }
     {
         err := writer.WriteBoolValue("hideRecoveryOptions", m.GetHideRecoveryOptions())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -256,6 +284,12 @@ func (m *BitLockerRecoveryOptions) SetEnableRecoveryInformationSaveToStore(value
 func (m *BitLockerRecoveryOptions) SetHideRecoveryOptions(value *bool)() {
     if m != nil {
         m.hideRecoveryOptions = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *BitLockerRecoveryOptions) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetRecoveryInformationToStore sets the recoveryInformationToStore property value. BitLockerRecoveryInformationType types

@@ -11,9 +11,11 @@ type InstitutionDataable interface {
     GetDescription()(*string)
     GetDisplayName()(*string)
     GetLocation()(PhysicalAddressable)
+    GetOdataType()(*string)
     GetWebUrl()(*string)
     SetDescription(value *string)()
     SetDisplayName(value *string)()
     SetLocation(value PhysicalAddressable)()
+    SetOdataType(value *string)()
     SetWebUrl(value *string)()
 }

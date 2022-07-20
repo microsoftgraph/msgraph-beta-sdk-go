@@ -12,12 +12,16 @@ type ClassificationAttribute struct {
     confidence *int32
     // The count property
     count *int32
+    // The OdataType property
+    odataType *string
 }
 // NewClassificationAttribute instantiates a new classificationAttribute and sets the default values.
 func NewClassificationAttribute()(*ClassificationAttribute) {
     m := &ClassificationAttribute{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.classificationAttribute";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateClassificationAttributeFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -71,7 +75,25 @@ func (m *ClassificationAttribute) GetFieldDeserializers()(map[string]func(i878a8
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *ClassificationAttribute) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
 }
 // Serialize serializes information the current object
 func (m *ClassificationAttribute) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -83,6 +105,12 @@ func (m *ClassificationAttribute) Serialize(writer i878a80d2330e89d26896388a3f48
     }
     {
         err := writer.WriteInt32Value("count", m.GetCount())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -111,5 +139,11 @@ func (m *ClassificationAttribute) SetConfidence(value *int32)() {
 func (m *ClassificationAttribute) SetCount(value *int32)() {
     if m != nil {
         m.count = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *ClassificationAttribute) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }

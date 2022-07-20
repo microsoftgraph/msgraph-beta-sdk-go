@@ -70,7 +70,7 @@ func NewWdacSupplementalPoliciesRequestBuilder(rawUrl string, requestAdapter i2a
     urlParams["request-raw-url"] = rawUrl
     return NewWdacSupplementalPoliciesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *WdacSupplementalPoliciesRequestBuilder) Count()(*i748c9caf9a633f33dd20f9c1d6063f09c74388ddf6efd31ccbb1de5ae771f3e5.CountRequestBuilder) {
     return i748c9caf9a633f33dd20f9c1d6063f09c74388ddf6efd31ccbb1de5ae771f3e5.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

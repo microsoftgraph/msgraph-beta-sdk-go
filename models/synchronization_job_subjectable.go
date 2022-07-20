@@ -11,7 +11,9 @@ type SynchronizationJobSubjectable interface {
     GetLinks()(SynchronizationLinkedObjectsable)
     GetObjectId()(*string)
     GetObjectTypeName()(*string)
+    GetOdataType()(*string)
     SetLinks(value SynchronizationLinkedObjectsable)()
     SetObjectId(value *string)()
     SetObjectTypeName(value *string)()
+    SetOdataType(value *string)()
 }

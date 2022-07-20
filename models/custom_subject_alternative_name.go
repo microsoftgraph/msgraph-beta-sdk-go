@@ -10,6 +10,8 @@ type CustomSubjectAlternativeName struct {
     additionalData map[string]interface{}
     // Custom SAN Name
     name *string
+    // The OdataType property
+    odataType *string
     // Subject Alternative Name Options.
     sanType *SubjectAlternativeNameType
 }
@@ -18,6 +20,8 @@ func NewCustomSubjectAlternativeName()(*CustomSubjectAlternativeName) {
     m := &CustomSubjectAlternativeName{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.customSubjectAlternativeName";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateCustomSubjectAlternativeNameFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -45,6 +49,16 @@ func (m *CustomSubjectAlternativeName) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["sanType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseSubjectAlternativeNameType)
         if err != nil {
@@ -65,6 +79,14 @@ func (m *CustomSubjectAlternativeName) GetName()(*string) {
         return m.name
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *CustomSubjectAlternativeName) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetSanType gets the sanType property value. Subject Alternative Name Options.
 func (m *CustomSubjectAlternativeName) GetSanType()(*SubjectAlternativeNameType) {
     if m == nil {
@@ -77,6 +99,12 @@ func (m *CustomSubjectAlternativeName) GetSanType()(*SubjectAlternativeNameType)
 func (m *CustomSubjectAlternativeName) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("name", m.GetName())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -106,6 +134,12 @@ func (m *CustomSubjectAlternativeName) SetAdditionalData(value map[string]interf
 func (m *CustomSubjectAlternativeName) SetName(value *string)() {
     if m != nil {
         m.name = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *CustomSubjectAlternativeName) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetSanType sets the sanType property value. Subject Alternative Name Options.

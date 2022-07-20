@@ -15,6 +15,8 @@ func NewCloudPcProvisioningPolicyAssignment()(*CloudPcProvisioningPolicyAssignme
     m := &CloudPcProvisioningPolicyAssignment{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.cloudPcProvisioningPolicyAssignment";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateCloudPcProvisioningPolicyAssignmentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

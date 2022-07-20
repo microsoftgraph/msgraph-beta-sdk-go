@@ -70,7 +70,7 @@ func NewManufacturerRegressionRequestBuilder(rawUrl string, requestAdapter i2ae4
     urlParams["request-raw-url"] = rawUrl
     return NewManufacturerRegressionRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *ManufacturerRegressionRequestBuilder) Count()(*id63223ae9c3c19835beecbdafee4fcaf9060f799657c41f9af916fa5ce7ca4d1.CountRequestBuilder) {
     return id63223ae9c3c19835beecbdafee4fcaf9060f799657c41f9af916fa5ce7ca4d1.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

@@ -17,6 +17,8 @@ func NewDeliveryOptimizationBandwidthAbsolute()(*DeliveryOptimizationBandwidthAb
     m := &DeliveryOptimizationBandwidthAbsolute{
         DeliveryOptimizationBandwidth: *NewDeliveryOptimizationBandwidth(),
     }
+    odataTypeValue := "#microsoft.graph.deliveryOptimizationBandwidthAbsolute";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDeliveryOptimizationBandwidthAbsoluteFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

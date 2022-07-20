@@ -15,6 +15,8 @@ func NewGroupMembershipGovernanceCriteria()(*GroupMembershipGovernanceCriteria) 
     m := &GroupMembershipGovernanceCriteria{
         GovernanceCriteria: *NewGovernanceCriteria(),
     }
+    odataTypeValue := "#microsoft.graph.groupMembershipGovernanceCriteria";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateGroupMembershipGovernanceCriteriaFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

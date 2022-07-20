@@ -8,6 +8,8 @@ import (
 type RoleSuccessStatistics struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
+    // The OdataType property
+    odataType *string
     // The permanentFail property
     permanentFail *int64
     // The permanentSuccess property
@@ -32,6 +34,8 @@ func NewRoleSuccessStatistics()(*RoleSuccessStatistics) {
     m := &RoleSuccessStatistics{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.roleSuccessStatistics";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateRoleSuccessStatisticsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -49,6 +53,16 @@ func (m *RoleSuccessStatistics) GetAdditionalData()(map[string]interface{}) {
 // GetFieldDeserializers the deserialization information for the current model
 func (m *RoleSuccessStatistics) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["permanentFail"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt64Value()
         if err != nil {
@@ -141,6 +155,14 @@ func (m *RoleSuccessStatistics) GetFieldDeserializers()(map[string]func(i878a80d
     }
     return res
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *RoleSuccessStatistics) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetPermanentFail gets the permanentFail property value. The permanentFail property
 func (m *RoleSuccessStatistics) GetPermanentFail()(*int64) {
     if m == nil {
@@ -216,6 +238,12 @@ func (m *RoleSuccessStatistics) GetUnknownFail()(*int64) {
 // Serialize serializes information the current object
 func (m *RoleSuccessStatistics) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err := writer.WriteInt64Value("permanentFail", m.GetPermanentFail())
         if err != nil {
             return err
@@ -281,6 +309,12 @@ func (m *RoleSuccessStatistics) Serialize(writer i878a80d2330e89d26896388a3f487e
 func (m *RoleSuccessStatistics) SetAdditionalData(value map[string]interface{})() {
     if m != nil {
         m.additionalData = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *RoleSuccessStatistics) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetPermanentFail sets the permanentFail property value. The permanentFail property

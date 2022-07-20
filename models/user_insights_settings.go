@@ -15,6 +15,8 @@ func NewUserInsightsSettings()(*UserInsightsSettings) {
     m := &UserInsightsSettings{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.userInsightsSettings";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateUserInsightsSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

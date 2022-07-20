@@ -70,7 +70,7 @@ func NewNdesConnectorsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7dae
     urlParams["request-raw-url"] = rawUrl
     return NewNdesConnectorsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *NdesConnectorsRequestBuilder) Count()(*ib510e5d2ed8cb1a6a8c419d13ede63386f79884289ddafc54e76051c8b21b0b5.CountRequestBuilder) {
     return ib510e5d2ed8cb1a6a8c419d13ede63386f79884289ddafc54e76051c8b21b0b5.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

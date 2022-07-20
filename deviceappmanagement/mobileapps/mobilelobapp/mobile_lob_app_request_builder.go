@@ -63,7 +63,7 @@ func NewMobileLobAppRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2
     urlParams["request-raw-url"] = rawUrl
     return NewMobileLobAppRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *MobileLobAppRequestBuilder) Count()(*ia9152f75b4c484b4eff10dfd7801fb639accbee6ce41aba12fc135ea94ef942a.CountRequestBuilder) {
     return ia9152f75b4c484b4eff10dfd7801fb639accbee6ce41aba12fc135ea94ef942a.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

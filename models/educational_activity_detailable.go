@@ -16,6 +16,7 @@ type EducationalActivityDetailable interface {
     GetFieldsOfStudy()([]string)
     GetGrade()(*string)
     GetNotes()(*string)
+    GetOdataType()(*string)
     GetWebUrl()(*string)
     SetAbbreviation(value *string)()
     SetActivities(value []string)()
@@ -25,5 +26,6 @@ type EducationalActivityDetailable interface {
     SetFieldsOfStudy(value []string)()
     SetGrade(value *string)()
     SetNotes(value *string)()
+    SetOdataType(value *string)()
     SetWebUrl(value *string)()
 }

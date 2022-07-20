@@ -10,10 +10,12 @@ type CustomExtensionHandlerInstanceable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetCustomExtensionId()(*string)
     GetExternalCorrelationId()(*string)
+    GetOdataType()(*string)
     GetStage()(*AccessPackageCustomExtensionStage)
     GetStatus()(*AccessPackageCustomExtensionHandlerStatus)
     SetCustomExtensionId(value *string)()
     SetExternalCorrelationId(value *string)()
+    SetOdataType(value *string)()
     SetStage(value *AccessPackageCustomExtensionStage)()
     SetStatus(value *AccessPackageCustomExtensionHandlerStatus)()
 }

@@ -10,12 +10,16 @@ type BufferDecryptionResult struct {
     additionalData map[string]interface{}
     // The decryptedBuffer property
     decryptedBuffer []byte
+    // The OdataType property
+    odataType *string
 }
 // NewBufferDecryptionResult instantiates a new bufferDecryptionResult and sets the default values.
 func NewBufferDecryptionResult()(*BufferDecryptionResult) {
     m := &BufferDecryptionResult{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.bufferDecryptionResult";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateBufferDecryptionResultFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -51,12 +55,36 @@ func (m *BufferDecryptionResult) GetFieldDeserializers()(map[string]func(i878a80
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *BufferDecryptionResult) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
 }
 // Serialize serializes information the current object
 func (m *BufferDecryptionResult) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
         err := writer.WriteByteArrayValue("decryptedBuffer", m.GetDecryptedBuffer())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -79,5 +107,11 @@ func (m *BufferDecryptionResult) SetAdditionalData(value map[string]interface{})
 func (m *BufferDecryptionResult) SetDecryptedBuffer(value []byte)() {
     if m != nil {
         m.decryptedBuffer = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *BufferDecryptionResult) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }

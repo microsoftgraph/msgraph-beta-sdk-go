@@ -15,6 +15,8 @@ func NewEducationCsvDataProvider()(*EducationCsvDataProvider) {
     m := &EducationCsvDataProvider{
         EducationSynchronizationDataProvider: *NewEducationSynchronizationDataProvider(),
     }
+    odataTypeValue := "#microsoft.graph.educationCsvDataProvider";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateEducationCsvDataProviderFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

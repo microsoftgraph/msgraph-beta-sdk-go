@@ -24,6 +24,8 @@ type AndroidManagedStoreAppConfigurationSchemaItem struct {
     displayName *string
     // Unique index the application uses to maintain nested schema items
     index *int32
+    // The OdataType property
+    odataType *string
     // Index of parent schema item to track nested schema items
     parentIndex *int32
     // Unique key the application uses to identify the item
@@ -36,6 +38,8 @@ func NewAndroidManagedStoreAppConfigurationSchemaItem()(*AndroidManagedStoreAppC
     m := &AndroidManagedStoreAppConfigurationSchemaItem{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.androidManagedStoreAppConfigurationSchemaItem";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAndroidManagedStoreAppConfigurationSchemaItemFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -193,6 +197,16 @@ func (m *AndroidManagedStoreAppConfigurationSchemaItem) GetFieldDeserializers()(
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["parentIndex"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
@@ -235,6 +249,14 @@ func (m *AndroidManagedStoreAppConfigurationSchemaItem) GetIndex()(*int32) {
         return nil
     } else {
         return m.index
+    }
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *AndroidManagedStoreAppConfigurationSchemaItem) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
     }
 }
 // GetParentIndex gets the parentIndex property value. Index of parent schema item to track nested schema items
@@ -308,6 +330,12 @@ func (m *AndroidManagedStoreAppConfigurationSchemaItem) Serialize(writer i878a80
     }
     {
         err := writer.WriteInt32Value("index", m.GetIndex())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -394,6 +422,12 @@ func (m *AndroidManagedStoreAppConfigurationSchemaItem) SetDisplayName(value *st
 func (m *AndroidManagedStoreAppConfigurationSchemaItem) SetIndex(value *int32)() {
     if m != nil {
         m.index = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *AndroidManagedStoreAppConfigurationSchemaItem) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetParentIndex sets the parentIndex property value. Index of parent schema item to track nested schema items

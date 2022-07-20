@@ -8,7 +8,7 @@ import (
 // ResourceConnection provides operations to manage the admin singleton.
 type ResourceConnection struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
-    // The state property
+    // The state of the connection. The possible values are: connected, notAuthorized, notFound, unknownFutureValue.
     state *ResourceConnectionState
 }
 // NewResourceConnection instantiates a new resourceConnection and sets the default values.
@@ -16,8 +16,8 @@ func NewResourceConnection()(*ResourceConnection) {
     m := &ResourceConnection{
         Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),
     }
-    odatatypeValue := "#microsoft.graph.windowsUpdates.resourceConnection";
-    m.SetType(&odatatypeValue);
+    odataTypeValue := "#microsoft.graph.windowsUpdates.resourceConnection";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateResourceConnectionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -58,7 +58,7 @@ func (m *ResourceConnection) GetFieldDeserializers()(map[string]func(i878a80d233
     }
     return res
 }
-// GetState gets the state property value. The state property
+// GetState gets the state property value. The state of the connection. The possible values are: connected, notAuthorized, notFound, unknownFutureValue.
 func (m *ResourceConnection) GetState()(*ResourceConnectionState) {
     if m == nil {
         return nil
@@ -81,7 +81,7 @@ func (m *ResourceConnection) Serialize(writer i878a80d2330e89d26896388a3f487eef2
     }
     return nil
 }
-// SetState sets the state property value. The state property
+// SetState sets the state property value. The state of the connection. The possible values are: connected, notAuthorized, notFound, unknownFutureValue.
 func (m *ResourceConnection) SetState(value *ResourceConnectionState)() {
     if m != nil {
         m.state = value

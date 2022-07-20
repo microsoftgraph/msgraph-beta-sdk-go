@@ -18,6 +18,8 @@ type ApprovalStage struct {
     isApproverJustificationRequired *bool
     // If true, then one or more escalation approvers are configured in this approval stage.
     isEscalationEnabled *bool
+    // The OdataType property
+    odataType *string
     // The users who will be asked to approve requests. A collection of singleUser, groupMembers, requestorManager, internalSponsors and externalSponsors. When creating or updating a policy, include at least one userSet in this collection.
     primaryApprovers []UserSetable
 }
@@ -26,6 +28,8 @@ func NewApprovalStage()(*ApprovalStage) {
     m := &ApprovalStage{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.approvalStage";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateApprovalStageFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -121,6 +125,16 @@ func (m *ApprovalStage) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["primaryApprovers"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateUserSetFromDiscriminatorValue)
         if err != nil {
@@ -151,6 +165,14 @@ func (m *ApprovalStage) GetIsEscalationEnabled()(*bool) {
         return nil
     } else {
         return m.isEscalationEnabled
+    }
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *ApprovalStage) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
     }
 }
 // GetPrimaryApprovers gets the primaryApprovers property value. The users who will be asked to approve requests. A collection of singleUser, groupMembers, requestorManager, internalSponsors and externalSponsors. When creating or updating a policy, include at least one userSet in this collection.
@@ -193,6 +215,12 @@ func (m *ApprovalStage) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
     }
     {
         err := writer.WriteBoolValue("isEscalationEnabled", m.GetIsEscalationEnabled())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -249,6 +277,12 @@ func (m *ApprovalStage) SetIsApproverJustificationRequired(value *bool)() {
 func (m *ApprovalStage) SetIsEscalationEnabled(value *bool)() {
     if m != nil {
         m.isEscalationEnabled = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *ApprovalStage) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetPrimaryApprovers sets the primaryApprovers property value. The users who will be asked to approve requests. A collection of singleUser, groupMembers, requestorManager, internalSponsors and externalSponsors. When creating or updating a policy, include at least one userSet in this collection.

@@ -31,6 +31,8 @@ func NewDepMacOSEnrollmentProfile()(*DepMacOSEnrollmentProfile) {
     m := &DepMacOSEnrollmentProfile{
         DepEnrollmentBaseProfile: *NewDepEnrollmentBaseProfile(),
     }
+    odataTypeValue := "#microsoft.graph.depMacOSEnrollmentProfile";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDepMacOSEnrollmentProfileFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

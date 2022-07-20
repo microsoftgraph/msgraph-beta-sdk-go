@@ -14,6 +14,8 @@ type TimeCardBreak struct {
     end TimeCardEventable
     // Notes about the timeCardBreak.
     notes ItemBodyable
+    // The OdataType property
+    odataType *string
     // The start property
     start TimeCardEventable
 }
@@ -22,6 +24,8 @@ func NewTimeCardBreak()(*TimeCardBreak) {
     m := &TimeCardBreak{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.timeCardBreak";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateTimeCardBreakFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -85,6 +89,16 @@ func (m *TimeCardBreak) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["start"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateTimeCardEventFromDiscriminatorValue)
         if err != nil {
@@ -103,6 +117,14 @@ func (m *TimeCardBreak) GetNotes()(ItemBodyable) {
         return nil
     } else {
         return m.notes
+    }
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *TimeCardBreak) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
     }
 }
 // GetStart gets the start property value. The start property
@@ -129,6 +151,12 @@ func (m *TimeCardBreak) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
     }
     {
         err := writer.WriteObjectValue("notes", m.GetNotes())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -169,6 +197,12 @@ func (m *TimeCardBreak) SetEnd(value TimeCardEventable)() {
 func (m *TimeCardBreak) SetNotes(value ItemBodyable)() {
     if m != nil {
         m.notes = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *TimeCardBreak) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetStart sets the start property value. The start property

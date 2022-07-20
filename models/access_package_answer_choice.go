@@ -12,12 +12,16 @@ type AccessPackageAnswerChoice struct {
     additionalData map[string]interface{}
     // The localized display values shown to the requestor and approvers. Required.
     displayValue AccessPackageLocalizedContentable
+    // The OdataType property
+    odataType *string
 }
 // NewAccessPackageAnswerChoice instantiates a new accessPackageAnswerChoice and sets the default values.
 func NewAccessPackageAnswerChoice()(*AccessPackageAnswerChoice) {
     m := &AccessPackageAnswerChoice{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.accessPackageAnswerChoice";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAccessPackageAnswerChoiceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -71,7 +75,25 @@ func (m *AccessPackageAnswerChoice) GetFieldDeserializers()(map[string]func(i878
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *AccessPackageAnswerChoice) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
 }
 // Serialize serializes information the current object
 func (m *AccessPackageAnswerChoice) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -83,6 +105,12 @@ func (m *AccessPackageAnswerChoice) Serialize(writer i878a80d2330e89d26896388a3f
     }
     {
         err := writer.WriteObjectValue("displayValue", m.GetDisplayValue())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -111,5 +139,11 @@ func (m *AccessPackageAnswerChoice) SetAdditionalData(value map[string]interface
 func (m *AccessPackageAnswerChoice) SetDisplayValue(value AccessPackageLocalizedContentable)() {
     if m != nil {
         m.displayValue = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *AccessPackageAnswerChoice) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }

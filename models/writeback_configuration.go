@@ -10,16 +10,16 @@ type WritebackConfiguration struct {
     additionalData map[string]interface{}
     // Indicates whether writeback of cloud groups to on-premise Active Directory is enabled. Default value is true for Microsoft 365 groups and false for security groups.
     isEnabled *bool
-    // The type property
-    type_escaped *string
+    // The OdataType property
+    odataType *string
 }
 // NewWritebackConfiguration instantiates a new writebackConfiguration and sets the default values.
 func NewWritebackConfiguration()(*WritebackConfiguration) {
     m := &WritebackConfiguration{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odatatypeValue := "#microsoft.graph.writebackConfiguration";
-    m.SetType(&odatatypeValue);
+    odataTypeValue := "#microsoft.graph.writebackConfiguration";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateWritebackConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -72,7 +72,7 @@ func (m *WritebackConfiguration) GetFieldDeserializers()(map[string]func(i878a80
             return err
         }
         if val != nil {
-            m.SetType(val)
+            m.SetOdataType(val)
         }
         return nil
     }
@@ -86,12 +86,12 @@ func (m *WritebackConfiguration) GetIsEnabled()(*bool) {
         return m.isEnabled
     }
 }
-// GetType gets the @odata.type property value. The type property
-func (m *WritebackConfiguration) GetType()(*string) {
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *WritebackConfiguration) GetOdataType()(*string) {
     if m == nil {
         return nil
     } else {
-        return m.type_escaped
+        return m.odataType
     }
 }
 // Serialize serializes information the current object
@@ -103,7 +103,7 @@ func (m *WritebackConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487
         }
     }
     {
-        err := writer.WriteStringValue("@odata.type", m.GetType())
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -128,9 +128,9 @@ func (m *WritebackConfiguration) SetIsEnabled(value *bool)() {
         m.isEnabled = value
     }
 }
-// SetType sets the @odata.type property value. The type property
-func (m *WritebackConfiguration) SetType(value *string)() {
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *WritebackConfiguration) SetOdataType(value *string)() {
     if m != nil {
-        m.type_escaped = value
+        m.odataType = value
     }
 }

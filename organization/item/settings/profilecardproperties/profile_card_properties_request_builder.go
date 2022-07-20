@@ -70,7 +70,7 @@ func NewProfileCardPropertiesRequestBuilder(rawUrl string, requestAdapter i2ae41
     urlParams["request-raw-url"] = rawUrl
     return NewProfileCardPropertiesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *ProfileCardPropertiesRequestBuilder) Count()(*ia5480ae23f63b1db9bd98b80c6d4827b13a1418f0635890e8a77bba6c56fbef4.CountRequestBuilder) {
     return ia5480ae23f63b1db9bd98b80c6d4827b13a1418f0635890e8a77bba6c56fbef4.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

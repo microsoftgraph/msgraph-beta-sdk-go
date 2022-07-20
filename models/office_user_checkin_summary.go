@@ -10,6 +10,8 @@ type OfficeUserCheckinSummary struct {
     additionalData map[string]interface{}
     // Total failed user check ins for the last 3 months.
     failedUserCount *int32
+    // The OdataType property
+    odataType *string
     // Total successful user check ins for the last 3 months.
     succeededUserCount *int32
 }
@@ -18,6 +20,8 @@ func NewOfficeUserCheckinSummary()(*OfficeUserCheckinSummary) {
     m := &OfficeUserCheckinSummary{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.officeUserCheckinSummary";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateOfficeUserCheckinSummaryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -53,6 +57,16 @@ func (m *OfficeUserCheckinSummary) GetFieldDeserializers()(map[string]func(i878a
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["succeededUserCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
@@ -64,6 +78,14 @@ func (m *OfficeUserCheckinSummary) GetFieldDeserializers()(map[string]func(i878a
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *OfficeUserCheckinSummary) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
 }
 // GetSucceededUserCount gets the succeededUserCount property value. Total successful user check ins for the last 3 months.
 func (m *OfficeUserCheckinSummary) GetSucceededUserCount()(*int32) {
@@ -77,6 +99,12 @@ func (m *OfficeUserCheckinSummary) GetSucceededUserCount()(*int32) {
 func (m *OfficeUserCheckinSummary) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
         err := writer.WriteInt32Value("failedUserCount", m.GetFailedUserCount())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -105,6 +133,12 @@ func (m *OfficeUserCheckinSummary) SetAdditionalData(value map[string]interface{
 func (m *OfficeUserCheckinSummary) SetFailedUserCount(value *int32)() {
     if m != nil {
         m.failedUserCount = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *OfficeUserCheckinSummary) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetSucceededUserCount sets the succeededUserCount property value. Total successful user check ins for the last 3 months.

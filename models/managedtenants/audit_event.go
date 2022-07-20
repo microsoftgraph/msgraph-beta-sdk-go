@@ -6,7 +6,7 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
-// AuditEvent provides operations to manage the collection of accessReviewDecision entities.
+// AuditEvent provides operations to manage the collection of accessReview entities.
 type AuditEvent struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
     // A string which uniquely represents the operation that occurred. Required. Read-only.
@@ -41,6 +41,8 @@ func NewAuditEvent()(*AuditEvent) {
     m := &AuditEvent{
         Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.managedTenants.auditEvent";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAuditEventFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

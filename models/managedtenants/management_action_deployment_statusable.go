@@ -11,11 +11,13 @@ type ManagementActionDeploymentStatusable interface {
     GetManagementActionId()(*string)
     GetManagementTemplateId()(*string)
     GetManagementTemplateVersion()(*int32)
+    GetOdataType()(*string)
     GetStatus()(*ManagementActionStatus)
     GetWorkloadActionDeploymentStatuses()([]WorkloadActionDeploymentStatusable)
     SetManagementActionId(value *string)()
     SetManagementTemplateId(value *string)()
     SetManagementTemplateVersion(value *int32)()
+    SetOdataType(value *string)()
     SetStatus(value *ManagementActionStatus)()
     SetWorkloadActionDeploymentStatuses(value []WorkloadActionDeploymentStatusable)()
 }

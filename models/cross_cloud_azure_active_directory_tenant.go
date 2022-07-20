@@ -19,6 +19,8 @@ func NewCrossCloudAzureActiveDirectoryTenant()(*CrossCloudAzureActiveDirectoryTe
     m := &CrossCloudAzureActiveDirectoryTenant{
         IdentitySource: *NewIdentitySource(),
     }
+    odataTypeValue := "#microsoft.graph.crossCloudAzureActiveDirectoryTenant";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateCrossCloudAzureActiveDirectoryTenantFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

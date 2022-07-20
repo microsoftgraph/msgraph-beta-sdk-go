@@ -12,12 +12,16 @@ type TeamworkTeamsClientConfiguration struct {
     additionalData map[string]interface{}
     // The configuration of Microsoft Teams client features for a device.
     featuresConfiguration TeamworkFeaturesConfigurationable
+    // The OdataType property
+    odataType *string
 }
 // NewTeamworkTeamsClientConfiguration instantiates a new teamworkTeamsClientConfiguration and sets the default values.
 func NewTeamworkTeamsClientConfiguration()(*TeamworkTeamsClientConfiguration) {
     m := &TeamworkTeamsClientConfiguration{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.teamworkTeamsClientConfiguration";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateTeamworkTeamsClientConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -71,7 +75,25 @@ func (m *TeamworkTeamsClientConfiguration) GetFieldDeserializers()(map[string]fu
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *TeamworkTeamsClientConfiguration) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
 }
 // Serialize serializes information the current object
 func (m *TeamworkTeamsClientConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -83,6 +105,12 @@ func (m *TeamworkTeamsClientConfiguration) Serialize(writer i878a80d2330e89d2689
     }
     {
         err := writer.WriteObjectValue("featuresConfiguration", m.GetFeaturesConfiguration())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -111,5 +139,11 @@ func (m *TeamworkTeamsClientConfiguration) SetAdditionalData(value map[string]in
 func (m *TeamworkTeamsClientConfiguration) SetFeaturesConfiguration(value TeamworkFeaturesConfigurationable)() {
     if m != nil {
         m.featuresConfiguration = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *TeamworkTeamsClientConfiguration) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }

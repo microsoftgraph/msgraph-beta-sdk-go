@@ -28,6 +28,8 @@ func NewAppRoleAssignment()(*AppRoleAssignment) {
     m := &AppRoleAssignment{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.appRoleAssignment";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAppRoleAssignmentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

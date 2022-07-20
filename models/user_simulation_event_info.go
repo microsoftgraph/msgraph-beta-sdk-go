@@ -17,6 +17,8 @@ type UserSimulationEventInfo struct {
     eventName *string
     // IP address from where the simulation event was initiated by a user in an attack simulation and training campaign.
     ipAddress *string
+    // The OdataType property
+    odataType *string
     // The operating system, platform, and device details from where the simulation event was initiated by a user in an attack simulation and training campaign.
     osPlatformDeviceDetails *string
 }
@@ -25,6 +27,8 @@ func NewUserSimulationEventInfo()(*UserSimulationEventInfo) {
     m := &UserSimulationEventInfo{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.userSimulationEventInfo";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateUserSimulationEventInfoFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -106,6 +110,16 @@ func (m *UserSimulationEventInfo) GetFieldDeserializers()(map[string]func(i878a8
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["osPlatformDeviceDetails"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -124,6 +138,14 @@ func (m *UserSimulationEventInfo) GetIpAddress()(*string) {
         return nil
     } else {
         return m.ipAddress
+    }
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *UserSimulationEventInfo) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
     }
 }
 // GetOsPlatformDeviceDetails gets the osPlatformDeviceDetails property value. The operating system, platform, and device details from where the simulation event was initiated by a user in an attack simulation and training campaign.
@@ -156,6 +178,12 @@ func (m *UserSimulationEventInfo) Serialize(writer i878a80d2330e89d26896388a3f48
     }
     {
         err := writer.WriteStringValue("ipAddress", m.GetIpAddress())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -202,6 +230,12 @@ func (m *UserSimulationEventInfo) SetEventName(value *string)() {
 func (m *UserSimulationEventInfo) SetIpAddress(value *string)() {
     if m != nil {
         m.ipAddress = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *UserSimulationEventInfo) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetOsPlatformDeviceDetails sets the osPlatformDeviceDetails property value. The operating system, platform, and device details from where the simulation event was initiated by a user in an attack simulation and training campaign.

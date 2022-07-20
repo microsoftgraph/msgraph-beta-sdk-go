@@ -19,6 +19,8 @@ type UserSimulationDetails struct {
     inProgressTrainingsCount *int32
     // Flag representing if user was compromised in an attack simulation and training campaign.
     isCompromised *bool
+    // The OdataType property
+    odataType *string
     // Date and time when user reported delivered payload as phish in the attack simulation and training campaign.
     reportedPhishDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // List of simulation events of a user in the attack simulation and training campaign.
@@ -33,6 +35,8 @@ func NewUserSimulationDetails()(*UserSimulationDetails) {
     m := &UserSimulationDetails{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.userSimulationDetails";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateUserSimulationDetailsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -124,6 +128,16 @@ func (m *UserSimulationDetails) GetFieldDeserializers()(map[string]func(i878a80d
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["reportedPhishDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
@@ -190,6 +204,14 @@ func (m *UserSimulationDetails) GetIsCompromised()(*bool) {
         return m.isCompromised
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *UserSimulationDetails) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetReportedPhishDateTime gets the reportedPhishDateTime property value. Date and time when user reported delivered payload as phish in the attack simulation and training campaign.
 func (m *UserSimulationDetails) GetReportedPhishDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
@@ -250,6 +272,12 @@ func (m *UserSimulationDetails) Serialize(writer i878a80d2330e89d26896388a3f487e
     }
     {
         err := writer.WriteBoolValue("isCompromised", m.GetIsCompromised())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -328,6 +356,12 @@ func (m *UserSimulationDetails) SetInProgressTrainingsCount(value *int32)() {
 func (m *UserSimulationDetails) SetIsCompromised(value *bool)() {
     if m != nil {
         m.isCompromised = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *UserSimulationDetails) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetReportedPhishDateTime sets the reportedPhishDateTime property value. Date and time when user reported delivered payload as phish in the attack simulation and training campaign.

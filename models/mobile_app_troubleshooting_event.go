@@ -23,6 +23,8 @@ func NewMobileAppTroubleshootingEvent()(*MobileAppTroubleshootingEvent) {
     m := &MobileAppTroubleshootingEvent{
         DeviceManagementTroubleshootingEvent: *NewDeviceManagementTroubleshootingEvent(),
     }
+    odataTypeValue := "#microsoft.graph.mobileAppTroubleshootingEvent";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateMobileAppTroubleshootingEventFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

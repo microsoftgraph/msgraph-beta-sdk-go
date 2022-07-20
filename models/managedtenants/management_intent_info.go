@@ -14,12 +14,16 @@ type ManagementIntentInfo struct {
     managementIntentId *string
     // The collection of management template information associated with the management intent. Optional. Read-only.
     managementTemplates []ManagementTemplateDetailedInfoable
+    // The OdataType property
+    odataType *string
 }
 // NewManagementIntentInfo instantiates a new managementIntentInfo and sets the default values.
 func NewManagementIntentInfo()(*ManagementIntentInfo) {
     m := &ManagementIntentInfo{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.managedTenants.managementIntentInfo";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateManagementIntentInfoFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -71,6 +75,16 @@ func (m *ManagementIntentInfo) GetFieldDeserializers()(map[string]func(i878a80d2
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetManagementIntentDisplayName gets the managementIntentDisplayName property value. The display name for the management intent. Optional. Read-only.
@@ -97,6 +111,14 @@ func (m *ManagementIntentInfo) GetManagementTemplates()([]ManagementTemplateDeta
         return m.managementTemplates
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *ManagementIntentInfo) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // Serialize serializes information the current object
 func (m *ManagementIntentInfo) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
@@ -117,6 +139,12 @@ func (m *ManagementIntentInfo) Serialize(writer i878a80d2330e89d26896388a3f487ee
             cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
         }
         err := writer.WriteCollectionOfObjectValues("managementTemplates", cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -151,5 +179,11 @@ func (m *ManagementIntentInfo) SetManagementIntentId(value *string)() {
 func (m *ManagementIntentInfo) SetManagementTemplates(value []ManagementTemplateDetailedInfoable)() {
     if m != nil {
         m.managementTemplates = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *ManagementIntentInfo) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }

@@ -41,6 +41,8 @@ func NewAospDeviceOwnerDeviceConfiguration()(*AospDeviceOwnerDeviceConfiguration
     m := &AospDeviceOwnerDeviceConfiguration{
         DeviceConfiguration: *NewDeviceConfiguration(),
     }
+    odataTypeValue := "#microsoft.graph.aospDeviceOwnerDeviceConfiguration";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAospDeviceOwnerDeviceConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

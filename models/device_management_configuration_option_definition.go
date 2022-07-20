@@ -22,6 +22,8 @@ type DeviceManagementConfigurationOptionDefinition struct {
     itemId *string
     // Name of the option
     name *string
+    // The OdataType property
+    odataType *string
     // Value of the option
     optionValue DeviceManagementConfigurationSettingValueable
 }
@@ -30,6 +32,8 @@ func NewDeviceManagementConfigurationOptionDefinition()(*DeviceManagementConfigu
     m := &DeviceManagementConfigurationOptionDefinition{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.deviceManagementConfigurationOptionDefinition";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDeviceManagementConfigurationOptionDefinitionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -157,6 +161,16 @@ func (m *DeviceManagementConfigurationOptionDefinition) GetFieldDeserializers()(
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["optionValue"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateDeviceManagementConfigurationSettingValueFromDiscriminatorValue)
         if err != nil {
@@ -191,6 +205,14 @@ func (m *DeviceManagementConfigurationOptionDefinition) GetName()(*string) {
         return nil
     } else {
         return m.name
+    }
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *DeviceManagementConfigurationOptionDefinition) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
     }
 }
 // GetOptionValue gets the optionValue property value. Value of the option
@@ -249,6 +271,12 @@ func (m *DeviceManagementConfigurationOptionDefinition) Serialize(writer i878a80
     }
     {
         err := writer.WriteStringValue("name", m.GetName())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -313,6 +341,12 @@ func (m *DeviceManagementConfigurationOptionDefinition) SetItemId(value *string)
 func (m *DeviceManagementConfigurationOptionDefinition) SetName(value *string)() {
     if m != nil {
         m.name = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *DeviceManagementConfigurationOptionDefinition) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetOptionValue sets the optionValue property value. Value of the option

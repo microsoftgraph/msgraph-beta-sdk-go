@@ -15,6 +15,8 @@ func NewDlpEvaluatePoliciesJobResponse()(*DlpEvaluatePoliciesJobResponse) {
     m := &DlpEvaluatePoliciesJobResponse{
         JobResponseBase: *NewJobResponseBase(),
     }
+    odataTypeValue := "#microsoft.graph.dlpEvaluatePoliciesJobResponse";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDlpEvaluatePoliciesJobResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

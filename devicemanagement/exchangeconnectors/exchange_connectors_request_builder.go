@@ -70,7 +70,7 @@ func NewExchangeConnectorsRequestBuilder(rawUrl string, requestAdapter i2ae4187f
     urlParams["request-raw-url"] = rawUrl
     return NewExchangeConnectorsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *ExchangeConnectorsRequestBuilder) Count()(*id2a313c864be4974560f8cc0f98de918a113f2c49283d1329c2b09bcd2043b19.CountRequestBuilder) {
     return id2a313c864be4974560f8cc0f98de918a113f2c49283d1329c2b09bcd2043b19.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

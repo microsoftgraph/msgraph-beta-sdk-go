@@ -17,6 +17,8 @@ func NewEducationSynchronizationOAuth2ClientCredentialsConnectionSettings()(*Edu
     m := &EducationSynchronizationOAuth2ClientCredentialsConnectionSettings{
         EducationSynchronizationConnectionSettings: *NewEducationSynchronizationConnectionSettings(),
     }
+    odataTypeValue := "#microsoft.graph.educationSynchronizationOAuth2ClientCredentialsConnectionSettings";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateEducationSynchronizationOAuth2ClientCredentialsConnectionSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

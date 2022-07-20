@@ -11,9 +11,11 @@ type BulkManagedDeviceActionResultable interface {
     GetFailedDeviceIds()([]string)
     GetNotFoundDeviceIds()([]string)
     GetNotSupportedDeviceIds()([]string)
+    GetOdataType()(*string)
     GetSuccessfulDeviceIds()([]string)
     SetFailedDeviceIds(value []string)()
     SetNotFoundDeviceIds(value []string)()
     SetNotSupportedDeviceIds(value []string)()
+    SetOdataType(value *string)()
     SetSuccessfulDeviceIds(value []string)()
 }

@@ -10,6 +10,8 @@ type AndroidPermissionAction struct {
     action *AndroidPermissionActionType
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
+    // The OdataType property
+    odataType *string
     // Android permission string, defined in the official Android documentation.  Example 'android.permission.READ_CONTACTS'.
     permission *string
 }
@@ -18,6 +20,8 @@ func NewAndroidPermissionAction()(*AndroidPermissionAction) {
     m := &AndroidPermissionAction{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.androidPermissionAction";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAndroidPermissionActionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -53,6 +57,16 @@ func (m *AndroidPermissionAction) GetFieldDeserializers()(map[string]func(i878a8
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["permission"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -64,6 +78,14 @@ func (m *AndroidPermissionAction) GetFieldDeserializers()(map[string]func(i878a8
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *AndroidPermissionAction) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
 }
 // GetPermission gets the permission property value. Android permission string, defined in the official Android documentation.  Example 'android.permission.READ_CONTACTS'.
 func (m *AndroidPermissionAction) GetPermission()(*string) {
@@ -78,6 +100,12 @@ func (m *AndroidPermissionAction) Serialize(writer i878a80d2330e89d26896388a3f48
     if m.GetAction() != nil {
         cast := (*m.GetAction()).String()
         err := writer.WriteStringValue("action", &cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -106,6 +134,12 @@ func (m *AndroidPermissionAction) SetAction(value *AndroidPermissionActionType)(
 func (m *AndroidPermissionAction) SetAdditionalData(value map[string]interface{})() {
     if m != nil {
         m.additionalData = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *AndroidPermissionAction) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetPermission sets the permission property value. Android permission string, defined in the official Android documentation.  Example 'android.permission.READ_CONTACTS'.

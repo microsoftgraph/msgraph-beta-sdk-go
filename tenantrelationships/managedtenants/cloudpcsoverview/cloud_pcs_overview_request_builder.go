@@ -70,7 +70,7 @@ func NewCloudPcsOverviewRequestBuilder(rawUrl string, requestAdapter i2ae4187f7d
     urlParams["request-raw-url"] = rawUrl
     return NewCloudPcsOverviewRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *CloudPcsOverviewRequestBuilder) Count()(*ie31bdb5d2437521047ba3a81672e2bb99eb562289c79cc40b79e1896bb9133f7.CountRequestBuilder) {
     return ie31bdb5d2437521047ba3a81672e2bb99eb562289c79cc40b79e1896bb9133f7.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

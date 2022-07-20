@@ -12,7 +12,9 @@ type DlpPoliciesJobResultable interface {
     GetAuditCorrelationId()(*string)
     GetEvaluationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetMatchingRules()([]MatchingDlpRuleable)
+    GetOdataType()(*string)
     SetAuditCorrelationId(value *string)()
     SetEvaluationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetMatchingRules(value []MatchingDlpRuleable)()
+    SetOdataType(value *string)()
 }

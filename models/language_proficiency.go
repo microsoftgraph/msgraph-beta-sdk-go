@@ -27,6 +27,8 @@ func NewLanguageProficiency()(*LanguageProficiency) {
     m := &LanguageProficiency{
         ItemFacet: *NewItemFacet(),
     }
+    odataTypeValue := "#microsoft.graph.languageProficiency";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateLanguageProficiencyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

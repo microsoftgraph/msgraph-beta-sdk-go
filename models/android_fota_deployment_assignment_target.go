@@ -10,12 +10,16 @@ type AndroidFotaDeploymentAssignmentTarget struct {
     additionalData map[string]interface{}
     // AAD Group Id.
     groupId *string
+    // The OdataType property
+    odataType *string
 }
 // NewAndroidFotaDeploymentAssignmentTarget instantiates a new androidFotaDeploymentAssignmentTarget and sets the default values.
 func NewAndroidFotaDeploymentAssignmentTarget()(*AndroidFotaDeploymentAssignmentTarget) {
     m := &AndroidFotaDeploymentAssignmentTarget{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.androidFotaDeploymentAssignmentTarget";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAndroidFotaDeploymentAssignmentTargetFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -43,6 +47,16 @@ func (m *AndroidFotaDeploymentAssignmentTarget) GetFieldDeserializers()(map[stri
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetGroupId gets the groupId property value. AAD Group Id.
@@ -53,10 +67,24 @@ func (m *AndroidFotaDeploymentAssignmentTarget) GetGroupId()(*string) {
         return m.groupId
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *AndroidFotaDeploymentAssignmentTarget) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // Serialize serializes information the current object
 func (m *AndroidFotaDeploymentAssignmentTarget) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("groupId", m.GetGroupId())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -79,5 +107,11 @@ func (m *AndroidFotaDeploymentAssignmentTarget) SetAdditionalData(value map[stri
 func (m *AndroidFotaDeploymentAssignmentTarget) SetGroupId(value *string)() {
     if m != nil {
         m.groupId = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *AndroidFotaDeploymentAssignmentTarget) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }

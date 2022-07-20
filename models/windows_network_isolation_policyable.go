@@ -16,6 +16,7 @@ type WindowsNetworkIsolationPolicyable interface {
     GetEnterpriseProxyServers()([]string)
     GetEnterpriseProxyServersAreAuthoritative()(*bool)
     GetNeutralDomainResources()([]string)
+    GetOdataType()(*string)
     SetEnterpriseCloudResources(value []ProxiedDomainable)()
     SetEnterpriseInternalProxyServers(value []string)()
     SetEnterpriseIPRanges(value []IpRangeable)()
@@ -24,4 +25,5 @@ type WindowsNetworkIsolationPolicyable interface {
     SetEnterpriseProxyServers(value []string)()
     SetEnterpriseProxyServersAreAuthoritative(value *bool)()
     SetNeutralDomainResources(value []string)()
+    SetOdataType(value *string)()
 }

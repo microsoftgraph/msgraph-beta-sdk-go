@@ -16,12 +16,16 @@ type MacOSAppleEventReceiver struct {
     identifier *string
     // Process identifier types for MacOS Privacy Preferences
     identifierType *MacOSProcessIdentifierType
+    // The OdataType property
+    odataType *string
 }
 // NewMacOSAppleEventReceiver instantiates a new macOSAppleEventReceiver and sets the default values.
 func NewMacOSAppleEventReceiver()(*MacOSAppleEventReceiver) {
     m := &MacOSAppleEventReceiver{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.macOSAppleEventReceiver";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateMacOSAppleEventReceiverFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -95,6 +99,16 @@ func (m *MacOSAppleEventReceiver) GetFieldDeserializers()(map[string]func(i878a8
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetIdentifier gets the identifier property value. Bundle ID of the app or file path of the process or executable that receives the Apple Event.
@@ -111,6 +125,14 @@ func (m *MacOSAppleEventReceiver) GetIdentifierType()(*MacOSProcessIdentifierTyp
         return nil
     } else {
         return m.identifierType
+    }
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *MacOSAppleEventReceiver) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
     }
 }
 // Serialize serializes information the current object
@@ -136,6 +158,12 @@ func (m *MacOSAppleEventReceiver) Serialize(writer i878a80d2330e89d26896388a3f48
     if m.GetIdentifierType() != nil {
         cast := (*m.GetIdentifierType()).String()
         err := writer.WriteStringValue("identifierType", &cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -176,5 +204,11 @@ func (m *MacOSAppleEventReceiver) SetIdentifier(value *string)() {
 func (m *MacOSAppleEventReceiver) SetIdentifierType(value *MacOSProcessIdentifierType)() {
     if m != nil {
         m.identifierType = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *MacOSAppleEventReceiver) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }

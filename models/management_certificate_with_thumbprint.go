@@ -10,6 +10,8 @@ type ManagementCertificateWithThumbprint struct {
     additionalData map[string]interface{}
     // The Base 64 encoded management certificate
     certificate *string
+    // The OdataType property
+    odataType *string
     // The thumbprint of the management certificate
     thumbprint *string
 }
@@ -18,6 +20,8 @@ func NewManagementCertificateWithThumbprint()(*ManagementCertificateWithThumbpri
     m := &ManagementCertificateWithThumbprint{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.managementCertificateWithThumbprint";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateManagementCertificateWithThumbprintFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -53,6 +57,16 @@ func (m *ManagementCertificateWithThumbprint) GetFieldDeserializers()(map[string
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["thumbprint"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -64,6 +78,14 @@ func (m *ManagementCertificateWithThumbprint) GetFieldDeserializers()(map[string
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *ManagementCertificateWithThumbprint) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
 }
 // GetThumbprint gets the thumbprint property value. The thumbprint of the management certificate
 func (m *ManagementCertificateWithThumbprint) GetThumbprint()(*string) {
@@ -77,6 +99,12 @@ func (m *ManagementCertificateWithThumbprint) GetThumbprint()(*string) {
 func (m *ManagementCertificateWithThumbprint) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("certificate", m.GetCertificate())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -105,6 +133,12 @@ func (m *ManagementCertificateWithThumbprint) SetAdditionalData(value map[string
 func (m *ManagementCertificateWithThumbprint) SetCertificate(value *string)() {
     if m != nil {
         m.certificate = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *ManagementCertificateWithThumbprint) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetThumbprint sets the thumbprint property value. The thumbprint of the management certificate

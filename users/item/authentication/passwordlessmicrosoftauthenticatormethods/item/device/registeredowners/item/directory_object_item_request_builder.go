@@ -40,7 +40,7 @@ func NewDirectoryObjectItemRequestBuilder(rawUrl string, requestAdapter i2ae4187
 func (m *DirectoryObjectItemRequestBuilder) Endpoint()(*i5eb970599e80bdff8722a653ae7be2698466a3fddfa10c27e566939ab3a8f568.EndpointRequestBuilder) {
     return i5eb970599e80bdff8722a653ae7be2698466a3fddfa10c27e566939ab3a8f568.NewEndpointRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Ref the ref property
+// Ref the Ref property
 func (m *DirectoryObjectItemRequestBuilder) Ref()(*i07da294fbf4713215f8826177f1ec62eea48f5c448f6eec0a08af160cac85cf7.RefRequestBuilder) {
     return i07da294fbf4713215f8826177f1ec62eea48f5c448f6eec0a08af160cac85cf7.NewRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

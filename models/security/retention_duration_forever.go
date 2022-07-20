@@ -13,6 +13,8 @@ func NewRetentionDurationForever()(*RetentionDurationForever) {
     m := &RetentionDurationForever{
         RetentionDuration: *NewRetentionDuration(),
     }
+    odataTypeValue := "#microsoft.graph.security.retentionDurationForever";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateRetentionDurationForeverFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -34,6 +34,8 @@ func NewCloudPcDeviceImage()(*CloudPcDeviceImage) {
     m := &CloudPcDeviceImage{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.cloudPcDeviceImage";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateCloudPcDeviceImageFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

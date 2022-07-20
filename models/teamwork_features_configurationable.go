@@ -13,9 +13,11 @@ type TeamworkFeaturesConfigurationable interface {
     GetIsBluetoothBeaconingEnabled()(*bool)
     GetIsHideMeetingNamesEnabled()(*bool)
     GetIsSendLogsAndFeedbackEnabled()(*bool)
+    GetOdataType()(*string)
     SetEmailToSendLogsAndFeedback(value *string)()
     SetIsAutoScreenShareEnabled(value *bool)()
     SetIsBluetoothBeaconingEnabled(value *bool)()
     SetIsHideMeetingNamesEnabled(value *bool)()
     SetIsSendLogsAndFeedbackEnabled(value *bool)()
+    SetOdataType(value *string)()
 }

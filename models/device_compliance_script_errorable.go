@@ -11,9 +11,9 @@ type DeviceComplianceScriptErrorable interface {
     GetCode()(*Code)
     GetDeviceComplianceScriptRulesValidationError()(*DeviceComplianceScriptRulesValidationError)
     GetMessage()(*string)
-    GetType()(*string)
+    GetOdataType()(*string)
     SetCode(value *Code)()
     SetDeviceComplianceScriptRulesValidationError(value *DeviceComplianceScriptRulesValidationError)()
     SetMessage(value *string)()
-    SetType(value *string)()
+    SetOdataType(value *string)()
 }

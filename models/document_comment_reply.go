@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DocumentCommentReply provides operations to manage the collection of activityStatistics entities.
+// DocumentCommentReply 
 type DocumentCommentReply struct {
     Entity
     // The content property
@@ -12,11 +12,13 @@ type DocumentCommentReply struct {
     // The location property
     location *string
 }
-// NewDocumentCommentReply instantiates a new documentCommentReply and sets the default values.
+// NewDocumentCommentReply instantiates a new DocumentCommentReply and sets the default values.
 func NewDocumentCommentReply()(*DocumentCommentReply) {
     m := &DocumentCommentReply{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.documentCommentReply";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDocumentCommentReplyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

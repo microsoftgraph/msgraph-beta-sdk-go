@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AccessPackageResourceRequest provides operations to manage the collection of activityStatistics entities.
+// AccessPackageResourceRequest provides operations to manage the collection of accessReview entities.
 type AccessPackageResourceRequest struct {
     Entity
     // The accessPackageResource property
@@ -34,6 +34,8 @@ func NewAccessPackageResourceRequest()(*AccessPackageResourceRequest) {
     m := &AccessPackageResourceRequest{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.accessPackageResourceRequest";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAccessPackageResourceRequestFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

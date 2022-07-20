@@ -10,6 +10,8 @@ type DeviceManagementApplicabilityRuleOsEdition struct {
     additionalData map[string]interface{}
     // Name for object.
     name *string
+    // The OdataType property
+    odataType *string
     // Applicability rule OS edition type.
     osEditionTypes []string
     // Supported Applicability rule types for Device Configuration
@@ -20,6 +22,8 @@ func NewDeviceManagementApplicabilityRuleOsEdition()(*DeviceManagementApplicabil
     m := &DeviceManagementApplicabilityRuleOsEdition{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.deviceManagementApplicabilityRuleOsEdition";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDeviceManagementApplicabilityRuleOsEditionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -44,6 +48,16 @@ func (m *DeviceManagementApplicabilityRuleOsEdition) GetFieldDeserializers()(map
         }
         if val != nil {
             m.SetName(val)
+        }
+        return nil
+    }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
         }
         return nil
     }
@@ -81,6 +95,14 @@ func (m *DeviceManagementApplicabilityRuleOsEdition) GetName()(*string) {
         return m.name
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *DeviceManagementApplicabilityRuleOsEdition) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetOsEditionTypes gets the osEditionTypes property value. Applicability rule OS edition type.
 func (m *DeviceManagementApplicabilityRuleOsEdition) GetOsEditionTypes()([]string) {
     if m == nil {
@@ -101,6 +123,12 @@ func (m *DeviceManagementApplicabilityRuleOsEdition) GetRuleType()(*DeviceManage
 func (m *DeviceManagementApplicabilityRuleOsEdition) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("name", m.GetName())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -136,6 +164,12 @@ func (m *DeviceManagementApplicabilityRuleOsEdition) SetAdditionalData(value map
 func (m *DeviceManagementApplicabilityRuleOsEdition) SetName(value *string)() {
     if m != nil {
         m.name = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *DeviceManagementApplicabilityRuleOsEdition) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetOsEditionTypes sets the osEditionTypes property value. Applicability rule OS edition type.

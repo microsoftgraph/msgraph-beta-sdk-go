@@ -13,6 +13,8 @@ func NewAccessPackageUserDirectoryAttributeStore()(*AccessPackageUserDirectoryAt
     m := &AccessPackageUserDirectoryAttributeStore{
         AccessPackageResourceAttributeDestination: *NewAccessPackageResourceAttributeDestination(),
     }
+    odataTypeValue := "#microsoft.graph.accessPackageUserDirectoryAttributeStore";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAccessPackageUserDirectoryAttributeStoreFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

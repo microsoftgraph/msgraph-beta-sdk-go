@@ -12,12 +12,16 @@ type DowngradeJustification struct {
     isDowngradeJustified *bool
     // Message that indicates why a downgrade is justified. The message will appear in administrative logs.
     justificationMessage *string
+    // The OdataType property
+    odataType *string
 }
 // NewDowngradeJustification instantiates a new downgradeJustification and sets the default values.
 func NewDowngradeJustification()(*DowngradeJustification) {
     m := &DowngradeJustification{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.downgradeJustification";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDowngradeJustificationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -55,6 +59,16 @@ func (m *DowngradeJustification) GetFieldDeserializers()(map[string]func(i878a80
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetIsDowngradeJustified gets the isDowngradeJustified property value. Indicates whether the downgrade is or is not justified.
@@ -73,6 +87,14 @@ func (m *DowngradeJustification) GetJustificationMessage()(*string) {
         return m.justificationMessage
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *DowngradeJustification) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // Serialize serializes information the current object
 func (m *DowngradeJustification) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
@@ -83,6 +105,12 @@ func (m *DowngradeJustification) Serialize(writer i878a80d2330e89d26896388a3f487
     }
     {
         err := writer.WriteStringValue("justificationMessage", m.GetJustificationMessage())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -111,5 +139,11 @@ func (m *DowngradeJustification) SetIsDowngradeJustified(value *bool)() {
 func (m *DowngradeJustification) SetJustificationMessage(value *string)() {
     if m != nil {
         m.justificationMessage = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *DowngradeJustification) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }

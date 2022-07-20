@@ -10,6 +10,8 @@ type DeviceCompliancePolicyScript struct {
     additionalData map[string]interface{}
     // Device compliance script Id.
     deviceComplianceScriptId *string
+    // The OdataType property
+    odataType *string
     // Json of the rules.
     rulesContent []byte
 }
@@ -18,6 +20,8 @@ func NewDeviceCompliancePolicyScript()(*DeviceCompliancePolicyScript) {
     m := &DeviceCompliancePolicyScript{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.deviceCompliancePolicyScript";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDeviceCompliancePolicyScriptFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -53,6 +57,16 @@ func (m *DeviceCompliancePolicyScript) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["rulesContent"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetByteArrayValue()
         if err != nil {
@@ -64,6 +78,14 @@ func (m *DeviceCompliancePolicyScript) GetFieldDeserializers()(map[string]func(i
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *DeviceCompliancePolicyScript) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
 }
 // GetRulesContent gets the rulesContent property value. Json of the rules.
 func (m *DeviceCompliancePolicyScript) GetRulesContent()([]byte) {
@@ -77,6 +99,12 @@ func (m *DeviceCompliancePolicyScript) GetRulesContent()([]byte) {
 func (m *DeviceCompliancePolicyScript) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("deviceComplianceScriptId", m.GetDeviceComplianceScriptId())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -105,6 +133,12 @@ func (m *DeviceCompliancePolicyScript) SetAdditionalData(value map[string]interf
 func (m *DeviceCompliancePolicyScript) SetDeviceComplianceScriptId(value *string)() {
     if m != nil {
         m.deviceComplianceScriptId = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *DeviceCompliancePolicyScript) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetRulesContent sets the rulesContent property value. Json of the rules.

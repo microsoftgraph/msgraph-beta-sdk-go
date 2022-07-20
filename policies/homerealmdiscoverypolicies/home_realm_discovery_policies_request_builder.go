@@ -70,7 +70,7 @@ func NewHomeRealmDiscoveryPoliciesRequestBuilder(rawUrl string, requestAdapter i
     urlParams["request-raw-url"] = rawUrl
     return NewHomeRealmDiscoveryPoliciesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *HomeRealmDiscoveryPoliciesRequestBuilder) Count()(*i1100746cd7795e57b0d6db2889de959ab262a99ef2d9b2754256a478310de37a.CountRequestBuilder) {
     return i1100746cd7795e57b0d6db2889de959ab262a99ef2d9b2754256a478310de37a.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

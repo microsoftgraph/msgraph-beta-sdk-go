@@ -73,7 +73,7 @@ func NewMembersWithLicenseErrorsRequestBuilder(rawUrl string, requestAdapter i2a
     urlParams["request-raw-url"] = rawUrl
     return NewMembersWithLicenseErrorsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *MembersWithLicenseErrorsRequestBuilder) Count()(*i266c609a4a0b2ea717fcb9f2b5bd204123ad620a4c9d6ac6d46ac21cb41e5d12.CountRequestBuilder) {
     return i266c609a4a0b2ea717fcb9f2b5bd204123ad620a4c9d6ac6d46ac21cb41e5d12.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

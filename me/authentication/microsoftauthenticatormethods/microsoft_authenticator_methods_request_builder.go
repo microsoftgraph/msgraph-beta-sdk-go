@@ -70,7 +70,7 @@ func NewMicrosoftAuthenticatorMethodsRequestBuilder(rawUrl string, requestAdapte
     urlParams["request-raw-url"] = rawUrl
     return NewMicrosoftAuthenticatorMethodsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *MicrosoftAuthenticatorMethodsRequestBuilder) Count()(*i7a2ffe1e99abadc8d382ec7ba85e86227f9987d7d4c72118bfee422c83fe33ba.CountRequestBuilder) {
     return i7a2ffe1e99abadc8d382ec7ba85e86227f9987d7d4c72118bfee422c83fe33ba.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

@@ -70,7 +70,7 @@ func NewContentSharingSessionsRequestBuilder(rawUrl string, requestAdapter i2ae4
     urlParams["request-raw-url"] = rawUrl
     return NewContentSharingSessionsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *ContentSharingSessionsRequestBuilder) Count()(*i68341c8bce89cd129fe768442df3396b0d82f6a0aed9f38f83498fec363f4003.CountRequestBuilder) {
     return i68341c8bce89cd129fe768442df3396b0d82f6a0aed9f38f83498fec363f4003.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

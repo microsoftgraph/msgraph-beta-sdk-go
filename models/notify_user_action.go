@@ -24,6 +24,8 @@ func NewNotifyUserAction()(*NotifyUserAction) {
     m := &NotifyUserAction{
         DlpActionInfo: *NewDlpActionInfo(),
     }
+    odataTypeValue := "#microsoft.graph.notifyUserAction";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateNotifyUserActionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

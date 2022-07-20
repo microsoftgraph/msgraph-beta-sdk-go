@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DeviceManagementResourceAccessProfileBase 
+// DeviceManagementResourceAccessProfileBase base Profile Type for Resource Access
 type DeviceManagementResourceAccessProfileBase struct {
     Entity
     // The list of assignments for the device configuration profile.
@@ -23,13 +23,13 @@ type DeviceManagementResourceAccessProfileBase struct {
     // Version of the profile
     version *int32
 }
-// NewDeviceManagementResourceAccessProfileBase instantiates a new DeviceManagementResourceAccessProfileBase and sets the default values.
+// NewDeviceManagementResourceAccessProfileBase instantiates a new deviceManagementResourceAccessProfileBase and sets the default values.
 func NewDeviceManagementResourceAccessProfileBase()(*DeviceManagementResourceAccessProfileBase) {
     m := &DeviceManagementResourceAccessProfileBase{
         Entity: *NewEntity(),
     }
-    odatatypeValue := "#microsoft.graph.deviceManagementResourceAccessProfileBase";
-    m.SetType(&odatatypeValue);
+    odataTypeValue := "#microsoft.graph.deviceManagementResourceAccessProfileBase";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDeviceManagementResourceAccessProfileBaseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -49,6 +49,8 @@ func CreateDeviceManagementResourceAccessProfileBaseFromDiscriminatorValue(parse
                 switch mappingStr {
                     case "#microsoft.graph.windows10XCertificateProfile":
                         return NewWindows10XCertificateProfile(), nil
+                    case "#microsoft.graph.windows10XSCEPCertificateProfile":
+                        return NewWindows10XSCEPCertificateProfile(), nil
                     case "#microsoft.graph.windows10XTrustedRootCertificate":
                         return NewWindows10XTrustedRootCertificate(), nil
                     case "#microsoft.graph.windows10XVpnConfiguration":

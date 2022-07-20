@@ -16,6 +16,8 @@ type TeamworkDisplayScreenConfiguration struct {
     isHighContrastEnabled *bool
     // True if screensaver is enabled. Not applicable for Teams Rooms devices.
     isScreensaverEnabled *bool
+    // The OdataType property
+    odataType *string
     // Screensaver timeout from 30 to 3600 secs. Not applicable for Teams Rooms devices.
     screensaverTimeout *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration
 }
@@ -24,6 +26,8 @@ func NewTeamworkDisplayScreenConfiguration()(*TeamworkDisplayScreenConfiguration
     m := &TeamworkDisplayScreenConfiguration{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.teamworkDisplayScreenConfiguration";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateTeamworkDisplayScreenConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -97,6 +101,16 @@ func (m *TeamworkDisplayScreenConfiguration) GetFieldDeserializers()(map[string]
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["screensaverTimeout"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetISODurationValue()
         if err != nil {
@@ -123,6 +137,14 @@ func (m *TeamworkDisplayScreenConfiguration) GetIsScreensaverEnabled()(*bool) {
         return nil
     } else {
         return m.isScreensaverEnabled
+    }
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *TeamworkDisplayScreenConfiguration) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
     }
 }
 // GetScreensaverTimeout gets the screensaverTimeout property value. Screensaver timeout from 30 to 3600 secs. Not applicable for Teams Rooms devices.
@@ -155,6 +177,12 @@ func (m *TeamworkDisplayScreenConfiguration) Serialize(writer i878a80d2330e89d26
     }
     {
         err := writer.WriteBoolValue("isScreensaverEnabled", m.GetIsScreensaverEnabled())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -201,6 +229,12 @@ func (m *TeamworkDisplayScreenConfiguration) SetIsHighContrastEnabled(value *boo
 func (m *TeamworkDisplayScreenConfiguration) SetIsScreensaverEnabled(value *bool)() {
     if m != nil {
         m.isScreensaverEnabled = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *TeamworkDisplayScreenConfiguration) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetScreensaverTimeout sets the screensaverTimeout property value. Screensaver timeout from 30 to 3600 secs. Not applicable for Teams Rooms devices.

@@ -10,6 +10,8 @@ type TrainingEventsContent struct {
     additionalData map[string]interface{}
     // List of assigned trainings and their information in an attack simulation and training campaign.
     assignedTrainingsInfos []AssignedTrainingInfoable
+    // The OdataType property
+    odataType *string
     // Number of users who were assigned trainings in an attack simulation and training campaign.
     trainingsAssignedUserCount *int32
 }
@@ -18,6 +20,8 @@ func NewTrainingEventsContent()(*TrainingEventsContent) {
     m := &TrainingEventsContent{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.trainingEventsContent";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateTrainingEventsContentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -57,6 +61,16 @@ func (m *TrainingEventsContent) GetFieldDeserializers()(map[string]func(i878a80d
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["trainingsAssignedUserCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
@@ -68,6 +82,14 @@ func (m *TrainingEventsContent) GetFieldDeserializers()(map[string]func(i878a80d
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *TrainingEventsContent) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
 }
 // GetTrainingsAssignedUserCount gets the trainingsAssignedUserCount property value. Number of users who were assigned trainings in an attack simulation and training campaign.
 func (m *TrainingEventsContent) GetTrainingsAssignedUserCount()(*int32) {
@@ -85,6 +107,12 @@ func (m *TrainingEventsContent) Serialize(writer i878a80d2330e89d26896388a3f487e
             cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
         }
         err := writer.WriteCollectionOfObjectValues("assignedTrainingsInfos", cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -113,6 +141,12 @@ func (m *TrainingEventsContent) SetAdditionalData(value map[string]interface{})(
 func (m *TrainingEventsContent) SetAssignedTrainingsInfos(value []AssignedTrainingInfoable)() {
     if m != nil {
         m.assignedTrainingsInfos = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *TrainingEventsContent) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetTrainingsAssignedUserCount sets the trainingsAssignedUserCount property value. Number of users who were assigned trainings in an attack simulation and training campaign.

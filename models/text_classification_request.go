@@ -23,6 +23,8 @@ func NewTextClassificationRequest()(*TextClassificationRequest) {
     m := &TextClassificationRequest{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.textClassificationRequest";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateTextClassificationRequestFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

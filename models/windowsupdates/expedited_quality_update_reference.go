@@ -15,6 +15,8 @@ func NewExpeditedQualityUpdateReference()(*ExpeditedQualityUpdateReference) {
     m := &ExpeditedQualityUpdateReference{
         QualityUpdateReference: *NewQualityUpdateReference(),
     }
+    odataTypeValue := "#microsoft.graph.windowsUpdates.expeditedQualityUpdateReference";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateExpeditedQualityUpdateReferenceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

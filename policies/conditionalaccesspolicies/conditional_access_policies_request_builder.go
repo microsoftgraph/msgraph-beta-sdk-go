@@ -70,7 +70,7 @@ func NewConditionalAccessPoliciesRequestBuilder(rawUrl string, requestAdapter i2
     urlParams["request-raw-url"] = rawUrl
     return NewConditionalAccessPoliciesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *ConditionalAccessPoliciesRequestBuilder) Count()(*ia92df046ddd83ec5e27ba3f05b9ec1420502628f5bee9ef1b5fd8ef88e37b5fb.CountRequestBuilder) {
     return ia92df046ddd83ec5e27ba3f05b9ec1420502628f5bee9ef1b5fd8ef88e37b5fb.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

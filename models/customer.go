@@ -50,6 +50,8 @@ type Customer struct {
     taxLiable *bool
     // The taxRegistrationNumber property
     taxRegistrationNumber *string
+    // The type property
+    type_escaped *string
     // The website property
     website *string
 }
@@ -58,6 +60,8 @@ func NewCustomer()(*Customer) {
     m := &Customer{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.customer";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateCustomerFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -337,6 +341,16 @@ func (m *Customer) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
         }
         return nil
     }
+    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetType(val)
+        }
+        return nil
+    }
     res["website"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -459,6 +473,14 @@ func (m *Customer) GetTaxRegistrationNumber()(*string) {
         return nil
     } else {
         return m.taxRegistrationNumber
+    }
+}
+// GetType gets the type property value. The type property
+func (m *Customer) GetType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.type_escaped
     }
 }
 // GetWebsite gets the website property value. The website property
@@ -606,6 +628,12 @@ func (m *Customer) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
         }
     }
     {
+        err = writer.WriteStringValue("type", m.GetType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("website", m.GetWebsite())
         if err != nil {
             return err
@@ -737,6 +765,12 @@ func (m *Customer) SetTaxLiable(value *bool)() {
 func (m *Customer) SetTaxRegistrationNumber(value *string)() {
     if m != nil {
         m.taxRegistrationNumber = value
+    }
+}
+// SetType sets the type property value. The type property
+func (m *Customer) SetType(value *string)() {
+    if m != nil {
+        m.type_escaped = value
     }
 }
 // SetWebsite sets the website property value. The website property

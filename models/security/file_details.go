@@ -18,6 +18,8 @@ type FileDetails struct {
     fileSize *int64
     // The issuer property
     issuer *string
+    // The OdataType property
+    odataType *string
     // The sha1 property
     sha1 *string
     // The sha256 property
@@ -30,6 +32,8 @@ func NewFileDetails()(*FileDetails) {
     m := &FileDetails{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.security.fileDetails";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateFileDetailsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -94,6 +98,16 @@ func (m *FileDetails) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
         }
         if val != nil {
             m.SetIssuer(val)
+        }
+        return nil
+    }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
         }
         return nil
     }
@@ -169,6 +183,14 @@ func (m *FileDetails) GetIssuer()(*string) {
         return m.issuer
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *FileDetails) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetSha1 gets the sha1 property value. The sha1 property
 func (m *FileDetails) GetSha1()(*string) {
     if m == nil {
@@ -221,6 +243,12 @@ func (m *FileDetails) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
     }
     {
         err := writer.WriteStringValue("issuer", m.GetIssuer())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -285,6 +313,12 @@ func (m *FileDetails) SetFileSize(value *int64)() {
 func (m *FileDetails) SetIssuer(value *string)() {
     if m != nil {
         m.issuer = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *FileDetails) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetSha1 sets the sha1 property value. The sha1 property

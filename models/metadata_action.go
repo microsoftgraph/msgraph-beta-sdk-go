@@ -17,6 +17,8 @@ func NewMetadataAction()(*MetadataAction) {
     m := &MetadataAction{
         InformationProtectionAction: *NewInformationProtectionAction(),
     }
+    odataTypeValue := "#microsoft.graph.metadataAction";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateMetadataActionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

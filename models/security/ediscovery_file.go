@@ -17,6 +17,8 @@ func NewEdiscoveryFile()(*EdiscoveryFile) {
     m := &EdiscoveryFile{
         File: *NewFile(),
     }
+    odataTypeValue := "#microsoft.graph.security.ediscoveryFile";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateEdiscoveryFileFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

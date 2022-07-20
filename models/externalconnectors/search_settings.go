@@ -8,7 +8,9 @@ import (
 type SearchSettings struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
-    // Enables the developer to define the appearance of the content and configure conditions that dictate when the template should be displayed.
+    // The OdataType property
+    odataType *string
+    // Enables the developer to define the appearance of the content and configure conditions that dictate when the template should be displayed. Maximum of 2 search result templates per connection.
     searchResultTemplates []DisplayTemplateable
 }
 // NewSearchSettings instantiates a new searchSettings and sets the default values.
@@ -16,6 +18,8 @@ func NewSearchSettings()(*SearchSettings) {
     m := &SearchSettings{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.externalConnectors.searchSettings";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateSearchSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -33,6 +37,16 @@ func (m *SearchSettings) GetAdditionalData()(map[string]interface{}) {
 // GetFieldDeserializers the deserialization information for the current model
 func (m *SearchSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["searchResultTemplates"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateDisplayTemplateFromDiscriminatorValue)
         if err != nil {
@@ -49,7 +63,15 @@ func (m *SearchSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89
     }
     return res
 }
-// GetSearchResultTemplates gets the searchResultTemplates property value. Enables the developer to define the appearance of the content and configure conditions that dictate when the template should be displayed.
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *SearchSettings) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
+// GetSearchResultTemplates gets the searchResultTemplates property value. Enables the developer to define the appearance of the content and configure conditions that dictate when the template should be displayed. Maximum of 2 search result templates per connection.
 func (m *SearchSettings) GetSearchResultTemplates()([]DisplayTemplateable) {
     if m == nil {
         return nil
@@ -59,6 +81,12 @@ func (m *SearchSettings) GetSearchResultTemplates()([]DisplayTemplateable) {
 }
 // Serialize serializes information the current object
 func (m *SearchSettings) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetSearchResultTemplates() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSearchResultTemplates()))
         for i, v := range m.GetSearchResultTemplates() {
@@ -83,7 +111,13 @@ func (m *SearchSettings) SetAdditionalData(value map[string]interface{})() {
         m.additionalData = value
     }
 }
-// SetSearchResultTemplates sets the searchResultTemplates property value. Enables the developer to define the appearance of the content and configure conditions that dictate when the template should be displayed.
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *SearchSettings) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
+    }
+}
+// SetSearchResultTemplates sets the searchResultTemplates property value. Enables the developer to define the appearance of the content and configure conditions that dictate when the template should be displayed. Maximum of 2 search result templates per connection.
 func (m *SearchSettings) SetSearchResultTemplates(value []DisplayTemplateable)() {
     if m != nil {
         m.searchResultTemplates = value

@@ -10,6 +10,8 @@ type DeviceManagementEnumValue struct {
     additionalData map[string]interface{}
     // Display name for this enum value
     displayName *string
+    // The OdataType property
+    odataType *string
     // The raw enum value text
     value *string
 }
@@ -18,6 +20,8 @@ func NewDeviceManagementEnumValue()(*DeviceManagementEnumValue) {
     m := &DeviceManagementEnumValue{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.deviceManagementEnumValue";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDeviceManagementEnumValueFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -53,6 +57,16 @@ func (m *DeviceManagementEnumValue) GetFieldDeserializers()(map[string]func(i878
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -64,6 +78,14 @@ func (m *DeviceManagementEnumValue) GetFieldDeserializers()(map[string]func(i878
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *DeviceManagementEnumValue) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
 }
 // GetValue gets the value property value. The raw enum value text
 func (m *DeviceManagementEnumValue) GetValue()(*string) {
@@ -77,6 +99,12 @@ func (m *DeviceManagementEnumValue) GetValue()(*string) {
 func (m *DeviceManagementEnumValue) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("displayName", m.GetDisplayName())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -105,6 +133,12 @@ func (m *DeviceManagementEnumValue) SetAdditionalData(value map[string]interface
 func (m *DeviceManagementEnumValue) SetDisplayName(value *string)() {
     if m != nil {
         m.displayName = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *DeviceManagementEnumValue) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetValue sets the value property value. The raw enum value text

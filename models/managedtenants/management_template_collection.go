@@ -6,7 +6,7 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
-// ManagementTemplateCollection provides operations to manage the collection of accessReviewDecision entities.
+// ManagementTemplateCollection provides operations to manage the collection of accessReview entities.
 type ManagementTemplateCollection struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
     // The createdByUserId property
@@ -29,6 +29,8 @@ func NewManagementTemplateCollection()(*ManagementTemplateCollection) {
     m := &ManagementTemplateCollection{
         Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.managedTenants.managementTemplateCollection";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateManagementTemplateCollectionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

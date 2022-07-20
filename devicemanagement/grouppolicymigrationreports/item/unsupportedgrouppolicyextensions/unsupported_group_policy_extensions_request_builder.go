@@ -70,7 +70,7 @@ func NewUnsupportedGroupPolicyExtensionsRequestBuilder(rawUrl string, requestAda
     urlParams["request-raw-url"] = rawUrl
     return NewUnsupportedGroupPolicyExtensionsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *UnsupportedGroupPolicyExtensionsRequestBuilder) Count()(*i6e5e07125c6c700a5903528a10026787c58243d792090096a9f6b71ee589c87a.CountRequestBuilder) {
     return i6e5e07125c6c700a5903528a10026787c58243d792090096a9f6b71ee589c87a.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

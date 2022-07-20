@@ -70,7 +70,7 @@ func NewUserExperienceAnalyticsCategoriesRequestBuilder(rawUrl string, requestAd
     urlParams["request-raw-url"] = rawUrl
     return NewUserExperienceAnalyticsCategoriesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *UserExperienceAnalyticsCategoriesRequestBuilder) Count()(*i8f4c2c6ba47e10117f6513d9c6f86d710e0c4f2d5c16279f59fd52c28eed4bdf.CountRequestBuilder) {
     return i8f4c2c6ba47e10117f6513d9c6f86d710e0c4f2d5c16279f59fd52c28eed4bdf.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

@@ -10,8 +10,10 @@ type RequestorSettingsable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetAcceptRequests()(*bool)
     GetAllowedRequestors()([]UserSetable)
+    GetOdataType()(*string)
     GetScopeType()(*string)
     SetAcceptRequests(value *bool)()
     SetAllowedRequestors(value []UserSetable)()
+    SetOdataType(value *string)()
     SetScopeType(value *string)()
 }

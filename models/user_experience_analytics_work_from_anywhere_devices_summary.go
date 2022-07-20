@@ -24,6 +24,8 @@ type UserExperienceAnalyticsWorkFromAnywhereDevicesSummary struct {
     devicesWithoutCloudIdentity *int32
     // The count of intune devices that are not autopilot registerd. Valid values -2147483648 to 2147483647
     intuneDevices *int32
+    // The OdataType property
+    odataType *string
     // Total count of tenant attach devices. Valid values -2147483648 to 2147483647
     tenantAttachDevices *int32
     // The total count of devices. Valid values -2147483648 to 2147483647
@@ -42,6 +44,8 @@ func NewUserExperienceAnalyticsWorkFromAnywhereDevicesSummary()(*UserExperienceA
     m := &UserExperienceAnalyticsWorkFromAnywhereDevicesSummary{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.userExperienceAnalyticsWorkFromAnywhereDevicesSummary";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateUserExperienceAnalyticsWorkFromAnywhereDevicesSummaryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -195,6 +199,16 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereDevicesSummary) GetFieldDeserial
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["tenantAttachDevices"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
@@ -263,6 +277,14 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereDevicesSummary) GetIntuneDevices
         return nil
     } else {
         return m.intuneDevices
+    }
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *UserExperienceAnalyticsWorkFromAnywhereDevicesSummary) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
     }
 }
 // GetTenantAttachDevices gets the tenantAttachDevices property value. Total count of tenant attach devices. Valid values -2147483648 to 2147483647
@@ -364,6 +386,12 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereDevicesSummary) Serialize(writer
         }
     }
     {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err := writer.WriteInt32Value("tenantAttachDevices", m.GetTenantAttachDevices())
         if err != nil {
             return err
@@ -459,6 +487,12 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereDevicesSummary) SetDevicesWithou
 func (m *UserExperienceAnalyticsWorkFromAnywhereDevicesSummary) SetIntuneDevices(value *int32)() {
     if m != nil {
         m.intuneDevices = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *UserExperienceAnalyticsWorkFromAnywhereDevicesSummary) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetTenantAttachDevices sets the tenantAttachDevices property value. Total count of tenant attach devices. Valid values -2147483648 to 2147483647

@@ -19,6 +19,8 @@ func NewTeamworkPeripheral()(*TeamworkPeripheral) {
     m := &TeamworkPeripheral{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.teamworkPeripheral";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateTeamworkPeripheralFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

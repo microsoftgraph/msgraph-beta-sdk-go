@@ -10,6 +10,8 @@ type X509CertificateRule struct {
     additionalData map[string]interface{}
     // The identifier of the X.509 certificate. Required.
     identifier *string
+    // The OdataType property
+    odataType *string
     // The type of strong authentication mode. The possible values are: x509CertificateSingleFactor, x509CertificateMultiFactor, unknownFutureValue. Required.
     x509CertificateAuthenticationMode *X509CertificateAuthenticationMode
     // The type of the X.509 certificate mode configuration rule. The possible values are: issuerSubject, policyOID, unknownFutureValue. Required.
@@ -20,6 +22,8 @@ func NewX509CertificateRule()(*X509CertificateRule) {
     m := &X509CertificateRule{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.x509CertificateRule";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateX509CertificateRuleFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -44,6 +48,16 @@ func (m *X509CertificateRule) GetFieldDeserializers()(map[string]func(i878a80d23
         }
         if val != nil {
             m.SetIdentifier(val)
+        }
+        return nil
+    }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
         }
         return nil
     }
@@ -77,6 +91,14 @@ func (m *X509CertificateRule) GetIdentifier()(*string) {
         return m.identifier
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *X509CertificateRule) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetX509CertificateAuthenticationMode gets the x509CertificateAuthenticationMode property value. The type of strong authentication mode. The possible values are: x509CertificateSingleFactor, x509CertificateMultiFactor, unknownFutureValue. Required.
 func (m *X509CertificateRule) GetX509CertificateAuthenticationMode()(*X509CertificateAuthenticationMode) {
     if m == nil {
@@ -97,6 +119,12 @@ func (m *X509CertificateRule) GetX509CertificateRuleType()(*X509CertificateRuleT
 func (m *X509CertificateRule) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("identifier", m.GetIdentifier())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -133,6 +161,12 @@ func (m *X509CertificateRule) SetAdditionalData(value map[string]interface{})() 
 func (m *X509CertificateRule) SetIdentifier(value *string)() {
     if m != nil {
         m.identifier = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *X509CertificateRule) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetX509CertificateAuthenticationMode sets the x509CertificateAuthenticationMode property value. The type of strong authentication mode. The possible values are: x509CertificateSingleFactor, x509CertificateMultiFactor, unknownFutureValue. Required.

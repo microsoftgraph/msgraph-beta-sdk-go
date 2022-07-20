@@ -70,7 +70,7 @@ func NewFileThreatsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26
     urlParams["request-raw-url"] = rawUrl
     return NewFileThreatsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *FileThreatsRequestBuilder) Count()(*i7462ffd91859b2acf6a64a779472a243b4e4acd7a1be8e143c411eb30fdbe8c9.CountRequestBuilder) {
     return i7462ffd91859b2acf6a64a779472a243b4e4acd7a1be8e143c411eb30fdbe8c9.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

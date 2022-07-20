@@ -13,12 +13,16 @@ type ChatViewpoint struct {
     isHidden *bool
     // Represents the dateTime up until which the current user has read chatMessages in a specific chat.
     lastMessageReadDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
+    // The OdataType property
+    odataType *string
 }
 // NewChatViewpoint instantiates a new chatViewpoint and sets the default values.
 func NewChatViewpoint()(*ChatViewpoint) {
     m := &ChatViewpoint{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.chatViewpoint";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateChatViewpointFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -56,6 +60,16 @@ func (m *ChatViewpoint) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetIsHidden gets the isHidden property value. Indicates whether the chat is hidden for the current user.
@@ -74,6 +88,14 @@ func (m *ChatViewpoint) GetLastMessageReadDateTime()(*i336074805fc853987abe6f7fe
         return m.lastMessageReadDateTime
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *ChatViewpoint) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // Serialize serializes information the current object
 func (m *ChatViewpoint) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
@@ -84,6 +106,12 @@ func (m *ChatViewpoint) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
     }
     {
         err := writer.WriteTimeValue("lastMessageReadDateTime", m.GetLastMessageReadDateTime())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -112,5 +140,11 @@ func (m *ChatViewpoint) SetIsHidden(value *bool)() {
 func (m *ChatViewpoint) SetLastMessageReadDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     if m != nil {
         m.lastMessageReadDateTime = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *ChatViewpoint) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }

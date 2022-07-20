@@ -11,11 +11,13 @@ type AssignmentFilterStatusDetailsable interface {
     GetDeviceProperties()([]KeyValuePairable)
     GetEvalutionSummaries()([]AssignmentFilterEvaluationSummaryable)
     GetManagedDeviceId()(*string)
+    GetOdataType()(*string)
     GetPayloadId()(*string)
     GetUserId()(*string)
     SetDeviceProperties(value []KeyValuePairable)()
     SetEvalutionSummaries(value []AssignmentFilterEvaluationSummaryable)()
     SetManagedDeviceId(value *string)()
+    SetOdataType(value *string)()
     SetPayloadId(value *string)()
     SetUserId(value *string)()
 }

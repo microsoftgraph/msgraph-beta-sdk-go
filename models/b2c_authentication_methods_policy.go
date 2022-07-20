@@ -19,6 +19,8 @@ func NewB2cAuthenticationMethodsPolicy()(*B2cAuthenticationMethodsPolicy) {
     m := &B2cAuthenticationMethodsPolicy{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.b2cAuthenticationMethodsPolicy";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateB2cAuthenticationMethodsPolicyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

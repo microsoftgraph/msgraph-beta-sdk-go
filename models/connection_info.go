@@ -8,6 +8,8 @@ import (
 type ConnectionInfo struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
+    // The OdataType property
+    odataType *string
     // The endpoint that is used by Entitlement Management to communicate with the access package resource.
     url *string
 }
@@ -16,6 +18,8 @@ func NewConnectionInfo()(*ConnectionInfo) {
     m := &ConnectionInfo{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.connectionInfo";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateConnectionInfoFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -33,6 +37,16 @@ func (m *ConnectionInfo) GetAdditionalData()(map[string]interface{}) {
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ConnectionInfo) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["url"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -45,6 +59,14 @@ func (m *ConnectionInfo) GetFieldDeserializers()(map[string]func(i878a80d2330e89
     }
     return res
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *ConnectionInfo) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetUrl gets the url property value. The endpoint that is used by Entitlement Management to communicate with the access package resource.
 func (m *ConnectionInfo) GetUrl()(*string) {
     if m == nil {
@@ -55,6 +77,12 @@ func (m *ConnectionInfo) GetUrl()(*string) {
 }
 // Serialize serializes information the current object
 func (m *ConnectionInfo) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     {
         err := writer.WriteStringValue("url", m.GetUrl())
         if err != nil {
@@ -73,6 +101,12 @@ func (m *ConnectionInfo) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
 func (m *ConnectionInfo) SetAdditionalData(value map[string]interface{})() {
     if m != nil {
         m.additionalData = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *ConnectionInfo) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetUrl sets the url property value. The endpoint that is used by Entitlement Management to communicate with the access package resource.

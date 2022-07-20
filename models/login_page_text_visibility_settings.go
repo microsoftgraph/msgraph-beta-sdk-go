@@ -20,12 +20,16 @@ type LoginPageTextVisibilitySettings struct {
     hideResetItNow *bool
     // Option to hide the 'Terms of Use' hyperlink in the footer.
     hideTermsOfUse *bool
+    // The OdataType property
+    odataType *string
 }
 // NewLoginPageTextVisibilitySettings instantiates a new loginPageTextVisibilitySettings and sets the default values.
 func NewLoginPageTextVisibilitySettings()(*LoginPageTextVisibilitySettings) {
     m := &LoginPageTextVisibilitySettings{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.loginPageTextVisibilitySettings";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateLoginPageTextVisibilitySettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -103,6 +107,16 @@ func (m *LoginPageTextVisibilitySettings) GetFieldDeserializers()(map[string]fun
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetHideAccountResetCredentials gets the hideAccountResetCredentials property value. Option to hide the self-service password reset (SSPR) hyperlinks such as 'Can't access your account?', 'Forgot my password' and 'Reset it now' on the sign-in form.
@@ -153,6 +167,14 @@ func (m *LoginPageTextVisibilitySettings) GetHideTermsOfUse()(*bool) {
         return m.hideTermsOfUse
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *LoginPageTextVisibilitySettings) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // Serialize serializes information the current object
 func (m *LoginPageTextVisibilitySettings) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
@@ -187,6 +209,12 @@ func (m *LoginPageTextVisibilitySettings) Serialize(writer i878a80d2330e89d26896
     }
     {
         err := writer.WriteBoolValue("hideTermsOfUse", m.GetHideTermsOfUse())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -239,5 +267,11 @@ func (m *LoginPageTextVisibilitySettings) SetHideResetItNow(value *bool)() {
 func (m *LoginPageTextVisibilitySettings) SetHideTermsOfUse(value *bool)() {
     if m != nil {
         m.hideTermsOfUse = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *LoginPageTextVisibilitySettings) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }

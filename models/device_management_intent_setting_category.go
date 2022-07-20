@@ -15,6 +15,8 @@ func NewDeviceManagementIntentSettingCategory()(*DeviceManagementIntentSettingCa
     m := &DeviceManagementIntentSettingCategory{
         DeviceManagementSettingCategory: *NewDeviceManagementSettingCategory(),
     }
+    odataTypeValue := "#microsoft.graph.deviceManagementIntentSettingCategory";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDeviceManagementIntentSettingCategoryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

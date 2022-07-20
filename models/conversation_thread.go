@@ -32,6 +32,8 @@ func NewConversationThread()(*ConversationThread) {
     m := &ConversationThread{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.conversationThread";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateConversationThreadFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

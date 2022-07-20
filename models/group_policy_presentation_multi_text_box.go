@@ -19,6 +19,8 @@ func NewGroupPolicyPresentationMultiTextBox()(*GroupPolicyPresentationMultiTextB
     m := &GroupPolicyPresentationMultiTextBox{
         GroupPolicyPresentation: *NewGroupPolicyPresentation(),
     }
+    odataTypeValue := "#microsoft.graph.groupPolicyPresentationMultiTextBox";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateGroupPolicyPresentationMultiTextBoxFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

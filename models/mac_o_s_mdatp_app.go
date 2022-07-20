@@ -13,6 +13,8 @@ func NewMacOSMdatpApp()(*MacOSMdatpApp) {
     m := &MacOSMdatpApp{
         MobileApp: *NewMobileApp(),
     }
+    odataTypeValue := "#microsoft.graph.macOSMdatpApp";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateMacOSMdatpAppFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

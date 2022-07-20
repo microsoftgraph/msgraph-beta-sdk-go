@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DeviceManagementTemplate 
+// DeviceManagementTemplate entity that represents a defined collection of device settings
 type DeviceManagementTemplate struct {
     Entity
     // Collection of setting categories within the template
@@ -33,13 +33,13 @@ type DeviceManagementTemplate struct {
     // The template's version information
     versionInfo *string
 }
-// NewDeviceManagementTemplate instantiates a new DeviceManagementTemplate and sets the default values.
+// NewDeviceManagementTemplate instantiates a new deviceManagementTemplate and sets the default values.
 func NewDeviceManagementTemplate()(*DeviceManagementTemplate) {
     m := &DeviceManagementTemplate{
         Entity: *NewEntity(),
     }
-    odatatypeValue := "#microsoft.graph.deviceManagementTemplate";
-    m.SetType(&odatatypeValue);
+    odataTypeValue := "#microsoft.graph.deviceManagementTemplate";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDeviceManagementTemplateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

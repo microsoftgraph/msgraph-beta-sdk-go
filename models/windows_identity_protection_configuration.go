@@ -41,6 +41,8 @@ func NewWindowsIdentityProtectionConfiguration()(*WindowsIdentityProtectionConfi
     m := &WindowsIdentityProtectionConfiguration{
         DeviceConfiguration: *NewDeviceConfiguration(),
     }
+    odataTypeValue := "#microsoft.graph.windowsIdentityProtectionConfiguration";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateWindowsIdentityProtectionConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

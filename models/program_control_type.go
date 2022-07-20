@@ -17,6 +17,8 @@ func NewProgramControlType()(*ProgramControlType) {
     m := &ProgramControlType{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.programControlType";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateProgramControlTypeFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

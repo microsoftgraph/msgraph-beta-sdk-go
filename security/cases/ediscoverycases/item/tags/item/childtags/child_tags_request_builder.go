@@ -63,7 +63,7 @@ func NewChildTagsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2633
     urlParams["request-raw-url"] = rawUrl
     return NewChildTagsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *ChildTagsRequestBuilder) Count()(*i8130c5bedb712070a6880266c5c04f45334d293d03ca4b4f29383ea622be776d.CountRequestBuilder) {
     return i8130c5bedb712070a6880266c5c04f45334d293d03ca4b4f29383ea622be776d.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

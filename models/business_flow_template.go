@@ -15,6 +15,8 @@ func NewBusinessFlowTemplate()(*BusinessFlowTemplate) {
     m := &BusinessFlowTemplate{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.businessFlowTemplate";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateBusinessFlowTemplateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

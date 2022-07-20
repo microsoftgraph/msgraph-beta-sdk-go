@@ -30,6 +30,7 @@ type Customerable interface {
     GetTaxAreaId()(*string)
     GetTaxLiable()(*bool)
     GetTaxRegistrationNumber()(*string)
+    GetType()(*string)
     GetWebsite()(*string)
     SetAddress(value PostalAddressTypeable)()
     SetBlocked(value *string)()
@@ -52,5 +53,6 @@ type Customerable interface {
     SetTaxAreaId(value *string)()
     SetTaxLiable(value *bool)()
     SetTaxRegistrationNumber(value *string)()
+    SetType(value *string)()
     SetWebsite(value *string)()
 }

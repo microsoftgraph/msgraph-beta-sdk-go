@@ -70,7 +70,7 @@ func NewUserRunStatesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee
     urlParams["request-raw-url"] = rawUrl
     return NewUserRunStatesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *UserRunStatesRequestBuilder) Count()(*iaa59e67b40563a19d3c9e51f16e4283f76600efdc509cf7a19ecbc1e3cd76cef.CountRequestBuilder) {
     return iaa59e67b40563a19d3c9e51f16e4283f76600efdc509cf7a19ecbc1e3cd76cef.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

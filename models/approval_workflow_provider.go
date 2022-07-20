@@ -21,6 +21,8 @@ func NewApprovalWorkflowProvider()(*ApprovalWorkflowProvider) {
     m := &ApprovalWorkflowProvider{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.approvalWorkflowProvider";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateApprovalWorkflowProviderFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

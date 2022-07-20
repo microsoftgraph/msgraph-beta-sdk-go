@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// SalesQuote 
+// SalesQuote provides operations to manage the collection of accessReview entities.
 type SalesQuote struct {
     Entity
     // The acceptedDate property
@@ -81,11 +81,13 @@ type SalesQuote struct {
     // The validUntilDate property
     validUntilDate *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly
 }
-// NewSalesQuote instantiates a new SalesQuote and sets the default values.
+// NewSalesQuote instantiates a new salesQuote and sets the default values.
 func NewSalesQuote()(*SalesQuote) {
     m := &SalesQuote{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.salesQuote";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateSalesQuoteFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

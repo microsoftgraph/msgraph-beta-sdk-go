@@ -64,7 +64,7 @@ func NewIncompatibleAccessPackagesRequestBuilder(rawUrl string, requestAdapter i
     urlParams["request-raw-url"] = rawUrl
     return NewIncompatibleAccessPackagesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *IncompatibleAccessPackagesRequestBuilder) Count()(*iff6c3d3cd0dea30cee7799f69283dabf01613edce450c3a1ddc315fa3eb138e1.CountRequestBuilder) {
     return iff6c3d3cd0dea30cee7799f69283dabf01613edce450c3a1ddc315fa3eb138e1.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -108,7 +108,7 @@ func (m *IncompatibleAccessPackagesRequestBuilder) GetWithRequestConfigurationAn
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageCollectionResponseable), nil
 }
-// Ref the ref property
+// Ref the Ref property
 func (m *IncompatibleAccessPackagesRequestBuilder) Ref()(*i94cfa1da50c4e4fd0beba278cccae98e1f433907fd214ad0e39c78e46d2a6678.RefRequestBuilder) {
     return i94cfa1da50c4e4fd0beba278cccae98e1f433907fd214ad0e39c78e46d2a6678.NewRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

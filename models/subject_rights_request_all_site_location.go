@@ -13,6 +13,8 @@ func NewSubjectRightsRequestAllSiteLocation()(*SubjectRightsRequestAllSiteLocati
     m := &SubjectRightsRequestAllSiteLocation{
         SubjectRightsRequestSiteLocation: *NewSubjectRightsRequestSiteLocation(),
     }
+    odataTypeValue := "#microsoft.graph.subjectRightsRequestAllSiteLocation";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateSubjectRightsRequestAllSiteLocationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

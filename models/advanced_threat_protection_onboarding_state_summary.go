@@ -26,11 +26,13 @@ type AdvancedThreatProtectionOnboardingStateSummary struct {
     // Number of unknown devices
     unknownDeviceCount *int32
 }
-// NewAdvancedThreatProtectionOnboardingStateSummary instantiates a new advancedThreatProtectionOnboardingStateSummary and sets the default values.
+// NewAdvancedThreatProtectionOnboardingStateSummary instantiates a new AdvancedThreatProtectionOnboardingStateSummary and sets the default values.
 func NewAdvancedThreatProtectionOnboardingStateSummary()(*AdvancedThreatProtectionOnboardingStateSummary) {
     m := &AdvancedThreatProtectionOnboardingStateSummary{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.advancedThreatProtectionOnboardingStateSummary";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAdvancedThreatProtectionOnboardingStateSummaryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

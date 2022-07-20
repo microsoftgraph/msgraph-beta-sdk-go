@@ -6,7 +6,7 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
-// ManagementTemplateStepDeployment provides operations to manage the collection of accessReviewDecision entities.
+// ManagementTemplateStepDeployment provides operations to manage the collection of accessReview entities.
 type ManagementTemplateStepDeployment struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
     // The createdByUserId property
@@ -31,6 +31,8 @@ func NewManagementTemplateStepDeployment()(*ManagementTemplateStepDeployment) {
     m := &ManagementTemplateStepDeployment{
         Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.managedTenants.managementTemplateStepDeployment";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateManagementTemplateStepDeploymentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

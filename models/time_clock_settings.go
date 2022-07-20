@@ -10,12 +10,16 @@ type TimeClockSettings struct {
     additionalData map[string]interface{}
     // The aprroved location of the timeClock.
     approvedLocation GeoCoordinatesable
+    // The OdataType property
+    odataType *string
 }
 // NewTimeClockSettings instantiates a new timeClockSettings and sets the default values.
 func NewTimeClockSettings()(*TimeClockSettings) {
     m := &TimeClockSettings{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.timeClockSettings";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateTimeClockSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -51,12 +55,36 @@ func (m *TimeClockSettings) GetFieldDeserializers()(map[string]func(i878a80d2330
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *TimeClockSettings) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
 }
 // Serialize serializes information the current object
 func (m *TimeClockSettings) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
         err := writer.WriteObjectValue("approvedLocation", m.GetApprovedLocation())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -79,5 +107,11 @@ func (m *TimeClockSettings) SetAdditionalData(value map[string]interface{})() {
 func (m *TimeClockSettings) SetApprovedLocation(value GeoCoordinatesable)() {
     if m != nil {
         m.approvedLocation = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *TimeClockSettings) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }

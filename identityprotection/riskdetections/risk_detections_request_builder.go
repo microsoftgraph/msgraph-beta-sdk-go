@@ -70,7 +70,7 @@ func NewRiskDetectionsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7dae
     urlParams["request-raw-url"] = rawUrl
     return NewRiskDetectionsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *RiskDetectionsRequestBuilder) Count()(*ib369a15539518621174d77b4aa391102f994b50483d88a9c145f42ce0c4017ab.CountRequestBuilder) {
     return ib369a15539518621174d77b4aa391102f994b50483d88a9c145f42ce0c4017ab.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ImportedWindowsAutopilotDeviceIdentity 
+// ImportedWindowsAutopilotDeviceIdentity imported windows autopilot devices.
 type ImportedWindowsAutopilotDeviceIdentity struct {
     Entity
     // UPN of the user the device will be assigned
@@ -22,11 +22,13 @@ type ImportedWindowsAutopilotDeviceIdentity struct {
     // Current state of the imported device.
     state ImportedWindowsAutopilotDeviceIdentityStateable
 }
-// NewImportedWindowsAutopilotDeviceIdentity instantiates a new ImportedWindowsAutopilotDeviceIdentity and sets the default values.
+// NewImportedWindowsAutopilotDeviceIdentity instantiates a new importedWindowsAutopilotDeviceIdentity and sets the default values.
 func NewImportedWindowsAutopilotDeviceIdentity()(*ImportedWindowsAutopilotDeviceIdentity) {
     m := &ImportedWindowsAutopilotDeviceIdentity{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.importedWindowsAutopilotDeviceIdentity";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateImportedWindowsAutopilotDeviceIdentityFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

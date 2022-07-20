@@ -21,6 +21,7 @@ type EntitlementManagementable interface {
     GetAccessPackages()([]AccessPackageable)
     GetConnectedOrganizations()([]ConnectedOrganizationable)
     GetSettings()(EntitlementManagementSettingsable)
+    GetSubjects()([]AccessPackageSubjectable)
     SetAccessPackageAssignmentApprovals(value []Approvalable)()
     SetAccessPackageAssignmentPolicies(value []AccessPackageAssignmentPolicyable)()
     SetAccessPackageAssignmentRequests(value []AccessPackageAssignmentRequestable)()
@@ -34,4 +35,5 @@ type EntitlementManagementable interface {
     SetAccessPackages(value []AccessPackageable)()
     SetConnectedOrganizations(value []ConnectedOrganizationable)()
     SetSettings(value EntitlementManagementSettingsable)()
+    SetSubjects(value []AccessPackageSubjectable)()
 }

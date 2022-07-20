@@ -15,6 +15,8 @@ func NewMultiValueLegacyExtendedProperty()(*MultiValueLegacyExtendedProperty) {
     m := &MultiValueLegacyExtendedProperty{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.multiValueLegacyExtendedProperty";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateMultiValueLegacyExtendedPropertyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -64,7 +64,7 @@ func NewTokenIssuancePoliciesRequestBuilder(rawUrl string, requestAdapter i2ae41
     urlParams["request-raw-url"] = rawUrl
     return NewTokenIssuancePoliciesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *TokenIssuancePoliciesRequestBuilder) Count()(*ie49adee9e95fdfe4bbe54d8bc31762b53264aae9ff3da9125bc85cc00e122756.CountRequestBuilder) {
     return ie49adee9e95fdfe4bbe54d8bc31762b53264aae9ff3da9125bc85cc00e122756.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -108,7 +108,7 @@ func (m *TokenIssuancePoliciesRequestBuilder) GetWithRequestConfigurationAndResp
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TokenIssuancePolicyCollectionResponseable), nil
 }
-// Ref the ref property
+// Ref the Ref property
 func (m *TokenIssuancePoliciesRequestBuilder) Ref()(*i81974746075fd4cfcc5b4ec9638fe19bce6edcb8224e4edebd83783ed5d12b12.RefRequestBuilder) {
     return i81974746075fd4cfcc5b4ec9638fe19bce6edcb8224e4edebd83783ed5d12b12.NewRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

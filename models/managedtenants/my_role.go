@@ -10,6 +10,8 @@ type MyRole struct {
     additionalData map[string]interface{}
     // A collection of role assignments for the managed tenant.
     assignments []RoleAssignmentable
+    // The OdataType property
+    odataType *string
     // The Azure Active Directory tenant identifier for the managed tenant. Optional. Read-only.
     tenantId *string
 }
@@ -18,6 +20,8 @@ func NewMyRole()(*MyRole) {
     m := &MyRole{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.managedTenants.myRole";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateMyRoleFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -57,6 +61,16 @@ func (m *MyRole) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689638
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["tenantId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -68,6 +82,14 @@ func (m *MyRole) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689638
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *MyRole) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
 }
 // GetTenantId gets the tenantId property value. The Azure Active Directory tenant identifier for the managed tenant. Optional. Read-only.
 func (m *MyRole) GetTenantId()(*string) {
@@ -85,6 +107,12 @@ func (m *MyRole) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c
             cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
         }
         err := writer.WriteCollectionOfObjectValues("assignments", cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -113,6 +141,12 @@ func (m *MyRole) SetAdditionalData(value map[string]interface{})() {
 func (m *MyRole) SetAssignments(value []RoleAssignmentable)() {
     if m != nil {
         m.assignments = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *MyRole) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetTenantId sets the tenantId property value. The Azure Active Directory tenant identifier for the managed tenant. Optional. Read-only.

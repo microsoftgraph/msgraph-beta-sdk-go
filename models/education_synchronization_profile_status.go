@@ -24,6 +24,8 @@ func NewEducationSynchronizationProfileStatus()(*EducationSynchronizationProfile
     m := &EducationSynchronizationProfileStatus{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.educationSynchronizationProfileStatus";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateEducationSynchronizationProfileStatusFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

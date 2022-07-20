@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DeviceCustomAttributeShellScript 
+// DeviceCustomAttributeShellScript represents a custom attribute script for macOS.
 type DeviceCustomAttributeShellScript struct {
     Entity
     // The list of group assignments for the device management script.
@@ -39,11 +39,13 @@ type DeviceCustomAttributeShellScript struct {
     // List of run states for this script across all users.
     userRunStates []DeviceManagementScriptUserStateable
 }
-// NewDeviceCustomAttributeShellScript instantiates a new DeviceCustomAttributeShellScript and sets the default values.
+// NewDeviceCustomAttributeShellScript instantiates a new deviceCustomAttributeShellScript and sets the default values.
 func NewDeviceCustomAttributeShellScript()(*DeviceCustomAttributeShellScript) {
     m := &DeviceCustomAttributeShellScript{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.deviceCustomAttributeShellScript";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDeviceCustomAttributeShellScriptFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

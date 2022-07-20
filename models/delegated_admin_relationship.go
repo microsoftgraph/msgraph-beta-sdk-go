@@ -38,6 +38,8 @@ func NewDelegatedAdminRelationship()(*DelegatedAdminRelationship) {
     m := &DelegatedAdminRelationship{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.delegatedAdminRelationship";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDelegatedAdminRelationshipFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

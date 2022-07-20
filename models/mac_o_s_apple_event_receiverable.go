@@ -12,8 +12,10 @@ type MacOSAppleEventReceiverable interface {
     GetCodeRequirement()(*string)
     GetIdentifier()(*string)
     GetIdentifierType()(*MacOSProcessIdentifierType)
+    GetOdataType()(*string)
     SetAllowed(value *bool)()
     SetCodeRequirement(value *string)()
     SetIdentifier(value *string)()
     SetIdentifierType(value *MacOSProcessIdentifierType)()
+    SetOdataType(value *string)()
 }

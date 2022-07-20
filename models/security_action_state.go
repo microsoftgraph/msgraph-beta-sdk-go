@@ -11,6 +11,8 @@ type SecurityActionState struct {
     additionalData map[string]interface{}
     // The Application ID of the calling application that submitted an update (PATCH) to the action. The appId should be extracted from the auth token and not entered manually by the calling application.
     appId *string
+    // The OdataType property
+    odataType *string
     // Status of the securityAction in this update. Possible values are: NotStarted, Running, Completed, Failed.
     status *OperationStatus
     // Timestamp when the actionState was updated. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
@@ -23,6 +25,8 @@ func NewSecurityActionState()(*SecurityActionState) {
     m := &SecurityActionState{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.securityActionState";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateSecurityActionStateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -58,6 +62,16 @@ func (m *SecurityActionState) GetFieldDeserializers()(map[string]func(i878a80d23
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["status"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseOperationStatus)
         if err != nil {
@@ -90,6 +104,14 @@ func (m *SecurityActionState) GetFieldDeserializers()(map[string]func(i878a80d23
     }
     return res
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *SecurityActionState) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetStatus gets the status property value. Status of the securityAction in this update. Possible values are: NotStarted, Running, Completed, Failed.
 func (m *SecurityActionState) GetStatus()(*OperationStatus) {
     if m == nil {
@@ -118,6 +140,12 @@ func (m *SecurityActionState) GetUser()(*string) {
 func (m *SecurityActionState) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("appId", m.GetAppId())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -159,6 +187,12 @@ func (m *SecurityActionState) SetAdditionalData(value map[string]interface{})() 
 func (m *SecurityActionState) SetAppId(value *string)() {
     if m != nil {
         m.appId = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *SecurityActionState) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetStatus sets the status property value. Status of the securityAction in this update. Possible values are: NotStarted, Running, Completed, Failed.

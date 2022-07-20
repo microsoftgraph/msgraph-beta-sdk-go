@@ -12,18 +12,18 @@ type VpnProxyServer struct {
     address *string
     // Proxy's automatic configuration script url.
     automaticConfigurationScriptUrl *string
+    // The OdataType property
+    odataType *string
     // Port. Valid values 0 to 65535
     port *int32
-    // The type property
-    type_escaped *string
 }
 // NewVpnProxyServer instantiates a new vpnProxyServer and sets the default values.
 func NewVpnProxyServer()(*VpnProxyServer) {
     m := &VpnProxyServer{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odatatypeValue := "#microsoft.graph.vpnProxyServer";
-    m.SetType(&odatatypeValue);
+    odataTypeValue := "#microsoft.graph.vpnProxyServer";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateVpnProxyServerFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -98,6 +98,16 @@ func (m *VpnProxyServer) GetFieldDeserializers()(map[string]func(i878a80d2330e89
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["port"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
@@ -108,17 +118,15 @@ func (m *VpnProxyServer) GetFieldDeserializers()(map[string]func(i878a80d2330e89
         }
         return nil
     }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetType(val)
-        }
-        return nil
-    }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *VpnProxyServer) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
 }
 // GetPort gets the port property value. Port. Valid values 0 to 65535
 func (m *VpnProxyServer) GetPort()(*int32) {
@@ -126,14 +134,6 @@ func (m *VpnProxyServer) GetPort()(*int32) {
         return nil
     } else {
         return m.port
-    }
-}
-// GetType gets the @odata.type property value. The type property
-func (m *VpnProxyServer) GetType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.type_escaped
     }
 }
 // Serialize serializes information the current object
@@ -151,13 +151,13 @@ func (m *VpnProxyServer) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
         }
     }
     {
-        err := writer.WriteInt32Value("port", m.GetPort())
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
     }
     {
-        err := writer.WriteStringValue("@odata.type", m.GetType())
+        err := writer.WriteInt32Value("port", m.GetPort())
         if err != nil {
             return err
         }
@@ -188,15 +188,15 @@ func (m *VpnProxyServer) SetAutomaticConfigurationScriptUrl(value *string)() {
         m.automaticConfigurationScriptUrl = value
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *VpnProxyServer) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
+    }
+}
 // SetPort sets the port property value. Port. Valid values 0 to 65535
 func (m *VpnProxyServer) SetPort(value *int32)() {
     if m != nil {
         m.port = value
-    }
-}
-// SetType sets the @odata.type property value. The type property
-func (m *VpnProxyServer) SetType(value *string)() {
-    if m != nil {
-        m.type_escaped = value
     }
 }

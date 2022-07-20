@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// InformationProtectionLabel provides operations to manage the collection of activityStatistics entities.
+// InformationProtectionLabel provides operations to manage the collection of accessReview entities.
 type InformationProtectionLabel struct {
     Entity
     // The color that the UI should display for the label, if configured.
@@ -27,6 +27,8 @@ func NewInformationProtectionLabel()(*InformationProtectionLabel) {
     m := &InformationProtectionLabel{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.informationProtectionLabel";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateInformationProtectionLabelFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

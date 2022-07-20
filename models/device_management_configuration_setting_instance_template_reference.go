@@ -8,6 +8,8 @@ import (
 type DeviceManagementConfigurationSettingInstanceTemplateReference struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
+    // The OdataType property
+    odataType *string
     // Setting instance template id
     settingInstanceTemplateId *string
 }
@@ -16,6 +18,8 @@ func NewDeviceManagementConfigurationSettingInstanceTemplateReference()(*DeviceM
     m := &DeviceManagementConfigurationSettingInstanceTemplateReference{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.deviceManagementConfigurationSettingInstanceTemplateReference";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDeviceManagementConfigurationSettingInstanceTemplateReferenceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -33,6 +37,16 @@ func (m *DeviceManagementConfigurationSettingInstanceTemplateReference) GetAddit
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceManagementConfigurationSettingInstanceTemplateReference) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["settingInstanceTemplateId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -45,6 +59,14 @@ func (m *DeviceManagementConfigurationSettingInstanceTemplateReference) GetField
     }
     return res
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *DeviceManagementConfigurationSettingInstanceTemplateReference) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetSettingInstanceTemplateId gets the settingInstanceTemplateId property value. Setting instance template id
 func (m *DeviceManagementConfigurationSettingInstanceTemplateReference) GetSettingInstanceTemplateId()(*string) {
     if m == nil {
@@ -55,6 +77,12 @@ func (m *DeviceManagementConfigurationSettingInstanceTemplateReference) GetSetti
 }
 // Serialize serializes information the current object
 func (m *DeviceManagementConfigurationSettingInstanceTemplateReference) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     {
         err := writer.WriteStringValue("settingInstanceTemplateId", m.GetSettingInstanceTemplateId())
         if err != nil {
@@ -73,6 +101,12 @@ func (m *DeviceManagementConfigurationSettingInstanceTemplateReference) Serializ
 func (m *DeviceManagementConfigurationSettingInstanceTemplateReference) SetAdditionalData(value map[string]interface{})() {
     if m != nil {
         m.additionalData = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *DeviceManagementConfigurationSettingInstanceTemplateReference) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetSettingInstanceTemplateId sets the settingInstanceTemplateId property value. Setting instance template id

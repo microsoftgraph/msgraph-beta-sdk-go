@@ -70,7 +70,7 @@ func NewAppLogCollectionRequestsRequestBuilder(rawUrl string, requestAdapter i2a
     urlParams["request-raw-url"] = rawUrl
     return NewAppLogCollectionRequestsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *AppLogCollectionRequestsRequestBuilder) Count()(*icfcbd75c9d14633581a4631d8d2d57d4e70a45406beb0a3b0f5d287f43208f99.CountRequestBuilder) {
     return icfcbd75c9d14633581a4631d8d2d57d4e70a45406beb0a3b0f5d287f43208f99.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

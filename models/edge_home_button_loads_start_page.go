@@ -13,6 +13,8 @@ func NewEdgeHomeButtonLoadsStartPage()(*EdgeHomeButtonLoadsStartPage) {
     m := &EdgeHomeButtonLoadsStartPage{
         EdgeHomeButtonConfiguration: *NewEdgeHomeButtonConfiguration(),
     }
+    odataTypeValue := "#microsoft.graph.edgeHomeButtonLoadsStartPage";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateEdgeHomeButtonLoadsStartPageFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

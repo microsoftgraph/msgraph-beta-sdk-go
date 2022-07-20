@@ -69,7 +69,7 @@ func NewAttachmentsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26
     urlParams["request-raw-url"] = rawUrl
     return NewAttachmentsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *AttachmentsRequestBuilder) Count()(*i7ce009de5bfae8ae44157c49a861897311ff76c3529876ce4f3d83ad2aa1ce3d.CountRequestBuilder) {
     return i7ce009de5bfae8ae44157c49a861897311ff76c3529876ce4f3d83ad2aa1ce3d.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

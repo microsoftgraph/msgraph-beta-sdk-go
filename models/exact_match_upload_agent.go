@@ -13,11 +13,13 @@ type ExactMatchUploadAgent struct {
     // The description property
     description *string
 }
-// NewExactMatchUploadAgent instantiates a new ExactMatchUploadAgent and sets the default values.
+// NewExactMatchUploadAgent instantiates a new exactMatchUploadAgent and sets the default values.
 func NewExactMatchUploadAgent()(*ExactMatchUploadAgent) {
     m := &ExactMatchUploadAgent{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.exactMatchUploadAgent";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateExactMatchUploadAgentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -10,6 +10,8 @@ type MacOSSystemExtensionTypeMapping struct {
     additionalData map[string]interface{}
     // Flag enum representing the allowed macOS system extension types.
     allowedTypes *MacOSSystemExtensionType
+    // The OdataType property
+    odataType *string
     // Gets or sets the team identifier used to sign the system extension.
     teamIdentifier *string
 }
@@ -18,6 +20,8 @@ func NewMacOSSystemExtensionTypeMapping()(*MacOSSystemExtensionTypeMapping) {
     m := &MacOSSystemExtensionTypeMapping{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.macOSSystemExtensionTypeMapping";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateMacOSSystemExtensionTypeMappingFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -53,6 +57,16 @@ func (m *MacOSSystemExtensionTypeMapping) GetFieldDeserializers()(map[string]fun
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["teamIdentifier"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -64,6 +78,14 @@ func (m *MacOSSystemExtensionTypeMapping) GetFieldDeserializers()(map[string]fun
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *MacOSSystemExtensionTypeMapping) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
 }
 // GetTeamIdentifier gets the teamIdentifier property value. Gets or sets the team identifier used to sign the system extension.
 func (m *MacOSSystemExtensionTypeMapping) GetTeamIdentifier()(*string) {
@@ -78,6 +100,12 @@ func (m *MacOSSystemExtensionTypeMapping) Serialize(writer i878a80d2330e89d26896
     if m.GetAllowedTypes() != nil {
         cast := (*m.GetAllowedTypes()).String()
         err := writer.WriteStringValue("allowedTypes", &cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -106,6 +134,12 @@ func (m *MacOSSystemExtensionTypeMapping) SetAdditionalData(value map[string]int
 func (m *MacOSSystemExtensionTypeMapping) SetAllowedTypes(value *MacOSSystemExtensionType)() {
     if m != nil {
         m.allowedTypes = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *MacOSSystemExtensionTypeMapping) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetTeamIdentifier sets the teamIdentifier property value. Gets or sets the team identifier used to sign the system extension.

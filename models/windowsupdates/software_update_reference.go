@@ -13,8 +13,8 @@ func NewSoftwareUpdateReference()(*SoftwareUpdateReference) {
     m := &SoftwareUpdateReference{
         DeployableContent: *NewDeployableContent(),
     }
-    odatatypeValue := "#microsoft.graph.windowsUpdates.softwareUpdateReference";
-    m.SetType(&odatatypeValue);
+    odataTypeValue := "#microsoft.graph.windowsUpdates.softwareUpdateReference";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateSoftwareUpdateReferenceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -32,6 +32,12 @@ func CreateSoftwareUpdateReferenceFromDiscriminatorValue(parseNode i878a80d2330e
             if mappingValue != nil {
                 mappingStr := *mappingValue
                 switch mappingStr {
+                    case "#microsoft.graph.windowsUpdates.expeditedQualityUpdateReference":
+                        return NewExpeditedQualityUpdateReference(), nil
+                    case "#microsoft.graph.windowsUpdates.featureUpdateReference":
+                        return NewFeatureUpdateReference(), nil
+                    case "#microsoft.graph.windowsUpdates.qualityUpdateReference":
+                        return NewQualityUpdateReference(), nil
                     case "#microsoft.graph.windowsUpdates.windowsUpdateReference":
                         return NewWindowsUpdateReference(), nil
                 }

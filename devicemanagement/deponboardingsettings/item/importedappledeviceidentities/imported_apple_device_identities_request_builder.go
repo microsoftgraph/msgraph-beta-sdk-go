@@ -71,7 +71,7 @@ func NewImportedAppleDeviceIdentitiesRequestBuilder(rawUrl string, requestAdapte
     urlParams["request-raw-url"] = rawUrl
     return NewImportedAppleDeviceIdentitiesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *ImportedAppleDeviceIdentitiesRequestBuilder) Count()(*ic993a2f6e8ac6912a5c900f61a9bbf488aaf4daf75a366e308bdfebdfe2bfce7.CountRequestBuilder) {
     return ic993a2f6e8ac6912a5c900f61a9bbf488aaf4daf75a366e308bdfebdfe2bfce7.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

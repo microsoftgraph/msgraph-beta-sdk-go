@@ -5,17 +5,19 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// UserExperienceAnalyticsScoreHistory 
+// UserExperienceAnalyticsScoreHistory the user experience analytics device startup score history.
 type UserExperienceAnalyticsScoreHistory struct {
     Entity
     // The user experience analytics device startup date time.
     startupDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
 }
-// NewUserExperienceAnalyticsScoreHistory instantiates a new UserExperienceAnalyticsScoreHistory and sets the default values.
+// NewUserExperienceAnalyticsScoreHistory instantiates a new userExperienceAnalyticsScoreHistory and sets the default values.
 func NewUserExperienceAnalyticsScoreHistory()(*UserExperienceAnalyticsScoreHistory) {
     m := &UserExperienceAnalyticsScoreHistory{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.userExperienceAnalyticsScoreHistory";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateUserExperienceAnalyticsScoreHistoryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

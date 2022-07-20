@@ -18,12 +18,16 @@ type ComanagementEligibleDevicesSummary struct {
     ineligibleCount *int32
     // Count of devices that will be eligible for Co-Management after an OS update
     needsOsUpdateCount *int32
+    // The OdataType property
+    odataType *string
 }
 // NewComanagementEligibleDevicesSummary instantiates a new comanagementEligibleDevicesSummary and sets the default values.
 func NewComanagementEligibleDevicesSummary()(*ComanagementEligibleDevicesSummary) {
     m := &ComanagementEligibleDevicesSummary{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.comanagementEligibleDevicesSummary";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateComanagementEligibleDevicesSummaryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -115,6 +119,16 @@ func (m *ComanagementEligibleDevicesSummary) GetFieldDeserializers()(map[string]
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetIneligibleCount gets the ineligibleCount property value. Count of devices ineligible for Co-Management
@@ -131,6 +145,14 @@ func (m *ComanagementEligibleDevicesSummary) GetNeedsOsUpdateCount()(*int32) {
         return nil
     } else {
         return m.needsOsUpdateCount
+    }
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *ComanagementEligibleDevicesSummary) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
     }
 }
 // Serialize serializes information the current object
@@ -161,6 +183,12 @@ func (m *ComanagementEligibleDevicesSummary) Serialize(writer i878a80d2330e89d26
     }
     {
         err := writer.WriteInt32Value("needsOsUpdateCount", m.GetNeedsOsUpdateCount())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -207,5 +235,11 @@ func (m *ComanagementEligibleDevicesSummary) SetIneligibleCount(value *int32)() 
 func (m *ComanagementEligibleDevicesSummary) SetNeedsOsUpdateCount(value *int32)() {
     if m != nil {
         m.needsOsUpdateCount = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *ComanagementEligibleDevicesSummary) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }

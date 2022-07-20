@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Picture provides operations to manage the collection of accessReviewDecision entities.
+// Picture provides operations to manage the collection of accessReview entities.
 type Picture struct {
     Entity
     // The content property
@@ -21,6 +21,8 @@ func NewPicture()(*Picture) {
     m := &Picture{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.picture";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreatePictureFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

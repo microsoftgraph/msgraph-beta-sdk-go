@@ -70,7 +70,7 @@ func NewPaymentMethodsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7dae
     urlParams["request-raw-url"] = rawUrl
     return NewPaymentMethodsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *PaymentMethodsRequestBuilder) Count()(*i78f0589e1e87769a3f6dce2d36940a2aefb3f5329785ffc3a8c62e33fa94f301.CountRequestBuilder) {
     return i78f0589e1e87769a3f6dce2d36940a2aefb3f5329785ffc3a8c62e33fa94f301.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

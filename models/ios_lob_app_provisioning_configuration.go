@@ -40,6 +40,8 @@ func NewIosLobAppProvisioningConfiguration()(*IosLobAppProvisioningConfiguration
     m := &IosLobAppProvisioningConfiguration{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.iosLobAppProvisioningConfiguration";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateIosLobAppProvisioningConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -16,12 +16,16 @@ type ExactDataMatchStoreColumn struct {
     isSearchable *bool
     // The name property
     name *string
+    // The OdataType property
+    odataType *string
 }
 // NewExactDataMatchStoreColumn instantiates a new exactDataMatchStoreColumn and sets the default values.
 func NewExactDataMatchStoreColumn()(*ExactDataMatchStoreColumn) {
     m := &ExactDataMatchStoreColumn{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.exactDataMatchStoreColumn";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateExactDataMatchStoreColumnFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -83,6 +87,16 @@ func (m *ExactDataMatchStoreColumn) GetFieldDeserializers()(map[string]func(i878
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetIgnoredDelimiters gets the ignoredDelimiters property value. The ignoredDelimiters property
@@ -117,6 +131,14 @@ func (m *ExactDataMatchStoreColumn) GetName()(*string) {
         return m.name
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *ExactDataMatchStoreColumn) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // Serialize serializes information the current object
 func (m *ExactDataMatchStoreColumn) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     if m.GetIgnoredDelimiters() != nil {
@@ -139,6 +161,12 @@ func (m *ExactDataMatchStoreColumn) Serialize(writer i878a80d2330e89d26896388a3f
     }
     {
         err := writer.WriteStringValue("name", m.GetName())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -179,5 +207,11 @@ func (m *ExactDataMatchStoreColumn) SetIsSearchable(value *bool)() {
 func (m *ExactDataMatchStoreColumn) SetName(value *string)() {
     if m != nil {
         m.name = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *ExactDataMatchStoreColumn) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }

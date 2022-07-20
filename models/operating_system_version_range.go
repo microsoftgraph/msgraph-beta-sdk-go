@@ -14,12 +14,16 @@ type OperatingSystemVersionRange struct {
     highestVersion *string
     // The lowest inclusive version that this range contains.
     lowestVersion *string
+    // The OdataType property
+    odataType *string
 }
 // NewOperatingSystemVersionRange instantiates a new operatingSystemVersionRange and sets the default values.
 func NewOperatingSystemVersionRange()(*OperatingSystemVersionRange) {
     m := &OperatingSystemVersionRange{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.operatingSystemVersionRange";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateOperatingSystemVersionRangeFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -75,6 +79,16 @@ func (m *OperatingSystemVersionRange) GetFieldDeserializers()(map[string]func(i8
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetHighestVersion gets the highestVersion property value. The highest inclusive version that this range contains.
@@ -93,6 +107,14 @@ func (m *OperatingSystemVersionRange) GetLowestVersion()(*string) {
         return m.lowestVersion
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *OperatingSystemVersionRange) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // Serialize serializes information the current object
 func (m *OperatingSystemVersionRange) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
@@ -109,6 +131,12 @@ func (m *OperatingSystemVersionRange) Serialize(writer i878a80d2330e89d26896388a
     }
     {
         err := writer.WriteStringValue("lowestVersion", m.GetLowestVersion())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -143,5 +171,11 @@ func (m *OperatingSystemVersionRange) SetHighestVersion(value *string)() {
 func (m *OperatingSystemVersionRange) SetLowestVersion(value *string)() {
     if m != nil {
         m.lowestVersion = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *OperatingSystemVersionRange) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }

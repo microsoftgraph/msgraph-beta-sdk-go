@@ -10,6 +10,8 @@ type ChromeOSDeviceProperty struct {
     additionalData map[string]interface{}
     // Name of the property
     name *string
+    // The OdataType property
+    odataType *string
     // Whether this property is updatable
     updatable *bool
     // Value of the property
@@ -22,6 +24,8 @@ func NewChromeOSDeviceProperty()(*ChromeOSDeviceProperty) {
     m := &ChromeOSDeviceProperty{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.chromeOSDeviceProperty";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateChromeOSDevicePropertyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -46,6 +50,16 @@ func (m *ChromeOSDeviceProperty) GetFieldDeserializers()(map[string]func(i878a80
         }
         if val != nil {
             m.SetName(val)
+        }
+        return nil
+    }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
         }
         return nil
     }
@@ -89,6 +103,14 @@ func (m *ChromeOSDeviceProperty) GetName()(*string) {
         return m.name
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *ChromeOSDeviceProperty) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetUpdatable gets the updatable property value. Whether this property is updatable
 func (m *ChromeOSDeviceProperty) GetUpdatable()(*bool) {
     if m == nil {
@@ -117,6 +139,12 @@ func (m *ChromeOSDeviceProperty) GetValueType()(*string) {
 func (m *ChromeOSDeviceProperty) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("name", m.GetName())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -157,6 +185,12 @@ func (m *ChromeOSDeviceProperty) SetAdditionalData(value map[string]interface{})
 func (m *ChromeOSDeviceProperty) SetName(value *string)() {
     if m != nil {
         m.name = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *ChromeOSDeviceProperty) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetUpdatable sets the updatable property value. Whether this property is updatable

@@ -21,6 +21,8 @@ func NewDeviceManagementScriptRunSummary()(*DeviceManagementScriptRunSummary) {
     m := &DeviceManagementScriptRunSummary{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.deviceManagementScriptRunSummary";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDeviceManagementScriptRunSummaryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

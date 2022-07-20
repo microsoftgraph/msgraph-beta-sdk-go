@@ -16,6 +16,8 @@ type AccessReviewStageSettings struct {
     durationInDays *int32
     // If provided, the fallback reviewers are asked to complete a review if the primary reviewers do not exist. For example, if managers are selected as reviewers and a principal under review does not have a manager in Azure AD, the fallback reviewers are asked to review that principal. NOTE: The value of this property will override the corresponding setting on the accessReviewScheduleDefinition object.
     fallbackReviewers []AccessReviewReviewerScopeable
+    // The OdataType property
+    odataType *string
     // The recommendationInsightSettings property
     recommendationInsightSettings []AccessReviewRecommendationInsightSettingable
     // Optional field. Indicates the time period of inactivity (with respect to the start date of the review instance) that recommendations will be configured from. The recommendation will be to deny if the user is inactive during the look back duration. For reviews of groups and Azure AD roles, any duration is accepted. For reviews of applications, 30 days is the maximum duration. If not specified, the duration is 30 days. NOTE: The value of this property will override the corresponding setting on the accessReviewScheduleDefinition object.
@@ -32,6 +34,8 @@ func NewAccessReviewStageSettings()(*AccessReviewStageSettings) {
     m := &AccessReviewStageSettings{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.accessReviewStageSettings";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAccessReviewStageSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -133,6 +137,16 @@ func (m *AccessReviewStageSettings) GetFieldDeserializers()(map[string]func(i878
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["recommendationInsightSettings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateAccessReviewRecommendationInsightSettingFromDiscriminatorValue)
         if err != nil {
@@ -192,6 +206,14 @@ func (m *AccessReviewStageSettings) GetFieldDeserializers()(map[string]func(i878
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *AccessReviewStageSettings) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
 }
 // GetRecommendationInsightSettings gets the recommendationInsightSettings property value. The recommendationInsightSettings property
 func (m *AccessReviewStageSettings) GetRecommendationInsightSettings()([]AccessReviewRecommendationInsightSettingable) {
@@ -259,6 +281,12 @@ func (m *AccessReviewStageSettings) Serialize(writer i878a80d2330e89d26896388a3f
             cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
         }
         err := writer.WriteCollectionOfObjectValues("fallbackReviewers", cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -337,6 +365,12 @@ func (m *AccessReviewStageSettings) SetDurationInDays(value *int32)() {
 func (m *AccessReviewStageSettings) SetFallbackReviewers(value []AccessReviewReviewerScopeable)() {
     if m != nil {
         m.fallbackReviewers = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *AccessReviewStageSettings) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetRecommendationInsightSettings sets the recommendationInsightSettings property value. The recommendationInsightSettings property

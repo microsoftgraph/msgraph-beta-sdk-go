@@ -10,6 +10,8 @@ type InferenceData struct {
     additionalData map[string]interface{}
     // Confidence score reflecting the accuracy of the data inferred about the user.
     confidenceScore *float64
+    // The OdataType property
+    odataType *string
     // Records if the user has confirmed this inference as being True or False.
     userHasVerifiedAccuracy *bool
 }
@@ -18,6 +20,8 @@ func NewInferenceData()(*InferenceData) {
     m := &InferenceData{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.inferenceData";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateInferenceDataFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -53,6 +57,16 @@ func (m *InferenceData) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["userHasVerifiedAccuracy"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
@@ -64,6 +78,14 @@ func (m *InferenceData) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *InferenceData) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
 }
 // GetUserHasVerifiedAccuracy gets the userHasVerifiedAccuracy property value. Records if the user has confirmed this inference as being True or False.
 func (m *InferenceData) GetUserHasVerifiedAccuracy()(*bool) {
@@ -77,6 +99,12 @@ func (m *InferenceData) GetUserHasVerifiedAccuracy()(*bool) {
 func (m *InferenceData) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
         err := writer.WriteFloat64Value("confidenceScore", m.GetConfidenceScore())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -105,6 +133,12 @@ func (m *InferenceData) SetAdditionalData(value map[string]interface{})() {
 func (m *InferenceData) SetConfidenceScore(value *float64)() {
     if m != nil {
         m.confidenceScore = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *InferenceData) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetUserHasVerifiedAccuracy sets the userHasVerifiedAccuracy property value. Records if the user has confirmed this inference as being True or False.

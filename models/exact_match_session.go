@@ -29,6 +29,8 @@ func NewExactMatchSession()(*ExactMatchSession) {
     m := &ExactMatchSession{
         ExactMatchSessionBase: *NewExactMatchSessionBase(),
     }
+    odataTypeValue := "#microsoft.graph.exactMatchSession";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateExactMatchSessionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

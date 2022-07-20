@@ -19,6 +19,8 @@ func NewIosAzureAdSingleSignOnExtension()(*IosAzureAdSingleSignOnExtension) {
     m := &IosAzureAdSingleSignOnExtension{
         IosSingleSignOnExtension: *NewIosSingleSignOnExtension(),
     }
+    odataTypeValue := "#microsoft.graph.iosAzureAdSingleSignOnExtension";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateIosAzureAdSingleSignOnExtensionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

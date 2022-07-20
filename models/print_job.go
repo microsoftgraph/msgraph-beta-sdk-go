@@ -32,6 +32,8 @@ func NewPrintJob()(*PrintJob) {
     m := &PrintJob{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.printJob";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreatePrintJobFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

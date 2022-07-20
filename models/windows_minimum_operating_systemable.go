@@ -8,6 +8,7 @@ import (
 type WindowsMinimumOperatingSystemable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetOdataType()(*string)
     GetV10_0()(*bool)
     GetV10_1607()(*bool)
     GetV10_1703()(*bool)
@@ -21,6 +22,7 @@ type WindowsMinimumOperatingSystemable interface {
     GetV10_2H20()(*bool)
     GetV8_0()(*bool)
     GetV8_1()(*bool)
+    SetOdataType(value *string)()
     SetV10_0(value *bool)()
     SetV10_1607(value *bool)()
     SetV10_1703(value *bool)()

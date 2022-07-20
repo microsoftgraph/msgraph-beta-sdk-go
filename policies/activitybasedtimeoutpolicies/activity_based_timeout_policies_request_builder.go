@@ -70,7 +70,7 @@ func NewActivityBasedTimeoutPoliciesRequestBuilder(rawUrl string, requestAdapter
     urlParams["request-raw-url"] = rawUrl
     return NewActivityBasedTimeoutPoliciesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *ActivityBasedTimeoutPoliciesRequestBuilder) Count()(*icc63819c18904f19ccd572e7e2c185bcbbf9146d29f0987699efa57b983273a1.CountRequestBuilder) {
     return icc63819c18904f19ccd572e7e2c185bcbbf9146d29f0987699efa57b983273a1.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

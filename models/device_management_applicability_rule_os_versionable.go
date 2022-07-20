@@ -11,9 +11,11 @@ type DeviceManagementApplicabilityRuleOsVersionable interface {
     GetMaxOSVersion()(*string)
     GetMinOSVersion()(*string)
     GetName()(*string)
+    GetOdataType()(*string)
     GetRuleType()(*DeviceManagementApplicabilityRuleType)
     SetMaxOSVersion(value *string)()
     SetMinOSVersion(value *string)()
     SetName(value *string)()
+    SetOdataType(value *string)()
     SetRuleType(value *DeviceManagementApplicabilityRuleType)()
 }

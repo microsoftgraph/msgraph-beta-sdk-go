@@ -11,9 +11,11 @@ type DeviceScopeActionResultable interface {
     GetDeviceScopeAction()(*string)
     GetDeviceScopeId()(*string)
     GetFailedMessage()(*string)
+    GetOdataType()(*string)
     GetStatus()(*DeviceScopeActionStatus)
     SetDeviceScopeAction(value *string)()
     SetDeviceScopeId(value *string)()
     SetFailedMessage(value *string)()
+    SetOdataType(value *string)()
     SetStatus(value *DeviceScopeActionStatus)()
 }

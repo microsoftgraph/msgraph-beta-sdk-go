@@ -13,6 +13,8 @@ func NewAccessReviewError()(*AccessReviewError) {
     m := &AccessReviewError{
         GenericError: *NewGenericError(),
     }
+    odataTypeValue := "#microsoft.graph.accessReviewError";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAccessReviewErrorFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

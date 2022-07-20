@@ -15,6 +15,8 @@ type ZebraFotaDeploymentStatus struct {
     completeOrCanceledDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Date and time when the deployment status was updated from Zebra
     lastUpdatedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
+    // The OdataType property
+    odataType *string
     // Represents the state of Zebra FOTA deployment.
     state *ZebraFotaDeploymentState
     // An integer that indicates the total number of devices where installation was successful.
@@ -43,6 +45,8 @@ func NewZebraFotaDeploymentStatus()(*ZebraFotaDeploymentStatus) {
     m := &ZebraFotaDeploymentStatus{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.zebraFotaDeploymentStatus";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateZebraFotaDeploymentStatusFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -103,6 +107,16 @@ func (m *ZebraFotaDeploymentStatus) GetFieldDeserializers()(map[string]func(i878
         }
         if val != nil {
             m.SetLastUpdatedDateTime(val)
+        }
+        return nil
+    }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
         }
         return nil
     }
@@ -226,6 +240,14 @@ func (m *ZebraFotaDeploymentStatus) GetLastUpdatedDateTime()(*i336074805fc853987
         return m.lastUpdatedDateTime
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *ZebraFotaDeploymentStatus) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetState gets the state property value. Represents the state of Zebra FOTA deployment.
 func (m *ZebraFotaDeploymentStatus) GetState()(*ZebraFotaDeploymentState) {
     if m == nil {
@@ -334,6 +356,12 @@ func (m *ZebraFotaDeploymentStatus) Serialize(writer i878a80d2330e89d26896388a3f
             return err
         }
     }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetState() != nil {
         cast := (*m.GetState()).String()
         err := writer.WriteStringValue("state", &cast)
@@ -431,6 +459,12 @@ func (m *ZebraFotaDeploymentStatus) SetCompleteOrCanceledDateTime(value *i336074
 func (m *ZebraFotaDeploymentStatus) SetLastUpdatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     if m != nil {
         m.lastUpdatedDateTime = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *ZebraFotaDeploymentStatus) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetState sets the state property value. Represents the state of Zebra FOTA deployment.

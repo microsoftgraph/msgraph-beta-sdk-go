@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ChangeTrackedEntity 
+// ChangeTrackedEntity provides operations to manage the collection of accessReviewDecision entities.
 type ChangeTrackedEntity struct {
     Entity
     // The createdBy property
@@ -22,8 +22,8 @@ func NewChangeTrackedEntity()(*ChangeTrackedEntity) {
     m := &ChangeTrackedEntity{
         Entity: *NewEntity(),
     }
-    odatatypeValue := "#microsoft.graph.changeTrackedEntity";
-    m.SetType(&odatatypeValue);
+    odataTypeValue := "#microsoft.graph.changeTrackedEntity";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateChangeTrackedEntityFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -41,8 +41,12 @@ func CreateChangeTrackedEntityFromDiscriminatorValue(parseNode i878a80d2330e89d2
             if mappingValue != nil {
                 mappingStr := *mappingValue
                 switch mappingStr {
+                    case "#microsoft.graph.offerShiftRequest":
+                        return NewOfferShiftRequest(), nil
                     case "#microsoft.graph.openShift":
                         return NewOpenShift(), nil
+                    case "#microsoft.graph.openShiftChangeRequest":
+                        return NewOpenShiftChangeRequest(), nil
                     case "#microsoft.graph.scheduleChangeRequest":
                         return NewScheduleChangeRequest(), nil
                     case "#microsoft.graph.schedulingGroup":
@@ -51,12 +55,16 @@ func CreateChangeTrackedEntityFromDiscriminatorValue(parseNode i878a80d2330e89d2
                         return NewShift(), nil
                     case "#microsoft.graph.shiftPreferences":
                         return NewShiftPreferences(), nil
+                    case "#microsoft.graph.swapShiftsChangeRequest":
+                        return NewSwapShiftsChangeRequest(), nil
                     case "#microsoft.graph.timeCard":
                         return NewTimeCard(), nil
                     case "#microsoft.graph.timeOff":
                         return NewTimeOff(), nil
                     case "#microsoft.graph.timeOffReason":
                         return NewTimeOffReason(), nil
+                    case "#microsoft.graph.timeOffRequest":
+                        return NewTimeOffRequest(), nil
                     case "#microsoft.graph.workforceIntegration":
                         return NewWorkforceIntegration(), nil
                 }

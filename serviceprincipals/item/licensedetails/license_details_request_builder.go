@@ -70,7 +70,7 @@ func NewLicenseDetailsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7dae
     urlParams["request-raw-url"] = rawUrl
     return NewLicenseDetailsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *LicenseDetailsRequestBuilder) Count()(*if7ade06d62bd5250d47d45f6fb36b6d91b1e40d24eda22cbe71e1dfda8964ac3.CountRequestBuilder) {
     return if7ade06d62bd5250d47d45f6fb36b6d91b1e40d24eda22cbe71e1dfda8964ac3.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

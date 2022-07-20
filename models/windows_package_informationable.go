@@ -15,6 +15,7 @@ type WindowsPackageInformationable interface {
     GetIdentityResourceIdentifier()(*string)
     GetIdentityVersion()(*string)
     GetMinimumSupportedOperatingSystem()(WindowsMinimumOperatingSystemable)
+    GetOdataType()(*string)
     SetApplicableArchitecture(value *WindowsArchitecture)()
     SetDisplayName(value *string)()
     SetIdentityName(value *string)()
@@ -22,4 +23,5 @@ type WindowsPackageInformationable interface {
     SetIdentityResourceIdentifier(value *string)()
     SetIdentityVersion(value *string)()
     SetMinimumSupportedOperatingSystem(value WindowsMinimumOperatingSystemable)()
+    SetOdataType(value *string)()
 }

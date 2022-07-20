@@ -22,6 +22,8 @@ type MatchingLabel struct {
     labelActions []LabelActionBaseable
     // The name property
     name *string
+    // The OdataType property
+    odataType *string
     // The policyTip property
     policyTip *string
     // The priority property
@@ -34,6 +36,8 @@ func NewMatchingLabel()(*MatchingLabel) {
     m := &MatchingLabel{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.matchingLabel";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateMatchingLabelFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -149,6 +153,16 @@ func (m *MatchingLabel) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["policyTip"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -211,6 +225,14 @@ func (m *MatchingLabel) GetName()(*string) {
         return nil
     } else {
         return m.name
+    }
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *MatchingLabel) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
     }
 }
 // GetPolicyTip gets the policyTip property value. The policyTip property
@@ -287,6 +309,12 @@ func (m *MatchingLabel) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
         }
     }
     {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err := writer.WriteStringValue("policyTip", m.GetPolicyTip())
         if err != nil {
             return err
@@ -358,6 +386,12 @@ func (m *MatchingLabel) SetLabelActions(value []LabelActionBaseable)() {
 func (m *MatchingLabel) SetName(value *string)() {
     if m != nil {
         m.name = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *MatchingLabel) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetPolicyTip sets the policyTip property value. The policyTip property

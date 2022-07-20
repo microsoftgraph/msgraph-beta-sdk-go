@@ -70,7 +70,7 @@ func NewUsageRightsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26
     urlParams["request-raw-url"] = rawUrl
     return NewUsageRightsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *UsageRightsRequestBuilder) Count()(*i75fac89e93eb7489abbb11295349ab8ea70f3b68ef5f689ad6d1f2040a5bc819.CountRequestBuilder) {
     return i75fac89e93eb7489abbb11295349ab8ea70f3b68ef5f689ad6d1f2040a5bc819.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

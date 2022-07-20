@@ -31,6 +31,8 @@ func NewBusinessFlow()(*BusinessFlow) {
     m := &BusinessFlow{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.businessFlow";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateBusinessFlowFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

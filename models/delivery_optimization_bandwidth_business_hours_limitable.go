@@ -12,8 +12,10 @@ type DeliveryOptimizationBandwidthBusinessHoursLimitable interface {
     GetBandwidthEndBusinessHours()(*int32)
     GetBandwidthPercentageDuringBusinessHours()(*int32)
     GetBandwidthPercentageOutsideBusinessHours()(*int32)
+    GetOdataType()(*string)
     SetBandwidthBeginBusinessHours(value *int32)()
     SetBandwidthEndBusinessHours(value *int32)()
     SetBandwidthPercentageDuringBusinessHours(value *int32)()
     SetBandwidthPercentageOutsideBusinessHours(value *int32)()
+    SetOdataType(value *string)()
 }

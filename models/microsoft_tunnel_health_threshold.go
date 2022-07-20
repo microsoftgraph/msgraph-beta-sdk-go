@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// MicrosoftTunnelHealthThreshold 
+// MicrosoftTunnelHealthThreshold entity that represents the health thresholds of a health metric.
 type MicrosoftTunnelHealthThreshold struct {
     Entity
     // The default threshold for being healthy
@@ -16,11 +16,13 @@ type MicrosoftTunnelHealthThreshold struct {
     // The threshold for being unhealthy
     unhealthyThreshold *int64
 }
-// NewMicrosoftTunnelHealthThreshold instantiates a new MicrosoftTunnelHealthThreshold and sets the default values.
+// NewMicrosoftTunnelHealthThreshold instantiates a new microsoftTunnelHealthThreshold and sets the default values.
 func NewMicrosoftTunnelHealthThreshold()(*MicrosoftTunnelHealthThreshold) {
     m := &MicrosoftTunnelHealthThreshold{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.microsoftTunnelHealthThreshold";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateMicrosoftTunnelHealthThresholdFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

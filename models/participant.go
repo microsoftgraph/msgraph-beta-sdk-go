@@ -27,6 +27,8 @@ func NewParticipant()(*Participant) {
     m := &Participant{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.participant";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateParticipantFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

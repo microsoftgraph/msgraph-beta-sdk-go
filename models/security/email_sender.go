@@ -14,12 +14,16 @@ type EmailSender struct {
     domainName *string
     // The emailAddress property
     emailAddress *string
+    // The OdataType property
+    odataType *string
 }
 // NewEmailSender instantiates a new emailSender and sets the default values.
 func NewEmailSender()(*EmailSender) {
     m := &EmailSender{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.security.emailSender";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateEmailSenderFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -91,7 +95,25 @@ func (m *EmailSender) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *EmailSender) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
 }
 // Serialize serializes information the current object
 func (m *EmailSender) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -109,6 +131,12 @@ func (m *EmailSender) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
     }
     {
         err := writer.WriteStringValue("emailAddress", m.GetEmailAddress())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -143,5 +171,11 @@ func (m *EmailSender) SetDomainName(value *string)() {
 func (m *EmailSender) SetEmailAddress(value *string)() {
     if m != nil {
         m.emailAddress = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *EmailSender) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }

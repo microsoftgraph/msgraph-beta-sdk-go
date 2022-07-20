@@ -13,9 +13,11 @@ type NetworkInterfaceable interface {
     GetIpV6Address()(*string)
     GetLocalIpV6Address()(*string)
     GetMacAddress()(*string)
+    GetOdataType()(*string)
     SetDescription(value *string)()
     SetIpV4Address(value *string)()
     SetIpV6Address(value *string)()
     SetLocalIpV6Address(value *string)()
     SetMacAddress(value *string)()
+    SetOdataType(value *string)()
 }

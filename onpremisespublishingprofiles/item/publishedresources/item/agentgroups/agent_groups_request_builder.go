@@ -71,7 +71,7 @@ func NewAgentGroupsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26
     urlParams["request-raw-url"] = rawUrl
     return NewAgentGroupsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *AgentGroupsRequestBuilder) Count()(*i1db9e94739c3466c9749aa8fdf09b308c893d480f73c43f6f2ceab8602cf9047.CountRequestBuilder) {
     return i1db9e94739c3466c9749aa8fdf09b308c893d480f73c43f6f2ceab8602cf9047.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
@@ -153,7 +153,7 @@ func (m *AgentGroupsRequestBuilder) PostWithRequestConfigurationAndResponseHandl
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OnPremisesAgentGroupable), nil
 }
-// Ref the ref property
+// Ref the Ref property
 func (m *AgentGroupsRequestBuilder) Ref()(*i4f7d88aa21ffd96dd844ccda7cdf9cfb12a2e4b9b291e8470e3b10e685522064.RefRequestBuilder) {
     return i4f7d88aa21ffd96dd844ccda7cdf9cfb12a2e4b9b291e8470e3b10e685522064.NewRefRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

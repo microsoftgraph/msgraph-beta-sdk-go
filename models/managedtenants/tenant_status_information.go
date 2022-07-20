@@ -13,6 +13,8 @@ type TenantStatusInformation struct {
     delegatedPrivilegeStatus *DelegatedPrivilegeStatus
     // The date and time the delegated admin privileges status was updated. Optional. Read-only.
     lastDelegatedPrivilegeRefreshDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
+    // The OdataType property
+    odataType *string
     // The identifier for the account that offboarded the managed tenant. Optional. Read-only.
     offboardedByUserId *string
     // The date and time when the managed tenant was offboarded. Optional. Read-only.
@@ -33,6 +35,8 @@ func NewTenantStatusInformation()(*TenantStatusInformation) {
     m := &TenantStatusInformation{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.managedTenants.tenantStatusInformation";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateTenantStatusInformationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -75,6 +79,16 @@ func (m *TenantStatusInformation) GetFieldDeserializers()(map[string]func(i878a8
         }
         if val != nil {
             m.SetLastDelegatedPrivilegeRefreshDateTime(val)
+        }
+        return nil
+    }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
         }
         return nil
     }
@@ -162,6 +176,14 @@ func (m *TenantStatusInformation) GetLastDelegatedPrivilegeRefreshDateTime()(*i3
         return m.lastDelegatedPrivilegeRefreshDateTime
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *TenantStatusInformation) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetOffboardedByUserId gets the offboardedByUserId property value. The identifier for the account that offboarded the managed tenant. Optional. Read-only.
 func (m *TenantStatusInformation) GetOffboardedByUserId()(*string) {
     if m == nil {
@@ -229,6 +251,12 @@ func (m *TenantStatusInformation) Serialize(writer i878a80d2330e89d26896388a3f48
     }
     {
         err := writer.WriteTimeValue("lastDelegatedPrivilegeRefreshDateTime", m.GetLastDelegatedPrivilegeRefreshDateTime())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -305,6 +333,12 @@ func (m *TenantStatusInformation) SetDelegatedPrivilegeStatus(value *DelegatedPr
 func (m *TenantStatusInformation) SetLastDelegatedPrivilegeRefreshDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     if m != nil {
         m.lastDelegatedPrivilegeRefreshDateTime = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *TenantStatusInformation) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetOffboardedByUserId sets the offboardedByUserId property value. The identifier for the account that offboarded the managed tenant. Optional. Read-only.

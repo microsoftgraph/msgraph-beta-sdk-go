@@ -17,6 +17,8 @@ func NewStrongAuthenticationDetail()(*StrongAuthenticationDetail) {
     m := &StrongAuthenticationDetail{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.strongAuthenticationDetail";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateStrongAuthenticationDetailFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

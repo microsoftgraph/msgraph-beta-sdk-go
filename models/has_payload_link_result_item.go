@@ -12,6 +12,8 @@ type HasPayloadLinkResultItem struct {
     error *string
     // Indicate whether a payload has any link or not.
     hasLink *bool
+    // The OdataType property
+    odataType *string
     // Key of the Payload, In the format of Guid.
     payloadId *string
     // The reason where the link comes from.
@@ -22,6 +24,8 @@ func NewHasPayloadLinkResultItem()(*HasPayloadLinkResultItem) {
     m := &HasPayloadLinkResultItem{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.hasPayloadLinkResultItem";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateHasPayloadLinkResultItemFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -67,6 +71,16 @@ func (m *HasPayloadLinkResultItem) GetFieldDeserializers()(map[string]func(i878a
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["payloadId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -101,6 +115,14 @@ func (m *HasPayloadLinkResultItem) GetHasLink()(*bool) {
         return m.hasLink
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *HasPayloadLinkResultItem) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetPayloadId gets the payloadId property value. Key of the Payload, In the format of Guid.
 func (m *HasPayloadLinkResultItem) GetPayloadId()(*string) {
     if m == nil {
@@ -127,6 +149,12 @@ func (m *HasPayloadLinkResultItem) Serialize(writer i878a80d2330e89d26896388a3f4
     }
     {
         err := writer.WriteBoolValue("hasLink", m.GetHasLink())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -167,6 +195,12 @@ func (m *HasPayloadLinkResultItem) SetError(value *string)() {
 func (m *HasPayloadLinkResultItem) SetHasLink(value *bool)() {
     if m != nil {
         m.hasLink = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *HasPayloadLinkResultItem) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetPayloadId sets the payloadId property value. Key of the Payload, In the format of Guid.

@@ -10,6 +10,8 @@ type PasswordValidationInformation struct {
     additionalData map[string]interface{}
     // Specifies whether the password is valid based on the calculation of the results in the validationResults property. Not nullable. Read-only.
     isValid *bool
+    // The OdataType property
+    odataType *string
     // The list of password validation rules and whether the password passed those rules. Not nullable. Read-only.
     validationResults []ValidationResultable
 }
@@ -18,6 +20,8 @@ func NewPasswordValidationInformation()(*PasswordValidationInformation) {
     m := &PasswordValidationInformation{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.passwordValidationInformation";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreatePasswordValidationInformationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -45,6 +49,16 @@ func (m *PasswordValidationInformation) GetFieldDeserializers()(map[string]func(
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["validationResults"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateValidationResultFromDiscriminatorValue)
         if err != nil {
@@ -69,6 +83,14 @@ func (m *PasswordValidationInformation) GetIsValid()(*bool) {
         return m.isValid
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *PasswordValidationInformation) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetValidationResults gets the validationResults property value. The list of password validation rules and whether the password passed those rules. Not nullable. Read-only.
 func (m *PasswordValidationInformation) GetValidationResults()([]ValidationResultable) {
     if m == nil {
@@ -81,6 +103,12 @@ func (m *PasswordValidationInformation) GetValidationResults()([]ValidationResul
 func (m *PasswordValidationInformation) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
         err := writer.WriteBoolValue("isValid", m.GetIsValid())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -113,6 +141,12 @@ func (m *PasswordValidationInformation) SetAdditionalData(value map[string]inter
 func (m *PasswordValidationInformation) SetIsValid(value *bool)() {
     if m != nil {
         m.isValid = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *PasswordValidationInformation) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetValidationResults sets the validationResults property value. The list of password validation rules and whether the password passed those rules. Not nullable. Read-only.

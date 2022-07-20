@@ -63,7 +63,7 @@ func NewFollowedSitesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee
     urlParams["request-raw-url"] = rawUrl
     return NewFollowedSitesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *FollowedSitesRequestBuilder) Count()(*iea864de3197734f1d93fe3037037c1ccbed81709ca33fbb11862aa590bca3cbb.CountRequestBuilder) {
     return iea864de3197734f1d93fe3037037c1ccbed81709ca33fbb11862aa590bca3cbb.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

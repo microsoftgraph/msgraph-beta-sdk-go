@@ -10,6 +10,8 @@ type VmMetadata struct {
     additionalData map[string]interface{}
     // The cloudProvider property
     cloudProvider *VmCloudProvider
+    // The OdataType property
+    odataType *string
     // The resourceId property
     resourceId *string
     // The subscriptionId property
@@ -22,6 +24,8 @@ func NewVmMetadata()(*VmMetadata) {
     m := &VmMetadata{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.security.vmMetadata";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateVmMetadataFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -57,6 +61,16 @@ func (m *VmMetadata) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["resourceId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -89,6 +103,14 @@ func (m *VmMetadata) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
     }
     return res
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *VmMetadata) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetResourceId gets the resourceId property value. The resourceId property
 func (m *VmMetadata) GetResourceId()(*string) {
     if m == nil {
@@ -118,6 +140,12 @@ func (m *VmMetadata) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
     if m.GetCloudProvider() != nil {
         cast := (*m.GetCloudProvider()).String()
         err := writer.WriteStringValue("cloudProvider", &cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -158,6 +186,12 @@ func (m *VmMetadata) SetAdditionalData(value map[string]interface{})() {
 func (m *VmMetadata) SetCloudProvider(value *VmCloudProvider)() {
     if m != nil {
         m.cloudProvider = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *VmMetadata) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetResourceId sets the resourceId property value. The resourceId property

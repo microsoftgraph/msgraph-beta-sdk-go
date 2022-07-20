@@ -13,6 +13,8 @@ func NewDeviceManagementSettingXmlConstraint()(*DeviceManagementSettingXmlConstr
     m := &DeviceManagementSettingXmlConstraint{
         DeviceManagementConstraint: *NewDeviceManagementConstraint(),
     }
+    odataTypeValue := "#microsoft.graph.deviceManagementSettingXmlConstraint";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateDeviceManagementSettingXmlConstraintFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

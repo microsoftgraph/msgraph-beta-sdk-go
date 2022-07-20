@@ -12,6 +12,8 @@ type AuditResource struct {
     displayName *string
     // List of modified properties.
     modifiedProperties []AuditPropertyable
+    // The OdataType property
+    odataType *string
     // Audit resource's Id.
     resourceId *string
     // Audit resource's type.
@@ -22,6 +24,8 @@ func NewAuditResource()(*AuditResource) {
     m := &AuditResource{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.auditResource";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAuditResourceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -71,6 +75,16 @@ func (m *AuditResource) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["resourceId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -99,6 +113,14 @@ func (m *AuditResource) GetModifiedProperties()([]AuditPropertyable) {
         return nil
     } else {
         return m.modifiedProperties
+    }
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *AuditResource) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
     }
 }
 // GetResourceId gets the resourceId property value. Audit resource's Id.
@@ -131,6 +153,12 @@ func (m *AuditResource) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
             cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
         }
         err := writer.WriteCollectionOfObjectValues("modifiedProperties", cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -171,6 +199,12 @@ func (m *AuditResource) SetDisplayName(value *string)() {
 func (m *AuditResource) SetModifiedProperties(value []AuditPropertyable)() {
     if m != nil {
         m.modifiedProperties = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *AuditResource) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetResourceId sets the resourceId property value. Audit resource's Id.

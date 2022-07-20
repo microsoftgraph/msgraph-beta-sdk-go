@@ -13,6 +13,8 @@ func NewCommunicationsEncryptedIdentity()(*CommunicationsEncryptedIdentity) {
     m := &CommunicationsEncryptedIdentity{
         Identity: *NewIdentity(),
     }
+    odataTypeValue := "#microsoft.graph.communicationsEncryptedIdentity";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateCommunicationsEncryptedIdentityFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

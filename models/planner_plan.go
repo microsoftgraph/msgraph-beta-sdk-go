@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// PlannerPlan provides operations to manage the collection of activityStatistics entities.
+// PlannerPlan provides operations to manage the collection of accessReviewDecision entities.
 type PlannerPlan struct {
     PlannerDelta
     // Collection of buckets in the plan. Read-only. Nullable.
@@ -32,6 +32,8 @@ func NewPlannerPlan()(*PlannerPlan) {
     m := &PlannerPlan{
         PlannerDelta: *NewPlannerDelta(),
     }
+    odataTypeValue := "#microsoft.graph.plannerPlan";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreatePlannerPlanFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

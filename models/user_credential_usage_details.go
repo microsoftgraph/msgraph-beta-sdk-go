@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// UserCredentialUsageDetails provides operations to manage the collection of activityStatistics entities.
+// UserCredentialUsageDetails provides operations to manage the collection of accessReview entities.
 type UserCredentialUsageDetails struct {
     Entity
     // The authMethod property
@@ -28,6 +28,8 @@ func NewUserCredentialUsageDetails()(*UserCredentialUsageDetails) {
     m := &UserCredentialUsageDetails{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.userCredentialUsageDetails";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateUserCredentialUsageDetailsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

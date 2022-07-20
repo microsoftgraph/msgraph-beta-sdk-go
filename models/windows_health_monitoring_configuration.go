@@ -19,6 +19,8 @@ func NewWindowsHealthMonitoringConfiguration()(*WindowsHealthMonitoringConfigura
     m := &WindowsHealthMonitoringConfiguration{
         DeviceConfiguration: *NewDeviceConfiguration(),
     }
+    odataTypeValue := "#microsoft.graph.windowsHealthMonitoringConfiguration";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateWindowsHealthMonitoringConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

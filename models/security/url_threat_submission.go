@@ -7,7 +7,7 @@ import (
 // UrlThreatSubmission 
 type UrlThreatSubmission struct {
     ThreatSubmission
-    // The webUrl property
+    // Denotes the webUrl that needs to be submitted.
     webUrl *string
 }
 // NewUrlThreatSubmission instantiates a new UrlThreatSubmission and sets the default values.
@@ -15,6 +15,8 @@ func NewUrlThreatSubmission()(*UrlThreatSubmission) {
     m := &UrlThreatSubmission{
         ThreatSubmission: *NewThreatSubmission(),
     }
+    odataTypeValue := "#microsoft.graph.security.urlThreatSubmission";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateUrlThreatSubmissionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -36,7 +38,7 @@ func (m *UrlThreatSubmission) GetFieldDeserializers()(map[string]func(i878a80d23
     }
     return res
 }
-// GetWebUrl gets the webUrl property value. The webUrl property
+// GetWebUrl gets the webUrl property value. Denotes the webUrl that needs to be submitted.
 func (m *UrlThreatSubmission) GetWebUrl()(*string) {
     if m == nil {
         return nil
@@ -58,7 +60,7 @@ func (m *UrlThreatSubmission) Serialize(writer i878a80d2330e89d26896388a3f487eef
     }
     return nil
 }
-// SetWebUrl sets the webUrl property value. The webUrl property
+// SetWebUrl sets the webUrl property value. Denotes the webUrl that needs to be submitted.
 func (m *UrlThreatSubmission) SetWebUrl(value *string)() {
     if m != nil {
         m.webUrl = value

@@ -12,6 +12,8 @@ type ClassificationResult struct {
     confidenceLevel *int32
     // The count property
     count *int32
+    // The OdataType property
+    odataType *string
     // The sensitiveTypeId property
     sensitiveTypeId *string
 }
@@ -20,6 +22,8 @@ func NewClassificationResult()(*ClassificationResult) {
     m := &ClassificationResult{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.security.classificationResult";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateClassificationResultFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -73,6 +77,16 @@ func (m *ClassificationResult) GetFieldDeserializers()(map[string]func(i878a80d2
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["sensitiveTypeId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -84,6 +98,14 @@ func (m *ClassificationResult) GetFieldDeserializers()(map[string]func(i878a80d2
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *ClassificationResult) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
 }
 // GetSensitiveTypeId gets the sensitiveTypeId property value. The sensitiveTypeId property
 func (m *ClassificationResult) GetSensitiveTypeId()(*string) {
@@ -103,6 +125,12 @@ func (m *ClassificationResult) Serialize(writer i878a80d2330e89d26896388a3f487ee
     }
     {
         err := writer.WriteInt32Value("count", m.GetCount())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -137,6 +165,12 @@ func (m *ClassificationResult) SetConfidenceLevel(value *int32)() {
 func (m *ClassificationResult) SetCount(value *int32)() {
     if m != nil {
         m.count = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *ClassificationResult) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetSensitiveTypeId sets the sensitiveTypeId property value. The sensitiveTypeId property

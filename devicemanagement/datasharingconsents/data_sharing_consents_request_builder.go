@@ -70,7 +70,7 @@ func NewDataSharingConsentsRequestBuilder(rawUrl string, requestAdapter i2ae4187
     urlParams["request-raw-url"] = rawUrl
     return NewDataSharingConsentsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *DataSharingConsentsRequestBuilder) Count()(*i7d02e1ebf9aee84d7d9a804617b9baa70912a98d4a3e14726302bf8dbbcebf2e.CountRequestBuilder) {
     return i7d02e1ebf9aee84d7d9a804617b9baa70912a98d4a3e14726302bf8dbbcebf2e.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

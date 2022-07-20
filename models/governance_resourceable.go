@@ -19,6 +19,7 @@ type GovernanceResourceable interface {
     GetRoleDefinitions()([]GovernanceRoleDefinitionable)
     GetRoleSettings()([]GovernanceRoleSettingable)
     GetStatus()(*string)
+    GetType()(*string)
     SetDisplayName(value *string)()
     SetExternalId(value *string)()
     SetParent(value GovernanceResourceable)()
@@ -29,4 +30,5 @@ type GovernanceResourceable interface {
     SetRoleDefinitions(value []GovernanceRoleDefinitionable)()
     SetRoleSettings(value []GovernanceRoleSettingable)()
     SetStatus(value *string)()
+    SetType(value *string)()
 }

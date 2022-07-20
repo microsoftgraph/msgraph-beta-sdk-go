@@ -14,10 +14,12 @@ type LoginPageTextVisibilitySettingsable interface {
     GetHidePrivacyAndCookies()(*bool)
     GetHideResetItNow()(*bool)
     GetHideTermsOfUse()(*bool)
+    GetOdataType()(*string)
     SetHideAccountResetCredentials(value *bool)()
     SetHideCannotAccessYourAccount(value *bool)()
     SetHideForgotMyPassword(value *bool)()
     SetHidePrivacyAndCookies(value *bool)()
     SetHideResetItNow(value *bool)()
     SetHideTermsOfUse(value *bool)()
+    SetOdataType(value *string)()
 }

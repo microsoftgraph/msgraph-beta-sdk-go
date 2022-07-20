@@ -17,6 +17,8 @@ func NewCloudPcSupportedRegion()(*CloudPcSupportedRegion) {
     m := &CloudPcSupportedRegion{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.cloudPcSupportedRegion";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateCloudPcSupportedRegionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

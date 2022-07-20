@@ -70,7 +70,7 @@ func NewOpenShiftChangeRequestsRequestBuilder(rawUrl string, requestAdapter i2ae
     urlParams["request-raw-url"] = rawUrl
     return NewOpenShiftChangeRequestsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *OpenShiftChangeRequestsRequestBuilder) Count()(*i4d634a68231f1f5d0ecf518e2a7eedb864655fa78b2a426799603eea786d975c.CountRequestBuilder) {
     return i4d634a68231f1f5d0ecf518e2a7eedb864655fa78b2a426799603eea786d975c.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

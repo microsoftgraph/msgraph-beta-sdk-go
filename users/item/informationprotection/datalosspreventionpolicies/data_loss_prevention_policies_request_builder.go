@@ -71,7 +71,7 @@ func NewDataLossPreventionPoliciesRequestBuilder(rawUrl string, requestAdapter i
     urlParams["request-raw-url"] = rawUrl
     return NewDataLossPreventionPoliciesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *DataLossPreventionPoliciesRequestBuilder) Count()(*ica1f70465a279503b8a4d7dbac96daff006f35a7ac4154b61e907953fb960e9f.CountRequestBuilder) {
     return ica1f70465a279503b8a4d7dbac96daff006f35a7ac4154b61e907953fb960e9f.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

@@ -11,7 +11,9 @@ type CloudPcStatusDetailsable interface {
     GetAdditionalInformation()([]KeyValuePairable)
     GetCode()(*string)
     GetMessage()(*string)
+    GetOdataType()(*string)
     SetAdditionalInformation(value []KeyValuePairable)()
     SetCode(value *string)()
     SetMessage(value *string)()
+    SetOdataType(value *string)()
 }

@@ -12,6 +12,8 @@ type MobileAppSupportedDeviceType struct {
     maximumOperatingSystemVersion *string
     // Minimum OS version
     minimumOperatingSystemVersion *string
+    // The OdataType property
+    odataType *string
     // Device type.
     type_escaped *DeviceType
 }
@@ -20,6 +22,8 @@ func NewMobileAppSupportedDeviceType()(*MobileAppSupportedDeviceType) {
     m := &MobileAppSupportedDeviceType{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.mobileAppSupportedDeviceType";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateMobileAppSupportedDeviceTypeFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -57,6 +61,16 @@ func (m *MobileAppSupportedDeviceType) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseDeviceType)
         if err != nil {
@@ -85,6 +99,14 @@ func (m *MobileAppSupportedDeviceType) GetMinimumOperatingSystemVersion()(*strin
         return m.minimumOperatingSystemVersion
     }
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *MobileAppSupportedDeviceType) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetType gets the type property value. Device type.
 func (m *MobileAppSupportedDeviceType) GetType()(*DeviceType) {
     if m == nil {
@@ -103,6 +125,12 @@ func (m *MobileAppSupportedDeviceType) Serialize(writer i878a80d2330e89d26896388
     }
     {
         err := writer.WriteStringValue("minimumOperatingSystemVersion", m.GetMinimumOperatingSystemVersion())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -138,6 +166,12 @@ func (m *MobileAppSupportedDeviceType) SetMaximumOperatingSystemVersion(value *s
 func (m *MobileAppSupportedDeviceType) SetMinimumOperatingSystemVersion(value *string)() {
     if m != nil {
         m.minimumOperatingSystemVersion = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *MobileAppSupportedDeviceType) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetType sets the type property value. Device type.

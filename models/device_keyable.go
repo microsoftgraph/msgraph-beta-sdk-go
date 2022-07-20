@@ -11,7 +11,9 @@ type DeviceKeyable interface {
     GetDeviceId()(*string)
     GetKeyMaterial()([]byte)
     GetKeyType()(*string)
+    GetOdataType()(*string)
     SetDeviceId(value *string)()
     SetKeyMaterial(value []byte)()
     SetKeyType(value *string)()
+    SetOdataType(value *string)()
 }

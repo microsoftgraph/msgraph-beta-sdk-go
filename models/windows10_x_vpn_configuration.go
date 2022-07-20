@@ -19,6 +19,8 @@ func NewWindows10XVpnConfiguration()(*Windows10XVpnConfiguration) {
     m := &Windows10XVpnConfiguration{
         DeviceManagementResourceAccessProfileBase: *NewDeviceManagementResourceAccessProfileBase(),
     }
+    odataTypeValue := "#microsoft.graph.windows10XVpnConfiguration";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateWindows10XVpnConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

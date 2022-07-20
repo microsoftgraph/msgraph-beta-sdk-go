@@ -11,7 +11,9 @@ type EmailSenderable interface {
     GetDisplayName()(*string)
     GetDomainName()(*string)
     GetEmailAddress()(*string)
+    GetOdataType()(*string)
     SetDisplayName(value *string)()
     SetDomainName(value *string)()
     SetEmailAddress(value *string)()
+    SetOdataType(value *string)()
 }

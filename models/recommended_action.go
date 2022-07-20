@@ -10,6 +10,8 @@ type RecommendedAction struct {
     actionWebUrl *string
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
+    // The OdataType property
+    odataType *string
     // Potential improvement in security score of the tenant from the recommended action.
     potentialScoreImpact *float64
     // Title of the recommended action.
@@ -20,6 +22,8 @@ func NewRecommendedAction()(*RecommendedAction) {
     m := &RecommendedAction{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.recommendedAction";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateRecommendedActionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -55,6 +59,16 @@ func (m *RecommendedAction) GetFieldDeserializers()(map[string]func(i878a80d2330
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["potentialScoreImpact"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetFloat64Value()
         if err != nil {
@@ -77,6 +91,14 @@ func (m *RecommendedAction) GetFieldDeserializers()(map[string]func(i878a80d2330
     }
     return res
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *RecommendedAction) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetPotentialScoreImpact gets the potentialScoreImpact property value. Potential improvement in security score of the tenant from the recommended action.
 func (m *RecommendedAction) GetPotentialScoreImpact()(*float64) {
     if m == nil {
@@ -97,6 +119,12 @@ func (m *RecommendedAction) GetTitle()(*string) {
 func (m *RecommendedAction) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("actionWebUrl", m.GetActionWebUrl())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -131,6 +159,12 @@ func (m *RecommendedAction) SetActionWebUrl(value *string)() {
 func (m *RecommendedAction) SetAdditionalData(value map[string]interface{})() {
     if m != nil {
         m.additionalData = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *RecommendedAction) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetPotentialScoreImpact sets the potentialScoreImpact property value. Potential improvement in security score of the tenant from the recommended action.

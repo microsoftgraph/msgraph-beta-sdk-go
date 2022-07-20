@@ -8,8 +8,8 @@ import (
 type CustomSecurityAttributeDefinitionCollectionResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
-    // The nextLink property
-    nextLink *string
+    // The OdataNextLink property
+    odataNextLink *string
     // The value property
     value []CustomSecurityAttributeDefinitionable
 }
@@ -41,7 +41,7 @@ func (m *CustomSecurityAttributeDefinitionCollectionResponse) GetFieldDeserializ
             return err
         }
         if val != nil {
-            m.SetNextLink(val)
+            m.SetOdataNextLink(val)
         }
         return nil
     }
@@ -61,12 +61,12 @@ func (m *CustomSecurityAttributeDefinitionCollectionResponse) GetFieldDeserializ
     }
     return res
 }
-// GetNextLink gets the @odata.nextLink property value. The nextLink property
-func (m *CustomSecurityAttributeDefinitionCollectionResponse) GetNextLink()(*string) {
+// GetOdataNextLink gets the @odata.nextLink property value. The OdataNextLink property
+func (m *CustomSecurityAttributeDefinitionCollectionResponse) GetOdataNextLink()(*string) {
     if m == nil {
         return nil
     } else {
-        return m.nextLink
+        return m.odataNextLink
     }
 }
 // GetValue gets the value property value. The value property
@@ -80,7 +80,7 @@ func (m *CustomSecurityAttributeDefinitionCollectionResponse) GetValue()([]Custo
 // Serialize serializes information the current object
 func (m *CustomSecurityAttributeDefinitionCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
-        err := writer.WriteStringValue("@odata.nextLink", m.GetNextLink())
+        err := writer.WriteStringValue("@odata.nextLink", m.GetOdataNextLink())
         if err != nil {
             return err
         }
@@ -109,10 +109,10 @@ func (m *CustomSecurityAttributeDefinitionCollectionResponse) SetAdditionalData(
         m.additionalData = value
     }
 }
-// SetNextLink sets the @odata.nextLink property value. The nextLink property
-func (m *CustomSecurityAttributeDefinitionCollectionResponse) SetNextLink(value *string)() {
+// SetOdataNextLink sets the @odata.nextLink property value. The OdataNextLink property
+func (m *CustomSecurityAttributeDefinitionCollectionResponse) SetOdataNextLink(value *string)() {
     if m != nil {
-        m.nextLink = value
+        m.odataNextLink = value
     }
 }
 // SetValue sets the value property value. The value property

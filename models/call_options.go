@@ -12,16 +12,16 @@ type CallOptions struct {
     hideBotAfterEscalation *bool
     // Indicates whether content sharing notifications should be enabled for the call.
     isContentSharingNotificationEnabled *bool
-    // The type property
-    type_escaped *string
+    // The OdataType property
+    odataType *string
 }
 // NewCallOptions instantiates a new callOptions and sets the default values.
 func NewCallOptions()(*CallOptions) {
     m := &CallOptions{
     }
     m.SetAdditionalData(make(map[string]interface{}));
-    odatatypeValue := "#microsoft.graph.callOptions";
-    m.SetType(&odatatypeValue);
+    odataTypeValue := "#microsoft.graph.callOptions";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateCallOptionsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -86,7 +86,7 @@ func (m *CallOptions) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
             return err
         }
         if val != nil {
-            m.SetType(val)
+            m.SetOdataType(val)
         }
         return nil
     }
@@ -108,12 +108,12 @@ func (m *CallOptions) GetIsContentSharingNotificationEnabled()(*bool) {
         return m.isContentSharingNotificationEnabled
     }
 }
-// GetType gets the @odata.type property value. The type property
-func (m *CallOptions) GetType()(*string) {
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *CallOptions) GetOdataType()(*string) {
     if m == nil {
         return nil
     } else {
-        return m.type_escaped
+        return m.odataType
     }
 }
 // Serialize serializes information the current object
@@ -131,7 +131,7 @@ func (m *CallOptions) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
         }
     }
     {
-        err := writer.WriteStringValue("@odata.type", m.GetType())
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -162,9 +162,9 @@ func (m *CallOptions) SetIsContentSharingNotificationEnabled(value *bool)() {
         m.isContentSharingNotificationEnabled = value
     }
 }
-// SetType sets the @odata.type property value. The type property
-func (m *CallOptions) SetType(value *string)() {
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *CallOptions) SetOdataType(value *string)() {
     if m != nil {
-        m.type_escaped = value
+        m.odataType = value
     }
 }

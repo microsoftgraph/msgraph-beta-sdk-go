@@ -20,6 +20,8 @@ func NewAzureADFeatureUsage()(*AzureADFeatureUsage) {
     m := &AzureADFeatureUsage{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.azureADFeatureUsage";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAzureADFeatureUsageFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

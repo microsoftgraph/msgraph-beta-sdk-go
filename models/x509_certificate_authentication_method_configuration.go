@@ -19,6 +19,8 @@ func NewX509CertificateAuthenticationMethodConfiguration()(*X509CertificateAuthe
     m := &X509CertificateAuthenticationMethodConfiguration{
         AuthenticationMethodConfiguration: *NewAuthenticationMethodConfiguration(),
     }
+    odataTypeValue := "#microsoft.graph.x509CertificateAuthenticationMethodConfiguration";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateX509CertificateAuthenticationMethodConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

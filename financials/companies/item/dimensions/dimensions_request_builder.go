@@ -70,7 +70,7 @@ func NewDimensionsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263
     urlParams["request-raw-url"] = rawUrl
     return NewDimensionsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *DimensionsRequestBuilder) Count()(*ie702f4d19db705339c05b127b2e5e1e41756d433e29387af42801fa12c8f051a.CountRequestBuilder) {
     return ie702f4d19db705339c05b127b2e5e1e41756d433e29387af42801fa12c8f051a.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

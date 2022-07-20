@@ -27,6 +27,8 @@ func NewAndroidScepCertificateProfile()(*AndroidScepCertificateProfile) {
     m := &AndroidScepCertificateProfile{
         AndroidCertificateProfileBase: *NewAndroidCertificateProfileBase(),
     }
+    odataTypeValue := "#microsoft.graph.androidScepCertificateProfile";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAndroidScepCertificateProfileFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

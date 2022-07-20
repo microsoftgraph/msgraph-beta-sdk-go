@@ -70,7 +70,7 @@ func NewUserPfxCertificatesRequestBuilder(rawUrl string, requestAdapter i2ae4187
     urlParams["request-raw-url"] = rawUrl
     return NewUserPfxCertificatesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *UserPfxCertificatesRequestBuilder) Count()(*id58eeed93af695ec75e670c45d5d0c348ef632f4a59ebeb2431e6d033d683709.CountRequestBuilder) {
     return id58eeed93af695ec75e670c45d5d0c348ef632f4a59ebeb2431e6d033d683709.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

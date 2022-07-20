@@ -15,6 +15,8 @@ func NewAddWatermark()(*AddWatermark) {
     m := &AddWatermark{
         MarkContent: *NewMarkContent(),
     }
+    odataTypeValue := "#microsoft.graph.addWatermark";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAddWatermarkFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -11,11 +11,13 @@ type ParseExpressionResponseable interface {
     GetError()(PublicErrorable)
     GetEvaluationResult()([]string)
     GetEvaluationSucceeded()(*bool)
+    GetOdataType()(*string)
     GetParsedExpression()(AttributeMappingSourceable)
     GetParsingSucceeded()(*bool)
     SetError(value PublicErrorable)()
     SetEvaluationResult(value []string)()
     SetEvaluationSucceeded(value *bool)()
+    SetOdataType(value *string)()
     SetParsedExpression(value AttributeMappingSourceable)()
     SetParsingSucceeded(value *bool)()
 }

@@ -10,6 +10,8 @@ type AttackSimulationTrainingUserCoverage struct {
     additionalData map[string]interface{}
     // User in an attack simulation and training campaign.
     attackSimulationUser AttackSimulationUserable
+    // The OdataType property
+    odataType *string
     // List of assigned trainings' and their statuses for the user.
     userTrainings []UserTrainingStatusInfoable
 }
@@ -18,6 +20,8 @@ func NewAttackSimulationTrainingUserCoverage()(*AttackSimulationTrainingUserCove
     m := &AttackSimulationTrainingUserCoverage{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.attackSimulationTrainingUserCoverage";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateAttackSimulationTrainingUserCoverageFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -53,6 +57,16 @@ func (m *AttackSimulationTrainingUserCoverage) GetFieldDeserializers()(map[strin
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["userTrainings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateUserTrainingStatusInfoFromDiscriminatorValue)
         if err != nil {
@@ -69,6 +83,14 @@ func (m *AttackSimulationTrainingUserCoverage) GetFieldDeserializers()(map[strin
     }
     return res
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *AttackSimulationTrainingUserCoverage) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
+}
 // GetUserTrainings gets the userTrainings property value. List of assigned trainings' and their statuses for the user.
 func (m *AttackSimulationTrainingUserCoverage) GetUserTrainings()([]UserTrainingStatusInfoable) {
     if m == nil {
@@ -81,6 +103,12 @@ func (m *AttackSimulationTrainingUserCoverage) GetUserTrainings()([]UserTraining
 func (m *AttackSimulationTrainingUserCoverage) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
         err := writer.WriteObjectValue("attackSimulationUser", m.GetAttackSimulationUser())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -113,6 +141,12 @@ func (m *AttackSimulationTrainingUserCoverage) SetAdditionalData(value map[strin
 func (m *AttackSimulationTrainingUserCoverage) SetAttackSimulationUser(value AttackSimulationUserable)() {
     if m != nil {
         m.attackSimulationUser = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *AttackSimulationTrainingUserCoverage) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetUserTrainings sets the userTrainings property value. List of assigned trainings' and their statuses for the user.

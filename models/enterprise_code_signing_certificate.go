@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// EnterpriseCodeSigningCertificate provides operations to manage the collection of activityStatistics entities.
+// EnterpriseCodeSigningCertificate 
 type EnterpriseCodeSigningCertificate struct {
     Entity
     // The Windows Enterprise Code-Signing Certificate in the raw data format.
@@ -25,11 +25,13 @@ type EnterpriseCodeSigningCertificate struct {
     // The date time of CodeSigning Cert when it is uploaded.
     uploadDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
 }
-// NewEnterpriseCodeSigningCertificate instantiates a new enterpriseCodeSigningCertificate and sets the default values.
+// NewEnterpriseCodeSigningCertificate instantiates a new EnterpriseCodeSigningCertificate and sets the default values.
 func NewEnterpriseCodeSigningCertificate()(*EnterpriseCodeSigningCertificate) {
     m := &EnterpriseCodeSigningCertificate{
         Entity: *NewEntity(),
     }
+    odataTypeValue := "#microsoft.graph.enterpriseCodeSigningCertificate";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateEnterpriseCodeSigningCertificateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

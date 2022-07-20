@@ -29,6 +29,8 @@ func NewCaseExportOperation()(*CaseExportOperation) {
     m := &CaseExportOperation{
         CaseOperation: *NewCaseOperation(),
     }
+    odataTypeValue := "#microsoft.graph.ediscovery.caseExportOperation";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateCaseExportOperationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

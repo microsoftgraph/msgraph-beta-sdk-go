@@ -12,10 +12,12 @@ type TemplateParameterable interface {
     GetDisplayName()(*string)
     GetJsonAllowedValues()(*string)
     GetJsonDefaultValue()(*string)
+    GetOdataType()(*string)
     GetValueType()(*ManagementParameterValueType)
     SetDescription(value *string)()
     SetDisplayName(value *string)()
     SetJsonAllowedValues(value *string)()
     SetJsonDefaultValue(value *string)()
+    SetOdataType(value *string)()
     SetValueType(value *ManagementParameterValueType)()
 }

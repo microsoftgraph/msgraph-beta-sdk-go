@@ -14,6 +14,8 @@ type CompanyDetail struct {
     department *string
     // Company name.
     displayName *string
+    // The OdataType property
+    odataType *string
     // Office Location of the person referred to.
     officeLocation *string
     // Pronunciation guide for the company name.
@@ -26,6 +28,8 @@ func NewCompanyDetail()(*CompanyDetail) {
     m := &CompanyDetail{
     }
     m.SetAdditionalData(make(map[string]interface{}));
+    odataTypeValue := "#microsoft.graph.companyDetail";
+    m.SetOdataType(&odataTypeValue);
     return m
 }
 // CreateCompanyDetailFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -97,6 +101,16 @@ func (m *CompanyDetail) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         }
         return nil
     }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
     res["officeLocation"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -128,6 +142,14 @@ func (m *CompanyDetail) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         return nil
     }
     return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+func (m *CompanyDetail) GetOdataType()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.odataType
+    }
 }
 // GetOfficeLocation gets the officeLocation property value. Office Location of the person referred to.
 func (m *CompanyDetail) GetOfficeLocation()(*string) {
@@ -169,6 +191,12 @@ func (m *CompanyDetail) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
     }
     {
         err := writer.WriteStringValue("displayName", m.GetDisplayName())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -221,6 +249,12 @@ func (m *CompanyDetail) SetDepartment(value *string)() {
 func (m *CompanyDetail) SetDisplayName(value *string)() {
     if m != nil {
         m.displayName = value
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *CompanyDetail) SetOdataType(value *string)() {
+    if m != nil {
+        m.odataType = value
     }
 }
 // SetOfficeLocation sets the officeLocation property value. Office Location of the person referred to.

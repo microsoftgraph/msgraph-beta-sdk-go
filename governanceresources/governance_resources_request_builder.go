@@ -71,7 +71,7 @@ func NewGovernanceResourcesRequestBuilder(rawUrl string, requestAdapter i2ae4187
     urlParams["request-raw-url"] = rawUrl
     return NewGovernanceResourcesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Count the count property
+// Count the Count property
 func (m *GovernanceResourcesRequestBuilder) Count()(*i779ee9d8f0da7fccccba300f8ea545500bed8dcf3295631674a1414c93daaacd.CountRequestBuilder) {
     return i779ee9d8f0da7fccccba300f8ea545500bed8dcf3295631674a1414c93daaacd.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
