@@ -445,6 +445,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewCall(), nil
                     case "#microsoft.graph.callActivityStatistics":
                         return NewCallActivityStatistics(), nil
+                    case "#microsoft.graph.callTranscript":
+                        return NewCallTranscript(), nil
                     case "#microsoft.graph.cancelMediaProcessingOperation":
                         return NewCancelMediaProcessingOperation(), nil
                     case "#microsoft.graph.cartToClassAssociation":
@@ -2359,6 +2361,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewUserTeamwork(), nil
                     case "#microsoft.graph.vendor":
                         return NewVendor_escaped(), nil
+                    case "#microsoft.graph.virtualAppointment":
+                        return NewVirtualAppointment(), nil
                     case "#microsoft.graph.virtualEndpoint":
                         return NewVirtualEndpoint(), nil
                     case "#microsoft.graph.vpnConfiguration":

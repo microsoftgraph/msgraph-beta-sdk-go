@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// RecommendationResource provides operations to manage the collection of accessReview entities.
+// RecommendationResource 
 type RecommendationResource struct {
     Entity
     // The addedDateTime property
@@ -29,7 +29,7 @@ type RecommendationResource struct {
     // The status property
     status *RecommendationStatus
 }
-// NewRecommendationResource instantiates a new recommendationResource and sets the default values.
+// NewRecommendationResource instantiates a new RecommendationResource and sets the default values.
 func NewRecommendationResource()(*RecommendationResource) {
     m := &RecommendationResource{
         Entity: *NewEntity(),

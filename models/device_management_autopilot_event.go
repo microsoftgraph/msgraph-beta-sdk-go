@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DeviceManagementAutopilotEvent represents an Autopilot flow event.
+// DeviceManagementAutopilotEvent 
 type DeviceManagementAutopilotEvent struct {
     Entity
     // Time spent in user ESP.
@@ -63,7 +63,7 @@ type DeviceManagementAutopilotEvent struct {
     // Autopilot profile name.
     windowsAutopilotDeploymentProfileDisplayName *string
 }
-// NewDeviceManagementAutopilotEvent instantiates a new deviceManagementAutopilotEvent and sets the default values.
+// NewDeviceManagementAutopilotEvent instantiates a new DeviceManagementAutopilotEvent and sets the default values.
 func NewDeviceManagementAutopilotEvent()(*DeviceManagementAutopilotEvent) {
     m := &DeviceManagementAutopilotEvent{
         Entity: *NewEntity(),

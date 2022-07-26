@@ -68,8 +68,12 @@ type OnlineMeeting struct {
     startDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The subject of the online meeting.
     subject *string
+    // The transcripts property
+    transcripts []CallTranscriptable
     // The video teleconferencing ID. Read-only.
     videoTeleconferenceId *string
+    // The virtualAppointment property
+    virtualAppointment VirtualAppointmentable
 }
 // NewOnlineMeeting instantiates a new OnlineMeeting and sets the default values.
 func NewOnlineMeeting()(*OnlineMeeting) {
@@ -527,6 +531,20 @@ func (m *OnlineMeeting) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         }
         return nil
     }
+    res["transcripts"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateCallTranscriptFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]CallTranscriptable, len(val))
+            for i, v := range val {
+                res[i] = v.(CallTranscriptable)
+            }
+            m.SetTranscripts(res)
+        }
+        return nil
+    }
     res["videoTeleconferenceId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -534,6 +552,16 @@ func (m *OnlineMeeting) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         }
         if val != nil {
             m.SetVideoTeleconferenceId(val)
+        }
+        return nil
+    }
+    res["virtualAppointment"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateVirtualAppointmentFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetVirtualAppointment(val.(VirtualAppointmentable))
         }
         return nil
     }
@@ -651,12 +679,28 @@ func (m *OnlineMeeting) GetSubject()(*string) {
         return m.subject
     }
 }
+// GetTranscripts gets the transcripts property value. The transcripts property
+func (m *OnlineMeeting) GetTranscripts()([]CallTranscriptable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.transcripts
+    }
+}
 // GetVideoTeleconferenceId gets the videoTeleconferenceId property value. The video teleconferencing ID. Read-only.
 func (m *OnlineMeeting) GetVideoTeleconferenceId()(*string) {
     if m == nil {
         return nil
     } else {
         return m.videoTeleconferenceId
+    }
+}
+// GetVirtualAppointment gets the virtualAppointment property value. The virtualAppointment property
+func (m *OnlineMeeting) GetVirtualAppointment()(VirtualAppointmentable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.virtualAppointment
     }
 }
 // Serialize serializes information the current object
@@ -851,8 +895,24 @@ func (m *OnlineMeeting) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
             return err
         }
     }
+    if m.GetTranscripts() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetTranscripts()))
+        for i, v := range m.GetTranscripts() {
+            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+        }
+        err = writer.WriteCollectionOfObjectValues("transcripts", cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteStringValue("videoTeleconferenceId", m.GetVideoTeleconferenceId())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteObjectValue("virtualAppointment", m.GetVirtualAppointment())
         if err != nil {
             return err
         }
@@ -1039,9 +1099,21 @@ func (m *OnlineMeeting) SetSubject(value *string)() {
         m.subject = value
     }
 }
+// SetTranscripts sets the transcripts property value. The transcripts property
+func (m *OnlineMeeting) SetTranscripts(value []CallTranscriptable)() {
+    if m != nil {
+        m.transcripts = value
+    }
+}
 // SetVideoTeleconferenceId sets the videoTeleconferenceId property value. The video teleconferencing ID. Read-only.
 func (m *OnlineMeeting) SetVideoTeleconferenceId(value *string)() {
     if m != nil {
         m.videoTeleconferenceId = value
+    }
+}
+// SetVirtualAppointment sets the virtualAppointment property value. The virtualAppointment property
+func (m *OnlineMeeting) SetVirtualAppointment(value VirtualAppointmentable)() {
+    if m != nil {
+        m.virtualAppointment = value
     }
 }

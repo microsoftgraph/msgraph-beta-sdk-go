@@ -16,7 +16,7 @@ type LearningContentsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// LearningContentsRequestBuilderGetQueryParameters get learningContents from employeeExperience
+// LearningContentsRequestBuilderGetQueryParameters learning catalog items for the provider.
 type LearningContentsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,11 +74,11 @@ func NewLearningContentsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7d
 func (m *LearningContentsRequestBuilder) Count()(*idf1118fd10ad43c70b36e5e2d255fa06a9fe666eded522b362a4941188354d7c.CountRequestBuilder) {
     return idf1118fd10ad43c70b36e5e2d255fa06a9fe666eded522b362a4941188354d7c.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation get learningContents from employeeExperience
+// CreateGetRequestInformation learning catalog items for the provider.
 func (m *LearningContentsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration get learningContents from employeeExperience
+// CreateGetRequestInformationWithRequestConfiguration learning catalog items for the provider.
 func (m *LearningContentsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *LearningContentsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -112,11 +112,11 @@ func (m *LearningContentsRequestBuilder) CreatePostRequestInformationWithRequest
     }
     return requestInfo, nil
 }
-// Get get learningContents from employeeExperience
+// Get learning catalog items for the provider.
 func (m *LearningContentsRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.LearningContentCollectionResponseable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler get learningContents from employeeExperience
+// GetWithRequestConfigurationAndResponseHandler learning catalog items for the provider.
 func (m *LearningContentsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *LearningContentsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.LearningContentCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

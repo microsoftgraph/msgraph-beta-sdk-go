@@ -12,7 +12,7 @@ type UserExperienceAnalyticsCategory struct {
     // The metric values for the user experience analytics category.
     metricValues []UserExperienceAnalyticsMetricable
 }
-// NewUserExperienceAnalyticsCategory instantiates a new userExperienceAnalyticsCategory and sets the default values.
+// NewUserExperienceAnalyticsCategory instantiates a new UserExperienceAnalyticsCategory and sets the default values.
 func NewUserExperienceAnalyticsCategory()(*UserExperienceAnalyticsCategory) {
     m := &UserExperienceAnalyticsCategory{
         Entity: *NewEntity(),

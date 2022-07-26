@@ -29,7 +29,7 @@ type ReportRoot struct {
     monthlyPrintUsageSummariesByPrinter []PrintUsageByPrinterable
     // The monthlyPrintUsageSummariesByUser property
     monthlyPrintUsageSummariesByUser []PrintUsageByUserable
-    // The security property
+    // Provides the ability to launch a realistic simulated phishing attack that organizations can learn from.
     security SecurityReportsRootable
     // Represents the self-service password reset (SSPR) usage for a given tenant.
     userCredentialUsageDetails []UserCredentialUsageDetailsable
@@ -314,7 +314,7 @@ func (m *ReportRoot) GetMonthlyPrintUsageSummariesByUser()([]PrintUsageByUserabl
         return m.monthlyPrintUsageSummariesByUser
     }
 }
-// GetSecurity gets the security property value. The security property
+// GetSecurity gets the security property value. Provides the ability to launch a realistic simulated phishing attack that organizations can learn from.
 func (m *ReportRoot) GetSecurity()(SecurityReportsRootable) {
     if m == nil {
         return nil
@@ -526,7 +526,7 @@ func (m *ReportRoot) SetMonthlyPrintUsageSummariesByUser(value []PrintUsageByUse
         m.monthlyPrintUsageSummariesByUser = value
     }
 }
-// SetSecurity sets the security property value. The security property
+// SetSecurity sets the security property value. Provides the ability to launch a realistic simulated phishing attack that organizations can learn from.
 func (m *ReportRoot) SetSecurity(value SecurityReportsRootable)() {
     if m != nil {
         m.security = value
