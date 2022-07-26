@@ -33,7 +33,7 @@ type PrivilegedRoleAssignmentRequest struct {
     // The id of the user.
     userId *string
 }
-// NewPrivilegedRoleAssignmentRequest instantiates a new PrivilegedRoleAssignmentRequest and sets the default values.
+// NewPrivilegedRoleAssignmentRequest instantiates a new privilegedRoleAssignmentRequest and sets the default values.
 func NewPrivilegedRoleAssignmentRequest()(*PrivilegedRoleAssignmentRequest) {
     m := &PrivilegedRoleAssignmentRequest{
         Entity: *NewEntity(),

@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DeviceManagementConfigurationCategory device Management Configuration Policy
+// DeviceManagementConfigurationCategory 
 type DeviceManagementConfigurationCategory struct {
     Entity
     // Description of the category header
@@ -30,7 +30,7 @@ type DeviceManagementConfigurationCategory struct {
     // Describes which technology this setting can be deployed with
     technologies *DeviceManagementConfigurationTechnologies
 }
-// NewDeviceManagementConfigurationCategory instantiates a new deviceManagementConfigurationCategory and sets the default values.
+// NewDeviceManagementConfigurationCategory instantiates a new DeviceManagementConfigurationCategory and sets the default values.
 func NewDeviceManagementConfigurationCategory()(*DeviceManagementConfigurationCategory) {
     m := &DeviceManagementConfigurationCategory{
         Entity: *NewEntity(),

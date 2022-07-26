@@ -15,7 +15,7 @@ type WindowsAutopilotSettings struct {
     // The syncStatus property
     syncStatus *WindowsAutopilotSyncStatus
 }
-// NewWindowsAutopilotSettings instantiates a new windowsAutopilotSettings and sets the default values.
+// NewWindowsAutopilotSettings instantiates a new WindowsAutopilotSettings and sets the default values.
 func NewWindowsAutopilotSettings()(*WindowsAutopilotSettings) {
     m := &WindowsAutopilotSettings{
         Entity: *NewEntity(),

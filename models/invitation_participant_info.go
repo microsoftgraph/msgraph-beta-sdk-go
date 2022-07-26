@@ -8,7 +8,7 @@ import (
 type InvitationParticipantInfo struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
-    // The type of the endpoint. Possible values are: default, voicemail.
+    // The type of endpoint. Possible values are: default, voicemail, skypeForBusiness, skypeForBusinessVoipPhone and unknownFutureValue.
     endpointType *EndpointType
     // The hidden property
     hidden *bool
@@ -44,7 +44,7 @@ func (m *InvitationParticipantInfo) GetAdditionalData()(map[string]interface{}) 
         return m.additionalData
     }
 }
-// GetEndpointType gets the endpointType property value. The type of the endpoint. Possible values are: default, voicemail.
+// GetEndpointType gets the endpointType property value. The type of endpoint. Possible values are: default, voicemail, skypeForBusiness, skypeForBusinessVoipPhone and unknownFutureValue.
 func (m *InvitationParticipantInfo) GetEndpointType()(*EndpointType) {
     if m == nil {
         return nil
@@ -234,7 +234,7 @@ func (m *InvitationParticipantInfo) SetAdditionalData(value map[string]interface
         m.additionalData = value
     }
 }
-// SetEndpointType sets the endpointType property value. The type of the endpoint. Possible values are: default, voicemail.
+// SetEndpointType sets the endpointType property value. The type of endpoint. Possible values are: default, voicemail, skypeForBusiness, skypeForBusinessVoipPhone and unknownFutureValue.
 func (m *InvitationParticipantInfo) SetEndpointType(value *EndpointType)() {
     if m != nil {
         m.endpointType = value

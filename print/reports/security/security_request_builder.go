@@ -25,7 +25,7 @@ type SecurityRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// SecurityRequestBuilderGetQueryParameters get security from print
+// SecurityRequestBuilderGetQueryParameters provides the ability to launch a realistic simulated phishing attack that organizations can learn from.
 type SecurityRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -83,11 +83,11 @@ func (m *SecurityRequestBuilder) CreateDeleteRequestInformationWithRequestConfig
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation get security from print
+// CreateGetRequestInformation provides the ability to launch a realistic simulated phishing attack that organizations can learn from.
 func (m *SecurityRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration get security from print
+// CreateGetRequestInformationWithRequestConfiguration provides the ability to launch a realistic simulated phishing attack that organizations can learn from.
 func (m *SecurityRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *SecurityRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -140,7 +140,7 @@ func (m *SecurityRequestBuilder) DeleteWithRequestConfigurationAndResponseHandle
     }
     return nil
 }
-// Get get security from print
+// Get provides the ability to launch a realistic simulated phishing attack that organizations can learn from.
 func (m *SecurityRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SecurityReportsRootable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
@@ -156,7 +156,7 @@ func (m *SecurityRequestBuilder) GetAttackSimulationSimulationUserCoverage()(*ia
 func (m *SecurityRequestBuilder) GetAttackSimulationTrainingUserCoverage()(*i5586f69477cb75aa877b7b1f2f72f1133178c698791fcaf1d282388aa04d0535.GetAttackSimulationTrainingUserCoverageRequestBuilder) {
     return i5586f69477cb75aa877b7b1f2f72f1133178c698791fcaf1d282388aa04d0535.NewGetAttackSimulationTrainingUserCoverageRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// GetWithRequestConfigurationAndResponseHandler get security from print
+// GetWithRequestConfigurationAndResponseHandler provides the ability to launch a realistic simulated phishing attack that organizations can learn from.
 func (m *SecurityRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *SecurityRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SecurityReportsRootable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

@@ -11,7 +11,7 @@ type Windows struct {
     // Entity that acts as a container for the functionality of the Windows Update for Business deployment service. Read-only.
     updates Updatesable
 }
-// NewWindows instantiates a new windows and sets the default values.
+// NewWindows instantiates a new Windows and sets the default values.
 func NewWindows()(*Windows) {
     m := &Windows{
         Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),

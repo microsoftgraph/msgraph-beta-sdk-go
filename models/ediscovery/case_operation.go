@@ -24,7 +24,7 @@ type CaseOperation struct {
     // The status of the case operation. Possible values are: notStarted, submissionFailed, running, succeeded, partiallySucceeded, failed.
     status *CaseOperationStatus
 }
-// NewCaseOperation instantiates a new CaseOperation and sets the default values.
+// NewCaseOperation instantiates a new caseOperation and sets the default values.
 func NewCaseOperation()(*CaseOperation) {
     m := &CaseOperation{
         Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),

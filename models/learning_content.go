@@ -9,43 +9,43 @@ import (
 type LearningContent struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
-    // The additionalTags property
+    // Keywords, topics, and other tags associated with the learning content. Optional.
     additionalTags []string
-    // The contentWebUrl property
+    // The content web URL for the learning content. Required.
     contentWebUrl *string
-    // The contributor property
+    // The author, creator, or contributor of the learning content. Optional.
     contributor *string
-    // The createdDateTime property
+    // The date when the learning content was created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Optional.
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The description property
+    // The description or summary for the learning content. Optional.
     description *string
-    // The duration property
+    // The duration of the learning content in seconds. Optional.
     duration *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration
-    // The externalId property
+    // Unique external content ID for the learning content. Required.
     externalId *string
-    // The format property
+    // The format of the learning content. For example, Course, Video, Book, Book Summary, Audiobook Summary. Optional.
     format *string
-    // The isActive property
+    // Indicates whether the content is active or not. Inactive content will not show up in the UI. The default value is true. Optional.
     isActive *bool
-    // The isPremium property
+    // Indicates whether the learning content requires the user to sign-in on the learning provider platform or not. The default value is false. Optional.
     isPremium *bool
-    // The isSearchable property
+    // Indicates whether the learning content is searchable or not. The default value is true. Optional.
     isSearchable *bool
-    // The languageTag property
+    // The language of the learning content, for example, en-us or fr-fr. Required.
     languageTag *string
-    // The lastModifiedDateTime property
+    // The date when the learning content was last modified. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Optional.
     lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The numberOfPages property
+    // The number of pages of the learning content, for example, 9. Optional.
     numberOfPages *int32
     // The OdataType property
     odataType *string
-    // The skillTags property
+    // The skills tags associated with the learning content. Optional.
     skillTags []string
-    // The sourceName property
+    // The source name of the learning content, such as LinkedIn Learning or Coursera. Optional.
     sourceName *string
-    // The thumbnailWebUrl property
+    // The URL of learning content thumbnail image. Optional.
     thumbnailWebUrl *string
-    // The title property
+    // The title of the learning content. Required.
     title *string
 }
 // NewLearningContent instantiates a new learningContent and sets the default values.
@@ -69,7 +69,7 @@ func (m *LearningContent) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// GetAdditionalTags gets the additionalTags property value. The additionalTags property
+// GetAdditionalTags gets the additionalTags property value. Keywords, topics, and other tags associated with the learning content. Optional.
 func (m *LearningContent) GetAdditionalTags()([]string) {
     if m == nil {
         return nil
@@ -77,7 +77,7 @@ func (m *LearningContent) GetAdditionalTags()([]string) {
         return m.additionalTags
     }
 }
-// GetContentWebUrl gets the contentWebUrl property value. The contentWebUrl property
+// GetContentWebUrl gets the contentWebUrl property value. The content web URL for the learning content. Required.
 func (m *LearningContent) GetContentWebUrl()(*string) {
     if m == nil {
         return nil
@@ -85,7 +85,7 @@ func (m *LearningContent) GetContentWebUrl()(*string) {
         return m.contentWebUrl
     }
 }
-// GetContributor gets the contributor property value. The contributor property
+// GetContributor gets the contributor property value. The author, creator, or contributor of the learning content. Optional.
 func (m *LearningContent) GetContributor()(*string) {
     if m == nil {
         return nil
@@ -93,7 +93,7 @@ func (m *LearningContent) GetContributor()(*string) {
         return m.contributor
     }
 }
-// GetCreatedDateTime gets the createdDateTime property value. The createdDateTime property
+// GetCreatedDateTime gets the createdDateTime property value. The date when the learning content was created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Optional.
 func (m *LearningContent) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -101,7 +101,7 @@ func (m *LearningContent) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a
         return m.createdDateTime
     }
 }
-// GetDescription gets the description property value. The description property
+// GetDescription gets the description property value. The description or summary for the learning content. Optional.
 func (m *LearningContent) GetDescription()(*string) {
     if m == nil {
         return nil
@@ -109,7 +109,7 @@ func (m *LearningContent) GetDescription()(*string) {
         return m.description
     }
 }
-// GetDuration gets the duration property value. The duration property
+// GetDuration gets the duration property value. The duration of the learning content in seconds. Optional.
 func (m *LearningContent) GetDuration()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration) {
     if m == nil {
         return nil
@@ -117,7 +117,7 @@ func (m *LearningContent) GetDuration()(*i878a80d2330e89d26896388a3f487eef27b0a0
         return m.duration
     }
 }
-// GetExternalId gets the externalId property value. The externalId property
+// GetExternalId gets the externalId property value. Unique external content ID for the learning content. Required.
 func (m *LearningContent) GetExternalId()(*string) {
     if m == nil {
         return nil
@@ -328,7 +328,7 @@ func (m *LearningContent) GetFieldDeserializers()(map[string]func(i878a80d2330e8
     }
     return res
 }
-// GetFormat gets the format property value. The format property
+// GetFormat gets the format property value. The format of the learning content. For example, Course, Video, Book, Book Summary, Audiobook Summary. Optional.
 func (m *LearningContent) GetFormat()(*string) {
     if m == nil {
         return nil
@@ -336,7 +336,7 @@ func (m *LearningContent) GetFormat()(*string) {
         return m.format
     }
 }
-// GetIsActive gets the isActive property value. The isActive property
+// GetIsActive gets the isActive property value. Indicates whether the content is active or not. Inactive content will not show up in the UI. The default value is true. Optional.
 func (m *LearningContent) GetIsActive()(*bool) {
     if m == nil {
         return nil
@@ -344,7 +344,7 @@ func (m *LearningContent) GetIsActive()(*bool) {
         return m.isActive
     }
 }
-// GetIsPremium gets the isPremium property value. The isPremium property
+// GetIsPremium gets the isPremium property value. Indicates whether the learning content requires the user to sign-in on the learning provider platform or not. The default value is false. Optional.
 func (m *LearningContent) GetIsPremium()(*bool) {
     if m == nil {
         return nil
@@ -352,7 +352,7 @@ func (m *LearningContent) GetIsPremium()(*bool) {
         return m.isPremium
     }
 }
-// GetIsSearchable gets the isSearchable property value. The isSearchable property
+// GetIsSearchable gets the isSearchable property value. Indicates whether the learning content is searchable or not. The default value is true. Optional.
 func (m *LearningContent) GetIsSearchable()(*bool) {
     if m == nil {
         return nil
@@ -360,7 +360,7 @@ func (m *LearningContent) GetIsSearchable()(*bool) {
         return m.isSearchable
     }
 }
-// GetLanguageTag gets the languageTag property value. The languageTag property
+// GetLanguageTag gets the languageTag property value. The language of the learning content, for example, en-us or fr-fr. Required.
 func (m *LearningContent) GetLanguageTag()(*string) {
     if m == nil {
         return nil
@@ -368,7 +368,7 @@ func (m *LearningContent) GetLanguageTag()(*string) {
         return m.languageTag
     }
 }
-// GetLastModifiedDateTime gets the lastModifiedDateTime property value. The lastModifiedDateTime property
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. The date when the learning content was last modified. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Optional.
 func (m *LearningContent) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     if m == nil {
         return nil
@@ -376,7 +376,7 @@ func (m *LearningContent) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3
         return m.lastModifiedDateTime
     }
 }
-// GetNumberOfPages gets the numberOfPages property value. The numberOfPages property
+// GetNumberOfPages gets the numberOfPages property value. The number of pages of the learning content, for example, 9. Optional.
 func (m *LearningContent) GetNumberOfPages()(*int32) {
     if m == nil {
         return nil
@@ -392,7 +392,7 @@ func (m *LearningContent) GetOdataType()(*string) {
         return m.odataType
     }
 }
-// GetSkillTags gets the skillTags property value. The skillTags property
+// GetSkillTags gets the skillTags property value. The skills tags associated with the learning content. Optional.
 func (m *LearningContent) GetSkillTags()([]string) {
     if m == nil {
         return nil
@@ -400,7 +400,7 @@ func (m *LearningContent) GetSkillTags()([]string) {
         return m.skillTags
     }
 }
-// GetSourceName gets the sourceName property value. The sourceName property
+// GetSourceName gets the sourceName property value. The source name of the learning content, such as LinkedIn Learning or Coursera. Optional.
 func (m *LearningContent) GetSourceName()(*string) {
     if m == nil {
         return nil
@@ -408,7 +408,7 @@ func (m *LearningContent) GetSourceName()(*string) {
         return m.sourceName
     }
 }
-// GetThumbnailWebUrl gets the thumbnailWebUrl property value. The thumbnailWebUrl property
+// GetThumbnailWebUrl gets the thumbnailWebUrl property value. The URL of learning content thumbnail image. Optional.
 func (m *LearningContent) GetThumbnailWebUrl()(*string) {
     if m == nil {
         return nil
@@ -416,7 +416,7 @@ func (m *LearningContent) GetThumbnailWebUrl()(*string) {
         return m.thumbnailWebUrl
     }
 }
-// GetTitle gets the title property value. The title property
+// GetTitle gets the title property value. The title of the learning content. Required.
 func (m *LearningContent) GetTitle()(*string) {
     if m == nil {
         return nil
@@ -554,85 +554,85 @@ func (m *LearningContent) SetAdditionalData(value map[string]interface{})() {
         m.additionalData = value
     }
 }
-// SetAdditionalTags sets the additionalTags property value. The additionalTags property
+// SetAdditionalTags sets the additionalTags property value. Keywords, topics, and other tags associated with the learning content. Optional.
 func (m *LearningContent) SetAdditionalTags(value []string)() {
     if m != nil {
         m.additionalTags = value
     }
 }
-// SetContentWebUrl sets the contentWebUrl property value. The contentWebUrl property
+// SetContentWebUrl sets the contentWebUrl property value. The content web URL for the learning content. Required.
 func (m *LearningContent) SetContentWebUrl(value *string)() {
     if m != nil {
         m.contentWebUrl = value
     }
 }
-// SetContributor sets the contributor property value. The contributor property
+// SetContributor sets the contributor property value. The author, creator, or contributor of the learning content. Optional.
 func (m *LearningContent) SetContributor(value *string)() {
     if m != nil {
         m.contributor = value
     }
 }
-// SetCreatedDateTime sets the createdDateTime property value. The createdDateTime property
+// SetCreatedDateTime sets the createdDateTime property value. The date when the learning content was created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Optional.
 func (m *LearningContent) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     if m != nil {
         m.createdDateTime = value
     }
 }
-// SetDescription sets the description property value. The description property
+// SetDescription sets the description property value. The description or summary for the learning content. Optional.
 func (m *LearningContent) SetDescription(value *string)() {
     if m != nil {
         m.description = value
     }
 }
-// SetDuration sets the duration property value. The duration property
+// SetDuration sets the duration property value. The duration of the learning content in seconds. Optional.
 func (m *LearningContent) SetDuration(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)() {
     if m != nil {
         m.duration = value
     }
 }
-// SetExternalId sets the externalId property value. The externalId property
+// SetExternalId sets the externalId property value. Unique external content ID for the learning content. Required.
 func (m *LearningContent) SetExternalId(value *string)() {
     if m != nil {
         m.externalId = value
     }
 }
-// SetFormat sets the format property value. The format property
+// SetFormat sets the format property value. The format of the learning content. For example, Course, Video, Book, Book Summary, Audiobook Summary. Optional.
 func (m *LearningContent) SetFormat(value *string)() {
     if m != nil {
         m.format = value
     }
 }
-// SetIsActive sets the isActive property value. The isActive property
+// SetIsActive sets the isActive property value. Indicates whether the content is active or not. Inactive content will not show up in the UI. The default value is true. Optional.
 func (m *LearningContent) SetIsActive(value *bool)() {
     if m != nil {
         m.isActive = value
     }
 }
-// SetIsPremium sets the isPremium property value. The isPremium property
+// SetIsPremium sets the isPremium property value. Indicates whether the learning content requires the user to sign-in on the learning provider platform or not. The default value is false. Optional.
 func (m *LearningContent) SetIsPremium(value *bool)() {
     if m != nil {
         m.isPremium = value
     }
 }
-// SetIsSearchable sets the isSearchable property value. The isSearchable property
+// SetIsSearchable sets the isSearchable property value. Indicates whether the learning content is searchable or not. The default value is true. Optional.
 func (m *LearningContent) SetIsSearchable(value *bool)() {
     if m != nil {
         m.isSearchable = value
     }
 }
-// SetLanguageTag sets the languageTag property value. The languageTag property
+// SetLanguageTag sets the languageTag property value. The language of the learning content, for example, en-us or fr-fr. Required.
 func (m *LearningContent) SetLanguageTag(value *string)() {
     if m != nil {
         m.languageTag = value
     }
 }
-// SetLastModifiedDateTime sets the lastModifiedDateTime property value. The lastModifiedDateTime property
+// SetLastModifiedDateTime sets the lastModifiedDateTime property value. The date when the learning content was last modified. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Optional.
 func (m *LearningContent) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     if m != nil {
         m.lastModifiedDateTime = value
     }
 }
-// SetNumberOfPages sets the numberOfPages property value. The numberOfPages property
+// SetNumberOfPages sets the numberOfPages property value. The number of pages of the learning content, for example, 9. Optional.
 func (m *LearningContent) SetNumberOfPages(value *int32)() {
     if m != nil {
         m.numberOfPages = value
@@ -644,25 +644,25 @@ func (m *LearningContent) SetOdataType(value *string)() {
         m.odataType = value
     }
 }
-// SetSkillTags sets the skillTags property value. The skillTags property
+// SetSkillTags sets the skillTags property value. The skills tags associated with the learning content. Optional.
 func (m *LearningContent) SetSkillTags(value []string)() {
     if m != nil {
         m.skillTags = value
     }
 }
-// SetSourceName sets the sourceName property value. The sourceName property
+// SetSourceName sets the sourceName property value. The source name of the learning content, such as LinkedIn Learning or Coursera. Optional.
 func (m *LearningContent) SetSourceName(value *string)() {
     if m != nil {
         m.sourceName = value
     }
 }
-// SetThumbnailWebUrl sets the thumbnailWebUrl property value. The thumbnailWebUrl property
+// SetThumbnailWebUrl sets the thumbnailWebUrl property value. The URL of learning content thumbnail image. Optional.
 func (m *LearningContent) SetThumbnailWebUrl(value *string)() {
     if m != nil {
         m.thumbnailWebUrl = value
     }
 }
-// SetTitle sets the title property value. The title property
+// SetTitle sets the title property value. The title of the learning content. Required.
 func (m *LearningContent) SetTitle(value *string)() {
     if m != nil {
         m.title = value

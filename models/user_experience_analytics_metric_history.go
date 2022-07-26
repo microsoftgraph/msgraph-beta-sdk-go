@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// UserExperienceAnalyticsMetricHistory the user experience analytics metric history.
+// UserExperienceAnalyticsMetricHistory 
 type UserExperienceAnalyticsMetricHistory struct {
     Entity
     // The user experience analytics device id.
@@ -15,7 +15,7 @@ type UserExperienceAnalyticsMetricHistory struct {
     // The user experience analytics metric type.
     metricType *string
 }
-// NewUserExperienceAnalyticsMetricHistory instantiates a new userExperienceAnalyticsMetricHistory and sets the default values.
+// NewUserExperienceAnalyticsMetricHistory instantiates a new UserExperienceAnalyticsMetricHistory and sets the default values.
 func NewUserExperienceAnalyticsMetricHistory()(*UserExperienceAnalyticsMetricHistory) {
     m := &UserExperienceAnalyticsMetricHistory{
         Entity: *NewEntity(),

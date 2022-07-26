@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ManagedEBookCategory 
+// ManagedEBookCategory contains properties for a single Intune eBook category.
 type ManagedEBookCategory struct {
     Entity
     // The name of the eBook category.
@@ -13,7 +13,7 @@ type ManagedEBookCategory struct {
     // The date and time the ManagedEBookCategory was last modified.
     lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
 }
-// NewManagedEBookCategory instantiates a new ManagedEBookCategory and sets the default values.
+// NewManagedEBookCategory instantiates a new managedEBookCategory and sets the default values.
 func NewManagedEBookCategory()(*ManagedEBookCategory) {
     m := &ManagedEBookCategory{
         Entity: *NewEntity(),

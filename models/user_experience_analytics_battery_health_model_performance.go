@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// UserExperienceAnalyticsBatteryHealthModelPerformance the user experience analytics battery health model performance entity contains battery related information for all unique device models in their organization.
+// UserExperienceAnalyticsBatteryHealthModelPerformance 
 type UserExperienceAnalyticsBatteryHealthModelPerformance struct {
     Entity
     // Number of active devices for that model. Valid values -2147483648 to 2147483647
@@ -22,7 +22,7 @@ type UserExperienceAnalyticsBatteryHealthModelPerformance struct {
     // A weighted average of a model’s maximum capacity score and runtime estimate score. Values range from 0-100. Valid values -2147483648 to 2147483647
     modelBatteryHealthScore *int32
 }
-// NewUserExperienceAnalyticsBatteryHealthModelPerformance instantiates a new userExperienceAnalyticsBatteryHealthModelPerformance and sets the default values.
+// NewUserExperienceAnalyticsBatteryHealthModelPerformance instantiates a new UserExperienceAnalyticsBatteryHealthModelPerformance and sets the default values.
 func NewUserExperienceAnalyticsBatteryHealthModelPerformance()(*UserExperienceAnalyticsBatteryHealthModelPerformance) {
     m := &UserExperienceAnalyticsBatteryHealthModelPerformance{
         Entity: *NewEntity(),

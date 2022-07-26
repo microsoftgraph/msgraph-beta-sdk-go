@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// BookingService represents a particular service offered by a booking business.
+// BookingService 
 type BookingService struct {
     BookingNamedEntity
     // Additional information that is sent to the customer when an appointment is confirmed.
@@ -48,7 +48,7 @@ type BookingService struct {
     // The URL a customer uses to access the service.
     webUrl *string
 }
-// NewBookingService instantiates a new bookingService and sets the default values.
+// NewBookingService instantiates a new BookingService and sets the default values.
 func NewBookingService()(*BookingService) {
     m := &BookingService{
         BookingNamedEntity: *NewBookingNamedEntity(),

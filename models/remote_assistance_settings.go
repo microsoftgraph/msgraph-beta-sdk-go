@@ -12,7 +12,7 @@ type RemoteAssistanceSettings struct {
     // State of remote assistance for the account
     remoteAssistanceState *RemoteAssistanceState
 }
-// NewRemoteAssistanceSettings instantiates a new remoteAssistanceSettings and sets the default values.
+// NewRemoteAssistanceSettings instantiates a new RemoteAssistanceSettings and sets the default values.
 func NewRemoteAssistanceSettings()(*RemoteAssistanceSettings) {
     m := &RemoteAssistanceSettings{
         Entity: *NewEntity(),

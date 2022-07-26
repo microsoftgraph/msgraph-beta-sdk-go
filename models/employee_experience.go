@@ -8,7 +8,7 @@ import (
 type EmployeeExperience struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
-    // The learningProviders property
+    // A collection of learning providers.
     learningProviders []LearningProviderable
     // The OdataType property
     odataType *string
@@ -63,7 +63,7 @@ func (m *EmployeeExperience) GetFieldDeserializers()(map[string]func(i878a80d233
     }
     return res
 }
-// GetLearningProviders gets the learningProviders property value. The learningProviders property
+// GetLearningProviders gets the learningProviders property value. A collection of learning providers.
 func (m *EmployeeExperience) GetLearningProviders()([]LearningProviderable) {
     if m == nil {
         return nil
@@ -111,7 +111,7 @@ func (m *EmployeeExperience) SetAdditionalData(value map[string]interface{})() {
         m.additionalData = value
     }
 }
-// SetLearningProviders sets the learningProviders property value. The learningProviders property
+// SetLearningProviders sets the learningProviders property value. A collection of learning providers.
 func (m *EmployeeExperience) SetLearningProviders(value []LearningProviderable)() {
     if m != nil {
         m.learningProviders = value

@@ -7,11 +7,11 @@ import (
 // CommunicationsIdentitySet 
 type CommunicationsIdentitySet struct {
     IdentitySet
-    // The assertedIdentity property
+    // An identity the participant would like to present itself as to the other participants in the call.
     assertedIdentity Identityable
-    // The azureCommunicationServicesUser property
+    // The Azure Communication Services user associated with this action.
     azureCommunicationServicesUser Identityable
-    // The endpointType property
+    // Type of endpoint the participant is using. Possible values are: default, voicemail, skypeForBusiness, skypeForBusinessVoipPhone and unknownFutureValue.
     endpointType *EndpointType
 }
 // NewCommunicationsIdentitySet instantiates a new CommunicationsIdentitySet and sets the default values.
@@ -27,7 +27,7 @@ func NewCommunicationsIdentitySet()(*CommunicationsIdentitySet) {
 func CreateCommunicationsIdentitySetFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCommunicationsIdentitySet(), nil
 }
-// GetAssertedIdentity gets the assertedIdentity property value. The assertedIdentity property
+// GetAssertedIdentity gets the assertedIdentity property value. An identity the participant would like to present itself as to the other participants in the call.
 func (m *CommunicationsIdentitySet) GetAssertedIdentity()(Identityable) {
     if m == nil {
         return nil
@@ -35,7 +35,7 @@ func (m *CommunicationsIdentitySet) GetAssertedIdentity()(Identityable) {
         return m.assertedIdentity
     }
 }
-// GetAzureCommunicationServicesUser gets the azureCommunicationServicesUser property value. The azureCommunicationServicesUser property
+// GetAzureCommunicationServicesUser gets the azureCommunicationServicesUser property value. The Azure Communication Services user associated with this action.
 func (m *CommunicationsIdentitySet) GetAzureCommunicationServicesUser()(Identityable) {
     if m == nil {
         return nil
@@ -43,7 +43,7 @@ func (m *CommunicationsIdentitySet) GetAzureCommunicationServicesUser()(Identity
         return m.azureCommunicationServicesUser
     }
 }
-// GetEndpointType gets the endpointType property value. The endpointType property
+// GetEndpointType gets the endpointType property value. Type of endpoint the participant is using. Possible values are: default, voicemail, skypeForBusiness, skypeForBusinessVoipPhone and unknownFutureValue.
 func (m *CommunicationsIdentitySet) GetEndpointType()(*EndpointType) {
     if m == nil {
         return nil
@@ -113,19 +113,19 @@ func (m *CommunicationsIdentitySet) Serialize(writer i878a80d2330e89d26896388a3f
     }
     return nil
 }
-// SetAssertedIdentity sets the assertedIdentity property value. The assertedIdentity property
+// SetAssertedIdentity sets the assertedIdentity property value. An identity the participant would like to present itself as to the other participants in the call.
 func (m *CommunicationsIdentitySet) SetAssertedIdentity(value Identityable)() {
     if m != nil {
         m.assertedIdentity = value
     }
 }
-// SetAzureCommunicationServicesUser sets the azureCommunicationServicesUser property value. The azureCommunicationServicesUser property
+// SetAzureCommunicationServicesUser sets the azureCommunicationServicesUser property value. The Azure Communication Services user associated with this action.
 func (m *CommunicationsIdentitySet) SetAzureCommunicationServicesUser(value Identityable)() {
     if m != nil {
         m.azureCommunicationServicesUser = value
     }
 }
-// SetEndpointType sets the endpointType property value. The endpointType property
+// SetEndpointType sets the endpointType property value. Type of endpoint the participant is using. Possible values are: default, voicemail, skypeForBusiness, skypeForBusinessVoipPhone and unknownFutureValue.
 func (m *CommunicationsIdentitySet) SetEndpointType(value *EndpointType)() {
     if m != nil {
         m.endpointType = value

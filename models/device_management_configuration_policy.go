@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DeviceManagementConfigurationPolicy device Management Configuration Policy
+// DeviceManagementConfigurationPolicy 
 type DeviceManagementConfigurationPolicy struct {
     Entity
     // Policy assignments
@@ -35,7 +35,7 @@ type DeviceManagementConfigurationPolicy struct {
     // Template reference information
     templateReference DeviceManagementConfigurationPolicyTemplateReferenceable
 }
-// NewDeviceManagementConfigurationPolicy instantiates a new deviceManagementConfigurationPolicy and sets the default values.
+// NewDeviceManagementConfigurationPolicy instantiates a new DeviceManagementConfigurationPolicy and sets the default values.
 func NewDeviceManagementConfigurationPolicy()(*DeviceManagementConfigurationPolicy) {
     m := &DeviceManagementConfigurationPolicy{
         Entity: *NewEntity(),

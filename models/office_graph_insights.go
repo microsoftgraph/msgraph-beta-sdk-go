@@ -14,7 +14,7 @@ type OfficeGraphInsights struct {
     // Access this property from the derived type itemInsights.
     used []UsedInsightable
 }
-// NewOfficeGraphInsights instantiates a new OfficeGraphInsights and sets the default values.
+// NewOfficeGraphInsights instantiates a new officeGraphInsights and sets the default values.
 func NewOfficeGraphInsights()(*OfficeGraphInsights) {
     m := &OfficeGraphInsights{
         Entity: *NewEntity(),

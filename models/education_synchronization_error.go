@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// EducationSynchronizationError provides operations to manage the collection of accessReviewDecision entities.
+// EducationSynchronizationError 
 type EducationSynchronizationError struct {
     Entity
     // Represents the sync entity (school, section, student, teacher).
@@ -21,7 +21,7 @@ type EducationSynchronizationError struct {
     // The identifier of this error entry.
     reportableIdentifier *string
 }
-// NewEducationSynchronizationError instantiates a new educationSynchronizationError and sets the default values.
+// NewEducationSynchronizationError instantiates a new EducationSynchronizationError and sets the default values.
 func NewEducationSynchronizationError()(*EducationSynchronizationError) {
     m := &EducationSynchronizationError{
         Entity: *NewEntity(),

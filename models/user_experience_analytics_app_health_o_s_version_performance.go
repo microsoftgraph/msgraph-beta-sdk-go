@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// UserExperienceAnalyticsAppHealthOSVersionPerformance the user experience analytics device OS version performance entity contains OS version performance details.
+// UserExperienceAnalyticsAppHealthOSVersionPerformance 
 type UserExperienceAnalyticsAppHealthOSVersionPerformance struct {
     Entity
     // The number of active devices for the OS version. Valid values -2147483648 to 2147483647
@@ -20,7 +20,7 @@ type UserExperienceAnalyticsAppHealthOSVersionPerformance struct {
     // The overall app health status of the OS version.
     osVersionAppHealthStatus *string
 }
-// NewUserExperienceAnalyticsAppHealthOSVersionPerformance instantiates a new userExperienceAnalyticsAppHealthOSVersionPerformance and sets the default values.
+// NewUserExperienceAnalyticsAppHealthOSVersionPerformance instantiates a new UserExperienceAnalyticsAppHealthOSVersionPerformance and sets the default values.
 func NewUserExperienceAnalyticsAppHealthOSVersionPerformance()(*UserExperienceAnalyticsAppHealthOSVersionPerformance) {
     m := &UserExperienceAnalyticsAppHealthOSVersionPerformance{
         Entity: *NewEntity(),

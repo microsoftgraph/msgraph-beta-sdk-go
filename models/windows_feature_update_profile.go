@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// WindowsFeatureUpdateProfile windows Feature Update Profile
+// WindowsFeatureUpdateProfile 
 type WindowsFeatureUpdateProfile struct {
     Entity
     // The list of group assignments of the profile.
@@ -29,7 +29,7 @@ type WindowsFeatureUpdateProfile struct {
     // The windows update rollout settings, including offer start date time, offer end date time, and days between each set of offers.
     rolloutSettings WindowsUpdateRolloutSettingsable
 }
-// NewWindowsFeatureUpdateProfile instantiates a new windowsFeatureUpdateProfile and sets the default values.
+// NewWindowsFeatureUpdateProfile instantiates a new WindowsFeatureUpdateProfile and sets the default values.
 func NewWindowsFeatureUpdateProfile()(*WindowsFeatureUpdateProfile) {
     m := &WindowsFeatureUpdateProfile{
         Entity: *NewEntity(),
