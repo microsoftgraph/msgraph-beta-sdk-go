@@ -49,6 +49,10 @@ type OrganizationalBrandingProperties struct {
     signInPageText *string
     // A square version of your company logo that appears in Windows 10 out-of-box experiences (OOBE) and when Windows Autopilot is enabled for deployment. Allowed types are PNG or JPEG not larger than 240 x 240 pixels and not more than 10 KB in size. We recommend using a transparent image with no padding around the logo.
     squareLogo []byte
+    // A square dark version of your company logo that appears in Windows 10 out-of-box experiences (OOBE) and when Windows Autopilot is enabled for deployment. Allowed types are PNG or JPEG not larger than 240 x 240 pixels and not more than 10 KB in size. We recommend using a transparent image with no padding around the logo.
+    squareLogoDark []byte
+    // A relative URL for the squareLogoDark property that is combined with a CDN base URL from the cdnList to provide the version served by a CDN. Read-only.
+    squareLogoDarkRelativeUrl *string
     // A relative URL for the squareLogo property that is combined with a CDN base URL from the cdnList to provide the version served by a CDN. Read-only.
     squareLogoRelativeUrl *string
     // A string that shows as the hint in the username textbox on the sign-in screen. This text must be a Unicode, without links or code, and can't exceed 64 characters.
@@ -441,6 +445,26 @@ func (m *OrganizationalBrandingProperties) GetFieldDeserializers()(map[string]fu
         }
         return nil
     }
+    res["squareLogoDark"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetByteArrayValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetSquareLogoDark(val)
+        }
+        return nil
+    }
+    res["squareLogoDarkRelativeUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetSquareLogoDarkRelativeUrl(val)
+        }
+        return nil
+    }
     res["squareLogoRelativeUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -493,6 +517,22 @@ func (m *OrganizationalBrandingProperties) GetSquareLogo()([]byte) {
         return nil
     } else {
         return m.squareLogo
+    }
+}
+// GetSquareLogoDark gets the squareLogoDark property value. A square dark version of your company logo that appears in Windows 10 out-of-box experiences (OOBE) and when Windows Autopilot is enabled for deployment. Allowed types are PNG or JPEG not larger than 240 x 240 pixels and not more than 10 KB in size. We recommend using a transparent image with no padding around the logo.
+func (m *OrganizationalBrandingProperties) GetSquareLogoDark()([]byte) {
+    if m == nil {
+        return nil
+    } else {
+        return m.squareLogoDark
+    }
+}
+// GetSquareLogoDarkRelativeUrl gets the squareLogoDarkRelativeUrl property value. A relative URL for the squareLogoDark property that is combined with a CDN base URL from the cdnList to provide the version served by a CDN. Read-only.
+func (m *OrganizationalBrandingProperties) GetSquareLogoDarkRelativeUrl()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.squareLogoDarkRelativeUrl
     }
 }
 // GetSquareLogoRelativeUrl gets the squareLogoRelativeUrl property value. A relative URL for the squareLogo property that is combined with a CDN base URL from the cdnList to provide the version served by a CDN. Read-only.
@@ -644,6 +684,18 @@ func (m *OrganizationalBrandingProperties) Serialize(writer i878a80d2330e89d2689
         }
     }
     {
+        err = writer.WriteByteArrayValue("squareLogoDark", m.GetSquareLogoDark())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteStringValue("squareLogoDarkRelativeUrl", m.GetSquareLogoDarkRelativeUrl())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("squareLogoRelativeUrl", m.GetSquareLogoRelativeUrl())
         if err != nil {
             return err
@@ -781,6 +833,18 @@ func (m *OrganizationalBrandingProperties) SetSignInPageText(value *string)() {
 func (m *OrganizationalBrandingProperties) SetSquareLogo(value []byte)() {
     if m != nil {
         m.squareLogo = value
+    }
+}
+// SetSquareLogoDark sets the squareLogoDark property value. A square dark version of your company logo that appears in Windows 10 out-of-box experiences (OOBE) and when Windows Autopilot is enabled for deployment. Allowed types are PNG or JPEG not larger than 240 x 240 pixels and not more than 10 KB in size. We recommend using a transparent image with no padding around the logo.
+func (m *OrganizationalBrandingProperties) SetSquareLogoDark(value []byte)() {
+    if m != nil {
+        m.squareLogoDark = value
+    }
+}
+// SetSquareLogoDarkRelativeUrl sets the squareLogoDarkRelativeUrl property value. A relative URL for the squareLogoDark property that is combined with a CDN base URL from the cdnList to provide the version served by a CDN. Read-only.
+func (m *OrganizationalBrandingProperties) SetSquareLogoDarkRelativeUrl(value *string)() {
+    if m != nil {
+        m.squareLogoDarkRelativeUrl = value
     }
 }
 // SetSquareLogoRelativeUrl sets the squareLogoRelativeUrl property value. A relative URL for the squareLogo property that is combined with a CDN base URL from the cdnList to provide the version served by a CDN. Read-only.

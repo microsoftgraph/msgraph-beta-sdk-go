@@ -7,10 +7,13 @@ import (
     i36d7f6a1b1906c3cdb16b4ede2175f668fa5388566026ae225a46e8d0be75ba4 "github.com/microsoftgraph/msgraph-beta-sdk-go/app/onlinemeetings/item/attendancereports"
     i5792a57d1b509cf5853eddfc75cdd3d12d7fffac6c1d1ec273e69dfc55edec5d "github.com/microsoftgraph/msgraph-beta-sdk-go/app/onlinemeetings/item/attendeereport"
     i621490855f8aac21cf8d7032977ac3e4dd93569a78b9ec995379c44e1ed33eaf "github.com/microsoftgraph/msgraph-beta-sdk-go/app/onlinemeetings/item/alternativerecording"
+    i67de322803fb9ceef33e79fb4b659d5e8d0ffaa90284f5ea1260109536f446ce "github.com/microsoftgraph/msgraph-beta-sdk-go/app/onlinemeetings/item/transcripts"
     ia44b3dfc614f798ddda4e107c7b00a962e62b26be06acb8ba2c30fda4607647a "github.com/microsoftgraph/msgraph-beta-sdk-go/app/onlinemeetings/item/meetingattendancereport"
     ic4cea0d5545c1ec81a2c193eb0ee5d7a032aa549a87e4b5ea7d5e3d4250137fc "github.com/microsoftgraph/msgraph-beta-sdk-go/app/onlinemeetings/item/recording"
+    if386b4892e4921e066f9d8ba80ef001577fdf97ddb75e8a48e18973728537f9e "github.com/microsoftgraph/msgraph-beta-sdk-go/app/onlinemeetings/item/virtualappointment"
     ifc43ad7bd5674ca951e2271a8b4d99b63fa47b18f4fca9e422daedf0278acaf6 "github.com/microsoftgraph/msgraph-beta-sdk-go/app/onlinemeetings/item/registration"
     i29fda42a3d65f7aed1e8a1e9c5006e031671b1aed329c71b8d3daa638210ed5a "github.com/microsoftgraph/msgraph-beta-sdk-go/app/onlinemeetings/item/attendancereports/item"
+    ide6e7b6bb6c57b727e00bfe216300dcd9aa6cd3b52ecddbd9256ee94b3816d97 "github.com/microsoftgraph/msgraph-beta-sdk-go/app/onlinemeetings/item/transcripts/item"
 )
 
 // OnlineMeetingItemRequestBuilder provides operations to manage the onlineMeetings property of the microsoft.graph.commsApplication entity.
@@ -218,4 +221,23 @@ func (m *OnlineMeetingItemRequestBuilder) Recording()(*ic4cea0d5545c1ec81a2c193e
 // Registration the registration property
 func (m *OnlineMeetingItemRequestBuilder) Registration()(*ifc43ad7bd5674ca951e2271a8b4d99b63fa47b18f4fca9e422daedf0278acaf6.RegistrationRequestBuilder) {
     return ifc43ad7bd5674ca951e2271a8b4d99b63fa47b18f4fca9e422daedf0278acaf6.NewRegistrationRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// Transcripts the transcripts property
+func (m *OnlineMeetingItemRequestBuilder) Transcripts()(*i67de322803fb9ceef33e79fb4b659d5e8d0ffaa90284f5ea1260109536f446ce.TranscriptsRequestBuilder) {
+    return i67de322803fb9ceef33e79fb4b659d5e8d0ffaa90284f5ea1260109536f446ce.NewTranscriptsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// TranscriptsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.app.onlineMeetings.item.transcripts.item collection
+func (m *OnlineMeetingItemRequestBuilder) TranscriptsById(id string)(*ide6e7b6bb6c57b727e00bfe216300dcd9aa6cd3b52ecddbd9256ee94b3816d97.CallTranscriptItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
+    }
+    if id != "" {
+        urlTplParams["callTranscript%2Did"] = id
+    }
+    return ide6e7b6bb6c57b727e00bfe216300dcd9aa6cd3b52ecddbd9256ee94b3816d97.NewCallTranscriptItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+}
+// VirtualAppointment the virtualAppointment property
+func (m *OnlineMeetingItemRequestBuilder) VirtualAppointment()(*if386b4892e4921e066f9d8ba80ef001577fdf97ddb75e8a48e18973728537f9e.VirtualAppointmentRequestBuilder) {
+    return if386b4892e4921e066f9d8ba80ef001577fdf97ddb75e8a48e18973728537f9e.NewVirtualAppointmentRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

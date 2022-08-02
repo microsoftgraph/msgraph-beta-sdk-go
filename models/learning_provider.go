@@ -7,21 +7,21 @@ import (
 // LearningProvider 
 type LearningProvider struct {
     Entity
-    // The displayName property
+    // The display name that appears in Viva Learning. Required.
     displayName *string
-    // The isEnabled property
+    // The state of the provider. Optional.
     isEnabled *bool
-    // The learningContents property
+    // Learning catalog items for the provider.
     learningContents []LearningContentable
-    // The loginWebUrl property
+    // Authentication URL to access the courses for the provider. Optional.
     loginWebUrl *string
-    // The longLogoWebUrlForDarkTheme property
+    // The long logo URL for the dark mode, which needs to be a publicly accessible image. This image would be saved to the Blob storage of Viva Learning for rendering within the Viva Learning app. Required.
     longLogoWebUrlForDarkTheme *string
-    // The longLogoWebUrlForLightTheme property
+    // The long logo URL for the light mode, which needs to be a publicly accessible image. This image would be saved to the Blob storage of Viva Learning for rendering  within the Viva Learning app. Required.
     longLogoWebUrlForLightTheme *string
-    // The squareLogoWebUrlForDarkTheme property
+    // The square logo URL for the dark mode, which needs to be a publicly accessible image. This image would be saved to the Blob storage of Viva Learning for rendering within the Viva Learning app. Required.
     squareLogoWebUrlForDarkTheme *string
-    // The squareLogoWebUrlForLightTheme property
+    // The square logo URL for the light mode, which needs to be a publicly accessible image. This image would be saved to the Blob storage of Viva Learning for rendering within the Viva Learning app. Required.
     squareLogoWebUrlForLightTheme *string
 }
 // NewLearningProvider instantiates a new LearningProvider and sets the default values.
@@ -37,7 +37,7 @@ func NewLearningProvider()(*LearningProvider) {
 func CreateLearningProviderFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewLearningProvider(), nil
 }
-// GetDisplayName gets the displayName property value. The displayName property
+// GetDisplayName gets the displayName property value. The display name that appears in Viva Learning. Required.
 func (m *LearningProvider) GetDisplayName()(*string) {
     if m == nil {
         return nil
@@ -134,7 +134,7 @@ func (m *LearningProvider) GetFieldDeserializers()(map[string]func(i878a80d2330e
     }
     return res
 }
-// GetIsEnabled gets the isEnabled property value. The isEnabled property
+// GetIsEnabled gets the isEnabled property value. The state of the provider. Optional.
 func (m *LearningProvider) GetIsEnabled()(*bool) {
     if m == nil {
         return nil
@@ -142,7 +142,7 @@ func (m *LearningProvider) GetIsEnabled()(*bool) {
         return m.isEnabled
     }
 }
-// GetLearningContents gets the learningContents property value. The learningContents property
+// GetLearningContents gets the learningContents property value. Learning catalog items for the provider.
 func (m *LearningProvider) GetLearningContents()([]LearningContentable) {
     if m == nil {
         return nil
@@ -150,7 +150,7 @@ func (m *LearningProvider) GetLearningContents()([]LearningContentable) {
         return m.learningContents
     }
 }
-// GetLoginWebUrl gets the loginWebUrl property value. The loginWebUrl property
+// GetLoginWebUrl gets the loginWebUrl property value. Authentication URL to access the courses for the provider. Optional.
 func (m *LearningProvider) GetLoginWebUrl()(*string) {
     if m == nil {
         return nil
@@ -158,7 +158,7 @@ func (m *LearningProvider) GetLoginWebUrl()(*string) {
         return m.loginWebUrl
     }
 }
-// GetLongLogoWebUrlForDarkTheme gets the longLogoWebUrlForDarkTheme property value. The longLogoWebUrlForDarkTheme property
+// GetLongLogoWebUrlForDarkTheme gets the longLogoWebUrlForDarkTheme property value. The long logo URL for the dark mode, which needs to be a publicly accessible image. This image would be saved to the Blob storage of Viva Learning for rendering within the Viva Learning app. Required.
 func (m *LearningProvider) GetLongLogoWebUrlForDarkTheme()(*string) {
     if m == nil {
         return nil
@@ -166,7 +166,7 @@ func (m *LearningProvider) GetLongLogoWebUrlForDarkTheme()(*string) {
         return m.longLogoWebUrlForDarkTheme
     }
 }
-// GetLongLogoWebUrlForLightTheme gets the longLogoWebUrlForLightTheme property value. The longLogoWebUrlForLightTheme property
+// GetLongLogoWebUrlForLightTheme gets the longLogoWebUrlForLightTheme property value. The long logo URL for the light mode, which needs to be a publicly accessible image. This image would be saved to the Blob storage of Viva Learning for rendering  within the Viva Learning app. Required.
 func (m *LearningProvider) GetLongLogoWebUrlForLightTheme()(*string) {
     if m == nil {
         return nil
@@ -174,7 +174,7 @@ func (m *LearningProvider) GetLongLogoWebUrlForLightTheme()(*string) {
         return m.longLogoWebUrlForLightTheme
     }
 }
-// GetSquareLogoWebUrlForDarkTheme gets the squareLogoWebUrlForDarkTheme property value. The squareLogoWebUrlForDarkTheme property
+// GetSquareLogoWebUrlForDarkTheme gets the squareLogoWebUrlForDarkTheme property value. The square logo URL for the dark mode, which needs to be a publicly accessible image. This image would be saved to the Blob storage of Viva Learning for rendering within the Viva Learning app. Required.
 func (m *LearningProvider) GetSquareLogoWebUrlForDarkTheme()(*string) {
     if m == nil {
         return nil
@@ -182,7 +182,7 @@ func (m *LearningProvider) GetSquareLogoWebUrlForDarkTheme()(*string) {
         return m.squareLogoWebUrlForDarkTheme
     }
 }
-// GetSquareLogoWebUrlForLightTheme gets the squareLogoWebUrlForLightTheme property value. The squareLogoWebUrlForLightTheme property
+// GetSquareLogoWebUrlForLightTheme gets the squareLogoWebUrlForLightTheme property value. The square logo URL for the light mode, which needs to be a publicly accessible image. This image would be saved to the Blob storage of Viva Learning for rendering within the Viva Learning app. Required.
 func (m *LearningProvider) GetSquareLogoWebUrlForLightTheme()(*string) {
     if m == nil {
         return nil
@@ -250,49 +250,49 @@ func (m *LearningProvider) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
     }
     return nil
 }
-// SetDisplayName sets the displayName property value. The displayName property
+// SetDisplayName sets the displayName property value. The display name that appears in Viva Learning. Required.
 func (m *LearningProvider) SetDisplayName(value *string)() {
     if m != nil {
         m.displayName = value
     }
 }
-// SetIsEnabled sets the isEnabled property value. The isEnabled property
+// SetIsEnabled sets the isEnabled property value. The state of the provider. Optional.
 func (m *LearningProvider) SetIsEnabled(value *bool)() {
     if m != nil {
         m.isEnabled = value
     }
 }
-// SetLearningContents sets the learningContents property value. The learningContents property
+// SetLearningContents sets the learningContents property value. Learning catalog items for the provider.
 func (m *LearningProvider) SetLearningContents(value []LearningContentable)() {
     if m != nil {
         m.learningContents = value
     }
 }
-// SetLoginWebUrl sets the loginWebUrl property value. The loginWebUrl property
+// SetLoginWebUrl sets the loginWebUrl property value. Authentication URL to access the courses for the provider. Optional.
 func (m *LearningProvider) SetLoginWebUrl(value *string)() {
     if m != nil {
         m.loginWebUrl = value
     }
 }
-// SetLongLogoWebUrlForDarkTheme sets the longLogoWebUrlForDarkTheme property value. The longLogoWebUrlForDarkTheme property
+// SetLongLogoWebUrlForDarkTheme sets the longLogoWebUrlForDarkTheme property value. The long logo URL for the dark mode, which needs to be a publicly accessible image. This image would be saved to the Blob storage of Viva Learning for rendering within the Viva Learning app. Required.
 func (m *LearningProvider) SetLongLogoWebUrlForDarkTheme(value *string)() {
     if m != nil {
         m.longLogoWebUrlForDarkTheme = value
     }
 }
-// SetLongLogoWebUrlForLightTheme sets the longLogoWebUrlForLightTheme property value. The longLogoWebUrlForLightTheme property
+// SetLongLogoWebUrlForLightTheme sets the longLogoWebUrlForLightTheme property value. The long logo URL for the light mode, which needs to be a publicly accessible image. This image would be saved to the Blob storage of Viva Learning for rendering  within the Viva Learning app. Required.
 func (m *LearningProvider) SetLongLogoWebUrlForLightTheme(value *string)() {
     if m != nil {
         m.longLogoWebUrlForLightTheme = value
     }
 }
-// SetSquareLogoWebUrlForDarkTheme sets the squareLogoWebUrlForDarkTheme property value. The squareLogoWebUrlForDarkTheme property
+// SetSquareLogoWebUrlForDarkTheme sets the squareLogoWebUrlForDarkTheme property value. The square logo URL for the dark mode, which needs to be a publicly accessible image. This image would be saved to the Blob storage of Viva Learning for rendering within the Viva Learning app. Required.
 func (m *LearningProvider) SetSquareLogoWebUrlForDarkTheme(value *string)() {
     if m != nil {
         m.squareLogoWebUrlForDarkTheme = value
     }
 }
-// SetSquareLogoWebUrlForLightTheme sets the squareLogoWebUrlForLightTheme property value. The squareLogoWebUrlForLightTheme property
+// SetSquareLogoWebUrlForLightTheme sets the squareLogoWebUrlForLightTheme property value. The square logo URL for the light mode, which needs to be a publicly accessible image. This image would be saved to the Blob storage of Viva Learning for rendering within the Viva Learning app. Required.
 func (m *LearningProvider) SetSquareLogoWebUrlForLightTheme(value *string)() {
     if m != nil {
         m.squareLogoWebUrlForLightTheme = value

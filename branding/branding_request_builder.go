@@ -4,6 +4,7 @@ import (
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
     i0cc7ec2bb77cfb998ba8a1ad527a89fb9a51a4881030337bde331a8e4f476070 "github.com/microsoftgraph/msgraph-beta-sdk-go/branding/backgroundimage"
+    i1b40b605aeb59b28ba3fa6abed7afbe4b8f7d36ecb4da595918a6e40e86b5489 "github.com/microsoftgraph/msgraph-beta-sdk-go/branding/squarelogodark"
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
     i2dc84c458003c3284caa395048d6882b017ff8d4d2f1da317816287aff8f011c "github.com/microsoftgraph/msgraph-beta-sdk-go/branding/squarelogo"
     i6dbe8712bcbf565967e359a0b5474825946d283c9a8f7154520173aba185bbdb "github.com/microsoftgraph/msgraph-beta-sdk-go/branding/favicon"
@@ -170,4 +171,8 @@ func (m *BrandingRequestBuilder) PatchWithRequestConfigurationAndResponseHandler
 // SquareLogo the squareLogo property
 func (m *BrandingRequestBuilder) SquareLogo()(*i2dc84c458003c3284caa395048d6882b017ff8d4d2f1da317816287aff8f011c.SquareLogoRequestBuilder) {
     return i2dc84c458003c3284caa395048d6882b017ff8d4d2f1da317816287aff8f011c.NewSquareLogoRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// SquareLogoDark the squareLogoDark property
+func (m *BrandingRequestBuilder) SquareLogoDark()(*i1b40b605aeb59b28ba3fa6abed7afbe4b8f7d36ecb4da595918a6e40e86b5489.SquareLogoDarkRequestBuilder) {
+    return i1b40b605aeb59b28ba3fa6abed7afbe4b8f7d36ecb4da595918a6e40e86b5489.NewSquareLogoDarkRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

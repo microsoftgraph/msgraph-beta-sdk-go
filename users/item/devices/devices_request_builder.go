@@ -5,6 +5,7 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
     i000920950afec74ee3236bcb1b56a6ffbcbd168697e8e421d9bf377c179b2c97 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/devices/getuserownedobjects"
+    i22c8b907b681f32a7b07302ba3d91c113a48129a6485cc0808dc3f1c7905d18f "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/devices/delta"
     i5b99a93dfadae89dd1a0250b13e44b39be4c40435f5b5670c19cb96ba87b1810 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/devices/getbyids"
     i800566844fcfb7cc1f53476272e8c00a3364179482887ce17eebdf7c1b5e75b6 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/devices/count"
     ic4620257c5f6a7211c4eade0d12c8e243a7b9c5be5d1552436c6b6aa91e2ec48 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/devices/validateproperties"
@@ -114,6 +115,10 @@ func (m *DevicesRequestBuilder) CreatePostRequestInformationWithRequestConfigura
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// Delta provides operations to call the delta method.
+func (m *DevicesRequestBuilder) Delta()(*i22c8b907b681f32a7b07302ba3d91c113a48129a6485cc0808dc3f1c7905d18f.DeltaRequestBuilder) {
+    return i22c8b907b681f32a7b07302ba3d91c113a48129a6485cc0808dc3f1c7905d18f.NewDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Get get devices from users
 func (m *DevicesRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceCollectionResponseable, error) {

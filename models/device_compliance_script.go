@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DeviceComplianceScript intune will provide customer the ability to run their Powershell Compliance scripts (detection) on the enrolled windows 10 Azure Active Directory joined devices.
+// DeviceComplianceScript 
 type DeviceComplianceScript struct {
     Entity
     // The list of group assignments for the device compliance script
@@ -37,7 +37,7 @@ type DeviceComplianceScript struct {
     // Version of the device compliance script
     version *string
 }
-// NewDeviceComplianceScript instantiates a new deviceComplianceScript and sets the default values.
+// NewDeviceComplianceScript instantiates a new DeviceComplianceScript and sets the default values.
 func NewDeviceComplianceScript()(*DeviceComplianceScript) {
     m := &DeviceComplianceScript{
         Entity: *NewEntity(),

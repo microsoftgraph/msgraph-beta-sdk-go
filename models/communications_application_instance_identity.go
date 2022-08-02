@@ -7,9 +7,9 @@ import (
 // CommunicationsApplicationInstanceIdentity 
 type CommunicationsApplicationInstanceIdentity struct {
     Identity
-    // The hidden property
+    // True if the participant would not like to be shown in other participants' rosters.
     hidden *bool
-    // The tenantId property
+    // The application's tenant ID.
     tenantId *string
 }
 // NewCommunicationsApplicationInstanceIdentity instantiates a new CommunicationsApplicationInstanceIdentity and sets the default values.
@@ -50,7 +50,7 @@ func (m *CommunicationsApplicationInstanceIdentity) GetFieldDeserializers()(map[
     }
     return res
 }
-// GetHidden gets the hidden property value. The hidden property
+// GetHidden gets the hidden property value. True if the participant would not like to be shown in other participants' rosters.
 func (m *CommunicationsApplicationInstanceIdentity) GetHidden()(*bool) {
     if m == nil {
         return nil
@@ -58,7 +58,7 @@ func (m *CommunicationsApplicationInstanceIdentity) GetHidden()(*bool) {
         return m.hidden
     }
 }
-// GetTenantId gets the tenantId property value. The tenantId property
+// GetTenantId gets the tenantId property value. The application's tenant ID.
 func (m *CommunicationsApplicationInstanceIdentity) GetTenantId()(*string) {
     if m == nil {
         return nil
@@ -86,13 +86,13 @@ func (m *CommunicationsApplicationInstanceIdentity) Serialize(writer i878a80d233
     }
     return nil
 }
-// SetHidden sets the hidden property value. The hidden property
+// SetHidden sets the hidden property value. True if the participant would not like to be shown in other participants' rosters.
 func (m *CommunicationsApplicationInstanceIdentity) SetHidden(value *bool)() {
     if m != nil {
         m.hidden = value
     }
 }
-// SetTenantId sets the tenantId property value. The tenantId property
+// SetTenantId sets the tenantId property value. The application's tenant ID.
 func (m *CommunicationsApplicationInstanceIdentity) SetTenantId(value *string)() {
     if m != nil {
         m.tenantId = value

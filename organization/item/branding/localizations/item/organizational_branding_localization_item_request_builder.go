@@ -7,6 +7,7 @@ import (
     i6a7478100780912a5be031e6c8d790dc49405d68dd9b8c7f08e4ce316b6b8e3d "github.com/microsoftgraph/msgraph-beta-sdk-go/organization/item/branding/localizations/item/backgroundimage"
     i9d66c98e71dc6ac8e5d6be7ba84577c585b7605c426a5121a43bdc47b7842967 "github.com/microsoftgraph/msgraph-beta-sdk-go/organization/item/branding/localizations/item/squarelogo"
     ia7baad9e196f596f211db6cea3f24b75276809ee9ba116821ef97852759ddad3 "github.com/microsoftgraph/msgraph-beta-sdk-go/organization/item/branding/localizations/item/favicon"
+    ib06e3fb2ab0d52cd388a43e277edd31fc53e151e7c2cbb2c7729364e258b5717 "github.com/microsoftgraph/msgraph-beta-sdk-go/organization/item/branding/localizations/item/squarelogodark"
     ic2fbe7099579dba0316764b0f81d4a843f3004e003c2609224543e9897d0b2ae "github.com/microsoftgraph/msgraph-beta-sdk-go/organization/item/branding/localizations/item/bannerlogo"
 )
 
@@ -196,4 +197,8 @@ func (m *OrganizationalBrandingLocalizationItemRequestBuilder) PatchWithRequestC
 // SquareLogo the squareLogo property
 func (m *OrganizationalBrandingLocalizationItemRequestBuilder) SquareLogo()(*i9d66c98e71dc6ac8e5d6be7ba84577c585b7605c426a5121a43bdc47b7842967.SquareLogoRequestBuilder) {
     return i9d66c98e71dc6ac8e5d6be7ba84577c585b7605c426a5121a43bdc47b7842967.NewSquareLogoRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// SquareLogoDark the squareLogoDark property
+func (m *OrganizationalBrandingLocalizationItemRequestBuilder) SquareLogoDark()(*ib06e3fb2ab0d52cd388a43e277edd31fc53e151e7c2cbb2c7729364e258b5717.SquareLogoDarkRequestBuilder) {
+    return ib06e3fb2ab0d52cd388a43e277edd31fc53e151e7c2cbb2c7729364e258b5717.NewSquareLogoDarkRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }

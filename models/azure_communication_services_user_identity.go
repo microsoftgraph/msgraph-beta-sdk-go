@@ -7,7 +7,7 @@ import (
 // AzureCommunicationServicesUserIdentity 
 type AzureCommunicationServicesUserIdentity struct {
     Identity
-    // The azureCommunicationServicesResourceId property
+    // The Azure Communication Services resource ID associated with the user.
     azureCommunicationServicesResourceId *string
 }
 // NewAzureCommunicationServicesUserIdentity instantiates a new AzureCommunicationServicesUserIdentity and sets the default values.
@@ -23,7 +23,7 @@ func NewAzureCommunicationServicesUserIdentity()(*AzureCommunicationServicesUser
 func CreateAzureCommunicationServicesUserIdentityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAzureCommunicationServicesUserIdentity(), nil
 }
-// GetAzureCommunicationServicesResourceId gets the azureCommunicationServicesResourceId property value. The azureCommunicationServicesResourceId property
+// GetAzureCommunicationServicesResourceId gets the azureCommunicationServicesResourceId property value. The Azure Communication Services resource ID associated with the user.
 func (m *AzureCommunicationServicesUserIdentity) GetAzureCommunicationServicesResourceId()(*string) {
     if m == nil {
         return nil
@@ -60,7 +60,7 @@ func (m *AzureCommunicationServicesUserIdentity) Serialize(writer i878a80d2330e8
     }
     return nil
 }
-// SetAzureCommunicationServicesResourceId sets the azureCommunicationServicesResourceId property value. The azureCommunicationServicesResourceId property
+// SetAzureCommunicationServicesResourceId sets the azureCommunicationServicesResourceId property value. The Azure Communication Services resource ID associated with the user.
 func (m *AzureCommunicationServicesUserIdentity) SetAzureCommunicationServicesResourceId(value *string)() {
     if m != nil {
         m.azureCommunicationServicesResourceId = value

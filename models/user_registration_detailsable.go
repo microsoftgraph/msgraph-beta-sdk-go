@@ -9,6 +9,7 @@ type UserRegistrationDetailsable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetDefaultMfaMethod()(*DefaultMfaMethodType)
+    GetIsAdmin()(*bool)
     GetIsMfaCapable()(*bool)
     GetIsMfaRegistered()(*bool)
     GetIsPasswordlessCapable()(*bool)
@@ -18,7 +19,9 @@ type UserRegistrationDetailsable interface {
     GetMethodsRegistered()([]string)
     GetUserDisplayName()(*string)
     GetUserPrincipalName()(*string)
+    GetUserType()(*SignInUserType)
     SetDefaultMfaMethod(value *DefaultMfaMethodType)()
+    SetIsAdmin(value *bool)()
     SetIsMfaCapable(value *bool)()
     SetIsMfaRegistered(value *bool)()
     SetIsPasswordlessCapable(value *bool)()
@@ -28,4 +31,5 @@ type UserRegistrationDetailsable interface {
     SetMethodsRegistered(value []string)()
     SetUserDisplayName(value *string)()
     SetUserPrincipalName(value *string)()
+    SetUserType(value *SignInUserType)()
 }

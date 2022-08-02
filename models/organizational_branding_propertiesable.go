@@ -29,6 +29,8 @@ type OrganizationalBrandingPropertiesable interface {
     GetLoginPageTextVisibilitySettings()(LoginPageTextVisibilitySettingsable)
     GetSignInPageText()(*string)
     GetSquareLogo()([]byte)
+    GetSquareLogoDark()([]byte)
+    GetSquareLogoDarkRelativeUrl()(*string)
     GetSquareLogoRelativeUrl()(*string)
     GetUsernameHintText()(*string)
     SetBackgroundColor(value *string)()
@@ -52,6 +54,8 @@ type OrganizationalBrandingPropertiesable interface {
     SetLoginPageTextVisibilitySettings(value LoginPageTextVisibilitySettingsable)()
     SetSignInPageText(value *string)()
     SetSquareLogo(value []byte)()
+    SetSquareLogoDark(value []byte)()
+    SetSquareLogoDarkRelativeUrl(value *string)()
     SetSquareLogoRelativeUrl(value *string)()
     SetUsernameHintText(value *string)()
 }
