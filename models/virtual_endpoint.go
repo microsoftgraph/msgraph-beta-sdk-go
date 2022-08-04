@@ -13,7 +13,7 @@ type VirtualEndpoint struct {
     cloudPCs []CloudPCable
     // The image resource on Cloud PC.
     deviceImages []CloudPcDeviceImageable
-    // The externalPartnerSettings property
+    // The external partner settings on a Cloud PC.
     externalPartnerSettings []CloudPcExternalPartnerSettingable
     // The gallery image resource on Cloud PC.
     galleryImages []CloudPcGalleryImageable
@@ -69,7 +69,7 @@ func (m *VirtualEndpoint) GetDeviceImages()([]CloudPcDeviceImageable) {
         return m.deviceImages
     }
 }
-// GetExternalPartnerSettings gets the externalPartnerSettings property value. The externalPartnerSettings property
+// GetExternalPartnerSettings gets the externalPartnerSettings property value. The external partner settings on a Cloud PC.
 func (m *VirtualEndpoint) GetExternalPartnerSettings()([]CloudPcExternalPartnerSettingable) {
     if m == nil {
         return nil
@@ -452,7 +452,7 @@ func (m *VirtualEndpoint) SetDeviceImages(value []CloudPcDeviceImageable)() {
         m.deviceImages = value
     }
 }
-// SetExternalPartnerSettings sets the externalPartnerSettings property value. The externalPartnerSettings property
+// SetExternalPartnerSettings sets the externalPartnerSettings property value. The external partner settings on a Cloud PC.
 func (m *VirtualEndpoint) SetExternalPartnerSettings(value []CloudPcExternalPartnerSettingable)() {
     if m != nil {
         m.externalPartnerSettings = value

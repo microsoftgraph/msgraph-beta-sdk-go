@@ -16,16 +16,22 @@ type Settings struct {
     deletedUserPersonalSiteRetentionPeriodInDays *int32
     // Collection of file extensions not uploaded by the OneDrive sync app.
     excludedFileExtensionsForSyncApp []string
+    // Specifies the idle session sign-out policies for the tenant.
+    idleSessionSignOut IdleSessionSignOutable
     // Specifies the image tagging option for the tenant. Possible values are: disabled, basic, enhanced.
     imageTaggingOption *ImageTaggingChoice
     // Indicates whether comments are allowed on modern site pages in SharePoint.
     isCommentingOnSitePagesEnabled *bool
     // Indicates whether push notifications are enabled for OneDrive events.
     isFileActivityNotificationEnabled *bool
+    // Indicates whether legacy authentication protocols are enabled for the tenant.
+    isLegacyAuthProtocolsEnabled *bool
     // Indicates whetherif Fluid Framework is allowed on SharePoint sites.
     isLoopEnabled *bool
     // Indicates whether files can be synced using the OneDrive sync app for Mac.
     isMacSyncAppEnabled *bool
+    // Indicates whether guests must sign in using the same account to which sharing invitations are sent.
+    isRequireAcceptingUserToMatchInvitedUserEnabled *bool
     // Indicates whether guests are allowed to reshare files, folders, and sites they don't own.
     isResharingByExternalUsersEnabled *bool
     // Indicates whether mobile push notifications are enabled for SharePoint.
@@ -161,6 +167,16 @@ func (m *Settings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
         }
         return nil
     }
+    res["idleSessionSignOut"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateIdleSessionSignOutFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetIdleSessionSignOut(val.(IdleSessionSignOutable))
+        }
+        return nil
+    }
     res["imageTaggingOption"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseImageTaggingChoice)
         if err != nil {
@@ -191,6 +207,16 @@ func (m *Settings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
         }
         return nil
     }
+    res["isLegacyAuthProtocolsEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetIsLegacyAuthProtocolsEnabled(val)
+        }
+        return nil
+    }
     res["isLoopEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
@@ -208,6 +234,16 @@ func (m *Settings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
         }
         if val != nil {
             m.SetIsMacSyncAppEnabled(val)
+        }
+        return nil
+    }
+    res["isRequireAcceptingUserToMatchInvitedUserEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetIsRequireAcceptingUserToMatchInvitedUserEnabled(val)
         }
         return nil
     }
@@ -391,6 +427,14 @@ func (m *Settings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
     }
     return res
 }
+// GetIdleSessionSignOut gets the idleSessionSignOut property value. Specifies the idle session sign-out policies for the tenant.
+func (m *Settings) GetIdleSessionSignOut()(IdleSessionSignOutable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.idleSessionSignOut
+    }
+}
 // GetImageTaggingOption gets the imageTaggingOption property value. Specifies the image tagging option for the tenant. Possible values are: disabled, basic, enhanced.
 func (m *Settings) GetImageTaggingOption()(*ImageTaggingChoice) {
     if m == nil {
@@ -415,6 +459,14 @@ func (m *Settings) GetIsFileActivityNotificationEnabled()(*bool) {
         return m.isFileActivityNotificationEnabled
     }
 }
+// GetIsLegacyAuthProtocolsEnabled gets the isLegacyAuthProtocolsEnabled property value. Indicates whether legacy authentication protocols are enabled for the tenant.
+func (m *Settings) GetIsLegacyAuthProtocolsEnabled()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isLegacyAuthProtocolsEnabled
+    }
+}
 // GetIsLoopEnabled gets the isLoopEnabled property value. Indicates whetherif Fluid Framework is allowed on SharePoint sites.
 func (m *Settings) GetIsLoopEnabled()(*bool) {
     if m == nil {
@@ -429,6 +481,14 @@ func (m *Settings) GetIsMacSyncAppEnabled()(*bool) {
         return nil
     } else {
         return m.isMacSyncAppEnabled
+    }
+}
+// GetIsRequireAcceptingUserToMatchInvitedUserEnabled gets the isRequireAcceptingUserToMatchInvitedUserEnabled property value. Indicates whether guests must sign in using the same account to which sharing invitations are sent.
+func (m *Settings) GetIsRequireAcceptingUserToMatchInvitedUserEnabled()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isRequireAcceptingUserToMatchInvitedUserEnabled
     }
 }
 // GetIsResharingByExternalUsersEnabled gets the isResharingByExternalUsersEnabled property value. Indicates whether guests are allowed to reshare files, folders, and sites they don't own.
@@ -597,6 +657,12 @@ func (m *Settings) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
             return err
         }
     }
+    {
+        err = writer.WriteObjectValue("idleSessionSignOut", m.GetIdleSessionSignOut())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetImageTaggingOption() != nil {
         cast := (*m.GetImageTaggingOption()).String()
         err = writer.WriteStringValue("imageTaggingOption", &cast)
@@ -617,6 +683,12 @@ func (m *Settings) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
         }
     }
     {
+        err = writer.WriteBoolValue("isLegacyAuthProtocolsEnabled", m.GetIsLegacyAuthProtocolsEnabled())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteBoolValue("isLoopEnabled", m.GetIsLoopEnabled())
         if err != nil {
             return err
@@ -624,6 +696,12 @@ func (m *Settings) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
     }
     {
         err = writer.WriteBoolValue("isMacSyncAppEnabled", m.GetIsMacSyncAppEnabled())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteBoolValue("isRequireAcceptingUserToMatchInvitedUserEnabled", m.GetIsRequireAcceptingUserToMatchInvitedUserEnabled())
         if err != nil {
             return err
         }
@@ -758,6 +836,12 @@ func (m *Settings) SetExcludedFileExtensionsForSyncApp(value []string)() {
         m.excludedFileExtensionsForSyncApp = value
     }
 }
+// SetIdleSessionSignOut sets the idleSessionSignOut property value. Specifies the idle session sign-out policies for the tenant.
+func (m *Settings) SetIdleSessionSignOut(value IdleSessionSignOutable)() {
+    if m != nil {
+        m.idleSessionSignOut = value
+    }
+}
 // SetImageTaggingOption sets the imageTaggingOption property value. Specifies the image tagging option for the tenant. Possible values are: disabled, basic, enhanced.
 func (m *Settings) SetImageTaggingOption(value *ImageTaggingChoice)() {
     if m != nil {
@@ -776,6 +860,12 @@ func (m *Settings) SetIsFileActivityNotificationEnabled(value *bool)() {
         m.isFileActivityNotificationEnabled = value
     }
 }
+// SetIsLegacyAuthProtocolsEnabled sets the isLegacyAuthProtocolsEnabled property value. Indicates whether legacy authentication protocols are enabled for the tenant.
+func (m *Settings) SetIsLegacyAuthProtocolsEnabled(value *bool)() {
+    if m != nil {
+        m.isLegacyAuthProtocolsEnabled = value
+    }
+}
 // SetIsLoopEnabled sets the isLoopEnabled property value. Indicates whetherif Fluid Framework is allowed on SharePoint sites.
 func (m *Settings) SetIsLoopEnabled(value *bool)() {
     if m != nil {
@@ -786,6 +876,12 @@ func (m *Settings) SetIsLoopEnabled(value *bool)() {
 func (m *Settings) SetIsMacSyncAppEnabled(value *bool)() {
     if m != nil {
         m.isMacSyncAppEnabled = value
+    }
+}
+// SetIsRequireAcceptingUserToMatchInvitedUserEnabled sets the isRequireAcceptingUserToMatchInvitedUserEnabled property value. Indicates whether guests must sign in using the same account to which sharing invitations are sent.
+func (m *Settings) SetIsRequireAcceptingUserToMatchInvitedUserEnabled(value *bool)() {
+    if m != nil {
+        m.isRequireAcceptingUserToMatchInvitedUserEnabled = value
     }
 }
 // SetIsResharingByExternalUsersEnabled sets the isResharingByExternalUsersEnabled property value. Indicates whether guests are allowed to reshare files, folders, and sites they don't own.

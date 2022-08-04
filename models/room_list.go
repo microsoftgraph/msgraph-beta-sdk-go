@@ -11,6 +11,8 @@ type RoomList struct {
     emailAddress *string
     // The rooms property
     rooms []Roomable
+    // The workspaces property
+    workspaces []Workspaceable
 }
 // NewRoomList instantiates a new RoomList and sets the default values.
 func NewRoomList()(*RoomList) {
@@ -60,6 +62,20 @@ func (m *RoomList) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
         }
         return nil
     }
+    res["workspaces"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateWorkspaceFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]Workspaceable, len(val))
+            for i, v := range val {
+                res[i] = v.(Workspaceable)
+            }
+            m.SetWorkspaces(res)
+        }
+        return nil
+    }
     return res
 }
 // GetRooms gets the rooms property value. The rooms property
@@ -68,6 +84,14 @@ func (m *RoomList) GetRooms()([]Roomable) {
         return nil
     } else {
         return m.rooms
+    }
+}
+// GetWorkspaces gets the workspaces property value. The workspaces property
+func (m *RoomList) GetWorkspaces()([]Workspaceable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.workspaces
     }
 }
 // Serialize serializes information the current object
@@ -92,6 +116,16 @@ func (m *RoomList) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
             return err
         }
     }
+    if m.GetWorkspaces() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetWorkspaces()))
+        for i, v := range m.GetWorkspaces() {
+            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+        }
+        err = writer.WriteCollectionOfObjectValues("workspaces", cast)
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetEmailAddress sets the emailAddress property value. The email address of the room list.
@@ -104,5 +138,11 @@ func (m *RoomList) SetEmailAddress(value *string)() {
 func (m *RoomList) SetRooms(value []Roomable)() {
     if m != nil {
         m.rooms = value
+    }
+}
+// SetWorkspaces sets the workspaces property value. The workspaces property
+func (m *RoomList) SetWorkspaces(value []Workspaceable)() {
+    if m != nil {
+        m.workspaces = value
     }
 }

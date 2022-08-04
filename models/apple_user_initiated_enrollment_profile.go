@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AppleUserInitiatedEnrollmentProfile the enrollmentProfile resource represents a collection of configurations which must be provided pre-enrollment to enable enrolling certain devices whose identities have been pre-staged. Pre-staged device identities are assigned to this type of profile to apply the profile's configurations at enrollment of the corresponding device.
+// AppleUserInitiatedEnrollmentProfile 
 type AppleUserInitiatedEnrollmentProfile struct {
     Entity
     // The list of assignments for this profile.
@@ -27,7 +27,7 @@ type AppleUserInitiatedEnrollmentProfile struct {
     // Priority, 0 is highest
     priority *int32
 }
-// NewAppleUserInitiatedEnrollmentProfile instantiates a new appleUserInitiatedEnrollmentProfile and sets the default values.
+// NewAppleUserInitiatedEnrollmentProfile instantiates a new AppleUserInitiatedEnrollmentProfile and sets the default values.
 func NewAppleUserInitiatedEnrollmentProfile()(*AppleUserInitiatedEnrollmentProfile) {
     m := &AppleUserInitiatedEnrollmentProfile{
         Entity: *NewEntity(),

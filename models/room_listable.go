@@ -10,6 +10,8 @@ type RoomListable interface {
     Placeable
     GetEmailAddress()(*string)
     GetRooms()([]Roomable)
+    GetWorkspaces()([]Workspaceable)
     SetEmailAddress(value *string)()
     SetRooms(value []Roomable)()
+    SetWorkspaces(value []Workspaceable)()
 }

@@ -16,7 +16,7 @@ type ExtensionPropertiesRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// ExtensionPropertiesRequestBuilderGetQueryParameters read-only. Nullable. Supports $expand and $filter (eq when counting empty collections).
+// ExtensionPropertiesRequestBuilderGetQueryParameters read-only. Nullable. Supports $expand and $filter (eq and ne when counting empty collections and only with advanced query parameters).
 type ExtensionPropertiesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,11 +74,11 @@ func NewExtensionPropertiesRequestBuilder(rawUrl string, requestAdapter i2ae4187
 func (m *ExtensionPropertiesRequestBuilder) Count()(*ifc59420a468ba0c8c569c2aa0c2481ad43fb51e57bad4cd5eb4b2cf3eb23569c.CountRequestBuilder) {
     return ifc59420a468ba0c8c569c2aa0c2481ad43fb51e57bad4cd5eb4b2cf3eb23569c.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation read-only. Nullable. Supports $expand and $filter (eq when counting empty collections).
+// CreateGetRequestInformation read-only. Nullable. Supports $expand and $filter (eq and ne when counting empty collections and only with advanced query parameters).
 func (m *ExtensionPropertiesRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration read-only. Nullable. Supports $expand and $filter (eq when counting empty collections).
+// CreateGetRequestInformationWithRequestConfiguration read-only. Nullable. Supports $expand and $filter (eq and ne when counting empty collections and only with advanced query parameters).
 func (m *ExtensionPropertiesRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *ExtensionPropertiesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -112,11 +112,11 @@ func (m *ExtensionPropertiesRequestBuilder) CreatePostRequestInformationWithRequ
     }
     return requestInfo, nil
 }
-// Get read-only. Nullable. Supports $expand and $filter (eq when counting empty collections).
+// Get read-only. Nullable. Supports $expand and $filter (eq and ne when counting empty collections and only with advanced query parameters).
 func (m *ExtensionPropertiesRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ExtensionPropertyCollectionResponseable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler read-only. Nullable. Supports $expand and $filter (eq when counting empty collections).
+// GetWithRequestConfigurationAndResponseHandler read-only. Nullable. Supports $expand and $filter (eq and ne when counting empty collections and only with advanced query parameters).
 func (m *ExtensionPropertiesRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *ExtensionPropertiesRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ExtensionPropertyCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

@@ -4,11 +4,13 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// UserRegistrationDetails provides operations to manage the collection of accessReview entities.
+// UserRegistrationDetails provides operations to manage the collection of accessReviewDecision entities.
 type UserRegistrationDetails struct {
     Entity
     // The method the user or admin selected as default for performing multi-factor authentication for the user. The possible values are: none, mobilePhone, alternateMobilePhone, officePhone, microsoftAuthenticatorPush, softwareOneTimePasscode, unknownFutureValue.
     defaultMfaMethod *DefaultMfaMethodType
+    // The isAdmin property
+    isAdmin *bool
     // Whether the user has registered a strong authentication method for multi-factor authentication. The method must be allowed by the authentication methods policy. Supports $filter (eq).
     isMfaCapable *bool
     // Whether the user has registered a strong authentication method for multi-factor authentication. The method may not necessarily be allowed by the authentication methods policy.  Supports $filter (eq).
@@ -27,6 +29,8 @@ type UserRegistrationDetails struct {
     userDisplayName *string
     // The user principal name, such as AdeleV@contoso.com. Supports $filter (eq, startsWith) and $orderBy.
     userPrincipalName *string
+    // The userType property
+    userType *SignInUserType
 }
 // NewUserRegistrationDetails instantiates a new userRegistrationDetails and sets the default values.
 func NewUserRegistrationDetails()(*UserRegistrationDetails) {
@@ -59,6 +63,16 @@ func (m *UserRegistrationDetails) GetFieldDeserializers()(map[string]func(i878a8
         }
         if val != nil {
             m.SetDefaultMfaMethod(val.(*DefaultMfaMethodType))
+        }
+        return nil
+    }
+    res["isAdmin"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetIsAdmin(val)
         }
         return nil
     }
@@ -156,7 +170,25 @@ func (m *UserRegistrationDetails) GetFieldDeserializers()(map[string]func(i878a8
         }
         return nil
     }
+    res["userType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseSignInUserType)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetUserType(val.(*SignInUserType))
+        }
+        return nil
+    }
     return res
+}
+// GetIsAdmin gets the isAdmin property value. The isAdmin property
+func (m *UserRegistrationDetails) GetIsAdmin()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.isAdmin
+    }
 }
 // GetIsMfaCapable gets the isMfaCapable property value. Whether the user has registered a strong authentication method for multi-factor authentication. The method must be allowed by the authentication methods policy. Supports $filter (eq).
 func (m *UserRegistrationDetails) GetIsMfaCapable()(*bool) {
@@ -230,6 +262,14 @@ func (m *UserRegistrationDetails) GetUserPrincipalName()(*string) {
         return m.userPrincipalName
     }
 }
+// GetUserType gets the userType property value. The userType property
+func (m *UserRegistrationDetails) GetUserType()(*SignInUserType) {
+    if m == nil {
+        return nil
+    } else {
+        return m.userType
+    }
+}
 // Serialize serializes information the current object
 func (m *UserRegistrationDetails) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
@@ -239,6 +279,12 @@ func (m *UserRegistrationDetails) Serialize(writer i878a80d2330e89d26896388a3f48
     if m.GetDefaultMfaMethod() != nil {
         cast := (*m.GetDefaultMfaMethod()).String()
         err = writer.WriteStringValue("defaultMfaMethod", &cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteBoolValue("isAdmin", m.GetIsAdmin())
         if err != nil {
             return err
         }
@@ -297,12 +343,25 @@ func (m *UserRegistrationDetails) Serialize(writer i878a80d2330e89d26896388a3f48
             return err
         }
     }
+    if m.GetUserType() != nil {
+        cast := (*m.GetUserType()).String()
+        err = writer.WriteStringValue("userType", &cast)
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetDefaultMfaMethod sets the defaultMfaMethod property value. The method the user or admin selected as default for performing multi-factor authentication for the user. The possible values are: none, mobilePhone, alternateMobilePhone, officePhone, microsoftAuthenticatorPush, softwareOneTimePasscode, unknownFutureValue.
 func (m *UserRegistrationDetails) SetDefaultMfaMethod(value *DefaultMfaMethodType)() {
     if m != nil {
         m.defaultMfaMethod = value
+    }
+}
+// SetIsAdmin sets the isAdmin property value. The isAdmin property
+func (m *UserRegistrationDetails) SetIsAdmin(value *bool)() {
+    if m != nil {
+        m.isAdmin = value
     }
 }
 // SetIsMfaCapable sets the isMfaCapable property value. Whether the user has registered a strong authentication method for multi-factor authentication. The method must be allowed by the authentication methods policy. Supports $filter (eq).
@@ -357,5 +416,11 @@ func (m *UserRegistrationDetails) SetUserDisplayName(value *string)() {
 func (m *UserRegistrationDetails) SetUserPrincipalName(value *string)() {
     if m != nil {
         m.userPrincipalName = value
+    }
+}
+// SetUserType sets the userType property value. The userType property
+func (m *UserRegistrationDetails) SetUserType(value *SignInUserType)() {
+    if m != nil {
+        m.userType = value
     }
 }

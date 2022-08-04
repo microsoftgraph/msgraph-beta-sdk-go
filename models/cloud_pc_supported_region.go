@@ -9,7 +9,7 @@ type CloudPcSupportedRegion struct {
     Entity
     // The name for the supported region. Read-only.
     displayName *string
-    // The regionStatus property
+    // The status of the supported region. Possible values are: available, restricted, unavailable, unknownFutureValue. Read-only.
     regionStatus *CloudPcSupportedRegionStatus
 }
 // NewCloudPcSupportedRegion instantiates a new CloudPcSupportedRegion and sets the default values.
@@ -58,7 +58,7 @@ func (m *CloudPcSupportedRegion) GetFieldDeserializers()(map[string]func(i878a80
     }
     return res
 }
-// GetRegionStatus gets the regionStatus property value. The regionStatus property
+// GetRegionStatus gets the regionStatus property value. The status of the supported region. Possible values are: available, restricted, unavailable, unknownFutureValue. Read-only.
 func (m *CloudPcSupportedRegion) GetRegionStatus()(*CloudPcSupportedRegionStatus) {
     if m == nil {
         return nil
@@ -93,7 +93,7 @@ func (m *CloudPcSupportedRegion) SetDisplayName(value *string)() {
         m.displayName = value
     }
 }
-// SetRegionStatus sets the regionStatus property value. The regionStatus property
+// SetRegionStatus sets the regionStatus property value. The status of the supported region. Possible values are: available, restricted, unavailable, unknownFutureValue. Read-only.
 func (m *CloudPcSupportedRegion) SetRegionStatus(value *CloudPcSupportedRegionStatus)() {
     if m != nil {
         m.regionStatus = value

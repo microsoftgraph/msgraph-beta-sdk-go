@@ -8,6 +8,7 @@ import (
     i245c5456e4cc807d8fa25704c2cef0dba9f2ccf01d2300b9c3629d105091c2c8 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/devices/getbyids"
     i44a571a0fe599c6bd5f243624597c6fdee6573e59a4ebefc1ac2ef51eec120f2 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/devices/getuserownedobjects"
     i7393203adc985ae5ef34cb7b4b188efc1efe5551337636069d48dbc9e246c5b9 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/devices/count"
+    if0aff782efd5b46801af14a168d58dfac733c74e2da7c751c068a776ac8703ac "github.com/microsoftgraph/msgraph-beta-sdk-go/me/devices/delta"
 )
 
 // DevicesRequestBuilder provides operations to manage the devices property of the microsoft.graph.user entity.
@@ -114,6 +115,10 @@ func (m *DevicesRequestBuilder) CreatePostRequestInformationWithRequestConfigura
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// Delta provides operations to call the delta method.
+func (m *DevicesRequestBuilder) Delta()(*if0aff782efd5b46801af14a168d58dfac733c74e2da7c751c068a776ac8703ac.DeltaRequestBuilder) {
+    return if0aff782efd5b46801af14a168d58dfac733c74e2da7c751c068a776ac8703ac.NewDeltaRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Get get devices from me
 func (m *DevicesRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceCollectionResponseable, error) {

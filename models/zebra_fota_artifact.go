@@ -7,15 +7,15 @@ import (
 // ZebraFotaArtifact describes a single artifact for a specific device model.
 type ZebraFotaArtifact struct {
     Entity
-    // The version of the Board Support Package.
+    // The version of the Board Support Package (BSP. E.g.: 01.18.02.00)
     boardSupportPackageVersion *string
-    // Artifact device model.
+    // Applicable device model (e.g.: TC8300)
     deviceModel *string
-    // Artifact OS version.
+    // Artifact OS version (e.g.: 8.1.0)
     osVersion *string
-    // Artifact patch version.
+    // Artifact patch version (e.g.: U00)
     patchVersion *string
-    // Artifact release notes URL.
+    // Artifact release notes URL (e.g.: https://www.zebra.com/<filename.pdf>)
     releaseNotesUrl *string
 }
 // NewZebraFotaArtifact instantiates a new zebraFotaArtifact and sets the default values.
@@ -31,7 +31,7 @@ func NewZebraFotaArtifact()(*ZebraFotaArtifact) {
 func CreateZebraFotaArtifactFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewZebraFotaArtifact(), nil
 }
-// GetBoardSupportPackageVersion gets the boardSupportPackageVersion property value. The version of the Board Support Package.
+// GetBoardSupportPackageVersion gets the boardSupportPackageVersion property value. The version of the Board Support Package (BSP. E.g.: 01.18.02.00)
 func (m *ZebraFotaArtifact) GetBoardSupportPackageVersion()(*string) {
     if m == nil {
         return nil
@@ -39,7 +39,7 @@ func (m *ZebraFotaArtifact) GetBoardSupportPackageVersion()(*string) {
         return m.boardSupportPackageVersion
     }
 }
-// GetDeviceModel gets the deviceModel property value. Artifact device model.
+// GetDeviceModel gets the deviceModel property value. Applicable device model (e.g.: TC8300)
 func (m *ZebraFotaArtifact) GetDeviceModel()(*string) {
     if m == nil {
         return nil
@@ -102,7 +102,7 @@ func (m *ZebraFotaArtifact) GetFieldDeserializers()(map[string]func(i878a80d2330
     }
     return res
 }
-// GetOsVersion gets the osVersion property value. Artifact OS version.
+// GetOsVersion gets the osVersion property value. Artifact OS version (e.g.: 8.1.0)
 func (m *ZebraFotaArtifact) GetOsVersion()(*string) {
     if m == nil {
         return nil
@@ -110,7 +110,7 @@ func (m *ZebraFotaArtifact) GetOsVersion()(*string) {
         return m.osVersion
     }
 }
-// GetPatchVersion gets the patchVersion property value. Artifact patch version.
+// GetPatchVersion gets the patchVersion property value. Artifact patch version (e.g.: U00)
 func (m *ZebraFotaArtifact) GetPatchVersion()(*string) {
     if m == nil {
         return nil
@@ -118,7 +118,7 @@ func (m *ZebraFotaArtifact) GetPatchVersion()(*string) {
         return m.patchVersion
     }
 }
-// GetReleaseNotesUrl gets the releaseNotesUrl property value. Artifact release notes URL.
+// GetReleaseNotesUrl gets the releaseNotesUrl property value. Artifact release notes URL (e.g.: https://www.zebra.com/<filename.pdf>)
 func (m *ZebraFotaArtifact) GetReleaseNotesUrl()(*string) {
     if m == nil {
         return nil
@@ -164,31 +164,31 @@ func (m *ZebraFotaArtifact) Serialize(writer i878a80d2330e89d26896388a3f487eef27
     }
     return nil
 }
-// SetBoardSupportPackageVersion sets the boardSupportPackageVersion property value. The version of the Board Support Package.
+// SetBoardSupportPackageVersion sets the boardSupportPackageVersion property value. The version of the Board Support Package (BSP. E.g.: 01.18.02.00)
 func (m *ZebraFotaArtifact) SetBoardSupportPackageVersion(value *string)() {
     if m != nil {
         m.boardSupportPackageVersion = value
     }
 }
-// SetDeviceModel sets the deviceModel property value. Artifact device model.
+// SetDeviceModel sets the deviceModel property value. Applicable device model (e.g.: TC8300)
 func (m *ZebraFotaArtifact) SetDeviceModel(value *string)() {
     if m != nil {
         m.deviceModel = value
     }
 }
-// SetOsVersion sets the osVersion property value. Artifact OS version.
+// SetOsVersion sets the osVersion property value. Artifact OS version (e.g.: 8.1.0)
 func (m *ZebraFotaArtifact) SetOsVersion(value *string)() {
     if m != nil {
         m.osVersion = value
     }
 }
-// SetPatchVersion sets the patchVersion property value. Artifact patch version.
+// SetPatchVersion sets the patchVersion property value. Artifact patch version (e.g.: U00)
 func (m *ZebraFotaArtifact) SetPatchVersion(value *string)() {
     if m != nil {
         m.patchVersion = value
     }
 }
-// SetReleaseNotesUrl sets the releaseNotesUrl property value. Artifact release notes URL.
+// SetReleaseNotesUrl sets the releaseNotesUrl property value. Artifact release notes URL (e.g.: https://www.zebra.com/<filename.pdf>)
 func (m *ZebraFotaArtifact) SetReleaseNotesUrl(value *string)() {
     if m != nil {
         m.releaseNotesUrl = value

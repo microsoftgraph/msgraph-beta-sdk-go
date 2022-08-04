@@ -16,7 +16,7 @@ type ExternalPartnerSettingsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// ExternalPartnerSettingsRequestBuilderGetQueryParameters get externalPartnerSettings from deviceManagement
+// ExternalPartnerSettingsRequestBuilderGetQueryParameters the external partner settings on a Cloud PC.
 type ExternalPartnerSettingsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,11 +74,11 @@ func NewExternalPartnerSettingsRequestBuilder(rawUrl string, requestAdapter i2ae
 func (m *ExternalPartnerSettingsRequestBuilder) Count()(*ic76c46ccd4aeeee631ef390a41acaec7b8bc2f7550bae3700f82e48bafab3450.CountRequestBuilder) {
     return ic76c46ccd4aeeee631ef390a41acaec7b8bc2f7550bae3700f82e48bafab3450.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation get externalPartnerSettings from deviceManagement
+// CreateGetRequestInformation the external partner settings on a Cloud PC.
 func (m *ExternalPartnerSettingsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration get externalPartnerSettings from deviceManagement
+// CreateGetRequestInformationWithRequestConfiguration the external partner settings on a Cloud PC.
 func (m *ExternalPartnerSettingsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *ExternalPartnerSettingsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -112,11 +112,11 @@ func (m *ExternalPartnerSettingsRequestBuilder) CreatePostRequestInformationWith
     }
     return requestInfo, nil
 }
-// Get get externalPartnerSettings from deviceManagement
+// Get the external partner settings on a Cloud PC.
 func (m *ExternalPartnerSettingsRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcExternalPartnerSettingCollectionResponseable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler get externalPartnerSettings from deviceManagement
+// GetWithRequestConfigurationAndResponseHandler the external partner settings on a Cloud PC.
 func (m *ExternalPartnerSettingsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *ExternalPartnerSettingsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcExternalPartnerSettingCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
