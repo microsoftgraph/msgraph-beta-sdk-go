@@ -10,6 +10,8 @@ type IdentityContainer struct {
     additionalData map[string]interface{}
     // Represents entry point for API connectors.
     apiConnectors []IdentityApiConnectorable
+    // The authenticationEventListeners property
+    authenticationEventListeners []AuthenticationEventListenerable
     // Represents entry point for B2C identity userflows.
     b2cUserFlows []B2cIdentityUserFlowable
     // Represents entry point for B2X and self-service sign-up identity userflows.
@@ -18,6 +20,8 @@ type IdentityContainer struct {
     conditionalAccess ConditionalAccessRootable
     // Represents entry point for continuous access evaluation policy.
     continuousAccessEvaluationPolicy ContinuousAccessEvaluationPolicyable
+    // The customAuthenticationExtensions property
+    customAuthenticationExtensions []CustomAuthenticationExtensionable
     // Represents entry point for identity provider base.
     identityProviders []IdentityProviderBaseable
     // The OdataType property
@@ -56,6 +60,14 @@ func (m *IdentityContainer) GetApiConnectors()([]IdentityApiConnectorable) {
         return m.apiConnectors
     }
 }
+// GetAuthenticationEventListeners gets the authenticationEventListeners property value. The authenticationEventListeners property
+func (m *IdentityContainer) GetAuthenticationEventListeners()([]AuthenticationEventListenerable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.authenticationEventListeners
+    }
+}
 // GetB2cUserFlows gets the b2cUserFlows property value. Represents entry point for B2C identity userflows.
 func (m *IdentityContainer) GetB2cUserFlows()([]B2cIdentityUserFlowable) {
     if m == nil {
@@ -88,6 +100,14 @@ func (m *IdentityContainer) GetContinuousAccessEvaluationPolicy()(ContinuousAcce
         return m.continuousAccessEvaluationPolicy
     }
 }
+// GetCustomAuthenticationExtensions gets the customAuthenticationExtensions property value. The customAuthenticationExtensions property
+func (m *IdentityContainer) GetCustomAuthenticationExtensions()([]CustomAuthenticationExtensionable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.customAuthenticationExtensions
+    }
+}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *IdentityContainer) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
@@ -102,6 +122,20 @@ func (m *IdentityContainer) GetFieldDeserializers()(map[string]func(i878a80d2330
                 res[i] = v.(IdentityApiConnectorable)
             }
             m.SetApiConnectors(res)
+        }
+        return nil
+    }
+    res["authenticationEventListeners"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateAuthenticationEventListenerFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]AuthenticationEventListenerable, len(val))
+            for i, v := range val {
+                res[i] = v.(AuthenticationEventListenerable)
+            }
+            m.SetAuthenticationEventListeners(res)
         }
         return nil
     }
@@ -150,6 +184,20 @@ func (m *IdentityContainer) GetFieldDeserializers()(map[string]func(i878a80d2330
         }
         if val != nil {
             m.SetContinuousAccessEvaluationPolicy(val.(ContinuousAccessEvaluationPolicyable))
+        }
+        return nil
+    }
+    res["customAuthenticationExtensions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateCustomAuthenticationExtensionFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]CustomAuthenticationExtensionable, len(val))
+            for i, v := range val {
+                res[i] = v.(CustomAuthenticationExtensionable)
+            }
+            m.SetCustomAuthenticationExtensions(res)
         }
         return nil
     }
@@ -251,6 +299,16 @@ func (m *IdentityContainer) Serialize(writer i878a80d2330e89d26896388a3f487eef27
             return err
         }
     }
+    if m.GetAuthenticationEventListeners() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAuthenticationEventListeners()))
+        for i, v := range m.GetAuthenticationEventListeners() {
+            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+        }
+        err := writer.WriteCollectionOfObjectValues("authenticationEventListeners", cast)
+        if err != nil {
+            return err
+        }
+    }
     if m.GetB2cUserFlows() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetB2cUserFlows()))
         for i, v := range m.GetB2cUserFlows() {
@@ -279,6 +337,16 @@ func (m *IdentityContainer) Serialize(writer i878a80d2330e89d26896388a3f487eef27
     }
     {
         err := writer.WriteObjectValue("continuousAccessEvaluationPolicy", m.GetContinuousAccessEvaluationPolicy())
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetCustomAuthenticationExtensions() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetCustomAuthenticationExtensions()))
+        for i, v := range m.GetCustomAuthenticationExtensions() {
+            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+        }
+        err := writer.WriteCollectionOfObjectValues("customAuthenticationExtensions", cast)
         if err != nil {
             return err
         }
@@ -339,6 +407,12 @@ func (m *IdentityContainer) SetApiConnectors(value []IdentityApiConnectorable)()
         m.apiConnectors = value
     }
 }
+// SetAuthenticationEventListeners sets the authenticationEventListeners property value. The authenticationEventListeners property
+func (m *IdentityContainer) SetAuthenticationEventListeners(value []AuthenticationEventListenerable)() {
+    if m != nil {
+        m.authenticationEventListeners = value
+    }
+}
 // SetB2cUserFlows sets the b2cUserFlows property value. Represents entry point for B2C identity userflows.
 func (m *IdentityContainer) SetB2cUserFlows(value []B2cIdentityUserFlowable)() {
     if m != nil {
@@ -361,6 +435,12 @@ func (m *IdentityContainer) SetConditionalAccess(value ConditionalAccessRootable
 func (m *IdentityContainer) SetContinuousAccessEvaluationPolicy(value ContinuousAccessEvaluationPolicyable)() {
     if m != nil {
         m.continuousAccessEvaluationPolicy = value
+    }
+}
+// SetCustomAuthenticationExtensions sets the customAuthenticationExtensions property value. The customAuthenticationExtensions property
+func (m *IdentityContainer) SetCustomAuthenticationExtensions(value []CustomAuthenticationExtensionable)() {
+    if m != nil {
+        m.customAuthenticationExtensions = value
     }
 }
 // SetIdentityProviders sets the identityProviders property value. Represents entry point for identity provider base.

@@ -5,12 +5,14 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
-// ExternalItem provides operations to manage the collection of accessReview entities.
+// ExternalItem provides operations to manage the collection of activityStatistics entities.
 type ExternalItem struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
     // An array of access control entries. Each entry specifies the access granted to a user or group. Required.
     acl []Aclable
-    // A plain-text  representation of the contents of the item. The text in this property is full-text indexed. Optional.
+    // Write-only property. Returns results.
+    activities []ExternalActivityable
+    // A plain-text representation of the contents of the item. The text in this property is full-text indexed. Optional.
     content ExternalItemContentable
     // A property bag with the properties of the item. The properties MUST conform to the schema defined for the externalConnection. Required.
     properties Propertiesable
@@ -36,7 +38,15 @@ func (m *ExternalItem) GetAcl()([]Aclable) {
         return m.acl
     }
 }
-// GetContent gets the content property value. A plain-text  representation of the contents of the item. The text in this property is full-text indexed. Optional.
+// GetActivities gets the activities property value. Write-only property. Returns results.
+func (m *ExternalItem) GetActivities()([]ExternalActivityable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.activities
+    }
+}
+// GetContent gets the content property value. A plain-text representation of the contents of the item. The text in this property is full-text indexed. Optional.
 func (m *ExternalItem) GetContent()(ExternalItemContentable) {
     if m == nil {
         return nil
@@ -58,6 +68,20 @@ func (m *ExternalItem) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
                 res[i] = v.(Aclable)
             }
             m.SetAcl(res)
+        }
+        return nil
+    }
+    res["activities"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateExternalActivityFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]ExternalActivityable, len(val))
+            for i, v := range val {
+                res[i] = v.(ExternalActivityable)
+            }
+            m.SetActivities(res)
         }
         return nil
     }
@@ -107,6 +131,16 @@ func (m *ExternalItem) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
             return err
         }
     }
+    if m.GetActivities() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetActivities()))
+        for i, v := range m.GetActivities() {
+            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+        }
+        err = writer.WriteCollectionOfObjectValues("activities", cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteObjectValue("content", m.GetContent())
         if err != nil {
@@ -127,7 +161,13 @@ func (m *ExternalItem) SetAcl(value []Aclable)() {
         m.acl = value
     }
 }
-// SetContent sets the content property value. A plain-text  representation of the contents of the item. The text in this property is full-text indexed. Optional.
+// SetActivities sets the activities property value. Write-only property. Returns results.
+func (m *ExternalItem) SetActivities(value []ExternalActivityable)() {
+    if m != nil {
+        m.activities = value
+    }
+}
+// SetContent sets the content property value. A plain-text representation of the contents of the item. The text in this property is full-text indexed. Optional.
 func (m *ExternalItem) SetContent(value ExternalItemContentable)() {
     if m != nil {
         m.content = value

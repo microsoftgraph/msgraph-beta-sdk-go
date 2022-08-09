@@ -7,7 +7,7 @@ import (
 // RemoveContentFooterAction 
 type RemoveContentFooterAction struct {
     InformationProtectionAction
-    // The uiElementNames property
+    // The name of the UI element of the footer to be removed.
     uiElementNames []string
 }
 // NewRemoveContentFooterAction instantiates a new RemoveContentFooterAction and sets the default values.
@@ -42,7 +42,7 @@ func (m *RemoveContentFooterAction) GetFieldDeserializers()(map[string]func(i878
     }
     return res
 }
-// GetUiElementNames gets the uiElementNames property value. The uiElementNames property
+// GetUiElementNames gets the uiElementNames property value. The name of the UI element of the footer to be removed.
 func (m *RemoveContentFooterAction) GetUiElementNames()([]string) {
     if m == nil {
         return nil
@@ -64,7 +64,7 @@ func (m *RemoveContentFooterAction) Serialize(writer i878a80d2330e89d26896388a3f
     }
     return nil
 }
-// SetUiElementNames sets the uiElementNames property value. The uiElementNames property
+// SetUiElementNames sets the uiElementNames property value. The name of the UI element of the footer to be removed.
 func (m *RemoveContentFooterAction) SetUiElementNames(value []string)() {
     if m != nil {
         m.uiElementNames = value

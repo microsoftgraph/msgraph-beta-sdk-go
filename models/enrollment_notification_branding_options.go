@@ -2,26 +2,28 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of accessReviewDecision entities.
+// Provides operations to manage the collection of accessReview entities.
 type EnrollmentNotificationBrandingOptions int
 
 const (
-    // No Branding.
+    // Indicates that the template has no branding.
     NONE_ENROLLMENTNOTIFICATIONBRANDINGOPTIONS EnrollmentNotificationBrandingOptions = iota
-    // Include Company Logo.
+    // Indicates that the Company Logo is included in the notification.
     INCLUDECOMPANYLOGO_ENROLLMENTNOTIFICATIONBRANDINGOPTIONS
-    // Include Company Name.
+    // Indicates that the Company Name is included in the notification.
     INCLUDECOMPANYNAME_ENROLLMENTNOTIFICATIONBRANDINGOPTIONS
-    // Include Contact Info.
+    // Indicates that the Contact Information is included in the notification.
     INCLUDECONTACTINFORMATION_ENROLLMENTNOTIFICATIONBRANDINGOPTIONS
-    // Include Company Portal Link.
+    // Indicates that the Company Portal Link is included in the notification.
     INCLUDECOMPANYPORTALLINK_ENROLLMENTNOTIFICATIONBRANDINGOPTIONS
-    // Include Device Details.
+    // Indicates that the DeviceDetails is included in the notification.
     INCLUDEDEVICEDETAILS_ENROLLMENTNOTIFICATIONBRANDINGOPTIONS
+    // unknownFutureValue for evolvable enums pattern.
+    UNKNOWNFUTUREVALUE_ENROLLMENTNOTIFICATIONBRANDINGOPTIONS
 )
 
 func (i EnrollmentNotificationBrandingOptions) String() string {
-    return []string{"none", "includeCompanyLogo", "includeCompanyName", "includeContactInformation", "includeCompanyPortalLink", "includeDeviceDetails"}[i]
+    return []string{"none", "includeCompanyLogo", "includeCompanyName", "includeContactInformation", "includeCompanyPortalLink", "includeDeviceDetails", "unknownFutureValue"}[i]
 }
 func ParseEnrollmentNotificationBrandingOptions(v string) (interface{}, error) {
     result := NONE_ENROLLMENTNOTIFICATIONBRANDINGOPTIONS
@@ -38,6 +40,8 @@ func ParseEnrollmentNotificationBrandingOptions(v string) (interface{}, error) {
             result = INCLUDECOMPANYPORTALLINK_ENROLLMENTNOTIFICATIONBRANDINGOPTIONS
         case "includeDeviceDetails":
             result = INCLUDEDEVICEDETAILS_ENROLLMENTNOTIFICATIONBRANDINGOPTIONS
+        case "unknownFutureValue":
+            result = UNKNOWNFUTUREVALUE_ENROLLMENTNOTIFICATIONBRANDINGOPTIONS
         default:
             return 0, errors.New("Unknown EnrollmentNotificationBrandingOptions value: " + v)
     }

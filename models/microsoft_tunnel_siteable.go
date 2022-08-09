@@ -10,6 +10,7 @@ type MicrosoftTunnelSiteable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetDescription()(*string)
     GetDisplayName()(*string)
+    GetEnableCertificatePinning()(*bool)
     GetInternalNetworkProbeUrl()(*string)
     GetMicrosoftTunnelConfiguration()(MicrosoftTunnelConfigurationable)
     GetMicrosoftTunnelServers()([]MicrosoftTunnelServerable)
@@ -22,6 +23,7 @@ type MicrosoftTunnelSiteable interface {
     GetUpgradeWindowUtcOffsetInMinutes()(*int32)
     SetDescription(value *string)()
     SetDisplayName(value *string)()
+    SetEnableCertificatePinning(value *bool)()
     SetInternalNetworkProbeUrl(value *string)()
     SetMicrosoftTunnelConfiguration(value MicrosoftTunnelConfigurationable)()
     SetMicrosoftTunnelServers(value []MicrosoftTunnelServerable)()

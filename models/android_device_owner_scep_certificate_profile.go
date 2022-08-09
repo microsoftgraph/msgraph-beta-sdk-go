@@ -7,6 +7,8 @@ import (
 // AndroidDeviceOwnerScepCertificateProfile 
 type AndroidDeviceOwnerScepCertificateProfile struct {
     AndroidDeviceOwnerCertificateProfileBase
+    // Certificate access type. Possible values are: userApproval, specificApps, unknownFutureValue.
+    certificateAccessType *AndroidDeviceOwnerCertificateAccessType
     // Target store certificate. Possible values are: user, machine.
     certificateStore *CertificateStore
     // Custom Subject Alternative Name Settings. This collection can contain a maximum of 500 elements.
@@ -21,6 +23,8 @@ type AndroidDeviceOwnerScepCertificateProfile struct {
     managedDeviceCertificateStates []ManagedDeviceCertificateStateable
     // SCEP Server Url(s)
     scepServerUrls []string
+    // Certificate access information. This collection can contain a maximum of 50 elements.
+    silentCertificateAccessDetails []AndroidDeviceOwnerSilentCertificateAccessable
     // Custom String that defines the AAD Attribute.
     subjectAlternativeNameFormatString *string
     // Custom format to use with SubjectNameFormat = Custom. Example: CN={{EmailAddress}},E={{EmailAddress}},OU=Enterprise Users,O=Contoso Corporation,L=Redmond,ST=WA,C=US
@@ -38,6 +42,14 @@ func NewAndroidDeviceOwnerScepCertificateProfile()(*AndroidDeviceOwnerScepCertif
 // CreateAndroidDeviceOwnerScepCertificateProfileFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateAndroidDeviceOwnerScepCertificateProfileFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAndroidDeviceOwnerScepCertificateProfile(), nil
+}
+// GetCertificateAccessType gets the certificateAccessType property value. Certificate access type. Possible values are: userApproval, specificApps, unknownFutureValue.
+func (m *AndroidDeviceOwnerScepCertificateProfile) GetCertificateAccessType()(*AndroidDeviceOwnerCertificateAccessType) {
+    if m == nil {
+        return nil
+    } else {
+        return m.certificateAccessType
+    }
 }
 // GetCertificateStore gets the certificateStore property value. Target store certificate. Possible values are: user, machine.
 func (m *AndroidDeviceOwnerScepCertificateProfile) GetCertificateStore()(*CertificateStore) {
@@ -58,6 +70,16 @@ func (m *AndroidDeviceOwnerScepCertificateProfile) GetCustomSubjectAlternativeNa
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AndroidDeviceOwnerScepCertificateProfile) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.AndroidDeviceOwnerCertificateProfileBase.GetFieldDeserializers()
+    res["certificateAccessType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseAndroidDeviceOwnerCertificateAccessType)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetCertificateAccessType(val.(*AndroidDeviceOwnerCertificateAccessType))
+        }
+        return nil
+    }
     res["certificateStore"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseCertificateStore)
         if err != nil {
@@ -140,6 +162,20 @@ func (m *AndroidDeviceOwnerScepCertificateProfile) GetFieldDeserializers()(map[s
         }
         return nil
     }
+    res["silentCertificateAccessDetails"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateAndroidDeviceOwnerSilentCertificateAccessFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]AndroidDeviceOwnerSilentCertificateAccessable, len(val))
+            for i, v := range val {
+                res[i] = v.(AndroidDeviceOwnerSilentCertificateAccessable)
+            }
+            m.SetSilentCertificateAccessDetails(res)
+        }
+        return nil
+    }
     res["subjectAlternativeNameFormatString"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -202,6 +238,14 @@ func (m *AndroidDeviceOwnerScepCertificateProfile) GetScepServerUrls()([]string)
         return m.scepServerUrls
     }
 }
+// GetSilentCertificateAccessDetails gets the silentCertificateAccessDetails property value. Certificate access information. This collection can contain a maximum of 50 elements.
+func (m *AndroidDeviceOwnerScepCertificateProfile) GetSilentCertificateAccessDetails()([]AndroidDeviceOwnerSilentCertificateAccessable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.silentCertificateAccessDetails
+    }
+}
 // GetSubjectAlternativeNameFormatString gets the subjectAlternativeNameFormatString property value. Custom String that defines the AAD Attribute.
 func (m *AndroidDeviceOwnerScepCertificateProfile) GetSubjectAlternativeNameFormatString()(*string) {
     if m == nil {
@@ -223,6 +267,13 @@ func (m *AndroidDeviceOwnerScepCertificateProfile) Serialize(writer i878a80d2330
     err := m.AndroidDeviceOwnerCertificateProfileBase.Serialize(writer)
     if err != nil {
         return err
+    }
+    if m.GetCertificateAccessType() != nil {
+        cast := (*m.GetCertificateAccessType()).String()
+        err = writer.WriteStringValue("certificateAccessType", &cast)
+        if err != nil {
+            return err
+        }
     }
     if m.GetCertificateStore() != nil {
         cast := (*m.GetCertificateStore()).String()
@@ -278,6 +329,16 @@ func (m *AndroidDeviceOwnerScepCertificateProfile) Serialize(writer i878a80d2330
             return err
         }
     }
+    if m.GetSilentCertificateAccessDetails() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSilentCertificateAccessDetails()))
+        for i, v := range m.GetSilentCertificateAccessDetails() {
+            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+        }
+        err = writer.WriteCollectionOfObjectValues("silentCertificateAccessDetails", cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteStringValue("subjectAlternativeNameFormatString", m.GetSubjectAlternativeNameFormatString())
         if err != nil {
@@ -291,6 +352,12 @@ func (m *AndroidDeviceOwnerScepCertificateProfile) Serialize(writer i878a80d2330
         }
     }
     return nil
+}
+// SetCertificateAccessType sets the certificateAccessType property value. Certificate access type. Possible values are: userApproval, specificApps, unknownFutureValue.
+func (m *AndroidDeviceOwnerScepCertificateProfile) SetCertificateAccessType(value *AndroidDeviceOwnerCertificateAccessType)() {
+    if m != nil {
+        m.certificateAccessType = value
+    }
 }
 // SetCertificateStore sets the certificateStore property value. Target store certificate. Possible values are: user, machine.
 func (m *AndroidDeviceOwnerScepCertificateProfile) SetCertificateStore(value *CertificateStore)() {
@@ -332,6 +399,12 @@ func (m *AndroidDeviceOwnerScepCertificateProfile) SetManagedDeviceCertificateSt
 func (m *AndroidDeviceOwnerScepCertificateProfile) SetScepServerUrls(value []string)() {
     if m != nil {
         m.scepServerUrls = value
+    }
+}
+// SetSilentCertificateAccessDetails sets the silentCertificateAccessDetails property value. Certificate access information. This collection can contain a maximum of 50 elements.
+func (m *AndroidDeviceOwnerScepCertificateProfile) SetSilentCertificateAccessDetails(value []AndroidDeviceOwnerSilentCertificateAccessable)() {
+    if m != nil {
+        m.silentCertificateAccessDetails = value
     }
 }
 // SetSubjectAlternativeNameFormatString sets the subjectAlternativeNameFormatString property value. Custom String that defines the AAD Attribute.

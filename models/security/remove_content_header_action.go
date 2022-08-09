@@ -7,7 +7,7 @@ import (
 // RemoveContentHeaderAction 
 type RemoveContentHeaderAction struct {
     InformationProtectionAction
-    // The uiElementNames property
+    // The name of the UI element of the header to be removed.
     uiElementNames []string
 }
 // NewRemoveContentHeaderAction instantiates a new RemoveContentHeaderAction and sets the default values.
@@ -42,7 +42,7 @@ func (m *RemoveContentHeaderAction) GetFieldDeserializers()(map[string]func(i878
     }
     return res
 }
-// GetUiElementNames gets the uiElementNames property value. The uiElementNames property
+// GetUiElementNames gets the uiElementNames property value. The name of the UI element of the header to be removed.
 func (m *RemoveContentHeaderAction) GetUiElementNames()([]string) {
     if m == nil {
         return nil
@@ -64,7 +64,7 @@ func (m *RemoveContentHeaderAction) Serialize(writer i878a80d2330e89d26896388a3f
     }
     return nil
 }
-// SetUiElementNames sets the uiElementNames property value. The uiElementNames property
+// SetUiElementNames sets the uiElementNames property value. The name of the UI element of the header to be removed.
 func (m *RemoveContentHeaderAction) SetUiElementNames(value []string)() {
     if m != nil {
         m.uiElementNames = value

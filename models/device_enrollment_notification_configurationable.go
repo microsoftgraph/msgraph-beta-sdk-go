@@ -11,11 +11,13 @@ type DeviceEnrollmentNotificationConfigurationable interface {
     GetBrandingOptions()(*EnrollmentNotificationBrandingOptions)
     GetDefaultLocale()(*string)
     GetNotificationMessageTemplateId()(*string)
+    GetNotificationTemplates()([]string)
     GetPlatformType()(*EnrollmentRestrictionPlatformType)
     GetTemplateType()(*EnrollmentNotificationTemplateType)
     SetBrandingOptions(value *EnrollmentNotificationBrandingOptions)()
     SetDefaultLocale(value *string)()
     SetNotificationMessageTemplateId(value *string)()
+    SetNotificationTemplates(value []string)()
     SetPlatformType(value *EnrollmentRestrictionPlatformType)()
     SetTemplateType(value *EnrollmentNotificationTemplateType)()
 }

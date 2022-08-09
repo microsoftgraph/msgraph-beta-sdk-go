@@ -2,7 +2,7 @@ package tenantadmin
 import (
     "errors"
 )
-// Provides operations to manage the admin singleton.
+// Provides operations to manage the collection of activityStatistics entities.
 type ImageTaggingChoice int
 
 const (

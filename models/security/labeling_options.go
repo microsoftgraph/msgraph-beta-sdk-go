@@ -10,11 +10,11 @@ type LabelingOptions struct {
     additionalData map[string]interface{}
     // The assignmentMethod property
     assignmentMethod *AssignmentMethod
-    // The downgradeJustification property
+    // The downgrade justification object that indicates if downgrade was justified and, if so, the reason.
     downgradeJustification DowngradeJustificationable
-    // The extendedProperties property
+    // Extended properties will be parsed and returned in the standard Microsoft Purview Information Protection labeled metadata format as part of the label information.
     extendedProperties []KeyValuePairable
-    // The labelId property
+    // The GUID of the label that should be applied to the information.
     labelId *string
     // The OdataType property
     odataType *string
@@ -48,7 +48,7 @@ func (m *LabelingOptions) GetAssignmentMethod()(*AssignmentMethod) {
         return m.assignmentMethod
     }
 }
-// GetDowngradeJustification gets the downgradeJustification property value. The downgradeJustification property
+// GetDowngradeJustification gets the downgradeJustification property value. The downgrade justification object that indicates if downgrade was justified and, if so, the reason.
 func (m *LabelingOptions) GetDowngradeJustification()(DowngradeJustificationable) {
     if m == nil {
         return nil
@@ -56,7 +56,7 @@ func (m *LabelingOptions) GetDowngradeJustification()(DowngradeJustificationable
         return m.downgradeJustification
     }
 }
-// GetExtendedProperties gets the extendedProperties property value. The extendedProperties property
+// GetExtendedProperties gets the extendedProperties property value. Extended properties will be parsed and returned in the standard Microsoft Purview Information Protection labeled metadata format as part of the label information.
 func (m *LabelingOptions) GetExtendedProperties()([]KeyValuePairable) {
     if m == nil {
         return nil
@@ -123,7 +123,7 @@ func (m *LabelingOptions) GetFieldDeserializers()(map[string]func(i878a80d2330e8
     }
     return res
 }
-// GetLabelId gets the labelId property value. The labelId property
+// GetLabelId gets the labelId property value. The GUID of the label that should be applied to the information.
 func (m *LabelingOptions) GetLabelId()(*string) {
     if m == nil {
         return nil
@@ -196,19 +196,19 @@ func (m *LabelingOptions) SetAssignmentMethod(value *AssignmentMethod)() {
         m.assignmentMethod = value
     }
 }
-// SetDowngradeJustification sets the downgradeJustification property value. The downgradeJustification property
+// SetDowngradeJustification sets the downgradeJustification property value. The downgrade justification object that indicates if downgrade was justified and, if so, the reason.
 func (m *LabelingOptions) SetDowngradeJustification(value DowngradeJustificationable)() {
     if m != nil {
         m.downgradeJustification = value
     }
 }
-// SetExtendedProperties sets the extendedProperties property value. The extendedProperties property
+// SetExtendedProperties sets the extendedProperties property value. Extended properties will be parsed and returned in the standard Microsoft Purview Information Protection labeled metadata format as part of the label information.
 func (m *LabelingOptions) SetExtendedProperties(value []KeyValuePairable)() {
     if m != nil {
         m.extendedProperties = value
     }
 }
-// SetLabelId sets the labelId property value. The labelId property
+// SetLabelId sets the labelId property value. The GUID of the label that should be applied to the information.
 func (m *LabelingOptions) SetLabelId(value *string)() {
     if m != nil {
         m.labelId = value

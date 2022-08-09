@@ -8,11 +8,11 @@ import (
 type ContentInfo struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
-    // The contentFormat property
+    // The format of the content to be labeled. Possible values are: file, email.
     contentFormat *string
-    // The identifier property
+    // Identifier used for Azure Information Protection Analytics.
     identifier *string
-    // The metadata property
+    // Existing Microsoft Purview Information Protection metadata is passed as key-value pairs, where the key is the MSIP_Label_GUID_PropName.
     metadata []KeyValuePairable
     // The OdataType property
     odataType *string
@@ -40,7 +40,7 @@ func (m *ContentInfo) GetAdditionalData()(map[string]interface{}) {
         return m.additionalData
     }
 }
-// GetContentFormat gets the contentFormat property value. The contentFormat property
+// GetContentFormat gets the contentFormat property value. The format of the content to be labeled. Possible values are: file, email.
 func (m *ContentInfo) GetContentFormat()(*string) {
     if m == nil {
         return nil
@@ -107,7 +107,7 @@ func (m *ContentInfo) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
     }
     return res
 }
-// GetIdentifier gets the identifier property value. The identifier property
+// GetIdentifier gets the identifier property value. Identifier used for Azure Information Protection Analytics.
 func (m *ContentInfo) GetIdentifier()(*string) {
     if m == nil {
         return nil
@@ -115,7 +115,7 @@ func (m *ContentInfo) GetIdentifier()(*string) {
         return m.identifier
     }
 }
-// GetMetadata gets the metadata property value. The metadata property
+// GetMetadata gets the metadata property value. Existing Microsoft Purview Information Protection metadata is passed as key-value pairs, where the key is the MSIP_Label_GUID_PropName.
 func (m *ContentInfo) GetMetadata()([]KeyValuePairable) {
     if m == nil {
         return nil
@@ -190,19 +190,19 @@ func (m *ContentInfo) SetAdditionalData(value map[string]interface{})() {
         m.additionalData = value
     }
 }
-// SetContentFormat sets the contentFormat property value. The contentFormat property
+// SetContentFormat sets the contentFormat property value. The format of the content to be labeled. Possible values are: file, email.
 func (m *ContentInfo) SetContentFormat(value *string)() {
     if m != nil {
         m.contentFormat = value
     }
 }
-// SetIdentifier sets the identifier property value. The identifier property
+// SetIdentifier sets the identifier property value. Identifier used for Azure Information Protection Analytics.
 func (m *ContentInfo) SetIdentifier(value *string)() {
     if m != nil {
         m.identifier = value
     }
 }
-// SetMetadata sets the metadata property value. The metadata property
+// SetMetadata sets the metadata property value. Existing Microsoft Purview Information Protection metadata is passed as key-value pairs, where the key is the MSIP_Label_GUID_PropName.
 func (m *ContentInfo) SetMetadata(value []KeyValuePairable)() {
     if m != nil {
         m.metadata = value

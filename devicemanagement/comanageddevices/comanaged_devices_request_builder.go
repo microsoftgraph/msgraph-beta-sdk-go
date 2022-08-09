@@ -6,9 +6,11 @@ import (
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
     i0952f14bd3d84883aa9509ce20c436cb3a9becc286ff26416d1a9ab4f9a5188e "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/comanageddevices/executeaction"
     i21b46d2a36281265e82fedbdddef1c20e278c5a4bbf3cf85fa0d860eccee5b55 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/comanageddevices/movedevicestoou"
+    i4f4d1e82bdbf717dd4e35e8b22ec176f431413dacfc02b1b0bc8f88b35a947b4 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/comanageddevices/appdiagnosticswithupn"
     i7e96e1b990aeb4d47dec870ab144f92eef626fd02edc82312e6ebb7fb40dbd1b "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/comanageddevices/count"
     i7fe672ce2ded63745de2480f0a175b485195547bff2ac413663b22ef3172bb4e "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/comanageddevices/bulkreprovisioncloudpc"
     i97970601371fcbb5ba7ab85926c15aaf372bd11b13e0e69958d51b9047db72f5 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/comanageddevices/bulkrestorecloudpc"
+    ic9861b4c5eec73a24e165a652a259a451fc7607c744e648fc52fd66bba4ce197 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/comanageddevices/downloadappdiagnostics"
     if7ab50280eee6c516e9627d5b46411704669babc585beaa87d9d2b895be64058 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/comanageddevices/bulksetcloudpcreviewstatus"
 )
 
@@ -55,6 +57,10 @@ type ComanagedDevicesRequestBuilderPostRequestConfiguration struct {
     Headers map[string]string
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
+}
+// AppDiagnosticsWithUpn provides operations to call the appDiagnostics method.
+func (m *ComanagedDevicesRequestBuilder) AppDiagnosticsWithUpn(upn *string)(*i4f4d1e82bdbf717dd4e35e8b22ec176f431413dacfc02b1b0bc8f88b35a947b4.AppDiagnosticsWithUpnRequestBuilder) {
+    return i4f4d1e82bdbf717dd4e35e8b22ec176f431413dacfc02b1b0bc8f88b35a947b4.NewAppDiagnosticsWithUpnRequestBuilderInternal(m.pathParameters, m.requestAdapter, upn);
 }
 // BulkReprovisionCloudPc the bulkReprovisionCloudPc property
 func (m *ComanagedDevicesRequestBuilder) BulkReprovisionCloudPc()(*i7fe672ce2ded63745de2480f0a175b485195547bff2ac413663b22ef3172bb4e.BulkReprovisionCloudPcRequestBuilder) {
@@ -128,6 +134,10 @@ func (m *ComanagedDevicesRequestBuilder) CreatePostRequestInformationWithRequest
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     return requestInfo, nil
+}
+// DownloadAppDiagnostics the downloadAppDiagnostics property
+func (m *ComanagedDevicesRequestBuilder) DownloadAppDiagnostics()(*ic9861b4c5eec73a24e165a652a259a451fc7607c744e648fc52fd66bba4ce197.DownloadAppDiagnosticsRequestBuilder) {
+    return ic9861b4c5eec73a24e165a652a259a451fc7607c744e648fc52fd66bba4ce197.NewDownloadAppDiagnosticsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // ExecuteAction the executeAction property
 func (m *ComanagedDevicesRequestBuilder) ExecuteAction()(*i0952f14bd3d84883aa9509ce20c436cb3a9becc286ff26416d1a9ab4f9a5188e.ExecuteActionRequestBuilder) {

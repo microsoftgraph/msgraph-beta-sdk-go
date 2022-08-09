@@ -6,7 +6,7 @@ import (
 
 // GroupPolicyPresentationLongDecimalTextBox 
 type GroupPolicyPresentationLongDecimalTextBox struct {
-    GroupPolicyPresentation
+    GroupPolicyUploadedPresentation
     // An unsigned integer that specifies the initial value for the decimal text box. The default value is 1.
     defaultValue *int64
     // An unsigned long that specifies the maximum allowed value. The default value is 9999.
@@ -23,7 +23,7 @@ type GroupPolicyPresentationLongDecimalTextBox struct {
 // NewGroupPolicyPresentationLongDecimalTextBox instantiates a new GroupPolicyPresentationLongDecimalTextBox and sets the default values.
 func NewGroupPolicyPresentationLongDecimalTextBox()(*GroupPolicyPresentationLongDecimalTextBox) {
     m := &GroupPolicyPresentationLongDecimalTextBox{
-        GroupPolicyPresentation: *NewGroupPolicyPresentation(),
+        GroupPolicyUploadedPresentation: *NewGroupPolicyUploadedPresentation(),
     }
     odataTypeValue := "#microsoft.graph.groupPolicyPresentationLongDecimalTextBox";
     m.SetOdataType(&odataTypeValue);
@@ -43,7 +43,7 @@ func (m *GroupPolicyPresentationLongDecimalTextBox) GetDefaultValue()(*int64) {
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *GroupPolicyPresentationLongDecimalTextBox) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := m.GroupPolicyPresentation.GetFieldDeserializers()
+    res := m.GroupPolicyUploadedPresentation.GetFieldDeserializers()
     res["defaultValue"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt64Value()
         if err != nil {
@@ -148,7 +148,7 @@ func (m *GroupPolicyPresentationLongDecimalTextBox) GetSpinStep()(*int64) {
 }
 // Serialize serializes information the current object
 func (m *GroupPolicyPresentationLongDecimalTextBox) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
-    err := m.GroupPolicyPresentation.Serialize(writer)
+    err := m.GroupPolicyUploadedPresentation.Serialize(writer)
     if err != nil {
         return err
     }

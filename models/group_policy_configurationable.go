@@ -15,6 +15,7 @@ type GroupPolicyConfigurationable interface {
     GetDescription()(*string)
     GetDisplayName()(*string)
     GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetPolicyConfigurationIngestionType()(*GroupPolicyConfigurationIngestionType)
     GetRoleScopeTagIds()([]string)
     SetAssignments(value []GroupPolicyConfigurationAssignmentable)()
     SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
@@ -22,5 +23,6 @@ type GroupPolicyConfigurationable interface {
     SetDescription(value *string)()
     SetDisplayName(value *string)()
     SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetPolicyConfigurationIngestionType(value *GroupPolicyConfigurationIngestionType)()
     SetRoleScopeTagIds(value []string)()
 }

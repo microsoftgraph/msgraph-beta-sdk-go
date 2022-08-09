@@ -12,7 +12,7 @@ type AttackSimulationRoot struct {
     // Represents an attack simulation training campaign in a tenant.
     simulations []Simulationable
 }
-// NewAttackSimulationRoot instantiates a new attackSimulationRoot and sets the default values.
+// NewAttackSimulationRoot instantiates a new AttackSimulationRoot and sets the default values.
 func NewAttackSimulationRoot()(*AttackSimulationRoot) {
     m := &AttackSimulationRoot{
         Entity: *NewEntity(),

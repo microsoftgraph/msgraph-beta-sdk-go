@@ -2,26 +2,26 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of accessReview entities.
+// Provides operations to manage the collection of activityStatistics entities.
 type DeviceManagementReportFileFormat int
 
 const (
-    // Comma-separated values
+    // CSV Format
     CSV_DEVICEMANAGEMENTREPORTFILEFORMAT DeviceManagementReportFileFormat = iota
-    // Portable Document Format
-    PDF_DEVICEMANAGEMENTREPORTFILEFORMAT
+    // JSON Format
+    JSON_DEVICEMANAGEMENTREPORTFILEFORMAT
 )
 
 func (i DeviceManagementReportFileFormat) String() string {
-    return []string{"csv", "pdf"}[i]
+    return []string{"csv", "json"}[i]
 }
 func ParseDeviceManagementReportFileFormat(v string) (interface{}, error) {
     result := CSV_DEVICEMANAGEMENTREPORTFILEFORMAT
     switch v {
         case "csv":
             result = CSV_DEVICEMANAGEMENTREPORTFILEFORMAT
-        case "pdf":
-            result = PDF_DEVICEMANAGEMENTREPORTFILEFORMAT
+        case "json":
+            result = JSON_DEVICEMANAGEMENTREPORTFILEFORMAT
         default:
             return 0, errors.New("Unknown DeviceManagementReportFileFormat value: " + v)
     }

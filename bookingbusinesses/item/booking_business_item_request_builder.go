@@ -37,7 +37,7 @@ type BookingBusinessItemRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// BookingBusinessItemRequestBuilderGetQueryParameters represents a Microsot Bookings Business.
+// BookingBusinessItemRequestBuilderGetQueryParameters get the properties and relationships of a bookingBusiness object.
 type BookingBusinessItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -109,11 +109,11 @@ func NewBookingBusinessItemRequestBuilder(rawUrl string, requestAdapter i2ae4187
     urlParams["request-raw-url"] = rawUrl
     return NewBookingBusinessItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateDeleteRequestInformation delete entity from bookingBusinesses
+// CreateDeleteRequestInformation delete a bookingBusiness object.
 func (m *BookingBusinessItemRequestBuilder) CreateDeleteRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateDeleteRequestInformationWithRequestConfiguration(nil);
 }
-// CreateDeleteRequestInformationWithRequestConfiguration delete entity from bookingBusinesses
+// CreateDeleteRequestInformationWithRequestConfiguration delete a bookingBusiness object.
 func (m *BookingBusinessItemRequestBuilder) CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration *BookingBusinessItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -125,11 +125,11 @@ func (m *BookingBusinessItemRequestBuilder) CreateDeleteRequestInformationWithRe
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation represents a Microsot Bookings Business.
+// CreateGetRequestInformation get the properties and relationships of a bookingBusiness object.
 func (m *BookingBusinessItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration represents a Microsot Bookings Business.
+// CreateGetRequestInformationWithRequestConfiguration get the properties and relationships of a bookingBusiness object.
 func (m *BookingBusinessItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *BookingBusinessItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -145,11 +145,11 @@ func (m *BookingBusinessItemRequestBuilder) CreateGetRequestInformationWithReque
     }
     return requestInfo, nil
 }
-// CreatePatchRequestInformation update entity in bookingBusinesses
+// CreatePatchRequestInformation update the properties of a bookingBusiness object.
 func (m *BookingBusinessItemRequestBuilder) CreatePatchRequestInformation(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BookingBusinessable)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreatePatchRequestInformationWithRequestConfiguration(body, nil);
 }
-// CreatePatchRequestInformationWithRequestConfiguration update entity in bookingBusinesses
+// CreatePatchRequestInformationWithRequestConfiguration update the properties of a bookingBusiness object.
 func (m *BookingBusinessItemRequestBuilder) CreatePatchRequestInformationWithRequestConfiguration(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BookingBusinessable, requestConfiguration *BookingBusinessItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -192,11 +192,11 @@ func (m *BookingBusinessItemRequestBuilder) CustomQuestionsById(id string)(*i9ce
     }
     return i9cec441a87d2feb52d21615818f6b762a3fd05b35a9b73951208540f5eb80c77.NewBookingCustomQuestionItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
-// Delete delete entity from bookingBusinesses
+// Delete delete a bookingBusiness object.
 func (m *BookingBusinessItemRequestBuilder) Delete()(error) {
     return m.DeleteWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// DeleteWithRequestConfigurationAndResponseHandler delete entity from bookingBusinesses
+// DeleteWithRequestConfigurationAndResponseHandler delete a bookingBusiness object.
 func (m *BookingBusinessItemRequestBuilder) DeleteWithRequestConfigurationAndResponseHandler(requestConfiguration *BookingBusinessItemRequestBuilderDeleteRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreateDeleteRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
@@ -212,7 +212,7 @@ func (m *BookingBusinessItemRequestBuilder) DeleteWithRequestConfigurationAndRes
     }
     return nil
 }
-// Get represents a Microsot Bookings Business.
+// Get get the properties and relationships of a bookingBusiness object.
 func (m *BookingBusinessItemRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BookingBusinessable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
@@ -220,7 +220,7 @@ func (m *BookingBusinessItemRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce
 func (m *BookingBusinessItemRequestBuilder) GetStaffAvailability()(*iab9cfaa5004260332caf3903526a9ebdb267173b4a21a7fabc9278975a7053fe.GetStaffAvailabilityRequestBuilder) {
     return iab9cfaa5004260332caf3903526a9ebdb267173b4a21a7fabc9278975a7053fe.NewGetStaffAvailabilityRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// GetWithRequestConfigurationAndResponseHandler represents a Microsot Bookings Business.
+// GetWithRequestConfigurationAndResponseHandler get the properties and relationships of a bookingBusiness object.
 func (m *BookingBusinessItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *BookingBusinessItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BookingBusinessable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
@@ -236,11 +236,11 @@ func (m *BookingBusinessItemRequestBuilder) GetWithRequestConfigurationAndRespon
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BookingBusinessable), nil
 }
-// Patch update entity in bookingBusinesses
+// Patch update the properties of a bookingBusiness object.
 func (m *BookingBusinessItemRequestBuilder) Patch(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BookingBusinessable)(error) {
     return m.PatchWithRequestConfigurationAndResponseHandler(body, nil, nil);
 }
-// PatchWithRequestConfigurationAndResponseHandler update entity in bookingBusinesses
+// PatchWithRequestConfigurationAndResponseHandler update the properties of a bookingBusiness object.
 func (m *BookingBusinessItemRequestBuilder) PatchWithRequestConfigurationAndResponseHandler(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BookingBusinessable, requestConfiguration *BookingBusinessItemRequestBuilderPatchRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(error) {
     requestInfo, err := m.CreatePatchRequestInformationWithRequestConfiguration(body, requestConfiguration);
     if err != nil {

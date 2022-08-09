@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// SalesInvoice 
+// SalesInvoice provides operations to manage the collection of activityStatistics entities.
 type SalesInvoice struct {
     Entity
     // The billingPostalAddress property
@@ -85,7 +85,7 @@ type SalesInvoice struct {
     // The totalTaxAmount property
     totalTaxAmount *float64
 }
-// NewSalesInvoice instantiates a new SalesInvoice and sets the default values.
+// NewSalesInvoice instantiates a new salesInvoice and sets the default values.
 func NewSalesInvoice()(*SalesInvoice) {
     m := &SalesInvoice{
         Entity: *NewEntity(),

@@ -6,7 +6,7 @@ import (
 
 // GroupPolicyPresentationMultiTextBox 
 type GroupPolicyPresentationMultiTextBox struct {
-    GroupPolicyPresentation
+    GroupPolicyUploadedPresentation
     // An unsigned integer that specifies the maximum number of text characters. Default value is 1023.
     maxLength *int64
     // An unsigned integer that specifies the maximum number of strings. Default value is 0.
@@ -17,7 +17,7 @@ type GroupPolicyPresentationMultiTextBox struct {
 // NewGroupPolicyPresentationMultiTextBox instantiates a new GroupPolicyPresentationMultiTextBox and sets the default values.
 func NewGroupPolicyPresentationMultiTextBox()(*GroupPolicyPresentationMultiTextBox) {
     m := &GroupPolicyPresentationMultiTextBox{
-        GroupPolicyPresentation: *NewGroupPolicyPresentation(),
+        GroupPolicyUploadedPresentation: *NewGroupPolicyUploadedPresentation(),
     }
     odataTypeValue := "#microsoft.graph.groupPolicyPresentationMultiTextBox";
     m.SetOdataType(&odataTypeValue);
@@ -29,7 +29,7 @@ func CreateGroupPolicyPresentationMultiTextBoxFromDiscriminatorValue(parseNode i
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *GroupPolicyPresentationMultiTextBox) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := m.GroupPolicyPresentation.GetFieldDeserializers()
+    res := m.GroupPolicyUploadedPresentation.GetFieldDeserializers()
     res["maxLength"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt64Value()
         if err != nil {
@@ -88,7 +88,7 @@ func (m *GroupPolicyPresentationMultiTextBox) GetRequired()(*bool) {
 }
 // Serialize serializes information the current object
 func (m *GroupPolicyPresentationMultiTextBox) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
-    err := m.GroupPolicyPresentation.Serialize(writer)
+    err := m.GroupPolicyUploadedPresentation.Serialize(writer)
     if err != nil {
         return err
     }

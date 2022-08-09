@@ -8,11 +8,11 @@ import (
 type KeyValuePair struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
-    // The name property
+    // Name for this key-value pair.
     name *string
     // The OdataType property
     odataType *string
-    // The value property
+    // Value for this key-value pair.
     value *string
 }
 // NewKeyValuePair instantiates a new keyValuePair and sets the default values.
@@ -71,7 +71,7 @@ func (m *KeyValuePair) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
     }
     return res
 }
-// GetName gets the name property value. The name property
+// GetName gets the name property value. Name for this key-value pair.
 func (m *KeyValuePair) GetName()(*string) {
     if m == nil {
         return nil
@@ -87,7 +87,7 @@ func (m *KeyValuePair) GetOdataType()(*string) {
         return m.odataType
     }
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. Value for this key-value pair.
 func (m *KeyValuePair) GetValue()(*string) {
     if m == nil {
         return nil
@@ -129,7 +129,7 @@ func (m *KeyValuePair) SetAdditionalData(value map[string]interface{})() {
         m.additionalData = value
     }
 }
-// SetName sets the name property value. The name property
+// SetName sets the name property value. Name for this key-value pair.
 func (m *KeyValuePair) SetName(value *string)() {
     if m != nil {
         m.name = value
@@ -141,7 +141,7 @@ func (m *KeyValuePair) SetOdataType(value *string)() {
         m.odataType = value
     }
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. Value for this key-value pair.
 func (m *KeyValuePair) SetValue(value *string)() {
     if m != nil {
         m.value = value

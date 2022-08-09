@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// TeamworkDeviceOperation provides operations to manage the collection of accessReviewDecision entities.
+// TeamworkDeviceOperation 
 type TeamworkDeviceOperation struct {
     Entity
     // Time at which the operation reached a final state (for example, Successful, Failed, and Cancelled).
@@ -27,7 +27,7 @@ type TeamworkDeviceOperation struct {
     // The current status of the async operation, for example, Queued, Scheduled, InProgress,  Successful, Cancelled, and Failed.
     status *string
 }
-// NewTeamworkDeviceOperation instantiates a new teamworkDeviceOperation and sets the default values.
+// NewTeamworkDeviceOperation instantiates a new TeamworkDeviceOperation and sets the default values.
 func NewTeamworkDeviceOperation()(*TeamworkDeviceOperation) {
     m := &TeamworkDeviceOperation{
         Entity: *NewEntity(),

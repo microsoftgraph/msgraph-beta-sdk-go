@@ -16,6 +16,8 @@ type GroupPolicyCategory struct {
     definitions []GroupPolicyDefinitionable
     // The string id of the category's display name
     displayName *string
+    // Category Ingestion source
+    ingestionSource *IngestionSource
     // Defines if the category is a root category
     isRoot *bool
     // The date and time the entity was last modified.
@@ -119,6 +121,16 @@ func (m *GroupPolicyCategory) GetFieldDeserializers()(map[string]func(i878a80d23
         }
         return nil
     }
+    res["ingestionSource"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseIngestionSource)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetIngestionSource(val.(*IngestionSource))
+        }
+        return nil
+    }
     res["isRoot"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
@@ -150,6 +162,14 @@ func (m *GroupPolicyCategory) GetFieldDeserializers()(map[string]func(i878a80d23
         return nil
     }
     return res
+}
+// GetIngestionSource gets the ingestionSource property value. Category Ingestion source
+func (m *GroupPolicyCategory) GetIngestionSource()(*IngestionSource) {
+    if m == nil {
+        return nil
+    } else {
+        return m.ingestionSource
+    }
 }
 // GetIsRoot gets the isRoot property value. Defines if the category is a root category
 func (m *GroupPolicyCategory) GetIsRoot()(*bool) {
@@ -213,6 +233,13 @@ func (m *GroupPolicyCategory) Serialize(writer i878a80d2330e89d26896388a3f487eef
             return err
         }
     }
+    if m.GetIngestionSource() != nil {
+        cast := (*m.GetIngestionSource()).String()
+        err = writer.WriteStringValue("ingestionSource", &cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteBoolValue("isRoot", m.GetIsRoot())
         if err != nil {
@@ -255,6 +282,12 @@ func (m *GroupPolicyCategory) SetDefinitions(value []GroupPolicyDefinitionable)(
 func (m *GroupPolicyCategory) SetDisplayName(value *string)() {
     if m != nil {
         m.displayName = value
+    }
+}
+// SetIngestionSource sets the ingestionSource property value. Category Ingestion source
+func (m *GroupPolicyCategory) SetIngestionSource(value *IngestionSource)() {
+    if m != nil {
+        m.ingestionSource = value
     }
 }
 // SetIsRoot sets the isRoot property value. Defines if the category is a root category

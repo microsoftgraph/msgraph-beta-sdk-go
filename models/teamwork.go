@@ -13,6 +13,8 @@ type Teamwork struct {
     devices []TeamworkDeviceable
     // Represents tenant-wide settings for all Teams apps in the tenant.
     teamsAppSettings TeamsAppSettingsable
+    // The templates associated with a team.
+    teamTemplates []TeamTemplateable
     // A workforce integration with shifts.
     workforceIntegrations []WorkforceIntegrationable
 }
@@ -86,6 +88,20 @@ func (m *Teamwork) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
         }
         return nil
     }
+    res["teamTemplates"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateTeamTemplateFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]TeamTemplateable, len(val))
+            for i, v := range val {
+                res[i] = v.(TeamTemplateable)
+            }
+            m.SetTeamTemplates(res)
+        }
+        return nil
+    }
     res["workforceIntegrations"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateWorkforceIntegrationFromDiscriminatorValue)
         if err != nil {
@@ -108,6 +124,14 @@ func (m *Teamwork) GetTeamsAppSettings()(TeamsAppSettingsable) {
         return nil
     } else {
         return m.teamsAppSettings
+    }
+}
+// GetTeamTemplates gets the teamTemplates property value. The templates associated with a team.
+func (m *Teamwork) GetTeamTemplates()([]TeamTemplateable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.teamTemplates
     }
 }
 // GetWorkforceIntegrations gets the workforceIntegrations property value. A workforce integration with shifts.
@@ -150,6 +174,16 @@ func (m *Teamwork) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
             return err
         }
     }
+    if m.GetTeamTemplates() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetTeamTemplates()))
+        for i, v := range m.GetTeamTemplates() {
+            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+        }
+        err = writer.WriteCollectionOfObjectValues("teamTemplates", cast)
+        if err != nil {
+            return err
+        }
+    }
     if m.GetWorkforceIntegrations() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetWorkforceIntegrations()))
         for i, v := range m.GetWorkforceIntegrations() {
@@ -178,6 +212,12 @@ func (m *Teamwork) SetDevices(value []TeamworkDeviceable)() {
 func (m *Teamwork) SetTeamsAppSettings(value TeamsAppSettingsable)() {
     if m != nil {
         m.teamsAppSettings = value
+    }
+}
+// SetTeamTemplates sets the teamTemplates property value. The templates associated with a team.
+func (m *Teamwork) SetTeamTemplates(value []TeamTemplateable)() {
+    if m != nil {
+        m.teamTemplates = value
     }
 }
 // SetWorkforceIntegrations sets the workforceIntegrations property value. A workforce integration with shifts.

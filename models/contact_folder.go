@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ContactFolder 
+// ContactFolder provides operations to manage the collection of accessReview entities.
 type ContactFolder struct {
     Entity
     // The collection of child folders in the folder. Navigation property. Read-only. Nullable.
@@ -22,7 +22,7 @@ type ContactFolder struct {
     // The name of the folder if the folder is a recognized folder. Currently contacts is the only recognized contacts folder.
     wellKnownName *string
 }
-// NewContactFolder instantiates a new ContactFolder and sets the default values.
+// NewContactFolder instantiates a new contactFolder and sets the default values.
 func NewContactFolder()(*ContactFolder) {
     m := &ContactFolder{
         Entity: *NewEntity(),

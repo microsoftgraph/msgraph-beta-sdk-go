@@ -13,6 +13,7 @@ import (
     i07f3d961099ef67a3461c2a7c22256a9a4e212a860280569ab7520faa618a475 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/compliancesettings"
     i08923e6cb04538143ef467f61d1f68f42feb51236dd85ea051561286101056b9 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/compliancepolicies"
     i08aace5d722a25be94c3870519ce5be0f606f406a71f189a8969a6c597840d66 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/userexperienceanalyticsbatteryhealthmodelperformance"
+    i0b08a420df2118d05af20d0f8785ea74e30b982b250b80259c4d9d9c2ea441e4 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/organizationalmessageguidedcontents"
     i1026eee1563c445d573818d7c0ee3bbb4f859572fbfce275bbc01b981ffe3d67 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/windowsautopilotdeploymentprofiles"
     i1139b32380c25d76d1f7979a554c41b83234dd62c3aaf7e0c39d3286ad87e5e5 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/iosupdatestatuses"
     i123f7e3613b14bdb6583793a8d2b8201841844975e8b2a4040cf377652ad4f4f "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/userexperienceanalyticsbatteryhealthdeviceruntimehistory"
@@ -53,6 +54,7 @@ import (
     i3f9e02dc418faa1121caa625af488a2db2444f528d0dd315716c1fb4c073311a "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/reusablesettings"
     i3fe987324a6f52269c1192e32d6ec0f12410e6c6a2ed63c186118a915711286a "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/advancedthreatprotectiononboardingstatesummary"
     i40a8e00e460bc3f161887071f058de9d337d7e495f1a3d7661c7d8bc98dcb6ae "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/mobileapptroubleshootingevents"
+    i4212fda420073f02c0b6310a87e6c6c6e583b18460419b15d87f9b9bde8791b2 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/organizationalmessagedetails"
     i4252c65331d838d3f6fc7facbc5b82bc4dd347df90714b1bfa5f3bc96ec99e19 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/configmanagercollections"
     i46f6b730fa2bb030fa0b9c2d0af94ba03f8f2c25d6e086a7f55f47071f42fc09 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/userexperienceanalyticsapphealthapplicationperformancebyappversiondeviceid"
     i4deaab6d5ba50813ad2e9aa4704473d165202b18e7c38cd1fd3bb871aecc2364 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/userexperienceanalyticsmodelscores"
@@ -196,6 +198,7 @@ import (
     i21d5ff7c7bad73fe610934541fdd0b62baddc6b6bfb19642899dbba4768af420 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/devicecompliancepolicysettingstatesummaries/item"
     i22df34f1d011439270aa80f1c0df83a47bfccd829bdadb118ad00be372bcbacd "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/telecomexpensemanagementpartners/item"
     i24abb123826461a00a90764243200f8c9d00edda2d377fe0fd0c2b0f81719f76 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/windowsmalwareinformation/item"
+    i260b62087efaed4c7beb6bd358d7f35fb41a3ce9b5e7efe7cc44f0f80c9a30a7 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/organizationalmessagedetails/item"
     i26fb1c650b48073e6ced464ef92267c0a24a7434e6d374d8d672ab39dd6c708f "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/datasharingconsents/item"
     i27102a1f55f0e4f532da32f9fd084200fff4b915619203ac19778e277550113e "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/windowsinformationprotectionapplearningsummaries/item"
     i2b74d96ff84d5fe2d4dd32bbda034d0939a6963d72ec6bdc6385dbd2c7be7399 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/userexperienceanalyticsapphealthdeviceperformancedetails/item"
@@ -222,6 +225,7 @@ import (
     i513d8d8b74c87b48fc53b5b81415678490500a8a5edc7915f7f4248e0c1935d3 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/embeddedsimactivationcodepools/item"
     i5185a0e6534a11cca51f4633f60a197ce736badd66d35bc2dd5699838abba41c "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/userexperienceanalyticsdevicescopes/item"
     i54e65d93ef820122e89e6a29edbe82bf7f240dd7ea821ef8e67e1ae5f80ebb88 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/devicemanagementscripts/item"
+    i55ec3779a1db9f0bea7c8292fdcd25a7d32847ef391ba112febdcea320afb855 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/organizationalmessageguidedcontents/item"
     i56bc149ad6993ba047897a1c8c1431979f381d0fcc715b60c2384b165dd578fd "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/comanageddevices/item"
     i5a9df32f03feecaa0c953174fcd18381b26be2d3cb4e5f0c407cf4926db7f232 "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/appleuserinitiatedenrollmentprofiles/item"
     i5d8d3d68e99a3b659b85753837fbb9b6148adb3f7d3a84c58ae6fbe4e9060c0e "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/manageddeviceencryptionstates/item"
@@ -1558,6 +1562,36 @@ func (m *DeviceManagementRequestBuilder) OemWarrantyInformationOnboardingById(id
         urlTplParams["oemWarrantyInformationOnboarding%2Did"] = id
     }
     return i2b80fe28d9f30f8b3299f4f1ee5b54048b597abcb77e37e4cba3907059257c35.NewOemWarrantyInformationOnboardingItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+}
+// OrganizationalMessageDetails the organizationalMessageDetails property
+func (m *DeviceManagementRequestBuilder) OrganizationalMessageDetails()(*i4212fda420073f02c0b6310a87e6c6c6e583b18460419b15d87f9b9bde8791b2.OrganizationalMessageDetailsRequestBuilder) {
+    return i4212fda420073f02c0b6310a87e6c6c6e583b18460419b15d87f9b9bde8791b2.NewOrganizationalMessageDetailsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// OrganizationalMessageDetailsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.organizationalMessageDetails.item collection
+func (m *DeviceManagementRequestBuilder) OrganizationalMessageDetailsById(id string)(*i260b62087efaed4c7beb6bd358d7f35fb41a3ce9b5e7efe7cc44f0f80c9a30a7.OrganizationalMessageDetailItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
+    }
+    if id != "" {
+        urlTplParams["organizationalMessageDetail%2Did"] = id
+    }
+    return i260b62087efaed4c7beb6bd358d7f35fb41a3ce9b5e7efe7cc44f0f80c9a30a7.NewOrganizationalMessageDetailItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+}
+// OrganizationalMessageGuidedContents the organizationalMessageGuidedContents property
+func (m *DeviceManagementRequestBuilder) OrganizationalMessageGuidedContents()(*i0b08a420df2118d05af20d0f8785ea74e30b982b250b80259c4d9d9c2ea441e4.OrganizationalMessageGuidedContentsRequestBuilder) {
+    return i0b08a420df2118d05af20d0f8785ea74e30b982b250b80259c4d9d9c2ea441e4.NewOrganizationalMessageGuidedContentsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// OrganizationalMessageGuidedContentsById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.deviceManagement.organizationalMessageGuidedContents.item collection
+func (m *DeviceManagementRequestBuilder) OrganizationalMessageGuidedContentsById(id string)(*i55ec3779a1db9f0bea7c8292fdcd25a7d32847ef391ba112febdcea320afb855.OrganizationalMessageGuidedContentItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
+    }
+    if id != "" {
+        urlTplParams["organizationalMessageGuidedContent%2Did"] = id
+    }
+    return i55ec3779a1db9f0bea7c8292fdcd25a7d32847ef391ba112febdcea320afb855.NewOrganizationalMessageGuidedContentItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // Patch update deviceManagement
 func (m *DeviceManagementRequestBuilder) Patch(body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementable)(error) {

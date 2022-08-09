@@ -98,6 +98,7 @@ import (
     if53d06a6944a15601fc9e0ecdcd8e010fb0ac38ce7857531732470170377fa9c "github.com/microsoftgraph/msgraph-beta-sdk-go/me/activities"
     if54b727c8f82e94874a8380d8e6c910ef5f2b561abf736f53bd43812b1e23237 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/calendars"
     if6e3044a34bc88e3264e7687443bb1bb7614a36ae9afdf6f7b962a1086748067 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/cloudpcs"
+    if7c226ac1fb697611e5cc28b6bee0ac1f1c6d51898fd4bf78542842ae06536db "github.com/microsoftgraph/msgraph-beta-sdk-go/me/approleassignedresources"
     if9a235a81139ac366dce38caf3d59b07903735e656934a8208ee758d24cf000e "github.com/microsoftgraph/msgraph-beta-sdk-go/me/checkmemberobjects"
     ifa6354c03b0a297cab93d13f8bc78708546aaeb1be40e137a7d07a262fce0ea9 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/photo"
     ifae3a8927e14c995c44faea104b1594d3360d9fcbfabb3aba01f5da5671d0ba4 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/mobileappintentandstates"
@@ -141,6 +142,7 @@ import (
     icccda8c1e029711a6c2c010bde446ea283c88f9167583edd4cb4b8891df462bd "github.com/microsoftgraph/msgraph-beta-sdk-go/me/contactfolders/item"
     id23f8c7e0c3929eeb36c197eb371fd7242f148f968513d3b42532b35904d2c7e "github.com/microsoftgraph/msgraph-beta-sdk-go/me/devices/item"
     id7edb04c2fe4b42c55656962bf3bb27391a93462cc5a89234df1ddf704bdf49d "github.com/microsoftgraph/msgraph-beta-sdk-go/me/mobileappintentandstates/item"
+    ie03252d8bc0ab84afe8d33f54e4b7dcd6b92db4b4d16eb6d427177dc1271a9c0 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/approleassignedresources/item"
     ie23caf2134464ac7a439e71ae9e04c43d1e7edeb9f60834c6450c46b2a73ef3d "github.com/microsoftgraph/msgraph-beta-sdk-go/me/onlinemeetings/item"
     iedd9b42c61703c4f6442a904b683a6508ee4bf335825ff84ce57fb2616e2cce3 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/people/item"
     if68ffab8944bb223858e55142c815f29e64d6051ab2ef6f6ce0d495d4d87f4a9 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/chats/item"
@@ -233,6 +235,21 @@ func (m *MeRequestBuilder) AppConsentRequestsForApprovalById(id string)(*i964afe
         urlTplParams["appConsentRequest%2Did"] = id
     }
     return i964afe288259202a4e1a7dec3dd29d7b0e636062c4231f642d5958afce7f732f.NewAppConsentRequestItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+}
+// AppRoleAssignedResources the appRoleAssignedResources property
+func (m *MeRequestBuilder) AppRoleAssignedResources()(*if7c226ac1fb697611e5cc28b6bee0ac1f1c6d51898fd4bf78542842ae06536db.AppRoleAssignedResourcesRequestBuilder) {
+    return if7c226ac1fb697611e5cc28b6bee0ac1f1c6d51898fd4bf78542842ae06536db.NewAppRoleAssignedResourcesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// AppRoleAssignedResourcesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.me.appRoleAssignedResources.item collection
+func (m *MeRequestBuilder) AppRoleAssignedResourcesById(id string)(*ie03252d8bc0ab84afe8d33f54e4b7dcd6b92db4b4d16eb6d427177dc1271a9c0.ServicePrincipalItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
+    }
+    if id != "" {
+        urlTplParams["servicePrincipal%2Did"] = id
+    }
+    return ie03252d8bc0ab84afe8d33f54e4b7dcd6b92db4b4d16eb6d427177dc1271a9c0.NewServicePrincipalItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // AppRoleAssignments the appRoleAssignments property
 func (m *MeRequestBuilder) AppRoleAssignments()(*i3aea592c6cb33f9e19fb4c62bdecfe7aa46cc52af88598190451b79c5e046e26.AppRoleAssignmentsRequestBuilder) {

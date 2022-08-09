@@ -13,6 +13,8 @@ type DeviceEnrollmentNotificationConfiguration struct {
     defaultLocale *string
     // Notification Message Template Id
     notificationMessageTemplateId *string
+    // The list of notification data -
+    notificationTemplates []string
     // This enum indicates the platform type for which the enrollment restriction applies.
     platformType *EnrollmentRestrictionPlatformType
     // This enum indicates the Template type for which the enrollment notification applies.
@@ -80,6 +82,20 @@ func (m *DeviceEnrollmentNotificationConfiguration) GetFieldDeserializers()(map[
         }
         return nil
     }
+    res["notificationTemplates"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfPrimitiveValues("string")
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetNotificationTemplates(res)
+        }
+        return nil
+    }
     res["platformType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseEnrollmentRestrictionPlatformType)
         if err != nil {
@@ -108,6 +124,14 @@ func (m *DeviceEnrollmentNotificationConfiguration) GetNotificationMessageTempla
         return nil
     } else {
         return m.notificationMessageTemplateId
+    }
+}
+// GetNotificationTemplates gets the notificationTemplates property value. The list of notification data -
+func (m *DeviceEnrollmentNotificationConfiguration) GetNotificationTemplates()([]string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.notificationTemplates
     }
 }
 // GetPlatformType gets the platformType property value. This enum indicates the platform type for which the enrollment restriction applies.
@@ -151,6 +175,12 @@ func (m *DeviceEnrollmentNotificationConfiguration) Serialize(writer i878a80d233
             return err
         }
     }
+    if m.GetNotificationTemplates() != nil {
+        err = writer.WriteCollectionOfStringValues("notificationTemplates", m.GetNotificationTemplates())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetPlatformType() != nil {
         cast := (*m.GetPlatformType()).String()
         err = writer.WriteStringValue("platformType", &cast)
@@ -183,6 +213,12 @@ func (m *DeviceEnrollmentNotificationConfiguration) SetDefaultLocale(value *stri
 func (m *DeviceEnrollmentNotificationConfiguration) SetNotificationMessageTemplateId(value *string)() {
     if m != nil {
         m.notificationMessageTemplateId = value
+    }
+}
+// SetNotificationTemplates sets the notificationTemplates property value. The list of notification data -
+func (m *DeviceEnrollmentNotificationConfiguration) SetNotificationTemplates(value []string)() {
+    if m != nil {
+        m.notificationTemplates = value
     }
 }
 // SetPlatformType sets the platformType property value. This enum indicates the platform type for which the enrollment restriction applies.

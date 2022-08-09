@@ -11,6 +11,8 @@ type MicrosoftTunnelSite struct {
     description *string
     // The MicrosoftTunnelSite's display name
     displayName *string
+    // When set to true, certificate pinning will be enforced on connections between the Microsoft Tunnel server and Microsoft Tunnel clients. When set to false, certificate pinning will be disabled.
+    enableCertificatePinning *bool
     // The MicrosoftTunnelSite's Internal Network Access Probe URL
     internalNetworkProbeUrl *string
     // The MicrosoftTunnelConfiguration that has been applied to this MicrosoftTunnelSite
@@ -61,6 +63,14 @@ func (m *MicrosoftTunnelSite) GetDisplayName()(*string) {
         return m.displayName
     }
 }
+// GetEnableCertificatePinning gets the enableCertificatePinning property value. When set to true, certificate pinning will be enforced on connections between the Microsoft Tunnel server and Microsoft Tunnel clients. When set to false, certificate pinning will be disabled.
+func (m *MicrosoftTunnelSite) GetEnableCertificatePinning()(*bool) {
+    if m == nil {
+        return nil
+    } else {
+        return m.enableCertificatePinning
+    }
+}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *MicrosoftTunnelSite) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
@@ -81,6 +91,16 @@ func (m *MicrosoftTunnelSite) GetFieldDeserializers()(map[string]func(i878a80d23
         }
         if val != nil {
             m.SetDisplayName(val)
+        }
+        return nil
+    }
+    res["enableCertificatePinning"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetEnableCertificatePinning(val)
         }
         return nil
     }
@@ -293,6 +313,12 @@ func (m *MicrosoftTunnelSite) Serialize(writer i878a80d2330e89d26896388a3f487eef
         }
     }
     {
+        err = writer.WriteBoolValue("enableCertificatePinning", m.GetEnableCertificatePinning())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("internalNetworkProbeUrl", m.GetInternalNetworkProbeUrl())
         if err != nil {
             return err
@@ -368,6 +394,12 @@ func (m *MicrosoftTunnelSite) SetDescription(value *string)() {
 func (m *MicrosoftTunnelSite) SetDisplayName(value *string)() {
     if m != nil {
         m.displayName = value
+    }
+}
+// SetEnableCertificatePinning sets the enableCertificatePinning property value. When set to true, certificate pinning will be enforced on connections between the Microsoft Tunnel server and Microsoft Tunnel clients. When set to false, certificate pinning will be disabled.
+func (m *MicrosoftTunnelSite) SetEnableCertificatePinning(value *bool)() {
+    if m != nil {
+        m.enableCertificatePinning = value
     }
 }
 // SetInternalNetworkProbeUrl sets the internalNetworkProbeUrl property value. The MicrosoftTunnelSite's Internal Network Access Probe URL

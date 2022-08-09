@@ -22,7 +22,7 @@ type LabelPolicySettingsRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// LabelPolicySettingsRequestBuilderGetQueryParameters get labelPolicySettings from users
+// LabelPolicySettingsRequestBuilderGetQueryParameters read the Microsoft Purview Information Protection policy settings for the user or organization.
 type LabelPolicySettingsRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -80,11 +80,11 @@ func (m *LabelPolicySettingsRequestBuilder) CreateDeleteRequestInformationWithRe
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation get labelPolicySettings from users
+// CreateGetRequestInformation read the Microsoft Purview Information Protection policy settings for the user or organization.
 func (m *LabelPolicySettingsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration get labelPolicySettings from users
+// CreateGetRequestInformationWithRequestConfiguration read the Microsoft Purview Information Protection policy settings for the user or organization.
 func (m *LabelPolicySettingsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *LabelPolicySettingsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -137,11 +137,11 @@ func (m *LabelPolicySettingsRequestBuilder) DeleteWithRequestConfigurationAndRes
     }
     return nil
 }
-// Get get labelPolicySettings from users
+// Get read the Microsoft Purview Information Protection policy settings for the user or organization.
 func (m *LabelPolicySettingsRequestBuilder) Get()(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.InformationProtectionPolicySettingable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler get labelPolicySettings from users
+// GetWithRequestConfigurationAndResponseHandler read the Microsoft Purview Information Protection policy settings for the user or organization.
 func (m *LabelPolicySettingsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *LabelPolicySettingsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.InformationProtectionPolicySettingable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {
