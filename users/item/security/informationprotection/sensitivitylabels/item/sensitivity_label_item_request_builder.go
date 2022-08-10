@@ -23,7 +23,7 @@ type SensitivityLabelItemRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// SensitivityLabelItemRequestBuilderGetQueryParameters get sensitivityLabels from users
+// SensitivityLabelItemRequestBuilderGetQueryParameters read the Microsoft Purview Information Protection labels for the user or organization.
 type SensitivityLabelItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -81,11 +81,11 @@ func (m *SensitivityLabelItemRequestBuilder) CreateDeleteRequestInformationWithR
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation get sensitivityLabels from users
+// CreateGetRequestInformation read the Microsoft Purview Information Protection labels for the user or organization.
 func (m *SensitivityLabelItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration get sensitivityLabels from users
+// CreateGetRequestInformationWithRequestConfiguration read the Microsoft Purview Information Protection labels for the user or organization.
 func (m *SensitivityLabelItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *SensitivityLabelItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -138,11 +138,11 @@ func (m *SensitivityLabelItemRequestBuilder) DeleteWithRequestConfigurationAndRe
     }
     return nil
 }
-// Get get sensitivityLabels from users
+// Get read the Microsoft Purview Information Protection labels for the user or organization.
 func (m *SensitivityLabelItemRequestBuilder) Get()(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.SensitivityLabelable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler get sensitivityLabels from users
+// GetWithRequestConfigurationAndResponseHandler read the Microsoft Purview Information Protection labels for the user or organization.
 func (m *SensitivityLabelItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *SensitivityLabelItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.SensitivityLabelable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

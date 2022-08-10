@@ -22,6 +22,8 @@ type User struct {
     analytics UserAnalyticsable
     // The appConsentRequestsForApproval property
     appConsentRequestsForApproval []AppConsentRequestable
+    // The appRoleAssignedResources property
+    appRoleAssignedResources []ServicePrincipalable
     // Represents the app roles a user has been granted for an application. Supports $expand.
     appRoleAssignments []AppRoleAssignmentable
     // The approvals property
@@ -360,6 +362,14 @@ func (m *User) GetAppConsentRequestsForApproval()([]AppConsentRequestable) {
         return nil
     } else {
         return m.appConsentRequestsForApproval
+    }
+}
+// GetAppRoleAssignedResources gets the appRoleAssignedResources property value. The appRoleAssignedResources property
+func (m *User) GetAppRoleAssignedResources()([]ServicePrincipalable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.appRoleAssignedResources
     }
 }
 // GetAppRoleAssignments gets the appRoleAssignments property value. Represents the app roles a user has been granted for an application. Supports $expand.
@@ -788,6 +798,20 @@ func (m *User) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a
                 res[i] = v.(AppConsentRequestable)
             }
             m.SetAppConsentRequestsForApproval(res)
+        }
+        return nil
+    }
+    res["appRoleAssignedResources"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateServicePrincipalFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]ServicePrincipalable, len(val))
+            for i, v := range val {
+                res[i] = v.(ServicePrincipalable)
+            }
+            m.SetAppRoleAssignedResources(res)
         }
         return nil
     }
@@ -3175,6 +3199,16 @@ func (m *User) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c49
             return err
         }
     }
+    if m.GetAppRoleAssignedResources() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAppRoleAssignedResources()))
+        for i, v := range m.GetAppRoleAssignedResources() {
+            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+        }
+        err = writer.WriteCollectionOfObjectValues("appRoleAssignedResources", cast)
+        if err != nil {
+            return err
+        }
+    }
     if m.GetAppRoleAssignments() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAppRoleAssignments()))
         for i, v := range m.GetAppRoleAssignments() {
@@ -4223,6 +4257,12 @@ func (m *User) SetAnalytics(value UserAnalyticsable)() {
 func (m *User) SetAppConsentRequestsForApproval(value []AppConsentRequestable)() {
     if m != nil {
         m.appConsentRequestsForApproval = value
+    }
+}
+// SetAppRoleAssignedResources sets the appRoleAssignedResources property value. The appRoleAssignedResources property
+func (m *User) SetAppRoleAssignedResources(value []ServicePrincipalable)() {
+    if m != nil {
+        m.appRoleAssignedResources = value
     }
 }
 // SetAppRoleAssignments sets the appRoleAssignments property value. Represents the app roles a user has been granted for an application. Supports $expand.

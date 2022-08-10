@@ -8,9 +8,9 @@ import (
 type DowngradeJustification struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
-    // The isDowngradeJustified property
+    // Indicates whether the downgrade is or is not justified.
     isDowngradeJustified *bool
-    // The justificationMessage property
+    // Message that indicates why a downgrade is justified. The message will appear in administrative logs.
     justificationMessage *string
     // The OdataType property
     odataType *string
@@ -71,7 +71,7 @@ func (m *DowngradeJustification) GetFieldDeserializers()(map[string]func(i878a80
     }
     return res
 }
-// GetIsDowngradeJustified gets the isDowngradeJustified property value. The isDowngradeJustified property
+// GetIsDowngradeJustified gets the isDowngradeJustified property value. Indicates whether the downgrade is or is not justified.
 func (m *DowngradeJustification) GetIsDowngradeJustified()(*bool) {
     if m == nil {
         return nil
@@ -79,7 +79,7 @@ func (m *DowngradeJustification) GetIsDowngradeJustified()(*bool) {
         return m.isDowngradeJustified
     }
 }
-// GetJustificationMessage gets the justificationMessage property value. The justificationMessage property
+// GetJustificationMessage gets the justificationMessage property value. Message that indicates why a downgrade is justified. The message will appear in administrative logs.
 func (m *DowngradeJustification) GetJustificationMessage()(*string) {
     if m == nil {
         return nil
@@ -129,13 +129,13 @@ func (m *DowngradeJustification) SetAdditionalData(value map[string]interface{})
         m.additionalData = value
     }
 }
-// SetIsDowngradeJustified sets the isDowngradeJustified property value. The isDowngradeJustified property
+// SetIsDowngradeJustified sets the isDowngradeJustified property value. Indicates whether the downgrade is or is not justified.
 func (m *DowngradeJustification) SetIsDowngradeJustified(value *bool)() {
     if m != nil {
         m.isDowngradeJustified = value
     }
 }
-// SetJustificationMessage sets the justificationMessage property value. The justificationMessage property
+// SetJustificationMessage sets the justificationMessage property value. Message that indicates why a downgrade is justified. The message will appear in administrative logs.
 func (m *DowngradeJustification) SetJustificationMessage(value *string)() {
     if m != nil {
         m.justificationMessage = value

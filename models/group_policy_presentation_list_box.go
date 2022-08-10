@@ -6,7 +6,7 @@ import (
 
 // GroupPolicyPresentationListBox 
 type GroupPolicyPresentationListBox struct {
-    GroupPolicyPresentation
+    GroupPolicyUploadedPresentation
     // If this option is specified true the user must specify the registry subkey value and the registry subkey name. The list box shows two columns, one for the name and one for the data. The default value is false.
     explicitValue *bool
     // Not yet documented
@@ -15,7 +15,7 @@ type GroupPolicyPresentationListBox struct {
 // NewGroupPolicyPresentationListBox instantiates a new GroupPolicyPresentationListBox and sets the default values.
 func NewGroupPolicyPresentationListBox()(*GroupPolicyPresentationListBox) {
     m := &GroupPolicyPresentationListBox{
-        GroupPolicyPresentation: *NewGroupPolicyPresentation(),
+        GroupPolicyUploadedPresentation: *NewGroupPolicyUploadedPresentation(),
     }
     odataTypeValue := "#microsoft.graph.groupPolicyPresentationListBox";
     m.SetOdataType(&odataTypeValue);
@@ -35,7 +35,7 @@ func (m *GroupPolicyPresentationListBox) GetExplicitValue()(*bool) {
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *GroupPolicyPresentationListBox) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := m.GroupPolicyPresentation.GetFieldDeserializers()
+    res := m.GroupPolicyUploadedPresentation.GetFieldDeserializers()
     res["explicitValue"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
@@ -68,7 +68,7 @@ func (m *GroupPolicyPresentationListBox) GetValuePrefix()(*string) {
 }
 // Serialize serializes information the current object
 func (m *GroupPolicyPresentationListBox) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
-    err := m.GroupPolicyPresentation.Serialize(writer)
+    err := m.GroupPolicyUploadedPresentation.Serialize(writer)
     if err != nil {
         return err
     }

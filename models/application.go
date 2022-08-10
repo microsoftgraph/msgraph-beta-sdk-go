@@ -22,7 +22,7 @@ type Application struct {
     connectorGroup ConnectorGroupable
     // The date and time the application was registered. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.  Supports $filter (eq, ne, not, ge, le, in, and eq on null values) and $orderBy.
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The createdOnBehalfOf property
+    // Supports $filter (eq when counting empty collections). Read-only.
     createdOnBehalfOf DirectoryObjectable
     // The default redirect URI. If specified and there is no explicit redirect URI in the sign-in request for SAML and OIDC flows, Azure AD sends the token to this redirect URI. Azure AD also sends the token to this default URI in SAML IdP-initiated single sign-on. The value must match one of the configured redirect URIs for the application.
     defaultRedirectUri *string
@@ -58,7 +58,7 @@ type Application struct {
     onPremisesPublishing OnPremisesPublishingable
     // Application developers can configure optional claims in their Azure AD applications to specify the claims that are sent to their application by the Microsoft security token service. For more information, see How to: Provide optional claims to your app.
     optionalClaims OptionalClaimsable
-    // Directory objects that are owners of the application. Read-only. Nullable. Supports $expand.
+    // Directory objects that are owners of the application. Read-only. Nullable. Supports $expand and $filter (eq when counting empty collections).
     owners []DirectoryObjectable
     // Specifies parental control settings for an application.
     parentalControlSettings ParentalControlSettingsable
@@ -68,6 +68,8 @@ type Application struct {
     publicClient PublicClientApplicationable
     // The verified publisher domain for the application. Read-only. Supports $filter (eq, ne, ge, le, startsWith).
     publisherDomain *string
+    // The requestSignatureVerification property
+    requestSignatureVerification RequestSignatureVerificationable
     // Specifies the resources that the application needs to access. This property also specifies the set of delegated permissions and application roles that it needs for each of those resources. This configuration of access to the required resources drives the consent experience. No more than 50 resource services (APIs) can be configured. Beginning mid-October 2021, the total number of required permissions must not exceed 400. Not nullable. Supports $filter (eq, not, ge, le).
     requiredResourceAccess []RequiredResourceAccessable
     // The URL where the service exposes SAML metadata for federation. This property is valid only for single-tenant applications. Nullable.
@@ -166,7 +168,7 @@ func (m *Application) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f
         return m.createdDateTime
     }
 }
-// GetCreatedOnBehalfOf gets the createdOnBehalfOf property value. The createdOnBehalfOf property
+// GetCreatedOnBehalfOf gets the createdOnBehalfOf property value. Supports $filter (eq when counting empty collections). Read-only.
 func (m *Application) GetCreatedOnBehalfOf()(DirectoryObjectable) {
     if m == nil {
         return nil
@@ -561,6 +563,16 @@ func (m *Application) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
         }
         return nil
     }
+    res["requestSignatureVerification"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateRequestSignatureVerificationFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetRequestSignatureVerification(val.(RequestSignatureVerificationable))
+        }
+        return nil
+    }
     res["requiredResourceAccess"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateRequiredResourceAccessFromDiscriminatorValue)
         if err != nil {
@@ -807,7 +819,7 @@ func (m *Application) GetOptionalClaims()(OptionalClaimsable) {
         return m.optionalClaims
     }
 }
-// GetOwners gets the owners property value. Directory objects that are owners of the application. Read-only. Nullable. Supports $expand.
+// GetOwners gets the owners property value. Directory objects that are owners of the application. Read-only. Nullable. Supports $expand and $filter (eq when counting empty collections).
 func (m *Application) GetOwners()([]DirectoryObjectable) {
     if m == nil {
         return nil
@@ -845,6 +857,14 @@ func (m *Application) GetPublisherDomain()(*string) {
         return nil
     } else {
         return m.publisherDomain
+    }
+}
+// GetRequestSignatureVerification gets the requestSignatureVerification property value. The requestSignatureVerification property
+func (m *Application) GetRequestSignatureVerification()(RequestSignatureVerificationable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.requestSignatureVerification
     }
 }
 // GetRequiredResourceAccess gets the requiredResourceAccess property value. Specifies the resources that the application needs to access. This property also specifies the set of delegated permissions and application roles that it needs for each of those resources. This configuration of access to the required resources drives the consent experience. No more than 50 resource services (APIs) can be configured. Beginning mid-October 2021, the total number of required permissions must not exceed 400. Not nullable. Supports $filter (eq, not, ge, le).
@@ -1177,6 +1197,12 @@ func (m *Application) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
             return err
         }
     }
+    {
+        err = writer.WriteObjectValue("requestSignatureVerification", m.GetRequestSignatureVerification())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetRequiredResourceAccess() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetRequiredResourceAccess()))
         for i, v := range m.GetRequiredResourceAccess() {
@@ -1317,7 +1343,7 @@ func (m *Application) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a
         m.createdDateTime = value
     }
 }
-// SetCreatedOnBehalfOf sets the createdOnBehalfOf property value. The createdOnBehalfOf property
+// SetCreatedOnBehalfOf sets the createdOnBehalfOf property value. Supports $filter (eq when counting empty collections). Read-only.
 func (m *Application) SetCreatedOnBehalfOf(value DirectoryObjectable)() {
     if m != nil {
         m.createdOnBehalfOf = value
@@ -1425,7 +1451,7 @@ func (m *Application) SetOptionalClaims(value OptionalClaimsable)() {
         m.optionalClaims = value
     }
 }
-// SetOwners sets the owners property value. Directory objects that are owners of the application. Read-only. Nullable. Supports $expand.
+// SetOwners sets the owners property value. Directory objects that are owners of the application. Read-only. Nullable. Supports $expand and $filter (eq when counting empty collections).
 func (m *Application) SetOwners(value []DirectoryObjectable)() {
     if m != nil {
         m.owners = value
@@ -1453,6 +1479,12 @@ func (m *Application) SetPublicClient(value PublicClientApplicationable)() {
 func (m *Application) SetPublisherDomain(value *string)() {
     if m != nil {
         m.publisherDomain = value
+    }
+}
+// SetRequestSignatureVerification sets the requestSignatureVerification property value. The requestSignatureVerification property
+func (m *Application) SetRequestSignatureVerification(value RequestSignatureVerificationable)() {
+    if m != nil {
+        m.requestSignatureVerification = value
     }
 }
 // SetRequiredResourceAccess sets the requiredResourceAccess property value. Specifies the resources that the application needs to access. This property also specifies the set of delegated permissions and application roles that it needs for each of those resources. This configuration of access to the required resources drives the consent experience. No more than 50 resource services (APIs) can be configured. Beginning mid-October 2021, the total number of required permissions must not exceed 400. Not nullable. Supports $filter (eq, not, ge, le).

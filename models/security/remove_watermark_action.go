@@ -7,7 +7,7 @@ import (
 // RemoveWatermarkAction 
 type RemoveWatermarkAction struct {
     InformationProtectionAction
-    // The uiElementNames property
+    // The name of the UI element of watermark to be removed.
     uiElementNames []string
 }
 // NewRemoveWatermarkAction instantiates a new RemoveWatermarkAction and sets the default values.
@@ -42,7 +42,7 @@ func (m *RemoveWatermarkAction) GetFieldDeserializers()(map[string]func(i878a80d
     }
     return res
 }
-// GetUiElementNames gets the uiElementNames property value. The uiElementNames property
+// GetUiElementNames gets the uiElementNames property value. The name of the UI element of watermark to be removed.
 func (m *RemoveWatermarkAction) GetUiElementNames()([]string) {
     if m == nil {
         return nil
@@ -64,7 +64,7 @@ func (m *RemoveWatermarkAction) Serialize(writer i878a80d2330e89d26896388a3f487e
     }
     return nil
 }
-// SetUiElementNames sets the uiElementNames property value. The uiElementNames property
+// SetUiElementNames sets the uiElementNames property value. The name of the UI element of watermark to be removed.
 func (m *RemoveWatermarkAction) SetUiElementNames(value []string)() {
     if m != nil {
         m.uiElementNames = value

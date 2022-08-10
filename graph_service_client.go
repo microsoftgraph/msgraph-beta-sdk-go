@@ -66,6 +66,7 @@ import (
     i71438b4a3f9d4a17f8c873a44b8ac76600403f5ce0cce2423bde35e0191f2c17 "github.com/microsoftgraph/msgraph-beta-sdk-go/grouplifecyclepolicies"
     i714cbeb65962cb4d3e58007792fa4832d175c04614ba3aa7efb22871aea885bf "github.com/microsoftgraph/msgraph-beta-sdk-go/settings"
     i716e3204a4c47d24737c05f3b4c2ef2462fa5a1df29b57365f338e8f68ee16ef "github.com/microsoftgraph/msgraph-beta-sdk-go/contacts"
+    i7282246c788c7b44fcd028d8a1500ce1ffd32f655bee3b580b6a33d9ec10f610 "github.com/microsoftgraph/msgraph-beta-sdk-go/solutions"
     i73583652789c7aab226ac5bae66bc7b5fd924607d28350c4478c2a20524fd624 "github.com/microsoftgraph/msgraph-beta-sdk-go/shares"
     i75b6dc07087cda1a9afc465878b0aa56ca3703a3ed530d5a22119b0960d159d3 "github.com/microsoftgraph/msgraph-beta-sdk-go/print"
     i761e9f0dec20dbf36c7fd626d107fb81ef94cafa7369422d2b2af143ffa16184 "github.com/microsoftgraph/msgraph-beta-sdk-go/security"
@@ -1399,6 +1400,10 @@ func (m *GraphServiceClient) SitesById(id string)(*ic557b65175a90fb05406286b014b
         urlTplParams["site%2Did"] = id
     }
     return ic557b65175a90fb05406286b014b07b096a266f27fc59e78636733800d66ff09.NewSiteItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+}
+// Solutions the solutions property
+func (m *GraphServiceClient) Solutions()(*i7282246c788c7b44fcd028d8a1500ce1ffd32f655bee3b580b6a33d9ec10f610.SolutionsRequestBuilder) {
+    return i7282246c788c7b44fcd028d8a1500ce1ffd32f655bee3b580b6a33d9ec10f610.NewSolutionsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Storage the storage property
 func (m *GraphServiceClient) Storage()(*id14bafb4ee71e1257662cacab67dd479e54eba65ce10c6816ee4676804caf821.StorageRequestBuilder) {

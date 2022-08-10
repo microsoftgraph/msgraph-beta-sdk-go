@@ -7,9 +7,9 @@ import (
 // MetadataAction 
 type MetadataAction struct {
     InformationProtectionAction
-    // The metadataToAdd property
+    // A collection of key-value pairs that should be added to the file.
     metadataToAdd []KeyValuePairable
-    // The metadataToRemove property
+    // A collection of strings that indicate which keys to remove from the file metadata.
     metadataToRemove []string
 }
 // NewMetadataAction instantiates a new MetadataAction and sets the default values.
@@ -58,7 +58,7 @@ func (m *MetadataAction) GetFieldDeserializers()(map[string]func(i878a80d2330e89
     }
     return res
 }
-// GetMetadataToAdd gets the metadataToAdd property value. The metadataToAdd property
+// GetMetadataToAdd gets the metadataToAdd property value. A collection of key-value pairs that should be added to the file.
 func (m *MetadataAction) GetMetadataToAdd()([]KeyValuePairable) {
     if m == nil {
         return nil
@@ -66,7 +66,7 @@ func (m *MetadataAction) GetMetadataToAdd()([]KeyValuePairable) {
         return m.metadataToAdd
     }
 }
-// GetMetadataToRemove gets the metadataToRemove property value. The metadataToRemove property
+// GetMetadataToRemove gets the metadataToRemove property value. A collection of strings that indicate which keys to remove from the file metadata.
 func (m *MetadataAction) GetMetadataToRemove()([]string) {
     if m == nil {
         return nil
@@ -98,13 +98,13 @@ func (m *MetadataAction) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
     }
     return nil
 }
-// SetMetadataToAdd sets the metadataToAdd property value. The metadataToAdd property
+// SetMetadataToAdd sets the metadataToAdd property value. A collection of key-value pairs that should be added to the file.
 func (m *MetadataAction) SetMetadataToAdd(value []KeyValuePairable)() {
     if m != nil {
         m.metadataToAdd = value
     }
 }
-// SetMetadataToRemove sets the metadataToRemove property value. The metadataToRemove property
+// SetMetadataToRemove sets the metadataToRemove property value. A collection of strings that indicate which keys to remove from the file metadata.
 func (m *MetadataAction) SetMetadataToRemove(value []string)() {
     if m != nil {
         m.metadataToRemove = value

@@ -6,7 +6,7 @@ import (
 
 // GroupPolicyPresentationDropdownList 
 type GroupPolicyPresentationDropdownList struct {
-    GroupPolicyPresentation
+    GroupPolicyUploadedPresentation
     // Localized string value identifying the default choice of the list of items.
     defaultItem GroupPolicyPresentationDropdownListItemable
     // Represents a set of localized display names and their associated values.
@@ -17,7 +17,7 @@ type GroupPolicyPresentationDropdownList struct {
 // NewGroupPolicyPresentationDropdownList instantiates a new GroupPolicyPresentationDropdownList and sets the default values.
 func NewGroupPolicyPresentationDropdownList()(*GroupPolicyPresentationDropdownList) {
     m := &GroupPolicyPresentationDropdownList{
-        GroupPolicyPresentation: *NewGroupPolicyPresentation(),
+        GroupPolicyUploadedPresentation: *NewGroupPolicyUploadedPresentation(),
     }
     odataTypeValue := "#microsoft.graph.groupPolicyPresentationDropdownList";
     m.SetOdataType(&odataTypeValue);
@@ -37,7 +37,7 @@ func (m *GroupPolicyPresentationDropdownList) GetDefaultItem()(GroupPolicyPresen
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *GroupPolicyPresentationDropdownList) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := m.GroupPolicyPresentation.GetFieldDeserializers()
+    res := m.GroupPolicyUploadedPresentation.GetFieldDeserializers()
     res["defaultItem"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateGroupPolicyPresentationDropdownListItemFromDiscriminatorValue)
         if err != nil {
@@ -92,7 +92,7 @@ func (m *GroupPolicyPresentationDropdownList) GetRequired()(*bool) {
 }
 // Serialize serializes information the current object
 func (m *GroupPolicyPresentationDropdownList) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
-    err := m.GroupPolicyPresentation.Serialize(writer)
+    err := m.GroupPolicyUploadedPresentation.Serialize(writer)
     if err != nil {
         return err
     }

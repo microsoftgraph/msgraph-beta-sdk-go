@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Provides operations to manage the collection of accessReviewDecision entities.
+// Provides operations to manage the collection of accessReview entities.
 type UserExperienceAnalyticsHealthState int
 
 const (
@@ -10,10 +10,12 @@ const (
     INSUFFICIENTDATA_USEREXPERIENCEANALYTICSHEALTHSTATE
     NEEDSATTENTION_USEREXPERIENCEANALYTICSHEALTHSTATE
     MEETINGGOALS_USEREXPERIENCEANALYTICSHEALTHSTATE
+    // Evolvable enum member
+    UNKNOWNFUTUREVALUE_USEREXPERIENCEANALYTICSHEALTHSTATE
 )
 
 func (i UserExperienceAnalyticsHealthState) String() string {
-    return []string{"unknown", "insufficientData", "needsAttention", "meetingGoals"}[i]
+    return []string{"unknown", "insufficientData", "needsAttention", "meetingGoals", "unknownFutureValue"}[i]
 }
 func ParseUserExperienceAnalyticsHealthState(v string) (interface{}, error) {
     result := UNKNOWN_USEREXPERIENCEANALYTICSHEALTHSTATE
@@ -26,6 +28,8 @@ func ParseUserExperienceAnalyticsHealthState(v string) (interface{}, error) {
             result = NEEDSATTENTION_USEREXPERIENCEANALYTICSHEALTHSTATE
         case "meetingGoals":
             result = MEETINGGOALS_USEREXPERIENCEANALYTICSHEALTHSTATE
+        case "unknownFutureValue":
+            result = UNKNOWNFUTUREVALUE_USEREXPERIENCEANALYTICSHEALTHSTATE
         default:
             return 0, errors.New("Unknown UserExperienceAnalyticsHealthState value: " + v)
     }

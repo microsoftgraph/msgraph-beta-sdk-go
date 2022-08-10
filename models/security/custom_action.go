@@ -7,9 +7,9 @@ import (
 // CustomAction 
 type CustomAction struct {
     InformationProtectionAction
-    // The name property
+    // Name of the custom action.
     name *string
-    // The properties property
+    // Properties, in key-value pair format, of the action.
     properties []KeyValuePairable
 }
 // NewCustomAction instantiates a new CustomAction and sets the default values.
@@ -54,7 +54,7 @@ func (m *CustomAction) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
     }
     return res
 }
-// GetName gets the name property value. The name property
+// GetName gets the name property value. Name of the custom action.
 func (m *CustomAction) GetName()(*string) {
     if m == nil {
         return nil
@@ -62,7 +62,7 @@ func (m *CustomAction) GetName()(*string) {
         return m.name
     }
 }
-// GetProperties gets the properties property value. The properties property
+// GetProperties gets the properties property value. Properties, in key-value pair format, of the action.
 func (m *CustomAction) GetProperties()([]KeyValuePairable) {
     if m == nil {
         return nil
@@ -94,13 +94,13 @@ func (m *CustomAction) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
     }
     return nil
 }
-// SetName sets the name property value. The name property
+// SetName sets the name property value. Name of the custom action.
 func (m *CustomAction) SetName(value *string)() {
     if m != nil {
         m.name = value
     }
 }
-// SetProperties sets the properties property value. The properties property
+// SetProperties sets the properties property value. Properties, in key-value pair format, of the action.
 func (m *CustomAction) SetProperties(value []KeyValuePairable)() {
     if m != nil {
         m.properties = value

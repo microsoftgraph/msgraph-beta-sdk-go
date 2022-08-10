@@ -8,6 +8,8 @@ import (
 // ExternalConnection 
 type ExternalConnection struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
+    // Collects configurable settings related to activities involving connector content.
+    activitySettings ActivitySettingsable
     // The complianceSettings property
     complianceSettings ComplianceSettingsable
     // Specifies additional application IDs that are allowed to manage the connection and to index content in the connection. Optional.
@@ -49,6 +51,14 @@ func NewExternalConnection()(*ExternalConnection) {
 // CreateExternalConnectionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateExternalConnectionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewExternalConnection(), nil
+}
+// GetActivitySettings gets the activitySettings property value. Collects configurable settings related to activities involving connector content.
+func (m *ExternalConnection) GetActivitySettings()(ActivitySettingsable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.activitySettings
+    }
 }
 // GetComplianceSettings gets the complianceSettings property value. The complianceSettings property
 func (m *ExternalConnection) GetComplianceSettings()(ComplianceSettingsable) {
@@ -93,6 +103,16 @@ func (m *ExternalConnection) GetEnabledContentExperiences()(*ContentExperienceTy
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ExternalConnection) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
+    res["activitySettings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateActivitySettingsFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetActivitySettings(val.(ActivitySettingsable))
+        }
+        return nil
+    }
     res["complianceSettings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateComplianceSettingsFromDiscriminatorValue)
         if err != nil {
@@ -326,6 +346,12 @@ func (m *ExternalConnection) Serialize(writer i878a80d2330e89d26896388a3f487eef2
         return err
     }
     {
+        err = writer.WriteObjectValue("activitySettings", m.GetActivitySettings())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteObjectValue("complianceSettings", m.GetComplianceSettings())
         if err != nil {
             return err
@@ -424,6 +450,12 @@ func (m *ExternalConnection) Serialize(writer i878a80d2330e89d26896388a3f487eef2
         }
     }
     return nil
+}
+// SetActivitySettings sets the activitySettings property value. Collects configurable settings related to activities involving connector content.
+func (m *ExternalConnection) SetActivitySettings(value ActivitySettingsable)() {
+    if m != nil {
+        m.activitySettings = value
+    }
 }
 // SetComplianceSettings sets the complianceSettings property value. The complianceSettings property
 func (m *ExternalConnection) SetComplianceSettings(value ComplianceSettingsable)() {

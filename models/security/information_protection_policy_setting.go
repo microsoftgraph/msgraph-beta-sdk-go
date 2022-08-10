@@ -10,11 +10,11 @@ type InformationProtectionPolicySetting struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
     // The defaultLabelId property
     defaultLabelId *string
-    // The isDowngradeJustificationRequired property
+    // Exposes whether justification input is required on label downgrade.
     isDowngradeJustificationRequired *bool
-    // The isMandatory property
+    // Exposes whether mandatory labeling is enabled.
     isMandatory *bool
-    // The moreInfoUrl property
+    // Exposes the more information URL that can be configured by the administrator.
     moreInfoUrl *string
 }
 // NewInformationProtectionPolicySetting instantiates a new informationProtectionPolicySetting and sets the default values.
@@ -83,7 +83,7 @@ func (m *InformationProtectionPolicySetting) GetFieldDeserializers()(map[string]
     }
     return res
 }
-// GetIsDowngradeJustificationRequired gets the isDowngradeJustificationRequired property value. The isDowngradeJustificationRequired property
+// GetIsDowngradeJustificationRequired gets the isDowngradeJustificationRequired property value. Exposes whether justification input is required on label downgrade.
 func (m *InformationProtectionPolicySetting) GetIsDowngradeJustificationRequired()(*bool) {
     if m == nil {
         return nil
@@ -91,7 +91,7 @@ func (m *InformationProtectionPolicySetting) GetIsDowngradeJustificationRequired
         return m.isDowngradeJustificationRequired
     }
 }
-// GetIsMandatory gets the isMandatory property value. The isMandatory property
+// GetIsMandatory gets the isMandatory property value. Exposes whether mandatory labeling is enabled.
 func (m *InformationProtectionPolicySetting) GetIsMandatory()(*bool) {
     if m == nil {
         return nil
@@ -99,7 +99,7 @@ func (m *InformationProtectionPolicySetting) GetIsMandatory()(*bool) {
         return m.isMandatory
     }
 }
-// GetMoreInfoUrl gets the moreInfoUrl property value. The moreInfoUrl property
+// GetMoreInfoUrl gets the moreInfoUrl property value. Exposes the more information URL that can be configured by the administrator.
 func (m *InformationProtectionPolicySetting) GetMoreInfoUrl()(*string) {
     if m == nil {
         return nil
@@ -145,19 +145,19 @@ func (m *InformationProtectionPolicySetting) SetDefaultLabelId(value *string)() 
         m.defaultLabelId = value
     }
 }
-// SetIsDowngradeJustificationRequired sets the isDowngradeJustificationRequired property value. The isDowngradeJustificationRequired property
+// SetIsDowngradeJustificationRequired sets the isDowngradeJustificationRequired property value. Exposes whether justification input is required on label downgrade.
 func (m *InformationProtectionPolicySetting) SetIsDowngradeJustificationRequired(value *bool)() {
     if m != nil {
         m.isDowngradeJustificationRequired = value
     }
 }
-// SetIsMandatory sets the isMandatory property value. The isMandatory property
+// SetIsMandatory sets the isMandatory property value. Exposes whether mandatory labeling is enabled.
 func (m *InformationProtectionPolicySetting) SetIsMandatory(value *bool)() {
     if m != nil {
         m.isMandatory = value
     }
 }
-// SetMoreInfoUrl sets the moreInfoUrl property value. The moreInfoUrl property
+// SetMoreInfoUrl sets the moreInfoUrl property value. Exposes the more information URL that can be configured by the administrator.
 func (m *InformationProtectionPolicySetting) SetMoreInfoUrl(value *string)() {
     if m != nil {
         m.moreInfoUrl = value

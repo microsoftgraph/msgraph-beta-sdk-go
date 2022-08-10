@@ -6,12 +6,14 @@ import (
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
     i3fce2babf7b4f0d1cb31c054814424b76c87dc90eadacea48f98134cc0ffe6e7 "github.com/microsoftgraph/msgraph-beta-sdk-go/teamwork/devices"
     i5f853021bcd09dc31bcfe1b81013b0b4476658eb54310db69fef8d76e06b714a "github.com/microsoftgraph/msgraph-beta-sdk-go/teamwork/deletedteams"
+    ib14bcbfd4e3bccc76a4fe3dff4da7ebc6577392679e6ba6cd1710cd5c03eeba0 "github.com/microsoftgraph/msgraph-beta-sdk-go/teamwork/teamtemplates"
     ib9c577680442ee756cdbf50e3c2f2d61fc1877ecb12e13bf9ec9802c878f1b45 "github.com/microsoftgraph/msgraph-beta-sdk-go/teamwork/workforceintegrations"
     id1ff05524188cf798ff28c962060e88b92f5555111be336cede7088f8719c6a6 "github.com/microsoftgraph/msgraph-beta-sdk-go/teamwork/sendactivitynotificationtorecipients"
     idad6e2713a756a61b26caca3cc1da42b705a499834ed5b89ca8f4eade11dac1d "github.com/microsoftgraph/msgraph-beta-sdk-go/teamwork/teamsappsettings"
     i17ffe63fafac127289aa66b154f468d1a6a27dee2b4568c67bf179cbf15811a8 "github.com/microsoftgraph/msgraph-beta-sdk-go/teamwork/devices/item"
     i75138276537be7f359112029ca90eee1631bb436b9f9db869b58bf15fd0cd092 "github.com/microsoftgraph/msgraph-beta-sdk-go/teamwork/workforceintegrations/item"
     ic86fd621ddc51f4cb681ecef66a6c6bbfecda42d24db8e141175f82fdabf74d2 "github.com/microsoftgraph/msgraph-beta-sdk-go/teamwork/deletedteams/item"
+    id6e8a1d6759febda5acd2ed7c5930f2db6a83ef4fdb4eddde327904716515370 "github.com/microsoftgraph/msgraph-beta-sdk-go/teamwork/teamtemplates/item"
 )
 
 // TeamworkRequestBuilder provides operations to manage the teamwork singleton.
@@ -179,6 +181,21 @@ func (m *TeamworkRequestBuilder) SendActivityNotificationToRecipients()(*id1ff05
 // TeamsAppSettings the teamsAppSettings property
 func (m *TeamworkRequestBuilder) TeamsAppSettings()(*idad6e2713a756a61b26caca3cc1da42b705a499834ed5b89ca8f4eade11dac1d.TeamsAppSettingsRequestBuilder) {
     return idad6e2713a756a61b26caca3cc1da42b705a499834ed5b89ca8f4eade11dac1d.NewTeamsAppSettingsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// TeamTemplates the teamTemplates property
+func (m *TeamworkRequestBuilder) TeamTemplates()(*ib14bcbfd4e3bccc76a4fe3dff4da7ebc6577392679e6ba6cd1710cd5c03eeba0.TeamTemplatesRequestBuilder) {
+    return ib14bcbfd4e3bccc76a4fe3dff4da7ebc6577392679e6ba6cd1710cd5c03eeba0.NewTeamTemplatesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// TeamTemplatesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.teamwork.teamTemplates.item collection
+func (m *TeamworkRequestBuilder) TeamTemplatesById(id string)(*id6e8a1d6759febda5acd2ed7c5930f2db6a83ef4fdb4eddde327904716515370.TeamTemplateItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
+    }
+    if id != "" {
+        urlTplParams["teamTemplate%2Did"] = id
+    }
+    return id6e8a1d6759febda5acd2ed7c5930f2db6a83ef4fdb4eddde327904716515370.NewTeamTemplateItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // WorkforceIntegrations the workforceIntegrations property
 func (m *TeamworkRequestBuilder) WorkforceIntegrations()(*ib9c577680442ee756cdbf50e3c2f2d61fc1877ecb12e13bf9ec9802c878f1b45.WorkforceIntegrationsRequestBuilder) {

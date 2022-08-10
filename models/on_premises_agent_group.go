@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// OnPremisesAgentGroup provides operations to manage the collection of accessReview entities.
+// OnPremisesAgentGroup 
 type OnPremisesAgentGroup struct {
     Entity
     // List of onPremisesAgent that are assigned to an onPremisesAgentGroup. Read-only. Nullable.
@@ -18,7 +18,7 @@ type OnPremisesAgentGroup struct {
     // The publishingType property
     publishingType *OnPremisesPublishingType
 }
-// NewOnPremisesAgentGroup instantiates a new onPremisesAgentGroup and sets the default values.
+// NewOnPremisesAgentGroup instantiates a new OnPremisesAgentGroup and sets the default values.
 func NewOnPremisesAgentGroup()(*OnPremisesAgentGroup) {
     m := &OnPremisesAgentGroup{
         Entity: *NewEntity(),

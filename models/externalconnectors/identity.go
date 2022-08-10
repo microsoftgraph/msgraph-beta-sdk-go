@@ -5,7 +5,7 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
-// Identity provides operations to manage the collection of accessReview entities.
+// Identity provides operations to manage the collection of activityStatistics entities.
 type Identity struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
     // The type of identity. Possible values are: user or group for Azure AD identities and externalgroup for groups in an external system.

@@ -4,11 +4,13 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ZebraFotaArtifact describes a single artifact for a specific device model.
+// ZebraFotaArtifact 
 type ZebraFotaArtifact struct {
     Entity
     // The version of the Board Support Package (BSP. E.g.: 01.18.02.00)
     boardSupportPackageVersion *string
+    // Artifact description. (e.g.: `LifeGuard Update 98 (released 24-September-2021)
+    description *string
     // Applicable device model (e.g.: TC8300)
     deviceModel *string
     // Artifact OS version (e.g.: 8.1.0)
@@ -18,7 +20,7 @@ type ZebraFotaArtifact struct {
     // Artifact release notes URL (e.g.: https://www.zebra.com/<filename.pdf>)
     releaseNotesUrl *string
 }
-// NewZebraFotaArtifact instantiates a new zebraFotaArtifact and sets the default values.
+// NewZebraFotaArtifact instantiates a new ZebraFotaArtifact and sets the default values.
 func NewZebraFotaArtifact()(*ZebraFotaArtifact) {
     m := &ZebraFotaArtifact{
         Entity: *NewEntity(),
@@ -39,6 +41,14 @@ func (m *ZebraFotaArtifact) GetBoardSupportPackageVersion()(*string) {
         return m.boardSupportPackageVersion
     }
 }
+// GetDescription gets the description property value. Artifact description. (e.g.: `LifeGuard Update 98 (released 24-September-2021)
+func (m *ZebraFotaArtifact) GetDescription()(*string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.description
+    }
+}
 // GetDeviceModel gets the deviceModel property value. Applicable device model (e.g.: TC8300)
 func (m *ZebraFotaArtifact) GetDeviceModel()(*string) {
     if m == nil {
@@ -57,6 +67,16 @@ func (m *ZebraFotaArtifact) GetFieldDeserializers()(map[string]func(i878a80d2330
         }
         if val != nil {
             m.SetBoardSupportPackageVersion(val)
+        }
+        return nil
+    }
+    res["description"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetDescription(val)
         }
         return nil
     }
@@ -139,6 +159,12 @@ func (m *ZebraFotaArtifact) Serialize(writer i878a80d2330e89d26896388a3f487eef27
         }
     }
     {
+        err = writer.WriteStringValue("description", m.GetDescription())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("deviceModel", m.GetDeviceModel())
         if err != nil {
             return err
@@ -168,6 +194,12 @@ func (m *ZebraFotaArtifact) Serialize(writer i878a80d2330e89d26896388a3f487eef27
 func (m *ZebraFotaArtifact) SetBoardSupportPackageVersion(value *string)() {
     if m != nil {
         m.boardSupportPackageVersion = value
+    }
+}
+// SetDescription sets the description property value. Artifact description. (e.g.: `LifeGuard Update 98 (released 24-September-2021)
+func (m *ZebraFotaArtifact) SetDescription(value *string)() {
+    if m != nil {
+        m.description = value
     }
 }
 // SetDeviceModel sets the deviceModel property value. Applicable device model (e.g.: TC8300)

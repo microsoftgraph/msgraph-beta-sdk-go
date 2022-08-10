@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// TodoTask provides operations to manage the collection of accessReviewDecision entities.
+// TodoTask provides operations to manage the collection of activityStatistics entities.
 type TodoTask struct {
     Entity
     // A collection of file attachments for the task.
@@ -20,11 +20,11 @@ type TodoTask struct {
     categories []string
     // A collection of smaller subtasks linked to the more complex parent task.
     checklistItems []ChecklistItemable
-    // The date in the specified time zone that the task was finished.
+    // The date and time in the specified time zone that the task was finished.
     completedDateTime DateTimeTimeZoneable
     // The date and time when the task was created. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format. For example, midnight UTC on Jan 1, 2020 would look like this: '2020-01-01T00:00:00Z'.
     createdDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The date in the specified time zone that the task is to be finished.
+    // The date and time in the specified time zone that the task is to be finished.
     dueDateTime DateTimeTimeZoneable
     // The collection of open extensions defined for the task. Nullable.
     extensions []Extensionable
@@ -40,9 +40,9 @@ type TodoTask struct {
     linkedResources []LinkedResourceable
     // The recurrence pattern for the task.
     recurrence PatternedRecurrenceable
-    // The date and time for a reminder alert of the task to occur.
+    // The date and time in the specified time zone for a reminder alert of the task to occur.
     reminderDateTime DateTimeTimeZoneable
-    // The date in the specified time zone at which the task is scheduled to start.
+    // The date and time in the specified time zone at which the task is scheduled to start.
     startDateTime DateTimeTimeZoneable
     // The status property
     status *TaskStatus
@@ -110,7 +110,7 @@ func (m *TodoTask) GetChecklistItems()([]ChecklistItemable) {
         return m.checklistItems
     }
 }
-// GetCompletedDateTime gets the completedDateTime property value. The date in the specified time zone that the task was finished.
+// GetCompletedDateTime gets the completedDateTime property value. The date and time in the specified time zone that the task was finished.
 func (m *TodoTask) GetCompletedDateTime()(DateTimeTimeZoneable) {
     if m == nil {
         return nil
@@ -126,7 +126,7 @@ func (m *TodoTask) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f307
         return m.createdDateTime
     }
 }
-// GetDueDateTime gets the dueDateTime property value. The date in the specified time zone that the task is to be finished.
+// GetDueDateTime gets the dueDateTime property value. The date and time in the specified time zone that the task is to be finished.
 func (m *TodoTask) GetDueDateTime()(DateTimeTimeZoneable) {
     if m == nil {
         return nil
@@ -419,7 +419,7 @@ func (m *TodoTask) GetRecurrence()(PatternedRecurrenceable) {
         return m.recurrence
     }
 }
-// GetReminderDateTime gets the reminderDateTime property value. The date and time for a reminder alert of the task to occur.
+// GetReminderDateTime gets the reminderDateTime property value. The date and time in the specified time zone for a reminder alert of the task to occur.
 func (m *TodoTask) GetReminderDateTime()(DateTimeTimeZoneable) {
     if m == nil {
         return nil
@@ -427,7 +427,7 @@ func (m *TodoTask) GetReminderDateTime()(DateTimeTimeZoneable) {
         return m.reminderDateTime
     }
 }
-// GetStartDateTime gets the startDateTime property value. The date in the specified time zone at which the task is scheduled to start.
+// GetStartDateTime gets the startDateTime property value. The date and time in the specified time zone at which the task is scheduled to start.
 func (m *TodoTask) GetStartDateTime()(DateTimeTimeZoneable) {
     if m == nil {
         return nil
@@ -637,7 +637,7 @@ func (m *TodoTask) SetChecklistItems(value []ChecklistItemable)() {
         m.checklistItems = value
     }
 }
-// SetCompletedDateTime sets the completedDateTime property value. The date in the specified time zone that the task was finished.
+// SetCompletedDateTime sets the completedDateTime property value. The date and time in the specified time zone that the task was finished.
 func (m *TodoTask) SetCompletedDateTime(value DateTimeTimeZoneable)() {
     if m != nil {
         m.completedDateTime = value
@@ -649,7 +649,7 @@ func (m *TodoTask) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6
         m.createdDateTime = value
     }
 }
-// SetDueDateTime sets the dueDateTime property value. The date in the specified time zone that the task is to be finished.
+// SetDueDateTime sets the dueDateTime property value. The date and time in the specified time zone that the task is to be finished.
 func (m *TodoTask) SetDueDateTime(value DateTimeTimeZoneable)() {
     if m != nil {
         m.dueDateTime = value
@@ -697,13 +697,13 @@ func (m *TodoTask) SetRecurrence(value PatternedRecurrenceable)() {
         m.recurrence = value
     }
 }
-// SetReminderDateTime sets the reminderDateTime property value. The date and time for a reminder alert of the task to occur.
+// SetReminderDateTime sets the reminderDateTime property value. The date and time in the specified time zone for a reminder alert of the task to occur.
 func (m *TodoTask) SetReminderDateTime(value DateTimeTimeZoneable)() {
     if m != nil {
         m.reminderDateTime = value
     }
 }
-// SetStartDateTime sets the startDateTime property value. The date in the specified time zone at which the task is scheduled to start.
+// SetStartDateTime sets the startDateTime property value. The date and time in the specified time zone at which the task is scheduled to start.
 func (m *TodoTask) SetStartDateTime(value DateTimeTimeZoneable)() {
     if m != nil {
         m.startDateTime = value

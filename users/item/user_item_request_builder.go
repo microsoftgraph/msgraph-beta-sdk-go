@@ -45,6 +45,7 @@ import (
     i4e8ad44991b185083366e107199ff13f6438a07cafd58ae36e0e862692bf9826 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/joinedteams"
     i52ea864f44c605939329148c5a95626ead1b771dff88c6072de654caee1b281e "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/getmanageddeviceswithfailedorpendingapps"
     i53e4d773c077f49b4590da13b904e6a502ef1f8f43b7a7fdfaba256a667df083 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/licensedetails"
+    i55ac7591042853708e32005320f053aac164b91987142fe88da44995054ce50a "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/approleassignedresources"
     i58ea06623816d885f9dc5730c5fd341b9dc32ca959bf1ffe118d49d00bdfbc62 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/photos"
     i5c0e1410fbc34cac508ae33c37b1e9dd9a4ca3540ad1525e02f20329f8a264f0 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/findmeetingtimes"
     i5c911b116a9e04c78f811a8141c00da4569a7dc37a1d8590843bc9d14e30377e "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/notifications"
@@ -146,6 +147,7 @@ import (
     idbb158da6d78d676ea0c3d14f6ae7004f016a1bdc89a3da430f82196981f35af "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/memberof/item"
     ideab25898675089d3e174a0e5f0bde76aa4e227661b4518a256695e6a0500360 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/oauth2permissiongrants/item"
     ie132362db0baae23ad9567ff4032a62c165d8386308f8baec97ecbb60c10a021 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/scopedrolememberof/item"
+    if35b9a09bc16de74d0bfce124707aacc1fdc8b5743fe1048d957f0e359ebd013 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/approleassignedresources/item"
     ifeea6837d24ad8765a5cb2092fe2e730b4403b36aa4e813a9cdfdb831a8f7974 "github.com/microsoftgraph/msgraph-beta-sdk-go/users/item/approvals/item"
 )
 
@@ -240,6 +242,21 @@ func (m *UserItemRequestBuilder) AppConsentRequestsForApprovalById(id string)(*i
         urlTplParams["appConsentRequest%2Did"] = id
     }
     return ic60383690980d3eba5846d285791ffa2fb94867c1850c6c8da9aaa03aca3c008.NewAppConsentRequestItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+}
+// AppRoleAssignedResources the appRoleAssignedResources property
+func (m *UserItemRequestBuilder) AppRoleAssignedResources()(*i55ac7591042853708e32005320f053aac164b91987142fe88da44995054ce50a.AppRoleAssignedResourcesRequestBuilder) {
+    return i55ac7591042853708e32005320f053aac164b91987142fe88da44995054ce50a.NewAppRoleAssignedResourcesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// AppRoleAssignedResourcesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.users.item.appRoleAssignedResources.item collection
+func (m *UserItemRequestBuilder) AppRoleAssignedResourcesById(id string)(*if35b9a09bc16de74d0bfce124707aacc1fdc8b5743fe1048d957f0e359ebd013.ServicePrincipalItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
+    }
+    if id != "" {
+        urlTplParams["servicePrincipal%2Did"] = id
+    }
+    return if35b9a09bc16de74d0bfce124707aacc1fdc8b5743fe1048d957f0e359ebd013.NewServicePrincipalItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
 }
 // AppRoleAssignments the appRoleAssignments property
 func (m *UserItemRequestBuilder) AppRoleAssignments()(*i67e4cd2b85517c9aa8f5256b8ca64c3daab00417eaeedb8528d78204b2257eb1.AppRoleAssignmentsRequestBuilder) {

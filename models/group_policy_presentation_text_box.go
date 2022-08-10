@@ -6,7 +6,7 @@ import (
 
 // GroupPolicyPresentationTextBox 
 type GroupPolicyPresentationTextBox struct {
-    GroupPolicyPresentation
+    GroupPolicyUploadedPresentation
     // Localized default string displayed in the text box. The default value is empty.
     defaultValue *string
     // An unsigned integer that specifies the maximum number of text characters. Default value is 1023.
@@ -17,7 +17,7 @@ type GroupPolicyPresentationTextBox struct {
 // NewGroupPolicyPresentationTextBox instantiates a new GroupPolicyPresentationTextBox and sets the default values.
 func NewGroupPolicyPresentationTextBox()(*GroupPolicyPresentationTextBox) {
     m := &GroupPolicyPresentationTextBox{
-        GroupPolicyPresentation: *NewGroupPolicyPresentation(),
+        GroupPolicyUploadedPresentation: *NewGroupPolicyUploadedPresentation(),
     }
     odataTypeValue := "#microsoft.graph.groupPolicyPresentationTextBox";
     m.SetOdataType(&odataTypeValue);
@@ -37,7 +37,7 @@ func (m *GroupPolicyPresentationTextBox) GetDefaultValue()(*string) {
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *GroupPolicyPresentationTextBox) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := m.GroupPolicyPresentation.GetFieldDeserializers()
+    res := m.GroupPolicyUploadedPresentation.GetFieldDeserializers()
     res["defaultValue"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -88,7 +88,7 @@ func (m *GroupPolicyPresentationTextBox) GetRequired()(*bool) {
 }
 // Serialize serializes information the current object
 func (m *GroupPolicyPresentationTextBox) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
-    err := m.GroupPolicyPresentation.Serialize(writer)
+    err := m.GroupPolicyUploadedPresentation.Serialize(writer)
     if err != nil {
         return err
     }

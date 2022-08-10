@@ -4,12 +4,12 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// UserRegistrationDetails provides operations to manage the collection of accessReviewDecision entities.
+// UserRegistrationDetails provides operations to manage the collection of accessReview entities.
 type UserRegistrationDetails struct {
     Entity
     // The method the user or admin selected as default for performing multi-factor authentication for the user. The possible values are: none, mobilePhone, alternateMobilePhone, officePhone, microsoftAuthenticatorPush, softwareOneTimePasscode, unknownFutureValue.
     defaultMfaMethod *DefaultMfaMethodType
-    // The isAdmin property
+    // Whether the user has an admin role in the tenant. This value can be used to check the authentication methods that privileged accounts are registered for and capable of.
     isAdmin *bool
     // Whether the user has registered a strong authentication method for multi-factor authentication. The method must be allowed by the authentication methods policy. Supports $filter (eq).
     isMfaCapable *bool
@@ -29,7 +29,7 @@ type UserRegistrationDetails struct {
     userDisplayName *string
     // The user principal name, such as AdeleV@contoso.com. Supports $filter (eq, startsWith) and $orderBy.
     userPrincipalName *string
-    // The userType property
+    // Identifies whether the user is a member or guest in the tenant. The possible values are: member, guest, unknownFutureValue.
     userType *SignInUserType
 }
 // NewUserRegistrationDetails instantiates a new userRegistrationDetails and sets the default values.
@@ -182,7 +182,7 @@ func (m *UserRegistrationDetails) GetFieldDeserializers()(map[string]func(i878a8
     }
     return res
 }
-// GetIsAdmin gets the isAdmin property value. The isAdmin property
+// GetIsAdmin gets the isAdmin property value. Whether the user has an admin role in the tenant. This value can be used to check the authentication methods that privileged accounts are registered for and capable of.
 func (m *UserRegistrationDetails) GetIsAdmin()(*bool) {
     if m == nil {
         return nil
@@ -262,7 +262,7 @@ func (m *UserRegistrationDetails) GetUserPrincipalName()(*string) {
         return m.userPrincipalName
     }
 }
-// GetUserType gets the userType property value. The userType property
+// GetUserType gets the userType property value. Identifies whether the user is a member or guest in the tenant. The possible values are: member, guest, unknownFutureValue.
 func (m *UserRegistrationDetails) GetUserType()(*SignInUserType) {
     if m == nil {
         return nil
@@ -358,7 +358,7 @@ func (m *UserRegistrationDetails) SetDefaultMfaMethod(value *DefaultMfaMethodTyp
         m.defaultMfaMethod = value
     }
 }
-// SetIsAdmin sets the isAdmin property value. The isAdmin property
+// SetIsAdmin sets the isAdmin property value. Whether the user has an admin role in the tenant. This value can be used to check the authentication methods that privileged accounts are registered for and capable of.
 func (m *UserRegistrationDetails) SetIsAdmin(value *bool)() {
     if m != nil {
         m.isAdmin = value
@@ -418,7 +418,7 @@ func (m *UserRegistrationDetails) SetUserPrincipalName(value *string)() {
         m.userPrincipalName = value
     }
 }
-// SetUserType sets the userType property value. The userType property
+// SetUserType sets the userType property value. Identifies whether the user is a member or guest in the tenant. The possible values are: member, guest, unknownFutureValue.
 func (m *UserRegistrationDetails) SetUserType(value *SignInUserType)() {
     if m != nil {
         m.userType = value

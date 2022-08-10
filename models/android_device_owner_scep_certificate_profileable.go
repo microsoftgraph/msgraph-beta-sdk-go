@@ -8,6 +8,7 @@ import (
 type AndroidDeviceOwnerScepCertificateProfileable interface {
     AndroidDeviceOwnerCertificateProfileBaseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetCertificateAccessType()(*AndroidDeviceOwnerCertificateAccessType)
     GetCertificateStore()(*CertificateStore)
     GetCustomSubjectAlternativeNames()([]CustomSubjectAlternativeNameable)
     GetHashAlgorithm()(*HashAlgorithms)
@@ -15,8 +16,10 @@ type AndroidDeviceOwnerScepCertificateProfileable interface {
     GetKeyUsage()(*KeyUsages)
     GetManagedDeviceCertificateStates()([]ManagedDeviceCertificateStateable)
     GetScepServerUrls()([]string)
+    GetSilentCertificateAccessDetails()([]AndroidDeviceOwnerSilentCertificateAccessable)
     GetSubjectAlternativeNameFormatString()(*string)
     GetSubjectNameFormatString()(*string)
+    SetCertificateAccessType(value *AndroidDeviceOwnerCertificateAccessType)()
     SetCertificateStore(value *CertificateStore)()
     SetCustomSubjectAlternativeNames(value []CustomSubjectAlternativeNameable)()
     SetHashAlgorithm(value *HashAlgorithms)()
@@ -24,6 +27,7 @@ type AndroidDeviceOwnerScepCertificateProfileable interface {
     SetKeyUsage(value *KeyUsages)()
     SetManagedDeviceCertificateStates(value []ManagedDeviceCertificateStateable)()
     SetScepServerUrls(value []string)()
+    SetSilentCertificateAccessDetails(value []AndroidDeviceOwnerSilentCertificateAccessable)()
     SetSubjectAlternativeNameFormatString(value *string)()
     SetSubjectNameFormatString(value *string)()
 }

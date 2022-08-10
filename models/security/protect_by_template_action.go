@@ -7,7 +7,7 @@ import (
 // ProtectByTemplateAction 
 type ProtectByTemplateAction struct {
     InformationProtectionAction
-    // The templateId property
+    // The unique identifier for a protection template in Microsoft Purview Information Protection to apply to the content.
     templateId *string
 }
 // NewProtectByTemplateAction instantiates a new ProtectByTemplateAction and sets the default values.
@@ -38,7 +38,7 @@ func (m *ProtectByTemplateAction) GetFieldDeserializers()(map[string]func(i878a8
     }
     return res
 }
-// GetTemplateId gets the templateId property value. The templateId property
+// GetTemplateId gets the templateId property value. The unique identifier for a protection template in Microsoft Purview Information Protection to apply to the content.
 func (m *ProtectByTemplateAction) GetTemplateId()(*string) {
     if m == nil {
         return nil
@@ -60,7 +60,7 @@ func (m *ProtectByTemplateAction) Serialize(writer i878a80d2330e89d26896388a3f48
     }
     return nil
 }
-// SetTemplateId sets the templateId property value. The templateId property
+// SetTemplateId sets the templateId property value. The unique identifier for a protection template in Microsoft Purview Information Protection to apply to the content.
 func (m *ProtectByTemplateAction) SetTemplateId(value *string)() {
     if m != nil {
         m.templateId = value

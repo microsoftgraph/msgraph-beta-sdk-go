@@ -188,6 +188,10 @@ type DeviceManagement struct {
     notificationMessageTemplates []NotificationMessageTemplateable
     // List of OEM Warranty Statuses
     oemWarrantyInformationOnboarding []OemWarrantyInformationOnboardingable
+    // A list of OrganizationalMessageDetails
+    organizationalMessageDetails []OrganizationalMessageDetailable
+    // A list of OrganizationalMessageGuidedContents
+    organizationalMessageGuidedContents []OrganizationalMessageGuidedContentable
     // The list of device remote action audits with the tenant.
     remoteActionAudits []RemoteActionAuditable
     // The remote assist partners.
@@ -2019,6 +2023,34 @@ func (m *DeviceManagement) GetFieldDeserializers()(map[string]func(i878a80d2330e
         }
         return nil
     }
+    res["organizationalMessageDetails"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateOrganizationalMessageDetailFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]OrganizationalMessageDetailable, len(val))
+            for i, v := range val {
+                res[i] = v.(OrganizationalMessageDetailable)
+            }
+            m.SetOrganizationalMessageDetails(res)
+        }
+        return nil
+    }
+    res["organizationalMessageGuidedContents"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateOrganizationalMessageGuidedContentFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]OrganizationalMessageGuidedContentable, len(val))
+            for i, v := range val {
+                res[i] = v.(OrganizationalMessageGuidedContentable)
+            }
+            m.SetOrganizationalMessageGuidedContents(res)
+        }
+        return nil
+    }
     res["remoteActionAudits"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateRemoteActionAuditFromDiscriminatorValue)
         if err != nil {
@@ -3321,6 +3353,22 @@ func (m *DeviceManagement) GetOemWarrantyInformationOnboarding()([]OemWarrantyIn
         return nil
     } else {
         return m.oemWarrantyInformationOnboarding
+    }
+}
+// GetOrganizationalMessageDetails gets the organizationalMessageDetails property value. A list of OrganizationalMessageDetails
+func (m *DeviceManagement) GetOrganizationalMessageDetails()([]OrganizationalMessageDetailable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.organizationalMessageDetails
+    }
+}
+// GetOrganizationalMessageGuidedContents gets the organizationalMessageGuidedContents property value. A list of OrganizationalMessageGuidedContents
+func (m *DeviceManagement) GetOrganizationalMessageGuidedContents()([]OrganizationalMessageGuidedContentable) {
+    if m == nil {
+        return nil
+    } else {
+        return m.organizationalMessageGuidedContents
     }
 }
 // GetRemoteActionAudits gets the remoteActionAudits property value. The list of device remote action audits with the tenant.
@@ -4797,6 +4845,26 @@ func (m *DeviceManagement) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
             return err
         }
     }
+    if m.GetOrganizationalMessageDetails() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetOrganizationalMessageDetails()))
+        for i, v := range m.GetOrganizationalMessageDetails() {
+            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+        }
+        err = writer.WriteCollectionOfObjectValues("organizationalMessageDetails", cast)
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetOrganizationalMessageGuidedContents() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetOrganizationalMessageGuidedContents()))
+        for i, v := range m.GetOrganizationalMessageGuidedContents() {
+            cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+        }
+        err = writer.WriteCollectionOfObjectValues("organizationalMessageGuidedContents", cast)
+        if err != nil {
+            return err
+        }
+    }
     if m.GetRemoteActionAudits() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetRemoteActionAudits()))
         for i, v := range m.GetRemoteActionAudits() {
@@ -6069,6 +6137,18 @@ func (m *DeviceManagement) SetNotificationMessageTemplates(value []NotificationM
 func (m *DeviceManagement) SetOemWarrantyInformationOnboarding(value []OemWarrantyInformationOnboardingable)() {
     if m != nil {
         m.oemWarrantyInformationOnboarding = value
+    }
+}
+// SetOrganizationalMessageDetails sets the organizationalMessageDetails property value. A list of OrganizationalMessageDetails
+func (m *DeviceManagement) SetOrganizationalMessageDetails(value []OrganizationalMessageDetailable)() {
+    if m != nil {
+        m.organizationalMessageDetails = value
+    }
+}
+// SetOrganizationalMessageGuidedContents sets the organizationalMessageGuidedContents property value. A list of OrganizationalMessageGuidedContents
+func (m *DeviceManagement) SetOrganizationalMessageGuidedContents(value []OrganizationalMessageGuidedContentable)() {
+    if m != nil {
+        m.organizationalMessageGuidedContents = value
     }
 }
 // SetRemoteActionAudits sets the remoteActionAudits property value. The list of device remote action audits with the tenant.

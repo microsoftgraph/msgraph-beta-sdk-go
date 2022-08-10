@@ -10,7 +10,7 @@ type AdminReportSettings struct {
     // If set to true, all reports will conceal user information such as usernames, groups, and sites. If false, all reports will show identifiable information. This property represents a setting in the Microsoft 365 admin center. Required.
     displayConcealedNames *bool
 }
-// NewAdminReportSettings instantiates a new adminReportSettings and sets the default values.
+// NewAdminReportSettings instantiates a new AdminReportSettings and sets the default values.
 func NewAdminReportSettings()(*AdminReportSettings) {
     m := &AdminReportSettings{
         Entity: *NewEntity(),

@@ -363,6 +363,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewAuthentication(), nil
                     case "#microsoft.graph.authenticationContextClassReference":
                         return NewAuthenticationContextClassReference(), nil
+                    case "#microsoft.graph.authenticationEventListener":
+                        return NewAuthenticationEventListener(), nil
                     case "#microsoft.graph.authenticationEventsPolicy":
                         return NewAuthenticationEventsPolicy(), nil
                     case "#microsoft.graph.authenticationFlowsPolicy":
@@ -579,6 +581,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewCurrency(), nil
                     case "#microsoft.graph.customAccessPackageWorkflowExtension":
                         return NewCustomAccessPackageWorkflowExtension(), nil
+                    case "#microsoft.graph.customAuthenticationExtension":
+                        return NewCustomAuthenticationExtension(), nil
                     case "#microsoft.graph.customCalloutExtension":
                         return NewCustomCalloutExtension(), nil
                     case "#microsoft.graph.customer":
@@ -1143,6 +1147,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewGroupPolicySettingMapping(), nil
                     case "#microsoft.graph.groupPolicyUploadedDefinitionFile":
                         return NewGroupPolicyUploadedDefinitionFile(), nil
+                    case "#microsoft.graph.groupPolicyUploadedPresentation":
+                        return NewGroupPolicyUploadedPresentation(), nil
                     case "#microsoft.graph.homeRealmDiscoveryPolicy":
                         return NewHomeRealmDiscoveryPolicy(), nil
                     case "#microsoft.graph.hostSecurityProfile":
@@ -1625,6 +1631,10 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewOnPremisesConditionalAccessSettings(), nil
                     case "#microsoft.graph.onPremisesPublishingProfile":
                         return NewOnPremisesPublishingProfile(), nil
+                    case "#microsoft.graph.onTokenIssuanceStartCustomExtension":
+                        return NewOnTokenIssuanceStartCustomExtension(), nil
+                    case "#microsoft.graph.onTokenIssuanceStartListener":
+                        return NewOnTokenIssuanceStartListener(), nil
                     case "#microsoft.graph.openIdConnectIdentityProvider":
                         return NewOpenIdConnectIdentityProvider(), nil
                     case "#microsoft.graph.openIdConnectProvider":
@@ -1645,6 +1655,10 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewOrganizationalBrandingLocalization(), nil
                     case "#microsoft.graph.organizationalBrandingProperties":
                         return NewOrganizationalBrandingProperties(), nil
+                    case "#microsoft.graph.organizationalMessageDetail":
+                        return NewOrganizationalMessageDetail(), nil
+                    case "#microsoft.graph.organizationalMessageGuidedContent":
+                        return NewOrganizationalMessageGuidedContent(), nil
                     case "#microsoft.graph.organizationSettings":
                         return NewOrganizationSettings(), nil
                     case "#microsoft.graph.orgContact":
@@ -2097,6 +2111,10 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewTeamsTab(), nil
                     case "#microsoft.graph.teamsTemplate":
                         return NewTeamsTemplate(), nil
+                    case "#microsoft.graph.teamTemplate":
+                        return NewTeamTemplate(), nil
+                    case "#microsoft.graph.teamTemplateDefinition":
+                        return NewTeamTemplateDefinition(), nil
                     case "#microsoft.graph.teamwork":
                         return NewTeamwork(), nil
                     case "#microsoft.graph.teamworkBot":

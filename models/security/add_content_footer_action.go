@@ -9,17 +9,17 @@ type AddContentFooterAction struct {
     InformationProtectionAction
     // The alignment property
     alignment *ContentAlignment
-    // The fontColor property
+    // Color of the font to use for the footer.
     fontColor *string
-    // The fontName property
+    // Name of the font to use for the footer.
     fontName *string
-    // The fontSize property
+    // Font size to use for the footer.
     fontSize *int32
-    // The margin property
+    // The margin of the header from the bottom of the document.
     margin *int32
-    // The text property
+    // The contents of the footer itself.
     text *string
-    // The uiElementName property
+    // The name of the UI element where the footer should be placed.
     uiElementName *string
 }
 // NewAddContentFooterAction instantiates a new AddContentFooterAction and sets the default values.
@@ -118,7 +118,7 @@ func (m *AddContentFooterAction) GetFieldDeserializers()(map[string]func(i878a80
     }
     return res
 }
-// GetFontColor gets the fontColor property value. The fontColor property
+// GetFontColor gets the fontColor property value. Color of the font to use for the footer.
 func (m *AddContentFooterAction) GetFontColor()(*string) {
     if m == nil {
         return nil
@@ -126,7 +126,7 @@ func (m *AddContentFooterAction) GetFontColor()(*string) {
         return m.fontColor
     }
 }
-// GetFontName gets the fontName property value. The fontName property
+// GetFontName gets the fontName property value. Name of the font to use for the footer.
 func (m *AddContentFooterAction) GetFontName()(*string) {
     if m == nil {
         return nil
@@ -134,7 +134,7 @@ func (m *AddContentFooterAction) GetFontName()(*string) {
         return m.fontName
     }
 }
-// GetFontSize gets the fontSize property value. The fontSize property
+// GetFontSize gets the fontSize property value. Font size to use for the footer.
 func (m *AddContentFooterAction) GetFontSize()(*int32) {
     if m == nil {
         return nil
@@ -142,7 +142,7 @@ func (m *AddContentFooterAction) GetFontSize()(*int32) {
         return m.fontSize
     }
 }
-// GetMargin gets the margin property value. The margin property
+// GetMargin gets the margin property value. The margin of the header from the bottom of the document.
 func (m *AddContentFooterAction) GetMargin()(*int32) {
     if m == nil {
         return nil
@@ -150,7 +150,7 @@ func (m *AddContentFooterAction) GetMargin()(*int32) {
         return m.margin
     }
 }
-// GetText gets the text property value. The text property
+// GetText gets the text property value. The contents of the footer itself.
 func (m *AddContentFooterAction) GetText()(*string) {
     if m == nil {
         return nil
@@ -158,7 +158,7 @@ func (m *AddContentFooterAction) GetText()(*string) {
         return m.text
     }
 }
-// GetUiElementName gets the uiElementName property value. The uiElementName property
+// GetUiElementName gets the uiElementName property value. The name of the UI element where the footer should be placed.
 func (m *AddContentFooterAction) GetUiElementName()(*string) {
     if m == nil {
         return nil
@@ -223,37 +223,37 @@ func (m *AddContentFooterAction) SetAlignment(value *ContentAlignment)() {
         m.alignment = value
     }
 }
-// SetFontColor sets the fontColor property value. The fontColor property
+// SetFontColor sets the fontColor property value. Color of the font to use for the footer.
 func (m *AddContentFooterAction) SetFontColor(value *string)() {
     if m != nil {
         m.fontColor = value
     }
 }
-// SetFontName sets the fontName property value. The fontName property
+// SetFontName sets the fontName property value. Name of the font to use for the footer.
 func (m *AddContentFooterAction) SetFontName(value *string)() {
     if m != nil {
         m.fontName = value
     }
 }
-// SetFontSize sets the fontSize property value. The fontSize property
+// SetFontSize sets the fontSize property value. Font size to use for the footer.
 func (m *AddContentFooterAction) SetFontSize(value *int32)() {
     if m != nil {
         m.fontSize = value
     }
 }
-// SetMargin sets the margin property value. The margin property
+// SetMargin sets the margin property value. The margin of the header from the bottom of the document.
 func (m *AddContentFooterAction) SetMargin(value *int32)() {
     if m != nil {
         m.margin = value
     }
 }
-// SetText sets the text property value. The text property
+// SetText sets the text property value. The contents of the footer itself.
 func (m *AddContentFooterAction) SetText(value *string)() {
     if m != nil {
         m.text = value
     }
 }
-// SetUiElementName sets the uiElementName property value. The uiElementName property
+// SetUiElementName sets the uiElementName property value. The name of the UI element where the footer should be placed.
 func (m *AddContentFooterAction) SetUiElementName(value *string)() {
     if m != nil {
         m.uiElementName = value

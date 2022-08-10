@@ -12,10 +12,14 @@ type VpnOnDemandRule struct {
     additionalData map[string]interface{}
     // DNS Search Domains.
     dnsSearchDomains []string
+    // DNS Search Server Address.
+    dnsServerAddressMatch []string
     // VPN On-Demand Rule Connection Domain Action.
     domainAction *VpnOnDemandRuleConnectionDomainAction
     // Domains (Only applicable when Action is evaluate connection).
     domains []string
+    // VPN On-Demand Rule Connection network interface type.
+    interfaceTypeMatch *VpnOnDemandRuleInterfaceTypeMatch
     // The OdataType property
     odataType *string
     // Probe Required Url (Only applicable when Action is evaluate connection and DomainAction is connect if needed).
@@ -62,6 +66,14 @@ func (m *VpnOnDemandRule) GetDnsSearchDomains()([]string) {
         return m.dnsSearchDomains
     }
 }
+// GetDnsServerAddressMatch gets the dnsServerAddressMatch property value. DNS Search Server Address.
+func (m *VpnOnDemandRule) GetDnsServerAddressMatch()([]string) {
+    if m == nil {
+        return nil
+    } else {
+        return m.dnsServerAddressMatch
+    }
+}
 // GetDomainAction gets the domainAction property value. VPN On-Demand Rule Connection Domain Action.
 func (m *VpnOnDemandRule) GetDomainAction()(*VpnOnDemandRuleConnectionDomainAction) {
     if m == nil {
@@ -105,6 +117,20 @@ func (m *VpnOnDemandRule) GetFieldDeserializers()(map[string]func(i878a80d2330e8
         }
         return nil
     }
+    res["dnsServerAddressMatch"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfPrimitiveValues("string")
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                res[i] = *(v.(*string))
+            }
+            m.SetDnsServerAddressMatch(res)
+        }
+        return nil
+    }
     res["domainAction"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseVpnOnDemandRuleConnectionDomainAction)
         if err != nil {
@@ -126,6 +152,16 @@ func (m *VpnOnDemandRule) GetFieldDeserializers()(map[string]func(i878a80d2330e8
                 res[i] = *(v.(*string))
             }
             m.SetDomains(res)
+        }
+        return nil
+    }
+    res["interfaceTypeMatch"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseVpnOnDemandRuleInterfaceTypeMatch)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetInterfaceTypeMatch(val.(*VpnOnDemandRuleInterfaceTypeMatch))
         }
         return nil
     }
@@ -175,6 +211,14 @@ func (m *VpnOnDemandRule) GetFieldDeserializers()(map[string]func(i878a80d2330e8
     }
     return res
 }
+// GetInterfaceTypeMatch gets the interfaceTypeMatch property value. VPN On-Demand Rule Connection network interface type.
+func (m *VpnOnDemandRule) GetInterfaceTypeMatch()(*VpnOnDemandRuleInterfaceTypeMatch) {
+    if m == nil {
+        return nil
+    } else {
+        return m.interfaceTypeMatch
+    }
+}
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *VpnOnDemandRule) GetOdataType()(*string) {
     if m == nil {
@@ -222,6 +266,12 @@ func (m *VpnOnDemandRule) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
             return err
         }
     }
+    if m.GetDnsServerAddressMatch() != nil {
+        err := writer.WriteCollectionOfStringValues("dnsServerAddressMatch", m.GetDnsServerAddressMatch())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetDomainAction() != nil {
         cast := (*m.GetDomainAction()).String()
         err := writer.WriteStringValue("domainAction", &cast)
@@ -231,6 +281,13 @@ func (m *VpnOnDemandRule) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
     }
     if m.GetDomains() != nil {
         err := writer.WriteCollectionOfStringValues("domains", m.GetDomains())
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetInterfaceTypeMatch() != nil {
+        cast := (*m.GetInterfaceTypeMatch()).String()
+        err := writer.WriteStringValue("interfaceTypeMatch", &cast)
         if err != nil {
             return err
         }
@@ -285,6 +342,12 @@ func (m *VpnOnDemandRule) SetDnsSearchDomains(value []string)() {
         m.dnsSearchDomains = value
     }
 }
+// SetDnsServerAddressMatch sets the dnsServerAddressMatch property value. DNS Search Server Address.
+func (m *VpnOnDemandRule) SetDnsServerAddressMatch(value []string)() {
+    if m != nil {
+        m.dnsServerAddressMatch = value
+    }
+}
 // SetDomainAction sets the domainAction property value. VPN On-Demand Rule Connection Domain Action.
 func (m *VpnOnDemandRule) SetDomainAction(value *VpnOnDemandRuleConnectionDomainAction)() {
     if m != nil {
@@ -295,6 +358,12 @@ func (m *VpnOnDemandRule) SetDomainAction(value *VpnOnDemandRuleConnectionDomain
 func (m *VpnOnDemandRule) SetDomains(value []string)() {
     if m != nil {
         m.domains = value
+    }
+}
+// SetInterfaceTypeMatch sets the interfaceTypeMatch property value. VPN On-Demand Rule Connection network interface type.
+func (m *VpnOnDemandRule) SetInterfaceTypeMatch(value *VpnOnDemandRuleInterfaceTypeMatch)() {
+    if m != nil {
+        m.interfaceTypeMatch = value
     }
 }
 // SetOdataType sets the @odata.type property value. The OdataType property

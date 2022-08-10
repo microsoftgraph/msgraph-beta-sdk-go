@@ -4,6 +4,9 @@ import (
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
     ie98116770ca9f5eee835504331ccb9976e822c2f776cca356ee95c843b4cce86 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/externalconnectors"
+    i0b64a056cdc0395ed65428f6cc669477cc2a3539e57f3b9f847a761f2612ec56 "github.com/microsoftgraph/msgraph-beta-sdk-go/connections/item/items/item/addactivities"
+    id4fb21891daa15849c8c5b5c2a4306e1a8dcb106d545b688718c0f3edc1c8734 "github.com/microsoftgraph/msgraph-beta-sdk-go/connections/item/items/item/activities"
+    i8956ebc39875adb9855c2cc11374ae86fad8593ac607428a7d1c03dfb8ed5095 "github.com/microsoftgraph/msgraph-beta-sdk-go/connections/item/items/item/activities/item"
 )
 
 // ExternalItemItemRequestBuilder provides operations to manage the items property of the microsoft.graph.externalConnectors.externalConnection entity.
@@ -44,6 +47,25 @@ type ExternalItemItemRequestBuilderPatchRequestConfiguration struct {
     Headers map[string]string
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
+}
+// Activities the activities property
+func (m *ExternalItemItemRequestBuilder) Activities()(*id4fb21891daa15849c8c5b5c2a4306e1a8dcb106d545b688718c0f3edc1c8734.ActivitiesRequestBuilder) {
+    return id4fb21891daa15849c8c5b5c2a4306e1a8dcb106d545b688718c0f3edc1c8734.NewActivitiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// ActivitiesById gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.connections.item.items.item.activities.item collection
+func (m *ExternalItemItemRequestBuilder) ActivitiesById(id string)(*i8956ebc39875adb9855c2cc11374ae86fad8593ac607428a7d1c03dfb8ed5095.ExternalActivityItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.pathParameters {
+        urlTplParams[idx] = item
+    }
+    if id != "" {
+        urlTplParams["externalActivity%2Did"] = id
+    }
+    return i8956ebc39875adb9855c2cc11374ae86fad8593ac607428a7d1c03dfb8ed5095.NewExternalActivityItemRequestBuilderInternal(urlTplParams, m.requestAdapter);
+}
+// AddActivities the addActivities property
+func (m *ExternalItemItemRequestBuilder) AddActivities()(*i0b64a056cdc0395ed65428f6cc669477cc2a3539e57f3b9f847a761f2612ec56.AddActivitiesRequestBuilder) {
+    return i0b64a056cdc0395ed65428f6cc669477cc2a3539e57f3b9f847a761f2612ec56.NewAddActivitiesRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // NewExternalItemItemRequestBuilderInternal instantiates a new ExternalItemItemRequestBuilder and sets the default values.
 func NewExternalItemItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ExternalItemItemRequestBuilder) {

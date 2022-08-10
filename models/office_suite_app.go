@@ -19,6 +19,8 @@ type OfficeSuiteApp struct {
     officeConfigurationXml []byte
     // Contains properties for Windows architecture.
     officePlatformArchitecture *WindowsArchitecture
+    // Describes the OfficeSuiteApp file format types that can be selected.
+    officeSuiteAppDefaultFileFormat *OfficeSuiteDefaultFileFormatType
     // The Product Ids that represent the Office365 Suite SKU.
     productIds []string
     // The property to determine whether to uninstall existing Office MSI if an Office365 app suite is deployed to the device or not.
@@ -128,6 +130,16 @@ func (m *OfficeSuiteApp) GetFieldDeserializers()(map[string]func(i878a80d2330e89
         }
         return nil
     }
+    res["officeSuiteAppDefaultFileFormat"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseOfficeSuiteDefaultFileFormatType)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOfficeSuiteAppDefaultFileFormat(val.(*OfficeSuiteDefaultFileFormatType))
+        }
+        return nil
+    }
     res["productIds"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
@@ -226,6 +238,14 @@ func (m *OfficeSuiteApp) GetOfficePlatformArchitecture()(*WindowsArchitecture) {
         return m.officePlatformArchitecture
     }
 }
+// GetOfficeSuiteAppDefaultFileFormat gets the officeSuiteAppDefaultFileFormat property value. Describes the OfficeSuiteApp file format types that can be selected.
+func (m *OfficeSuiteApp) GetOfficeSuiteAppDefaultFileFormat()(*OfficeSuiteDefaultFileFormatType) {
+    if m == nil {
+        return nil
+    } else {
+        return m.officeSuiteAppDefaultFileFormat
+    }
+}
 // GetProductIds gets the productIds property value. The Product Ids that represent the Office365 Suite SKU.
 func (m *OfficeSuiteApp) GetProductIds()([]string) {
     if m == nil {
@@ -318,6 +338,13 @@ func (m *OfficeSuiteApp) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
             return err
         }
     }
+    if m.GetOfficeSuiteAppDefaultFileFormat() != nil {
+        cast := (*m.GetOfficeSuiteAppDefaultFileFormat()).String()
+        err = writer.WriteStringValue("officeSuiteAppDefaultFileFormat", &cast)
+        if err != nil {
+            return err
+        }
+    }
     if m.GetProductIds() != nil {
         err = writer.WriteCollectionOfStringValues("productIds", m.GetProductIds())
         if err != nil {
@@ -391,6 +418,12 @@ func (m *OfficeSuiteApp) SetOfficeConfigurationXml(value []byte)() {
 func (m *OfficeSuiteApp) SetOfficePlatformArchitecture(value *WindowsArchitecture)() {
     if m != nil {
         m.officePlatformArchitecture = value
+    }
+}
+// SetOfficeSuiteAppDefaultFileFormat sets the officeSuiteAppDefaultFileFormat property value. Describes the OfficeSuiteApp file format types that can be selected.
+func (m *OfficeSuiteApp) SetOfficeSuiteAppDefaultFileFormat(value *OfficeSuiteDefaultFileFormatType)() {
+    if m != nil {
+        m.officeSuiteAppDefaultFileFormat = value
     }
 }
 // SetProductIds sets the productIds property value. The Product Ids that represent the Office365 Suite SKU.

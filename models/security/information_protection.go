@@ -8,9 +8,9 @@ import (
 // InformationProtection 
 type InformationProtection struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
-    // The labelPolicySettings property
+    // Read the Microsoft Purview Information Protection policy settings for the user or organization.
     labelPolicySettings InformationProtectionPolicySettingable
-    // The sensitivityLabels property
+    // Read the Microsoft Purview Information Protection labels for the user or organization.
     sensitivityLabels []SensitivityLabelable
 }
 // NewInformationProtection instantiates a new informationProtection and sets the default values.
@@ -55,7 +55,7 @@ func (m *InformationProtection) GetFieldDeserializers()(map[string]func(i878a80d
     }
     return res
 }
-// GetLabelPolicySettings gets the labelPolicySettings property value. The labelPolicySettings property
+// GetLabelPolicySettings gets the labelPolicySettings property value. Read the Microsoft Purview Information Protection policy settings for the user or organization.
 func (m *InformationProtection) GetLabelPolicySettings()(InformationProtectionPolicySettingable) {
     if m == nil {
         return nil
@@ -63,7 +63,7 @@ func (m *InformationProtection) GetLabelPolicySettings()(InformationProtectionPo
         return m.labelPolicySettings
     }
 }
-// GetSensitivityLabels gets the sensitivityLabels property value. The sensitivityLabels property
+// GetSensitivityLabels gets the sensitivityLabels property value. Read the Microsoft Purview Information Protection labels for the user or organization.
 func (m *InformationProtection) GetSensitivityLabels()([]SensitivityLabelable) {
     if m == nil {
         return nil
@@ -95,13 +95,13 @@ func (m *InformationProtection) Serialize(writer i878a80d2330e89d26896388a3f487e
     }
     return nil
 }
-// SetLabelPolicySettings sets the labelPolicySettings property value. The labelPolicySettings property
+// SetLabelPolicySettings sets the labelPolicySettings property value. Read the Microsoft Purview Information Protection policy settings for the user or organization.
 func (m *InformationProtection) SetLabelPolicySettings(value InformationProtectionPolicySettingable)() {
     if m != nil {
         m.labelPolicySettings = value
     }
 }
-// SetSensitivityLabels sets the sensitivityLabels property value. The sensitivityLabels property
+// SetSensitivityLabels sets the sensitivityLabels property value. Read the Microsoft Purview Information Protection labels for the user or organization.
 func (m *InformationProtection) SetSensitivityLabels(value []SensitivityLabelable)() {
     if m != nil {
         m.sensitivityLabels = value

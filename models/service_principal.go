@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ServicePrincipal 
+// ServicePrincipal provides operations to manage the collection of accessReview entities.
 type ServicePrincipal struct {
     DirectoryObject
     // true if the service principal account is enabled; otherwise, false. Supports $filter (eq, ne, not, in).
@@ -52,7 +52,7 @@ type ServicePrincipal struct {
     endpoints []Endpointable
     // Deprecated. Don't use.
     errorUrl *string
-    // The federatedIdentityCredentials property
+    // Federated identities for a specific type of service principal - managed identity. Supports $expand and $filter (eq when counting empty collections).
     federatedIdentityCredentials []FederatedIdentityCredentialable
     // Home page or landing page of the application.
     homepage *string
@@ -119,7 +119,7 @@ type ServicePrincipal struct {
     // The transitiveMemberOf property
     transitiveMemberOf []DirectoryObjectable
 }
-// NewServicePrincipal instantiates a new ServicePrincipal and sets the default values.
+// NewServicePrincipal instantiates a new servicePrincipal and sets the default values.
 func NewServicePrincipal()(*ServicePrincipal) {
     m := &ServicePrincipal{
         DirectoryObject: *NewDirectoryObject(),
@@ -308,7 +308,7 @@ func (m *ServicePrincipal) GetErrorUrl()(*string) {
         return m.errorUrl
     }
 }
-// GetFederatedIdentityCredentials gets the federatedIdentityCredentials property value. The federatedIdentityCredentials property
+// GetFederatedIdentityCredentials gets the federatedIdentityCredentials property value. Federated identities for a specific type of service principal - managed identity. Supports $expand and $filter (eq when counting empty collections).
 func (m *ServicePrincipal) GetFederatedIdentityCredentials()([]FederatedIdentityCredentialable) {
     if m == nil {
         return nil
@@ -1793,7 +1793,7 @@ func (m *ServicePrincipal) SetErrorUrl(value *string)() {
         m.errorUrl = value
     }
 }
-// SetFederatedIdentityCredentials sets the federatedIdentityCredentials property value. The federatedIdentityCredentials property
+// SetFederatedIdentityCredentials sets the federatedIdentityCredentials property value. Federated identities for a specific type of service principal - managed identity. Supports $expand and $filter (eq when counting empty collections).
 func (m *ServicePrincipal) SetFederatedIdentityCredentials(value []FederatedIdentityCredentialable)() {
     if m != nil {
         m.federatedIdentityCredentials = value

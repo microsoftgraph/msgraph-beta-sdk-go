@@ -11,9 +11,11 @@ type Teamworkable interface {
     GetDeletedTeams()([]DeletedTeamable)
     GetDevices()([]TeamworkDeviceable)
     GetTeamsAppSettings()(TeamsAppSettingsable)
+    GetTeamTemplates()([]TeamTemplateable)
     GetWorkforceIntegrations()([]WorkforceIntegrationable)
     SetDeletedTeams(value []DeletedTeamable)()
     SetDevices(value []TeamworkDeviceable)()
     SetTeamsAppSettings(value TeamsAppSettingsable)()
+    SetTeamTemplates(value []TeamTemplateable)()
     SetWorkforceIntegrations(value []WorkforceIntegrationable)()
 }

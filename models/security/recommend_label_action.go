@@ -7,11 +7,11 @@ import (
 // RecommendLabelAction 
 type RecommendLabelAction struct {
     InformationProtectionAction
-    // The actions property
+    // Actions to take if the label is accepted by the user.
     actions []InformationProtectionActionable
     // The actionSource property
     actionSource *ActionSource
-    // The responsibleSensitiveTypeIds property
+    // The sensitive information type GUIDs that caused the recommendation to be given.
     responsibleSensitiveTypeIds []string
     // The sensitivityLabelId property
     sensitivityLabelId *string
@@ -29,7 +29,7 @@ func NewRecommendLabelAction()(*RecommendLabelAction) {
 func CreateRecommendLabelActionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewRecommendLabelAction(), nil
 }
-// GetActions gets the actions property value. The actions property
+// GetActions gets the actions property value. Actions to take if the label is accepted by the user.
 func (m *RecommendLabelAction) GetActions()([]InformationProtectionActionable) {
     if m == nil {
         return nil
@@ -98,7 +98,7 @@ func (m *RecommendLabelAction) GetFieldDeserializers()(map[string]func(i878a80d2
     }
     return res
 }
-// GetResponsibleSensitiveTypeIds gets the responsibleSensitiveTypeIds property value. The responsibleSensitiveTypeIds property
+// GetResponsibleSensitiveTypeIds gets the responsibleSensitiveTypeIds property value. The sensitive information type GUIDs that caused the recommendation to be given.
 func (m *RecommendLabelAction) GetResponsibleSensitiveTypeIds()([]string) {
     if m == nil {
         return nil
@@ -151,7 +151,7 @@ func (m *RecommendLabelAction) Serialize(writer i878a80d2330e89d26896388a3f487ee
     }
     return nil
 }
-// SetActions sets the actions property value. The actions property
+// SetActions sets the actions property value. Actions to take if the label is accepted by the user.
 func (m *RecommendLabelAction) SetActions(value []InformationProtectionActionable)() {
     if m != nil {
         m.actions = value
@@ -163,7 +163,7 @@ func (m *RecommendLabelAction) SetActionSource(value *ActionSource)() {
         m.actionSource = value
     }
 }
-// SetResponsibleSensitiveTypeIds sets the responsibleSensitiveTypeIds property value. The responsibleSensitiveTypeIds property
+// SetResponsibleSensitiveTypeIds sets the responsibleSensitiveTypeIds property value. The sensitive information type GUIDs that caused the recommendation to be given.
 func (m *RecommendLabelAction) SetResponsibleSensitiveTypeIds(value []string)() {
     if m != nil {
         m.responsibleSensitiveTypeIds = value
