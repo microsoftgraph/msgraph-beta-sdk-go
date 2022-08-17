@@ -31,27 +31,15 @@ func CreateRoleScopeTagFromDiscriminatorValue(parseNode i878a80d2330e89d26896388
 }
 // GetAssignments gets the assignments property value. The list of assignments for this Role Scope Tag.
 func (m *RoleScopeTag) GetAssignments()([]RoleScopeTagAutoAssignmentable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.assignments
-    }
+    return m.assignments
 }
 // GetDescription gets the description property value. Description of the Role Scope Tag.
 func (m *RoleScopeTag) GetDescription()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.description
-    }
+    return m.description
 }
 // GetDisplayName gets the displayName property value. The display or friendly name of the Role Scope Tag.
 func (m *RoleScopeTag) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *RoleScopeTag) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -104,11 +92,7 @@ func (m *RoleScopeTag) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
 }
 // GetIsBuiltIn gets the isBuiltIn property value. Description of the Role Scope Tag. This property is read-only.
 func (m *RoleScopeTag) GetIsBuiltIn()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isBuiltIn
-    }
+    return m.isBuiltIn
 }
 // Serialize serializes information the current object
 func (m *RoleScopeTag) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -148,25 +132,17 @@ func (m *RoleScopeTag) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
 }
 // SetAssignments sets the assignments property value. The list of assignments for this Role Scope Tag.
 func (m *RoleScopeTag) SetAssignments(value []RoleScopeTagAutoAssignmentable)() {
-    if m != nil {
-        m.assignments = value
-    }
+    m.assignments = value
 }
 // SetDescription sets the description property value. Description of the Role Scope Tag.
 func (m *RoleScopeTag) SetDescription(value *string)() {
-    if m != nil {
-        m.description = value
-    }
+    m.description = value
 }
 // SetDisplayName sets the displayName property value. The display or friendly name of the Role Scope Tag.
 func (m *RoleScopeTag) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }
 // SetIsBuiltIn sets the isBuiltIn property value. Description of the Role Scope Tag. This property is read-only.
 func (m *RoleScopeTag) SetIsBuiltIn(value *bool)() {
-    if m != nil {
-        m.isBuiltIn = value
-    }
+    m.isBuiltIn = value
 }

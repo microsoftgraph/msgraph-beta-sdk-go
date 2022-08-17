@@ -37,43 +37,23 @@ func CreateEducationPowerSchoolDataProviderFromDiscriminatorValue(parseNode i878
 }
 // GetAllowTeachersInMultipleSchools gets the allowTeachersInMultipleSchools property value. Indicates whether the source has multiple identifiers for a single student or teacher.
 func (m *EducationPowerSchoolDataProvider) GetAllowTeachersInMultipleSchools()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.allowTeachersInMultipleSchools
-    }
+    return m.allowTeachersInMultipleSchools
 }
 // GetClientId gets the clientId property value. The client ID used to connect to PowerSchool.
 func (m *EducationPowerSchoolDataProvider) GetClientId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.clientId
-    }
+    return m.clientId
 }
 // GetClientSecret gets the clientSecret property value. The client secret to authenticate the connection to the PowerSchool instance.
 func (m *EducationPowerSchoolDataProvider) GetClientSecret()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.clientSecret
-    }
+    return m.clientSecret
 }
 // GetConnectionUrl gets the connectionUrl property value. The connection URL to the PowerSchool instance.
 func (m *EducationPowerSchoolDataProvider) GetConnectionUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.connectionUrl
-    }
+    return m.connectionUrl
 }
 // GetCustomizations gets the customizations property value. Optional customization to be applied to the synchronization profile.
 func (m *EducationPowerSchoolDataProvider) GetCustomizations()(EducationSynchronizationCustomizationsable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.customizations
-    }
+    return m.customizations
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *EducationPowerSchoolDataProvider) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -156,19 +136,11 @@ func (m *EducationPowerSchoolDataProvider) GetFieldDeserializers()(map[string]fu
 }
 // GetSchoolsIds gets the schoolsIds property value. The list of schools to sync.
 func (m *EducationPowerSchoolDataProvider) GetSchoolsIds()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.schoolsIds
-    }
+    return m.schoolsIds
 }
 // GetSchoolYear gets the schoolYear property value. The school year to sync.
 func (m *EducationPowerSchoolDataProvider) GetSchoolYear()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.schoolYear
-    }
+    return m.schoolYear
 }
 // Serialize serializes information the current object
 func (m *EducationPowerSchoolDataProvider) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -222,43 +194,29 @@ func (m *EducationPowerSchoolDataProvider) Serialize(writer i878a80d2330e89d2689
 }
 // SetAllowTeachersInMultipleSchools sets the allowTeachersInMultipleSchools property value. Indicates whether the source has multiple identifiers for a single student or teacher.
 func (m *EducationPowerSchoolDataProvider) SetAllowTeachersInMultipleSchools(value *bool)() {
-    if m != nil {
-        m.allowTeachersInMultipleSchools = value
-    }
+    m.allowTeachersInMultipleSchools = value
 }
 // SetClientId sets the clientId property value. The client ID used to connect to PowerSchool.
 func (m *EducationPowerSchoolDataProvider) SetClientId(value *string)() {
-    if m != nil {
-        m.clientId = value
-    }
+    m.clientId = value
 }
 // SetClientSecret sets the clientSecret property value. The client secret to authenticate the connection to the PowerSchool instance.
 func (m *EducationPowerSchoolDataProvider) SetClientSecret(value *string)() {
-    if m != nil {
-        m.clientSecret = value
-    }
+    m.clientSecret = value
 }
 // SetConnectionUrl sets the connectionUrl property value. The connection URL to the PowerSchool instance.
 func (m *EducationPowerSchoolDataProvider) SetConnectionUrl(value *string)() {
-    if m != nil {
-        m.connectionUrl = value
-    }
+    m.connectionUrl = value
 }
 // SetCustomizations sets the customizations property value. Optional customization to be applied to the synchronization profile.
 func (m *EducationPowerSchoolDataProvider) SetCustomizations(value EducationSynchronizationCustomizationsable)() {
-    if m != nil {
-        m.customizations = value
-    }
+    m.customizations = value
 }
 // SetSchoolsIds sets the schoolsIds property value. The list of schools to sync.
 func (m *EducationPowerSchoolDataProvider) SetSchoolsIds(value []string)() {
-    if m != nil {
-        m.schoolsIds = value
-    }
+    m.schoolsIds = value
 }
 // SetSchoolYear sets the schoolYear property value. The school year to sync.
 func (m *EducationPowerSchoolDataProvider) SetSchoolYear(value *string)() {
-    if m != nil {
-        m.schoolYear = value
-    }
+    m.schoolYear = value
 }

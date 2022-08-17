@@ -52,19 +52,11 @@ func (m *EducationSynchronizationOAuth2ClientCredentialsConnectionSettings) GetF
 }
 // GetScope gets the scope property value. The scope of the access request (see RFC6749).
 func (m *EducationSynchronizationOAuth2ClientCredentialsConnectionSettings) GetScope()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.scope
-    }
+    return m.scope
 }
 // GetTokenUrl gets the tokenUrl property value. The URL to get access tokens for the data provider.
 func (m *EducationSynchronizationOAuth2ClientCredentialsConnectionSettings) GetTokenUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.tokenUrl
-    }
+    return m.tokenUrl
 }
 // Serialize serializes information the current object
 func (m *EducationSynchronizationOAuth2ClientCredentialsConnectionSettings) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -88,13 +80,9 @@ func (m *EducationSynchronizationOAuth2ClientCredentialsConnectionSettings) Seri
 }
 // SetScope sets the scope property value. The scope of the access request (see RFC6749).
 func (m *EducationSynchronizationOAuth2ClientCredentialsConnectionSettings) SetScope(value *string)() {
-    if m != nil {
-        m.scope = value
-    }
+    m.scope = value
 }
 // SetTokenUrl sets the tokenUrl property value. The URL to get access tokens for the data provider.
 func (m *EducationSynchronizationOAuth2ClientCredentialsConnectionSettings) SetTokenUrl(value *string)() {
-    if m != nil {
-        m.tokenUrl = value
-    }
+    m.tokenUrl = value
 }

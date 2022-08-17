@@ -30,19 +30,11 @@ func CreateMacOSSystemExtensionFromDiscriminatorValue(parseNode i878a80d2330e89d
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *MacOSSystemExtension) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetBundleId gets the bundleId property value. Gets or sets the bundle identifier of the system extension.
 func (m *MacOSSystemExtension) GetBundleId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.bundleId
-    }
+    return m.bundleId
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *MacOSSystemExtension) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -81,19 +73,11 @@ func (m *MacOSSystemExtension) GetFieldDeserializers()(map[string]func(i878a80d2
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *MacOSSystemExtension) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetTeamIdentifier gets the teamIdentifier property value. Gets or sets the team identifier that was used to sign the system extension.
 func (m *MacOSSystemExtension) GetTeamIdentifier()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.teamIdentifier
-    }
+    return m.teamIdentifier
 }
 // Serialize serializes information the current object
 func (m *MacOSSystemExtension) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -125,25 +109,17 @@ func (m *MacOSSystemExtension) Serialize(writer i878a80d2330e89d26896388a3f487ee
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *MacOSSystemExtension) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetBundleId sets the bundleId property value. Gets or sets the bundle identifier of the system extension.
 func (m *MacOSSystemExtension) SetBundleId(value *string)() {
-    if m != nil {
-        m.bundleId = value
-    }
+    m.bundleId = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *MacOSSystemExtension) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetTeamIdentifier sets the teamIdentifier property value. Gets or sets the team identifier that was used to sign the system extension.
 func (m *MacOSSystemExtension) SetTeamIdentifier(value *string)() {
-    if m != nil {
-        m.teamIdentifier = value
-    }
+    m.teamIdentifier = value
 }

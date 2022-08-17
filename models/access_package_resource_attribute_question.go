@@ -40,11 +40,7 @@ func (m *AccessPackageResourceAttributeQuestion) GetFieldDeserializers()(map[str
 }
 // GetQuestion gets the question property value. The question asked in order to get the value of the attribute
 func (m *AccessPackageResourceAttributeQuestion) GetQuestion()(AccessPackageQuestionable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.question
-    }
+    return m.question
 }
 // Serialize serializes information the current object
 func (m *AccessPackageResourceAttributeQuestion) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -62,7 +58,5 @@ func (m *AccessPackageResourceAttributeQuestion) Serialize(writer i878a80d2330e8
 }
 // SetQuestion sets the question property value. The question asked in order to get the value of the attribute
 func (m *AccessPackageResourceAttributeQuestion) SetQuestion(value AccessPackageQuestionable)() {
-    if m != nil {
-        m.question = value
-    }
+    m.question = value
 }

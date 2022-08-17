@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// BaseTask provides operations to manage the collection of accessReview entities.
+// BaseTask provides operations to manage the collection of activityStatistics entities.
 type BaseTask struct {
     Entity
     // The date and time when the task was last modified. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2020 would look like this: '2020-01-01T00:00:00Z'.
@@ -75,59 +75,31 @@ func CreateBaseTaskFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f4
 }
 // GetBodyLastModifiedDateTime gets the bodyLastModifiedDateTime property value. The date and time when the task was last modified. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2020 would look like this: '2020-01-01T00:00:00Z'.
 func (m *BaseTask) GetBodyLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.bodyLastModifiedDateTime
-    }
+    return m.bodyLastModifiedDateTime
 }
 // GetChecklistItems gets the checklistItems property value. A collection of smaller subtasks linked to the more complex parent task.
 func (m *BaseTask) GetChecklistItems()([]ChecklistItemable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.checklistItems
-    }
+    return m.checklistItems
 }
 // GetCompletedDateTime gets the completedDateTime property value. The date when the task was finished.
 func (m *BaseTask) GetCompletedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.completedDateTime
-    }
+    return m.completedDateTime
 }
 // GetCreatedDateTime gets the createdDateTime property value. The date and time when the task was created. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format. For example, midnight UTC on Jan 1, 2020 would look like this: '2020-01-01T00:00:00Z'.
 func (m *BaseTask) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.createdDateTime
-    }
+    return m.createdDateTime
 }
 // GetDisplayName gets the displayName property value. The name of the task.
 func (m *BaseTask) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
 // GetDueDateTime gets the dueDateTime property value. The date in the specified time zone that the task is to be finished.
 func (m *BaseTask) GetDueDateTime()(DateTimeTimeZoneable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.dueDateTime
-    }
+    return m.dueDateTime
 }
 // GetExtensions gets the extensions property value. The collection of open extensions defined for the task .
 func (m *BaseTask) GetExtensions()([]Extensionable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.extensions
-    }
+    return m.extensions
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *BaseTask) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -308,75 +280,39 @@ func (m *BaseTask) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
 }
 // GetImportance gets the importance property value. The importance property
 func (m *BaseTask) GetImportance()(*Importance) {
-    if m == nil {
-        return nil
-    } else {
-        return m.importance
-    }
+    return m.importance
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. The date and time when the task was last modified. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2020 would look like this: '2020-01-01T00:00:00Z'.
 func (m *BaseTask) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastModifiedDateTime
-    }
+    return m.lastModifiedDateTime
 }
 // GetLinkedResources gets the linkedResources property value. A collection of resources linked to the task.
 func (m *BaseTask) GetLinkedResources()([]LinkedResource_v2able) {
-    if m == nil {
-        return nil
-    } else {
-        return m.linkedResources
-    }
+    return m.linkedResources
 }
 // GetParentList gets the parentList property value. The list which contains the task.
 func (m *BaseTask) GetParentList()(BaseTaskListable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.parentList
-    }
+    return m.parentList
 }
 // GetRecurrence gets the recurrence property value. The recurrence pattern for the task.
 func (m *BaseTask) GetRecurrence()(PatternedRecurrenceable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.recurrence
-    }
+    return m.recurrence
 }
 // GetStartDateTime gets the startDateTime property value. The date in the specified time zone when the task is to begin.
 func (m *BaseTask) GetStartDateTime()(DateTimeTimeZoneable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.startDateTime
-    }
+    return m.startDateTime
 }
 // GetStatus gets the status property value. The status property
 func (m *BaseTask) GetStatus()(*TaskStatus_v2) {
-    if m == nil {
-        return nil
-    } else {
-        return m.status
-    }
+    return m.status
 }
 // GetTextBody gets the textBody property value. The task body in text format that typically contains information about the task.
 func (m *BaseTask) GetTextBody()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.textBody
-    }
+    return m.textBody
 }
 // GetViewpoint gets the viewpoint property value. The viewpoint property
 func (m *BaseTask) GetViewpoint()(TaskViewpointable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.viewpoint
-    }
+    return m.viewpoint
 }
 // Serialize serializes information the current object
 func (m *BaseTask) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -498,97 +434,65 @@ func (m *BaseTask) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
 }
 // SetBodyLastModifiedDateTime sets the bodyLastModifiedDateTime property value. The date and time when the task was last modified. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2020 would look like this: '2020-01-01T00:00:00Z'.
 func (m *BaseTask) SetBodyLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.bodyLastModifiedDateTime = value
-    }
+    m.bodyLastModifiedDateTime = value
 }
 // SetChecklistItems sets the checklistItems property value. A collection of smaller subtasks linked to the more complex parent task.
 func (m *BaseTask) SetChecklistItems(value []ChecklistItemable)() {
-    if m != nil {
-        m.checklistItems = value
-    }
+    m.checklistItems = value
 }
 // SetCompletedDateTime sets the completedDateTime property value. The date when the task was finished.
 func (m *BaseTask) SetCompletedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.completedDateTime = value
-    }
+    m.completedDateTime = value
 }
 // SetCreatedDateTime sets the createdDateTime property value. The date and time when the task was created. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format. For example, midnight UTC on Jan 1, 2020 would look like this: '2020-01-01T00:00:00Z'.
 func (m *BaseTask) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.createdDateTime = value
-    }
+    m.createdDateTime = value
 }
 // SetDisplayName sets the displayName property value. The name of the task.
 func (m *BaseTask) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }
 // SetDueDateTime sets the dueDateTime property value. The date in the specified time zone that the task is to be finished.
 func (m *BaseTask) SetDueDateTime(value DateTimeTimeZoneable)() {
-    if m != nil {
-        m.dueDateTime = value
-    }
+    m.dueDateTime = value
 }
 // SetExtensions sets the extensions property value. The collection of open extensions defined for the task .
 func (m *BaseTask) SetExtensions(value []Extensionable)() {
-    if m != nil {
-        m.extensions = value
-    }
+    m.extensions = value
 }
 // SetImportance sets the importance property value. The importance property
 func (m *BaseTask) SetImportance(value *Importance)() {
-    if m != nil {
-        m.importance = value
-    }
+    m.importance = value
 }
 // SetLastModifiedDateTime sets the lastModifiedDateTime property value. The date and time when the task was last modified. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2020 would look like this: '2020-01-01T00:00:00Z'.
 func (m *BaseTask) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.lastModifiedDateTime = value
-    }
+    m.lastModifiedDateTime = value
 }
 // SetLinkedResources sets the linkedResources property value. A collection of resources linked to the task.
 func (m *BaseTask) SetLinkedResources(value []LinkedResource_v2able)() {
-    if m != nil {
-        m.linkedResources = value
-    }
+    m.linkedResources = value
 }
 // SetParentList sets the parentList property value. The list which contains the task.
 func (m *BaseTask) SetParentList(value BaseTaskListable)() {
-    if m != nil {
-        m.parentList = value
-    }
+    m.parentList = value
 }
 // SetRecurrence sets the recurrence property value. The recurrence pattern for the task.
 func (m *BaseTask) SetRecurrence(value PatternedRecurrenceable)() {
-    if m != nil {
-        m.recurrence = value
-    }
+    m.recurrence = value
 }
 // SetStartDateTime sets the startDateTime property value. The date in the specified time zone when the task is to begin.
 func (m *BaseTask) SetStartDateTime(value DateTimeTimeZoneable)() {
-    if m != nil {
-        m.startDateTime = value
-    }
+    m.startDateTime = value
 }
 // SetStatus sets the status property value. The status property
 func (m *BaseTask) SetStatus(value *TaskStatus_v2)() {
-    if m != nil {
-        m.status = value
-    }
+    m.status = value
 }
 // SetTextBody sets the textBody property value. The task body in text format that typically contains information about the task.
 func (m *BaseTask) SetTextBody(value *string)() {
-    if m != nil {
-        m.textBody = value
-    }
+    m.textBody = value
 }
 // SetViewpoint sets the viewpoint property value. The viewpoint property
 func (m *BaseTask) SetViewpoint(value TaskViewpointable)() {
-    if m != nil {
-        m.viewpoint = value
-    }
+    m.viewpoint = value
 }

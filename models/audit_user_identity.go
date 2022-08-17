@@ -52,19 +52,11 @@ func (m *AuditUserIdentity) GetFieldDeserializers()(map[string]func(i878a80d2330
 }
 // GetHomeTenantId gets the homeTenantId property value. For user sign ins, the identifier of the tenant that the user is a member of.
 func (m *AuditUserIdentity) GetHomeTenantId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.homeTenantId
-    }
+    return m.homeTenantId
 }
 // GetHomeTenantName gets the homeTenantName property value. For user sign ins, the name of the tenant that the user is a member of. Only populated in cases where the home tenant has provided affirmative consent to Azure AD to show the tenant content.
 func (m *AuditUserIdentity) GetHomeTenantName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.homeTenantName
-    }
+    return m.homeTenantName
 }
 // Serialize serializes information the current object
 func (m *AuditUserIdentity) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -88,13 +80,9 @@ func (m *AuditUserIdentity) Serialize(writer i878a80d2330e89d26896388a3f487eef27
 }
 // SetHomeTenantId sets the homeTenantId property value. For user sign ins, the identifier of the tenant that the user is a member of.
 func (m *AuditUserIdentity) SetHomeTenantId(value *string)() {
-    if m != nil {
-        m.homeTenantId = value
-    }
+    m.homeTenantId = value
 }
 // SetHomeTenantName sets the homeTenantName property value. For user sign ins, the name of the tenant that the user is a member of. Only populated in cases where the home tenant has provided affirmative consent to Azure AD to show the tenant content.
 func (m *AuditUserIdentity) SetHomeTenantName(value *string)() {
-    if m != nil {
-        m.homeTenantName = value
-    }
+    m.homeTenantName = value
 }

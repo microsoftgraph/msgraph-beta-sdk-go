@@ -48,11 +48,7 @@ func CreateMeetingRegistrationBaseFromDiscriminatorValue(parseNode i878a80d2330e
 }
 // GetAllowedRegistrant gets the allowedRegistrant property value. Specifies who can register for the meeting.
 func (m *MeetingRegistrationBase) GetAllowedRegistrant()(*MeetingAudience) {
-    if m == nil {
-        return nil
-    } else {
-        return m.allowedRegistrant
-    }
+    return m.allowedRegistrant
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *MeetingRegistrationBase) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -85,11 +81,7 @@ func (m *MeetingRegistrationBase) GetFieldDeserializers()(map[string]func(i878a8
 }
 // GetRegistrants gets the registrants property value. Registrants of the online meeting.
 func (m *MeetingRegistrationBase) GetRegistrants()([]MeetingRegistrantBaseable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.registrants
-    }
+    return m.registrants
 }
 // Serialize serializes information the current object
 func (m *MeetingRegistrationBase) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -118,13 +110,9 @@ func (m *MeetingRegistrationBase) Serialize(writer i878a80d2330e89d26896388a3f48
 }
 // SetAllowedRegistrant sets the allowedRegistrant property value. Specifies who can register for the meeting.
 func (m *MeetingRegistrationBase) SetAllowedRegistrant(value *MeetingAudience)() {
-    if m != nil {
-        m.allowedRegistrant = value
-    }
+    m.allowedRegistrant = value
 }
 // SetRegistrants sets the registrants property value. Registrants of the online meeting.
 func (m *MeetingRegistrationBase) SetRegistrants(value []MeetingRegistrantBaseable)() {
-    if m != nil {
-        m.registrants = value
-    }
+    m.registrants = value
 }

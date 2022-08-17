@@ -34,35 +34,19 @@ func CreateExpressionEvaluationDetailsFromDiscriminatorValue(parseNode i878a80d2
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ExpressionEvaluationDetails) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetExpression gets the expression property value. Represents expression which has been evaluated.
 func (m *ExpressionEvaluationDetails) GetExpression()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.expression
-    }
+    return m.expression
 }
 // GetExpressionEvaluationDetails gets the expressionEvaluationDetails property value. Represents the details of the evaluation of the expression.
 func (m *ExpressionEvaluationDetails) GetExpressionEvaluationDetails()([]ExpressionEvaluationDetailsable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.expressionEvaluationDetails
-    }
+    return m.expressionEvaluationDetails
 }
 // GetExpressionResult gets the expressionResult property value. Represents the value of the result of the current expression.
 func (m *ExpressionEvaluationDetails) GetExpressionResult()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.expressionResult
-    }
+    return m.expressionResult
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ExpressionEvaluationDetails) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -125,19 +109,11 @@ func (m *ExpressionEvaluationDetails) GetFieldDeserializers()(map[string]func(i8
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *ExpressionEvaluationDetails) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetPropertyToEvaluate gets the propertyToEvaluate property value. Defines the name of the property and the value of that property.
 func (m *ExpressionEvaluationDetails) GetPropertyToEvaluate()(PropertyToEvaluateable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.propertyToEvaluate
-    }
+    return m.propertyToEvaluate
 }
 // Serialize serializes information the current object
 func (m *ExpressionEvaluationDetails) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -185,37 +161,25 @@ func (m *ExpressionEvaluationDetails) Serialize(writer i878a80d2330e89d26896388a
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ExpressionEvaluationDetails) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetExpression sets the expression property value. Represents expression which has been evaluated.
 func (m *ExpressionEvaluationDetails) SetExpression(value *string)() {
-    if m != nil {
-        m.expression = value
-    }
+    m.expression = value
 }
 // SetExpressionEvaluationDetails sets the expressionEvaluationDetails property value. Represents the details of the evaluation of the expression.
 func (m *ExpressionEvaluationDetails) SetExpressionEvaluationDetails(value []ExpressionEvaluationDetailsable)() {
-    if m != nil {
-        m.expressionEvaluationDetails = value
-    }
+    m.expressionEvaluationDetails = value
 }
 // SetExpressionResult sets the expressionResult property value. Represents the value of the result of the current expression.
 func (m *ExpressionEvaluationDetails) SetExpressionResult(value *bool)() {
-    if m != nil {
-        m.expressionResult = value
-    }
+    m.expressionResult = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *ExpressionEvaluationDetails) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetPropertyToEvaluate sets the propertyToEvaluate property value. Defines the name of the property and the value of that property.
 func (m *ExpressionEvaluationDetails) SetPropertyToEvaluate(value PropertyToEvaluateable)() {
-    if m != nil {
-        m.propertyToEvaluate = value
-    }
+    m.propertyToEvaluate = value
 }

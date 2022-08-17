@@ -29,11 +29,7 @@ func CreateDeviceManagementConfigurationIntegerSettingValueTemplateFromDiscrimin
 }
 // GetDefaultValue gets the defaultValue property value. Integer Setting Value Default Template.
 func (m *DeviceManagementConfigurationIntegerSettingValueTemplate) GetDefaultValue()(DeviceManagementConfigurationIntegerSettingValueDefaultTemplateable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.defaultValue
-    }
+    return m.defaultValue
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceManagementConfigurationIntegerSettingValueTemplate) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -72,19 +68,11 @@ func (m *DeviceManagementConfigurationIntegerSettingValueTemplate) GetFieldDeser
 }
 // GetRecommendedValueDefinition gets the recommendedValueDefinition property value. Recommended value definition.
 func (m *DeviceManagementConfigurationIntegerSettingValueTemplate) GetRecommendedValueDefinition()(DeviceManagementConfigurationIntegerSettingValueDefinitionTemplateable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.recommendedValueDefinition
-    }
+    return m.recommendedValueDefinition
 }
 // GetRequiredValueDefinition gets the requiredValueDefinition property value. Required value definition.
 func (m *DeviceManagementConfigurationIntegerSettingValueTemplate) GetRequiredValueDefinition()(DeviceManagementConfigurationIntegerSettingValueDefinitionTemplateable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.requiredValueDefinition
-    }
+    return m.requiredValueDefinition
 }
 // Serialize serializes information the current object
 func (m *DeviceManagementConfigurationIntegerSettingValueTemplate) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -114,19 +102,13 @@ func (m *DeviceManagementConfigurationIntegerSettingValueTemplate) Serialize(wri
 }
 // SetDefaultValue sets the defaultValue property value. Integer Setting Value Default Template.
 func (m *DeviceManagementConfigurationIntegerSettingValueTemplate) SetDefaultValue(value DeviceManagementConfigurationIntegerSettingValueDefaultTemplateable)() {
-    if m != nil {
-        m.defaultValue = value
-    }
+    m.defaultValue = value
 }
 // SetRecommendedValueDefinition sets the recommendedValueDefinition property value. Recommended value definition.
 func (m *DeviceManagementConfigurationIntegerSettingValueTemplate) SetRecommendedValueDefinition(value DeviceManagementConfigurationIntegerSettingValueDefinitionTemplateable)() {
-    if m != nil {
-        m.recommendedValueDefinition = value
-    }
+    m.recommendedValueDefinition = value
 }
 // SetRequiredValueDefinition sets the requiredValueDefinition property value. Required value definition.
 func (m *DeviceManagementConfigurationIntegerSettingValueTemplate) SetRequiredValueDefinition(value DeviceManagementConfigurationIntegerSettingValueDefinitionTemplateable)() {
-    if m != nil {
-        m.requiredValueDefinition = value
-    }
+    m.requiredValueDefinition = value
 }

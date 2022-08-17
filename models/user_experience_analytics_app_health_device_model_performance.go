@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// UserExperienceAnalyticsAppHealthDeviceModelPerformance 
+// UserExperienceAnalyticsAppHealthDeviceModelPerformance the user experience analytics device model performance entity contains device model performance details.
 type UserExperienceAnalyticsAppHealthDeviceModelPerformance struct {
     Entity
     // The number of active devices for the model. Valid values -2147483648 to 2147483647
@@ -22,7 +22,7 @@ type UserExperienceAnalyticsAppHealthDeviceModelPerformance struct {
     // The overall app health status of the device model.
     modelAppHealthStatus *string
 }
-// NewUserExperienceAnalyticsAppHealthDeviceModelPerformance instantiates a new UserExperienceAnalyticsAppHealthDeviceModelPerformance and sets the default values.
+// NewUserExperienceAnalyticsAppHealthDeviceModelPerformance instantiates a new userExperienceAnalyticsAppHealthDeviceModelPerformance and sets the default values.
 func NewUserExperienceAnalyticsAppHealthDeviceModelPerformance()(*UserExperienceAnalyticsAppHealthDeviceModelPerformance) {
     m := &UserExperienceAnalyticsAppHealthDeviceModelPerformance{
         Entity: *NewEntity(),
@@ -37,27 +37,15 @@ func CreateUserExperienceAnalyticsAppHealthDeviceModelPerformanceFromDiscriminat
 }
 // GetActiveDeviceCount gets the activeDeviceCount property value. The number of active devices for the model. Valid values -2147483648 to 2147483647
 func (m *UserExperienceAnalyticsAppHealthDeviceModelPerformance) GetActiveDeviceCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.activeDeviceCount
-    }
+    return m.activeDeviceCount
 }
 // GetDeviceManufacturer gets the deviceManufacturer property value. The manufacturer name of the device.
 func (m *UserExperienceAnalyticsAppHealthDeviceModelPerformance) GetDeviceManufacturer()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deviceManufacturer
-    }
+    return m.deviceManufacturer
 }
 // GetDeviceModel gets the deviceModel property value. The model name of the device.
 func (m *UserExperienceAnalyticsAppHealthDeviceModelPerformance) GetDeviceModel()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deviceModel
-    }
+    return m.deviceModel
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *UserExperienceAnalyticsAppHealthDeviceModelPerformance) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -136,35 +124,19 @@ func (m *UserExperienceAnalyticsAppHealthDeviceModelPerformance) GetFieldDeseria
 }
 // GetHealthStatus gets the healthStatus property value. The healthStatus property
 func (m *UserExperienceAnalyticsAppHealthDeviceModelPerformance) GetHealthStatus()(*UserExperienceAnalyticsHealthState) {
-    if m == nil {
-        return nil
-    } else {
-        return m.healthStatus
-    }
+    return m.healthStatus
 }
 // GetMeanTimeToFailureInMinutes gets the meanTimeToFailureInMinutes property value. The mean time to failure for the model device in minutes. Valid values -2147483648 to 2147483647
 func (m *UserExperienceAnalyticsAppHealthDeviceModelPerformance) GetMeanTimeToFailureInMinutes()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.meanTimeToFailureInMinutes
-    }
+    return m.meanTimeToFailureInMinutes
 }
 // GetModelAppHealthScore gets the modelAppHealthScore property value. The app health score of the device model. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
 func (m *UserExperienceAnalyticsAppHealthDeviceModelPerformance) GetModelAppHealthScore()(*float64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.modelAppHealthScore
-    }
+    return m.modelAppHealthScore
 }
 // GetModelAppHealthStatus gets the modelAppHealthStatus property value. The overall app health status of the device model.
 func (m *UserExperienceAnalyticsAppHealthDeviceModelPerformance) GetModelAppHealthStatus()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.modelAppHealthStatus
-    }
+    return m.modelAppHealthStatus
 }
 // Serialize serializes information the current object
 func (m *UserExperienceAnalyticsAppHealthDeviceModelPerformance) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -219,43 +191,29 @@ func (m *UserExperienceAnalyticsAppHealthDeviceModelPerformance) Serialize(write
 }
 // SetActiveDeviceCount sets the activeDeviceCount property value. The number of active devices for the model. Valid values -2147483648 to 2147483647
 func (m *UserExperienceAnalyticsAppHealthDeviceModelPerformance) SetActiveDeviceCount(value *int32)() {
-    if m != nil {
-        m.activeDeviceCount = value
-    }
+    m.activeDeviceCount = value
 }
 // SetDeviceManufacturer sets the deviceManufacturer property value. The manufacturer name of the device.
 func (m *UserExperienceAnalyticsAppHealthDeviceModelPerformance) SetDeviceManufacturer(value *string)() {
-    if m != nil {
-        m.deviceManufacturer = value
-    }
+    m.deviceManufacturer = value
 }
 // SetDeviceModel sets the deviceModel property value. The model name of the device.
 func (m *UserExperienceAnalyticsAppHealthDeviceModelPerformance) SetDeviceModel(value *string)() {
-    if m != nil {
-        m.deviceModel = value
-    }
+    m.deviceModel = value
 }
 // SetHealthStatus sets the healthStatus property value. The healthStatus property
 func (m *UserExperienceAnalyticsAppHealthDeviceModelPerformance) SetHealthStatus(value *UserExperienceAnalyticsHealthState)() {
-    if m != nil {
-        m.healthStatus = value
-    }
+    m.healthStatus = value
 }
 // SetMeanTimeToFailureInMinutes sets the meanTimeToFailureInMinutes property value. The mean time to failure for the model device in minutes. Valid values -2147483648 to 2147483647
 func (m *UserExperienceAnalyticsAppHealthDeviceModelPerformance) SetMeanTimeToFailureInMinutes(value *int32)() {
-    if m != nil {
-        m.meanTimeToFailureInMinutes = value
-    }
+    m.meanTimeToFailureInMinutes = value
 }
 // SetModelAppHealthScore sets the modelAppHealthScore property value. The app health score of the device model. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
 func (m *UserExperienceAnalyticsAppHealthDeviceModelPerformance) SetModelAppHealthScore(value *float64)() {
-    if m != nil {
-        m.modelAppHealthScore = value
-    }
+    m.modelAppHealthScore = value
 }
 // SetModelAppHealthStatus sets the modelAppHealthStatus property value. The overall app health status of the device model.
 func (m *UserExperienceAnalyticsAppHealthDeviceModelPerformance) SetModelAppHealthStatus(value *string)() {
-    if m != nil {
-        m.modelAppHealthStatus = value
-    }
+    m.modelAppHealthStatus = value
 }

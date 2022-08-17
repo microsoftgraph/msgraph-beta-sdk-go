@@ -32,11 +32,7 @@ func CreateJoinMeetingIdSettingsFromDiscriminatorValue(parseNode i878a80d2330e89
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *JoinMeetingIdSettings) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *JoinMeetingIdSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -85,35 +81,19 @@ func (m *JoinMeetingIdSettings) GetFieldDeserializers()(map[string]func(i878a80d
 }
 // GetIsPasscodeRequired gets the isPasscodeRequired property value. Indicates whether a passcode is required to join a meeting when using joinMeetingId. Optional.
 func (m *JoinMeetingIdSettings) GetIsPasscodeRequired()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isPasscodeRequired
-    }
+    return m.isPasscodeRequired
 }
 // GetJoinMeetingId gets the joinMeetingId property value. The meeting ID to be used to join a meeting. Optional. Read-only.
 func (m *JoinMeetingIdSettings) GetJoinMeetingId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.joinMeetingId
-    }
+    return m.joinMeetingId
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *JoinMeetingIdSettings) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetPasscode gets the passcode property value. The passcode to join a meeting.  Optional. Read-only.
 func (m *JoinMeetingIdSettings) GetPasscode()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.passcode
-    }
+    return m.passcode
 }
 // Serialize serializes information the current object
 func (m *JoinMeetingIdSettings) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -151,31 +131,21 @@ func (m *JoinMeetingIdSettings) Serialize(writer i878a80d2330e89d26896388a3f487e
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *JoinMeetingIdSettings) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetIsPasscodeRequired sets the isPasscodeRequired property value. Indicates whether a passcode is required to join a meeting when using joinMeetingId. Optional.
 func (m *JoinMeetingIdSettings) SetIsPasscodeRequired(value *bool)() {
-    if m != nil {
-        m.isPasscodeRequired = value
-    }
+    m.isPasscodeRequired = value
 }
 // SetJoinMeetingId sets the joinMeetingId property value. The meeting ID to be used to join a meeting. Optional. Read-only.
 func (m *JoinMeetingIdSettings) SetJoinMeetingId(value *string)() {
-    if m != nil {
-        m.joinMeetingId = value
-    }
+    m.joinMeetingId = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *JoinMeetingIdSettings) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetPasscode sets the passcode property value. The passcode to join a meeting.  Optional. Read-only.
 func (m *JoinMeetingIdSettings) SetPasscode(value *string)() {
-    if m != nil {
-        m.passcode = value
-    }
+    m.passcode = value
 }

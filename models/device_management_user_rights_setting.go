@@ -30,11 +30,7 @@ func CreateDeviceManagementUserRightsSettingFromDiscriminatorValue(parseNode i87
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DeviceManagementUserRightsSetting) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceManagementUserRightsSetting) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -77,27 +73,15 @@ func (m *DeviceManagementUserRightsSetting) GetFieldDeserializers()(map[string]f
 }
 // GetLocalUsersOrGroups gets the localUsersOrGroups property value. Representing a collection of local users or groups which will be set on device if the state of this setting is Allowed. This collection can contain a maximum of 500 elements.
 func (m *DeviceManagementUserRightsSetting) GetLocalUsersOrGroups()([]DeviceManagementUserRightsLocalUserOrGroupable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.localUsersOrGroups
-    }
+    return m.localUsersOrGroups
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *DeviceManagementUserRightsSetting) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetState gets the state property value. State Management Setting.
 func (m *DeviceManagementUserRightsSetting) GetState()(*StateManagementSetting) {
-    if m == nil {
-        return nil
-    } else {
-        return m.state
-    }
+    return m.state
 }
 // Serialize serializes information the current object
 func (m *DeviceManagementUserRightsSetting) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -134,25 +118,17 @@ func (m *DeviceManagementUserRightsSetting) Serialize(writer i878a80d2330e89d268
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DeviceManagementUserRightsSetting) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetLocalUsersOrGroups sets the localUsersOrGroups property value. Representing a collection of local users or groups which will be set on device if the state of this setting is Allowed. This collection can contain a maximum of 500 elements.
 func (m *DeviceManagementUserRightsSetting) SetLocalUsersOrGroups(value []DeviceManagementUserRightsLocalUserOrGroupable)() {
-    if m != nil {
-        m.localUsersOrGroups = value
-    }
+    m.localUsersOrGroups = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *DeviceManagementUserRightsSetting) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetState sets the state property value. State Management Setting.
 func (m *DeviceManagementUserRightsSetting) SetState(value *StateManagementSetting)() {
-    if m != nil {
-        m.state = value
-    }
+    m.state = value
 }

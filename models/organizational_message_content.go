@@ -32,11 +32,7 @@ func CreateOrganizationalMessageContentFromDiscriminatorValue(parseNode i878a80d
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *OrganizationalMessageContent) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *OrganizationalMessageContent) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -89,35 +85,19 @@ func (m *OrganizationalMessageContent) GetFieldDeserializers()(map[string]func(i
 }
 // GetGuidedContentId gets the guidedContentId property value. The ID of the guided content that this content is using
 func (m *OrganizationalMessageContent) GetGuidedContentId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.guidedContentId
-    }
+    return m.guidedContentId
 }
 // GetLogoInfo gets the logoInfo property value. The logo that will be displayed to the clients. This will contain ether the binary contents of the logo or a url to the logo's location
 func (m *OrganizationalMessageContent) GetLogoInfo()(OrganizationalMessageLogoable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.logoInfo
-    }
+    return m.logoInfo
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *OrganizationalMessageContent) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetPlacementDetails gets the placementDetails property value. Contains the different types of text content that can be displayed to customers along with their localized values
 func (m *OrganizationalMessageContent) GetPlacementDetails()([]OrganizationalMessagePlacementDetailable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.placementDetails
-    }
+    return m.placementDetails
 }
 // Serialize serializes information the current object
 func (m *OrganizationalMessageContent) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -159,31 +139,21 @@ func (m *OrganizationalMessageContent) Serialize(writer i878a80d2330e89d26896388
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *OrganizationalMessageContent) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetGuidedContentId sets the guidedContentId property value. The ID of the guided content that this content is using
 func (m *OrganizationalMessageContent) SetGuidedContentId(value *string)() {
-    if m != nil {
-        m.guidedContentId = value
-    }
+    m.guidedContentId = value
 }
 // SetLogoInfo sets the logoInfo property value. The logo that will be displayed to the clients. This will contain ether the binary contents of the logo or a url to the logo's location
 func (m *OrganizationalMessageContent) SetLogoInfo(value OrganizationalMessageLogoable)() {
-    if m != nil {
-        m.logoInfo = value
-    }
+    m.logoInfo = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *OrganizationalMessageContent) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetPlacementDetails sets the placementDetails property value. Contains the different types of text content that can be displayed to customers along with their localized values
 func (m *OrganizationalMessageContent) SetPlacementDetails(value []OrganizationalMessagePlacementDetailable)() {
-    if m != nil {
-        m.placementDetails = value
-    }
+    m.placementDetails = value
 }

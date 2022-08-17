@@ -37,35 +37,19 @@ func CreateUserSimulationEventInfoFromDiscriminatorValue(parseNode i878a80d2330e
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *UserSimulationEventInfo) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetBrowser gets the browser property value. Browser information from where the simulation event was initiated by a user in an attack simulation and training campaign.
 func (m *UserSimulationEventInfo) GetBrowser()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.browser
-    }
+    return m.browser
 }
 // GetEventDateTime gets the eventDateTime property value. Date and time of the simulation event by a user in an attack simulation and training campaign.
 func (m *UserSimulationEventInfo) GetEventDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.eventDateTime
-    }
+    return m.eventDateTime
 }
 // GetEventName gets the eventName property value. Name of the simulation event by a user in an attack simulation and training campaign.
 func (m *UserSimulationEventInfo) GetEventName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.eventName
-    }
+    return m.eventName
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *UserSimulationEventInfo) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -134,27 +118,15 @@ func (m *UserSimulationEventInfo) GetFieldDeserializers()(map[string]func(i878a8
 }
 // GetIpAddress gets the ipAddress property value. IP address from where the simulation event was initiated by a user in an attack simulation and training campaign.
 func (m *UserSimulationEventInfo) GetIpAddress()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.ipAddress
-    }
+    return m.ipAddress
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *UserSimulationEventInfo) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetOsPlatformDeviceDetails gets the osPlatformDeviceDetails property value. The operating system, platform, and device details from where the simulation event was initiated by a user in an attack simulation and training campaign.
 func (m *UserSimulationEventInfo) GetOsPlatformDeviceDetails()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.osPlatformDeviceDetails
-    }
+    return m.osPlatformDeviceDetails
 }
 // Serialize serializes information the current object
 func (m *UserSimulationEventInfo) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -204,43 +176,29 @@ func (m *UserSimulationEventInfo) Serialize(writer i878a80d2330e89d26896388a3f48
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *UserSimulationEventInfo) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetBrowser sets the browser property value. Browser information from where the simulation event was initiated by a user in an attack simulation and training campaign.
 func (m *UserSimulationEventInfo) SetBrowser(value *string)() {
-    if m != nil {
-        m.browser = value
-    }
+    m.browser = value
 }
 // SetEventDateTime sets the eventDateTime property value. Date and time of the simulation event by a user in an attack simulation and training campaign.
 func (m *UserSimulationEventInfo) SetEventDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.eventDateTime = value
-    }
+    m.eventDateTime = value
 }
 // SetEventName sets the eventName property value. Name of the simulation event by a user in an attack simulation and training campaign.
 func (m *UserSimulationEventInfo) SetEventName(value *string)() {
-    if m != nil {
-        m.eventName = value
-    }
+    m.eventName = value
 }
 // SetIpAddress sets the ipAddress property value. IP address from where the simulation event was initiated by a user in an attack simulation and training campaign.
 func (m *UserSimulationEventInfo) SetIpAddress(value *string)() {
-    if m != nil {
-        m.ipAddress = value
-    }
+    m.ipAddress = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *UserSimulationEventInfo) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetOsPlatformDeviceDetails sets the osPlatformDeviceDetails property value. The operating system, platform, and device details from where the simulation event was initiated by a user in an attack simulation and training campaign.
 func (m *UserSimulationEventInfo) SetOsPlatformDeviceDetails(value *string)() {
-    if m != nil {
-        m.osPlatformDeviceDetails = value
-    }
+    m.osPlatformDeviceDetails = value
 }

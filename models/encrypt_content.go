@@ -46,11 +46,7 @@ func CreateEncryptContentFromDiscriminatorValue(parseNode i878a80d2330e89d268963
 }
 // GetEncryptWith gets the encryptWith property value. The encryptWith property
 func (m *EncryptContent) GetEncryptWith()(*EncryptWith) {
-    if m == nil {
-        return nil
-    } else {
-        return m.encryptWith
-    }
+    return m.encryptWith
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *EncryptContent) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -84,7 +80,5 @@ func (m *EncryptContent) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
 }
 // SetEncryptWith sets the encryptWith property value. The encryptWith property
 func (m *EncryptContent) SetEncryptWith(value *EncryptWith)() {
-    if m != nil {
-        m.encryptWith = value
-    }
+    m.encryptWith = value
 }

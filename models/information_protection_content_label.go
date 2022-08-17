@@ -33,27 +33,15 @@ func CreateInformationProtectionContentLabelFromDiscriminatorValue(parseNode i87
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *InformationProtectionContentLabel) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetAssignmentMethod gets the assignmentMethod property value. The assignmentMethod property
 func (m *InformationProtectionContentLabel) GetAssignmentMethod()(*AssignmentMethod) {
-    if m == nil {
-        return nil
-    } else {
-        return m.assignmentMethod
-    }
+    return m.assignmentMethod
 }
 // GetCreationDateTime gets the creationDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 func (m *InformationProtectionContentLabel) GetCreationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.creationDateTime
-    }
+    return m.creationDateTime
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *InformationProtectionContentLabel) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -102,19 +90,11 @@ func (m *InformationProtectionContentLabel) GetFieldDeserializers()(map[string]f
 }
 // GetLabel gets the label property value. Details on the label that is currently applied to the file.
 func (m *InformationProtectionContentLabel) GetLabel()(LabelDetailsable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.label
-    }
+    return m.label
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *InformationProtectionContentLabel) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // Serialize serializes information the current object
 func (m *InformationProtectionContentLabel) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -153,31 +133,21 @@ func (m *InformationProtectionContentLabel) Serialize(writer i878a80d2330e89d268
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *InformationProtectionContentLabel) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetAssignmentMethod sets the assignmentMethod property value. The assignmentMethod property
 func (m *InformationProtectionContentLabel) SetAssignmentMethod(value *AssignmentMethod)() {
-    if m != nil {
-        m.assignmentMethod = value
-    }
+    m.assignmentMethod = value
 }
 // SetCreationDateTime sets the creationDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 func (m *InformationProtectionContentLabel) SetCreationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.creationDateTime = value
-    }
+    m.creationDateTime = value
 }
 // SetLabel sets the label property value. Details on the label that is currently applied to the file.
 func (m *InformationProtectionContentLabel) SetLabel(value LabelDetailsable)() {
-    if m != nil {
-        m.label = value
-    }
+    m.label = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *InformationProtectionContentLabel) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }

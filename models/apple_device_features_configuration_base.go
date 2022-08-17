@@ -46,11 +46,7 @@ func CreateAppleDeviceFeaturesConfigurationBaseFromDiscriminatorValue(parseNode 
 }
 // GetAirPrintDestinations gets the airPrintDestinations property value. An array of AirPrint printers that should always be shown. This collection can contain a maximum of 500 elements.
 func (m *AppleDeviceFeaturesConfigurationBase) GetAirPrintDestinations()([]AirPrintDestinationable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.airPrintDestinations
-    }
+    return m.airPrintDestinations
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AppleDeviceFeaturesConfigurationBase) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -91,7 +87,5 @@ func (m *AppleDeviceFeaturesConfigurationBase) Serialize(writer i878a80d2330e89d
 }
 // SetAirPrintDestinations sets the airPrintDestinations property value. An array of AirPrint printers that should always be shown. This collection can contain a maximum of 500 elements.
 func (m *AppleDeviceFeaturesConfigurationBase) SetAirPrintDestinations(value []AirPrintDestinationable)() {
-    if m != nil {
-        m.airPrintDestinations = value
-    }
+    m.airPrintDestinations = value
 }

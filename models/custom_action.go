@@ -56,19 +56,11 @@ func (m *CustomAction) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
 }
 // GetName gets the name property value. Name of the custom action.
 func (m *CustomAction) GetName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.name
-    }
+    return m.name
 }
 // GetProperties gets the properties property value. Properties, in key value pair format, of the action.
 func (m *CustomAction) GetProperties()([]KeyValuePairable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.properties
-    }
+    return m.properties
 }
 // Serialize serializes information the current object
 func (m *CustomAction) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -96,13 +88,9 @@ func (m *CustomAction) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
 }
 // SetName sets the name property value. Name of the custom action.
 func (m *CustomAction) SetName(value *string)() {
-    if m != nil {
-        m.name = value
-    }
+    m.name = value
 }
 // SetProperties sets the properties property value. Properties, in key value pair format, of the action.
 func (m *CustomAction) SetProperties(value []KeyValuePairable)() {
-    if m != nil {
-        m.properties = value
-    }
+    m.properties = value
 }

@@ -61,27 +61,15 @@ func CreateParentLabelDetailsFromDiscriminatorValue(parseNode i878a80d2330e89d26
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ParentLabelDetails) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetColor gets the color property value. The color that the user interface should display for the label, if configured.
 func (m *ParentLabelDetails) GetColor()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.color
-    }
+    return m.color
 }
 // GetDescription gets the description property value. The admin-defined description for the label.
 func (m *ParentLabelDetails) GetDescription()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.description
-    }
+    return m.description
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ParentLabelDetails) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -180,59 +168,31 @@ func (m *ParentLabelDetails) GetFieldDeserializers()(map[string]func(i878a80d233
 }
 // GetId gets the id property value. The label ID is a globally unique identifier (GUID).
 func (m *ParentLabelDetails) GetId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.id
-    }
+    return m.id
 }
 // GetIsActive gets the isActive property value. Indicates whether the label is active or not. Active labels should be hidden or disabled in user interfaces.
 func (m *ParentLabelDetails) GetIsActive()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isActive
-    }
+    return m.isActive
 }
 // GetName gets the name property value. The plaintext name of the label.
 func (m *ParentLabelDetails) GetName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.name
-    }
+    return m.name
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *ParentLabelDetails) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetParent gets the parent property value. The parent property
 func (m *ParentLabelDetails) GetParent()(ParentLabelDetailsable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.parent
-    }
+    return m.parent
 }
 // GetSensitivity gets the sensitivity property value. The sensitivity value of the label, where lower is less sensitive.
 func (m *ParentLabelDetails) GetSensitivity()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.sensitivity
-    }
+    return m.sensitivity
 }
 // GetTooltip gets the tooltip property value. The tooltip that should be displayed for the label in a user interface.
 func (m *ParentLabelDetails) GetTooltip()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.tooltip
-    }
+    return m.tooltip
 }
 // Serialize serializes information the current object
 func (m *ParentLabelDetails) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -300,61 +260,41 @@ func (m *ParentLabelDetails) Serialize(writer i878a80d2330e89d26896388a3f487eef2
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ParentLabelDetails) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetColor sets the color property value. The color that the user interface should display for the label, if configured.
 func (m *ParentLabelDetails) SetColor(value *string)() {
-    if m != nil {
-        m.color = value
-    }
+    m.color = value
 }
 // SetDescription sets the description property value. The admin-defined description for the label.
 func (m *ParentLabelDetails) SetDescription(value *string)() {
-    if m != nil {
-        m.description = value
-    }
+    m.description = value
 }
 // SetId sets the id property value. The label ID is a globally unique identifier (GUID).
 func (m *ParentLabelDetails) SetId(value *string)() {
-    if m != nil {
-        m.id = value
-    }
+    m.id = value
 }
 // SetIsActive sets the isActive property value. Indicates whether the label is active or not. Active labels should be hidden or disabled in user interfaces.
 func (m *ParentLabelDetails) SetIsActive(value *bool)() {
-    if m != nil {
-        m.isActive = value
-    }
+    m.isActive = value
 }
 // SetName sets the name property value. The plaintext name of the label.
 func (m *ParentLabelDetails) SetName(value *string)() {
-    if m != nil {
-        m.name = value
-    }
+    m.name = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *ParentLabelDetails) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetParent sets the parent property value. The parent property
 func (m *ParentLabelDetails) SetParent(value ParentLabelDetailsable)() {
-    if m != nil {
-        m.parent = value
-    }
+    m.parent = value
 }
 // SetSensitivity sets the sensitivity property value. The sensitivity value of the label, where lower is less sensitive.
 func (m *ParentLabelDetails) SetSensitivity(value *int32)() {
-    if m != nil {
-        m.sensitivity = value
-    }
+    m.sensitivity = value
 }
 // SetTooltip sets the tooltip property value. The tooltip that should be displayed for the label in a user interface.
 func (m *ParentLabelDetails) SetTooltip(value *string)() {
-    if m != nil {
-        m.tooltip = value
-    }
+    m.tooltip = value
 }

@@ -64,27 +64,15 @@ func (m *WindowsPhoneXAP) GetFieldDeserializers()(map[string]func(i878a80d2330e8
 }
 // GetIdentityVersion gets the identityVersion property value. The identity version.
 func (m *WindowsPhoneXAP) GetIdentityVersion()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.identityVersion
-    }
+    return m.identityVersion
 }
 // GetMinimumSupportedOperatingSystem gets the minimumSupportedOperatingSystem property value. The minimum operating system required for a Windows mobile app.
 func (m *WindowsPhoneXAP) GetMinimumSupportedOperatingSystem()(WindowsMinimumOperatingSystemable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.minimumSupportedOperatingSystem
-    }
+    return m.minimumSupportedOperatingSystem
 }
 // GetProductIdentifier gets the productIdentifier property value. The Product Identifier.
 func (m *WindowsPhoneXAP) GetProductIdentifier()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.productIdentifier
-    }
+    return m.productIdentifier
 }
 // Serialize serializes information the current object
 func (m *WindowsPhoneXAP) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -114,19 +102,13 @@ func (m *WindowsPhoneXAP) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
 }
 // SetIdentityVersion sets the identityVersion property value. The identity version.
 func (m *WindowsPhoneXAP) SetIdentityVersion(value *string)() {
-    if m != nil {
-        m.identityVersion = value
-    }
+    m.identityVersion = value
 }
 // SetMinimumSupportedOperatingSystem sets the minimumSupportedOperatingSystem property value. The minimum operating system required for a Windows mobile app.
 func (m *WindowsPhoneXAP) SetMinimumSupportedOperatingSystem(value WindowsMinimumOperatingSystemable)() {
-    if m != nil {
-        m.minimumSupportedOperatingSystem = value
-    }
+    m.minimumSupportedOperatingSystem = value
 }
 // SetProductIdentifier sets the productIdentifier property value. The Product Identifier.
 func (m *WindowsPhoneXAP) SetProductIdentifier(value *string)() {
-    if m != nil {
-        m.productIdentifier = value
-    }
+    m.productIdentifier = value
 }

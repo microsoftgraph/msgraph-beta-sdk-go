@@ -40,11 +40,7 @@ func (m *CloudPcManagementGroupAssignmentTarget) GetFieldDeserializers()(map[str
 }
 // GetGroupId gets the groupId property value. The id of the assignment's target group
 func (m *CloudPcManagementGroupAssignmentTarget) GetGroupId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.groupId
-    }
+    return m.groupId
 }
 // Serialize serializes information the current object
 func (m *CloudPcManagementGroupAssignmentTarget) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -62,7 +58,5 @@ func (m *CloudPcManagementGroupAssignmentTarget) Serialize(writer i878a80d2330e8
 }
 // SetGroupId sets the groupId property value. The id of the assignment's target group
 func (m *CloudPcManagementGroupAssignmentTarget) SetGroupId(value *string)() {
-    if m != nil {
-        m.groupId = value
-    }
+    m.groupId = value
 }

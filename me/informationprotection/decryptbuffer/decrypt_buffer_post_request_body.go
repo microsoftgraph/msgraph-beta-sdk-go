@@ -26,19 +26,11 @@ func CreateDecryptBufferPostRequestBodyFromDiscriminatorValue(parseNode i878a80d
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DecryptBufferPostRequestBody) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetEncryptedBuffer gets the encryptedBuffer property value. The encryptedBuffer property
 func (m *DecryptBufferPostRequestBody) GetEncryptedBuffer()([]byte) {
-    if m == nil {
-        return nil
-    } else {
-        return m.encryptedBuffer
-    }
+    return m.encryptedBuffer
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DecryptBufferPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -67,11 +59,7 @@ func (m *DecryptBufferPostRequestBody) GetFieldDeserializers()(map[string]func(i
 }
 // GetPublishingLicense gets the publishingLicense property value. The publishingLicense property
 func (m *DecryptBufferPostRequestBody) GetPublishingLicense()([]byte) {
-    if m == nil {
-        return nil
-    } else {
-        return m.publishingLicense
-    }
+    return m.publishingLicense
 }
 // Serialize serializes information the current object
 func (m *DecryptBufferPostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -97,19 +85,13 @@ func (m *DecryptBufferPostRequestBody) Serialize(writer i878a80d2330e89d26896388
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DecryptBufferPostRequestBody) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetEncryptedBuffer sets the encryptedBuffer property value. The encryptedBuffer property
 func (m *DecryptBufferPostRequestBody) SetEncryptedBuffer(value []byte)() {
-    if m != nil {
-        m.encryptedBuffer = value
-    }
+    m.encryptedBuffer = value
 }
 // SetPublishingLicense sets the publishingLicense property value. The publishingLicense property
 func (m *DecryptBufferPostRequestBody) SetPublishingLicense(value []byte)() {
-    if m != nil {
-        m.publishingLicense = value
-    }
+    m.publishingLicense = value
 }

@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ItemFacet provides operations to manage the collection of accessReview entities.
+// ItemFacet provides operations to manage the collection of accessReviewDecision entities.
 type ItemFacet struct {
     Entity
     // The audiences that are able to see the values contained within the associated entity. Possible values are: me, family, contacts, groupMembers, organization, federatedOrganizations, everyone, unknownFutureValue.
@@ -97,27 +97,15 @@ func CreateItemFacetFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f
 }
 // GetAllowedAudiences gets the allowedAudiences property value. The audiences that are able to see the values contained within the associated entity. Possible values are: me, family, contacts, groupMembers, organization, federatedOrganizations, everyone, unknownFutureValue.
 func (m *ItemFacet) GetAllowedAudiences()(*AllowedAudiences) {
-    if m == nil {
-        return nil
-    } else {
-        return m.allowedAudiences
-    }
+    return m.allowedAudiences
 }
 // GetCreatedBy gets the createdBy property value. The createdBy property
 func (m *ItemFacet) GetCreatedBy()(IdentitySetable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.createdBy
-    }
+    return m.createdBy
 }
 // GetCreatedDateTime gets the createdDateTime property value. Provides the dateTimeOffset for when the entity was created.
 func (m *ItemFacet) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.createdDateTime
-    }
+    return m.createdDateTime
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ItemFacet) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -206,43 +194,23 @@ func (m *ItemFacet) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
 }
 // GetInference gets the inference property value. Contains inference detail if the entity is inferred by the creating or modifying application.
 func (m *ItemFacet) GetInference()(InferenceDataable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.inference
-    }
+    return m.inference
 }
 // GetIsSearchable gets the isSearchable property value. The isSearchable property
 func (m *ItemFacet) GetIsSearchable()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isSearchable
-    }
+    return m.isSearchable
 }
 // GetLastModifiedBy gets the lastModifiedBy property value. The lastModifiedBy property
 func (m *ItemFacet) GetLastModifiedBy()(IdentitySetable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastModifiedBy
-    }
+    return m.lastModifiedBy
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. Provides the dateTimeOffset for when the entity was created.
 func (m *ItemFacet) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastModifiedDateTime
-    }
+    return m.lastModifiedDateTime
 }
 // GetSource gets the source property value. Where the values within an entity originated if synced from another service.
 func (m *ItemFacet) GetSource()(PersonDataSourcesable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.source
-    }
+    return m.source
 }
 // Serialize serializes information the current object
 func (m *ItemFacet) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -303,49 +271,33 @@ func (m *ItemFacet) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
 }
 // SetAllowedAudiences sets the allowedAudiences property value. The audiences that are able to see the values contained within the associated entity. Possible values are: me, family, contacts, groupMembers, organization, federatedOrganizations, everyone, unknownFutureValue.
 func (m *ItemFacet) SetAllowedAudiences(value *AllowedAudiences)() {
-    if m != nil {
-        m.allowedAudiences = value
-    }
+    m.allowedAudiences = value
 }
 // SetCreatedBy sets the createdBy property value. The createdBy property
 func (m *ItemFacet) SetCreatedBy(value IdentitySetable)() {
-    if m != nil {
-        m.createdBy = value
-    }
+    m.createdBy = value
 }
 // SetCreatedDateTime sets the createdDateTime property value. Provides the dateTimeOffset for when the entity was created.
 func (m *ItemFacet) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.createdDateTime = value
-    }
+    m.createdDateTime = value
 }
 // SetInference sets the inference property value. Contains inference detail if the entity is inferred by the creating or modifying application.
 func (m *ItemFacet) SetInference(value InferenceDataable)() {
-    if m != nil {
-        m.inference = value
-    }
+    m.inference = value
 }
 // SetIsSearchable sets the isSearchable property value. The isSearchable property
 func (m *ItemFacet) SetIsSearchable(value *bool)() {
-    if m != nil {
-        m.isSearchable = value
-    }
+    m.isSearchable = value
 }
 // SetLastModifiedBy sets the lastModifiedBy property value. The lastModifiedBy property
 func (m *ItemFacet) SetLastModifiedBy(value IdentitySetable)() {
-    if m != nil {
-        m.lastModifiedBy = value
-    }
+    m.lastModifiedBy = value
 }
 // SetLastModifiedDateTime sets the lastModifiedDateTime property value. Provides the dateTimeOffset for when the entity was created.
 func (m *ItemFacet) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.lastModifiedDateTime = value
-    }
+    m.lastModifiedDateTime = value
 }
 // SetSource sets the source property value. Where the values within an entity originated if synced from another service.
 func (m *ItemFacet) SetSource(value PersonDataSourcesable)() {
-    if m != nil {
-        m.source = value
-    }
+    m.source = value
 }

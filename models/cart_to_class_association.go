@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// CartToClassAssociation 
+// CartToClassAssociation cartToClassAssociation for associating device carts with classrooms.
 type CartToClassAssociation struct {
     Entity
     // Identifiers of classrooms to be associated with device carts.
@@ -23,7 +23,7 @@ type CartToClassAssociation struct {
     // Version of the CartToClassAssociation.
     version *int32
 }
-// NewCartToClassAssociation instantiates a new CartToClassAssociation and sets the default values.
+// NewCartToClassAssociation instantiates a new cartToClassAssociation and sets the default values.
 func NewCartToClassAssociation()(*CartToClassAssociation) {
     m := &CartToClassAssociation{
         Entity: *NewEntity(),
@@ -38,43 +38,23 @@ func CreateCartToClassAssociationFromDiscriminatorValue(parseNode i878a80d2330e8
 }
 // GetClassroomIds gets the classroomIds property value. Identifiers of classrooms to be associated with device carts.
 func (m *CartToClassAssociation) GetClassroomIds()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.classroomIds
-    }
+    return m.classroomIds
 }
 // GetCreatedDateTime gets the createdDateTime property value. DateTime the object was created.
 func (m *CartToClassAssociation) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.createdDateTime
-    }
+    return m.createdDateTime
 }
 // GetDescription gets the description property value. Admin provided description of the CartToClassAssociation.
 func (m *CartToClassAssociation) GetDescription()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.description
-    }
+    return m.description
 }
 // GetDeviceCartIds gets the deviceCartIds property value. Identifiers of device carts to be associated with classes.
 func (m *CartToClassAssociation) GetDeviceCartIds()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deviceCartIds
-    }
+    return m.deviceCartIds
 }
 // GetDisplayName gets the displayName property value. Admin provided name of the device configuration.
 func (m *CartToClassAssociation) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *CartToClassAssociation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -161,19 +141,11 @@ func (m *CartToClassAssociation) GetFieldDeserializers()(map[string]func(i878a80
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. DateTime the object was last modified.
 func (m *CartToClassAssociation) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastModifiedDateTime
-    }
+    return m.lastModifiedDateTime
 }
 // GetVersion gets the version property value. Version of the CartToClassAssociation.
 func (m *CartToClassAssociation) GetVersion()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.version
-    }
+    return m.version
 }
 // Serialize serializes information the current object
 func (m *CartToClassAssociation) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -227,43 +199,29 @@ func (m *CartToClassAssociation) Serialize(writer i878a80d2330e89d26896388a3f487
 }
 // SetClassroomIds sets the classroomIds property value. Identifiers of classrooms to be associated with device carts.
 func (m *CartToClassAssociation) SetClassroomIds(value []string)() {
-    if m != nil {
-        m.classroomIds = value
-    }
+    m.classroomIds = value
 }
 // SetCreatedDateTime sets the createdDateTime property value. DateTime the object was created.
 func (m *CartToClassAssociation) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.createdDateTime = value
-    }
+    m.createdDateTime = value
 }
 // SetDescription sets the description property value. Admin provided description of the CartToClassAssociation.
 func (m *CartToClassAssociation) SetDescription(value *string)() {
-    if m != nil {
-        m.description = value
-    }
+    m.description = value
 }
 // SetDeviceCartIds sets the deviceCartIds property value. Identifiers of device carts to be associated with classes.
 func (m *CartToClassAssociation) SetDeviceCartIds(value []string)() {
-    if m != nil {
-        m.deviceCartIds = value
-    }
+    m.deviceCartIds = value
 }
 // SetDisplayName sets the displayName property value. Admin provided name of the device configuration.
 func (m *CartToClassAssociation) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }
 // SetLastModifiedDateTime sets the lastModifiedDateTime property value. DateTime the object was last modified.
 func (m *CartToClassAssociation) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.lastModifiedDateTime = value
-    }
+    m.lastModifiedDateTime = value
 }
 // SetVersion sets the version property value. Version of the CartToClassAssociation.
 func (m *CartToClassAssociation) SetVersion(value *int32)() {
-    if m != nil {
-        m.version = value
-    }
+    m.version = value
 }

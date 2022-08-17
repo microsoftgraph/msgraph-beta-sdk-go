@@ -25,11 +25,7 @@ func CreateDeviceManagementSettingAbstractImplementationConstraintFromDiscrimina
 }
 // GetAllowedAbstractImplementationDefinitionIds gets the allowedAbstractImplementationDefinitionIds property value. List of value which means not configured for the setting
 func (m *DeviceManagementSettingAbstractImplementationConstraint) GetAllowedAbstractImplementationDefinitionIds()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.allowedAbstractImplementationDefinitionIds
-    }
+    return m.allowedAbstractImplementationDefinitionIds
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceManagementSettingAbstractImplementationConstraint) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -66,7 +62,5 @@ func (m *DeviceManagementSettingAbstractImplementationConstraint) Serialize(writ
 }
 // SetAllowedAbstractImplementationDefinitionIds sets the allowedAbstractImplementationDefinitionIds property value. List of value which means not configured for the setting
 func (m *DeviceManagementSettingAbstractImplementationConstraint) SetAllowedAbstractImplementationDefinitionIds(value []string)() {
-    if m != nil {
-        m.allowedAbstractImplementationDefinitionIds = value
-    }
+    m.allowedAbstractImplementationDefinitionIds = value
 }

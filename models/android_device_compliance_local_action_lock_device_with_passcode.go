@@ -52,19 +52,11 @@ func (m *AndroidDeviceComplianceLocalActionLockDeviceWithPasscode) GetFieldDeser
 }
 // GetPasscode gets the passcode property value. Passcode to reset to Android device. This property is read-only.
 func (m *AndroidDeviceComplianceLocalActionLockDeviceWithPasscode) GetPasscode()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.passcode
-    }
+    return m.passcode
 }
 // GetPasscodeSignInFailureCountBeforeWipe gets the passcodeSignInFailureCountBeforeWipe property value. Number of sign in failures before wiping device, the value can be 4-11. Valid values 4 to 11
 func (m *AndroidDeviceComplianceLocalActionLockDeviceWithPasscode) GetPasscodeSignInFailureCountBeforeWipe()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.passcodeSignInFailureCountBeforeWipe
-    }
+    return m.passcodeSignInFailureCountBeforeWipe
 }
 // Serialize serializes information the current object
 func (m *AndroidDeviceComplianceLocalActionLockDeviceWithPasscode) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -88,13 +80,9 @@ func (m *AndroidDeviceComplianceLocalActionLockDeviceWithPasscode) Serialize(wri
 }
 // SetPasscode sets the passcode property value. Passcode to reset to Android device. This property is read-only.
 func (m *AndroidDeviceComplianceLocalActionLockDeviceWithPasscode) SetPasscode(value *string)() {
-    if m != nil {
-        m.passcode = value
-    }
+    m.passcode = value
 }
 // SetPasscodeSignInFailureCountBeforeWipe sets the passcodeSignInFailureCountBeforeWipe property value. Number of sign in failures before wiping device, the value can be 4-11. Valid values 4 to 11
 func (m *AndroidDeviceComplianceLocalActionLockDeviceWithPasscode) SetPasscodeSignInFailureCountBeforeWipe(value *int32)() {
-    if m != nil {
-        m.passcodeSignInFailureCountBeforeWipe = value
-    }
+    m.passcodeSignInFailureCountBeforeWipe = value
 }

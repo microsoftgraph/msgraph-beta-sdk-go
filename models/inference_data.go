@@ -30,19 +30,11 @@ func CreateInferenceDataFromDiscriminatorValue(parseNode i878a80d2330e89d2689638
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *InferenceData) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetConfidenceScore gets the confidenceScore property value. Confidence score reflecting the accuracy of the data inferred about the user.
 func (m *InferenceData) GetConfidenceScore()(*float64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.confidenceScore
-    }
+    return m.confidenceScore
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *InferenceData) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -81,19 +73,11 @@ func (m *InferenceData) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *InferenceData) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetUserHasVerifiedAccuracy gets the userHasVerifiedAccuracy property value. Records if the user has confirmed this inference as being True or False.
 func (m *InferenceData) GetUserHasVerifiedAccuracy()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userHasVerifiedAccuracy
-    }
+    return m.userHasVerifiedAccuracy
 }
 // Serialize serializes information the current object
 func (m *InferenceData) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -125,25 +109,17 @@ func (m *InferenceData) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *InferenceData) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetConfidenceScore sets the confidenceScore property value. Confidence score reflecting the accuracy of the data inferred about the user.
 func (m *InferenceData) SetConfidenceScore(value *float64)() {
-    if m != nil {
-        m.confidenceScore = value
-    }
+    m.confidenceScore = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *InferenceData) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetUserHasVerifiedAccuracy sets the userHasVerifiedAccuracy property value. Records if the user has confirmed this inference as being True or False.
 func (m *InferenceData) SetUserHasVerifiedAccuracy(value *bool)() {
-    if m != nil {
-        m.userHasVerifiedAccuracy = value
-    }
+    m.userHasVerifiedAccuracy = value
 }

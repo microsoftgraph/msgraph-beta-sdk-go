@@ -32,27 +32,15 @@ func CreateIosBookmarkFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *IosBookmark) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetBookmarkFolder gets the bookmarkFolder property value. The folder into which the bookmark should be added in Safari
 func (m *IosBookmark) GetBookmarkFolder()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.bookmarkFolder
-    }
+    return m.bookmarkFolder
 }
 // GetDisplayName gets the displayName property value. The display name of the bookmark
 func (m *IosBookmark) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *IosBookmark) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -101,19 +89,11 @@ func (m *IosBookmark) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *IosBookmark) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetUrl gets the url property value. URL allowed to access
 func (m *IosBookmark) GetUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.url
-    }
+    return m.url
 }
 // Serialize serializes information the current object
 func (m *IosBookmark) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -151,31 +131,21 @@ func (m *IosBookmark) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *IosBookmark) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetBookmarkFolder sets the bookmarkFolder property value. The folder into which the bookmark should be added in Safari
 func (m *IosBookmark) SetBookmarkFolder(value *string)() {
-    if m != nil {
-        m.bookmarkFolder = value
-    }
+    m.bookmarkFolder = value
 }
 // SetDisplayName sets the displayName property value. The display name of the bookmark
 func (m *IosBookmark) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *IosBookmark) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetUrl sets the url property value. URL allowed to access
 func (m *IosBookmark) SetUrl(value *string)() {
-    if m != nil {
-        m.url = value
-    }
+    m.url = value
 }

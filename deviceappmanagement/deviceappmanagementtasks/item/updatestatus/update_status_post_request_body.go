@@ -27,11 +27,7 @@ func CreateUpdateStatusPostRequestBodyFromDiscriminatorValue(parseNode i878a80d2
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *UpdateStatusPostRequestBody) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *UpdateStatusPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -60,19 +56,11 @@ func (m *UpdateStatusPostRequestBody) GetFieldDeserializers()(map[string]func(i8
 }
 // GetNote gets the note property value. The note property
 func (m *UpdateStatusPostRequestBody) GetNote()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.note
-    }
+    return m.note
 }
 // GetStatus gets the status property value. Device app management task status.
 func (m *UpdateStatusPostRequestBody) GetStatus()(*ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceAppManagementTaskStatus) {
-    if m == nil {
-        return nil
-    } else {
-        return m.status
-    }
+    return m.status
 }
 // Serialize serializes information the current object
 func (m *UpdateStatusPostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -99,19 +87,13 @@ func (m *UpdateStatusPostRequestBody) Serialize(writer i878a80d2330e89d26896388a
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *UpdateStatusPostRequestBody) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetNote sets the note property value. The note property
 func (m *UpdateStatusPostRequestBody) SetNote(value *string)() {
-    if m != nil {
-        m.note = value
-    }
+    m.note = value
 }
 // SetStatus sets the status property value. Device app management task status.
 func (m *UpdateStatusPostRequestBody) SetStatus(value *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceAppManagementTaskStatus)() {
-    if m != nil {
-        m.status = value
-    }
+    m.status = value
 }

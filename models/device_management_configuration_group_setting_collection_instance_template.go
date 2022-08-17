@@ -27,11 +27,7 @@ func CreateDeviceManagementConfigurationGroupSettingCollectionInstanceTemplateFr
 }
 // GetAllowUnmanagedValues gets the allowUnmanagedValues property value. Linked policy may append values which are not present in the template.
 func (m *DeviceManagementConfigurationGroupSettingCollectionInstanceTemplate) GetAllowUnmanagedValues()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.allowUnmanagedValues
-    }
+    return m.allowUnmanagedValues
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceManagementConfigurationGroupSettingCollectionInstanceTemplate) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -64,11 +60,7 @@ func (m *DeviceManagementConfigurationGroupSettingCollectionInstanceTemplate) Ge
 }
 // GetGroupSettingCollectionValueTemplate gets the groupSettingCollectionValueTemplate property value. Group Setting Collection Value Template
 func (m *DeviceManagementConfigurationGroupSettingCollectionInstanceTemplate) GetGroupSettingCollectionValueTemplate()([]DeviceManagementConfigurationGroupSettingValueTemplateable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.groupSettingCollectionValueTemplate
-    }
+    return m.groupSettingCollectionValueTemplate
 }
 // Serialize serializes information the current object
 func (m *DeviceManagementConfigurationGroupSettingCollectionInstanceTemplate) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -96,13 +88,9 @@ func (m *DeviceManagementConfigurationGroupSettingCollectionInstanceTemplate) Se
 }
 // SetAllowUnmanagedValues sets the allowUnmanagedValues property value. Linked policy may append values which are not present in the template.
 func (m *DeviceManagementConfigurationGroupSettingCollectionInstanceTemplate) SetAllowUnmanagedValues(value *bool)() {
-    if m != nil {
-        m.allowUnmanagedValues = value
-    }
+    m.allowUnmanagedValues = value
 }
 // SetGroupSettingCollectionValueTemplate sets the groupSettingCollectionValueTemplate property value. Group Setting Collection Value Template
 func (m *DeviceManagementConfigurationGroupSettingCollectionInstanceTemplate) SetGroupSettingCollectionValueTemplate(value []DeviceManagementConfigurationGroupSettingValueTemplateable)() {
-    if m != nil {
-        m.groupSettingCollectionValueTemplate = value
-    }
+    m.groupSettingCollectionValueTemplate = value
 }

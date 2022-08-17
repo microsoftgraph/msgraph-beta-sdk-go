@@ -25,11 +25,7 @@ func CreateOnTokenIssuanceStartCustomExtensionFromDiscriminatorValue(parseNode i
 }
 // GetClaimsForTokenConfiguration gets the claimsForTokenConfiguration property value. The claimsForTokenConfiguration property
 func (m *OnTokenIssuanceStartCustomExtension) GetClaimsForTokenConfiguration()([]OnTokenIssuanceStartReturnClaimable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.claimsForTokenConfiguration
-    }
+    return m.claimsForTokenConfiguration
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *OnTokenIssuanceStartCustomExtension) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -70,7 +66,5 @@ func (m *OnTokenIssuanceStartCustomExtension) Serialize(writer i878a80d2330e89d2
 }
 // SetClaimsForTokenConfiguration sets the claimsForTokenConfiguration property value. The claimsForTokenConfiguration property
 func (m *OnTokenIssuanceStartCustomExtension) SetClaimsForTokenConfiguration(value []OnTokenIssuanceStartReturnClaimable)() {
-    if m != nil {
-        m.claimsForTokenConfiguration = value
-    }
+    m.claimsForTokenConfiguration = value
 }

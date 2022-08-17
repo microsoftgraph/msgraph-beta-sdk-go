@@ -54,51 +54,27 @@ func CreateExternalConnectionFromDiscriminatorValue(parseNode i878a80d2330e89d26
 }
 // GetActivitySettings gets the activitySettings property value. Collects configurable settings related to activities involving connector content.
 func (m *ExternalConnection) GetActivitySettings()(ActivitySettingsable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.activitySettings
-    }
+    return m.activitySettings
 }
 // GetComplianceSettings gets the complianceSettings property value. The complianceSettings property
 func (m *ExternalConnection) GetComplianceSettings()(ComplianceSettingsable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.complianceSettings
-    }
+    return m.complianceSettings
 }
 // GetConfiguration gets the configuration property value. Specifies additional application IDs that are allowed to manage the connection and to index content in the connection. Optional.
 func (m *ExternalConnection) GetConfiguration()(Configurationable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.configuration
-    }
+    return m.configuration
 }
 // GetConnectorId gets the connectorId property value. The Teams App ID. Optional.
 func (m *ExternalConnection) GetConnectorId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.connectorId
-    }
+    return m.connectorId
 }
 // GetDescription gets the description property value. Description of the connection displayed in the Microsoft 365 admin center. Optional.
 func (m *ExternalConnection) GetDescription()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.description
-    }
+    return m.description
 }
 // GetEnabledContentExperiences gets the enabledContentExperiences property value. The enabledContentExperiences property
 func (m *ExternalConnection) GetEnabledContentExperiences()(*ContentExperienceType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.enabledContentExperiences
-    }
+    return m.enabledContentExperiences
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ExternalConnection) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -269,75 +245,39 @@ func (m *ExternalConnection) GetFieldDeserializers()(map[string]func(i878a80d233
 }
 // GetGroups gets the groups property value. The groups property
 func (m *ExternalConnection) GetGroups()([]ExternalGroupable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.groups
-    }
+    return m.groups
 }
 // GetIngestedItemsCount gets the ingestedItemsCount property value. The number of items ingested into a connection. This value is refreshed every 15 minutes. If the connection state is draft, then ingestedItemsCount will be null.
 func (m *ExternalConnection) GetIngestedItemsCount()(*int64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.ingestedItemsCount
-    }
+    return m.ingestedItemsCount
 }
 // GetItems gets the items property value. The items property
 func (m *ExternalConnection) GetItems()([]ExternalItemable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.items
-    }
+    return m.items
 }
 // GetName gets the name property value. The display name of the connection to be displayed in the Microsoft 365 admin center. Maximum length of 128 characters. Required.
 func (m *ExternalConnection) GetName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.name
-    }
+    return m.name
 }
 // GetOperations gets the operations property value. The operations property
 func (m *ExternalConnection) GetOperations()([]ConnectionOperationable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.operations
-    }
+    return m.operations
 }
 // GetQuota gets the quota property value. The quota property
 func (m *ExternalConnection) GetQuota()(ConnectionQuotaable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.quota
-    }
+    return m.quota
 }
 // GetSchema gets the schema property value. The schema property
 func (m *ExternalConnection) GetSchema()(Schemaable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.schema
-    }
+    return m.schema
 }
 // GetSearchSettings gets the searchSettings property value. The settings configuring the search experience for content in this connection, such as the display templates for search results.
 func (m *ExternalConnection) GetSearchSettings()(SearchSettingsable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.searchSettings
-    }
+    return m.searchSettings
 }
 // GetState gets the state property value. Indicates the current state of the connection. Possible values are draft, ready, obsolete, and limitExceeded. Required.
 func (m *ExternalConnection) GetState()(*ConnectionState) {
-    if m == nil {
-        return nil
-    } else {
-        return m.state
-    }
+    return m.state
 }
 // Serialize serializes information the current object
 func (m *ExternalConnection) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -453,91 +393,61 @@ func (m *ExternalConnection) Serialize(writer i878a80d2330e89d26896388a3f487eef2
 }
 // SetActivitySettings sets the activitySettings property value. Collects configurable settings related to activities involving connector content.
 func (m *ExternalConnection) SetActivitySettings(value ActivitySettingsable)() {
-    if m != nil {
-        m.activitySettings = value
-    }
+    m.activitySettings = value
 }
 // SetComplianceSettings sets the complianceSettings property value. The complianceSettings property
 func (m *ExternalConnection) SetComplianceSettings(value ComplianceSettingsable)() {
-    if m != nil {
-        m.complianceSettings = value
-    }
+    m.complianceSettings = value
 }
 // SetConfiguration sets the configuration property value. Specifies additional application IDs that are allowed to manage the connection and to index content in the connection. Optional.
 func (m *ExternalConnection) SetConfiguration(value Configurationable)() {
-    if m != nil {
-        m.configuration = value
-    }
+    m.configuration = value
 }
 // SetConnectorId sets the connectorId property value. The Teams App ID. Optional.
 func (m *ExternalConnection) SetConnectorId(value *string)() {
-    if m != nil {
-        m.connectorId = value
-    }
+    m.connectorId = value
 }
 // SetDescription sets the description property value. Description of the connection displayed in the Microsoft 365 admin center. Optional.
 func (m *ExternalConnection) SetDescription(value *string)() {
-    if m != nil {
-        m.description = value
-    }
+    m.description = value
 }
 // SetEnabledContentExperiences sets the enabledContentExperiences property value. The enabledContentExperiences property
 func (m *ExternalConnection) SetEnabledContentExperiences(value *ContentExperienceType)() {
-    if m != nil {
-        m.enabledContentExperiences = value
-    }
+    m.enabledContentExperiences = value
 }
 // SetGroups sets the groups property value. The groups property
 func (m *ExternalConnection) SetGroups(value []ExternalGroupable)() {
-    if m != nil {
-        m.groups = value
-    }
+    m.groups = value
 }
 // SetIngestedItemsCount sets the ingestedItemsCount property value. The number of items ingested into a connection. This value is refreshed every 15 minutes. If the connection state is draft, then ingestedItemsCount will be null.
 func (m *ExternalConnection) SetIngestedItemsCount(value *int64)() {
-    if m != nil {
-        m.ingestedItemsCount = value
-    }
+    m.ingestedItemsCount = value
 }
 // SetItems sets the items property value. The items property
 func (m *ExternalConnection) SetItems(value []ExternalItemable)() {
-    if m != nil {
-        m.items = value
-    }
+    m.items = value
 }
 // SetName sets the name property value. The display name of the connection to be displayed in the Microsoft 365 admin center. Maximum length of 128 characters. Required.
 func (m *ExternalConnection) SetName(value *string)() {
-    if m != nil {
-        m.name = value
-    }
+    m.name = value
 }
 // SetOperations sets the operations property value. The operations property
 func (m *ExternalConnection) SetOperations(value []ConnectionOperationable)() {
-    if m != nil {
-        m.operations = value
-    }
+    m.operations = value
 }
 // SetQuota sets the quota property value. The quota property
 func (m *ExternalConnection) SetQuota(value ConnectionQuotaable)() {
-    if m != nil {
-        m.quota = value
-    }
+    m.quota = value
 }
 // SetSchema sets the schema property value. The schema property
 func (m *ExternalConnection) SetSchema(value Schemaable)() {
-    if m != nil {
-        m.schema = value
-    }
+    m.schema = value
 }
 // SetSearchSettings sets the searchSettings property value. The settings configuring the search experience for content in this connection, such as the display templates for search results.
 func (m *ExternalConnection) SetSearchSettings(value SearchSettingsable)() {
-    if m != nil {
-        m.searchSettings = value
-    }
+    m.searchSettings = value
 }
 // SetState sets the state property value. Indicates the current state of the connection. Possible values are draft, ready, obsolete, and limitExceeded. Required.
 func (m *ExternalConnection) SetState(value *ConnectionState)() {
-    if m != nil {
-        m.state = value
-    }
+    m.state = value
 }

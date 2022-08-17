@@ -37,27 +37,15 @@ func CreateWindowsKioskForceUpdateScheduleFromDiscriminatorValue(parseNode i878a
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *WindowsKioskForceUpdateSchedule) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetDayofMonth gets the dayofMonth property value. Day of month. Valid values 1 to 31
 func (m *WindowsKioskForceUpdateSchedule) GetDayofMonth()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.dayofMonth
-    }
+    return m.dayofMonth
 }
 // GetDayofWeek gets the dayofWeek property value. The dayofWeek property
 func (m *WindowsKioskForceUpdateSchedule) GetDayofWeek()(*DayOfWeek) {
-    if m == nil {
-        return nil
-    } else {
-        return m.dayofWeek
-    }
+    return m.dayofWeek
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *WindowsKioskForceUpdateSchedule) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -126,35 +114,19 @@ func (m *WindowsKioskForceUpdateSchedule) GetFieldDeserializers()(map[string]fun
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *WindowsKioskForceUpdateSchedule) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetRecurrence gets the recurrence property value. Possible values for App update on Windows10 recurrence.
 func (m *WindowsKioskForceUpdateSchedule) GetRecurrence()(*Windows10AppsUpdateRecurrence) {
-    if m == nil {
-        return nil
-    } else {
-        return m.recurrence
-    }
+    return m.recurrence
 }
 // GetRunImmediatelyIfAfterStartDateTime gets the runImmediatelyIfAfterStartDateTime property value. If true, runs the task immediately if StartDateTime is in the past, else, runs at the next recurrence.
 func (m *WindowsKioskForceUpdateSchedule) GetRunImmediatelyIfAfterStartDateTime()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.runImmediatelyIfAfterStartDateTime
-    }
+    return m.runImmediatelyIfAfterStartDateTime
 }
 // GetStartDateTime gets the startDateTime property value. The start time for the force restart.
 func (m *WindowsKioskForceUpdateSchedule) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.startDateTime
-    }
+    return m.startDateTime
 }
 // Serialize serializes information the current object
 func (m *WindowsKioskForceUpdateSchedule) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -206,43 +178,29 @@ func (m *WindowsKioskForceUpdateSchedule) Serialize(writer i878a80d2330e89d26896
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *WindowsKioskForceUpdateSchedule) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetDayofMonth sets the dayofMonth property value. Day of month. Valid values 1 to 31
 func (m *WindowsKioskForceUpdateSchedule) SetDayofMonth(value *int32)() {
-    if m != nil {
-        m.dayofMonth = value
-    }
+    m.dayofMonth = value
 }
 // SetDayofWeek sets the dayofWeek property value. The dayofWeek property
 func (m *WindowsKioskForceUpdateSchedule) SetDayofWeek(value *DayOfWeek)() {
-    if m != nil {
-        m.dayofWeek = value
-    }
+    m.dayofWeek = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *WindowsKioskForceUpdateSchedule) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetRecurrence sets the recurrence property value. Possible values for App update on Windows10 recurrence.
 func (m *WindowsKioskForceUpdateSchedule) SetRecurrence(value *Windows10AppsUpdateRecurrence)() {
-    if m != nil {
-        m.recurrence = value
-    }
+    m.recurrence = value
 }
 // SetRunImmediatelyIfAfterStartDateTime sets the runImmediatelyIfAfterStartDateTime property value. If true, runs the task immediately if StartDateTime is in the past, else, runs at the next recurrence.
 func (m *WindowsKioskForceUpdateSchedule) SetRunImmediatelyIfAfterStartDateTime(value *bool)() {
-    if m != nil {
-        m.runImmediatelyIfAfterStartDateTime = value
-    }
+    m.runImmediatelyIfAfterStartDateTime = value
 }
 // SetStartDateTime sets the startDateTime property value. The start time for the force restart.
 func (m *WindowsKioskForceUpdateSchedule) SetStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.startDateTime = value
-    }
+    m.startDateTime = value
 }

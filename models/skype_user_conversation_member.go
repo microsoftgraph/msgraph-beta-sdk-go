@@ -40,11 +40,7 @@ func (m *SkypeUserConversationMember) GetFieldDeserializers()(map[string]func(i8
 }
 // GetSkypeId gets the skypeId property value. Skype ID of the user.
 func (m *SkypeUserConversationMember) GetSkypeId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.skypeId
-    }
+    return m.skypeId
 }
 // Serialize serializes information the current object
 func (m *SkypeUserConversationMember) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -62,7 +58,5 @@ func (m *SkypeUserConversationMember) Serialize(writer i878a80d2330e89d26896388a
 }
 // SetSkypeId sets the skypeId property value. Skype ID of the user.
 func (m *SkypeUserConversationMember) SetSkypeId(value *string)() {
-    if m != nil {
-        m.skypeId = value
-    }
+    m.skypeId = value
 }

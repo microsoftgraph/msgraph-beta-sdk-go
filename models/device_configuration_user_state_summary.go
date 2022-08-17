@@ -37,27 +37,15 @@ func CreateDeviceConfigurationUserStateSummaryFromDiscriminatorValue(parseNode i
 }
 // GetCompliantUserCount gets the compliantUserCount property value. Number of compliant users
 func (m *DeviceConfigurationUserStateSummary) GetCompliantUserCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.compliantUserCount
-    }
+    return m.compliantUserCount
 }
 // GetConflictUserCount gets the conflictUserCount property value. Number of conflict users
 func (m *DeviceConfigurationUserStateSummary) GetConflictUserCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.conflictUserCount
-    }
+    return m.conflictUserCount
 }
 // GetErrorUserCount gets the errorUserCount property value. Number of error users
 func (m *DeviceConfigurationUserStateSummary) GetErrorUserCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.errorUserCount
-    }
+    return m.errorUserCount
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceConfigurationUserStateSummary) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -136,35 +124,19 @@ func (m *DeviceConfigurationUserStateSummary) GetFieldDeserializers()(map[string
 }
 // GetNonCompliantUserCount gets the nonCompliantUserCount property value. Number of NonCompliant users
 func (m *DeviceConfigurationUserStateSummary) GetNonCompliantUserCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.nonCompliantUserCount
-    }
+    return m.nonCompliantUserCount
 }
 // GetNotApplicableUserCount gets the notApplicableUserCount property value. Number of not applicable users
 func (m *DeviceConfigurationUserStateSummary) GetNotApplicableUserCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.notApplicableUserCount
-    }
+    return m.notApplicableUserCount
 }
 // GetRemediatedUserCount gets the remediatedUserCount property value. Number of remediated users
 func (m *DeviceConfigurationUserStateSummary) GetRemediatedUserCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.remediatedUserCount
-    }
+    return m.remediatedUserCount
 }
 // GetUnknownUserCount gets the unknownUserCount property value. Number of unknown users
 func (m *DeviceConfigurationUserStateSummary) GetUnknownUserCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.unknownUserCount
-    }
+    return m.unknownUserCount
 }
 // Serialize serializes information the current object
 func (m *DeviceConfigurationUserStateSummary) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -218,43 +190,29 @@ func (m *DeviceConfigurationUserStateSummary) Serialize(writer i878a80d2330e89d2
 }
 // SetCompliantUserCount sets the compliantUserCount property value. Number of compliant users
 func (m *DeviceConfigurationUserStateSummary) SetCompliantUserCount(value *int32)() {
-    if m != nil {
-        m.compliantUserCount = value
-    }
+    m.compliantUserCount = value
 }
 // SetConflictUserCount sets the conflictUserCount property value. Number of conflict users
 func (m *DeviceConfigurationUserStateSummary) SetConflictUserCount(value *int32)() {
-    if m != nil {
-        m.conflictUserCount = value
-    }
+    m.conflictUserCount = value
 }
 // SetErrorUserCount sets the errorUserCount property value. Number of error users
 func (m *DeviceConfigurationUserStateSummary) SetErrorUserCount(value *int32)() {
-    if m != nil {
-        m.errorUserCount = value
-    }
+    m.errorUserCount = value
 }
 // SetNonCompliantUserCount sets the nonCompliantUserCount property value. Number of NonCompliant users
 func (m *DeviceConfigurationUserStateSummary) SetNonCompliantUserCount(value *int32)() {
-    if m != nil {
-        m.nonCompliantUserCount = value
-    }
+    m.nonCompliantUserCount = value
 }
 // SetNotApplicableUserCount sets the notApplicableUserCount property value. Number of not applicable users
 func (m *DeviceConfigurationUserStateSummary) SetNotApplicableUserCount(value *int32)() {
-    if m != nil {
-        m.notApplicableUserCount = value
-    }
+    m.notApplicableUserCount = value
 }
 // SetRemediatedUserCount sets the remediatedUserCount property value. Number of remediated users
 func (m *DeviceConfigurationUserStateSummary) SetRemediatedUserCount(value *int32)() {
-    if m != nil {
-        m.remediatedUserCount = value
-    }
+    m.remediatedUserCount = value
 }
 // SetUnknownUserCount sets the unknownUserCount property value. Number of unknown users
 func (m *DeviceConfigurationUserStateSummary) SetUnknownUserCount(value *int32)() {
-    if m != nil {
-        m.unknownUserCount = value
-    }
+    m.unknownUserCount = value
 }

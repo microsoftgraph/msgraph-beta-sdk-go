@@ -32,11 +32,7 @@ func CreateSynchronizationJobSubjectFromDiscriminatorValue(parseNode i878a80d233
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SynchronizationJobSubject) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *SynchronizationJobSubject) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -85,35 +81,19 @@ func (m *SynchronizationJobSubject) GetFieldDeserializers()(map[string]func(i878
 }
 // GetLinks gets the links property value. Principals that you would like to provision.
 func (m *SynchronizationJobSubject) GetLinks()(SynchronizationLinkedObjectsable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.links
-    }
+    return m.links
 }
 // GetObjectId gets the objectId property value. The identifier of an object to which a synchronizationJob is to be applied. Can be one of the following: An onPremisesDistinguishedName for synchronization from Active Directory to Azure AD.The user ID for synchronization from Azure AD to a third-party.The Worker ID of the Workday worker for synchronization from Workday to either Active Directory or Azure AD.
 func (m *SynchronizationJobSubject) GetObjectId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.objectId
-    }
+    return m.objectId
 }
 // GetObjectTypeName gets the objectTypeName property value. The type of the object to which a synchronizationJob is to be applied. Can be one of the following: user for synchronizing between Active Directory and Azure AD.User for synchronizing a user between Azure AD and a third-party application. Worker for synchronization a user between Workday and either Active Directory or Azure AD.Group for synchronizing a group between Azure AD and a third-party application.
 func (m *SynchronizationJobSubject) GetObjectTypeName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.objectTypeName
-    }
+    return m.objectTypeName
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *SynchronizationJobSubject) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // Serialize serializes information the current object
 func (m *SynchronizationJobSubject) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -151,31 +131,21 @@ func (m *SynchronizationJobSubject) Serialize(writer i878a80d2330e89d26896388a3f
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SynchronizationJobSubject) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetLinks sets the links property value. Principals that you would like to provision.
 func (m *SynchronizationJobSubject) SetLinks(value SynchronizationLinkedObjectsable)() {
-    if m != nil {
-        m.links = value
-    }
+    m.links = value
 }
 // SetObjectId sets the objectId property value. The identifier of an object to which a synchronizationJob is to be applied. Can be one of the following: An onPremisesDistinguishedName for synchronization from Active Directory to Azure AD.The user ID for synchronization from Azure AD to a third-party.The Worker ID of the Workday worker for synchronization from Workday to either Active Directory or Azure AD.
 func (m *SynchronizationJobSubject) SetObjectId(value *string)() {
-    if m != nil {
-        m.objectId = value
-    }
+    m.objectId = value
 }
 // SetObjectTypeName sets the objectTypeName property value. The type of the object to which a synchronizationJob is to be applied. Can be one of the following: user for synchronizing between Active Directory and Azure AD.User for synchronizing a user between Azure AD and a third-party application. Worker for synchronization a user between Workday and either Active Directory or Azure AD.Group for synchronizing a group between Azure AD and a third-party application.
 func (m *SynchronizationJobSubject) SetObjectTypeName(value *string)() {
-    if m != nil {
-        m.objectTypeName = value
-    }
+    m.objectTypeName = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *SynchronizationJobSubject) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }

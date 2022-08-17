@@ -29,11 +29,7 @@ func CreateFileEvidenceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388
 }
 // GetDetectionStatus gets the detectionStatus property value. The detectionStatus property
 func (m *FileEvidence) GetDetectionStatus()(*DetectionStatus) {
-    if m == nil {
-        return nil
-    } else {
-        return m.detectionStatus
-    }
+    return m.detectionStatus
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *FileEvidence) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -72,19 +68,11 @@ func (m *FileEvidence) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
 }
 // GetFileDetails gets the fileDetails property value. The fileDetails property
 func (m *FileEvidence) GetFileDetails()(FileDetailsable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.fileDetails
-    }
+    return m.fileDetails
 }
 // GetMdeDeviceId gets the mdeDeviceId property value. The mdeDeviceId property
 func (m *FileEvidence) GetMdeDeviceId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.mdeDeviceId
-    }
+    return m.mdeDeviceId
 }
 // Serialize serializes information the current object
 func (m *FileEvidence) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -115,19 +103,13 @@ func (m *FileEvidence) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
 }
 // SetDetectionStatus sets the detectionStatus property value. The detectionStatus property
 func (m *FileEvidence) SetDetectionStatus(value *DetectionStatus)() {
-    if m != nil {
-        m.detectionStatus = value
-    }
+    m.detectionStatus = value
 }
 // SetFileDetails sets the fileDetails property value. The fileDetails property
 func (m *FileEvidence) SetFileDetails(value FileDetailsable)() {
-    if m != nil {
-        m.fileDetails = value
-    }
+    m.fileDetails = value
 }
 // SetMdeDeviceId sets the mdeDeviceId property value. The mdeDeviceId property
 func (m *FileEvidence) SetMdeDeviceId(value *string)() {
-    if m != nil {
-        m.mdeDeviceId = value
-    }
+    m.mdeDeviceId = value
 }

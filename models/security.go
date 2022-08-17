@@ -53,35 +53,19 @@ func CreateSecurityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f4
 }
 // GetAlerts gets the alerts property value. Notifications for suspicious or potential security issues in a customer’s tenant.
 func (m *Security) GetAlerts()([]Alertable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.alerts
-    }
+    return m.alerts
 }
 // GetAttackSimulation gets the attackSimulation property value. Provides tenants capability to launch a simulated and realistic phishing attack and learn from it.
 func (m *Security) GetAttackSimulation()(AttackSimulationRootable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.attackSimulation
-    }
+    return m.attackSimulation
 }
 // GetCloudAppSecurityProfiles gets the cloudAppSecurityProfiles property value. The cloudAppSecurityProfiles property
 func (m *Security) GetCloudAppSecurityProfiles()([]CloudAppSecurityProfileable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.cloudAppSecurityProfiles
-    }
+    return m.cloudAppSecurityProfiles
 }
 // GetDomainSecurityProfiles gets the domainSecurityProfiles property value. The domainSecurityProfiles property
 func (m *Security) GetDomainSecurityProfiles()([]DomainSecurityProfileable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.domainSecurityProfiles
-    }
+    return m.domainSecurityProfiles
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Security) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -296,91 +280,47 @@ func (m *Security) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
 }
 // GetFileSecurityProfiles gets the fileSecurityProfiles property value. The fileSecurityProfiles property
 func (m *Security) GetFileSecurityProfiles()([]FileSecurityProfileable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.fileSecurityProfiles
-    }
+    return m.fileSecurityProfiles
 }
 // GetHostSecurityProfiles gets the hostSecurityProfiles property value. The hostSecurityProfiles property
 func (m *Security) GetHostSecurityProfiles()([]HostSecurityProfileable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.hostSecurityProfiles
-    }
+    return m.hostSecurityProfiles
 }
 // GetIpSecurityProfiles gets the ipSecurityProfiles property value. The ipSecurityProfiles property
 func (m *Security) GetIpSecurityProfiles()([]IpSecurityProfileable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.ipSecurityProfiles
-    }
+    return m.ipSecurityProfiles
 }
 // GetProviderStatus gets the providerStatus property value. The providerStatus property
 func (m *Security) GetProviderStatus()([]SecurityProviderStatusable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.providerStatus
-    }
+    return m.providerStatus
 }
 // GetProviderTenantSettings gets the providerTenantSettings property value. The providerTenantSettings property
 func (m *Security) GetProviderTenantSettings()([]ProviderTenantSettingable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.providerTenantSettings
-    }
+    return m.providerTenantSettings
 }
 // GetSecureScoreControlProfiles gets the secureScoreControlProfiles property value. The secureScoreControlProfiles property
 func (m *Security) GetSecureScoreControlProfiles()([]SecureScoreControlProfileable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.secureScoreControlProfiles
-    }
+    return m.secureScoreControlProfiles
 }
 // GetSecureScores gets the secureScores property value. The secureScores property
 func (m *Security) GetSecureScores()([]SecureScoreable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.secureScores
-    }
+    return m.secureScores
 }
 // GetSecurityActions gets the securityActions property value. The securityActions property
 func (m *Security) GetSecurityActions()([]SecurityActionable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.securityActions
-    }
+    return m.securityActions
 }
 // GetSubjectRightsRequests gets the subjectRightsRequests property value. The subjectRightsRequests property
 func (m *Security) GetSubjectRightsRequests()([]SubjectRightsRequestable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.subjectRightsRequests
-    }
+    return m.subjectRightsRequests
 }
 // GetTiIndicators gets the tiIndicators property value. The tiIndicators property
 func (m *Security) GetTiIndicators()([]TiIndicatorable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.tiIndicators
-    }
+    return m.tiIndicators
 }
 // GetUserSecurityProfiles gets the userSecurityProfiles property value. The userSecurityProfiles property
 func (m *Security) GetUserSecurityProfiles()([]UserSecurityProfileable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userSecurityProfiles
-    }
+    return m.userSecurityProfiles
 }
 // Serialize serializes information the current object
 func (m *Security) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -538,91 +478,61 @@ func (m *Security) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
 }
 // SetAlerts sets the alerts property value. Notifications for suspicious or potential security issues in a customer’s tenant.
 func (m *Security) SetAlerts(value []Alertable)() {
-    if m != nil {
-        m.alerts = value
-    }
+    m.alerts = value
 }
 // SetAttackSimulation sets the attackSimulation property value. Provides tenants capability to launch a simulated and realistic phishing attack and learn from it.
 func (m *Security) SetAttackSimulation(value AttackSimulationRootable)() {
-    if m != nil {
-        m.attackSimulation = value
-    }
+    m.attackSimulation = value
 }
 // SetCloudAppSecurityProfiles sets the cloudAppSecurityProfiles property value. The cloudAppSecurityProfiles property
 func (m *Security) SetCloudAppSecurityProfiles(value []CloudAppSecurityProfileable)() {
-    if m != nil {
-        m.cloudAppSecurityProfiles = value
-    }
+    m.cloudAppSecurityProfiles = value
 }
 // SetDomainSecurityProfiles sets the domainSecurityProfiles property value. The domainSecurityProfiles property
 func (m *Security) SetDomainSecurityProfiles(value []DomainSecurityProfileable)() {
-    if m != nil {
-        m.domainSecurityProfiles = value
-    }
+    m.domainSecurityProfiles = value
 }
 // SetFileSecurityProfiles sets the fileSecurityProfiles property value. The fileSecurityProfiles property
 func (m *Security) SetFileSecurityProfiles(value []FileSecurityProfileable)() {
-    if m != nil {
-        m.fileSecurityProfiles = value
-    }
+    m.fileSecurityProfiles = value
 }
 // SetHostSecurityProfiles sets the hostSecurityProfiles property value. The hostSecurityProfiles property
 func (m *Security) SetHostSecurityProfiles(value []HostSecurityProfileable)() {
-    if m != nil {
-        m.hostSecurityProfiles = value
-    }
+    m.hostSecurityProfiles = value
 }
 // SetIpSecurityProfiles sets the ipSecurityProfiles property value. The ipSecurityProfiles property
 func (m *Security) SetIpSecurityProfiles(value []IpSecurityProfileable)() {
-    if m != nil {
-        m.ipSecurityProfiles = value
-    }
+    m.ipSecurityProfiles = value
 }
 // SetProviderStatus sets the providerStatus property value. The providerStatus property
 func (m *Security) SetProviderStatus(value []SecurityProviderStatusable)() {
-    if m != nil {
-        m.providerStatus = value
-    }
+    m.providerStatus = value
 }
 // SetProviderTenantSettings sets the providerTenantSettings property value. The providerTenantSettings property
 func (m *Security) SetProviderTenantSettings(value []ProviderTenantSettingable)() {
-    if m != nil {
-        m.providerTenantSettings = value
-    }
+    m.providerTenantSettings = value
 }
 // SetSecureScoreControlProfiles sets the secureScoreControlProfiles property value. The secureScoreControlProfiles property
 func (m *Security) SetSecureScoreControlProfiles(value []SecureScoreControlProfileable)() {
-    if m != nil {
-        m.secureScoreControlProfiles = value
-    }
+    m.secureScoreControlProfiles = value
 }
 // SetSecureScores sets the secureScores property value. The secureScores property
 func (m *Security) SetSecureScores(value []SecureScoreable)() {
-    if m != nil {
-        m.secureScores = value
-    }
+    m.secureScores = value
 }
 // SetSecurityActions sets the securityActions property value. The securityActions property
 func (m *Security) SetSecurityActions(value []SecurityActionable)() {
-    if m != nil {
-        m.securityActions = value
-    }
+    m.securityActions = value
 }
 // SetSubjectRightsRequests sets the subjectRightsRequests property value. The subjectRightsRequests property
 func (m *Security) SetSubjectRightsRequests(value []SubjectRightsRequestable)() {
-    if m != nil {
-        m.subjectRightsRequests = value
-    }
+    m.subjectRightsRequests = value
 }
 // SetTiIndicators sets the tiIndicators property value. The tiIndicators property
 func (m *Security) SetTiIndicators(value []TiIndicatorable)() {
-    if m != nil {
-        m.tiIndicators = value
-    }
+    m.tiIndicators = value
 }
 // SetUserSecurityProfiles sets the userSecurityProfiles property value. The userSecurityProfiles property
 func (m *Security) SetUserSecurityProfiles(value []UserSecurityProfileable)() {
-    if m != nil {
-        m.userSecurityProfiles = value
-    }
+    m.userSecurityProfiles = value
 }

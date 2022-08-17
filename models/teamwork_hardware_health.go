@@ -30,19 +30,11 @@ func CreateTeamworkHardwareHealthFromDiscriminatorValue(parseNode i878a80d2330e8
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TeamworkHardwareHealth) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetComputeHealth gets the computeHealth property value. The system health details for a teamworkDevice.
 func (m *TeamworkHardwareHealth) GetComputeHealth()(TeamworkPeripheralHealthable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.computeHealth
-    }
+    return m.computeHealth
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *TeamworkHardwareHealth) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -81,19 +73,11 @@ func (m *TeamworkHardwareHealth) GetFieldDeserializers()(map[string]func(i878a80
 }
 // GetHdmiIngestHealth gets the hdmiIngestHealth property value. The health details about the HDMI ingest of a device.
 func (m *TeamworkHardwareHealth) GetHdmiIngestHealth()(TeamworkPeripheralHealthable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.hdmiIngestHealth
-    }
+    return m.hdmiIngestHealth
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *TeamworkHardwareHealth) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // Serialize serializes information the current object
 func (m *TeamworkHardwareHealth) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -125,25 +109,17 @@ func (m *TeamworkHardwareHealth) Serialize(writer i878a80d2330e89d26896388a3f487
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TeamworkHardwareHealth) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetComputeHealth sets the computeHealth property value. The system health details for a teamworkDevice.
 func (m *TeamworkHardwareHealth) SetComputeHealth(value TeamworkPeripheralHealthable)() {
-    if m != nil {
-        m.computeHealth = value
-    }
+    m.computeHealth = value
 }
 // SetHdmiIngestHealth sets the hdmiIngestHealth property value. The health details about the HDMI ingest of a device.
 func (m *TeamworkHardwareHealth) SetHdmiIngestHealth(value TeamworkPeripheralHealthable)() {
-    if m != nil {
-        m.hdmiIngestHealth = value
-    }
+    m.hdmiIngestHealth = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *TeamworkHardwareHealth) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }

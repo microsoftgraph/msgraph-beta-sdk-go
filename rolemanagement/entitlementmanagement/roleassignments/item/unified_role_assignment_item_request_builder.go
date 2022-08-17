@@ -26,7 +26,7 @@ type UnifiedRoleAssignmentItemRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// UnifiedRoleAssignmentItemRequestBuilderGetQueryParameters resource to grant access to users or groups.
+// UnifiedRoleAssignmentItemRequestBuilderGetQueryParameters get roleAssignments from roleManagement
 type UnifiedRoleAssignmentItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -88,11 +88,11 @@ func (m *UnifiedRoleAssignmentItemRequestBuilder) CreateDeleteRequestInformation
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation resource to grant access to users or groups.
+// CreateGetRequestInformation get roleAssignments from roleManagement
 func (m *UnifiedRoleAssignmentItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration resource to grant access to users or groups.
+// CreateGetRequestInformationWithRequestConfiguration get roleAssignments from roleManagement
 func (m *UnifiedRoleAssignmentItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *UnifiedRoleAssignmentItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -149,11 +149,11 @@ func (m *UnifiedRoleAssignmentItemRequestBuilder) DeleteWithRequestConfiguration
 func (m *UnifiedRoleAssignmentItemRequestBuilder) DirectoryScope()(*i9c6fba8818b46e9b897f6da0f048015127b2a818ba2978b0887e54895c958fce.DirectoryScopeRequestBuilder) {
     return i9c6fba8818b46e9b897f6da0f048015127b2a818ba2978b0887e54895c958fce.NewDirectoryScopeRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// Get resource to grant access to users or groups.
+// Get get roleAssignments from roleManagement
 func (m *UnifiedRoleAssignmentItemRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnifiedRoleAssignmentable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler resource to grant access to users or groups.
+// GetWithRequestConfigurationAndResponseHandler get roleAssignments from roleManagement
 func (m *UnifiedRoleAssignmentItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *UnifiedRoleAssignmentItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnifiedRoleAssignmentable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

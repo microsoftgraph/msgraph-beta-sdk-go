@@ -9,11 +9,11 @@ import (
 type CloudPcHealthCheckItem struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]interface{}
-    // The additionalDetails property
+    // Additional message for this health check.
     additionalDetails *string
-    // The displayName property
+    // The connectivity health check item name.
     displayName *string
-    // The lastHealthCheckDateTime property
+    // Timestamp when the last check occurs. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 appears as 2014-01-01T00:00:00Z.
     lastHealthCheckDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The OdataType property
     odataType *string
@@ -35,27 +35,15 @@ func CreateCloudPcHealthCheckItemFromDiscriminatorValue(parseNode i878a80d2330e8
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CloudPcHealthCheckItem) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
-// GetAdditionalDetails gets the additionalDetails property value. The additionalDetails property
+// GetAdditionalDetails gets the additionalDetails property value. Additional message for this health check.
 func (m *CloudPcHealthCheckItem) GetAdditionalDetails()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalDetails
-    }
+    return m.additionalDetails
 }
-// GetDisplayName gets the displayName property value. The displayName property
+// GetDisplayName gets the displayName property value. The connectivity health check item name.
 func (m *CloudPcHealthCheckItem) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *CloudPcHealthCheckItem) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -112,29 +100,17 @@ func (m *CloudPcHealthCheckItem) GetFieldDeserializers()(map[string]func(i878a80
     }
     return res
 }
-// GetLastHealthCheckDateTime gets the lastHealthCheckDateTime property value. The lastHealthCheckDateTime property
+// GetLastHealthCheckDateTime gets the lastHealthCheckDateTime property value. Timestamp when the last check occurs. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 appears as 2014-01-01T00:00:00Z.
 func (m *CloudPcHealthCheckItem) GetLastHealthCheckDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastHealthCheckDateTime
-    }
+    return m.lastHealthCheckDateTime
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *CloudPcHealthCheckItem) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetResult gets the result property value. The result property
 func (m *CloudPcHealthCheckItem) GetResult()(*CloudPcConnectivityEventResult) {
-    if m == nil {
-        return nil
-    } else {
-        return m.result
-    }
+    return m.result
 }
 // Serialize serializes information the current object
 func (m *CloudPcHealthCheckItem) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -179,37 +155,25 @@ func (m *CloudPcHealthCheckItem) Serialize(writer i878a80d2330e89d26896388a3f487
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CloudPcHealthCheckItem) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
-// SetAdditionalDetails sets the additionalDetails property value. The additionalDetails property
+// SetAdditionalDetails sets the additionalDetails property value. Additional message for this health check.
 func (m *CloudPcHealthCheckItem) SetAdditionalDetails(value *string)() {
-    if m != nil {
-        m.additionalDetails = value
-    }
+    m.additionalDetails = value
 }
-// SetDisplayName sets the displayName property value. The displayName property
+// SetDisplayName sets the displayName property value. The connectivity health check item name.
 func (m *CloudPcHealthCheckItem) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }
-// SetLastHealthCheckDateTime sets the lastHealthCheckDateTime property value. The lastHealthCheckDateTime property
+// SetLastHealthCheckDateTime sets the lastHealthCheckDateTime property value. Timestamp when the last check occurs. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 appears as 2014-01-01T00:00:00Z.
 func (m *CloudPcHealthCheckItem) SetLastHealthCheckDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.lastHealthCheckDateTime = value
-    }
+    m.lastHealthCheckDateTime = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *CloudPcHealthCheckItem) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetResult sets the result property value. The result property
 func (m *CloudPcHealthCheckItem) SetResult(value *CloudPcConnectivityEventResult)() {
-    if m != nil {
-        m.result = value
-    }
+    m.result = value
 }

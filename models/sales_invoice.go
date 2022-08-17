@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// SalesInvoice provides operations to manage the collection of activityStatistics entities.
+// SalesInvoice 
 type SalesInvoice struct {
     Entity
     // The billingPostalAddress property
@@ -85,7 +85,7 @@ type SalesInvoice struct {
     // The totalTaxAmount property
     totalTaxAmount *float64
 }
-// NewSalesInvoice instantiates a new salesInvoice and sets the default values.
+// NewSalesInvoice instantiates a new SalesInvoice and sets the default values.
 func NewSalesInvoice()(*SalesInvoice) {
     m := &SalesInvoice{
         Entity: *NewEntity(),
@@ -100,139 +100,71 @@ func CreateSalesInvoiceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388
 }
 // GetBillingPostalAddress gets the billingPostalAddress property value. The billingPostalAddress property
 func (m *SalesInvoice) GetBillingPostalAddress()(PostalAddressTypeable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.billingPostalAddress
-    }
+    return m.billingPostalAddress
 }
 // GetBillToCustomerId gets the billToCustomerId property value. The billToCustomerId property
 func (m *SalesInvoice) GetBillToCustomerId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.billToCustomerId
-    }
+    return m.billToCustomerId
 }
 // GetBillToCustomerNumber gets the billToCustomerNumber property value. The billToCustomerNumber property
 func (m *SalesInvoice) GetBillToCustomerNumber()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.billToCustomerNumber
-    }
+    return m.billToCustomerNumber
 }
 // GetBillToName gets the billToName property value. The billToName property
 func (m *SalesInvoice) GetBillToName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.billToName
-    }
+    return m.billToName
 }
 // GetCurrency gets the currency property value. The currency property
 func (m *SalesInvoice) GetCurrency()(Currencyable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.currency
-    }
+    return m.currency
 }
 // GetCurrencyCode gets the currencyCode property value. The currencyCode property
 func (m *SalesInvoice) GetCurrencyCode()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.currencyCode
-    }
+    return m.currencyCode
 }
 // GetCurrencyId gets the currencyId property value. The currencyId property
 func (m *SalesInvoice) GetCurrencyId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.currencyId
-    }
+    return m.currencyId
 }
 // GetCustomer gets the customer property value. The customer property
 func (m *SalesInvoice) GetCustomer()(Customerable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.customer
-    }
+    return m.customer
 }
 // GetCustomerId gets the customerId property value. The customerId property
 func (m *SalesInvoice) GetCustomerId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.customerId
-    }
+    return m.customerId
 }
 // GetCustomerName gets the customerName property value. The customerName property
 func (m *SalesInvoice) GetCustomerName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.customerName
-    }
+    return m.customerName
 }
 // GetCustomerNumber gets the customerNumber property value. The customerNumber property
 func (m *SalesInvoice) GetCustomerNumber()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.customerNumber
-    }
+    return m.customerNumber
 }
 // GetCustomerPurchaseOrderReference gets the customerPurchaseOrderReference property value. The customerPurchaseOrderReference property
 func (m *SalesInvoice) GetCustomerPurchaseOrderReference()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.customerPurchaseOrderReference
-    }
+    return m.customerPurchaseOrderReference
 }
 // GetDiscountAmount gets the discountAmount property value. The discountAmount property
 func (m *SalesInvoice) GetDiscountAmount()(*float64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.discountAmount
-    }
+    return m.discountAmount
 }
 // GetDiscountAppliedBeforeTax gets the discountAppliedBeforeTax property value. The discountAppliedBeforeTax property
 func (m *SalesInvoice) GetDiscountAppliedBeforeTax()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.discountAppliedBeforeTax
-    }
+    return m.discountAppliedBeforeTax
 }
 // GetDueDate gets the dueDate property value. The dueDate property
 func (m *SalesInvoice) GetDueDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly) {
-    if m == nil {
-        return nil
-    } else {
-        return m.dueDate
-    }
+    return m.dueDate
 }
 // GetEmail gets the email property value. The email property
 func (m *SalesInvoice) GetEmail()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.email
-    }
+    return m.email
 }
 // GetExternalDocumentNumber gets the externalDocumentNumber property value. The externalDocumentNumber property
 func (m *SalesInvoice) GetExternalDocumentNumber()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.externalDocumentNumber
-    }
+    return m.externalDocumentNumber
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *SalesInvoice) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -625,171 +557,87 @@ func (m *SalesInvoice) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
 }
 // GetInvoiceDate gets the invoiceDate property value. The invoiceDate property
 func (m *SalesInvoice) GetInvoiceDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly) {
-    if m == nil {
-        return nil
-    } else {
-        return m.invoiceDate
-    }
+    return m.invoiceDate
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. The lastModifiedDateTime property
 func (m *SalesInvoice) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastModifiedDateTime
-    }
+    return m.lastModifiedDateTime
 }
 // GetNumber gets the number property value. The number property
 func (m *SalesInvoice) GetNumber()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.number
-    }
+    return m.number
 }
 // GetOrderId gets the orderId property value. The orderId property
 func (m *SalesInvoice) GetOrderId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.orderId
-    }
+    return m.orderId
 }
 // GetOrderNumber gets the orderNumber property value. The orderNumber property
 func (m *SalesInvoice) GetOrderNumber()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.orderNumber
-    }
+    return m.orderNumber
 }
 // GetPaymentTerm gets the paymentTerm property value. The paymentTerm property
 func (m *SalesInvoice) GetPaymentTerm()(PaymentTermable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.paymentTerm
-    }
+    return m.paymentTerm
 }
 // GetPaymentTermsId gets the paymentTermsId property value. The paymentTermsId property
 func (m *SalesInvoice) GetPaymentTermsId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.paymentTermsId
-    }
+    return m.paymentTermsId
 }
 // GetPhoneNumber gets the phoneNumber property value. The phoneNumber property
 func (m *SalesInvoice) GetPhoneNumber()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.phoneNumber
-    }
+    return m.phoneNumber
 }
 // GetPricesIncludeTax gets the pricesIncludeTax property value. The pricesIncludeTax property
 func (m *SalesInvoice) GetPricesIncludeTax()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.pricesIncludeTax
-    }
+    return m.pricesIncludeTax
 }
 // GetSalesInvoiceLines gets the salesInvoiceLines property value. The salesInvoiceLines property
 func (m *SalesInvoice) GetSalesInvoiceLines()([]SalesInvoiceLineable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.salesInvoiceLines
-    }
+    return m.salesInvoiceLines
 }
 // GetSalesperson gets the salesperson property value. The salesperson property
 func (m *SalesInvoice) GetSalesperson()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.salesperson
-    }
+    return m.salesperson
 }
 // GetSellingPostalAddress gets the sellingPostalAddress property value. The sellingPostalAddress property
 func (m *SalesInvoice) GetSellingPostalAddress()(PostalAddressTypeable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.sellingPostalAddress
-    }
+    return m.sellingPostalAddress
 }
 // GetShipmentMethod gets the shipmentMethod property value. The shipmentMethod property
 func (m *SalesInvoice) GetShipmentMethod()(ShipmentMethodable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.shipmentMethod
-    }
+    return m.shipmentMethod
 }
 // GetShipmentMethodId gets the shipmentMethodId property value. The shipmentMethodId property
 func (m *SalesInvoice) GetShipmentMethodId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.shipmentMethodId
-    }
+    return m.shipmentMethodId
 }
 // GetShippingPostalAddress gets the shippingPostalAddress property value. The shippingPostalAddress property
 func (m *SalesInvoice) GetShippingPostalAddress()(PostalAddressTypeable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.shippingPostalAddress
-    }
+    return m.shippingPostalAddress
 }
 // GetShipToContact gets the shipToContact property value. The shipToContact property
 func (m *SalesInvoice) GetShipToContact()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.shipToContact
-    }
+    return m.shipToContact
 }
 // GetShipToName gets the shipToName property value. The shipToName property
 func (m *SalesInvoice) GetShipToName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.shipToName
-    }
+    return m.shipToName
 }
 // GetStatus gets the status property value. The status property
 func (m *SalesInvoice) GetStatus()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.status
-    }
+    return m.status
 }
 // GetTotalAmountExcludingTax gets the totalAmountExcludingTax property value. The totalAmountExcludingTax property
 func (m *SalesInvoice) GetTotalAmountExcludingTax()(*float64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.totalAmountExcludingTax
-    }
+    return m.totalAmountExcludingTax
 }
 // GetTotalAmountIncludingTax gets the totalAmountIncludingTax property value. The totalAmountIncludingTax property
 func (m *SalesInvoice) GetTotalAmountIncludingTax()(*float64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.totalAmountIncludingTax
-    }
+    return m.totalAmountIncludingTax
 }
 // GetTotalTaxAmount gets the totalTaxAmount property value. The totalTaxAmount property
 func (m *SalesInvoice) GetTotalTaxAmount()(*float64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.totalTaxAmount
-    }
+    return m.totalTaxAmount
 }
 // Serialize serializes information the current object
 func (m *SalesInvoice) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -1033,229 +881,153 @@ func (m *SalesInvoice) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
 }
 // SetBillingPostalAddress sets the billingPostalAddress property value. The billingPostalAddress property
 func (m *SalesInvoice) SetBillingPostalAddress(value PostalAddressTypeable)() {
-    if m != nil {
-        m.billingPostalAddress = value
-    }
+    m.billingPostalAddress = value
 }
 // SetBillToCustomerId sets the billToCustomerId property value. The billToCustomerId property
 func (m *SalesInvoice) SetBillToCustomerId(value *string)() {
-    if m != nil {
-        m.billToCustomerId = value
-    }
+    m.billToCustomerId = value
 }
 // SetBillToCustomerNumber sets the billToCustomerNumber property value. The billToCustomerNumber property
 func (m *SalesInvoice) SetBillToCustomerNumber(value *string)() {
-    if m != nil {
-        m.billToCustomerNumber = value
-    }
+    m.billToCustomerNumber = value
 }
 // SetBillToName sets the billToName property value. The billToName property
 func (m *SalesInvoice) SetBillToName(value *string)() {
-    if m != nil {
-        m.billToName = value
-    }
+    m.billToName = value
 }
 // SetCurrency sets the currency property value. The currency property
 func (m *SalesInvoice) SetCurrency(value Currencyable)() {
-    if m != nil {
-        m.currency = value
-    }
+    m.currency = value
 }
 // SetCurrencyCode sets the currencyCode property value. The currencyCode property
 func (m *SalesInvoice) SetCurrencyCode(value *string)() {
-    if m != nil {
-        m.currencyCode = value
-    }
+    m.currencyCode = value
 }
 // SetCurrencyId sets the currencyId property value. The currencyId property
 func (m *SalesInvoice) SetCurrencyId(value *string)() {
-    if m != nil {
-        m.currencyId = value
-    }
+    m.currencyId = value
 }
 // SetCustomer sets the customer property value. The customer property
 func (m *SalesInvoice) SetCustomer(value Customerable)() {
-    if m != nil {
-        m.customer = value
-    }
+    m.customer = value
 }
 // SetCustomerId sets the customerId property value. The customerId property
 func (m *SalesInvoice) SetCustomerId(value *string)() {
-    if m != nil {
-        m.customerId = value
-    }
+    m.customerId = value
 }
 // SetCustomerName sets the customerName property value. The customerName property
 func (m *SalesInvoice) SetCustomerName(value *string)() {
-    if m != nil {
-        m.customerName = value
-    }
+    m.customerName = value
 }
 // SetCustomerNumber sets the customerNumber property value. The customerNumber property
 func (m *SalesInvoice) SetCustomerNumber(value *string)() {
-    if m != nil {
-        m.customerNumber = value
-    }
+    m.customerNumber = value
 }
 // SetCustomerPurchaseOrderReference sets the customerPurchaseOrderReference property value. The customerPurchaseOrderReference property
 func (m *SalesInvoice) SetCustomerPurchaseOrderReference(value *string)() {
-    if m != nil {
-        m.customerPurchaseOrderReference = value
-    }
+    m.customerPurchaseOrderReference = value
 }
 // SetDiscountAmount sets the discountAmount property value. The discountAmount property
 func (m *SalesInvoice) SetDiscountAmount(value *float64)() {
-    if m != nil {
-        m.discountAmount = value
-    }
+    m.discountAmount = value
 }
 // SetDiscountAppliedBeforeTax sets the discountAppliedBeforeTax property value. The discountAppliedBeforeTax property
 func (m *SalesInvoice) SetDiscountAppliedBeforeTax(value *bool)() {
-    if m != nil {
-        m.discountAppliedBeforeTax = value
-    }
+    m.discountAppliedBeforeTax = value
 }
 // SetDueDate sets the dueDate property value. The dueDate property
 func (m *SalesInvoice) SetDueDate(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)() {
-    if m != nil {
-        m.dueDate = value
-    }
+    m.dueDate = value
 }
 // SetEmail sets the email property value. The email property
 func (m *SalesInvoice) SetEmail(value *string)() {
-    if m != nil {
-        m.email = value
-    }
+    m.email = value
 }
 // SetExternalDocumentNumber sets the externalDocumentNumber property value. The externalDocumentNumber property
 func (m *SalesInvoice) SetExternalDocumentNumber(value *string)() {
-    if m != nil {
-        m.externalDocumentNumber = value
-    }
+    m.externalDocumentNumber = value
 }
 // SetInvoiceDate sets the invoiceDate property value. The invoiceDate property
 func (m *SalesInvoice) SetInvoiceDate(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)() {
-    if m != nil {
-        m.invoiceDate = value
-    }
+    m.invoiceDate = value
 }
 // SetLastModifiedDateTime sets the lastModifiedDateTime property value. The lastModifiedDateTime property
 func (m *SalesInvoice) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.lastModifiedDateTime = value
-    }
+    m.lastModifiedDateTime = value
 }
 // SetNumber sets the number property value. The number property
 func (m *SalesInvoice) SetNumber(value *string)() {
-    if m != nil {
-        m.number = value
-    }
+    m.number = value
 }
 // SetOrderId sets the orderId property value. The orderId property
 func (m *SalesInvoice) SetOrderId(value *string)() {
-    if m != nil {
-        m.orderId = value
-    }
+    m.orderId = value
 }
 // SetOrderNumber sets the orderNumber property value. The orderNumber property
 func (m *SalesInvoice) SetOrderNumber(value *string)() {
-    if m != nil {
-        m.orderNumber = value
-    }
+    m.orderNumber = value
 }
 // SetPaymentTerm sets the paymentTerm property value. The paymentTerm property
 func (m *SalesInvoice) SetPaymentTerm(value PaymentTermable)() {
-    if m != nil {
-        m.paymentTerm = value
-    }
+    m.paymentTerm = value
 }
 // SetPaymentTermsId sets the paymentTermsId property value. The paymentTermsId property
 func (m *SalesInvoice) SetPaymentTermsId(value *string)() {
-    if m != nil {
-        m.paymentTermsId = value
-    }
+    m.paymentTermsId = value
 }
 // SetPhoneNumber sets the phoneNumber property value. The phoneNumber property
 func (m *SalesInvoice) SetPhoneNumber(value *string)() {
-    if m != nil {
-        m.phoneNumber = value
-    }
+    m.phoneNumber = value
 }
 // SetPricesIncludeTax sets the pricesIncludeTax property value. The pricesIncludeTax property
 func (m *SalesInvoice) SetPricesIncludeTax(value *bool)() {
-    if m != nil {
-        m.pricesIncludeTax = value
-    }
+    m.pricesIncludeTax = value
 }
 // SetSalesInvoiceLines sets the salesInvoiceLines property value. The salesInvoiceLines property
 func (m *SalesInvoice) SetSalesInvoiceLines(value []SalesInvoiceLineable)() {
-    if m != nil {
-        m.salesInvoiceLines = value
-    }
+    m.salesInvoiceLines = value
 }
 // SetSalesperson sets the salesperson property value. The salesperson property
 func (m *SalesInvoice) SetSalesperson(value *string)() {
-    if m != nil {
-        m.salesperson = value
-    }
+    m.salesperson = value
 }
 // SetSellingPostalAddress sets the sellingPostalAddress property value. The sellingPostalAddress property
 func (m *SalesInvoice) SetSellingPostalAddress(value PostalAddressTypeable)() {
-    if m != nil {
-        m.sellingPostalAddress = value
-    }
+    m.sellingPostalAddress = value
 }
 // SetShipmentMethod sets the shipmentMethod property value. The shipmentMethod property
 func (m *SalesInvoice) SetShipmentMethod(value ShipmentMethodable)() {
-    if m != nil {
-        m.shipmentMethod = value
-    }
+    m.shipmentMethod = value
 }
 // SetShipmentMethodId sets the shipmentMethodId property value. The shipmentMethodId property
 func (m *SalesInvoice) SetShipmentMethodId(value *string)() {
-    if m != nil {
-        m.shipmentMethodId = value
-    }
+    m.shipmentMethodId = value
 }
 // SetShippingPostalAddress sets the shippingPostalAddress property value. The shippingPostalAddress property
 func (m *SalesInvoice) SetShippingPostalAddress(value PostalAddressTypeable)() {
-    if m != nil {
-        m.shippingPostalAddress = value
-    }
+    m.shippingPostalAddress = value
 }
 // SetShipToContact sets the shipToContact property value. The shipToContact property
 func (m *SalesInvoice) SetShipToContact(value *string)() {
-    if m != nil {
-        m.shipToContact = value
-    }
+    m.shipToContact = value
 }
 // SetShipToName sets the shipToName property value. The shipToName property
 func (m *SalesInvoice) SetShipToName(value *string)() {
-    if m != nil {
-        m.shipToName = value
-    }
+    m.shipToName = value
 }
 // SetStatus sets the status property value. The status property
 func (m *SalesInvoice) SetStatus(value *string)() {
-    if m != nil {
-        m.status = value
-    }
+    m.status = value
 }
 // SetTotalAmountExcludingTax sets the totalAmountExcludingTax property value. The totalAmountExcludingTax property
 func (m *SalesInvoice) SetTotalAmountExcludingTax(value *float64)() {
-    if m != nil {
-        m.totalAmountExcludingTax = value
-    }
+    m.totalAmountExcludingTax = value
 }
 // SetTotalAmountIncludingTax sets the totalAmountIncludingTax property value. The totalAmountIncludingTax property
 func (m *SalesInvoice) SetTotalAmountIncludingTax(value *float64)() {
-    if m != nil {
-        m.totalAmountIncludingTax = value
-    }
+    m.totalAmountIncludingTax = value
 }
 // SetTotalTaxAmount sets the totalTaxAmount property value. The totalTaxAmount property
 func (m *SalesInvoice) SetTotalTaxAmount(value *float64)() {
-    if m != nil {
-        m.totalTaxAmount = value
-    }
+    m.totalTaxAmount = value
 }

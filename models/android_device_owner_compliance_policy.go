@@ -67,27 +67,15 @@ func CreateAndroidDeviceOwnerCompliancePolicyFromDiscriminatorValue(parseNode i8
 }
 // GetAdvancedThreatProtectionRequiredSecurityLevel gets the advancedThreatProtectionRequiredSecurityLevel property value. MDATP Require Mobile Threat Protection minimum risk level to report noncompliance. Possible values are: unavailable, secured, low, medium, high, notSet.
 func (m *AndroidDeviceOwnerCompliancePolicy) GetAdvancedThreatProtectionRequiredSecurityLevel()(*DeviceThreatProtectionLevel) {
-    if m == nil {
-        return nil
-    } else {
-        return m.advancedThreatProtectionRequiredSecurityLevel
-    }
+    return m.advancedThreatProtectionRequiredSecurityLevel
 }
 // GetDeviceThreatProtectionEnabled gets the deviceThreatProtectionEnabled property value. Require that devices have enabled device threat protection.
 func (m *AndroidDeviceOwnerCompliancePolicy) GetDeviceThreatProtectionEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deviceThreatProtectionEnabled
-    }
+    return m.deviceThreatProtectionEnabled
 }
 // GetDeviceThreatProtectionRequiredSecurityLevel gets the deviceThreatProtectionRequiredSecurityLevel property value. Require Mobile Threat Protection minimum risk level to report noncompliance. Possible values are: unavailable, secured, low, medium, high, notSet.
 func (m *AndroidDeviceOwnerCompliancePolicy) GetDeviceThreatProtectionRequiredSecurityLevel()(*DeviceThreatProtectionLevel) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deviceThreatProtectionRequiredSecurityLevel
-    }
+    return m.deviceThreatProtectionRequiredSecurityLevel
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AndroidDeviceOwnerCompliancePolicy) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -316,155 +304,79 @@ func (m *AndroidDeviceOwnerCompliancePolicy) GetFieldDeserializers()(map[string]
 }
 // GetMinAndroidSecurityPatchLevel gets the minAndroidSecurityPatchLevel property value. Minimum Android security patch level.
 func (m *AndroidDeviceOwnerCompliancePolicy) GetMinAndroidSecurityPatchLevel()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.minAndroidSecurityPatchLevel
-    }
+    return m.minAndroidSecurityPatchLevel
 }
 // GetOsMaximumVersion gets the osMaximumVersion property value. Maximum Android version.
 func (m *AndroidDeviceOwnerCompliancePolicy) GetOsMaximumVersion()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.osMaximumVersion
-    }
+    return m.osMaximumVersion
 }
 // GetOsMinimumVersion gets the osMinimumVersion property value. Minimum Android version.
 func (m *AndroidDeviceOwnerCompliancePolicy) GetOsMinimumVersion()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.osMinimumVersion
-    }
+    return m.osMinimumVersion
 }
 // GetPasswordExpirationDays gets the passwordExpirationDays property value. Number of days before the password expires. Valid values 1 to 365
 func (m *AndroidDeviceOwnerCompliancePolicy) GetPasswordExpirationDays()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.passwordExpirationDays
-    }
+    return m.passwordExpirationDays
 }
 // GetPasswordMinimumLength gets the passwordMinimumLength property value. Minimum password length. Valid values 4 to 16
 func (m *AndroidDeviceOwnerCompliancePolicy) GetPasswordMinimumLength()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.passwordMinimumLength
-    }
+    return m.passwordMinimumLength
 }
 // GetPasswordMinimumLetterCharacters gets the passwordMinimumLetterCharacters property value. Indicates the minimum number of letter characters required for device password. Valid values 1 to 16
 func (m *AndroidDeviceOwnerCompliancePolicy) GetPasswordMinimumLetterCharacters()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.passwordMinimumLetterCharacters
-    }
+    return m.passwordMinimumLetterCharacters
 }
 // GetPasswordMinimumLowerCaseCharacters gets the passwordMinimumLowerCaseCharacters property value. Indicates the minimum number of lower case characters required for device password. Valid values 1 to 16
 func (m *AndroidDeviceOwnerCompliancePolicy) GetPasswordMinimumLowerCaseCharacters()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.passwordMinimumLowerCaseCharacters
-    }
+    return m.passwordMinimumLowerCaseCharacters
 }
 // GetPasswordMinimumNonLetterCharacters gets the passwordMinimumNonLetterCharacters property value. Indicates the minimum number of non-letter characters required for device password. Valid values 1 to 16
 func (m *AndroidDeviceOwnerCompliancePolicy) GetPasswordMinimumNonLetterCharacters()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.passwordMinimumNonLetterCharacters
-    }
+    return m.passwordMinimumNonLetterCharacters
 }
 // GetPasswordMinimumNumericCharacters gets the passwordMinimumNumericCharacters property value. Indicates the minimum number of numeric characters required for device password. Valid values 1 to 16
 func (m *AndroidDeviceOwnerCompliancePolicy) GetPasswordMinimumNumericCharacters()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.passwordMinimumNumericCharacters
-    }
+    return m.passwordMinimumNumericCharacters
 }
 // GetPasswordMinimumSymbolCharacters gets the passwordMinimumSymbolCharacters property value. Indicates the minimum number of symbol characters required for device password. Valid values 1 to 16
 func (m *AndroidDeviceOwnerCompliancePolicy) GetPasswordMinimumSymbolCharacters()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.passwordMinimumSymbolCharacters
-    }
+    return m.passwordMinimumSymbolCharacters
 }
 // GetPasswordMinimumUpperCaseCharacters gets the passwordMinimumUpperCaseCharacters property value. Indicates the minimum number of upper case letter characters required for device password. Valid values 1 to 16
 func (m *AndroidDeviceOwnerCompliancePolicy) GetPasswordMinimumUpperCaseCharacters()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.passwordMinimumUpperCaseCharacters
-    }
+    return m.passwordMinimumUpperCaseCharacters
 }
 // GetPasswordMinutesOfInactivityBeforeLock gets the passwordMinutesOfInactivityBeforeLock property value. Minutes of inactivity before a password is required.
 func (m *AndroidDeviceOwnerCompliancePolicy) GetPasswordMinutesOfInactivityBeforeLock()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.passwordMinutesOfInactivityBeforeLock
-    }
+    return m.passwordMinutesOfInactivityBeforeLock
 }
 // GetPasswordPreviousPasswordCountToBlock gets the passwordPreviousPasswordCountToBlock property value. Number of previous passwords to block. Valid values 1 to 24
 func (m *AndroidDeviceOwnerCompliancePolicy) GetPasswordPreviousPasswordCountToBlock()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.passwordPreviousPasswordCountToBlock
-    }
+    return m.passwordPreviousPasswordCountToBlock
 }
 // GetPasswordRequired gets the passwordRequired property value. Require a password to unlock device.
 func (m *AndroidDeviceOwnerCompliancePolicy) GetPasswordRequired()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.passwordRequired
-    }
+    return m.passwordRequired
 }
 // GetPasswordRequiredType gets the passwordRequiredType property value. Type of characters in password. Possible values are: deviceDefault, required, numeric, numericComplex, alphabetic, alphanumeric, alphanumericWithSymbols, lowSecurityBiometric, customPassword.
 func (m *AndroidDeviceOwnerCompliancePolicy) GetPasswordRequiredType()(*AndroidDeviceOwnerRequiredPasswordType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.passwordRequiredType
-    }
+    return m.passwordRequiredType
 }
 // GetSecurityRequireIntuneAppIntegrity gets the securityRequireIntuneAppIntegrity property value. If setting is set to true, checks that the Intune app installed on fully managed, dedicated, or corporate-owned work profile Android Enterprise enrolled devices, is the one provided by Microsoft from the Managed Google Playstore. If the check fails, the device will be reported as non-compliant.
 func (m *AndroidDeviceOwnerCompliancePolicy) GetSecurityRequireIntuneAppIntegrity()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.securityRequireIntuneAppIntegrity
-    }
+    return m.securityRequireIntuneAppIntegrity
 }
 // GetSecurityRequireSafetyNetAttestationBasicIntegrity gets the securityRequireSafetyNetAttestationBasicIntegrity property value. Require the device to pass the SafetyNet basic integrity check.
 func (m *AndroidDeviceOwnerCompliancePolicy) GetSecurityRequireSafetyNetAttestationBasicIntegrity()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.securityRequireSafetyNetAttestationBasicIntegrity
-    }
+    return m.securityRequireSafetyNetAttestationBasicIntegrity
 }
 // GetSecurityRequireSafetyNetAttestationCertifiedDevice gets the securityRequireSafetyNetAttestationCertifiedDevice property value. Require the device to pass the SafetyNet certified device check.
 func (m *AndroidDeviceOwnerCompliancePolicy) GetSecurityRequireSafetyNetAttestationCertifiedDevice()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.securityRequireSafetyNetAttestationCertifiedDevice
-    }
+    return m.securityRequireSafetyNetAttestationCertifiedDevice
 }
 // GetStorageRequireEncryption gets the storageRequireEncryption property value. Require encryption on Android devices.
 func (m *AndroidDeviceOwnerCompliancePolicy) GetStorageRequireEncryption()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.storageRequireEncryption
-    }
+    return m.storageRequireEncryption
 }
 // Serialize serializes information the current object
 func (m *AndroidDeviceOwnerCompliancePolicy) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -611,133 +523,89 @@ func (m *AndroidDeviceOwnerCompliancePolicy) Serialize(writer i878a80d2330e89d26
 }
 // SetAdvancedThreatProtectionRequiredSecurityLevel sets the advancedThreatProtectionRequiredSecurityLevel property value. MDATP Require Mobile Threat Protection minimum risk level to report noncompliance. Possible values are: unavailable, secured, low, medium, high, notSet.
 func (m *AndroidDeviceOwnerCompliancePolicy) SetAdvancedThreatProtectionRequiredSecurityLevel(value *DeviceThreatProtectionLevel)() {
-    if m != nil {
-        m.advancedThreatProtectionRequiredSecurityLevel = value
-    }
+    m.advancedThreatProtectionRequiredSecurityLevel = value
 }
 // SetDeviceThreatProtectionEnabled sets the deviceThreatProtectionEnabled property value. Require that devices have enabled device threat protection.
 func (m *AndroidDeviceOwnerCompliancePolicy) SetDeviceThreatProtectionEnabled(value *bool)() {
-    if m != nil {
-        m.deviceThreatProtectionEnabled = value
-    }
+    m.deviceThreatProtectionEnabled = value
 }
 // SetDeviceThreatProtectionRequiredSecurityLevel sets the deviceThreatProtectionRequiredSecurityLevel property value. Require Mobile Threat Protection minimum risk level to report noncompliance. Possible values are: unavailable, secured, low, medium, high, notSet.
 func (m *AndroidDeviceOwnerCompliancePolicy) SetDeviceThreatProtectionRequiredSecurityLevel(value *DeviceThreatProtectionLevel)() {
-    if m != nil {
-        m.deviceThreatProtectionRequiredSecurityLevel = value
-    }
+    m.deviceThreatProtectionRequiredSecurityLevel = value
 }
 // SetMinAndroidSecurityPatchLevel sets the minAndroidSecurityPatchLevel property value. Minimum Android security patch level.
 func (m *AndroidDeviceOwnerCompliancePolicy) SetMinAndroidSecurityPatchLevel(value *string)() {
-    if m != nil {
-        m.minAndroidSecurityPatchLevel = value
-    }
+    m.minAndroidSecurityPatchLevel = value
 }
 // SetOsMaximumVersion sets the osMaximumVersion property value. Maximum Android version.
 func (m *AndroidDeviceOwnerCompliancePolicy) SetOsMaximumVersion(value *string)() {
-    if m != nil {
-        m.osMaximumVersion = value
-    }
+    m.osMaximumVersion = value
 }
 // SetOsMinimumVersion sets the osMinimumVersion property value. Minimum Android version.
 func (m *AndroidDeviceOwnerCompliancePolicy) SetOsMinimumVersion(value *string)() {
-    if m != nil {
-        m.osMinimumVersion = value
-    }
+    m.osMinimumVersion = value
 }
 // SetPasswordExpirationDays sets the passwordExpirationDays property value. Number of days before the password expires. Valid values 1 to 365
 func (m *AndroidDeviceOwnerCompliancePolicy) SetPasswordExpirationDays(value *int32)() {
-    if m != nil {
-        m.passwordExpirationDays = value
-    }
+    m.passwordExpirationDays = value
 }
 // SetPasswordMinimumLength sets the passwordMinimumLength property value. Minimum password length. Valid values 4 to 16
 func (m *AndroidDeviceOwnerCompliancePolicy) SetPasswordMinimumLength(value *int32)() {
-    if m != nil {
-        m.passwordMinimumLength = value
-    }
+    m.passwordMinimumLength = value
 }
 // SetPasswordMinimumLetterCharacters sets the passwordMinimumLetterCharacters property value. Indicates the minimum number of letter characters required for device password. Valid values 1 to 16
 func (m *AndroidDeviceOwnerCompliancePolicy) SetPasswordMinimumLetterCharacters(value *int32)() {
-    if m != nil {
-        m.passwordMinimumLetterCharacters = value
-    }
+    m.passwordMinimumLetterCharacters = value
 }
 // SetPasswordMinimumLowerCaseCharacters sets the passwordMinimumLowerCaseCharacters property value. Indicates the minimum number of lower case characters required for device password. Valid values 1 to 16
 func (m *AndroidDeviceOwnerCompliancePolicy) SetPasswordMinimumLowerCaseCharacters(value *int32)() {
-    if m != nil {
-        m.passwordMinimumLowerCaseCharacters = value
-    }
+    m.passwordMinimumLowerCaseCharacters = value
 }
 // SetPasswordMinimumNonLetterCharacters sets the passwordMinimumNonLetterCharacters property value. Indicates the minimum number of non-letter characters required for device password. Valid values 1 to 16
 func (m *AndroidDeviceOwnerCompliancePolicy) SetPasswordMinimumNonLetterCharacters(value *int32)() {
-    if m != nil {
-        m.passwordMinimumNonLetterCharacters = value
-    }
+    m.passwordMinimumNonLetterCharacters = value
 }
 // SetPasswordMinimumNumericCharacters sets the passwordMinimumNumericCharacters property value. Indicates the minimum number of numeric characters required for device password. Valid values 1 to 16
 func (m *AndroidDeviceOwnerCompliancePolicy) SetPasswordMinimumNumericCharacters(value *int32)() {
-    if m != nil {
-        m.passwordMinimumNumericCharacters = value
-    }
+    m.passwordMinimumNumericCharacters = value
 }
 // SetPasswordMinimumSymbolCharacters sets the passwordMinimumSymbolCharacters property value. Indicates the minimum number of symbol characters required for device password. Valid values 1 to 16
 func (m *AndroidDeviceOwnerCompliancePolicy) SetPasswordMinimumSymbolCharacters(value *int32)() {
-    if m != nil {
-        m.passwordMinimumSymbolCharacters = value
-    }
+    m.passwordMinimumSymbolCharacters = value
 }
 // SetPasswordMinimumUpperCaseCharacters sets the passwordMinimumUpperCaseCharacters property value. Indicates the minimum number of upper case letter characters required for device password. Valid values 1 to 16
 func (m *AndroidDeviceOwnerCompliancePolicy) SetPasswordMinimumUpperCaseCharacters(value *int32)() {
-    if m != nil {
-        m.passwordMinimumUpperCaseCharacters = value
-    }
+    m.passwordMinimumUpperCaseCharacters = value
 }
 // SetPasswordMinutesOfInactivityBeforeLock sets the passwordMinutesOfInactivityBeforeLock property value. Minutes of inactivity before a password is required.
 func (m *AndroidDeviceOwnerCompliancePolicy) SetPasswordMinutesOfInactivityBeforeLock(value *int32)() {
-    if m != nil {
-        m.passwordMinutesOfInactivityBeforeLock = value
-    }
+    m.passwordMinutesOfInactivityBeforeLock = value
 }
 // SetPasswordPreviousPasswordCountToBlock sets the passwordPreviousPasswordCountToBlock property value. Number of previous passwords to block. Valid values 1 to 24
 func (m *AndroidDeviceOwnerCompliancePolicy) SetPasswordPreviousPasswordCountToBlock(value *int32)() {
-    if m != nil {
-        m.passwordPreviousPasswordCountToBlock = value
-    }
+    m.passwordPreviousPasswordCountToBlock = value
 }
 // SetPasswordRequired sets the passwordRequired property value. Require a password to unlock device.
 func (m *AndroidDeviceOwnerCompliancePolicy) SetPasswordRequired(value *bool)() {
-    if m != nil {
-        m.passwordRequired = value
-    }
+    m.passwordRequired = value
 }
 // SetPasswordRequiredType sets the passwordRequiredType property value. Type of characters in password. Possible values are: deviceDefault, required, numeric, numericComplex, alphabetic, alphanumeric, alphanumericWithSymbols, lowSecurityBiometric, customPassword.
 func (m *AndroidDeviceOwnerCompliancePolicy) SetPasswordRequiredType(value *AndroidDeviceOwnerRequiredPasswordType)() {
-    if m != nil {
-        m.passwordRequiredType = value
-    }
+    m.passwordRequiredType = value
 }
 // SetSecurityRequireIntuneAppIntegrity sets the securityRequireIntuneAppIntegrity property value. If setting is set to true, checks that the Intune app installed on fully managed, dedicated, or corporate-owned work profile Android Enterprise enrolled devices, is the one provided by Microsoft from the Managed Google Playstore. If the check fails, the device will be reported as non-compliant.
 func (m *AndroidDeviceOwnerCompliancePolicy) SetSecurityRequireIntuneAppIntegrity(value *bool)() {
-    if m != nil {
-        m.securityRequireIntuneAppIntegrity = value
-    }
+    m.securityRequireIntuneAppIntegrity = value
 }
 // SetSecurityRequireSafetyNetAttestationBasicIntegrity sets the securityRequireSafetyNetAttestationBasicIntegrity property value. Require the device to pass the SafetyNet basic integrity check.
 func (m *AndroidDeviceOwnerCompliancePolicy) SetSecurityRequireSafetyNetAttestationBasicIntegrity(value *bool)() {
-    if m != nil {
-        m.securityRequireSafetyNetAttestationBasicIntegrity = value
-    }
+    m.securityRequireSafetyNetAttestationBasicIntegrity = value
 }
 // SetSecurityRequireSafetyNetAttestationCertifiedDevice sets the securityRequireSafetyNetAttestationCertifiedDevice property value. Require the device to pass the SafetyNet certified device check.
 func (m *AndroidDeviceOwnerCompliancePolicy) SetSecurityRequireSafetyNetAttestationCertifiedDevice(value *bool)() {
-    if m != nil {
-        m.securityRequireSafetyNetAttestationCertifiedDevice = value
-    }
+    m.securityRequireSafetyNetAttestationCertifiedDevice = value
 }
 // SetStorageRequireEncryption sets the storageRequireEncryption property value. Require encryption on Android devices.
 func (m *AndroidDeviceOwnerCompliancePolicy) SetStorageRequireEncryption(value *bool)() {
-    if m != nil {
-        m.storageRequireEncryption = value
-    }
+    m.storageRequireEncryption = value
 }

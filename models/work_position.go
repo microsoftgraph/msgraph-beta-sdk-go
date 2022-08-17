@@ -33,27 +33,15 @@ func CreateWorkPositionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388
 }
 // GetCategories gets the categories property value. Categories that the user has associated with this position.
 func (m *WorkPosition) GetCategories()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.categories
-    }
+    return m.categories
 }
 // GetColleagues gets the colleagues property value. Colleagues that are associated with this position.
 func (m *WorkPosition) GetColleagues()([]RelatedPersonable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.colleagues
-    }
+    return m.colleagues
 }
 // GetDetail gets the detail property value. The detail property
 func (m *WorkPosition) GetDetail()(PositionDetailable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.detail
-    }
+    return m.detail
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *WorkPosition) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -120,19 +108,11 @@ func (m *WorkPosition) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
 }
 // GetIsCurrent gets the isCurrent property value. Denotes whether or not the position is current.
 func (m *WorkPosition) GetIsCurrent()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isCurrent
-    }
+    return m.isCurrent
 }
 // GetManager gets the manager property value. Contains detail of the user's manager in this position.
 func (m *WorkPosition) GetManager()(RelatedPersonable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.manager
-    }
+    return m.manager
 }
 // Serialize serializes information the current object
 func (m *WorkPosition) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -178,31 +158,21 @@ func (m *WorkPosition) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
 }
 // SetCategories sets the categories property value. Categories that the user has associated with this position.
 func (m *WorkPosition) SetCategories(value []string)() {
-    if m != nil {
-        m.categories = value
-    }
+    m.categories = value
 }
 // SetColleagues sets the colleagues property value. Colleagues that are associated with this position.
 func (m *WorkPosition) SetColleagues(value []RelatedPersonable)() {
-    if m != nil {
-        m.colleagues = value
-    }
+    m.colleagues = value
 }
 // SetDetail sets the detail property value. The detail property
 func (m *WorkPosition) SetDetail(value PositionDetailable)() {
-    if m != nil {
-        m.detail = value
-    }
+    m.detail = value
 }
 // SetIsCurrent sets the isCurrent property value. Denotes whether or not the position is current.
 func (m *WorkPosition) SetIsCurrent(value *bool)() {
-    if m != nil {
-        m.isCurrent = value
-    }
+    m.isCurrent = value
 }
 // SetManager sets the manager property value. Contains detail of the user's manager in this position.
 func (m *WorkPosition) SetManager(value RelatedPersonable)() {
-    if m != nil {
-        m.manager = value
-    }
+    m.manager = value
 }

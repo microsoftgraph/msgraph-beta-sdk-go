@@ -27,11 +27,7 @@ func CreateDeviceManagementConfigurationSimpleSettingCollectionInstanceTemplateF
 }
 // GetAllowUnmanagedValues gets the allowUnmanagedValues property value. Linked policy may append values which are not present in the template.
 func (m *DeviceManagementConfigurationSimpleSettingCollectionInstanceTemplate) GetAllowUnmanagedValues()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.allowUnmanagedValues
-    }
+    return m.allowUnmanagedValues
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceManagementConfigurationSimpleSettingCollectionInstanceTemplate) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -64,11 +60,7 @@ func (m *DeviceManagementConfigurationSimpleSettingCollectionInstanceTemplate) G
 }
 // GetSimpleSettingCollectionValueTemplate gets the simpleSettingCollectionValueTemplate property value. Simple Setting Collection Value Template
 func (m *DeviceManagementConfigurationSimpleSettingCollectionInstanceTemplate) GetSimpleSettingCollectionValueTemplate()([]DeviceManagementConfigurationSimpleSettingValueTemplateable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.simpleSettingCollectionValueTemplate
-    }
+    return m.simpleSettingCollectionValueTemplate
 }
 // Serialize serializes information the current object
 func (m *DeviceManagementConfigurationSimpleSettingCollectionInstanceTemplate) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -96,13 +88,9 @@ func (m *DeviceManagementConfigurationSimpleSettingCollectionInstanceTemplate) S
 }
 // SetAllowUnmanagedValues sets the allowUnmanagedValues property value. Linked policy may append values which are not present in the template.
 func (m *DeviceManagementConfigurationSimpleSettingCollectionInstanceTemplate) SetAllowUnmanagedValues(value *bool)() {
-    if m != nil {
-        m.allowUnmanagedValues = value
-    }
+    m.allowUnmanagedValues = value
 }
 // SetSimpleSettingCollectionValueTemplate sets the simpleSettingCollectionValueTemplate property value. Simple Setting Collection Value Template
 func (m *DeviceManagementConfigurationSimpleSettingCollectionInstanceTemplate) SetSimpleSettingCollectionValueTemplate(value []DeviceManagementConfigurationSimpleSettingValueTemplateable)() {
-    if m != nil {
-        m.simpleSettingCollectionValueTemplate = value
-    }
+    m.simpleSettingCollectionValueTemplate = value
 }

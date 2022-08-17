@@ -30,27 +30,15 @@ func CreateTeamworkTeamsClientConfigurationFromDiscriminatorValue(parseNode i878
 }
 // GetAccountConfiguration gets the accountConfiguration property value. The configuration of the Microsoft Teams client user account for a device.
 func (m *TeamworkTeamsClientConfiguration) GetAccountConfiguration()(TeamworkAccountConfigurationable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.accountConfiguration
-    }
+    return m.accountConfiguration
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TeamworkTeamsClientConfiguration) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFeaturesConfiguration gets the featuresConfiguration property value. The configuration of Microsoft Teams client features for a device.
 func (m *TeamworkTeamsClientConfiguration) GetFeaturesConfiguration()(TeamworkFeaturesConfigurationable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.featuresConfiguration
-    }
+    return m.featuresConfiguration
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *TeamworkTeamsClientConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -89,11 +77,7 @@ func (m *TeamworkTeamsClientConfiguration) GetFieldDeserializers()(map[string]fu
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *TeamworkTeamsClientConfiguration) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // Serialize serializes information the current object
 func (m *TeamworkTeamsClientConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -125,25 +109,17 @@ func (m *TeamworkTeamsClientConfiguration) Serialize(writer i878a80d2330e89d2689
 }
 // SetAccountConfiguration sets the accountConfiguration property value. The configuration of the Microsoft Teams client user account for a device.
 func (m *TeamworkTeamsClientConfiguration) SetAccountConfiguration(value TeamworkAccountConfigurationable)() {
-    if m != nil {
-        m.accountConfiguration = value
-    }
+    m.accountConfiguration = value
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TeamworkTeamsClientConfiguration) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetFeaturesConfiguration sets the featuresConfiguration property value. The configuration of Microsoft Teams client features for a device.
 func (m *TeamworkTeamsClientConfiguration) SetFeaturesConfiguration(value TeamworkFeaturesConfigurationable)() {
-    if m != nil {
-        m.featuresConfiguration = value
-    }
+    m.featuresConfiguration = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *TeamworkTeamsClientConfiguration) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }

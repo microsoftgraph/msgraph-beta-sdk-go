@@ -34,27 +34,15 @@ func CreateOrganizationalMessageTextFromDiscriminatorValue(parseNode i878a80d233
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *OrganizationalMessageText) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetButtonText gets the buttonText property value. Indicates the text that will be displayed on the button of the message. This field applies to the softLanding surface
 func (m *OrganizationalMessageText) GetButtonText()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.buttonText
-    }
+    return m.buttonText
 }
 // GetClickUrl gets the clickUrl property value. Indicates the url that the user will be directed to when the message is clicked
 func (m *OrganizationalMessageText) GetClickUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.clickUrl
-    }
+    return m.clickUrl
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *OrganizationalMessageText) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -113,27 +101,15 @@ func (m *OrganizationalMessageText) GetFieldDeserializers()(map[string]func(i878
 }
 // GetMessage gets the message property value. Indicates the message that will be displayed
 func (m *OrganizationalMessageText) GetMessage()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.message
-    }
+    return m.message
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *OrganizationalMessageText) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetTitle gets the title property value. Indicates the title that will be displayed
 func (m *OrganizationalMessageText) GetTitle()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.title
-    }
+    return m.title
 }
 // Serialize serializes information the current object
 func (m *OrganizationalMessageText) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -177,37 +153,25 @@ func (m *OrganizationalMessageText) Serialize(writer i878a80d2330e89d26896388a3f
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *OrganizationalMessageText) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetButtonText sets the buttonText property value. Indicates the text that will be displayed on the button of the message. This field applies to the softLanding surface
 func (m *OrganizationalMessageText) SetButtonText(value *string)() {
-    if m != nil {
-        m.buttonText = value
-    }
+    m.buttonText = value
 }
 // SetClickUrl sets the clickUrl property value. Indicates the url that the user will be directed to when the message is clicked
 func (m *OrganizationalMessageText) SetClickUrl(value *string)() {
-    if m != nil {
-        m.clickUrl = value
-    }
+    m.clickUrl = value
 }
 // SetMessage sets the message property value. Indicates the message that will be displayed
 func (m *OrganizationalMessageText) SetMessage(value *string)() {
-    if m != nil {
-        m.message = value
-    }
+    m.message = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *OrganizationalMessageText) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetTitle sets the title property value. Indicates the title that will be displayed
 func (m *OrganizationalMessageText) SetTitle(value *string)() {
-    if m != nil {
-        m.title = value
-    }
+    m.title = value
 }

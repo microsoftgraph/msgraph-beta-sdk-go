@@ -59,11 +59,7 @@ func (m *DeviceManagementConfigurationStringSettingValue) GetFieldDeserializers(
 }
 // GetValue gets the value property value. Value of the string setting.
 func (m *DeviceManagementConfigurationStringSettingValue) GetValue()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.value
-    }
+    return m.value
 }
 // Serialize serializes information the current object
 func (m *DeviceManagementConfigurationStringSettingValue) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -81,7 +77,5 @@ func (m *DeviceManagementConfigurationStringSettingValue) Serialize(writer i878a
 }
 // SetValue sets the value property value. Value of the string setting.
 func (m *DeviceManagementConfigurationStringSettingValue) SetValue(value *string)() {
-    if m != nil {
-        m.value = value
-    }
+    m.value = value
 }

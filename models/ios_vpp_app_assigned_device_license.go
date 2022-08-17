@@ -27,11 +27,7 @@ func CreateIosVppAppAssignedDeviceLicenseFromDiscriminatorValue(parseNode i878a8
 }
 // GetDeviceName gets the deviceName property value. The device name.
 func (m *IosVppAppAssignedDeviceLicense) GetDeviceName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deviceName
-    }
+    return m.deviceName
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *IosVppAppAssignedDeviceLicense) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -60,11 +56,7 @@ func (m *IosVppAppAssignedDeviceLicense) GetFieldDeserializers()(map[string]func
 }
 // GetManagedDeviceId gets the managedDeviceId property value. The managed device ID.
 func (m *IosVppAppAssignedDeviceLicense) GetManagedDeviceId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.managedDeviceId
-    }
+    return m.managedDeviceId
 }
 // Serialize serializes information the current object
 func (m *IosVppAppAssignedDeviceLicense) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -88,13 +80,9 @@ func (m *IosVppAppAssignedDeviceLicense) Serialize(writer i878a80d2330e89d268963
 }
 // SetDeviceName sets the deviceName property value. The device name.
 func (m *IosVppAppAssignedDeviceLicense) SetDeviceName(value *string)() {
-    if m != nil {
-        m.deviceName = value
-    }
+    m.deviceName = value
 }
 // SetManagedDeviceId sets the managedDeviceId property value. The managed device ID.
 func (m *IosVppAppAssignedDeviceLicense) SetManagedDeviceId(value *string)() {
-    if m != nil {
-        m.managedDeviceId = value
-    }
+    m.managedDeviceId = value
 }

@@ -33,27 +33,15 @@ func CreateTimeCardEventFromDiscriminatorValue(parseNode i878a80d2330e89d2689638
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TimeCardEvent) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetAtApprovedLocation gets the atApprovedLocation property value. Indicates whether the entry was recorded at the approved location.
 func (m *TimeCardEvent) GetAtApprovedLocation()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.atApprovedLocation
-    }
+    return m.atApprovedLocation
 }
 // GetDateTime gets the dateTime property value. The time the entry is recorded.
 func (m *TimeCardEvent) GetDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.dateTime
-    }
+    return m.dateTime
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *TimeCardEvent) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -102,19 +90,11 @@ func (m *TimeCardEvent) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
 }
 // GetNotes gets the notes property value. Notes about the timeCardEvent.
 func (m *TimeCardEvent) GetNotes()(ItemBodyable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.notes
-    }
+    return m.notes
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *TimeCardEvent) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // Serialize serializes information the current object
 func (m *TimeCardEvent) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -152,31 +132,21 @@ func (m *TimeCardEvent) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TimeCardEvent) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetAtApprovedLocation sets the atApprovedLocation property value. Indicates whether the entry was recorded at the approved location.
 func (m *TimeCardEvent) SetAtApprovedLocation(value *bool)() {
-    if m != nil {
-        m.atApprovedLocation = value
-    }
+    m.atApprovedLocation = value
 }
 // SetDateTime sets the dateTime property value. The time the entry is recorded.
 func (m *TimeCardEvent) SetDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.dateTime = value
-    }
+    m.dateTime = value
 }
 // SetNotes sets the notes property value. Notes about the timeCardEvent.
 func (m *TimeCardEvent) SetNotes(value ItemBodyable)() {
-    if m != nil {
-        m.notes = value
-    }
+    m.notes = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *TimeCardEvent) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }

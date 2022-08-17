@@ -68,27 +68,15 @@ func CreateWindowsWifiConfigurationFromDiscriminatorValue(parseNode i878a80d2330
 }
 // GetConnectAutomatically gets the connectAutomatically property value. Specify whether the wifi connection should connect automatically when in range.
 func (m *WindowsWifiConfiguration) GetConnectAutomatically()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.connectAutomatically
-    }
+    return m.connectAutomatically
 }
 // GetConnectToPreferredNetwork gets the connectToPreferredNetwork property value. Specify whether the wifi connection should connect to more preferred networks when already connected to this one.  Requires ConnectAutomatically to be true.
 func (m *WindowsWifiConfiguration) GetConnectToPreferredNetwork()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.connectToPreferredNetwork
-    }
+    return m.connectToPreferredNetwork
 }
 // GetConnectWhenNetworkNameIsHidden gets the connectWhenNetworkNameIsHidden property value. Specify whether the wifi connection should connect automatically even when the SSID is not broadcasting.
 func (m *WindowsWifiConfiguration) GetConnectWhenNetworkNameIsHidden()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.connectWhenNetworkNameIsHidden
-    }
+    return m.connectWhenNetworkNameIsHidden
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *WindowsWifiConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -227,83 +215,43 @@ func (m *WindowsWifiConfiguration) GetFieldDeserializers()(map[string]func(i878a
 }
 // GetForceFIPSCompliance gets the forceFIPSCompliance property value. Specify whether to force FIPS compliance.
 func (m *WindowsWifiConfiguration) GetForceFIPSCompliance()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.forceFIPSCompliance
-    }
+    return m.forceFIPSCompliance
 }
 // GetMeteredConnectionLimit gets the meteredConnectionLimit property value. Specify the metered connection limit type for the wifi connection. Possible values are: unrestricted, fixed, variable.
 func (m *WindowsWifiConfiguration) GetMeteredConnectionLimit()(*MeteredConnectionLimitType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.meteredConnectionLimit
-    }
+    return m.meteredConnectionLimit
 }
 // GetNetworkName gets the networkName property value. Specify the network configuration name.
 func (m *WindowsWifiConfiguration) GetNetworkName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.networkName
-    }
+    return m.networkName
 }
 // GetPreSharedKey gets the preSharedKey property value. This is the pre-shared key for WPA Personal Wi-Fi network.
 func (m *WindowsWifiConfiguration) GetPreSharedKey()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.preSharedKey
-    }
+    return m.preSharedKey
 }
 // GetProxyAutomaticConfigurationUrl gets the proxyAutomaticConfigurationUrl property value. Specify the URL for the proxy server configuration script.
 func (m *WindowsWifiConfiguration) GetProxyAutomaticConfigurationUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.proxyAutomaticConfigurationUrl
-    }
+    return m.proxyAutomaticConfigurationUrl
 }
 // GetProxyManualAddress gets the proxyManualAddress property value. Specify the IP address for the proxy server.
 func (m *WindowsWifiConfiguration) GetProxyManualAddress()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.proxyManualAddress
-    }
+    return m.proxyManualAddress
 }
 // GetProxyManualPort gets the proxyManualPort property value. Specify the port for the proxy server.
 func (m *WindowsWifiConfiguration) GetProxyManualPort()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.proxyManualPort
-    }
+    return m.proxyManualPort
 }
 // GetProxySetting gets the proxySetting property value. Specify the proxy setting for Wi-Fi configuration. Possible values are: none, manual, automatic.
 func (m *WindowsWifiConfiguration) GetProxySetting()(*WiFiProxySetting) {
-    if m == nil {
-        return nil
-    } else {
-        return m.proxySetting
-    }
+    return m.proxySetting
 }
 // GetSsid gets the ssid property value. Specify the SSID of the wifi connection.
 func (m *WindowsWifiConfiguration) GetSsid()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.ssid
-    }
+    return m.ssid
 }
 // GetWifiSecurityType gets the wifiSecurityType property value. Specify the Wifi Security Type. Possible values are: open, wpaPersonal, wpaEnterprise, wep, wpa2Personal, wpa2Enterprise.
 func (m *WindowsWifiConfiguration) GetWifiSecurityType()(*WiFiSecurityType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.wifiSecurityType
-    }
+    return m.wifiSecurityType
 }
 // Serialize serializes information the current object
 func (m *WindowsWifiConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -396,79 +344,53 @@ func (m *WindowsWifiConfiguration) Serialize(writer i878a80d2330e89d26896388a3f4
 }
 // SetConnectAutomatically sets the connectAutomatically property value. Specify whether the wifi connection should connect automatically when in range.
 func (m *WindowsWifiConfiguration) SetConnectAutomatically(value *bool)() {
-    if m != nil {
-        m.connectAutomatically = value
-    }
+    m.connectAutomatically = value
 }
 // SetConnectToPreferredNetwork sets the connectToPreferredNetwork property value. Specify whether the wifi connection should connect to more preferred networks when already connected to this one.  Requires ConnectAutomatically to be true.
 func (m *WindowsWifiConfiguration) SetConnectToPreferredNetwork(value *bool)() {
-    if m != nil {
-        m.connectToPreferredNetwork = value
-    }
+    m.connectToPreferredNetwork = value
 }
 // SetConnectWhenNetworkNameIsHidden sets the connectWhenNetworkNameIsHidden property value. Specify whether the wifi connection should connect automatically even when the SSID is not broadcasting.
 func (m *WindowsWifiConfiguration) SetConnectWhenNetworkNameIsHidden(value *bool)() {
-    if m != nil {
-        m.connectWhenNetworkNameIsHidden = value
-    }
+    m.connectWhenNetworkNameIsHidden = value
 }
 // SetForceFIPSCompliance sets the forceFIPSCompliance property value. Specify whether to force FIPS compliance.
 func (m *WindowsWifiConfiguration) SetForceFIPSCompliance(value *bool)() {
-    if m != nil {
-        m.forceFIPSCompliance = value
-    }
+    m.forceFIPSCompliance = value
 }
 // SetMeteredConnectionLimit sets the meteredConnectionLimit property value. Specify the metered connection limit type for the wifi connection. Possible values are: unrestricted, fixed, variable.
 func (m *WindowsWifiConfiguration) SetMeteredConnectionLimit(value *MeteredConnectionLimitType)() {
-    if m != nil {
-        m.meteredConnectionLimit = value
-    }
+    m.meteredConnectionLimit = value
 }
 // SetNetworkName sets the networkName property value. Specify the network configuration name.
 func (m *WindowsWifiConfiguration) SetNetworkName(value *string)() {
-    if m != nil {
-        m.networkName = value
-    }
+    m.networkName = value
 }
 // SetPreSharedKey sets the preSharedKey property value. This is the pre-shared key for WPA Personal Wi-Fi network.
 func (m *WindowsWifiConfiguration) SetPreSharedKey(value *string)() {
-    if m != nil {
-        m.preSharedKey = value
-    }
+    m.preSharedKey = value
 }
 // SetProxyAutomaticConfigurationUrl sets the proxyAutomaticConfigurationUrl property value. Specify the URL for the proxy server configuration script.
 func (m *WindowsWifiConfiguration) SetProxyAutomaticConfigurationUrl(value *string)() {
-    if m != nil {
-        m.proxyAutomaticConfigurationUrl = value
-    }
+    m.proxyAutomaticConfigurationUrl = value
 }
 // SetProxyManualAddress sets the proxyManualAddress property value. Specify the IP address for the proxy server.
 func (m *WindowsWifiConfiguration) SetProxyManualAddress(value *string)() {
-    if m != nil {
-        m.proxyManualAddress = value
-    }
+    m.proxyManualAddress = value
 }
 // SetProxyManualPort sets the proxyManualPort property value. Specify the port for the proxy server.
 func (m *WindowsWifiConfiguration) SetProxyManualPort(value *int32)() {
-    if m != nil {
-        m.proxyManualPort = value
-    }
+    m.proxyManualPort = value
 }
 // SetProxySetting sets the proxySetting property value. Specify the proxy setting for Wi-Fi configuration. Possible values are: none, manual, automatic.
 func (m *WindowsWifiConfiguration) SetProxySetting(value *WiFiProxySetting)() {
-    if m != nil {
-        m.proxySetting = value
-    }
+    m.proxySetting = value
 }
 // SetSsid sets the ssid property value. Specify the SSID of the wifi connection.
 func (m *WindowsWifiConfiguration) SetSsid(value *string)() {
-    if m != nil {
-        m.ssid = value
-    }
+    m.ssid = value
 }
 // SetWifiSecurityType sets the wifiSecurityType property value. Specify the Wifi Security Type. Possible values are: open, wpaPersonal, wpaEnterprise, wep, wpa2Personal, wpa2Enterprise.
 func (m *WindowsWifiConfiguration) SetWifiSecurityType(value *WiFiSecurityType)() {
-    if m != nil {
-        m.wifiSecurityType = value
-    }
+    m.wifiSecurityType = value
 }

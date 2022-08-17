@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// LookupResultRow provides operations to manage the collection of activityStatistics entities.
+// LookupResultRow provides operations to manage the collection of accessReviewDecision entities.
 type LookupResultRow struct {
     Entity
     // The row property
@@ -40,11 +40,7 @@ func (m *LookupResultRow) GetFieldDeserializers()(map[string]func(i878a80d2330e8
 }
 // GetRow gets the row property value. The row property
 func (m *LookupResultRow) GetRow()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.row
-    }
+    return m.row
 }
 // Serialize serializes information the current object
 func (m *LookupResultRow) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -62,7 +58,5 @@ func (m *LookupResultRow) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
 }
 // SetRow sets the row property value. The row property
 func (m *LookupResultRow) SetRow(value *string)() {
-    if m != nil {
-        m.row = value
-    }
+    m.row = value
 }

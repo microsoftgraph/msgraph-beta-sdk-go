@@ -32,11 +32,7 @@ func CreateValidationResultFromDiscriminatorValue(parseNode i878a80d2330e89d2689
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ValidationResult) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ValidationResult) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -85,35 +81,19 @@ func (m *ValidationResult) GetFieldDeserializers()(map[string]func(i878a80d2330e
 }
 // GetMessage gets the message property value. The string containing the reason for why the rule passed or not. Read-only. Not nullable.
 func (m *ValidationResult) GetMessage()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.message
-    }
+    return m.message
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *ValidationResult) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetRuleName gets the ruleName property value. The string containing the name of the password validation rule that the action was validated against. Read-only. Not nullable.
 func (m *ValidationResult) GetRuleName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.ruleName
-    }
+    return m.ruleName
 }
 // GetValidationPassed gets the validationPassed property value. Whether the password passed or failed the validation rule. Read-only. Not nullable.
 func (m *ValidationResult) GetValidationPassed()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.validationPassed
-    }
+    return m.validationPassed
 }
 // Serialize serializes information the current object
 func (m *ValidationResult) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -151,31 +131,21 @@ func (m *ValidationResult) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ValidationResult) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetMessage sets the message property value. The string containing the reason for why the rule passed or not. Read-only. Not nullable.
 func (m *ValidationResult) SetMessage(value *string)() {
-    if m != nil {
-        m.message = value
-    }
+    m.message = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *ValidationResult) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetRuleName sets the ruleName property value. The string containing the name of the password validation rule that the action was validated against. Read-only. Not nullable.
 func (m *ValidationResult) SetRuleName(value *string)() {
-    if m != nil {
-        m.ruleName = value
-    }
+    m.ruleName = value
 }
 // SetValidationPassed sets the validationPassed property value. Whether the password passed or failed the validation rule. Read-only. Not nullable.
 func (m *ValidationResult) SetValidationPassed(value *bool)() {
-    if m != nil {
-        m.validationPassed = value
-    }
+    m.validationPassed = value
 }

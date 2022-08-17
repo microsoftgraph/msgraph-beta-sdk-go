@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// SharedEmailDomain provides operations to manage the collection of activityStatistics entities.
+// SharedEmailDomain provides operations to manage the collection of accessReviewDecision entities.
 type SharedEmailDomain struct {
     Entity
     // The provisioningStatus property
@@ -40,11 +40,7 @@ func (m *SharedEmailDomain) GetFieldDeserializers()(map[string]func(i878a80d2330
 }
 // GetProvisioningStatus gets the provisioningStatus property value. The provisioningStatus property
 func (m *SharedEmailDomain) GetProvisioningStatus()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.provisioningStatus
-    }
+    return m.provisioningStatus
 }
 // Serialize serializes information the current object
 func (m *SharedEmailDomain) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -62,7 +58,5 @@ func (m *SharedEmailDomain) Serialize(writer i878a80d2330e89d26896388a3f487eef27
 }
 // SetProvisioningStatus sets the provisioningStatus property value. The provisioningStatus property
 func (m *SharedEmailDomain) SetProvisioningStatus(value *string)() {
-    if m != nil {
-        m.provisioningStatus = value
-    }
+    m.provisioningStatus = value
 }

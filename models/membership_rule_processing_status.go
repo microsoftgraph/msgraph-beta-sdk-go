@@ -33,19 +33,11 @@ func CreateMembershipRuleProcessingStatusFromDiscriminatorValue(parseNode i878a8
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *MembershipRuleProcessingStatus) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetErrorMessage gets the errorMessage property value. Detailed error message if dynamic group processing ran into an error.  Optional. Read-only.
 func (m *MembershipRuleProcessingStatus) GetErrorMessage()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.errorMessage
-    }
+    return m.errorMessage
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *MembershipRuleProcessingStatus) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -94,27 +86,15 @@ func (m *MembershipRuleProcessingStatus) GetFieldDeserializers()(map[string]func
 }
 // GetLastMembershipUpdated gets the lastMembershipUpdated property value. Most recent date and time when membership of a dynamic group was updated.  Optional. Read-only.
 func (m *MembershipRuleProcessingStatus) GetLastMembershipUpdated()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastMembershipUpdated
-    }
+    return m.lastMembershipUpdated
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *MembershipRuleProcessingStatus) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetStatus gets the status property value. Current status of a dynamic group processing. Possible values are: NotStarted, Running, Succeeded, Failed, and UnknownFutureValue.  Required. Read-only.
 func (m *MembershipRuleProcessingStatus) GetStatus()(*MembershipRuleProcessingStatusDetails) {
-    if m == nil {
-        return nil
-    } else {
-        return m.status
-    }
+    return m.status
 }
 // Serialize serializes information the current object
 func (m *MembershipRuleProcessingStatus) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -153,31 +133,21 @@ func (m *MembershipRuleProcessingStatus) Serialize(writer i878a80d2330e89d268963
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *MembershipRuleProcessingStatus) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetErrorMessage sets the errorMessage property value. Detailed error message if dynamic group processing ran into an error.  Optional. Read-only.
 func (m *MembershipRuleProcessingStatus) SetErrorMessage(value *string)() {
-    if m != nil {
-        m.errorMessage = value
-    }
+    m.errorMessage = value
 }
 // SetLastMembershipUpdated sets the lastMembershipUpdated property value. Most recent date and time when membership of a dynamic group was updated.  Optional. Read-only.
 func (m *MembershipRuleProcessingStatus) SetLastMembershipUpdated(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.lastMembershipUpdated = value
-    }
+    m.lastMembershipUpdated = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *MembershipRuleProcessingStatus) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetStatus sets the status property value. Current status of a dynamic group processing. Possible values are: NotStarted, Running, Succeeded, Failed, and UnknownFutureValue.  Required. Read-only.
 func (m *MembershipRuleProcessingStatus) SetStatus(value *MembershipRuleProcessingStatusDetails)() {
-    if m != nil {
-        m.status = value
-    }
+    m.status = value
 }

@@ -6,7 +6,7 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
-// DeviceCompliancePolicySettingStateSummary provides operations to manage the collection of activityStatistics entities.
+// DeviceCompliancePolicySettingStateSummary provides operations to manage the collection of accessReviewDecision entities.
 type DeviceCompliancePolicySettingStateSummary struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
     // The number of devices in a conflict state. Optional. Read-only.
@@ -51,27 +51,15 @@ func CreateDeviceCompliancePolicySettingStateSummaryFromDiscriminatorValue(parse
 }
 // GetConflictDeviceCount gets the conflictDeviceCount property value. The number of devices in a conflict state. Optional. Read-only.
 func (m *DeviceCompliancePolicySettingStateSummary) GetConflictDeviceCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.conflictDeviceCount
-    }
+    return m.conflictDeviceCount
 }
 // GetErrorDeviceCount gets the errorDeviceCount property value. The number of devices in an error state. Optional. Read-only.
 func (m *DeviceCompliancePolicySettingStateSummary) GetErrorDeviceCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.errorDeviceCount
-    }
+    return m.errorDeviceCount
 }
 // GetFailedDeviceCount gets the failedDeviceCount property value. The number of devices in a failed state. Optional. Read-only.
 func (m *DeviceCompliancePolicySettingStateSummary) GetFailedDeviceCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.failedDeviceCount
-    }
+    return m.failedDeviceCount
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceCompliancePolicySettingStateSummary) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -210,83 +198,43 @@ func (m *DeviceCompliancePolicySettingStateSummary) GetFieldDeserializers()(map[
 }
 // GetIntuneAccountId gets the intuneAccountId property value. The identifer for the Microsoft Intune account. Required. Read-only.
 func (m *DeviceCompliancePolicySettingStateSummary) GetIntuneAccountId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.intuneAccountId
-    }
+    return m.intuneAccountId
 }
 // GetIntuneSettingId gets the intuneSettingId property value. The identifier for the Intune setting. Optional. Read-only.
 func (m *DeviceCompliancePolicySettingStateSummary) GetIntuneSettingId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.intuneSettingId
-    }
+    return m.intuneSettingId
 }
 // GetLastRefreshedDateTime gets the lastRefreshedDateTime property value. Date and time the entity was last updated in the multi-tenant management platform. Optional. Read-only.
 func (m *DeviceCompliancePolicySettingStateSummary) GetLastRefreshedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastRefreshedDateTime
-    }
+    return m.lastRefreshedDateTime
 }
 // GetNotApplicableDeviceCount gets the notApplicableDeviceCount property value. The number of devices in a not applicable state. Optional. Read-only.
 func (m *DeviceCompliancePolicySettingStateSummary) GetNotApplicableDeviceCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.notApplicableDeviceCount
-    }
+    return m.notApplicableDeviceCount
 }
 // GetPendingDeviceCount gets the pendingDeviceCount property value. The number of devices in a pending state. Optional. Read-only.
 func (m *DeviceCompliancePolicySettingStateSummary) GetPendingDeviceCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.pendingDeviceCount
-    }
+    return m.pendingDeviceCount
 }
 // GetPolicyType gets the policyType property value. The type for the device compliance policy. Optional. Read-only.
 func (m *DeviceCompliancePolicySettingStateSummary) GetPolicyType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.policyType
-    }
+    return m.policyType
 }
 // GetSettingName gets the settingName property value. The name for the setting within the device compliance policy. Optional. Read-only.
 func (m *DeviceCompliancePolicySettingStateSummary) GetSettingName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.settingName
-    }
+    return m.settingName
 }
 // GetSucceededDeviceCount gets the succeededDeviceCount property value. The number of devices in a succeeded state. Optional. Read-only.
 func (m *DeviceCompliancePolicySettingStateSummary) GetSucceededDeviceCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.succeededDeviceCount
-    }
+    return m.succeededDeviceCount
 }
 // GetTenantDisplayName gets the tenantDisplayName property value. The display name for the managed tenant. Required. Read-only.
 func (m *DeviceCompliancePolicySettingStateSummary) GetTenantDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.tenantDisplayName
-    }
+    return m.tenantDisplayName
 }
 // GetTenantId gets the tenantId property value. The Azure Active Directory tenant identifier for the managed tenant. Required. Read-only.
 func (m *DeviceCompliancePolicySettingStateSummary) GetTenantId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.tenantId
-    }
+    return m.tenantId
 }
 // Serialize serializes information the current object
 func (m *DeviceCompliancePolicySettingStateSummary) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -376,79 +324,53 @@ func (m *DeviceCompliancePolicySettingStateSummary) Serialize(writer i878a80d233
 }
 // SetConflictDeviceCount sets the conflictDeviceCount property value. The number of devices in a conflict state. Optional. Read-only.
 func (m *DeviceCompliancePolicySettingStateSummary) SetConflictDeviceCount(value *int32)() {
-    if m != nil {
-        m.conflictDeviceCount = value
-    }
+    m.conflictDeviceCount = value
 }
 // SetErrorDeviceCount sets the errorDeviceCount property value. The number of devices in an error state. Optional. Read-only.
 func (m *DeviceCompliancePolicySettingStateSummary) SetErrorDeviceCount(value *int32)() {
-    if m != nil {
-        m.errorDeviceCount = value
-    }
+    m.errorDeviceCount = value
 }
 // SetFailedDeviceCount sets the failedDeviceCount property value. The number of devices in a failed state. Optional. Read-only.
 func (m *DeviceCompliancePolicySettingStateSummary) SetFailedDeviceCount(value *int32)() {
-    if m != nil {
-        m.failedDeviceCount = value
-    }
+    m.failedDeviceCount = value
 }
 // SetIntuneAccountId sets the intuneAccountId property value. The identifer for the Microsoft Intune account. Required. Read-only.
 func (m *DeviceCompliancePolicySettingStateSummary) SetIntuneAccountId(value *string)() {
-    if m != nil {
-        m.intuneAccountId = value
-    }
+    m.intuneAccountId = value
 }
 // SetIntuneSettingId sets the intuneSettingId property value. The identifier for the Intune setting. Optional. Read-only.
 func (m *DeviceCompliancePolicySettingStateSummary) SetIntuneSettingId(value *string)() {
-    if m != nil {
-        m.intuneSettingId = value
-    }
+    m.intuneSettingId = value
 }
 // SetLastRefreshedDateTime sets the lastRefreshedDateTime property value. Date and time the entity was last updated in the multi-tenant management platform. Optional. Read-only.
 func (m *DeviceCompliancePolicySettingStateSummary) SetLastRefreshedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.lastRefreshedDateTime = value
-    }
+    m.lastRefreshedDateTime = value
 }
 // SetNotApplicableDeviceCount sets the notApplicableDeviceCount property value. The number of devices in a not applicable state. Optional. Read-only.
 func (m *DeviceCompliancePolicySettingStateSummary) SetNotApplicableDeviceCount(value *int32)() {
-    if m != nil {
-        m.notApplicableDeviceCount = value
-    }
+    m.notApplicableDeviceCount = value
 }
 // SetPendingDeviceCount sets the pendingDeviceCount property value. The number of devices in a pending state. Optional. Read-only.
 func (m *DeviceCompliancePolicySettingStateSummary) SetPendingDeviceCount(value *int32)() {
-    if m != nil {
-        m.pendingDeviceCount = value
-    }
+    m.pendingDeviceCount = value
 }
 // SetPolicyType sets the policyType property value. The type for the device compliance policy. Optional. Read-only.
 func (m *DeviceCompliancePolicySettingStateSummary) SetPolicyType(value *string)() {
-    if m != nil {
-        m.policyType = value
-    }
+    m.policyType = value
 }
 // SetSettingName sets the settingName property value. The name for the setting within the device compliance policy. Optional. Read-only.
 func (m *DeviceCompliancePolicySettingStateSummary) SetSettingName(value *string)() {
-    if m != nil {
-        m.settingName = value
-    }
+    m.settingName = value
 }
 // SetSucceededDeviceCount sets the succeededDeviceCount property value. The number of devices in a succeeded state. Optional. Read-only.
 func (m *DeviceCompliancePolicySettingStateSummary) SetSucceededDeviceCount(value *int32)() {
-    if m != nil {
-        m.succeededDeviceCount = value
-    }
+    m.succeededDeviceCount = value
 }
 // SetTenantDisplayName sets the tenantDisplayName property value. The display name for the managed tenant. Required. Read-only.
 func (m *DeviceCompliancePolicySettingStateSummary) SetTenantDisplayName(value *string)() {
-    if m != nil {
-        m.tenantDisplayName = value
-    }
+    m.tenantDisplayName = value
 }
 // SetTenantId sets the tenantId property value. The Azure Active Directory tenant identifier for the managed tenant. Required. Read-only.
 func (m *DeviceCompliancePolicySettingStateSummary) SetTenantId(value *string)() {
-    if m != nil {
-        m.tenantId = value
-    }
+    m.tenantId = value
 }

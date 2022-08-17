@@ -56,43 +56,23 @@ func CreateFileSecurityProfileFromDiscriminatorValue(parseNode i878a80d2330e89d2
 }
 // GetActivityGroupNames gets the activityGroupNames property value. The activityGroupNames property
 func (m *FileSecurityProfile) GetActivityGroupNames()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.activityGroupNames
-    }
+    return m.activityGroupNames
 }
 // GetAzureSubscriptionId gets the azureSubscriptionId property value. The azureSubscriptionId property
 func (m *FileSecurityProfile) GetAzureSubscriptionId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.azureSubscriptionId
-    }
+    return m.azureSubscriptionId
 }
 // GetAzureTenantId gets the azureTenantId property value. The azureTenantId property
 func (m *FileSecurityProfile) GetAzureTenantId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.azureTenantId
-    }
+    return m.azureTenantId
 }
 // GetCertificateThumbprint gets the certificateThumbprint property value. The certificateThumbprint property
 func (m *FileSecurityProfile) GetCertificateThumbprint()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.certificateThumbprint
-    }
+    return m.certificateThumbprint
 }
 // GetExtensions gets the extensions property value. The extensions property
 func (m *FileSecurityProfile) GetExtensions()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.extensions
-    }
+    return m.extensions
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *FileSecurityProfile) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -289,91 +269,47 @@ func (m *FileSecurityProfile) GetFieldDeserializers()(map[string]func(i878a80d23
 }
 // GetFileType gets the fileType property value. The fileType property
 func (m *FileSecurityProfile) GetFileType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.fileType
-    }
+    return m.fileType
 }
 // GetFirstSeenDateTime gets the firstSeenDateTime property value. The firstSeenDateTime property
 func (m *FileSecurityProfile) GetFirstSeenDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.firstSeenDateTime
-    }
+    return m.firstSeenDateTime
 }
 // GetHashes gets the hashes property value. The hashes property
 func (m *FileSecurityProfile) GetHashes()([]FileHashable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.hashes
-    }
+    return m.hashes
 }
 // GetLastSeenDateTime gets the lastSeenDateTime property value. The lastSeenDateTime property
 func (m *FileSecurityProfile) GetLastSeenDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastSeenDateTime
-    }
+    return m.lastSeenDateTime
 }
 // GetMalwareStates gets the malwareStates property value. The malwareStates property
 func (m *FileSecurityProfile) GetMalwareStates()([]MalwareStateable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.malwareStates
-    }
+    return m.malwareStates
 }
 // GetNames gets the names property value. The names property
 func (m *FileSecurityProfile) GetNames()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.names
-    }
+    return m.names
 }
 // GetRiskScore gets the riskScore property value. The riskScore property
 func (m *FileSecurityProfile) GetRiskScore()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.riskScore
-    }
+    return m.riskScore
 }
 // GetSize gets the size property value. The size property
 func (m *FileSecurityProfile) GetSize()(*int64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.size
-    }
+    return m.size
 }
 // GetTags gets the tags property value. The tags property
 func (m *FileSecurityProfile) GetTags()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.tags
-    }
+    return m.tags
 }
 // GetVendorInformation gets the vendorInformation property value. The vendorInformation property
 func (m *FileSecurityProfile) GetVendorInformation()(SecurityVendorInformationable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.vendorInformation
-    }
+    return m.vendorInformation
 }
 // GetVulnerabilityStates gets the vulnerabilityStates property value. The vulnerabilityStates property
 func (m *FileSecurityProfile) GetVulnerabilityStates()([]VulnerabilityStateable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.vulnerabilityStates
-    }
+    return m.vulnerabilityStates
 }
 // Serialize serializes information the current object
 func (m *FileSecurityProfile) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -493,97 +429,65 @@ func (m *FileSecurityProfile) Serialize(writer i878a80d2330e89d26896388a3f487eef
 }
 // SetActivityGroupNames sets the activityGroupNames property value. The activityGroupNames property
 func (m *FileSecurityProfile) SetActivityGroupNames(value []string)() {
-    if m != nil {
-        m.activityGroupNames = value
-    }
+    m.activityGroupNames = value
 }
 // SetAzureSubscriptionId sets the azureSubscriptionId property value. The azureSubscriptionId property
 func (m *FileSecurityProfile) SetAzureSubscriptionId(value *string)() {
-    if m != nil {
-        m.azureSubscriptionId = value
-    }
+    m.azureSubscriptionId = value
 }
 // SetAzureTenantId sets the azureTenantId property value. The azureTenantId property
 func (m *FileSecurityProfile) SetAzureTenantId(value *string)() {
-    if m != nil {
-        m.azureTenantId = value
-    }
+    m.azureTenantId = value
 }
 // SetCertificateThumbprint sets the certificateThumbprint property value. The certificateThumbprint property
 func (m *FileSecurityProfile) SetCertificateThumbprint(value *string)() {
-    if m != nil {
-        m.certificateThumbprint = value
-    }
+    m.certificateThumbprint = value
 }
 // SetExtensions sets the extensions property value. The extensions property
 func (m *FileSecurityProfile) SetExtensions(value []string)() {
-    if m != nil {
-        m.extensions = value
-    }
+    m.extensions = value
 }
 // SetFileType sets the fileType property value. The fileType property
 func (m *FileSecurityProfile) SetFileType(value *string)() {
-    if m != nil {
-        m.fileType = value
-    }
+    m.fileType = value
 }
 // SetFirstSeenDateTime sets the firstSeenDateTime property value. The firstSeenDateTime property
 func (m *FileSecurityProfile) SetFirstSeenDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.firstSeenDateTime = value
-    }
+    m.firstSeenDateTime = value
 }
 // SetHashes sets the hashes property value. The hashes property
 func (m *FileSecurityProfile) SetHashes(value []FileHashable)() {
-    if m != nil {
-        m.hashes = value
-    }
+    m.hashes = value
 }
 // SetLastSeenDateTime sets the lastSeenDateTime property value. The lastSeenDateTime property
 func (m *FileSecurityProfile) SetLastSeenDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.lastSeenDateTime = value
-    }
+    m.lastSeenDateTime = value
 }
 // SetMalwareStates sets the malwareStates property value. The malwareStates property
 func (m *FileSecurityProfile) SetMalwareStates(value []MalwareStateable)() {
-    if m != nil {
-        m.malwareStates = value
-    }
+    m.malwareStates = value
 }
 // SetNames sets the names property value. The names property
 func (m *FileSecurityProfile) SetNames(value []string)() {
-    if m != nil {
-        m.names = value
-    }
+    m.names = value
 }
 // SetRiskScore sets the riskScore property value. The riskScore property
 func (m *FileSecurityProfile) SetRiskScore(value *string)() {
-    if m != nil {
-        m.riskScore = value
-    }
+    m.riskScore = value
 }
 // SetSize sets the size property value. The size property
 func (m *FileSecurityProfile) SetSize(value *int64)() {
-    if m != nil {
-        m.size = value
-    }
+    m.size = value
 }
 // SetTags sets the tags property value. The tags property
 func (m *FileSecurityProfile) SetTags(value []string)() {
-    if m != nil {
-        m.tags = value
-    }
+    m.tags = value
 }
 // SetVendorInformation sets the vendorInformation property value. The vendorInformation property
 func (m *FileSecurityProfile) SetVendorInformation(value SecurityVendorInformationable)() {
-    if m != nil {
-        m.vendorInformation = value
-    }
+    m.vendorInformation = value
 }
 // SetVulnerabilityStates sets the vulnerabilityStates property value. The vulnerabilityStates property
 func (m *FileSecurityProfile) SetVulnerabilityStates(value []VulnerabilityStateable)() {
-    if m != nil {
-        m.vulnerabilityStates = value
-    }
+    m.vulnerabilityStates = value
 }

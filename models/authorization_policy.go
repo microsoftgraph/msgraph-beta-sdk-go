@@ -43,67 +43,35 @@ func CreateAuthorizationPolicyFromDiscriminatorValue(parseNode i878a80d2330e89d2
 }
 // GetAllowedToSignUpEmailBasedSubscriptions gets the allowedToSignUpEmailBasedSubscriptions property value. Indicates whether users can sign up for email based subscriptions.
 func (m *AuthorizationPolicy) GetAllowedToSignUpEmailBasedSubscriptions()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.allowedToSignUpEmailBasedSubscriptions
-    }
+    return m.allowedToSignUpEmailBasedSubscriptions
 }
 // GetAllowedToUseSSPR gets the allowedToUseSSPR property value. Indicates whether the Self-Serve Password Reset feature can be used by users on the tenant.
 func (m *AuthorizationPolicy) GetAllowedToUseSSPR()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.allowedToUseSSPR
-    }
+    return m.allowedToUseSSPR
 }
 // GetAllowEmailVerifiedUsersToJoinOrganization gets the allowEmailVerifiedUsersToJoinOrganization property value. Indicates whether a user can join the tenant by email validation.
 func (m *AuthorizationPolicy) GetAllowEmailVerifiedUsersToJoinOrganization()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.allowEmailVerifiedUsersToJoinOrganization
-    }
+    return m.allowEmailVerifiedUsersToJoinOrganization
 }
 // GetAllowInvitesFrom gets the allowInvitesFrom property value. Indicates who can invite external users to the organization. Possible values are: none, adminsAndGuestInviters, adminsGuestInvitersAndAllMembers, everyone.  everyone is the default setting for all cloud environments except US Government. See more in the table below.
 func (m *AuthorizationPolicy) GetAllowInvitesFrom()(*AllowInvitesFrom) {
-    if m == nil {
-        return nil
-    } else {
-        return m.allowInvitesFrom
-    }
+    return m.allowInvitesFrom
 }
 // GetBlockMsolPowerShell gets the blockMsolPowerShell property value. To disable the use of MSOL PowerShell set this property to true. This will also disable user-based access to the legacy service endpoint used by MSOL PowerShell. This does not affect Azure AD Connect or Microsoft Graph.
 func (m *AuthorizationPolicy) GetBlockMsolPowerShell()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.blockMsolPowerShell
-    }
+    return m.blockMsolPowerShell
 }
 // GetDefaultUserRoleOverrides gets the defaultUserRoleOverrides property value. The defaultUserRoleOverrides property
 func (m *AuthorizationPolicy) GetDefaultUserRoleOverrides()([]DefaultUserRoleOverrideable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.defaultUserRoleOverrides
-    }
+    return m.defaultUserRoleOverrides
 }
 // GetDefaultUserRolePermissions gets the defaultUserRolePermissions property value. The defaultUserRolePermissions property
 func (m *AuthorizationPolicy) GetDefaultUserRolePermissions()(DefaultUserRolePermissionsable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.defaultUserRolePermissions
-    }
+    return m.defaultUserRolePermissions
 }
 // GetEnabledPreviewFeatures gets the enabledPreviewFeatures property value. List of features enabled for private preview on the tenant.
 func (m *AuthorizationPolicy) GetEnabledPreviewFeatures()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.enabledPreviewFeatures
-    }
+    return m.enabledPreviewFeatures
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AuthorizationPolicy) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -224,19 +192,11 @@ func (m *AuthorizationPolicy) GetFieldDeserializers()(map[string]func(i878a80d23
 }
 // GetGuestUserRoleId gets the guestUserRoleId property value. Represents role templateId for the role that should be granted to guest user. Refer to List unifiedRoleDefinitions to find the list of available role templates. Currently following roles are supported:  User (a0b1b346-4d3e-4e8b-98f8-753987be4970), Guest User (10dae51f-b6af-4016-8d66-8c2a99b929b3), and Restricted Guest User (2af84b1e-32c8-42b7-82bc-daa82404023b).
 func (m *AuthorizationPolicy) GetGuestUserRoleId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.guestUserRoleId
-    }
+    return m.guestUserRoleId
 }
 // GetPermissionGrantPolicyIdsAssignedToDefaultUserRole gets the permissionGrantPolicyIdsAssignedToDefaultUserRole property value. Indicates if user consent to apps is allowed, and if it is, which app consent policy (permissionGrantPolicy) governs the permission for users to grant consent. Values should be in the format managePermissionGrantsForSelf.{id}, where {id} is the id of a built-in or custom app consent policy. An empty list indicates user consent to apps is disabled.
 func (m *AuthorizationPolicy) GetPermissionGrantPolicyIdsAssignedToDefaultUserRole()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.permissionGrantPolicyIdsAssignedToDefaultUserRole
-    }
+    return m.permissionGrantPolicyIdsAssignedToDefaultUserRole
 }
 // Serialize serializes information the current object
 func (m *AuthorizationPolicy) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -313,61 +273,41 @@ func (m *AuthorizationPolicy) Serialize(writer i878a80d2330e89d26896388a3f487eef
 }
 // SetAllowedToSignUpEmailBasedSubscriptions sets the allowedToSignUpEmailBasedSubscriptions property value. Indicates whether users can sign up for email based subscriptions.
 func (m *AuthorizationPolicy) SetAllowedToSignUpEmailBasedSubscriptions(value *bool)() {
-    if m != nil {
-        m.allowedToSignUpEmailBasedSubscriptions = value
-    }
+    m.allowedToSignUpEmailBasedSubscriptions = value
 }
 // SetAllowedToUseSSPR sets the allowedToUseSSPR property value. Indicates whether the Self-Serve Password Reset feature can be used by users on the tenant.
 func (m *AuthorizationPolicy) SetAllowedToUseSSPR(value *bool)() {
-    if m != nil {
-        m.allowedToUseSSPR = value
-    }
+    m.allowedToUseSSPR = value
 }
 // SetAllowEmailVerifiedUsersToJoinOrganization sets the allowEmailVerifiedUsersToJoinOrganization property value. Indicates whether a user can join the tenant by email validation.
 func (m *AuthorizationPolicy) SetAllowEmailVerifiedUsersToJoinOrganization(value *bool)() {
-    if m != nil {
-        m.allowEmailVerifiedUsersToJoinOrganization = value
-    }
+    m.allowEmailVerifiedUsersToJoinOrganization = value
 }
 // SetAllowInvitesFrom sets the allowInvitesFrom property value. Indicates who can invite external users to the organization. Possible values are: none, adminsAndGuestInviters, adminsGuestInvitersAndAllMembers, everyone.  everyone is the default setting for all cloud environments except US Government. See more in the table below.
 func (m *AuthorizationPolicy) SetAllowInvitesFrom(value *AllowInvitesFrom)() {
-    if m != nil {
-        m.allowInvitesFrom = value
-    }
+    m.allowInvitesFrom = value
 }
 // SetBlockMsolPowerShell sets the blockMsolPowerShell property value. To disable the use of MSOL PowerShell set this property to true. This will also disable user-based access to the legacy service endpoint used by MSOL PowerShell. This does not affect Azure AD Connect or Microsoft Graph.
 func (m *AuthorizationPolicy) SetBlockMsolPowerShell(value *bool)() {
-    if m != nil {
-        m.blockMsolPowerShell = value
-    }
+    m.blockMsolPowerShell = value
 }
 // SetDefaultUserRoleOverrides sets the defaultUserRoleOverrides property value. The defaultUserRoleOverrides property
 func (m *AuthorizationPolicy) SetDefaultUserRoleOverrides(value []DefaultUserRoleOverrideable)() {
-    if m != nil {
-        m.defaultUserRoleOverrides = value
-    }
+    m.defaultUserRoleOverrides = value
 }
 // SetDefaultUserRolePermissions sets the defaultUserRolePermissions property value. The defaultUserRolePermissions property
 func (m *AuthorizationPolicy) SetDefaultUserRolePermissions(value DefaultUserRolePermissionsable)() {
-    if m != nil {
-        m.defaultUserRolePermissions = value
-    }
+    m.defaultUserRolePermissions = value
 }
 // SetEnabledPreviewFeatures sets the enabledPreviewFeatures property value. List of features enabled for private preview on the tenant.
 func (m *AuthorizationPolicy) SetEnabledPreviewFeatures(value []string)() {
-    if m != nil {
-        m.enabledPreviewFeatures = value
-    }
+    m.enabledPreviewFeatures = value
 }
 // SetGuestUserRoleId sets the guestUserRoleId property value. Represents role templateId for the role that should be granted to guest user. Refer to List unifiedRoleDefinitions to find the list of available role templates. Currently following roles are supported:  User (a0b1b346-4d3e-4e8b-98f8-753987be4970), Guest User (10dae51f-b6af-4016-8d66-8c2a99b929b3), and Restricted Guest User (2af84b1e-32c8-42b7-82bc-daa82404023b).
 func (m *AuthorizationPolicy) SetGuestUserRoleId(value *string)() {
-    if m != nil {
-        m.guestUserRoleId = value
-    }
+    m.guestUserRoleId = value
 }
 // SetPermissionGrantPolicyIdsAssignedToDefaultUserRole sets the permissionGrantPolicyIdsAssignedToDefaultUserRole property value. Indicates if user consent to apps is allowed, and if it is, which app consent policy (permissionGrantPolicy) governs the permission for users to grant consent. Values should be in the format managePermissionGrantsForSelf.{id}, where {id} is the id of a built-in or custom app consent policy. An empty list indicates user consent to apps is disabled.
 func (m *AuthorizationPolicy) SetPermissionGrantPolicyIdsAssignedToDefaultUserRole(value []string)() {
-    if m != nil {
-        m.permissionGrantPolicyIdsAssignedToDefaultUserRole = value
-    }
+    m.permissionGrantPolicyIdsAssignedToDefaultUserRole = value
 }

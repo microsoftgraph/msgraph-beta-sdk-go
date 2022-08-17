@@ -44,11 +44,7 @@ func (m *UnmanagedDeviceDiscoveryTask) GetFieldDeserializers()(map[string]func(i
 }
 // GetUnmanagedDevices gets the unmanagedDevices property value. Unmanaged devices discovered in the network.
 func (m *UnmanagedDeviceDiscoveryTask) GetUnmanagedDevices()([]UnmanagedDeviceable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.unmanagedDevices
-    }
+    return m.unmanagedDevices
 }
 // Serialize serializes information the current object
 func (m *UnmanagedDeviceDiscoveryTask) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -70,7 +66,5 @@ func (m *UnmanagedDeviceDiscoveryTask) Serialize(writer i878a80d2330e89d26896388
 }
 // SetUnmanagedDevices sets the unmanagedDevices property value. Unmanaged devices discovered in the network.
 func (m *UnmanagedDeviceDiscoveryTask) SetUnmanagedDevices(value []UnmanagedDeviceable)() {
-    if m != nil {
-        m.unmanagedDevices = value
-    }
+    m.unmanagedDevices = value
 }

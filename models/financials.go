@@ -28,19 +28,11 @@ func CreateFinancialsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *Financials) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetCompanies gets the companies property value. The companies property
 func (m *Financials) GetCompanies()([]Companyable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.companies
-    }
+    return m.companies
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Financials) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -73,11 +65,7 @@ func (m *Financials) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *Financials) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // Serialize serializes information the current object
 func (m *Financials) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -107,19 +95,13 @@ func (m *Financials) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *Financials) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetCompanies sets the companies property value. The companies property
 func (m *Financials) SetCompanies(value []Companyable)() {
-    if m != nil {
-        m.companies = value
-    }
+    m.companies = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *Financials) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }

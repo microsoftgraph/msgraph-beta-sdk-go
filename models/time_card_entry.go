@@ -32,35 +32,19 @@ func CreateTimeCardEntryFromDiscriminatorValue(parseNode i878a80d2330e89d2689638
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TimeCardEntry) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetBreaks gets the breaks property value. The list of breaks associated with the timeCard.
 func (m *TimeCardEntry) GetBreaks()([]TimeCardBreakable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.breaks
-    }
+    return m.breaks
 }
 // GetClockInEvent gets the clockInEvent property value. The clock-in event of the timeCard.
 func (m *TimeCardEntry) GetClockInEvent()(TimeCardEventable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.clockInEvent
-    }
+    return m.clockInEvent
 }
 // GetClockOutEvent gets the clockOutEvent property value. The clock-out event of the timeCard.
 func (m *TimeCardEntry) GetClockOutEvent()(TimeCardEventable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.clockOutEvent
-    }
+    return m.clockOutEvent
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *TimeCardEntry) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -113,11 +97,7 @@ func (m *TimeCardEntry) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *TimeCardEntry) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // Serialize serializes information the current object
 func (m *TimeCardEntry) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -159,31 +139,21 @@ func (m *TimeCardEntry) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TimeCardEntry) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetBreaks sets the breaks property value. The list of breaks associated with the timeCard.
 func (m *TimeCardEntry) SetBreaks(value []TimeCardBreakable)() {
-    if m != nil {
-        m.breaks = value
-    }
+    m.breaks = value
 }
 // SetClockInEvent sets the clockInEvent property value. The clock-in event of the timeCard.
 func (m *TimeCardEntry) SetClockInEvent(value TimeCardEventable)() {
-    if m != nil {
-        m.clockInEvent = value
-    }
+    m.clockInEvent = value
 }
 // SetClockOutEvent sets the clockOutEvent property value. The clock-out event of the timeCard.
 func (m *TimeCardEntry) SetClockOutEvent(value TimeCardEventable)() {
-    if m != nil {
-        m.clockOutEvent = value
-    }
+    m.clockOutEvent = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *TimeCardEntry) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }

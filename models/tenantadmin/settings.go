@@ -82,35 +82,19 @@ func CreateSettingsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f4
 }
 // GetAllowedDomainGuidsForSyncApp gets the allowedDomainGuidsForSyncApp property value. Collection of trusted domain GUIDs for the OneDrive sync app.
 func (m *Settings) GetAllowedDomainGuidsForSyncApp()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.allowedDomainGuidsForSyncApp
-    }
+    return m.allowedDomainGuidsForSyncApp
 }
 // GetAvailableManagedPathsForSiteCreation gets the availableManagedPathsForSiteCreation property value. Collection of managed paths available for site creation. Read-only.
 func (m *Settings) GetAvailableManagedPathsForSiteCreation()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.availableManagedPathsForSiteCreation
-    }
+    return m.availableManagedPathsForSiteCreation
 }
 // GetDeletedUserPersonalSiteRetentionPeriodInDays gets the deletedUserPersonalSiteRetentionPeriodInDays property value. The number of days for preserving a deleted user's OneDrive.
 func (m *Settings) GetDeletedUserPersonalSiteRetentionPeriodInDays()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deletedUserPersonalSiteRetentionPeriodInDays
-    }
+    return m.deletedUserPersonalSiteRetentionPeriodInDays
 }
 // GetExcludedFileExtensionsForSyncApp gets the excludedFileExtensionsForSyncApp property value. Collection of file extensions not uploaded by the OneDrive sync app.
 func (m *Settings) GetExcludedFileExtensionsForSyncApp()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.excludedFileExtensionsForSyncApp
-    }
+    return m.excludedFileExtensionsForSyncApp
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Settings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -429,203 +413,103 @@ func (m *Settings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
 }
 // GetIdleSessionSignOut gets the idleSessionSignOut property value. Specifies the idle session sign-out policies for the tenant.
 func (m *Settings) GetIdleSessionSignOut()(IdleSessionSignOutable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.idleSessionSignOut
-    }
+    return m.idleSessionSignOut
 }
 // GetImageTaggingOption gets the imageTaggingOption property value. Specifies the image tagging option for the tenant. Possible values are: disabled, basic, enhanced.
 func (m *Settings) GetImageTaggingOption()(*ImageTaggingChoice) {
-    if m == nil {
-        return nil
-    } else {
-        return m.imageTaggingOption
-    }
+    return m.imageTaggingOption
 }
 // GetIsCommentingOnSitePagesEnabled gets the isCommentingOnSitePagesEnabled property value. Indicates whether comments are allowed on modern site pages in SharePoint.
 func (m *Settings) GetIsCommentingOnSitePagesEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isCommentingOnSitePagesEnabled
-    }
+    return m.isCommentingOnSitePagesEnabled
 }
 // GetIsFileActivityNotificationEnabled gets the isFileActivityNotificationEnabled property value. Indicates whether push notifications are enabled for OneDrive events.
 func (m *Settings) GetIsFileActivityNotificationEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isFileActivityNotificationEnabled
-    }
+    return m.isFileActivityNotificationEnabled
 }
 // GetIsLegacyAuthProtocolsEnabled gets the isLegacyAuthProtocolsEnabled property value. Indicates whether legacy authentication protocols are enabled for the tenant.
 func (m *Settings) GetIsLegacyAuthProtocolsEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isLegacyAuthProtocolsEnabled
-    }
+    return m.isLegacyAuthProtocolsEnabled
 }
 // GetIsLoopEnabled gets the isLoopEnabled property value. Indicates whetherif Fluid Framework is allowed on SharePoint sites.
 func (m *Settings) GetIsLoopEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isLoopEnabled
-    }
+    return m.isLoopEnabled
 }
 // GetIsMacSyncAppEnabled gets the isMacSyncAppEnabled property value. Indicates whether files can be synced using the OneDrive sync app for Mac.
 func (m *Settings) GetIsMacSyncAppEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isMacSyncAppEnabled
-    }
+    return m.isMacSyncAppEnabled
 }
 // GetIsRequireAcceptingUserToMatchInvitedUserEnabled gets the isRequireAcceptingUserToMatchInvitedUserEnabled property value. Indicates whether guests must sign in using the same account to which sharing invitations are sent.
 func (m *Settings) GetIsRequireAcceptingUserToMatchInvitedUserEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isRequireAcceptingUserToMatchInvitedUserEnabled
-    }
+    return m.isRequireAcceptingUserToMatchInvitedUserEnabled
 }
 // GetIsResharingByExternalUsersEnabled gets the isResharingByExternalUsersEnabled property value. Indicates whether guests are allowed to reshare files, folders, and sites they don't own.
 func (m *Settings) GetIsResharingByExternalUsersEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isResharingByExternalUsersEnabled
-    }
+    return m.isResharingByExternalUsersEnabled
 }
 // GetIsSharePointMobileNotificationEnabled gets the isSharePointMobileNotificationEnabled property value. Indicates whether mobile push notifications are enabled for SharePoint.
 func (m *Settings) GetIsSharePointMobileNotificationEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isSharePointMobileNotificationEnabled
-    }
+    return m.isSharePointMobileNotificationEnabled
 }
 // GetIsSharePointNewsfeedEnabled gets the isSharePointNewsfeedEnabled property value. Indicates whether the newsfeed is allowed on the modern site pages in SharePoint.
 func (m *Settings) GetIsSharePointNewsfeedEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isSharePointNewsfeedEnabled
-    }
+    return m.isSharePointNewsfeedEnabled
 }
 // GetIsSiteCreationEnabled gets the isSiteCreationEnabled property value. Indicates whether users are allowed to create sites.
 func (m *Settings) GetIsSiteCreationEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isSiteCreationEnabled
-    }
+    return m.isSiteCreationEnabled
 }
 // GetIsSiteCreationUIEnabled gets the isSiteCreationUIEnabled property value. Indicates whether the UI commands for creating sites are shown.
 func (m *Settings) GetIsSiteCreationUIEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isSiteCreationUIEnabled
-    }
+    return m.isSiteCreationUIEnabled
 }
 // GetIsSitePagesCreationEnabled gets the isSitePagesCreationEnabled property value. Indicates whether creating new modern pages is allowed on SharePoint sites.
 func (m *Settings) GetIsSitePagesCreationEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isSitePagesCreationEnabled
-    }
+    return m.isSitePagesCreationEnabled
 }
 // GetIsSitesStorageLimitAutomatic gets the isSitesStorageLimitAutomatic property value. Indicates whether site storage space is automatically managed or if specific storage limits are set per site.
 func (m *Settings) GetIsSitesStorageLimitAutomatic()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isSitesStorageLimitAutomatic
-    }
+    return m.isSitesStorageLimitAutomatic
 }
 // GetIsSyncButtonHiddenOnPersonalSite gets the isSyncButtonHiddenOnPersonalSite property value. Indicates whether the sync button in OneDrive is hidden.
 func (m *Settings) GetIsSyncButtonHiddenOnPersonalSite()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isSyncButtonHiddenOnPersonalSite
-    }
+    return m.isSyncButtonHiddenOnPersonalSite
 }
 // GetIsUnmanagedSyncAppForTenantRestricted gets the isUnmanagedSyncAppForTenantRestricted property value. Indicates whether users are allowed to sync files only on PCs joined to specific domains.
 func (m *Settings) GetIsUnmanagedSyncAppForTenantRestricted()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isUnmanagedSyncAppForTenantRestricted
-    }
+    return m.isUnmanagedSyncAppForTenantRestricted
 }
 // GetPersonalSiteDefaultStorageLimitInMB gets the personalSiteDefaultStorageLimitInMB property value. The default OneDrive storage limit for all new and existing users who are assigned a qualifying license. Measured in megabytes (MB).
 func (m *Settings) GetPersonalSiteDefaultStorageLimitInMB()(*int64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.personalSiteDefaultStorageLimitInMB
-    }
+    return m.personalSiteDefaultStorageLimitInMB
 }
 // GetSharingAllowedDomainList gets the sharingAllowedDomainList property value. Collection of email domains that are allowed for sharing outside the organization.
 func (m *Settings) GetSharingAllowedDomainList()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.sharingAllowedDomainList
-    }
+    return m.sharingAllowedDomainList
 }
 // GetSharingBlockedDomainList gets the sharingBlockedDomainList property value. Collection of email domains that are blocked for sharing outside the organization.
 func (m *Settings) GetSharingBlockedDomainList()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.sharingBlockedDomainList
-    }
+    return m.sharingBlockedDomainList
 }
 // GetSharingCapability gets the sharingCapability property value. Sharing capability for the tenant. Possible values are: disabled, externalUserSharingOnly, externalUserAndGuestSharing, existingExternalUserSharingOnly.
 func (m *Settings) GetSharingCapability()(*SharingCapabilities) {
-    if m == nil {
-        return nil
-    } else {
-        return m.sharingCapability
-    }
+    return m.sharingCapability
 }
 // GetSharingDomainRestrictionMode gets the sharingDomainRestrictionMode property value. Specifies the external sharing mode for domains. Possible values are: none, allowList, blockList.
 func (m *Settings) GetSharingDomainRestrictionMode()(*SharingDomainRestrictionMode) {
-    if m == nil {
-        return nil
-    } else {
-        return m.sharingDomainRestrictionMode
-    }
+    return m.sharingDomainRestrictionMode
 }
 // GetSiteCreationDefaultManagedPath gets the siteCreationDefaultManagedPath property value. The value of the team site managed path. This is the path under which new team sites will be created.
 func (m *Settings) GetSiteCreationDefaultManagedPath()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.siteCreationDefaultManagedPath
-    }
+    return m.siteCreationDefaultManagedPath
 }
 // GetSiteCreationDefaultStorageLimitInMB gets the siteCreationDefaultStorageLimitInMB property value. The default storage quota for a new site upon creation. Measured in megabytes (MB).
 func (m *Settings) GetSiteCreationDefaultStorageLimitInMB()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.siteCreationDefaultStorageLimitInMB
-    }
+    return m.siteCreationDefaultStorageLimitInMB
 }
 // GetTenantDefaultTimezone gets the tenantDefaultTimezone property value. The default timezone of a tenant for newly created sites.
 func (m *Settings) GetTenantDefaultTimezone()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.tenantDefaultTimezone
-    }
+    return m.tenantDefaultTimezone
 }
 // Serialize serializes information the current object
 func (m *Settings) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -814,175 +698,117 @@ func (m *Settings) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
 }
 // SetAllowedDomainGuidsForSyncApp sets the allowedDomainGuidsForSyncApp property value. Collection of trusted domain GUIDs for the OneDrive sync app.
 func (m *Settings) SetAllowedDomainGuidsForSyncApp(value []string)() {
-    if m != nil {
-        m.allowedDomainGuidsForSyncApp = value
-    }
+    m.allowedDomainGuidsForSyncApp = value
 }
 // SetAvailableManagedPathsForSiteCreation sets the availableManagedPathsForSiteCreation property value. Collection of managed paths available for site creation. Read-only.
 func (m *Settings) SetAvailableManagedPathsForSiteCreation(value []string)() {
-    if m != nil {
-        m.availableManagedPathsForSiteCreation = value
-    }
+    m.availableManagedPathsForSiteCreation = value
 }
 // SetDeletedUserPersonalSiteRetentionPeriodInDays sets the deletedUserPersonalSiteRetentionPeriodInDays property value. The number of days for preserving a deleted user's OneDrive.
 func (m *Settings) SetDeletedUserPersonalSiteRetentionPeriodInDays(value *int32)() {
-    if m != nil {
-        m.deletedUserPersonalSiteRetentionPeriodInDays = value
-    }
+    m.deletedUserPersonalSiteRetentionPeriodInDays = value
 }
 // SetExcludedFileExtensionsForSyncApp sets the excludedFileExtensionsForSyncApp property value. Collection of file extensions not uploaded by the OneDrive sync app.
 func (m *Settings) SetExcludedFileExtensionsForSyncApp(value []string)() {
-    if m != nil {
-        m.excludedFileExtensionsForSyncApp = value
-    }
+    m.excludedFileExtensionsForSyncApp = value
 }
 // SetIdleSessionSignOut sets the idleSessionSignOut property value. Specifies the idle session sign-out policies for the tenant.
 func (m *Settings) SetIdleSessionSignOut(value IdleSessionSignOutable)() {
-    if m != nil {
-        m.idleSessionSignOut = value
-    }
+    m.idleSessionSignOut = value
 }
 // SetImageTaggingOption sets the imageTaggingOption property value. Specifies the image tagging option for the tenant. Possible values are: disabled, basic, enhanced.
 func (m *Settings) SetImageTaggingOption(value *ImageTaggingChoice)() {
-    if m != nil {
-        m.imageTaggingOption = value
-    }
+    m.imageTaggingOption = value
 }
 // SetIsCommentingOnSitePagesEnabled sets the isCommentingOnSitePagesEnabled property value. Indicates whether comments are allowed on modern site pages in SharePoint.
 func (m *Settings) SetIsCommentingOnSitePagesEnabled(value *bool)() {
-    if m != nil {
-        m.isCommentingOnSitePagesEnabled = value
-    }
+    m.isCommentingOnSitePagesEnabled = value
 }
 // SetIsFileActivityNotificationEnabled sets the isFileActivityNotificationEnabled property value. Indicates whether push notifications are enabled for OneDrive events.
 func (m *Settings) SetIsFileActivityNotificationEnabled(value *bool)() {
-    if m != nil {
-        m.isFileActivityNotificationEnabled = value
-    }
+    m.isFileActivityNotificationEnabled = value
 }
 // SetIsLegacyAuthProtocolsEnabled sets the isLegacyAuthProtocolsEnabled property value. Indicates whether legacy authentication protocols are enabled for the tenant.
 func (m *Settings) SetIsLegacyAuthProtocolsEnabled(value *bool)() {
-    if m != nil {
-        m.isLegacyAuthProtocolsEnabled = value
-    }
+    m.isLegacyAuthProtocolsEnabled = value
 }
 // SetIsLoopEnabled sets the isLoopEnabled property value. Indicates whetherif Fluid Framework is allowed on SharePoint sites.
 func (m *Settings) SetIsLoopEnabled(value *bool)() {
-    if m != nil {
-        m.isLoopEnabled = value
-    }
+    m.isLoopEnabled = value
 }
 // SetIsMacSyncAppEnabled sets the isMacSyncAppEnabled property value. Indicates whether files can be synced using the OneDrive sync app for Mac.
 func (m *Settings) SetIsMacSyncAppEnabled(value *bool)() {
-    if m != nil {
-        m.isMacSyncAppEnabled = value
-    }
+    m.isMacSyncAppEnabled = value
 }
 // SetIsRequireAcceptingUserToMatchInvitedUserEnabled sets the isRequireAcceptingUserToMatchInvitedUserEnabled property value. Indicates whether guests must sign in using the same account to which sharing invitations are sent.
 func (m *Settings) SetIsRequireAcceptingUserToMatchInvitedUserEnabled(value *bool)() {
-    if m != nil {
-        m.isRequireAcceptingUserToMatchInvitedUserEnabled = value
-    }
+    m.isRequireAcceptingUserToMatchInvitedUserEnabled = value
 }
 // SetIsResharingByExternalUsersEnabled sets the isResharingByExternalUsersEnabled property value. Indicates whether guests are allowed to reshare files, folders, and sites they don't own.
 func (m *Settings) SetIsResharingByExternalUsersEnabled(value *bool)() {
-    if m != nil {
-        m.isResharingByExternalUsersEnabled = value
-    }
+    m.isResharingByExternalUsersEnabled = value
 }
 // SetIsSharePointMobileNotificationEnabled sets the isSharePointMobileNotificationEnabled property value. Indicates whether mobile push notifications are enabled for SharePoint.
 func (m *Settings) SetIsSharePointMobileNotificationEnabled(value *bool)() {
-    if m != nil {
-        m.isSharePointMobileNotificationEnabled = value
-    }
+    m.isSharePointMobileNotificationEnabled = value
 }
 // SetIsSharePointNewsfeedEnabled sets the isSharePointNewsfeedEnabled property value. Indicates whether the newsfeed is allowed on the modern site pages in SharePoint.
 func (m *Settings) SetIsSharePointNewsfeedEnabled(value *bool)() {
-    if m != nil {
-        m.isSharePointNewsfeedEnabled = value
-    }
+    m.isSharePointNewsfeedEnabled = value
 }
 // SetIsSiteCreationEnabled sets the isSiteCreationEnabled property value. Indicates whether users are allowed to create sites.
 func (m *Settings) SetIsSiteCreationEnabled(value *bool)() {
-    if m != nil {
-        m.isSiteCreationEnabled = value
-    }
+    m.isSiteCreationEnabled = value
 }
 // SetIsSiteCreationUIEnabled sets the isSiteCreationUIEnabled property value. Indicates whether the UI commands for creating sites are shown.
 func (m *Settings) SetIsSiteCreationUIEnabled(value *bool)() {
-    if m != nil {
-        m.isSiteCreationUIEnabled = value
-    }
+    m.isSiteCreationUIEnabled = value
 }
 // SetIsSitePagesCreationEnabled sets the isSitePagesCreationEnabled property value. Indicates whether creating new modern pages is allowed on SharePoint sites.
 func (m *Settings) SetIsSitePagesCreationEnabled(value *bool)() {
-    if m != nil {
-        m.isSitePagesCreationEnabled = value
-    }
+    m.isSitePagesCreationEnabled = value
 }
 // SetIsSitesStorageLimitAutomatic sets the isSitesStorageLimitAutomatic property value. Indicates whether site storage space is automatically managed or if specific storage limits are set per site.
 func (m *Settings) SetIsSitesStorageLimitAutomatic(value *bool)() {
-    if m != nil {
-        m.isSitesStorageLimitAutomatic = value
-    }
+    m.isSitesStorageLimitAutomatic = value
 }
 // SetIsSyncButtonHiddenOnPersonalSite sets the isSyncButtonHiddenOnPersonalSite property value. Indicates whether the sync button in OneDrive is hidden.
 func (m *Settings) SetIsSyncButtonHiddenOnPersonalSite(value *bool)() {
-    if m != nil {
-        m.isSyncButtonHiddenOnPersonalSite = value
-    }
+    m.isSyncButtonHiddenOnPersonalSite = value
 }
 // SetIsUnmanagedSyncAppForTenantRestricted sets the isUnmanagedSyncAppForTenantRestricted property value. Indicates whether users are allowed to sync files only on PCs joined to specific domains.
 func (m *Settings) SetIsUnmanagedSyncAppForTenantRestricted(value *bool)() {
-    if m != nil {
-        m.isUnmanagedSyncAppForTenantRestricted = value
-    }
+    m.isUnmanagedSyncAppForTenantRestricted = value
 }
 // SetPersonalSiteDefaultStorageLimitInMB sets the personalSiteDefaultStorageLimitInMB property value. The default OneDrive storage limit for all new and existing users who are assigned a qualifying license. Measured in megabytes (MB).
 func (m *Settings) SetPersonalSiteDefaultStorageLimitInMB(value *int64)() {
-    if m != nil {
-        m.personalSiteDefaultStorageLimitInMB = value
-    }
+    m.personalSiteDefaultStorageLimitInMB = value
 }
 // SetSharingAllowedDomainList sets the sharingAllowedDomainList property value. Collection of email domains that are allowed for sharing outside the organization.
 func (m *Settings) SetSharingAllowedDomainList(value []string)() {
-    if m != nil {
-        m.sharingAllowedDomainList = value
-    }
+    m.sharingAllowedDomainList = value
 }
 // SetSharingBlockedDomainList sets the sharingBlockedDomainList property value. Collection of email domains that are blocked for sharing outside the organization.
 func (m *Settings) SetSharingBlockedDomainList(value []string)() {
-    if m != nil {
-        m.sharingBlockedDomainList = value
-    }
+    m.sharingBlockedDomainList = value
 }
 // SetSharingCapability sets the sharingCapability property value. Sharing capability for the tenant. Possible values are: disabled, externalUserSharingOnly, externalUserAndGuestSharing, existingExternalUserSharingOnly.
 func (m *Settings) SetSharingCapability(value *SharingCapabilities)() {
-    if m != nil {
-        m.sharingCapability = value
-    }
+    m.sharingCapability = value
 }
 // SetSharingDomainRestrictionMode sets the sharingDomainRestrictionMode property value. Specifies the external sharing mode for domains. Possible values are: none, allowList, blockList.
 func (m *Settings) SetSharingDomainRestrictionMode(value *SharingDomainRestrictionMode)() {
-    if m != nil {
-        m.sharingDomainRestrictionMode = value
-    }
+    m.sharingDomainRestrictionMode = value
 }
 // SetSiteCreationDefaultManagedPath sets the siteCreationDefaultManagedPath property value. The value of the team site managed path. This is the path under which new team sites will be created.
 func (m *Settings) SetSiteCreationDefaultManagedPath(value *string)() {
-    if m != nil {
-        m.siteCreationDefaultManagedPath = value
-    }
+    m.siteCreationDefaultManagedPath = value
 }
 // SetSiteCreationDefaultStorageLimitInMB sets the siteCreationDefaultStorageLimitInMB property value. The default storage quota for a new site upon creation. Measured in megabytes (MB).
 func (m *Settings) SetSiteCreationDefaultStorageLimitInMB(value *int32)() {
-    if m != nil {
-        m.siteCreationDefaultStorageLimitInMB = value
-    }
+    m.siteCreationDefaultStorageLimitInMB = value
 }
 // SetTenantDefaultTimezone sets the tenantDefaultTimezone property value. The default timezone of a tenant for newly created sites.
 func (m *Settings) SetTenantDefaultTimezone(value *string)() {
-    if m != nil {
-        m.tenantDefaultTimezone = value
-    }
+    m.tenantDefaultTimezone = value
 }

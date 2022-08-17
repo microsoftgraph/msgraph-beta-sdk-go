@@ -37,35 +37,19 @@ func CreateAttackSimulationSimulationUserCoverageFromDiscriminatorValue(parseNod
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AttackSimulationSimulationUserCoverage) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetAttackSimulationUser gets the attackSimulationUser property value. User in an attack simulation and training campaign.
 func (m *AttackSimulationSimulationUserCoverage) GetAttackSimulationUser()(AttackSimulationUserable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.attackSimulationUser
-    }
+    return m.attackSimulationUser
 }
 // GetClickCount gets the clickCount property value. Number of link clicks in the received payloads by the user in attack simulation and training campaigns.
 func (m *AttackSimulationSimulationUserCoverage) GetClickCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.clickCount
-    }
+    return m.clickCount
 }
 // GetCompromisedCount gets the compromisedCount property value. Number of compromising actions by the user in attack simulation and training campaigns.
 func (m *AttackSimulationSimulationUserCoverage) GetCompromisedCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.compromisedCount
-    }
+    return m.compromisedCount
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AttackSimulationSimulationUserCoverage) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -134,27 +118,15 @@ func (m *AttackSimulationSimulationUserCoverage) GetFieldDeserializers()(map[str
 }
 // GetLatestSimulationDateTime gets the latestSimulationDateTime property value. Date and time of latest attack simulation and training campaign that the user was included in.
 func (m *AttackSimulationSimulationUserCoverage) GetLatestSimulationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.latestSimulationDateTime
-    }
+    return m.latestSimulationDateTime
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *AttackSimulationSimulationUserCoverage) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetSimulationCount gets the simulationCount property value. Number of attack simulation and training campaigns that the user was included in.
 func (m *AttackSimulationSimulationUserCoverage) GetSimulationCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.simulationCount
-    }
+    return m.simulationCount
 }
 // Serialize serializes information the current object
 func (m *AttackSimulationSimulationUserCoverage) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -204,43 +176,29 @@ func (m *AttackSimulationSimulationUserCoverage) Serialize(writer i878a80d2330e8
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AttackSimulationSimulationUserCoverage) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetAttackSimulationUser sets the attackSimulationUser property value. User in an attack simulation and training campaign.
 func (m *AttackSimulationSimulationUserCoverage) SetAttackSimulationUser(value AttackSimulationUserable)() {
-    if m != nil {
-        m.attackSimulationUser = value
-    }
+    m.attackSimulationUser = value
 }
 // SetClickCount sets the clickCount property value. Number of link clicks in the received payloads by the user in attack simulation and training campaigns.
 func (m *AttackSimulationSimulationUserCoverage) SetClickCount(value *int32)() {
-    if m != nil {
-        m.clickCount = value
-    }
+    m.clickCount = value
 }
 // SetCompromisedCount sets the compromisedCount property value. Number of compromising actions by the user in attack simulation and training campaigns.
 func (m *AttackSimulationSimulationUserCoverage) SetCompromisedCount(value *int32)() {
-    if m != nil {
-        m.compromisedCount = value
-    }
+    m.compromisedCount = value
 }
 // SetLatestSimulationDateTime sets the latestSimulationDateTime property value. Date and time of latest attack simulation and training campaign that the user was included in.
 func (m *AttackSimulationSimulationUserCoverage) SetLatestSimulationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.latestSimulationDateTime = value
-    }
+    m.latestSimulationDateTime = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *AttackSimulationSimulationUserCoverage) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetSimulationCount sets the simulationCount property value. Number of attack simulation and training campaigns that the user was included in.
 func (m *AttackSimulationSimulationUserCoverage) SetSimulationCount(value *int32)() {
-    if m != nil {
-        m.simulationCount = value
-    }
+    m.simulationCount = value
 }

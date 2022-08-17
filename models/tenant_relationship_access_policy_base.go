@@ -44,11 +44,7 @@ func CreateTenantRelationshipAccessPolicyBaseFromDiscriminatorValue(parseNode i8
 }
 // GetDefinition gets the definition property value. The definition property
 func (m *TenantRelationshipAccessPolicyBase) GetDefinition()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.definition
-    }
+    return m.definition
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *TenantRelationshipAccessPolicyBase) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -85,7 +81,5 @@ func (m *TenantRelationshipAccessPolicyBase) Serialize(writer i878a80d2330e89d26
 }
 // SetDefinition sets the definition property value. The definition property
 func (m *TenantRelationshipAccessPolicyBase) SetDefinition(value []string)() {
-    if m != nil {
-        m.definition = value
-    }
+    m.definition = value
 }

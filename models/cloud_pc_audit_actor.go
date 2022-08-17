@@ -48,27 +48,15 @@ func CreateCloudPcAuditActorFromDiscriminatorValue(parseNode i878a80d2330e89d268
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CloudPcAuditActor) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetApplicationDisplayName gets the applicationDisplayName property value. Name of the application.
 func (m *CloudPcAuditActor) GetApplicationDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.applicationDisplayName
-    }
+    return m.applicationDisplayName
 }
 // GetApplicationId gets the applicationId property value. Azure AD application ID.
 func (m *CloudPcAuditActor) GetApplicationId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.applicationId
-    }
+    return m.applicationId
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *CloudPcAuditActor) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -205,83 +193,43 @@ func (m *CloudPcAuditActor) GetFieldDeserializers()(map[string]func(i878a80d2330
 }
 // GetIpAddress gets the ipAddress property value. IP address.
 func (m *CloudPcAuditActor) GetIpAddress()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.ipAddress
-    }
+    return m.ipAddress
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *CloudPcAuditActor) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetRemoteTenantId gets the remoteTenantId property value. The delegated partner tenant ID.
 func (m *CloudPcAuditActor) GetRemoteTenantId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.remoteTenantId
-    }
+    return m.remoteTenantId
 }
 // GetRemoteUserId gets the remoteUserId property value. The delegated partner user ID.
 func (m *CloudPcAuditActor) GetRemoteUserId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.remoteUserId
-    }
+    return m.remoteUserId
 }
 // GetServicePrincipalName gets the servicePrincipalName property value. Service Principal Name (SPN).
 func (m *CloudPcAuditActor) GetServicePrincipalName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.servicePrincipalName
-    }
+    return m.servicePrincipalName
 }
 // GetType gets the type property value. The type property
 func (m *CloudPcAuditActor) GetType()(*CloudPcAuditActorType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.type_escaped
-    }
+    return m.type_escaped
 }
 // GetUserId gets the userId property value. Azure AD user ID.
 func (m *CloudPcAuditActor) GetUserId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userId
-    }
+    return m.userId
 }
 // GetUserPermissions gets the userPermissions property value. List of user permissions and application permissions when the audit event was performed.
 func (m *CloudPcAuditActor) GetUserPermissions()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userPermissions
-    }
+    return m.userPermissions
 }
 // GetUserPrincipalName gets the userPrincipalName property value. User Principal Name (UPN).
 func (m *CloudPcAuditActor) GetUserPrincipalName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userPrincipalName
-    }
+    return m.userPrincipalName
 }
 // GetUserRoleScopeTags gets the userRoleScopeTags property value. List of role scope tags.
 func (m *CloudPcAuditActor) GetUserRoleScopeTags()([]CloudPcUserRoleScopeTagInfoable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userRoleScopeTags
-    }
+    return m.userRoleScopeTags
 }
 // Serialize serializes information the current object
 func (m *CloudPcAuditActor) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -372,79 +320,53 @@ func (m *CloudPcAuditActor) Serialize(writer i878a80d2330e89d26896388a3f487eef27
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CloudPcAuditActor) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetApplicationDisplayName sets the applicationDisplayName property value. Name of the application.
 func (m *CloudPcAuditActor) SetApplicationDisplayName(value *string)() {
-    if m != nil {
-        m.applicationDisplayName = value
-    }
+    m.applicationDisplayName = value
 }
 // SetApplicationId sets the applicationId property value. Azure AD application ID.
 func (m *CloudPcAuditActor) SetApplicationId(value *string)() {
-    if m != nil {
-        m.applicationId = value
-    }
+    m.applicationId = value
 }
 // SetIpAddress sets the ipAddress property value. IP address.
 func (m *CloudPcAuditActor) SetIpAddress(value *string)() {
-    if m != nil {
-        m.ipAddress = value
-    }
+    m.ipAddress = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *CloudPcAuditActor) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetRemoteTenantId sets the remoteTenantId property value. The delegated partner tenant ID.
 func (m *CloudPcAuditActor) SetRemoteTenantId(value *string)() {
-    if m != nil {
-        m.remoteTenantId = value
-    }
+    m.remoteTenantId = value
 }
 // SetRemoteUserId sets the remoteUserId property value. The delegated partner user ID.
 func (m *CloudPcAuditActor) SetRemoteUserId(value *string)() {
-    if m != nil {
-        m.remoteUserId = value
-    }
+    m.remoteUserId = value
 }
 // SetServicePrincipalName sets the servicePrincipalName property value. Service Principal Name (SPN).
 func (m *CloudPcAuditActor) SetServicePrincipalName(value *string)() {
-    if m != nil {
-        m.servicePrincipalName = value
-    }
+    m.servicePrincipalName = value
 }
 // SetType sets the type property value. The type property
 func (m *CloudPcAuditActor) SetType(value *CloudPcAuditActorType)() {
-    if m != nil {
-        m.type_escaped = value
-    }
+    m.type_escaped = value
 }
 // SetUserId sets the userId property value. Azure AD user ID.
 func (m *CloudPcAuditActor) SetUserId(value *string)() {
-    if m != nil {
-        m.userId = value
-    }
+    m.userId = value
 }
 // SetUserPermissions sets the userPermissions property value. List of user permissions and application permissions when the audit event was performed.
 func (m *CloudPcAuditActor) SetUserPermissions(value []string)() {
-    if m != nil {
-        m.userPermissions = value
-    }
+    m.userPermissions = value
 }
 // SetUserPrincipalName sets the userPrincipalName property value. User Principal Name (UPN).
 func (m *CloudPcAuditActor) SetUserPrincipalName(value *string)() {
-    if m != nil {
-        m.userPrincipalName = value
-    }
+    m.userPrincipalName = value
 }
 // SetUserRoleScopeTags sets the userRoleScopeTags property value. List of role scope tags.
 func (m *CloudPcAuditActor) SetUserRoleScopeTags(value []CloudPcUserRoleScopeTagInfoable)() {
-    if m != nil {
-        m.userRoleScopeTags = value
-    }
+    m.userRoleScopeTags = value
 }

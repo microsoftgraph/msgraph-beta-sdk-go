@@ -52,19 +52,11 @@ func (m *AndroidDeviceOwnerKioskModeWeblink) GetFieldDeserializers()(map[string]
 }
 // GetLabel gets the label property value. Display name for weblink
 func (m *AndroidDeviceOwnerKioskModeWeblink) GetLabel()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.label
-    }
+    return m.label
 }
 // GetLink gets the link property value. Link for weblink
 func (m *AndroidDeviceOwnerKioskModeWeblink) GetLink()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.link
-    }
+    return m.link
 }
 // Serialize serializes information the current object
 func (m *AndroidDeviceOwnerKioskModeWeblink) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -88,13 +80,9 @@ func (m *AndroidDeviceOwnerKioskModeWeblink) Serialize(writer i878a80d2330e89d26
 }
 // SetLabel sets the label property value. Display name for weblink
 func (m *AndroidDeviceOwnerKioskModeWeblink) SetLabel(value *string)() {
-    if m != nil {
-        m.label = value
-    }
+    m.label = value
 }
 // SetLink sets the link property value. Link for weblink
 func (m *AndroidDeviceOwnerKioskModeWeblink) SetLink(value *string)() {
-    if m != nil {
-        m.link = value
-    }
+    m.link = value
 }

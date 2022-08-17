@@ -56,19 +56,11 @@ func (m *FileClassificationRequest) GetFieldDeserializers()(map[string]func(i878
 }
 // GetFile gets the file property value. The file property
 func (m *FileClassificationRequest) GetFile()([]byte) {
-    if m == nil {
-        return nil
-    } else {
-        return m.file
-    }
+    return m.file
 }
 // GetSensitiveTypeIds gets the sensitiveTypeIds property value. The sensitiveTypeIds property
 func (m *FileClassificationRequest) GetSensitiveTypeIds()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.sensitiveTypeIds
-    }
+    return m.sensitiveTypeIds
 }
 // Serialize serializes information the current object
 func (m *FileClassificationRequest) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -92,13 +84,9 @@ func (m *FileClassificationRequest) Serialize(writer i878a80d2330e89d26896388a3f
 }
 // SetFile sets the file property value. The file property
 func (m *FileClassificationRequest) SetFile(value []byte)() {
-    if m != nil {
-        m.file = value
-    }
+    m.file = value
 }
 // SetSensitiveTypeIds sets the sensitiveTypeIds property value. The sensitiveTypeIds property
 func (m *FileClassificationRequest) SetSensitiveTypeIds(value []string)() {
-    if m != nil {
-        m.sensitiveTypeIds = value
-    }
+    m.sensitiveTypeIds = value
 }

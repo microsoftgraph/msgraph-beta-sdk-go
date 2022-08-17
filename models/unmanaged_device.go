@@ -49,27 +49,15 @@ func CreateUnmanagedDeviceFromDiscriminatorValue(parseNode i878a80d2330e89d26896
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *UnmanagedDevice) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetDeviceName gets the deviceName property value. Device name.
 func (m *UnmanagedDevice) GetDeviceName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deviceName
-    }
+    return m.deviceName
 }
 // GetDomain gets the domain property value. Domain.
 func (m *UnmanagedDevice) GetDomain()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.domain
-    }
+    return m.domain
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *UnmanagedDevice) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -198,83 +186,43 @@ func (m *UnmanagedDevice) GetFieldDeserializers()(map[string]func(i878a80d2330e8
 }
 // GetIpAddress gets the ipAddress property value. IP address.
 func (m *UnmanagedDevice) GetIpAddress()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.ipAddress
-    }
+    return m.ipAddress
 }
 // GetLastLoggedOnUser gets the lastLoggedOnUser property value. Last logged on user.
 func (m *UnmanagedDevice) GetLastLoggedOnUser()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastLoggedOnUser
-    }
+    return m.lastLoggedOnUser
 }
 // GetLastSeenDateTime gets the lastSeenDateTime property value. Last seen date and time.
 func (m *UnmanagedDevice) GetLastSeenDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastSeenDateTime
-    }
+    return m.lastSeenDateTime
 }
 // GetLocation gets the location property value. Location.
 func (m *UnmanagedDevice) GetLocation()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.location
-    }
+    return m.location
 }
 // GetMacAddress gets the macAddress property value. MAC address.
 func (m *UnmanagedDevice) GetMacAddress()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.macAddress
-    }
+    return m.macAddress
 }
 // GetManufacturer gets the manufacturer property value. Manufacturer.
 func (m *UnmanagedDevice) GetManufacturer()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.manufacturer
-    }
+    return m.manufacturer
 }
 // GetModel gets the model property value. Model.
 func (m *UnmanagedDevice) GetModel()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.model
-    }
+    return m.model
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *UnmanagedDevice) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetOs gets the os property value. Operating system.
 func (m *UnmanagedDevice) GetOs()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.os
-    }
+    return m.os
 }
 // GetOsVersion gets the osVersion property value. Operating system version.
 func (m *UnmanagedDevice) GetOsVersion()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.osVersion
-    }
+    return m.osVersion
 }
 // Serialize serializes information the current object
 func (m *UnmanagedDevice) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -360,79 +308,53 @@ func (m *UnmanagedDevice) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *UnmanagedDevice) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetDeviceName sets the deviceName property value. Device name.
 func (m *UnmanagedDevice) SetDeviceName(value *string)() {
-    if m != nil {
-        m.deviceName = value
-    }
+    m.deviceName = value
 }
 // SetDomain sets the domain property value. Domain.
 func (m *UnmanagedDevice) SetDomain(value *string)() {
-    if m != nil {
-        m.domain = value
-    }
+    m.domain = value
 }
 // SetIpAddress sets the ipAddress property value. IP address.
 func (m *UnmanagedDevice) SetIpAddress(value *string)() {
-    if m != nil {
-        m.ipAddress = value
-    }
+    m.ipAddress = value
 }
 // SetLastLoggedOnUser sets the lastLoggedOnUser property value. Last logged on user.
 func (m *UnmanagedDevice) SetLastLoggedOnUser(value *string)() {
-    if m != nil {
-        m.lastLoggedOnUser = value
-    }
+    m.lastLoggedOnUser = value
 }
 // SetLastSeenDateTime sets the lastSeenDateTime property value. Last seen date and time.
 func (m *UnmanagedDevice) SetLastSeenDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.lastSeenDateTime = value
-    }
+    m.lastSeenDateTime = value
 }
 // SetLocation sets the location property value. Location.
 func (m *UnmanagedDevice) SetLocation(value *string)() {
-    if m != nil {
-        m.location = value
-    }
+    m.location = value
 }
 // SetMacAddress sets the macAddress property value. MAC address.
 func (m *UnmanagedDevice) SetMacAddress(value *string)() {
-    if m != nil {
-        m.macAddress = value
-    }
+    m.macAddress = value
 }
 // SetManufacturer sets the manufacturer property value. Manufacturer.
 func (m *UnmanagedDevice) SetManufacturer(value *string)() {
-    if m != nil {
-        m.manufacturer = value
-    }
+    m.manufacturer = value
 }
 // SetModel sets the model property value. Model.
 func (m *UnmanagedDevice) SetModel(value *string)() {
-    if m != nil {
-        m.model = value
-    }
+    m.model = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *UnmanagedDevice) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetOs sets the os property value. Operating system.
 func (m *UnmanagedDevice) SetOs(value *string)() {
-    if m != nil {
-        m.os = value
-    }
+    m.os = value
 }
 // SetOsVersion sets the osVersion property value. Operating system version.
 func (m *UnmanagedDevice) SetOsVersion(value *string)() {
-    if m != nil {
-        m.osVersion = value
-    }
+    m.osVersion = value
 }

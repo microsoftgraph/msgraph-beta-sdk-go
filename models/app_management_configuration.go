@@ -30,11 +30,7 @@ func CreateAppManagementConfigurationFromDiscriminatorValue(parseNode i878a80d23
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AppManagementConfiguration) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AppManagementConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -81,27 +77,15 @@ func (m *AppManagementConfiguration) GetFieldDeserializers()(map[string]func(i87
 }
 // GetKeyCredentials gets the keyCredentials property value. Collection of keyCredential restrictions settings to be applied to an application or service principal.
 func (m *AppManagementConfiguration) GetKeyCredentials()([]KeyCredentialConfigurationable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.keyCredentials
-    }
+    return m.keyCredentials
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *AppManagementConfiguration) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetPasswordCredentials gets the passwordCredentials property value. Collection of password restrictions settings to be applied to an application or service principal.
 func (m *AppManagementConfiguration) GetPasswordCredentials()([]PasswordCredentialConfigurationable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.passwordCredentials
-    }
+    return m.passwordCredentials
 }
 // Serialize serializes information the current object
 func (m *AppManagementConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -141,25 +125,17 @@ func (m *AppManagementConfiguration) Serialize(writer i878a80d2330e89d26896388a3
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AppManagementConfiguration) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetKeyCredentials sets the keyCredentials property value. Collection of keyCredential restrictions settings to be applied to an application or service principal.
 func (m *AppManagementConfiguration) SetKeyCredentials(value []KeyCredentialConfigurationable)() {
-    if m != nil {
-        m.keyCredentials = value
-    }
+    m.keyCredentials = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *AppManagementConfiguration) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetPasswordCredentials sets the passwordCredentials property value. Collection of password restrictions settings to be applied to an application or service principal.
 func (m *AppManagementConfiguration) SetPasswordCredentials(value []PasswordCredentialConfigurationable)() {
-    if m != nil {
-        m.passwordCredentials = value
-    }
+    m.passwordCredentials = value
 }

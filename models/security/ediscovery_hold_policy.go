@@ -33,19 +33,11 @@ func CreateEdiscoveryHoldPolicyFromDiscriminatorValue(parseNode i878a80d2330e89d
 }
 // GetContentQuery gets the contentQuery property value. KQL query that specifies content to be held in the specified locations. To learn more, see Keyword queries and search conditions for Content Search and eDiscovery.  To hold all content in the specified locations, leave contentQuery blank.
 func (m *EdiscoveryHoldPolicy) GetContentQuery()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.contentQuery
-    }
+    return m.contentQuery
 }
 // GetErrors gets the errors property value. Lists any errors that happened while placing the hold.
 func (m *EdiscoveryHoldPolicy) GetErrors()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.errors
-    }
+    return m.errors
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *EdiscoveryHoldPolicy) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -116,27 +108,15 @@ func (m *EdiscoveryHoldPolicy) GetFieldDeserializers()(map[string]func(i878a80d2
 }
 // GetIsEnabled gets the isEnabled property value. Indicates whether the hold is enabled and actively holding content.
 func (m *EdiscoveryHoldPolicy) GetIsEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isEnabled
-    }
+    return m.isEnabled
 }
 // GetSiteSources gets the siteSources property value. Data sources that represent SharePoint sites.
 func (m *EdiscoveryHoldPolicy) GetSiteSources()([]SiteSourceable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.siteSources
-    }
+    return m.siteSources
 }
 // GetUserSources gets the userSources property value. Data sources that represent Exchange mailboxes.
 func (m *EdiscoveryHoldPolicy) GetUserSources()([]UserSourceable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userSources
-    }
+    return m.userSources
 }
 // Serialize serializes information the current object
 func (m *EdiscoveryHoldPolicy) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -186,31 +166,21 @@ func (m *EdiscoveryHoldPolicy) Serialize(writer i878a80d2330e89d26896388a3f487ee
 }
 // SetContentQuery sets the contentQuery property value. KQL query that specifies content to be held in the specified locations. To learn more, see Keyword queries and search conditions for Content Search and eDiscovery.  To hold all content in the specified locations, leave contentQuery blank.
 func (m *EdiscoveryHoldPolicy) SetContentQuery(value *string)() {
-    if m != nil {
-        m.contentQuery = value
-    }
+    m.contentQuery = value
 }
 // SetErrors sets the errors property value. Lists any errors that happened while placing the hold.
 func (m *EdiscoveryHoldPolicy) SetErrors(value []string)() {
-    if m != nil {
-        m.errors = value
-    }
+    m.errors = value
 }
 // SetIsEnabled sets the isEnabled property value. Indicates whether the hold is enabled and actively holding content.
 func (m *EdiscoveryHoldPolicy) SetIsEnabled(value *bool)() {
-    if m != nil {
-        m.isEnabled = value
-    }
+    m.isEnabled = value
 }
 // SetSiteSources sets the siteSources property value. Data sources that represent SharePoint sites.
 func (m *EdiscoveryHoldPolicy) SetSiteSources(value []SiteSourceable)() {
-    if m != nil {
-        m.siteSources = value
-    }
+    m.siteSources = value
 }
 // SetUserSources sets the userSources property value. Data sources that represent Exchange mailboxes.
 func (m *EdiscoveryHoldPolicy) SetUserSources(value []UserSourceable)() {
-    if m != nil {
-        m.userSources = value
-    }
+    m.userSources = value
 }

@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// MeetingRegistrationQuestion provides operations to manage the collection of activityStatistics entities.
+// MeetingRegistrationQuestion provides operations to manage the collection of accessReviewDecision entities.
 type MeetingRegistrationQuestion struct {
     Entity
     // Answer input type of the custom registration question.
@@ -31,27 +31,15 @@ func CreateMeetingRegistrationQuestionFromDiscriminatorValue(parseNode i878a80d2
 }
 // GetAnswerInputType gets the answerInputType property value. Answer input type of the custom registration question.
 func (m *MeetingRegistrationQuestion) GetAnswerInputType()(*AnswerInputType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.answerInputType
-    }
+    return m.answerInputType
 }
 // GetAnswerOptions gets the answerOptions property value. Answer options when answerInputType is radioButton.
 func (m *MeetingRegistrationQuestion) GetAnswerOptions()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.answerOptions
-    }
+    return m.answerOptions
 }
 // GetDisplayName gets the displayName property value. Display name of the custom registration question.
 func (m *MeetingRegistrationQuestion) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *MeetingRegistrationQuestion) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -104,11 +92,7 @@ func (m *MeetingRegistrationQuestion) GetFieldDeserializers()(map[string]func(i8
 }
 // GetIsRequired gets the isRequired property value. Indicates whether the question is required. Default value is false.
 func (m *MeetingRegistrationQuestion) GetIsRequired()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isRequired
-    }
+    return m.isRequired
 }
 // Serialize serializes information the current object
 func (m *MeetingRegistrationQuestion) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -145,25 +129,17 @@ func (m *MeetingRegistrationQuestion) Serialize(writer i878a80d2330e89d26896388a
 }
 // SetAnswerInputType sets the answerInputType property value. Answer input type of the custom registration question.
 func (m *MeetingRegistrationQuestion) SetAnswerInputType(value *AnswerInputType)() {
-    if m != nil {
-        m.answerInputType = value
-    }
+    m.answerInputType = value
 }
 // SetAnswerOptions sets the answerOptions property value. Answer options when answerInputType is radioButton.
 func (m *MeetingRegistrationQuestion) SetAnswerOptions(value []string)() {
-    if m != nil {
-        m.answerOptions = value
-    }
+    m.answerOptions = value
 }
 // SetDisplayName sets the displayName property value. Display name of the custom registration question.
 func (m *MeetingRegistrationQuestion) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }
 // SetIsRequired sets the isRequired property value. Indicates whether the question is required. Default value is false.
 func (m *MeetingRegistrationQuestion) SetIsRequired(value *bool)() {
-    if m != nil {
-        m.isRequired = value
-    }
+    m.isRequired = value
 }

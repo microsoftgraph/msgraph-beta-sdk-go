@@ -47,43 +47,23 @@ func CreateManagementTemplateStepVersionFromDiscriminatorValue(parseNode i878a80
 }
 // GetAcceptedFor gets the acceptedFor property value. The acceptedFor property
 func (m *ManagementTemplateStepVersion) GetAcceptedFor()(ManagementTemplateStepable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.acceptedFor
-    }
+    return m.acceptedFor
 }
 // GetContentMarkdown gets the contentMarkdown property value. The contentMarkdown property
 func (m *ManagementTemplateStepVersion) GetContentMarkdown()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.contentMarkdown
-    }
+    return m.contentMarkdown
 }
 // GetCreatedByUserId gets the createdByUserId property value. The createdByUserId property
 func (m *ManagementTemplateStepVersion) GetCreatedByUserId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.createdByUserId
-    }
+    return m.createdByUserId
 }
 // GetCreatedDateTime gets the createdDateTime property value. The createdDateTime property
 func (m *ManagementTemplateStepVersion) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.createdDateTime
-    }
+    return m.createdDateTime
 }
 // GetDeployments gets the deployments property value. The deployments property
 func (m *ManagementTemplateStepVersion) GetDeployments()([]ManagementTemplateStepDeploymentable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deployments
-    }
+    return m.deployments
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ManagementTemplateStepVersion) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -206,51 +186,27 @@ func (m *ManagementTemplateStepVersion) GetFieldDeserializers()(map[string]func(
 }
 // GetLastActionByUserId gets the lastActionByUserId property value. The lastActionByUserId property
 func (m *ManagementTemplateStepVersion) GetLastActionByUserId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastActionByUserId
-    }
+    return m.lastActionByUserId
 }
 // GetLastActionDateTime gets the lastActionDateTime property value. The lastActionDateTime property
 func (m *ManagementTemplateStepVersion) GetLastActionDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastActionDateTime
-    }
+    return m.lastActionDateTime
 }
 // GetName gets the name property value. The name property
 func (m *ManagementTemplateStepVersion) GetName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.name
-    }
+    return m.name
 }
 // GetTemplateStep gets the templateStep property value. The templateStep property
 func (m *ManagementTemplateStepVersion) GetTemplateStep()(ManagementTemplateStepable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.templateStep
-    }
+    return m.templateStep
 }
 // GetVersion gets the version property value. The version property
 func (m *ManagementTemplateStepVersion) GetVersion()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.version
-    }
+    return m.version
 }
 // GetVersionInformation gets the versionInformation property value. The versionInformation property
 func (m *ManagementTemplateStepVersion) GetVersionInformation()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.versionInformation
-    }
+    return m.versionInformation
 }
 // Serialize serializes information the current object
 func (m *ManagementTemplateStepVersion) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -332,67 +288,45 @@ func (m *ManagementTemplateStepVersion) Serialize(writer i878a80d2330e89d2689638
 }
 // SetAcceptedFor sets the acceptedFor property value. The acceptedFor property
 func (m *ManagementTemplateStepVersion) SetAcceptedFor(value ManagementTemplateStepable)() {
-    if m != nil {
-        m.acceptedFor = value
-    }
+    m.acceptedFor = value
 }
 // SetContentMarkdown sets the contentMarkdown property value. The contentMarkdown property
 func (m *ManagementTemplateStepVersion) SetContentMarkdown(value *string)() {
-    if m != nil {
-        m.contentMarkdown = value
-    }
+    m.contentMarkdown = value
 }
 // SetCreatedByUserId sets the createdByUserId property value. The createdByUserId property
 func (m *ManagementTemplateStepVersion) SetCreatedByUserId(value *string)() {
-    if m != nil {
-        m.createdByUserId = value
-    }
+    m.createdByUserId = value
 }
 // SetCreatedDateTime sets the createdDateTime property value. The createdDateTime property
 func (m *ManagementTemplateStepVersion) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.createdDateTime = value
-    }
+    m.createdDateTime = value
 }
 // SetDeployments sets the deployments property value. The deployments property
 func (m *ManagementTemplateStepVersion) SetDeployments(value []ManagementTemplateStepDeploymentable)() {
-    if m != nil {
-        m.deployments = value
-    }
+    m.deployments = value
 }
 // SetLastActionByUserId sets the lastActionByUserId property value. The lastActionByUserId property
 func (m *ManagementTemplateStepVersion) SetLastActionByUserId(value *string)() {
-    if m != nil {
-        m.lastActionByUserId = value
-    }
+    m.lastActionByUserId = value
 }
 // SetLastActionDateTime sets the lastActionDateTime property value. The lastActionDateTime property
 func (m *ManagementTemplateStepVersion) SetLastActionDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.lastActionDateTime = value
-    }
+    m.lastActionDateTime = value
 }
 // SetName sets the name property value. The name property
 func (m *ManagementTemplateStepVersion) SetName(value *string)() {
-    if m != nil {
-        m.name = value
-    }
+    m.name = value
 }
 // SetTemplateStep sets the templateStep property value. The templateStep property
 func (m *ManagementTemplateStepVersion) SetTemplateStep(value ManagementTemplateStepable)() {
-    if m != nil {
-        m.templateStep = value
-    }
+    m.templateStep = value
 }
 // SetVersion sets the version property value. The version property
 func (m *ManagementTemplateStepVersion) SetVersion(value *int32)() {
-    if m != nil {
-        m.version = value
-    }
+    m.version = value
 }
 // SetVersionInformation sets the versionInformation property value. The versionInformation property
 func (m *ManagementTemplateStepVersion) SetVersionInformation(value *string)() {
-    if m != nil {
-        m.versionInformation = value
-    }
+    m.versionInformation = value
 }

@@ -65,35 +65,19 @@ func CreateDeviceManagementResourceAccessProfileBaseFromDiscriminatorValue(parse
 }
 // GetAssignments gets the assignments property value. The list of assignments for the device configuration profile.
 func (m *DeviceManagementResourceAccessProfileBase) GetAssignments()([]DeviceManagementResourceAccessProfileAssignmentable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.assignments
-    }
+    return m.assignments
 }
 // GetCreationDateTime gets the creationDateTime property value. DateTime profile was created
 func (m *DeviceManagementResourceAccessProfileBase) GetCreationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.creationDateTime
-    }
+    return m.creationDateTime
 }
 // GetDescription gets the description property value. Profile description
 func (m *DeviceManagementResourceAccessProfileBase) GetDescription()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.description
-    }
+    return m.description
 }
 // GetDisplayName gets the displayName property value. Profile display name
 func (m *DeviceManagementResourceAccessProfileBase) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceManagementResourceAccessProfileBase) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -180,27 +164,15 @@ func (m *DeviceManagementResourceAccessProfileBase) GetFieldDeserializers()(map[
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. DateTime profile was last modified
 func (m *DeviceManagementResourceAccessProfileBase) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastModifiedDateTime
-    }
+    return m.lastModifiedDateTime
 }
 // GetRoleScopeTagIds gets the roleScopeTagIds property value. Scope Tags
 func (m *DeviceManagementResourceAccessProfileBase) GetRoleScopeTagIds()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.roleScopeTagIds
-    }
+    return m.roleScopeTagIds
 }
 // GetVersion gets the version property value. Version of the profile
 func (m *DeviceManagementResourceAccessProfileBase) GetVersion()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.version
-    }
+    return m.version
 }
 // Serialize serializes information the current object
 func (m *DeviceManagementResourceAccessProfileBase) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -258,43 +230,29 @@ func (m *DeviceManagementResourceAccessProfileBase) Serialize(writer i878a80d233
 }
 // SetAssignments sets the assignments property value. The list of assignments for the device configuration profile.
 func (m *DeviceManagementResourceAccessProfileBase) SetAssignments(value []DeviceManagementResourceAccessProfileAssignmentable)() {
-    if m != nil {
-        m.assignments = value
-    }
+    m.assignments = value
 }
 // SetCreationDateTime sets the creationDateTime property value. DateTime profile was created
 func (m *DeviceManagementResourceAccessProfileBase) SetCreationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.creationDateTime = value
-    }
+    m.creationDateTime = value
 }
 // SetDescription sets the description property value. Profile description
 func (m *DeviceManagementResourceAccessProfileBase) SetDescription(value *string)() {
-    if m != nil {
-        m.description = value
-    }
+    m.description = value
 }
 // SetDisplayName sets the displayName property value. Profile display name
 func (m *DeviceManagementResourceAccessProfileBase) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }
 // SetLastModifiedDateTime sets the lastModifiedDateTime property value. DateTime profile was last modified
 func (m *DeviceManagementResourceAccessProfileBase) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.lastModifiedDateTime = value
-    }
+    m.lastModifiedDateTime = value
 }
 // SetRoleScopeTagIds sets the roleScopeTagIds property value. Scope Tags
 func (m *DeviceManagementResourceAccessProfileBase) SetRoleScopeTagIds(value []string)() {
-    if m != nil {
-        m.roleScopeTagIds = value
-    }
+    m.roleScopeTagIds = value
 }
 // SetVersion sets the version property value. Version of the profile
 func (m *DeviceManagementResourceAccessProfileBase) SetVersion(value *int32)() {
-    if m != nil {
-        m.version = value
-    }
+    m.version = value
 }

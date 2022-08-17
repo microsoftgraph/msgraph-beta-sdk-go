@@ -52,19 +52,11 @@ func (m *DeliveryOptimizationBandwidthPercentage) GetFieldDeserializers()(map[st
 }
 // GetMaximumBackgroundBandwidthPercentage gets the maximumBackgroundBandwidthPercentage property value. Specifies the maximum background download bandwidth that Delivery Optimization uses across all concurrent download activities as a percentage of available download bandwidth (0-100). Valid values 0 to 100
 func (m *DeliveryOptimizationBandwidthPercentage) GetMaximumBackgroundBandwidthPercentage()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.maximumBackgroundBandwidthPercentage
-    }
+    return m.maximumBackgroundBandwidthPercentage
 }
 // GetMaximumForegroundBandwidthPercentage gets the maximumForegroundBandwidthPercentage property value. Specifies the maximum foreground download bandwidth that Delivery Optimization uses across all concurrent download activities as a percentage of available download bandwidth (0-100). Valid values 0 to 100
 func (m *DeliveryOptimizationBandwidthPercentage) GetMaximumForegroundBandwidthPercentage()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.maximumForegroundBandwidthPercentage
-    }
+    return m.maximumForegroundBandwidthPercentage
 }
 // Serialize serializes information the current object
 func (m *DeliveryOptimizationBandwidthPercentage) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -88,13 +80,9 @@ func (m *DeliveryOptimizationBandwidthPercentage) Serialize(writer i878a80d2330e
 }
 // SetMaximumBackgroundBandwidthPercentage sets the maximumBackgroundBandwidthPercentage property value. Specifies the maximum background download bandwidth that Delivery Optimization uses across all concurrent download activities as a percentage of available download bandwidth (0-100). Valid values 0 to 100
 func (m *DeliveryOptimizationBandwidthPercentage) SetMaximumBackgroundBandwidthPercentage(value *int32)() {
-    if m != nil {
-        m.maximumBackgroundBandwidthPercentage = value
-    }
+    m.maximumBackgroundBandwidthPercentage = value
 }
 // SetMaximumForegroundBandwidthPercentage sets the maximumForegroundBandwidthPercentage property value. Specifies the maximum foreground download bandwidth that Delivery Optimization uses across all concurrent download activities as a percentage of available download bandwidth (0-100). Valid values 0 to 100
 func (m *DeliveryOptimizationBandwidthPercentage) SetMaximumForegroundBandwidthPercentage(value *int32)() {
-    if m != nil {
-        m.maximumForegroundBandwidthPercentage = value
-    }
+    m.maximumForegroundBandwidthPercentage = value
 }

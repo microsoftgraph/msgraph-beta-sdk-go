@@ -56,19 +56,11 @@ func (m *MacOSImportedPFXCertificateProfile) GetFieldDeserializers()(map[string]
 }
 // GetIntendedPurpose gets the intendedPurpose property value. PFX Import Options.
 func (m *MacOSImportedPFXCertificateProfile) GetIntendedPurpose()(*IntendedPurpose) {
-    if m == nil {
-        return nil
-    } else {
-        return m.intendedPurpose
-    }
+    return m.intendedPurpose
 }
 // GetManagedDeviceCertificateStates gets the managedDeviceCertificateStates property value. Certificate state for devices. This collection can contain a maximum of 2147483647 elements.
 func (m *MacOSImportedPFXCertificateProfile) GetManagedDeviceCertificateStates()([]ManagedDeviceCertificateStateable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.managedDeviceCertificateStates
-    }
+    return m.managedDeviceCertificateStates
 }
 // Serialize serializes information the current object
 func (m *MacOSImportedPFXCertificateProfile) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -97,13 +89,9 @@ func (m *MacOSImportedPFXCertificateProfile) Serialize(writer i878a80d2330e89d26
 }
 // SetIntendedPurpose sets the intendedPurpose property value. PFX Import Options.
 func (m *MacOSImportedPFXCertificateProfile) SetIntendedPurpose(value *IntendedPurpose)() {
-    if m != nil {
-        m.intendedPurpose = value
-    }
+    m.intendedPurpose = value
 }
 // SetManagedDeviceCertificateStates sets the managedDeviceCertificateStates property value. Certificate state for devices. This collection can contain a maximum of 2147483647 elements.
 func (m *MacOSImportedPFXCertificateProfile) SetManagedDeviceCertificateStates(value []ManagedDeviceCertificateStateable)() {
-    if m != nil {
-        m.managedDeviceCertificateStates = value
-    }
+    m.managedDeviceCertificateStates = value
 }

@@ -28,11 +28,7 @@ func CreateChangeDeploymentStatusPostRequestBodyFromDiscriminatorValue(parseNode
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ChangeDeploymentStatusPostRequestBody) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ChangeDeploymentStatusPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -71,27 +67,15 @@ func (m *ChangeDeploymentStatusPostRequestBody) GetFieldDeserializers()(map[stri
 }
 // GetManagementTemplateStepId gets the managementTemplateStepId property value. The managementTemplateStepId property
 func (m *ChangeDeploymentStatusPostRequestBody) GetManagementTemplateStepId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.managementTemplateStepId
-    }
+    return m.managementTemplateStepId
 }
 // GetStatus gets the status property value. The status property
 func (m *ChangeDeploymentStatusPostRequestBody) GetStatus()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.status
-    }
+    return m.status
 }
 // GetTenantId gets the tenantId property value. The tenantId property
 func (m *ChangeDeploymentStatusPostRequestBody) GetTenantId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.tenantId
-    }
+    return m.tenantId
 }
 // Serialize serializes information the current object
 func (m *ChangeDeploymentStatusPostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -123,25 +107,17 @@ func (m *ChangeDeploymentStatusPostRequestBody) Serialize(writer i878a80d2330e89
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ChangeDeploymentStatusPostRequestBody) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetManagementTemplateStepId sets the managementTemplateStepId property value. The managementTemplateStepId property
 func (m *ChangeDeploymentStatusPostRequestBody) SetManagementTemplateStepId(value *string)() {
-    if m != nil {
-        m.managementTemplateStepId = value
-    }
+    m.managementTemplateStepId = value
 }
 // SetStatus sets the status property value. The status property
 func (m *ChangeDeploymentStatusPostRequestBody) SetStatus(value *string)() {
-    if m != nil {
-        m.status = value
-    }
+    m.status = value
 }
 // SetTenantId sets the tenantId property value. The tenantId property
 func (m *ChangeDeploymentStatusPostRequestBody) SetTenantId(value *string)() {
-    if m != nil {
-        m.tenantId = value
-    }
+    m.tenantId = value
 }

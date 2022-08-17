@@ -42,51 +42,27 @@ func CreateAppleUserInitiatedEnrollmentProfileFromDiscriminatorValue(parseNode i
 }
 // GetAssignments gets the assignments property value. The list of assignments for this profile.
 func (m *AppleUserInitiatedEnrollmentProfile) GetAssignments()([]AppleEnrollmentProfileAssignmentable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.assignments
-    }
+    return m.assignments
 }
 // GetAvailableEnrollmentTypeOptions gets the availableEnrollmentTypeOptions property value. List of available enrollment type options
 func (m *AppleUserInitiatedEnrollmentProfile) GetAvailableEnrollmentTypeOptions()([]AppleOwnerTypeEnrollmentTypeable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.availableEnrollmentTypeOptions
-    }
+    return m.availableEnrollmentTypeOptions
 }
 // GetCreatedDateTime gets the createdDateTime property value. Profile creation time
 func (m *AppleUserInitiatedEnrollmentProfile) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.createdDateTime
-    }
+    return m.createdDateTime
 }
 // GetDefaultEnrollmentType gets the defaultEnrollmentType property value. The defaultEnrollmentType property
 func (m *AppleUserInitiatedEnrollmentProfile) GetDefaultEnrollmentType()(*AppleUserInitiatedEnrollmentType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.defaultEnrollmentType
-    }
+    return m.defaultEnrollmentType
 }
 // GetDescription gets the description property value. Description of the profile
 func (m *AppleUserInitiatedEnrollmentProfile) GetDescription()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.description
-    }
+    return m.description
 }
 // GetDisplayName gets the displayName property value. Name of the profile
 func (m *AppleUserInitiatedEnrollmentProfile) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AppleUserInitiatedEnrollmentProfile) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -193,27 +169,15 @@ func (m *AppleUserInitiatedEnrollmentProfile) GetFieldDeserializers()(map[string
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. Profile last modified time
 func (m *AppleUserInitiatedEnrollmentProfile) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastModifiedDateTime
-    }
+    return m.lastModifiedDateTime
 }
 // GetPlatform gets the platform property value. Supported platform types.
 func (m *AppleUserInitiatedEnrollmentProfile) GetPlatform()(*DevicePlatformType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.platform
-    }
+    return m.platform
 }
 // GetPriority gets the priority property value. Priority, 0 is highest
 func (m *AppleUserInitiatedEnrollmentProfile) GetPriority()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.priority
-    }
+    return m.priority
 }
 // Serialize serializes information the current object
 func (m *AppleUserInitiatedEnrollmentProfile) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -289,55 +253,37 @@ func (m *AppleUserInitiatedEnrollmentProfile) Serialize(writer i878a80d2330e89d2
 }
 // SetAssignments sets the assignments property value. The list of assignments for this profile.
 func (m *AppleUserInitiatedEnrollmentProfile) SetAssignments(value []AppleEnrollmentProfileAssignmentable)() {
-    if m != nil {
-        m.assignments = value
-    }
+    m.assignments = value
 }
 // SetAvailableEnrollmentTypeOptions sets the availableEnrollmentTypeOptions property value. List of available enrollment type options
 func (m *AppleUserInitiatedEnrollmentProfile) SetAvailableEnrollmentTypeOptions(value []AppleOwnerTypeEnrollmentTypeable)() {
-    if m != nil {
-        m.availableEnrollmentTypeOptions = value
-    }
+    m.availableEnrollmentTypeOptions = value
 }
 // SetCreatedDateTime sets the createdDateTime property value. Profile creation time
 func (m *AppleUserInitiatedEnrollmentProfile) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.createdDateTime = value
-    }
+    m.createdDateTime = value
 }
 // SetDefaultEnrollmentType sets the defaultEnrollmentType property value. The defaultEnrollmentType property
 func (m *AppleUserInitiatedEnrollmentProfile) SetDefaultEnrollmentType(value *AppleUserInitiatedEnrollmentType)() {
-    if m != nil {
-        m.defaultEnrollmentType = value
-    }
+    m.defaultEnrollmentType = value
 }
 // SetDescription sets the description property value. Description of the profile
 func (m *AppleUserInitiatedEnrollmentProfile) SetDescription(value *string)() {
-    if m != nil {
-        m.description = value
-    }
+    m.description = value
 }
 // SetDisplayName sets the displayName property value. Name of the profile
 func (m *AppleUserInitiatedEnrollmentProfile) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }
 // SetLastModifiedDateTime sets the lastModifiedDateTime property value. Profile last modified time
 func (m *AppleUserInitiatedEnrollmentProfile) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.lastModifiedDateTime = value
-    }
+    m.lastModifiedDateTime = value
 }
 // SetPlatform sets the platform property value. Supported platform types.
 func (m *AppleUserInitiatedEnrollmentProfile) SetPlatform(value *DevicePlatformType)() {
-    if m != nil {
-        m.platform = value
-    }
+    m.platform = value
 }
 // SetPriority sets the priority property value. Priority, 0 is highest
 func (m *AppleUserInitiatedEnrollmentProfile) SetPriority(value *int32)() {
-    if m != nil {
-        m.priority = value
-    }
+    m.priority = value
 }

@@ -44,43 +44,23 @@ func CreateWorkloadActionDeploymentStatusFromDiscriminatorValue(parseNode i878a8
 }
 // GetActionId gets the actionId property value. The unique identifier for the workload action. Required. Read-only.
 func (m *WorkloadActionDeploymentStatus) GetActionId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.actionId
-    }
+    return m.actionId
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *WorkloadActionDeploymentStatus) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetDeployedPolicyId gets the deployedPolicyId property value. The identifier of any policy that was created by applying the workload action. Optional. Read-only.
 func (m *WorkloadActionDeploymentStatus) GetDeployedPolicyId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deployedPolicyId
-    }
+    return m.deployedPolicyId
 }
 // GetError gets the error property value. The detailed information for exceptions that occur when deploying the workload action. Optional. Required.
 func (m *WorkloadActionDeploymentStatus) GetError()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GenericErrorable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.error
-    }
+    return m.error
 }
 // GetExcludeGroups gets the excludeGroups property value. The excludeGroups property
 func (m *WorkloadActionDeploymentStatus) GetExcludeGroups()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.excludeGroups
-    }
+    return m.excludeGroups
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *WorkloadActionDeploymentStatus) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -187,43 +167,23 @@ func (m *WorkloadActionDeploymentStatus) GetFieldDeserializers()(map[string]func
 }
 // GetIncludeAllUsers gets the includeAllUsers property value. The includeAllUsers property
 func (m *WorkloadActionDeploymentStatus) GetIncludeAllUsers()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.includeAllUsers
-    }
+    return m.includeAllUsers
 }
 // GetIncludeGroups gets the includeGroups property value. The includeGroups property
 func (m *WorkloadActionDeploymentStatus) GetIncludeGroups()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.includeGroups
-    }
+    return m.includeGroups
 }
 // GetLastDeploymentDateTime gets the lastDeploymentDateTime property value. The date and time the workload action was last deployed. Optional.
 func (m *WorkloadActionDeploymentStatus) GetLastDeploymentDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastDeploymentDateTime
-    }
+    return m.lastDeploymentDateTime
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *WorkloadActionDeploymentStatus) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetStatus gets the status property value. The status property
 func (m *WorkloadActionDeploymentStatus) GetStatus()(*WorkloadActionStatus) {
-    if m == nil {
-        return nil
-    } else {
-        return m.status
-    }
+    return m.status
 }
 // Serialize serializes information the current object
 func (m *WorkloadActionDeploymentStatus) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -292,61 +252,41 @@ func (m *WorkloadActionDeploymentStatus) Serialize(writer i878a80d2330e89d268963
 }
 // SetActionId sets the actionId property value. The unique identifier for the workload action. Required. Read-only.
 func (m *WorkloadActionDeploymentStatus) SetActionId(value *string)() {
-    if m != nil {
-        m.actionId = value
-    }
+    m.actionId = value
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *WorkloadActionDeploymentStatus) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetDeployedPolicyId sets the deployedPolicyId property value. The identifier of any policy that was created by applying the workload action. Optional. Read-only.
 func (m *WorkloadActionDeploymentStatus) SetDeployedPolicyId(value *string)() {
-    if m != nil {
-        m.deployedPolicyId = value
-    }
+    m.deployedPolicyId = value
 }
 // SetError sets the error property value. The detailed information for exceptions that occur when deploying the workload action. Optional. Required.
 func (m *WorkloadActionDeploymentStatus) SetError(value ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GenericErrorable)() {
-    if m != nil {
-        m.error = value
-    }
+    m.error = value
 }
 // SetExcludeGroups sets the excludeGroups property value. The excludeGroups property
 func (m *WorkloadActionDeploymentStatus) SetExcludeGroups(value []string)() {
-    if m != nil {
-        m.excludeGroups = value
-    }
+    m.excludeGroups = value
 }
 // SetIncludeAllUsers sets the includeAllUsers property value. The includeAllUsers property
 func (m *WorkloadActionDeploymentStatus) SetIncludeAllUsers(value *bool)() {
-    if m != nil {
-        m.includeAllUsers = value
-    }
+    m.includeAllUsers = value
 }
 // SetIncludeGroups sets the includeGroups property value. The includeGroups property
 func (m *WorkloadActionDeploymentStatus) SetIncludeGroups(value []string)() {
-    if m != nil {
-        m.includeGroups = value
-    }
+    m.includeGroups = value
 }
 // SetLastDeploymentDateTime sets the lastDeploymentDateTime property value. The date and time the workload action was last deployed. Optional.
 func (m *WorkloadActionDeploymentStatus) SetLastDeploymentDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.lastDeploymentDateTime = value
-    }
+    m.lastDeploymentDateTime = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *WorkloadActionDeploymentStatus) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetStatus sets the status property value. The status property
 func (m *WorkloadActionDeploymentStatus) SetStatus(value *WorkloadActionStatus)() {
-    if m != nil {
-        m.status = value
-    }
+    m.status = value
 }

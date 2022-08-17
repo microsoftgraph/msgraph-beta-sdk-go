@@ -44,11 +44,7 @@ func (m *Approval) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
 }
 // GetSteps gets the steps property value. The steps property
 func (m *Approval) GetSteps()([]ApprovalStepable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.steps
-    }
+    return m.steps
 }
 // Serialize serializes information the current object
 func (m *Approval) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -70,7 +66,5 @@ func (m *Approval) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
 }
 // SetSteps sets the steps property value. The steps property
 func (m *Approval) SetSteps(value []ApprovalStepable)() {
-    if m != nil {
-        m.steps = value
-    }
+    m.steps = value
 }

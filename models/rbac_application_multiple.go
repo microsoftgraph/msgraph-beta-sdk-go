@@ -76,27 +76,15 @@ func (m *RbacApplicationMultiple) GetFieldDeserializers()(map[string]func(i878a8
 }
 // GetResourceNamespaces gets the resourceNamespaces property value. The resourceNamespaces property
 func (m *RbacApplicationMultiple) GetResourceNamespaces()([]UnifiedRbacResourceNamespaceable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.resourceNamespaces
-    }
+    return m.resourceNamespaces
 }
 // GetRoleAssignments gets the roleAssignments property value. The roleAssignments property
 func (m *RbacApplicationMultiple) GetRoleAssignments()([]UnifiedRoleAssignmentMultipleable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.roleAssignments
-    }
+    return m.roleAssignments
 }
 // GetRoleDefinitions gets the roleDefinitions property value. The roleDefinitions property
 func (m *RbacApplicationMultiple) GetRoleDefinitions()([]UnifiedRoleDefinitionable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.roleDefinitions
-    }
+    return m.roleDefinitions
 }
 // Serialize serializes information the current object
 func (m *RbacApplicationMultiple) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -138,19 +126,13 @@ func (m *RbacApplicationMultiple) Serialize(writer i878a80d2330e89d26896388a3f48
 }
 // SetResourceNamespaces sets the resourceNamespaces property value. The resourceNamespaces property
 func (m *RbacApplicationMultiple) SetResourceNamespaces(value []UnifiedRbacResourceNamespaceable)() {
-    if m != nil {
-        m.resourceNamespaces = value
-    }
+    m.resourceNamespaces = value
 }
 // SetRoleAssignments sets the roleAssignments property value. The roleAssignments property
 func (m *RbacApplicationMultiple) SetRoleAssignments(value []UnifiedRoleAssignmentMultipleable)() {
-    if m != nil {
-        m.roleAssignments = value
-    }
+    m.roleAssignments = value
 }
 // SetRoleDefinitions sets the roleDefinitions property value. The roleDefinitions property
 func (m *RbacApplicationMultiple) SetRoleDefinitions(value []UnifiedRoleDefinitionable)() {
-    if m != nil {
-        m.roleDefinitions = value
-    }
+    m.roleDefinitions = value
 }

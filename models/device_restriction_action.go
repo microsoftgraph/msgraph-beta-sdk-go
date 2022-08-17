@@ -68,27 +68,15 @@ func (m *DeviceRestrictionAction) GetFieldDeserializers()(map[string]func(i878a8
 }
 // GetMessage gets the message property value. The message property
 func (m *DeviceRestrictionAction) GetMessage()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.message
-    }
+    return m.message
 }
 // GetRestrictionAction gets the restrictionAction property value. The restrictionAction property
 func (m *DeviceRestrictionAction) GetRestrictionAction()(*RestrictionAction) {
-    if m == nil {
-        return nil
-    } else {
-        return m.restrictionAction
-    }
+    return m.restrictionAction
 }
 // GetTriggers gets the triggers property value. The triggers property
 func (m *DeviceRestrictionAction) GetTriggers()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.triggers
-    }
+    return m.triggers
 }
 // Serialize serializes information the current object
 func (m *DeviceRestrictionAction) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -119,19 +107,13 @@ func (m *DeviceRestrictionAction) Serialize(writer i878a80d2330e89d26896388a3f48
 }
 // SetMessage sets the message property value. The message property
 func (m *DeviceRestrictionAction) SetMessage(value *string)() {
-    if m != nil {
-        m.message = value
-    }
+    m.message = value
 }
 // SetRestrictionAction sets the restrictionAction property value. The restrictionAction property
 func (m *DeviceRestrictionAction) SetRestrictionAction(value *RestrictionAction)() {
-    if m != nil {
-        m.restrictionAction = value
-    }
+    m.restrictionAction = value
 }
 // SetTriggers sets the triggers property value. The triggers property
 func (m *DeviceRestrictionAction) SetTriggers(value []string)() {
-    if m != nil {
-        m.triggers = value
-    }
+    m.triggers = value
 }

@@ -35,19 +35,11 @@ func CreateRedirectPostRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *RedirectPostRequestBody) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetCallbackUri gets the callbackUri property value. The callbackUri property
 func (m *RedirectPostRequestBody) GetCallbackUri()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.callbackUri
-    }
+    return m.callbackUri
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *RedirectPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -120,43 +112,23 @@ func (m *RedirectPostRequestBody) GetFieldDeserializers()(map[string]func(i878a8
 }
 // GetMaskCallee gets the maskCallee property value. The maskCallee property
 func (m *RedirectPostRequestBody) GetMaskCallee()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.maskCallee
-    }
+    return m.maskCallee
 }
 // GetMaskCaller gets the maskCaller property value. The maskCaller property
 func (m *RedirectPostRequestBody) GetMaskCaller()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.maskCaller
-    }
+    return m.maskCaller
 }
 // GetTargetDisposition gets the targetDisposition property value. The targetDisposition property
 func (m *RedirectPostRequestBody) GetTargetDisposition()(*ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CallDisposition) {
-    if m == nil {
-        return nil
-    } else {
-        return m.targetDisposition
-    }
+    return m.targetDisposition
 }
 // GetTargets gets the targets property value. The targets property
 func (m *RedirectPostRequestBody) GetTargets()([]ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.InvitationParticipantInfoable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.targets
-    }
+    return m.targets
 }
 // GetTimeout gets the timeout property value. The timeout property
 func (m *RedirectPostRequestBody) GetTimeout()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.timeout
-    }
+    return m.timeout
 }
 // Serialize serializes information the current object
 func (m *RedirectPostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -211,43 +183,29 @@ func (m *RedirectPostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f48
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *RedirectPostRequestBody) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetCallbackUri sets the callbackUri property value. The callbackUri property
 func (m *RedirectPostRequestBody) SetCallbackUri(value *string)() {
-    if m != nil {
-        m.callbackUri = value
-    }
+    m.callbackUri = value
 }
 // SetMaskCallee sets the maskCallee property value. The maskCallee property
 func (m *RedirectPostRequestBody) SetMaskCallee(value *bool)() {
-    if m != nil {
-        m.maskCallee = value
-    }
+    m.maskCallee = value
 }
 // SetMaskCaller sets the maskCaller property value. The maskCaller property
 func (m *RedirectPostRequestBody) SetMaskCaller(value *bool)() {
-    if m != nil {
-        m.maskCaller = value
-    }
+    m.maskCaller = value
 }
 // SetTargetDisposition sets the targetDisposition property value. The targetDisposition property
 func (m *RedirectPostRequestBody) SetTargetDisposition(value *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CallDisposition)() {
-    if m != nil {
-        m.targetDisposition = value
-    }
+    m.targetDisposition = value
 }
 // SetTargets sets the targets property value. The targets property
 func (m *RedirectPostRequestBody) SetTargets(value []ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.InvitationParticipantInfoable)() {
-    if m != nil {
-        m.targets = value
-    }
+    m.targets = value
 }
 // SetTimeout sets the timeout property value. The timeout property
 func (m *RedirectPostRequestBody) SetTimeout(value *int32)() {
-    if m != nil {
-        m.timeout = value
-    }
+    m.timeout = value
 }

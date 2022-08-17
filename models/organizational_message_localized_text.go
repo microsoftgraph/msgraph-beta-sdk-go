@@ -30,11 +30,7 @@ func CreateOrganizationalMessageLocalizedTextFromDiscriminatorValue(parseNode i8
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *OrganizationalMessageLocalizedText) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *OrganizationalMessageLocalizedText) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -73,27 +69,15 @@ func (m *OrganizationalMessageLocalizedText) GetFieldDeserializers()(map[string]
 }
 // GetLocale gets the locale property value. The locale for this text
 func (m *OrganizationalMessageLocalizedText) GetLocale()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.locale
-    }
+    return m.locale
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *OrganizationalMessageLocalizedText) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetText gets the text property value. The text that will be displayed to a user from this specific locale
 func (m *OrganizationalMessageLocalizedText) GetText()(OrganizationalMessageTextable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.text
-    }
+    return m.text
 }
 // Serialize serializes information the current object
 func (m *OrganizationalMessageLocalizedText) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -125,25 +109,17 @@ func (m *OrganizationalMessageLocalizedText) Serialize(writer i878a80d2330e89d26
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *OrganizationalMessageLocalizedText) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetLocale sets the locale property value. The locale for this text
 func (m *OrganizationalMessageLocalizedText) SetLocale(value *string)() {
-    if m != nil {
-        m.locale = value
-    }
+    m.locale = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *OrganizationalMessageLocalizedText) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetText sets the text property value. The text that will be displayed to a user from this specific locale
 func (m *OrganizationalMessageLocalizedText) SetText(value OrganizationalMessageTextable)() {
-    if m != nil {
-        m.text = value
-    }
+    m.text = value
 }

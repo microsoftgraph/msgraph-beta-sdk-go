@@ -32,19 +32,11 @@ func CreateOfficeConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d2
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *OfficeConfiguration) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetClientConfigurations gets the clientConfigurations property value. List of office Client configuration.
 func (m *OfficeConfiguration) GetClientConfigurations()([]OfficeClientConfigurationable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.clientConfigurations
-    }
+    return m.clientConfigurations
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *OfficeConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -101,27 +93,15 @@ func (m *OfficeConfiguration) GetFieldDeserializers()(map[string]func(i878a80d23
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *OfficeConfiguration) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetTenantCheckinStatuses gets the tenantCheckinStatuses property value. List of office Client check-in status.
 func (m *OfficeConfiguration) GetTenantCheckinStatuses()([]OfficeClientCheckinStatusable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.tenantCheckinStatuses
-    }
+    return m.tenantCheckinStatuses
 }
 // GetTenantUserCheckinSummary gets the tenantUserCheckinSummary property value. Entity that describes tenant check-in statues
 func (m *OfficeConfiguration) GetTenantUserCheckinSummary()(OfficeUserCheckinSummaryable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.tenantUserCheckinSummary
-    }
+    return m.tenantUserCheckinSummary
 }
 // Serialize serializes information the current object
 func (m *OfficeConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -167,31 +147,21 @@ func (m *OfficeConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *OfficeConfiguration) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetClientConfigurations sets the clientConfigurations property value. List of office Client configuration.
 func (m *OfficeConfiguration) SetClientConfigurations(value []OfficeClientConfigurationable)() {
-    if m != nil {
-        m.clientConfigurations = value
-    }
+    m.clientConfigurations = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *OfficeConfiguration) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetTenantCheckinStatuses sets the tenantCheckinStatuses property value. List of office Client check-in status.
 func (m *OfficeConfiguration) SetTenantCheckinStatuses(value []OfficeClientCheckinStatusable)() {
-    if m != nil {
-        m.tenantCheckinStatuses = value
-    }
+    m.tenantCheckinStatuses = value
 }
 // SetTenantUserCheckinSummary sets the tenantUserCheckinSummary property value. Entity that describes tenant check-in statues
 func (m *OfficeConfiguration) SetTenantUserCheckinSummary(value OfficeUserCheckinSummaryable)() {
-    if m != nil {
-        m.tenantUserCheckinSummary = value
-    }
+    m.tenantUserCheckinSummary = value
 }

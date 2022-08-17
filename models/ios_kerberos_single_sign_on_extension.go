@@ -69,59 +69,31 @@ func CreateIosKerberosSingleSignOnExtensionFromDiscriminatorValue(parseNode i878
 }
 // GetActiveDirectorySiteCode gets the activeDirectorySiteCode property value. Gets or sets the Active Directory site.
 func (m *IosKerberosSingleSignOnExtension) GetActiveDirectorySiteCode()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.activeDirectorySiteCode
-    }
+    return m.activeDirectorySiteCode
 }
 // GetBlockActiveDirectorySiteAutoDiscovery gets the blockActiveDirectorySiteAutoDiscovery property value. Enables or disables whether the Kerberos extension can automatically determine its site name.
 func (m *IosKerberosSingleSignOnExtension) GetBlockActiveDirectorySiteAutoDiscovery()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.blockActiveDirectorySiteAutoDiscovery
-    }
+    return m.blockActiveDirectorySiteAutoDiscovery
 }
 // GetBlockAutomaticLogin gets the blockAutomaticLogin property value. Enables or disables Keychain usage.
 func (m *IosKerberosSingleSignOnExtension) GetBlockAutomaticLogin()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.blockAutomaticLogin
-    }
+    return m.blockAutomaticLogin
 }
 // GetCacheName gets the cacheName property value. Gets or sets the Generic Security Services name of the Kerberos cache to use for this profile.
 func (m *IosKerberosSingleSignOnExtension) GetCacheName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.cacheName
-    }
+    return m.cacheName
 }
 // GetCredentialBundleIdAccessControlList gets the credentialBundleIdAccessControlList property value. Gets or sets a list of app Bundle IDs allowed to access the Kerberos Ticket Granting Ticket.
 func (m *IosKerberosSingleSignOnExtension) GetCredentialBundleIdAccessControlList()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.credentialBundleIdAccessControlList
-    }
+    return m.credentialBundleIdAccessControlList
 }
 // GetDomainRealms gets the domainRealms property value. Gets or sets a list of realms for custom domain-realm mapping. Realms are case sensitive.
 func (m *IosKerberosSingleSignOnExtension) GetDomainRealms()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.domainRealms
-    }
+    return m.domainRealms
 }
 // GetDomains gets the domains property value. Gets or sets a list of hosts or domain names for which the app extension performs SSO.
 func (m *IosKerberosSingleSignOnExtension) GetDomains()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.domains
-    }
+    return m.domains
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *IosKerberosSingleSignOnExtension) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -372,131 +344,67 @@ func (m *IosKerberosSingleSignOnExtension) GetFieldDeserializers()(map[string]fu
 }
 // GetIsDefaultRealm gets the isDefaultRealm property value. When true, this profile's realm will be selected as the default. Necessary if multiple Kerberos-type profiles are configured.
 func (m *IosKerberosSingleSignOnExtension) GetIsDefaultRealm()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isDefaultRealm
-    }
+    return m.isDefaultRealm
 }
 // GetManagedAppsInBundleIdACLIncluded gets the managedAppsInBundleIdACLIncluded property value. When set to True, the Kerberos extension allows managed apps, and any apps entered with the app bundle ID to access the credential. When set to False, the Kerberos extension allows all apps to access the credential. Available for devices running iOS and iPadOS versions 14 and later.
 func (m *IosKerberosSingleSignOnExtension) GetManagedAppsInBundleIdACLIncluded()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.managedAppsInBundleIdACLIncluded
-    }
+    return m.managedAppsInBundleIdACLIncluded
 }
 // GetPasswordBlockModification gets the passwordBlockModification property value. Enables or disables password changes.
 func (m *IosKerberosSingleSignOnExtension) GetPasswordBlockModification()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.passwordBlockModification
-    }
+    return m.passwordBlockModification
 }
 // GetPasswordChangeUrl gets the passwordChangeUrl property value. Gets or sets the URL that the user will be sent to when they initiate a password change.
 func (m *IosKerberosSingleSignOnExtension) GetPasswordChangeUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.passwordChangeUrl
-    }
+    return m.passwordChangeUrl
 }
 // GetPasswordEnableLocalSync gets the passwordEnableLocalSync property value. Enables or disables password syncing. This won't affect users logged in with a mobile account on macOS.
 func (m *IosKerberosSingleSignOnExtension) GetPasswordEnableLocalSync()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.passwordEnableLocalSync
-    }
+    return m.passwordEnableLocalSync
 }
 // GetPasswordExpirationDays gets the passwordExpirationDays property value. Overrides the default password expiration in days. For most domains, this value is calculated automatically.
 func (m *IosKerberosSingleSignOnExtension) GetPasswordExpirationDays()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.passwordExpirationDays
-    }
+    return m.passwordExpirationDays
 }
 // GetPasswordExpirationNotificationDays gets the passwordExpirationNotificationDays property value. Gets or sets the number of days until the user is notified that their password will expire (default is 15).
 func (m *IosKerberosSingleSignOnExtension) GetPasswordExpirationNotificationDays()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.passwordExpirationNotificationDays
-    }
+    return m.passwordExpirationNotificationDays
 }
 // GetPasswordMinimumAgeDays gets the passwordMinimumAgeDays property value. Gets or sets the minimum number of days until a user can change their password again.
 func (m *IosKerberosSingleSignOnExtension) GetPasswordMinimumAgeDays()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.passwordMinimumAgeDays
-    }
+    return m.passwordMinimumAgeDays
 }
 // GetPasswordMinimumLength gets the passwordMinimumLength property value. Gets or sets the minimum length of a password.
 func (m *IosKerberosSingleSignOnExtension) GetPasswordMinimumLength()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.passwordMinimumLength
-    }
+    return m.passwordMinimumLength
 }
 // GetPasswordPreviousPasswordBlockCount gets the passwordPreviousPasswordBlockCount property value. Gets or sets the number of previous passwords to block.
 func (m *IosKerberosSingleSignOnExtension) GetPasswordPreviousPasswordBlockCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.passwordPreviousPasswordBlockCount
-    }
+    return m.passwordPreviousPasswordBlockCount
 }
 // GetPasswordRequireActiveDirectoryComplexity gets the passwordRequireActiveDirectoryComplexity property value. Enables or disables whether passwords must meet Active Directory's complexity requirements.
 func (m *IosKerberosSingleSignOnExtension) GetPasswordRequireActiveDirectoryComplexity()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.passwordRequireActiveDirectoryComplexity
-    }
+    return m.passwordRequireActiveDirectoryComplexity
 }
 // GetPasswordRequirementsDescription gets the passwordRequirementsDescription property value. Gets or sets a description of the password complexity requirements.
 func (m *IosKerberosSingleSignOnExtension) GetPasswordRequirementsDescription()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.passwordRequirementsDescription
-    }
+    return m.passwordRequirementsDescription
 }
 // GetRealm gets the realm property value. Gets or sets the case-sensitive realm name for this profile.
 func (m *IosKerberosSingleSignOnExtension) GetRealm()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.realm
-    }
+    return m.realm
 }
 // GetRequireUserPresence gets the requireUserPresence property value. Gets or sets whether to require authentication via Touch ID, Face ID, or a passcode to access the keychain entry.
 func (m *IosKerberosSingleSignOnExtension) GetRequireUserPresence()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.requireUserPresence
-    }
+    return m.requireUserPresence
 }
 // GetSignInHelpText gets the signInHelpText property value. Text displayed to the user at the Kerberos sign in window. Available for devices running iOS and iPadOS versions 14 and later.
 func (m *IosKerberosSingleSignOnExtension) GetSignInHelpText()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.signInHelpText
-    }
+    return m.signInHelpText
 }
 // GetUserPrincipalName gets the userPrincipalName property value. Gets or sets the principle user name to use for this profile. The realm name does not need to be included.
 func (m *IosKerberosSingleSignOnExtension) GetUserPrincipalName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userPrincipalName
-    }
+    return m.userPrincipalName
 }
 // Serialize serializes information the current object
 func (m *IosKerberosSingleSignOnExtension) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -646,139 +554,93 @@ func (m *IosKerberosSingleSignOnExtension) Serialize(writer i878a80d2330e89d2689
 }
 // SetActiveDirectorySiteCode sets the activeDirectorySiteCode property value. Gets or sets the Active Directory site.
 func (m *IosKerberosSingleSignOnExtension) SetActiveDirectorySiteCode(value *string)() {
-    if m != nil {
-        m.activeDirectorySiteCode = value
-    }
+    m.activeDirectorySiteCode = value
 }
 // SetBlockActiveDirectorySiteAutoDiscovery sets the blockActiveDirectorySiteAutoDiscovery property value. Enables or disables whether the Kerberos extension can automatically determine its site name.
 func (m *IosKerberosSingleSignOnExtension) SetBlockActiveDirectorySiteAutoDiscovery(value *bool)() {
-    if m != nil {
-        m.blockActiveDirectorySiteAutoDiscovery = value
-    }
+    m.blockActiveDirectorySiteAutoDiscovery = value
 }
 // SetBlockAutomaticLogin sets the blockAutomaticLogin property value. Enables or disables Keychain usage.
 func (m *IosKerberosSingleSignOnExtension) SetBlockAutomaticLogin(value *bool)() {
-    if m != nil {
-        m.blockAutomaticLogin = value
-    }
+    m.blockAutomaticLogin = value
 }
 // SetCacheName sets the cacheName property value. Gets or sets the Generic Security Services name of the Kerberos cache to use for this profile.
 func (m *IosKerberosSingleSignOnExtension) SetCacheName(value *string)() {
-    if m != nil {
-        m.cacheName = value
-    }
+    m.cacheName = value
 }
 // SetCredentialBundleIdAccessControlList sets the credentialBundleIdAccessControlList property value. Gets or sets a list of app Bundle IDs allowed to access the Kerberos Ticket Granting Ticket.
 func (m *IosKerberosSingleSignOnExtension) SetCredentialBundleIdAccessControlList(value []string)() {
-    if m != nil {
-        m.credentialBundleIdAccessControlList = value
-    }
+    m.credentialBundleIdAccessControlList = value
 }
 // SetDomainRealms sets the domainRealms property value. Gets or sets a list of realms for custom domain-realm mapping. Realms are case sensitive.
 func (m *IosKerberosSingleSignOnExtension) SetDomainRealms(value []string)() {
-    if m != nil {
-        m.domainRealms = value
-    }
+    m.domainRealms = value
 }
 // SetDomains sets the domains property value. Gets or sets a list of hosts or domain names for which the app extension performs SSO.
 func (m *IosKerberosSingleSignOnExtension) SetDomains(value []string)() {
-    if m != nil {
-        m.domains = value
-    }
+    m.domains = value
 }
 // SetIsDefaultRealm sets the isDefaultRealm property value. When true, this profile's realm will be selected as the default. Necessary if multiple Kerberos-type profiles are configured.
 func (m *IosKerberosSingleSignOnExtension) SetIsDefaultRealm(value *bool)() {
-    if m != nil {
-        m.isDefaultRealm = value
-    }
+    m.isDefaultRealm = value
 }
 // SetManagedAppsInBundleIdACLIncluded sets the managedAppsInBundleIdACLIncluded property value. When set to True, the Kerberos extension allows managed apps, and any apps entered with the app bundle ID to access the credential. When set to False, the Kerberos extension allows all apps to access the credential. Available for devices running iOS and iPadOS versions 14 and later.
 func (m *IosKerberosSingleSignOnExtension) SetManagedAppsInBundleIdACLIncluded(value *bool)() {
-    if m != nil {
-        m.managedAppsInBundleIdACLIncluded = value
-    }
+    m.managedAppsInBundleIdACLIncluded = value
 }
 // SetPasswordBlockModification sets the passwordBlockModification property value. Enables or disables password changes.
 func (m *IosKerberosSingleSignOnExtension) SetPasswordBlockModification(value *bool)() {
-    if m != nil {
-        m.passwordBlockModification = value
-    }
+    m.passwordBlockModification = value
 }
 // SetPasswordChangeUrl sets the passwordChangeUrl property value. Gets or sets the URL that the user will be sent to when they initiate a password change.
 func (m *IosKerberosSingleSignOnExtension) SetPasswordChangeUrl(value *string)() {
-    if m != nil {
-        m.passwordChangeUrl = value
-    }
+    m.passwordChangeUrl = value
 }
 // SetPasswordEnableLocalSync sets the passwordEnableLocalSync property value. Enables or disables password syncing. This won't affect users logged in with a mobile account on macOS.
 func (m *IosKerberosSingleSignOnExtension) SetPasswordEnableLocalSync(value *bool)() {
-    if m != nil {
-        m.passwordEnableLocalSync = value
-    }
+    m.passwordEnableLocalSync = value
 }
 // SetPasswordExpirationDays sets the passwordExpirationDays property value. Overrides the default password expiration in days. For most domains, this value is calculated automatically.
 func (m *IosKerberosSingleSignOnExtension) SetPasswordExpirationDays(value *int32)() {
-    if m != nil {
-        m.passwordExpirationDays = value
-    }
+    m.passwordExpirationDays = value
 }
 // SetPasswordExpirationNotificationDays sets the passwordExpirationNotificationDays property value. Gets or sets the number of days until the user is notified that their password will expire (default is 15).
 func (m *IosKerberosSingleSignOnExtension) SetPasswordExpirationNotificationDays(value *int32)() {
-    if m != nil {
-        m.passwordExpirationNotificationDays = value
-    }
+    m.passwordExpirationNotificationDays = value
 }
 // SetPasswordMinimumAgeDays sets the passwordMinimumAgeDays property value. Gets or sets the minimum number of days until a user can change their password again.
 func (m *IosKerberosSingleSignOnExtension) SetPasswordMinimumAgeDays(value *int32)() {
-    if m != nil {
-        m.passwordMinimumAgeDays = value
-    }
+    m.passwordMinimumAgeDays = value
 }
 // SetPasswordMinimumLength sets the passwordMinimumLength property value. Gets or sets the minimum length of a password.
 func (m *IosKerberosSingleSignOnExtension) SetPasswordMinimumLength(value *int32)() {
-    if m != nil {
-        m.passwordMinimumLength = value
-    }
+    m.passwordMinimumLength = value
 }
 // SetPasswordPreviousPasswordBlockCount sets the passwordPreviousPasswordBlockCount property value. Gets or sets the number of previous passwords to block.
 func (m *IosKerberosSingleSignOnExtension) SetPasswordPreviousPasswordBlockCount(value *int32)() {
-    if m != nil {
-        m.passwordPreviousPasswordBlockCount = value
-    }
+    m.passwordPreviousPasswordBlockCount = value
 }
 // SetPasswordRequireActiveDirectoryComplexity sets the passwordRequireActiveDirectoryComplexity property value. Enables or disables whether passwords must meet Active Directory's complexity requirements.
 func (m *IosKerberosSingleSignOnExtension) SetPasswordRequireActiveDirectoryComplexity(value *bool)() {
-    if m != nil {
-        m.passwordRequireActiveDirectoryComplexity = value
-    }
+    m.passwordRequireActiveDirectoryComplexity = value
 }
 // SetPasswordRequirementsDescription sets the passwordRequirementsDescription property value. Gets or sets a description of the password complexity requirements.
 func (m *IosKerberosSingleSignOnExtension) SetPasswordRequirementsDescription(value *string)() {
-    if m != nil {
-        m.passwordRequirementsDescription = value
-    }
+    m.passwordRequirementsDescription = value
 }
 // SetRealm sets the realm property value. Gets or sets the case-sensitive realm name for this profile.
 func (m *IosKerberosSingleSignOnExtension) SetRealm(value *string)() {
-    if m != nil {
-        m.realm = value
-    }
+    m.realm = value
 }
 // SetRequireUserPresence sets the requireUserPresence property value. Gets or sets whether to require authentication via Touch ID, Face ID, or a passcode to access the keychain entry.
 func (m *IosKerberosSingleSignOnExtension) SetRequireUserPresence(value *bool)() {
-    if m != nil {
-        m.requireUserPresence = value
-    }
+    m.requireUserPresence = value
 }
 // SetSignInHelpText sets the signInHelpText property value. Text displayed to the user at the Kerberos sign in window. Available for devices running iOS and iPadOS versions 14 and later.
 func (m *IosKerberosSingleSignOnExtension) SetSignInHelpText(value *string)() {
-    if m != nil {
-        m.signInHelpText = value
-    }
+    m.signInHelpText = value
 }
 // SetUserPrincipalName sets the userPrincipalName property value. Gets or sets the principle user name to use for this profile. The realm name does not need to be included.
 func (m *IosKerberosSingleSignOnExtension) SetUserPrincipalName(value *string)() {
-    if m != nil {
-        m.userPrincipalName = value
-    }
+    m.userPrincipalName = value
 }

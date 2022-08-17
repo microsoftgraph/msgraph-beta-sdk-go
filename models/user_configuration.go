@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// UserConfiguration provides operations to manage the collection of accessReview entities.
+// UserConfiguration provides operations to manage the collection of accessReviewDecision entities.
 type UserConfiguration struct {
     Entity
     // The binaryData property
@@ -25,11 +25,7 @@ func CreateUserConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d268
 }
 // GetBinaryData gets the binaryData property value. The binaryData property
 func (m *UserConfiguration) GetBinaryData()([]byte) {
-    if m == nil {
-        return nil
-    } else {
-        return m.binaryData
-    }
+    return m.binaryData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *UserConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -62,7 +58,5 @@ func (m *UserConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef27
 }
 // SetBinaryData sets the binaryData property value. The binaryData property
 func (m *UserConfiguration) SetBinaryData(value []byte)() {
-    if m != nil {
-        m.binaryData = value
-    }
+    m.binaryData = value
 }

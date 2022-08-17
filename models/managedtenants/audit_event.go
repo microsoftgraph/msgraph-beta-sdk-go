@@ -6,7 +6,7 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
-// AuditEvent provides operations to manage the collection of activityStatistics entities.
+// AuditEvent provides operations to manage the collection of accessReviewDecision entities.
 type AuditEvent struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
     // A string which uniquely represents the operation that occurred. Required. Read-only.
@@ -51,35 +51,19 @@ func CreateAuditEventFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3
 }
 // GetActivity gets the activity property value. A string which uniquely represents the operation that occurred. Required. Read-only.
 func (m *AuditEvent) GetActivity()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.activity
-    }
+    return m.activity
 }
 // GetActivityDateTime gets the activityDateTime property value. The time when the activity ocurred. Required. Read-only.
 func (m *AuditEvent) GetActivityDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.activityDateTime
-    }
+    return m.activityDateTime
 }
 // GetActivityId gets the activityId property value. The identifier of the activity request that made the audit event. Required. Read-only.
 func (m *AuditEvent) GetActivityId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.activityId
-    }
+    return m.activityId
 }
 // GetCategory gets the category property value. A category which represents a logical grouping of activities. Required. Read-only.
 func (m *AuditEvent) GetCategory()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.category
-    }
+    return m.category
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AuditEvent) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -218,75 +202,39 @@ func (m *AuditEvent) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
 }
 // GetHttpVerb gets the httpVerb property value. The HTTP verb that was used when making the API request. Required. Read-only.
 func (m *AuditEvent) GetHttpVerb()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.httpVerb
-    }
+    return m.httpVerb
 }
 // GetInitiatedByAppId gets the initiatedByAppId property value. The identifier of the app that was used to make the request. Required. Read-only.
 func (m *AuditEvent) GetInitiatedByAppId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.initiatedByAppId
-    }
+    return m.initiatedByAppId
 }
 // GetInitiatedByUpn gets the initiatedByUpn property value. The UPN of the user who initiated the activity. Required. Read-only.
 func (m *AuditEvent) GetInitiatedByUpn()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.initiatedByUpn
-    }
+    return m.initiatedByUpn
 }
 // GetInitiatedByUserId gets the initiatedByUserId property value. The identifier of the user who initiated the activity. Required. Read-only.
 func (m *AuditEvent) GetInitiatedByUserId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.initiatedByUserId
-    }
+    return m.initiatedByUserId
 }
 // GetIpAddress gets the ipAddress property value. The IP address of where the activity was initiated. This may be an IPv4 or IPv6 address. Required. Read-only.
 func (m *AuditEvent) GetIpAddress()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.ipAddress
-    }
+    return m.ipAddress
 }
 // GetRequestBody gets the requestBody property value. The raw HTTP request body. Some sensitive information may be removed.
 func (m *AuditEvent) GetRequestBody()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.requestBody
-    }
+    return m.requestBody
 }
 // GetRequestUrl gets the requestUrl property value. The raw HTTP request URL. Required. Read-only.
 func (m *AuditEvent) GetRequestUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.requestUrl
-    }
+    return m.requestUrl
 }
 // GetTenantIds gets the tenantIds property value. The collection of Azure Active Directory tenant identifiers for the managed tenants that were impacted by this change. This is formatted as a list of comma-separated values. Required. Read-only.
 func (m *AuditEvent) GetTenantIds()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.tenantIds
-    }
+    return m.tenantIds
 }
 // GetTenantNames gets the tenantNames property value. The collection of tenant names that were impacted by this change. This is formatted as a list of comma-separated values. Required. Read-only.
 func (m *AuditEvent) GetTenantNames()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.tenantNames
-    }
+    return m.tenantNames
 }
 // Serialize serializes information the current object
 func (m *AuditEvent) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -376,79 +324,53 @@ func (m *AuditEvent) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
 }
 // SetActivity sets the activity property value. A string which uniquely represents the operation that occurred. Required. Read-only.
 func (m *AuditEvent) SetActivity(value *string)() {
-    if m != nil {
-        m.activity = value
-    }
+    m.activity = value
 }
 // SetActivityDateTime sets the activityDateTime property value. The time when the activity ocurred. Required. Read-only.
 func (m *AuditEvent) SetActivityDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.activityDateTime = value
-    }
+    m.activityDateTime = value
 }
 // SetActivityId sets the activityId property value. The identifier of the activity request that made the audit event. Required. Read-only.
 func (m *AuditEvent) SetActivityId(value *string)() {
-    if m != nil {
-        m.activityId = value
-    }
+    m.activityId = value
 }
 // SetCategory sets the category property value. A category which represents a logical grouping of activities. Required. Read-only.
 func (m *AuditEvent) SetCategory(value *string)() {
-    if m != nil {
-        m.category = value
-    }
+    m.category = value
 }
 // SetHttpVerb sets the httpVerb property value. The HTTP verb that was used when making the API request. Required. Read-only.
 func (m *AuditEvent) SetHttpVerb(value *string)() {
-    if m != nil {
-        m.httpVerb = value
-    }
+    m.httpVerb = value
 }
 // SetInitiatedByAppId sets the initiatedByAppId property value. The identifier of the app that was used to make the request. Required. Read-only.
 func (m *AuditEvent) SetInitiatedByAppId(value *string)() {
-    if m != nil {
-        m.initiatedByAppId = value
-    }
+    m.initiatedByAppId = value
 }
 // SetInitiatedByUpn sets the initiatedByUpn property value. The UPN of the user who initiated the activity. Required. Read-only.
 func (m *AuditEvent) SetInitiatedByUpn(value *string)() {
-    if m != nil {
-        m.initiatedByUpn = value
-    }
+    m.initiatedByUpn = value
 }
 // SetInitiatedByUserId sets the initiatedByUserId property value. The identifier of the user who initiated the activity. Required. Read-only.
 func (m *AuditEvent) SetInitiatedByUserId(value *string)() {
-    if m != nil {
-        m.initiatedByUserId = value
-    }
+    m.initiatedByUserId = value
 }
 // SetIpAddress sets the ipAddress property value. The IP address of where the activity was initiated. This may be an IPv4 or IPv6 address. Required. Read-only.
 func (m *AuditEvent) SetIpAddress(value *string)() {
-    if m != nil {
-        m.ipAddress = value
-    }
+    m.ipAddress = value
 }
 // SetRequestBody sets the requestBody property value. The raw HTTP request body. Some sensitive information may be removed.
 func (m *AuditEvent) SetRequestBody(value *string)() {
-    if m != nil {
-        m.requestBody = value
-    }
+    m.requestBody = value
 }
 // SetRequestUrl sets the requestUrl property value. The raw HTTP request URL. Required. Read-only.
 func (m *AuditEvent) SetRequestUrl(value *string)() {
-    if m != nil {
-        m.requestUrl = value
-    }
+    m.requestUrl = value
 }
 // SetTenantIds sets the tenantIds property value. The collection of Azure Active Directory tenant identifiers for the managed tenants that were impacted by this change. This is formatted as a list of comma-separated values. Required. Read-only.
 func (m *AuditEvent) SetTenantIds(value *string)() {
-    if m != nil {
-        m.tenantIds = value
-    }
+    m.tenantIds = value
 }
 // SetTenantNames sets the tenantNames property value. The collection of tenant names that were impacted by this change. This is formatted as a list of comma-separated values. Required. Read-only.
 func (m *AuditEvent) SetTenantNames(value *string)() {
-    if m != nil {
-        m.tenantNames = value
-    }
+    m.tenantNames = value
 }

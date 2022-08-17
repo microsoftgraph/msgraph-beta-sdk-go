@@ -30,11 +30,7 @@ func CreateX509CertificateAuthenticationModeConfigurationFromDiscriminatorValue(
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *X509CertificateAuthenticationModeConfiguration) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *X509CertificateAuthenticationModeConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -77,27 +73,15 @@ func (m *X509CertificateAuthenticationModeConfiguration) GetFieldDeserializers()
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *X509CertificateAuthenticationModeConfiguration) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetRules gets the rules property value. Rules are configured in addition to the authentication mode to bind a specific x509CertificateRuleType to an x509CertificateAuthenticationMode. For example, bind the policyOID with identifier 1.32.132.343 to x509CertificateMultiFactor authentication mode.
 func (m *X509CertificateAuthenticationModeConfiguration) GetRules()([]X509CertificateRuleable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.rules
-    }
+    return m.rules
 }
 // GetX509CertificateAuthenticationDefaultMode gets the x509CertificateAuthenticationDefaultMode property value. The type of strong authentication mode. The possible values are: x509CertificateSingleFactor, x509CertificateMultiFactor, unknownFutureValue.
 func (m *X509CertificateAuthenticationModeConfiguration) GetX509CertificateAuthenticationDefaultMode()(*X509CertificateAuthenticationMode) {
-    if m == nil {
-        return nil
-    } else {
-        return m.x509CertificateAuthenticationDefaultMode
-    }
+    return m.x509CertificateAuthenticationDefaultMode
 }
 // Serialize serializes information the current object
 func (m *X509CertificateAuthenticationModeConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -134,25 +118,17 @@ func (m *X509CertificateAuthenticationModeConfiguration) Serialize(writer i878a8
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *X509CertificateAuthenticationModeConfiguration) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *X509CertificateAuthenticationModeConfiguration) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetRules sets the rules property value. Rules are configured in addition to the authentication mode to bind a specific x509CertificateRuleType to an x509CertificateAuthenticationMode. For example, bind the policyOID with identifier 1.32.132.343 to x509CertificateMultiFactor authentication mode.
 func (m *X509CertificateAuthenticationModeConfiguration) SetRules(value []X509CertificateRuleable)() {
-    if m != nil {
-        m.rules = value
-    }
+    m.rules = value
 }
 // SetX509CertificateAuthenticationDefaultMode sets the x509CertificateAuthenticationDefaultMode property value. The type of strong authentication mode. The possible values are: x509CertificateSingleFactor, x509CertificateMultiFactor, unknownFutureValue.
 func (m *X509CertificateAuthenticationModeConfiguration) SetX509CertificateAuthenticationDefaultMode(value *X509CertificateAuthenticationMode)() {
-    if m != nil {
-        m.x509CertificateAuthenticationDefaultMode = value
-    }
+    m.x509CertificateAuthenticationDefaultMode = value
 }

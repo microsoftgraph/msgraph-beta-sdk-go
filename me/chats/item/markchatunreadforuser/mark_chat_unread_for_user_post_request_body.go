@@ -30,11 +30,7 @@ func CreateMarkChatUnreadForUserPostRequestBodyFromDiscriminatorValue(parseNode 
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *MarkChatUnreadForUserPostRequestBody) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *MarkChatUnreadForUserPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -73,27 +69,15 @@ func (m *MarkChatUnreadForUserPostRequestBody) GetFieldDeserializers()(map[strin
 }
 // GetLastMessageReadDateTime gets the lastMessageReadDateTime property value. The lastMessageReadDateTime property
 func (m *MarkChatUnreadForUserPostRequestBody) GetLastMessageReadDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastMessageReadDateTime
-    }
+    return m.lastMessageReadDateTime
 }
 // GetTenantId gets the tenantId property value. The tenantId property
 func (m *MarkChatUnreadForUserPostRequestBody) GetTenantId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.tenantId
-    }
+    return m.tenantId
 }
 // GetUser gets the user property value. The user property
 func (m *MarkChatUnreadForUserPostRequestBody) GetUser()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamworkUserIdentityable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.user
-    }
+    return m.user
 }
 // Serialize serializes information the current object
 func (m *MarkChatUnreadForUserPostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -125,25 +109,17 @@ func (m *MarkChatUnreadForUserPostRequestBody) Serialize(writer i878a80d2330e89d
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *MarkChatUnreadForUserPostRequestBody) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetLastMessageReadDateTime sets the lastMessageReadDateTime property value. The lastMessageReadDateTime property
 func (m *MarkChatUnreadForUserPostRequestBody) SetLastMessageReadDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.lastMessageReadDateTime = value
-    }
+    m.lastMessageReadDateTime = value
 }
 // SetTenantId sets the tenantId property value. The tenantId property
 func (m *MarkChatUnreadForUserPostRequestBody) SetTenantId(value *string)() {
-    if m != nil {
-        m.tenantId = value
-    }
+    m.tenantId = value
 }
 // SetUser sets the user property value. The user property
 func (m *MarkChatUnreadForUserPostRequestBody) SetUser(value ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamworkUserIdentityable)() {
-    if m != nil {
-        m.user = value
-    }
+    m.user = value
 }

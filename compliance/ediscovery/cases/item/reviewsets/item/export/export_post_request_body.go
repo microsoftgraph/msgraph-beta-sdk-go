@@ -35,51 +35,27 @@ func CreateExportPostRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e89
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ExportPostRequestBody) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetAzureBlobContainer gets the azureBlobContainer property value. The azureBlobContainer property
 func (m *ExportPostRequestBody) GetAzureBlobContainer()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.azureBlobContainer
-    }
+    return m.azureBlobContainer
 }
 // GetAzureBlobToken gets the azureBlobToken property value. The azureBlobToken property
 func (m *ExportPostRequestBody) GetAzureBlobToken()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.azureBlobToken
-    }
+    return m.azureBlobToken
 }
 // GetDescription gets the description property value. The description property
 func (m *ExportPostRequestBody) GetDescription()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.description
-    }
+    return m.description
 }
 // GetExportOptions gets the exportOptions property value. The exportOptions property
 func (m *ExportPostRequestBody) GetExportOptions()(*ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.ExportOptions) {
-    if m == nil {
-        return nil
-    } else {
-        return m.exportOptions
-    }
+    return m.exportOptions
 }
 // GetExportStructure gets the exportStructure property value. The exportStructure property
 func (m *ExportPostRequestBody) GetExportStructure()(*ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.ExportFileStructure) {
-    if m == nil {
-        return nil
-    } else {
-        return m.exportStructure
-    }
+    return m.exportStructure
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ExportPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -148,11 +124,7 @@ func (m *ExportPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d
 }
 // GetOutputName gets the outputName property value. The outputName property
 func (m *ExportPostRequestBody) GetOutputName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.outputName
-    }
+    return m.outputName
 }
 // Serialize serializes information the current object
 func (m *ExportPostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -204,43 +176,29 @@ func (m *ExportPostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487e
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ExportPostRequestBody) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetAzureBlobContainer sets the azureBlobContainer property value. The azureBlobContainer property
 func (m *ExportPostRequestBody) SetAzureBlobContainer(value *string)() {
-    if m != nil {
-        m.azureBlobContainer = value
-    }
+    m.azureBlobContainer = value
 }
 // SetAzureBlobToken sets the azureBlobToken property value. The azureBlobToken property
 func (m *ExportPostRequestBody) SetAzureBlobToken(value *string)() {
-    if m != nil {
-        m.azureBlobToken = value
-    }
+    m.azureBlobToken = value
 }
 // SetDescription sets the description property value. The description property
 func (m *ExportPostRequestBody) SetDescription(value *string)() {
-    if m != nil {
-        m.description = value
-    }
+    m.description = value
 }
 // SetExportOptions sets the exportOptions property value. The exportOptions property
 func (m *ExportPostRequestBody) SetExportOptions(value *ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.ExportOptions)() {
-    if m != nil {
-        m.exportOptions = value
-    }
+    m.exportOptions = value
 }
 // SetExportStructure sets the exportStructure property value. The exportStructure property
 func (m *ExportPostRequestBody) SetExportStructure(value *ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.ExportFileStructure)() {
-    if m != nil {
-        m.exportStructure = value
-    }
+    m.exportStructure = value
 }
 // SetOutputName sets the outputName property value. The outputName property
 func (m *ExportPostRequestBody) SetOutputName(value *string)() {
-    if m != nil {
-        m.outputName = value
-    }
+    m.outputName = value
 }

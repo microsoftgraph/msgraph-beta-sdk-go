@@ -30,19 +30,11 @@ func CreateExpressionInputObjectFromDiscriminatorValue(parseNode i878a80d2330e89
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ExpressionInputObject) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetDefinition gets the definition property value. Definition of the test object.
 func (m *ExpressionInputObject) GetDefinition()(ObjectDefinitionable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.definition
-    }
+    return m.definition
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ExpressionInputObject) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -85,19 +77,11 @@ func (m *ExpressionInputObject) GetFieldDeserializers()(map[string]func(i878a80d
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *ExpressionInputObject) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetProperties gets the properties property value. Property values of the test object.
 func (m *ExpressionInputObject) GetProperties()([]StringKeyObjectValuePairable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.properties
-    }
+    return m.properties
 }
 // Serialize serializes information the current object
 func (m *ExpressionInputObject) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -133,25 +117,17 @@ func (m *ExpressionInputObject) Serialize(writer i878a80d2330e89d26896388a3f487e
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ExpressionInputObject) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetDefinition sets the definition property value. Definition of the test object.
 func (m *ExpressionInputObject) SetDefinition(value ObjectDefinitionable)() {
-    if m != nil {
-        m.definition = value
-    }
+    m.definition = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *ExpressionInputObject) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetProperties sets the properties property value. Property values of the test object.
 func (m *ExpressionInputObject) SetProperties(value []StringKeyObjectValuePairable)() {
-    if m != nil {
-        m.properties = value
-    }
+    m.properties = value
 }

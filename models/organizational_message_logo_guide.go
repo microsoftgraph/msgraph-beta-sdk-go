@@ -32,27 +32,15 @@ func CreateOrganizationalMessageLogoGuideFromDiscriminatorValue(parseNode i878a8
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *OrganizationalMessageLogoGuide) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetAssetName gets the assetName property value. The asset name is the key for this specific logo. This is used to compute the required token when accessing the logoCdnUrl to fetch the logo
 func (m *OrganizationalMessageLogoGuide) GetAssetName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.assetName
-    }
+    return m.assetName
 }
 // GetDimensions gets the dimensions property value. The required size dimensions of the logo
 func (m *OrganizationalMessageLogoGuide) GetDimensions()(OrganizationalMessageLogoDimensionsable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.dimensions
-    }
+    return m.dimensions
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *OrganizationalMessageLogoGuide) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -101,19 +89,11 @@ func (m *OrganizationalMessageLogoGuide) GetFieldDeserializers()(map[string]func
 }
 // GetLogoCdnUrl gets the logoCdnUrl property value. The url at which the logo resides
 func (m *OrganizationalMessageLogoGuide) GetLogoCdnUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.logoCdnUrl
-    }
+    return m.logoCdnUrl
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *OrganizationalMessageLogoGuide) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // Serialize serializes information the current object
 func (m *OrganizationalMessageLogoGuide) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -151,31 +131,21 @@ func (m *OrganizationalMessageLogoGuide) Serialize(writer i878a80d2330e89d268963
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *OrganizationalMessageLogoGuide) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetAssetName sets the assetName property value. The asset name is the key for this specific logo. This is used to compute the required token when accessing the logoCdnUrl to fetch the logo
 func (m *OrganizationalMessageLogoGuide) SetAssetName(value *string)() {
-    if m != nil {
-        m.assetName = value
-    }
+    m.assetName = value
 }
 // SetDimensions sets the dimensions property value. The required size dimensions of the logo
 func (m *OrganizationalMessageLogoGuide) SetDimensions(value OrganizationalMessageLogoDimensionsable)() {
-    if m != nil {
-        m.dimensions = value
-    }
+    m.dimensions = value
 }
 // SetLogoCdnUrl sets the logoCdnUrl property value. The url at which the logo resides
 func (m *OrganizationalMessageLogoGuide) SetLogoCdnUrl(value *string)() {
-    if m != nil {
-        m.logoCdnUrl = value
-    }
+    m.logoCdnUrl = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *OrganizationalMessageLogoGuide) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }

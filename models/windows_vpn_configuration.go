@@ -52,19 +52,11 @@ func CreateWindowsVpnConfigurationFromDiscriminatorValue(parseNode i878a80d2330e
 }
 // GetConnectionName gets the connectionName property value. Connection name displayed to the user.
 func (m *WindowsVpnConfiguration) GetConnectionName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.connectionName
-    }
+    return m.connectionName
 }
 // GetCustomXml gets the customXml property value. Custom XML commands that configures the VPN connection. (UTF8 encoded byte array)
 func (m *WindowsVpnConfiguration) GetCustomXml()([]byte) {
-    if m == nil {
-        return nil
-    } else {
-        return m.customXml
-    }
+    return m.customXml
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *WindowsVpnConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -107,11 +99,7 @@ func (m *WindowsVpnConfiguration) GetFieldDeserializers()(map[string]func(i878a8
 }
 // GetServers gets the servers property value. List of VPN Servers on the network. Make sure end users can access these network locations. This collection can contain a maximum of 500 elements.
 func (m *WindowsVpnConfiguration) GetServers()([]VpnServerable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.servers
-    }
+    return m.servers
 }
 // Serialize serializes information the current object
 func (m *WindowsVpnConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -145,19 +133,13 @@ func (m *WindowsVpnConfiguration) Serialize(writer i878a80d2330e89d26896388a3f48
 }
 // SetConnectionName sets the connectionName property value. Connection name displayed to the user.
 func (m *WindowsVpnConfiguration) SetConnectionName(value *string)() {
-    if m != nil {
-        m.connectionName = value
-    }
+    m.connectionName = value
 }
 // SetCustomXml sets the customXml property value. Custom XML commands that configures the VPN connection. (UTF8 encoded byte array)
 func (m *WindowsVpnConfiguration) SetCustomXml(value []byte)() {
-    if m != nil {
-        m.customXml = value
-    }
+    m.customXml = value
 }
 // SetServers sets the servers property value. List of VPN Servers on the network. Make sure end users can access these network locations. This collection can contain a maximum of 500 elements.
 func (m *WindowsVpnConfiguration) SetServers(value []VpnServerable)() {
-    if m != nil {
-        m.servers = value
-    }
+    m.servers = value
 }

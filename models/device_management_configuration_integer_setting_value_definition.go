@@ -52,19 +52,11 @@ func (m *DeviceManagementConfigurationIntegerSettingValueDefinition) GetFieldDes
 }
 // GetMaximumValue gets the maximumValue property value. Maximum allowed value of the integer
 func (m *DeviceManagementConfigurationIntegerSettingValueDefinition) GetMaximumValue()(*int64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.maximumValue
-    }
+    return m.maximumValue
 }
 // GetMinimumValue gets the minimumValue property value. Minimum allowed value of the integer
 func (m *DeviceManagementConfigurationIntegerSettingValueDefinition) GetMinimumValue()(*int64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.minimumValue
-    }
+    return m.minimumValue
 }
 // Serialize serializes information the current object
 func (m *DeviceManagementConfigurationIntegerSettingValueDefinition) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -88,13 +80,9 @@ func (m *DeviceManagementConfigurationIntegerSettingValueDefinition) Serialize(w
 }
 // SetMaximumValue sets the maximumValue property value. Maximum allowed value of the integer
 func (m *DeviceManagementConfigurationIntegerSettingValueDefinition) SetMaximumValue(value *int64)() {
-    if m != nil {
-        m.maximumValue = value
-    }
+    m.maximumValue = value
 }
 // SetMinimumValue sets the minimumValue property value. Minimum allowed value of the integer
 func (m *DeviceManagementConfigurationIntegerSettingValueDefinition) SetMinimumValue(value *int64)() {
-    if m != nil {
-        m.minimumValue = value
-    }
+    m.minimumValue = value
 }

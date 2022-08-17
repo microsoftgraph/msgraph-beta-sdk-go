@@ -52,19 +52,11 @@ func (m *CloudPcForensicStorageAccount) GetFieldDeserializers()(map[string]func(
 }
 // GetStorageAccountId gets the storageAccountId property value. The ID of the storage account.
 func (m *CloudPcForensicStorageAccount) GetStorageAccountId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.storageAccountId
-    }
+    return m.storageAccountId
 }
 // GetStorageAccountName gets the storageAccountName property value. The name of the storage account.
 func (m *CloudPcForensicStorageAccount) GetStorageAccountName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.storageAccountName
-    }
+    return m.storageAccountName
 }
 // Serialize serializes information the current object
 func (m *CloudPcForensicStorageAccount) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -88,13 +80,9 @@ func (m *CloudPcForensicStorageAccount) Serialize(writer i878a80d2330e89d2689638
 }
 // SetStorageAccountId sets the storageAccountId property value. The ID of the storage account.
 func (m *CloudPcForensicStorageAccount) SetStorageAccountId(value *string)() {
-    if m != nil {
-        m.storageAccountId = value
-    }
+    m.storageAccountId = value
 }
 // SetStorageAccountName sets the storageAccountName property value. The name of the storage account.
 func (m *CloudPcForensicStorageAccount) SetStorageAccountName(value *string)() {
-    if m != nil {
-        m.storageAccountName = value
-    }
+    m.storageAccountName = value
 }

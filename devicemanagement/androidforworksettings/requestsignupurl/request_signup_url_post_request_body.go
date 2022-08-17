@@ -24,11 +24,7 @@ func CreateRequestSignupUrlPostRequestBodyFromDiscriminatorValue(parseNode i878a
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *RequestSignupUrlPostRequestBody) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *RequestSignupUrlPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -47,11 +43,7 @@ func (m *RequestSignupUrlPostRequestBody) GetFieldDeserializers()(map[string]fun
 }
 // GetHostName gets the hostName property value. The hostName property
 func (m *RequestSignupUrlPostRequestBody) GetHostName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.hostName
-    }
+    return m.hostName
 }
 // Serialize serializes information the current object
 func (m *RequestSignupUrlPostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -71,13 +63,9 @@ func (m *RequestSignupUrlPostRequestBody) Serialize(writer i878a80d2330e89d26896
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *RequestSignupUrlPostRequestBody) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetHostName sets the hostName property value. The hostName property
 func (m *RequestSignupUrlPostRequestBody) SetHostName(value *string)() {
-    if m != nil {
-        m.hostName = value
-    }
+    m.hostName = value
 }

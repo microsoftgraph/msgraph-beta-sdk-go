@@ -31,19 +31,11 @@ func CreateWin32LobAppRegistryRequirementFromDiscriminatorValue(parseNode i878a8
 }
 // GetCheck32BitOn64System gets the check32BitOn64System property value. A value indicating whether this registry path is for checking 32-bit app on 64-bit system
 func (m *Win32LobAppRegistryRequirement) GetCheck32BitOn64System()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.check32BitOn64System
-    }
+    return m.check32BitOn64System
 }
 // GetDetectionType gets the detectionType property value. Contains all supported registry data detection type.
 func (m *Win32LobAppRegistryRequirement) GetDetectionType()(*Win32LobAppRegistryDetectionType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.detectionType
-    }
+    return m.detectionType
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Win32LobAppRegistryRequirement) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -92,19 +84,11 @@ func (m *Win32LobAppRegistryRequirement) GetFieldDeserializers()(map[string]func
 }
 // GetKeyPath gets the keyPath property value. The registry key path to detect Win32 Line of Business (LoB) app
 func (m *Win32LobAppRegistryRequirement) GetKeyPath()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.keyPath
-    }
+    return m.keyPath
 }
 // GetValueName gets the valueName property value. The registry value name
 func (m *Win32LobAppRegistryRequirement) GetValueName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.valueName
-    }
+    return m.valueName
 }
 // Serialize serializes information the current object
 func (m *Win32LobAppRegistryRequirement) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -141,25 +125,17 @@ func (m *Win32LobAppRegistryRequirement) Serialize(writer i878a80d2330e89d268963
 }
 // SetCheck32BitOn64System sets the check32BitOn64System property value. A value indicating whether this registry path is for checking 32-bit app on 64-bit system
 func (m *Win32LobAppRegistryRequirement) SetCheck32BitOn64System(value *bool)() {
-    if m != nil {
-        m.check32BitOn64System = value
-    }
+    m.check32BitOn64System = value
 }
 // SetDetectionType sets the detectionType property value. Contains all supported registry data detection type.
 func (m *Win32LobAppRegistryRequirement) SetDetectionType(value *Win32LobAppRegistryDetectionType)() {
-    if m != nil {
-        m.detectionType = value
-    }
+    m.detectionType = value
 }
 // SetKeyPath sets the keyPath property value. The registry key path to detect Win32 Line of Business (LoB) app
 func (m *Win32LobAppRegistryRequirement) SetKeyPath(value *string)() {
-    if m != nil {
-        m.keyPath = value
-    }
+    m.keyPath = value
 }
 // SetValueName sets the valueName property value. The registry value name
 func (m *Win32LobAppRegistryRequirement) SetValueName(value *string)() {
-    if m != nil {
-        m.valueName = value
-    }
+    m.valueName = value
 }

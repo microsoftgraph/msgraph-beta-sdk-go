@@ -35,11 +35,7 @@ func CreateDeviceManagementConfigurationWindowsSettingApplicabilityFromDiscrimin
 }
 // GetConfigurationServiceProviderVersion gets the configurationServiceProviderVersion property value. Version of CSP setting is a part of
 func (m *DeviceManagementConfigurationWindowsSettingApplicability) GetConfigurationServiceProviderVersion()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.configurationServiceProviderVersion
-    }
+    return m.configurationServiceProviderVersion
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceManagementConfigurationWindowsSettingApplicability) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -112,43 +108,23 @@ func (m *DeviceManagementConfigurationWindowsSettingApplicability) GetFieldDeser
 }
 // GetMaximumSupportedVersion gets the maximumSupportedVersion property value. Maximum supported version of Windows
 func (m *DeviceManagementConfigurationWindowsSettingApplicability) GetMaximumSupportedVersion()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.maximumSupportedVersion
-    }
+    return m.maximumSupportedVersion
 }
 // GetMinimumSupportedVersion gets the minimumSupportedVersion property value. Minimum supported version of Windows
 func (m *DeviceManagementConfigurationWindowsSettingApplicability) GetMinimumSupportedVersion()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.minimumSupportedVersion
-    }
+    return m.minimumSupportedVersion
 }
 // GetRequiredAzureAdTrustType gets the requiredAzureAdTrustType property value. Required AAD Trust Type
 func (m *DeviceManagementConfigurationWindowsSettingApplicability) GetRequiredAzureAdTrustType()(*DeviceManagementConfigurationAzureAdTrustType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.requiredAzureAdTrustType
-    }
+    return m.requiredAzureAdTrustType
 }
 // GetRequiresAzureAd gets the requiresAzureAd property value. AzureAD setting requirement
 func (m *DeviceManagementConfigurationWindowsSettingApplicability) GetRequiresAzureAd()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.requiresAzureAd
-    }
+    return m.requiresAzureAd
 }
 // GetWindowsSkus gets the windowsSkus property value. List of Windows SKUs that the setting is applicable for
 func (m *DeviceManagementConfigurationWindowsSettingApplicability) GetWindowsSkus()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.windowsSkus
-    }
+    return m.windowsSkus
 }
 // Serialize serializes information the current object
 func (m *DeviceManagementConfigurationWindowsSettingApplicability) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -197,37 +173,25 @@ func (m *DeviceManagementConfigurationWindowsSettingApplicability) Serialize(wri
 }
 // SetConfigurationServiceProviderVersion sets the configurationServiceProviderVersion property value. Version of CSP setting is a part of
 func (m *DeviceManagementConfigurationWindowsSettingApplicability) SetConfigurationServiceProviderVersion(value *string)() {
-    if m != nil {
-        m.configurationServiceProviderVersion = value
-    }
+    m.configurationServiceProviderVersion = value
 }
 // SetMaximumSupportedVersion sets the maximumSupportedVersion property value. Maximum supported version of Windows
 func (m *DeviceManagementConfigurationWindowsSettingApplicability) SetMaximumSupportedVersion(value *string)() {
-    if m != nil {
-        m.maximumSupportedVersion = value
-    }
+    m.maximumSupportedVersion = value
 }
 // SetMinimumSupportedVersion sets the minimumSupportedVersion property value. Minimum supported version of Windows
 func (m *DeviceManagementConfigurationWindowsSettingApplicability) SetMinimumSupportedVersion(value *string)() {
-    if m != nil {
-        m.minimumSupportedVersion = value
-    }
+    m.minimumSupportedVersion = value
 }
 // SetRequiredAzureAdTrustType sets the requiredAzureAdTrustType property value. Required AAD Trust Type
 func (m *DeviceManagementConfigurationWindowsSettingApplicability) SetRequiredAzureAdTrustType(value *DeviceManagementConfigurationAzureAdTrustType)() {
-    if m != nil {
-        m.requiredAzureAdTrustType = value
-    }
+    m.requiredAzureAdTrustType = value
 }
 // SetRequiresAzureAd sets the requiresAzureAd property value. AzureAD setting requirement
 func (m *DeviceManagementConfigurationWindowsSettingApplicability) SetRequiresAzureAd(value *bool)() {
-    if m != nil {
-        m.requiresAzureAd = value
-    }
+    m.requiresAzureAd = value
 }
 // SetWindowsSkus sets the windowsSkus property value. List of Windows SKUs that the setting is applicable for
 func (m *DeviceManagementConfigurationWindowsSettingApplicability) SetWindowsSkus(value []string)() {
-    if m != nil {
-        m.windowsSkus = value
-    }
+    m.windowsSkus = value
 }

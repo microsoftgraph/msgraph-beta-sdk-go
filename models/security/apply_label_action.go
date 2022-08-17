@@ -31,19 +31,11 @@ func CreateApplyLabelActionFromDiscriminatorValue(parseNode i878a80d2330e89d2689
 }
 // GetActions gets the actions property value. The collection of actions that should be implemented by the caller.
 func (m *ApplyLabelAction) GetActions()([]InformationProtectionActionable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.actions
-    }
+    return m.actions
 }
 // GetActionSource gets the actionSource property value. The actionSource property
 func (m *ApplyLabelAction) GetActionSource()(*ActionSource) {
-    if m == nil {
-        return nil
-    } else {
-        return m.actionSource
-    }
+    return m.actionSource
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ApplyLabelAction) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -100,19 +92,11 @@ func (m *ApplyLabelAction) GetFieldDeserializers()(map[string]func(i878a80d2330e
 }
 // GetResponsibleSensitiveTypeIds gets the responsibleSensitiveTypeIds property value. If the label was the result of an automatic classification, supply the list of sensitive info type GUIDs that resulted in the returned label.
 func (m *ApplyLabelAction) GetResponsibleSensitiveTypeIds()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.responsibleSensitiveTypeIds
-    }
+    return m.responsibleSensitiveTypeIds
 }
 // GetSensitivityLabelId gets the sensitivityLabelId property value. The sensitivityLabelId property
 func (m *ApplyLabelAction) GetSensitivityLabelId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.sensitivityLabelId
-    }
+    return m.sensitivityLabelId
 }
 // Serialize serializes information the current object
 func (m *ApplyLabelAction) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -153,25 +137,17 @@ func (m *ApplyLabelAction) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
 }
 // SetActions sets the actions property value. The collection of actions that should be implemented by the caller.
 func (m *ApplyLabelAction) SetActions(value []InformationProtectionActionable)() {
-    if m != nil {
-        m.actions = value
-    }
+    m.actions = value
 }
 // SetActionSource sets the actionSource property value. The actionSource property
 func (m *ApplyLabelAction) SetActionSource(value *ActionSource)() {
-    if m != nil {
-        m.actionSource = value
-    }
+    m.actionSource = value
 }
 // SetResponsibleSensitiveTypeIds sets the responsibleSensitiveTypeIds property value. If the label was the result of an automatic classification, supply the list of sensitive info type GUIDs that resulted in the returned label.
 func (m *ApplyLabelAction) SetResponsibleSensitiveTypeIds(value []string)() {
-    if m != nil {
-        m.responsibleSensitiveTypeIds = value
-    }
+    m.responsibleSensitiveTypeIds = value
 }
 // SetSensitivityLabelId sets the sensitivityLabelId property value. The sensitivityLabelId property
 func (m *ApplyLabelAction) SetSensitivityLabelId(value *string)() {
-    if m != nil {
-        m.sensitivityLabelId = value
-    }
+    m.sensitivityLabelId = value
 }

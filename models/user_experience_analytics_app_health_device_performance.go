@@ -48,75 +48,39 @@ func CreateUserExperienceAnalyticsAppHealthDevicePerformanceFromDiscriminatorVal
 }
 // GetAppCrashCount gets the appCrashCount property value. The number of app crashes for the device. Valid values -2147483648 to 2147483647
 func (m *UserExperienceAnalyticsAppHealthDevicePerformance) GetAppCrashCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.appCrashCount
-    }
+    return m.appCrashCount
 }
 // GetAppHangCount gets the appHangCount property value. The number of app hangs for the device. Valid values -2147483648 to 2147483647
 func (m *UserExperienceAnalyticsAppHealthDevicePerformance) GetAppHangCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.appHangCount
-    }
+    return m.appHangCount
 }
 // GetCrashedAppCount gets the crashedAppCount property value. The number of distinct app crashes for the device. Valid values -2147483648 to 2147483647
 func (m *UserExperienceAnalyticsAppHealthDevicePerformance) GetCrashedAppCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.crashedAppCount
-    }
+    return m.crashedAppCount
 }
 // GetDeviceAppHealthScore gets the deviceAppHealthScore property value. The app health score of the device. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
 func (m *UserExperienceAnalyticsAppHealthDevicePerformance) GetDeviceAppHealthScore()(*float64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deviceAppHealthScore
-    }
+    return m.deviceAppHealthScore
 }
 // GetDeviceAppHealthStatus gets the deviceAppHealthStatus property value. The overall app health status of the device.
 func (m *UserExperienceAnalyticsAppHealthDevicePerformance) GetDeviceAppHealthStatus()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deviceAppHealthStatus
-    }
+    return m.deviceAppHealthStatus
 }
 // GetDeviceDisplayName gets the deviceDisplayName property value. The name of the device.
 func (m *UserExperienceAnalyticsAppHealthDevicePerformance) GetDeviceDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deviceDisplayName
-    }
+    return m.deviceDisplayName
 }
 // GetDeviceId gets the deviceId property value. The id of the device.
 func (m *UserExperienceAnalyticsAppHealthDevicePerformance) GetDeviceId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deviceId
-    }
+    return m.deviceId
 }
 // GetDeviceManufacturer gets the deviceManufacturer property value. The manufacturer name of the device.
 func (m *UserExperienceAnalyticsAppHealthDevicePerformance) GetDeviceManufacturer()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deviceManufacturer
-    }
+    return m.deviceManufacturer
 }
 // GetDeviceModel gets the deviceModel property value. The model name of the device.
 func (m *UserExperienceAnalyticsAppHealthDevicePerformance) GetDeviceModel()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deviceModel
-    }
+    return m.deviceModel
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *UserExperienceAnalyticsAppHealthDevicePerformance) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -245,27 +209,15 @@ func (m *UserExperienceAnalyticsAppHealthDevicePerformance) GetFieldDeserializer
 }
 // GetHealthStatus gets the healthStatus property value. The healthStatus property
 func (m *UserExperienceAnalyticsAppHealthDevicePerformance) GetHealthStatus()(*UserExperienceAnalyticsHealthState) {
-    if m == nil {
-        return nil
-    } else {
-        return m.healthStatus
-    }
+    return m.healthStatus
 }
 // GetMeanTimeToFailureInMinutes gets the meanTimeToFailureInMinutes property value. The mean time to failure for the device in minutes. Valid values -2147483648 to 2147483647
 func (m *UserExperienceAnalyticsAppHealthDevicePerformance) GetMeanTimeToFailureInMinutes()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.meanTimeToFailureInMinutes
-    }
+    return m.meanTimeToFailureInMinutes
 }
 // GetProcessedDateTime gets the processedDateTime property value. The date and time when the statistics were last computed.
 func (m *UserExperienceAnalyticsAppHealthDevicePerformance) GetProcessedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.processedDateTime
-    }
+    return m.processedDateTime
 }
 // Serialize serializes information the current object
 func (m *UserExperienceAnalyticsAppHealthDevicePerformance) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -350,73 +302,49 @@ func (m *UserExperienceAnalyticsAppHealthDevicePerformance) Serialize(writer i87
 }
 // SetAppCrashCount sets the appCrashCount property value. The number of app crashes for the device. Valid values -2147483648 to 2147483647
 func (m *UserExperienceAnalyticsAppHealthDevicePerformance) SetAppCrashCount(value *int32)() {
-    if m != nil {
-        m.appCrashCount = value
-    }
+    m.appCrashCount = value
 }
 // SetAppHangCount sets the appHangCount property value. The number of app hangs for the device. Valid values -2147483648 to 2147483647
 func (m *UserExperienceAnalyticsAppHealthDevicePerformance) SetAppHangCount(value *int32)() {
-    if m != nil {
-        m.appHangCount = value
-    }
+    m.appHangCount = value
 }
 // SetCrashedAppCount sets the crashedAppCount property value. The number of distinct app crashes for the device. Valid values -2147483648 to 2147483647
 func (m *UserExperienceAnalyticsAppHealthDevicePerformance) SetCrashedAppCount(value *int32)() {
-    if m != nil {
-        m.crashedAppCount = value
-    }
+    m.crashedAppCount = value
 }
 // SetDeviceAppHealthScore sets the deviceAppHealthScore property value. The app health score of the device. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
 func (m *UserExperienceAnalyticsAppHealthDevicePerformance) SetDeviceAppHealthScore(value *float64)() {
-    if m != nil {
-        m.deviceAppHealthScore = value
-    }
+    m.deviceAppHealthScore = value
 }
 // SetDeviceAppHealthStatus sets the deviceAppHealthStatus property value. The overall app health status of the device.
 func (m *UserExperienceAnalyticsAppHealthDevicePerformance) SetDeviceAppHealthStatus(value *string)() {
-    if m != nil {
-        m.deviceAppHealthStatus = value
-    }
+    m.deviceAppHealthStatus = value
 }
 // SetDeviceDisplayName sets the deviceDisplayName property value. The name of the device.
 func (m *UserExperienceAnalyticsAppHealthDevicePerformance) SetDeviceDisplayName(value *string)() {
-    if m != nil {
-        m.deviceDisplayName = value
-    }
+    m.deviceDisplayName = value
 }
 // SetDeviceId sets the deviceId property value. The id of the device.
 func (m *UserExperienceAnalyticsAppHealthDevicePerformance) SetDeviceId(value *string)() {
-    if m != nil {
-        m.deviceId = value
-    }
+    m.deviceId = value
 }
 // SetDeviceManufacturer sets the deviceManufacturer property value. The manufacturer name of the device.
 func (m *UserExperienceAnalyticsAppHealthDevicePerformance) SetDeviceManufacturer(value *string)() {
-    if m != nil {
-        m.deviceManufacturer = value
-    }
+    m.deviceManufacturer = value
 }
 // SetDeviceModel sets the deviceModel property value. The model name of the device.
 func (m *UserExperienceAnalyticsAppHealthDevicePerformance) SetDeviceModel(value *string)() {
-    if m != nil {
-        m.deviceModel = value
-    }
+    m.deviceModel = value
 }
 // SetHealthStatus sets the healthStatus property value. The healthStatus property
 func (m *UserExperienceAnalyticsAppHealthDevicePerformance) SetHealthStatus(value *UserExperienceAnalyticsHealthState)() {
-    if m != nil {
-        m.healthStatus = value
-    }
+    m.healthStatus = value
 }
 // SetMeanTimeToFailureInMinutes sets the meanTimeToFailureInMinutes property value. The mean time to failure for the device in minutes. Valid values -2147483648 to 2147483647
 func (m *UserExperienceAnalyticsAppHealthDevicePerformance) SetMeanTimeToFailureInMinutes(value *int32)() {
-    if m != nil {
-        m.meanTimeToFailureInMinutes = value
-    }
+    m.meanTimeToFailureInMinutes = value
 }
 // SetProcessedDateTime sets the processedDateTime property value. The date and time when the statistics were last computed.
 func (m *UserExperienceAnalyticsAppHealthDevicePerformance) SetProcessedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.processedDateTime = value
-    }
+    m.processedDateTime = value
 }

@@ -33,19 +33,11 @@ func CreateProtectOnlineMeetingActionFromDiscriminatorValue(parseNode i878a80d23
 }
 // GetAllowedForwarders gets the allowedForwarders property value. The allowedForwarders property
 func (m *ProtectOnlineMeetingAction) GetAllowedForwarders()(*OnlineMeetingForwarders) {
-    if m == nil {
-        return nil
-    } else {
-        return m.allowedForwarders
-    }
+    return m.allowedForwarders
 }
 // GetAllowedPresenters gets the allowedPresenters property value. The allowedPresenters property
 func (m *ProtectOnlineMeetingAction) GetAllowedPresenters()(*OnlineMeetingPresenters) {
-    if m == nil {
-        return nil
-    } else {
-        return m.allowedPresenters
-    }
+    return m.allowedPresenters
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ProtectOnlineMeetingAction) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -104,27 +96,15 @@ func (m *ProtectOnlineMeetingAction) GetFieldDeserializers()(map[string]func(i87
 }
 // GetIsCopyToClipboardEnabled gets the isCopyToClipboardEnabled property value. The isCopyToClipboardEnabled property
 func (m *ProtectOnlineMeetingAction) GetIsCopyToClipboardEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isCopyToClipboardEnabled
-    }
+    return m.isCopyToClipboardEnabled
 }
 // GetIsLobbyEnabled gets the isLobbyEnabled property value. The isLobbyEnabled property
 func (m *ProtectOnlineMeetingAction) GetIsLobbyEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isLobbyEnabled
-    }
+    return m.isLobbyEnabled
 }
 // GetLobbyBypassSettings gets the lobbyBypassSettings property value. The lobbyBypassSettings property
 func (m *ProtectOnlineMeetingAction) GetLobbyBypassSettings()(LobbyBypassSettingsable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lobbyBypassSettings
-    }
+    return m.lobbyBypassSettings
 }
 // Serialize serializes information the current object
 func (m *ProtectOnlineMeetingAction) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -168,31 +148,21 @@ func (m *ProtectOnlineMeetingAction) Serialize(writer i878a80d2330e89d26896388a3
 }
 // SetAllowedForwarders sets the allowedForwarders property value. The allowedForwarders property
 func (m *ProtectOnlineMeetingAction) SetAllowedForwarders(value *OnlineMeetingForwarders)() {
-    if m != nil {
-        m.allowedForwarders = value
-    }
+    m.allowedForwarders = value
 }
 // SetAllowedPresenters sets the allowedPresenters property value. The allowedPresenters property
 func (m *ProtectOnlineMeetingAction) SetAllowedPresenters(value *OnlineMeetingPresenters)() {
-    if m != nil {
-        m.allowedPresenters = value
-    }
+    m.allowedPresenters = value
 }
 // SetIsCopyToClipboardEnabled sets the isCopyToClipboardEnabled property value. The isCopyToClipboardEnabled property
 func (m *ProtectOnlineMeetingAction) SetIsCopyToClipboardEnabled(value *bool)() {
-    if m != nil {
-        m.isCopyToClipboardEnabled = value
-    }
+    m.isCopyToClipboardEnabled = value
 }
 // SetIsLobbyEnabled sets the isLobbyEnabled property value. The isLobbyEnabled property
 func (m *ProtectOnlineMeetingAction) SetIsLobbyEnabled(value *bool)() {
-    if m != nil {
-        m.isLobbyEnabled = value
-    }
+    m.isLobbyEnabled = value
 }
 // SetLobbyBypassSettings sets the lobbyBypassSettings property value. The lobbyBypassSettings property
 func (m *ProtectOnlineMeetingAction) SetLobbyBypassSettings(value LobbyBypassSettingsable)() {
-    if m != nil {
-        m.lobbyBypassSettings = value
-    }
+    m.lobbyBypassSettings = value
 }

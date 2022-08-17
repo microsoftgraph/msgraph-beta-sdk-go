@@ -30,19 +30,11 @@ func CreateDeviceManagementConfigurationSettingDependedOnByFromDiscriminatorValu
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DeviceManagementConfigurationSettingDependedOnBy) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetDependedOnBy gets the dependedOnBy property value. Identifier of child setting that is dependent on the current setting
 func (m *DeviceManagementConfigurationSettingDependedOnBy) GetDependedOnBy()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.dependedOnBy
-    }
+    return m.dependedOnBy
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceManagementConfigurationSettingDependedOnBy) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -81,19 +73,11 @@ func (m *DeviceManagementConfigurationSettingDependedOnBy) GetFieldDeserializers
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *DeviceManagementConfigurationSettingDependedOnBy) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetRequired gets the required property value. Value that determines if the child setting is required based on the parent setting's selection
 func (m *DeviceManagementConfigurationSettingDependedOnBy) GetRequired()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.required
-    }
+    return m.required
 }
 // Serialize serializes information the current object
 func (m *DeviceManagementConfigurationSettingDependedOnBy) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -125,25 +109,17 @@ func (m *DeviceManagementConfigurationSettingDependedOnBy) Serialize(writer i878
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DeviceManagementConfigurationSettingDependedOnBy) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetDependedOnBy sets the dependedOnBy property value. Identifier of child setting that is dependent on the current setting
 func (m *DeviceManagementConfigurationSettingDependedOnBy) SetDependedOnBy(value *string)() {
-    if m != nil {
-        m.dependedOnBy = value
-    }
+    m.dependedOnBy = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *DeviceManagementConfigurationSettingDependedOnBy) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetRequired sets the required property value. Value that determines if the child setting is required based on the parent setting's selection
 func (m *DeviceManagementConfigurationSettingDependedOnBy) SetRequired(value *bool)() {
-    if m != nil {
-        m.required = value
-    }
+    m.required = value
 }

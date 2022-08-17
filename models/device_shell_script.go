@@ -56,59 +56,31 @@ func CreateDeviceShellScriptFromDiscriminatorValue(parseNode i878a80d2330e89d268
 }
 // GetAssignments gets the assignments property value. The list of group assignments for the device management script.
 func (m *DeviceShellScript) GetAssignments()([]DeviceManagementScriptAssignmentable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.assignments
-    }
+    return m.assignments
 }
 // GetBlockExecutionNotifications gets the blockExecutionNotifications property value. Does not notify the user a script is being executed
 func (m *DeviceShellScript) GetBlockExecutionNotifications()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.blockExecutionNotifications
-    }
+    return m.blockExecutionNotifications
 }
 // GetCreatedDateTime gets the createdDateTime property value. The date and time the device management script was created. This property is read-only.
 func (m *DeviceShellScript) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.createdDateTime
-    }
+    return m.createdDateTime
 }
 // GetDescription gets the description property value. Optional description for the device management script.
 func (m *DeviceShellScript) GetDescription()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.description
-    }
+    return m.description
 }
 // GetDeviceRunStates gets the deviceRunStates property value. List of run states for this script across all devices.
 func (m *DeviceShellScript) GetDeviceRunStates()([]DeviceManagementScriptDeviceStateable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deviceRunStates
-    }
+    return m.deviceRunStates
 }
 // GetDisplayName gets the displayName property value. Name of the device management script.
 func (m *DeviceShellScript) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
 // GetExecutionFrequency gets the executionFrequency property value. The interval for script to run. If not defined the script will run once
 func (m *DeviceShellScript) GetExecutionFrequency()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration) {
-    if m == nil {
-        return nil
-    } else {
-        return m.executionFrequency
-    }
+    return m.executionFrequency
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceShellScript) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -297,75 +269,39 @@ func (m *DeviceShellScript) GetFieldDeserializers()(map[string]func(i878a80d2330
 }
 // GetFileName gets the fileName property value. Script file name.
 func (m *DeviceShellScript) GetFileName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.fileName
-    }
+    return m.fileName
 }
 // GetGroupAssignments gets the groupAssignments property value. The list of group assignments for the device management script.
 func (m *DeviceShellScript) GetGroupAssignments()([]DeviceManagementScriptGroupAssignmentable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.groupAssignments
-    }
+    return m.groupAssignments
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. The date and time the device management script was last modified. This property is read-only.
 func (m *DeviceShellScript) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastModifiedDateTime
-    }
+    return m.lastModifiedDateTime
 }
 // GetRetryCount gets the retryCount property value. Number of times for the script to be retried if it fails
 func (m *DeviceShellScript) GetRetryCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.retryCount
-    }
+    return m.retryCount
 }
 // GetRoleScopeTagIds gets the roleScopeTagIds property value. List of Scope Tag IDs for this PowerShellScript instance.
 func (m *DeviceShellScript) GetRoleScopeTagIds()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.roleScopeTagIds
-    }
+    return m.roleScopeTagIds
 }
 // GetRunAsAccount gets the runAsAccount property value. Indicates the type of execution context the app runs in.
 func (m *DeviceShellScript) GetRunAsAccount()(*RunAsAccountType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.runAsAccount
-    }
+    return m.runAsAccount
 }
 // GetRunSummary gets the runSummary property value. Run summary for device management script.
 func (m *DeviceShellScript) GetRunSummary()(DeviceManagementScriptRunSummaryable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.runSummary
-    }
+    return m.runSummary
 }
 // GetScriptContent gets the scriptContent property value. The script content.
 func (m *DeviceShellScript) GetScriptContent()([]byte) {
-    if m == nil {
-        return nil
-    } else {
-        return m.scriptContent
-    }
+    return m.scriptContent
 }
 // GetUserRunStates gets the userRunStates property value. List of run states for this script across all users.
 func (m *DeviceShellScript) GetUserRunStates()([]DeviceManagementScriptUserStateable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userRunStates
-    }
+    return m.userRunStates
 }
 // Serialize serializes information the current object
 func (m *DeviceShellScript) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -490,97 +426,65 @@ func (m *DeviceShellScript) Serialize(writer i878a80d2330e89d26896388a3f487eef27
 }
 // SetAssignments sets the assignments property value. The list of group assignments for the device management script.
 func (m *DeviceShellScript) SetAssignments(value []DeviceManagementScriptAssignmentable)() {
-    if m != nil {
-        m.assignments = value
-    }
+    m.assignments = value
 }
 // SetBlockExecutionNotifications sets the blockExecutionNotifications property value. Does not notify the user a script is being executed
 func (m *DeviceShellScript) SetBlockExecutionNotifications(value *bool)() {
-    if m != nil {
-        m.blockExecutionNotifications = value
-    }
+    m.blockExecutionNotifications = value
 }
 // SetCreatedDateTime sets the createdDateTime property value. The date and time the device management script was created. This property is read-only.
 func (m *DeviceShellScript) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.createdDateTime = value
-    }
+    m.createdDateTime = value
 }
 // SetDescription sets the description property value. Optional description for the device management script.
 func (m *DeviceShellScript) SetDescription(value *string)() {
-    if m != nil {
-        m.description = value
-    }
+    m.description = value
 }
 // SetDeviceRunStates sets the deviceRunStates property value. List of run states for this script across all devices.
 func (m *DeviceShellScript) SetDeviceRunStates(value []DeviceManagementScriptDeviceStateable)() {
-    if m != nil {
-        m.deviceRunStates = value
-    }
+    m.deviceRunStates = value
 }
 // SetDisplayName sets the displayName property value. Name of the device management script.
 func (m *DeviceShellScript) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }
 // SetExecutionFrequency sets the executionFrequency property value. The interval for script to run. If not defined the script will run once
 func (m *DeviceShellScript) SetExecutionFrequency(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)() {
-    if m != nil {
-        m.executionFrequency = value
-    }
+    m.executionFrequency = value
 }
 // SetFileName sets the fileName property value. Script file name.
 func (m *DeviceShellScript) SetFileName(value *string)() {
-    if m != nil {
-        m.fileName = value
-    }
+    m.fileName = value
 }
 // SetGroupAssignments sets the groupAssignments property value. The list of group assignments for the device management script.
 func (m *DeviceShellScript) SetGroupAssignments(value []DeviceManagementScriptGroupAssignmentable)() {
-    if m != nil {
-        m.groupAssignments = value
-    }
+    m.groupAssignments = value
 }
 // SetLastModifiedDateTime sets the lastModifiedDateTime property value. The date and time the device management script was last modified. This property is read-only.
 func (m *DeviceShellScript) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.lastModifiedDateTime = value
-    }
+    m.lastModifiedDateTime = value
 }
 // SetRetryCount sets the retryCount property value. Number of times for the script to be retried if it fails
 func (m *DeviceShellScript) SetRetryCount(value *int32)() {
-    if m != nil {
-        m.retryCount = value
-    }
+    m.retryCount = value
 }
 // SetRoleScopeTagIds sets the roleScopeTagIds property value. List of Scope Tag IDs for this PowerShellScript instance.
 func (m *DeviceShellScript) SetRoleScopeTagIds(value []string)() {
-    if m != nil {
-        m.roleScopeTagIds = value
-    }
+    m.roleScopeTagIds = value
 }
 // SetRunAsAccount sets the runAsAccount property value. Indicates the type of execution context the app runs in.
 func (m *DeviceShellScript) SetRunAsAccount(value *RunAsAccountType)() {
-    if m != nil {
-        m.runAsAccount = value
-    }
+    m.runAsAccount = value
 }
 // SetRunSummary sets the runSummary property value. Run summary for device management script.
 func (m *DeviceShellScript) SetRunSummary(value DeviceManagementScriptRunSummaryable)() {
-    if m != nil {
-        m.runSummary = value
-    }
+    m.runSummary = value
 }
 // SetScriptContent sets the scriptContent property value. The script content.
 func (m *DeviceShellScript) SetScriptContent(value []byte)() {
-    if m != nil {
-        m.scriptContent = value
-    }
+    m.scriptContent = value
 }
 // SetUserRunStates sets the userRunStates property value. List of run states for this script across all users.
 func (m *DeviceShellScript) SetUserRunStates(value []DeviceManagementScriptUserStateable)() {
-    if m != nil {
-        m.userRunStates = value
-    }
+    m.userRunStates = value
 }

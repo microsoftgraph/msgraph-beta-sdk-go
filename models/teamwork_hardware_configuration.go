@@ -32,19 +32,11 @@ func CreateTeamworkHardwareConfigurationFromDiscriminatorValue(parseNode i878a80
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TeamworkHardwareConfiguration) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetCompute gets the compute property value. The compute property
 func (m *TeamworkHardwareConfiguration) GetCompute()(TeamworkPeripheralable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.compute
-    }
+    return m.compute
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *TeamworkHardwareConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -93,27 +85,15 @@ func (m *TeamworkHardwareConfiguration) GetFieldDeserializers()(map[string]func(
 }
 // GetHdmiIngest gets the hdmiIngest property value. The hdmiIngest property
 func (m *TeamworkHardwareConfiguration) GetHdmiIngest()(TeamworkPeripheralable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.hdmiIngest
-    }
+    return m.hdmiIngest
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *TeamworkHardwareConfiguration) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetProcessorModel gets the processorModel property value. The CPU model on the device.
 func (m *TeamworkHardwareConfiguration) GetProcessorModel()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.processorModel
-    }
+    return m.processorModel
 }
 // Serialize serializes information the current object
 func (m *TeamworkHardwareConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -151,31 +131,21 @@ func (m *TeamworkHardwareConfiguration) Serialize(writer i878a80d2330e89d2689638
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TeamworkHardwareConfiguration) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetCompute sets the compute property value. The compute property
 func (m *TeamworkHardwareConfiguration) SetCompute(value TeamworkPeripheralable)() {
-    if m != nil {
-        m.compute = value
-    }
+    m.compute = value
 }
 // SetHdmiIngest sets the hdmiIngest property value. The hdmiIngest property
 func (m *TeamworkHardwareConfiguration) SetHdmiIngest(value TeamworkPeripheralable)() {
-    if m != nil {
-        m.hdmiIngest = value
-    }
+    m.hdmiIngest = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *TeamworkHardwareConfiguration) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetProcessorModel sets the processorModel property value. The CPU model on the device.
 func (m *TeamworkHardwareConfiguration) SetProcessorModel(value *string)() {
-    if m != nil {
-        m.processorModel = value
-    }
+    m.processorModel = value
 }

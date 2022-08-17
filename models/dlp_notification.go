@@ -47,19 +47,11 @@ func CreateDlpNotificationFromDiscriminatorValue(parseNode i878a80d2330e89d26896
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DlpNotification) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetAuthor gets the author property value. The author property
 func (m *DlpNotification) GetAuthor()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.author
-    }
+    return m.author
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DlpNotification) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -88,11 +80,7 @@ func (m *DlpNotification) GetFieldDeserializers()(map[string]func(i878a80d2330e8
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *DlpNotification) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // Serialize serializes information the current object
 func (m *DlpNotification) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -118,19 +106,13 @@ func (m *DlpNotification) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DlpNotification) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetAuthor sets the author property value. The author property
 func (m *DlpNotification) SetAuthor(value *string)() {
-    if m != nil {
-        m.author = value
-    }
+    m.author = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *DlpNotification) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }

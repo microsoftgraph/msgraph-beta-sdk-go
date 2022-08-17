@@ -40,11 +40,7 @@ func CreateDeviceManagementCachedReportConfigurationFromDiscriminatorValue(parse
 }
 // GetExpirationDateTime gets the expirationDateTime property value. Time that the cached report expires
 func (m *DeviceManagementCachedReportConfiguration) GetExpirationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.expirationDateTime
-    }
+    return m.expirationDateTime
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceManagementCachedReportConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -141,59 +137,31 @@ func (m *DeviceManagementCachedReportConfiguration) GetFieldDeserializers()(map[
 }
 // GetFilter gets the filter property value. Filters applied on report creation.
 func (m *DeviceManagementCachedReportConfiguration) GetFilter()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.filter
-    }
+    return m.filter
 }
 // GetLastRefreshDateTime gets the lastRefreshDateTime property value. Time that the cached report was last refreshed
 func (m *DeviceManagementCachedReportConfiguration) GetLastRefreshDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastRefreshDateTime
-    }
+    return m.lastRefreshDateTime
 }
 // GetMetadata gets the metadata property value. Caller-managed metadata associated with the report
 func (m *DeviceManagementCachedReportConfiguration) GetMetadata()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.metadata
-    }
+    return m.metadata
 }
 // GetOrderBy gets the orderBy property value. Ordering of columns in the report
 func (m *DeviceManagementCachedReportConfiguration) GetOrderBy()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.orderBy
-    }
+    return m.orderBy
 }
 // GetReportName gets the reportName property value. Name of the report
 func (m *DeviceManagementCachedReportConfiguration) GetReportName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.reportName
-    }
+    return m.reportName
 }
 // GetSelect gets the select property value. Columns selected from the report
 func (m *DeviceManagementCachedReportConfiguration) GetSelect()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.select_escaped
-    }
+    return m.select_escaped
 }
 // GetStatus gets the status property value. Possible statuses associated with a generated report
 func (m *DeviceManagementCachedReportConfiguration) GetStatus()(*DeviceManagementReportStatus) {
-    if m == nil {
-        return nil
-    } else {
-        return m.status
-    }
+    return m.status
 }
 // Serialize serializes information the current object
 func (m *DeviceManagementCachedReportConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -254,49 +222,33 @@ func (m *DeviceManagementCachedReportConfiguration) Serialize(writer i878a80d233
 }
 // SetExpirationDateTime sets the expirationDateTime property value. Time that the cached report expires
 func (m *DeviceManagementCachedReportConfiguration) SetExpirationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.expirationDateTime = value
-    }
+    m.expirationDateTime = value
 }
 // SetFilter sets the filter property value. Filters applied on report creation.
 func (m *DeviceManagementCachedReportConfiguration) SetFilter(value *string)() {
-    if m != nil {
-        m.filter = value
-    }
+    m.filter = value
 }
 // SetLastRefreshDateTime sets the lastRefreshDateTime property value. Time that the cached report was last refreshed
 func (m *DeviceManagementCachedReportConfiguration) SetLastRefreshDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.lastRefreshDateTime = value
-    }
+    m.lastRefreshDateTime = value
 }
 // SetMetadata sets the metadata property value. Caller-managed metadata associated with the report
 func (m *DeviceManagementCachedReportConfiguration) SetMetadata(value *string)() {
-    if m != nil {
-        m.metadata = value
-    }
+    m.metadata = value
 }
 // SetOrderBy sets the orderBy property value. Ordering of columns in the report
 func (m *DeviceManagementCachedReportConfiguration) SetOrderBy(value []string)() {
-    if m != nil {
-        m.orderBy = value
-    }
+    m.orderBy = value
 }
 // SetReportName sets the reportName property value. Name of the report
 func (m *DeviceManagementCachedReportConfiguration) SetReportName(value *string)() {
-    if m != nil {
-        m.reportName = value
-    }
+    m.reportName = value
 }
 // SetSelect sets the select property value. Columns selected from the report
 func (m *DeviceManagementCachedReportConfiguration) SetSelect(value []string)() {
-    if m != nil {
-        m.select_escaped = value
-    }
+    m.select_escaped = value
 }
 // SetStatus sets the status property value. Possible statuses associated with a generated report
 func (m *DeviceManagementCachedReportConfiguration) SetStatus(value *DeviceManagementReportStatus)() {
-    if m != nil {
-        m.status = value
-    }
+    m.status = value
 }

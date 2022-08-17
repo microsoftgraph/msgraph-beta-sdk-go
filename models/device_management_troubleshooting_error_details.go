@@ -36,35 +36,19 @@ func CreateDeviceManagementTroubleshootingErrorDetailsFromDiscriminatorValue(par
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DeviceManagementTroubleshootingErrorDetails) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetContext gets the context property value. Not yet documented
 func (m *DeviceManagementTroubleshootingErrorDetails) GetContext()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.context
-    }
+    return m.context
 }
 // GetFailure gets the failure property value. Not yet documented
 func (m *DeviceManagementTroubleshootingErrorDetails) GetFailure()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.failure
-    }
+    return m.failure
 }
 // GetFailureDetails gets the failureDetails property value. The detailed description of what went wrong.
 func (m *DeviceManagementTroubleshootingErrorDetails) GetFailureDetails()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.failureDetails
-    }
+    return m.failureDetails
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceManagementTroubleshootingErrorDetails) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -137,27 +121,15 @@ func (m *DeviceManagementTroubleshootingErrorDetails) GetFieldDeserializers()(ma
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *DeviceManagementTroubleshootingErrorDetails) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetRemediation gets the remediation property value. The detailed description of how to remediate this issue.
 func (m *DeviceManagementTroubleshootingErrorDetails) GetRemediation()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.remediation
-    }
+    return m.remediation
 }
 // GetResources gets the resources property value. Links to helpful documentation about this failure.
 func (m *DeviceManagementTroubleshootingErrorDetails) GetResources()([]DeviceManagementTroubleshootingErrorResourceable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.resources
-    }
+    return m.resources
 }
 // Serialize serializes information the current object
 func (m *DeviceManagementTroubleshootingErrorDetails) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -211,43 +183,29 @@ func (m *DeviceManagementTroubleshootingErrorDetails) Serialize(writer i878a80d2
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DeviceManagementTroubleshootingErrorDetails) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetContext sets the context property value. Not yet documented
 func (m *DeviceManagementTroubleshootingErrorDetails) SetContext(value *string)() {
-    if m != nil {
-        m.context = value
-    }
+    m.context = value
 }
 // SetFailure sets the failure property value. Not yet documented
 func (m *DeviceManagementTroubleshootingErrorDetails) SetFailure(value *string)() {
-    if m != nil {
-        m.failure = value
-    }
+    m.failure = value
 }
 // SetFailureDetails sets the failureDetails property value. The detailed description of what went wrong.
 func (m *DeviceManagementTroubleshootingErrorDetails) SetFailureDetails(value *string)() {
-    if m != nil {
-        m.failureDetails = value
-    }
+    m.failureDetails = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *DeviceManagementTroubleshootingErrorDetails) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetRemediation sets the remediation property value. The detailed description of how to remediate this issue.
 func (m *DeviceManagementTroubleshootingErrorDetails) SetRemediation(value *string)() {
-    if m != nil {
-        m.remediation = value
-    }
+    m.remediation = value
 }
 // SetResources sets the resources property value. Links to helpful documentation about this failure.
 func (m *DeviceManagementTroubleshootingErrorDetails) SetResources(value []DeviceManagementTroubleshootingErrorResourceable)() {
-    if m != nil {
-        m.resources = value
-    }
+    m.resources = value
 }

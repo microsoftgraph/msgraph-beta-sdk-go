@@ -30,19 +30,11 @@ func CreateConfigurationManagerClientInformationFromDiscriminatorValue(parseNode
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ConfigurationManagerClientInformation) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetClientIdentifier gets the clientIdentifier property value. Configuration Manager Client Id from SCCM
 func (m *ConfigurationManagerClientInformation) GetClientIdentifier()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.clientIdentifier
-    }
+    return m.clientIdentifier
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ConfigurationManagerClientInformation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -81,19 +73,11 @@ func (m *ConfigurationManagerClientInformation) GetFieldDeserializers()(map[stri
 }
 // GetIsBlocked gets the isBlocked property value. Configuration Manager Client blocked status from SCCM
 func (m *ConfigurationManagerClientInformation) GetIsBlocked()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isBlocked
-    }
+    return m.isBlocked
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *ConfigurationManagerClientInformation) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // Serialize serializes information the current object
 func (m *ConfigurationManagerClientInformation) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -125,25 +109,17 @@ func (m *ConfigurationManagerClientInformation) Serialize(writer i878a80d2330e89
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ConfigurationManagerClientInformation) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetClientIdentifier sets the clientIdentifier property value. Configuration Manager Client Id from SCCM
 func (m *ConfigurationManagerClientInformation) SetClientIdentifier(value *string)() {
-    if m != nil {
-        m.clientIdentifier = value
-    }
+    m.clientIdentifier = value
 }
 // SetIsBlocked sets the isBlocked property value. Configuration Manager Client blocked status from SCCM
 func (m *ConfigurationManagerClientInformation) SetIsBlocked(value *bool)() {
-    if m != nil {
-        m.isBlocked = value
-    }
+    m.isBlocked = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *ConfigurationManagerClientInformation) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }

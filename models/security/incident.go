@@ -6,7 +6,7 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
-// Incident provides operations to manage the collection of accessReview entities.
+// Incident provides operations to manage the collection of accessReviewDecision entities.
 type Incident struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
     // The alerts property
@@ -53,59 +53,31 @@ func CreateIncidentFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f4
 }
 // GetAlerts gets the alerts property value. The alerts property
 func (m *Incident) GetAlerts()([]Alertable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.alerts
-    }
+    return m.alerts
 }
 // GetAssignedTo gets the assignedTo property value. The assignedTo property
 func (m *Incident) GetAssignedTo()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.assignedTo
-    }
+    return m.assignedTo
 }
 // GetClassification gets the classification property value. The classification property
 func (m *Incident) GetClassification()(*AlertClassification) {
-    if m == nil {
-        return nil
-    } else {
-        return m.classification
-    }
+    return m.classification
 }
 // GetComments gets the comments property value. The comments property
 func (m *Incident) GetComments()([]AlertCommentable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.comments
-    }
+    return m.comments
 }
 // GetCreatedDateTime gets the createdDateTime property value. The createdDateTime property
 func (m *Incident) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.createdDateTime
-    }
+    return m.createdDateTime
 }
 // GetDetermination gets the determination property value. The determination property
 func (m *Incident) GetDetermination()(*AlertDetermination) {
-    if m == nil {
-        return nil
-    } else {
-        return m.determination
-    }
+    return m.determination
 }
 // GetDisplayName gets the displayName property value. The displayName property
 func (m *Incident) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Incident) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -266,59 +238,31 @@ func (m *Incident) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
 }
 // GetIncidentWebUrl gets the incidentWebUrl property value. The incidentWebUrl property
 func (m *Incident) GetIncidentWebUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.incidentWebUrl
-    }
+    return m.incidentWebUrl
 }
 // GetLastUpdateDateTime gets the lastUpdateDateTime property value. The lastUpdateDateTime property
 func (m *Incident) GetLastUpdateDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastUpdateDateTime
-    }
+    return m.lastUpdateDateTime
 }
 // GetRedirectIncidentId gets the redirectIncidentId property value. The redirectIncidentId property
 func (m *Incident) GetRedirectIncidentId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.redirectIncidentId
-    }
+    return m.redirectIncidentId
 }
 // GetSeverity gets the severity property value. The severity property
 func (m *Incident) GetSeverity()(*AlertSeverity) {
-    if m == nil {
-        return nil
-    } else {
-        return m.severity
-    }
+    return m.severity
 }
 // GetStatus gets the status property value. The status property
 func (m *Incident) GetStatus()(*IncidentStatus) {
-    if m == nil {
-        return nil
-    } else {
-        return m.status
-    }
+    return m.status
 }
 // GetTags gets the tags property value. The tags property
 func (m *Incident) GetTags()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.tags
-    }
+    return m.tags
 }
 // GetTenantId gets the tenantId property value. The tenantId property
 func (m *Incident) GetTenantId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.tenantId
-    }
+    return m.tenantId
 }
 // Serialize serializes information the current object
 func (m *Incident) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -426,85 +370,57 @@ func (m *Incident) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
 }
 // SetAlerts sets the alerts property value. The alerts property
 func (m *Incident) SetAlerts(value []Alertable)() {
-    if m != nil {
-        m.alerts = value
-    }
+    m.alerts = value
 }
 // SetAssignedTo sets the assignedTo property value. The assignedTo property
 func (m *Incident) SetAssignedTo(value *string)() {
-    if m != nil {
-        m.assignedTo = value
-    }
+    m.assignedTo = value
 }
 // SetClassification sets the classification property value. The classification property
 func (m *Incident) SetClassification(value *AlertClassification)() {
-    if m != nil {
-        m.classification = value
-    }
+    m.classification = value
 }
 // SetComments sets the comments property value. The comments property
 func (m *Incident) SetComments(value []AlertCommentable)() {
-    if m != nil {
-        m.comments = value
-    }
+    m.comments = value
 }
 // SetCreatedDateTime sets the createdDateTime property value. The createdDateTime property
 func (m *Incident) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.createdDateTime = value
-    }
+    m.createdDateTime = value
 }
 // SetDetermination sets the determination property value. The determination property
 func (m *Incident) SetDetermination(value *AlertDetermination)() {
-    if m != nil {
-        m.determination = value
-    }
+    m.determination = value
 }
 // SetDisplayName sets the displayName property value. The displayName property
 func (m *Incident) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }
 // SetIncidentWebUrl sets the incidentWebUrl property value. The incidentWebUrl property
 func (m *Incident) SetIncidentWebUrl(value *string)() {
-    if m != nil {
-        m.incidentWebUrl = value
-    }
+    m.incidentWebUrl = value
 }
 // SetLastUpdateDateTime sets the lastUpdateDateTime property value. The lastUpdateDateTime property
 func (m *Incident) SetLastUpdateDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.lastUpdateDateTime = value
-    }
+    m.lastUpdateDateTime = value
 }
 // SetRedirectIncidentId sets the redirectIncidentId property value. The redirectIncidentId property
 func (m *Incident) SetRedirectIncidentId(value *string)() {
-    if m != nil {
-        m.redirectIncidentId = value
-    }
+    m.redirectIncidentId = value
 }
 // SetSeverity sets the severity property value. The severity property
 func (m *Incident) SetSeverity(value *AlertSeverity)() {
-    if m != nil {
-        m.severity = value
-    }
+    m.severity = value
 }
 // SetStatus sets the status property value. The status property
 func (m *Incident) SetStatus(value *IncidentStatus)() {
-    if m != nil {
-        m.status = value
-    }
+    m.status = value
 }
 // SetTags sets the tags property value. The tags property
 func (m *Incident) SetTags(value []string)() {
-    if m != nil {
-        m.tags = value
-    }
+    m.tags = value
 }
 // SetTenantId sets the tenantId property value. The tenantId property
 func (m *Incident) SetTenantId(value *string)() {
-    if m != nil {
-        m.tenantId = value
-    }
+    m.tenantId = value
 }

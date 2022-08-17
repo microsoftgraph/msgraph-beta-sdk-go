@@ -6,7 +6,7 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
-// ManagementTemplateStep provides operations to manage the collection of activityStatistics entities.
+// ManagementTemplateStep provides operations to manage the collection of accessReviewDecision entities.
 type ManagementTemplateStep struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
     // The acceptedVersion property
@@ -49,51 +49,27 @@ func CreateManagementTemplateStepFromDiscriminatorValue(parseNode i878a80d2330e8
 }
 // GetAcceptedVersion gets the acceptedVersion property value. The acceptedVersion property
 func (m *ManagementTemplateStep) GetAcceptedVersion()(ManagementTemplateStepVersionable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.acceptedVersion
-    }
+    return m.acceptedVersion
 }
 // GetCategory gets the category property value. The category property
 func (m *ManagementTemplateStep) GetCategory()(*ManagementCategory) {
-    if m == nil {
-        return nil
-    } else {
-        return m.category
-    }
+    return m.category
 }
 // GetCreatedByUserId gets the createdByUserId property value. The createdByUserId property
 func (m *ManagementTemplateStep) GetCreatedByUserId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.createdByUserId
-    }
+    return m.createdByUserId
 }
 // GetCreatedDateTime gets the createdDateTime property value. The createdDateTime property
 func (m *ManagementTemplateStep) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.createdDateTime
-    }
+    return m.createdDateTime
 }
 // GetDescription gets the description property value. The description property
 func (m *ManagementTemplateStep) GetDescription()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.description
-    }
+    return m.description
 }
 // GetDisplayName gets the displayName property value. The displayName property
 func (m *ManagementTemplateStep) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ManagementTemplateStep) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -226,51 +202,27 @@ func (m *ManagementTemplateStep) GetFieldDeserializers()(map[string]func(i878a80
 }
 // GetLastActionByUserId gets the lastActionByUserId property value. The lastActionByUserId property
 func (m *ManagementTemplateStep) GetLastActionByUserId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastActionByUserId
-    }
+    return m.lastActionByUserId
 }
 // GetLastActionDateTime gets the lastActionDateTime property value. The lastActionDateTime property
 func (m *ManagementTemplateStep) GetLastActionDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastActionDateTime
-    }
+    return m.lastActionDateTime
 }
 // GetManagementTemplate gets the managementTemplate property value. The managementTemplate property
 func (m *ManagementTemplateStep) GetManagementTemplate()(ManagementTemplateable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.managementTemplate
-    }
+    return m.managementTemplate
 }
 // GetPortalLink gets the portalLink property value. The portalLink property
 func (m *ManagementTemplateStep) GetPortalLink()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ActionUrlable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.portalLink
-    }
+    return m.portalLink
 }
 // GetPriority gets the priority property value. The priority property
 func (m *ManagementTemplateStep) GetPriority()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.priority
-    }
+    return m.priority
 }
 // GetVersions gets the versions property value. The versions property
 func (m *ManagementTemplateStep) GetVersions()([]ManagementTemplateStepVersionable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.versions
-    }
+    return m.versions
 }
 // Serialize serializes information the current object
 func (m *ManagementTemplateStep) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -359,73 +311,49 @@ func (m *ManagementTemplateStep) Serialize(writer i878a80d2330e89d26896388a3f487
 }
 // SetAcceptedVersion sets the acceptedVersion property value. The acceptedVersion property
 func (m *ManagementTemplateStep) SetAcceptedVersion(value ManagementTemplateStepVersionable)() {
-    if m != nil {
-        m.acceptedVersion = value
-    }
+    m.acceptedVersion = value
 }
 // SetCategory sets the category property value. The category property
 func (m *ManagementTemplateStep) SetCategory(value *ManagementCategory)() {
-    if m != nil {
-        m.category = value
-    }
+    m.category = value
 }
 // SetCreatedByUserId sets the createdByUserId property value. The createdByUserId property
 func (m *ManagementTemplateStep) SetCreatedByUserId(value *string)() {
-    if m != nil {
-        m.createdByUserId = value
-    }
+    m.createdByUserId = value
 }
 // SetCreatedDateTime sets the createdDateTime property value. The createdDateTime property
 func (m *ManagementTemplateStep) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.createdDateTime = value
-    }
+    m.createdDateTime = value
 }
 // SetDescription sets the description property value. The description property
 func (m *ManagementTemplateStep) SetDescription(value *string)() {
-    if m != nil {
-        m.description = value
-    }
+    m.description = value
 }
 // SetDisplayName sets the displayName property value. The displayName property
 func (m *ManagementTemplateStep) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }
 // SetLastActionByUserId sets the lastActionByUserId property value. The lastActionByUserId property
 func (m *ManagementTemplateStep) SetLastActionByUserId(value *string)() {
-    if m != nil {
-        m.lastActionByUserId = value
-    }
+    m.lastActionByUserId = value
 }
 // SetLastActionDateTime sets the lastActionDateTime property value. The lastActionDateTime property
 func (m *ManagementTemplateStep) SetLastActionDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.lastActionDateTime = value
-    }
+    m.lastActionDateTime = value
 }
 // SetManagementTemplate sets the managementTemplate property value. The managementTemplate property
 func (m *ManagementTemplateStep) SetManagementTemplate(value ManagementTemplateable)() {
-    if m != nil {
-        m.managementTemplate = value
-    }
+    m.managementTemplate = value
 }
 // SetPortalLink sets the portalLink property value. The portalLink property
 func (m *ManagementTemplateStep) SetPortalLink(value ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ActionUrlable)() {
-    if m != nil {
-        m.portalLink = value
-    }
+    m.portalLink = value
 }
 // SetPriority sets the priority property value. The priority property
 func (m *ManagementTemplateStep) SetPriority(value *int32)() {
-    if m != nil {
-        m.priority = value
-    }
+    m.priority = value
 }
 // SetVersions sets the versions property value. The versions property
 func (m *ManagementTemplateStep) SetVersions(value []ManagementTemplateStepVersionable)() {
-    if m != nil {
-        m.versions = value
-    }
+    m.versions = value
 }

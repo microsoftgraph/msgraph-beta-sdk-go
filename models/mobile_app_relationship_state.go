@@ -43,27 +43,15 @@ func CreateMobileAppRelationshipStateFromDiscriminatorValue(parseNode i878a80d23
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *MobileAppRelationshipState) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetDeviceId gets the deviceId property value. The corresponding device id.
 func (m *MobileAppRelationshipState) GetDeviceId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deviceId
-    }
+    return m.deviceId
 }
 // GetErrorCode gets the errorCode property value. The error code for install or uninstall failures of target app.
 func (m *MobileAppRelationshipState) GetErrorCode()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.errorCode
-    }
+    return m.errorCode
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *MobileAppRelationshipState) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -166,59 +154,31 @@ func (m *MobileAppRelationshipState) GetFieldDeserializers()(map[string]func(i87
 }
 // GetInstallState gets the installState property value. A list of possible states for application status on an individual device. When devices contact the Intune service and find targeted application enforcement intent, the status of the enforcement is recorded and becomes accessible in the Graph API. Since the application status is identified during device interaction with the Intune service, status records do not immediately appear upon application group assignment; it is created only after the assignment is evaluated in the service and devices start receiving the policy during check-ins.
 func (m *MobileAppRelationshipState) GetInstallState()(*ResultantAppState) {
-    if m == nil {
-        return nil
-    } else {
-        return m.installState
-    }
+    return m.installState
 }
 // GetInstallStateDetail gets the installStateDetail property value. Enum indicating additional details regarding why an application has a particular install state.
 func (m *MobileAppRelationshipState) GetInstallStateDetail()(*ResultantAppStateDetail) {
-    if m == nil {
-        return nil
-    } else {
-        return m.installStateDetail
-    }
+    return m.installStateDetail
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *MobileAppRelationshipState) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetSourceIds gets the sourceIds property value. The collection of source mobile app's ids.
 func (m *MobileAppRelationshipState) GetSourceIds()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.sourceIds
-    }
+    return m.sourceIds
 }
 // GetTargetDisplayName gets the targetDisplayName property value. The related target app's display name.
 func (m *MobileAppRelationshipState) GetTargetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.targetDisplayName
-    }
+    return m.targetDisplayName
 }
 // GetTargetId gets the targetId property value. The related target app's id.
 func (m *MobileAppRelationshipState) GetTargetId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.targetId
-    }
+    return m.targetId
 }
 // GetTargetLastSyncDateTime gets the targetLastSyncDateTime property value. The last sync time of the target app.
 func (m *MobileAppRelationshipState) GetTargetLastSyncDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.targetLastSyncDateTime
-    }
+    return m.targetLastSyncDateTime
 }
 // Serialize serializes information the current object
 func (m *MobileAppRelationshipState) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -288,61 +248,41 @@ func (m *MobileAppRelationshipState) Serialize(writer i878a80d2330e89d26896388a3
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *MobileAppRelationshipState) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetDeviceId sets the deviceId property value. The corresponding device id.
 func (m *MobileAppRelationshipState) SetDeviceId(value *string)() {
-    if m != nil {
-        m.deviceId = value
-    }
+    m.deviceId = value
 }
 // SetErrorCode sets the errorCode property value. The error code for install or uninstall failures of target app.
 func (m *MobileAppRelationshipState) SetErrorCode(value *int32)() {
-    if m != nil {
-        m.errorCode = value
-    }
+    m.errorCode = value
 }
 // SetInstallState sets the installState property value. A list of possible states for application status on an individual device. When devices contact the Intune service and find targeted application enforcement intent, the status of the enforcement is recorded and becomes accessible in the Graph API. Since the application status is identified during device interaction with the Intune service, status records do not immediately appear upon application group assignment; it is created only after the assignment is evaluated in the service and devices start receiving the policy during check-ins.
 func (m *MobileAppRelationshipState) SetInstallState(value *ResultantAppState)() {
-    if m != nil {
-        m.installState = value
-    }
+    m.installState = value
 }
 // SetInstallStateDetail sets the installStateDetail property value. Enum indicating additional details regarding why an application has a particular install state.
 func (m *MobileAppRelationshipState) SetInstallStateDetail(value *ResultantAppStateDetail)() {
-    if m != nil {
-        m.installStateDetail = value
-    }
+    m.installStateDetail = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *MobileAppRelationshipState) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetSourceIds sets the sourceIds property value. The collection of source mobile app's ids.
 func (m *MobileAppRelationshipState) SetSourceIds(value []string)() {
-    if m != nil {
-        m.sourceIds = value
-    }
+    m.sourceIds = value
 }
 // SetTargetDisplayName sets the targetDisplayName property value. The related target app's display name.
 func (m *MobileAppRelationshipState) SetTargetDisplayName(value *string)() {
-    if m != nil {
-        m.targetDisplayName = value
-    }
+    m.targetDisplayName = value
 }
 // SetTargetId sets the targetId property value. The related target app's id.
 func (m *MobileAppRelationshipState) SetTargetId(value *string)() {
-    if m != nil {
-        m.targetId = value
-    }
+    m.targetId = value
 }
 // SetTargetLastSyncDateTime sets the targetLastSyncDateTime property value. The last sync time of the target app.
 func (m *MobileAppRelationshipState) SetTargetLastSyncDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.targetLastSyncDateTime = value
-    }
+    m.targetLastSyncDateTime = value
 }

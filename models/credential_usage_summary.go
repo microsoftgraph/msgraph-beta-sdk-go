@@ -31,27 +31,15 @@ func CreateCredentialUsageSummaryFromDiscriminatorValue(parseNode i878a80d2330e8
 }
 // GetAuthMethod gets the authMethod property value. The authMethod property
 func (m *CredentialUsageSummary) GetAuthMethod()(*UsageAuthMethod) {
-    if m == nil {
-        return nil
-    } else {
-        return m.authMethod
-    }
+    return m.authMethod
 }
 // GetFailureActivityCount gets the failureActivityCount property value. Provides the count of failed resets or registration data.
 func (m *CredentialUsageSummary) GetFailureActivityCount()(*int64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.failureActivityCount
-    }
+    return m.failureActivityCount
 }
 // GetFeature gets the feature property value. The feature property
 func (m *CredentialUsageSummary) GetFeature()(*FeatureType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.feature
-    }
+    return m.feature
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *CredentialUsageSummary) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -100,11 +88,7 @@ func (m *CredentialUsageSummary) GetFieldDeserializers()(map[string]func(i878a80
 }
 // GetSuccessfulActivityCount gets the successfulActivityCount property value. Provides the count of successful registrations or resets.
 func (m *CredentialUsageSummary) GetSuccessfulActivityCount()(*int64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.successfulActivityCount
-    }
+    return m.successfulActivityCount
 }
 // Serialize serializes information the current object
 func (m *CredentialUsageSummary) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -142,25 +126,17 @@ func (m *CredentialUsageSummary) Serialize(writer i878a80d2330e89d26896388a3f487
 }
 // SetAuthMethod sets the authMethod property value. The authMethod property
 func (m *CredentialUsageSummary) SetAuthMethod(value *UsageAuthMethod)() {
-    if m != nil {
-        m.authMethod = value
-    }
+    m.authMethod = value
 }
 // SetFailureActivityCount sets the failureActivityCount property value. Provides the count of failed resets or registration data.
 func (m *CredentialUsageSummary) SetFailureActivityCount(value *int64)() {
-    if m != nil {
-        m.failureActivityCount = value
-    }
+    m.failureActivityCount = value
 }
 // SetFeature sets the feature property value. The feature property
 func (m *CredentialUsageSummary) SetFeature(value *FeatureType)() {
-    if m != nil {
-        m.feature = value
-    }
+    m.feature = value
 }
 // SetSuccessfulActivityCount sets the successfulActivityCount property value. Provides the count of successful registrations or resets.
 func (m *CredentialUsageSummary) SetSuccessfulActivityCount(value *int64)() {
-    if m != nil {
-        m.successfulActivityCount = value
-    }
+    m.successfulActivityCount = value
 }

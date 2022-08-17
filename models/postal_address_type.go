@@ -36,27 +36,15 @@ func CreatePostalAddressTypeFromDiscriminatorValue(parseNode i878a80d2330e89d268
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *PostalAddressType) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetCity gets the city property value. The city property
 func (m *PostalAddressType) GetCity()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.city
-    }
+    return m.city
 }
 // GetCountryLetterCode gets the countryLetterCode property value. The countryLetterCode property
 func (m *PostalAddressType) GetCountryLetterCode()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.countryLetterCode
-    }
+    return m.countryLetterCode
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *PostalAddressType) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -125,35 +113,19 @@ func (m *PostalAddressType) GetFieldDeserializers()(map[string]func(i878a80d2330
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *PostalAddressType) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetPostalCode gets the postalCode property value. The postalCode property
 func (m *PostalAddressType) GetPostalCode()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.postalCode
-    }
+    return m.postalCode
 }
 // GetState gets the state property value. The state property
 func (m *PostalAddressType) GetState()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.state
-    }
+    return m.state
 }
 // GetStreet gets the street property value. The street property
 func (m *PostalAddressType) GetStreet()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.street
-    }
+    return m.street
 }
 // Serialize serializes information the current object
 func (m *PostalAddressType) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -203,43 +175,29 @@ func (m *PostalAddressType) Serialize(writer i878a80d2330e89d26896388a3f487eef27
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *PostalAddressType) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetCity sets the city property value. The city property
 func (m *PostalAddressType) SetCity(value *string)() {
-    if m != nil {
-        m.city = value
-    }
+    m.city = value
 }
 // SetCountryLetterCode sets the countryLetterCode property value. The countryLetterCode property
 func (m *PostalAddressType) SetCountryLetterCode(value *string)() {
-    if m != nil {
-        m.countryLetterCode = value
-    }
+    m.countryLetterCode = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *PostalAddressType) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetPostalCode sets the postalCode property value. The postalCode property
 func (m *PostalAddressType) SetPostalCode(value *string)() {
-    if m != nil {
-        m.postalCode = value
-    }
+    m.postalCode = value
 }
 // SetState sets the state property value. The state property
 func (m *PostalAddressType) SetState(value *string)() {
-    if m != nil {
-        m.state = value
-    }
+    m.state = value
 }
 // SetStreet sets the street property value. The street property
 func (m *PostalAddressType) SetStreet(value *string)() {
-    if m != nil {
-        m.street = value
-    }
+    m.street = value
 }

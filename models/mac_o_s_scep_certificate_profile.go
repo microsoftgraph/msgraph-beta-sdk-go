@@ -47,35 +47,19 @@ func CreateMacOSScepCertificateProfileFromDiscriminatorValue(parseNode i878a80d2
 }
 // GetAllowAllAppsAccess gets the allowAllAppsAccess property value. AllowAllAppsAccess setting
 func (m *MacOSScepCertificateProfile) GetAllowAllAppsAccess()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.allowAllAppsAccess
-    }
+    return m.allowAllAppsAccess
 }
 // GetCertificateStore gets the certificateStore property value. Target store certificate. Possible values are: user, machine.
 func (m *MacOSScepCertificateProfile) GetCertificateStore()(*CertificateStore) {
-    if m == nil {
-        return nil
-    } else {
-        return m.certificateStore
-    }
+    return m.certificateStore
 }
 // GetCustomSubjectAlternativeNames gets the customSubjectAlternativeNames property value. Custom Subject Alternative Name Settings. This collection can contain a maximum of 500 elements.
 func (m *MacOSScepCertificateProfile) GetCustomSubjectAlternativeNames()([]CustomSubjectAlternativeNameable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.customSubjectAlternativeNames
-    }
+    return m.customSubjectAlternativeNames
 }
 // GetExtendedKeyUsages gets the extendedKeyUsages property value. Extended Key Usage (EKU) settings. This collection can contain a maximum of 500 elements.
 func (m *MacOSScepCertificateProfile) GetExtendedKeyUsages()([]ExtendedKeyUsageable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.extendedKeyUsages
-    }
+    return m.extendedKeyUsages
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *MacOSScepCertificateProfile) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -220,67 +204,35 @@ func (m *MacOSScepCertificateProfile) GetFieldDeserializers()(map[string]func(i8
 }
 // GetHashAlgorithm gets the hashAlgorithm property value. SCEP Hash Algorithm. Possible values are: sha1, sha2.
 func (m *MacOSScepCertificateProfile) GetHashAlgorithm()(*HashAlgorithms) {
-    if m == nil {
-        return nil
-    } else {
-        return m.hashAlgorithm
-    }
+    return m.hashAlgorithm
 }
 // GetKeySize gets the keySize property value. Key Size Options.
 func (m *MacOSScepCertificateProfile) GetKeySize()(*KeySize) {
-    if m == nil {
-        return nil
-    } else {
-        return m.keySize
-    }
+    return m.keySize
 }
 // GetKeyUsage gets the keyUsage property value. Key Usage Options.
 func (m *MacOSScepCertificateProfile) GetKeyUsage()(*KeyUsages) {
-    if m == nil {
-        return nil
-    } else {
-        return m.keyUsage
-    }
+    return m.keyUsage
 }
 // GetManagedDeviceCertificateStates gets the managedDeviceCertificateStates property value. Certificate state for devices. This collection can contain a maximum of 2147483647 elements.
 func (m *MacOSScepCertificateProfile) GetManagedDeviceCertificateStates()([]ManagedDeviceCertificateStateable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.managedDeviceCertificateStates
-    }
+    return m.managedDeviceCertificateStates
 }
 // GetRootCertificate gets the rootCertificate property value. Trusted Root Certificate.
 func (m *MacOSScepCertificateProfile) GetRootCertificate()(MacOSTrustedRootCertificateable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.rootCertificate
-    }
+    return m.rootCertificate
 }
 // GetScepServerUrls gets the scepServerUrls property value. SCEP Server Url(s).
 func (m *MacOSScepCertificateProfile) GetScepServerUrls()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.scepServerUrls
-    }
+    return m.scepServerUrls
 }
 // GetSubjectAlternativeNameFormatString gets the subjectAlternativeNameFormatString property value. Custom String that defines the AAD Attribute.
 func (m *MacOSScepCertificateProfile) GetSubjectAlternativeNameFormatString()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.subjectAlternativeNameFormatString
-    }
+    return m.subjectAlternativeNameFormatString
 }
 // GetSubjectNameFormatString gets the subjectNameFormatString property value. Custom format to use with SubjectNameFormat = Custom. Example: CN={{EmailAddress}},E={{EmailAddress}},OU=Enterprise Users,O=Contoso Corporation,L=Redmond,ST=WA,C=US
 func (m *MacOSScepCertificateProfile) GetSubjectNameFormatString()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.subjectNameFormatString
-    }
+    return m.subjectNameFormatString
 }
 // Serialize serializes information the current object
 func (m *MacOSScepCertificateProfile) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -380,73 +332,49 @@ func (m *MacOSScepCertificateProfile) Serialize(writer i878a80d2330e89d26896388a
 }
 // SetAllowAllAppsAccess sets the allowAllAppsAccess property value. AllowAllAppsAccess setting
 func (m *MacOSScepCertificateProfile) SetAllowAllAppsAccess(value *bool)() {
-    if m != nil {
-        m.allowAllAppsAccess = value
-    }
+    m.allowAllAppsAccess = value
 }
 // SetCertificateStore sets the certificateStore property value. Target store certificate. Possible values are: user, machine.
 func (m *MacOSScepCertificateProfile) SetCertificateStore(value *CertificateStore)() {
-    if m != nil {
-        m.certificateStore = value
-    }
+    m.certificateStore = value
 }
 // SetCustomSubjectAlternativeNames sets the customSubjectAlternativeNames property value. Custom Subject Alternative Name Settings. This collection can contain a maximum of 500 elements.
 func (m *MacOSScepCertificateProfile) SetCustomSubjectAlternativeNames(value []CustomSubjectAlternativeNameable)() {
-    if m != nil {
-        m.customSubjectAlternativeNames = value
-    }
+    m.customSubjectAlternativeNames = value
 }
 // SetExtendedKeyUsages sets the extendedKeyUsages property value. Extended Key Usage (EKU) settings. This collection can contain a maximum of 500 elements.
 func (m *MacOSScepCertificateProfile) SetExtendedKeyUsages(value []ExtendedKeyUsageable)() {
-    if m != nil {
-        m.extendedKeyUsages = value
-    }
+    m.extendedKeyUsages = value
 }
 // SetHashAlgorithm sets the hashAlgorithm property value. SCEP Hash Algorithm. Possible values are: sha1, sha2.
 func (m *MacOSScepCertificateProfile) SetHashAlgorithm(value *HashAlgorithms)() {
-    if m != nil {
-        m.hashAlgorithm = value
-    }
+    m.hashAlgorithm = value
 }
 // SetKeySize sets the keySize property value. Key Size Options.
 func (m *MacOSScepCertificateProfile) SetKeySize(value *KeySize)() {
-    if m != nil {
-        m.keySize = value
-    }
+    m.keySize = value
 }
 // SetKeyUsage sets the keyUsage property value. Key Usage Options.
 func (m *MacOSScepCertificateProfile) SetKeyUsage(value *KeyUsages)() {
-    if m != nil {
-        m.keyUsage = value
-    }
+    m.keyUsage = value
 }
 // SetManagedDeviceCertificateStates sets the managedDeviceCertificateStates property value. Certificate state for devices. This collection can contain a maximum of 2147483647 elements.
 func (m *MacOSScepCertificateProfile) SetManagedDeviceCertificateStates(value []ManagedDeviceCertificateStateable)() {
-    if m != nil {
-        m.managedDeviceCertificateStates = value
-    }
+    m.managedDeviceCertificateStates = value
 }
 // SetRootCertificate sets the rootCertificate property value. Trusted Root Certificate.
 func (m *MacOSScepCertificateProfile) SetRootCertificate(value MacOSTrustedRootCertificateable)() {
-    if m != nil {
-        m.rootCertificate = value
-    }
+    m.rootCertificate = value
 }
 // SetScepServerUrls sets the scepServerUrls property value. SCEP Server Url(s).
 func (m *MacOSScepCertificateProfile) SetScepServerUrls(value []string)() {
-    if m != nil {
-        m.scepServerUrls = value
-    }
+    m.scepServerUrls = value
 }
 // SetSubjectAlternativeNameFormatString sets the subjectAlternativeNameFormatString property value. Custom String that defines the AAD Attribute.
 func (m *MacOSScepCertificateProfile) SetSubjectAlternativeNameFormatString(value *string)() {
-    if m != nil {
-        m.subjectAlternativeNameFormatString = value
-    }
+    m.subjectAlternativeNameFormatString = value
 }
 // SetSubjectNameFormatString sets the subjectNameFormatString property value. Custom format to use with SubjectNameFormat = Custom. Example: CN={{EmailAddress}},E={{EmailAddress}},OU=Enterprise Users,O=Contoso Corporation,L=Redmond,ST=WA,C=US
 func (m *MacOSScepCertificateProfile) SetSubjectNameFormatString(value *string)() {
-    if m != nil {
-        m.subjectNameFormatString = value
-    }
+    m.subjectNameFormatString = value
 }

@@ -27,11 +27,7 @@ func CreateTasksFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487e
 }
 // GetAlltasks gets the alltasks property value. All tasks in the users mailbox.
 func (m *Tasks) GetAlltasks()([]BaseTaskable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.alltasks
-    }
+    return m.alltasks
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Tasks) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -68,11 +64,7 @@ func (m *Tasks) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388
 }
 // GetLists gets the lists property value. The task lists in the users mailbox.
 func (m *Tasks) GetLists()([]BaseTaskListable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lists
-    }
+    return m.lists
 }
 // Serialize serializes information the current object
 func (m *Tasks) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -104,13 +96,9 @@ func (m *Tasks) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c4
 }
 // SetAlltasks sets the alltasks property value. All tasks in the users mailbox.
 func (m *Tasks) SetAlltasks(value []BaseTaskable)() {
-    if m != nil {
-        m.alltasks = value
-    }
+    m.alltasks = value
 }
 // SetLists sets the lists property value. The task lists in the users mailbox.
 func (m *Tasks) SetLists(value []BaseTaskListable)() {
-    if m != nil {
-        m.lists = value
-    }
+    m.lists = value
 }

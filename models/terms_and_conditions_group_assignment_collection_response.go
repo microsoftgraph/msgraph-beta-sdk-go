@@ -26,11 +26,7 @@ func CreateTermsAndConditionsGroupAssignmentCollectionResponseFromDiscriminatorV
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TermsAndConditionsGroupAssignmentCollectionResponse) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *TermsAndConditionsGroupAssignmentCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -63,19 +59,11 @@ func (m *TermsAndConditionsGroupAssignmentCollectionResponse) GetFieldDeserializ
 }
 // GetOdataNextLink gets the @odata.nextLink property value. The OdataNextLink property
 func (m *TermsAndConditionsGroupAssignmentCollectionResponse) GetOdataNextLink()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataNextLink
-    }
+    return m.odataNextLink
 }
 // GetValue gets the value property value. The value property
 func (m *TermsAndConditionsGroupAssignmentCollectionResponse) GetValue()([]TermsAndConditionsGroupAssignmentable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.value
-    }
+    return m.value
 }
 // Serialize serializes information the current object
 func (m *TermsAndConditionsGroupAssignmentCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -105,19 +93,13 @@ func (m *TermsAndConditionsGroupAssignmentCollectionResponse) Serialize(writer i
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TermsAndConditionsGroupAssignmentCollectionResponse) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetOdataNextLink sets the @odata.nextLink property value. The OdataNextLink property
 func (m *TermsAndConditionsGroupAssignmentCollectionResponse) SetOdataNextLink(value *string)() {
-    if m != nil {
-        m.odataNextLink = value
-    }
+    m.odataNextLink = value
 }
 // SetValue sets the value property value. The value property
 func (m *TermsAndConditionsGroupAssignmentCollectionResponse) SetValue(value []TermsAndConditionsGroupAssignmentable)() {
-    if m != nil {
-        m.value = value
-    }
+    m.value = value
 }

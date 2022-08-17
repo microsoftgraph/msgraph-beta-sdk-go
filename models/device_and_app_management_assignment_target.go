@@ -57,27 +57,15 @@ func CreateDeviceAndAppManagementAssignmentTargetFromDiscriminatorValue(parseNod
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DeviceAndAppManagementAssignmentTarget) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetDeviceAndAppManagementAssignmentFilterId gets the deviceAndAppManagementAssignmentFilterId property value. The Id of the filter for the target assignment.
 func (m *DeviceAndAppManagementAssignmentTarget) GetDeviceAndAppManagementAssignmentFilterId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deviceAndAppManagementAssignmentFilterId
-    }
+    return m.deviceAndAppManagementAssignmentFilterId
 }
 // GetDeviceAndAppManagementAssignmentFilterType gets the deviceAndAppManagementAssignmentFilterType property value. Represents type of the assignment filter.
 func (m *DeviceAndAppManagementAssignmentTarget) GetDeviceAndAppManagementAssignmentFilterType()(*DeviceAndAppManagementAssignmentFilterType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deviceAndAppManagementAssignmentFilterType
-    }
+    return m.deviceAndAppManagementAssignmentFilterType
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceAndAppManagementAssignmentTarget) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -116,11 +104,7 @@ func (m *DeviceAndAppManagementAssignmentTarget) GetFieldDeserializers()(map[str
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *DeviceAndAppManagementAssignmentTarget) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // Serialize serializes information the current object
 func (m *DeviceAndAppManagementAssignmentTarget) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -153,25 +137,17 @@ func (m *DeviceAndAppManagementAssignmentTarget) Serialize(writer i878a80d2330e8
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DeviceAndAppManagementAssignmentTarget) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetDeviceAndAppManagementAssignmentFilterId sets the deviceAndAppManagementAssignmentFilterId property value. The Id of the filter for the target assignment.
 func (m *DeviceAndAppManagementAssignmentTarget) SetDeviceAndAppManagementAssignmentFilterId(value *string)() {
-    if m != nil {
-        m.deviceAndAppManagementAssignmentFilterId = value
-    }
+    m.deviceAndAppManagementAssignmentFilterId = value
 }
 // SetDeviceAndAppManagementAssignmentFilterType sets the deviceAndAppManagementAssignmentFilterType property value. Represents type of the assignment filter.
 func (m *DeviceAndAppManagementAssignmentTarget) SetDeviceAndAppManagementAssignmentFilterType(value *DeviceAndAppManagementAssignmentFilterType)() {
-    if m != nil {
-        m.deviceAndAppManagementAssignmentFilterType = value
-    }
+    m.deviceAndAppManagementAssignmentFilterType = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *DeviceAndAppManagementAssignmentTarget) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }

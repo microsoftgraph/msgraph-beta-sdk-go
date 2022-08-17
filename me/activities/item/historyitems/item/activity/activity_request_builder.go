@@ -15,7 +15,7 @@ type ActivityRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// ActivityRequestBuilderGetQueryParameters optional. NavigationProperty/Containment; navigation property to the associated activity.
+// ActivityRequestBuilderGetQueryParameters get activity from me
 type ActivityRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -50,11 +50,11 @@ func NewActivityRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26337
     urlParams["request-raw-url"] = rawUrl
     return NewActivityRequestBuilderInternal(urlParams, requestAdapter)
 }
-// CreateGetRequestInformation optional. NavigationProperty/Containment; navigation property to the associated activity.
+// CreateGetRequestInformation get activity from me
 func (m *ActivityRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration optional. NavigationProperty/Containment; navigation property to the associated activity.
+// CreateGetRequestInformationWithRequestConfiguration get activity from me
 func (m *ActivityRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *ActivityRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -70,11 +70,11 @@ func (m *ActivityRequestBuilder) CreateGetRequestInformationWithRequestConfigura
     }
     return requestInfo, nil
 }
-// Get optional. NavigationProperty/Containment; navigation property to the associated activity.
+// Get get activity from me
 func (m *ActivityRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserActivityable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler optional. NavigationProperty/Containment; navigation property to the associated activity.
+// GetWithRequestConfigurationAndResponseHandler get activity from me
 func (m *ActivityRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *ActivityRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserActivityable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

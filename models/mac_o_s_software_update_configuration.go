@@ -37,35 +37,19 @@ func CreateMacOSSoftwareUpdateConfigurationFromDiscriminatorValue(parseNode i878
 }
 // GetAllOtherUpdateBehavior gets the allOtherUpdateBehavior property value. Update behavior options for macOS software updates.
 func (m *MacOSSoftwareUpdateConfiguration) GetAllOtherUpdateBehavior()(*MacOSSoftwareUpdateBehavior) {
-    if m == nil {
-        return nil
-    } else {
-        return m.allOtherUpdateBehavior
-    }
+    return m.allOtherUpdateBehavior
 }
 // GetConfigDataUpdateBehavior gets the configDataUpdateBehavior property value. Update behavior options for macOS software updates.
 func (m *MacOSSoftwareUpdateConfiguration) GetConfigDataUpdateBehavior()(*MacOSSoftwareUpdateBehavior) {
-    if m == nil {
-        return nil
-    } else {
-        return m.configDataUpdateBehavior
-    }
+    return m.configDataUpdateBehavior
 }
 // GetCriticalUpdateBehavior gets the criticalUpdateBehavior property value. Update behavior options for macOS software updates.
 func (m *MacOSSoftwareUpdateConfiguration) GetCriticalUpdateBehavior()(*MacOSSoftwareUpdateBehavior) {
-    if m == nil {
-        return nil
-    } else {
-        return m.criticalUpdateBehavior
-    }
+    return m.criticalUpdateBehavior
 }
 // GetCustomUpdateTimeWindows gets the customUpdateTimeWindows property value. Custom Time windows when updates will be allowed or blocked. This collection can contain a maximum of 20 elements.
 func (m *MacOSSoftwareUpdateConfiguration) GetCustomUpdateTimeWindows()([]CustomUpdateTimeWindowable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.customUpdateTimeWindows
-    }
+    return m.customUpdateTimeWindows
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *MacOSSoftwareUpdateConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -148,27 +132,15 @@ func (m *MacOSSoftwareUpdateConfiguration) GetFieldDeserializers()(map[string]fu
 }
 // GetFirmwareUpdateBehavior gets the firmwareUpdateBehavior property value. Update behavior options for macOS software updates.
 func (m *MacOSSoftwareUpdateConfiguration) GetFirmwareUpdateBehavior()(*MacOSSoftwareUpdateBehavior) {
-    if m == nil {
-        return nil
-    } else {
-        return m.firmwareUpdateBehavior
-    }
+    return m.firmwareUpdateBehavior
 }
 // GetUpdateScheduleType gets the updateScheduleType property value. Update schedule type for macOS software updates.
 func (m *MacOSSoftwareUpdateConfiguration) GetUpdateScheduleType()(*MacOSSoftwareUpdateScheduleType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.updateScheduleType
-    }
+    return m.updateScheduleType
 }
 // GetUpdateTimeWindowUtcOffsetInMinutes gets the updateTimeWindowUtcOffsetInMinutes property value. Minutes indicating UTC offset for each update time window
 func (m *MacOSSoftwareUpdateConfiguration) GetUpdateTimeWindowUtcOffsetInMinutes()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.updateTimeWindowUtcOffsetInMinutes
-    }
+    return m.updateTimeWindowUtcOffsetInMinutes
 }
 // Serialize serializes information the current object
 func (m *MacOSSoftwareUpdateConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -231,43 +203,29 @@ func (m *MacOSSoftwareUpdateConfiguration) Serialize(writer i878a80d2330e89d2689
 }
 // SetAllOtherUpdateBehavior sets the allOtherUpdateBehavior property value. Update behavior options for macOS software updates.
 func (m *MacOSSoftwareUpdateConfiguration) SetAllOtherUpdateBehavior(value *MacOSSoftwareUpdateBehavior)() {
-    if m != nil {
-        m.allOtherUpdateBehavior = value
-    }
+    m.allOtherUpdateBehavior = value
 }
 // SetConfigDataUpdateBehavior sets the configDataUpdateBehavior property value. Update behavior options for macOS software updates.
 func (m *MacOSSoftwareUpdateConfiguration) SetConfigDataUpdateBehavior(value *MacOSSoftwareUpdateBehavior)() {
-    if m != nil {
-        m.configDataUpdateBehavior = value
-    }
+    m.configDataUpdateBehavior = value
 }
 // SetCriticalUpdateBehavior sets the criticalUpdateBehavior property value. Update behavior options for macOS software updates.
 func (m *MacOSSoftwareUpdateConfiguration) SetCriticalUpdateBehavior(value *MacOSSoftwareUpdateBehavior)() {
-    if m != nil {
-        m.criticalUpdateBehavior = value
-    }
+    m.criticalUpdateBehavior = value
 }
 // SetCustomUpdateTimeWindows sets the customUpdateTimeWindows property value. Custom Time windows when updates will be allowed or blocked. This collection can contain a maximum of 20 elements.
 func (m *MacOSSoftwareUpdateConfiguration) SetCustomUpdateTimeWindows(value []CustomUpdateTimeWindowable)() {
-    if m != nil {
-        m.customUpdateTimeWindows = value
-    }
+    m.customUpdateTimeWindows = value
 }
 // SetFirmwareUpdateBehavior sets the firmwareUpdateBehavior property value. Update behavior options for macOS software updates.
 func (m *MacOSSoftwareUpdateConfiguration) SetFirmwareUpdateBehavior(value *MacOSSoftwareUpdateBehavior)() {
-    if m != nil {
-        m.firmwareUpdateBehavior = value
-    }
+    m.firmwareUpdateBehavior = value
 }
 // SetUpdateScheduleType sets the updateScheduleType property value. Update schedule type for macOS software updates.
 func (m *MacOSSoftwareUpdateConfiguration) SetUpdateScheduleType(value *MacOSSoftwareUpdateScheduleType)() {
-    if m != nil {
-        m.updateScheduleType = value
-    }
+    m.updateScheduleType = value
 }
 // SetUpdateTimeWindowUtcOffsetInMinutes sets the updateTimeWindowUtcOffsetInMinutes property value. Minutes indicating UTC offset for each update time window
 func (m *MacOSSoftwareUpdateConfiguration) SetUpdateTimeWindowUtcOffsetInMinutes(value *int32)() {
-    if m != nil {
-        m.updateTimeWindowUtcOffsetInMinutes = value
-    }
+    m.updateTimeWindowUtcOffsetInMinutes = value
 }

@@ -32,11 +32,7 @@ func CreateOrganizationalMessageVariantFromDiscriminatorValue(parseNode i878a80d
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *OrganizationalMessageVariant) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *OrganizationalMessageVariant) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -89,35 +85,19 @@ func (m *OrganizationalMessageVariant) GetFieldDeserializers()(map[string]func(i
 }
 // GetLocalizedTexts gets the localizedTexts property value. The list of localized texts for this variant
 func (m *OrganizationalMessageVariant) GetLocalizedTexts()([]OrganizationalMessageLocalizedTextable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.localizedTexts
-    }
+    return m.localizedTexts
 }
 // GetName gets the name property value. The name of the variant
 func (m *OrganizationalMessageVariant) GetName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.name
-    }
+    return m.name
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *OrganizationalMessageVariant) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetVariantId gets the variantId property value. A unique identifier for this variant
 func (m *OrganizationalMessageVariant) GetVariantId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.variantId
-    }
+    return m.variantId
 }
 // Serialize serializes information the current object
 func (m *OrganizationalMessageVariant) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -159,31 +139,21 @@ func (m *OrganizationalMessageVariant) Serialize(writer i878a80d2330e89d26896388
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *OrganizationalMessageVariant) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetLocalizedTexts sets the localizedTexts property value. The list of localized texts for this variant
 func (m *OrganizationalMessageVariant) SetLocalizedTexts(value []OrganizationalMessageLocalizedTextable)() {
-    if m != nil {
-        m.localizedTexts = value
-    }
+    m.localizedTexts = value
 }
 // SetName sets the name property value. The name of the variant
 func (m *OrganizationalMessageVariant) SetName(value *string)() {
-    if m != nil {
-        m.name = value
-    }
+    m.name = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *OrganizationalMessageVariant) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetVariantId sets the variantId property value. A unique identifier for this variant
 func (m *OrganizationalMessageVariant) SetVariantId(value *string)() {
-    if m != nil {
-        m.variantId = value
-    }
+    m.variantId = value
 }

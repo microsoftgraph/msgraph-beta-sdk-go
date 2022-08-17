@@ -40,11 +40,7 @@ func (m *ImportedAppleDeviceIdentityResult) GetFieldDeserializers()(map[string]f
 }
 // GetStatus gets the status property value. Status of imported device identity
 func (m *ImportedAppleDeviceIdentityResult) GetStatus()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.status
-    }
+    return m.status
 }
 // Serialize serializes information the current object
 func (m *ImportedAppleDeviceIdentityResult) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -62,7 +58,5 @@ func (m *ImportedAppleDeviceIdentityResult) Serialize(writer i878a80d2330e89d268
 }
 // SetStatus sets the status property value. Status of imported device identity
 func (m *ImportedAppleDeviceIdentityResult) SetStatus(value *bool)() {
-    if m != nil {
-        m.status = value
-    }
+    m.status = value
 }

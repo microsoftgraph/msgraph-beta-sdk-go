@@ -92,43 +92,23 @@ func (m *MacOSDmgApp) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
 }
 // GetIgnoreVersionDetection gets the ignoreVersionDetection property value. A value indicating whether the app's version will be used to detect the app after it is installed on a device. Set this to true for apps that use a self-update feature. Set this to false to install the app when it is not already installed on the device, or if the deploying app's version number does not match the version that's already installed on the device.
 func (m *MacOSDmgApp) GetIgnoreVersionDetection()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.ignoreVersionDetection
-    }
+    return m.ignoreVersionDetection
 }
 // GetIncludedApps gets the includedApps property value. The list of apps expected to be installed by the DMG.
 func (m *MacOSDmgApp) GetIncludedApps()([]MacOSIncludedAppable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.includedApps
-    }
+    return m.includedApps
 }
 // GetMinimumSupportedOperatingSystem gets the minimumSupportedOperatingSystem property value. The value for the minimum applicable operating system.
 func (m *MacOSDmgApp) GetMinimumSupportedOperatingSystem()(MacOSMinimumOperatingSystemable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.minimumSupportedOperatingSystem
-    }
+    return m.minimumSupportedOperatingSystem
 }
 // GetPrimaryBundleId gets the primaryBundleId property value. The primary CFBundleIdentifier of the DMG.
 func (m *MacOSDmgApp) GetPrimaryBundleId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.primaryBundleId
-    }
+    return m.primaryBundleId
 }
 // GetPrimaryBundleVersion gets the primaryBundleVersion property value. The primary CFBundleVersion of the DMG.
 func (m *MacOSDmgApp) GetPrimaryBundleVersion()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.primaryBundleVersion
-    }
+    return m.primaryBundleVersion
 }
 // Serialize serializes information the current object
 func (m *MacOSDmgApp) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -174,31 +154,21 @@ func (m *MacOSDmgApp) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
 }
 // SetIgnoreVersionDetection sets the ignoreVersionDetection property value. A value indicating whether the app's version will be used to detect the app after it is installed on a device. Set this to true for apps that use a self-update feature. Set this to false to install the app when it is not already installed on the device, or if the deploying app's version number does not match the version that's already installed on the device.
 func (m *MacOSDmgApp) SetIgnoreVersionDetection(value *bool)() {
-    if m != nil {
-        m.ignoreVersionDetection = value
-    }
+    m.ignoreVersionDetection = value
 }
 // SetIncludedApps sets the includedApps property value. The list of apps expected to be installed by the DMG.
 func (m *MacOSDmgApp) SetIncludedApps(value []MacOSIncludedAppable)() {
-    if m != nil {
-        m.includedApps = value
-    }
+    m.includedApps = value
 }
 // SetMinimumSupportedOperatingSystem sets the minimumSupportedOperatingSystem property value. The value for the minimum applicable operating system.
 func (m *MacOSDmgApp) SetMinimumSupportedOperatingSystem(value MacOSMinimumOperatingSystemable)() {
-    if m != nil {
-        m.minimumSupportedOperatingSystem = value
-    }
+    m.minimumSupportedOperatingSystem = value
 }
 // SetPrimaryBundleId sets the primaryBundleId property value. The primary CFBundleIdentifier of the DMG.
 func (m *MacOSDmgApp) SetPrimaryBundleId(value *string)() {
-    if m != nil {
-        m.primaryBundleId = value
-    }
+    m.primaryBundleId = value
 }
 // SetPrimaryBundleVersion sets the primaryBundleVersion property value. The primary CFBundleVersion of the DMG.
 func (m *MacOSDmgApp) SetPrimaryBundleVersion(value *string)() {
-    if m != nil {
-        m.primaryBundleVersion = value
-    }
+    m.primaryBundleVersion = value
 }

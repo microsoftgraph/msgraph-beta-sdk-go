@@ -30,11 +30,7 @@ func CreateUpdateWindowFromDiscriminatorValue(parseNode i878a80d2330e89d26896388
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *UpdateWindow) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *UpdateWindow) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -73,27 +69,15 @@ func (m *UpdateWindow) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *UpdateWindow) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetUpdateWindowEndTime gets the updateWindowEndTime property value. End of a time window during which agents can receive updates
 func (m *UpdateWindow) GetUpdateWindowEndTime()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.TimeOnly) {
-    if m == nil {
-        return nil
-    } else {
-        return m.updateWindowEndTime
-    }
+    return m.updateWindowEndTime
 }
 // GetUpdateWindowStartTime gets the updateWindowStartTime property value. Start of a time window during which agents can receive updates
 func (m *UpdateWindow) GetUpdateWindowStartTime()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.TimeOnly) {
-    if m == nil {
-        return nil
-    } else {
-        return m.updateWindowStartTime
-    }
+    return m.updateWindowStartTime
 }
 // Serialize serializes information the current object
 func (m *UpdateWindow) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -125,25 +109,17 @@ func (m *UpdateWindow) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *UpdateWindow) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *UpdateWindow) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetUpdateWindowEndTime sets the updateWindowEndTime property value. End of a time window during which agents can receive updates
 func (m *UpdateWindow) SetUpdateWindowEndTime(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.TimeOnly)() {
-    if m != nil {
-        m.updateWindowEndTime = value
-    }
+    m.updateWindowEndTime = value
 }
 // SetUpdateWindowStartTime sets the updateWindowStartTime property value. Start of a time window during which agents can receive updates
 func (m *UpdateWindow) SetUpdateWindowStartTime(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.TimeOnly)() {
-    if m != nil {
-        m.updateWindowStartTime = value
-    }
+    m.updateWindowStartTime = value
 }

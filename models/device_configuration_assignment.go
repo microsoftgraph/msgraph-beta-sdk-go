@@ -76,35 +76,19 @@ func (m *DeviceConfigurationAssignment) GetFieldDeserializers()(map[string]func(
 }
 // GetIntent gets the intent property value. The admin intent to apply or remove the profile. Possible values are: apply, remove.
 func (m *DeviceConfigurationAssignment) GetIntent()(*DeviceConfigAssignmentIntent) {
-    if m == nil {
-        return nil
-    } else {
-        return m.intent
-    }
+    return m.intent
 }
 // GetSource gets the source property value. Represents source of assignment.
 func (m *DeviceConfigurationAssignment) GetSource()(*DeviceAndAppManagementAssignmentSource) {
-    if m == nil {
-        return nil
-    } else {
-        return m.source
-    }
+    return m.source
 }
 // GetSourceId gets the sourceId property value. The identifier of the source of the assignment. This property is read-only.
 func (m *DeviceConfigurationAssignment) GetSourceId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.sourceId
-    }
+    return m.sourceId
 }
 // GetTarget gets the target property value. The assignment target for the device configuration.
 func (m *DeviceConfigurationAssignment) GetTarget()(DeviceAndAppManagementAssignmentTargetable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.target
-    }
+    return m.target
 }
 // Serialize serializes information the current object
 func (m *DeviceConfigurationAssignment) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -142,25 +126,17 @@ func (m *DeviceConfigurationAssignment) Serialize(writer i878a80d2330e89d2689638
 }
 // SetIntent sets the intent property value. The admin intent to apply or remove the profile. Possible values are: apply, remove.
 func (m *DeviceConfigurationAssignment) SetIntent(value *DeviceConfigAssignmentIntent)() {
-    if m != nil {
-        m.intent = value
-    }
+    m.intent = value
 }
 // SetSource sets the source property value. Represents source of assignment.
 func (m *DeviceConfigurationAssignment) SetSource(value *DeviceAndAppManagementAssignmentSource)() {
-    if m != nil {
-        m.source = value
-    }
+    m.source = value
 }
 // SetSourceId sets the sourceId property value. The identifier of the source of the assignment. This property is read-only.
 func (m *DeviceConfigurationAssignment) SetSourceId(value *string)() {
-    if m != nil {
-        m.sourceId = value
-    }
+    m.sourceId = value
 }
 // SetTarget sets the target property value. The assignment target for the device configuration.
 func (m *DeviceConfigurationAssignment) SetTarget(value DeviceAndAppManagementAssignmentTargetable)() {
-    if m != nil {
-        m.target = value
-    }
+    m.target = value
 }

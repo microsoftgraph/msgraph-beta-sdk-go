@@ -33,19 +33,11 @@ func CreateTeamworkFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f4
 }
 // GetDeletedTeams gets the deletedTeams property value. A collection of deleted teams.
 func (m *Teamwork) GetDeletedTeams()([]DeletedTeamable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deletedTeams
-    }
+    return m.deletedTeams
 }
 // GetDevices gets the devices property value. The Teams devices provisioned for the tenant.
 func (m *Teamwork) GetDevices()([]TeamworkDeviceable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.devices
-    }
+    return m.devices
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Teamwork) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -120,27 +112,15 @@ func (m *Teamwork) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
 }
 // GetTeamsAppSettings gets the teamsAppSettings property value. Represents tenant-wide settings for all Teams apps in the tenant.
 func (m *Teamwork) GetTeamsAppSettings()(TeamsAppSettingsable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.teamsAppSettings
-    }
+    return m.teamsAppSettings
 }
 // GetTeamTemplates gets the teamTemplates property value. The templates associated with a team.
 func (m *Teamwork) GetTeamTemplates()([]TeamTemplateable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.teamTemplates
-    }
+    return m.teamTemplates
 }
 // GetWorkforceIntegrations gets the workforceIntegrations property value. A workforce integration with shifts.
 func (m *Teamwork) GetWorkforceIntegrations()([]WorkforceIntegrationable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.workforceIntegrations
-    }
+    return m.workforceIntegrations
 }
 // Serialize serializes information the current object
 func (m *Teamwork) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -198,31 +178,21 @@ func (m *Teamwork) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
 }
 // SetDeletedTeams sets the deletedTeams property value. A collection of deleted teams.
 func (m *Teamwork) SetDeletedTeams(value []DeletedTeamable)() {
-    if m != nil {
-        m.deletedTeams = value
-    }
+    m.deletedTeams = value
 }
 // SetDevices sets the devices property value. The Teams devices provisioned for the tenant.
 func (m *Teamwork) SetDevices(value []TeamworkDeviceable)() {
-    if m != nil {
-        m.devices = value
-    }
+    m.devices = value
 }
 // SetTeamsAppSettings sets the teamsAppSettings property value. Represents tenant-wide settings for all Teams apps in the tenant.
 func (m *Teamwork) SetTeamsAppSettings(value TeamsAppSettingsable)() {
-    if m != nil {
-        m.teamsAppSettings = value
-    }
+    m.teamsAppSettings = value
 }
 // SetTeamTemplates sets the teamTemplates property value. The templates associated with a team.
 func (m *Teamwork) SetTeamTemplates(value []TeamTemplateable)() {
-    if m != nil {
-        m.teamTemplates = value
-    }
+    m.teamTemplates = value
 }
 // SetWorkforceIntegrations sets the workforceIntegrations property value. A workforce integration with shifts.
 func (m *Teamwork) SetWorkforceIntegrations(value []WorkforceIntegrationable)() {
-    if m != nil {
-        m.workforceIntegrations = value
-    }
+    m.workforceIntegrations = value
 }

@@ -52,27 +52,15 @@ func CreatePrivilegedOperationEventFromDiscriminatorValue(parseNode i878a80d2330
 }
 // GetAdditionalInformation gets the additionalInformation property value. Detailed human readable information for the event.
 func (m *PrivilegedOperationEvent) GetAdditionalInformation()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalInformation
-    }
+    return m.additionalInformation
 }
 // GetCreationDateTime gets the creationDateTime property value. Indicates the time when the event is created.
 func (m *PrivilegedOperationEvent) GetCreationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.creationDateTime
-    }
+    return m.creationDateTime
 }
 // GetExpirationDateTime gets the expirationDateTime property value. This is only used when the requestType is Activate, and it indicates the expiration time for the role activation.
 func (m *PrivilegedOperationEvent) GetExpirationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.expirationDateTime
-    }
+    return m.expirationDateTime
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *PrivilegedOperationEvent) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -221,91 +209,47 @@ func (m *PrivilegedOperationEvent) GetFieldDeserializers()(map[string]func(i878a
 }
 // GetReferenceKey gets the referenceKey property value. Incident/Request ticket number during role activation. The value is presented only if the ticket number is provided during role activation.
 func (m *PrivilegedOperationEvent) GetReferenceKey()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.referenceKey
-    }
+    return m.referenceKey
 }
 // GetReferenceSystem gets the referenceSystem property value. Incident/Request ticketing system provided during tole activation. The value is presented only if the ticket system is provided during role activation.
 func (m *PrivilegedOperationEvent) GetReferenceSystem()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.referenceSystem
-    }
+    return m.referenceSystem
 }
 // GetRequestorId gets the requestorId property value. The user id of the requestor who initiates the operation.
 func (m *PrivilegedOperationEvent) GetRequestorId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.requestorId
-    }
+    return m.requestorId
 }
 // GetRequestorName gets the requestorName property value. The user name of the requestor who initiates the operation.
 func (m *PrivilegedOperationEvent) GetRequestorName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.requestorName
-    }
+    return m.requestorName
 }
 // GetRequestType gets the requestType property value. The request operation type. The requestType value can be: Assign (role assignment), Activate (role activation), Unassign (remove role assignment), Deactivate (role deactivation), ScanAlertsNow (scan security alerts), DismissAlert (dismiss security alert), FixAlertItem (fix a security alert issue),  AccessReview_Review (review an Access Review), AccessReview_Create (create an Access Review) , AccessReview_Update (update an Access Review), AccessReview_Delete (delete an Access Review).
 func (m *PrivilegedOperationEvent) GetRequestType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.requestType
-    }
+    return m.requestType
 }
 // GetRoleId gets the roleId property value. The id of the role that is associated with the operation.
 func (m *PrivilegedOperationEvent) GetRoleId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.roleId
-    }
+    return m.roleId
 }
 // GetRoleName gets the roleName property value. The name of the role.
 func (m *PrivilegedOperationEvent) GetRoleName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.roleName
-    }
+    return m.roleName
 }
 // GetTenantId gets the tenantId property value. The tenant (organization) id.
 func (m *PrivilegedOperationEvent) GetTenantId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.tenantId
-    }
+    return m.tenantId
 }
 // GetUserId gets the userId property value. The id of the user that is associated with the operation.
 func (m *PrivilegedOperationEvent) GetUserId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userId
-    }
+    return m.userId
 }
 // GetUserMail gets the userMail property value. The user's email.
 func (m *PrivilegedOperationEvent) GetUserMail()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userMail
-    }
+    return m.userMail
 }
 // GetUserName gets the userName property value. The user's display name.
 func (m *PrivilegedOperationEvent) GetUserName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userName
-    }
+    return m.userName
 }
 // Serialize serializes information the current object
 func (m *PrivilegedOperationEvent) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -401,85 +345,57 @@ func (m *PrivilegedOperationEvent) Serialize(writer i878a80d2330e89d26896388a3f4
 }
 // SetAdditionalInformation sets the additionalInformation property value. Detailed human readable information for the event.
 func (m *PrivilegedOperationEvent) SetAdditionalInformation(value *string)() {
-    if m != nil {
-        m.additionalInformation = value
-    }
+    m.additionalInformation = value
 }
 // SetCreationDateTime sets the creationDateTime property value. Indicates the time when the event is created.
 func (m *PrivilegedOperationEvent) SetCreationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.creationDateTime = value
-    }
+    m.creationDateTime = value
 }
 // SetExpirationDateTime sets the expirationDateTime property value. This is only used when the requestType is Activate, and it indicates the expiration time for the role activation.
 func (m *PrivilegedOperationEvent) SetExpirationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.expirationDateTime = value
-    }
+    m.expirationDateTime = value
 }
 // SetReferenceKey sets the referenceKey property value. Incident/Request ticket number during role activation. The value is presented only if the ticket number is provided during role activation.
 func (m *PrivilegedOperationEvent) SetReferenceKey(value *string)() {
-    if m != nil {
-        m.referenceKey = value
-    }
+    m.referenceKey = value
 }
 // SetReferenceSystem sets the referenceSystem property value. Incident/Request ticketing system provided during tole activation. The value is presented only if the ticket system is provided during role activation.
 func (m *PrivilegedOperationEvent) SetReferenceSystem(value *string)() {
-    if m != nil {
-        m.referenceSystem = value
-    }
+    m.referenceSystem = value
 }
 // SetRequestorId sets the requestorId property value. The user id of the requestor who initiates the operation.
 func (m *PrivilegedOperationEvent) SetRequestorId(value *string)() {
-    if m != nil {
-        m.requestorId = value
-    }
+    m.requestorId = value
 }
 // SetRequestorName sets the requestorName property value. The user name of the requestor who initiates the operation.
 func (m *PrivilegedOperationEvent) SetRequestorName(value *string)() {
-    if m != nil {
-        m.requestorName = value
-    }
+    m.requestorName = value
 }
 // SetRequestType sets the requestType property value. The request operation type. The requestType value can be: Assign (role assignment), Activate (role activation), Unassign (remove role assignment), Deactivate (role deactivation), ScanAlertsNow (scan security alerts), DismissAlert (dismiss security alert), FixAlertItem (fix a security alert issue),  AccessReview_Review (review an Access Review), AccessReview_Create (create an Access Review) , AccessReview_Update (update an Access Review), AccessReview_Delete (delete an Access Review).
 func (m *PrivilegedOperationEvent) SetRequestType(value *string)() {
-    if m != nil {
-        m.requestType = value
-    }
+    m.requestType = value
 }
 // SetRoleId sets the roleId property value. The id of the role that is associated with the operation.
 func (m *PrivilegedOperationEvent) SetRoleId(value *string)() {
-    if m != nil {
-        m.roleId = value
-    }
+    m.roleId = value
 }
 // SetRoleName sets the roleName property value. The name of the role.
 func (m *PrivilegedOperationEvent) SetRoleName(value *string)() {
-    if m != nil {
-        m.roleName = value
-    }
+    m.roleName = value
 }
 // SetTenantId sets the tenantId property value. The tenant (organization) id.
 func (m *PrivilegedOperationEvent) SetTenantId(value *string)() {
-    if m != nil {
-        m.tenantId = value
-    }
+    m.tenantId = value
 }
 // SetUserId sets the userId property value. The id of the user that is associated with the operation.
 func (m *PrivilegedOperationEvent) SetUserId(value *string)() {
-    if m != nil {
-        m.userId = value
-    }
+    m.userId = value
 }
 // SetUserMail sets the userMail property value. The user's email.
 func (m *PrivilegedOperationEvent) SetUserMail(value *string)() {
-    if m != nil {
-        m.userMail = value
-    }
+    m.userMail = value
 }
 // SetUserName sets the userName property value. The user's display name.
 func (m *PrivilegedOperationEvent) SetUserName(value *string)() {
-    if m != nil {
-        m.userName = value
-    }
+    m.userName = value
 }

@@ -34,19 +34,11 @@ func CreateVmMetadataFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *VmMetadata) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetCloudProvider gets the cloudProvider property value. The cloudProvider property
 func (m *VmMetadata) GetCloudProvider()(*VmCloudProvider) {
-    if m == nil {
-        return nil
-    } else {
-        return m.cloudProvider
-    }
+    return m.cloudProvider
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *VmMetadata) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -105,35 +97,19 @@ func (m *VmMetadata) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *VmMetadata) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetResourceId gets the resourceId property value. The resourceId property
 func (m *VmMetadata) GetResourceId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.resourceId
-    }
+    return m.resourceId
 }
 // GetSubscriptionId gets the subscriptionId property value. The subscriptionId property
 func (m *VmMetadata) GetSubscriptionId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.subscriptionId
-    }
+    return m.subscriptionId
 }
 // GetVmId gets the vmId property value. The vmId property
 func (m *VmMetadata) GetVmId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.vmId
-    }
+    return m.vmId
 }
 // Serialize serializes information the current object
 func (m *VmMetadata) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -178,37 +154,25 @@ func (m *VmMetadata) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *VmMetadata) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetCloudProvider sets the cloudProvider property value. The cloudProvider property
 func (m *VmMetadata) SetCloudProvider(value *VmCloudProvider)() {
-    if m != nil {
-        m.cloudProvider = value
-    }
+    m.cloudProvider = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *VmMetadata) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetResourceId sets the resourceId property value. The resourceId property
 func (m *VmMetadata) SetResourceId(value *string)() {
-    if m != nil {
-        m.resourceId = value
-    }
+    m.resourceId = value
 }
 // SetSubscriptionId sets the subscriptionId property value. The subscriptionId property
 func (m *VmMetadata) SetSubscriptionId(value *string)() {
-    if m != nil {
-        m.subscriptionId = value
-    }
+    m.subscriptionId = value
 }
 // SetVmId sets the vmId property value. The vmId property
 func (m *VmMetadata) SetVmId(value *string)() {
-    if m != nil {
-        m.vmId = value
-    }
+    m.vmId = value
 }

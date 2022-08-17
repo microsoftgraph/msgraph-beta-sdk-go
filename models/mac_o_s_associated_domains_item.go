@@ -32,35 +32,19 @@ func CreateMacOSAssociatedDomainsItemFromDiscriminatorValue(parseNode i878a80d23
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *MacOSAssociatedDomainsItem) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetApplicationIdentifier gets the applicationIdentifier property value. The application identifier of the app to associate domains with.
 func (m *MacOSAssociatedDomainsItem) GetApplicationIdentifier()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.applicationIdentifier
-    }
+    return m.applicationIdentifier
 }
 // GetDirectDownloadsEnabled gets the directDownloadsEnabled property value. Determines whether data should be downloaded directly or via a CDN.
 func (m *MacOSAssociatedDomainsItem) GetDirectDownloadsEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.directDownloadsEnabled
-    }
+    return m.directDownloadsEnabled
 }
 // GetDomains gets the domains property value. The list of domains to associate.
 func (m *MacOSAssociatedDomainsItem) GetDomains()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.domains
-    }
+    return m.domains
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *MacOSAssociatedDomainsItem) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -113,11 +97,7 @@ func (m *MacOSAssociatedDomainsItem) GetFieldDeserializers()(map[string]func(i87
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *MacOSAssociatedDomainsItem) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // Serialize serializes information the current object
 func (m *MacOSAssociatedDomainsItem) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -155,31 +135,21 @@ func (m *MacOSAssociatedDomainsItem) Serialize(writer i878a80d2330e89d26896388a3
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *MacOSAssociatedDomainsItem) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetApplicationIdentifier sets the applicationIdentifier property value. The application identifier of the app to associate domains with.
 func (m *MacOSAssociatedDomainsItem) SetApplicationIdentifier(value *string)() {
-    if m != nil {
-        m.applicationIdentifier = value
-    }
+    m.applicationIdentifier = value
 }
 // SetDirectDownloadsEnabled sets the directDownloadsEnabled property value. Determines whether data should be downloaded directly or via a CDN.
 func (m *MacOSAssociatedDomainsItem) SetDirectDownloadsEnabled(value *bool)() {
-    if m != nil {
-        m.directDownloadsEnabled = value
-    }
+    m.directDownloadsEnabled = value
 }
 // SetDomains sets the domains property value. The list of domains to associate.
 func (m *MacOSAssociatedDomainsItem) SetDomains(value []string)() {
-    if m != nil {
-        m.domains = value
-    }
+    m.domains = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *MacOSAssociatedDomainsItem) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }

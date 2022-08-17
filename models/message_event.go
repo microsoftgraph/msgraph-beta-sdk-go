@@ -30,27 +30,15 @@ func CreateMessageEventFromDiscriminatorValue(parseNode i878a80d2330e89d26896388
 }
 // GetDateTime gets the dateTime property value. The dateTime property
 func (m *MessageEvent) GetDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.dateTime
-    }
+    return m.dateTime
 }
 // GetDescription gets the description property value. The description property
 func (m *MessageEvent) GetDescription()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.description
-    }
+    return m.description
 }
 // GetEventType gets the eventType property value. The eventType property
 func (m *MessageEvent) GetEventType()(*MessageEventType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.eventType
-    }
+    return m.eventType
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *MessageEvent) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -116,19 +104,13 @@ func (m *MessageEvent) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
 }
 // SetDateTime sets the dateTime property value. The dateTime property
 func (m *MessageEvent) SetDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.dateTime = value
-    }
+    m.dateTime = value
 }
 // SetDescription sets the description property value. The description property
 func (m *MessageEvent) SetDescription(value *string)() {
-    if m != nil {
-        m.description = value
-    }
+    m.description = value
 }
 // SetEventType sets the eventType property value. The eventType property
 func (m *MessageEvent) SetEventType(value *MessageEventType)() {
-    if m != nil {
-        m.eventType = value
-    }
+    m.eventType = value
 }

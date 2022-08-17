@@ -52,19 +52,11 @@ func (m *DeviceEnrollmentPlatformRestrictionConfiguration) GetFieldDeserializers
 }
 // GetPlatformRestriction gets the platformRestriction property value. Restrictions based on platform, platform operating system version, and device ownership
 func (m *DeviceEnrollmentPlatformRestrictionConfiguration) GetPlatformRestriction()(DeviceEnrollmentPlatformRestrictionable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.platformRestriction
-    }
+    return m.platformRestriction
 }
 // GetPlatformType gets the platformType property value. This enum indicates the platform type for which the enrollment restriction applies.
 func (m *DeviceEnrollmentPlatformRestrictionConfiguration) GetPlatformType()(*EnrollmentRestrictionPlatformType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.platformType
-    }
+    return m.platformType
 }
 // Serialize serializes information the current object
 func (m *DeviceEnrollmentPlatformRestrictionConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -89,13 +81,9 @@ func (m *DeviceEnrollmentPlatformRestrictionConfiguration) Serialize(writer i878
 }
 // SetPlatformRestriction sets the platformRestriction property value. Restrictions based on platform, platform operating system version, and device ownership
 func (m *DeviceEnrollmentPlatformRestrictionConfiguration) SetPlatformRestriction(value DeviceEnrollmentPlatformRestrictionable)() {
-    if m != nil {
-        m.platformRestriction = value
-    }
+    m.platformRestriction = value
 }
 // SetPlatformType sets the platformType property value. This enum indicates the platform type for which the enrollment restriction applies.
 func (m *DeviceEnrollmentPlatformRestrictionConfiguration) SetPlatformType(value *EnrollmentRestrictionPlatformType)() {
-    if m != nil {
-        m.platformType = value
-    }
+    m.platformType = value
 }

@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// WindowsDriverUpdateProfile 
+// WindowsDriverUpdateProfile windows Driver Update Profile
 type WindowsDriverUpdateProfile struct {
     Entity
     // An enum type to represent approval type of a driver update profile.
@@ -33,7 +33,7 @@ type WindowsDriverUpdateProfile struct {
     // List of Scope Tags for this Driver Update entity.
     roleScopeTagIds []string
 }
-// NewWindowsDriverUpdateProfile instantiates a new WindowsDriverUpdateProfile and sets the default values.
+// NewWindowsDriverUpdateProfile instantiates a new windowsDriverUpdateProfile and sets the default values.
 func NewWindowsDriverUpdateProfile()(*WindowsDriverUpdateProfile) {
     m := &WindowsDriverUpdateProfile{
         Entity: *NewEntity(),
@@ -48,67 +48,35 @@ func CreateWindowsDriverUpdateProfileFromDiscriminatorValue(parseNode i878a80d23
 }
 // GetApprovalType gets the approvalType property value. An enum type to represent approval type of a driver update profile.
 func (m *WindowsDriverUpdateProfile) GetApprovalType()(*DriverUpdateProfileApprovalType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.approvalType
-    }
+    return m.approvalType
 }
 // GetAssignments gets the assignments property value. The list of group assignments of the profile.
 func (m *WindowsDriverUpdateProfile) GetAssignments()([]WindowsDriverUpdateProfileAssignmentable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.assignments
-    }
+    return m.assignments
 }
 // GetCreatedDateTime gets the createdDateTime property value. The date time that the profile was created.
 func (m *WindowsDriverUpdateProfile) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.createdDateTime
-    }
+    return m.createdDateTime
 }
 // GetDeploymentDeferralInDays gets the deploymentDeferralInDays property value. Deployment deferral settings in days, only applicable when ApprovalType is set to automatic approval.
 func (m *WindowsDriverUpdateProfile) GetDeploymentDeferralInDays()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deploymentDeferralInDays
-    }
+    return m.deploymentDeferralInDays
 }
 // GetDescription gets the description property value. The description of the profile which is specified by the user.
 func (m *WindowsDriverUpdateProfile) GetDescription()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.description
-    }
+    return m.description
 }
 // GetDeviceReporting gets the deviceReporting property value. Number of devices reporting for this profile
 func (m *WindowsDriverUpdateProfile) GetDeviceReporting()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deviceReporting
-    }
+    return m.deviceReporting
 }
 // GetDisplayName gets the displayName property value. The display name for the profile.
 func (m *WindowsDriverUpdateProfile) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
 // GetDriverInventories gets the driverInventories property value. Driver inventories for this profile.
 func (m *WindowsDriverUpdateProfile) GetDriverInventories()([]WindowsDriverUpdateInventoryable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.driverInventories
-    }
+    return m.driverInventories
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *WindowsDriverUpdateProfile) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -249,35 +217,19 @@ func (m *WindowsDriverUpdateProfile) GetFieldDeserializers()(map[string]func(i87
 }
 // GetInventorySyncStatus gets the inventorySyncStatus property value. Driver inventory sync status for this profile.
 func (m *WindowsDriverUpdateProfile) GetInventorySyncStatus()(WindowsDriverUpdateProfileInventorySyncStatusable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.inventorySyncStatus
-    }
+    return m.inventorySyncStatus
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. The date time that the profile was last modified.
 func (m *WindowsDriverUpdateProfile) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastModifiedDateTime
-    }
+    return m.lastModifiedDateTime
 }
 // GetNewUpdates gets the newUpdates property value. Number of new driver updates available for this profile.
 func (m *WindowsDriverUpdateProfile) GetNewUpdates()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.newUpdates
-    }
+    return m.newUpdates
 }
 // GetRoleScopeTagIds gets the roleScopeTagIds property value. List of Scope Tags for this Driver Update entity.
 func (m *WindowsDriverUpdateProfile) GetRoleScopeTagIds()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.roleScopeTagIds
-    }
+    return m.roleScopeTagIds
 }
 // Serialize serializes information the current object
 func (m *WindowsDriverUpdateProfile) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -370,73 +322,49 @@ func (m *WindowsDriverUpdateProfile) Serialize(writer i878a80d2330e89d26896388a3
 }
 // SetApprovalType sets the approvalType property value. An enum type to represent approval type of a driver update profile.
 func (m *WindowsDriverUpdateProfile) SetApprovalType(value *DriverUpdateProfileApprovalType)() {
-    if m != nil {
-        m.approvalType = value
-    }
+    m.approvalType = value
 }
 // SetAssignments sets the assignments property value. The list of group assignments of the profile.
 func (m *WindowsDriverUpdateProfile) SetAssignments(value []WindowsDriverUpdateProfileAssignmentable)() {
-    if m != nil {
-        m.assignments = value
-    }
+    m.assignments = value
 }
 // SetCreatedDateTime sets the createdDateTime property value. The date time that the profile was created.
 func (m *WindowsDriverUpdateProfile) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.createdDateTime = value
-    }
+    m.createdDateTime = value
 }
 // SetDeploymentDeferralInDays sets the deploymentDeferralInDays property value. Deployment deferral settings in days, only applicable when ApprovalType is set to automatic approval.
 func (m *WindowsDriverUpdateProfile) SetDeploymentDeferralInDays(value *int32)() {
-    if m != nil {
-        m.deploymentDeferralInDays = value
-    }
+    m.deploymentDeferralInDays = value
 }
 // SetDescription sets the description property value. The description of the profile which is specified by the user.
 func (m *WindowsDriverUpdateProfile) SetDescription(value *string)() {
-    if m != nil {
-        m.description = value
-    }
+    m.description = value
 }
 // SetDeviceReporting sets the deviceReporting property value. Number of devices reporting for this profile
 func (m *WindowsDriverUpdateProfile) SetDeviceReporting(value *int32)() {
-    if m != nil {
-        m.deviceReporting = value
-    }
+    m.deviceReporting = value
 }
 // SetDisplayName sets the displayName property value. The display name for the profile.
 func (m *WindowsDriverUpdateProfile) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }
 // SetDriverInventories sets the driverInventories property value. Driver inventories for this profile.
 func (m *WindowsDriverUpdateProfile) SetDriverInventories(value []WindowsDriverUpdateInventoryable)() {
-    if m != nil {
-        m.driverInventories = value
-    }
+    m.driverInventories = value
 }
 // SetInventorySyncStatus sets the inventorySyncStatus property value. Driver inventory sync status for this profile.
 func (m *WindowsDriverUpdateProfile) SetInventorySyncStatus(value WindowsDriverUpdateProfileInventorySyncStatusable)() {
-    if m != nil {
-        m.inventorySyncStatus = value
-    }
+    m.inventorySyncStatus = value
 }
 // SetLastModifiedDateTime sets the lastModifiedDateTime property value. The date time that the profile was last modified.
 func (m *WindowsDriverUpdateProfile) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.lastModifiedDateTime = value
-    }
+    m.lastModifiedDateTime = value
 }
 // SetNewUpdates sets the newUpdates property value. Number of new driver updates available for this profile.
 func (m *WindowsDriverUpdateProfile) SetNewUpdates(value *int32)() {
-    if m != nil {
-        m.newUpdates = value
-    }
+    m.newUpdates = value
 }
 // SetRoleScopeTagIds sets the roleScopeTagIds property value. List of Scope Tags for this Driver Update entity.
 func (m *WindowsDriverUpdateProfile) SetRoleScopeTagIds(value []string)() {
-    if m != nil {
-        m.roleScopeTagIds = value
-    }
+    m.roleScopeTagIds = value
 }

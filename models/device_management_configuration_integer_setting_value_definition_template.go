@@ -30,11 +30,7 @@ func CreateDeviceManagementConfigurationIntegerSettingValueDefinitionTemplateFro
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DeviceManagementConfigurationIntegerSettingValueDefinitionTemplate) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceManagementConfigurationIntegerSettingValueDefinitionTemplate) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -73,27 +69,15 @@ func (m *DeviceManagementConfigurationIntegerSettingValueDefinitionTemplate) Get
 }
 // GetMaxValue gets the maxValue property value. Integer Setting Maximum Value. Valid values -2147483648 to 2147483647
 func (m *DeviceManagementConfigurationIntegerSettingValueDefinitionTemplate) GetMaxValue()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.maxValue
-    }
+    return m.maxValue
 }
 // GetMinValue gets the minValue property value. Integer Setting Minimum Value. Valid values -2147483648 to 2147483647
 func (m *DeviceManagementConfigurationIntegerSettingValueDefinitionTemplate) GetMinValue()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.minValue
-    }
+    return m.minValue
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *DeviceManagementConfigurationIntegerSettingValueDefinitionTemplate) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // Serialize serializes information the current object
 func (m *DeviceManagementConfigurationIntegerSettingValueDefinitionTemplate) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -125,25 +109,17 @@ func (m *DeviceManagementConfigurationIntegerSettingValueDefinitionTemplate) Ser
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DeviceManagementConfigurationIntegerSettingValueDefinitionTemplate) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetMaxValue sets the maxValue property value. Integer Setting Maximum Value. Valid values -2147483648 to 2147483647
 func (m *DeviceManagementConfigurationIntegerSettingValueDefinitionTemplate) SetMaxValue(value *int32)() {
-    if m != nil {
-        m.maxValue = value
-    }
+    m.maxValue = value
 }
 // SetMinValue sets the minValue property value. Integer Setting Minimum Value. Valid values -2147483648 to 2147483647
 func (m *DeviceManagementConfigurationIntegerSettingValueDefinitionTemplate) SetMinValue(value *int32)() {
-    if m != nil {
-        m.minValue = value
-    }
+    m.minValue = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *DeviceManagementConfigurationIntegerSettingValueDefinitionTemplate) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }

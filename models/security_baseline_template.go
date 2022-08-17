@@ -29,27 +29,15 @@ func CreateSecurityBaselineTemplateFromDiscriminatorValue(parseNode i878a80d2330
 }
 // GetCategoryDeviceStateSummaries gets the categoryDeviceStateSummaries property value. The security baseline per category device state summary
 func (m *SecurityBaselineTemplate) GetCategoryDeviceStateSummaries()([]SecurityBaselineCategoryStateSummaryable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.categoryDeviceStateSummaries
-    }
+    return m.categoryDeviceStateSummaries
 }
 // GetDeviceStates gets the deviceStates property value. The security baseline device states
 func (m *SecurityBaselineTemplate) GetDeviceStates()([]SecurityBaselineDeviceStateable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deviceStates
-    }
+    return m.deviceStates
 }
 // GetDeviceStateSummary gets the deviceStateSummary property value. The security baseline device state summary
 func (m *SecurityBaselineTemplate) GetDeviceStateSummary()(SecurityBaselineStateSummaryable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deviceStateSummary
-    }
+    return m.deviceStateSummary
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *SecurityBaselineTemplate) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -130,19 +118,13 @@ func (m *SecurityBaselineTemplate) Serialize(writer i878a80d2330e89d26896388a3f4
 }
 // SetCategoryDeviceStateSummaries sets the categoryDeviceStateSummaries property value. The security baseline per category device state summary
 func (m *SecurityBaselineTemplate) SetCategoryDeviceStateSummaries(value []SecurityBaselineCategoryStateSummaryable)() {
-    if m != nil {
-        m.categoryDeviceStateSummaries = value
-    }
+    m.categoryDeviceStateSummaries = value
 }
 // SetDeviceStates sets the deviceStates property value. The security baseline device states
 func (m *SecurityBaselineTemplate) SetDeviceStates(value []SecurityBaselineDeviceStateable)() {
-    if m != nil {
-        m.deviceStates = value
-    }
+    m.deviceStates = value
 }
 // SetDeviceStateSummary sets the deviceStateSummary property value. The security baseline device state summary
 func (m *SecurityBaselineTemplate) SetDeviceStateSummary(value SecurityBaselineStateSummaryable)() {
-    if m != nil {
-        m.deviceStateSummary = value
-    }
+    m.deviceStateSummary = value
 }

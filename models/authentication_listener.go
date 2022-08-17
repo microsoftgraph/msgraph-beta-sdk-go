@@ -71,19 +71,11 @@ func (m *AuthenticationListener) GetFieldDeserializers()(map[string]func(i878a80
 }
 // GetPriority gets the priority property value. The priority of the listener. Determines the order of evaluation when an event has multiple listeners. The priority is evaluated from low to high.
 func (m *AuthenticationListener) GetPriority()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.priority
-    }
+    return m.priority
 }
 // GetSourceFilter gets the sourceFilter property value. Filter based on the source of the authentication that is used to determine whether the listener is evaluated. This is currently limited to evaluations based on application the user is authenticating to.
 func (m *AuthenticationListener) GetSourceFilter()(AuthenticationSourceFilterable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.sourceFilter
-    }
+    return m.sourceFilter
 }
 // Serialize serializes information the current object
 func (m *AuthenticationListener) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -107,13 +99,9 @@ func (m *AuthenticationListener) Serialize(writer i878a80d2330e89d26896388a3f487
 }
 // SetPriority sets the priority property value. The priority of the listener. Determines the order of evaluation when an event has multiple listeners. The priority is evaluated from low to high.
 func (m *AuthenticationListener) SetPriority(value *int32)() {
-    if m != nil {
-        m.priority = value
-    }
+    m.priority = value
 }
 // SetSourceFilter sets the sourceFilter property value. Filter based on the source of the authentication that is used to determine whether the listener is evaluated. This is currently limited to evaluations based on application the user is authenticating to.
 func (m *AuthenticationListener) SetSourceFilter(value AuthenticationSourceFilterable)() {
-    if m != nil {
-        m.sourceFilter = value
-    }
+    m.sourceFilter = value
 }

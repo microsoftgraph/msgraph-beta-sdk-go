@@ -5,7 +5,7 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
-// SensitivityLabel provides operations to manage the collection of accessReview entities.
+// SensitivityLabel provides operations to manage the collection of activityStatistics entities.
 type SensitivityLabel struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
     // The color that the UI should display for the label, if configured.
@@ -44,27 +44,15 @@ func CreateSensitivityLabelFromDiscriminatorValue(parseNode i878a80d2330e89d2689
 }
 // GetColor gets the color property value. The color that the UI should display for the label, if configured.
 func (m *SensitivityLabel) GetColor()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.color
-    }
+    return m.color
 }
 // GetContentFormats gets the contentFormats property value. Returns the supported content formats for the label.
 func (m *SensitivityLabel) GetContentFormats()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.contentFormats
-    }
+    return m.contentFormats
 }
 // GetDescription gets the description property value. The admin-defined description for the label.
 func (m *SensitivityLabel) GetDescription()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.description
-    }
+    return m.description
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *SensitivityLabel) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -177,59 +165,31 @@ func (m *SensitivityLabel) GetFieldDeserializers()(map[string]func(i878a80d2330e
 }
 // GetHasProtection gets the hasProtection property value. Indicates whether the label has protection actions configured.
 func (m *SensitivityLabel) GetHasProtection()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.hasProtection
-    }
+    return m.hasProtection
 }
 // GetIsActive gets the isActive property value. Indicates whether the label is active or not. Active labels should be hidden or disabled in the UI.
 func (m *SensitivityLabel) GetIsActive()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isActive
-    }
+    return m.isActive
 }
 // GetIsAppliable gets the isAppliable property value. Indicates whether the label can be applied to content. False if the label is a parent with child labels.
 func (m *SensitivityLabel) GetIsAppliable()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isAppliable
-    }
+    return m.isAppliable
 }
 // GetName gets the name property value. The plaintext name of the label.
 func (m *SensitivityLabel) GetName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.name
-    }
+    return m.name
 }
 // GetParent gets the parent property value. The parent label associated with a child label. Null if the label has no parent.
 func (m *SensitivityLabel) GetParent()(SensitivityLabelable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.parent
-    }
+    return m.parent
 }
 // GetSensitivity gets the sensitivity property value. The sensitivity value of the label, where lower is less sensitive.
 func (m *SensitivityLabel) GetSensitivity()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.sensitivity
-    }
+    return m.sensitivity
 }
 // GetTooltip gets the tooltip property value. The tooltip that should be displayed for the label in a UI.
 func (m *SensitivityLabel) GetTooltip()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.tooltip
-    }
+    return m.tooltip
 }
 // Serialize serializes information the current object
 func (m *SensitivityLabel) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -301,61 +261,41 @@ func (m *SensitivityLabel) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
 }
 // SetColor sets the color property value. The color that the UI should display for the label, if configured.
 func (m *SensitivityLabel) SetColor(value *string)() {
-    if m != nil {
-        m.color = value
-    }
+    m.color = value
 }
 // SetContentFormats sets the contentFormats property value. Returns the supported content formats for the label.
 func (m *SensitivityLabel) SetContentFormats(value []string)() {
-    if m != nil {
-        m.contentFormats = value
-    }
+    m.contentFormats = value
 }
 // SetDescription sets the description property value. The admin-defined description for the label.
 func (m *SensitivityLabel) SetDescription(value *string)() {
-    if m != nil {
-        m.description = value
-    }
+    m.description = value
 }
 // SetHasProtection sets the hasProtection property value. Indicates whether the label has protection actions configured.
 func (m *SensitivityLabel) SetHasProtection(value *bool)() {
-    if m != nil {
-        m.hasProtection = value
-    }
+    m.hasProtection = value
 }
 // SetIsActive sets the isActive property value. Indicates whether the label is active or not. Active labels should be hidden or disabled in the UI.
 func (m *SensitivityLabel) SetIsActive(value *bool)() {
-    if m != nil {
-        m.isActive = value
-    }
+    m.isActive = value
 }
 // SetIsAppliable sets the isAppliable property value. Indicates whether the label can be applied to content. False if the label is a parent with child labels.
 func (m *SensitivityLabel) SetIsAppliable(value *bool)() {
-    if m != nil {
-        m.isAppliable = value
-    }
+    m.isAppliable = value
 }
 // SetName sets the name property value. The plaintext name of the label.
 func (m *SensitivityLabel) SetName(value *string)() {
-    if m != nil {
-        m.name = value
-    }
+    m.name = value
 }
 // SetParent sets the parent property value. The parent label associated with a child label. Null if the label has no parent.
 func (m *SensitivityLabel) SetParent(value SensitivityLabelable)() {
-    if m != nil {
-        m.parent = value
-    }
+    m.parent = value
 }
 // SetSensitivity sets the sensitivity property value. The sensitivity value of the label, where lower is less sensitive.
 func (m *SensitivityLabel) SetSensitivity(value *int32)() {
-    if m != nil {
-        m.sensitivity = value
-    }
+    m.sensitivity = value
 }
 // SetTooltip sets the tooltip property value. The tooltip that should be displayed for the label in a UI.
 func (m *SensitivityLabel) SetTooltip(value *string)() {
-    if m != nil {
-        m.tooltip = value
-    }
+    m.tooltip = value
 }

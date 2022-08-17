@@ -27,11 +27,7 @@ func CreateDocumentCommentFromDiscriminatorValue(parseNode i878a80d2330e89d26896
 }
 // GetContent gets the content property value. The content property
 func (m *DocumentComment) GetContent()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.content
-    }
+    return m.content
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DocumentComment) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -64,11 +60,7 @@ func (m *DocumentComment) GetFieldDeserializers()(map[string]func(i878a80d2330e8
 }
 // GetReplies gets the replies property value. The replies property
 func (m *DocumentComment) GetReplies()([]DocumentCommentReplyable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.replies
-    }
+    return m.replies
 }
 // Serialize serializes information the current object
 func (m *DocumentComment) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -96,13 +88,9 @@ func (m *DocumentComment) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
 }
 // SetContent sets the content property value. The content property
 func (m *DocumentComment) SetContent(value *string)() {
-    if m != nil {
-        m.content = value
-    }
+    m.content = value
 }
 // SetReplies sets the replies property value. The replies property
 func (m *DocumentComment) SetReplies(value []DocumentCommentReplyable)() {
-    if m != nil {
-        m.replies = value
-    }
+    m.replies = value
 }

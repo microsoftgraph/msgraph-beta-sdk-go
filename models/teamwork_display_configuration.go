@@ -36,27 +36,15 @@ func CreateTeamworkDisplayConfigurationFromDiscriminatorValue(parseNode i878a80d
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TeamworkDisplayConfiguration) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetConfiguredDisplays gets the configuredDisplays property value. The list of configured displays. Applicable only for Microsoft Teams Rooms devices.
 func (m *TeamworkDisplayConfiguration) GetConfiguredDisplays()([]TeamworkConfiguredPeripheralable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.configuredDisplays
-    }
+    return m.configuredDisplays
 }
 // GetDisplayCount gets the displayCount property value. Total number of connected displays, including the inbuilt display. Applicable only for Teams Rooms devices.
 func (m *TeamworkDisplayConfiguration) GetDisplayCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayCount
-    }
+    return m.displayCount
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *TeamworkDisplayConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -129,35 +117,19 @@ func (m *TeamworkDisplayConfiguration) GetFieldDeserializers()(map[string]func(i
 }
 // GetInBuiltDisplayScreenConfiguration gets the inBuiltDisplayScreenConfiguration property value. Configuration for the inbuilt display. Not applicable for Teams Rooms devices.
 func (m *TeamworkDisplayConfiguration) GetInBuiltDisplayScreenConfiguration()(TeamworkDisplayScreenConfigurationable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.inBuiltDisplayScreenConfiguration
-    }
+    return m.inBuiltDisplayScreenConfiguration
 }
 // GetIsContentDuplicationAllowed gets the isContentDuplicationAllowed property value. True if content duplication is allowed. Applicable only for Teams Rooms devices.
 func (m *TeamworkDisplayConfiguration) GetIsContentDuplicationAllowed()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isContentDuplicationAllowed
-    }
+    return m.isContentDuplicationAllowed
 }
 // GetIsDualDisplayModeEnabled gets the isDualDisplayModeEnabled property value. True if dual display mode is enabled. If isDualDisplayModeEnabled is true, then the content will be displayed on both front of room screens instead of just the one screen, when it is shared via the HDMI ingest module on the Microsoft Teams Rooms device. Applicable only for Teams Rooms devices.
 func (m *TeamworkDisplayConfiguration) GetIsDualDisplayModeEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isDualDisplayModeEnabled
-    }
+    return m.isDualDisplayModeEnabled
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *TeamworkDisplayConfiguration) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // Serialize serializes information the current object
 func (m *TeamworkDisplayConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -211,43 +183,29 @@ func (m *TeamworkDisplayConfiguration) Serialize(writer i878a80d2330e89d26896388
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TeamworkDisplayConfiguration) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetConfiguredDisplays sets the configuredDisplays property value. The list of configured displays. Applicable only for Microsoft Teams Rooms devices.
 func (m *TeamworkDisplayConfiguration) SetConfiguredDisplays(value []TeamworkConfiguredPeripheralable)() {
-    if m != nil {
-        m.configuredDisplays = value
-    }
+    m.configuredDisplays = value
 }
 // SetDisplayCount sets the displayCount property value. Total number of connected displays, including the inbuilt display. Applicable only for Teams Rooms devices.
 func (m *TeamworkDisplayConfiguration) SetDisplayCount(value *int32)() {
-    if m != nil {
-        m.displayCount = value
-    }
+    m.displayCount = value
 }
 // SetInBuiltDisplayScreenConfiguration sets the inBuiltDisplayScreenConfiguration property value. Configuration for the inbuilt display. Not applicable for Teams Rooms devices.
 func (m *TeamworkDisplayConfiguration) SetInBuiltDisplayScreenConfiguration(value TeamworkDisplayScreenConfigurationable)() {
-    if m != nil {
-        m.inBuiltDisplayScreenConfiguration = value
-    }
+    m.inBuiltDisplayScreenConfiguration = value
 }
 // SetIsContentDuplicationAllowed sets the isContentDuplicationAllowed property value. True if content duplication is allowed. Applicable only for Teams Rooms devices.
 func (m *TeamworkDisplayConfiguration) SetIsContentDuplicationAllowed(value *bool)() {
-    if m != nil {
-        m.isContentDuplicationAllowed = value
-    }
+    m.isContentDuplicationAllowed = value
 }
 // SetIsDualDisplayModeEnabled sets the isDualDisplayModeEnabled property value. True if dual display mode is enabled. If isDualDisplayModeEnabled is true, then the content will be displayed on both front of room screens instead of just the one screen, when it is shared via the HDMI ingest module on the Microsoft Teams Rooms device. Applicable only for Teams Rooms devices.
 func (m *TeamworkDisplayConfiguration) SetIsDualDisplayModeEnabled(value *bool)() {
-    if m != nil {
-        m.isDualDisplayModeEnabled = value
-    }
+    m.isDualDisplayModeEnabled = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *TeamworkDisplayConfiguration) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }

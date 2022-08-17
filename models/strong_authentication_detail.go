@@ -27,11 +27,7 @@ func CreateStrongAuthenticationDetailFromDiscriminatorValue(parseNode i878a80d23
 }
 // GetEncryptedPinHashHistory gets the encryptedPinHashHistory property value. The encryptedPinHashHistory property
 func (m *StrongAuthenticationDetail) GetEncryptedPinHashHistory()([]byte) {
-    if m == nil {
-        return nil
-    } else {
-        return m.encryptedPinHashHistory
-    }
+    return m.encryptedPinHashHistory
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *StrongAuthenticationDetail) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -60,11 +56,7 @@ func (m *StrongAuthenticationDetail) GetFieldDeserializers()(map[string]func(i87
 }
 // GetProofupTime gets the proofupTime property value. The proofupTime property
 func (m *StrongAuthenticationDetail) GetProofupTime()(*int64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.proofupTime
-    }
+    return m.proofupTime
 }
 // Serialize serializes information the current object
 func (m *StrongAuthenticationDetail) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -88,13 +80,9 @@ func (m *StrongAuthenticationDetail) Serialize(writer i878a80d2330e89d26896388a3
 }
 // SetEncryptedPinHashHistory sets the encryptedPinHashHistory property value. The encryptedPinHashHistory property
 func (m *StrongAuthenticationDetail) SetEncryptedPinHashHistory(value []byte)() {
-    if m != nil {
-        m.encryptedPinHashHistory = value
-    }
+    m.encryptedPinHashHistory = value
 }
 // SetProofupTime sets the proofupTime property value. The proofupTime property
 func (m *StrongAuthenticationDetail) SetProofupTime(value *int64)() {
-    if m != nil {
-        m.proofupTime = value
-    }
+    m.proofupTime = value
 }

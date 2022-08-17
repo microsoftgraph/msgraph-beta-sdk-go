@@ -30,19 +30,11 @@ func CreateRequestSignatureVerificationFromDiscriminatorValue(parseNode i878a80d
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *RequestSignatureVerification) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetAllowedWeakAlgorithms gets the allowedWeakAlgorithms property value. The allowedWeakAlgorithms property
 func (m *RequestSignatureVerification) GetAllowedWeakAlgorithms()(*WeakAlgorithms) {
-    if m == nil {
-        return nil
-    } else {
-        return m.allowedWeakAlgorithms
-    }
+    return m.allowedWeakAlgorithms
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *RequestSignatureVerification) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -81,19 +73,11 @@ func (m *RequestSignatureVerification) GetFieldDeserializers()(map[string]func(i
 }
 // GetIsSignedRequestRequired gets the isSignedRequestRequired property value. The isSignedRequestRequired property
 func (m *RequestSignatureVerification) GetIsSignedRequestRequired()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isSignedRequestRequired
-    }
+    return m.isSignedRequestRequired
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *RequestSignatureVerification) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // Serialize serializes information the current object
 func (m *RequestSignatureVerification) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -126,25 +110,17 @@ func (m *RequestSignatureVerification) Serialize(writer i878a80d2330e89d26896388
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *RequestSignatureVerification) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetAllowedWeakAlgorithms sets the allowedWeakAlgorithms property value. The allowedWeakAlgorithms property
 func (m *RequestSignatureVerification) SetAllowedWeakAlgorithms(value *WeakAlgorithms)() {
-    if m != nil {
-        m.allowedWeakAlgorithms = value
-    }
+    m.allowedWeakAlgorithms = value
 }
 // SetIsSignedRequestRequired sets the isSignedRequestRequired property value. The isSignedRequestRequired property
 func (m *RequestSignatureVerification) SetIsSignedRequestRequired(value *bool)() {
-    if m != nil {
-        m.isSignedRequestRequired = value
-    }
+    m.isSignedRequestRequired = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *RequestSignatureVerification) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }

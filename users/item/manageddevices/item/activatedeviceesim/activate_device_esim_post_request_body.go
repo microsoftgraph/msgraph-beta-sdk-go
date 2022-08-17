@@ -24,19 +24,11 @@ func CreateActivateDeviceEsimPostRequestBodyFromDiscriminatorValue(parseNode i87
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ActivateDeviceEsimPostRequestBody) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetCarrierUrl gets the carrierUrl property value. The carrierUrl property
 func (m *ActivateDeviceEsimPostRequestBody) GetCarrierUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.carrierUrl
-    }
+    return m.carrierUrl
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ActivateDeviceEsimPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -71,13 +63,9 @@ func (m *ActivateDeviceEsimPostRequestBody) Serialize(writer i878a80d2330e89d268
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ActivateDeviceEsimPostRequestBody) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetCarrierUrl sets the carrierUrl property value. The carrierUrl property
 func (m *ActivateDeviceEsimPostRequestBody) SetCarrierUrl(value *string)() {
-    if m != nil {
-        m.carrierUrl = value
-    }
+    m.carrierUrl = value
 }

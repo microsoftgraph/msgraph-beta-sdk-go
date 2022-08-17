@@ -30,11 +30,7 @@ func CreateTranslationLanguageOverrideFromDiscriminatorValue(parseNode i878a80d2
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TranslationLanguageOverride) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *TranslationLanguageOverride) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -73,27 +69,15 @@ func (m *TranslationLanguageOverride) GetFieldDeserializers()(map[string]func(i8
 }
 // GetLanguageTag gets the languageTag property value. The language to apply the override.Returned by default. Not nullable.
 func (m *TranslationLanguageOverride) GetLanguageTag()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.languageTag
-    }
+    return m.languageTag
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *TranslationLanguageOverride) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetTranslationBehavior gets the translationBehavior property value. The translation override behavior for the language, if any.Returned by default. Not nullable.
 func (m *TranslationLanguageOverride) GetTranslationBehavior()(*TranslationBehavior) {
-    if m == nil {
-        return nil
-    } else {
-        return m.translationBehavior
-    }
+    return m.translationBehavior
 }
 // Serialize serializes information the current object
 func (m *TranslationLanguageOverride) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -126,25 +110,17 @@ func (m *TranslationLanguageOverride) Serialize(writer i878a80d2330e89d26896388a
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TranslationLanguageOverride) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetLanguageTag sets the languageTag property value. The language to apply the override.Returned by default. Not nullable.
 func (m *TranslationLanguageOverride) SetLanguageTag(value *string)() {
-    if m != nil {
-        m.languageTag = value
-    }
+    m.languageTag = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *TranslationLanguageOverride) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetTranslationBehavior sets the translationBehavior property value. The translation override behavior for the language, if any.Returned by default. Not nullable.
 func (m *TranslationLanguageOverride) SetTranslationBehavior(value *TranslationBehavior)() {
-    if m != nil {
-        m.translationBehavior = value
-    }
+    m.translationBehavior = value
 }

@@ -78,139 +78,71 @@ func CreatePolicyRootFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3
 }
 // GetAccessReviewPolicy gets the accessReviewPolicy property value. The policy that contains directory-level access review settings.
 func (m *PolicyRoot) GetAccessReviewPolicy()(AccessReviewPolicyable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.accessReviewPolicy
-    }
+    return m.accessReviewPolicy
 }
 // GetActivityBasedTimeoutPolicies gets the activityBasedTimeoutPolicies property value. The policy that controls the idle time out for web sessions for applications.
 func (m *PolicyRoot) GetActivityBasedTimeoutPolicies()([]ActivityBasedTimeoutPolicyable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.activityBasedTimeoutPolicies
-    }
+    return m.activityBasedTimeoutPolicies
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *PolicyRoot) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetAdminConsentRequestPolicy gets the adminConsentRequestPolicy property value. The policy by which consent requests are created and managed for the entire tenant.
 func (m *PolicyRoot) GetAdminConsentRequestPolicy()(AdminConsentRequestPolicyable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.adminConsentRequestPolicy
-    }
+    return m.adminConsentRequestPolicy
 }
 // GetAppManagementPolicies gets the appManagementPolicies property value. The policies that enforce app management restrictions for specific applications and service principals, overriding the defaultAppManagementPolicy.
 func (m *PolicyRoot) GetAppManagementPolicies()([]AppManagementPolicyable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.appManagementPolicies
-    }
+    return m.appManagementPolicies
 }
 // GetAuthenticationFlowsPolicy gets the authenticationFlowsPolicy property value. The policy configuration of the self-service sign-up experience of external users.
 func (m *PolicyRoot) GetAuthenticationFlowsPolicy()(AuthenticationFlowsPolicyable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.authenticationFlowsPolicy
-    }
+    return m.authenticationFlowsPolicy
 }
 // GetAuthenticationMethodsPolicy gets the authenticationMethodsPolicy property value. The authentication methods and the users that are allowed to use them to sign in and perform multi-factor authentication (MFA) in Azure Active Directory (Azure AD).
 func (m *PolicyRoot) GetAuthenticationMethodsPolicy()(AuthenticationMethodsPolicyable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.authenticationMethodsPolicy
-    }
+    return m.authenticationMethodsPolicy
 }
 // GetAuthorizationPolicy gets the authorizationPolicy property value. The policy that controls Azure AD authorization settings.
 func (m *PolicyRoot) GetAuthorizationPolicy()([]AuthorizationPolicyable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.authorizationPolicy
-    }
+    return m.authorizationPolicy
 }
 // GetB2cAuthenticationMethodsPolicy gets the b2cAuthenticationMethodsPolicy property value. The Azure AD B2C policies that define how end users register via local accounts.
 func (m *PolicyRoot) GetB2cAuthenticationMethodsPolicy()(B2cAuthenticationMethodsPolicyable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.b2cAuthenticationMethodsPolicy
-    }
+    return m.b2cAuthenticationMethodsPolicy
 }
 // GetClaimsMappingPolicies gets the claimsMappingPolicies property value. The claim-mapping policies for WS-Fed, SAML, OAuth 2.0, and OpenID Connect protocols, for tokens issued to a specific application.
 func (m *PolicyRoot) GetClaimsMappingPolicies()([]ClaimsMappingPolicyable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.claimsMappingPolicies
-    }
+    return m.claimsMappingPolicies
 }
 // GetConditionalAccessPolicies gets the conditionalAccessPolicies property value. The custom rules that define an access scenario.
 func (m *PolicyRoot) GetConditionalAccessPolicies()([]ConditionalAccessPolicyable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.conditionalAccessPolicies
-    }
+    return m.conditionalAccessPolicies
 }
 // GetCrossTenantAccessPolicy gets the crossTenantAccessPolicy property value. The custom rules that define an access scenario when interacting with external Azure AD tenants.
 func (m *PolicyRoot) GetCrossTenantAccessPolicy()(CrossTenantAccessPolicyable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.crossTenantAccessPolicy
-    }
+    return m.crossTenantAccessPolicy
 }
 // GetDefaultAppManagementPolicy gets the defaultAppManagementPolicy property value. The tenant-wide policy that enforces app management restrictions for all applications and service principals.
 func (m *PolicyRoot) GetDefaultAppManagementPolicy()(TenantAppManagementPolicyable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.defaultAppManagementPolicy
-    }
+    return m.defaultAppManagementPolicy
 }
 // GetDeviceRegistrationPolicy gets the deviceRegistrationPolicy property value. The deviceRegistrationPolicy property
 func (m *PolicyRoot) GetDeviceRegistrationPolicy()(DeviceRegistrationPolicyable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deviceRegistrationPolicy
-    }
+    return m.deviceRegistrationPolicy
 }
 // GetDirectoryRoleAccessReviewPolicy gets the directoryRoleAccessReviewPolicy property value. The directoryRoleAccessReviewPolicy property
 func (m *PolicyRoot) GetDirectoryRoleAccessReviewPolicy()(DirectoryRoleAccessReviewPolicyable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.directoryRoleAccessReviewPolicy
-    }
+    return m.directoryRoleAccessReviewPolicy
 }
 // GetExternalIdentitiesPolicy gets the externalIdentitiesPolicy property value. Represents the tenant-wide policy that controls whether external users can leave an Azure AD tenant via self-service controls.
 func (m *PolicyRoot) GetExternalIdentitiesPolicy()(ExternalIdentitiesPolicyable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.externalIdentitiesPolicy
-    }
+    return m.externalIdentitiesPolicy
 }
 // GetFeatureRolloutPolicies gets the featureRolloutPolicies property value. The feature rollout policy associated with a directory object.
 func (m *PolicyRoot) GetFeatureRolloutPolicies()([]FeatureRolloutPolicyable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.featureRolloutPolicies
-    }
+    return m.featureRolloutPolicies
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *PolicyRoot) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -549,91 +481,47 @@ func (m *PolicyRoot) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
 }
 // GetHomeRealmDiscoveryPolicies gets the homeRealmDiscoveryPolicies property value. The policy to control Azure AD authentication behavior for federated users.
 func (m *PolicyRoot) GetHomeRealmDiscoveryPolicies()([]HomeRealmDiscoveryPolicyable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.homeRealmDiscoveryPolicies
-    }
+    return m.homeRealmDiscoveryPolicies
 }
 // GetIdentitySecurityDefaultsEnforcementPolicy gets the identitySecurityDefaultsEnforcementPolicy property value. The policy that represents the security defaults that protect against common attacks.
 func (m *PolicyRoot) GetIdentitySecurityDefaultsEnforcementPolicy()(IdentitySecurityDefaultsEnforcementPolicyable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.identitySecurityDefaultsEnforcementPolicy
-    }
+    return m.identitySecurityDefaultsEnforcementPolicy
 }
 // GetMobileAppManagementPolicies gets the mobileAppManagementPolicies property value. The policy that defines auto-enrollment configuration for a mobility management (MDM or MAM) application.
 func (m *PolicyRoot) GetMobileAppManagementPolicies()([]MobilityManagementPolicyable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.mobileAppManagementPolicies
-    }
+    return m.mobileAppManagementPolicies
 }
 // GetMobileDeviceManagementPolicies gets the mobileDeviceManagementPolicies property value. The mobileDeviceManagementPolicies property
 func (m *PolicyRoot) GetMobileDeviceManagementPolicies()([]MobilityManagementPolicyable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.mobileDeviceManagementPolicies
-    }
+    return m.mobileDeviceManagementPolicies
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *PolicyRoot) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetPermissionGrantPolicies gets the permissionGrantPolicies property value. The policy that specifies the conditions under which consent can be granted.
 func (m *PolicyRoot) GetPermissionGrantPolicies()([]PermissionGrantPolicyable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.permissionGrantPolicies
-    }
+    return m.permissionGrantPolicies
 }
 // GetRoleManagementPolicies gets the roleManagementPolicies property value. Represents the role management policies.
 func (m *PolicyRoot) GetRoleManagementPolicies()([]UnifiedRoleManagementPolicyable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.roleManagementPolicies
-    }
+    return m.roleManagementPolicies
 }
 // GetRoleManagementPolicyAssignments gets the roleManagementPolicyAssignments property value. Represents the role management policy assignments.
 func (m *PolicyRoot) GetRoleManagementPolicyAssignments()([]UnifiedRoleManagementPolicyAssignmentable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.roleManagementPolicyAssignments
-    }
+    return m.roleManagementPolicyAssignments
 }
 // GetServicePrincipalCreationPolicies gets the servicePrincipalCreationPolicies property value. The servicePrincipalCreationPolicies property
 func (m *PolicyRoot) GetServicePrincipalCreationPolicies()([]ServicePrincipalCreationPolicyable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.servicePrincipalCreationPolicies
-    }
+    return m.servicePrincipalCreationPolicies
 }
 // GetTokenIssuancePolicies gets the tokenIssuancePolicies property value. The policy that specifies the characteristics of SAML tokens issued by Azure AD.
 func (m *PolicyRoot) GetTokenIssuancePolicies()([]TokenIssuancePolicyable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.tokenIssuancePolicies
-    }
+    return m.tokenIssuancePolicies
 }
 // GetTokenLifetimePolicies gets the tokenLifetimePolicies property value. The policy that controls the lifetime of a JWT access token, an ID token, or a SAML 1.1/2.0 token issued by Azure AD.
 func (m *PolicyRoot) GetTokenLifetimePolicies()([]TokenLifetimePolicyable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.tokenLifetimePolicies
-    }
+    return m.tokenLifetimePolicies
 }
 // Serialize serializes information the current object
 func (m *PolicyRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -869,169 +757,113 @@ func (m *PolicyRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
 }
 // SetAccessReviewPolicy sets the accessReviewPolicy property value. The policy that contains directory-level access review settings.
 func (m *PolicyRoot) SetAccessReviewPolicy(value AccessReviewPolicyable)() {
-    if m != nil {
-        m.accessReviewPolicy = value
-    }
+    m.accessReviewPolicy = value
 }
 // SetActivityBasedTimeoutPolicies sets the activityBasedTimeoutPolicies property value. The policy that controls the idle time out for web sessions for applications.
 func (m *PolicyRoot) SetActivityBasedTimeoutPolicies(value []ActivityBasedTimeoutPolicyable)() {
-    if m != nil {
-        m.activityBasedTimeoutPolicies = value
-    }
+    m.activityBasedTimeoutPolicies = value
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *PolicyRoot) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetAdminConsentRequestPolicy sets the adminConsentRequestPolicy property value. The policy by which consent requests are created and managed for the entire tenant.
 func (m *PolicyRoot) SetAdminConsentRequestPolicy(value AdminConsentRequestPolicyable)() {
-    if m != nil {
-        m.adminConsentRequestPolicy = value
-    }
+    m.adminConsentRequestPolicy = value
 }
 // SetAppManagementPolicies sets the appManagementPolicies property value. The policies that enforce app management restrictions for specific applications and service principals, overriding the defaultAppManagementPolicy.
 func (m *PolicyRoot) SetAppManagementPolicies(value []AppManagementPolicyable)() {
-    if m != nil {
-        m.appManagementPolicies = value
-    }
+    m.appManagementPolicies = value
 }
 // SetAuthenticationFlowsPolicy sets the authenticationFlowsPolicy property value. The policy configuration of the self-service sign-up experience of external users.
 func (m *PolicyRoot) SetAuthenticationFlowsPolicy(value AuthenticationFlowsPolicyable)() {
-    if m != nil {
-        m.authenticationFlowsPolicy = value
-    }
+    m.authenticationFlowsPolicy = value
 }
 // SetAuthenticationMethodsPolicy sets the authenticationMethodsPolicy property value. The authentication methods and the users that are allowed to use them to sign in and perform multi-factor authentication (MFA) in Azure Active Directory (Azure AD).
 func (m *PolicyRoot) SetAuthenticationMethodsPolicy(value AuthenticationMethodsPolicyable)() {
-    if m != nil {
-        m.authenticationMethodsPolicy = value
-    }
+    m.authenticationMethodsPolicy = value
 }
 // SetAuthorizationPolicy sets the authorizationPolicy property value. The policy that controls Azure AD authorization settings.
 func (m *PolicyRoot) SetAuthorizationPolicy(value []AuthorizationPolicyable)() {
-    if m != nil {
-        m.authorizationPolicy = value
-    }
+    m.authorizationPolicy = value
 }
 // SetB2cAuthenticationMethodsPolicy sets the b2cAuthenticationMethodsPolicy property value. The Azure AD B2C policies that define how end users register via local accounts.
 func (m *PolicyRoot) SetB2cAuthenticationMethodsPolicy(value B2cAuthenticationMethodsPolicyable)() {
-    if m != nil {
-        m.b2cAuthenticationMethodsPolicy = value
-    }
+    m.b2cAuthenticationMethodsPolicy = value
 }
 // SetClaimsMappingPolicies sets the claimsMappingPolicies property value. The claim-mapping policies for WS-Fed, SAML, OAuth 2.0, and OpenID Connect protocols, for tokens issued to a specific application.
 func (m *PolicyRoot) SetClaimsMappingPolicies(value []ClaimsMappingPolicyable)() {
-    if m != nil {
-        m.claimsMappingPolicies = value
-    }
+    m.claimsMappingPolicies = value
 }
 // SetConditionalAccessPolicies sets the conditionalAccessPolicies property value. The custom rules that define an access scenario.
 func (m *PolicyRoot) SetConditionalAccessPolicies(value []ConditionalAccessPolicyable)() {
-    if m != nil {
-        m.conditionalAccessPolicies = value
-    }
+    m.conditionalAccessPolicies = value
 }
 // SetCrossTenantAccessPolicy sets the crossTenantAccessPolicy property value. The custom rules that define an access scenario when interacting with external Azure AD tenants.
 func (m *PolicyRoot) SetCrossTenantAccessPolicy(value CrossTenantAccessPolicyable)() {
-    if m != nil {
-        m.crossTenantAccessPolicy = value
-    }
+    m.crossTenantAccessPolicy = value
 }
 // SetDefaultAppManagementPolicy sets the defaultAppManagementPolicy property value. The tenant-wide policy that enforces app management restrictions for all applications and service principals.
 func (m *PolicyRoot) SetDefaultAppManagementPolicy(value TenantAppManagementPolicyable)() {
-    if m != nil {
-        m.defaultAppManagementPolicy = value
-    }
+    m.defaultAppManagementPolicy = value
 }
 // SetDeviceRegistrationPolicy sets the deviceRegistrationPolicy property value. The deviceRegistrationPolicy property
 func (m *PolicyRoot) SetDeviceRegistrationPolicy(value DeviceRegistrationPolicyable)() {
-    if m != nil {
-        m.deviceRegistrationPolicy = value
-    }
+    m.deviceRegistrationPolicy = value
 }
 // SetDirectoryRoleAccessReviewPolicy sets the directoryRoleAccessReviewPolicy property value. The directoryRoleAccessReviewPolicy property
 func (m *PolicyRoot) SetDirectoryRoleAccessReviewPolicy(value DirectoryRoleAccessReviewPolicyable)() {
-    if m != nil {
-        m.directoryRoleAccessReviewPolicy = value
-    }
+    m.directoryRoleAccessReviewPolicy = value
 }
 // SetExternalIdentitiesPolicy sets the externalIdentitiesPolicy property value. Represents the tenant-wide policy that controls whether external users can leave an Azure AD tenant via self-service controls.
 func (m *PolicyRoot) SetExternalIdentitiesPolicy(value ExternalIdentitiesPolicyable)() {
-    if m != nil {
-        m.externalIdentitiesPolicy = value
-    }
+    m.externalIdentitiesPolicy = value
 }
 // SetFeatureRolloutPolicies sets the featureRolloutPolicies property value. The feature rollout policy associated with a directory object.
 func (m *PolicyRoot) SetFeatureRolloutPolicies(value []FeatureRolloutPolicyable)() {
-    if m != nil {
-        m.featureRolloutPolicies = value
-    }
+    m.featureRolloutPolicies = value
 }
 // SetHomeRealmDiscoveryPolicies sets the homeRealmDiscoveryPolicies property value. The policy to control Azure AD authentication behavior for federated users.
 func (m *PolicyRoot) SetHomeRealmDiscoveryPolicies(value []HomeRealmDiscoveryPolicyable)() {
-    if m != nil {
-        m.homeRealmDiscoveryPolicies = value
-    }
+    m.homeRealmDiscoveryPolicies = value
 }
 // SetIdentitySecurityDefaultsEnforcementPolicy sets the identitySecurityDefaultsEnforcementPolicy property value. The policy that represents the security defaults that protect against common attacks.
 func (m *PolicyRoot) SetIdentitySecurityDefaultsEnforcementPolicy(value IdentitySecurityDefaultsEnforcementPolicyable)() {
-    if m != nil {
-        m.identitySecurityDefaultsEnforcementPolicy = value
-    }
+    m.identitySecurityDefaultsEnforcementPolicy = value
 }
 // SetMobileAppManagementPolicies sets the mobileAppManagementPolicies property value. The policy that defines auto-enrollment configuration for a mobility management (MDM or MAM) application.
 func (m *PolicyRoot) SetMobileAppManagementPolicies(value []MobilityManagementPolicyable)() {
-    if m != nil {
-        m.mobileAppManagementPolicies = value
-    }
+    m.mobileAppManagementPolicies = value
 }
 // SetMobileDeviceManagementPolicies sets the mobileDeviceManagementPolicies property value. The mobileDeviceManagementPolicies property
 func (m *PolicyRoot) SetMobileDeviceManagementPolicies(value []MobilityManagementPolicyable)() {
-    if m != nil {
-        m.mobileDeviceManagementPolicies = value
-    }
+    m.mobileDeviceManagementPolicies = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *PolicyRoot) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetPermissionGrantPolicies sets the permissionGrantPolicies property value. The policy that specifies the conditions under which consent can be granted.
 func (m *PolicyRoot) SetPermissionGrantPolicies(value []PermissionGrantPolicyable)() {
-    if m != nil {
-        m.permissionGrantPolicies = value
-    }
+    m.permissionGrantPolicies = value
 }
 // SetRoleManagementPolicies sets the roleManagementPolicies property value. Represents the role management policies.
 func (m *PolicyRoot) SetRoleManagementPolicies(value []UnifiedRoleManagementPolicyable)() {
-    if m != nil {
-        m.roleManagementPolicies = value
-    }
+    m.roleManagementPolicies = value
 }
 // SetRoleManagementPolicyAssignments sets the roleManagementPolicyAssignments property value. Represents the role management policy assignments.
 func (m *PolicyRoot) SetRoleManagementPolicyAssignments(value []UnifiedRoleManagementPolicyAssignmentable)() {
-    if m != nil {
-        m.roleManagementPolicyAssignments = value
-    }
+    m.roleManagementPolicyAssignments = value
 }
 // SetServicePrincipalCreationPolicies sets the servicePrincipalCreationPolicies property value. The servicePrincipalCreationPolicies property
 func (m *PolicyRoot) SetServicePrincipalCreationPolicies(value []ServicePrincipalCreationPolicyable)() {
-    if m != nil {
-        m.servicePrincipalCreationPolicies = value
-    }
+    m.servicePrincipalCreationPolicies = value
 }
 // SetTokenIssuancePolicies sets the tokenIssuancePolicies property value. The policy that specifies the characteristics of SAML tokens issued by Azure AD.
 func (m *PolicyRoot) SetTokenIssuancePolicies(value []TokenIssuancePolicyable)() {
-    if m != nil {
-        m.tokenIssuancePolicies = value
-    }
+    m.tokenIssuancePolicies = value
 }
 // SetTokenLifetimePolicies sets the tokenLifetimePolicies property value. The policy that controls the lifetime of a JWT access token, an ID token, or a SAML 1.1/2.0 token issued by Azure AD.
 func (m *PolicyRoot) SetTokenLifetimePolicies(value []TokenLifetimePolicyable)() {
-    if m != nil {
-        m.tokenLifetimePolicies = value
-    }
+    m.tokenLifetimePolicies = value
 }

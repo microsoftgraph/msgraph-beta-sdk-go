@@ -40,11 +40,7 @@ func (m *WindowsAppIdentifier) GetFieldDeserializers()(map[string]func(i878a80d2
 }
 // GetWindowsAppId gets the windowsAppId property value. The identifier for an app, as specified in the app store.
 func (m *WindowsAppIdentifier) GetWindowsAppId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.windowsAppId
-    }
+    return m.windowsAppId
 }
 // Serialize serializes information the current object
 func (m *WindowsAppIdentifier) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -62,7 +58,5 @@ func (m *WindowsAppIdentifier) Serialize(writer i878a80d2330e89d26896388a3f487ee
 }
 // SetWindowsAppId sets the windowsAppId property value. The identifier for an app, as specified in the app store.
 func (m *WindowsAppIdentifier) SetWindowsAppId(value *string)() {
-    if m != nil {
-        m.windowsAppId = value
-    }
+    m.windowsAppId = value
 }

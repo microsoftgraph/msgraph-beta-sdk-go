@@ -48,35 +48,19 @@ func CreateUserPFXCertificateFromDiscriminatorValue(parseNode i878a80d2330e89d26
 }
 // GetCreatedDateTime gets the createdDateTime property value. Date/time when this PFX certificate was imported.
 func (m *UserPFXCertificate) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.createdDateTime
-    }
+    return m.createdDateTime
 }
 // GetEncryptedPfxBlob gets the encryptedPfxBlob property value. Encrypted PFX blob.
 func (m *UserPFXCertificate) GetEncryptedPfxBlob()([]byte) {
-    if m == nil {
-        return nil
-    } else {
-        return m.encryptedPfxBlob
-    }
+    return m.encryptedPfxBlob
 }
 // GetEncryptedPfxPassword gets the encryptedPfxPassword property value. Encrypted PFX password.
 func (m *UserPFXCertificate) GetEncryptedPfxPassword()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.encryptedPfxPassword
-    }
+    return m.encryptedPfxPassword
 }
 // GetExpirationDateTime gets the expirationDateTime property value. Certificate's validity expiration date/time.
 func (m *UserPFXCertificate) GetExpirationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.expirationDateTime
-    }
+    return m.expirationDateTime
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *UserPFXCertificate) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -205,67 +189,35 @@ func (m *UserPFXCertificate) GetFieldDeserializers()(map[string]func(i878a80d233
 }
 // GetIntendedPurpose gets the intendedPurpose property value. Supported values for the intended purpose of a user PFX certificate.
 func (m *UserPFXCertificate) GetIntendedPurpose()(*UserPfxIntendedPurpose) {
-    if m == nil {
-        return nil
-    } else {
-        return m.intendedPurpose
-    }
+    return m.intendedPurpose
 }
 // GetKeyName gets the keyName property value. Name of the key (within the provider) used to encrypt the blob.
 func (m *UserPFXCertificate) GetKeyName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.keyName
-    }
+    return m.keyName
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. Date/time when this PFX certificate was last modified.
 func (m *UserPFXCertificate) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastModifiedDateTime
-    }
+    return m.lastModifiedDateTime
 }
 // GetPaddingScheme gets the paddingScheme property value. Supported values for the padding scheme used by encryption provider.
 func (m *UserPFXCertificate) GetPaddingScheme()(*UserPfxPaddingScheme) {
-    if m == nil {
-        return nil
-    } else {
-        return m.paddingScheme
-    }
+    return m.paddingScheme
 }
 // GetProviderName gets the providerName property value. Crypto provider used to encrypt this blob.
 func (m *UserPFXCertificate) GetProviderName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.providerName
-    }
+    return m.providerName
 }
 // GetStartDateTime gets the startDateTime property value. Certificate's validity start date/time.
 func (m *UserPFXCertificate) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.startDateTime
-    }
+    return m.startDateTime
 }
 // GetThumbprint gets the thumbprint property value. SHA-1 thumbprint of the PFX certificate.
 func (m *UserPFXCertificate) GetThumbprint()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.thumbprint
-    }
+    return m.thumbprint
 }
 // GetUserPrincipalName gets the userPrincipalName property value. User Principal Name of the PFX certificate.
 func (m *UserPFXCertificate) GetUserPrincipalName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userPrincipalName
-    }
+    return m.userPrincipalName
 }
 // Serialize serializes information the current object
 func (m *UserPFXCertificate) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -351,73 +303,49 @@ func (m *UserPFXCertificate) Serialize(writer i878a80d2330e89d26896388a3f487eef2
 }
 // SetCreatedDateTime sets the createdDateTime property value. Date/time when this PFX certificate was imported.
 func (m *UserPFXCertificate) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.createdDateTime = value
-    }
+    m.createdDateTime = value
 }
 // SetEncryptedPfxBlob sets the encryptedPfxBlob property value. Encrypted PFX blob.
 func (m *UserPFXCertificate) SetEncryptedPfxBlob(value []byte)() {
-    if m != nil {
-        m.encryptedPfxBlob = value
-    }
+    m.encryptedPfxBlob = value
 }
 // SetEncryptedPfxPassword sets the encryptedPfxPassword property value. Encrypted PFX password.
 func (m *UserPFXCertificate) SetEncryptedPfxPassword(value *string)() {
-    if m != nil {
-        m.encryptedPfxPassword = value
-    }
+    m.encryptedPfxPassword = value
 }
 // SetExpirationDateTime sets the expirationDateTime property value. Certificate's validity expiration date/time.
 func (m *UserPFXCertificate) SetExpirationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.expirationDateTime = value
-    }
+    m.expirationDateTime = value
 }
 // SetIntendedPurpose sets the intendedPurpose property value. Supported values for the intended purpose of a user PFX certificate.
 func (m *UserPFXCertificate) SetIntendedPurpose(value *UserPfxIntendedPurpose)() {
-    if m != nil {
-        m.intendedPurpose = value
-    }
+    m.intendedPurpose = value
 }
 // SetKeyName sets the keyName property value. Name of the key (within the provider) used to encrypt the blob.
 func (m *UserPFXCertificate) SetKeyName(value *string)() {
-    if m != nil {
-        m.keyName = value
-    }
+    m.keyName = value
 }
 // SetLastModifiedDateTime sets the lastModifiedDateTime property value. Date/time when this PFX certificate was last modified.
 func (m *UserPFXCertificate) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.lastModifiedDateTime = value
-    }
+    m.lastModifiedDateTime = value
 }
 // SetPaddingScheme sets the paddingScheme property value. Supported values for the padding scheme used by encryption provider.
 func (m *UserPFXCertificate) SetPaddingScheme(value *UserPfxPaddingScheme)() {
-    if m != nil {
-        m.paddingScheme = value
-    }
+    m.paddingScheme = value
 }
 // SetProviderName sets the providerName property value. Crypto provider used to encrypt this blob.
 func (m *UserPFXCertificate) SetProviderName(value *string)() {
-    if m != nil {
-        m.providerName = value
-    }
+    m.providerName = value
 }
 // SetStartDateTime sets the startDateTime property value. Certificate's validity start date/time.
 func (m *UserPFXCertificate) SetStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.startDateTime = value
-    }
+    m.startDateTime = value
 }
 // SetThumbprint sets the thumbprint property value. SHA-1 thumbprint of the PFX certificate.
 func (m *UserPFXCertificate) SetThumbprint(value *string)() {
-    if m != nil {
-        m.thumbprint = value
-    }
+    m.thumbprint = value
 }
 // SetUserPrincipalName sets the userPrincipalName property value. User Principal Name of the PFX certificate.
 func (m *UserPFXCertificate) SetUserPrincipalName(value *string)() {
-    if m != nil {
-        m.userPrincipalName = value
-    }
+    m.userPrincipalName = value
 }

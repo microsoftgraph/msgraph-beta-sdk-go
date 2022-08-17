@@ -35,11 +35,7 @@ func CreateWebAccountFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3
 }
 // GetDescription gets the description property value. Contains the description the user has provided for the account on the service being referenced.
 func (m *WebAccount) GetDescription()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.description
-    }
+    return m.description
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *WebAccount) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -108,43 +104,23 @@ func (m *WebAccount) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
 }
 // GetService gets the service property value. The service property
 func (m *WebAccount) GetService()(ServiceInformationable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.service
-    }
+    return m.service
 }
 // GetStatusMessage gets the statusMessage property value. Contains a status message from the cloud service if provided or synchronized.
 func (m *WebAccount) GetStatusMessage()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.statusMessage
-    }
+    return m.statusMessage
 }
 // GetThumbnailUrl gets the thumbnailUrl property value. The thumbnailUrl property
 func (m *WebAccount) GetThumbnailUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.thumbnailUrl
-    }
+    return m.thumbnailUrl
 }
 // GetUserId gets the userId property value. The user name  displayed for the webaccount.
 func (m *WebAccount) GetUserId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userId
-    }
+    return m.userId
 }
 // GetWebUrl gets the webUrl property value. Contains a link to the user's profile on the cloud service if one exists.
 func (m *WebAccount) GetWebUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.webUrl
-    }
+    return m.webUrl
 }
 // Serialize serializes information the current object
 func (m *WebAccount) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -192,37 +168,25 @@ func (m *WebAccount) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
 }
 // SetDescription sets the description property value. Contains the description the user has provided for the account on the service being referenced.
 func (m *WebAccount) SetDescription(value *string)() {
-    if m != nil {
-        m.description = value
-    }
+    m.description = value
 }
 // SetService sets the service property value. The service property
 func (m *WebAccount) SetService(value ServiceInformationable)() {
-    if m != nil {
-        m.service = value
-    }
+    m.service = value
 }
 // SetStatusMessage sets the statusMessage property value. Contains a status message from the cloud service if provided or synchronized.
 func (m *WebAccount) SetStatusMessage(value *string)() {
-    if m != nil {
-        m.statusMessage = value
-    }
+    m.statusMessage = value
 }
 // SetThumbnailUrl sets the thumbnailUrl property value. The thumbnailUrl property
 func (m *WebAccount) SetThumbnailUrl(value *string)() {
-    if m != nil {
-        m.thumbnailUrl = value
-    }
+    m.thumbnailUrl = value
 }
 // SetUserId sets the userId property value. The user name  displayed for the webaccount.
 func (m *WebAccount) SetUserId(value *string)() {
-    if m != nil {
-        m.userId = value
-    }
+    m.userId = value
 }
 // SetWebUrl sets the webUrl property value. Contains a link to the user's profile on the cloud service if one exists.
 func (m *WebAccount) SetWebUrl(value *string)() {
-    if m != nil {
-        m.webUrl = value
-    }
+    m.webUrl = value
 }

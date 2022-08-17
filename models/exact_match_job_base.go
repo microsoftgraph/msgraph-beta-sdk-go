@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ExactMatchJobBase provides operations to manage the collection of activityStatistics entities.
+// ExactMatchJobBase provides operations to manage the collection of accessReviewDecision entities.
 type ExactMatchJobBase struct {
     Entity
     // The completionDateTime property
@@ -57,27 +57,15 @@ func CreateExactMatchJobBaseFromDiscriminatorValue(parseNode i878a80d2330e89d268
 }
 // GetCompletionDateTime gets the completionDateTime property value. The completionDateTime property
 func (m *ExactMatchJobBase) GetCompletionDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.completionDateTime
-    }
+    return m.completionDateTime
 }
 // GetCreationDateTime gets the creationDateTime property value. The creationDateTime property
 func (m *ExactMatchJobBase) GetCreationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.creationDateTime
-    }
+    return m.creationDateTime
 }
 // GetError gets the error property value. The error property
 func (m *ExactMatchJobBase) GetError()(ClassificationErrorable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.error
-    }
+    return m.error
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ExactMatchJobBase) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -136,19 +124,11 @@ func (m *ExactMatchJobBase) GetFieldDeserializers()(map[string]func(i878a80d2330
 }
 // GetLastUpdatedDateTime gets the lastUpdatedDateTime property value. The lastUpdatedDateTime property
 func (m *ExactMatchJobBase) GetLastUpdatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastUpdatedDateTime
-    }
+    return m.lastUpdatedDateTime
 }
 // GetStartDateTime gets the startDateTime property value. The startDateTime property
 func (m *ExactMatchJobBase) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.startDateTime
-    }
+    return m.startDateTime
 }
 // Serialize serializes information the current object
 func (m *ExactMatchJobBase) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -190,31 +170,21 @@ func (m *ExactMatchJobBase) Serialize(writer i878a80d2330e89d26896388a3f487eef27
 }
 // SetCompletionDateTime sets the completionDateTime property value. The completionDateTime property
 func (m *ExactMatchJobBase) SetCompletionDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.completionDateTime = value
-    }
+    m.completionDateTime = value
 }
 // SetCreationDateTime sets the creationDateTime property value. The creationDateTime property
 func (m *ExactMatchJobBase) SetCreationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.creationDateTime = value
-    }
+    m.creationDateTime = value
 }
 // SetError sets the error property value. The error property
 func (m *ExactMatchJobBase) SetError(value ClassificationErrorable)() {
-    if m != nil {
-        m.error = value
-    }
+    m.error = value
 }
 // SetLastUpdatedDateTime sets the lastUpdatedDateTime property value. The lastUpdatedDateTime property
 func (m *ExactMatchJobBase) SetLastUpdatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.lastUpdatedDateTime = value
-    }
+    m.lastUpdatedDateTime = value
 }
 // SetStartDateTime sets the startDateTime property value. The startDateTime property
 func (m *ExactMatchJobBase) SetStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.startDateTime = value
-    }
+    m.startDateTime = value
 }

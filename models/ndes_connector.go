@@ -38,27 +38,15 @@ func CreateNdesConnectorFromDiscriminatorValue(parseNode i878a80d2330e89d2689638
 }
 // GetConnectorVersion gets the connectorVersion property value. The build version of the Ndes Connector.
 func (m *NdesConnector) GetConnectorVersion()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.connectorVersion
-    }
+    return m.connectorVersion
 }
 // GetDisplayName gets the displayName property value. The friendly name of the Ndes Connector.
 func (m *NdesConnector) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
 // GetEnrolledDateTime gets the enrolledDateTime property value. Timestamp when on-prem certificate connector was enrolled in Intune.
 func (m *NdesConnector) GetEnrolledDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.enrolledDateTime
-    }
+    return m.enrolledDateTime
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *NdesConnector) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -141,35 +129,19 @@ func (m *NdesConnector) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
 }
 // GetLastConnectionDateTime gets the lastConnectionDateTime property value. Last connection time for the Ndes Connector
 func (m *NdesConnector) GetLastConnectionDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastConnectionDateTime
-    }
+    return m.lastConnectionDateTime
 }
 // GetMachineName gets the machineName property value. Name of the machine running on-prem certificate connector service.
 func (m *NdesConnector) GetMachineName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.machineName
-    }
+    return m.machineName
 }
 // GetRoleScopeTagIds gets the roleScopeTagIds property value. List of Scope Tags for this Entity instance.
 func (m *NdesConnector) GetRoleScopeTagIds()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.roleScopeTagIds
-    }
+    return m.roleScopeTagIds
 }
 // GetState gets the state property value. The current status of the Ndes Connector.
 func (m *NdesConnector) GetState()(*NdesConnectorState) {
-    if m == nil {
-        return nil
-    } else {
-        return m.state
-    }
+    return m.state
 }
 // Serialize serializes information the current object
 func (m *NdesConnector) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -224,43 +196,29 @@ func (m *NdesConnector) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
 }
 // SetConnectorVersion sets the connectorVersion property value. The build version of the Ndes Connector.
 func (m *NdesConnector) SetConnectorVersion(value *string)() {
-    if m != nil {
-        m.connectorVersion = value
-    }
+    m.connectorVersion = value
 }
 // SetDisplayName sets the displayName property value. The friendly name of the Ndes Connector.
 func (m *NdesConnector) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }
 // SetEnrolledDateTime sets the enrolledDateTime property value. Timestamp when on-prem certificate connector was enrolled in Intune.
 func (m *NdesConnector) SetEnrolledDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.enrolledDateTime = value
-    }
+    m.enrolledDateTime = value
 }
 // SetLastConnectionDateTime sets the lastConnectionDateTime property value. Last connection time for the Ndes Connector
 func (m *NdesConnector) SetLastConnectionDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.lastConnectionDateTime = value
-    }
+    m.lastConnectionDateTime = value
 }
 // SetMachineName sets the machineName property value. Name of the machine running on-prem certificate connector service.
 func (m *NdesConnector) SetMachineName(value *string)() {
-    if m != nil {
-        m.machineName = value
-    }
+    m.machineName = value
 }
 // SetRoleScopeTagIds sets the roleScopeTagIds property value. List of Scope Tags for this Entity instance.
 func (m *NdesConnector) SetRoleScopeTagIds(value []string)() {
-    if m != nil {
-        m.roleScopeTagIds = value
-    }
+    m.roleScopeTagIds = value
 }
 // SetState sets the state property value. The current status of the Ndes Connector.
 func (m *NdesConnector) SetState(value *NdesConnectorState)() {
-    if m != nil {
-        m.state = value
-    }
+    m.state = value
 }

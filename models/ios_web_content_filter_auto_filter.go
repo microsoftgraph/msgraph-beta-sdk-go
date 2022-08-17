@@ -27,19 +27,11 @@ func CreateIosWebContentFilterAutoFilterFromDiscriminatorValue(parseNode i878a80
 }
 // GetAllowedUrls gets the allowedUrls property value. Additional URLs allowed for access
 func (m *IosWebContentFilterAutoFilter) GetAllowedUrls()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.allowedUrls
-    }
+    return m.allowedUrls
 }
 // GetBlockedUrls gets the blockedUrls property value. Additional URLs blocked for access
 func (m *IosWebContentFilterAutoFilter) GetBlockedUrls()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.blockedUrls
-    }
+    return m.blockedUrls
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *IosWebContentFilterAutoFilter) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -96,13 +88,9 @@ func (m *IosWebContentFilterAutoFilter) Serialize(writer i878a80d2330e89d2689638
 }
 // SetAllowedUrls sets the allowedUrls property value. Additional URLs allowed for access
 func (m *IosWebContentFilterAutoFilter) SetAllowedUrls(value []string)() {
-    if m != nil {
-        m.allowedUrls = value
-    }
+    m.allowedUrls = value
 }
 // SetBlockedUrls sets the blockedUrls property value. Additional URLs blocked for access
 func (m *IosWebContentFilterAutoFilter) SetBlockedUrls(value []string)() {
-    if m != nil {
-        m.blockedUrls = value
-    }
+    m.blockedUrls = value
 }

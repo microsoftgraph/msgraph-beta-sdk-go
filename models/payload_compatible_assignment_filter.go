@@ -40,11 +40,7 @@ func (m *PayloadCompatibleAssignmentFilter) GetFieldDeserializers()(map[string]f
 }
 // GetPayloadType gets the payloadType property value. Represents the payload type AssignmentFilter is being assigned to.
 func (m *PayloadCompatibleAssignmentFilter) GetPayloadType()(*AssignmentFilterPayloadType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.payloadType
-    }
+    return m.payloadType
 }
 // Serialize serializes information the current object
 func (m *PayloadCompatibleAssignmentFilter) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -63,7 +59,5 @@ func (m *PayloadCompatibleAssignmentFilter) Serialize(writer i878a80d2330e89d268
 }
 // SetPayloadType sets the payloadType property value. Represents the payload type AssignmentFilter is being assigned to.
 func (m *PayloadCompatibleAssignmentFilter) SetPayloadType(value *AssignmentFilterPayloadType)() {
-    if m != nil {
-        m.payloadType = value
-    }
+    m.payloadType = value
 }

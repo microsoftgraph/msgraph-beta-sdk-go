@@ -56,27 +56,15 @@ func CreateWindowsPhone81CertificateProfileBaseFromDiscriminatorValue(parseNode 
 }
 // GetCertificateValidityPeriodScale gets the certificateValidityPeriodScale property value. Certificate Validity Period Options.
 func (m *WindowsPhone81CertificateProfileBase) GetCertificateValidityPeriodScale()(*CertificateValidityPeriodScale) {
-    if m == nil {
-        return nil
-    } else {
-        return m.certificateValidityPeriodScale
-    }
+    return m.certificateValidityPeriodScale
 }
 // GetCertificateValidityPeriodValue gets the certificateValidityPeriodValue property value. Value for the Certificate Validtiy Period.
 func (m *WindowsPhone81CertificateProfileBase) GetCertificateValidityPeriodValue()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.certificateValidityPeriodValue
-    }
+    return m.certificateValidityPeriodValue
 }
 // GetExtendedKeyUsages gets the extendedKeyUsages property value. Extended Key Usage (EKU) settings. This collection can contain a maximum of 500 elements.
 func (m *WindowsPhone81CertificateProfileBase) GetExtendedKeyUsages()([]ExtendedKeyUsageable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.extendedKeyUsages
-    }
+    return m.extendedKeyUsages
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *WindowsPhone81CertificateProfileBase) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -159,35 +147,19 @@ func (m *WindowsPhone81CertificateProfileBase) GetFieldDeserializers()(map[strin
 }
 // GetKeyStorageProvider gets the keyStorageProvider property value. Key Storage Provider (KSP) Import Options.
 func (m *WindowsPhone81CertificateProfileBase) GetKeyStorageProvider()(*KeyStorageProviderOption) {
-    if m == nil {
-        return nil
-    } else {
-        return m.keyStorageProvider
-    }
+    return m.keyStorageProvider
 }
 // GetRenewalThresholdPercentage gets the renewalThresholdPercentage property value. Certificate renewal threshold percentage.
 func (m *WindowsPhone81CertificateProfileBase) GetRenewalThresholdPercentage()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.renewalThresholdPercentage
-    }
+    return m.renewalThresholdPercentage
 }
 // GetSubjectAlternativeNameType gets the subjectAlternativeNameType property value. Subject Alternative Name Options.
 func (m *WindowsPhone81CertificateProfileBase) GetSubjectAlternativeNameType()(*SubjectAlternativeNameType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.subjectAlternativeNameType
-    }
+    return m.subjectAlternativeNameType
 }
 // GetSubjectNameFormat gets the subjectNameFormat property value. Subject Name Format Options.
 func (m *WindowsPhone81CertificateProfileBase) GetSubjectNameFormat()(*SubjectNameFormat) {
-    if m == nil {
-        return nil
-    } else {
-        return m.subjectNameFormat
-    }
+    return m.subjectNameFormat
 }
 // Serialize serializes information the current object
 func (m *WindowsPhone81CertificateProfileBase) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -249,43 +221,29 @@ func (m *WindowsPhone81CertificateProfileBase) Serialize(writer i878a80d2330e89d
 }
 // SetCertificateValidityPeriodScale sets the certificateValidityPeriodScale property value. Certificate Validity Period Options.
 func (m *WindowsPhone81CertificateProfileBase) SetCertificateValidityPeriodScale(value *CertificateValidityPeriodScale)() {
-    if m != nil {
-        m.certificateValidityPeriodScale = value
-    }
+    m.certificateValidityPeriodScale = value
 }
 // SetCertificateValidityPeriodValue sets the certificateValidityPeriodValue property value. Value for the Certificate Validtiy Period.
 func (m *WindowsPhone81CertificateProfileBase) SetCertificateValidityPeriodValue(value *int32)() {
-    if m != nil {
-        m.certificateValidityPeriodValue = value
-    }
+    m.certificateValidityPeriodValue = value
 }
 // SetExtendedKeyUsages sets the extendedKeyUsages property value. Extended Key Usage (EKU) settings. This collection can contain a maximum of 500 elements.
 func (m *WindowsPhone81CertificateProfileBase) SetExtendedKeyUsages(value []ExtendedKeyUsageable)() {
-    if m != nil {
-        m.extendedKeyUsages = value
-    }
+    m.extendedKeyUsages = value
 }
 // SetKeyStorageProvider sets the keyStorageProvider property value. Key Storage Provider (KSP) Import Options.
 func (m *WindowsPhone81CertificateProfileBase) SetKeyStorageProvider(value *KeyStorageProviderOption)() {
-    if m != nil {
-        m.keyStorageProvider = value
-    }
+    m.keyStorageProvider = value
 }
 // SetRenewalThresholdPercentage sets the renewalThresholdPercentage property value. Certificate renewal threshold percentage.
 func (m *WindowsPhone81CertificateProfileBase) SetRenewalThresholdPercentage(value *int32)() {
-    if m != nil {
-        m.renewalThresholdPercentage = value
-    }
+    m.renewalThresholdPercentage = value
 }
 // SetSubjectAlternativeNameType sets the subjectAlternativeNameType property value. Subject Alternative Name Options.
 func (m *WindowsPhone81CertificateProfileBase) SetSubjectAlternativeNameType(value *SubjectAlternativeNameType)() {
-    if m != nil {
-        m.subjectAlternativeNameType = value
-    }
+    m.subjectAlternativeNameType = value
 }
 // SetSubjectNameFormat sets the subjectNameFormat property value. Subject Name Format Options.
 func (m *WindowsPhone81CertificateProfileBase) SetSubjectNameFormat(value *SubjectNameFormat)() {
-    if m != nil {
-        m.subjectNameFormat = value
-    }
+    m.subjectNameFormat = value
 }

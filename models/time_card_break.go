@@ -34,27 +34,15 @@ func CreateTimeCardBreakFromDiscriminatorValue(parseNode i878a80d2330e89d2689638
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TimeCardBreak) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetBreakId gets the breakId property value. ID of the timeCardBreak.
 func (m *TimeCardBreak) GetBreakId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.breakId
-    }
+    return m.breakId
 }
 // GetEnd gets the end property value. The start event of the timeCardBreak.
 func (m *TimeCardBreak) GetEnd()(TimeCardEventable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.end
-    }
+    return m.end
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *TimeCardBreak) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -113,27 +101,15 @@ func (m *TimeCardBreak) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
 }
 // GetNotes gets the notes property value. Notes about the timeCardBreak.
 func (m *TimeCardBreak) GetNotes()(ItemBodyable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.notes
-    }
+    return m.notes
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *TimeCardBreak) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetStart gets the start property value. The start property
 func (m *TimeCardBreak) GetStart()(TimeCardEventable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.start
-    }
+    return m.start
 }
 // Serialize serializes information the current object
 func (m *TimeCardBreak) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -177,37 +153,25 @@ func (m *TimeCardBreak) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TimeCardBreak) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetBreakId sets the breakId property value. ID of the timeCardBreak.
 func (m *TimeCardBreak) SetBreakId(value *string)() {
-    if m != nil {
-        m.breakId = value
-    }
+    m.breakId = value
 }
 // SetEnd sets the end property value. The start event of the timeCardBreak.
 func (m *TimeCardBreak) SetEnd(value TimeCardEventable)() {
-    if m != nil {
-        m.end = value
-    }
+    m.end = value
 }
 // SetNotes sets the notes property value. Notes about the timeCardBreak.
 func (m *TimeCardBreak) SetNotes(value ItemBodyable)() {
-    if m != nil {
-        m.notes = value
-    }
+    m.notes = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *TimeCardBreak) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetStart sets the start property value. The start property
 func (m *TimeCardBreak) SetStart(value TimeCardEventable)() {
-    if m != nil {
-        m.start = value
-    }
+    m.start = value
 }

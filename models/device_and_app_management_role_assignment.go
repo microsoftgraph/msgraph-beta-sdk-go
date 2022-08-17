@@ -60,19 +60,11 @@ func (m *DeviceAndAppManagementRoleAssignment) GetFieldDeserializers()(map[strin
 }
 // GetMembers gets the members property value. The list of ids of role member security groups. These are IDs from Azure Active Directory.
 func (m *DeviceAndAppManagementRoleAssignment) GetMembers()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.members
-    }
+    return m.members
 }
 // GetRoleScopeTags gets the roleScopeTags property value. The set of Role Scope Tags defined on the Role Assignment.
 func (m *DeviceAndAppManagementRoleAssignment) GetRoleScopeTags()([]RoleScopeTagable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.roleScopeTags
-    }
+    return m.roleScopeTags
 }
 // Serialize serializes information the current object
 func (m *DeviceAndAppManagementRoleAssignment) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -100,13 +92,9 @@ func (m *DeviceAndAppManagementRoleAssignment) Serialize(writer i878a80d2330e89d
 }
 // SetMembers sets the members property value. The list of ids of role member security groups. These are IDs from Azure Active Directory.
 func (m *DeviceAndAppManagementRoleAssignment) SetMembers(value []string)() {
-    if m != nil {
-        m.members = value
-    }
+    m.members = value
 }
 // SetRoleScopeTags sets the roleScopeTags property value. The set of Role Scope Tags defined on the Role Assignment.
 func (m *DeviceAndAppManagementRoleAssignment) SetRoleScopeTags(value []RoleScopeTagable)() {
-    if m != nil {
-        m.roleScopeTags = value
-    }
+    m.roleScopeTags = value
 }

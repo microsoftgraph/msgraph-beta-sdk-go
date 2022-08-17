@@ -30,11 +30,7 @@ func CreateOrganizationalMessagePlacementDetailFromDiscriminatorValue(parseNode 
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *OrganizationalMessagePlacementDetail) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *OrganizationalMessagePlacementDetail) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -77,27 +73,15 @@ func (m *OrganizationalMessagePlacementDetail) GetFieldDeserializers()(map[strin
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *OrganizationalMessagePlacementDetail) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetPlacement gets the placement property value. Indicates the name of the placement. Possible values are: default, card0, card1, card2, card3.
 func (m *OrganizationalMessagePlacementDetail) GetPlacement()(*OrganizationalMessagePlacement) {
-    if m == nil {
-        return nil
-    } else {
-        return m.placement
-    }
+    return m.placement
 }
 // GetVariants gets the variants property value. The list of different variants that can be displayed for this placement
 func (m *OrganizationalMessagePlacementDetail) GetVariants()([]OrganizationalMessageVariantable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.variants
-    }
+    return m.variants
 }
 // Serialize serializes information the current object
 func (m *OrganizationalMessagePlacementDetail) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -134,25 +118,17 @@ func (m *OrganizationalMessagePlacementDetail) Serialize(writer i878a80d2330e89d
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *OrganizationalMessagePlacementDetail) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *OrganizationalMessagePlacementDetail) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetPlacement sets the placement property value. Indicates the name of the placement. Possible values are: default, card0, card1, card2, card3.
 func (m *OrganizationalMessagePlacementDetail) SetPlacement(value *OrganizationalMessagePlacement)() {
-    if m != nil {
-        m.placement = value
-    }
+    m.placement = value
 }
 // SetVariants sets the variants property value. The list of different variants that can be displayed for this placement
 func (m *OrganizationalMessagePlacementDetail) SetVariants(value []OrganizationalMessageVariantable)() {
-    if m != nil {
-        m.variants = value
-    }
+    m.variants = value
 }

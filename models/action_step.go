@@ -32,19 +32,11 @@ func CreateActionStepFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3
 }
 // GetActionUrl gets the actionUrl property value. The actionUrl property
 func (m *ActionStep) GetActionUrl()(ActionUrlable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.actionUrl
-    }
+    return m.actionUrl
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ActionStep) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ActionStep) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -93,27 +85,15 @@ func (m *ActionStep) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *ActionStep) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetStepNumber gets the stepNumber property value. The stepNumber property
 func (m *ActionStep) GetStepNumber()(*int64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.stepNumber
-    }
+    return m.stepNumber
 }
 // GetText gets the text property value. The text property
 func (m *ActionStep) GetText()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.text
-    }
+    return m.text
 }
 // Serialize serializes information the current object
 func (m *ActionStep) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -151,31 +131,21 @@ func (m *ActionStep) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
 }
 // SetActionUrl sets the actionUrl property value. The actionUrl property
 func (m *ActionStep) SetActionUrl(value ActionUrlable)() {
-    if m != nil {
-        m.actionUrl = value
-    }
+    m.actionUrl = value
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ActionStep) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *ActionStep) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetStepNumber sets the stepNumber property value. The stepNumber property
 func (m *ActionStep) SetStepNumber(value *int64)() {
-    if m != nil {
-        m.stepNumber = value
-    }
+    m.stepNumber = value
 }
 // SetText sets the text property value. The text property
 func (m *ActionStep) SetText(value *string)() {
-    if m != nil {
-        m.text = value
-    }
+    m.text = value
 }

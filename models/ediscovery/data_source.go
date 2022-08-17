@@ -56,27 +56,15 @@ func CreateDataSourceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3
 }
 // GetCreatedBy gets the createdBy property value. The user who created the dataSource.
 func (m *DataSource) GetCreatedBy()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentitySetable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.createdBy
-    }
+    return m.createdBy
 }
 // GetCreatedDateTime gets the createdDateTime property value. The date and time the dataSource was created.
 func (m *DataSource) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.createdDateTime
-    }
+    return m.createdDateTime
 }
 // GetDisplayName gets the displayName property value. The display name of the dataSource. This will be the name of the SharePoint site.
 func (m *DataSource) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DataSource) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -125,11 +113,7 @@ func (m *DataSource) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
 }
 // GetHoldStatus gets the holdStatus property value. The holdStatus property
 func (m *DataSource) GetHoldStatus()(*DataSourceHoldStatus) {
-    if m == nil {
-        return nil
-    } else {
-        return m.holdStatus
-    }
+    return m.holdStatus
 }
 // Serialize serializes information the current object
 func (m *DataSource) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -166,25 +150,17 @@ func (m *DataSource) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
 }
 // SetCreatedBy sets the createdBy property value. The user who created the dataSource.
 func (m *DataSource) SetCreatedBy(value ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentitySetable)() {
-    if m != nil {
-        m.createdBy = value
-    }
+    m.createdBy = value
 }
 // SetCreatedDateTime sets the createdDateTime property value. The date and time the dataSource was created.
 func (m *DataSource) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.createdDateTime = value
-    }
+    m.createdDateTime = value
 }
 // SetDisplayName sets the displayName property value. The display name of the dataSource. This will be the name of the SharePoint site.
 func (m *DataSource) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }
 // SetHoldStatus sets the holdStatus property value. The holdStatus property
 func (m *DataSource) SetHoldStatus(value *DataSourceHoldStatus)() {
-    if m != nil {
-        m.holdStatus = value
-    }
+    m.holdStatus = value
 }

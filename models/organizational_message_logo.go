@@ -32,19 +32,11 @@ func CreateOrganizationalMessageLogoFromDiscriminatorValue(parseNode i878a80d233
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *OrganizationalMessageLogo) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetContentType gets the contentType property value. The content type of the logo that is contained in the logo array. This is null when logoCdnUrl is used to send the logo. Possible values are: png.
 func (m *OrganizationalMessageLogo) GetContentType()(*OrganizationalMessageLogoType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.contentType
-    }
+    return m.contentType
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *OrganizationalMessageLogo) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -93,27 +85,15 @@ func (m *OrganizationalMessageLogo) GetFieldDeserializers()(map[string]func(i878
 }
 // GetLogo gets the logo property value. The binary contents of the logo. This is null when logoCdnUrl is used to send the logo
 func (m *OrganizationalMessageLogo) GetLogo()([]byte) {
-    if m == nil {
-        return nil
-    } else {
-        return m.logo
-    }
+    return m.logo
 }
 // GetLogoCdnUrl gets the logoCdnUrl property value. The url at which the logo resides. This is null when logo and contentType are used to send the logo
 func (m *OrganizationalMessageLogo) GetLogoCdnUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.logoCdnUrl
-    }
+    return m.logoCdnUrl
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *OrganizationalMessageLogo) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // Serialize serializes information the current object
 func (m *OrganizationalMessageLogo) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -152,31 +132,21 @@ func (m *OrganizationalMessageLogo) Serialize(writer i878a80d2330e89d26896388a3f
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *OrganizationalMessageLogo) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetContentType sets the contentType property value. The content type of the logo that is contained in the logo array. This is null when logoCdnUrl is used to send the logo. Possible values are: png.
 func (m *OrganizationalMessageLogo) SetContentType(value *OrganizationalMessageLogoType)() {
-    if m != nil {
-        m.contentType = value
-    }
+    m.contentType = value
 }
 // SetLogo sets the logo property value. The binary contents of the logo. This is null when logoCdnUrl is used to send the logo
 func (m *OrganizationalMessageLogo) SetLogo(value []byte)() {
-    if m != nil {
-        m.logo = value
-    }
+    m.logo = value
 }
 // SetLogoCdnUrl sets the logoCdnUrl property value. The url at which the logo resides. This is null when logo and contentType are used to send the logo
 func (m *OrganizationalMessageLogo) SetLogoCdnUrl(value *string)() {
-    if m != nil {
-        m.logoCdnUrl = value
-    }
+    m.logoCdnUrl = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *OrganizationalMessageLogo) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }

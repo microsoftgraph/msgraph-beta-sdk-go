@@ -27,27 +27,15 @@ func CreateEvaluateRemovalPostRequestBodyFromDiscriminatorValue(parseNode i878a8
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *EvaluateRemovalPostRequestBody) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetContentInfo gets the contentInfo property value. The contentInfo property
 func (m *EvaluateRemovalPostRequestBody) GetContentInfo()(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.ContentInfoable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.contentInfo
-    }
+    return m.contentInfo
 }
 // GetDowngradeJustification gets the downgradeJustification property value. The downgradeJustification property
 func (m *EvaluateRemovalPostRequestBody) GetDowngradeJustification()(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.DowngradeJustificationable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.downgradeJustification
-    }
+    return m.downgradeJustification
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *EvaluateRemovalPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -98,19 +86,13 @@ func (m *EvaluateRemovalPostRequestBody) Serialize(writer i878a80d2330e89d268963
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *EvaluateRemovalPostRequestBody) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetContentInfo sets the contentInfo property value. The contentInfo property
 func (m *EvaluateRemovalPostRequestBody) SetContentInfo(value i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.ContentInfoable)() {
-    if m != nil {
-        m.contentInfo = value
-    }
+    m.contentInfo = value
 }
 // SetDowngradeJustification sets the downgradeJustification property value. The downgradeJustification property
 func (m *EvaluateRemovalPostRequestBody) SetDowngradeJustification(value i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.DowngradeJustificationable)() {
-    if m != nil {
-        m.downgradeJustification = value
-    }
+    m.downgradeJustification = value
 }

@@ -44,51 +44,27 @@ func CreateEducationalActivityDetailFromDiscriminatorValue(parseNode i878a80d233
 }
 // GetAbbreviation gets the abbreviation property value. Shortened name of the degree or program (example: PhD, MBA)
 func (m *EducationalActivityDetail) GetAbbreviation()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.abbreviation
-    }
+    return m.abbreviation
 }
 // GetActivities gets the activities property value. Extracurricular activities undertaken alongside the program.
 func (m *EducationalActivityDetail) GetActivities()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.activities
-    }
+    return m.activities
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *EducationalActivityDetail) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetAwards gets the awards property value. Any awards or honors associated with the program.
 func (m *EducationalActivityDetail) GetAwards()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.awards
-    }
+    return m.awards
 }
 // GetDescription gets the description property value. Short description of the program provided by the user.
 func (m *EducationalActivityDetail) GetDescription()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.description
-    }
+    return m.description
 }
 // GetDisplayName gets the displayName property value. Long-form name of the program that the user has provided.
 func (m *EducationalActivityDetail) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *EducationalActivityDetail) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -209,43 +185,23 @@ func (m *EducationalActivityDetail) GetFieldDeserializers()(map[string]func(i878
 }
 // GetFieldsOfStudy gets the fieldsOfStudy property value. Majors and minors associated with the program. (if applicable)
 func (m *EducationalActivityDetail) GetFieldsOfStudy()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.fieldsOfStudy
-    }
+    return m.fieldsOfStudy
 }
 // GetGrade gets the grade property value. The final grade, class, GPA or score.
 func (m *EducationalActivityDetail) GetGrade()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.grade
-    }
+    return m.grade
 }
 // GetNotes gets the notes property value. Additional notes the user has provided.
 func (m *EducationalActivityDetail) GetNotes()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.notes
-    }
+    return m.notes
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *EducationalActivityDetail) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetWebUrl gets the webUrl property value. Link to the degree or program page.
 func (m *EducationalActivityDetail) GetWebUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.webUrl
-    }
+    return m.webUrl
 }
 // Serialize serializes information the current object
 func (m *EducationalActivityDetail) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -319,67 +275,45 @@ func (m *EducationalActivityDetail) Serialize(writer i878a80d2330e89d26896388a3f
 }
 // SetAbbreviation sets the abbreviation property value. Shortened name of the degree or program (example: PhD, MBA)
 func (m *EducationalActivityDetail) SetAbbreviation(value *string)() {
-    if m != nil {
-        m.abbreviation = value
-    }
+    m.abbreviation = value
 }
 // SetActivities sets the activities property value. Extracurricular activities undertaken alongside the program.
 func (m *EducationalActivityDetail) SetActivities(value []string)() {
-    if m != nil {
-        m.activities = value
-    }
+    m.activities = value
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *EducationalActivityDetail) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetAwards sets the awards property value. Any awards or honors associated with the program.
 func (m *EducationalActivityDetail) SetAwards(value []string)() {
-    if m != nil {
-        m.awards = value
-    }
+    m.awards = value
 }
 // SetDescription sets the description property value. Short description of the program provided by the user.
 func (m *EducationalActivityDetail) SetDescription(value *string)() {
-    if m != nil {
-        m.description = value
-    }
+    m.description = value
 }
 // SetDisplayName sets the displayName property value. Long-form name of the program that the user has provided.
 func (m *EducationalActivityDetail) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }
 // SetFieldsOfStudy sets the fieldsOfStudy property value. Majors and minors associated with the program. (if applicable)
 func (m *EducationalActivityDetail) SetFieldsOfStudy(value []string)() {
-    if m != nil {
-        m.fieldsOfStudy = value
-    }
+    m.fieldsOfStudy = value
 }
 // SetGrade sets the grade property value. The final grade, class, GPA or score.
 func (m *EducationalActivityDetail) SetGrade(value *string)() {
-    if m != nil {
-        m.grade = value
-    }
+    m.grade = value
 }
 // SetNotes sets the notes property value. Additional notes the user has provided.
 func (m *EducationalActivityDetail) SetNotes(value *string)() {
-    if m != nil {
-        m.notes = value
-    }
+    m.notes = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *EducationalActivityDetail) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetWebUrl sets the webUrl property value. Link to the degree or program page.
 func (m *EducationalActivityDetail) SetWebUrl(value *string)() {
-    if m != nil {
-        m.webUrl = value
-    }
+    m.webUrl = value
 }

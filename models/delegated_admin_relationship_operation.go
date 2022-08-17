@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DelegatedAdminRelationshipOperation provides operations to manage the collection of accessReview entities.
+// DelegatedAdminRelationshipOperation provides operations to manage the collection of activityStatistics entities.
 type DelegatedAdminRelationshipOperation struct {
     Entity
     // The time in ISO 8601 format and in UTC time when the long-running operation was created. Read-only.
@@ -34,19 +34,11 @@ func CreateDelegatedAdminRelationshipOperationFromDiscriminatorValue(parseNode i
 }
 // GetCreatedDateTime gets the createdDateTime property value. The time in ISO 8601 format and in UTC time when the long-running operation was created. Read-only.
 func (m *DelegatedAdminRelationshipOperation) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.createdDateTime
-    }
+    return m.createdDateTime
 }
 // GetData gets the data property value. The data (payload) for the operation. Read-only.
 func (m *DelegatedAdminRelationshipOperation) GetData()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.data
-    }
+    return m.data
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DelegatedAdminRelationshipOperation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -105,27 +97,15 @@ func (m *DelegatedAdminRelationshipOperation) GetFieldDeserializers()(map[string
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. The time in ISO 8601 format and in UTC time when the long-running operation was last modified. Read-only.
 func (m *DelegatedAdminRelationshipOperation) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastModifiedDateTime
-    }
+    return m.lastModifiedDateTime
 }
 // GetOperationType gets the operationType property value. The operationType property
 func (m *DelegatedAdminRelationshipOperation) GetOperationType()(*DelegatedAdminRelationshipOperationType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.operationType
-    }
+    return m.operationType
 }
 // GetStatus gets the status property value. The status property
 func (m *DelegatedAdminRelationshipOperation) GetStatus()(*LongRunningOperationStatus) {
-    if m == nil {
-        return nil
-    } else {
-        return m.status
-    }
+    return m.status
 }
 // Serialize serializes information the current object
 func (m *DelegatedAdminRelationshipOperation) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -169,31 +149,21 @@ func (m *DelegatedAdminRelationshipOperation) Serialize(writer i878a80d2330e89d2
 }
 // SetCreatedDateTime sets the createdDateTime property value. The time in ISO 8601 format and in UTC time when the long-running operation was created. Read-only.
 func (m *DelegatedAdminRelationshipOperation) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.createdDateTime = value
-    }
+    m.createdDateTime = value
 }
 // SetData sets the data property value. The data (payload) for the operation. Read-only.
 func (m *DelegatedAdminRelationshipOperation) SetData(value *string)() {
-    if m != nil {
-        m.data = value
-    }
+    m.data = value
 }
 // SetLastModifiedDateTime sets the lastModifiedDateTime property value. The time in ISO 8601 format and in UTC time when the long-running operation was last modified. Read-only.
 func (m *DelegatedAdminRelationshipOperation) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.lastModifiedDateTime = value
-    }
+    m.lastModifiedDateTime = value
 }
 // SetOperationType sets the operationType property value. The operationType property
 func (m *DelegatedAdminRelationshipOperation) SetOperationType(value *DelegatedAdminRelationshipOperationType)() {
-    if m != nil {
-        m.operationType = value
-    }
+    m.operationType = value
 }
 // SetStatus sets the status property value. The status property
 func (m *DelegatedAdminRelationshipOperation) SetStatus(value *LongRunningOperationStatus)() {
-    if m != nil {
-        m.status = value
-    }
+    m.status = value
 }

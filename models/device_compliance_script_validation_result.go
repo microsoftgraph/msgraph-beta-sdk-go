@@ -32,11 +32,7 @@ func CreateDeviceComplianceScriptValidationResultFromDiscriminatorValue(parseNod
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DeviceComplianceScriptValidationResult) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceComplianceScriptValidationResult) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -97,35 +93,19 @@ func (m *DeviceComplianceScriptValidationResult) GetFieldDeserializers()(map[str
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *DeviceComplianceScriptValidationResult) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetRuleErrors gets the ruleErrors property value. Errors in json for the script for rules.
 func (m *DeviceComplianceScriptValidationResult) GetRuleErrors()([]DeviceComplianceScriptRuleErrorable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.ruleErrors
-    }
+    return m.ruleErrors
 }
 // GetRules gets the rules property value. Parsed rules from json.
 func (m *DeviceComplianceScriptValidationResult) GetRules()([]DeviceComplianceScriptRuleable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.rules
-    }
+    return m.rules
 }
 // GetScriptErrors gets the scriptErrors property value. Errors in json for the script.
 func (m *DeviceComplianceScriptValidationResult) GetScriptErrors()([]DeviceComplianceScriptErrorable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.scriptErrors
-    }
+    return m.scriptErrors
 }
 // Serialize serializes information the current object
 func (m *DeviceComplianceScriptValidationResult) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -175,31 +155,21 @@ func (m *DeviceComplianceScriptValidationResult) Serialize(writer i878a80d2330e8
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DeviceComplianceScriptValidationResult) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *DeviceComplianceScriptValidationResult) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetRuleErrors sets the ruleErrors property value. Errors in json for the script for rules.
 func (m *DeviceComplianceScriptValidationResult) SetRuleErrors(value []DeviceComplianceScriptRuleErrorable)() {
-    if m != nil {
-        m.ruleErrors = value
-    }
+    m.ruleErrors = value
 }
 // SetRules sets the rules property value. Parsed rules from json.
 func (m *DeviceComplianceScriptValidationResult) SetRules(value []DeviceComplianceScriptRuleable)() {
-    if m != nil {
-        m.rules = value
-    }
+    m.rules = value
 }
 // SetScriptErrors sets the scriptErrors property value. Errors in json for the script.
 func (m *DeviceComplianceScriptValidationResult) SetScriptErrors(value []DeviceComplianceScriptErrorable)() {
-    if m != nil {
-        m.scriptErrors = value
-    }
+    m.scriptErrors = value
 }

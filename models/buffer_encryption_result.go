@@ -30,19 +30,11 @@ func CreateBufferEncryptionResultFromDiscriminatorValue(parseNode i878a80d2330e8
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *BufferEncryptionResult) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetEncryptedBuffer gets the encryptedBuffer property value. The encryptedBuffer property
 func (m *BufferEncryptionResult) GetEncryptedBuffer()([]byte) {
-    if m == nil {
-        return nil
-    } else {
-        return m.encryptedBuffer
-    }
+    return m.encryptedBuffer
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *BufferEncryptionResult) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -81,19 +73,11 @@ func (m *BufferEncryptionResult) GetFieldDeserializers()(map[string]func(i878a80
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *BufferEncryptionResult) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetPublishingLicense gets the publishingLicense property value. The publishingLicense property
 func (m *BufferEncryptionResult) GetPublishingLicense()([]byte) {
-    if m == nil {
-        return nil
-    } else {
-        return m.publishingLicense
-    }
+    return m.publishingLicense
 }
 // Serialize serializes information the current object
 func (m *BufferEncryptionResult) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -125,25 +109,17 @@ func (m *BufferEncryptionResult) Serialize(writer i878a80d2330e89d26896388a3f487
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *BufferEncryptionResult) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetEncryptedBuffer sets the encryptedBuffer property value. The encryptedBuffer property
 func (m *BufferEncryptionResult) SetEncryptedBuffer(value []byte)() {
-    if m != nil {
-        m.encryptedBuffer = value
-    }
+    m.encryptedBuffer = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *BufferEncryptionResult) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetPublishingLicense sets the publishingLicense property value. The publishingLicense property
 func (m *BufferEncryptionResult) SetPublishingLicense(value []byte)() {
-    if m != nil {
-        m.publishingLicense = value
-    }
+    m.publishingLicense = value
 }

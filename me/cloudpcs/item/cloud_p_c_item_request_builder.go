@@ -7,6 +7,7 @@ import (
     i0543ab08206c491078113b4b6ec824e6ea4dc3659ea1392f05efc163b50bac03 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/cloudpcs/item/changeuseraccounttype"
     i3fc1b0e9b520291a737c5354479f5ce10f5650dd33030dfefdc4b6ee1d1af0a6 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/cloudpcs/item/reboot"
     i48833d47a3b49cc67b08b792c187d1d2e754160e7d01e8291dfc3500786630e6 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/cloudpcs/item/troubleshoot"
+    i88cd15ed11dc17187b0e27e7a33a8beec99e35253eff3491796a0b40e3081054 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/cloudpcs/item/restore"
     ib05f8eb4a398c1197e5500e337b98f29806e31c0d85a4c4d513aa425dcdbbc08 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/cloudpcs/item/getcloudpcconnectivityhistory"
     ibd3ed8e86fd7912f38df4a5ee348162bbd2f3faee2c4688adbdf41aed4563b2d "github.com/microsoftgraph/msgraph-beta-sdk-go/me/cloudpcs/item/getcloudpclaunchinfo"
     idd692d448454691ef652a1555dc60f805306ee63076a45f51d1f0e45253c9964 "github.com/microsoftgraph/msgraph-beta-sdk-go/me/cloudpcs/item/rename"
@@ -212,6 +213,10 @@ func (m *CloudPCItemRequestBuilder) Rename()(*idd692d448454691ef652a1555dc60f805
 // Reprovision the reprovision property
 func (m *CloudPCItemRequestBuilder) Reprovision()(*ie4696cde156288c3f3bd9ecdc93adfc93dc5d8beeb9cceac7e81177b09b725a3.ReprovisionRequestBuilder) {
     return ie4696cde156288c3f3bd9ecdc93adfc93dc5d8beeb9cceac7e81177b09b725a3.NewReprovisionRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// Restore the restore property
+func (m *CloudPCItemRequestBuilder) Restore()(*i88cd15ed11dc17187b0e27e7a33a8beec99e35253eff3491796a0b40e3081054.RestoreRequestBuilder) {
+    return i88cd15ed11dc17187b0e27e7a33a8beec99e35253eff3491796a0b40e3081054.NewRestoreRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Troubleshoot the troubleshoot property
 func (m *CloudPCItemRequestBuilder) Troubleshoot()(*i48833d47a3b49cc67b08b792c187d1d2e754160e7d01e8291dfc3500786630e6.TroubleshootRequestBuilder) {

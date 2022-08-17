@@ -52,19 +52,11 @@ func (m *UserExperienceAnalyticsMetric) GetFieldDeserializers()(map[string]func(
 }
 // GetUnit gets the unit property value. The unit of the user experience analytics metric.
 func (m *UserExperienceAnalyticsMetric) GetUnit()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.unit
-    }
+    return m.unit
 }
 // GetValue gets the value property value. The value of the user experience analytics metric.
 func (m *UserExperienceAnalyticsMetric) GetValue()(*float64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.value
-    }
+    return m.value
 }
 // Serialize serializes information the current object
 func (m *UserExperienceAnalyticsMetric) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -88,13 +80,9 @@ func (m *UserExperienceAnalyticsMetric) Serialize(writer i878a80d2330e89d2689638
 }
 // SetUnit sets the unit property value. The unit of the user experience analytics metric.
 func (m *UserExperienceAnalyticsMetric) SetUnit(value *string)() {
-    if m != nil {
-        m.unit = value
-    }
+    m.unit = value
 }
 // SetValue sets the value property value. The value of the user experience analytics metric.
 func (m *UserExperienceAnalyticsMetric) SetValue(value *float64)() {
-    if m != nil {
-        m.value = value
-    }
+    m.value = value
 }

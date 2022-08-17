@@ -31,27 +31,15 @@ func CreateUpdateAudiencePostRequestBodyFromDiscriminatorValue(parseNode i878a80
 }
 // GetAddExclusions gets the addExclusions property value. The addExclusions property
 func (m *UpdateAudiencePostRequestBody) GetAddExclusions()([]i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.UpdatableAssetable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.addExclusions
-    }
+    return m.addExclusions
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *UpdateAudiencePostRequestBody) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetAddMembers gets the addMembers property value. The addMembers property
 func (m *UpdateAudiencePostRequestBody) GetAddMembers()([]i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.UpdatableAssetable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.addMembers
-    }
+    return m.addMembers
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *UpdateAudiencePostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -116,19 +104,11 @@ func (m *UpdateAudiencePostRequestBody) GetFieldDeserializers()(map[string]func(
 }
 // GetRemoveExclusions gets the removeExclusions property value. The removeExclusions property
 func (m *UpdateAudiencePostRequestBody) GetRemoveExclusions()([]i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.UpdatableAssetable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.removeExclusions
-    }
+    return m.removeExclusions
 }
 // GetRemoveMembers gets the removeMembers property value. The removeMembers property
 func (m *UpdateAudiencePostRequestBody) GetRemoveMembers()([]i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.UpdatableAssetable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.removeMembers
-    }
+    return m.removeMembers
 }
 // Serialize serializes information the current object
 func (m *UpdateAudiencePostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -182,31 +162,21 @@ func (m *UpdateAudiencePostRequestBody) Serialize(writer i878a80d2330e89d2689638
 }
 // SetAddExclusions sets the addExclusions property value. The addExclusions property
 func (m *UpdateAudiencePostRequestBody) SetAddExclusions(value []i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.UpdatableAssetable)() {
-    if m != nil {
-        m.addExclusions = value
-    }
+    m.addExclusions = value
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *UpdateAudiencePostRequestBody) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetAddMembers sets the addMembers property value. The addMembers property
 func (m *UpdateAudiencePostRequestBody) SetAddMembers(value []i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.UpdatableAssetable)() {
-    if m != nil {
-        m.addMembers = value
-    }
+    m.addMembers = value
 }
 // SetRemoveExclusions sets the removeExclusions property value. The removeExclusions property
 func (m *UpdateAudiencePostRequestBody) SetRemoveExclusions(value []i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.UpdatableAssetable)() {
-    if m != nil {
-        m.removeExclusions = value
-    }
+    m.removeExclusions = value
 }
 // SetRemoveMembers sets the removeMembers property value. The removeMembers property
 func (m *UpdateAudiencePostRequestBody) SetRemoveMembers(value []i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.UpdatableAssetable)() {
-    if m != nil {
-        m.removeMembers = value
-    }
+    m.removeMembers = value
 }

@@ -29,19 +29,11 @@ func CreateDeviceCompliancePolicyGroupAssignmentFromDiscriminatorValue(parseNode
 }
 // GetDeviceCompliancePolicy gets the deviceCompliancePolicy property value. The navigation link to the  device compliance polic targeted.
 func (m *DeviceCompliancePolicyGroupAssignment) GetDeviceCompliancePolicy()(DeviceCompliancePolicyable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deviceCompliancePolicy
-    }
+    return m.deviceCompliancePolicy
 }
 // GetExcludeGroup gets the excludeGroup property value. Indicates if this group is should be excluded. Defaults that the group should be included
 func (m *DeviceCompliancePolicyGroupAssignment) GetExcludeGroup()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.excludeGroup
-    }
+    return m.excludeGroup
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceCompliancePolicyGroupAssignment) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -80,11 +72,7 @@ func (m *DeviceCompliancePolicyGroupAssignment) GetFieldDeserializers()(map[stri
 }
 // GetTargetGroupId gets the targetGroupId property value. The Id of the AAD group we are targeting the device compliance policy to.
 func (m *DeviceCompliancePolicyGroupAssignment) GetTargetGroupId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.targetGroupId
-    }
+    return m.targetGroupId
 }
 // Serialize serializes information the current object
 func (m *DeviceCompliancePolicyGroupAssignment) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -114,19 +102,13 @@ func (m *DeviceCompliancePolicyGroupAssignment) Serialize(writer i878a80d2330e89
 }
 // SetDeviceCompliancePolicy sets the deviceCompliancePolicy property value. The navigation link to the  device compliance polic targeted.
 func (m *DeviceCompliancePolicyGroupAssignment) SetDeviceCompliancePolicy(value DeviceCompliancePolicyable)() {
-    if m != nil {
-        m.deviceCompliancePolicy = value
-    }
+    m.deviceCompliancePolicy = value
 }
 // SetExcludeGroup sets the excludeGroup property value. Indicates if this group is should be excluded. Defaults that the group should be included
 func (m *DeviceCompliancePolicyGroupAssignment) SetExcludeGroup(value *bool)() {
-    if m != nil {
-        m.excludeGroup = value
-    }
+    m.excludeGroup = value
 }
 // SetTargetGroupId sets the targetGroupId property value. The Id of the AAD group we are targeting the device compliance policy to.
 func (m *DeviceCompliancePolicyGroupAssignment) SetTargetGroupId(value *string)() {
-    if m != nil {
-        m.targetGroupId = value
-    }
+    m.targetGroupId = value
 }

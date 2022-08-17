@@ -44,11 +44,7 @@ func CreateAppleExpeditedCheckinConfigurationBaseFromDiscriminatorValue(parseNod
 }
 // GetEnableExpeditedCheckin gets the enableExpeditedCheckin property value. Gets or sets whether to enable expedited device check-ins.
 func (m *AppleExpeditedCheckinConfigurationBase) GetEnableExpeditedCheckin()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.enableExpeditedCheckin
-    }
+    return m.enableExpeditedCheckin
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AppleExpeditedCheckinConfigurationBase) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -81,7 +77,5 @@ func (m *AppleExpeditedCheckinConfigurationBase) Serialize(writer i878a80d2330e8
 }
 // SetEnableExpeditedCheckin sets the enableExpeditedCheckin property value. Gets or sets whether to enable expedited device check-ins.
 func (m *AppleExpeditedCheckinConfigurationBase) SetEnableExpeditedCheckin(value *bool)() {
-    if m != nil {
-        m.enableExpeditedCheckin = value
-    }
+    m.enableExpeditedCheckin = value
 }

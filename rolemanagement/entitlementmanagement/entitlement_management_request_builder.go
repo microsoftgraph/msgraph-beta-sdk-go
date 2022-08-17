@@ -46,7 +46,7 @@ type EntitlementManagementRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// EntitlementManagementRequestBuilderGetQueryParameters container for roles and assignments for entitlement management resources.
+// EntitlementManagementRequestBuilderGetQueryParameters the RbacApplication for Entitlement Management
 type EntitlementManagementRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -104,11 +104,11 @@ func (m *EntitlementManagementRequestBuilder) CreateDeleteRequestInformationWith
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation container for roles and assignments for entitlement management resources.
+// CreateGetRequestInformation the RbacApplication for Entitlement Management
 func (m *EntitlementManagementRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration container for roles and assignments for entitlement management resources.
+// CreateGetRequestInformationWithRequestConfiguration the RbacApplication for Entitlement Management
 func (m *EntitlementManagementRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *EntitlementManagementRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -161,11 +161,11 @@ func (m *EntitlementManagementRequestBuilder) DeleteWithRequestConfigurationAndR
     }
     return nil
 }
-// Get container for roles and assignments for entitlement management resources.
+// Get the RbacApplication for Entitlement Management
 func (m *EntitlementManagementRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RbacApplicationable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler container for roles and assignments for entitlement management resources.
+// GetWithRequestConfigurationAndResponseHandler the RbacApplication for Entitlement Management
 func (m *EntitlementManagementRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *EntitlementManagementRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RbacApplicationable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

@@ -34,11 +34,7 @@ func CreateExactDataMatchStoreColumnFromDiscriminatorValue(parseNode i878a80d233
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ExactDataMatchStoreColumn) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ExactDataMatchStoreColumn) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -101,43 +97,23 @@ func (m *ExactDataMatchStoreColumn) GetFieldDeserializers()(map[string]func(i878
 }
 // GetIgnoredDelimiters gets the ignoredDelimiters property value. The ignoredDelimiters property
 func (m *ExactDataMatchStoreColumn) GetIgnoredDelimiters()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.ignoredDelimiters
-    }
+    return m.ignoredDelimiters
 }
 // GetIsCaseInsensitive gets the isCaseInsensitive property value. The isCaseInsensitive property
 func (m *ExactDataMatchStoreColumn) GetIsCaseInsensitive()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isCaseInsensitive
-    }
+    return m.isCaseInsensitive
 }
 // GetIsSearchable gets the isSearchable property value. The isSearchable property
 func (m *ExactDataMatchStoreColumn) GetIsSearchable()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isSearchable
-    }
+    return m.isSearchable
 }
 // GetName gets the name property value. The name property
 func (m *ExactDataMatchStoreColumn) GetName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.name
-    }
+    return m.name
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *ExactDataMatchStoreColumn) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // Serialize serializes information the current object
 func (m *ExactDataMatchStoreColumn) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -181,37 +157,25 @@ func (m *ExactDataMatchStoreColumn) Serialize(writer i878a80d2330e89d26896388a3f
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ExactDataMatchStoreColumn) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetIgnoredDelimiters sets the ignoredDelimiters property value. The ignoredDelimiters property
 func (m *ExactDataMatchStoreColumn) SetIgnoredDelimiters(value []string)() {
-    if m != nil {
-        m.ignoredDelimiters = value
-    }
+    m.ignoredDelimiters = value
 }
 // SetIsCaseInsensitive sets the isCaseInsensitive property value. The isCaseInsensitive property
 func (m *ExactDataMatchStoreColumn) SetIsCaseInsensitive(value *bool)() {
-    if m != nil {
-        m.isCaseInsensitive = value
-    }
+    m.isCaseInsensitive = value
 }
 // SetIsSearchable sets the isSearchable property value. The isSearchable property
 func (m *ExactDataMatchStoreColumn) SetIsSearchable(value *bool)() {
-    if m != nil {
-        m.isSearchable = value
-    }
+    m.isSearchable = value
 }
 // SetName sets the name property value. The name property
 func (m *ExactDataMatchStoreColumn) SetName(value *string)() {
-    if m != nil {
-        m.name = value
-    }
+    m.name = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *ExactDataMatchStoreColumn) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }

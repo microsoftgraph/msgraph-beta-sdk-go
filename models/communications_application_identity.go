@@ -27,11 +27,7 @@ func CreateCommunicationsApplicationIdentityFromDiscriminatorValue(parseNode i87
 }
 // GetApplicationType gets the applicationType property value. First party Microsoft application presenting this identity.
 func (m *CommunicationsApplicationIdentity) GetApplicationType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.applicationType
-    }
+    return m.applicationType
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *CommunicationsApplicationIdentity) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -60,11 +56,7 @@ func (m *CommunicationsApplicationIdentity) GetFieldDeserializers()(map[string]f
 }
 // GetHidden gets the hidden property value. True if the participant would not like to be shown in other participants' rosters.
 func (m *CommunicationsApplicationIdentity) GetHidden()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.hidden
-    }
+    return m.hidden
 }
 // Serialize serializes information the current object
 func (m *CommunicationsApplicationIdentity) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -88,13 +80,9 @@ func (m *CommunicationsApplicationIdentity) Serialize(writer i878a80d2330e89d268
 }
 // SetApplicationType sets the applicationType property value. First party Microsoft application presenting this identity.
 func (m *CommunicationsApplicationIdentity) SetApplicationType(value *string)() {
-    if m != nil {
-        m.applicationType = value
-    }
+    m.applicationType = value
 }
 // SetHidden sets the hidden property value. True if the participant would not like to be shown in other participants' rosters.
 func (m *CommunicationsApplicationIdentity) SetHidden(value *bool)() {
-    if m != nil {
-        m.hidden = value
-    }
+    m.hidden = value
 }

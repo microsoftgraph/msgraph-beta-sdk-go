@@ -15,9 +15,9 @@ type DeviceManagementConfigurationStringSettingValueDefinition struct {
     inputValidationSchema *string
     // Specifies whether the setting needs to be treated as a secret. Settings marked as yes will be encrypted in transit and at rest and will be displayed as asterisks when represented in the UX.
     isSecret *bool
-    // Maximum length of string
+    // Maximum length of string. Valid values 0 to 87516
     maximumLength *int64
-    // Minimum length of string
+    // Minimum length of string. Valid values 0 to 87516
     minimumLength *int64
 }
 // NewDeviceManagementConfigurationStringSettingValueDefinition instantiates a new DeviceManagementConfigurationStringSettingValueDefinition and sets the default values.
@@ -104,51 +104,27 @@ func (m *DeviceManagementConfigurationStringSettingValueDefinition) GetFieldDese
 }
 // GetFileTypes gets the fileTypes property value. Supported file types for this setting.
 func (m *DeviceManagementConfigurationStringSettingValueDefinition) GetFileTypes()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.fileTypes
-    }
+    return m.fileTypes
 }
 // GetFormat gets the format property value. The format property
 func (m *DeviceManagementConfigurationStringSettingValueDefinition) GetFormat()(*DeviceManagementConfigurationStringFormat) {
-    if m == nil {
-        return nil
-    } else {
-        return m.format
-    }
+    return m.format
 }
 // GetInputValidationSchema gets the inputValidationSchema property value. Regular expression or any xml or json schema that the input string should match
 func (m *DeviceManagementConfigurationStringSettingValueDefinition) GetInputValidationSchema()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.inputValidationSchema
-    }
+    return m.inputValidationSchema
 }
 // GetIsSecret gets the isSecret property value. Specifies whether the setting needs to be treated as a secret. Settings marked as yes will be encrypted in transit and at rest and will be displayed as asterisks when represented in the UX.
 func (m *DeviceManagementConfigurationStringSettingValueDefinition) GetIsSecret()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isSecret
-    }
+    return m.isSecret
 }
-// GetMaximumLength gets the maximumLength property value. Maximum length of string
+// GetMaximumLength gets the maximumLength property value. Maximum length of string. Valid values 0 to 87516
 func (m *DeviceManagementConfigurationStringSettingValueDefinition) GetMaximumLength()(*int64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.maximumLength
-    }
+    return m.maximumLength
 }
-// GetMinimumLength gets the minimumLength property value. Minimum length of string
+// GetMinimumLength gets the minimumLength property value. Minimum length of string. Valid values 0 to 87516
 func (m *DeviceManagementConfigurationStringSettingValueDefinition) GetMinimumLength()(*int64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.minimumLength
-    }
+    return m.minimumLength
 }
 // Serialize serializes information the current object
 func (m *DeviceManagementConfigurationStringSettingValueDefinition) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -197,37 +173,25 @@ func (m *DeviceManagementConfigurationStringSettingValueDefinition) Serialize(wr
 }
 // SetFileTypes sets the fileTypes property value. Supported file types for this setting.
 func (m *DeviceManagementConfigurationStringSettingValueDefinition) SetFileTypes(value []string)() {
-    if m != nil {
-        m.fileTypes = value
-    }
+    m.fileTypes = value
 }
 // SetFormat sets the format property value. The format property
 func (m *DeviceManagementConfigurationStringSettingValueDefinition) SetFormat(value *DeviceManagementConfigurationStringFormat)() {
-    if m != nil {
-        m.format = value
-    }
+    m.format = value
 }
 // SetInputValidationSchema sets the inputValidationSchema property value. Regular expression or any xml or json schema that the input string should match
 func (m *DeviceManagementConfigurationStringSettingValueDefinition) SetInputValidationSchema(value *string)() {
-    if m != nil {
-        m.inputValidationSchema = value
-    }
+    m.inputValidationSchema = value
 }
 // SetIsSecret sets the isSecret property value. Specifies whether the setting needs to be treated as a secret. Settings marked as yes will be encrypted in transit and at rest and will be displayed as asterisks when represented in the UX.
 func (m *DeviceManagementConfigurationStringSettingValueDefinition) SetIsSecret(value *bool)() {
-    if m != nil {
-        m.isSecret = value
-    }
+    m.isSecret = value
 }
-// SetMaximumLength sets the maximumLength property value. Maximum length of string
+// SetMaximumLength sets the maximumLength property value. Maximum length of string. Valid values 0 to 87516
 func (m *DeviceManagementConfigurationStringSettingValueDefinition) SetMaximumLength(value *int64)() {
-    if m != nil {
-        m.maximumLength = value
-    }
+    m.maximumLength = value
 }
-// SetMinimumLength sets the minimumLength property value. Minimum length of string
+// SetMinimumLength sets the minimumLength property value. Minimum length of string. Valid values 0 to 87516
 func (m *DeviceManagementConfigurationStringSettingValueDefinition) SetMinimumLength(value *int64)() {
-    if m != nil {
-        m.minimumLength = value
-    }
+    m.minimumLength = value
 }

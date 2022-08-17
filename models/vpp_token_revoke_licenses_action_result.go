@@ -29,19 +29,11 @@ func CreateVppTokenRevokeLicensesActionResultFromDiscriminatorValue(parseNode i8
 }
 // GetActionFailureReason gets the actionFailureReason property value. Possible types of reasons for an Apple Volume Purchase Program token action failure.
 func (m *VppTokenRevokeLicensesActionResult) GetActionFailureReason()(*VppTokenActionFailureReason) {
-    if m == nil {
-        return nil
-    } else {
-        return m.actionFailureReason
-    }
+    return m.actionFailureReason
 }
 // GetFailedLicensesCount gets the failedLicensesCount property value. A count of the number of licenses that failed to revoke.
 func (m *VppTokenRevokeLicensesActionResult) GetFailedLicensesCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.failedLicensesCount
-    }
+    return m.failedLicensesCount
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *VppTokenRevokeLicensesActionResult) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -80,11 +72,7 @@ func (m *VppTokenRevokeLicensesActionResult) GetFieldDeserializers()(map[string]
 }
 // GetTotalLicensesCount gets the totalLicensesCount property value. A count of the number of licenses that were attempted to revoke.
 func (m *VppTokenRevokeLicensesActionResult) GetTotalLicensesCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.totalLicensesCount
-    }
+    return m.totalLicensesCount
 }
 // Serialize serializes information the current object
 func (m *VppTokenRevokeLicensesActionResult) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -115,19 +103,13 @@ func (m *VppTokenRevokeLicensesActionResult) Serialize(writer i878a80d2330e89d26
 }
 // SetActionFailureReason sets the actionFailureReason property value. Possible types of reasons for an Apple Volume Purchase Program token action failure.
 func (m *VppTokenRevokeLicensesActionResult) SetActionFailureReason(value *VppTokenActionFailureReason)() {
-    if m != nil {
-        m.actionFailureReason = value
-    }
+    m.actionFailureReason = value
 }
 // SetFailedLicensesCount sets the failedLicensesCount property value. A count of the number of licenses that failed to revoke.
 func (m *VppTokenRevokeLicensesActionResult) SetFailedLicensesCount(value *int32)() {
-    if m != nil {
-        m.failedLicensesCount = value
-    }
+    m.failedLicensesCount = value
 }
 // SetTotalLicensesCount sets the totalLicensesCount property value. A count of the number of licenses that were attempted to revoke.
 func (m *VppTokenRevokeLicensesActionResult) SetTotalLicensesCount(value *int32)() {
-    if m != nil {
-        m.totalLicensesCount = value
-    }
+    m.totalLicensesCount = value
 }

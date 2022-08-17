@@ -40,11 +40,7 @@ func (m *GroupPolicyPresentationValueLongDecimal) GetFieldDeserializers()(map[st
 }
 // GetValue gets the value property value. An unsigned long value for the associated presentation.
 func (m *GroupPolicyPresentationValueLongDecimal) GetValue()(*int64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.value
-    }
+    return m.value
 }
 // Serialize serializes information the current object
 func (m *GroupPolicyPresentationValueLongDecimal) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -62,7 +58,5 @@ func (m *GroupPolicyPresentationValueLongDecimal) Serialize(writer i878a80d2330e
 }
 // SetValue sets the value property value. An unsigned long value for the associated presentation.
 func (m *GroupPolicyPresentationValueLongDecimal) SetValue(value *int64)() {
-    if m != nil {
-        m.value = value
-    }
+    m.value = value
 }

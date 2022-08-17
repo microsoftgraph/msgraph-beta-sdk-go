@@ -33,11 +33,7 @@ func CreateOffice365GroupsActivityGroupCountsFromDiscriminatorValue(parseNode i8
 }
 // GetActive gets the active property value. The number of active groups. A group is considered active if any of the following occurred: group mailbox received email; user viewed, edited, shared, or synced files in SharePoint document library; user viewed SharePoint pages; user posted, read, or liked messages in Yammer groups.
 func (m *Office365GroupsActivityGroupCounts) GetActive()(*int64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.active
-    }
+    return m.active
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Office365GroupsActivityGroupCounts) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -96,35 +92,19 @@ func (m *Office365GroupsActivityGroupCounts) GetFieldDeserializers()(map[string]
 }
 // GetReportDate gets the reportDate property value. The date on which a number of groups were active.
 func (m *Office365GroupsActivityGroupCounts) GetReportDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly) {
-    if m == nil {
-        return nil
-    } else {
-        return m.reportDate
-    }
+    return m.reportDate
 }
 // GetReportPeriod gets the reportPeriod property value. The number of days the report covers.
 func (m *Office365GroupsActivityGroupCounts) GetReportPeriod()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.reportPeriod
-    }
+    return m.reportPeriod
 }
 // GetReportRefreshDate gets the reportRefreshDate property value. The latest date of the content.
 func (m *Office365GroupsActivityGroupCounts) GetReportRefreshDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly) {
-    if m == nil {
-        return nil
-    } else {
-        return m.reportRefreshDate
-    }
+    return m.reportRefreshDate
 }
 // GetTotal gets the total property value. The total number of groups.
 func (m *Office365GroupsActivityGroupCounts) GetTotal()(*int64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.total
-    }
+    return m.total
 }
 // Serialize serializes information the current object
 func (m *Office365GroupsActivityGroupCounts) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -166,31 +146,21 @@ func (m *Office365GroupsActivityGroupCounts) Serialize(writer i878a80d2330e89d26
 }
 // SetActive sets the active property value. The number of active groups. A group is considered active if any of the following occurred: group mailbox received email; user viewed, edited, shared, or synced files in SharePoint document library; user viewed SharePoint pages; user posted, read, or liked messages in Yammer groups.
 func (m *Office365GroupsActivityGroupCounts) SetActive(value *int64)() {
-    if m != nil {
-        m.active = value
-    }
+    m.active = value
 }
 // SetReportDate sets the reportDate property value. The date on which a number of groups were active.
 func (m *Office365GroupsActivityGroupCounts) SetReportDate(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)() {
-    if m != nil {
-        m.reportDate = value
-    }
+    m.reportDate = value
 }
 // SetReportPeriod sets the reportPeriod property value. The number of days the report covers.
 func (m *Office365GroupsActivityGroupCounts) SetReportPeriod(value *string)() {
-    if m != nil {
-        m.reportPeriod = value
-    }
+    m.reportPeriod = value
 }
 // SetReportRefreshDate sets the reportRefreshDate property value. The latest date of the content.
 func (m *Office365GroupsActivityGroupCounts) SetReportRefreshDate(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)() {
-    if m != nil {
-        m.reportRefreshDate = value
-    }
+    m.reportRefreshDate = value
 }
 // SetTotal sets the total property value. The total number of groups.
 func (m *Office365GroupsActivityGroupCounts) SetTotal(value *int64)() {
-    if m != nil {
-        m.total = value
-    }
+    m.total = value
 }

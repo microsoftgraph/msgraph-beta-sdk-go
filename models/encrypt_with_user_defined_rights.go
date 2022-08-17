@@ -29,27 +29,15 @@ func CreateEncryptWithUserDefinedRightsFromDiscriminatorValue(parseNode i878a80d
 }
 // GetAllowAdHocPermissions gets the allowAdHocPermissions property value. The allowAdHocPermissions property
 func (m *EncryptWithUserDefinedRights) GetAllowAdHocPermissions()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.allowAdHocPermissions
-    }
+    return m.allowAdHocPermissions
 }
 // GetAllowMailForwarding gets the allowMailForwarding property value. The allowMailForwarding property
 func (m *EncryptWithUserDefinedRights) GetAllowMailForwarding()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.allowMailForwarding
-    }
+    return m.allowMailForwarding
 }
 // GetDecryptionRightsManagementTemplateId gets the decryptionRightsManagementTemplateId property value. The decryptionRightsManagementTemplateId property
 func (m *EncryptWithUserDefinedRights) GetDecryptionRightsManagementTemplateId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.decryptionRightsManagementTemplateId
-    }
+    return m.decryptionRightsManagementTemplateId
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *EncryptWithUserDefinedRights) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -114,19 +102,13 @@ func (m *EncryptWithUserDefinedRights) Serialize(writer i878a80d2330e89d26896388
 }
 // SetAllowAdHocPermissions sets the allowAdHocPermissions property value. The allowAdHocPermissions property
 func (m *EncryptWithUserDefinedRights) SetAllowAdHocPermissions(value *bool)() {
-    if m != nil {
-        m.allowAdHocPermissions = value
-    }
+    m.allowAdHocPermissions = value
 }
 // SetAllowMailForwarding sets the allowMailForwarding property value. The allowMailForwarding property
 func (m *EncryptWithUserDefinedRights) SetAllowMailForwarding(value *bool)() {
-    if m != nil {
-        m.allowMailForwarding = value
-    }
+    m.allowMailForwarding = value
 }
 // SetDecryptionRightsManagementTemplateId sets the decryptionRightsManagementTemplateId property value. The decryptionRightsManagementTemplateId property
 func (m *EncryptWithUserDefinedRights) SetDecryptionRightsManagementTemplateId(value *string)() {
-    if m != nil {
-        m.decryptionRightsManagementTemplateId = value
-    }
+    m.decryptionRightsManagementTemplateId = value
 }

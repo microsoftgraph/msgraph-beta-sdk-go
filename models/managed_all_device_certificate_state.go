@@ -48,83 +48,43 @@ func CreateManagedAllDeviceCertificateStateFromDiscriminatorValue(parseNode i878
 }
 // GetCertificateExpirationDateTime gets the certificateExpirationDateTime property value. Certificate expiry date
 func (m *ManagedAllDeviceCertificateState) GetCertificateExpirationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.certificateExpirationDateTime
-    }
+    return m.certificateExpirationDateTime
 }
 // GetCertificateExtendedKeyUsages gets the certificateExtendedKeyUsages property value. Enhanced Key Usage
 func (m *ManagedAllDeviceCertificateState) GetCertificateExtendedKeyUsages()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.certificateExtendedKeyUsages
-    }
+    return m.certificateExtendedKeyUsages
 }
 // GetCertificateIssuanceDateTime gets the certificateIssuanceDateTime property value. Issuance date
 func (m *ManagedAllDeviceCertificateState) GetCertificateIssuanceDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.certificateIssuanceDateTime
-    }
+    return m.certificateIssuanceDateTime
 }
 // GetCertificateIssuerName gets the certificateIssuerName property value. Issuer
 func (m *ManagedAllDeviceCertificateState) GetCertificateIssuerName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.certificateIssuerName
-    }
+    return m.certificateIssuerName
 }
 // GetCertificateKeyUsages gets the certificateKeyUsages property value. Key Usage
 func (m *ManagedAllDeviceCertificateState) GetCertificateKeyUsages()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.certificateKeyUsages
-    }
+    return m.certificateKeyUsages
 }
 // GetCertificateRevokeStatus gets the certificateRevokeStatus property value. Certificate Revocation Status.
 func (m *ManagedAllDeviceCertificateState) GetCertificateRevokeStatus()(*CertificateRevocationStatus) {
-    if m == nil {
-        return nil
-    } else {
-        return m.certificateRevokeStatus
-    }
+    return m.certificateRevokeStatus
 }
 // GetCertificateRevokeStatusLastChangeDateTime gets the certificateRevokeStatusLastChangeDateTime property value. The time the revoke status was last changed
 func (m *ManagedAllDeviceCertificateState) GetCertificateRevokeStatusLastChangeDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.certificateRevokeStatusLastChangeDateTime
-    }
+    return m.certificateRevokeStatusLastChangeDateTime
 }
 // GetCertificateSerialNumber gets the certificateSerialNumber property value. Serial number
 func (m *ManagedAllDeviceCertificateState) GetCertificateSerialNumber()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.certificateSerialNumber
-    }
+    return m.certificateSerialNumber
 }
 // GetCertificateSubjectName gets the certificateSubjectName property value. Certificate subject name
 func (m *ManagedAllDeviceCertificateState) GetCertificateSubjectName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.certificateSubjectName
-    }
+    return m.certificateSubjectName
 }
 // GetCertificateThumbprint gets the certificateThumbprint property value. Thumbprint
 func (m *ManagedAllDeviceCertificateState) GetCertificateThumbprint()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.certificateThumbprint
-    }
+    return m.certificateThumbprint
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ManagedAllDeviceCertificateState) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -253,19 +213,11 @@ func (m *ManagedAllDeviceCertificateState) GetFieldDeserializers()(map[string]fu
 }
 // GetManagedDeviceDisplayName gets the managedDeviceDisplayName property value. Device display name
 func (m *ManagedAllDeviceCertificateState) GetManagedDeviceDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.managedDeviceDisplayName
-    }
+    return m.managedDeviceDisplayName
 }
 // GetUserPrincipalName gets the userPrincipalName property value. User principal name
 func (m *ManagedAllDeviceCertificateState) GetUserPrincipalName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userPrincipalName
-    }
+    return m.userPrincipalName
 }
 // Serialize serializes information the current object
 func (m *ManagedAllDeviceCertificateState) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -350,73 +302,49 @@ func (m *ManagedAllDeviceCertificateState) Serialize(writer i878a80d2330e89d2689
 }
 // SetCertificateExpirationDateTime sets the certificateExpirationDateTime property value. Certificate expiry date
 func (m *ManagedAllDeviceCertificateState) SetCertificateExpirationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.certificateExpirationDateTime = value
-    }
+    m.certificateExpirationDateTime = value
 }
 // SetCertificateExtendedKeyUsages sets the certificateExtendedKeyUsages property value. Enhanced Key Usage
 func (m *ManagedAllDeviceCertificateState) SetCertificateExtendedKeyUsages(value *string)() {
-    if m != nil {
-        m.certificateExtendedKeyUsages = value
-    }
+    m.certificateExtendedKeyUsages = value
 }
 // SetCertificateIssuanceDateTime sets the certificateIssuanceDateTime property value. Issuance date
 func (m *ManagedAllDeviceCertificateState) SetCertificateIssuanceDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.certificateIssuanceDateTime = value
-    }
+    m.certificateIssuanceDateTime = value
 }
 // SetCertificateIssuerName sets the certificateIssuerName property value. Issuer
 func (m *ManagedAllDeviceCertificateState) SetCertificateIssuerName(value *string)() {
-    if m != nil {
-        m.certificateIssuerName = value
-    }
+    m.certificateIssuerName = value
 }
 // SetCertificateKeyUsages sets the certificateKeyUsages property value. Key Usage
 func (m *ManagedAllDeviceCertificateState) SetCertificateKeyUsages(value *int32)() {
-    if m != nil {
-        m.certificateKeyUsages = value
-    }
+    m.certificateKeyUsages = value
 }
 // SetCertificateRevokeStatus sets the certificateRevokeStatus property value. Certificate Revocation Status.
 func (m *ManagedAllDeviceCertificateState) SetCertificateRevokeStatus(value *CertificateRevocationStatus)() {
-    if m != nil {
-        m.certificateRevokeStatus = value
-    }
+    m.certificateRevokeStatus = value
 }
 // SetCertificateRevokeStatusLastChangeDateTime sets the certificateRevokeStatusLastChangeDateTime property value. The time the revoke status was last changed
 func (m *ManagedAllDeviceCertificateState) SetCertificateRevokeStatusLastChangeDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.certificateRevokeStatusLastChangeDateTime = value
-    }
+    m.certificateRevokeStatusLastChangeDateTime = value
 }
 // SetCertificateSerialNumber sets the certificateSerialNumber property value. Serial number
 func (m *ManagedAllDeviceCertificateState) SetCertificateSerialNumber(value *string)() {
-    if m != nil {
-        m.certificateSerialNumber = value
-    }
+    m.certificateSerialNumber = value
 }
 // SetCertificateSubjectName sets the certificateSubjectName property value. Certificate subject name
 func (m *ManagedAllDeviceCertificateState) SetCertificateSubjectName(value *string)() {
-    if m != nil {
-        m.certificateSubjectName = value
-    }
+    m.certificateSubjectName = value
 }
 // SetCertificateThumbprint sets the certificateThumbprint property value. Thumbprint
 func (m *ManagedAllDeviceCertificateState) SetCertificateThumbprint(value *string)() {
-    if m != nil {
-        m.certificateThumbprint = value
-    }
+    m.certificateThumbprint = value
 }
 // SetManagedDeviceDisplayName sets the managedDeviceDisplayName property value. Device display name
 func (m *ManagedAllDeviceCertificateState) SetManagedDeviceDisplayName(value *string)() {
-    if m != nil {
-        m.managedDeviceDisplayName = value
-    }
+    m.managedDeviceDisplayName = value
 }
 // SetUserPrincipalName sets the userPrincipalName property value. User principal name
 func (m *ManagedAllDeviceCertificateState) SetUserPrincipalName(value *string)() {
-    if m != nil {
-        m.userPrincipalName = value
-    }
+    m.userPrincipalName = value
 }

@@ -100,51 +100,27 @@ func (m *ReferenceAttachment) GetFieldDeserializers()(map[string]func(i878a80d23
 }
 // GetIsFolder gets the isFolder property value. Specifies whether the attachment is a link to a folder. Must set this to true if sourceUrl is a link to a folder. Optional.
 func (m *ReferenceAttachment) GetIsFolder()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isFolder
-    }
+    return m.isFolder
 }
 // GetPermission gets the permission property value. Specifies the permissions granted for the attachment by the type of provider in providerType. Possible values are: other, view, edit, anonymousView, anonymousEdit, organizationView, organizationEdit. Optional.
 func (m *ReferenceAttachment) GetPermission()(*ReferenceAttachmentPermission) {
-    if m == nil {
-        return nil
-    } else {
-        return m.permission
-    }
+    return m.permission
 }
 // GetPreviewUrl gets the previewUrl property value. Applies to only a reference attachment of an image - URL to get a preview image. Use thumbnailUrl and previewUrl only when sourceUrl identifies an image file. Optional.
 func (m *ReferenceAttachment) GetPreviewUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.previewUrl
-    }
+    return m.previewUrl
 }
 // GetProviderType gets the providerType property value. The type of provider that supports an attachment of this contentType. Possible values are: other, oneDriveBusiness, oneDriveConsumer, dropbox. Optional.
 func (m *ReferenceAttachment) GetProviderType()(*ReferenceAttachmentProvider) {
-    if m == nil {
-        return nil
-    } else {
-        return m.providerType
-    }
+    return m.providerType
 }
 // GetSourceUrl gets the sourceUrl property value. URL to get the attachment content. If this is a URL to a folder, then for the folder to be displayed correctly in Outlook or Outlook on the web, set isFolder to true. Required.
 func (m *ReferenceAttachment) GetSourceUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.sourceUrl
-    }
+    return m.sourceUrl
 }
 // GetThumbnailUrl gets the thumbnailUrl property value. Applies to only a reference attachment of an image - URL to get a thumbnail image. Use thumbnailUrl and previewUrl only when sourceUrl identifies an image file. Optional.
 func (m *ReferenceAttachment) GetThumbnailUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.thumbnailUrl
-    }
+    return m.thumbnailUrl
 }
 // Serialize serializes information the current object
 func (m *ReferenceAttachment) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -194,37 +170,25 @@ func (m *ReferenceAttachment) Serialize(writer i878a80d2330e89d26896388a3f487eef
 }
 // SetIsFolder sets the isFolder property value. Specifies whether the attachment is a link to a folder. Must set this to true if sourceUrl is a link to a folder. Optional.
 func (m *ReferenceAttachment) SetIsFolder(value *bool)() {
-    if m != nil {
-        m.isFolder = value
-    }
+    m.isFolder = value
 }
 // SetPermission sets the permission property value. Specifies the permissions granted for the attachment by the type of provider in providerType. Possible values are: other, view, edit, anonymousView, anonymousEdit, organizationView, organizationEdit. Optional.
 func (m *ReferenceAttachment) SetPermission(value *ReferenceAttachmentPermission)() {
-    if m != nil {
-        m.permission = value
-    }
+    m.permission = value
 }
 // SetPreviewUrl sets the previewUrl property value. Applies to only a reference attachment of an image - URL to get a preview image. Use thumbnailUrl and previewUrl only when sourceUrl identifies an image file. Optional.
 func (m *ReferenceAttachment) SetPreviewUrl(value *string)() {
-    if m != nil {
-        m.previewUrl = value
-    }
+    m.previewUrl = value
 }
 // SetProviderType sets the providerType property value. The type of provider that supports an attachment of this contentType. Possible values are: other, oneDriveBusiness, oneDriveConsumer, dropbox. Optional.
 func (m *ReferenceAttachment) SetProviderType(value *ReferenceAttachmentProvider)() {
-    if m != nil {
-        m.providerType = value
-    }
+    m.providerType = value
 }
 // SetSourceUrl sets the sourceUrl property value. URL to get the attachment content. If this is a URL to a folder, then for the folder to be displayed correctly in Outlook or Outlook on the web, set isFolder to true. Required.
 func (m *ReferenceAttachment) SetSourceUrl(value *string)() {
-    if m != nil {
-        m.sourceUrl = value
-    }
+    m.sourceUrl = value
 }
 // SetThumbnailUrl sets the thumbnailUrl property value. Applies to only a reference attachment of an image - URL to get a thumbnail image. Use thumbnailUrl and previewUrl only when sourceUrl identifies an image file. Optional.
 func (m *ReferenceAttachment) SetThumbnailUrl(value *string)() {
-    if m != nil {
-        m.thumbnailUrl = value
-    }
+    m.thumbnailUrl = value
 }

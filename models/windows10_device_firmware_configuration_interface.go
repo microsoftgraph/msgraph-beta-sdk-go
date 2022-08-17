@@ -65,43 +65,23 @@ func CreateWindows10DeviceFirmwareConfigurationInterfaceFromDiscriminatorValue(p
 }
 // GetBluetooth gets the bluetooth property value. Possible values of a property
 func (m *Windows10DeviceFirmwareConfigurationInterface) GetBluetooth()(*Enablement) {
-    if m == nil {
-        return nil
-    } else {
-        return m.bluetooth
-    }
+    return m.bluetooth
 }
 // GetBootFromBuiltInNetworkAdapters gets the bootFromBuiltInNetworkAdapters property value. Possible values of a property
 func (m *Windows10DeviceFirmwareConfigurationInterface) GetBootFromBuiltInNetworkAdapters()(*Enablement) {
-    if m == nil {
-        return nil
-    } else {
-        return m.bootFromBuiltInNetworkAdapters
-    }
+    return m.bootFromBuiltInNetworkAdapters
 }
 // GetBootFromExternalMedia gets the bootFromExternalMedia property value. Possible values of a property
 func (m *Windows10DeviceFirmwareConfigurationInterface) GetBootFromExternalMedia()(*Enablement) {
-    if m == nil {
-        return nil
-    } else {
-        return m.bootFromExternalMedia
-    }
+    return m.bootFromExternalMedia
 }
 // GetCameras gets the cameras property value. Possible values of a property
 func (m *Windows10DeviceFirmwareConfigurationInterface) GetCameras()(*Enablement) {
-    if m == nil {
-        return nil
-    } else {
-        return m.cameras
-    }
+    return m.cameras
 }
 // GetChangeUefiSettingsPermission gets the changeUefiSettingsPermission property value. Defines the permission level granted to users to enable them change Uefi settings
 func (m *Windows10DeviceFirmwareConfigurationInterface) GetChangeUefiSettingsPermission()(*ChangeUefiSettingsPermission) {
-    if m == nil {
-        return nil
-    } else {
-        return m.changeUefiSettingsPermission
-    }
+    return m.changeUefiSettingsPermission
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Windows10DeviceFirmwareConfigurationInterface) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -320,131 +300,67 @@ func (m *Windows10DeviceFirmwareConfigurationInterface) GetFieldDeserializers()(
 }
 // GetFrontCamera gets the frontCamera property value. Possible values of a property
 func (m *Windows10DeviceFirmwareConfigurationInterface) GetFrontCamera()(*Enablement) {
-    if m == nil {
-        return nil
-    } else {
-        return m.frontCamera
-    }
+    return m.frontCamera
 }
 // GetInfraredCamera gets the infraredCamera property value. Possible values of a property
 func (m *Windows10DeviceFirmwareConfigurationInterface) GetInfraredCamera()(*Enablement) {
-    if m == nil {
-        return nil
-    } else {
-        return m.infraredCamera
-    }
+    return m.infraredCamera
 }
 // GetMicrophone gets the microphone property value. Possible values of a property
 func (m *Windows10DeviceFirmwareConfigurationInterface) GetMicrophone()(*Enablement) {
-    if m == nil {
-        return nil
-    } else {
-        return m.microphone
-    }
+    return m.microphone
 }
 // GetMicrophonesAndSpeakers gets the microphonesAndSpeakers property value. Possible values of a property
 func (m *Windows10DeviceFirmwareConfigurationInterface) GetMicrophonesAndSpeakers()(*Enablement) {
-    if m == nil {
-        return nil
-    } else {
-        return m.microphonesAndSpeakers
-    }
+    return m.microphonesAndSpeakers
 }
 // GetNearFieldCommunication gets the nearFieldCommunication property value. Possible values of a property
 func (m *Windows10DeviceFirmwareConfigurationInterface) GetNearFieldCommunication()(*Enablement) {
-    if m == nil {
-        return nil
-    } else {
-        return m.nearFieldCommunication
-    }
+    return m.nearFieldCommunication
 }
 // GetRadios gets the radios property value. Possible values of a property
 func (m *Windows10DeviceFirmwareConfigurationInterface) GetRadios()(*Enablement) {
-    if m == nil {
-        return nil
-    } else {
-        return m.radios
-    }
+    return m.radios
 }
 // GetRearCamera gets the rearCamera property value. Possible values of a property
 func (m *Windows10DeviceFirmwareConfigurationInterface) GetRearCamera()(*Enablement) {
-    if m == nil {
-        return nil
-    } else {
-        return m.rearCamera
-    }
+    return m.rearCamera
 }
 // GetSdCard gets the sdCard property value. Possible values of a property
 func (m *Windows10DeviceFirmwareConfigurationInterface) GetSdCard()(*Enablement) {
-    if m == nil {
-        return nil
-    } else {
-        return m.sdCard
-    }
+    return m.sdCard
 }
 // GetSimultaneousMultiThreading gets the simultaneousMultiThreading property value. Possible values of a property
 func (m *Windows10DeviceFirmwareConfigurationInterface) GetSimultaneousMultiThreading()(*Enablement) {
-    if m == nil {
-        return nil
-    } else {
-        return m.simultaneousMultiThreading
-    }
+    return m.simultaneousMultiThreading
 }
 // GetUsbTypeAPort gets the usbTypeAPort property value. Possible values of a property
 func (m *Windows10DeviceFirmwareConfigurationInterface) GetUsbTypeAPort()(*Enablement) {
-    if m == nil {
-        return nil
-    } else {
-        return m.usbTypeAPort
-    }
+    return m.usbTypeAPort
 }
 // GetVirtualizationOfCpuAndIO gets the virtualizationOfCpuAndIO property value. Possible values of a property
 func (m *Windows10DeviceFirmwareConfigurationInterface) GetVirtualizationOfCpuAndIO()(*Enablement) {
-    if m == nil {
-        return nil
-    } else {
-        return m.virtualizationOfCpuAndIO
-    }
+    return m.virtualizationOfCpuAndIO
 }
 // GetWakeOnLAN gets the wakeOnLAN property value. Possible values of a property
 func (m *Windows10DeviceFirmwareConfigurationInterface) GetWakeOnLAN()(*Enablement) {
-    if m == nil {
-        return nil
-    } else {
-        return m.wakeOnLAN
-    }
+    return m.wakeOnLAN
 }
 // GetWakeOnPower gets the wakeOnPower property value. Possible values of a property
 func (m *Windows10DeviceFirmwareConfigurationInterface) GetWakeOnPower()(*Enablement) {
-    if m == nil {
-        return nil
-    } else {
-        return m.wakeOnPower
-    }
+    return m.wakeOnPower
 }
 // GetWiFi gets the wiFi property value. Possible values of a property
 func (m *Windows10DeviceFirmwareConfigurationInterface) GetWiFi()(*Enablement) {
-    if m == nil {
-        return nil
-    } else {
-        return m.wiFi
-    }
+    return m.wiFi
 }
 // GetWindowsPlatformBinaryTable gets the windowsPlatformBinaryTable property value. Possible values of a property
 func (m *Windows10DeviceFirmwareConfigurationInterface) GetWindowsPlatformBinaryTable()(*Enablement) {
-    if m == nil {
-        return nil
-    } else {
-        return m.windowsPlatformBinaryTable
-    }
+    return m.windowsPlatformBinaryTable
 }
 // GetWirelessWideAreaNetwork gets the wirelessWideAreaNetwork property value. Possible values of a property
 func (m *Windows10DeviceFirmwareConfigurationInterface) GetWirelessWideAreaNetwork()(*Enablement) {
-    if m == nil {
-        return nil
-    } else {
-        return m.wirelessWideAreaNetwork
-    }
+    return m.wirelessWideAreaNetwork
 }
 // Serialize serializes information the current object
 func (m *Windows10DeviceFirmwareConfigurationInterface) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -603,127 +519,85 @@ func (m *Windows10DeviceFirmwareConfigurationInterface) Serialize(writer i878a80
 }
 // SetBluetooth sets the bluetooth property value. Possible values of a property
 func (m *Windows10DeviceFirmwareConfigurationInterface) SetBluetooth(value *Enablement)() {
-    if m != nil {
-        m.bluetooth = value
-    }
+    m.bluetooth = value
 }
 // SetBootFromBuiltInNetworkAdapters sets the bootFromBuiltInNetworkAdapters property value. Possible values of a property
 func (m *Windows10DeviceFirmwareConfigurationInterface) SetBootFromBuiltInNetworkAdapters(value *Enablement)() {
-    if m != nil {
-        m.bootFromBuiltInNetworkAdapters = value
-    }
+    m.bootFromBuiltInNetworkAdapters = value
 }
 // SetBootFromExternalMedia sets the bootFromExternalMedia property value. Possible values of a property
 func (m *Windows10DeviceFirmwareConfigurationInterface) SetBootFromExternalMedia(value *Enablement)() {
-    if m != nil {
-        m.bootFromExternalMedia = value
-    }
+    m.bootFromExternalMedia = value
 }
 // SetCameras sets the cameras property value. Possible values of a property
 func (m *Windows10DeviceFirmwareConfigurationInterface) SetCameras(value *Enablement)() {
-    if m != nil {
-        m.cameras = value
-    }
+    m.cameras = value
 }
 // SetChangeUefiSettingsPermission sets the changeUefiSettingsPermission property value. Defines the permission level granted to users to enable them change Uefi settings
 func (m *Windows10DeviceFirmwareConfigurationInterface) SetChangeUefiSettingsPermission(value *ChangeUefiSettingsPermission)() {
-    if m != nil {
-        m.changeUefiSettingsPermission = value
-    }
+    m.changeUefiSettingsPermission = value
 }
 // SetFrontCamera sets the frontCamera property value. Possible values of a property
 func (m *Windows10DeviceFirmwareConfigurationInterface) SetFrontCamera(value *Enablement)() {
-    if m != nil {
-        m.frontCamera = value
-    }
+    m.frontCamera = value
 }
 // SetInfraredCamera sets the infraredCamera property value. Possible values of a property
 func (m *Windows10DeviceFirmwareConfigurationInterface) SetInfraredCamera(value *Enablement)() {
-    if m != nil {
-        m.infraredCamera = value
-    }
+    m.infraredCamera = value
 }
 // SetMicrophone sets the microphone property value. Possible values of a property
 func (m *Windows10DeviceFirmwareConfigurationInterface) SetMicrophone(value *Enablement)() {
-    if m != nil {
-        m.microphone = value
-    }
+    m.microphone = value
 }
 // SetMicrophonesAndSpeakers sets the microphonesAndSpeakers property value. Possible values of a property
 func (m *Windows10DeviceFirmwareConfigurationInterface) SetMicrophonesAndSpeakers(value *Enablement)() {
-    if m != nil {
-        m.microphonesAndSpeakers = value
-    }
+    m.microphonesAndSpeakers = value
 }
 // SetNearFieldCommunication sets the nearFieldCommunication property value. Possible values of a property
 func (m *Windows10DeviceFirmwareConfigurationInterface) SetNearFieldCommunication(value *Enablement)() {
-    if m != nil {
-        m.nearFieldCommunication = value
-    }
+    m.nearFieldCommunication = value
 }
 // SetRadios sets the radios property value. Possible values of a property
 func (m *Windows10DeviceFirmwareConfigurationInterface) SetRadios(value *Enablement)() {
-    if m != nil {
-        m.radios = value
-    }
+    m.radios = value
 }
 // SetRearCamera sets the rearCamera property value. Possible values of a property
 func (m *Windows10DeviceFirmwareConfigurationInterface) SetRearCamera(value *Enablement)() {
-    if m != nil {
-        m.rearCamera = value
-    }
+    m.rearCamera = value
 }
 // SetSdCard sets the sdCard property value. Possible values of a property
 func (m *Windows10DeviceFirmwareConfigurationInterface) SetSdCard(value *Enablement)() {
-    if m != nil {
-        m.sdCard = value
-    }
+    m.sdCard = value
 }
 // SetSimultaneousMultiThreading sets the simultaneousMultiThreading property value. Possible values of a property
 func (m *Windows10DeviceFirmwareConfigurationInterface) SetSimultaneousMultiThreading(value *Enablement)() {
-    if m != nil {
-        m.simultaneousMultiThreading = value
-    }
+    m.simultaneousMultiThreading = value
 }
 // SetUsbTypeAPort sets the usbTypeAPort property value. Possible values of a property
 func (m *Windows10DeviceFirmwareConfigurationInterface) SetUsbTypeAPort(value *Enablement)() {
-    if m != nil {
-        m.usbTypeAPort = value
-    }
+    m.usbTypeAPort = value
 }
 // SetVirtualizationOfCpuAndIO sets the virtualizationOfCpuAndIO property value. Possible values of a property
 func (m *Windows10DeviceFirmwareConfigurationInterface) SetVirtualizationOfCpuAndIO(value *Enablement)() {
-    if m != nil {
-        m.virtualizationOfCpuAndIO = value
-    }
+    m.virtualizationOfCpuAndIO = value
 }
 // SetWakeOnLAN sets the wakeOnLAN property value. Possible values of a property
 func (m *Windows10DeviceFirmwareConfigurationInterface) SetWakeOnLAN(value *Enablement)() {
-    if m != nil {
-        m.wakeOnLAN = value
-    }
+    m.wakeOnLAN = value
 }
 // SetWakeOnPower sets the wakeOnPower property value. Possible values of a property
 func (m *Windows10DeviceFirmwareConfigurationInterface) SetWakeOnPower(value *Enablement)() {
-    if m != nil {
-        m.wakeOnPower = value
-    }
+    m.wakeOnPower = value
 }
 // SetWiFi sets the wiFi property value. Possible values of a property
 func (m *Windows10DeviceFirmwareConfigurationInterface) SetWiFi(value *Enablement)() {
-    if m != nil {
-        m.wiFi = value
-    }
+    m.wiFi = value
 }
 // SetWindowsPlatformBinaryTable sets the windowsPlatformBinaryTable property value. Possible values of a property
 func (m *Windows10DeviceFirmwareConfigurationInterface) SetWindowsPlatformBinaryTable(value *Enablement)() {
-    if m != nil {
-        m.windowsPlatformBinaryTable = value
-    }
+    m.windowsPlatformBinaryTable = value
 }
 // SetWirelessWideAreaNetwork sets the wirelessWideAreaNetwork property value. Possible values of a property
 func (m *Windows10DeviceFirmwareConfigurationInterface) SetWirelessWideAreaNetwork(value *Enablement)() {
-    if m != nil {
-        m.wirelessWideAreaNetwork = value
-    }
+    m.wirelessWideAreaNetwork = value
 }

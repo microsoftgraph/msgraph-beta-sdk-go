@@ -30,19 +30,11 @@ func CreateWebPartFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f48
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *WebPart) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetData gets the data property value. The required properties for the webPart (varies by webPart)
 func (m *WebPart) GetData()(SitePageDataable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.data
-    }
+    return m.data
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *WebPart) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -81,19 +73,11 @@ func (m *WebPart) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *WebPart) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetType gets the type property value. A unique identifier specifying the webPart type. Read-only.
 func (m *WebPart) GetType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.type_escaped
-    }
+    return m.type_escaped
 }
 // Serialize serializes information the current object
 func (m *WebPart) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -125,25 +109,17 @@ func (m *WebPart) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *WebPart) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetData sets the data property value. The required properties for the webPart (varies by webPart)
 func (m *WebPart) SetData(value SitePageDataable)() {
-    if m != nil {
-        m.data = value
-    }
+    m.data = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *WebPart) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetType sets the type property value. A unique identifier specifying the webPart type. Read-only.
 func (m *WebPart) SetType(value *string)() {
-    if m != nil {
-        m.type_escaped = value
-    }
+    m.type_escaped = value
 }

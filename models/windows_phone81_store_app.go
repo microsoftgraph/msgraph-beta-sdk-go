@@ -25,11 +25,7 @@ func CreateWindowsPhone81StoreAppFromDiscriminatorValue(parseNode i878a80d2330e8
 }
 // GetAppStoreUrl gets the appStoreUrl property value. The Windows Phone 8.1 app store URL.
 func (m *WindowsPhone81StoreApp) GetAppStoreUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.appStoreUrl
-    }
+    return m.appStoreUrl
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *WindowsPhone81StoreApp) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -62,7 +58,5 @@ func (m *WindowsPhone81StoreApp) Serialize(writer i878a80d2330e89d26896388a3f487
 }
 // SetAppStoreUrl sets the appStoreUrl property value. The Windows Phone 8.1 app store URL.
 func (m *WindowsPhone81StoreApp) SetAppStoreUrl(value *string)() {
-    if m != nil {
-        m.appStoreUrl = value
-    }
+    m.appStoreUrl = value
 }

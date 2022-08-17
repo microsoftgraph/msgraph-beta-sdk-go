@@ -25,11 +25,7 @@ func CreateGroupPolicyPresentationCheckBoxFromDiscriminatorValue(parseNode i878a
 }
 // GetDefaultChecked gets the defaultChecked property value. Default value for the check box. The default value is false.
 func (m *GroupPolicyPresentationCheckBox) GetDefaultChecked()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.defaultChecked
-    }
+    return m.defaultChecked
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *GroupPolicyPresentationCheckBox) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -62,7 +58,5 @@ func (m *GroupPolicyPresentationCheckBox) Serialize(writer i878a80d2330e89d26896
 }
 // SetDefaultChecked sets the defaultChecked property value. Default value for the check box. The default value is false.
 func (m *GroupPolicyPresentationCheckBox) SetDefaultChecked(value *bool)() {
-    if m != nil {
-        m.defaultChecked = value
-    }
+    m.defaultChecked = value
 }

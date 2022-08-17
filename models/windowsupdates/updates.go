@@ -32,19 +32,11 @@ func CreateUpdatesFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f48
 }
 // GetCatalog gets the catalog property value. Catalog of content that can be approved for deployment by the deployment service. Read-only.
 func (m *Updates) GetCatalog()(Catalogable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.catalog
-    }
+    return m.catalog
 }
 // GetDeployments gets the deployments property value. Deployments created using the deployment service. Read-only.
 func (m *Updates) GetDeployments()([]Deploymentable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deployments
-    }
+    return m.deployments
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Updates) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -105,19 +97,11 @@ func (m *Updates) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
 }
 // GetResourceConnections gets the resourceConnections property value. Service connections to external resources such as analytics workspaces.
 func (m *Updates) GetResourceConnections()([]ResourceConnectionable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.resourceConnections
-    }
+    return m.resourceConnections
 }
 // GetUpdatableAssets gets the updatableAssets property value. Assets registered with the deployment service that can receive updates. Read-only.
 func (m *Updates) GetUpdatableAssets()([]UpdatableAssetable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.updatableAssets
-    }
+    return m.updatableAssets
 }
 // Serialize serializes information the current object
 func (m *Updates) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -165,25 +149,17 @@ func (m *Updates) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
 }
 // SetCatalog sets the catalog property value. Catalog of content that can be approved for deployment by the deployment service. Read-only.
 func (m *Updates) SetCatalog(value Catalogable)() {
-    if m != nil {
-        m.catalog = value
-    }
+    m.catalog = value
 }
 // SetDeployments sets the deployments property value. Deployments created using the deployment service. Read-only.
 func (m *Updates) SetDeployments(value []Deploymentable)() {
-    if m != nil {
-        m.deployments = value
-    }
+    m.deployments = value
 }
 // SetResourceConnections sets the resourceConnections property value. Service connections to external resources such as analytics workspaces.
 func (m *Updates) SetResourceConnections(value []ResourceConnectionable)() {
-    if m != nil {
-        m.resourceConnections = value
-    }
+    m.resourceConnections = value
 }
 // SetUpdatableAssets sets the updatableAssets property value. Assets registered with the deployment service that can receive updates. Read-only.
 func (m *Updates) SetUpdatableAssets(value []UpdatableAssetable)() {
-    if m != nil {
-        m.updatableAssets = value
-    }
+    m.updatableAssets = value
 }

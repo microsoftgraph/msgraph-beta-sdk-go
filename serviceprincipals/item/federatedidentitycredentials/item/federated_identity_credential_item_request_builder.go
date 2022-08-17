@@ -22,7 +22,7 @@ type FederatedIdentityCredentialItemRequestBuilderDeleteRequestConfiguration str
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// FederatedIdentityCredentialItemRequestBuilderGetQueryParameters federated identities for a specific type of service principal - managed identity. Supports $expand and $filter (eq when counting empty collections).
+// FederatedIdentityCredentialItemRequestBuilderGetQueryParameters get federatedIdentityCredentials from servicePrincipals
 type FederatedIdentityCredentialItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -80,11 +80,11 @@ func (m *FederatedIdentityCredentialItemRequestBuilder) CreateDeleteRequestInfor
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation federated identities for a specific type of service principal - managed identity. Supports $expand and $filter (eq when counting empty collections).
+// CreateGetRequestInformation get federatedIdentityCredentials from servicePrincipals
 func (m *FederatedIdentityCredentialItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration federated identities for a specific type of service principal - managed identity. Supports $expand and $filter (eq when counting empty collections).
+// CreateGetRequestInformationWithRequestConfiguration get federatedIdentityCredentials from servicePrincipals
 func (m *FederatedIdentityCredentialItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *FederatedIdentityCredentialItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -137,11 +137,11 @@ func (m *FederatedIdentityCredentialItemRequestBuilder) DeleteWithRequestConfigu
     }
     return nil
 }
-// Get federated identities for a specific type of service principal - managed identity. Supports $expand and $filter (eq when counting empty collections).
+// Get get federatedIdentityCredentials from servicePrincipals
 func (m *FederatedIdentityCredentialItemRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.FederatedIdentityCredentialable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler federated identities for a specific type of service principal - managed identity. Supports $expand and $filter (eq when counting empty collections).
+// GetWithRequestConfigurationAndResponseHandler get federatedIdentityCredentials from servicePrincipals
 func (m *FederatedIdentityCredentialItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *FederatedIdentityCredentialItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.FederatedIdentityCredentialable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

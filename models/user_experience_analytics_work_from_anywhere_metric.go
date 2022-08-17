@@ -44,11 +44,7 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereMetric) GetFieldDeserializers()(
 }
 // GetMetricDevices gets the metricDevices property value. The work from anywhere metric devices.
 func (m *UserExperienceAnalyticsWorkFromAnywhereMetric) GetMetricDevices()([]UserExperienceAnalyticsWorkFromAnywhereDeviceable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.metricDevices
-    }
+    return m.metricDevices
 }
 // Serialize serializes information the current object
 func (m *UserExperienceAnalyticsWorkFromAnywhereMetric) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -70,7 +66,5 @@ func (m *UserExperienceAnalyticsWorkFromAnywhereMetric) Serialize(writer i878a80
 }
 // SetMetricDevices sets the metricDevices property value. The work from anywhere metric devices.
 func (m *UserExperienceAnalyticsWorkFromAnywhereMetric) SetMetricDevices(value []UserExperienceAnalyticsWorkFromAnywhereDeviceable)() {
-    if m != nil {
-        m.metricDevices = value
-    }
+    m.metricDevices = value
 }

@@ -36,19 +36,11 @@ func CreateGroupPolicyUploadedDefinitionFileFromDiscriminatorValue(parseNode i87
 }
 // GetContent gets the content property value. The contents of the uploaded ADMX file.
 func (m *GroupPolicyUploadedDefinitionFile) GetContent()([]byte) {
-    if m == nil {
-        return nil
-    } else {
-        return m.content
-    }
+    return m.content
 }
 // GetDefaultLanguageCode gets the defaultLanguageCode property value. The default language of the uploaded ADMX file.
 func (m *GroupPolicyUploadedDefinitionFile) GetDefaultLanguageCode()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.defaultLanguageCode
-    }
+    return m.defaultLanguageCode
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *GroupPolicyUploadedDefinitionFile) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -125,35 +117,19 @@ func (m *GroupPolicyUploadedDefinitionFile) GetFieldDeserializers()(map[string]f
 }
 // GetGroupPolicyOperations gets the groupPolicyOperations property value. The list of operations on the uploaded ADMX file.
 func (m *GroupPolicyUploadedDefinitionFile) GetGroupPolicyOperations()([]GroupPolicyOperationable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.groupPolicyOperations
-    }
+    return m.groupPolicyOperations
 }
 // GetGroupPolicyUploadedLanguageFiles gets the groupPolicyUploadedLanguageFiles property value. The list of ADML files associated with the uploaded ADMX file.
 func (m *GroupPolicyUploadedDefinitionFile) GetGroupPolicyUploadedLanguageFiles()([]GroupPolicyUploadedLanguageFileable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.groupPolicyUploadedLanguageFiles
-    }
+    return m.groupPolicyUploadedLanguageFiles
 }
 // GetStatus gets the status property value. Type of Group Policy uploaded definition file status.
 func (m *GroupPolicyUploadedDefinitionFile) GetStatus()(*GroupPolicyUploadedDefinitionFileStatus) {
-    if m == nil {
-        return nil
-    } else {
-        return m.status
-    }
+    return m.status
 }
 // GetUploadDateTime gets the uploadDateTime property value. The uploaded time of the uploaded ADMX file.
 func (m *GroupPolicyUploadedDefinitionFile) GetUploadDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.uploadDateTime
-    }
+    return m.uploadDateTime
 }
 // Serialize serializes information the current object
 func (m *GroupPolicyUploadedDefinitionFile) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -210,37 +186,25 @@ func (m *GroupPolicyUploadedDefinitionFile) Serialize(writer i878a80d2330e89d268
 }
 // SetContent sets the content property value. The contents of the uploaded ADMX file.
 func (m *GroupPolicyUploadedDefinitionFile) SetContent(value []byte)() {
-    if m != nil {
-        m.content = value
-    }
+    m.content = value
 }
 // SetDefaultLanguageCode sets the defaultLanguageCode property value. The default language of the uploaded ADMX file.
 func (m *GroupPolicyUploadedDefinitionFile) SetDefaultLanguageCode(value *string)() {
-    if m != nil {
-        m.defaultLanguageCode = value
-    }
+    m.defaultLanguageCode = value
 }
 // SetGroupPolicyOperations sets the groupPolicyOperations property value. The list of operations on the uploaded ADMX file.
 func (m *GroupPolicyUploadedDefinitionFile) SetGroupPolicyOperations(value []GroupPolicyOperationable)() {
-    if m != nil {
-        m.groupPolicyOperations = value
-    }
+    m.groupPolicyOperations = value
 }
 // SetGroupPolicyUploadedLanguageFiles sets the groupPolicyUploadedLanguageFiles property value. The list of ADML files associated with the uploaded ADMX file.
 func (m *GroupPolicyUploadedDefinitionFile) SetGroupPolicyUploadedLanguageFiles(value []GroupPolicyUploadedLanguageFileable)() {
-    if m != nil {
-        m.groupPolicyUploadedLanguageFiles = value
-    }
+    m.groupPolicyUploadedLanguageFiles = value
 }
 // SetStatus sets the status property value. Type of Group Policy uploaded definition file status.
 func (m *GroupPolicyUploadedDefinitionFile) SetStatus(value *GroupPolicyUploadedDefinitionFileStatus)() {
-    if m != nil {
-        m.status = value
-    }
+    m.status = value
 }
 // SetUploadDateTime sets the uploadDateTime property value. The uploaded time of the uploaded ADMX file.
 func (m *GroupPolicyUploadedDefinitionFile) SetUploadDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.uploadDateTime = value
-    }
+    m.uploadDateTime = value
 }

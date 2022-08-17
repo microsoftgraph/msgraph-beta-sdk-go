@@ -52,35 +52,19 @@ func CreateManagedDeviceMobileAppConfigurationSettingStateFromDiscriminatorValue
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ManagedDeviceMobileAppConfigurationSettingState) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetCurrentValue gets the currentValue property value. Current value of setting on device
 func (m *ManagedDeviceMobileAppConfigurationSettingState) GetCurrentValue()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.currentValue
-    }
+    return m.currentValue
 }
 // GetErrorCode gets the errorCode property value. Error code for the setting
 func (m *ManagedDeviceMobileAppConfigurationSettingState) GetErrorCode()(*int64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.errorCode
-    }
+    return m.errorCode
 }
 // GetErrorDescription gets the errorDescription property value. Error description
 func (m *ManagedDeviceMobileAppConfigurationSettingState) GetErrorDescription()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.errorDescription
-    }
+    return m.errorDescription
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ManagedDeviceMobileAppConfigurationSettingState) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -233,91 +217,47 @@ func (m *ManagedDeviceMobileAppConfigurationSettingState) GetFieldDeserializers(
 }
 // GetInstanceDisplayName gets the instanceDisplayName property value. Name of setting instance that is being reported.
 func (m *ManagedDeviceMobileAppConfigurationSettingState) GetInstanceDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.instanceDisplayName
-    }
+    return m.instanceDisplayName
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *ManagedDeviceMobileAppConfigurationSettingState) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetSetting gets the setting property value. The setting that is being reported
 func (m *ManagedDeviceMobileAppConfigurationSettingState) GetSetting()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.setting
-    }
+    return m.setting
 }
 // GetSettingInstanceId gets the settingInstanceId property value. SettingInstanceId
 func (m *ManagedDeviceMobileAppConfigurationSettingState) GetSettingInstanceId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.settingInstanceId
-    }
+    return m.settingInstanceId
 }
 // GetSettingName gets the settingName property value. Localized/user friendly setting name that is being reported
 func (m *ManagedDeviceMobileAppConfigurationSettingState) GetSettingName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.settingName
-    }
+    return m.settingName
 }
 // GetSources gets the sources property value. Contributing policies
 func (m *ManagedDeviceMobileAppConfigurationSettingState) GetSources()([]SettingSourceable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.sources
-    }
+    return m.sources
 }
 // GetState gets the state property value. The state property
 func (m *ManagedDeviceMobileAppConfigurationSettingState) GetState()(*ComplianceStatus) {
-    if m == nil {
-        return nil
-    } else {
-        return m.state
-    }
+    return m.state
 }
 // GetUserEmail gets the userEmail property value. UserEmail
 func (m *ManagedDeviceMobileAppConfigurationSettingState) GetUserEmail()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userEmail
-    }
+    return m.userEmail
 }
 // GetUserId gets the userId property value. UserId
 func (m *ManagedDeviceMobileAppConfigurationSettingState) GetUserId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userId
-    }
+    return m.userId
 }
 // GetUserName gets the userName property value. UserName
 func (m *ManagedDeviceMobileAppConfigurationSettingState) GetUserName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userName
-    }
+    return m.userName
 }
 // GetUserPrincipalName gets the userPrincipalName property value. UserPrincipalName.
 func (m *ManagedDeviceMobileAppConfigurationSettingState) GetUserPrincipalName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userPrincipalName
-    }
+    return m.userPrincipalName
 }
 // Serialize serializes information the current object
 func (m *ManagedDeviceMobileAppConfigurationSettingState) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -420,91 +360,61 @@ func (m *ManagedDeviceMobileAppConfigurationSettingState) Serialize(writer i878a
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ManagedDeviceMobileAppConfigurationSettingState) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetCurrentValue sets the currentValue property value. Current value of setting on device
 func (m *ManagedDeviceMobileAppConfigurationSettingState) SetCurrentValue(value *string)() {
-    if m != nil {
-        m.currentValue = value
-    }
+    m.currentValue = value
 }
 // SetErrorCode sets the errorCode property value. Error code for the setting
 func (m *ManagedDeviceMobileAppConfigurationSettingState) SetErrorCode(value *int64)() {
-    if m != nil {
-        m.errorCode = value
-    }
+    m.errorCode = value
 }
 // SetErrorDescription sets the errorDescription property value. Error description
 func (m *ManagedDeviceMobileAppConfigurationSettingState) SetErrorDescription(value *string)() {
-    if m != nil {
-        m.errorDescription = value
-    }
+    m.errorDescription = value
 }
 // SetInstanceDisplayName sets the instanceDisplayName property value. Name of setting instance that is being reported.
 func (m *ManagedDeviceMobileAppConfigurationSettingState) SetInstanceDisplayName(value *string)() {
-    if m != nil {
-        m.instanceDisplayName = value
-    }
+    m.instanceDisplayName = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *ManagedDeviceMobileAppConfigurationSettingState) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetSetting sets the setting property value. The setting that is being reported
 func (m *ManagedDeviceMobileAppConfigurationSettingState) SetSetting(value *string)() {
-    if m != nil {
-        m.setting = value
-    }
+    m.setting = value
 }
 // SetSettingInstanceId sets the settingInstanceId property value. SettingInstanceId
 func (m *ManagedDeviceMobileAppConfigurationSettingState) SetSettingInstanceId(value *string)() {
-    if m != nil {
-        m.settingInstanceId = value
-    }
+    m.settingInstanceId = value
 }
 // SetSettingName sets the settingName property value. Localized/user friendly setting name that is being reported
 func (m *ManagedDeviceMobileAppConfigurationSettingState) SetSettingName(value *string)() {
-    if m != nil {
-        m.settingName = value
-    }
+    m.settingName = value
 }
 // SetSources sets the sources property value. Contributing policies
 func (m *ManagedDeviceMobileAppConfigurationSettingState) SetSources(value []SettingSourceable)() {
-    if m != nil {
-        m.sources = value
-    }
+    m.sources = value
 }
 // SetState sets the state property value. The state property
 func (m *ManagedDeviceMobileAppConfigurationSettingState) SetState(value *ComplianceStatus)() {
-    if m != nil {
-        m.state = value
-    }
+    m.state = value
 }
 // SetUserEmail sets the userEmail property value. UserEmail
 func (m *ManagedDeviceMobileAppConfigurationSettingState) SetUserEmail(value *string)() {
-    if m != nil {
-        m.userEmail = value
-    }
+    m.userEmail = value
 }
 // SetUserId sets the userId property value. UserId
 func (m *ManagedDeviceMobileAppConfigurationSettingState) SetUserId(value *string)() {
-    if m != nil {
-        m.userId = value
-    }
+    m.userId = value
 }
 // SetUserName sets the userName property value. UserName
 func (m *ManagedDeviceMobileAppConfigurationSettingState) SetUserName(value *string)() {
-    if m != nil {
-        m.userName = value
-    }
+    m.userName = value
 }
 // SetUserPrincipalName sets the userPrincipalName property value. UserPrincipalName.
 func (m *ManagedDeviceMobileAppConfigurationSettingState) SetUserPrincipalName(value *string)() {
-    if m != nil {
-        m.userPrincipalName = value
-    }
+    m.userPrincipalName = value
 }

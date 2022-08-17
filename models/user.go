@@ -12,7 +12,7 @@ type User struct {
     aboutMe *string
     // true if the account is enabled; otherwise, false. This property is required when a user is created. Supports $filter (eq, ne, not, and in).
     accountEnabled *bool
-    // The user's activities across devices. Read-only. Nullable.
+    // The activities property
     activities []UserActivityable
     // Sets the age group of the user. Allowed values: null, Minor, NotAdult and Adult. Refer to the legal age group property definitions for further information. Supports $filter (eq, ne, not, and in).
     ageGroup *string
@@ -32,7 +32,7 @@ type User struct {
     assignedLicenses []AssignedLicenseable
     // The plans that are assigned to the user. Read-only. Not nullable.Supports $filter (eq and not).
     assignedPlans []AssignedPlanable
-    // The authentication methods that are supported for the user.
+    // The authentication property
     authentication Authenticationable
     // The authorizationInfo property
     authorizationInfo AuthorizationInfoable
@@ -96,6 +96,8 @@ type User struct {
     employeeHireDate *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The employee identifier assigned to the user by the organization. The maximum length is 16 characters.Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values).
     employeeId *string
+    // The employeeLeaveDateTime property
+    employeeLeaveDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Represents organization data (e.g. division and costCenter) associated with a user. Supports $filter (eq, ne, not , ge, le, in).
     employeeOrgData EmployeeOrgDataable
     // Captures enterprise worker type. For example, Employee, Contractor, Consultant, or Vendor. Supports $filter (eq, ne, not , ge, le, in, startsWith).
@@ -146,7 +148,7 @@ type User struct {
     legalAgeGroupClassification *string
     // State of license assignments for this user. Read-only. Returned only on $select.
     licenseAssignmentStates []LicenseAssignmentStateable
-    // A collection of this user's license details. Read-only.
+    // The licenseDetails property
     licenseDetails []LicenseDetailsable
     // The SMTP address for the user, for example, admin@contoso.com. Changes to this property will also update the user's proxyAddresses collection to include the value as an SMTP address. This property cannot contain accent characters.  NOTE: We do not recommend updating this property for Azure AD B2C user profiles. Use the otherMails property instead.  Supports $filter (eq, ne, not, ge, le, in, startsWith, endsWith, and eq on null values).
     mail *string
@@ -310,411 +312,211 @@ func CreateUserFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487ee
 }
 // GetAboutMe gets the aboutMe property value. A freeform text entry field for the user to describe themselves. Returned only on $select.
 func (m *User) GetAboutMe()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.aboutMe
-    }
+    return m.aboutMe
 }
 // GetAccountEnabled gets the accountEnabled property value. true if the account is enabled; otherwise, false. This property is required when a user is created. Supports $filter (eq, ne, not, and in).
 func (m *User) GetAccountEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.accountEnabled
-    }
+    return m.accountEnabled
 }
-// GetActivities gets the activities property value. The user's activities across devices. Read-only. Nullable.
+// GetActivities gets the activities property value. The activities property
 func (m *User) GetActivities()([]UserActivityable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.activities
-    }
+    return m.activities
 }
 // GetAgeGroup gets the ageGroup property value. Sets the age group of the user. Allowed values: null, Minor, NotAdult and Adult. Refer to the legal age group property definitions for further information. Supports $filter (eq, ne, not, and in).
 func (m *User) GetAgeGroup()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.ageGroup
-    }
+    return m.ageGroup
 }
 // GetAgreementAcceptances gets the agreementAcceptances property value. The user's terms of use acceptance statuses. Read-only. Nullable.
 func (m *User) GetAgreementAcceptances()([]AgreementAcceptanceable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.agreementAcceptances
-    }
+    return m.agreementAcceptances
 }
 // GetAnalytics gets the analytics property value. The analytics property
 func (m *User) GetAnalytics()(UserAnalyticsable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.analytics
-    }
+    return m.analytics
 }
 // GetAppConsentRequestsForApproval gets the appConsentRequestsForApproval property value. The appConsentRequestsForApproval property
 func (m *User) GetAppConsentRequestsForApproval()([]AppConsentRequestable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.appConsentRequestsForApproval
-    }
+    return m.appConsentRequestsForApproval
 }
 // GetAppRoleAssignedResources gets the appRoleAssignedResources property value. The appRoleAssignedResources property
 func (m *User) GetAppRoleAssignedResources()([]ServicePrincipalable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.appRoleAssignedResources
-    }
+    return m.appRoleAssignedResources
 }
 // GetAppRoleAssignments gets the appRoleAssignments property value. Represents the app roles a user has been granted for an application. Supports $expand.
 func (m *User) GetAppRoleAssignments()([]AppRoleAssignmentable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.appRoleAssignments
-    }
+    return m.appRoleAssignments
 }
 // GetApprovals gets the approvals property value. The approvals property
 func (m *User) GetApprovals()([]Approvalable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.approvals
-    }
+    return m.approvals
 }
 // GetAssignedLicenses gets the assignedLicenses property value. The licenses that are assigned to the user, including inherited (group-based) licenses. Not nullable. Supports $filter (eq, not, and counting empty collections).
 func (m *User) GetAssignedLicenses()([]AssignedLicenseable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.assignedLicenses
-    }
+    return m.assignedLicenses
 }
 // GetAssignedPlans gets the assignedPlans property value. The plans that are assigned to the user. Read-only. Not nullable.Supports $filter (eq and not).
 func (m *User) GetAssignedPlans()([]AssignedPlanable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.assignedPlans
-    }
+    return m.assignedPlans
 }
-// GetAuthentication gets the authentication property value. The authentication methods that are supported for the user.
+// GetAuthentication gets the authentication property value. The authentication property
 func (m *User) GetAuthentication()(Authenticationable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.authentication
-    }
+    return m.authentication
 }
 // GetAuthorizationInfo gets the authorizationInfo property value. The authorizationInfo property
 func (m *User) GetAuthorizationInfo()(AuthorizationInfoable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.authorizationInfo
-    }
+    return m.authorizationInfo
 }
 // GetBirthday gets the birthday property value. The birthday of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z Returned only on $select.
 func (m *User) GetBirthday()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.birthday
-    }
+    return m.birthday
 }
 // GetBusinessPhones gets the businessPhones property value. The telephone numbers for the user. Only one number can be set for this property. Read-only for users synced from on-premises directory. Supports $filter (eq, not, ge, le, startsWith).
 func (m *User) GetBusinessPhones()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.businessPhones
-    }
+    return m.businessPhones
 }
 // GetCalendar gets the calendar property value. The user's primary calendar. Read-only.
 func (m *User) GetCalendar()(Calendarable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.calendar
-    }
+    return m.calendar
 }
 // GetCalendarGroups gets the calendarGroups property value. The user's calendar groups. Read-only. Nullable.
 func (m *User) GetCalendarGroups()([]CalendarGroupable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.calendarGroups
-    }
+    return m.calendarGroups
 }
 // GetCalendars gets the calendars property value. The user's calendars. Read-only. Nullable.
 func (m *User) GetCalendars()([]Calendarable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.calendars
-    }
+    return m.calendars
 }
 // GetCalendarView gets the calendarView property value. The calendar view for the calendar. Read-only. Nullable.
 func (m *User) GetCalendarView()([]Eventable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.calendarView
-    }
+    return m.calendarView
 }
 // GetChats gets the chats property value. The chats property
 func (m *User) GetChats()([]Chatable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.chats
-    }
+    return m.chats
 }
 // GetCity gets the city property value. The city in which the user is located. Maximum length is 128 characters. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
 func (m *User) GetCity()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.city
-    }
+    return m.city
 }
 // GetCloudPCs gets the cloudPCs property value. The cloudPCs property
 func (m *User) GetCloudPCs()([]CloudPCable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.cloudPCs
-    }
+    return m.cloudPCs
 }
 // GetCompanyName gets the companyName property value. The company name which the user is associated. This property can be useful for describing the company that an external user comes from. The maximum length is 64 characters.Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
 func (m *User) GetCompanyName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.companyName
-    }
+    return m.companyName
 }
 // GetConsentProvidedForMinor gets the consentProvidedForMinor property value. Sets whether consent has been obtained for minors. Allowed values: null, Granted, Denied and NotRequired. Refer to the legal age group property definitions for further information. Supports $filter (eq, ne, not, and in).
 func (m *User) GetConsentProvidedForMinor()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.consentProvidedForMinor
-    }
+    return m.consentProvidedForMinor
 }
 // GetContactFolders gets the contactFolders property value. The user's contacts folders. Read-only. Nullable.
 func (m *User) GetContactFolders()([]ContactFolderable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.contactFolders
-    }
+    return m.contactFolders
 }
 // GetContacts gets the contacts property value. The user's contacts. Read-only. Nullable.
 func (m *User) GetContacts()([]Contactable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.contacts
-    }
+    return m.contacts
 }
 // GetCountry gets the country property value. The country/region in which the user is located; for example, US or UK. Maximum length is 128 characters. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
 func (m *User) GetCountry()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.country
-    }
+    return m.country
 }
 // GetCreatedDateTime gets the createdDateTime property value. The date and time the user was created. The value cannot be modified and is automatically populated when the entity is created. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. Property is nullable. A null value indicates that an accurate creation time couldn't be determined for the user. Read-only. Supports $filter (eq, ne, not , ge, le, in).
 func (m *User) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.createdDateTime
-    }
+    return m.createdDateTime
 }
 // GetCreatedObjects gets the createdObjects property value. Directory objects that were created by the user. Read-only. Nullable.
 func (m *User) GetCreatedObjects()([]DirectoryObjectable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.createdObjects
-    }
+    return m.createdObjects
 }
 // GetCreationType gets the creationType property value. Indicates whether the user account was created through one of the following methods:  As a regular school or work account (null). As an external account (Invitation). As a local account for an Azure Active Directory B2C tenant (LocalAccount). Through self-service sign-up by an internal user using email verification (EmailVerified). Through self-service sign-up by an external user signing up through a link that is part of a user flow (SelfServiceSignUp).  Read-only.Supports $filter (eq, ne, not, and in).
 func (m *User) GetCreationType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.creationType
-    }
+    return m.creationType
 }
 // GetCustomSecurityAttributes gets the customSecurityAttributes property value. An open complex type that holds the value of a custom security attribute that is assigned to a directory object. Nullable. Returned only on $select. Supports $filter (eq, ne, not, startsWith).
 func (m *User) GetCustomSecurityAttributes()(CustomSecurityAttributeValueable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.customSecurityAttributes
-    }
+    return m.customSecurityAttributes
 }
 // GetDepartment gets the department property value. The name for the department in which the user works. Maximum length is 64 characters.Supports $filter (eq, ne, not , ge, le, in, and eq on null values).
 func (m *User) GetDepartment()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.department
-    }
+    return m.department
 }
 // GetDeviceEnrollmentConfigurations gets the deviceEnrollmentConfigurations property value. Get enrollment configurations targeted to the user
 func (m *User) GetDeviceEnrollmentConfigurations()([]DeviceEnrollmentConfigurationable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deviceEnrollmentConfigurations
-    }
+    return m.deviceEnrollmentConfigurations
 }
 // GetDeviceEnrollmentLimit gets the deviceEnrollmentLimit property value. The limit on the maximum number of devices that the user is permitted to enroll. Allowed values are 5 or 1000.
 func (m *User) GetDeviceEnrollmentLimit()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deviceEnrollmentLimit
-    }
+    return m.deviceEnrollmentLimit
 }
 // GetDeviceKeys gets the deviceKeys property value. The deviceKeys property
 func (m *User) GetDeviceKeys()([]DeviceKeyable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deviceKeys
-    }
+    return m.deviceKeys
 }
 // GetDeviceManagementTroubleshootingEvents gets the deviceManagementTroubleshootingEvents property value. The list of troubleshooting events for this user.
 func (m *User) GetDeviceManagementTroubleshootingEvents()([]DeviceManagementTroubleshootingEventable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deviceManagementTroubleshootingEvents
-    }
+    return m.deviceManagementTroubleshootingEvents
 }
 // GetDevices gets the devices property value. The devices property
 func (m *User) GetDevices()([]Deviceable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.devices
-    }
+    return m.devices
 }
 // GetDirectReports gets the directReports property value. The users and contacts that report to the user. (The users and contacts that have their manager property set to this user.) Read-only. Nullable. Supports $expand.
 func (m *User) GetDirectReports()([]DirectoryObjectable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.directReports
-    }
+    return m.directReports
 }
 // GetDisplayName gets the displayName property value. The name displayed in the address book for the user. This value is usually the combination of the user's first name, middle initial, and last name. This property is required when a user is created and it cannot be cleared during updates. Maximum length is 256 characters. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values), $orderBy, and $search.
 func (m *User) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
 // GetDrive gets the drive property value. The user's OneDrive. Read-only.
 func (m *User) GetDrive()(Driveable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.drive
-    }
+    return m.drive
 }
 // GetDrives gets the drives property value. A collection of drives available for this user. Read-only.
 func (m *User) GetDrives()([]Driveable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.drives
-    }
+    return m.drives
 }
 // GetEmployeeHireDate gets the employeeHireDate property value. The date and time when the user was hired or will start work in case of a future hire. Supports $filter (eq, ne, not , ge, le, in).
 func (m *User) GetEmployeeHireDate()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.employeeHireDate
-    }
+    return m.employeeHireDate
 }
 // GetEmployeeId gets the employeeId property value. The employee identifier assigned to the user by the organization. The maximum length is 16 characters.Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values).
 func (m *User) GetEmployeeId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.employeeId
-    }
+    return m.employeeId
+}
+// GetEmployeeLeaveDateTime gets the employeeLeaveDateTime property value. The employeeLeaveDateTime property
+func (m *User) GetEmployeeLeaveDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    return m.employeeLeaveDateTime
 }
 // GetEmployeeOrgData gets the employeeOrgData property value. Represents organization data (e.g. division and costCenter) associated with a user. Supports $filter (eq, ne, not , ge, le, in).
 func (m *User) GetEmployeeOrgData()(EmployeeOrgDataable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.employeeOrgData
-    }
+    return m.employeeOrgData
 }
 // GetEmployeeType gets the employeeType property value. Captures enterprise worker type. For example, Employee, Contractor, Consultant, or Vendor. Supports $filter (eq, ne, not , ge, le, in, startsWith).
 func (m *User) GetEmployeeType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.employeeType
-    }
+    return m.employeeType
 }
 // GetEvents gets the events property value. The user's events. Default is to show events under the Default Calendar. Read-only. Nullable.
 func (m *User) GetEvents()([]Eventable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.events
-    }
+    return m.events
 }
 // GetExtensions gets the extensions property value. The collection of open extensions defined for the user. Supports $expand. Nullable.
 func (m *User) GetExtensions()([]Extensionable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.extensions
-    }
+    return m.extensions
 }
 // GetExternalUserState gets the externalUserState property value. For an external user invited to the tenant using the invitation API, this property represents the invited user's invitation status. For invited users, the state can be PendingAcceptance or Accepted, or null for all other users. Supports $filter (eq, ne, not , in).
 func (m *User) GetExternalUserState()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.externalUserState
-    }
+    return m.externalUserState
 }
 // GetExternalUserStateChangeDateTime gets the externalUserStateChangeDateTime property value. Shows the timestamp for the latest change to the externalUserState property. Supports $filter (eq, ne, not , in).
 func (m *User) GetExternalUserStateChangeDateTime()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.externalUserStateChangeDateTime
-    }
+    return m.externalUserStateChangeDateTime
 }
 // GetFaxNumber gets the faxNumber property value. The fax number of the user. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values).
 func (m *User) GetFaxNumber()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.faxNumber
-    }
+    return m.faxNumber
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *User) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -1248,6 +1050,16 @@ func (m *User) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a
         }
         if val != nil {
             m.SetEmployeeId(val)
+        }
+        return nil
+    }
+    res["employeeLeaveDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetTimeValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetEmployeeLeaveDateTime(val)
         }
         return nil
     }
@@ -2405,739 +2217,371 @@ func (m *User) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a
 }
 // GetFollowedSites gets the followedSites property value. The followedSites property
 func (m *User) GetFollowedSites()([]Siteable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.followedSites
-    }
+    return m.followedSites
 }
 // GetGivenName gets the givenName property value. The given name (first name) of the user. Maximum length is 64 characters. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values).
 func (m *User) GetGivenName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.givenName
-    }
+    return m.givenName
 }
 // GetHireDate gets the hireDate property value. The hire date of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.  Returned only on $select.  Note: This property is specific to SharePoint Online. We recommend using the native employeeHireDate property to set and update hire date values using Microsoft Graph APIs.
 func (m *User) GetHireDate()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.hireDate
-    }
+    return m.hireDate
 }
 // GetIdentities gets the identities property value. Represents the identities that can be used to sign in to this user account. An identity can be provided by Microsoft (also known as a local account), by organizations, or by social identity providers such as Facebook, Google, and Microsoft, and tied to a user account. May contain multiple items with the same signInType value. Supports $filter (eq) including on null values, only where the signInType is not userPrincipalName.
 func (m *User) GetIdentities()([]ObjectIdentityable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.identities
-    }
+    return m.identities
 }
 // GetImAddresses gets the imAddresses property value. The instant message voice over IP (VOIP) session initiation protocol (SIP) addresses for the user. Read-only. Supports $filter (eq, not, ge, le, startsWith).
 func (m *User) GetImAddresses()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.imAddresses
-    }
+    return m.imAddresses
 }
 // GetInferenceClassification gets the inferenceClassification property value. Relevance classification of the user's messages based on explicit designations which override inferred relevance or importance.
 func (m *User) GetInferenceClassification()(InferenceClassificationable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.inferenceClassification
-    }
+    return m.inferenceClassification
 }
 // GetInfoCatalogs gets the infoCatalogs property value. Identifies the info segments assigned to the user.  Supports $filter (eq, not, ge, le, startsWith).
 func (m *User) GetInfoCatalogs()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.infoCatalogs
-    }
+    return m.infoCatalogs
 }
 // GetInformationProtection gets the informationProtection property value. The informationProtection property
 func (m *User) GetInformationProtection()(InformationProtectionable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.informationProtection
-    }
+    return m.informationProtection
 }
 // GetInsights gets the insights property value. The insights property
 func (m *User) GetInsights()(ItemInsightsable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.insights
-    }
+    return m.insights
 }
 // GetInterests gets the interests property value. A list for the user to describe their interests. Returned only on $select.
 func (m *User) GetInterests()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.interests
-    }
+    return m.interests
 }
 // GetIsManagementRestricted gets the isManagementRestricted property value. The isManagementRestricted property
 func (m *User) GetIsManagementRestricted()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isManagementRestricted
-    }
+    return m.isManagementRestricted
 }
 // GetIsResourceAccount gets the isResourceAccount property value. Do not use – reserved for future use.
 func (m *User) GetIsResourceAccount()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isResourceAccount
-    }
+    return m.isResourceAccount
 }
 // GetJobTitle gets the jobTitle property value. The user's job title. Maximum length is 128 characters. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values).
 func (m *User) GetJobTitle()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.jobTitle
-    }
+    return m.jobTitle
 }
 // GetJoinedGroups gets the joinedGroups property value. The joinedGroups property
 func (m *User) GetJoinedGroups()([]Groupable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.joinedGroups
-    }
+    return m.joinedGroups
 }
 // GetJoinedTeams gets the joinedTeams property value. The Microsoft Teams teams that the user is a member of. Read-only. Nullable.
 func (m *User) GetJoinedTeams()([]Teamable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.joinedTeams
-    }
+    return m.joinedTeams
 }
 // GetLastPasswordChangeDateTime gets the lastPasswordChangeDateTime property value. The time when this Azure AD user last changed their password or when their password was created, , whichever date the latest action was performed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Returned only on $select.
 func (m *User) GetLastPasswordChangeDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastPasswordChangeDateTime
-    }
+    return m.lastPasswordChangeDateTime
 }
 // GetLegalAgeGroupClassification gets the legalAgeGroupClassification property value. Used by enterprise applications to determine the legal age group of the user. This property is read-only and calculated based on ageGroup and consentProvidedForMinor properties. Allowed values: null, MinorWithOutParentalConsent, MinorWithParentalConsent, MinorNoParentalConsentRequired, NotAdult and Adult. Refer to the legal age group property definitions for further information. Returned only on $select.
 func (m *User) GetLegalAgeGroupClassification()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.legalAgeGroupClassification
-    }
+    return m.legalAgeGroupClassification
 }
 // GetLicenseAssignmentStates gets the licenseAssignmentStates property value. State of license assignments for this user. Read-only. Returned only on $select.
 func (m *User) GetLicenseAssignmentStates()([]LicenseAssignmentStateable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.licenseAssignmentStates
-    }
+    return m.licenseAssignmentStates
 }
-// GetLicenseDetails gets the licenseDetails property value. A collection of this user's license details. Read-only.
+// GetLicenseDetails gets the licenseDetails property value. The licenseDetails property
 func (m *User) GetLicenseDetails()([]LicenseDetailsable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.licenseDetails
-    }
+    return m.licenseDetails
 }
 // GetMail gets the mail property value. The SMTP address for the user, for example, admin@contoso.com. Changes to this property will also update the user's proxyAddresses collection to include the value as an SMTP address. This property cannot contain accent characters.  NOTE: We do not recommend updating this property for Azure AD B2C user profiles. Use the otherMails property instead.  Supports $filter (eq, ne, not, ge, le, in, startsWith, endsWith, and eq on null values).
 func (m *User) GetMail()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.mail
-    }
+    return m.mail
 }
 // GetMailboxSettings gets the mailboxSettings property value. Settings for the primary mailbox of the signed-in user. You can get or update settings for sending automatic replies to incoming messages, locale, and time zone. For more information, see User preferences for languages and regional formats. Returned only on $select.
 func (m *User) GetMailboxSettings()(MailboxSettingsable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.mailboxSettings
-    }
+    return m.mailboxSettings
 }
 // GetMailFolders gets the mailFolders property value. The user's mail folders. Read-only. Nullable.
 func (m *User) GetMailFolders()([]MailFolderable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.mailFolders
-    }
+    return m.mailFolders
 }
 // GetMailNickname gets the mailNickname property value. The mail alias for the user. This property must be specified when a user is created. Maximum length is 64 characters. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
 func (m *User) GetMailNickname()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.mailNickname
-    }
+    return m.mailNickname
 }
 // GetManagedAppRegistrations gets the managedAppRegistrations property value. Zero or more managed app registrations that belong to the user.
 func (m *User) GetManagedAppRegistrations()([]ManagedAppRegistrationable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.managedAppRegistrations
-    }
+    return m.managedAppRegistrations
 }
 // GetManagedDevices gets the managedDevices property value. The managed devices associated with the user.
 func (m *User) GetManagedDevices()([]ManagedDeviceable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.managedDevices
-    }
+    return m.managedDevices
 }
 // GetManager gets the manager property value. The user or contact that is this user's manager. Read-only. (HTTP Methods: GET, PUT, DELETE.). Supports $expand.
 func (m *User) GetManager()(DirectoryObjectable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.manager
-    }
+    return m.manager
 }
 // GetMemberOf gets the memberOf property value. The groups, directory roles and administrative units that the user is a member of. Read-only. Nullable. Supports $expand.
 func (m *User) GetMemberOf()([]DirectoryObjectable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.memberOf
-    }
+    return m.memberOf
 }
 // GetMessages gets the messages property value. The messages in a mailbox or folder. Read-only. Nullable.
 func (m *User) GetMessages()([]Messageable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.messages
-    }
+    return m.messages
 }
 // GetMobileAppIntentAndStates gets the mobileAppIntentAndStates property value. The list of troubleshooting events for this user.
 func (m *User) GetMobileAppIntentAndStates()([]MobileAppIntentAndStateable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.mobileAppIntentAndStates
-    }
+    return m.mobileAppIntentAndStates
 }
 // GetMobileAppTroubleshootingEvents gets the mobileAppTroubleshootingEvents property value. The list of mobile app troubleshooting events for this user.
 func (m *User) GetMobileAppTroubleshootingEvents()([]MobileAppTroubleshootingEventable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.mobileAppTroubleshootingEvents
-    }
+    return m.mobileAppTroubleshootingEvents
 }
 // GetMobilePhone gets the mobilePhone property value. The primary cellular telephone number for the user. Read-only for users synced from on-premises directory.  Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
 func (m *User) GetMobilePhone()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.mobilePhone
-    }
+    return m.mobilePhone
 }
 // GetMySite gets the mySite property value. The URL for the user's personal site. Returned only on $select.
 func (m *User) GetMySite()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.mySite
-    }
+    return m.mySite
 }
 // GetNotifications gets the notifications property value. The notifications property
 func (m *User) GetNotifications()([]Notificationable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.notifications
-    }
+    return m.notifications
 }
 // GetOauth2PermissionGrants gets the oauth2PermissionGrants property value. The oauth2PermissionGrants property
 func (m *User) GetOauth2PermissionGrants()([]OAuth2PermissionGrantable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.oauth2PermissionGrants
-    }
+    return m.oauth2PermissionGrants
 }
 // GetOfficeLocation gets the officeLocation property value. The office location in the user's place of business. Maximum length is 128 characters. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
 func (m *User) GetOfficeLocation()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.officeLocation
-    }
+    return m.officeLocation
 }
 // GetOnenote gets the onenote property value. The onenote property
 func (m *User) GetOnenote()(Onenoteable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.onenote
-    }
+    return m.onenote
 }
 // GetOnlineMeetings gets the onlineMeetings property value. The onlineMeetings property
 func (m *User) GetOnlineMeetings()([]OnlineMeetingable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.onlineMeetings
-    }
+    return m.onlineMeetings
 }
 // GetOnPremisesDistinguishedName gets the onPremisesDistinguishedName property value. Contains the on-premises Active Directory distinguished name or DN. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only.
 func (m *User) GetOnPremisesDistinguishedName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.onPremisesDistinguishedName
-    }
+    return m.onPremisesDistinguishedName
 }
 // GetOnPremisesDomainName gets the onPremisesDomainName property value. Contains the on-premises domainFQDN, also called dnsDomainName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only.
 func (m *User) GetOnPremisesDomainName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.onPremisesDomainName
-    }
+    return m.onPremisesDomainName
 }
 // GetOnPremisesExtensionAttributes gets the onPremisesExtensionAttributes property value. Contains extensionAttributes1-15 for the user. These extension attributes are also known as Exchange custom attributes 1-15. For an onPremisesSyncEnabled user, the source of authority for this set of properties is the on-premises and is read-only. For a cloud-only user (where onPremisesSyncEnabled is false), these properties can be set during creation or update of a user object.  For a cloud-only user previously synced from on-premises Active Directory, these properties are read-only in Microsoft Graph but can be fully managed through the Exchange Admin Center or the Exchange Online V2 module in PowerShell. Supports $filter (eq, ne, not, in).
 func (m *User) GetOnPremisesExtensionAttributes()(OnPremisesExtensionAttributesable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.onPremisesExtensionAttributes
-    }
+    return m.onPremisesExtensionAttributes
 }
 // GetOnPremisesImmutableId gets the onPremisesImmutableId property value. This property is used to associate an on-premises Active Directory user account to their Azure AD user object. This property must be specified when creating a new user account in the Graph if you are using a federated domain for the user's userPrincipalName (UPN) property. Note: The $ and _ characters cannot be used when specifying this property. Supports $filter (eq, ne, not, ge, le, in).
 func (m *User) GetOnPremisesImmutableId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.onPremisesImmutableId
-    }
+    return m.onPremisesImmutableId
 }
 // GetOnPremisesLastSyncDateTime gets the onPremisesLastSyncDateTime property value. Indicates the last time at which the object was synced with the on-premises directory; for example: '2013-02-16T03:04:54Z'. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Supports $filter (eq, ne, not, ge, le, in).
 func (m *User) GetOnPremisesLastSyncDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.onPremisesLastSyncDateTime
-    }
+    return m.onPremisesLastSyncDateTime
 }
 // GetOnPremisesProvisioningErrors gets the onPremisesProvisioningErrors property value. Errors when using Microsoft synchronization product during provisioning.  Supports $filter (eq, not, ge, le).
 func (m *User) GetOnPremisesProvisioningErrors()([]OnPremisesProvisioningErrorable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.onPremisesProvisioningErrors
-    }
+    return m.onPremisesProvisioningErrors
 }
 // GetOnPremisesSamAccountName gets the onPremisesSamAccountName property value. Contains the on-premises sAMAccountName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only. Supports $filter (eq, ne, not, ge, le, in, startsWith).
 func (m *User) GetOnPremisesSamAccountName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.onPremisesSamAccountName
-    }
+    return m.onPremisesSamAccountName
 }
 // GetOnPremisesSecurityIdentifier gets the onPremisesSecurityIdentifier property value. Contains the on-premises security identifier (SID) for the user that was synchronized from on-premises to the cloud. Read-only. Supports $filter (eq including on null values).
 func (m *User) GetOnPremisesSecurityIdentifier()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.onPremisesSecurityIdentifier
-    }
+    return m.onPremisesSecurityIdentifier
 }
 // GetOnPremisesSyncEnabled gets the onPremisesSyncEnabled property value. true if this user object is currently being synced from an on-premises Active Directory (AD); otherwise the user isn't being synced and can be managed in Azure Active Directory (Azure AD). Read-only. Supports $filter (eq, ne, not, in, and eq on null values).
 func (m *User) GetOnPremisesSyncEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.onPremisesSyncEnabled
-    }
+    return m.onPremisesSyncEnabled
 }
 // GetOnPremisesUserPrincipalName gets the onPremisesUserPrincipalName property value. Contains the on-premises userPrincipalName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only. Supports $filter (eq, ne, not, ge, le, in, startsWith).
 func (m *User) GetOnPremisesUserPrincipalName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.onPremisesUserPrincipalName
-    }
+    return m.onPremisesUserPrincipalName
 }
 // GetOtherMails gets the otherMails property value. A list of additional email addresses for the user; for example: ['bob@contoso.com', 'Robert@fabrikam.com'].NOTE: This property cannot contain accent characters.Supports $filter (eq, not, ge, le, in, startsWith, endsWith, and counting empty collections).
 func (m *User) GetOtherMails()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.otherMails
-    }
+    return m.otherMails
 }
 // GetOutlook gets the outlook property value. Selective Outlook services available to the user. Read-only. Nullable.
 func (m *User) GetOutlook()(OutlookUserable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.outlook
-    }
+    return m.outlook
 }
 // GetOwnedDevices gets the ownedDevices property value. Devices that are owned by the user. Read-only. Nullable. Supports $expand.
 func (m *User) GetOwnedDevices()([]DirectoryObjectable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.ownedDevices
-    }
+    return m.ownedDevices
 }
 // GetOwnedObjects gets the ownedObjects property value. Directory objects that are owned by the user. Read-only. Nullable. Supports $expand.
 func (m *User) GetOwnedObjects()([]DirectoryObjectable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.ownedObjects
-    }
+    return m.ownedObjects
 }
 // GetPasswordPolicies gets the passwordPolicies property value. Specifies password policies for the user. This value is an enumeration with one possible value being DisableStrongPassword, which allows weaker passwords than the default policy to be specified. DisablePasswordExpiration can also be specified. The two may be specified together; for example: DisablePasswordExpiration, DisableStrongPassword. For more information on the default password policies, see Azure AD pasword policies. Supports $filter (ne, not, and eq on null values).
 func (m *User) GetPasswordPolicies()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.passwordPolicies
-    }
+    return m.passwordPolicies
 }
 // GetPasswordProfile gets the passwordProfile property value. Specifies the password profile for the user. The profile contains the user's password. This property is required when a user is created. The password in the profile must satisfy minimum requirements as specified by the passwordPolicies property. By default, a strong password is required. NOTE: For Azure B2C tenants, the forceChangePasswordNextSignIn property should be set to false and instead use custom policies and user flows to force password reset at first logon. See Force password reset at first logon. Supports $filter (eq, ne, not, in, and eq on null values).
 func (m *User) GetPasswordProfile()(PasswordProfileable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.passwordProfile
-    }
+    return m.passwordProfile
 }
 // GetPastProjects gets the pastProjects property value. A list for the user to enumerate their past projects. Returned only on $select.
 func (m *User) GetPastProjects()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.pastProjects
-    }
+    return m.pastProjects
 }
 // GetPendingAccessReviewInstances gets the pendingAccessReviewInstances property value. Navigation property to get list of access reviews pending approval by reviewer.
 func (m *User) GetPendingAccessReviewInstances()([]AccessReviewInstanceable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.pendingAccessReviewInstances
-    }
+    return m.pendingAccessReviewInstances
 }
 // GetPeople gets the people property value. Read-only. The most relevant people to the user. The collection is ordered by their relevance to the user, which is determined by the user's communication, collaboration and business relationships. A person is an aggregation of information from across mail, contacts and social networks.
 func (m *User) GetPeople()([]Personable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.people
-    }
+    return m.people
 }
 // GetPhoto gets the photo property value. The user's profile photo. Read-only.
 func (m *User) GetPhoto()(ProfilePhotoable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.photo
-    }
+    return m.photo
 }
 // GetPhotos gets the photos property value. The photos property
 func (m *User) GetPhotos()([]ProfilePhotoable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.photos
-    }
+    return m.photos
 }
 // GetPlanner gets the planner property value. Selective Planner services available to the user. Read-only. Nullable.
 func (m *User) GetPlanner()(PlannerUserable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.planner
-    }
+    return m.planner
 }
 // GetPostalCode gets the postalCode property value. The postal code for the user's postal address. The postal code is specific to the user's country/region. In the United States of America, this attribute contains the ZIP code. Maximum length is 40 characters. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
 func (m *User) GetPostalCode()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.postalCode
-    }
+    return m.postalCode
 }
 // GetPreferredDataLocation gets the preferredDataLocation property value. The preferred data location for the user. For more information, see OneDrive Online Multi-Geo.
 func (m *User) GetPreferredDataLocation()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.preferredDataLocation
-    }
+    return m.preferredDataLocation
 }
 // GetPreferredLanguage gets the preferredLanguage property value. The preferred language for the user. Should follow ISO 639-1 Code; for example en-US. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
 func (m *User) GetPreferredLanguage()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.preferredLanguage
-    }
+    return m.preferredLanguage
 }
 // GetPreferredName gets the preferredName property value. The preferred name for the user. Not Supported. This attribute returns an empty string.Returned only on $select.
 func (m *User) GetPreferredName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.preferredName
-    }
+    return m.preferredName
 }
 // GetPresence gets the presence property value. The presence property
 func (m *User) GetPresence()(Presenceable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.presence
-    }
+    return m.presence
 }
 // GetPrint gets the print property value. The print property
 func (m *User) GetPrint()(UserPrintable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.print
-    }
+    return m.print
 }
 // GetProfile gets the profile property value. Represents properties that are descriptive of a user in a tenant.
 func (m *User) GetProfile()(Profileable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.profile
-    }
+    return m.profile
 }
 // GetProvisionedPlans gets the provisionedPlans property value. The plans that are provisioned for the user. Read-only. Not nullable. Supports $filter (eq, not, ge, le).
 func (m *User) GetProvisionedPlans()([]ProvisionedPlanable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.provisionedPlans
-    }
+    return m.provisionedPlans
 }
 // GetProxyAddresses gets the proxyAddresses property value. For example: ['SMTP: bob@contoso.com', 'smtp: bob@sales.contoso.com']. Changes to the mail property will also update this collection to include the value as an SMTP address. For more information, see mail and proxyAddresses properties. The proxy address prefixed with SMTP (capitalized) is the primary proxy address while those prefixed with smtp are the secondary proxy addresses. For Azure AD B2C accounts, this property has a limit of ten unique addresses. Read-only in Microsoft Graph; you can update this property only through the Microsoft 365 admin center. Not nullable. Supports $filter (eq, not, ge, le, startsWith, endsWith, and counting empty collections).
 func (m *User) GetProxyAddresses()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.proxyAddresses
-    }
+    return m.proxyAddresses
 }
 // GetRefreshTokensValidFromDateTime gets the refreshTokensValidFromDateTime property value. Any refresh tokens or sessions tokens (session cookies) issued before this time are invalid, and applications will get an error when using an invalid refresh or sessions token to acquire a delegated access token (to access APIs such as Microsoft Graph).  If this happens, the application will need to acquire a new refresh token by making a request to the authorize endpoint. Read-only. Use invalidateAllRefreshTokens to reset.
 func (m *User) GetRefreshTokensValidFromDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.refreshTokensValidFromDateTime
-    }
+    return m.refreshTokensValidFromDateTime
 }
 // GetRegisteredDevices gets the registeredDevices property value. Devices that are registered for the user. Read-only. Nullable. Supports $expand.
 func (m *User) GetRegisteredDevices()([]DirectoryObjectable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.registeredDevices
-    }
+    return m.registeredDevices
 }
 // GetResponsibilities gets the responsibilities property value. A list for the user to enumerate their responsibilities. Returned only on $select.
 func (m *User) GetResponsibilities()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.responsibilities
-    }
+    return m.responsibilities
 }
 // GetSchools gets the schools property value. A list for the user to enumerate the schools they have attended. Returned only on $select.
 func (m *User) GetSchools()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.schools
-    }
+    return m.schools
 }
 // GetScopedRoleMemberOf gets the scopedRoleMemberOf property value. The scoped-role administrative unit memberships for this user. Read-only. Nullable.
 func (m *User) GetScopedRoleMemberOf()([]ScopedRoleMembershipable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.scopedRoleMemberOf
-    }
+    return m.scopedRoleMemberOf
 }
 // GetSecurityIdentifier gets the securityIdentifier property value. Security identifier (SID) of the user, used in Windows scenarios. Read-only. Returned by default. Supports $select and $filter (eq, not, ge, le, startsWith).
 func (m *User) GetSecurityIdentifier()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.securityIdentifier
-    }
+    return m.securityIdentifier
 }
 // GetSettings gets the settings property value. The settings property
 func (m *User) GetSettings()(UserSettingsable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.settings
-    }
+    return m.settings
 }
 // GetShowInAddressList gets the showInAddressList property value. Do not use in Microsoft Graph. Manage this property through the Microsoft 365 admin center instead. Represents whether the user should be included in the Outlook global address list. See Known issue.
 func (m *User) GetShowInAddressList()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.showInAddressList
-    }
+    return m.showInAddressList
 }
 // GetSignInActivity gets the signInActivity property value. Get the last signed-in date and request ID of the sign-in for a given user. Read-only.Returned only on $select. Supports $filter (eq, ne, not, ge, le) but, not with any other filterable properties. Note: Details for this property require an Azure AD Premium P1/P2 license and the AuditLog.Read.All permission.Note: There's a known issue with retrieving this property.This property is not returned for a user who has never signed in or last signed in before April 2020.
 func (m *User) GetSignInActivity()(SignInActivityable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.signInActivity
-    }
+    return m.signInActivity
 }
 // GetSignInSessionsValidFromDateTime gets the signInSessionsValidFromDateTime property value. Any refresh tokens or sessions tokens (session cookies) issued before this time are invalid, and applications will get an error when using an invalid refresh or sessions token to acquire a delegated access token (to access APIs such as Microsoft Graph).  If this happens, the application will need to acquire a new refresh token by making a request to the authorize endpoint. Read-only. Use revokeSignInSessions to reset.
 func (m *User) GetSignInSessionsValidFromDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.signInSessionsValidFromDateTime
-    }
+    return m.signInSessionsValidFromDateTime
 }
 // GetSkills gets the skills property value. A list for the user to enumerate their skills. Returned only on $select.
 func (m *User) GetSkills()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.skills
-    }
+    return m.skills
 }
 // GetState gets the state property value. The state or province in the user's address. Maximum length is 128 characters. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
 func (m *User) GetState()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.state
-    }
+    return m.state
 }
 // GetStreetAddress gets the streetAddress property value. The street address of the user's place of business. Maximum length is 1024 characters. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
 func (m *User) GetStreetAddress()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.streetAddress
-    }
+    return m.streetAddress
 }
 // GetSurname gets the surname property value. The user's surname (family name or last name). Maximum length is 64 characters. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
 func (m *User) GetSurname()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.surname
-    }
+    return m.surname
 }
 // GetTasks gets the tasks property value. The tasks property
 func (m *User) GetTasks()(Tasksable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.tasks
-    }
+    return m.tasks
 }
 // GetTeamwork gets the teamwork property value. A container for Microsoft Teams features available for the user. Read-only. Nullable.
 func (m *User) GetTeamwork()(UserTeamworkable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.teamwork
-    }
+    return m.teamwork
 }
 // GetTodo gets the todo property value. Represents the To Do services available to a user.
 func (m *User) GetTodo()(Todoable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.todo
-    }
+    return m.todo
 }
 // GetTransitiveMemberOf gets the transitiveMemberOf property value. The groups, including nested groups, and directory roles that a user is a member of. Nullable.
 func (m *User) GetTransitiveMemberOf()([]DirectoryObjectable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.transitiveMemberOf
-    }
+    return m.transitiveMemberOf
 }
 // GetTransitiveReports gets the transitiveReports property value. The transitive reports for a user. Read-only.
 func (m *User) GetTransitiveReports()([]DirectoryObjectable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.transitiveReports
-    }
+    return m.transitiveReports
 }
 // GetUsageLocation gets the usageLocation property value. A two letter country code (ISO standard 3166). Required for users that will be assigned licenses due to legal requirement to check for availability of services in countries.  Examples include: US, JP, and GB. Not nullable. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
 func (m *User) GetUsageLocation()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.usageLocation
-    }
+    return m.usageLocation
 }
 // GetUsageRights gets the usageRights property value. Represents the usage rights a user has been granted.
 func (m *User) GetUsageRights()([]UsageRightable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.usageRights
-    }
+    return m.usageRights
 }
 // GetUserPrincipalName gets the userPrincipalName property value. The user principal name (UPN) of the user. The UPN is an Internet-style login name for the user based on the Internet standard RFC 822. By convention, this should map to the user's email name. The general format is alias@domain, where domain must be present in the tenant's collection of verified domains. This property is required when a user is created. The verified domains for the tenant can be accessed from the verifiedDomains property of organization.NOTE: This property cannot contain accent characters. Only the following characters are allowed A - Z, a - z, 0 - 9, ' . - _ ! # ^ ~. For the complete list of allowed characters, see username policies. Supports $filter (eq, ne, not, ge, le, in, startsWith, endsWith) and $orderBy.
 func (m *User) GetUserPrincipalName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userPrincipalName
-    }
+    return m.userPrincipalName
 }
 // GetUserType gets the userType property value. A String value that can be used to classify user types in your directory, such as Member and Guest. Supports $filter (eq, ne, not, in, and eq on null values). NOTE: For more information about the permissions for member and guest users, see What are the default user permissions in Azure Active Directory?
 func (m *User) GetUserType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userType
-    }
+    return m.userType
 }
 // GetWindowsInformationProtectionDeviceRegistrations gets the windowsInformationProtectionDeviceRegistrations property value. Zero or more WIP device registrations that belong to the user.
 func (m *User) GetWindowsInformationProtectionDeviceRegistrations()([]WindowsInformationProtectionDeviceRegistrationable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.windowsInformationProtectionDeviceRegistrations
-    }
+    return m.windowsInformationProtectionDeviceRegistrations
 }
 // Serialize serializes information the current object
 func (m *User) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -3493,6 +2937,12 @@ func (m *User) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c49
     }
     {
         err = writer.WriteStringValue("employeeId", m.GetEmployeeId())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteTimeValue("employeeLeaveDateTime", m.GetEmployeeLeaveDateTime())
         if err != nil {
             return err
         }
@@ -4219,859 +3669,577 @@ func (m *User) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c49
 }
 // SetAboutMe sets the aboutMe property value. A freeform text entry field for the user to describe themselves. Returned only on $select.
 func (m *User) SetAboutMe(value *string)() {
-    if m != nil {
-        m.aboutMe = value
-    }
+    m.aboutMe = value
 }
 // SetAccountEnabled sets the accountEnabled property value. true if the account is enabled; otherwise, false. This property is required when a user is created. Supports $filter (eq, ne, not, and in).
 func (m *User) SetAccountEnabled(value *bool)() {
-    if m != nil {
-        m.accountEnabled = value
-    }
+    m.accountEnabled = value
 }
-// SetActivities sets the activities property value. The user's activities across devices. Read-only. Nullable.
+// SetActivities sets the activities property value. The activities property
 func (m *User) SetActivities(value []UserActivityable)() {
-    if m != nil {
-        m.activities = value
-    }
+    m.activities = value
 }
 // SetAgeGroup sets the ageGroup property value. Sets the age group of the user. Allowed values: null, Minor, NotAdult and Adult. Refer to the legal age group property definitions for further information. Supports $filter (eq, ne, not, and in).
 func (m *User) SetAgeGroup(value *string)() {
-    if m != nil {
-        m.ageGroup = value
-    }
+    m.ageGroup = value
 }
 // SetAgreementAcceptances sets the agreementAcceptances property value. The user's terms of use acceptance statuses. Read-only. Nullable.
 func (m *User) SetAgreementAcceptances(value []AgreementAcceptanceable)() {
-    if m != nil {
-        m.agreementAcceptances = value
-    }
+    m.agreementAcceptances = value
 }
 // SetAnalytics sets the analytics property value. The analytics property
 func (m *User) SetAnalytics(value UserAnalyticsable)() {
-    if m != nil {
-        m.analytics = value
-    }
+    m.analytics = value
 }
 // SetAppConsentRequestsForApproval sets the appConsentRequestsForApproval property value. The appConsentRequestsForApproval property
 func (m *User) SetAppConsentRequestsForApproval(value []AppConsentRequestable)() {
-    if m != nil {
-        m.appConsentRequestsForApproval = value
-    }
+    m.appConsentRequestsForApproval = value
 }
 // SetAppRoleAssignedResources sets the appRoleAssignedResources property value. The appRoleAssignedResources property
 func (m *User) SetAppRoleAssignedResources(value []ServicePrincipalable)() {
-    if m != nil {
-        m.appRoleAssignedResources = value
-    }
+    m.appRoleAssignedResources = value
 }
 // SetAppRoleAssignments sets the appRoleAssignments property value. Represents the app roles a user has been granted for an application. Supports $expand.
 func (m *User) SetAppRoleAssignments(value []AppRoleAssignmentable)() {
-    if m != nil {
-        m.appRoleAssignments = value
-    }
+    m.appRoleAssignments = value
 }
 // SetApprovals sets the approvals property value. The approvals property
 func (m *User) SetApprovals(value []Approvalable)() {
-    if m != nil {
-        m.approvals = value
-    }
+    m.approvals = value
 }
 // SetAssignedLicenses sets the assignedLicenses property value. The licenses that are assigned to the user, including inherited (group-based) licenses. Not nullable. Supports $filter (eq, not, and counting empty collections).
 func (m *User) SetAssignedLicenses(value []AssignedLicenseable)() {
-    if m != nil {
-        m.assignedLicenses = value
-    }
+    m.assignedLicenses = value
 }
 // SetAssignedPlans sets the assignedPlans property value. The plans that are assigned to the user. Read-only. Not nullable.Supports $filter (eq and not).
 func (m *User) SetAssignedPlans(value []AssignedPlanable)() {
-    if m != nil {
-        m.assignedPlans = value
-    }
+    m.assignedPlans = value
 }
-// SetAuthentication sets the authentication property value. The authentication methods that are supported for the user.
+// SetAuthentication sets the authentication property value. The authentication property
 func (m *User) SetAuthentication(value Authenticationable)() {
-    if m != nil {
-        m.authentication = value
-    }
+    m.authentication = value
 }
 // SetAuthorizationInfo sets the authorizationInfo property value. The authorizationInfo property
 func (m *User) SetAuthorizationInfo(value AuthorizationInfoable)() {
-    if m != nil {
-        m.authorizationInfo = value
-    }
+    m.authorizationInfo = value
 }
 // SetBirthday sets the birthday property value. The birthday of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z Returned only on $select.
 func (m *User) SetBirthday(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.birthday = value
-    }
+    m.birthday = value
 }
 // SetBusinessPhones sets the businessPhones property value. The telephone numbers for the user. Only one number can be set for this property. Read-only for users synced from on-premises directory. Supports $filter (eq, not, ge, le, startsWith).
 func (m *User) SetBusinessPhones(value []string)() {
-    if m != nil {
-        m.businessPhones = value
-    }
+    m.businessPhones = value
 }
 // SetCalendar sets the calendar property value. The user's primary calendar. Read-only.
 func (m *User) SetCalendar(value Calendarable)() {
-    if m != nil {
-        m.calendar = value
-    }
+    m.calendar = value
 }
 // SetCalendarGroups sets the calendarGroups property value. The user's calendar groups. Read-only. Nullable.
 func (m *User) SetCalendarGroups(value []CalendarGroupable)() {
-    if m != nil {
-        m.calendarGroups = value
-    }
+    m.calendarGroups = value
 }
 // SetCalendars sets the calendars property value. The user's calendars. Read-only. Nullable.
 func (m *User) SetCalendars(value []Calendarable)() {
-    if m != nil {
-        m.calendars = value
-    }
+    m.calendars = value
 }
 // SetCalendarView sets the calendarView property value. The calendar view for the calendar. Read-only. Nullable.
 func (m *User) SetCalendarView(value []Eventable)() {
-    if m != nil {
-        m.calendarView = value
-    }
+    m.calendarView = value
 }
 // SetChats sets the chats property value. The chats property
 func (m *User) SetChats(value []Chatable)() {
-    if m != nil {
-        m.chats = value
-    }
+    m.chats = value
 }
 // SetCity sets the city property value. The city in which the user is located. Maximum length is 128 characters. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
 func (m *User) SetCity(value *string)() {
-    if m != nil {
-        m.city = value
-    }
+    m.city = value
 }
 // SetCloudPCs sets the cloudPCs property value. The cloudPCs property
 func (m *User) SetCloudPCs(value []CloudPCable)() {
-    if m != nil {
-        m.cloudPCs = value
-    }
+    m.cloudPCs = value
 }
 // SetCompanyName sets the companyName property value. The company name which the user is associated. This property can be useful for describing the company that an external user comes from. The maximum length is 64 characters.Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
 func (m *User) SetCompanyName(value *string)() {
-    if m != nil {
-        m.companyName = value
-    }
+    m.companyName = value
 }
 // SetConsentProvidedForMinor sets the consentProvidedForMinor property value. Sets whether consent has been obtained for minors. Allowed values: null, Granted, Denied and NotRequired. Refer to the legal age group property definitions for further information. Supports $filter (eq, ne, not, and in).
 func (m *User) SetConsentProvidedForMinor(value *string)() {
-    if m != nil {
-        m.consentProvidedForMinor = value
-    }
+    m.consentProvidedForMinor = value
 }
 // SetContactFolders sets the contactFolders property value. The user's contacts folders. Read-only. Nullable.
 func (m *User) SetContactFolders(value []ContactFolderable)() {
-    if m != nil {
-        m.contactFolders = value
-    }
+    m.contactFolders = value
 }
 // SetContacts sets the contacts property value. The user's contacts. Read-only. Nullable.
 func (m *User) SetContacts(value []Contactable)() {
-    if m != nil {
-        m.contacts = value
-    }
+    m.contacts = value
 }
 // SetCountry sets the country property value. The country/region in which the user is located; for example, US or UK. Maximum length is 128 characters. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
 func (m *User) SetCountry(value *string)() {
-    if m != nil {
-        m.country = value
-    }
+    m.country = value
 }
 // SetCreatedDateTime sets the createdDateTime property value. The date and time the user was created. The value cannot be modified and is automatically populated when the entity is created. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. Property is nullable. A null value indicates that an accurate creation time couldn't be determined for the user. Read-only. Supports $filter (eq, ne, not , ge, le, in).
 func (m *User) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.createdDateTime = value
-    }
+    m.createdDateTime = value
 }
 // SetCreatedObjects sets the createdObjects property value. Directory objects that were created by the user. Read-only. Nullable.
 func (m *User) SetCreatedObjects(value []DirectoryObjectable)() {
-    if m != nil {
-        m.createdObjects = value
-    }
+    m.createdObjects = value
 }
 // SetCreationType sets the creationType property value. Indicates whether the user account was created through one of the following methods:  As a regular school or work account (null). As an external account (Invitation). As a local account for an Azure Active Directory B2C tenant (LocalAccount). Through self-service sign-up by an internal user using email verification (EmailVerified). Through self-service sign-up by an external user signing up through a link that is part of a user flow (SelfServiceSignUp).  Read-only.Supports $filter (eq, ne, not, and in).
 func (m *User) SetCreationType(value *string)() {
-    if m != nil {
-        m.creationType = value
-    }
+    m.creationType = value
 }
 // SetCustomSecurityAttributes sets the customSecurityAttributes property value. An open complex type that holds the value of a custom security attribute that is assigned to a directory object. Nullable. Returned only on $select. Supports $filter (eq, ne, not, startsWith).
 func (m *User) SetCustomSecurityAttributes(value CustomSecurityAttributeValueable)() {
-    if m != nil {
-        m.customSecurityAttributes = value
-    }
+    m.customSecurityAttributes = value
 }
 // SetDepartment sets the department property value. The name for the department in which the user works. Maximum length is 64 characters.Supports $filter (eq, ne, not , ge, le, in, and eq on null values).
 func (m *User) SetDepartment(value *string)() {
-    if m != nil {
-        m.department = value
-    }
+    m.department = value
 }
 // SetDeviceEnrollmentConfigurations sets the deviceEnrollmentConfigurations property value. Get enrollment configurations targeted to the user
 func (m *User) SetDeviceEnrollmentConfigurations(value []DeviceEnrollmentConfigurationable)() {
-    if m != nil {
-        m.deviceEnrollmentConfigurations = value
-    }
+    m.deviceEnrollmentConfigurations = value
 }
 // SetDeviceEnrollmentLimit sets the deviceEnrollmentLimit property value. The limit on the maximum number of devices that the user is permitted to enroll. Allowed values are 5 or 1000.
 func (m *User) SetDeviceEnrollmentLimit(value *int32)() {
-    if m != nil {
-        m.deviceEnrollmentLimit = value
-    }
+    m.deviceEnrollmentLimit = value
 }
 // SetDeviceKeys sets the deviceKeys property value. The deviceKeys property
 func (m *User) SetDeviceKeys(value []DeviceKeyable)() {
-    if m != nil {
-        m.deviceKeys = value
-    }
+    m.deviceKeys = value
 }
 // SetDeviceManagementTroubleshootingEvents sets the deviceManagementTroubleshootingEvents property value. The list of troubleshooting events for this user.
 func (m *User) SetDeviceManagementTroubleshootingEvents(value []DeviceManagementTroubleshootingEventable)() {
-    if m != nil {
-        m.deviceManagementTroubleshootingEvents = value
-    }
+    m.deviceManagementTroubleshootingEvents = value
 }
 // SetDevices sets the devices property value. The devices property
 func (m *User) SetDevices(value []Deviceable)() {
-    if m != nil {
-        m.devices = value
-    }
+    m.devices = value
 }
 // SetDirectReports sets the directReports property value. The users and contacts that report to the user. (The users and contacts that have their manager property set to this user.) Read-only. Nullable. Supports $expand.
 func (m *User) SetDirectReports(value []DirectoryObjectable)() {
-    if m != nil {
-        m.directReports = value
-    }
+    m.directReports = value
 }
 // SetDisplayName sets the displayName property value. The name displayed in the address book for the user. This value is usually the combination of the user's first name, middle initial, and last name. This property is required when a user is created and it cannot be cleared during updates. Maximum length is 256 characters. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values), $orderBy, and $search.
 func (m *User) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }
 // SetDrive sets the drive property value. The user's OneDrive. Read-only.
 func (m *User) SetDrive(value Driveable)() {
-    if m != nil {
-        m.drive = value
-    }
+    m.drive = value
 }
 // SetDrives sets the drives property value. A collection of drives available for this user. Read-only.
 func (m *User) SetDrives(value []Driveable)() {
-    if m != nil {
-        m.drives = value
-    }
+    m.drives = value
 }
 // SetEmployeeHireDate sets the employeeHireDate property value. The date and time when the user was hired or will start work in case of a future hire. Supports $filter (eq, ne, not , ge, le, in).
 func (m *User) SetEmployeeHireDate(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.employeeHireDate = value
-    }
+    m.employeeHireDate = value
 }
 // SetEmployeeId sets the employeeId property value. The employee identifier assigned to the user by the organization. The maximum length is 16 characters.Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values).
 func (m *User) SetEmployeeId(value *string)() {
-    if m != nil {
-        m.employeeId = value
-    }
+    m.employeeId = value
+}
+// SetEmployeeLeaveDateTime sets the employeeLeaveDateTime property value. The employeeLeaveDateTime property
+func (m *User) SetEmployeeLeaveDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
+    m.employeeLeaveDateTime = value
 }
 // SetEmployeeOrgData sets the employeeOrgData property value. Represents organization data (e.g. division and costCenter) associated with a user. Supports $filter (eq, ne, not , ge, le, in).
 func (m *User) SetEmployeeOrgData(value EmployeeOrgDataable)() {
-    if m != nil {
-        m.employeeOrgData = value
-    }
+    m.employeeOrgData = value
 }
 // SetEmployeeType sets the employeeType property value. Captures enterprise worker type. For example, Employee, Contractor, Consultant, or Vendor. Supports $filter (eq, ne, not , ge, le, in, startsWith).
 func (m *User) SetEmployeeType(value *string)() {
-    if m != nil {
-        m.employeeType = value
-    }
+    m.employeeType = value
 }
 // SetEvents sets the events property value. The user's events. Default is to show events under the Default Calendar. Read-only. Nullable.
 func (m *User) SetEvents(value []Eventable)() {
-    if m != nil {
-        m.events = value
-    }
+    m.events = value
 }
 // SetExtensions sets the extensions property value. The collection of open extensions defined for the user. Supports $expand. Nullable.
 func (m *User) SetExtensions(value []Extensionable)() {
-    if m != nil {
-        m.extensions = value
-    }
+    m.extensions = value
 }
 // SetExternalUserState sets the externalUserState property value. For an external user invited to the tenant using the invitation API, this property represents the invited user's invitation status. For invited users, the state can be PendingAcceptance or Accepted, or null for all other users. Supports $filter (eq, ne, not , in).
 func (m *User) SetExternalUserState(value *string)() {
-    if m != nil {
-        m.externalUserState = value
-    }
+    m.externalUserState = value
 }
 // SetExternalUserStateChangeDateTime sets the externalUserStateChangeDateTime property value. Shows the timestamp for the latest change to the externalUserState property. Supports $filter (eq, ne, not , in).
 func (m *User) SetExternalUserStateChangeDateTime(value *string)() {
-    if m != nil {
-        m.externalUserStateChangeDateTime = value
-    }
+    m.externalUserStateChangeDateTime = value
 }
 // SetFaxNumber sets the faxNumber property value. The fax number of the user. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values).
 func (m *User) SetFaxNumber(value *string)() {
-    if m != nil {
-        m.faxNumber = value
-    }
+    m.faxNumber = value
 }
 // SetFollowedSites sets the followedSites property value. The followedSites property
 func (m *User) SetFollowedSites(value []Siteable)() {
-    if m != nil {
-        m.followedSites = value
-    }
+    m.followedSites = value
 }
 // SetGivenName sets the givenName property value. The given name (first name) of the user. Maximum length is 64 characters. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values).
 func (m *User) SetGivenName(value *string)() {
-    if m != nil {
-        m.givenName = value
-    }
+    m.givenName = value
 }
 // SetHireDate sets the hireDate property value. The hire date of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.  Returned only on $select.  Note: This property is specific to SharePoint Online. We recommend using the native employeeHireDate property to set and update hire date values using Microsoft Graph APIs.
 func (m *User) SetHireDate(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.hireDate = value
-    }
+    m.hireDate = value
 }
 // SetIdentities sets the identities property value. Represents the identities that can be used to sign in to this user account. An identity can be provided by Microsoft (also known as a local account), by organizations, or by social identity providers such as Facebook, Google, and Microsoft, and tied to a user account. May contain multiple items with the same signInType value. Supports $filter (eq) including on null values, only where the signInType is not userPrincipalName.
 func (m *User) SetIdentities(value []ObjectIdentityable)() {
-    if m != nil {
-        m.identities = value
-    }
+    m.identities = value
 }
 // SetImAddresses sets the imAddresses property value. The instant message voice over IP (VOIP) session initiation protocol (SIP) addresses for the user. Read-only. Supports $filter (eq, not, ge, le, startsWith).
 func (m *User) SetImAddresses(value []string)() {
-    if m != nil {
-        m.imAddresses = value
-    }
+    m.imAddresses = value
 }
 // SetInferenceClassification sets the inferenceClassification property value. Relevance classification of the user's messages based on explicit designations which override inferred relevance or importance.
 func (m *User) SetInferenceClassification(value InferenceClassificationable)() {
-    if m != nil {
-        m.inferenceClassification = value
-    }
+    m.inferenceClassification = value
 }
 // SetInfoCatalogs sets the infoCatalogs property value. Identifies the info segments assigned to the user.  Supports $filter (eq, not, ge, le, startsWith).
 func (m *User) SetInfoCatalogs(value []string)() {
-    if m != nil {
-        m.infoCatalogs = value
-    }
+    m.infoCatalogs = value
 }
 // SetInformationProtection sets the informationProtection property value. The informationProtection property
 func (m *User) SetInformationProtection(value InformationProtectionable)() {
-    if m != nil {
-        m.informationProtection = value
-    }
+    m.informationProtection = value
 }
 // SetInsights sets the insights property value. The insights property
 func (m *User) SetInsights(value ItemInsightsable)() {
-    if m != nil {
-        m.insights = value
-    }
+    m.insights = value
 }
 // SetInterests sets the interests property value. A list for the user to describe their interests. Returned only on $select.
 func (m *User) SetInterests(value []string)() {
-    if m != nil {
-        m.interests = value
-    }
+    m.interests = value
 }
 // SetIsManagementRestricted sets the isManagementRestricted property value. The isManagementRestricted property
 func (m *User) SetIsManagementRestricted(value *bool)() {
-    if m != nil {
-        m.isManagementRestricted = value
-    }
+    m.isManagementRestricted = value
 }
 // SetIsResourceAccount sets the isResourceAccount property value. Do not use – reserved for future use.
 func (m *User) SetIsResourceAccount(value *bool)() {
-    if m != nil {
-        m.isResourceAccount = value
-    }
+    m.isResourceAccount = value
 }
 // SetJobTitle sets the jobTitle property value. The user's job title. Maximum length is 128 characters. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values).
 func (m *User) SetJobTitle(value *string)() {
-    if m != nil {
-        m.jobTitle = value
-    }
+    m.jobTitle = value
 }
 // SetJoinedGroups sets the joinedGroups property value. The joinedGroups property
 func (m *User) SetJoinedGroups(value []Groupable)() {
-    if m != nil {
-        m.joinedGroups = value
-    }
+    m.joinedGroups = value
 }
 // SetJoinedTeams sets the joinedTeams property value. The Microsoft Teams teams that the user is a member of. Read-only. Nullable.
 func (m *User) SetJoinedTeams(value []Teamable)() {
-    if m != nil {
-        m.joinedTeams = value
-    }
+    m.joinedTeams = value
 }
 // SetLastPasswordChangeDateTime sets the lastPasswordChangeDateTime property value. The time when this Azure AD user last changed their password or when their password was created, , whichever date the latest action was performed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Returned only on $select.
 func (m *User) SetLastPasswordChangeDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.lastPasswordChangeDateTime = value
-    }
+    m.lastPasswordChangeDateTime = value
 }
 // SetLegalAgeGroupClassification sets the legalAgeGroupClassification property value. Used by enterprise applications to determine the legal age group of the user. This property is read-only and calculated based on ageGroup and consentProvidedForMinor properties. Allowed values: null, MinorWithOutParentalConsent, MinorWithParentalConsent, MinorNoParentalConsentRequired, NotAdult and Adult. Refer to the legal age group property definitions for further information. Returned only on $select.
 func (m *User) SetLegalAgeGroupClassification(value *string)() {
-    if m != nil {
-        m.legalAgeGroupClassification = value
-    }
+    m.legalAgeGroupClassification = value
 }
 // SetLicenseAssignmentStates sets the licenseAssignmentStates property value. State of license assignments for this user. Read-only. Returned only on $select.
 func (m *User) SetLicenseAssignmentStates(value []LicenseAssignmentStateable)() {
-    if m != nil {
-        m.licenseAssignmentStates = value
-    }
+    m.licenseAssignmentStates = value
 }
-// SetLicenseDetails sets the licenseDetails property value. A collection of this user's license details. Read-only.
+// SetLicenseDetails sets the licenseDetails property value. The licenseDetails property
 func (m *User) SetLicenseDetails(value []LicenseDetailsable)() {
-    if m != nil {
-        m.licenseDetails = value
-    }
+    m.licenseDetails = value
 }
 // SetMail sets the mail property value. The SMTP address for the user, for example, admin@contoso.com. Changes to this property will also update the user's proxyAddresses collection to include the value as an SMTP address. This property cannot contain accent characters.  NOTE: We do not recommend updating this property for Azure AD B2C user profiles. Use the otherMails property instead.  Supports $filter (eq, ne, not, ge, le, in, startsWith, endsWith, and eq on null values).
 func (m *User) SetMail(value *string)() {
-    if m != nil {
-        m.mail = value
-    }
+    m.mail = value
 }
 // SetMailboxSettings sets the mailboxSettings property value. Settings for the primary mailbox of the signed-in user. You can get or update settings for sending automatic replies to incoming messages, locale, and time zone. For more information, see User preferences for languages and regional formats. Returned only on $select.
 func (m *User) SetMailboxSettings(value MailboxSettingsable)() {
-    if m != nil {
-        m.mailboxSettings = value
-    }
+    m.mailboxSettings = value
 }
 // SetMailFolders sets the mailFolders property value. The user's mail folders. Read-only. Nullable.
 func (m *User) SetMailFolders(value []MailFolderable)() {
-    if m != nil {
-        m.mailFolders = value
-    }
+    m.mailFolders = value
 }
 // SetMailNickname sets the mailNickname property value. The mail alias for the user. This property must be specified when a user is created. Maximum length is 64 characters. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
 func (m *User) SetMailNickname(value *string)() {
-    if m != nil {
-        m.mailNickname = value
-    }
+    m.mailNickname = value
 }
 // SetManagedAppRegistrations sets the managedAppRegistrations property value. Zero or more managed app registrations that belong to the user.
 func (m *User) SetManagedAppRegistrations(value []ManagedAppRegistrationable)() {
-    if m != nil {
-        m.managedAppRegistrations = value
-    }
+    m.managedAppRegistrations = value
 }
 // SetManagedDevices sets the managedDevices property value. The managed devices associated with the user.
 func (m *User) SetManagedDevices(value []ManagedDeviceable)() {
-    if m != nil {
-        m.managedDevices = value
-    }
+    m.managedDevices = value
 }
 // SetManager sets the manager property value. The user or contact that is this user's manager. Read-only. (HTTP Methods: GET, PUT, DELETE.). Supports $expand.
 func (m *User) SetManager(value DirectoryObjectable)() {
-    if m != nil {
-        m.manager = value
-    }
+    m.manager = value
 }
 // SetMemberOf sets the memberOf property value. The groups, directory roles and administrative units that the user is a member of. Read-only. Nullable. Supports $expand.
 func (m *User) SetMemberOf(value []DirectoryObjectable)() {
-    if m != nil {
-        m.memberOf = value
-    }
+    m.memberOf = value
 }
 // SetMessages sets the messages property value. The messages in a mailbox or folder. Read-only. Nullable.
 func (m *User) SetMessages(value []Messageable)() {
-    if m != nil {
-        m.messages = value
-    }
+    m.messages = value
 }
 // SetMobileAppIntentAndStates sets the mobileAppIntentAndStates property value. The list of troubleshooting events for this user.
 func (m *User) SetMobileAppIntentAndStates(value []MobileAppIntentAndStateable)() {
-    if m != nil {
-        m.mobileAppIntentAndStates = value
-    }
+    m.mobileAppIntentAndStates = value
 }
 // SetMobileAppTroubleshootingEvents sets the mobileAppTroubleshootingEvents property value. The list of mobile app troubleshooting events for this user.
 func (m *User) SetMobileAppTroubleshootingEvents(value []MobileAppTroubleshootingEventable)() {
-    if m != nil {
-        m.mobileAppTroubleshootingEvents = value
-    }
+    m.mobileAppTroubleshootingEvents = value
 }
 // SetMobilePhone sets the mobilePhone property value. The primary cellular telephone number for the user. Read-only for users synced from on-premises directory.  Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
 func (m *User) SetMobilePhone(value *string)() {
-    if m != nil {
-        m.mobilePhone = value
-    }
+    m.mobilePhone = value
 }
 // SetMySite sets the mySite property value. The URL for the user's personal site. Returned only on $select.
 func (m *User) SetMySite(value *string)() {
-    if m != nil {
-        m.mySite = value
-    }
+    m.mySite = value
 }
 // SetNotifications sets the notifications property value. The notifications property
 func (m *User) SetNotifications(value []Notificationable)() {
-    if m != nil {
-        m.notifications = value
-    }
+    m.notifications = value
 }
 // SetOauth2PermissionGrants sets the oauth2PermissionGrants property value. The oauth2PermissionGrants property
 func (m *User) SetOauth2PermissionGrants(value []OAuth2PermissionGrantable)() {
-    if m != nil {
-        m.oauth2PermissionGrants = value
-    }
+    m.oauth2PermissionGrants = value
 }
 // SetOfficeLocation sets the officeLocation property value. The office location in the user's place of business. Maximum length is 128 characters. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
 func (m *User) SetOfficeLocation(value *string)() {
-    if m != nil {
-        m.officeLocation = value
-    }
+    m.officeLocation = value
 }
 // SetOnenote sets the onenote property value. The onenote property
 func (m *User) SetOnenote(value Onenoteable)() {
-    if m != nil {
-        m.onenote = value
-    }
+    m.onenote = value
 }
 // SetOnlineMeetings sets the onlineMeetings property value. The onlineMeetings property
 func (m *User) SetOnlineMeetings(value []OnlineMeetingable)() {
-    if m != nil {
-        m.onlineMeetings = value
-    }
+    m.onlineMeetings = value
 }
 // SetOnPremisesDistinguishedName sets the onPremisesDistinguishedName property value. Contains the on-premises Active Directory distinguished name or DN. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only.
 func (m *User) SetOnPremisesDistinguishedName(value *string)() {
-    if m != nil {
-        m.onPremisesDistinguishedName = value
-    }
+    m.onPremisesDistinguishedName = value
 }
 // SetOnPremisesDomainName sets the onPremisesDomainName property value. Contains the on-premises domainFQDN, also called dnsDomainName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only.
 func (m *User) SetOnPremisesDomainName(value *string)() {
-    if m != nil {
-        m.onPremisesDomainName = value
-    }
+    m.onPremisesDomainName = value
 }
 // SetOnPremisesExtensionAttributes sets the onPremisesExtensionAttributes property value. Contains extensionAttributes1-15 for the user. These extension attributes are also known as Exchange custom attributes 1-15. For an onPremisesSyncEnabled user, the source of authority for this set of properties is the on-premises and is read-only. For a cloud-only user (where onPremisesSyncEnabled is false), these properties can be set during creation or update of a user object.  For a cloud-only user previously synced from on-premises Active Directory, these properties are read-only in Microsoft Graph but can be fully managed through the Exchange Admin Center or the Exchange Online V2 module in PowerShell. Supports $filter (eq, ne, not, in).
 func (m *User) SetOnPremisesExtensionAttributes(value OnPremisesExtensionAttributesable)() {
-    if m != nil {
-        m.onPremisesExtensionAttributes = value
-    }
+    m.onPremisesExtensionAttributes = value
 }
 // SetOnPremisesImmutableId sets the onPremisesImmutableId property value. This property is used to associate an on-premises Active Directory user account to their Azure AD user object. This property must be specified when creating a new user account in the Graph if you are using a federated domain for the user's userPrincipalName (UPN) property. Note: The $ and _ characters cannot be used when specifying this property. Supports $filter (eq, ne, not, ge, le, in).
 func (m *User) SetOnPremisesImmutableId(value *string)() {
-    if m != nil {
-        m.onPremisesImmutableId = value
-    }
+    m.onPremisesImmutableId = value
 }
 // SetOnPremisesLastSyncDateTime sets the onPremisesLastSyncDateTime property value. Indicates the last time at which the object was synced with the on-premises directory; for example: '2013-02-16T03:04:54Z'. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Supports $filter (eq, ne, not, ge, le, in).
 func (m *User) SetOnPremisesLastSyncDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.onPremisesLastSyncDateTime = value
-    }
+    m.onPremisesLastSyncDateTime = value
 }
 // SetOnPremisesProvisioningErrors sets the onPremisesProvisioningErrors property value. Errors when using Microsoft synchronization product during provisioning.  Supports $filter (eq, not, ge, le).
 func (m *User) SetOnPremisesProvisioningErrors(value []OnPremisesProvisioningErrorable)() {
-    if m != nil {
-        m.onPremisesProvisioningErrors = value
-    }
+    m.onPremisesProvisioningErrors = value
 }
 // SetOnPremisesSamAccountName sets the onPremisesSamAccountName property value. Contains the on-premises sAMAccountName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only. Supports $filter (eq, ne, not, ge, le, in, startsWith).
 func (m *User) SetOnPremisesSamAccountName(value *string)() {
-    if m != nil {
-        m.onPremisesSamAccountName = value
-    }
+    m.onPremisesSamAccountName = value
 }
 // SetOnPremisesSecurityIdentifier sets the onPremisesSecurityIdentifier property value. Contains the on-premises security identifier (SID) for the user that was synchronized from on-premises to the cloud. Read-only. Supports $filter (eq including on null values).
 func (m *User) SetOnPremisesSecurityIdentifier(value *string)() {
-    if m != nil {
-        m.onPremisesSecurityIdentifier = value
-    }
+    m.onPremisesSecurityIdentifier = value
 }
 // SetOnPremisesSyncEnabled sets the onPremisesSyncEnabled property value. true if this user object is currently being synced from an on-premises Active Directory (AD); otherwise the user isn't being synced and can be managed in Azure Active Directory (Azure AD). Read-only. Supports $filter (eq, ne, not, in, and eq on null values).
 func (m *User) SetOnPremisesSyncEnabled(value *bool)() {
-    if m != nil {
-        m.onPremisesSyncEnabled = value
-    }
+    m.onPremisesSyncEnabled = value
 }
 // SetOnPremisesUserPrincipalName sets the onPremisesUserPrincipalName property value. Contains the on-premises userPrincipalName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only. Supports $filter (eq, ne, not, ge, le, in, startsWith).
 func (m *User) SetOnPremisesUserPrincipalName(value *string)() {
-    if m != nil {
-        m.onPremisesUserPrincipalName = value
-    }
+    m.onPremisesUserPrincipalName = value
 }
 // SetOtherMails sets the otherMails property value. A list of additional email addresses for the user; for example: ['bob@contoso.com', 'Robert@fabrikam.com'].NOTE: This property cannot contain accent characters.Supports $filter (eq, not, ge, le, in, startsWith, endsWith, and counting empty collections).
 func (m *User) SetOtherMails(value []string)() {
-    if m != nil {
-        m.otherMails = value
-    }
+    m.otherMails = value
 }
 // SetOutlook sets the outlook property value. Selective Outlook services available to the user. Read-only. Nullable.
 func (m *User) SetOutlook(value OutlookUserable)() {
-    if m != nil {
-        m.outlook = value
-    }
+    m.outlook = value
 }
 // SetOwnedDevices sets the ownedDevices property value. Devices that are owned by the user. Read-only. Nullable. Supports $expand.
 func (m *User) SetOwnedDevices(value []DirectoryObjectable)() {
-    if m != nil {
-        m.ownedDevices = value
-    }
+    m.ownedDevices = value
 }
 // SetOwnedObjects sets the ownedObjects property value. Directory objects that are owned by the user. Read-only. Nullable. Supports $expand.
 func (m *User) SetOwnedObjects(value []DirectoryObjectable)() {
-    if m != nil {
-        m.ownedObjects = value
-    }
+    m.ownedObjects = value
 }
 // SetPasswordPolicies sets the passwordPolicies property value. Specifies password policies for the user. This value is an enumeration with one possible value being DisableStrongPassword, which allows weaker passwords than the default policy to be specified. DisablePasswordExpiration can also be specified. The two may be specified together; for example: DisablePasswordExpiration, DisableStrongPassword. For more information on the default password policies, see Azure AD pasword policies. Supports $filter (ne, not, and eq on null values).
 func (m *User) SetPasswordPolicies(value *string)() {
-    if m != nil {
-        m.passwordPolicies = value
-    }
+    m.passwordPolicies = value
 }
 // SetPasswordProfile sets the passwordProfile property value. Specifies the password profile for the user. The profile contains the user's password. This property is required when a user is created. The password in the profile must satisfy minimum requirements as specified by the passwordPolicies property. By default, a strong password is required. NOTE: For Azure B2C tenants, the forceChangePasswordNextSignIn property should be set to false and instead use custom policies and user flows to force password reset at first logon. See Force password reset at first logon. Supports $filter (eq, ne, not, in, and eq on null values).
 func (m *User) SetPasswordProfile(value PasswordProfileable)() {
-    if m != nil {
-        m.passwordProfile = value
-    }
+    m.passwordProfile = value
 }
 // SetPastProjects sets the pastProjects property value. A list for the user to enumerate their past projects. Returned only on $select.
 func (m *User) SetPastProjects(value []string)() {
-    if m != nil {
-        m.pastProjects = value
-    }
+    m.pastProjects = value
 }
 // SetPendingAccessReviewInstances sets the pendingAccessReviewInstances property value. Navigation property to get list of access reviews pending approval by reviewer.
 func (m *User) SetPendingAccessReviewInstances(value []AccessReviewInstanceable)() {
-    if m != nil {
-        m.pendingAccessReviewInstances = value
-    }
+    m.pendingAccessReviewInstances = value
 }
 // SetPeople sets the people property value. Read-only. The most relevant people to the user. The collection is ordered by their relevance to the user, which is determined by the user's communication, collaboration and business relationships. A person is an aggregation of information from across mail, contacts and social networks.
 func (m *User) SetPeople(value []Personable)() {
-    if m != nil {
-        m.people = value
-    }
+    m.people = value
 }
 // SetPhoto sets the photo property value. The user's profile photo. Read-only.
 func (m *User) SetPhoto(value ProfilePhotoable)() {
-    if m != nil {
-        m.photo = value
-    }
+    m.photo = value
 }
 // SetPhotos sets the photos property value. The photos property
 func (m *User) SetPhotos(value []ProfilePhotoable)() {
-    if m != nil {
-        m.photos = value
-    }
+    m.photos = value
 }
 // SetPlanner sets the planner property value. Selective Planner services available to the user. Read-only. Nullable.
 func (m *User) SetPlanner(value PlannerUserable)() {
-    if m != nil {
-        m.planner = value
-    }
+    m.planner = value
 }
 // SetPostalCode sets the postalCode property value. The postal code for the user's postal address. The postal code is specific to the user's country/region. In the United States of America, this attribute contains the ZIP code. Maximum length is 40 characters. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
 func (m *User) SetPostalCode(value *string)() {
-    if m != nil {
-        m.postalCode = value
-    }
+    m.postalCode = value
 }
 // SetPreferredDataLocation sets the preferredDataLocation property value. The preferred data location for the user. For more information, see OneDrive Online Multi-Geo.
 func (m *User) SetPreferredDataLocation(value *string)() {
-    if m != nil {
-        m.preferredDataLocation = value
-    }
+    m.preferredDataLocation = value
 }
 // SetPreferredLanguage sets the preferredLanguage property value. The preferred language for the user. Should follow ISO 639-1 Code; for example en-US. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
 func (m *User) SetPreferredLanguage(value *string)() {
-    if m != nil {
-        m.preferredLanguage = value
-    }
+    m.preferredLanguage = value
 }
 // SetPreferredName sets the preferredName property value. The preferred name for the user. Not Supported. This attribute returns an empty string.Returned only on $select.
 func (m *User) SetPreferredName(value *string)() {
-    if m != nil {
-        m.preferredName = value
-    }
+    m.preferredName = value
 }
 // SetPresence sets the presence property value. The presence property
 func (m *User) SetPresence(value Presenceable)() {
-    if m != nil {
-        m.presence = value
-    }
+    m.presence = value
 }
 // SetPrint sets the print property value. The print property
 func (m *User) SetPrint(value UserPrintable)() {
-    if m != nil {
-        m.print = value
-    }
+    m.print = value
 }
 // SetProfile sets the profile property value. Represents properties that are descriptive of a user in a tenant.
 func (m *User) SetProfile(value Profileable)() {
-    if m != nil {
-        m.profile = value
-    }
+    m.profile = value
 }
 // SetProvisionedPlans sets the provisionedPlans property value. The plans that are provisioned for the user. Read-only. Not nullable. Supports $filter (eq, not, ge, le).
 func (m *User) SetProvisionedPlans(value []ProvisionedPlanable)() {
-    if m != nil {
-        m.provisionedPlans = value
-    }
+    m.provisionedPlans = value
 }
 // SetProxyAddresses sets the proxyAddresses property value. For example: ['SMTP: bob@contoso.com', 'smtp: bob@sales.contoso.com']. Changes to the mail property will also update this collection to include the value as an SMTP address. For more information, see mail and proxyAddresses properties. The proxy address prefixed with SMTP (capitalized) is the primary proxy address while those prefixed with smtp are the secondary proxy addresses. For Azure AD B2C accounts, this property has a limit of ten unique addresses. Read-only in Microsoft Graph; you can update this property only through the Microsoft 365 admin center. Not nullable. Supports $filter (eq, not, ge, le, startsWith, endsWith, and counting empty collections).
 func (m *User) SetProxyAddresses(value []string)() {
-    if m != nil {
-        m.proxyAddresses = value
-    }
+    m.proxyAddresses = value
 }
 // SetRefreshTokensValidFromDateTime sets the refreshTokensValidFromDateTime property value. Any refresh tokens or sessions tokens (session cookies) issued before this time are invalid, and applications will get an error when using an invalid refresh or sessions token to acquire a delegated access token (to access APIs such as Microsoft Graph).  If this happens, the application will need to acquire a new refresh token by making a request to the authorize endpoint. Read-only. Use invalidateAllRefreshTokens to reset.
 func (m *User) SetRefreshTokensValidFromDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.refreshTokensValidFromDateTime = value
-    }
+    m.refreshTokensValidFromDateTime = value
 }
 // SetRegisteredDevices sets the registeredDevices property value. Devices that are registered for the user. Read-only. Nullable. Supports $expand.
 func (m *User) SetRegisteredDevices(value []DirectoryObjectable)() {
-    if m != nil {
-        m.registeredDevices = value
-    }
+    m.registeredDevices = value
 }
 // SetResponsibilities sets the responsibilities property value. A list for the user to enumerate their responsibilities. Returned only on $select.
 func (m *User) SetResponsibilities(value []string)() {
-    if m != nil {
-        m.responsibilities = value
-    }
+    m.responsibilities = value
 }
 // SetSchools sets the schools property value. A list for the user to enumerate the schools they have attended. Returned only on $select.
 func (m *User) SetSchools(value []string)() {
-    if m != nil {
-        m.schools = value
-    }
+    m.schools = value
 }
 // SetScopedRoleMemberOf sets the scopedRoleMemberOf property value. The scoped-role administrative unit memberships for this user. Read-only. Nullable.
 func (m *User) SetScopedRoleMemberOf(value []ScopedRoleMembershipable)() {
-    if m != nil {
-        m.scopedRoleMemberOf = value
-    }
+    m.scopedRoleMemberOf = value
 }
 // SetSecurityIdentifier sets the securityIdentifier property value. Security identifier (SID) of the user, used in Windows scenarios. Read-only. Returned by default. Supports $select and $filter (eq, not, ge, le, startsWith).
 func (m *User) SetSecurityIdentifier(value *string)() {
-    if m != nil {
-        m.securityIdentifier = value
-    }
+    m.securityIdentifier = value
 }
 // SetSettings sets the settings property value. The settings property
 func (m *User) SetSettings(value UserSettingsable)() {
-    if m != nil {
-        m.settings = value
-    }
+    m.settings = value
 }
 // SetShowInAddressList sets the showInAddressList property value. Do not use in Microsoft Graph. Manage this property through the Microsoft 365 admin center instead. Represents whether the user should be included in the Outlook global address list. See Known issue.
 func (m *User) SetShowInAddressList(value *bool)() {
-    if m != nil {
-        m.showInAddressList = value
-    }
+    m.showInAddressList = value
 }
 // SetSignInActivity sets the signInActivity property value. Get the last signed-in date and request ID of the sign-in for a given user. Read-only.Returned only on $select. Supports $filter (eq, ne, not, ge, le) but, not with any other filterable properties. Note: Details for this property require an Azure AD Premium P1/P2 license and the AuditLog.Read.All permission.Note: There's a known issue with retrieving this property.This property is not returned for a user who has never signed in or last signed in before April 2020.
 func (m *User) SetSignInActivity(value SignInActivityable)() {
-    if m != nil {
-        m.signInActivity = value
-    }
+    m.signInActivity = value
 }
 // SetSignInSessionsValidFromDateTime sets the signInSessionsValidFromDateTime property value. Any refresh tokens or sessions tokens (session cookies) issued before this time are invalid, and applications will get an error when using an invalid refresh or sessions token to acquire a delegated access token (to access APIs such as Microsoft Graph).  If this happens, the application will need to acquire a new refresh token by making a request to the authorize endpoint. Read-only. Use revokeSignInSessions to reset.
 func (m *User) SetSignInSessionsValidFromDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.signInSessionsValidFromDateTime = value
-    }
+    m.signInSessionsValidFromDateTime = value
 }
 // SetSkills sets the skills property value. A list for the user to enumerate their skills. Returned only on $select.
 func (m *User) SetSkills(value []string)() {
-    if m != nil {
-        m.skills = value
-    }
+    m.skills = value
 }
 // SetState sets the state property value. The state or province in the user's address. Maximum length is 128 characters. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
 func (m *User) SetState(value *string)() {
-    if m != nil {
-        m.state = value
-    }
+    m.state = value
 }
 // SetStreetAddress sets the streetAddress property value. The street address of the user's place of business. Maximum length is 1024 characters. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
 func (m *User) SetStreetAddress(value *string)() {
-    if m != nil {
-        m.streetAddress = value
-    }
+    m.streetAddress = value
 }
 // SetSurname sets the surname property value. The user's surname (family name or last name). Maximum length is 64 characters. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
 func (m *User) SetSurname(value *string)() {
-    if m != nil {
-        m.surname = value
-    }
+    m.surname = value
 }
 // SetTasks sets the tasks property value. The tasks property
 func (m *User) SetTasks(value Tasksable)() {
-    if m != nil {
-        m.tasks = value
-    }
+    m.tasks = value
 }
 // SetTeamwork sets the teamwork property value. A container for Microsoft Teams features available for the user. Read-only. Nullable.
 func (m *User) SetTeamwork(value UserTeamworkable)() {
-    if m != nil {
-        m.teamwork = value
-    }
+    m.teamwork = value
 }
 // SetTodo sets the todo property value. Represents the To Do services available to a user.
 func (m *User) SetTodo(value Todoable)() {
-    if m != nil {
-        m.todo = value
-    }
+    m.todo = value
 }
 // SetTransitiveMemberOf sets the transitiveMemberOf property value. The groups, including nested groups, and directory roles that a user is a member of. Nullable.
 func (m *User) SetTransitiveMemberOf(value []DirectoryObjectable)() {
-    if m != nil {
-        m.transitiveMemberOf = value
-    }
+    m.transitiveMemberOf = value
 }
 // SetTransitiveReports sets the transitiveReports property value. The transitive reports for a user. Read-only.
 func (m *User) SetTransitiveReports(value []DirectoryObjectable)() {
-    if m != nil {
-        m.transitiveReports = value
-    }
+    m.transitiveReports = value
 }
 // SetUsageLocation sets the usageLocation property value. A two letter country code (ISO standard 3166). Required for users that will be assigned licenses due to legal requirement to check for availability of services in countries.  Examples include: US, JP, and GB. Not nullable. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
 func (m *User) SetUsageLocation(value *string)() {
-    if m != nil {
-        m.usageLocation = value
-    }
+    m.usageLocation = value
 }
 // SetUsageRights sets the usageRights property value. Represents the usage rights a user has been granted.
 func (m *User) SetUsageRights(value []UsageRightable)() {
-    if m != nil {
-        m.usageRights = value
-    }
+    m.usageRights = value
 }
 // SetUserPrincipalName sets the userPrincipalName property value. The user principal name (UPN) of the user. The UPN is an Internet-style login name for the user based on the Internet standard RFC 822. By convention, this should map to the user's email name. The general format is alias@domain, where domain must be present in the tenant's collection of verified domains. This property is required when a user is created. The verified domains for the tenant can be accessed from the verifiedDomains property of organization.NOTE: This property cannot contain accent characters. Only the following characters are allowed A - Z, a - z, 0 - 9, ' . - _ ! # ^ ~. For the complete list of allowed characters, see username policies. Supports $filter (eq, ne, not, ge, le, in, startsWith, endsWith) and $orderBy.
 func (m *User) SetUserPrincipalName(value *string)() {
-    if m != nil {
-        m.userPrincipalName = value
-    }
+    m.userPrincipalName = value
 }
 // SetUserType sets the userType property value. A String value that can be used to classify user types in your directory, such as Member and Guest. Supports $filter (eq, ne, not, in, and eq on null values). NOTE: For more information about the permissions for member and guest users, see What are the default user permissions in Azure Active Directory?
 func (m *User) SetUserType(value *string)() {
-    if m != nil {
-        m.userType = value
-    }
+    m.userType = value
 }
 // SetWindowsInformationProtectionDeviceRegistrations sets the windowsInformationProtectionDeviceRegistrations property value. Zero or more WIP device registrations that belong to the user.
 func (m *User) SetWindowsInformationProtectionDeviceRegistrations(value []WindowsInformationProtectionDeviceRegistrationable)() {
-    if m != nil {
-        m.windowsInformationProtectionDeviceRegistrations = value
-    }
+    m.windowsInformationProtectionDeviceRegistrations = value
 }

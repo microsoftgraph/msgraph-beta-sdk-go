@@ -36,27 +36,15 @@ func CreateSensitiveContentLocationFromDiscriminatorValue(parseNode i878a80d2330
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SensitiveContentLocation) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetConfidence gets the confidence property value. The confidence property
 func (m *SensitiveContentLocation) GetConfidence()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.confidence
-    }
+    return m.confidence
 }
 // GetEvidences gets the evidences property value. The evidences property
 func (m *SensitiveContentLocation) GetEvidences()([]SensitiveContentEvidenceable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.evidences
-    }
+    return m.evidences
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *SensitiveContentLocation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -129,35 +117,19 @@ func (m *SensitiveContentLocation) GetFieldDeserializers()(map[string]func(i878a
 }
 // GetIdMatch gets the idMatch property value. The idMatch property
 func (m *SensitiveContentLocation) GetIdMatch()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.idMatch
-    }
+    return m.idMatch
 }
 // GetLength gets the length property value. The length property
 func (m *SensitiveContentLocation) GetLength()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.length
-    }
+    return m.length
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *SensitiveContentLocation) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetOffset gets the offset property value. The offset property
 func (m *SensitiveContentLocation) GetOffset()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.offset
-    }
+    return m.offset
 }
 // Serialize serializes information the current object
 func (m *SensitiveContentLocation) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -211,43 +183,29 @@ func (m *SensitiveContentLocation) Serialize(writer i878a80d2330e89d26896388a3f4
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SensitiveContentLocation) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetConfidence sets the confidence property value. The confidence property
 func (m *SensitiveContentLocation) SetConfidence(value *int32)() {
-    if m != nil {
-        m.confidence = value
-    }
+    m.confidence = value
 }
 // SetEvidences sets the evidences property value. The evidences property
 func (m *SensitiveContentLocation) SetEvidences(value []SensitiveContentEvidenceable)() {
-    if m != nil {
-        m.evidences = value
-    }
+    m.evidences = value
 }
 // SetIdMatch sets the idMatch property value. The idMatch property
 func (m *SensitiveContentLocation) SetIdMatch(value *string)() {
-    if m != nil {
-        m.idMatch = value
-    }
+    m.idMatch = value
 }
 // SetLength sets the length property value. The length property
 func (m *SensitiveContentLocation) SetLength(value *int32)() {
-    if m != nil {
-        m.length = value
-    }
+    m.length = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *SensitiveContentLocation) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetOffset sets the offset property value. The offset property
 func (m *SensitiveContentLocation) SetOffset(value *int32)() {
-    if m != nil {
-        m.offset = value
-    }
+    m.offset = value
 }

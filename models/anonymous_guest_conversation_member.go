@@ -25,11 +25,7 @@ func CreateAnonymousGuestConversationMemberFromDiscriminatorValue(parseNode i878
 }
 // GetAnonymousGuestId gets the anonymousGuestId property value. Unique ID that represents the user. Note: This ID can change if the user leaves and rejoins the meeting, or joins from a different device.
 func (m *AnonymousGuestConversationMember) GetAnonymousGuestId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.anonymousGuestId
-    }
+    return m.anonymousGuestId
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AnonymousGuestConversationMember) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -62,7 +58,5 @@ func (m *AnonymousGuestConversationMember) Serialize(writer i878a80d2330e89d2689
 }
 // SetAnonymousGuestId sets the anonymousGuestId property value. Unique ID that represents the user. Note: This ID can change if the user leaves and rejoins the meeting, or joins from a different device.
 func (m *AnonymousGuestConversationMember) SetAnonymousGuestId(value *string)() {
-    if m != nil {
-        m.anonymousGuestId = value
-    }
+    m.anonymousGuestId = value
 }

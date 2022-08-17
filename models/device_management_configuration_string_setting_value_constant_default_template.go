@@ -25,11 +25,7 @@ func CreateDeviceManagementConfigurationStringSettingValueConstantDefaultTemplat
 }
 // GetConstantValue gets the constantValue property value. Default Constant Value
 func (m *DeviceManagementConfigurationStringSettingValueConstantDefaultTemplate) GetConstantValue()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.constantValue
-    }
+    return m.constantValue
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceManagementConfigurationStringSettingValueConstantDefaultTemplate) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -62,7 +58,5 @@ func (m *DeviceManagementConfigurationStringSettingValueConstantDefaultTemplate)
 }
 // SetConstantValue sets the constantValue property value. Default Constant Value
 func (m *DeviceManagementConfigurationStringSettingValueConstantDefaultTemplate) SetConstantValue(value *string)() {
-    if m != nil {
-        m.constantValue = value
-    }
+    m.constantValue = value
 }

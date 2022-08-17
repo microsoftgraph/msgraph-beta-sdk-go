@@ -30,11 +30,7 @@ func CreateAndroidManagedStoreAppTrackFromDiscriminatorValue(parseNode i878a80d2
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AndroidManagedStoreAppTrack) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AndroidManagedStoreAppTrack) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -73,27 +69,15 @@ func (m *AndroidManagedStoreAppTrack) GetFieldDeserializers()(map[string]func(i8
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *AndroidManagedStoreAppTrack) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetTrackAlias gets the trackAlias property value. Friendly name for track.
 func (m *AndroidManagedStoreAppTrack) GetTrackAlias()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.trackAlias
-    }
+    return m.trackAlias
 }
 // GetTrackId gets the trackId property value. Unique track identifier.
 func (m *AndroidManagedStoreAppTrack) GetTrackId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.trackId
-    }
+    return m.trackId
 }
 // Serialize serializes information the current object
 func (m *AndroidManagedStoreAppTrack) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -125,25 +109,17 @@ func (m *AndroidManagedStoreAppTrack) Serialize(writer i878a80d2330e89d26896388a
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AndroidManagedStoreAppTrack) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *AndroidManagedStoreAppTrack) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetTrackAlias sets the trackAlias property value. Friendly name for track.
 func (m *AndroidManagedStoreAppTrack) SetTrackAlias(value *string)() {
-    if m != nil {
-        m.trackAlias = value
-    }
+    m.trackAlias = value
 }
 // SetTrackId sets the trackId property value. Unique track identifier.
 func (m *AndroidManagedStoreAppTrack) SetTrackId(value *string)() {
-    if m != nil {
-        m.trackId = value
-    }
+    m.trackId = value
 }

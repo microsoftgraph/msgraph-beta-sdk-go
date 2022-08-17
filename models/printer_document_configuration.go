@@ -66,67 +66,35 @@ func CreatePrinterDocumentConfigurationFromDiscriminatorValue(parseNode i878a80d
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *PrinterDocumentConfiguration) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetCollate gets the collate property value. The collate property
 func (m *PrinterDocumentConfiguration) GetCollate()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.collate
-    }
+    return m.collate
 }
 // GetColorMode gets the colorMode property value. The colorMode property
 func (m *PrinterDocumentConfiguration) GetColorMode()(*PrintColorMode) {
-    if m == nil {
-        return nil
-    } else {
-        return m.colorMode
-    }
+    return m.colorMode
 }
 // GetCopies gets the copies property value. The copies property
 func (m *PrinterDocumentConfiguration) GetCopies()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.copies
-    }
+    return m.copies
 }
 // GetDpi gets the dpi property value. The dpi property
 func (m *PrinterDocumentConfiguration) GetDpi()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.dpi
-    }
+    return m.dpi
 }
 // GetDuplexMode gets the duplexMode property value. The duplexMode property
 func (m *PrinterDocumentConfiguration) GetDuplexMode()(*PrintDuplexMode) {
-    if m == nil {
-        return nil
-    } else {
-        return m.duplexMode
-    }
+    return m.duplexMode
 }
 // GetFeedDirection gets the feedDirection property value. The feedDirection property
 func (m *PrinterDocumentConfiguration) GetFeedDirection()(*PrinterFeedDirection) {
-    if m == nil {
-        return nil
-    } else {
-        return m.feedDirection
-    }
+    return m.feedDirection
 }
 // GetFeedOrientation gets the feedOrientation property value. The feedOrientation property
 func (m *PrinterDocumentConfiguration) GetFeedOrientation()(*PrinterFeedOrientation) {
-    if m == nil {
-        return nil
-    } else {
-        return m.feedOrientation
-    }
+    return m.feedOrientation
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *PrinterDocumentConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -353,115 +321,59 @@ func (m *PrinterDocumentConfiguration) GetFieldDeserializers()(map[string]func(i
 }
 // GetFinishings gets the finishings property value. The finishings property
 func (m *PrinterDocumentConfiguration) GetFinishings()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.finishings
-    }
+    return m.finishings
 }
 // GetFitPdfToPage gets the fitPdfToPage property value. The fitPdfToPage property
 func (m *PrinterDocumentConfiguration) GetFitPdfToPage()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.fitPdfToPage
-    }
+    return m.fitPdfToPage
 }
 // GetInputBin gets the inputBin property value. The inputBin property
 func (m *PrinterDocumentConfiguration) GetInputBin()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.inputBin
-    }
+    return m.inputBin
 }
 // GetMargin gets the margin property value. The margin property
 func (m *PrinterDocumentConfiguration) GetMargin()(PrintMarginable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.margin
-    }
+    return m.margin
 }
 // GetMediaSize gets the mediaSize property value. The mediaSize property
 func (m *PrinterDocumentConfiguration) GetMediaSize()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.mediaSize
-    }
+    return m.mediaSize
 }
 // GetMediaType gets the mediaType property value. The mediaType property
 func (m *PrinterDocumentConfiguration) GetMediaType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.mediaType
-    }
+    return m.mediaType
 }
 // GetMultipageLayout gets the multipageLayout property value. The multipageLayout property
 func (m *PrinterDocumentConfiguration) GetMultipageLayout()(*PrintMultipageLayout) {
-    if m == nil {
-        return nil
-    } else {
-        return m.multipageLayout
-    }
+    return m.multipageLayout
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *PrinterDocumentConfiguration) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetOrientation gets the orientation property value. The orientation property
 func (m *PrinterDocumentConfiguration) GetOrientation()(*PrintOrientation) {
-    if m == nil {
-        return nil
-    } else {
-        return m.orientation
-    }
+    return m.orientation
 }
 // GetOutputBin gets the outputBin property value. The outputBin property
 func (m *PrinterDocumentConfiguration) GetOutputBin()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.outputBin
-    }
+    return m.outputBin
 }
 // GetPageRanges gets the pageRanges property value. The pageRanges property
 func (m *PrinterDocumentConfiguration) GetPageRanges()([]IntegerRangeable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.pageRanges
-    }
+    return m.pageRanges
 }
 // GetPagesPerSheet gets the pagesPerSheet property value. The pagesPerSheet property
 func (m *PrinterDocumentConfiguration) GetPagesPerSheet()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.pagesPerSheet
-    }
+    return m.pagesPerSheet
 }
 // GetQuality gets the quality property value. The quality property
 func (m *PrinterDocumentConfiguration) GetQuality()(*PrintQuality) {
-    if m == nil {
-        return nil
-    } else {
-        return m.quality
-    }
+    return m.quality
 }
 // GetScaling gets the scaling property value. The scaling property
 func (m *PrinterDocumentConfiguration) GetScaling()(*PrintScaling) {
-    if m == nil {
-        return nil
-    } else {
-        return m.scaling
-    }
+    return m.scaling
 }
 // Serialize serializes information the current object
 func (m *PrinterDocumentConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -613,133 +525,89 @@ func (m *PrinterDocumentConfiguration) Serialize(writer i878a80d2330e89d26896388
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *PrinterDocumentConfiguration) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetCollate sets the collate property value. The collate property
 func (m *PrinterDocumentConfiguration) SetCollate(value *bool)() {
-    if m != nil {
-        m.collate = value
-    }
+    m.collate = value
 }
 // SetColorMode sets the colorMode property value. The colorMode property
 func (m *PrinterDocumentConfiguration) SetColorMode(value *PrintColorMode)() {
-    if m != nil {
-        m.colorMode = value
-    }
+    m.colorMode = value
 }
 // SetCopies sets the copies property value. The copies property
 func (m *PrinterDocumentConfiguration) SetCopies(value *int32)() {
-    if m != nil {
-        m.copies = value
-    }
+    m.copies = value
 }
 // SetDpi sets the dpi property value. The dpi property
 func (m *PrinterDocumentConfiguration) SetDpi(value *int32)() {
-    if m != nil {
-        m.dpi = value
-    }
+    m.dpi = value
 }
 // SetDuplexMode sets the duplexMode property value. The duplexMode property
 func (m *PrinterDocumentConfiguration) SetDuplexMode(value *PrintDuplexMode)() {
-    if m != nil {
-        m.duplexMode = value
-    }
+    m.duplexMode = value
 }
 // SetFeedDirection sets the feedDirection property value. The feedDirection property
 func (m *PrinterDocumentConfiguration) SetFeedDirection(value *PrinterFeedDirection)() {
-    if m != nil {
-        m.feedDirection = value
-    }
+    m.feedDirection = value
 }
 // SetFeedOrientation sets the feedOrientation property value. The feedOrientation property
 func (m *PrinterDocumentConfiguration) SetFeedOrientation(value *PrinterFeedOrientation)() {
-    if m != nil {
-        m.feedOrientation = value
-    }
+    m.feedOrientation = value
 }
 // SetFinishings sets the finishings property value. The finishings property
 func (m *PrinterDocumentConfiguration) SetFinishings(value []string)() {
-    if m != nil {
-        m.finishings = value
-    }
+    m.finishings = value
 }
 // SetFitPdfToPage sets the fitPdfToPage property value. The fitPdfToPage property
 func (m *PrinterDocumentConfiguration) SetFitPdfToPage(value *bool)() {
-    if m != nil {
-        m.fitPdfToPage = value
-    }
+    m.fitPdfToPage = value
 }
 // SetInputBin sets the inputBin property value. The inputBin property
 func (m *PrinterDocumentConfiguration) SetInputBin(value *string)() {
-    if m != nil {
-        m.inputBin = value
-    }
+    m.inputBin = value
 }
 // SetMargin sets the margin property value. The margin property
 func (m *PrinterDocumentConfiguration) SetMargin(value PrintMarginable)() {
-    if m != nil {
-        m.margin = value
-    }
+    m.margin = value
 }
 // SetMediaSize sets the mediaSize property value. The mediaSize property
 func (m *PrinterDocumentConfiguration) SetMediaSize(value *string)() {
-    if m != nil {
-        m.mediaSize = value
-    }
+    m.mediaSize = value
 }
 // SetMediaType sets the mediaType property value. The mediaType property
 func (m *PrinterDocumentConfiguration) SetMediaType(value *string)() {
-    if m != nil {
-        m.mediaType = value
-    }
+    m.mediaType = value
 }
 // SetMultipageLayout sets the multipageLayout property value. The multipageLayout property
 func (m *PrinterDocumentConfiguration) SetMultipageLayout(value *PrintMultipageLayout)() {
-    if m != nil {
-        m.multipageLayout = value
-    }
+    m.multipageLayout = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *PrinterDocumentConfiguration) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetOrientation sets the orientation property value. The orientation property
 func (m *PrinterDocumentConfiguration) SetOrientation(value *PrintOrientation)() {
-    if m != nil {
-        m.orientation = value
-    }
+    m.orientation = value
 }
 // SetOutputBin sets the outputBin property value. The outputBin property
 func (m *PrinterDocumentConfiguration) SetOutputBin(value *string)() {
-    if m != nil {
-        m.outputBin = value
-    }
+    m.outputBin = value
 }
 // SetPageRanges sets the pageRanges property value. The pageRanges property
 func (m *PrinterDocumentConfiguration) SetPageRanges(value []IntegerRangeable)() {
-    if m != nil {
-        m.pageRanges = value
-    }
+    m.pageRanges = value
 }
 // SetPagesPerSheet sets the pagesPerSheet property value. The pagesPerSheet property
 func (m *PrinterDocumentConfiguration) SetPagesPerSheet(value *int32)() {
-    if m != nil {
-        m.pagesPerSheet = value
-    }
+    m.pagesPerSheet = value
 }
 // SetQuality sets the quality property value. The quality property
 func (m *PrinterDocumentConfiguration) SetQuality(value *PrintQuality)() {
-    if m != nil {
-        m.quality = value
-    }
+    m.quality = value
 }
 // SetScaling sets the scaling property value. The scaling property
 func (m *PrinterDocumentConfiguration) SetScaling(value *PrintScaling)() {
-    if m != nil {
-        m.scaling = value
-    }
+    m.scaling = value
 }

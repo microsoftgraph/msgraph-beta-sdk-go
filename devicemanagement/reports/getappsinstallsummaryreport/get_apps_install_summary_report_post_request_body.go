@@ -40,11 +40,7 @@ func CreateGetAppsInstallSummaryReportPostRequestBodyFromDiscriminatorValue(pars
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *GetAppsInstallSummaryReportPostRequestBody) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *GetAppsInstallSummaryReportPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -155,75 +151,39 @@ func (m *GetAppsInstallSummaryReportPostRequestBody) GetFieldDeserializers()(map
 }
 // GetFilter gets the filter property value. The filter property
 func (m *GetAppsInstallSummaryReportPostRequestBody) GetFilter()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.filter
-    }
+    return m.filter
 }
 // GetGroupBy gets the groupBy property value. The groupBy property
 func (m *GetAppsInstallSummaryReportPostRequestBody) GetGroupBy()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.groupBy
-    }
+    return m.groupBy
 }
 // GetName gets the name property value. The name property
 func (m *GetAppsInstallSummaryReportPostRequestBody) GetName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.name
-    }
+    return m.name
 }
 // GetOrderBy gets the orderBy property value. The orderBy property
 func (m *GetAppsInstallSummaryReportPostRequestBody) GetOrderBy()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.orderBy
-    }
+    return m.orderBy
 }
 // GetSearch gets the search property value. The search property
 func (m *GetAppsInstallSummaryReportPostRequestBody) GetSearch()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.search
-    }
+    return m.search
 }
 // GetSelect gets the select property value. The select property
 func (m *GetAppsInstallSummaryReportPostRequestBody) GetSelect()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.select_escaped
-    }
+    return m.select_escaped
 }
 // GetSessionId gets the sessionId property value. The sessionId property
 func (m *GetAppsInstallSummaryReportPostRequestBody) GetSessionId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.sessionId
-    }
+    return m.sessionId
 }
 // GetSkip gets the skip property value. The skip property
 func (m *GetAppsInstallSummaryReportPostRequestBody) GetSkip()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.skip
-    }
+    return m.skip
 }
 // GetTop gets the top property value. The top property
 func (m *GetAppsInstallSummaryReportPostRequestBody) GetTop()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.top
-    }
+    return m.top
 }
 // Serialize serializes information the current object
 func (m *GetAppsInstallSummaryReportPostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -291,61 +251,41 @@ func (m *GetAppsInstallSummaryReportPostRequestBody) Serialize(writer i878a80d23
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *GetAppsInstallSummaryReportPostRequestBody) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetFilter sets the filter property value. The filter property
 func (m *GetAppsInstallSummaryReportPostRequestBody) SetFilter(value *string)() {
-    if m != nil {
-        m.filter = value
-    }
+    m.filter = value
 }
 // SetGroupBy sets the groupBy property value. The groupBy property
 func (m *GetAppsInstallSummaryReportPostRequestBody) SetGroupBy(value []string)() {
-    if m != nil {
-        m.groupBy = value
-    }
+    m.groupBy = value
 }
 // SetName sets the name property value. The name property
 func (m *GetAppsInstallSummaryReportPostRequestBody) SetName(value *string)() {
-    if m != nil {
-        m.name = value
-    }
+    m.name = value
 }
 // SetOrderBy sets the orderBy property value. The orderBy property
 func (m *GetAppsInstallSummaryReportPostRequestBody) SetOrderBy(value []string)() {
-    if m != nil {
-        m.orderBy = value
-    }
+    m.orderBy = value
 }
 // SetSearch sets the search property value. The search property
 func (m *GetAppsInstallSummaryReportPostRequestBody) SetSearch(value *string)() {
-    if m != nil {
-        m.search = value
-    }
+    m.search = value
 }
 // SetSelect sets the select property value. The select property
 func (m *GetAppsInstallSummaryReportPostRequestBody) SetSelect(value []string)() {
-    if m != nil {
-        m.select_escaped = value
-    }
+    m.select_escaped = value
 }
 // SetSessionId sets the sessionId property value. The sessionId property
 func (m *GetAppsInstallSummaryReportPostRequestBody) SetSessionId(value *string)() {
-    if m != nil {
-        m.sessionId = value
-    }
+    m.sessionId = value
 }
 // SetSkip sets the skip property value. The skip property
 func (m *GetAppsInstallSummaryReportPostRequestBody) SetSkip(value *int32)() {
-    if m != nil {
-        m.skip = value
-    }
+    m.skip = value
 }
 // SetTop sets the top property value. The top property
 func (m *GetAppsInstallSummaryReportPostRequestBody) SetTop(value *int32)() {
-    if m != nil {
-        m.top = value
-    }
+    m.top = value
 }

@@ -28,11 +28,7 @@ func CreateMakePermanentPostRequestBodyFromDiscriminatorValue(parseNode i878a80d
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *MakePermanentPostRequestBody) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *MakePermanentPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -71,27 +67,15 @@ func (m *MakePermanentPostRequestBody) GetFieldDeserializers()(map[string]func(i
 }
 // GetReason gets the reason property value. The reason property
 func (m *MakePermanentPostRequestBody) GetReason()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.reason
-    }
+    return m.reason
 }
 // GetTicketNumber gets the ticketNumber property value. The ticketNumber property
 func (m *MakePermanentPostRequestBody) GetTicketNumber()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.ticketNumber
-    }
+    return m.ticketNumber
 }
 // GetTicketSystem gets the ticketSystem property value. The ticketSystem property
 func (m *MakePermanentPostRequestBody) GetTicketSystem()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.ticketSystem
-    }
+    return m.ticketSystem
 }
 // Serialize serializes information the current object
 func (m *MakePermanentPostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -123,25 +107,17 @@ func (m *MakePermanentPostRequestBody) Serialize(writer i878a80d2330e89d26896388
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *MakePermanentPostRequestBody) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetReason sets the reason property value. The reason property
 func (m *MakePermanentPostRequestBody) SetReason(value *string)() {
-    if m != nil {
-        m.reason = value
-    }
+    m.reason = value
 }
 // SetTicketNumber sets the ticketNumber property value. The ticketNumber property
 func (m *MakePermanentPostRequestBody) SetTicketNumber(value *string)() {
-    if m != nil {
-        m.ticketNumber = value
-    }
+    m.ticketNumber = value
 }
 // SetTicketSystem sets the ticketSystem property value. The ticketSystem property
 func (m *MakePermanentPostRequestBody) SetTicketSystem(value *string)() {
-    if m != nil {
-        m.ticketSystem = value
-    }
+    m.ticketSystem = value
 }

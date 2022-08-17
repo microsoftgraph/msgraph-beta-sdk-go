@@ -35,11 +35,7 @@ func CreateGroupPolicyPresentationDecimalTextBoxFromDiscriminatorValue(parseNode
 }
 // GetDefaultValue gets the defaultValue property value. An unsigned integer that specifies the initial value for the decimal text box. The default value is 1.
 func (m *GroupPolicyPresentationDecimalTextBox) GetDefaultValue()(*int64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.defaultValue
-    }
+    return m.defaultValue
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *GroupPolicyPresentationDecimalTextBox) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -108,43 +104,23 @@ func (m *GroupPolicyPresentationDecimalTextBox) GetFieldDeserializers()(map[stri
 }
 // GetMaxValue gets the maxValue property value. An unsigned integer that specifies the maximum allowed value. The default value is 9999.
 func (m *GroupPolicyPresentationDecimalTextBox) GetMaxValue()(*int64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.maxValue
-    }
+    return m.maxValue
 }
 // GetMinValue gets the minValue property value. An unsigned integer that specifies the minimum allowed value. The default value is 0.
 func (m *GroupPolicyPresentationDecimalTextBox) GetMinValue()(*int64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.minValue
-    }
+    return m.minValue
 }
 // GetRequired gets the required property value. Requirement to enter a value in the parameter box. The default value is false.
 func (m *GroupPolicyPresentationDecimalTextBox) GetRequired()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.required
-    }
+    return m.required
 }
 // GetSpin gets the spin property value. If true, create a spin control; otherwise, create a text box for numeric entry. The default value is true.
 func (m *GroupPolicyPresentationDecimalTextBox) GetSpin()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.spin
-    }
+    return m.spin
 }
 // GetSpinStep gets the spinStep property value. An unsigned integer that specifies the increment of change for the spin control. The default value is 1.
 func (m *GroupPolicyPresentationDecimalTextBox) GetSpinStep()(*int64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.spinStep
-    }
+    return m.spinStep
 }
 // Serialize serializes information the current object
 func (m *GroupPolicyPresentationDecimalTextBox) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -192,37 +168,25 @@ func (m *GroupPolicyPresentationDecimalTextBox) Serialize(writer i878a80d2330e89
 }
 // SetDefaultValue sets the defaultValue property value. An unsigned integer that specifies the initial value for the decimal text box. The default value is 1.
 func (m *GroupPolicyPresentationDecimalTextBox) SetDefaultValue(value *int64)() {
-    if m != nil {
-        m.defaultValue = value
-    }
+    m.defaultValue = value
 }
 // SetMaxValue sets the maxValue property value. An unsigned integer that specifies the maximum allowed value. The default value is 9999.
 func (m *GroupPolicyPresentationDecimalTextBox) SetMaxValue(value *int64)() {
-    if m != nil {
-        m.maxValue = value
-    }
+    m.maxValue = value
 }
 // SetMinValue sets the minValue property value. An unsigned integer that specifies the minimum allowed value. The default value is 0.
 func (m *GroupPolicyPresentationDecimalTextBox) SetMinValue(value *int64)() {
-    if m != nil {
-        m.minValue = value
-    }
+    m.minValue = value
 }
 // SetRequired sets the required property value. Requirement to enter a value in the parameter box. The default value is false.
 func (m *GroupPolicyPresentationDecimalTextBox) SetRequired(value *bool)() {
-    if m != nil {
-        m.required = value
-    }
+    m.required = value
 }
 // SetSpin sets the spin property value. If true, create a spin control; otherwise, create a text box for numeric entry. The default value is true.
 func (m *GroupPolicyPresentationDecimalTextBox) SetSpin(value *bool)() {
-    if m != nil {
-        m.spin = value
-    }
+    m.spin = value
 }
 // SetSpinStep sets the spinStep property value. An unsigned integer that specifies the increment of change for the spin control. The default value is 1.
 func (m *GroupPolicyPresentationDecimalTextBox) SetSpinStep(value *int64)() {
-    if m != nil {
-        m.spinStep = value
-    }
+    m.spinStep = value
 }

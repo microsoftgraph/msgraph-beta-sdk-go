@@ -34,11 +34,7 @@ func CreateLicenseInfoDetailFromDiscriminatorValue(parseNode i878a80d2330e89d268
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *LicenseInfoDetail) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *LicenseInfoDetail) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -97,43 +93,23 @@ func (m *LicenseInfoDetail) GetFieldDeserializers()(map[string]func(i878a80d2330
 }
 // GetLicenseType gets the licenseType property value. The licenseType property
 func (m *LicenseInfoDetail) GetLicenseType()(*AzureADLicenseType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.licenseType
-    }
+    return m.licenseType
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *LicenseInfoDetail) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetTotalAssignedCount gets the totalAssignedCount property value. The totalAssignedCount property
 func (m *LicenseInfoDetail) GetTotalAssignedCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.totalAssignedCount
-    }
+    return m.totalAssignedCount
 }
 // GetTotalLicenseCount gets the totalLicenseCount property value. The totalLicenseCount property
 func (m *LicenseInfoDetail) GetTotalLicenseCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.totalLicenseCount
-    }
+    return m.totalLicenseCount
 }
 // GetTotalUsageCount gets the totalUsageCount property value. The totalUsageCount property
 func (m *LicenseInfoDetail) GetTotalUsageCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.totalUsageCount
-    }
+    return m.totalUsageCount
 }
 // Serialize serializes information the current object
 func (m *LicenseInfoDetail) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -178,37 +154,25 @@ func (m *LicenseInfoDetail) Serialize(writer i878a80d2330e89d26896388a3f487eef27
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *LicenseInfoDetail) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetLicenseType sets the licenseType property value. The licenseType property
 func (m *LicenseInfoDetail) SetLicenseType(value *AzureADLicenseType)() {
-    if m != nil {
-        m.licenseType = value
-    }
+    m.licenseType = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *LicenseInfoDetail) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetTotalAssignedCount sets the totalAssignedCount property value. The totalAssignedCount property
 func (m *LicenseInfoDetail) SetTotalAssignedCount(value *int32)() {
-    if m != nil {
-        m.totalAssignedCount = value
-    }
+    m.totalAssignedCount = value
 }
 // SetTotalLicenseCount sets the totalLicenseCount property value. The totalLicenseCount property
 func (m *LicenseInfoDetail) SetTotalLicenseCount(value *int32)() {
-    if m != nil {
-        m.totalLicenseCount = value
-    }
+    m.totalLicenseCount = value
 }
 // SetTotalUsageCount sets the totalUsageCount property value. The totalUsageCount property
 func (m *LicenseInfoDetail) SetTotalUsageCount(value *int32)() {
-    if m != nil {
-        m.totalUsageCount = value
-    }
+    m.totalUsageCount = value
 }

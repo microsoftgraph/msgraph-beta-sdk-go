@@ -40,11 +40,7 @@ func (m *AddWatermark) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
 }
 // GetOrientation gets the orientation property value. The orientation property
 func (m *AddWatermark) GetOrientation()(*PageOrientation) {
-    if m == nil {
-        return nil
-    } else {
-        return m.orientation
-    }
+    return m.orientation
 }
 // Serialize serializes information the current object
 func (m *AddWatermark) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -63,7 +59,5 @@ func (m *AddWatermark) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
 }
 // SetOrientation sets the orientation property value. The orientation property
 func (m *AddWatermark) SetOrientation(value *PageOrientation)() {
-    if m != nil {
-        m.orientation = value
-    }
+    m.orientation = value
 }

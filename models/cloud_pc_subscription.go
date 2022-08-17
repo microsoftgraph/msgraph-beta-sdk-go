@@ -52,19 +52,11 @@ func (m *CloudPcSubscription) GetFieldDeserializers()(map[string]func(i878a80d23
 }
 // GetSubscriptionId gets the subscriptionId property value. The ID of the subscription.
 func (m *CloudPcSubscription) GetSubscriptionId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.subscriptionId
-    }
+    return m.subscriptionId
 }
 // GetSubscriptionName gets the subscriptionName property value. The name of the subscription.
 func (m *CloudPcSubscription) GetSubscriptionName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.subscriptionName
-    }
+    return m.subscriptionName
 }
 // Serialize serializes information the current object
 func (m *CloudPcSubscription) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -88,13 +80,9 @@ func (m *CloudPcSubscription) Serialize(writer i878a80d2330e89d26896388a3f487eef
 }
 // SetSubscriptionId sets the subscriptionId property value. The ID of the subscription.
 func (m *CloudPcSubscription) SetSubscriptionId(value *string)() {
-    if m != nil {
-        m.subscriptionId = value
-    }
+    m.subscriptionId = value
 }
 // SetSubscriptionName sets the subscriptionName property value. The name of the subscription.
 func (m *CloudPcSubscription) SetSubscriptionName(value *string)() {
-    if m != nil {
-        m.subscriptionName = value
-    }
+    m.subscriptionName = value
 }

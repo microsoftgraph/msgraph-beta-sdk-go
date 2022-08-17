@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// UserExperienceAnalyticsNotAutopilotReadyDevice the user experience analytics Device not windows autopilot ready.
+// UserExperienceAnalyticsNotAutopilotReadyDevice 
 type UserExperienceAnalyticsNotAutopilotReadyDevice struct {
     Entity
     // The intune device's autopilotProfileAssigned.
@@ -26,7 +26,7 @@ type UserExperienceAnalyticsNotAutopilotReadyDevice struct {
     // The intune device's serial number.
     serialNumber *string
 }
-// NewUserExperienceAnalyticsNotAutopilotReadyDevice instantiates a new userExperienceAnalyticsNotAutopilotReadyDevice and sets the default values.
+// NewUserExperienceAnalyticsNotAutopilotReadyDevice instantiates a new UserExperienceAnalyticsNotAutopilotReadyDevice and sets the default values.
 func NewUserExperienceAnalyticsNotAutopilotReadyDevice()(*UserExperienceAnalyticsNotAutopilotReadyDevice) {
     m := &UserExperienceAnalyticsNotAutopilotReadyDevice{
         Entity: *NewEntity(),
@@ -41,43 +41,23 @@ func CreateUserExperienceAnalyticsNotAutopilotReadyDeviceFromDiscriminatorValue(
 }
 // GetAutoPilotProfileAssigned gets the autoPilotProfileAssigned property value. The intune device's autopilotProfileAssigned.
 func (m *UserExperienceAnalyticsNotAutopilotReadyDevice) GetAutoPilotProfileAssigned()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.autoPilotProfileAssigned
-    }
+    return m.autoPilotProfileAssigned
 }
 // GetAutoPilotRegistered gets the autoPilotRegistered property value. The intune device's autopilotRegistered.
 func (m *UserExperienceAnalyticsNotAutopilotReadyDevice) GetAutoPilotRegistered()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.autoPilotRegistered
-    }
+    return m.autoPilotRegistered
 }
 // GetAzureAdJoinType gets the azureAdJoinType property value. The intune device's azure Ad joinType.
 func (m *UserExperienceAnalyticsNotAutopilotReadyDevice) GetAzureAdJoinType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.azureAdJoinType
-    }
+    return m.azureAdJoinType
 }
 // GetAzureAdRegistered gets the azureAdRegistered property value. The intune device's azureAdRegistered.
 func (m *UserExperienceAnalyticsNotAutopilotReadyDevice) GetAzureAdRegistered()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.azureAdRegistered
-    }
+    return m.azureAdRegistered
 }
 // GetDeviceName gets the deviceName property value. The intune device's name.
 func (m *UserExperienceAnalyticsNotAutopilotReadyDevice) GetDeviceName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deviceName
-    }
+    return m.deviceName
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *UserExperienceAnalyticsNotAutopilotReadyDevice) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -176,35 +156,19 @@ func (m *UserExperienceAnalyticsNotAutopilotReadyDevice) GetFieldDeserializers()
 }
 // GetManagedBy gets the managedBy property value. The intune device's managed by.
 func (m *UserExperienceAnalyticsNotAutopilotReadyDevice) GetManagedBy()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.managedBy
-    }
+    return m.managedBy
 }
 // GetManufacturer gets the manufacturer property value. The intune device's manufacturer.
 func (m *UserExperienceAnalyticsNotAutopilotReadyDevice) GetManufacturer()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.manufacturer
-    }
+    return m.manufacturer
 }
 // GetModel gets the model property value. The intune device's model.
 func (m *UserExperienceAnalyticsNotAutopilotReadyDevice) GetModel()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.model
-    }
+    return m.model
 }
 // GetSerialNumber gets the serialNumber property value. The intune device's serial number.
 func (m *UserExperienceAnalyticsNotAutopilotReadyDevice) GetSerialNumber()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.serialNumber
-    }
+    return m.serialNumber
 }
 // Serialize serializes information the current object
 func (m *UserExperienceAnalyticsNotAutopilotReadyDevice) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -270,55 +234,37 @@ func (m *UserExperienceAnalyticsNotAutopilotReadyDevice) Serialize(writer i878a8
 }
 // SetAutoPilotProfileAssigned sets the autoPilotProfileAssigned property value. The intune device's autopilotProfileAssigned.
 func (m *UserExperienceAnalyticsNotAutopilotReadyDevice) SetAutoPilotProfileAssigned(value *bool)() {
-    if m != nil {
-        m.autoPilotProfileAssigned = value
-    }
+    m.autoPilotProfileAssigned = value
 }
 // SetAutoPilotRegistered sets the autoPilotRegistered property value. The intune device's autopilotRegistered.
 func (m *UserExperienceAnalyticsNotAutopilotReadyDevice) SetAutoPilotRegistered(value *bool)() {
-    if m != nil {
-        m.autoPilotRegistered = value
-    }
+    m.autoPilotRegistered = value
 }
 // SetAzureAdJoinType sets the azureAdJoinType property value. The intune device's azure Ad joinType.
 func (m *UserExperienceAnalyticsNotAutopilotReadyDevice) SetAzureAdJoinType(value *string)() {
-    if m != nil {
-        m.azureAdJoinType = value
-    }
+    m.azureAdJoinType = value
 }
 // SetAzureAdRegistered sets the azureAdRegistered property value. The intune device's azureAdRegistered.
 func (m *UserExperienceAnalyticsNotAutopilotReadyDevice) SetAzureAdRegistered(value *bool)() {
-    if m != nil {
-        m.azureAdRegistered = value
-    }
+    m.azureAdRegistered = value
 }
 // SetDeviceName sets the deviceName property value. The intune device's name.
 func (m *UserExperienceAnalyticsNotAutopilotReadyDevice) SetDeviceName(value *string)() {
-    if m != nil {
-        m.deviceName = value
-    }
+    m.deviceName = value
 }
 // SetManagedBy sets the managedBy property value. The intune device's managed by.
 func (m *UserExperienceAnalyticsNotAutopilotReadyDevice) SetManagedBy(value *string)() {
-    if m != nil {
-        m.managedBy = value
-    }
+    m.managedBy = value
 }
 // SetManufacturer sets the manufacturer property value. The intune device's manufacturer.
 func (m *UserExperienceAnalyticsNotAutopilotReadyDevice) SetManufacturer(value *string)() {
-    if m != nil {
-        m.manufacturer = value
-    }
+    m.manufacturer = value
 }
 // SetModel sets the model property value. The intune device's model.
 func (m *UserExperienceAnalyticsNotAutopilotReadyDevice) SetModel(value *string)() {
-    if m != nil {
-        m.model = value
-    }
+    m.model = value
 }
 // SetSerialNumber sets the serialNumber property value. The intune device's serial number.
 func (m *UserExperienceAnalyticsNotAutopilotReadyDevice) SetSerialNumber(value *string)() {
-    if m != nil {
-        m.serialNumber = value
-    }
+    m.serialNumber = value
 }

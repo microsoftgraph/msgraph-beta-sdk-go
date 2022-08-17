@@ -33,43 +33,23 @@ func CreateZebraFotaDeploymentFromDiscriminatorValue(parseNode i878a80d2330e89d2
 }
 // GetDeploymentAssignments gets the deploymentAssignments property value. Collection of Android FOTA Assignment
 func (m *ZebraFotaDeployment) GetDeploymentAssignments()([]AndroidFotaDeploymentAssignmentable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deploymentAssignments
-    }
+    return m.deploymentAssignments
 }
 // GetDeploymentSettings gets the deploymentSettings property value. The Zebra FOTA deployment complex type that describes the settings required to create a FOTA deployment.
 func (m *ZebraFotaDeployment) GetDeploymentSettings()(ZebraFotaDeploymentSettingsable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deploymentSettings
-    }
+    return m.deploymentSettings
 }
 // GetDeploymentStatus gets the deploymentStatus property value. Represents the deployment status from Zebra. The status is a high level status of the deployment as opposed being a detailed status per device.
 func (m *ZebraFotaDeployment) GetDeploymentStatus()(ZebraFotaDeploymentStatusable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deploymentStatus
-    }
+    return m.deploymentStatus
 }
 // GetDescription gets the description property value. A human readable description of the deployment.
 func (m *ZebraFotaDeployment) GetDescription()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.description
-    }
+    return m.description
 }
 // GetDisplayName gets the displayName property value. A human readable name of the deployment.
 func (m *ZebraFotaDeployment) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ZebraFotaDeployment) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -174,31 +154,21 @@ func (m *ZebraFotaDeployment) Serialize(writer i878a80d2330e89d26896388a3f487eef
 }
 // SetDeploymentAssignments sets the deploymentAssignments property value. Collection of Android FOTA Assignment
 func (m *ZebraFotaDeployment) SetDeploymentAssignments(value []AndroidFotaDeploymentAssignmentable)() {
-    if m != nil {
-        m.deploymentAssignments = value
-    }
+    m.deploymentAssignments = value
 }
 // SetDeploymentSettings sets the deploymentSettings property value. The Zebra FOTA deployment complex type that describes the settings required to create a FOTA deployment.
 func (m *ZebraFotaDeployment) SetDeploymentSettings(value ZebraFotaDeploymentSettingsable)() {
-    if m != nil {
-        m.deploymentSettings = value
-    }
+    m.deploymentSettings = value
 }
 // SetDeploymentStatus sets the deploymentStatus property value. Represents the deployment status from Zebra. The status is a high level status of the deployment as opposed being a detailed status per device.
 func (m *ZebraFotaDeployment) SetDeploymentStatus(value ZebraFotaDeploymentStatusable)() {
-    if m != nil {
-        m.deploymentStatus = value
-    }
+    m.deploymentStatus = value
 }
 // SetDescription sets the description property value. A human readable description of the deployment.
 func (m *ZebraFotaDeployment) SetDescription(value *string)() {
-    if m != nil {
-        m.description = value
-    }
+    m.description = value
 }
 // SetDisplayName sets the displayName property value. A human readable name of the deployment.
 func (m *ZebraFotaDeployment) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }

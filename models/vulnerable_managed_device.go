@@ -30,11 +30,7 @@ func CreateVulnerableManagedDeviceFromDiscriminatorValue(parseNode i878a80d2330e
 }
 // GetDisplayName gets the displayName property value. The device name.
 func (m *VulnerableManagedDevice) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *VulnerableManagedDevice) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -73,19 +69,11 @@ func (m *VulnerableManagedDevice) GetFieldDeserializers()(map[string]func(i878a8
 }
 // GetLastSyncDateTime gets the lastSyncDateTime property value. The last sync date.
 func (m *VulnerableManagedDevice) GetLastSyncDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastSyncDateTime
-    }
+    return m.lastSyncDateTime
 }
 // GetManagedDeviceId gets the managedDeviceId property value. The Intune managed device ID.
 func (m *VulnerableManagedDevice) GetManagedDeviceId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.managedDeviceId
-    }
+    return m.managedDeviceId
 }
 // Serialize serializes information the current object
 func (m *VulnerableManagedDevice) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -115,19 +103,13 @@ func (m *VulnerableManagedDevice) Serialize(writer i878a80d2330e89d26896388a3f48
 }
 // SetDisplayName sets the displayName property value. The device name.
 func (m *VulnerableManagedDevice) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }
 // SetLastSyncDateTime sets the lastSyncDateTime property value. The last sync date.
 func (m *VulnerableManagedDevice) SetLastSyncDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.lastSyncDateTime = value
-    }
+    m.lastSyncDateTime = value
 }
 // SetManagedDeviceId sets the managedDeviceId property value. The Intune managed device ID.
 func (m *VulnerableManagedDevice) SetManagedDeviceId(value *string)() {
-    if m != nil {
-        m.managedDeviceId = value
-    }
+    m.managedDeviceId = value
 }

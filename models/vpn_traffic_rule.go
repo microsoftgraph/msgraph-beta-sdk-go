@@ -46,35 +46,19 @@ func CreateVpnTrafficRuleFromDiscriminatorValue(parseNode i878a80d2330e89d268963
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *VpnTrafficRule) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetAppId gets the appId property value. App identifier, if this traffic rule is triggered by an app.
 func (m *VpnTrafficRule) GetAppId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.appId
-    }
+    return m.appId
 }
 // GetAppType gets the appType property value. Indicates the type of app that a VPN traffic rule is associated with.
 func (m *VpnTrafficRule) GetAppType()(*VpnTrafficRuleAppType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.appType
-    }
+    return m.appType
 }
 // GetClaims gets the claims property value. Claims associated with this traffic rule.
 func (m *VpnTrafficRule) GetClaims()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.claims
-    }
+    return m.claims
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *VpnTrafficRule) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -209,67 +193,35 @@ func (m *VpnTrafficRule) GetFieldDeserializers()(map[string]func(i878a80d2330e89
 }
 // GetLocalAddressRanges gets the localAddressRanges property value. Local address range. This collection can contain a maximum of 500 elements.
 func (m *VpnTrafficRule) GetLocalAddressRanges()([]IPv4Rangeable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.localAddressRanges
-    }
+    return m.localAddressRanges
 }
 // GetLocalPortRanges gets the localPortRanges property value. Local port range can be set only when protocol is either TCP or UDP (6 or 17). This collection can contain a maximum of 500 elements.
 func (m *VpnTrafficRule) GetLocalPortRanges()([]NumberRangeable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.localPortRanges
-    }
+    return m.localPortRanges
 }
 // GetName gets the name property value. Name.
 func (m *VpnTrafficRule) GetName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.name
-    }
+    return m.name
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *VpnTrafficRule) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetProtocols gets the protocols property value. Protocols (0-255). Valid values 0 to 255
 func (m *VpnTrafficRule) GetProtocols()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.protocols
-    }
+    return m.protocols
 }
 // GetRemoteAddressRanges gets the remoteAddressRanges property value. Remote address range. This collection can contain a maximum of 500 elements.
 func (m *VpnTrafficRule) GetRemoteAddressRanges()([]IPv4Rangeable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.remoteAddressRanges
-    }
+    return m.remoteAddressRanges
 }
 // GetRemotePortRanges gets the remotePortRanges property value. Remote port range can be set only when protocol is either TCP or UDP (6 or 17). This collection can contain a maximum of 500 elements.
 func (m *VpnTrafficRule) GetRemotePortRanges()([]NumberRangeable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.remotePortRanges
-    }
+    return m.remotePortRanges
 }
 // GetRoutingPolicyType gets the routingPolicyType property value. Specifies the routing policy for a VPN traffic rule.
 func (m *VpnTrafficRule) GetRoutingPolicyType()(*VpnTrafficRuleRoutingPolicyType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.routingPolicyType
-    }
+    return m.routingPolicyType
 }
 // Serialize serializes information the current object
 func (m *VpnTrafficRule) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -367,73 +319,49 @@ func (m *VpnTrafficRule) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *VpnTrafficRule) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetAppId sets the appId property value. App identifier, if this traffic rule is triggered by an app.
 func (m *VpnTrafficRule) SetAppId(value *string)() {
-    if m != nil {
-        m.appId = value
-    }
+    m.appId = value
 }
 // SetAppType sets the appType property value. Indicates the type of app that a VPN traffic rule is associated with.
 func (m *VpnTrafficRule) SetAppType(value *VpnTrafficRuleAppType)() {
-    if m != nil {
-        m.appType = value
-    }
+    m.appType = value
 }
 // SetClaims sets the claims property value. Claims associated with this traffic rule.
 func (m *VpnTrafficRule) SetClaims(value *string)() {
-    if m != nil {
-        m.claims = value
-    }
+    m.claims = value
 }
 // SetLocalAddressRanges sets the localAddressRanges property value. Local address range. This collection can contain a maximum of 500 elements.
 func (m *VpnTrafficRule) SetLocalAddressRanges(value []IPv4Rangeable)() {
-    if m != nil {
-        m.localAddressRanges = value
-    }
+    m.localAddressRanges = value
 }
 // SetLocalPortRanges sets the localPortRanges property value. Local port range can be set only when protocol is either TCP or UDP (6 or 17). This collection can contain a maximum of 500 elements.
 func (m *VpnTrafficRule) SetLocalPortRanges(value []NumberRangeable)() {
-    if m != nil {
-        m.localPortRanges = value
-    }
+    m.localPortRanges = value
 }
 // SetName sets the name property value. Name.
 func (m *VpnTrafficRule) SetName(value *string)() {
-    if m != nil {
-        m.name = value
-    }
+    m.name = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *VpnTrafficRule) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetProtocols sets the protocols property value. Protocols (0-255). Valid values 0 to 255
 func (m *VpnTrafficRule) SetProtocols(value *int32)() {
-    if m != nil {
-        m.protocols = value
-    }
+    m.protocols = value
 }
 // SetRemoteAddressRanges sets the remoteAddressRanges property value. Remote address range. This collection can contain a maximum of 500 elements.
 func (m *VpnTrafficRule) SetRemoteAddressRanges(value []IPv4Rangeable)() {
-    if m != nil {
-        m.remoteAddressRanges = value
-    }
+    m.remoteAddressRanges = value
 }
 // SetRemotePortRanges sets the remotePortRanges property value. Remote port range can be set only when protocol is either TCP or UDP (6 or 17). This collection can contain a maximum of 500 elements.
 func (m *VpnTrafficRule) SetRemotePortRanges(value []NumberRangeable)() {
-    if m != nil {
-        m.remotePortRanges = value
-    }
+    m.remotePortRanges = value
 }
 // SetRoutingPolicyType sets the routingPolicyType property value. Specifies the routing policy for a VPN traffic rule.
 func (m *VpnTrafficRule) SetRoutingPolicyType(value *VpnTrafficRuleRoutingPolicyType)() {
-    if m != nil {
-        m.routingPolicyType = value
-    }
+    m.routingPolicyType = value
 }

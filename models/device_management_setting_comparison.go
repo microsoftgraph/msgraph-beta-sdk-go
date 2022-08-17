@@ -38,43 +38,23 @@ func CreateDeviceManagementSettingComparisonFromDiscriminatorValue(parseNode i87
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DeviceManagementSettingComparison) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetComparisonResult gets the comparisonResult property value. Setting comparison result type
 func (m *DeviceManagementSettingComparison) GetComparisonResult()(*DeviceManagementComparisonResult) {
-    if m == nil {
-        return nil
-    } else {
-        return m.comparisonResult
-    }
+    return m.comparisonResult
 }
 // GetCurrentValueJson gets the currentValueJson property value. JSON representation of current intent (or) template setting's value
 func (m *DeviceManagementSettingComparison) GetCurrentValueJson()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.currentValueJson
-    }
+    return m.currentValueJson
 }
 // GetDefinitionId gets the definitionId property value. The ID of the setting definition for this instance
 func (m *DeviceManagementSettingComparison) GetDefinitionId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.definitionId
-    }
+    return m.definitionId
 }
 // GetDisplayName gets the displayName property value. The setting's display name
 func (m *DeviceManagementSettingComparison) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceManagementSettingComparison) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -153,27 +133,15 @@ func (m *DeviceManagementSettingComparison) GetFieldDeserializers()(map[string]f
 }
 // GetId gets the id property value. The setting ID
 func (m *DeviceManagementSettingComparison) GetId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.id
-    }
+    return m.id
 }
 // GetNewValueJson gets the newValueJson property value. JSON representation of new template setting's value
 func (m *DeviceManagementSettingComparison) GetNewValueJson()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.newValueJson
-    }
+    return m.newValueJson
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *DeviceManagementSettingComparison) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // Serialize serializes information the current object
 func (m *DeviceManagementSettingComparison) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -230,49 +198,33 @@ func (m *DeviceManagementSettingComparison) Serialize(writer i878a80d2330e89d268
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DeviceManagementSettingComparison) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetComparisonResult sets the comparisonResult property value. Setting comparison result type
 func (m *DeviceManagementSettingComparison) SetComparisonResult(value *DeviceManagementComparisonResult)() {
-    if m != nil {
-        m.comparisonResult = value
-    }
+    m.comparisonResult = value
 }
 // SetCurrentValueJson sets the currentValueJson property value. JSON representation of current intent (or) template setting's value
 func (m *DeviceManagementSettingComparison) SetCurrentValueJson(value *string)() {
-    if m != nil {
-        m.currentValueJson = value
-    }
+    m.currentValueJson = value
 }
 // SetDefinitionId sets the definitionId property value. The ID of the setting definition for this instance
 func (m *DeviceManagementSettingComparison) SetDefinitionId(value *string)() {
-    if m != nil {
-        m.definitionId = value
-    }
+    m.definitionId = value
 }
 // SetDisplayName sets the displayName property value. The setting's display name
 func (m *DeviceManagementSettingComparison) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }
 // SetId sets the id property value. The setting ID
 func (m *DeviceManagementSettingComparison) SetId(value *string)() {
-    if m != nil {
-        m.id = value
-    }
+    m.id = value
 }
 // SetNewValueJson sets the newValueJson property value. JSON representation of new template setting's value
 func (m *DeviceManagementSettingComparison) SetNewValueJson(value *string)() {
-    if m != nil {
-        m.newValueJson = value
-    }
+    m.newValueJson = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *DeviceManagementSettingComparison) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }

@@ -46,51 +46,27 @@ func CreateAccessPackageResourceEnvironmentFromDiscriminatorValue(parseNode i878
 }
 // GetAccessPackageResources gets the accessPackageResources property value. Read-only. Required.
 func (m *AccessPackageResourceEnvironment) GetAccessPackageResources()([]AccessPackageResourceable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.accessPackageResources
-    }
+    return m.accessPackageResources
 }
 // GetConnectionInfo gets the connectionInfo property value. Connection information of an environment used to connect to a resource.
 func (m *AccessPackageResourceEnvironment) GetConnectionInfo()(ConnectionInfoable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.connectionInfo
-    }
+    return m.connectionInfo
 }
 // GetCreatedBy gets the createdBy property value. The display name of the user that created this object.
 func (m *AccessPackageResourceEnvironment) GetCreatedBy()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.createdBy
-    }
+    return m.createdBy
 }
 // GetCreatedDateTime gets the createdDateTime property value. The date and time that this object was created. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *AccessPackageResourceEnvironment) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.createdDateTime
-    }
+    return m.createdDateTime
 }
 // GetDescription gets the description property value. The description of this object.
 func (m *AccessPackageResourceEnvironment) GetDescription()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.description
-    }
+    return m.description
 }
 // GetDisplayName gets the displayName property value. The display name of this object.
 func (m *AccessPackageResourceEnvironment) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AccessPackageResourceEnvironment) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -213,43 +189,23 @@ func (m *AccessPackageResourceEnvironment) GetFieldDeserializers()(map[string]fu
 }
 // GetIsDefaultEnvironment gets the isDefaultEnvironment property value. Determines whether this is default environment or not. It is set to true for all static origin systems, such as Azure AD groups and Azure AD Applications.
 func (m *AccessPackageResourceEnvironment) GetIsDefaultEnvironment()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isDefaultEnvironment
-    }
+    return m.isDefaultEnvironment
 }
 // GetModifiedBy gets the modifiedBy property value. The display name of the entity that last modified this object.
 func (m *AccessPackageResourceEnvironment) GetModifiedBy()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.modifiedBy
-    }
+    return m.modifiedBy
 }
 // GetModifiedDateTime gets the modifiedDateTime property value. The date and time that this object was last modified. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *AccessPackageResourceEnvironment) GetModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.modifiedDateTime
-    }
+    return m.modifiedDateTime
 }
 // GetOriginId gets the originId property value. The unique identifier of this environment in the origin system.
 func (m *AccessPackageResourceEnvironment) GetOriginId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.originId
-    }
+    return m.originId
 }
 // GetOriginSystem gets the originSystem property value. The type of the resource in the origin system, that is, SharePointOnline. Requires $filter (eq).
 func (m *AccessPackageResourceEnvironment) GetOriginSystem()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.originSystem
-    }
+    return m.originSystem
 }
 // Serialize serializes information the current object
 func (m *AccessPackageResourceEnvironment) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -331,67 +287,45 @@ func (m *AccessPackageResourceEnvironment) Serialize(writer i878a80d2330e89d2689
 }
 // SetAccessPackageResources sets the accessPackageResources property value. Read-only. Required.
 func (m *AccessPackageResourceEnvironment) SetAccessPackageResources(value []AccessPackageResourceable)() {
-    if m != nil {
-        m.accessPackageResources = value
-    }
+    m.accessPackageResources = value
 }
 // SetConnectionInfo sets the connectionInfo property value. Connection information of an environment used to connect to a resource.
 func (m *AccessPackageResourceEnvironment) SetConnectionInfo(value ConnectionInfoable)() {
-    if m != nil {
-        m.connectionInfo = value
-    }
+    m.connectionInfo = value
 }
 // SetCreatedBy sets the createdBy property value. The display name of the user that created this object.
 func (m *AccessPackageResourceEnvironment) SetCreatedBy(value *string)() {
-    if m != nil {
-        m.createdBy = value
-    }
+    m.createdBy = value
 }
 // SetCreatedDateTime sets the createdDateTime property value. The date and time that this object was created. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *AccessPackageResourceEnvironment) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.createdDateTime = value
-    }
+    m.createdDateTime = value
 }
 // SetDescription sets the description property value. The description of this object.
 func (m *AccessPackageResourceEnvironment) SetDescription(value *string)() {
-    if m != nil {
-        m.description = value
-    }
+    m.description = value
 }
 // SetDisplayName sets the displayName property value. The display name of this object.
 func (m *AccessPackageResourceEnvironment) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }
 // SetIsDefaultEnvironment sets the isDefaultEnvironment property value. Determines whether this is default environment or not. It is set to true for all static origin systems, such as Azure AD groups and Azure AD Applications.
 func (m *AccessPackageResourceEnvironment) SetIsDefaultEnvironment(value *bool)() {
-    if m != nil {
-        m.isDefaultEnvironment = value
-    }
+    m.isDefaultEnvironment = value
 }
 // SetModifiedBy sets the modifiedBy property value. The display name of the entity that last modified this object.
 func (m *AccessPackageResourceEnvironment) SetModifiedBy(value *string)() {
-    if m != nil {
-        m.modifiedBy = value
-    }
+    m.modifiedBy = value
 }
 // SetModifiedDateTime sets the modifiedDateTime property value. The date and time that this object was last modified. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *AccessPackageResourceEnvironment) SetModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.modifiedDateTime = value
-    }
+    m.modifiedDateTime = value
 }
 // SetOriginId sets the originId property value. The unique identifier of this environment in the origin system.
 func (m *AccessPackageResourceEnvironment) SetOriginId(value *string)() {
-    if m != nil {
-        m.originId = value
-    }
+    m.originId = value
 }
 // SetOriginSystem sets the originSystem property value. The type of the resource in the origin system, that is, SharePointOnline. Requires $filter (eq).
 func (m *AccessPackageResourceEnvironment) SetOriginSystem(value *string)() {
-    if m != nil {
-        m.originSystem = value
-    }
+    m.originSystem = value
 }

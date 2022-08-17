@@ -88,43 +88,23 @@ func (m *MobileAppAssignment) GetFieldDeserializers()(map[string]func(i878a80d23
 }
 // GetIntent gets the intent property value. Possible values for the install intent chosen by the admin.
 func (m *MobileAppAssignment) GetIntent()(*InstallIntent) {
-    if m == nil {
-        return nil
-    } else {
-        return m.intent
-    }
+    return m.intent
 }
 // GetSettings gets the settings property value. The settings for target assignment defined by the admin.
 func (m *MobileAppAssignment) GetSettings()(MobileAppAssignmentSettingsable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.settings
-    }
+    return m.settings
 }
 // GetSource gets the source property value. Represents source of assignment.
 func (m *MobileAppAssignment) GetSource()(*DeviceAndAppManagementAssignmentSource) {
-    if m == nil {
-        return nil
-    } else {
-        return m.source
-    }
+    return m.source
 }
 // GetSourceId gets the sourceId property value. The identifier of the source of the assignment.
 func (m *MobileAppAssignment) GetSourceId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.sourceId
-    }
+    return m.sourceId
 }
 // GetTarget gets the target property value. The target group assignment defined by the admin.
 func (m *MobileAppAssignment) GetTarget()(DeviceAndAppManagementAssignmentTargetable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.target
-    }
+    return m.target
 }
 // Serialize serializes information the current object
 func (m *MobileAppAssignment) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -168,31 +148,21 @@ func (m *MobileAppAssignment) Serialize(writer i878a80d2330e89d26896388a3f487eef
 }
 // SetIntent sets the intent property value. Possible values for the install intent chosen by the admin.
 func (m *MobileAppAssignment) SetIntent(value *InstallIntent)() {
-    if m != nil {
-        m.intent = value
-    }
+    m.intent = value
 }
 // SetSettings sets the settings property value. The settings for target assignment defined by the admin.
 func (m *MobileAppAssignment) SetSettings(value MobileAppAssignmentSettingsable)() {
-    if m != nil {
-        m.settings = value
-    }
+    m.settings = value
 }
 // SetSource sets the source property value. Represents source of assignment.
 func (m *MobileAppAssignment) SetSource(value *DeviceAndAppManagementAssignmentSource)() {
-    if m != nil {
-        m.source = value
-    }
+    m.source = value
 }
 // SetSourceId sets the sourceId property value. The identifier of the source of the assignment.
 func (m *MobileAppAssignment) SetSourceId(value *string)() {
-    if m != nil {
-        m.sourceId = value
-    }
+    m.sourceId = value
 }
 // SetTarget sets the target property value. The target group assignment defined by the admin.
 func (m *MobileAppAssignment) SetTarget(value DeviceAndAppManagementAssignmentTargetable)() {
-    if m != nil {
-        m.target = value
-    }
+    m.target = value
 }

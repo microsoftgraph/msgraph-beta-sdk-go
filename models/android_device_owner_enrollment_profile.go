@@ -62,67 +62,35 @@ func CreateAndroidDeviceOwnerEnrollmentProfileFromDiscriminatorValue(parseNode i
 }
 // GetAccountId gets the accountId property value. Tenant GUID the enrollment profile belongs to.
 func (m *AndroidDeviceOwnerEnrollmentProfile) GetAccountId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.accountId
-    }
+    return m.accountId
 }
 // GetCreatedDateTime gets the createdDateTime property value. Date time the enrollment profile was created.
 func (m *AndroidDeviceOwnerEnrollmentProfile) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.createdDateTime
-    }
+    return m.createdDateTime
 }
 // GetDescription gets the description property value. Description for the enrollment profile.
 func (m *AndroidDeviceOwnerEnrollmentProfile) GetDescription()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.description
-    }
+    return m.description
 }
 // GetDisplayName gets the displayName property value. Display name for the enrollment profile.
 func (m *AndroidDeviceOwnerEnrollmentProfile) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
 // GetEnrolledDeviceCount gets the enrolledDeviceCount property value. Total number of Android devices that have enrolled using this enrollment profile.
 func (m *AndroidDeviceOwnerEnrollmentProfile) GetEnrolledDeviceCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.enrolledDeviceCount
-    }
+    return m.enrolledDeviceCount
 }
 // GetEnrollmentMode gets the enrollmentMode property value. The enrollment mode for an enrollment profile.
 func (m *AndroidDeviceOwnerEnrollmentProfile) GetEnrollmentMode()(*AndroidDeviceOwnerEnrollmentMode) {
-    if m == nil {
-        return nil
-    } else {
-        return m.enrollmentMode
-    }
+    return m.enrollmentMode
 }
 // GetEnrollmentTokenType gets the enrollmentTokenType property value. The enrollment token type for an enrollment profile.
 func (m *AndroidDeviceOwnerEnrollmentProfile) GetEnrollmentTokenType()(*AndroidDeviceOwnerEnrollmentTokenType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.enrollmentTokenType
-    }
+    return m.enrollmentTokenType
 }
 // GetEnrollmentTokenUsageCount gets the enrollmentTokenUsageCount property value. Total number of AOSP devices that have enrolled using the current token.
 func (m *AndroidDeviceOwnerEnrollmentProfile) GetEnrollmentTokenUsageCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.enrollmentTokenUsageCount
-    }
+    return m.enrollmentTokenUsageCount
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AndroidDeviceOwnerEnrollmentProfile) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -325,91 +293,47 @@ func (m *AndroidDeviceOwnerEnrollmentProfile) GetFieldDeserializers()(map[string
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. Date time the enrollment profile was last modified.
 func (m *AndroidDeviceOwnerEnrollmentProfile) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastModifiedDateTime
-    }
+    return m.lastModifiedDateTime
 }
 // GetQrCodeContent gets the qrCodeContent property value. String used to generate a QR code for the token.
 func (m *AndroidDeviceOwnerEnrollmentProfile) GetQrCodeContent()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.qrCodeContent
-    }
+    return m.qrCodeContent
 }
 // GetQrCodeImage gets the qrCodeImage property value. String used to generate a QR code for the token.
 func (m *AndroidDeviceOwnerEnrollmentProfile) GetQrCodeImage()(MimeContentable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.qrCodeImage
-    }
+    return m.qrCodeImage
 }
 // GetRoleScopeTagIds gets the roleScopeTagIds property value. List of Scope Tags for this Entity instance.
 func (m *AndroidDeviceOwnerEnrollmentProfile) GetRoleScopeTagIds()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.roleScopeTagIds
-    }
+    return m.roleScopeTagIds
 }
 // GetTokenCreationDateTime gets the tokenCreationDateTime property value. Date time the most recently created token was created.
 func (m *AndroidDeviceOwnerEnrollmentProfile) GetTokenCreationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.tokenCreationDateTime
-    }
+    return m.tokenCreationDateTime
 }
 // GetTokenExpirationDateTime gets the tokenExpirationDateTime property value. Date time the most recently created token will expire.
 func (m *AndroidDeviceOwnerEnrollmentProfile) GetTokenExpirationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.tokenExpirationDateTime
-    }
+    return m.tokenExpirationDateTime
 }
 // GetTokenValue gets the tokenValue property value. Value of the most recently created token for this enrollment profile.
 func (m *AndroidDeviceOwnerEnrollmentProfile) GetTokenValue()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.tokenValue
-    }
+    return m.tokenValue
 }
 // GetWifiHidden gets the wifiHidden property value. Boolean that indicates if hidden wifi networks are enabled
 func (m *AndroidDeviceOwnerEnrollmentProfile) GetWifiHidden()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.wifiHidden
-    }
+    return m.wifiHidden
 }
 // GetWifiPassword gets the wifiPassword property value. String that contains the wi-fi login password
 func (m *AndroidDeviceOwnerEnrollmentProfile) GetWifiPassword()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.wifiPassword
-    }
+    return m.wifiPassword
 }
 // GetWifiSecurityType gets the wifiSecurityType property value. This enum represents Wi-Fi Security Types for Android Device Owner AOSP Scenarios.
 func (m *AndroidDeviceOwnerEnrollmentProfile) GetWifiSecurityType()(*AospWifiSecurityType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.wifiSecurityType
-    }
+    return m.wifiSecurityType
 }
 // GetWifiSsid gets the wifiSsid property value. String that contains the wi-fi login ssid
 func (m *AndroidDeviceOwnerEnrollmentProfile) GetWifiSsid()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.wifiSsid
-    }
+    return m.wifiSsid
 }
 // Serialize serializes information the current object
 func (m *AndroidDeviceOwnerEnrollmentProfile) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -538,115 +462,77 @@ func (m *AndroidDeviceOwnerEnrollmentProfile) Serialize(writer i878a80d2330e89d2
 }
 // SetAccountId sets the accountId property value. Tenant GUID the enrollment profile belongs to.
 func (m *AndroidDeviceOwnerEnrollmentProfile) SetAccountId(value *string)() {
-    if m != nil {
-        m.accountId = value
-    }
+    m.accountId = value
 }
 // SetCreatedDateTime sets the createdDateTime property value. Date time the enrollment profile was created.
 func (m *AndroidDeviceOwnerEnrollmentProfile) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.createdDateTime = value
-    }
+    m.createdDateTime = value
 }
 // SetDescription sets the description property value. Description for the enrollment profile.
 func (m *AndroidDeviceOwnerEnrollmentProfile) SetDescription(value *string)() {
-    if m != nil {
-        m.description = value
-    }
+    m.description = value
 }
 // SetDisplayName sets the displayName property value. Display name for the enrollment profile.
 func (m *AndroidDeviceOwnerEnrollmentProfile) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }
 // SetEnrolledDeviceCount sets the enrolledDeviceCount property value. Total number of Android devices that have enrolled using this enrollment profile.
 func (m *AndroidDeviceOwnerEnrollmentProfile) SetEnrolledDeviceCount(value *int32)() {
-    if m != nil {
-        m.enrolledDeviceCount = value
-    }
+    m.enrolledDeviceCount = value
 }
 // SetEnrollmentMode sets the enrollmentMode property value. The enrollment mode for an enrollment profile.
 func (m *AndroidDeviceOwnerEnrollmentProfile) SetEnrollmentMode(value *AndroidDeviceOwnerEnrollmentMode)() {
-    if m != nil {
-        m.enrollmentMode = value
-    }
+    m.enrollmentMode = value
 }
 // SetEnrollmentTokenType sets the enrollmentTokenType property value. The enrollment token type for an enrollment profile.
 func (m *AndroidDeviceOwnerEnrollmentProfile) SetEnrollmentTokenType(value *AndroidDeviceOwnerEnrollmentTokenType)() {
-    if m != nil {
-        m.enrollmentTokenType = value
-    }
+    m.enrollmentTokenType = value
 }
 // SetEnrollmentTokenUsageCount sets the enrollmentTokenUsageCount property value. Total number of AOSP devices that have enrolled using the current token.
 func (m *AndroidDeviceOwnerEnrollmentProfile) SetEnrollmentTokenUsageCount(value *int32)() {
-    if m != nil {
-        m.enrollmentTokenUsageCount = value
-    }
+    m.enrollmentTokenUsageCount = value
 }
 // SetLastModifiedDateTime sets the lastModifiedDateTime property value. Date time the enrollment profile was last modified.
 func (m *AndroidDeviceOwnerEnrollmentProfile) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.lastModifiedDateTime = value
-    }
+    m.lastModifiedDateTime = value
 }
 // SetQrCodeContent sets the qrCodeContent property value. String used to generate a QR code for the token.
 func (m *AndroidDeviceOwnerEnrollmentProfile) SetQrCodeContent(value *string)() {
-    if m != nil {
-        m.qrCodeContent = value
-    }
+    m.qrCodeContent = value
 }
 // SetQrCodeImage sets the qrCodeImage property value. String used to generate a QR code for the token.
 func (m *AndroidDeviceOwnerEnrollmentProfile) SetQrCodeImage(value MimeContentable)() {
-    if m != nil {
-        m.qrCodeImage = value
-    }
+    m.qrCodeImage = value
 }
 // SetRoleScopeTagIds sets the roleScopeTagIds property value. List of Scope Tags for this Entity instance.
 func (m *AndroidDeviceOwnerEnrollmentProfile) SetRoleScopeTagIds(value []string)() {
-    if m != nil {
-        m.roleScopeTagIds = value
-    }
+    m.roleScopeTagIds = value
 }
 // SetTokenCreationDateTime sets the tokenCreationDateTime property value. Date time the most recently created token was created.
 func (m *AndroidDeviceOwnerEnrollmentProfile) SetTokenCreationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.tokenCreationDateTime = value
-    }
+    m.tokenCreationDateTime = value
 }
 // SetTokenExpirationDateTime sets the tokenExpirationDateTime property value. Date time the most recently created token will expire.
 func (m *AndroidDeviceOwnerEnrollmentProfile) SetTokenExpirationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.tokenExpirationDateTime = value
-    }
+    m.tokenExpirationDateTime = value
 }
 // SetTokenValue sets the tokenValue property value. Value of the most recently created token for this enrollment profile.
 func (m *AndroidDeviceOwnerEnrollmentProfile) SetTokenValue(value *string)() {
-    if m != nil {
-        m.tokenValue = value
-    }
+    m.tokenValue = value
 }
 // SetWifiHidden sets the wifiHidden property value. Boolean that indicates if hidden wifi networks are enabled
 func (m *AndroidDeviceOwnerEnrollmentProfile) SetWifiHidden(value *bool)() {
-    if m != nil {
-        m.wifiHidden = value
-    }
+    m.wifiHidden = value
 }
 // SetWifiPassword sets the wifiPassword property value. String that contains the wi-fi login password
 func (m *AndroidDeviceOwnerEnrollmentProfile) SetWifiPassword(value *string)() {
-    if m != nil {
-        m.wifiPassword = value
-    }
+    m.wifiPassword = value
 }
 // SetWifiSecurityType sets the wifiSecurityType property value. This enum represents Wi-Fi Security Types for Android Device Owner AOSP Scenarios.
 func (m *AndroidDeviceOwnerEnrollmentProfile) SetWifiSecurityType(value *AospWifiSecurityType)() {
-    if m != nil {
-        m.wifiSecurityType = value
-    }
+    m.wifiSecurityType = value
 }
 // SetWifiSsid sets the wifiSsid property value. String that contains the wi-fi login ssid
 func (m *AndroidDeviceOwnerEnrollmentProfile) SetWifiSsid(value *string)() {
-    if m != nil {
-        m.wifiSsid = value
-    }
+    m.wifiSsid = value
 }

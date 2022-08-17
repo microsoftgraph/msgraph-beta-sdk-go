@@ -25,11 +25,7 @@ func CreateBusinessFlowSettingsFromDiscriminatorValue(parseNode i878a80d2330e89d
 }
 // GetDurationInDays gets the durationInDays property value. The durationInDays property
 func (m *BusinessFlowSettings) GetDurationInDays()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.durationInDays
-    }
+    return m.durationInDays
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *BusinessFlowSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -62,7 +58,5 @@ func (m *BusinessFlowSettings) Serialize(writer i878a80d2330e89d26896388a3f487ee
 }
 // SetDurationInDays sets the durationInDays property value. The durationInDays property
 func (m *BusinessFlowSettings) SetDurationInDays(value *int32)() {
-    if m != nil {
-        m.durationInDays = value
-    }
+    m.durationInDays = value
 }

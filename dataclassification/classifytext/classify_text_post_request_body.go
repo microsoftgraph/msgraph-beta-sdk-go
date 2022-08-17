@@ -33,11 +33,7 @@ func CreateClassifyTextPostRequestBodyFromDiscriminatorValue(parseNode i878a80d2
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ClassifyTextPostRequestBody) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ClassifyTextPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -100,43 +96,23 @@ func (m *ClassifyTextPostRequestBody) GetFieldDeserializers()(map[string]func(i8
 }
 // GetFileExtension gets the fileExtension property value. The fileExtension property
 func (m *ClassifyTextPostRequestBody) GetFileExtension()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.fileExtension
-    }
+    return m.fileExtension
 }
 // GetMatchTolerancesToInclude gets the matchTolerancesToInclude property value. The matchTolerancesToInclude property
 func (m *ClassifyTextPostRequestBody) GetMatchTolerancesToInclude()(*ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MlClassificationMatchTolerance) {
-    if m == nil {
-        return nil
-    } else {
-        return m.matchTolerancesToInclude
-    }
+    return m.matchTolerancesToInclude
 }
 // GetScopesToRun gets the scopesToRun property value. The scopesToRun property
 func (m *ClassifyTextPostRequestBody) GetScopesToRun()(*ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SensitiveTypeScope) {
-    if m == nil {
-        return nil
-    } else {
-        return m.scopesToRun
-    }
+    return m.scopesToRun
 }
 // GetSensitiveTypeIds gets the sensitiveTypeIds property value. The sensitiveTypeIds property
 func (m *ClassifyTextPostRequestBody) GetSensitiveTypeIds()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.sensitiveTypeIds
-    }
+    return m.sensitiveTypeIds
 }
 // GetText gets the text property value. The text property
 func (m *ClassifyTextPostRequestBody) GetText()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.text
-    }
+    return m.text
 }
 // Serialize serializes information the current object
 func (m *ClassifyTextPostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -182,37 +158,25 @@ func (m *ClassifyTextPostRequestBody) Serialize(writer i878a80d2330e89d26896388a
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ClassifyTextPostRequestBody) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetFileExtension sets the fileExtension property value. The fileExtension property
 func (m *ClassifyTextPostRequestBody) SetFileExtension(value *string)() {
-    if m != nil {
-        m.fileExtension = value
-    }
+    m.fileExtension = value
 }
 // SetMatchTolerancesToInclude sets the matchTolerancesToInclude property value. The matchTolerancesToInclude property
 func (m *ClassifyTextPostRequestBody) SetMatchTolerancesToInclude(value *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MlClassificationMatchTolerance)() {
-    if m != nil {
-        m.matchTolerancesToInclude = value
-    }
+    m.matchTolerancesToInclude = value
 }
 // SetScopesToRun sets the scopesToRun property value. The scopesToRun property
 func (m *ClassifyTextPostRequestBody) SetScopesToRun(value *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SensitiveTypeScope)() {
-    if m != nil {
-        m.scopesToRun = value
-    }
+    m.scopesToRun = value
 }
 // SetSensitiveTypeIds sets the sensitiveTypeIds property value. The sensitiveTypeIds property
 func (m *ClassifyTextPostRequestBody) SetSensitiveTypeIds(value []string)() {
-    if m != nil {
-        m.sensitiveTypeIds = value
-    }
+    m.sensitiveTypeIds = value
 }
 // SetText sets the text property value. The text property
 func (m *ClassifyTextPostRequestBody) SetText(value *string)() {
-    if m != nil {
-        m.text = value
-    }
+    m.text = value
 }

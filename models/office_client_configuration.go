@@ -60,35 +60,19 @@ func CreateOfficeClientConfigurationFromDiscriminatorValue(parseNode i878a80d233
 }
 // GetAssignments gets the assignments property value. The list of group assignments for the policy.
 func (m *OfficeClientConfiguration) GetAssignments()([]OfficeClientConfigurationAssignmentable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.assignments
-    }
+    return m.assignments
 }
 // GetCheckinStatuses gets the checkinStatuses property value. List of office Client check-in status.
 func (m *OfficeClientConfiguration) GetCheckinStatuses()([]OfficeClientCheckinStatusable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.checkinStatuses
-    }
+    return m.checkinStatuses
 }
 // GetDescription gets the description property value. Not yet documented
 func (m *OfficeClientConfiguration) GetDescription()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.description
-    }
+    return m.description
 }
 // GetDisplayName gets the displayName property value. Admin provided description of the office client configuration policy.
 func (m *OfficeClientConfiguration) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *OfficeClientConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -185,35 +169,19 @@ func (m *OfficeClientConfiguration) GetFieldDeserializers()(map[string]func(i878
 }
 // GetPolicyPayload gets the policyPayload property value. Policy settings JSON string in binary format, these values cannot be changed by the user.
 func (m *OfficeClientConfiguration) GetPolicyPayload()([]byte) {
-    if m == nil {
-        return nil
-    } else {
-        return m.policyPayload
-    }
+    return m.policyPayload
 }
 // GetPriority gets the priority property value. Priority value should be unique value for each policy under a tenant and will be used for conflict resolution, lower values mean priority is high.
 func (m *OfficeClientConfiguration) GetPriority()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.priority
-    }
+    return m.priority
 }
 // GetUserCheckinSummary gets the userCheckinSummary property value. User check-in summary for the policy.
 func (m *OfficeClientConfiguration) GetUserCheckinSummary()(OfficeUserCheckinSummaryable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userCheckinSummary
-    }
+    return m.userCheckinSummary
 }
 // GetUserPreferencePayload gets the userPreferencePayload property value. Preference settings JSON string in binary format, these values can be overridden by the user.
 func (m *OfficeClientConfiguration) GetUserPreferencePayload()([]byte) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userPreferencePayload
-    }
+    return m.userPreferencePayload
 }
 // Serialize serializes information the current object
 func (m *OfficeClientConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -281,49 +249,33 @@ func (m *OfficeClientConfiguration) Serialize(writer i878a80d2330e89d26896388a3f
 }
 // SetAssignments sets the assignments property value. The list of group assignments for the policy.
 func (m *OfficeClientConfiguration) SetAssignments(value []OfficeClientConfigurationAssignmentable)() {
-    if m != nil {
-        m.assignments = value
-    }
+    m.assignments = value
 }
 // SetCheckinStatuses sets the checkinStatuses property value. List of office Client check-in status.
 func (m *OfficeClientConfiguration) SetCheckinStatuses(value []OfficeClientCheckinStatusable)() {
-    if m != nil {
-        m.checkinStatuses = value
-    }
+    m.checkinStatuses = value
 }
 // SetDescription sets the description property value. Not yet documented
 func (m *OfficeClientConfiguration) SetDescription(value *string)() {
-    if m != nil {
-        m.description = value
-    }
+    m.description = value
 }
 // SetDisplayName sets the displayName property value. Admin provided description of the office client configuration policy.
 func (m *OfficeClientConfiguration) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }
 // SetPolicyPayload sets the policyPayload property value. Policy settings JSON string in binary format, these values cannot be changed by the user.
 func (m *OfficeClientConfiguration) SetPolicyPayload(value []byte)() {
-    if m != nil {
-        m.policyPayload = value
-    }
+    m.policyPayload = value
 }
 // SetPriority sets the priority property value. Priority value should be unique value for each policy under a tenant and will be used for conflict resolution, lower values mean priority is high.
 func (m *OfficeClientConfiguration) SetPriority(value *int32)() {
-    if m != nil {
-        m.priority = value
-    }
+    m.priority = value
 }
 // SetUserCheckinSummary sets the userCheckinSummary property value. User check-in summary for the policy.
 func (m *OfficeClientConfiguration) SetUserCheckinSummary(value OfficeUserCheckinSummaryable)() {
-    if m != nil {
-        m.userCheckinSummary = value
-    }
+    m.userCheckinSummary = value
 }
 // SetUserPreferencePayload sets the userPreferencePayload property value. Preference settings JSON string in binary format, these values can be overridden by the user.
 func (m *OfficeClientConfiguration) SetUserPreferencePayload(value []byte)() {
-    if m != nil {
-        m.userPreferencePayload = value
-    }
+    m.userPreferencePayload = value
 }

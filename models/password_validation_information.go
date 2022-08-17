@@ -30,11 +30,7 @@ func CreatePasswordValidationInformationFromDiscriminatorValue(parseNode i878a80
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *PasswordValidationInformation) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *PasswordValidationInformation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -77,27 +73,15 @@ func (m *PasswordValidationInformation) GetFieldDeserializers()(map[string]func(
 }
 // GetIsValid gets the isValid property value. Specifies whether the password is valid based on the calculation of the results in the validationResults property. Not nullable. Read-only.
 func (m *PasswordValidationInformation) GetIsValid()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isValid
-    }
+    return m.isValid
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *PasswordValidationInformation) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetValidationResults gets the validationResults property value. The list of password validation rules and whether the password passed those rules. Not nullable. Read-only.
 func (m *PasswordValidationInformation) GetValidationResults()([]ValidationResultable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.validationResults
-    }
+    return m.validationResults
 }
 // Serialize serializes information the current object
 func (m *PasswordValidationInformation) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -133,25 +117,17 @@ func (m *PasswordValidationInformation) Serialize(writer i878a80d2330e89d2689638
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *PasswordValidationInformation) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetIsValid sets the isValid property value. Specifies whether the password is valid based on the calculation of the results in the validationResults property. Not nullable. Read-only.
 func (m *PasswordValidationInformation) SetIsValid(value *bool)() {
-    if m != nil {
-        m.isValid = value
-    }
+    m.isValid = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *PasswordValidationInformation) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetValidationResults sets the validationResults property value. The list of password validation rules and whether the password passed those rules. Not nullable. Read-only.
 func (m *PasswordValidationInformation) SetValidationResults(value []ValidationResultable)() {
-    if m != nil {
-        m.validationResults = value
-    }
+    m.validationResults = value
 }

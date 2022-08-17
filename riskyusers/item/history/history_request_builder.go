@@ -16,7 +16,7 @@ type HistoryRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// HistoryRequestBuilderGetQueryParameters the activity related to user risk level change
+// HistoryRequestBuilderGetQueryParameters get history from riskyUsers
 type HistoryRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,11 +74,11 @@ func NewHistoryRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371
 func (m *HistoryRequestBuilder) Count()(*ie70c8d82293d94e87620df7ca4647960b8d82301eef3458e88c04776f7cc9690.CountRequestBuilder) {
     return ie70c8d82293d94e87620df7ca4647960b8d82301eef3458e88c04776f7cc9690.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation the activity related to user risk level change
+// CreateGetRequestInformation get history from riskyUsers
 func (m *HistoryRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration the activity related to user risk level change
+// CreateGetRequestInformationWithRequestConfiguration get history from riskyUsers
 func (m *HistoryRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *HistoryRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -112,11 +112,11 @@ func (m *HistoryRequestBuilder) CreatePostRequestInformationWithRequestConfigura
     }
     return requestInfo, nil
 }
-// Get the activity related to user risk level change
+// Get get history from riskyUsers
 func (m *HistoryRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RiskyUserHistoryItemCollectionResponseable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler the activity related to user risk level change
+// GetWithRequestConfigurationAndResponseHandler get history from riskyUsers
 func (m *HistoryRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *HistoryRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RiskyUserHistoryItemCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

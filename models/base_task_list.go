@@ -50,19 +50,11 @@ func CreateBaseTaskListFromDiscriminatorValue(parseNode i878a80d2330e89d26896388
 }
 // GetDisplayName gets the displayName property value. The name of the task list.
 func (m *BaseTaskList) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
 // GetExtensions gets the extensions property value. The collection of open extensions defined for the task list. Nullable.
 func (m *BaseTaskList) GetExtensions()([]Extensionable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.extensions
-    }
+    return m.extensions
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *BaseTaskList) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -109,11 +101,7 @@ func (m *BaseTaskList) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
 }
 // GetTasks gets the tasks property value. The tasks in this task list. Read-only. Nullable.
 func (m *BaseTaskList) GetTasks()([]BaseTaskable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.tasks
-    }
+    return m.tasks
 }
 // Serialize serializes information the current object
 func (m *BaseTaskList) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -151,19 +139,13 @@ func (m *BaseTaskList) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
 }
 // SetDisplayName sets the displayName property value. The name of the task list.
 func (m *BaseTaskList) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }
 // SetExtensions sets the extensions property value. The collection of open extensions defined for the task list. Nullable.
 func (m *BaseTaskList) SetExtensions(value []Extensionable)() {
-    if m != nil {
-        m.extensions = value
-    }
+    m.extensions = value
 }
 // SetTasks sets the tasks property value. The tasks in this task list. Read-only. Nullable.
 func (m *BaseTaskList) SetTasks(value []BaseTaskable)() {
-    if m != nil {
-        m.tasks = value
-    }
+    m.tasks = value
 }

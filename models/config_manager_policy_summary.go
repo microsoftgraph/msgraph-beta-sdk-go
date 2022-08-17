@@ -38,35 +38,19 @@ func CreateConfigManagerPolicySummaryFromDiscriminatorValue(parseNode i878a80d23
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ConfigManagerPolicySummary) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetCompliantDeviceCount gets the compliantDeviceCount property value. The number of devices evaluated to be compliant by the policy.
 func (m *ConfigManagerPolicySummary) GetCompliantDeviceCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.compliantDeviceCount
-    }
+    return m.compliantDeviceCount
 }
 // GetEnforcedDeviceCount gets the enforcedDeviceCount property value. The number of devices that have have been remediated by the policy.
 func (m *ConfigManagerPolicySummary) GetEnforcedDeviceCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.enforcedDeviceCount
-    }
+    return m.enforcedDeviceCount
 }
 // GetFailedDeviceCount gets the failedDeviceCount property value. The number of devices that failed to be evaluated by the policy.
 func (m *ConfigManagerPolicySummary) GetFailedDeviceCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.failedDeviceCount
-    }
+    return m.failedDeviceCount
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ConfigManagerPolicySummary) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -145,35 +129,19 @@ func (m *ConfigManagerPolicySummary) GetFieldDeserializers()(map[string]func(i87
 }
 // GetNonCompliantDeviceCount gets the nonCompliantDeviceCount property value. The number of devices evaluated to be noncompliant by the policy.
 func (m *ConfigManagerPolicySummary) GetNonCompliantDeviceCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.nonCompliantDeviceCount
-    }
+    return m.nonCompliantDeviceCount
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *ConfigManagerPolicySummary) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetPendingDeviceCount gets the pendingDeviceCount property value. The number of devices that have acknowledged the policy but are pending evaluation.
 func (m *ConfigManagerPolicySummary) GetPendingDeviceCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.pendingDeviceCount
-    }
+    return m.pendingDeviceCount
 }
 // GetTargetedDeviceCount gets the targetedDeviceCount property value. The number of devices targeted by the policy.
 func (m *ConfigManagerPolicySummary) GetTargetedDeviceCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.targetedDeviceCount
-    }
+    return m.targetedDeviceCount
 }
 // Serialize serializes information the current object
 func (m *ConfigManagerPolicySummary) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -229,49 +197,33 @@ func (m *ConfigManagerPolicySummary) Serialize(writer i878a80d2330e89d26896388a3
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ConfigManagerPolicySummary) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetCompliantDeviceCount sets the compliantDeviceCount property value. The number of devices evaluated to be compliant by the policy.
 func (m *ConfigManagerPolicySummary) SetCompliantDeviceCount(value *int32)() {
-    if m != nil {
-        m.compliantDeviceCount = value
-    }
+    m.compliantDeviceCount = value
 }
 // SetEnforcedDeviceCount sets the enforcedDeviceCount property value. The number of devices that have have been remediated by the policy.
 func (m *ConfigManagerPolicySummary) SetEnforcedDeviceCount(value *int32)() {
-    if m != nil {
-        m.enforcedDeviceCount = value
-    }
+    m.enforcedDeviceCount = value
 }
 // SetFailedDeviceCount sets the failedDeviceCount property value. The number of devices that failed to be evaluated by the policy.
 func (m *ConfigManagerPolicySummary) SetFailedDeviceCount(value *int32)() {
-    if m != nil {
-        m.failedDeviceCount = value
-    }
+    m.failedDeviceCount = value
 }
 // SetNonCompliantDeviceCount sets the nonCompliantDeviceCount property value. The number of devices evaluated to be noncompliant by the policy.
 func (m *ConfigManagerPolicySummary) SetNonCompliantDeviceCount(value *int32)() {
-    if m != nil {
-        m.nonCompliantDeviceCount = value
-    }
+    m.nonCompliantDeviceCount = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *ConfigManagerPolicySummary) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetPendingDeviceCount sets the pendingDeviceCount property value. The number of devices that have acknowledged the policy but are pending evaluation.
 func (m *ConfigManagerPolicySummary) SetPendingDeviceCount(value *int32)() {
-    if m != nil {
-        m.pendingDeviceCount = value
-    }
+    m.pendingDeviceCount = value
 }
 // SetTargetedDeviceCount sets the targetedDeviceCount property value. The number of devices targeted by the policy.
 func (m *ConfigManagerPolicySummary) SetTargetedDeviceCount(value *int32)() {
-    if m != nil {
-        m.targetedDeviceCount = value
-    }
+    m.targetedDeviceCount = value
 }

@@ -64,27 +64,15 @@ func (m *AndroidWorkProfileNineWorkEasConfiguration) GetFieldDeserializers()(map
 }
 // GetSyncCalendar gets the syncCalendar property value. Toggles syncing the calendar. If set to false the calendar is turned off on the device.
 func (m *AndroidWorkProfileNineWorkEasConfiguration) GetSyncCalendar()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.syncCalendar
-    }
+    return m.syncCalendar
 }
 // GetSyncContacts gets the syncContacts property value. Toggles syncing contacts. If set to false contacts are turned off on the device.
 func (m *AndroidWorkProfileNineWorkEasConfiguration) GetSyncContacts()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.syncContacts
-    }
+    return m.syncContacts
 }
 // GetSyncTasks gets the syncTasks property value. Toggles syncing tasks. If set to false tasks are turned off on the device.
 func (m *AndroidWorkProfileNineWorkEasConfiguration) GetSyncTasks()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.syncTasks
-    }
+    return m.syncTasks
 }
 // Serialize serializes information the current object
 func (m *AndroidWorkProfileNineWorkEasConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -114,19 +102,13 @@ func (m *AndroidWorkProfileNineWorkEasConfiguration) Serialize(writer i878a80d23
 }
 // SetSyncCalendar sets the syncCalendar property value. Toggles syncing the calendar. If set to false the calendar is turned off on the device.
 func (m *AndroidWorkProfileNineWorkEasConfiguration) SetSyncCalendar(value *bool)() {
-    if m != nil {
-        m.syncCalendar = value
-    }
+    m.syncCalendar = value
 }
 // SetSyncContacts sets the syncContacts property value. Toggles syncing contacts. If set to false contacts are turned off on the device.
 func (m *AndroidWorkProfileNineWorkEasConfiguration) SetSyncContacts(value *bool)() {
-    if m != nil {
-        m.syncContacts = value
-    }
+    m.syncContacts = value
 }
 // SetSyncTasks sets the syncTasks property value. Toggles syncing tasks. If set to false tasks are turned off on the device.
 func (m *AndroidWorkProfileNineWorkEasConfiguration) SetSyncTasks(value *bool)() {
-    if m != nil {
-        m.syncTasks = value
-    }
+    m.syncTasks = value
 }

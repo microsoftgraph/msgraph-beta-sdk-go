@@ -30,7 +30,7 @@ type DirectoryObjectItemRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// DirectoryObjectItemRequestBuilderGetQueryParameters recently deleted items. Read-only. Nullable.
+// DirectoryObjectItemRequestBuilderGetQueryParameters get deletedItems from directory
 type DirectoryObjectItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -100,11 +100,11 @@ func (m *DirectoryObjectItemRequestBuilder) CreateDeleteRequestInformationWithRe
     }
     return requestInfo, nil
 }
-// CreateGetRequestInformation recently deleted items. Read-only. Nullable.
+// CreateGetRequestInformation get deletedItems from directory
 func (m *DirectoryObjectItemRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration recently deleted items. Read-only. Nullable.
+// CreateGetRequestInformationWithRequestConfiguration get deletedItems from directory
 func (m *DirectoryObjectItemRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *DirectoryObjectItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -157,7 +157,7 @@ func (m *DirectoryObjectItemRequestBuilder) DeleteWithRequestConfigurationAndRes
     }
     return nil
 }
-// Get recently deleted items. Read-only. Nullable.
+// Get get deletedItems from directory
 func (m *DirectoryObjectItemRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
@@ -169,7 +169,7 @@ func (m *DirectoryObjectItemRequestBuilder) GetMemberGroups()(*ifa902ae6cdb0d6db
 func (m *DirectoryObjectItemRequestBuilder) GetMemberObjects()(*iecc50f59642d3ded03c6cdda66cc48a3fd034beb1a00070995aa7a5d9202ec63.GetMemberObjectsRequestBuilder) {
     return iecc50f59642d3ded03c6cdda66cc48a3fd034beb1a00070995aa7a5d9202ec63.NewGetMemberObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// GetWithRequestConfigurationAndResponseHandler recently deleted items. Read-only. Nullable.
+// GetWithRequestConfigurationAndResponseHandler get deletedItems from directory
 func (m *DirectoryObjectItemRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *DirectoryObjectItemRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

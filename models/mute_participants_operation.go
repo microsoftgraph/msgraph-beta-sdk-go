@@ -44,11 +44,7 @@ func (m *MuteParticipantsOperation) GetFieldDeserializers()(map[string]func(i878
 }
 // GetParticipants gets the participants property value. The participants property
 func (m *MuteParticipantsOperation) GetParticipants()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.participants
-    }
+    return m.participants
 }
 // Serialize serializes information the current object
 func (m *MuteParticipantsOperation) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -66,7 +62,5 @@ func (m *MuteParticipantsOperation) Serialize(writer i878a80d2330e89d26896388a3f
 }
 // SetParticipants sets the participants property value. The participants property
 func (m *MuteParticipantsOperation) SetParticipants(value []string)() {
-    if m != nil {
-        m.participants = value
-    }
+    m.participants = value
 }

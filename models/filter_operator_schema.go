@@ -29,11 +29,7 @@ func CreateFilterOperatorSchemaFromDiscriminatorValue(parseNode i878a80d2330e89d
 }
 // GetArity gets the arity property value. The arity property
 func (m *FilterOperatorSchema) GetArity()(*ScopeOperatorType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.arity
-    }
+    return m.arity
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *FilterOperatorSchema) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -76,19 +72,11 @@ func (m *FilterOperatorSchema) GetFieldDeserializers()(map[string]func(i878a80d2
 }
 // GetMultivaluedComparisonType gets the multivaluedComparisonType property value. The multivaluedComparisonType property
 func (m *FilterOperatorSchema) GetMultivaluedComparisonType()(*ScopeOperatorMultiValuedComparisonType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.multivaluedComparisonType
-    }
+    return m.multivaluedComparisonType
 }
 // GetSupportedAttributeTypes gets the supportedAttributeTypes property value. Attribute types supported by the operator. Possible values are: Boolean, Binary, Reference, Integer, String.
 func (m *FilterOperatorSchema) GetSupportedAttributeTypes()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.supportedAttributeTypes
-    }
+    return m.supportedAttributeTypes
 }
 // Serialize serializes information the current object
 func (m *FilterOperatorSchema) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -120,19 +108,13 @@ func (m *FilterOperatorSchema) Serialize(writer i878a80d2330e89d26896388a3f487ee
 }
 // SetArity sets the arity property value. The arity property
 func (m *FilterOperatorSchema) SetArity(value *ScopeOperatorType)() {
-    if m != nil {
-        m.arity = value
-    }
+    m.arity = value
 }
 // SetMultivaluedComparisonType sets the multivaluedComparisonType property value. The multivaluedComparisonType property
 func (m *FilterOperatorSchema) SetMultivaluedComparisonType(value *ScopeOperatorMultiValuedComparisonType)() {
-    if m != nil {
-        m.multivaluedComparisonType = value
-    }
+    m.multivaluedComparisonType = value
 }
 // SetSupportedAttributeTypes sets the supportedAttributeTypes property value. Attribute types supported by the operator. Possible values are: Boolean, Binary, Reference, Integer, String.
 func (m *FilterOperatorSchema) SetSupportedAttributeTypes(value []string)() {
-    if m != nil {
-        m.supportedAttributeTypes = value
-    }
+    m.supportedAttributeTypes = value
 }

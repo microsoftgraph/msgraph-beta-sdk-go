@@ -57,19 +57,11 @@ func (m *AzureADLicenseUsage) GetFieldDeserializers()(map[string]func(i878a80d23
 }
 // GetLicenseInfoDetails gets the licenseInfoDetails property value. The licenseInfoDetails property
 func (m *AzureADLicenseUsage) GetLicenseInfoDetails()([]LicenseInfoDetailable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.licenseInfoDetails
-    }
+    return m.licenseInfoDetails
 }
 // GetSnapshotDateTime gets the snapshotDateTime property value. The snapshotDateTime property
 func (m *AzureADLicenseUsage) GetSnapshotDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.snapshotDateTime
-    }
+    return m.snapshotDateTime
 }
 // Serialize serializes information the current object
 func (m *AzureADLicenseUsage) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -97,13 +89,9 @@ func (m *AzureADLicenseUsage) Serialize(writer i878a80d2330e89d26896388a3f487eef
 }
 // SetLicenseInfoDetails sets the licenseInfoDetails property value. The licenseInfoDetails property
 func (m *AzureADLicenseUsage) SetLicenseInfoDetails(value []LicenseInfoDetailable)() {
-    if m != nil {
-        m.licenseInfoDetails = value
-    }
+    m.licenseInfoDetails = value
 }
 // SetSnapshotDateTime sets the snapshotDateTime property value. The snapshotDateTime property
 func (m *AzureADLicenseUsage) SetSnapshotDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.snapshotDateTime = value
-    }
+    m.snapshotDateTime = value
 }

@@ -32,27 +32,15 @@ func CreateVpnServerFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *VpnServer) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetAddress gets the address property value. Address (IP address, FQDN or URL)
 func (m *VpnServer) GetAddress()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.address
-    }
+    return m.address
 }
 // GetDescription gets the description property value. Description.
 func (m *VpnServer) GetDescription()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.description
-    }
+    return m.description
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *VpnServer) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -101,19 +89,11 @@ func (m *VpnServer) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
 }
 // GetIsDefaultServer gets the isDefaultServer property value. Default server.
 func (m *VpnServer) GetIsDefaultServer()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isDefaultServer
-    }
+    return m.isDefaultServer
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *VpnServer) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // Serialize serializes information the current object
 func (m *VpnServer) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -151,31 +131,21 @@ func (m *VpnServer) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *VpnServer) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetAddress sets the address property value. Address (IP address, FQDN or URL)
 func (m *VpnServer) SetAddress(value *string)() {
-    if m != nil {
-        m.address = value
-    }
+    m.address = value
 }
 // SetDescription sets the description property value. Description.
 func (m *VpnServer) SetDescription(value *string)() {
-    if m != nil {
-        m.description = value
-    }
+    m.description = value
 }
 // SetIsDefaultServer sets the isDefaultServer property value. Default server.
 func (m *VpnServer) SetIsDefaultServer(value *bool)() {
-    if m != nil {
-        m.isDefaultServer = value
-    }
+    m.isDefaultServer = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *VpnServer) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }

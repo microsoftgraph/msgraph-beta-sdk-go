@@ -54,11 +54,7 @@ func CreateEasEmailProfileConfigurationBaseFromDiscriminatorValue(parseNode i878
 }
 // GetCustomDomainName gets the customDomainName property value. Custom domain name value used while generating an email profile before installing on the device.
 func (m *EasEmailProfileConfigurationBase) GetCustomDomainName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.customDomainName
-    }
+    return m.customDomainName
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *EasEmailProfileConfigurationBase) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -107,27 +103,15 @@ func (m *EasEmailProfileConfigurationBase) GetFieldDeserializers()(map[string]fu
 }
 // GetUserDomainNameSource gets the userDomainNameSource property value. UserDomainname attribute that is picked from AAD and injected into this profile before installing on the device. Possible values are: fullDomainName, netBiosDomainName.
 func (m *EasEmailProfileConfigurationBase) GetUserDomainNameSource()(*DomainNameSource) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userDomainNameSource
-    }
+    return m.userDomainNameSource
 }
 // GetUsernameAADSource gets the usernameAADSource property value. Name of the AAD field, that will be used to retrieve UserName for email profile. Possible values are: userPrincipalName, primarySmtpAddress, samAccountName.
 func (m *EasEmailProfileConfigurationBase) GetUsernameAADSource()(*UsernameSource) {
-    if m == nil {
-        return nil
-    } else {
-        return m.usernameAADSource
-    }
+    return m.usernameAADSource
 }
 // GetUsernameSource gets the usernameSource property value. Possible values for username source or email source.
 func (m *EasEmailProfileConfigurationBase) GetUsernameSource()(*UserEmailSource) {
-    if m == nil {
-        return nil
-    } else {
-        return m.usernameSource
-    }
+    return m.usernameSource
 }
 // Serialize serializes information the current object
 func (m *EasEmailProfileConfigurationBase) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -166,25 +150,17 @@ func (m *EasEmailProfileConfigurationBase) Serialize(writer i878a80d2330e89d2689
 }
 // SetCustomDomainName sets the customDomainName property value. Custom domain name value used while generating an email profile before installing on the device.
 func (m *EasEmailProfileConfigurationBase) SetCustomDomainName(value *string)() {
-    if m != nil {
-        m.customDomainName = value
-    }
+    m.customDomainName = value
 }
 // SetUserDomainNameSource sets the userDomainNameSource property value. UserDomainname attribute that is picked from AAD and injected into this profile before installing on the device. Possible values are: fullDomainName, netBiosDomainName.
 func (m *EasEmailProfileConfigurationBase) SetUserDomainNameSource(value *DomainNameSource)() {
-    if m != nil {
-        m.userDomainNameSource = value
-    }
+    m.userDomainNameSource = value
 }
 // SetUsernameAADSource sets the usernameAADSource property value. Name of the AAD field, that will be used to retrieve UserName for email profile. Possible values are: userPrincipalName, primarySmtpAddress, samAccountName.
 func (m *EasEmailProfileConfigurationBase) SetUsernameAADSource(value *UsernameSource)() {
-    if m != nil {
-        m.usernameAADSource = value
-    }
+    m.usernameAADSource = value
 }
 // SetUsernameSource sets the usernameSource property value. Possible values for username source or email source.
 func (m *EasEmailProfileConfigurationBase) SetUsernameSource(value *UserEmailSource)() {
-    if m != nil {
-        m.usernameSource = value
-    }
+    m.usernameSource = value
 }

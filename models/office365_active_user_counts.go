@@ -43,11 +43,7 @@ func CreateOffice365ActiveUserCountsFromDiscriminatorValue(parseNode i878a80d233
 }
 // GetExchange gets the exchange property value. The number of active users in Exchange. Any user who can read and send email is considered an active user.
 func (m *Office365ActiveUserCounts) GetExchange()(*int64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.exchange
-    }
+    return m.exchange
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Office365ActiveUserCounts) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -156,75 +152,39 @@ func (m *Office365ActiveUserCounts) GetFieldDeserializers()(map[string]func(i878
 }
 // GetOffice365 gets the office365 property value. The number of active users in Microsoft 365. This number includes all the active users in Exchange, OneDrive, SharePoint, Skype For Business, Yammer, and Microsoft Teams. You can find the definition of active user for each product in the respective property description.
 func (m *Office365ActiveUserCounts) GetOffice365()(*int64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.office365
-    }
+    return m.office365
 }
 // GetOneDrive gets the oneDrive property value. The number of active users in OneDrive. Any user who viewed or edited files, shared files internally or externally, or synced files is considered an active user.
 func (m *Office365ActiveUserCounts) GetOneDrive()(*int64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.oneDrive
-    }
+    return m.oneDrive
 }
 // GetReportDate gets the reportDate property value. The date on which a number of users were active.
 func (m *Office365ActiveUserCounts) GetReportDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly) {
-    if m == nil {
-        return nil
-    } else {
-        return m.reportDate
-    }
+    return m.reportDate
 }
 // GetReportPeriod gets the reportPeriod property value. The number of days the report covers.
 func (m *Office365ActiveUserCounts) GetReportPeriod()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.reportPeriod
-    }
+    return m.reportPeriod
 }
 // GetReportRefreshDate gets the reportRefreshDate property value. The latest date of the content.
 func (m *Office365ActiveUserCounts) GetReportRefreshDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly) {
-    if m == nil {
-        return nil
-    } else {
-        return m.reportRefreshDate
-    }
+    return m.reportRefreshDate
 }
 // GetSharePoint gets the sharePoint property value. The number of active users in SharePoint. Any user who viewed or edited files, shared files internally or externally, synced files, or viewed SharePoint pages is considered an active user.
 func (m *Office365ActiveUserCounts) GetSharePoint()(*int64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.sharePoint
-    }
+    return m.sharePoint
 }
 // GetSkypeForBusiness gets the skypeForBusiness property value. The number of active users in Skype For Business. Any user who organized or participated in conferences, or joined peer-to-peer sessions is considered an active user.
 func (m *Office365ActiveUserCounts) GetSkypeForBusiness()(*int64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.skypeForBusiness
-    }
+    return m.skypeForBusiness
 }
 // GetTeams gets the teams property value. The number of active users in Microsoft Teams. Any user who posted messages in team channels, sent messages in private chat sessions, or participated in meetings or calls is considered an active user.
 func (m *Office365ActiveUserCounts) GetTeams()(*int64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.teams
-    }
+    return m.teams
 }
 // GetYammer gets the yammer property value. The number of active users in Yammer. Any user who can post, read, or like messages is considered an active user.
 func (m *Office365ActiveUserCounts) GetYammer()(*int64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.yammer
-    }
+    return m.yammer
 }
 // Serialize serializes information the current object
 func (m *Office365ActiveUserCounts) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -296,61 +256,41 @@ func (m *Office365ActiveUserCounts) Serialize(writer i878a80d2330e89d26896388a3f
 }
 // SetExchange sets the exchange property value. The number of active users in Exchange. Any user who can read and send email is considered an active user.
 func (m *Office365ActiveUserCounts) SetExchange(value *int64)() {
-    if m != nil {
-        m.exchange = value
-    }
+    m.exchange = value
 }
 // SetOffice365 sets the office365 property value. The number of active users in Microsoft 365. This number includes all the active users in Exchange, OneDrive, SharePoint, Skype For Business, Yammer, and Microsoft Teams. You can find the definition of active user for each product in the respective property description.
 func (m *Office365ActiveUserCounts) SetOffice365(value *int64)() {
-    if m != nil {
-        m.office365 = value
-    }
+    m.office365 = value
 }
 // SetOneDrive sets the oneDrive property value. The number of active users in OneDrive. Any user who viewed or edited files, shared files internally or externally, or synced files is considered an active user.
 func (m *Office365ActiveUserCounts) SetOneDrive(value *int64)() {
-    if m != nil {
-        m.oneDrive = value
-    }
+    m.oneDrive = value
 }
 // SetReportDate sets the reportDate property value. The date on which a number of users were active.
 func (m *Office365ActiveUserCounts) SetReportDate(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)() {
-    if m != nil {
-        m.reportDate = value
-    }
+    m.reportDate = value
 }
 // SetReportPeriod sets the reportPeriod property value. The number of days the report covers.
 func (m *Office365ActiveUserCounts) SetReportPeriod(value *string)() {
-    if m != nil {
-        m.reportPeriod = value
-    }
+    m.reportPeriod = value
 }
 // SetReportRefreshDate sets the reportRefreshDate property value. The latest date of the content.
 func (m *Office365ActiveUserCounts) SetReportRefreshDate(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)() {
-    if m != nil {
-        m.reportRefreshDate = value
-    }
+    m.reportRefreshDate = value
 }
 // SetSharePoint sets the sharePoint property value. The number of active users in SharePoint. Any user who viewed or edited files, shared files internally or externally, synced files, or viewed SharePoint pages is considered an active user.
 func (m *Office365ActiveUserCounts) SetSharePoint(value *int64)() {
-    if m != nil {
-        m.sharePoint = value
-    }
+    m.sharePoint = value
 }
 // SetSkypeForBusiness sets the skypeForBusiness property value. The number of active users in Skype For Business. Any user who organized or participated in conferences, or joined peer-to-peer sessions is considered an active user.
 func (m *Office365ActiveUserCounts) SetSkypeForBusiness(value *int64)() {
-    if m != nil {
-        m.skypeForBusiness = value
-    }
+    m.skypeForBusiness = value
 }
 // SetTeams sets the teams property value. The number of active users in Microsoft Teams. Any user who posted messages in team channels, sent messages in private chat sessions, or participated in meetings or calls is considered an active user.
 func (m *Office365ActiveUserCounts) SetTeams(value *int64)() {
-    if m != nil {
-        m.teams = value
-    }
+    m.teams = value
 }
 // SetYammer sets the yammer property value. The number of active users in Yammer. Any user who can post, read, or like messages is considered an active user.
 func (m *Office365ActiveUserCounts) SetYammer(value *int64)() {
-    if m != nil {
-        m.yammer = value
-    }
+    m.yammer = value
 }

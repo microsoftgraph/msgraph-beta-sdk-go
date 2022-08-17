@@ -52,19 +52,11 @@ func (m *PrivilegedSignupStatus) GetFieldDeserializers()(map[string]func(i878a80
 }
 // GetIsRegistered gets the isRegistered property value. The isRegistered property
 func (m *PrivilegedSignupStatus) GetIsRegistered()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isRegistered
-    }
+    return m.isRegistered
 }
 // GetStatus gets the status property value. The status property
 func (m *PrivilegedSignupStatus) GetStatus()(*SetupStatus) {
-    if m == nil {
-        return nil
-    } else {
-        return m.status
-    }
+    return m.status
 }
 // Serialize serializes information the current object
 func (m *PrivilegedSignupStatus) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -89,13 +81,9 @@ func (m *PrivilegedSignupStatus) Serialize(writer i878a80d2330e89d26896388a3f487
 }
 // SetIsRegistered sets the isRegistered property value. The isRegistered property
 func (m *PrivilegedSignupStatus) SetIsRegistered(value *bool)() {
-    if m != nil {
-        m.isRegistered = value
-    }
+    m.isRegistered = value
 }
 // SetStatus sets the status property value. The status property
 func (m *PrivilegedSignupStatus) SetStatus(value *SetupStatus)() {
-    if m != nil {
-        m.status = value
-    }
+    m.status = value
 }

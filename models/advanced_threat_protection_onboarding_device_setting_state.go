@@ -48,35 +48,19 @@ func CreateAdvancedThreatProtectionOnboardingDeviceSettingStateFromDiscriminator
 }
 // GetComplianceGracePeriodExpirationDateTime gets the complianceGracePeriodExpirationDateTime property value. The DateTime when device compliance grace period expires
 func (m *AdvancedThreatProtectionOnboardingDeviceSettingState) GetComplianceGracePeriodExpirationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.complianceGracePeriodExpirationDateTime
-    }
+    return m.complianceGracePeriodExpirationDateTime
 }
 // GetDeviceId gets the deviceId property value. The Device Id that is being reported
 func (m *AdvancedThreatProtectionOnboardingDeviceSettingState) GetDeviceId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deviceId
-    }
+    return m.deviceId
 }
 // GetDeviceModel gets the deviceModel property value. The device model that is being reported
 func (m *AdvancedThreatProtectionOnboardingDeviceSettingState) GetDeviceModel()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deviceModel
-    }
+    return m.deviceModel
 }
 // GetDeviceName gets the deviceName property value. The Device Name that is being reported
 func (m *AdvancedThreatProtectionOnboardingDeviceSettingState) GetDeviceName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deviceName
-    }
+    return m.deviceName
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AdvancedThreatProtectionOnboardingDeviceSettingState) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -205,67 +189,35 @@ func (m *AdvancedThreatProtectionOnboardingDeviceSettingState) GetFieldDeseriali
 }
 // GetPlatformType gets the platformType property value. Device type.
 func (m *AdvancedThreatProtectionOnboardingDeviceSettingState) GetPlatformType()(*DeviceType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.platformType
-    }
+    return m.platformType
 }
 // GetSetting gets the setting property value. The setting class name and property name.
 func (m *AdvancedThreatProtectionOnboardingDeviceSettingState) GetSetting()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.setting
-    }
+    return m.setting
 }
 // GetSettingName gets the settingName property value. The Setting Name that is being reported
 func (m *AdvancedThreatProtectionOnboardingDeviceSettingState) GetSettingName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.settingName
-    }
+    return m.settingName
 }
 // GetState gets the state property value. The state property
 func (m *AdvancedThreatProtectionOnboardingDeviceSettingState) GetState()(*ComplianceStatus) {
-    if m == nil {
-        return nil
-    } else {
-        return m.state
-    }
+    return m.state
 }
 // GetUserEmail gets the userEmail property value. The User email address that is being reported
 func (m *AdvancedThreatProtectionOnboardingDeviceSettingState) GetUserEmail()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userEmail
-    }
+    return m.userEmail
 }
 // GetUserId gets the userId property value. The user Id that is being reported
 func (m *AdvancedThreatProtectionOnboardingDeviceSettingState) GetUserId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userId
-    }
+    return m.userId
 }
 // GetUserName gets the userName property value. The User Name that is being reported
 func (m *AdvancedThreatProtectionOnboardingDeviceSettingState) GetUserName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userName
-    }
+    return m.userName
 }
 // GetUserPrincipalName gets the userPrincipalName property value. The User PrincipalName that is being reported
 func (m *AdvancedThreatProtectionOnboardingDeviceSettingState) GetUserPrincipalName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userPrincipalName
-    }
+    return m.userPrincipalName
 }
 // Serialize serializes information the current object
 func (m *AdvancedThreatProtectionOnboardingDeviceSettingState) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -351,73 +303,49 @@ func (m *AdvancedThreatProtectionOnboardingDeviceSettingState) Serialize(writer 
 }
 // SetComplianceGracePeriodExpirationDateTime sets the complianceGracePeriodExpirationDateTime property value. The DateTime when device compliance grace period expires
 func (m *AdvancedThreatProtectionOnboardingDeviceSettingState) SetComplianceGracePeriodExpirationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.complianceGracePeriodExpirationDateTime = value
-    }
+    m.complianceGracePeriodExpirationDateTime = value
 }
 // SetDeviceId sets the deviceId property value. The Device Id that is being reported
 func (m *AdvancedThreatProtectionOnboardingDeviceSettingState) SetDeviceId(value *string)() {
-    if m != nil {
-        m.deviceId = value
-    }
+    m.deviceId = value
 }
 // SetDeviceModel sets the deviceModel property value. The device model that is being reported
 func (m *AdvancedThreatProtectionOnboardingDeviceSettingState) SetDeviceModel(value *string)() {
-    if m != nil {
-        m.deviceModel = value
-    }
+    m.deviceModel = value
 }
 // SetDeviceName sets the deviceName property value. The Device Name that is being reported
 func (m *AdvancedThreatProtectionOnboardingDeviceSettingState) SetDeviceName(value *string)() {
-    if m != nil {
-        m.deviceName = value
-    }
+    m.deviceName = value
 }
 // SetPlatformType sets the platformType property value. Device type.
 func (m *AdvancedThreatProtectionOnboardingDeviceSettingState) SetPlatformType(value *DeviceType)() {
-    if m != nil {
-        m.platformType = value
-    }
+    m.platformType = value
 }
 // SetSetting sets the setting property value. The setting class name and property name.
 func (m *AdvancedThreatProtectionOnboardingDeviceSettingState) SetSetting(value *string)() {
-    if m != nil {
-        m.setting = value
-    }
+    m.setting = value
 }
 // SetSettingName sets the settingName property value. The Setting Name that is being reported
 func (m *AdvancedThreatProtectionOnboardingDeviceSettingState) SetSettingName(value *string)() {
-    if m != nil {
-        m.settingName = value
-    }
+    m.settingName = value
 }
 // SetState sets the state property value. The state property
 func (m *AdvancedThreatProtectionOnboardingDeviceSettingState) SetState(value *ComplianceStatus)() {
-    if m != nil {
-        m.state = value
-    }
+    m.state = value
 }
 // SetUserEmail sets the userEmail property value. The User email address that is being reported
 func (m *AdvancedThreatProtectionOnboardingDeviceSettingState) SetUserEmail(value *string)() {
-    if m != nil {
-        m.userEmail = value
-    }
+    m.userEmail = value
 }
 // SetUserId sets the userId property value. The user Id that is being reported
 func (m *AdvancedThreatProtectionOnboardingDeviceSettingState) SetUserId(value *string)() {
-    if m != nil {
-        m.userId = value
-    }
+    m.userId = value
 }
 // SetUserName sets the userName property value. The User Name that is being reported
 func (m *AdvancedThreatProtectionOnboardingDeviceSettingState) SetUserName(value *string)() {
-    if m != nil {
-        m.userName = value
-    }
+    m.userName = value
 }
 // SetUserPrincipalName sets the userPrincipalName property value. The User PrincipalName that is being reported
 func (m *AdvancedThreatProtectionOnboardingDeviceSettingState) SetUserPrincipalName(value *string)() {
-    if m != nil {
-        m.userPrincipalName = value
-    }
+    m.userPrincipalName = value
 }

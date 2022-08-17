@@ -64,27 +64,15 @@ func (m *DeviceManagementResourceAccessProfileAssignment) GetFieldDeserializers(
 }
 // GetIntent gets the intent property value. The administrator intent for the assignment of the profile.
 func (m *DeviceManagementResourceAccessProfileAssignment) GetIntent()(*DeviceManagementResourceAccessProfileIntent) {
-    if m == nil {
-        return nil
-    } else {
-        return m.intent
-    }
+    return m.intent
 }
 // GetSourceId gets the sourceId property value. The identifier of the source of the assignment.
 func (m *DeviceManagementResourceAccessProfileAssignment) GetSourceId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.sourceId
-    }
+    return m.sourceId
 }
 // GetTarget gets the target property value. Base type for assignment targets.
 func (m *DeviceManagementResourceAccessProfileAssignment) GetTarget()(DeviceAndAppManagementAssignmentTargetable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.target
-    }
+    return m.target
 }
 // Serialize serializes information the current object
 func (m *DeviceManagementResourceAccessProfileAssignment) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -115,19 +103,13 @@ func (m *DeviceManagementResourceAccessProfileAssignment) Serialize(writer i878a
 }
 // SetIntent sets the intent property value. The administrator intent for the assignment of the profile.
 func (m *DeviceManagementResourceAccessProfileAssignment) SetIntent(value *DeviceManagementResourceAccessProfileIntent)() {
-    if m != nil {
-        m.intent = value
-    }
+    m.intent = value
 }
 // SetSourceId sets the sourceId property value. The identifier of the source of the assignment.
 func (m *DeviceManagementResourceAccessProfileAssignment) SetSourceId(value *string)() {
-    if m != nil {
-        m.sourceId = value
-    }
+    m.sourceId = value
 }
 // SetTarget sets the target property value. Base type for assignment targets.
 func (m *DeviceManagementResourceAccessProfileAssignment) SetTarget(value DeviceAndAppManagementAssignmentTargetable)() {
-    if m != nil {
-        m.target = value
-    }
+    m.target = value
 }

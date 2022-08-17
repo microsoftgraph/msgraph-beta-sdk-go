@@ -27,27 +27,15 @@ func CreateAssignPostRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e89
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AssignPostRequestBody) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetDeviceManagementScriptAssignments gets the deviceManagementScriptAssignments property value. The deviceManagementScriptAssignments property
 func (m *AssignPostRequestBody) GetDeviceManagementScriptAssignments()([]ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementScriptAssignmentable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deviceManagementScriptAssignments
-    }
+    return m.deviceManagementScriptAssignments
 }
 // GetDeviceManagementScriptGroupAssignments gets the deviceManagementScriptGroupAssignments property value. The deviceManagementScriptGroupAssignments property
 func (m *AssignPostRequestBody) GetDeviceManagementScriptGroupAssignments()([]ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementScriptGroupAssignmentable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deviceManagementScriptGroupAssignments
-    }
+    return m.deviceManagementScriptGroupAssignments
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AssignPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -114,19 +102,13 @@ func (m *AssignPostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487e
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AssignPostRequestBody) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetDeviceManagementScriptAssignments sets the deviceManagementScriptAssignments property value. The deviceManagementScriptAssignments property
 func (m *AssignPostRequestBody) SetDeviceManagementScriptAssignments(value []ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementScriptAssignmentable)() {
-    if m != nil {
-        m.deviceManagementScriptAssignments = value
-    }
+    m.deviceManagementScriptAssignments = value
 }
 // SetDeviceManagementScriptGroupAssignments sets the deviceManagementScriptGroupAssignments property value. The deviceManagementScriptGroupAssignments property
 func (m *AssignPostRequestBody) SetDeviceManagementScriptGroupAssignments(value []ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementScriptGroupAssignmentable)() {
-    if m != nil {
-        m.deviceManagementScriptGroupAssignments = value
-    }
+    m.deviceManagementScriptGroupAssignments = value
 }

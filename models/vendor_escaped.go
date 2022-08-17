@@ -62,67 +62,35 @@ func CreateVendor_escapedFromDiscriminatorValue(parseNode i878a80d2330e89d268963
 }
 // GetAddress gets the address property value. The address property
 func (m *Vendor_escaped) GetAddress()(PostalAddressTypeable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.address
-    }
+    return m.address
 }
 // GetBalance gets the balance property value. The balance property
 func (m *Vendor_escaped) GetBalance()(*float64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.balance
-    }
+    return m.balance
 }
 // GetBlocked gets the blocked property value. The blocked property
 func (m *Vendor_escaped) GetBlocked()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.blocked
-    }
+    return m.blocked
 }
 // GetCurrency gets the currency property value. The currency property
 func (m *Vendor_escaped) GetCurrency()(Currencyable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.currency
-    }
+    return m.currency
 }
 // GetCurrencyCode gets the currencyCode property value. The currencyCode property
 func (m *Vendor_escaped) GetCurrencyCode()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.currencyCode
-    }
+    return m.currencyCode
 }
 // GetCurrencyId gets the currencyId property value. The currencyId property
 func (m *Vendor_escaped) GetCurrencyId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.currencyId
-    }
+    return m.currencyId
 }
 // GetDisplayName gets the displayName property value. The displayName property
 func (m *Vendor_escaped) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
 // GetEmail gets the email property value. The email property
 func (m *Vendor_escaped) GetEmail()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.email
-    }
+    return m.email
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Vendor_escaped) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -325,91 +293,47 @@ func (m *Vendor_escaped) GetFieldDeserializers()(map[string]func(i878a80d2330e89
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. The lastModifiedDateTime property
 func (m *Vendor_escaped) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastModifiedDateTime
-    }
+    return m.lastModifiedDateTime
 }
 // GetNumber gets the number property value. The number property
 func (m *Vendor_escaped) GetNumber()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.number
-    }
+    return m.number
 }
 // GetPaymentMethod gets the paymentMethod property value. The paymentMethod property
 func (m *Vendor_escaped) GetPaymentMethod()(PaymentMethodable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.paymentMethod
-    }
+    return m.paymentMethod
 }
 // GetPaymentMethodId gets the paymentMethodId property value. The paymentMethodId property
 func (m *Vendor_escaped) GetPaymentMethodId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.paymentMethodId
-    }
+    return m.paymentMethodId
 }
 // GetPaymentTerm gets the paymentTerm property value. The paymentTerm property
 func (m *Vendor_escaped) GetPaymentTerm()(PaymentTermable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.paymentTerm
-    }
+    return m.paymentTerm
 }
 // GetPaymentTermsId gets the paymentTermsId property value. The paymentTermsId property
 func (m *Vendor_escaped) GetPaymentTermsId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.paymentTermsId
-    }
+    return m.paymentTermsId
 }
 // GetPhoneNumber gets the phoneNumber property value. The phoneNumber property
 func (m *Vendor_escaped) GetPhoneNumber()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.phoneNumber
-    }
+    return m.phoneNumber
 }
 // GetPicture gets the picture property value. The picture property
 func (m *Vendor_escaped) GetPicture()([]Pictureable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.picture
-    }
+    return m.picture
 }
 // GetTaxLiable gets the taxLiable property value. The taxLiable property
 func (m *Vendor_escaped) GetTaxLiable()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.taxLiable
-    }
+    return m.taxLiable
 }
 // GetTaxRegistrationNumber gets the taxRegistrationNumber property value. The taxRegistrationNumber property
 func (m *Vendor_escaped) GetTaxRegistrationNumber()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.taxRegistrationNumber
-    }
+    return m.taxRegistrationNumber
 }
 // GetWebsite gets the website property value. The website property
 func (m *Vendor_escaped) GetWebsite()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.website
-    }
+    return m.website
 }
 // Serialize serializes information the current object
 func (m *Vendor_escaped) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -539,115 +463,77 @@ func (m *Vendor_escaped) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
 }
 // SetAddress sets the address property value. The address property
 func (m *Vendor_escaped) SetAddress(value PostalAddressTypeable)() {
-    if m != nil {
-        m.address = value
-    }
+    m.address = value
 }
 // SetBalance sets the balance property value. The balance property
 func (m *Vendor_escaped) SetBalance(value *float64)() {
-    if m != nil {
-        m.balance = value
-    }
+    m.balance = value
 }
 // SetBlocked sets the blocked property value. The blocked property
 func (m *Vendor_escaped) SetBlocked(value *string)() {
-    if m != nil {
-        m.blocked = value
-    }
+    m.blocked = value
 }
 // SetCurrency sets the currency property value. The currency property
 func (m *Vendor_escaped) SetCurrency(value Currencyable)() {
-    if m != nil {
-        m.currency = value
-    }
+    m.currency = value
 }
 // SetCurrencyCode sets the currencyCode property value. The currencyCode property
 func (m *Vendor_escaped) SetCurrencyCode(value *string)() {
-    if m != nil {
-        m.currencyCode = value
-    }
+    m.currencyCode = value
 }
 // SetCurrencyId sets the currencyId property value. The currencyId property
 func (m *Vendor_escaped) SetCurrencyId(value *string)() {
-    if m != nil {
-        m.currencyId = value
-    }
+    m.currencyId = value
 }
 // SetDisplayName sets the displayName property value. The displayName property
 func (m *Vendor_escaped) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }
 // SetEmail sets the email property value. The email property
 func (m *Vendor_escaped) SetEmail(value *string)() {
-    if m != nil {
-        m.email = value
-    }
+    m.email = value
 }
 // SetLastModifiedDateTime sets the lastModifiedDateTime property value. The lastModifiedDateTime property
 func (m *Vendor_escaped) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.lastModifiedDateTime = value
-    }
+    m.lastModifiedDateTime = value
 }
 // SetNumber sets the number property value. The number property
 func (m *Vendor_escaped) SetNumber(value *string)() {
-    if m != nil {
-        m.number = value
-    }
+    m.number = value
 }
 // SetPaymentMethod sets the paymentMethod property value. The paymentMethod property
 func (m *Vendor_escaped) SetPaymentMethod(value PaymentMethodable)() {
-    if m != nil {
-        m.paymentMethod = value
-    }
+    m.paymentMethod = value
 }
 // SetPaymentMethodId sets the paymentMethodId property value. The paymentMethodId property
 func (m *Vendor_escaped) SetPaymentMethodId(value *string)() {
-    if m != nil {
-        m.paymentMethodId = value
-    }
+    m.paymentMethodId = value
 }
 // SetPaymentTerm sets the paymentTerm property value. The paymentTerm property
 func (m *Vendor_escaped) SetPaymentTerm(value PaymentTermable)() {
-    if m != nil {
-        m.paymentTerm = value
-    }
+    m.paymentTerm = value
 }
 // SetPaymentTermsId sets the paymentTermsId property value. The paymentTermsId property
 func (m *Vendor_escaped) SetPaymentTermsId(value *string)() {
-    if m != nil {
-        m.paymentTermsId = value
-    }
+    m.paymentTermsId = value
 }
 // SetPhoneNumber sets the phoneNumber property value. The phoneNumber property
 func (m *Vendor_escaped) SetPhoneNumber(value *string)() {
-    if m != nil {
-        m.phoneNumber = value
-    }
+    m.phoneNumber = value
 }
 // SetPicture sets the picture property value. The picture property
 func (m *Vendor_escaped) SetPicture(value []Pictureable)() {
-    if m != nil {
-        m.picture = value
-    }
+    m.picture = value
 }
 // SetTaxLiable sets the taxLiable property value. The taxLiable property
 func (m *Vendor_escaped) SetTaxLiable(value *bool)() {
-    if m != nil {
-        m.taxLiable = value
-    }
+    m.taxLiable = value
 }
 // SetTaxRegistrationNumber sets the taxRegistrationNumber property value. The taxRegistrationNumber property
 func (m *Vendor_escaped) SetTaxRegistrationNumber(value *string)() {
-    if m != nil {
-        m.taxRegistrationNumber = value
-    }
+    m.taxRegistrationNumber = value
 }
 // SetWebsite sets the website property value. The website property
 func (m *Vendor_escaped) SetWebsite(value *string)() {
-    if m != nil {
-        m.website = value
-    }
+    m.website = value
 }

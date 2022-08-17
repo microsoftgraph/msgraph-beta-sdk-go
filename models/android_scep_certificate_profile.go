@@ -120,59 +120,31 @@ func (m *AndroidScepCertificateProfile) GetFieldDeserializers()(map[string]func(
 }
 // GetHashAlgorithm gets the hashAlgorithm property value. Hash Algorithm Options.
 func (m *AndroidScepCertificateProfile) GetHashAlgorithm()(*HashAlgorithms) {
-    if m == nil {
-        return nil
-    } else {
-        return m.hashAlgorithm
-    }
+    return m.hashAlgorithm
 }
 // GetKeySize gets the keySize property value. Key Size Options.
 func (m *AndroidScepCertificateProfile) GetKeySize()(*KeySize) {
-    if m == nil {
-        return nil
-    } else {
-        return m.keySize
-    }
+    return m.keySize
 }
 // GetKeyUsage gets the keyUsage property value. Key Usage Options.
 func (m *AndroidScepCertificateProfile) GetKeyUsage()(*KeyUsages) {
-    if m == nil {
-        return nil
-    } else {
-        return m.keyUsage
-    }
+    return m.keyUsage
 }
 // GetManagedDeviceCertificateStates gets the managedDeviceCertificateStates property value. Certificate state for devices. This collection can contain a maximum of 2147483647 elements.
 func (m *AndroidScepCertificateProfile) GetManagedDeviceCertificateStates()([]ManagedDeviceCertificateStateable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.managedDeviceCertificateStates
-    }
+    return m.managedDeviceCertificateStates
 }
 // GetScepServerUrls gets the scepServerUrls property value. SCEP Server Url(s)
 func (m *AndroidScepCertificateProfile) GetScepServerUrls()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.scepServerUrls
-    }
+    return m.scepServerUrls
 }
 // GetSubjectAlternativeNameFormatString gets the subjectAlternativeNameFormatString property value. Custom String that defines the AAD Attribute.
 func (m *AndroidScepCertificateProfile) GetSubjectAlternativeNameFormatString()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.subjectAlternativeNameFormatString
-    }
+    return m.subjectAlternativeNameFormatString
 }
 // GetSubjectNameFormatString gets the subjectNameFormatString property value. Custom format to use with SubjectNameFormat = Custom. Example: CN={{EmailAddress}},E={{EmailAddress}},OU=Enterprise Users,O=Contoso Corporation,L=Redmond,ST=WA,C=US
 func (m *AndroidScepCertificateProfile) GetSubjectNameFormatString()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.subjectNameFormatString
-    }
+    return m.subjectNameFormatString
 }
 // Serialize serializes information the current object
 func (m *AndroidScepCertificateProfile) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -233,43 +205,29 @@ func (m *AndroidScepCertificateProfile) Serialize(writer i878a80d2330e89d2689638
 }
 // SetHashAlgorithm sets the hashAlgorithm property value. Hash Algorithm Options.
 func (m *AndroidScepCertificateProfile) SetHashAlgorithm(value *HashAlgorithms)() {
-    if m != nil {
-        m.hashAlgorithm = value
-    }
+    m.hashAlgorithm = value
 }
 // SetKeySize sets the keySize property value. Key Size Options.
 func (m *AndroidScepCertificateProfile) SetKeySize(value *KeySize)() {
-    if m != nil {
-        m.keySize = value
-    }
+    m.keySize = value
 }
 // SetKeyUsage sets the keyUsage property value. Key Usage Options.
 func (m *AndroidScepCertificateProfile) SetKeyUsage(value *KeyUsages)() {
-    if m != nil {
-        m.keyUsage = value
-    }
+    m.keyUsage = value
 }
 // SetManagedDeviceCertificateStates sets the managedDeviceCertificateStates property value. Certificate state for devices. This collection can contain a maximum of 2147483647 elements.
 func (m *AndroidScepCertificateProfile) SetManagedDeviceCertificateStates(value []ManagedDeviceCertificateStateable)() {
-    if m != nil {
-        m.managedDeviceCertificateStates = value
-    }
+    m.managedDeviceCertificateStates = value
 }
 // SetScepServerUrls sets the scepServerUrls property value. SCEP Server Url(s)
 func (m *AndroidScepCertificateProfile) SetScepServerUrls(value []string)() {
-    if m != nil {
-        m.scepServerUrls = value
-    }
+    m.scepServerUrls = value
 }
 // SetSubjectAlternativeNameFormatString sets the subjectAlternativeNameFormatString property value. Custom String that defines the AAD Attribute.
 func (m *AndroidScepCertificateProfile) SetSubjectAlternativeNameFormatString(value *string)() {
-    if m != nil {
-        m.subjectAlternativeNameFormatString = value
-    }
+    m.subjectAlternativeNameFormatString = value
 }
 // SetSubjectNameFormatString sets the subjectNameFormatString property value. Custom format to use with SubjectNameFormat = Custom. Example: CN={{EmailAddress}},E={{EmailAddress}},OU=Enterprise Users,O=Contoso Corporation,L=Redmond,ST=WA,C=US
 func (m *AndroidScepCertificateProfile) SetSubjectNameFormatString(value *string)() {
-    if m != nil {
-        m.subjectNameFormatString = value
-    }
+    m.subjectNameFormatString = value
 }

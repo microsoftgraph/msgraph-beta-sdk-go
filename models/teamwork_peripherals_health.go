@@ -38,35 +38,19 @@ func CreateTeamworkPeripheralsHealthFromDiscriminatorValue(parseNode i878a80d233
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TeamworkPeripheralsHealth) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetCommunicationSpeakerHealth gets the communicationSpeakerHealth property value. The health details about the communication speaker.
 func (m *TeamworkPeripheralsHealth) GetCommunicationSpeakerHealth()(TeamworkPeripheralHealthable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.communicationSpeakerHealth
-    }
+    return m.communicationSpeakerHealth
 }
 // GetContentCameraHealth gets the contentCameraHealth property value. The health details about the content camera.
 func (m *TeamworkPeripheralsHealth) GetContentCameraHealth()(TeamworkPeripheralHealthable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.contentCameraHealth
-    }
+    return m.contentCameraHealth
 }
 // GetDisplayHealthCollection gets the displayHealthCollection property value. The health details about displays.
 func (m *TeamworkPeripheralsHealth) GetDisplayHealthCollection()([]TeamworkPeripheralHealthable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayHealthCollection
-    }
+    return m.displayHealthCollection
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *TeamworkPeripheralsHealth) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -149,35 +133,19 @@ func (m *TeamworkPeripheralsHealth) GetFieldDeserializers()(map[string]func(i878
 }
 // GetMicrophoneHealth gets the microphoneHealth property value. The health details about the microphone.
 func (m *TeamworkPeripheralsHealth) GetMicrophoneHealth()(TeamworkPeripheralHealthable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.microphoneHealth
-    }
+    return m.microphoneHealth
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *TeamworkPeripheralsHealth) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetRoomCameraHealth gets the roomCameraHealth property value. The health details about the room camera.
 func (m *TeamworkPeripheralsHealth) GetRoomCameraHealth()(TeamworkPeripheralHealthable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.roomCameraHealth
-    }
+    return m.roomCameraHealth
 }
 // GetSpeakerHealth gets the speakerHealth property value. The health details about the speaker.
 func (m *TeamworkPeripheralsHealth) GetSpeakerHealth()(TeamworkPeripheralHealthable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.speakerHealth
-    }
+    return m.speakerHealth
 }
 // Serialize serializes information the current object
 func (m *TeamworkPeripheralsHealth) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -237,49 +205,33 @@ func (m *TeamworkPeripheralsHealth) Serialize(writer i878a80d2330e89d26896388a3f
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TeamworkPeripheralsHealth) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetCommunicationSpeakerHealth sets the communicationSpeakerHealth property value. The health details about the communication speaker.
 func (m *TeamworkPeripheralsHealth) SetCommunicationSpeakerHealth(value TeamworkPeripheralHealthable)() {
-    if m != nil {
-        m.communicationSpeakerHealth = value
-    }
+    m.communicationSpeakerHealth = value
 }
 // SetContentCameraHealth sets the contentCameraHealth property value. The health details about the content camera.
 func (m *TeamworkPeripheralsHealth) SetContentCameraHealth(value TeamworkPeripheralHealthable)() {
-    if m != nil {
-        m.contentCameraHealth = value
-    }
+    m.contentCameraHealth = value
 }
 // SetDisplayHealthCollection sets the displayHealthCollection property value. The health details about displays.
 func (m *TeamworkPeripheralsHealth) SetDisplayHealthCollection(value []TeamworkPeripheralHealthable)() {
-    if m != nil {
-        m.displayHealthCollection = value
-    }
+    m.displayHealthCollection = value
 }
 // SetMicrophoneHealth sets the microphoneHealth property value. The health details about the microphone.
 func (m *TeamworkPeripheralsHealth) SetMicrophoneHealth(value TeamworkPeripheralHealthable)() {
-    if m != nil {
-        m.microphoneHealth = value
-    }
+    m.microphoneHealth = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *TeamworkPeripheralsHealth) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetRoomCameraHealth sets the roomCameraHealth property value. The health details about the room camera.
 func (m *TeamworkPeripheralsHealth) SetRoomCameraHealth(value TeamworkPeripheralHealthable)() {
-    if m != nil {
-        m.roomCameraHealth = value
-    }
+    m.roomCameraHealth = value
 }
 // SetSpeakerHealth sets the speakerHealth property value. The health details about the speaker.
 func (m *TeamworkPeripheralsHealth) SetSpeakerHealth(value TeamworkPeripheralHealthable)() {
-    if m != nil {
-        m.speakerHealth = value
-    }
+    m.speakerHealth = value
 }

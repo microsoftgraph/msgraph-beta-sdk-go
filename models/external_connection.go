@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ExternalConnection provides operations to manage the collection of accessReview entities.
+// ExternalConnection provides operations to manage the collection of activityStatistics entities.
 type ExternalConnection struct {
     Entity
     // The configuration property
@@ -39,19 +39,11 @@ func CreateExternalConnectionFromDiscriminatorValue(parseNode i878a80d2330e89d26
 }
 // GetConfiguration gets the configuration property value. The configuration property
 func (m *ExternalConnection) GetConfiguration()(Configurationable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.configuration
-    }
+    return m.configuration
 }
 // GetDescription gets the description property value. The description property
 func (m *ExternalConnection) GetDescription()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.description
-    }
+    return m.description
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ExternalConnection) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -152,51 +144,27 @@ func (m *ExternalConnection) GetFieldDeserializers()(map[string]func(i878a80d233
 }
 // GetGroups gets the groups property value. The groups property
 func (m *ExternalConnection) GetGroups()([]ExternalGroupable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.groups
-    }
+    return m.groups
 }
 // GetItems gets the items property value. The items property
 func (m *ExternalConnection) GetItems()([]ExternalItemable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.items
-    }
+    return m.items
 }
 // GetName gets the name property value. The name property
 func (m *ExternalConnection) GetName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.name
-    }
+    return m.name
 }
 // GetOperations gets the operations property value. The operations property
 func (m *ExternalConnection) GetOperations()([]ConnectionOperationable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.operations
-    }
+    return m.operations
 }
 // GetSchema gets the schema property value. The schema property
 func (m *ExternalConnection) GetSchema()(Schemaable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.schema
-    }
+    return m.schema
 }
 // GetState gets the state property value. The state property
 func (m *ExternalConnection) GetState()(*ConnectionState) {
-    if m == nil {
-        return nil
-    } else {
-        return m.state
-    }
+    return m.state
 }
 // Serialize serializes information the current object
 func (m *ExternalConnection) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -269,49 +237,33 @@ func (m *ExternalConnection) Serialize(writer i878a80d2330e89d26896388a3f487eef2
 }
 // SetConfiguration sets the configuration property value. The configuration property
 func (m *ExternalConnection) SetConfiguration(value Configurationable)() {
-    if m != nil {
-        m.configuration = value
-    }
+    m.configuration = value
 }
 // SetDescription sets the description property value. The description property
 func (m *ExternalConnection) SetDescription(value *string)() {
-    if m != nil {
-        m.description = value
-    }
+    m.description = value
 }
 // SetGroups sets the groups property value. The groups property
 func (m *ExternalConnection) SetGroups(value []ExternalGroupable)() {
-    if m != nil {
-        m.groups = value
-    }
+    m.groups = value
 }
 // SetItems sets the items property value. The items property
 func (m *ExternalConnection) SetItems(value []ExternalItemable)() {
-    if m != nil {
-        m.items = value
-    }
+    m.items = value
 }
 // SetName sets the name property value. The name property
 func (m *ExternalConnection) SetName(value *string)() {
-    if m != nil {
-        m.name = value
-    }
+    m.name = value
 }
 // SetOperations sets the operations property value. The operations property
 func (m *ExternalConnection) SetOperations(value []ConnectionOperationable)() {
-    if m != nil {
-        m.operations = value
-    }
+    m.operations = value
 }
 // SetSchema sets the schema property value. The schema property
 func (m *ExternalConnection) SetSchema(value Schemaable)() {
-    if m != nil {
-        m.schema = value
-    }
+    m.schema = value
 }
 // SetState sets the state property value. The state property
 func (m *ExternalConnection) SetState(value *ConnectionState)() {
-    if m != nil {
-        m.state = value
-    }
+    m.state = value
 }

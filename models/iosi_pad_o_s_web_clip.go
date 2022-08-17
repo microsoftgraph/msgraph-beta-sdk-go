@@ -27,11 +27,7 @@ func CreateIosiPadOSWebClipFromDiscriminatorValue(parseNode i878a80d2330e89d2689
 }
 // GetAppUrl gets the appUrl property value. The web app URL.
 func (m *IosiPadOSWebClip) GetAppUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.appUrl
-    }
+    return m.appUrl
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *IosiPadOSWebClip) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -60,11 +56,7 @@ func (m *IosiPadOSWebClip) GetFieldDeserializers()(map[string]func(i878a80d2330e
 }
 // GetUseManagedBrowser gets the useManagedBrowser property value. Whether or not to use managed browser. When true, the app will be required to be opened in an Intune-protected browser. When false, the app will not be required to be opened in an Intune-protected browser.
 func (m *IosiPadOSWebClip) GetUseManagedBrowser()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.useManagedBrowser
-    }
+    return m.useManagedBrowser
 }
 // Serialize serializes information the current object
 func (m *IosiPadOSWebClip) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -88,13 +80,9 @@ func (m *IosiPadOSWebClip) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
 }
 // SetAppUrl sets the appUrl property value. The web app URL.
 func (m *IosiPadOSWebClip) SetAppUrl(value *string)() {
-    if m != nil {
-        m.appUrl = value
-    }
+    m.appUrl = value
 }
 // SetUseManagedBrowser sets the useManagedBrowser property value. Whether or not to use managed browser. When true, the app will be required to be opened in an Intune-protected browser. When false, the app will not be required to be opened in an Intune-protected browser.
 func (m *IosiPadOSWebClip) SetUseManagedBrowser(value *bool)() {
-    if m != nil {
-        m.useManagedBrowser = value
-    }
+    m.useManagedBrowser = value
 }

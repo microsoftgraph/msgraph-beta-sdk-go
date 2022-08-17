@@ -53,19 +53,11 @@ func CreateClassifcationErrorBaseFromDiscriminatorValue(parseNode i878a80d2330e8
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ClassifcationErrorBase) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetCode gets the code property value. The code property
 func (m *ClassifcationErrorBase) GetCode()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.code
-    }
+    return m.code
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ClassifcationErrorBase) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -124,35 +116,19 @@ func (m *ClassifcationErrorBase) GetFieldDeserializers()(map[string]func(i878a80
 }
 // GetInnerError gets the innerError property value. The innerError property
 func (m *ClassifcationErrorBase) GetInnerError()(ClassificationInnerErrorable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.innerError
-    }
+    return m.innerError
 }
 // GetMessage gets the message property value. The message property
 func (m *ClassifcationErrorBase) GetMessage()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.message
-    }
+    return m.message
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *ClassifcationErrorBase) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetTarget gets the target property value. The target property
 func (m *ClassifcationErrorBase) GetTarget()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.target
-    }
+    return m.target
 }
 // Serialize serializes information the current object
 func (m *ClassifcationErrorBase) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -196,37 +172,25 @@ func (m *ClassifcationErrorBase) Serialize(writer i878a80d2330e89d26896388a3f487
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ClassifcationErrorBase) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetCode sets the code property value. The code property
 func (m *ClassifcationErrorBase) SetCode(value *string)() {
-    if m != nil {
-        m.code = value
-    }
+    m.code = value
 }
 // SetInnerError sets the innerError property value. The innerError property
 func (m *ClassifcationErrorBase) SetInnerError(value ClassificationInnerErrorable)() {
-    if m != nil {
-        m.innerError = value
-    }
+    m.innerError = value
 }
 // SetMessage sets the message property value. The message property
 func (m *ClassifcationErrorBase) SetMessage(value *string)() {
-    if m != nil {
-        m.message = value
-    }
+    m.message = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *ClassifcationErrorBase) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetTarget sets the target property value. The target property
 func (m *ClassifcationErrorBase) SetTarget(value *string)() {
-    if m != nil {
-        m.target = value
-    }
+    m.target = value
 }

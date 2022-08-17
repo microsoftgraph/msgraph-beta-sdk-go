@@ -30,27 +30,15 @@ func CreateDeviceManagementExchangeAccessRuleFromDiscriminatorValue(parseNode i8
 }
 // GetAccessLevel gets the accessLevel property value. Access Level in Exchange.
 func (m *DeviceManagementExchangeAccessRule) GetAccessLevel()(*DeviceManagementExchangeAccessLevel) {
-    if m == nil {
-        return nil
-    } else {
-        return m.accessLevel
-    }
+    return m.accessLevel
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DeviceManagementExchangeAccessRule) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetDeviceClass gets the deviceClass property value. Device Class which will be impacted by this rule.
 func (m *DeviceManagementExchangeAccessRule) GetDeviceClass()(DeviceManagementExchangeDeviceClassable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deviceClass
-    }
+    return m.deviceClass
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceManagementExchangeAccessRule) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -89,11 +77,7 @@ func (m *DeviceManagementExchangeAccessRule) GetFieldDeserializers()(map[string]
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *DeviceManagementExchangeAccessRule) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // Serialize serializes information the current object
 func (m *DeviceManagementExchangeAccessRule) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -126,25 +110,17 @@ func (m *DeviceManagementExchangeAccessRule) Serialize(writer i878a80d2330e89d26
 }
 // SetAccessLevel sets the accessLevel property value. Access Level in Exchange.
 func (m *DeviceManagementExchangeAccessRule) SetAccessLevel(value *DeviceManagementExchangeAccessLevel)() {
-    if m != nil {
-        m.accessLevel = value
-    }
+    m.accessLevel = value
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DeviceManagementExchangeAccessRule) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetDeviceClass sets the deviceClass property value. Device Class which will be impacted by this rule.
 func (m *DeviceManagementExchangeAccessRule) SetDeviceClass(value DeviceManagementExchangeDeviceClassable)() {
-    if m != nil {
-        m.deviceClass = value
-    }
+    m.deviceClass = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *DeviceManagementExchangeAccessRule) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }

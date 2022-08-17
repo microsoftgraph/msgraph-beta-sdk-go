@@ -40,11 +40,7 @@ func (m *DeviceComplianceScriptRuleError) GetFieldDeserializers()(map[string]fun
 }
 // GetSettingName gets the settingName property value. Setting name for the rule with error.
 func (m *DeviceComplianceScriptRuleError) GetSettingName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.settingName
-    }
+    return m.settingName
 }
 // Serialize serializes information the current object
 func (m *DeviceComplianceScriptRuleError) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -62,7 +58,5 @@ func (m *DeviceComplianceScriptRuleError) Serialize(writer i878a80d2330e89d26896
 }
 // SetSettingName sets the settingName property value. Setting name for the rule with error.
 func (m *DeviceComplianceScriptRuleError) SetSettingName(value *string)() {
-    if m != nil {
-        m.settingName = value
-    }
+    m.settingName = value
 }

@@ -42,11 +42,7 @@ func CreateFileDetailsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *FileDetails) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *FileDetails) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -145,75 +141,39 @@ func (m *FileDetails) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
 }
 // GetFileName gets the fileName property value. The fileName property
 func (m *FileDetails) GetFileName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.fileName
-    }
+    return m.fileName
 }
 // GetFilePath gets the filePath property value. The filePath property
 func (m *FileDetails) GetFilePath()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.filePath
-    }
+    return m.filePath
 }
 // GetFilePublisher gets the filePublisher property value. The filePublisher property
 func (m *FileDetails) GetFilePublisher()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.filePublisher
-    }
+    return m.filePublisher
 }
 // GetFileSize gets the fileSize property value. The fileSize property
 func (m *FileDetails) GetFileSize()(*int64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.fileSize
-    }
+    return m.fileSize
 }
 // GetIssuer gets the issuer property value. The issuer property
 func (m *FileDetails) GetIssuer()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.issuer
-    }
+    return m.issuer
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *FileDetails) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetSha1 gets the sha1 property value. The sha1 property
 func (m *FileDetails) GetSha1()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.sha1
-    }
+    return m.sha1
 }
 // GetSha256 gets the sha256 property value. The sha256 property
 func (m *FileDetails) GetSha256()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.sha256
-    }
+    return m.sha256
 }
 // GetSigner gets the signer property value. The signer property
 func (m *FileDetails) GetSigner()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.signer
-    }
+    return m.signer
 }
 // Serialize serializes information the current object
 func (m *FileDetails) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -281,61 +241,41 @@ func (m *FileDetails) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *FileDetails) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetFileName sets the fileName property value. The fileName property
 func (m *FileDetails) SetFileName(value *string)() {
-    if m != nil {
-        m.fileName = value
-    }
+    m.fileName = value
 }
 // SetFilePath sets the filePath property value. The filePath property
 func (m *FileDetails) SetFilePath(value *string)() {
-    if m != nil {
-        m.filePath = value
-    }
+    m.filePath = value
 }
 // SetFilePublisher sets the filePublisher property value. The filePublisher property
 func (m *FileDetails) SetFilePublisher(value *string)() {
-    if m != nil {
-        m.filePublisher = value
-    }
+    m.filePublisher = value
 }
 // SetFileSize sets the fileSize property value. The fileSize property
 func (m *FileDetails) SetFileSize(value *int64)() {
-    if m != nil {
-        m.fileSize = value
-    }
+    m.fileSize = value
 }
 // SetIssuer sets the issuer property value. The issuer property
 func (m *FileDetails) SetIssuer(value *string)() {
-    if m != nil {
-        m.issuer = value
-    }
+    m.issuer = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *FileDetails) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetSha1 sets the sha1 property value. The sha1 property
 func (m *FileDetails) SetSha1(value *string)() {
-    if m != nil {
-        m.sha1 = value
-    }
+    m.sha1 = value
 }
 // SetSha256 sets the sha256 property value. The sha256 property
 func (m *FileDetails) SetSha256(value *string)() {
-    if m != nil {
-        m.sha256 = value
-    }
+    m.sha256 = value
 }
 // SetSigner sets the signer property value. The signer property
 func (m *FileDetails) SetSigner(value *string)() {
-    if m != nil {
-        m.signer = value
-    }
+    m.signer = value
 }

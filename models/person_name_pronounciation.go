@@ -36,19 +36,11 @@ func CreatePersonNamePronounciationFromDiscriminatorValue(parseNode i878a80d2330
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *PersonNamePronounciation) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetDisplayName gets the displayName property value. The displayName property
 func (m *PersonNamePronounciation) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *PersonNamePronounciation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -117,43 +109,23 @@ func (m *PersonNamePronounciation) GetFieldDeserializers()(map[string]func(i878a
 }
 // GetFirst gets the first property value. The first property
 func (m *PersonNamePronounciation) GetFirst()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.first
-    }
+    return m.first
 }
 // GetLast gets the last property value. The last property
 func (m *PersonNamePronounciation) GetLast()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.last
-    }
+    return m.last
 }
 // GetMaiden gets the maiden property value. The maiden property
 func (m *PersonNamePronounciation) GetMaiden()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.maiden
-    }
+    return m.maiden
 }
 // GetMiddle gets the middle property value. The middle property
 func (m *PersonNamePronounciation) GetMiddle()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.middle
-    }
+    return m.middle
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *PersonNamePronounciation) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // Serialize serializes information the current object
 func (m *PersonNamePronounciation) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -203,43 +175,29 @@ func (m *PersonNamePronounciation) Serialize(writer i878a80d2330e89d26896388a3f4
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *PersonNamePronounciation) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetDisplayName sets the displayName property value. The displayName property
 func (m *PersonNamePronounciation) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }
 // SetFirst sets the first property value. The first property
 func (m *PersonNamePronounciation) SetFirst(value *string)() {
-    if m != nil {
-        m.first = value
-    }
+    m.first = value
 }
 // SetLast sets the last property value. The last property
 func (m *PersonNamePronounciation) SetLast(value *string)() {
-    if m != nil {
-        m.last = value
-    }
+    m.last = value
 }
 // SetMaiden sets the maiden property value. The maiden property
 func (m *PersonNamePronounciation) SetMaiden(value *string)() {
-    if m != nil {
-        m.maiden = value
-    }
+    m.maiden = value
 }
 // SetMiddle sets the middle property value. The middle property
 func (m *PersonNamePronounciation) SetMiddle(value *string)() {
-    if m != nil {
-        m.middle = value
-    }
+    m.middle = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *PersonNamePronounciation) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }

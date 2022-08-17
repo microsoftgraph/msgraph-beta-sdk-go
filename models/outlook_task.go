@@ -59,43 +59,23 @@ func CreateOutlookTaskFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a
 }
 // GetAssignedTo gets the assignedTo property value. The name of the person who has been assigned the task in Outlook. Read-only.
 func (m *OutlookTask) GetAssignedTo()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.assignedTo
-    }
+    return m.assignedTo
 }
 // GetAttachments gets the attachments property value. The collection of fileAttachment, itemAttachment, and referenceAttachment attachments for the task.  Read-only. Nullable.
 func (m *OutlookTask) GetAttachments()([]Attachmentable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.attachments
-    }
+    return m.attachments
 }
 // GetBody gets the body property value. The task body that typically contains information about the task. Note that only HTML type is supported.
 func (m *OutlookTask) GetBody()(ItemBodyable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.body
-    }
+    return m.body
 }
 // GetCompletedDateTime gets the completedDateTime property value. The date in the specified time zone that the task was finished.
 func (m *OutlookTask) GetCompletedDateTime()(DateTimeTimeZoneable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.completedDateTime
-    }
+    return m.completedDateTime
 }
 // GetDueDateTime gets the dueDateTime property value. The date in the specified time zone that the task is to be finished.
 func (m *OutlookTask) GetDueDateTime()(DateTimeTimeZoneable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.dueDateTime
-    }
+    return m.dueDateTime
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *OutlookTask) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -296,107 +276,55 @@ func (m *OutlookTask) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
 }
 // GetHasAttachments gets the hasAttachments property value. Set to true if the task has attachments.
 func (m *OutlookTask) GetHasAttachments()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.hasAttachments
-    }
+    return m.hasAttachments
 }
 // GetImportance gets the importance property value. The importance property
 func (m *OutlookTask) GetImportance()(*Importance) {
-    if m == nil {
-        return nil
-    } else {
-        return m.importance
-    }
+    return m.importance
 }
 // GetIsReminderOn gets the isReminderOn property value. The isReminderOn property
 func (m *OutlookTask) GetIsReminderOn()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isReminderOn
-    }
+    return m.isReminderOn
 }
 // GetMultiValueExtendedProperties gets the multiValueExtendedProperties property value. The collection of multi-value extended properties defined for the task. Read-only. Nullable.
 func (m *OutlookTask) GetMultiValueExtendedProperties()([]MultiValueLegacyExtendedPropertyable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.multiValueExtendedProperties
-    }
+    return m.multiValueExtendedProperties
 }
 // GetOwner gets the owner property value. The owner property
 func (m *OutlookTask) GetOwner()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.owner
-    }
+    return m.owner
 }
 // GetParentFolderId gets the parentFolderId property value. The parentFolderId property
 func (m *OutlookTask) GetParentFolderId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.parentFolderId
-    }
+    return m.parentFolderId
 }
 // GetRecurrence gets the recurrence property value. The recurrence property
 func (m *OutlookTask) GetRecurrence()(PatternedRecurrenceable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.recurrence
-    }
+    return m.recurrence
 }
 // GetReminderDateTime gets the reminderDateTime property value. The reminderDateTime property
 func (m *OutlookTask) GetReminderDateTime()(DateTimeTimeZoneable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.reminderDateTime
-    }
+    return m.reminderDateTime
 }
 // GetSensitivity gets the sensitivity property value. The sensitivity property
 func (m *OutlookTask) GetSensitivity()(*Sensitivity) {
-    if m == nil {
-        return nil
-    } else {
-        return m.sensitivity
-    }
+    return m.sensitivity
 }
 // GetSingleValueExtendedProperties gets the singleValueExtendedProperties property value. The collection of single-value extended properties defined for the task. Read-only. Nullable.
 func (m *OutlookTask) GetSingleValueExtendedProperties()([]SingleValueLegacyExtendedPropertyable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.singleValueExtendedProperties
-    }
+    return m.singleValueExtendedProperties
 }
 // GetStartDateTime gets the startDateTime property value. The startDateTime property
 func (m *OutlookTask) GetStartDateTime()(DateTimeTimeZoneable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.startDateTime
-    }
+    return m.startDateTime
 }
 // GetStatus gets the status property value. The status property
 func (m *OutlookTask) GetStatus()(*TaskStatus) {
-    if m == nil {
-        return nil
-    } else {
-        return m.status
-    }
+    return m.status
 }
 // GetSubject gets the subject property value. The subject property
 func (m *OutlookTask) GetSubject()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.subject
-    }
+    return m.subject
 }
 // Serialize serializes information the current object
 func (m *OutlookTask) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -531,109 +459,73 @@ func (m *OutlookTask) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
 }
 // SetAssignedTo sets the assignedTo property value. The name of the person who has been assigned the task in Outlook. Read-only.
 func (m *OutlookTask) SetAssignedTo(value *string)() {
-    if m != nil {
-        m.assignedTo = value
-    }
+    m.assignedTo = value
 }
 // SetAttachments sets the attachments property value. The collection of fileAttachment, itemAttachment, and referenceAttachment attachments for the task.  Read-only. Nullable.
 func (m *OutlookTask) SetAttachments(value []Attachmentable)() {
-    if m != nil {
-        m.attachments = value
-    }
+    m.attachments = value
 }
 // SetBody sets the body property value. The task body that typically contains information about the task. Note that only HTML type is supported.
 func (m *OutlookTask) SetBody(value ItemBodyable)() {
-    if m != nil {
-        m.body = value
-    }
+    m.body = value
 }
 // SetCompletedDateTime sets the completedDateTime property value. The date in the specified time zone that the task was finished.
 func (m *OutlookTask) SetCompletedDateTime(value DateTimeTimeZoneable)() {
-    if m != nil {
-        m.completedDateTime = value
-    }
+    m.completedDateTime = value
 }
 // SetDueDateTime sets the dueDateTime property value. The date in the specified time zone that the task is to be finished.
 func (m *OutlookTask) SetDueDateTime(value DateTimeTimeZoneable)() {
-    if m != nil {
-        m.dueDateTime = value
-    }
+    m.dueDateTime = value
 }
 // SetHasAttachments sets the hasAttachments property value. Set to true if the task has attachments.
 func (m *OutlookTask) SetHasAttachments(value *bool)() {
-    if m != nil {
-        m.hasAttachments = value
-    }
+    m.hasAttachments = value
 }
 // SetImportance sets the importance property value. The importance property
 func (m *OutlookTask) SetImportance(value *Importance)() {
-    if m != nil {
-        m.importance = value
-    }
+    m.importance = value
 }
 // SetIsReminderOn sets the isReminderOn property value. The isReminderOn property
 func (m *OutlookTask) SetIsReminderOn(value *bool)() {
-    if m != nil {
-        m.isReminderOn = value
-    }
+    m.isReminderOn = value
 }
 // SetMultiValueExtendedProperties sets the multiValueExtendedProperties property value. The collection of multi-value extended properties defined for the task. Read-only. Nullable.
 func (m *OutlookTask) SetMultiValueExtendedProperties(value []MultiValueLegacyExtendedPropertyable)() {
-    if m != nil {
-        m.multiValueExtendedProperties = value
-    }
+    m.multiValueExtendedProperties = value
 }
 // SetOwner sets the owner property value. The owner property
 func (m *OutlookTask) SetOwner(value *string)() {
-    if m != nil {
-        m.owner = value
-    }
+    m.owner = value
 }
 // SetParentFolderId sets the parentFolderId property value. The parentFolderId property
 func (m *OutlookTask) SetParentFolderId(value *string)() {
-    if m != nil {
-        m.parentFolderId = value
-    }
+    m.parentFolderId = value
 }
 // SetRecurrence sets the recurrence property value. The recurrence property
 func (m *OutlookTask) SetRecurrence(value PatternedRecurrenceable)() {
-    if m != nil {
-        m.recurrence = value
-    }
+    m.recurrence = value
 }
 // SetReminderDateTime sets the reminderDateTime property value. The reminderDateTime property
 func (m *OutlookTask) SetReminderDateTime(value DateTimeTimeZoneable)() {
-    if m != nil {
-        m.reminderDateTime = value
-    }
+    m.reminderDateTime = value
 }
 // SetSensitivity sets the sensitivity property value. The sensitivity property
 func (m *OutlookTask) SetSensitivity(value *Sensitivity)() {
-    if m != nil {
-        m.sensitivity = value
-    }
+    m.sensitivity = value
 }
 // SetSingleValueExtendedProperties sets the singleValueExtendedProperties property value. The collection of single-value extended properties defined for the task. Read-only. Nullable.
 func (m *OutlookTask) SetSingleValueExtendedProperties(value []SingleValueLegacyExtendedPropertyable)() {
-    if m != nil {
-        m.singleValueExtendedProperties = value
-    }
+    m.singleValueExtendedProperties = value
 }
 // SetStartDateTime sets the startDateTime property value. The startDateTime property
 func (m *OutlookTask) SetStartDateTime(value DateTimeTimeZoneable)() {
-    if m != nil {
-        m.startDateTime = value
-    }
+    m.startDateTime = value
 }
 // SetStatus sets the status property value. The status property
 func (m *OutlookTask) SetStatus(value *TaskStatus)() {
-    if m != nil {
-        m.status = value
-    }
+    m.status = value
 }
 // SetSubject sets the subject property value. The subject property
 func (m *OutlookTask) SetSubject(value *string)() {
-    if m != nil {
-        m.subject = value
-    }
+    m.subject = value
 }

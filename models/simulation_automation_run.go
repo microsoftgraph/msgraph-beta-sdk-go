@@ -32,11 +32,7 @@ func CreateSimulationAutomationRunFromDiscriminatorValue(parseNode i878a80d2330e
 }
 // GetEndDateTime gets the endDateTime property value. Date and time when the run ends in an attack simulation automation.
 func (m *SimulationAutomationRun) GetEndDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.endDateTime
-    }
+    return m.endDateTime
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *SimulationAutomationRun) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -85,27 +81,15 @@ func (m *SimulationAutomationRun) GetFieldDeserializers()(map[string]func(i878a8
 }
 // GetSimulationId gets the simulationId property value. Unique identifier for the attack simulation campaign initiated in the attack simulation automation run.
 func (m *SimulationAutomationRun) GetSimulationId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.simulationId
-    }
+    return m.simulationId
 }
 // GetStartDateTime gets the startDateTime property value. Date and time when the run starts in an attack simulation automation.
 func (m *SimulationAutomationRun) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.startDateTime
-    }
+    return m.startDateTime
 }
 // GetStatus gets the status property value. Status of the run of an attack simulation automation. The possible values are: unknown, running, succeeded, failed, skipped, unknownFutureValue.
 func (m *SimulationAutomationRun) GetStatus()(*SimulationAutomationRunStatus) {
-    if m == nil {
-        return nil
-    } else {
-        return m.status
-    }
+    return m.status
 }
 // Serialize serializes information the current object
 func (m *SimulationAutomationRun) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -142,25 +126,17 @@ func (m *SimulationAutomationRun) Serialize(writer i878a80d2330e89d26896388a3f48
 }
 // SetEndDateTime sets the endDateTime property value. Date and time when the run ends in an attack simulation automation.
 func (m *SimulationAutomationRun) SetEndDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.endDateTime = value
-    }
+    m.endDateTime = value
 }
 // SetSimulationId sets the simulationId property value. Unique identifier for the attack simulation campaign initiated in the attack simulation automation run.
 func (m *SimulationAutomationRun) SetSimulationId(value *string)() {
-    if m != nil {
-        m.simulationId = value
-    }
+    m.simulationId = value
 }
 // SetStartDateTime sets the startDateTime property value. Date and time when the run starts in an attack simulation automation.
 func (m *SimulationAutomationRun) SetStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.startDateTime = value
-    }
+    m.startDateTime = value
 }
 // SetStatus sets the status property value. Status of the run of an attack simulation automation. The possible values are: unknown, running, succeeded, failed, skipped, unknownFutureValue.
 func (m *SimulationAutomationRun) SetStatus(value *SimulationAutomationRunStatus)() {
-    if m != nil {
-        m.status = value
-    }
+    m.status = value
 }

@@ -27,19 +27,11 @@ func CreateNoncustodialDataSourceFromDiscriminatorValue(parseNode i878a80d2330e8
 }
 // GetApplyHoldToSource gets the applyHoldToSource property value. Indicates if hold is applied to non-custodial data source (such as mailbox or site).
 func (m *NoncustodialDataSource) GetApplyHoldToSource()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.applyHoldToSource
-    }
+    return m.applyHoldToSource
 }
 // GetDataSource gets the dataSource property value. User source or SharePoint site data source as non-custodial data source.
 func (m *NoncustodialDataSource) GetDataSource()(DataSourceable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.dataSource
-    }
+    return m.dataSource
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *NoncustodialDataSource) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -88,13 +80,9 @@ func (m *NoncustodialDataSource) Serialize(writer i878a80d2330e89d26896388a3f487
 }
 // SetApplyHoldToSource sets the applyHoldToSource property value. Indicates if hold is applied to non-custodial data source (such as mailbox or site).
 func (m *NoncustodialDataSource) SetApplyHoldToSource(value *bool)() {
-    if m != nil {
-        m.applyHoldToSource = value
-    }
+    m.applyHoldToSource = value
 }
 // SetDataSource sets the dataSource property value. User source or SharePoint site data source as non-custodial data source.
 func (m *NoncustodialDataSource) SetDataSource(value DataSourceable)() {
-    if m != nil {
-        m.dataSource = value
-    }
+    m.dataSource = value
 }

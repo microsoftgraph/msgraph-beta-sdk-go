@@ -25,11 +25,7 @@ func CreateMacAppIdentifierFromDiscriminatorValue(parseNode i878a80d2330e89d2689
 }
 // GetBundleId gets the bundleId property value. The identifier for an app, as specified in the app store.
 func (m *MacAppIdentifier) GetBundleId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.bundleId
-    }
+    return m.bundleId
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *MacAppIdentifier) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -62,7 +58,5 @@ func (m *MacAppIdentifier) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
 }
 // SetBundleId sets the bundleId property value. The identifier for an app, as specified in the app store.
 func (m *MacAppIdentifier) SetBundleId(value *string)() {
-    if m != nil {
-        m.bundleId = value
-    }
+    m.bundleId = value
 }

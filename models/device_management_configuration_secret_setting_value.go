@@ -52,19 +52,11 @@ func (m *DeviceManagementConfigurationSecretSettingValue) GetFieldDeserializers(
 }
 // GetValue gets the value property value. Value of the secret setting.
 func (m *DeviceManagementConfigurationSecretSettingValue) GetValue()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.value
-    }
+    return m.value
 }
 // GetValueState gets the valueState property value. type tracking the encryption state of a secret setting value
 func (m *DeviceManagementConfigurationSecretSettingValue) GetValueState()(*DeviceManagementConfigurationSecretSettingValueState) {
-    if m == nil {
-        return nil
-    } else {
-        return m.valueState
-    }
+    return m.valueState
 }
 // Serialize serializes information the current object
 func (m *DeviceManagementConfigurationSecretSettingValue) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -89,13 +81,9 @@ func (m *DeviceManagementConfigurationSecretSettingValue) Serialize(writer i878a
 }
 // SetValue sets the value property value. Value of the secret setting.
 func (m *DeviceManagementConfigurationSecretSettingValue) SetValue(value *string)() {
-    if m != nil {
-        m.value = value
-    }
+    m.value = value
 }
 // SetValueState sets the valueState property value. type tracking the encryption state of a secret setting value
 func (m *DeviceManagementConfigurationSecretSettingValue) SetValueState(value *DeviceManagementConfigurationSecretSettingValueState)() {
-    if m != nil {
-        m.valueState = value
-    }
+    m.valueState = value
 }

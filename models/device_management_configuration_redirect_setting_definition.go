@@ -29,11 +29,7 @@ func CreateDeviceManagementConfigurationRedirectSettingDefinitionFromDiscriminat
 }
 // GetDeepLink gets the deepLink property value. A deep link that points to the specific location in the Intune console where feature support must be managed from.
 func (m *DeviceManagementConfigurationRedirectSettingDefinition) GetDeepLink()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deepLink
-    }
+    return m.deepLink
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceManagementConfigurationRedirectSettingDefinition) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -72,19 +68,11 @@ func (m *DeviceManagementConfigurationRedirectSettingDefinition) GetFieldDeseria
 }
 // GetRedirectMessage gets the redirectMessage property value. A message that explains that clicking the link will redirect the user to a supported page to manage the settings.
 func (m *DeviceManagementConfigurationRedirectSettingDefinition) GetRedirectMessage()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.redirectMessage
-    }
+    return m.redirectMessage
 }
 // GetRedirectReason gets the redirectReason property value. Indicates the reason for redirecting the user to an alternative location in the console.  For example: WiFi profiles are not supported in the settings catalog and must be created with a template policy.
 func (m *DeviceManagementConfigurationRedirectSettingDefinition) GetRedirectReason()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.redirectReason
-    }
+    return m.redirectReason
 }
 // Serialize serializes information the current object
 func (m *DeviceManagementConfigurationRedirectSettingDefinition) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -114,19 +102,13 @@ func (m *DeviceManagementConfigurationRedirectSettingDefinition) Serialize(write
 }
 // SetDeepLink sets the deepLink property value. A deep link that points to the specific location in the Intune console where feature support must be managed from.
 func (m *DeviceManagementConfigurationRedirectSettingDefinition) SetDeepLink(value *string)() {
-    if m != nil {
-        m.deepLink = value
-    }
+    m.deepLink = value
 }
 // SetRedirectMessage sets the redirectMessage property value. A message that explains that clicking the link will redirect the user to a supported page to manage the settings.
 func (m *DeviceManagementConfigurationRedirectSettingDefinition) SetRedirectMessage(value *string)() {
-    if m != nil {
-        m.redirectMessage = value
-    }
+    m.redirectMessage = value
 }
 // SetRedirectReason sets the redirectReason property value. Indicates the reason for redirecting the user to an alternative location in the console.  For example: WiFi profiles are not supported in the settings catalog and must be created with a template policy.
 func (m *DeviceManagementConfigurationRedirectSettingDefinition) SetRedirectReason(value *string)() {
-    if m != nil {
-        m.redirectReason = value
-    }
+    m.redirectReason = value
 }

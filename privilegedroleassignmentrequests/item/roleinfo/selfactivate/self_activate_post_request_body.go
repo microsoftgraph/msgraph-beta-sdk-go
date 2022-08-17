@@ -30,19 +30,11 @@ func CreateSelfActivatePostRequestBodyFromDiscriminatorValue(parseNode i878a80d2
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SelfActivatePostRequestBody) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetDuration gets the duration property value. The duration property
 func (m *SelfActivatePostRequestBody) GetDuration()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.duration
-    }
+    return m.duration
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *SelfActivatePostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -91,27 +83,15 @@ func (m *SelfActivatePostRequestBody) GetFieldDeserializers()(map[string]func(i8
 }
 // GetReason gets the reason property value. The reason property
 func (m *SelfActivatePostRequestBody) GetReason()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.reason
-    }
+    return m.reason
 }
 // GetTicketNumber gets the ticketNumber property value. The ticketNumber property
 func (m *SelfActivatePostRequestBody) GetTicketNumber()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.ticketNumber
-    }
+    return m.ticketNumber
 }
 // GetTicketSystem gets the ticketSystem property value. The ticketSystem property
 func (m *SelfActivatePostRequestBody) GetTicketSystem()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.ticketSystem
-    }
+    return m.ticketSystem
 }
 // Serialize serializes information the current object
 func (m *SelfActivatePostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -149,31 +129,21 @@ func (m *SelfActivatePostRequestBody) Serialize(writer i878a80d2330e89d26896388a
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SelfActivatePostRequestBody) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetDuration sets the duration property value. The duration property
 func (m *SelfActivatePostRequestBody) SetDuration(value *string)() {
-    if m != nil {
-        m.duration = value
-    }
+    m.duration = value
 }
 // SetReason sets the reason property value. The reason property
 func (m *SelfActivatePostRequestBody) SetReason(value *string)() {
-    if m != nil {
-        m.reason = value
-    }
+    m.reason = value
 }
 // SetTicketNumber sets the ticketNumber property value. The ticketNumber property
 func (m *SelfActivatePostRequestBody) SetTicketNumber(value *string)() {
-    if m != nil {
-        m.ticketNumber = value
-    }
+    m.ticketNumber = value
 }
 // SetTicketSystem sets the ticketSystem property value. The ticketSystem property
 func (m *SelfActivatePostRequestBody) SetTicketSystem(value *string)() {
-    if m != nil {
-        m.ticketSystem = value
-    }
+    m.ticketSystem = value
 }

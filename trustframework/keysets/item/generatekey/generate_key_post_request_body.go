@@ -30,19 +30,11 @@ func CreateGenerateKeyPostRequestBodyFromDiscriminatorValue(parseNode i878a80d23
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *GenerateKeyPostRequestBody) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetExp gets the exp property value. The exp property
 func (m *GenerateKeyPostRequestBody) GetExp()(*int64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.exp
-    }
+    return m.exp
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *GenerateKeyPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -91,27 +83,15 @@ func (m *GenerateKeyPostRequestBody) GetFieldDeserializers()(map[string]func(i87
 }
 // GetKty gets the kty property value. The kty property
 func (m *GenerateKeyPostRequestBody) GetKty()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.kty
-    }
+    return m.kty
 }
 // GetNbf gets the nbf property value. The nbf property
 func (m *GenerateKeyPostRequestBody) GetNbf()(*int64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.nbf
-    }
+    return m.nbf
 }
 // GetUse gets the use property value. The use property
 func (m *GenerateKeyPostRequestBody) GetUse()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.use
-    }
+    return m.use
 }
 // Serialize serializes information the current object
 func (m *GenerateKeyPostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -149,31 +129,21 @@ func (m *GenerateKeyPostRequestBody) Serialize(writer i878a80d2330e89d26896388a3
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *GenerateKeyPostRequestBody) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetExp sets the exp property value. The exp property
 func (m *GenerateKeyPostRequestBody) SetExp(value *int64)() {
-    if m != nil {
-        m.exp = value
-    }
+    m.exp = value
 }
 // SetKty sets the kty property value. The kty property
 func (m *GenerateKeyPostRequestBody) SetKty(value *string)() {
-    if m != nil {
-        m.kty = value
-    }
+    m.kty = value
 }
 // SetNbf sets the nbf property value. The nbf property
 func (m *GenerateKeyPostRequestBody) SetNbf(value *int64)() {
-    if m != nil {
-        m.nbf = value
-    }
+    m.nbf = value
 }
 // SetUse sets the use property value. The use property
 func (m *GenerateKeyPostRequestBody) SetUse(value *string)() {
-    if m != nil {
-        m.use = value
-    }
+    m.use = value
 }

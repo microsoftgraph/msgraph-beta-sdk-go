@@ -42,27 +42,15 @@ func CreateObjectMappingFromDiscriminatorValue(parseNode i878a80d2330e89d2689638
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ObjectMapping) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetAttributeMappings gets the attributeMappings property value. Attribute mappings define which attributes to map from the source object into the target object and how they should flow. A number of functions are available to support the transformation of the original source values.
 func (m *ObjectMapping) GetAttributeMappings()([]AttributeMappingable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.attributeMappings
-    }
+    return m.attributeMappings
 }
 // GetEnabled gets the enabled property value. When true, this object mapping will be processed during synchronization. When false, this object mapping will be skipped.
 func (m *ObjectMapping) GetEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.enabled
-    }
+    return m.enabled
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ObjectMapping) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -169,59 +157,31 @@ func (m *ObjectMapping) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
 }
 // GetFlowTypes gets the flowTypes property value. The flowTypes property
 func (m *ObjectMapping) GetFlowTypes()(*ObjectFlowTypes) {
-    if m == nil {
-        return nil
-    } else {
-        return m.flowTypes
-    }
+    return m.flowTypes
 }
 // GetMetadata gets the metadata property value. Additional extension properties. Unless mentioned explicitly, metadata values should not be changed.
 func (m *ObjectMapping) GetMetadata()([]MetadataEntryable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.metadata
-    }
+    return m.metadata
 }
 // GetName gets the name property value. Human-friendly name of the object mapping.
 func (m *ObjectMapping) GetName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.name
-    }
+    return m.name
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *ObjectMapping) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetScope gets the scope property value. Defines a filter to be used when deciding whether a given object should be provisioned. For example, you might want to only provision users that are located in the US.
 func (m *ObjectMapping) GetScope()(Filterable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.scope
-    }
+    return m.scope
 }
 // GetSourceObjectName gets the sourceObjectName property value. Name of the object in the source directory. Must match the object name from the source directory definition.
 func (m *ObjectMapping) GetSourceObjectName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.sourceObjectName
-    }
+    return m.sourceObjectName
 }
 // GetTargetObjectName gets the targetObjectName property value. Name of the object in target directory. Must match the object name from the target directory definition.
 func (m *ObjectMapping) GetTargetObjectName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.targetObjectName
-    }
+    return m.targetObjectName
 }
 // Serialize serializes information the current object
 func (m *ObjectMapping) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -298,61 +258,41 @@ func (m *ObjectMapping) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ObjectMapping) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetAttributeMappings sets the attributeMappings property value. Attribute mappings define which attributes to map from the source object into the target object and how they should flow. A number of functions are available to support the transformation of the original source values.
 func (m *ObjectMapping) SetAttributeMappings(value []AttributeMappingable)() {
-    if m != nil {
-        m.attributeMappings = value
-    }
+    m.attributeMappings = value
 }
 // SetEnabled sets the enabled property value. When true, this object mapping will be processed during synchronization. When false, this object mapping will be skipped.
 func (m *ObjectMapping) SetEnabled(value *bool)() {
-    if m != nil {
-        m.enabled = value
-    }
+    m.enabled = value
 }
 // SetFlowTypes sets the flowTypes property value. The flowTypes property
 func (m *ObjectMapping) SetFlowTypes(value *ObjectFlowTypes)() {
-    if m != nil {
-        m.flowTypes = value
-    }
+    m.flowTypes = value
 }
 // SetMetadata sets the metadata property value. Additional extension properties. Unless mentioned explicitly, metadata values should not be changed.
 func (m *ObjectMapping) SetMetadata(value []MetadataEntryable)() {
-    if m != nil {
-        m.metadata = value
-    }
+    m.metadata = value
 }
 // SetName sets the name property value. Human-friendly name of the object mapping.
 func (m *ObjectMapping) SetName(value *string)() {
-    if m != nil {
-        m.name = value
-    }
+    m.name = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *ObjectMapping) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetScope sets the scope property value. Defines a filter to be used when deciding whether a given object should be provisioned. For example, you might want to only provision users that are located in the US.
 func (m *ObjectMapping) SetScope(value Filterable)() {
-    if m != nil {
-        m.scope = value
-    }
+    m.scope = value
 }
 // SetSourceObjectName sets the sourceObjectName property value. Name of the object in the source directory. Must match the object name from the source directory definition.
 func (m *ObjectMapping) SetSourceObjectName(value *string)() {
-    if m != nil {
-        m.sourceObjectName = value
-    }
+    m.sourceObjectName = value
 }
 // SetTargetObjectName sets the targetObjectName property value. Name of the object in target directory. Must match the object name from the target directory definition.
 func (m *ObjectMapping) SetTargetObjectName(value *string)() {
-    if m != nil {
-        m.targetObjectName = value
-    }
+    m.targetObjectName = value
 }

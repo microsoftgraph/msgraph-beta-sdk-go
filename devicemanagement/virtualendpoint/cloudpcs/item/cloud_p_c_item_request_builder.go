@@ -12,6 +12,7 @@ import (
     ia073266fa87f992d3a858948753dc53b6ac9007c5febc8b5d74af59df63531cf "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/virtualendpoint/cloudpcs/item/reprovision"
     iafdeeea6f76d4e54cc8d64182d5ef5738139e7487d31b19e0f8cd67313dd907f "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/virtualendpoint/cloudpcs/item/getcloudpcconnectivityhistory"
     ic5c3712fbfc3279ed202453cc12bb33fc813457da47b3438a76bf9022c5b2f4a "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/virtualendpoint/cloudpcs/item/endgraceperiod"
+    idf1c60771e98e3ab68c53c8c8b81360b0ea19beb273552bc7b02f0d6a691436f "github.com/microsoftgraph/msgraph-beta-sdk-go/devicemanagement/virtualendpoint/cloudpcs/item/restore"
 )
 
 // CloudPCItemRequestBuilder provides operations to manage the cloudPCs property of the microsoft.graph.virtualEndpoint entity.
@@ -212,6 +213,10 @@ func (m *CloudPCItemRequestBuilder) Rename()(*i170388c68b05b462f70fd530877e5751f
 // Reprovision the reprovision property
 func (m *CloudPCItemRequestBuilder) Reprovision()(*ia073266fa87f992d3a858948753dc53b6ac9007c5febc8b5d74af59df63531cf.ReprovisionRequestBuilder) {
     return ia073266fa87f992d3a858948753dc53b6ac9007c5febc8b5d74af59df63531cf.NewReprovisionRequestBuilderInternal(m.pathParameters, m.requestAdapter);
+}
+// Restore the restore property
+func (m *CloudPCItemRequestBuilder) Restore()(*idf1c60771e98e3ab68c53c8c8b81360b0ea19beb273552bc7b02f0d6a691436f.RestoreRequestBuilder) {
+    return idf1c60771e98e3ab68c53c8c8b81360b0ea19beb273552bc7b02f0d6a691436f.NewRestoreRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
 // Troubleshoot the troubleshoot property
 func (m *CloudPCItemRequestBuilder) Troubleshoot()(*i7174971b3bcb6f4ec85df581ff277b07bbaf56b391c32a3f561718b3a00346fe.TroubleshootRequestBuilder) {

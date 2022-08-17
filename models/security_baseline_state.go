@@ -33,11 +33,7 @@ func CreateSecurityBaselineStateFromDiscriminatorValue(parseNode i878a80d2330e89
 }
 // GetDisplayName gets the displayName property value. The display name of the security baseline
 func (m *SecurityBaselineState) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *SecurityBaselineState) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -100,35 +96,19 @@ func (m *SecurityBaselineState) GetFieldDeserializers()(map[string]func(i878a80d
 }
 // GetSecurityBaselineTemplateId gets the securityBaselineTemplateId property value. The security baseline template id
 func (m *SecurityBaselineState) GetSecurityBaselineTemplateId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.securityBaselineTemplateId
-    }
+    return m.securityBaselineTemplateId
 }
 // GetSettingStates gets the settingStates property value. The security baseline state for different settings for a device
 func (m *SecurityBaselineState) GetSettingStates()([]SecurityBaselineSettingStateable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.settingStates
-    }
+    return m.settingStates
 }
 // GetState gets the state property value. Security Baseline Compliance State
 func (m *SecurityBaselineState) GetState()(*SecurityBaselineComplianceState) {
-    if m == nil {
-        return nil
-    } else {
-        return m.state
-    }
+    return m.state
 }
 // GetUserPrincipalName gets the userPrincipalName property value. User Principal Name
 func (m *SecurityBaselineState) GetUserPrincipalName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userPrincipalName
-    }
+    return m.userPrincipalName
 }
 // Serialize serializes information the current object
 func (m *SecurityBaselineState) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -175,31 +155,21 @@ func (m *SecurityBaselineState) Serialize(writer i878a80d2330e89d26896388a3f487e
 }
 // SetDisplayName sets the displayName property value. The display name of the security baseline
 func (m *SecurityBaselineState) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }
 // SetSecurityBaselineTemplateId sets the securityBaselineTemplateId property value. The security baseline template id
 func (m *SecurityBaselineState) SetSecurityBaselineTemplateId(value *string)() {
-    if m != nil {
-        m.securityBaselineTemplateId = value
-    }
+    m.securityBaselineTemplateId = value
 }
 // SetSettingStates sets the settingStates property value. The security baseline state for different settings for a device
 func (m *SecurityBaselineState) SetSettingStates(value []SecurityBaselineSettingStateable)() {
-    if m != nil {
-        m.settingStates = value
-    }
+    m.settingStates = value
 }
 // SetState sets the state property value. Security Baseline Compliance State
 func (m *SecurityBaselineState) SetState(value *SecurityBaselineComplianceState)() {
-    if m != nil {
-        m.state = value
-    }
+    m.state = value
 }
 // SetUserPrincipalName sets the userPrincipalName property value. User Principal Name
 func (m *SecurityBaselineState) SetUserPrincipalName(value *string)() {
-    if m != nil {
-        m.userPrincipalName = value
-    }
+    m.userPrincipalName = value
 }

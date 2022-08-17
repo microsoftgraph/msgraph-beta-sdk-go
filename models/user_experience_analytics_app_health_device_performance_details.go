@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// UserExperienceAnalyticsAppHealthDevicePerformanceDetails the user experience analytics device performance entity contains device performance details.
+// UserExperienceAnalyticsAppHealthDevicePerformanceDetails 
 type UserExperienceAnalyticsAppHealthDevicePerformanceDetails struct {
     Entity
     // The friendly name of the application for which the event occurred.
@@ -23,7 +23,7 @@ type UserExperienceAnalyticsAppHealthDevicePerformanceDetails struct {
     // The type of the event.
     eventType *string
 }
-// NewUserExperienceAnalyticsAppHealthDevicePerformanceDetails instantiates a new userExperienceAnalyticsAppHealthDevicePerformanceDetails and sets the default values.
+// NewUserExperienceAnalyticsAppHealthDevicePerformanceDetails instantiates a new UserExperienceAnalyticsAppHealthDevicePerformanceDetails and sets the default values.
 func NewUserExperienceAnalyticsAppHealthDevicePerformanceDetails()(*UserExperienceAnalyticsAppHealthDevicePerformanceDetails) {
     m := &UserExperienceAnalyticsAppHealthDevicePerformanceDetails{
         Entity: *NewEntity(),
@@ -38,59 +38,31 @@ func CreateUserExperienceAnalyticsAppHealthDevicePerformanceDetailsFromDiscrimin
 }
 // GetAppDisplayName gets the appDisplayName property value. The friendly name of the application for which the event occurred.
 func (m *UserExperienceAnalyticsAppHealthDevicePerformanceDetails) GetAppDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.appDisplayName
-    }
+    return m.appDisplayName
 }
 // GetAppPublisher gets the appPublisher property value. The publisher of the application.
 func (m *UserExperienceAnalyticsAppHealthDevicePerformanceDetails) GetAppPublisher()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.appPublisher
-    }
+    return m.appPublisher
 }
 // GetAppVersion gets the appVersion property value. The version of the application.
 func (m *UserExperienceAnalyticsAppHealthDevicePerformanceDetails) GetAppVersion()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.appVersion
-    }
+    return m.appVersion
 }
 // GetDeviceDisplayName gets the deviceDisplayName property value. The name of the device.
 func (m *UserExperienceAnalyticsAppHealthDevicePerformanceDetails) GetDeviceDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deviceDisplayName
-    }
+    return m.deviceDisplayName
 }
 // GetDeviceId gets the deviceId property value. The id of the device.
 func (m *UserExperienceAnalyticsAppHealthDevicePerformanceDetails) GetDeviceId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deviceId
-    }
+    return m.deviceId
 }
 // GetEventDateTime gets the eventDateTime property value. The time the event occurred.
 func (m *UserExperienceAnalyticsAppHealthDevicePerformanceDetails) GetEventDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.eventDateTime
-    }
+    return m.eventDateTime
 }
 // GetEventType gets the eventType property value. The type of the event.
 func (m *UserExperienceAnalyticsAppHealthDevicePerformanceDetails) GetEventType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.eventType
-    }
+    return m.eventType
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *UserExperienceAnalyticsAppHealthDevicePerformanceDetails) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -219,43 +191,29 @@ func (m *UserExperienceAnalyticsAppHealthDevicePerformanceDetails) Serialize(wri
 }
 // SetAppDisplayName sets the appDisplayName property value. The friendly name of the application for which the event occurred.
 func (m *UserExperienceAnalyticsAppHealthDevicePerformanceDetails) SetAppDisplayName(value *string)() {
-    if m != nil {
-        m.appDisplayName = value
-    }
+    m.appDisplayName = value
 }
 // SetAppPublisher sets the appPublisher property value. The publisher of the application.
 func (m *UserExperienceAnalyticsAppHealthDevicePerformanceDetails) SetAppPublisher(value *string)() {
-    if m != nil {
-        m.appPublisher = value
-    }
+    m.appPublisher = value
 }
 // SetAppVersion sets the appVersion property value. The version of the application.
 func (m *UserExperienceAnalyticsAppHealthDevicePerformanceDetails) SetAppVersion(value *string)() {
-    if m != nil {
-        m.appVersion = value
-    }
+    m.appVersion = value
 }
 // SetDeviceDisplayName sets the deviceDisplayName property value. The name of the device.
 func (m *UserExperienceAnalyticsAppHealthDevicePerformanceDetails) SetDeviceDisplayName(value *string)() {
-    if m != nil {
-        m.deviceDisplayName = value
-    }
+    m.deviceDisplayName = value
 }
 // SetDeviceId sets the deviceId property value. The id of the device.
 func (m *UserExperienceAnalyticsAppHealthDevicePerformanceDetails) SetDeviceId(value *string)() {
-    if m != nil {
-        m.deviceId = value
-    }
+    m.deviceId = value
 }
 // SetEventDateTime sets the eventDateTime property value. The time the event occurred.
 func (m *UserExperienceAnalyticsAppHealthDevicePerformanceDetails) SetEventDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.eventDateTime = value
-    }
+    m.eventDateTime = value
 }
 // SetEventType sets the eventType property value. The type of the event.
 func (m *UserExperienceAnalyticsAppHealthDevicePerformanceDetails) SetEventType(value *string)() {
-    if m != nil {
-        m.eventType = value
-    }
+    m.eventType = value
 }

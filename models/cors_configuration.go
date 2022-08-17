@@ -36,35 +36,19 @@ func CreateCorsConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d268
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CorsConfiguration) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetAllowedHeaders gets the allowedHeaders property value. The allowedHeaders property
 func (m *CorsConfiguration) GetAllowedHeaders()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.allowedHeaders
-    }
+    return m.allowedHeaders
 }
 // GetAllowedMethods gets the allowedMethods property value. The allowedMethods property
 func (m *CorsConfiguration) GetAllowedMethods()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.allowedMethods
-    }
+    return m.allowedMethods
 }
 // GetAllowedOrigins gets the allowedOrigins property value. The allowedOrigins property
 func (m *CorsConfiguration) GetAllowedOrigins()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.allowedOrigins
-    }
+    return m.allowedOrigins
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *CorsConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -145,27 +129,15 @@ func (m *CorsConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330
 }
 // GetMaxAgeInSeconds gets the maxAgeInSeconds property value. The maxAgeInSeconds property
 func (m *CorsConfiguration) GetMaxAgeInSeconds()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.maxAgeInSeconds
-    }
+    return m.maxAgeInSeconds
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *CorsConfiguration) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetResource gets the resource property value. The resource property
 func (m *CorsConfiguration) GetResource()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.resource
-    }
+    return m.resource
 }
 // Serialize serializes information the current object
 func (m *CorsConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -215,43 +187,29 @@ func (m *CorsConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef27
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CorsConfiguration) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetAllowedHeaders sets the allowedHeaders property value. The allowedHeaders property
 func (m *CorsConfiguration) SetAllowedHeaders(value []string)() {
-    if m != nil {
-        m.allowedHeaders = value
-    }
+    m.allowedHeaders = value
 }
 // SetAllowedMethods sets the allowedMethods property value. The allowedMethods property
 func (m *CorsConfiguration) SetAllowedMethods(value []string)() {
-    if m != nil {
-        m.allowedMethods = value
-    }
+    m.allowedMethods = value
 }
 // SetAllowedOrigins sets the allowedOrigins property value. The allowedOrigins property
 func (m *CorsConfiguration) SetAllowedOrigins(value []string)() {
-    if m != nil {
-        m.allowedOrigins = value
-    }
+    m.allowedOrigins = value
 }
 // SetMaxAgeInSeconds sets the maxAgeInSeconds property value. The maxAgeInSeconds property
 func (m *CorsConfiguration) SetMaxAgeInSeconds(value *int32)() {
-    if m != nil {
-        m.maxAgeInSeconds = value
-    }
+    m.maxAgeInSeconds = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *CorsConfiguration) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetResource sets the resource property value. The resource property
 func (m *CorsConfiguration) SetResource(value *string)() {
-    if m != nil {
-        m.resource = value
-    }
+    m.resource = value
 }

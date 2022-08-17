@@ -30,19 +30,11 @@ func CreateUploadSecretPostRequestBodyFromDiscriminatorValue(parseNode i878a80d2
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *UploadSecretPostRequestBody) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetExp gets the exp property value. The exp property
 func (m *UploadSecretPostRequestBody) GetExp()(*int64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.exp
-    }
+    return m.exp
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *UploadSecretPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -91,27 +83,15 @@ func (m *UploadSecretPostRequestBody) GetFieldDeserializers()(map[string]func(i8
 }
 // GetK gets the k property value. The k property
 func (m *UploadSecretPostRequestBody) GetK()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.k
-    }
+    return m.k
 }
 // GetNbf gets the nbf property value. The nbf property
 func (m *UploadSecretPostRequestBody) GetNbf()(*int64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.nbf
-    }
+    return m.nbf
 }
 // GetUse gets the use property value. The use property
 func (m *UploadSecretPostRequestBody) GetUse()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.use
-    }
+    return m.use
 }
 // Serialize serializes information the current object
 func (m *UploadSecretPostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -149,31 +129,21 @@ func (m *UploadSecretPostRequestBody) Serialize(writer i878a80d2330e89d26896388a
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *UploadSecretPostRequestBody) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetExp sets the exp property value. The exp property
 func (m *UploadSecretPostRequestBody) SetExp(value *int64)() {
-    if m != nil {
-        m.exp = value
-    }
+    m.exp = value
 }
 // SetK sets the k property value. The k property
 func (m *UploadSecretPostRequestBody) SetK(value *string)() {
-    if m != nil {
-        m.k = value
-    }
+    m.k = value
 }
 // SetNbf sets the nbf property value. The nbf property
 func (m *UploadSecretPostRequestBody) SetNbf(value *int64)() {
-    if m != nil {
-        m.nbf = value
-    }
+    m.nbf = value
 }
 // SetUse sets the use property value. The use property
 func (m *UploadSecretPostRequestBody) SetUse(value *string)() {
-    if m != nil {
-        m.use = value
-    }
+    m.use = value
 }

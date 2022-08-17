@@ -39,19 +39,11 @@ func CreateSecurityBaselineSettingStateFromDiscriminatorValue(parseNode i878a80d
 }
 // GetContributingPolicies gets the contributingPolicies property value. The policies that contribute to this setting instance
 func (m *SecurityBaselineSettingState) GetContributingPolicies()([]SecurityBaselineContributingPolicyable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.contributingPolicies
-    }
+    return m.contributingPolicies
 }
 // GetErrorCode gets the errorCode property value. The error code if the setting is in error state
 func (m *SecurityBaselineSettingState) GetErrorCode()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.errorCode
-    }
+    return m.errorCode
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *SecurityBaselineSettingState) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -148,51 +140,27 @@ func (m *SecurityBaselineSettingState) GetFieldDeserializers()(map[string]func(i
 }
 // GetSettingCategoryId gets the settingCategoryId property value. The setting category id which this setting belongs to
 func (m *SecurityBaselineSettingState) GetSettingCategoryId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.settingCategoryId
-    }
+    return m.settingCategoryId
 }
 // GetSettingCategoryName gets the settingCategoryName property value. The setting category name which this setting belongs to
 func (m *SecurityBaselineSettingState) GetSettingCategoryName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.settingCategoryName
-    }
+    return m.settingCategoryName
 }
 // GetSettingId gets the settingId property value. The setting id guid
 func (m *SecurityBaselineSettingState) GetSettingId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.settingId
-    }
+    return m.settingId
 }
 // GetSettingName gets the settingName property value. The setting name that is being reported
 func (m *SecurityBaselineSettingState) GetSettingName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.settingName
-    }
+    return m.settingName
 }
 // GetSourcePolicies gets the sourcePolicies property value. The policies that contribute to this setting instance
 func (m *SecurityBaselineSettingState) GetSourcePolicies()([]SettingSourceable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.sourcePolicies
-    }
+    return m.sourcePolicies
 }
 // GetState gets the state property value. Security Baseline Compliance State
 func (m *SecurityBaselineSettingState) GetState()(*SecurityBaselineComplianceState) {
-    if m == nil {
-        return nil
-    } else {
-        return m.state
-    }
+    return m.state
 }
 // Serialize serializes information the current object
 func (m *SecurityBaselineSettingState) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -261,49 +229,33 @@ func (m *SecurityBaselineSettingState) Serialize(writer i878a80d2330e89d26896388
 }
 // SetContributingPolicies sets the contributingPolicies property value. The policies that contribute to this setting instance
 func (m *SecurityBaselineSettingState) SetContributingPolicies(value []SecurityBaselineContributingPolicyable)() {
-    if m != nil {
-        m.contributingPolicies = value
-    }
+    m.contributingPolicies = value
 }
 // SetErrorCode sets the errorCode property value. The error code if the setting is in error state
 func (m *SecurityBaselineSettingState) SetErrorCode(value *string)() {
-    if m != nil {
-        m.errorCode = value
-    }
+    m.errorCode = value
 }
 // SetSettingCategoryId sets the settingCategoryId property value. The setting category id which this setting belongs to
 func (m *SecurityBaselineSettingState) SetSettingCategoryId(value *string)() {
-    if m != nil {
-        m.settingCategoryId = value
-    }
+    m.settingCategoryId = value
 }
 // SetSettingCategoryName sets the settingCategoryName property value. The setting category name which this setting belongs to
 func (m *SecurityBaselineSettingState) SetSettingCategoryName(value *string)() {
-    if m != nil {
-        m.settingCategoryName = value
-    }
+    m.settingCategoryName = value
 }
 // SetSettingId sets the settingId property value. The setting id guid
 func (m *SecurityBaselineSettingState) SetSettingId(value *string)() {
-    if m != nil {
-        m.settingId = value
-    }
+    m.settingId = value
 }
 // SetSettingName sets the settingName property value. The setting name that is being reported
 func (m *SecurityBaselineSettingState) SetSettingName(value *string)() {
-    if m != nil {
-        m.settingName = value
-    }
+    m.settingName = value
 }
 // SetSourcePolicies sets the sourcePolicies property value. The policies that contribute to this setting instance
 func (m *SecurityBaselineSettingState) SetSourcePolicies(value []SettingSourceable)() {
-    if m != nil {
-        m.sourcePolicies = value
-    }
+    m.sourcePolicies = value
 }
 // SetState sets the state property value. Security Baseline Compliance State
 func (m *SecurityBaselineSettingState) SetState(value *SecurityBaselineComplianceState)() {
-    if m != nil {
-        m.state = value
-    }
+    m.state = value
 }

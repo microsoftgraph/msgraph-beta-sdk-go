@@ -41,11 +41,7 @@ func (m *Sharepoint) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
 }
 // GetSettings gets the settings property value. Represents the tenant-level settings for SharePoint and OneDrive.
 func (m *Sharepoint) GetSettings()(Settingsable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.settings
-    }
+    return m.settings
 }
 // Serialize serializes information the current object
 func (m *Sharepoint) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -63,7 +59,5 @@ func (m *Sharepoint) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
 }
 // SetSettings sets the settings property value. Represents the tenant-level settings for SharePoint and OneDrive.
 func (m *Sharepoint) SetSettings(value Settingsable)() {
-    if m != nil {
-        m.settings = value
-    }
+    m.settings = value
 }

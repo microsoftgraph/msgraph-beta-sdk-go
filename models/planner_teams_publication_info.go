@@ -37,11 +37,7 @@ func CreatePlannerTeamsPublicationInfoFromDiscriminatorValue(parseNode i878a80d2
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *PlannerTeamsPublicationInfo) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *PlannerTeamsPublicationInfo) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -110,51 +106,27 @@ func (m *PlannerTeamsPublicationInfo) GetFieldDeserializers()(map[string]func(i8
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. The date and time when this task was last modified by the publication process. Read-only.
 func (m *PlannerTeamsPublicationInfo) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastModifiedDateTime
-    }
+    return m.lastModifiedDateTime
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *PlannerTeamsPublicationInfo) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetPublicationId gets the publicationId property value. The identifier of the publication. Read-only.
 func (m *PlannerTeamsPublicationInfo) GetPublicationId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.publicationId
-    }
+    return m.publicationId
 }
 // GetPublishedToPlanId gets the publishedToPlanId property value. The identifier of the plannerPlan this task was originally placed in. Read-only.
 func (m *PlannerTeamsPublicationInfo) GetPublishedToPlanId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.publishedToPlanId
-    }
+    return m.publishedToPlanId
 }
 // GetPublishingTeamId gets the publishingTeamId property value. The identifier of the team that initiated the publication process. Read-only.
 func (m *PlannerTeamsPublicationInfo) GetPublishingTeamId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.publishingTeamId
-    }
+    return m.publishingTeamId
 }
 // GetPublishingTeamName gets the publishingTeamName property value. The display name of the team that initiated the publication process. This display name is for reference only, and might not represent the most up-to-date name of the team. Read-only.
 func (m *PlannerTeamsPublicationInfo) GetPublishingTeamName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.publishingTeamName
-    }
+    return m.publishingTeamName
 }
 // Serialize serializes information the current object
 func (m *PlannerTeamsPublicationInfo) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -204,43 +176,29 @@ func (m *PlannerTeamsPublicationInfo) Serialize(writer i878a80d2330e89d26896388a
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *PlannerTeamsPublicationInfo) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetLastModifiedDateTime sets the lastModifiedDateTime property value. The date and time when this task was last modified by the publication process. Read-only.
 func (m *PlannerTeamsPublicationInfo) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.lastModifiedDateTime = value
-    }
+    m.lastModifiedDateTime = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *PlannerTeamsPublicationInfo) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetPublicationId sets the publicationId property value. The identifier of the publication. Read-only.
 func (m *PlannerTeamsPublicationInfo) SetPublicationId(value *string)() {
-    if m != nil {
-        m.publicationId = value
-    }
+    m.publicationId = value
 }
 // SetPublishedToPlanId sets the publishedToPlanId property value. The identifier of the plannerPlan this task was originally placed in. Read-only.
 func (m *PlannerTeamsPublicationInfo) SetPublishedToPlanId(value *string)() {
-    if m != nil {
-        m.publishedToPlanId = value
-    }
+    m.publishedToPlanId = value
 }
 // SetPublishingTeamId sets the publishingTeamId property value. The identifier of the team that initiated the publication process. Read-only.
 func (m *PlannerTeamsPublicationInfo) SetPublishingTeamId(value *string)() {
-    if m != nil {
-        m.publishingTeamId = value
-    }
+    m.publishingTeamId = value
 }
 // SetPublishingTeamName sets the publishingTeamName property value. The display name of the team that initiated the publication process. This display name is for reference only, and might not represent the most up-to-date name of the team. Read-only.
 func (m *PlannerTeamsPublicationInfo) SetPublishingTeamName(value *string)() {
-    if m != nil {
-        m.publishingTeamName = value
-    }
+    m.publishingTeamName = value
 }

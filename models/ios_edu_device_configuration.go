@@ -29,11 +29,7 @@ func CreateIosEduDeviceConfigurationFromDiscriminatorValue(parseNode i878a80d233
 }
 // GetDeviceCertificateSettings gets the deviceCertificateSettings property value. The Trusted Root and PFX certificates for Device
 func (m *IosEduDeviceConfiguration) GetDeviceCertificateSettings()(IosEduCertificateSettingsable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deviceCertificateSettings
-    }
+    return m.deviceCertificateSettings
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *IosEduDeviceConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -72,19 +68,11 @@ func (m *IosEduDeviceConfiguration) GetFieldDeserializers()(map[string]func(i878
 }
 // GetStudentCertificateSettings gets the studentCertificateSettings property value. The Trusted Root and PFX certificates for Student
 func (m *IosEduDeviceConfiguration) GetStudentCertificateSettings()(IosEduCertificateSettingsable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.studentCertificateSettings
-    }
+    return m.studentCertificateSettings
 }
 // GetTeacherCertificateSettings gets the teacherCertificateSettings property value. Trusted Root and PFX certificates for iOS EDU.
 func (m *IosEduDeviceConfiguration) GetTeacherCertificateSettings()(IosEduCertificateSettingsable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.teacherCertificateSettings
-    }
+    return m.teacherCertificateSettings
 }
 // Serialize serializes information the current object
 func (m *IosEduDeviceConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -114,19 +102,13 @@ func (m *IosEduDeviceConfiguration) Serialize(writer i878a80d2330e89d26896388a3f
 }
 // SetDeviceCertificateSettings sets the deviceCertificateSettings property value. The Trusted Root and PFX certificates for Device
 func (m *IosEduDeviceConfiguration) SetDeviceCertificateSettings(value IosEduCertificateSettingsable)() {
-    if m != nil {
-        m.deviceCertificateSettings = value
-    }
+    m.deviceCertificateSettings = value
 }
 // SetStudentCertificateSettings sets the studentCertificateSettings property value. The Trusted Root and PFX certificates for Student
 func (m *IosEduDeviceConfiguration) SetStudentCertificateSettings(value IosEduCertificateSettingsable)() {
-    if m != nil {
-        m.studentCertificateSettings = value
-    }
+    m.studentCertificateSettings = value
 }
 // SetTeacherCertificateSettings sets the teacherCertificateSettings property value. Trusted Root and PFX certificates for iOS EDU.
 func (m *IosEduDeviceConfiguration) SetTeacherCertificateSettings(value IosEduCertificateSettingsable)() {
-    if m != nil {
-        m.teacherCertificateSettings = value
-    }
+    m.teacherCertificateSettings = value
 }

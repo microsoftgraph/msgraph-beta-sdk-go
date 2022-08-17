@@ -56,11 +56,7 @@ func CreateDeviceManagementSettingInstanceFromDiscriminatorValue(parseNode i878a
 }
 // GetDefinitionId gets the definitionId property value. The ID of the setting definition for this instance
 func (m *DeviceManagementSettingInstance) GetDefinitionId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.definitionId
-    }
+    return m.definitionId
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceManagementSettingInstance) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -89,11 +85,7 @@ func (m *DeviceManagementSettingInstance) GetFieldDeserializers()(map[string]fun
 }
 // GetValueJson gets the valueJson property value. JSON representation of the value
 func (m *DeviceManagementSettingInstance) GetValueJson()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.valueJson
-    }
+    return m.valueJson
 }
 // Serialize serializes information the current object
 func (m *DeviceManagementSettingInstance) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -117,13 +109,9 @@ func (m *DeviceManagementSettingInstance) Serialize(writer i878a80d2330e89d26896
 }
 // SetDefinitionId sets the definitionId property value. The ID of the setting definition for this instance
 func (m *DeviceManagementSettingInstance) SetDefinitionId(value *string)() {
-    if m != nil {
-        m.definitionId = value
-    }
+    m.definitionId = value
 }
 // SetValueJson sets the valueJson property value. JSON representation of the value
 func (m *DeviceManagementSettingInstance) SetValueJson(value *string)() {
-    if m != nil {
-        m.valueJson = value
-    }
+    m.valueJson = value
 }

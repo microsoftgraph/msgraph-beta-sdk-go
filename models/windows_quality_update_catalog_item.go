@@ -29,11 +29,7 @@ func CreateWindowsQualityUpdateCatalogItemFromDiscriminatorValue(parseNode i878a
 }
 // GetClassification gets the classification property value. Windows quality update classification
 func (m *WindowsQualityUpdateCatalogItem) GetClassification()(*WindowsQualityUpdateClassification) {
-    if m == nil {
-        return nil
-    } else {
-        return m.classification
-    }
+    return m.classification
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *WindowsQualityUpdateCatalogItem) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -72,19 +68,11 @@ func (m *WindowsQualityUpdateCatalogItem) GetFieldDeserializers()(map[string]fun
 }
 // GetIsExpeditable gets the isExpeditable property value. Flag indicating if update qualifies for expedite
 func (m *WindowsQualityUpdateCatalogItem) GetIsExpeditable()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isExpeditable
-    }
+    return m.isExpeditable
 }
 // GetKbArticleId gets the kbArticleId property value. Knowledge base article id
 func (m *WindowsQualityUpdateCatalogItem) GetKbArticleId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.kbArticleId
-    }
+    return m.kbArticleId
 }
 // Serialize serializes information the current object
 func (m *WindowsQualityUpdateCatalogItem) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -115,19 +103,13 @@ func (m *WindowsQualityUpdateCatalogItem) Serialize(writer i878a80d2330e89d26896
 }
 // SetClassification sets the classification property value. Windows quality update classification
 func (m *WindowsQualityUpdateCatalogItem) SetClassification(value *WindowsQualityUpdateClassification)() {
-    if m != nil {
-        m.classification = value
-    }
+    m.classification = value
 }
 // SetIsExpeditable sets the isExpeditable property value. Flag indicating if update qualifies for expedite
 func (m *WindowsQualityUpdateCatalogItem) SetIsExpeditable(value *bool)() {
-    if m != nil {
-        m.isExpeditable = value
-    }
+    m.isExpeditable = value
 }
 // SetKbArticleId sets the kbArticleId property value. Knowledge base article id
 func (m *WindowsQualityUpdateCatalogItem) SetKbArticleId(value *string)() {
-    if m != nil {
-        m.kbArticleId = value
-    }
+    m.kbArticleId = value
 }

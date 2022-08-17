@@ -52,19 +52,11 @@ func (m *EnrollmentRestrictionsConfigurationPolicySetItem) GetFieldDeserializers
 }
 // GetLimit gets the limit property value. Limit of the EnrollmentRestrictionsConfigurationPolicySetItem.
 func (m *EnrollmentRestrictionsConfigurationPolicySetItem) GetLimit()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.limit
-    }
+    return m.limit
 }
 // GetPriority gets the priority property value. Priority of the EnrollmentRestrictionsConfigurationPolicySetItem.
 func (m *EnrollmentRestrictionsConfigurationPolicySetItem) GetPriority()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.priority
-    }
+    return m.priority
 }
 // Serialize serializes information the current object
 func (m *EnrollmentRestrictionsConfigurationPolicySetItem) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -88,13 +80,9 @@ func (m *EnrollmentRestrictionsConfigurationPolicySetItem) Serialize(writer i878
 }
 // SetLimit sets the limit property value. Limit of the EnrollmentRestrictionsConfigurationPolicySetItem.
 func (m *EnrollmentRestrictionsConfigurationPolicySetItem) SetLimit(value *int32)() {
-    if m != nil {
-        m.limit = value
-    }
+    m.limit = value
 }
 // SetPriority sets the priority property value. Priority of the EnrollmentRestrictionsConfigurationPolicySetItem.
 func (m *EnrollmentRestrictionsConfigurationPolicySetItem) SetPriority(value *int32)() {
-    if m != nil {
-        m.priority = value
-    }
+    m.priority = value
 }

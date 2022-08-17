@@ -36,19 +36,11 @@ func CreateSettingFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f48
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *Setting) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetDisplayName gets the displayName property value. The display name for the setting. Required. Read-only.
 func (m *Setting) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Setting) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -117,43 +109,23 @@ func (m *Setting) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
 }
 // GetJsonValue gets the jsonValue property value. The value for the setting serialized as string of JSON. Required. Read-only.
 func (m *Setting) GetJsonValue()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.jsonValue
-    }
+    return m.jsonValue
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *Setting) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetOverwriteAllowed gets the overwriteAllowed property value. A flag indicating whether the setting can be override existing configurations when applied. Required. Read-only.
 func (m *Setting) GetOverwriteAllowed()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.overwriteAllowed
-    }
+    return m.overwriteAllowed
 }
 // GetSettingId gets the settingId property value. The settingId property
 func (m *Setting) GetSettingId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.settingId
-    }
+    return m.settingId
 }
 // GetValueType gets the valueType property value. The valueType property
 func (m *Setting) GetValueType()(*ManagementParameterValueType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.valueType
-    }
+    return m.valueType
 }
 // Serialize serializes information the current object
 func (m *Setting) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -204,43 +176,29 @@ func (m *Setting) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *Setting) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetDisplayName sets the displayName property value. The display name for the setting. Required. Read-only.
 func (m *Setting) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }
 // SetJsonValue sets the jsonValue property value. The value for the setting serialized as string of JSON. Required. Read-only.
 func (m *Setting) SetJsonValue(value *string)() {
-    if m != nil {
-        m.jsonValue = value
-    }
+    m.jsonValue = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *Setting) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetOverwriteAllowed sets the overwriteAllowed property value. A flag indicating whether the setting can be override existing configurations when applied. Required. Read-only.
 func (m *Setting) SetOverwriteAllowed(value *bool)() {
-    if m != nil {
-        m.overwriteAllowed = value
-    }
+    m.overwriteAllowed = value
 }
 // SetSettingId sets the settingId property value. The settingId property
 func (m *Setting) SetSettingId(value *string)() {
-    if m != nil {
-        m.settingId = value
-    }
+    m.settingId = value
 }
 // SetValueType sets the valueType property value. The valueType property
 func (m *Setting) SetValueType(value *ManagementParameterValueType)() {
-    if m != nil {
-        m.valueType = value
-    }
+    m.valueType = value
 }

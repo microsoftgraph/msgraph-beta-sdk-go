@@ -44,11 +44,7 @@ func (m *GroupPolicyPresentationValueMultiText) GetFieldDeserializers()(map[stri
 }
 // GetValues gets the values property value. A collection of non-empty strings for the associated presentation.
 func (m *GroupPolicyPresentationValueMultiText) GetValues()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.values
-    }
+    return m.values
 }
 // Serialize serializes information the current object
 func (m *GroupPolicyPresentationValueMultiText) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -66,7 +62,5 @@ func (m *GroupPolicyPresentationValueMultiText) Serialize(writer i878a80d2330e89
 }
 // SetValues sets the values property value. A collection of non-empty strings for the associated presentation.
 func (m *GroupPolicyPresentationValueMultiText) SetValues(value []string)() {
-    if m != nil {
-        m.values = value
-    }
+    m.values = value
 }

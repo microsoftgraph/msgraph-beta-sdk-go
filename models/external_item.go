@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ExternalItem provides operations to manage the collection of accessReview entities.
+// ExternalItem provides operations to manage the collection of activityStatistics entities.
 type ExternalItem struct {
     Entity
     // The acl property
@@ -29,19 +29,11 @@ func CreateExternalItemFromDiscriminatorValue(parseNode i878a80d2330e89d26896388
 }
 // GetAcl gets the acl property value. The acl property
 func (m *ExternalItem) GetAcl()([]Aclable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.acl
-    }
+    return m.acl
 }
 // GetContent gets the content property value. The content property
 func (m *ExternalItem) GetContent()(ExternalItemContentable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.content
-    }
+    return m.content
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ExternalItem) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -84,11 +76,7 @@ func (m *ExternalItem) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
 }
 // GetProperties gets the properties property value. The properties property
 func (m *ExternalItem) GetProperties()(Propertiesable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.properties
-    }
+    return m.properties
 }
 // Serialize serializes information the current object
 func (m *ExternalItem) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -122,19 +110,13 @@ func (m *ExternalItem) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
 }
 // SetAcl sets the acl property value. The acl property
 func (m *ExternalItem) SetAcl(value []Aclable)() {
-    if m != nil {
-        m.acl = value
-    }
+    m.acl = value
 }
 // SetContent sets the content property value. The content property
 func (m *ExternalItem) SetContent(value ExternalItemContentable)() {
-    if m != nil {
-        m.content = value
-    }
+    m.content = value
 }
 // SetProperties sets the properties property value. The properties property
 func (m *ExternalItem) SetProperties(value Propertiesable)() {
-    if m != nil {
-        m.properties = value
-    }
+    m.properties = value
 }

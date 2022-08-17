@@ -44,11 +44,7 @@ func (m *InformationProtectionPolicy) GetFieldDeserializers()(map[string]func(i8
 }
 // GetLabels gets the labels property value. The labels property
 func (m *InformationProtectionPolicy) GetLabels()([]InformationProtectionLabelable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.labels
-    }
+    return m.labels
 }
 // Serialize serializes information the current object
 func (m *InformationProtectionPolicy) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -70,7 +66,5 @@ func (m *InformationProtectionPolicy) Serialize(writer i878a80d2330e89d26896388a
 }
 // SetLabels sets the labels property value. The labels property
 func (m *InformationProtectionPolicy) SetLabels(value []InformationProtectionLabelable)() {
-    if m != nil {
-        m.labels = value
-    }
+    m.labels = value
 }

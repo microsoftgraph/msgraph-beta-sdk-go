@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ActivityStatistics provides operations to manage the collection of accessReview entities.
+// ActivityStatistics provides operations to manage the collection of accessReviewDecision entities.
 type ActivityStatistics struct {
     Entity
     // The type of activity for which statistics are returned. The possible values are: call, chat, email, focus, and meeting.
@@ -60,27 +60,15 @@ func CreateActivityStatisticsFromDiscriminatorValue(parseNode i878a80d2330e89d26
 }
 // GetActivity gets the activity property value. The type of activity for which statistics are returned. The possible values are: call, chat, email, focus, and meeting.
 func (m *ActivityStatistics) GetActivity()(*AnalyticsActivityType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.activity
-    }
+    return m.activity
 }
 // GetDuration gets the duration property value. Total hours spent on the activity. The value is represented in ISO 8601 format for durations.
 func (m *ActivityStatistics) GetDuration()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration) {
-    if m == nil {
-        return nil
-    } else {
-        return m.duration
-    }
+    return m.duration
 }
 // GetEndDate gets the endDate property value. Date when the activity ended, expressed in ISO 8601 format for calendar dates. For example, the property value could be '2019-07-03' that follows the YYYY-MM-DD format.
 func (m *ActivityStatistics) GetEndDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly) {
-    if m == nil {
-        return nil
-    } else {
-        return m.endDate
-    }
+    return m.endDate
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ActivityStatistics) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -139,19 +127,11 @@ func (m *ActivityStatistics) GetFieldDeserializers()(map[string]func(i878a80d233
 }
 // GetStartDate gets the startDate property value. Date when the activity started, expressed in ISO 8601 format for calendar dates. For example, the property value could be '2019-07-04' that follows the YYYY-MM-DD format.
 func (m *ActivityStatistics) GetStartDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly) {
-    if m == nil {
-        return nil
-    } else {
-        return m.startDate
-    }
+    return m.startDate
 }
 // GetTimeZoneUsed gets the timeZoneUsed property value. The time zone that the user sets in Microsoft Outlook is used for the computation. For example, the property value could be 'Pacific Standard Time.'
 func (m *ActivityStatistics) GetTimeZoneUsed()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.timeZoneUsed
-    }
+    return m.timeZoneUsed
 }
 // Serialize serializes information the current object
 func (m *ActivityStatistics) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -194,31 +174,21 @@ func (m *ActivityStatistics) Serialize(writer i878a80d2330e89d26896388a3f487eef2
 }
 // SetActivity sets the activity property value. The type of activity for which statistics are returned. The possible values are: call, chat, email, focus, and meeting.
 func (m *ActivityStatistics) SetActivity(value *AnalyticsActivityType)() {
-    if m != nil {
-        m.activity = value
-    }
+    m.activity = value
 }
 // SetDuration sets the duration property value. Total hours spent on the activity. The value is represented in ISO 8601 format for durations.
 func (m *ActivityStatistics) SetDuration(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)() {
-    if m != nil {
-        m.duration = value
-    }
+    m.duration = value
 }
 // SetEndDate sets the endDate property value. Date when the activity ended, expressed in ISO 8601 format for calendar dates. For example, the property value could be '2019-07-03' that follows the YYYY-MM-DD format.
 func (m *ActivityStatistics) SetEndDate(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)() {
-    if m != nil {
-        m.endDate = value
-    }
+    m.endDate = value
 }
 // SetStartDate sets the startDate property value. Date when the activity started, expressed in ISO 8601 format for calendar dates. For example, the property value could be '2019-07-04' that follows the YYYY-MM-DD format.
 func (m *ActivityStatistics) SetStartDate(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)() {
-    if m != nil {
-        m.startDate = value
-    }
+    m.startDate = value
 }
 // SetTimeZoneUsed sets the timeZoneUsed property value. The time zone that the user sets in Microsoft Outlook is used for the computation. For example, the property value could be 'Pacific Standard Time.'
 func (m *ActivityStatistics) SetTimeZoneUsed(value *string)() {
-    if m != nil {
-        m.timeZoneUsed = value
-    }
+    m.timeZoneUsed = value
 }

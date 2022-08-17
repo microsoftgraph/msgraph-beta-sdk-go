@@ -55,27 +55,15 @@ func CreateZebraFotaDeploymentStatusFromDiscriminatorValue(parseNode i878a80d233
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ZebraFotaDeploymentStatus) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetCancelRequested gets the cancelRequested property value. A boolean that indicates if a cancellation was requested on the deployment. NOTE: A cancellation request does not guarantee that the deployment was canceled.
 func (m *ZebraFotaDeploymentStatus) GetCancelRequested()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.cancelRequested
-    }
+    return m.cancelRequested
 }
 // GetCompleteOrCanceledDateTime gets the completeOrCanceledDateTime property value. The date and time when this deployment was completed or canceled. The actual date time is determined by the value of state. If the state is canceled, this property holds the cancellation date/time. If the the state is completed, this property holds the completion date/time. If the deployment is not completed before the deployment end date, then completed date/time and end date/time are the same. This is always in the deployment timezone. Note: An installation that is in progress can continue past the deployment end date.
 func (m *ZebraFotaDeploymentStatus) GetCompleteOrCanceledDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.completeOrCanceledDateTime
-    }
+    return m.completeOrCanceledDateTime
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ZebraFotaDeploymentStatus) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -234,107 +222,55 @@ func (m *ZebraFotaDeploymentStatus) GetFieldDeserializers()(map[string]func(i878
 }
 // GetLastUpdatedDateTime gets the lastUpdatedDateTime property value. Date and time when the deployment status was updated from Zebra
 func (m *ZebraFotaDeploymentStatus) GetLastUpdatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastUpdatedDateTime
-    }
+    return m.lastUpdatedDateTime
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *ZebraFotaDeploymentStatus) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetState gets the state property value. Represents the state of Zebra FOTA deployment.
 func (m *ZebraFotaDeploymentStatus) GetState()(*ZebraFotaDeploymentState) {
-    if m == nil {
-        return nil
-    } else {
-        return m.state
-    }
+    return m.state
 }
 // GetTotalAwaitingInstall gets the totalAwaitingInstall property value. An integer that indicates the total number of devices where installation was successful.
 func (m *ZebraFotaDeploymentStatus) GetTotalAwaitingInstall()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.totalAwaitingInstall
-    }
+    return m.totalAwaitingInstall
 }
 // GetTotalCanceled gets the totalCanceled property value. An integer that indicates the total number of devices where installation was canceled.
 func (m *ZebraFotaDeploymentStatus) GetTotalCanceled()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.totalCanceled
-    }
+    return m.totalCanceled
 }
 // GetTotalCreated gets the totalCreated property value. An integer that indicates the total number of devices that have a job in the CREATED state. Typically indicates jobs that did not reach the devices.
 func (m *ZebraFotaDeploymentStatus) GetTotalCreated()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.totalCreated
-    }
+    return m.totalCreated
 }
 // GetTotalDevices gets the totalDevices property value. An integer that indicates the total number of devices in the deployment.
 func (m *ZebraFotaDeploymentStatus) GetTotalDevices()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.totalDevices
-    }
+    return m.totalDevices
 }
 // GetTotalDownloading gets the totalDownloading property value. An integer that indicates the total number of devices where installation was successful.
 func (m *ZebraFotaDeploymentStatus) GetTotalDownloading()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.totalDownloading
-    }
+    return m.totalDownloading
 }
 // GetTotalFailedDownload gets the totalFailedDownload property value. An integer that indicates the total number of devices that have failed to download the new OS file.
 func (m *ZebraFotaDeploymentStatus) GetTotalFailedDownload()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.totalFailedDownload
-    }
+    return m.totalFailedDownload
 }
 // GetTotalFailedInstall gets the totalFailedInstall property value. An integer that indicates the total number of devices that have failed to install the new OS file.
 func (m *ZebraFotaDeploymentStatus) GetTotalFailedInstall()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.totalFailedInstall
-    }
+    return m.totalFailedInstall
 }
 // GetTotalScheduled gets the totalScheduled property value. An integer that indicates the total number of devices that received the json and are scheduled.
 func (m *ZebraFotaDeploymentStatus) GetTotalScheduled()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.totalScheduled
-    }
+    return m.totalScheduled
 }
 // GetTotalSucceededInstall gets the totalSucceededInstall property value. An integer that indicates the total number of devices where installation was successful.
 func (m *ZebraFotaDeploymentStatus) GetTotalSucceededInstall()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.totalSucceededInstall
-    }
+    return m.totalSucceededInstall
 }
 // GetTotalUnknown gets the totalUnknown property value. An integer that indicates the total number of devices where no deployment status or end state has not received, even after the scheduled end date was reached.
 func (m *ZebraFotaDeploymentStatus) GetTotalUnknown()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.totalUnknown
-    }
+    return m.totalUnknown
 }
 // Serialize serializes information the current object
 func (m *ZebraFotaDeploymentStatus) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -439,97 +375,65 @@ func (m *ZebraFotaDeploymentStatus) Serialize(writer i878a80d2330e89d26896388a3f
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ZebraFotaDeploymentStatus) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetCancelRequested sets the cancelRequested property value. A boolean that indicates if a cancellation was requested on the deployment. NOTE: A cancellation request does not guarantee that the deployment was canceled.
 func (m *ZebraFotaDeploymentStatus) SetCancelRequested(value *bool)() {
-    if m != nil {
-        m.cancelRequested = value
-    }
+    m.cancelRequested = value
 }
 // SetCompleteOrCanceledDateTime sets the completeOrCanceledDateTime property value. The date and time when this deployment was completed or canceled. The actual date time is determined by the value of state. If the state is canceled, this property holds the cancellation date/time. If the the state is completed, this property holds the completion date/time. If the deployment is not completed before the deployment end date, then completed date/time and end date/time are the same. This is always in the deployment timezone. Note: An installation that is in progress can continue past the deployment end date.
 func (m *ZebraFotaDeploymentStatus) SetCompleteOrCanceledDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.completeOrCanceledDateTime = value
-    }
+    m.completeOrCanceledDateTime = value
 }
 // SetLastUpdatedDateTime sets the lastUpdatedDateTime property value. Date and time when the deployment status was updated from Zebra
 func (m *ZebraFotaDeploymentStatus) SetLastUpdatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.lastUpdatedDateTime = value
-    }
+    m.lastUpdatedDateTime = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *ZebraFotaDeploymentStatus) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetState sets the state property value. Represents the state of Zebra FOTA deployment.
 func (m *ZebraFotaDeploymentStatus) SetState(value *ZebraFotaDeploymentState)() {
-    if m != nil {
-        m.state = value
-    }
+    m.state = value
 }
 // SetTotalAwaitingInstall sets the totalAwaitingInstall property value. An integer that indicates the total number of devices where installation was successful.
 func (m *ZebraFotaDeploymentStatus) SetTotalAwaitingInstall(value *int32)() {
-    if m != nil {
-        m.totalAwaitingInstall = value
-    }
+    m.totalAwaitingInstall = value
 }
 // SetTotalCanceled sets the totalCanceled property value. An integer that indicates the total number of devices where installation was canceled.
 func (m *ZebraFotaDeploymentStatus) SetTotalCanceled(value *int32)() {
-    if m != nil {
-        m.totalCanceled = value
-    }
+    m.totalCanceled = value
 }
 // SetTotalCreated sets the totalCreated property value. An integer that indicates the total number of devices that have a job in the CREATED state. Typically indicates jobs that did not reach the devices.
 func (m *ZebraFotaDeploymentStatus) SetTotalCreated(value *int32)() {
-    if m != nil {
-        m.totalCreated = value
-    }
+    m.totalCreated = value
 }
 // SetTotalDevices sets the totalDevices property value. An integer that indicates the total number of devices in the deployment.
 func (m *ZebraFotaDeploymentStatus) SetTotalDevices(value *int32)() {
-    if m != nil {
-        m.totalDevices = value
-    }
+    m.totalDevices = value
 }
 // SetTotalDownloading sets the totalDownloading property value. An integer that indicates the total number of devices where installation was successful.
 func (m *ZebraFotaDeploymentStatus) SetTotalDownloading(value *int32)() {
-    if m != nil {
-        m.totalDownloading = value
-    }
+    m.totalDownloading = value
 }
 // SetTotalFailedDownload sets the totalFailedDownload property value. An integer that indicates the total number of devices that have failed to download the new OS file.
 func (m *ZebraFotaDeploymentStatus) SetTotalFailedDownload(value *int32)() {
-    if m != nil {
-        m.totalFailedDownload = value
-    }
+    m.totalFailedDownload = value
 }
 // SetTotalFailedInstall sets the totalFailedInstall property value. An integer that indicates the total number of devices that have failed to install the new OS file.
 func (m *ZebraFotaDeploymentStatus) SetTotalFailedInstall(value *int32)() {
-    if m != nil {
-        m.totalFailedInstall = value
-    }
+    m.totalFailedInstall = value
 }
 // SetTotalScheduled sets the totalScheduled property value. An integer that indicates the total number of devices that received the json and are scheduled.
 func (m *ZebraFotaDeploymentStatus) SetTotalScheduled(value *int32)() {
-    if m != nil {
-        m.totalScheduled = value
-    }
+    m.totalScheduled = value
 }
 // SetTotalSucceededInstall sets the totalSucceededInstall property value. An integer that indicates the total number of devices where installation was successful.
 func (m *ZebraFotaDeploymentStatus) SetTotalSucceededInstall(value *int32)() {
-    if m != nil {
-        m.totalSucceededInstall = value
-    }
+    m.totalSucceededInstall = value
 }
 // SetTotalUnknown sets the totalUnknown property value. An integer that indicates the total number of devices where no deployment status or end state has not received, even after the scheduled end date was reached.
 func (m *ZebraFotaDeploymentStatus) SetTotalUnknown(value *int32)() {
-    if m != nil {
-        m.totalUnknown = value
-    }
+    m.totalUnknown = value
 }

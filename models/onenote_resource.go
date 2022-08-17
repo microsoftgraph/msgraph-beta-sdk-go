@@ -7,9 +7,9 @@ import (
 // OnenoteResource 
 type OnenoteResource struct {
     OnenoteEntityBaseModel
-    // The content stream
+    // The content property
     content []byte
-    // The URL for downloading the content
+    // The contentUrl property
     contentUrl *string
 }
 // NewOnenoteResource instantiates a new OnenoteResource and sets the default values.
@@ -25,21 +25,13 @@ func NewOnenoteResource()(*OnenoteResource) {
 func CreateOnenoteResourceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewOnenoteResource(), nil
 }
-// GetContent gets the content property value. The content stream
+// GetContent gets the content property value. The content property
 func (m *OnenoteResource) GetContent()([]byte) {
-    if m == nil {
-        return nil
-    } else {
-        return m.content
-    }
+    return m.content
 }
-// GetContentUrl gets the contentUrl property value. The URL for downloading the content
+// GetContentUrl gets the contentUrl property value. The contentUrl property
 func (m *OnenoteResource) GetContentUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.contentUrl
-    }
+    return m.contentUrl
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *OnenoteResource) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -86,15 +78,11 @@ func (m *OnenoteResource) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
     }
     return nil
 }
-// SetContent sets the content property value. The content stream
+// SetContent sets the content property value. The content property
 func (m *OnenoteResource) SetContent(value []byte)() {
-    if m != nil {
-        m.content = value
-    }
+    m.content = value
 }
-// SetContentUrl sets the contentUrl property value. The URL for downloading the content
+// SetContentUrl sets the contentUrl property value. The contentUrl property
 func (m *OnenoteResource) SetContentUrl(value *string)() {
-    if m != nil {
-        m.contentUrl = value
-    }
+    m.contentUrl = value
 }

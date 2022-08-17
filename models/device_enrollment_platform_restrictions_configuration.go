@@ -39,19 +39,11 @@ func CreateDeviceEnrollmentPlatformRestrictionsConfigurationFromDiscriminatorVal
 }
 // GetAndroidForWorkRestriction gets the androidForWorkRestriction property value. Android for work restrictions based on platform, platform operating system version, and device ownership
 func (m *DeviceEnrollmentPlatformRestrictionsConfiguration) GetAndroidForWorkRestriction()(DeviceEnrollmentPlatformRestrictionable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.androidForWorkRestriction
-    }
+    return m.androidForWorkRestriction
 }
 // GetAndroidRestriction gets the androidRestriction property value. Android restrictions based on platform, platform operating system version, and device ownership
 func (m *DeviceEnrollmentPlatformRestrictionsConfiguration) GetAndroidRestriction()(DeviceEnrollmentPlatformRestrictionable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.androidRestriction
-    }
+    return m.androidRestriction
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceEnrollmentPlatformRestrictionsConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -140,51 +132,27 @@ func (m *DeviceEnrollmentPlatformRestrictionsConfiguration) GetFieldDeserializer
 }
 // GetIosRestriction gets the iosRestriction property value. Ios restrictions based on platform, platform operating system version, and device ownership
 func (m *DeviceEnrollmentPlatformRestrictionsConfiguration) GetIosRestriction()(DeviceEnrollmentPlatformRestrictionable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.iosRestriction
-    }
+    return m.iosRestriction
 }
 // GetMacOSRestriction gets the macOSRestriction property value. Mac restrictions based on platform, platform operating system version, and device ownership
 func (m *DeviceEnrollmentPlatformRestrictionsConfiguration) GetMacOSRestriction()(DeviceEnrollmentPlatformRestrictionable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.macOSRestriction
-    }
+    return m.macOSRestriction
 }
 // GetMacRestriction gets the macRestriction property value. Mac restrictions based on platform, platform operating system version, and device ownership
 func (m *DeviceEnrollmentPlatformRestrictionsConfiguration) GetMacRestriction()(DeviceEnrollmentPlatformRestrictionable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.macRestriction
-    }
+    return m.macRestriction
 }
 // GetWindowsHomeSkuRestriction gets the windowsHomeSkuRestriction property value. Windows Home Sku restrictions based on platform, platform operating system version, and device ownership
 func (m *DeviceEnrollmentPlatformRestrictionsConfiguration) GetWindowsHomeSkuRestriction()(DeviceEnrollmentPlatformRestrictionable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.windowsHomeSkuRestriction
-    }
+    return m.windowsHomeSkuRestriction
 }
 // GetWindowsMobileRestriction gets the windowsMobileRestriction property value. Windows mobile restrictions based on platform, platform operating system version, and device ownership
 func (m *DeviceEnrollmentPlatformRestrictionsConfiguration) GetWindowsMobileRestriction()(DeviceEnrollmentPlatformRestrictionable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.windowsMobileRestriction
-    }
+    return m.windowsMobileRestriction
 }
 // GetWindowsRestriction gets the windowsRestriction property value. Windows restrictions based on platform, platform operating system version, and device ownership
 func (m *DeviceEnrollmentPlatformRestrictionsConfiguration) GetWindowsRestriction()(DeviceEnrollmentPlatformRestrictionable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.windowsRestriction
-    }
+    return m.windowsRestriction
 }
 // Serialize serializes information the current object
 func (m *DeviceEnrollmentPlatformRestrictionsConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -244,49 +212,33 @@ func (m *DeviceEnrollmentPlatformRestrictionsConfiguration) Serialize(writer i87
 }
 // SetAndroidForWorkRestriction sets the androidForWorkRestriction property value. Android for work restrictions based on platform, platform operating system version, and device ownership
 func (m *DeviceEnrollmentPlatformRestrictionsConfiguration) SetAndroidForWorkRestriction(value DeviceEnrollmentPlatformRestrictionable)() {
-    if m != nil {
-        m.androidForWorkRestriction = value
-    }
+    m.androidForWorkRestriction = value
 }
 // SetAndroidRestriction sets the androidRestriction property value. Android restrictions based on platform, platform operating system version, and device ownership
 func (m *DeviceEnrollmentPlatformRestrictionsConfiguration) SetAndroidRestriction(value DeviceEnrollmentPlatformRestrictionable)() {
-    if m != nil {
-        m.androidRestriction = value
-    }
+    m.androidRestriction = value
 }
 // SetIosRestriction sets the iosRestriction property value. Ios restrictions based on platform, platform operating system version, and device ownership
 func (m *DeviceEnrollmentPlatformRestrictionsConfiguration) SetIosRestriction(value DeviceEnrollmentPlatformRestrictionable)() {
-    if m != nil {
-        m.iosRestriction = value
-    }
+    m.iosRestriction = value
 }
 // SetMacOSRestriction sets the macOSRestriction property value. Mac restrictions based on platform, platform operating system version, and device ownership
 func (m *DeviceEnrollmentPlatformRestrictionsConfiguration) SetMacOSRestriction(value DeviceEnrollmentPlatformRestrictionable)() {
-    if m != nil {
-        m.macOSRestriction = value
-    }
+    m.macOSRestriction = value
 }
 // SetMacRestriction sets the macRestriction property value. Mac restrictions based on platform, platform operating system version, and device ownership
 func (m *DeviceEnrollmentPlatformRestrictionsConfiguration) SetMacRestriction(value DeviceEnrollmentPlatformRestrictionable)() {
-    if m != nil {
-        m.macRestriction = value
-    }
+    m.macRestriction = value
 }
 // SetWindowsHomeSkuRestriction sets the windowsHomeSkuRestriction property value. Windows Home Sku restrictions based on platform, platform operating system version, and device ownership
 func (m *DeviceEnrollmentPlatformRestrictionsConfiguration) SetWindowsHomeSkuRestriction(value DeviceEnrollmentPlatformRestrictionable)() {
-    if m != nil {
-        m.windowsHomeSkuRestriction = value
-    }
+    m.windowsHomeSkuRestriction = value
 }
 // SetWindowsMobileRestriction sets the windowsMobileRestriction property value. Windows mobile restrictions based on platform, platform operating system version, and device ownership
 func (m *DeviceEnrollmentPlatformRestrictionsConfiguration) SetWindowsMobileRestriction(value DeviceEnrollmentPlatformRestrictionable)() {
-    if m != nil {
-        m.windowsMobileRestriction = value
-    }
+    m.windowsMobileRestriction = value
 }
 // SetWindowsRestriction sets the windowsRestriction property value. Windows restrictions based on platform, platform operating system version, and device ownership
 func (m *DeviceEnrollmentPlatformRestrictionsConfiguration) SetWindowsRestriction(value DeviceEnrollmentPlatformRestrictionable)() {
-    if m != nil {
-        m.windowsRestriction = value
-    }
+    m.windowsRestriction = value
 }

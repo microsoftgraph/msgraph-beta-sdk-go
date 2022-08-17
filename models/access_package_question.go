@@ -57,11 +57,7 @@ func CreateAccessPackageQuestionFromDiscriminatorValue(parseNode i878a80d2330e89
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AccessPackageQuestion) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AccessPackageQuestion) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -130,51 +126,27 @@ func (m *AccessPackageQuestion) GetFieldDeserializers()(map[string]func(i878a80d
 }
 // GetId gets the id property value. ID of the question.
 func (m *AccessPackageQuestion) GetId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.id
-    }
+    return m.id
 }
 // GetIsAnswerEditable gets the isAnswerEditable property value. Specifies whether the requestor is allowed to edit answers to questions.
 func (m *AccessPackageQuestion) GetIsAnswerEditable()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isAnswerEditable
-    }
+    return m.isAnswerEditable
 }
 // GetIsRequired gets the isRequired property value. Whether the requestor is required to supply an answer or not.
 func (m *AccessPackageQuestion) GetIsRequired()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isRequired
-    }
+    return m.isRequired
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *AccessPackageQuestion) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetSequence gets the sequence property value. Relative position of this question when displaying a list of questions to the requestor.
 func (m *AccessPackageQuestion) GetSequence()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.sequence
-    }
+    return m.sequence
 }
 // GetText gets the text property value. The text of the question to show to the requestor.
 func (m *AccessPackageQuestion) GetText()(AccessPackageLocalizedContentable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.text
-    }
+    return m.text
 }
 // Serialize serializes information the current object
 func (m *AccessPackageQuestion) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -224,43 +196,29 @@ func (m *AccessPackageQuestion) Serialize(writer i878a80d2330e89d26896388a3f487e
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AccessPackageQuestion) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetId sets the id property value. ID of the question.
 func (m *AccessPackageQuestion) SetId(value *string)() {
-    if m != nil {
-        m.id = value
-    }
+    m.id = value
 }
 // SetIsAnswerEditable sets the isAnswerEditable property value. Specifies whether the requestor is allowed to edit answers to questions.
 func (m *AccessPackageQuestion) SetIsAnswerEditable(value *bool)() {
-    if m != nil {
-        m.isAnswerEditable = value
-    }
+    m.isAnswerEditable = value
 }
 // SetIsRequired sets the isRequired property value. Whether the requestor is required to supply an answer or not.
 func (m *AccessPackageQuestion) SetIsRequired(value *bool)() {
-    if m != nil {
-        m.isRequired = value
-    }
+    m.isRequired = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *AccessPackageQuestion) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetSequence sets the sequence property value. Relative position of this question when displaying a list of questions to the requestor.
 func (m *AccessPackageQuestion) SetSequence(value *int32)() {
-    if m != nil {
-        m.sequence = value
-    }
+    m.sequence = value
 }
 // SetText sets the text property value. The text of the question to show to the requestor.
 func (m *AccessPackageQuestion) SetText(value AccessPackageLocalizedContentable)() {
-    if m != nil {
-        m.text = value
-    }
+    m.text = value
 }

@@ -32,11 +32,7 @@ func CreateDeviceManagementApplicabilityRuleOsEditionFromDiscriminatorValue(pars
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DeviceManagementApplicabilityRuleOsEdition) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceManagementApplicabilityRuleOsEdition) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -89,35 +85,19 @@ func (m *DeviceManagementApplicabilityRuleOsEdition) GetFieldDeserializers()(map
 }
 // GetName gets the name property value. Name for object.
 func (m *DeviceManagementApplicabilityRuleOsEdition) GetName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.name
-    }
+    return m.name
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *DeviceManagementApplicabilityRuleOsEdition) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetOsEditionTypes gets the osEditionTypes property value. Applicability rule OS edition type.
 func (m *DeviceManagementApplicabilityRuleOsEdition) GetOsEditionTypes()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.osEditionTypes
-    }
+    return m.osEditionTypes
 }
 // GetRuleType gets the ruleType property value. Supported Applicability rule types for Device Configuration
 func (m *DeviceManagementApplicabilityRuleOsEdition) GetRuleType()(*DeviceManagementApplicabilityRuleType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.ruleType
-    }
+    return m.ruleType
 }
 // Serialize serializes information the current object
 func (m *DeviceManagementApplicabilityRuleOsEdition) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -156,31 +136,21 @@ func (m *DeviceManagementApplicabilityRuleOsEdition) Serialize(writer i878a80d23
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DeviceManagementApplicabilityRuleOsEdition) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetName sets the name property value. Name for object.
 func (m *DeviceManagementApplicabilityRuleOsEdition) SetName(value *string)() {
-    if m != nil {
-        m.name = value
-    }
+    m.name = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *DeviceManagementApplicabilityRuleOsEdition) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetOsEditionTypes sets the osEditionTypes property value. Applicability rule OS edition type.
 func (m *DeviceManagementApplicabilityRuleOsEdition) SetOsEditionTypes(value []string)() {
-    if m != nil {
-        m.osEditionTypes = value
-    }
+    m.osEditionTypes = value
 }
 // SetRuleType sets the ruleType property value. Supported Applicability rule types for Device Configuration
 func (m *DeviceManagementApplicabilityRuleOsEdition) SetRuleType(value *DeviceManagementApplicabilityRuleType)() {
-    if m != nil {
-        m.ruleType = value
-    }
+    m.ruleType = value
 }

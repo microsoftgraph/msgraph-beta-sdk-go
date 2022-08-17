@@ -52,19 +52,11 @@ func (m *ExternalMeetingRegistrant) GetFieldDeserializers()(map[string]func(i878
 }
 // GetTenantId gets the tenantId property value. The tenant ID of this registrant if in Azure Active Directory.
 func (m *ExternalMeetingRegistrant) GetTenantId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.tenantId
-    }
+    return m.tenantId
 }
 // GetUserId gets the userId property value. The user ID of this registrant if in Azure Active Directory.
 func (m *ExternalMeetingRegistrant) GetUserId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userId
-    }
+    return m.userId
 }
 // Serialize serializes information the current object
 func (m *ExternalMeetingRegistrant) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -88,13 +80,9 @@ func (m *ExternalMeetingRegistrant) Serialize(writer i878a80d2330e89d26896388a3f
 }
 // SetTenantId sets the tenantId property value. The tenant ID of this registrant if in Azure Active Directory.
 func (m *ExternalMeetingRegistrant) SetTenantId(value *string)() {
-    if m != nil {
-        m.tenantId = value
-    }
+    m.tenantId = value
 }
 // SetUserId sets the userId property value. The user ID of this registrant if in Azure Active Directory.
 func (m *ExternalMeetingRegistrant) SetUserId(value *string)() {
-    if m != nil {
-        m.userId = value
-    }
+    m.userId = value
 }

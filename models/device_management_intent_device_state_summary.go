@@ -35,27 +35,15 @@ func CreateDeviceManagementIntentDeviceStateSummaryFromDiscriminatorValue(parseN
 }
 // GetConflictCount gets the conflictCount property value. Number of devices in conflict
 func (m *DeviceManagementIntentDeviceStateSummary) GetConflictCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.conflictCount
-    }
+    return m.conflictCount
 }
 // GetErrorCount gets the errorCount property value. Number of error devices
 func (m *DeviceManagementIntentDeviceStateSummary) GetErrorCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.errorCount
-    }
+    return m.errorCount
 }
 // GetFailedCount gets the failedCount property value. Number of failed devices
 func (m *DeviceManagementIntentDeviceStateSummary) GetFailedCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.failedCount
-    }
+    return m.failedCount
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceManagementIntentDeviceStateSummary) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -124,27 +112,15 @@ func (m *DeviceManagementIntentDeviceStateSummary) GetFieldDeserializers()(map[s
 }
 // GetNotApplicableCount gets the notApplicableCount property value. Number of not applicable devices
 func (m *DeviceManagementIntentDeviceStateSummary) GetNotApplicableCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.notApplicableCount
-    }
+    return m.notApplicableCount
 }
 // GetNotApplicablePlatformCount gets the notApplicablePlatformCount property value. Number of not applicable devices due to mismatch platform and policy
 func (m *DeviceManagementIntentDeviceStateSummary) GetNotApplicablePlatformCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.notApplicablePlatformCount
-    }
+    return m.notApplicablePlatformCount
 }
 // GetSuccessCount gets the successCount property value. Number of succeeded devices
 func (m *DeviceManagementIntentDeviceStateSummary) GetSuccessCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.successCount
-    }
+    return m.successCount
 }
 // Serialize serializes information the current object
 func (m *DeviceManagementIntentDeviceStateSummary) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -192,37 +168,25 @@ func (m *DeviceManagementIntentDeviceStateSummary) Serialize(writer i878a80d2330
 }
 // SetConflictCount sets the conflictCount property value. Number of devices in conflict
 func (m *DeviceManagementIntentDeviceStateSummary) SetConflictCount(value *int32)() {
-    if m != nil {
-        m.conflictCount = value
-    }
+    m.conflictCount = value
 }
 // SetErrorCount sets the errorCount property value. Number of error devices
 func (m *DeviceManagementIntentDeviceStateSummary) SetErrorCount(value *int32)() {
-    if m != nil {
-        m.errorCount = value
-    }
+    m.errorCount = value
 }
 // SetFailedCount sets the failedCount property value. Number of failed devices
 func (m *DeviceManagementIntentDeviceStateSummary) SetFailedCount(value *int32)() {
-    if m != nil {
-        m.failedCount = value
-    }
+    m.failedCount = value
 }
 // SetNotApplicableCount sets the notApplicableCount property value. Number of not applicable devices
 func (m *DeviceManagementIntentDeviceStateSummary) SetNotApplicableCount(value *int32)() {
-    if m != nil {
-        m.notApplicableCount = value
-    }
+    m.notApplicableCount = value
 }
 // SetNotApplicablePlatformCount sets the notApplicablePlatformCount property value. Number of not applicable devices due to mismatch platform and policy
 func (m *DeviceManagementIntentDeviceStateSummary) SetNotApplicablePlatformCount(value *int32)() {
-    if m != nil {
-        m.notApplicablePlatformCount = value
-    }
+    m.notApplicablePlatformCount = value
 }
 // SetSuccessCount sets the successCount property value. Number of succeeded devices
 func (m *DeviceManagementIntentDeviceStateSummary) SetSuccessCount(value *int32)() {
-    if m != nil {
-        m.successCount = value
-    }
+    m.successCount = value
 }

@@ -44,11 +44,7 @@ func (m *UserExperienceAnalyticsOverview) GetFieldDeserializers()(map[string]fun
 }
 // GetInsights gets the insights property value. The user experience analytics insights.
 func (m *UserExperienceAnalyticsOverview) GetInsights()([]UserExperienceAnalyticsInsightable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.insights
-    }
+    return m.insights
 }
 // Serialize serializes information the current object
 func (m *UserExperienceAnalyticsOverview) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -70,7 +66,5 @@ func (m *UserExperienceAnalyticsOverview) Serialize(writer i878a80d2330e89d26896
 }
 // SetInsights sets the insights property value. The user experience analytics insights.
 func (m *UserExperienceAnalyticsOverview) SetInsights(value []UserExperienceAnalyticsInsightable)() {
-    if m != nil {
-        m.insights = value
-    }
+    m.insights = value
 }

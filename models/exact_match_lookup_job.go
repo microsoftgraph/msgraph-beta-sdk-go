@@ -56,19 +56,11 @@ func (m *ExactMatchLookupJob) GetFieldDeserializers()(map[string]func(i878a80d23
 }
 // GetMatchingRows gets the matchingRows property value. The matchingRows property
 func (m *ExactMatchLookupJob) GetMatchingRows()([]LookupResultRowable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.matchingRows
-    }
+    return m.matchingRows
 }
 // GetState gets the state property value. The state property
 func (m *ExactMatchLookupJob) GetState()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.state
-    }
+    return m.state
 }
 // Serialize serializes information the current object
 func (m *ExactMatchLookupJob) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -96,13 +88,9 @@ func (m *ExactMatchLookupJob) Serialize(writer i878a80d2330e89d26896388a3f487eef
 }
 // SetMatchingRows sets the matchingRows property value. The matchingRows property
 func (m *ExactMatchLookupJob) SetMatchingRows(value []LookupResultRowable)() {
-    if m != nil {
-        m.matchingRows = value
-    }
+    m.matchingRows = value
 }
 // SetState sets the state property value. The state property
 func (m *ExactMatchLookupJob) SetState(value *string)() {
-    if m != nil {
-        m.state = value
-    }
+    m.state = value
 }

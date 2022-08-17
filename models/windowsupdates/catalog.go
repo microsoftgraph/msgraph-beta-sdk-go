@@ -26,11 +26,7 @@ func CreateCatalogFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f48
 }
 // GetEntries gets the entries property value. Lists the content that you can approve for deployment. Read-only.
 func (m *Catalog) GetEntries()([]CatalogEntryable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.entries
-    }
+    return m.entries
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Catalog) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -71,7 +67,5 @@ func (m *Catalog) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
 }
 // SetEntries sets the entries property value. Lists the content that you can approve for deployment. Read-only.
 func (m *Catalog) SetEntries(value []CatalogEntryable)() {
-    if m != nil {
-        m.entries = value
-    }
+    m.entries = value
 }

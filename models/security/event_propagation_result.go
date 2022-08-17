@@ -34,11 +34,7 @@ func CreateEventPropagationResultFromDiscriminatorValue(parseNode i878a80d2330e8
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *EventPropagationResult) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *EventPropagationResult) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -97,43 +93,23 @@ func (m *EventPropagationResult) GetFieldDeserializers()(map[string]func(i878a80
 }
 // GetLocation gets the location property value. The name of the specific location in the workload associated with the event.
 func (m *EventPropagationResult) GetLocation()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.location
-    }
+    return m.location
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *EventPropagationResult) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetServiceName gets the serviceName property value. The name of the workload associated with the event.
 func (m *EventPropagationResult) GetServiceName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.serviceName
-    }
+    return m.serviceName
 }
 // GetStatus gets the status property value. Indicates the status of the event creation request. The possible values are: none, inProcessing, failed, success.
 func (m *EventPropagationResult) GetStatus()(*EventPropagationStatus) {
-    if m == nil {
-        return nil
-    } else {
-        return m.status
-    }
+    return m.status
 }
 // GetStatusInformation gets the statusInformation property value. Additional information about the status of the event creation request.
 func (m *EventPropagationResult) GetStatusInformation()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.statusInformation
-    }
+    return m.statusInformation
 }
 // Serialize serializes information the current object
 func (m *EventPropagationResult) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -178,37 +154,25 @@ func (m *EventPropagationResult) Serialize(writer i878a80d2330e89d26896388a3f487
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *EventPropagationResult) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetLocation sets the location property value. The name of the specific location in the workload associated with the event.
 func (m *EventPropagationResult) SetLocation(value *string)() {
-    if m != nil {
-        m.location = value
-    }
+    m.location = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *EventPropagationResult) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetServiceName sets the serviceName property value. The name of the workload associated with the event.
 func (m *EventPropagationResult) SetServiceName(value *string)() {
-    if m != nil {
-        m.serviceName = value
-    }
+    m.serviceName = value
 }
 // SetStatus sets the status property value. Indicates the status of the event creation request. The possible values are: none, inProcessing, failed, success.
 func (m *EventPropagationResult) SetStatus(value *EventPropagationStatus)() {
-    if m != nil {
-        m.status = value
-    }
+    m.status = value
 }
 // SetStatusInformation sets the statusInformation property value. Additional information about the status of the event creation request.
 func (m *EventPropagationResult) SetStatusInformation(value *string)() {
-    if m != nil {
-        m.statusInformation = value
-    }
+    m.statusInformation = value
 }

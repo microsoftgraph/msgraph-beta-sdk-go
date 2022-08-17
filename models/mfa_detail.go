@@ -30,27 +30,15 @@ func CreateMfaDetailFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *MfaDetail) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetAuthDetail gets the authDetail property value. Indicates the MFA auth detail for the corresponding Sign-in activity when the MFA Required is 'Yes'.
 func (m *MfaDetail) GetAuthDetail()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.authDetail
-    }
+    return m.authDetail
 }
 // GetAuthMethod gets the authMethod property value. Indicates the MFA Auth methods (SMS, Phone, Authenticator App are some of the value) for the corresponding sign-in activity when the MFA Required field is 'Yes'.
 func (m *MfaDetail) GetAuthMethod()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.authMethod
-    }
+    return m.authMethod
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *MfaDetail) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -89,11 +77,7 @@ func (m *MfaDetail) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *MfaDetail) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // Serialize serializes information the current object
 func (m *MfaDetail) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -125,25 +109,17 @@ func (m *MfaDetail) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *MfaDetail) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetAuthDetail sets the authDetail property value. Indicates the MFA auth detail for the corresponding Sign-in activity when the MFA Required is 'Yes'.
 func (m *MfaDetail) SetAuthDetail(value *string)() {
-    if m != nil {
-        m.authDetail = value
-    }
+    m.authDetail = value
 }
 // SetAuthMethod sets the authMethod property value. Indicates the MFA Auth methods (SMS, Phone, Authenticator App are some of the value) for the corresponding sign-in activity when the MFA Required field is 'Yes'.
 func (m *MfaDetail) SetAuthMethod(value *string)() {
-    if m != nil {
-        m.authMethod = value
-    }
+    m.authMethod = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *MfaDetail) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }

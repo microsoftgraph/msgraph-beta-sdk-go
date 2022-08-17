@@ -31,35 +31,19 @@ func CreateWindowsPrivacyDataAccessControlItemFromDiscriminatorValue(parseNode i
 }
 // GetAccessLevel gets the accessLevel property value. Determine the access level to specific Windows privacy data category.
 func (m *WindowsPrivacyDataAccessControlItem) GetAccessLevel()(*WindowsPrivacyDataAccessLevel) {
-    if m == nil {
-        return nil
-    } else {
-        return m.accessLevel
-    }
+    return m.accessLevel
 }
 // GetAppDisplayName gets the appDisplayName property value. The Package Family Name of a Windows app. When set, the access level applies to the specified application.
 func (m *WindowsPrivacyDataAccessControlItem) GetAppDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.appDisplayName
-    }
+    return m.appDisplayName
 }
 // GetAppPackageFamilyName gets the appPackageFamilyName property value. The Package Family Name of a Windows app. When set, the access level applies to the specified application.
 func (m *WindowsPrivacyDataAccessControlItem) GetAppPackageFamilyName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.appPackageFamilyName
-    }
+    return m.appPackageFamilyName
 }
 // GetDataCategory gets the dataCategory property value. Windows privacy data category specifier for privacy data access.
 func (m *WindowsPrivacyDataAccessControlItem) GetDataCategory()(*WindowsPrivacyDataCategory) {
-    if m == nil {
-        return nil
-    } else {
-        return m.dataCategory
-    }
+    return m.dataCategory
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *WindowsPrivacyDataAccessControlItem) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -142,25 +126,17 @@ func (m *WindowsPrivacyDataAccessControlItem) Serialize(writer i878a80d2330e89d2
 }
 // SetAccessLevel sets the accessLevel property value. Determine the access level to specific Windows privacy data category.
 func (m *WindowsPrivacyDataAccessControlItem) SetAccessLevel(value *WindowsPrivacyDataAccessLevel)() {
-    if m != nil {
-        m.accessLevel = value
-    }
+    m.accessLevel = value
 }
 // SetAppDisplayName sets the appDisplayName property value. The Package Family Name of a Windows app. When set, the access level applies to the specified application.
 func (m *WindowsPrivacyDataAccessControlItem) SetAppDisplayName(value *string)() {
-    if m != nil {
-        m.appDisplayName = value
-    }
+    m.appDisplayName = value
 }
 // SetAppPackageFamilyName sets the appPackageFamilyName property value. The Package Family Name of a Windows app. When set, the access level applies to the specified application.
 func (m *WindowsPrivacyDataAccessControlItem) SetAppPackageFamilyName(value *string)() {
-    if m != nil {
-        m.appPackageFamilyName = value
-    }
+    m.appPackageFamilyName = value
 }
 // SetDataCategory sets the dataCategory property value. Windows privacy data category specifier for privacy data access.
 func (m *WindowsPrivacyDataAccessControlItem) SetDataCategory(value *WindowsPrivacyDataCategory)() {
-    if m != nil {
-        m.dataCategory = value
-    }
+    m.dataCategory = value
 }

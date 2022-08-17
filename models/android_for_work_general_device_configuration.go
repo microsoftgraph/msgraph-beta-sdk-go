@@ -532,339 +532,171 @@ func (m *AndroidForWorkGeneralDeviceConfiguration) GetFieldDeserializers()(map[s
 }
 // GetPasswordBlockFaceUnlock gets the passwordBlockFaceUnlock property value. Indicates whether or not to block face unlock.
 func (m *AndroidForWorkGeneralDeviceConfiguration) GetPasswordBlockFaceUnlock()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.passwordBlockFaceUnlock
-    }
+    return m.passwordBlockFaceUnlock
 }
 // GetPasswordBlockFingerprintUnlock gets the passwordBlockFingerprintUnlock property value. Indicates whether or not to block fingerprint unlock.
 func (m *AndroidForWorkGeneralDeviceConfiguration) GetPasswordBlockFingerprintUnlock()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.passwordBlockFingerprintUnlock
-    }
+    return m.passwordBlockFingerprintUnlock
 }
 // GetPasswordBlockIrisUnlock gets the passwordBlockIrisUnlock property value. Indicates whether or not to block iris unlock.
 func (m *AndroidForWorkGeneralDeviceConfiguration) GetPasswordBlockIrisUnlock()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.passwordBlockIrisUnlock
-    }
+    return m.passwordBlockIrisUnlock
 }
 // GetPasswordBlockTrustAgents gets the passwordBlockTrustAgents property value. Indicates whether or not to block Smart Lock and other trust agents.
 func (m *AndroidForWorkGeneralDeviceConfiguration) GetPasswordBlockTrustAgents()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.passwordBlockTrustAgents
-    }
+    return m.passwordBlockTrustAgents
 }
 // GetPasswordExpirationDays gets the passwordExpirationDays property value. Number of days before the password expires. Valid values 1 to 365
 func (m *AndroidForWorkGeneralDeviceConfiguration) GetPasswordExpirationDays()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.passwordExpirationDays
-    }
+    return m.passwordExpirationDays
 }
 // GetPasswordMinimumLength gets the passwordMinimumLength property value. Minimum length of passwords. Valid values 4 to 16
 func (m *AndroidForWorkGeneralDeviceConfiguration) GetPasswordMinimumLength()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.passwordMinimumLength
-    }
+    return m.passwordMinimumLength
 }
 // GetPasswordMinutesOfInactivityBeforeScreenTimeout gets the passwordMinutesOfInactivityBeforeScreenTimeout property value. Minutes of inactivity before the screen times out.
 func (m *AndroidForWorkGeneralDeviceConfiguration) GetPasswordMinutesOfInactivityBeforeScreenTimeout()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.passwordMinutesOfInactivityBeforeScreenTimeout
-    }
+    return m.passwordMinutesOfInactivityBeforeScreenTimeout
 }
 // GetPasswordPreviousPasswordBlockCount gets the passwordPreviousPasswordBlockCount property value. Number of previous passwords to block. Valid values 0 to 24
 func (m *AndroidForWorkGeneralDeviceConfiguration) GetPasswordPreviousPasswordBlockCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.passwordPreviousPasswordBlockCount
-    }
+    return m.passwordPreviousPasswordBlockCount
 }
 // GetPasswordRequiredType gets the passwordRequiredType property value. Android For Work required password type.
 func (m *AndroidForWorkGeneralDeviceConfiguration) GetPasswordRequiredType()(*AndroidForWorkRequiredPasswordType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.passwordRequiredType
-    }
+    return m.passwordRequiredType
 }
 // GetPasswordSignInFailureCountBeforeFactoryReset gets the passwordSignInFailureCountBeforeFactoryReset property value. Number of sign in failures allowed before factory reset. Valid values 1 to 16
 func (m *AndroidForWorkGeneralDeviceConfiguration) GetPasswordSignInFailureCountBeforeFactoryReset()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.passwordSignInFailureCountBeforeFactoryReset
-    }
+    return m.passwordSignInFailureCountBeforeFactoryReset
 }
 // GetSecurityRequireVerifyApps gets the securityRequireVerifyApps property value. Require the Android Verify apps feature is turned on.
 func (m *AndroidForWorkGeneralDeviceConfiguration) GetSecurityRequireVerifyApps()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.securityRequireVerifyApps
-    }
+    return m.securityRequireVerifyApps
 }
 // GetVpnAlwaysOnPackageIdentifier gets the vpnAlwaysOnPackageIdentifier property value. Enable lockdown mode for always-on VPN.
 func (m *AndroidForWorkGeneralDeviceConfiguration) GetVpnAlwaysOnPackageIdentifier()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.vpnAlwaysOnPackageIdentifier
-    }
+    return m.vpnAlwaysOnPackageIdentifier
 }
 // GetVpnEnableAlwaysOnLockdownMode gets the vpnEnableAlwaysOnLockdownMode property value. Enable lockdown mode for always-on VPN.
 func (m *AndroidForWorkGeneralDeviceConfiguration) GetVpnEnableAlwaysOnLockdownMode()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.vpnEnableAlwaysOnLockdownMode
-    }
+    return m.vpnEnableAlwaysOnLockdownMode
 }
 // GetWorkProfileAllowWidgets gets the workProfileAllowWidgets property value. Allow widgets from work profile apps.
 func (m *AndroidForWorkGeneralDeviceConfiguration) GetWorkProfileAllowWidgets()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.workProfileAllowWidgets
-    }
+    return m.workProfileAllowWidgets
 }
 // GetWorkProfileBlockAddingAccounts gets the workProfileBlockAddingAccounts property value. Block users from adding/removing accounts in work profile.
 func (m *AndroidForWorkGeneralDeviceConfiguration) GetWorkProfileBlockAddingAccounts()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.workProfileBlockAddingAccounts
-    }
+    return m.workProfileBlockAddingAccounts
 }
 // GetWorkProfileBlockCamera gets the workProfileBlockCamera property value. Block work profile camera.
 func (m *AndroidForWorkGeneralDeviceConfiguration) GetWorkProfileBlockCamera()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.workProfileBlockCamera
-    }
+    return m.workProfileBlockCamera
 }
 // GetWorkProfileBlockCrossProfileCallerId gets the workProfileBlockCrossProfileCallerId property value. Block display work profile caller ID in personal profile.
 func (m *AndroidForWorkGeneralDeviceConfiguration) GetWorkProfileBlockCrossProfileCallerId()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.workProfileBlockCrossProfileCallerId
-    }
+    return m.workProfileBlockCrossProfileCallerId
 }
 // GetWorkProfileBlockCrossProfileContactsSearch gets the workProfileBlockCrossProfileContactsSearch property value. Block work profile contacts availability in personal profile.
 func (m *AndroidForWorkGeneralDeviceConfiguration) GetWorkProfileBlockCrossProfileContactsSearch()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.workProfileBlockCrossProfileContactsSearch
-    }
+    return m.workProfileBlockCrossProfileContactsSearch
 }
 // GetWorkProfileBlockCrossProfileCopyPaste gets the workProfileBlockCrossProfileCopyPaste property value. Boolean that indicates if the setting disallow cross profile copy/paste is enabled.
 func (m *AndroidForWorkGeneralDeviceConfiguration) GetWorkProfileBlockCrossProfileCopyPaste()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.workProfileBlockCrossProfileCopyPaste
-    }
+    return m.workProfileBlockCrossProfileCopyPaste
 }
 // GetWorkProfileBlockNotificationsWhileDeviceLocked gets the workProfileBlockNotificationsWhileDeviceLocked property value. Indicates whether or not to block notifications while device locked.
 func (m *AndroidForWorkGeneralDeviceConfiguration) GetWorkProfileBlockNotificationsWhileDeviceLocked()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.workProfileBlockNotificationsWhileDeviceLocked
-    }
+    return m.workProfileBlockNotificationsWhileDeviceLocked
 }
 // GetWorkProfileBlockPersonalAppInstallsFromUnknownSources gets the workProfileBlockPersonalAppInstallsFromUnknownSources property value. Prevent app installations from unknown sources in the personal profile.
 func (m *AndroidForWorkGeneralDeviceConfiguration) GetWorkProfileBlockPersonalAppInstallsFromUnknownSources()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.workProfileBlockPersonalAppInstallsFromUnknownSources
-    }
+    return m.workProfileBlockPersonalAppInstallsFromUnknownSources
 }
 // GetWorkProfileBlockScreenCapture gets the workProfileBlockScreenCapture property value. Block screen capture in work profile.
 func (m *AndroidForWorkGeneralDeviceConfiguration) GetWorkProfileBlockScreenCapture()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.workProfileBlockScreenCapture
-    }
+    return m.workProfileBlockScreenCapture
 }
 // GetWorkProfileBluetoothEnableContactSharing gets the workProfileBluetoothEnableContactSharing property value. Allow bluetooth devices to access enterprise contacts.
 func (m *AndroidForWorkGeneralDeviceConfiguration) GetWorkProfileBluetoothEnableContactSharing()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.workProfileBluetoothEnableContactSharing
-    }
+    return m.workProfileBluetoothEnableContactSharing
 }
 // GetWorkProfileDataSharingType gets the workProfileDataSharingType property value. Android For Work cross profile data sharing type.
 func (m *AndroidForWorkGeneralDeviceConfiguration) GetWorkProfileDataSharingType()(*AndroidForWorkCrossProfileDataSharingType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.workProfileDataSharingType
-    }
+    return m.workProfileDataSharingType
 }
 // GetWorkProfileDefaultAppPermissionPolicy gets the workProfileDefaultAppPermissionPolicy property value. Android For Work default app permission policy type.
 func (m *AndroidForWorkGeneralDeviceConfiguration) GetWorkProfileDefaultAppPermissionPolicy()(*AndroidForWorkDefaultAppPermissionPolicyType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.workProfileDefaultAppPermissionPolicy
-    }
+    return m.workProfileDefaultAppPermissionPolicy
 }
 // GetWorkProfilePasswordBlockFaceUnlock gets the workProfilePasswordBlockFaceUnlock property value. Indicates whether or not to block face unlock for work profile.
 func (m *AndroidForWorkGeneralDeviceConfiguration) GetWorkProfilePasswordBlockFaceUnlock()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.workProfilePasswordBlockFaceUnlock
-    }
+    return m.workProfilePasswordBlockFaceUnlock
 }
 // GetWorkProfilePasswordBlockFingerprintUnlock gets the workProfilePasswordBlockFingerprintUnlock property value. Indicates whether or not to block fingerprint unlock for work profile.
 func (m *AndroidForWorkGeneralDeviceConfiguration) GetWorkProfilePasswordBlockFingerprintUnlock()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.workProfilePasswordBlockFingerprintUnlock
-    }
+    return m.workProfilePasswordBlockFingerprintUnlock
 }
 // GetWorkProfilePasswordBlockIrisUnlock gets the workProfilePasswordBlockIrisUnlock property value. Indicates whether or not to block iris unlock for work profile.
 func (m *AndroidForWorkGeneralDeviceConfiguration) GetWorkProfilePasswordBlockIrisUnlock()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.workProfilePasswordBlockIrisUnlock
-    }
+    return m.workProfilePasswordBlockIrisUnlock
 }
 // GetWorkProfilePasswordBlockTrustAgents gets the workProfilePasswordBlockTrustAgents property value. Indicates whether or not to block Smart Lock and other trust agents for work profile.
 func (m *AndroidForWorkGeneralDeviceConfiguration) GetWorkProfilePasswordBlockTrustAgents()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.workProfilePasswordBlockTrustAgents
-    }
+    return m.workProfilePasswordBlockTrustAgents
 }
 // GetWorkProfilePasswordExpirationDays gets the workProfilePasswordExpirationDays property value. Number of days before the work profile password expires. Valid values 1 to 365
 func (m *AndroidForWorkGeneralDeviceConfiguration) GetWorkProfilePasswordExpirationDays()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.workProfilePasswordExpirationDays
-    }
+    return m.workProfilePasswordExpirationDays
 }
 // GetWorkProfilePasswordMinimumLength gets the workProfilePasswordMinimumLength property value. Minimum length of work profile password. Valid values 4 to 16
 func (m *AndroidForWorkGeneralDeviceConfiguration) GetWorkProfilePasswordMinimumLength()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.workProfilePasswordMinimumLength
-    }
+    return m.workProfilePasswordMinimumLength
 }
 // GetWorkProfilePasswordMinLetterCharacters gets the workProfilePasswordMinLetterCharacters property value. Minimum # of letter characters required in work profile password. Valid values 1 to 10
 func (m *AndroidForWorkGeneralDeviceConfiguration) GetWorkProfilePasswordMinLetterCharacters()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.workProfilePasswordMinLetterCharacters
-    }
+    return m.workProfilePasswordMinLetterCharacters
 }
 // GetWorkProfilePasswordMinLowerCaseCharacters gets the workProfilePasswordMinLowerCaseCharacters property value. Minimum # of lower-case characters required in work profile password. Valid values 1 to 10
 func (m *AndroidForWorkGeneralDeviceConfiguration) GetWorkProfilePasswordMinLowerCaseCharacters()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.workProfilePasswordMinLowerCaseCharacters
-    }
+    return m.workProfilePasswordMinLowerCaseCharacters
 }
 // GetWorkProfilePasswordMinNonLetterCharacters gets the workProfilePasswordMinNonLetterCharacters property value. Minimum # of non-letter characters required in work profile password. Valid values 1 to 10
 func (m *AndroidForWorkGeneralDeviceConfiguration) GetWorkProfilePasswordMinNonLetterCharacters()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.workProfilePasswordMinNonLetterCharacters
-    }
+    return m.workProfilePasswordMinNonLetterCharacters
 }
 // GetWorkProfilePasswordMinNumericCharacters gets the workProfilePasswordMinNumericCharacters property value. Minimum # of numeric characters required in work profile password. Valid values 1 to 10
 func (m *AndroidForWorkGeneralDeviceConfiguration) GetWorkProfilePasswordMinNumericCharacters()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.workProfilePasswordMinNumericCharacters
-    }
+    return m.workProfilePasswordMinNumericCharacters
 }
 // GetWorkProfilePasswordMinSymbolCharacters gets the workProfilePasswordMinSymbolCharacters property value. Minimum # of symbols required in work profile password. Valid values 1 to 10
 func (m *AndroidForWorkGeneralDeviceConfiguration) GetWorkProfilePasswordMinSymbolCharacters()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.workProfilePasswordMinSymbolCharacters
-    }
+    return m.workProfilePasswordMinSymbolCharacters
 }
 // GetWorkProfilePasswordMinUpperCaseCharacters gets the workProfilePasswordMinUpperCaseCharacters property value. Minimum # of upper-case characters required in work profile password. Valid values 1 to 10
 func (m *AndroidForWorkGeneralDeviceConfiguration) GetWorkProfilePasswordMinUpperCaseCharacters()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.workProfilePasswordMinUpperCaseCharacters
-    }
+    return m.workProfilePasswordMinUpperCaseCharacters
 }
 // GetWorkProfilePasswordMinutesOfInactivityBeforeScreenTimeout gets the workProfilePasswordMinutesOfInactivityBeforeScreenTimeout property value. Minutes of inactivity before the screen times out.
 func (m *AndroidForWorkGeneralDeviceConfiguration) GetWorkProfilePasswordMinutesOfInactivityBeforeScreenTimeout()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.workProfilePasswordMinutesOfInactivityBeforeScreenTimeout
-    }
+    return m.workProfilePasswordMinutesOfInactivityBeforeScreenTimeout
 }
 // GetWorkProfilePasswordPreviousPasswordBlockCount gets the workProfilePasswordPreviousPasswordBlockCount property value. Number of previous work profile passwords to block. Valid values 0 to 24
 func (m *AndroidForWorkGeneralDeviceConfiguration) GetWorkProfilePasswordPreviousPasswordBlockCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.workProfilePasswordPreviousPasswordBlockCount
-    }
+    return m.workProfilePasswordPreviousPasswordBlockCount
 }
 // GetWorkProfilePasswordRequiredType gets the workProfilePasswordRequiredType property value. Android For Work required password type.
 func (m *AndroidForWorkGeneralDeviceConfiguration) GetWorkProfilePasswordRequiredType()(*AndroidForWorkRequiredPasswordType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.workProfilePasswordRequiredType
-    }
+    return m.workProfilePasswordRequiredType
 }
 // GetWorkProfilePasswordSignInFailureCountBeforeFactoryReset gets the workProfilePasswordSignInFailureCountBeforeFactoryReset property value. Number of sign in failures allowed before work profile is removed and all corporate data deleted. Valid values 1 to 16
 func (m *AndroidForWorkGeneralDeviceConfiguration) GetWorkProfilePasswordSignInFailureCountBeforeFactoryReset()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.workProfilePasswordSignInFailureCountBeforeFactoryReset
-    }
+    return m.workProfilePasswordSignInFailureCountBeforeFactoryReset
 }
 // GetWorkProfileRequirePassword gets the workProfileRequirePassword property value. Password is required or not for work profile
 func (m *AndroidForWorkGeneralDeviceConfiguration) GetWorkProfileRequirePassword()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.workProfileRequirePassword
-    }
+    return m.workProfileRequirePassword
 }
 // Serialize serializes information the current object
 func (m *AndroidForWorkGeneralDeviceConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -1132,253 +964,169 @@ func (m *AndroidForWorkGeneralDeviceConfiguration) Serialize(writer i878a80d2330
 }
 // SetPasswordBlockFaceUnlock sets the passwordBlockFaceUnlock property value. Indicates whether or not to block face unlock.
 func (m *AndroidForWorkGeneralDeviceConfiguration) SetPasswordBlockFaceUnlock(value *bool)() {
-    if m != nil {
-        m.passwordBlockFaceUnlock = value
-    }
+    m.passwordBlockFaceUnlock = value
 }
 // SetPasswordBlockFingerprintUnlock sets the passwordBlockFingerprintUnlock property value. Indicates whether or not to block fingerprint unlock.
 func (m *AndroidForWorkGeneralDeviceConfiguration) SetPasswordBlockFingerprintUnlock(value *bool)() {
-    if m != nil {
-        m.passwordBlockFingerprintUnlock = value
-    }
+    m.passwordBlockFingerprintUnlock = value
 }
 // SetPasswordBlockIrisUnlock sets the passwordBlockIrisUnlock property value. Indicates whether or not to block iris unlock.
 func (m *AndroidForWorkGeneralDeviceConfiguration) SetPasswordBlockIrisUnlock(value *bool)() {
-    if m != nil {
-        m.passwordBlockIrisUnlock = value
-    }
+    m.passwordBlockIrisUnlock = value
 }
 // SetPasswordBlockTrustAgents sets the passwordBlockTrustAgents property value. Indicates whether or not to block Smart Lock and other trust agents.
 func (m *AndroidForWorkGeneralDeviceConfiguration) SetPasswordBlockTrustAgents(value *bool)() {
-    if m != nil {
-        m.passwordBlockTrustAgents = value
-    }
+    m.passwordBlockTrustAgents = value
 }
 // SetPasswordExpirationDays sets the passwordExpirationDays property value. Number of days before the password expires. Valid values 1 to 365
 func (m *AndroidForWorkGeneralDeviceConfiguration) SetPasswordExpirationDays(value *int32)() {
-    if m != nil {
-        m.passwordExpirationDays = value
-    }
+    m.passwordExpirationDays = value
 }
 // SetPasswordMinimumLength sets the passwordMinimumLength property value. Minimum length of passwords. Valid values 4 to 16
 func (m *AndroidForWorkGeneralDeviceConfiguration) SetPasswordMinimumLength(value *int32)() {
-    if m != nil {
-        m.passwordMinimumLength = value
-    }
+    m.passwordMinimumLength = value
 }
 // SetPasswordMinutesOfInactivityBeforeScreenTimeout sets the passwordMinutesOfInactivityBeforeScreenTimeout property value. Minutes of inactivity before the screen times out.
 func (m *AndroidForWorkGeneralDeviceConfiguration) SetPasswordMinutesOfInactivityBeforeScreenTimeout(value *int32)() {
-    if m != nil {
-        m.passwordMinutesOfInactivityBeforeScreenTimeout = value
-    }
+    m.passwordMinutesOfInactivityBeforeScreenTimeout = value
 }
 // SetPasswordPreviousPasswordBlockCount sets the passwordPreviousPasswordBlockCount property value. Number of previous passwords to block. Valid values 0 to 24
 func (m *AndroidForWorkGeneralDeviceConfiguration) SetPasswordPreviousPasswordBlockCount(value *int32)() {
-    if m != nil {
-        m.passwordPreviousPasswordBlockCount = value
-    }
+    m.passwordPreviousPasswordBlockCount = value
 }
 // SetPasswordRequiredType sets the passwordRequiredType property value. Android For Work required password type.
 func (m *AndroidForWorkGeneralDeviceConfiguration) SetPasswordRequiredType(value *AndroidForWorkRequiredPasswordType)() {
-    if m != nil {
-        m.passwordRequiredType = value
-    }
+    m.passwordRequiredType = value
 }
 // SetPasswordSignInFailureCountBeforeFactoryReset sets the passwordSignInFailureCountBeforeFactoryReset property value. Number of sign in failures allowed before factory reset. Valid values 1 to 16
 func (m *AndroidForWorkGeneralDeviceConfiguration) SetPasswordSignInFailureCountBeforeFactoryReset(value *int32)() {
-    if m != nil {
-        m.passwordSignInFailureCountBeforeFactoryReset = value
-    }
+    m.passwordSignInFailureCountBeforeFactoryReset = value
 }
 // SetSecurityRequireVerifyApps sets the securityRequireVerifyApps property value. Require the Android Verify apps feature is turned on.
 func (m *AndroidForWorkGeneralDeviceConfiguration) SetSecurityRequireVerifyApps(value *bool)() {
-    if m != nil {
-        m.securityRequireVerifyApps = value
-    }
+    m.securityRequireVerifyApps = value
 }
 // SetVpnAlwaysOnPackageIdentifier sets the vpnAlwaysOnPackageIdentifier property value. Enable lockdown mode for always-on VPN.
 func (m *AndroidForWorkGeneralDeviceConfiguration) SetVpnAlwaysOnPackageIdentifier(value *string)() {
-    if m != nil {
-        m.vpnAlwaysOnPackageIdentifier = value
-    }
+    m.vpnAlwaysOnPackageIdentifier = value
 }
 // SetVpnEnableAlwaysOnLockdownMode sets the vpnEnableAlwaysOnLockdownMode property value. Enable lockdown mode for always-on VPN.
 func (m *AndroidForWorkGeneralDeviceConfiguration) SetVpnEnableAlwaysOnLockdownMode(value *bool)() {
-    if m != nil {
-        m.vpnEnableAlwaysOnLockdownMode = value
-    }
+    m.vpnEnableAlwaysOnLockdownMode = value
 }
 // SetWorkProfileAllowWidgets sets the workProfileAllowWidgets property value. Allow widgets from work profile apps.
 func (m *AndroidForWorkGeneralDeviceConfiguration) SetWorkProfileAllowWidgets(value *bool)() {
-    if m != nil {
-        m.workProfileAllowWidgets = value
-    }
+    m.workProfileAllowWidgets = value
 }
 // SetWorkProfileBlockAddingAccounts sets the workProfileBlockAddingAccounts property value. Block users from adding/removing accounts in work profile.
 func (m *AndroidForWorkGeneralDeviceConfiguration) SetWorkProfileBlockAddingAccounts(value *bool)() {
-    if m != nil {
-        m.workProfileBlockAddingAccounts = value
-    }
+    m.workProfileBlockAddingAccounts = value
 }
 // SetWorkProfileBlockCamera sets the workProfileBlockCamera property value. Block work profile camera.
 func (m *AndroidForWorkGeneralDeviceConfiguration) SetWorkProfileBlockCamera(value *bool)() {
-    if m != nil {
-        m.workProfileBlockCamera = value
-    }
+    m.workProfileBlockCamera = value
 }
 // SetWorkProfileBlockCrossProfileCallerId sets the workProfileBlockCrossProfileCallerId property value. Block display work profile caller ID in personal profile.
 func (m *AndroidForWorkGeneralDeviceConfiguration) SetWorkProfileBlockCrossProfileCallerId(value *bool)() {
-    if m != nil {
-        m.workProfileBlockCrossProfileCallerId = value
-    }
+    m.workProfileBlockCrossProfileCallerId = value
 }
 // SetWorkProfileBlockCrossProfileContactsSearch sets the workProfileBlockCrossProfileContactsSearch property value. Block work profile contacts availability in personal profile.
 func (m *AndroidForWorkGeneralDeviceConfiguration) SetWorkProfileBlockCrossProfileContactsSearch(value *bool)() {
-    if m != nil {
-        m.workProfileBlockCrossProfileContactsSearch = value
-    }
+    m.workProfileBlockCrossProfileContactsSearch = value
 }
 // SetWorkProfileBlockCrossProfileCopyPaste sets the workProfileBlockCrossProfileCopyPaste property value. Boolean that indicates if the setting disallow cross profile copy/paste is enabled.
 func (m *AndroidForWorkGeneralDeviceConfiguration) SetWorkProfileBlockCrossProfileCopyPaste(value *bool)() {
-    if m != nil {
-        m.workProfileBlockCrossProfileCopyPaste = value
-    }
+    m.workProfileBlockCrossProfileCopyPaste = value
 }
 // SetWorkProfileBlockNotificationsWhileDeviceLocked sets the workProfileBlockNotificationsWhileDeviceLocked property value. Indicates whether or not to block notifications while device locked.
 func (m *AndroidForWorkGeneralDeviceConfiguration) SetWorkProfileBlockNotificationsWhileDeviceLocked(value *bool)() {
-    if m != nil {
-        m.workProfileBlockNotificationsWhileDeviceLocked = value
-    }
+    m.workProfileBlockNotificationsWhileDeviceLocked = value
 }
 // SetWorkProfileBlockPersonalAppInstallsFromUnknownSources sets the workProfileBlockPersonalAppInstallsFromUnknownSources property value. Prevent app installations from unknown sources in the personal profile.
 func (m *AndroidForWorkGeneralDeviceConfiguration) SetWorkProfileBlockPersonalAppInstallsFromUnknownSources(value *bool)() {
-    if m != nil {
-        m.workProfileBlockPersonalAppInstallsFromUnknownSources = value
-    }
+    m.workProfileBlockPersonalAppInstallsFromUnknownSources = value
 }
 // SetWorkProfileBlockScreenCapture sets the workProfileBlockScreenCapture property value. Block screen capture in work profile.
 func (m *AndroidForWorkGeneralDeviceConfiguration) SetWorkProfileBlockScreenCapture(value *bool)() {
-    if m != nil {
-        m.workProfileBlockScreenCapture = value
-    }
+    m.workProfileBlockScreenCapture = value
 }
 // SetWorkProfileBluetoothEnableContactSharing sets the workProfileBluetoothEnableContactSharing property value. Allow bluetooth devices to access enterprise contacts.
 func (m *AndroidForWorkGeneralDeviceConfiguration) SetWorkProfileBluetoothEnableContactSharing(value *bool)() {
-    if m != nil {
-        m.workProfileBluetoothEnableContactSharing = value
-    }
+    m.workProfileBluetoothEnableContactSharing = value
 }
 // SetWorkProfileDataSharingType sets the workProfileDataSharingType property value. Android For Work cross profile data sharing type.
 func (m *AndroidForWorkGeneralDeviceConfiguration) SetWorkProfileDataSharingType(value *AndroidForWorkCrossProfileDataSharingType)() {
-    if m != nil {
-        m.workProfileDataSharingType = value
-    }
+    m.workProfileDataSharingType = value
 }
 // SetWorkProfileDefaultAppPermissionPolicy sets the workProfileDefaultAppPermissionPolicy property value. Android For Work default app permission policy type.
 func (m *AndroidForWorkGeneralDeviceConfiguration) SetWorkProfileDefaultAppPermissionPolicy(value *AndroidForWorkDefaultAppPermissionPolicyType)() {
-    if m != nil {
-        m.workProfileDefaultAppPermissionPolicy = value
-    }
+    m.workProfileDefaultAppPermissionPolicy = value
 }
 // SetWorkProfilePasswordBlockFaceUnlock sets the workProfilePasswordBlockFaceUnlock property value. Indicates whether or not to block face unlock for work profile.
 func (m *AndroidForWorkGeneralDeviceConfiguration) SetWorkProfilePasswordBlockFaceUnlock(value *bool)() {
-    if m != nil {
-        m.workProfilePasswordBlockFaceUnlock = value
-    }
+    m.workProfilePasswordBlockFaceUnlock = value
 }
 // SetWorkProfilePasswordBlockFingerprintUnlock sets the workProfilePasswordBlockFingerprintUnlock property value. Indicates whether or not to block fingerprint unlock for work profile.
 func (m *AndroidForWorkGeneralDeviceConfiguration) SetWorkProfilePasswordBlockFingerprintUnlock(value *bool)() {
-    if m != nil {
-        m.workProfilePasswordBlockFingerprintUnlock = value
-    }
+    m.workProfilePasswordBlockFingerprintUnlock = value
 }
 // SetWorkProfilePasswordBlockIrisUnlock sets the workProfilePasswordBlockIrisUnlock property value. Indicates whether or not to block iris unlock for work profile.
 func (m *AndroidForWorkGeneralDeviceConfiguration) SetWorkProfilePasswordBlockIrisUnlock(value *bool)() {
-    if m != nil {
-        m.workProfilePasswordBlockIrisUnlock = value
-    }
+    m.workProfilePasswordBlockIrisUnlock = value
 }
 // SetWorkProfilePasswordBlockTrustAgents sets the workProfilePasswordBlockTrustAgents property value. Indicates whether or not to block Smart Lock and other trust agents for work profile.
 func (m *AndroidForWorkGeneralDeviceConfiguration) SetWorkProfilePasswordBlockTrustAgents(value *bool)() {
-    if m != nil {
-        m.workProfilePasswordBlockTrustAgents = value
-    }
+    m.workProfilePasswordBlockTrustAgents = value
 }
 // SetWorkProfilePasswordExpirationDays sets the workProfilePasswordExpirationDays property value. Number of days before the work profile password expires. Valid values 1 to 365
 func (m *AndroidForWorkGeneralDeviceConfiguration) SetWorkProfilePasswordExpirationDays(value *int32)() {
-    if m != nil {
-        m.workProfilePasswordExpirationDays = value
-    }
+    m.workProfilePasswordExpirationDays = value
 }
 // SetWorkProfilePasswordMinimumLength sets the workProfilePasswordMinimumLength property value. Minimum length of work profile password. Valid values 4 to 16
 func (m *AndroidForWorkGeneralDeviceConfiguration) SetWorkProfilePasswordMinimumLength(value *int32)() {
-    if m != nil {
-        m.workProfilePasswordMinimumLength = value
-    }
+    m.workProfilePasswordMinimumLength = value
 }
 // SetWorkProfilePasswordMinLetterCharacters sets the workProfilePasswordMinLetterCharacters property value. Minimum # of letter characters required in work profile password. Valid values 1 to 10
 func (m *AndroidForWorkGeneralDeviceConfiguration) SetWorkProfilePasswordMinLetterCharacters(value *int32)() {
-    if m != nil {
-        m.workProfilePasswordMinLetterCharacters = value
-    }
+    m.workProfilePasswordMinLetterCharacters = value
 }
 // SetWorkProfilePasswordMinLowerCaseCharacters sets the workProfilePasswordMinLowerCaseCharacters property value. Minimum # of lower-case characters required in work profile password. Valid values 1 to 10
 func (m *AndroidForWorkGeneralDeviceConfiguration) SetWorkProfilePasswordMinLowerCaseCharacters(value *int32)() {
-    if m != nil {
-        m.workProfilePasswordMinLowerCaseCharacters = value
-    }
+    m.workProfilePasswordMinLowerCaseCharacters = value
 }
 // SetWorkProfilePasswordMinNonLetterCharacters sets the workProfilePasswordMinNonLetterCharacters property value. Minimum # of non-letter characters required in work profile password. Valid values 1 to 10
 func (m *AndroidForWorkGeneralDeviceConfiguration) SetWorkProfilePasswordMinNonLetterCharacters(value *int32)() {
-    if m != nil {
-        m.workProfilePasswordMinNonLetterCharacters = value
-    }
+    m.workProfilePasswordMinNonLetterCharacters = value
 }
 // SetWorkProfilePasswordMinNumericCharacters sets the workProfilePasswordMinNumericCharacters property value. Minimum # of numeric characters required in work profile password. Valid values 1 to 10
 func (m *AndroidForWorkGeneralDeviceConfiguration) SetWorkProfilePasswordMinNumericCharacters(value *int32)() {
-    if m != nil {
-        m.workProfilePasswordMinNumericCharacters = value
-    }
+    m.workProfilePasswordMinNumericCharacters = value
 }
 // SetWorkProfilePasswordMinSymbolCharacters sets the workProfilePasswordMinSymbolCharacters property value. Minimum # of symbols required in work profile password. Valid values 1 to 10
 func (m *AndroidForWorkGeneralDeviceConfiguration) SetWorkProfilePasswordMinSymbolCharacters(value *int32)() {
-    if m != nil {
-        m.workProfilePasswordMinSymbolCharacters = value
-    }
+    m.workProfilePasswordMinSymbolCharacters = value
 }
 // SetWorkProfilePasswordMinUpperCaseCharacters sets the workProfilePasswordMinUpperCaseCharacters property value. Minimum # of upper-case characters required in work profile password. Valid values 1 to 10
 func (m *AndroidForWorkGeneralDeviceConfiguration) SetWorkProfilePasswordMinUpperCaseCharacters(value *int32)() {
-    if m != nil {
-        m.workProfilePasswordMinUpperCaseCharacters = value
-    }
+    m.workProfilePasswordMinUpperCaseCharacters = value
 }
 // SetWorkProfilePasswordMinutesOfInactivityBeforeScreenTimeout sets the workProfilePasswordMinutesOfInactivityBeforeScreenTimeout property value. Minutes of inactivity before the screen times out.
 func (m *AndroidForWorkGeneralDeviceConfiguration) SetWorkProfilePasswordMinutesOfInactivityBeforeScreenTimeout(value *int32)() {
-    if m != nil {
-        m.workProfilePasswordMinutesOfInactivityBeforeScreenTimeout = value
-    }
+    m.workProfilePasswordMinutesOfInactivityBeforeScreenTimeout = value
 }
 // SetWorkProfilePasswordPreviousPasswordBlockCount sets the workProfilePasswordPreviousPasswordBlockCount property value. Number of previous work profile passwords to block. Valid values 0 to 24
 func (m *AndroidForWorkGeneralDeviceConfiguration) SetWorkProfilePasswordPreviousPasswordBlockCount(value *int32)() {
-    if m != nil {
-        m.workProfilePasswordPreviousPasswordBlockCount = value
-    }
+    m.workProfilePasswordPreviousPasswordBlockCount = value
 }
 // SetWorkProfilePasswordRequiredType sets the workProfilePasswordRequiredType property value. Android For Work required password type.
 func (m *AndroidForWorkGeneralDeviceConfiguration) SetWorkProfilePasswordRequiredType(value *AndroidForWorkRequiredPasswordType)() {
-    if m != nil {
-        m.workProfilePasswordRequiredType = value
-    }
+    m.workProfilePasswordRequiredType = value
 }
 // SetWorkProfilePasswordSignInFailureCountBeforeFactoryReset sets the workProfilePasswordSignInFailureCountBeforeFactoryReset property value. Number of sign in failures allowed before work profile is removed and all corporate data deleted. Valid values 1 to 16
 func (m *AndroidForWorkGeneralDeviceConfiguration) SetWorkProfilePasswordSignInFailureCountBeforeFactoryReset(value *int32)() {
-    if m != nil {
-        m.workProfilePasswordSignInFailureCountBeforeFactoryReset = value
-    }
+    m.workProfilePasswordSignInFailureCountBeforeFactoryReset = value
 }
 // SetWorkProfileRequirePassword sets the workProfileRequirePassword property value. Password is required or not for work profile
 func (m *AndroidForWorkGeneralDeviceConfiguration) SetWorkProfileRequirePassword(value *bool)() {
-    if m != nil {
-        m.workProfileRequirePassword = value
-    }
+    m.workProfileRequirePassword = value
 }

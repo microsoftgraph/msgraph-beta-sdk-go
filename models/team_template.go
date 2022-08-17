@@ -25,11 +25,7 @@ func CreateTeamTemplateFromDiscriminatorValue(parseNode i878a80d2330e89d26896388
 }
 // GetDefinitions gets the definitions property value. The definitions property
 func (m *TeamTemplate) GetDefinitions()([]TeamTemplateDefinitionable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.definitions
-    }
+    return m.definitions
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *TeamTemplate) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -70,7 +66,5 @@ func (m *TeamTemplate) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
 }
 // SetDefinitions sets the definitions property value. The definitions property
 func (m *TeamTemplate) SetDefinitions(value []TeamTemplateDefinitionable)() {
-    if m != nil {
-        m.definitions = value
-    }
+    m.definitions = value
 }

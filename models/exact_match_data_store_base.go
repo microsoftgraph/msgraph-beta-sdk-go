@@ -51,35 +51,19 @@ func CreateExactMatchDataStoreBaseFromDiscriminatorValue(parseNode i878a80d2330e
 }
 // GetColumns gets the columns property value. The columns property
 func (m *ExactMatchDataStoreBase) GetColumns()([]ExactDataMatchStoreColumnable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.columns
-    }
+    return m.columns
 }
 // GetDataLastUpdatedDateTime gets the dataLastUpdatedDateTime property value. The dataLastUpdatedDateTime property
 func (m *ExactMatchDataStoreBase) GetDataLastUpdatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.dataLastUpdatedDateTime
-    }
+    return m.dataLastUpdatedDateTime
 }
 // GetDescription gets the description property value. The description property
 func (m *ExactMatchDataStoreBase) GetDescription()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.description
-    }
+    return m.description
 }
 // GetDisplayName gets the displayName property value. The displayName property
 func (m *ExactMatchDataStoreBase) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ExactMatchDataStoreBase) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -168,25 +152,17 @@ func (m *ExactMatchDataStoreBase) Serialize(writer i878a80d2330e89d26896388a3f48
 }
 // SetColumns sets the columns property value. The columns property
 func (m *ExactMatchDataStoreBase) SetColumns(value []ExactDataMatchStoreColumnable)() {
-    if m != nil {
-        m.columns = value
-    }
+    m.columns = value
 }
 // SetDataLastUpdatedDateTime sets the dataLastUpdatedDateTime property value. The dataLastUpdatedDateTime property
 func (m *ExactMatchDataStoreBase) SetDataLastUpdatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.dataLastUpdatedDateTime = value
-    }
+    m.dataLastUpdatedDateTime = value
 }
 // SetDescription sets the description property value. The description property
 func (m *ExactMatchDataStoreBase) SetDescription(value *string)() {
-    if m != nil {
-        m.description = value
-    }
+    m.description = value
 }
 // SetDisplayName sets the displayName property value. The displayName property
 func (m *ExactMatchDataStoreBase) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }

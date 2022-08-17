@@ -34,19 +34,11 @@ func CreateContentInfoFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ContentInfo) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetContentFormat gets the contentFormat property value. The format of the content to be labeled. Possible values are: file, email.
 func (m *ContentInfo) GetContentFormat()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.contentFormat
-    }
+    return m.contentFormat
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ContentInfo) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -109,35 +101,19 @@ func (m *ContentInfo) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
 }
 // GetIdentifier gets the identifier property value. Identifier used for Azure Information Protection Analytics.
 func (m *ContentInfo) GetIdentifier()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.identifier
-    }
+    return m.identifier
 }
 // GetMetadata gets the metadata property value. Existing Microsoft Purview Information Protection metadata is passed as key-value pairs, where the key is the MSIP_Label_GUID_PropName.
 func (m *ContentInfo) GetMetadata()([]KeyValuePairable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.metadata
-    }
+    return m.metadata
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *ContentInfo) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetState gets the state property value. The state property
 func (m *ContentInfo) GetState()(*ContentState) {
-    if m == nil {
-        return nil
-    } else {
-        return m.state
-    }
+    return m.state
 }
 // Serialize serializes information the current object
 func (m *ContentInfo) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -186,37 +162,25 @@ func (m *ContentInfo) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ContentInfo) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetContentFormat sets the contentFormat property value. The format of the content to be labeled. Possible values are: file, email.
 func (m *ContentInfo) SetContentFormat(value *string)() {
-    if m != nil {
-        m.contentFormat = value
-    }
+    m.contentFormat = value
 }
 // SetIdentifier sets the identifier property value. Identifier used for Azure Information Protection Analytics.
 func (m *ContentInfo) SetIdentifier(value *string)() {
-    if m != nil {
-        m.identifier = value
-    }
+    m.identifier = value
 }
 // SetMetadata sets the metadata property value. Existing Microsoft Purview Information Protection metadata is passed as key-value pairs, where the key is the MSIP_Label_GUID_PropName.
 func (m *ContentInfo) SetMetadata(value []KeyValuePairable)() {
-    if m != nil {
-        m.metadata = value
-    }
+    m.metadata = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *ContentInfo) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetState sets the state property value. The state property
 func (m *ContentInfo) SetState(value *ContentState)() {
-    if m != nil {
-        m.state = value
-    }
+    m.state = value
 }

@@ -57,27 +57,15 @@ func CreateDeviceAndAppManagementAssignmentFilterFromDiscriminatorValue(parseNod
 }
 // GetCreatedDateTime gets the createdDateTime property value. Creation time of the Assignment Filter.
 func (m *DeviceAndAppManagementAssignmentFilter) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.createdDateTime
-    }
+    return m.createdDateTime
 }
 // GetDescription gets the description property value. Description of the Assignment Filter.
 func (m *DeviceAndAppManagementAssignmentFilter) GetDescription()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.description
-    }
+    return m.description
 }
 // GetDisplayName gets the displayName property value. DisplayName of the Assignment Filter.
 func (m *DeviceAndAppManagementAssignmentFilter) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceAndAppManagementAssignmentFilter) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -160,35 +148,19 @@ func (m *DeviceAndAppManagementAssignmentFilter) GetFieldDeserializers()(map[str
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. Last modified time of the Assignment Filter.
 func (m *DeviceAndAppManagementAssignmentFilter) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastModifiedDateTime
-    }
+    return m.lastModifiedDateTime
 }
 // GetPlatform gets the platform property value. Supported platform types.
 func (m *DeviceAndAppManagementAssignmentFilter) GetPlatform()(*DevicePlatformType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.platform
-    }
+    return m.platform
 }
 // GetRoleScopeTags gets the roleScopeTags property value. RoleScopeTags of the Assignment Filter.
 func (m *DeviceAndAppManagementAssignmentFilter) GetRoleScopeTags()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.roleScopeTags
-    }
+    return m.roleScopeTags
 }
 // GetRule gets the rule property value. Rule definition of the Assignment Filter.
 func (m *DeviceAndAppManagementAssignmentFilter) GetRule()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.rule
-    }
+    return m.rule
 }
 // Serialize serializes information the current object
 func (m *DeviceAndAppManagementAssignmentFilter) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -243,43 +215,29 @@ func (m *DeviceAndAppManagementAssignmentFilter) Serialize(writer i878a80d2330e8
 }
 // SetCreatedDateTime sets the createdDateTime property value. Creation time of the Assignment Filter.
 func (m *DeviceAndAppManagementAssignmentFilter) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.createdDateTime = value
-    }
+    m.createdDateTime = value
 }
 // SetDescription sets the description property value. Description of the Assignment Filter.
 func (m *DeviceAndAppManagementAssignmentFilter) SetDescription(value *string)() {
-    if m != nil {
-        m.description = value
-    }
+    m.description = value
 }
 // SetDisplayName sets the displayName property value. DisplayName of the Assignment Filter.
 func (m *DeviceAndAppManagementAssignmentFilter) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }
 // SetLastModifiedDateTime sets the lastModifiedDateTime property value. Last modified time of the Assignment Filter.
 func (m *DeviceAndAppManagementAssignmentFilter) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.lastModifiedDateTime = value
-    }
+    m.lastModifiedDateTime = value
 }
 // SetPlatform sets the platform property value. Supported platform types.
 func (m *DeviceAndAppManagementAssignmentFilter) SetPlatform(value *DevicePlatformType)() {
-    if m != nil {
-        m.platform = value
-    }
+    m.platform = value
 }
 // SetRoleScopeTags sets the roleScopeTags property value. RoleScopeTags of the Assignment Filter.
 func (m *DeviceAndAppManagementAssignmentFilter) SetRoleScopeTags(value []string)() {
-    if m != nil {
-        m.roleScopeTags = value
-    }
+    m.roleScopeTags = value
 }
 // SetRule sets the rule property value. Rule definition of the Assignment Filter.
 func (m *DeviceAndAppManagementAssignmentFilter) SetRule(value *string)() {
-    if m != nil {
-        m.rule = value
-    }
+    m.rule = value
 }

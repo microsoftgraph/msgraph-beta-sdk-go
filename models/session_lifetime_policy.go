@@ -30,27 +30,15 @@ func CreateSessionLifetimePolicyFromDiscriminatorValue(parseNode i878a80d2330e89
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SessionLifetimePolicy) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetDetail gets the detail property value. The human-readable details of the conditional access session management policy applied to the sign-in.
 func (m *SessionLifetimePolicy) GetDetail()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.detail
-    }
+    return m.detail
 }
 // GetExpirationRequirement gets the expirationRequirement property value. If a conditional access session management policy required the user to authenticate in this sign-in event, this field describes the policy type that required authentication. The possible values are: rememberMultifactorAuthenticationOnTrustedDevices, tenantTokenLifetimePolicy, audienceTokenLifetimePolicy, signInFrequencyPeriodicReauthentication, ngcMfa, signInFrequencyEveryTime, unknownFutureValue.
 func (m *SessionLifetimePolicy) GetExpirationRequirement()(*ExpirationRequirement) {
-    if m == nil {
-        return nil
-    } else {
-        return m.expirationRequirement
-    }
+    return m.expirationRequirement
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *SessionLifetimePolicy) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -89,11 +77,7 @@ func (m *SessionLifetimePolicy) GetFieldDeserializers()(map[string]func(i878a80d
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *SessionLifetimePolicy) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // Serialize serializes information the current object
 func (m *SessionLifetimePolicy) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -126,25 +110,17 @@ func (m *SessionLifetimePolicy) Serialize(writer i878a80d2330e89d26896388a3f487e
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SessionLifetimePolicy) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetDetail sets the detail property value. The human-readable details of the conditional access session management policy applied to the sign-in.
 func (m *SessionLifetimePolicy) SetDetail(value *string)() {
-    if m != nil {
-        m.detail = value
-    }
+    m.detail = value
 }
 // SetExpirationRequirement sets the expirationRequirement property value. If a conditional access session management policy required the user to authenticate in this sign-in event, this field describes the policy type that required authentication. The possible values are: rememberMultifactorAuthenticationOnTrustedDevices, tenantTokenLifetimePolicy, audienceTokenLifetimePolicy, signInFrequencyPeriodicReauthentication, ngcMfa, signInFrequencyEveryTime, unknownFutureValue.
 func (m *SessionLifetimePolicy) SetExpirationRequirement(value *ExpirationRequirement)() {
-    if m != nil {
-        m.expirationRequirement = value
-    }
+    m.expirationRequirement = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *SessionLifetimePolicy) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }

@@ -40,11 +40,7 @@ func (m *DeviceManagementSettingRequiredConstraint) GetFieldDeserializers()(map[
 }
 // GetNotConfiguredValue gets the notConfiguredValue property value. List of value which means not configured for the setting
 func (m *DeviceManagementSettingRequiredConstraint) GetNotConfiguredValue()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.notConfiguredValue
-    }
+    return m.notConfiguredValue
 }
 // Serialize serializes information the current object
 func (m *DeviceManagementSettingRequiredConstraint) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -62,7 +58,5 @@ func (m *DeviceManagementSettingRequiredConstraint) Serialize(writer i878a80d233
 }
 // SetNotConfiguredValue sets the notConfiguredValue property value. List of value which means not configured for the setting
 func (m *DeviceManagementSettingRequiredConstraint) SetNotConfiguredValue(value *string)() {
-    if m != nil {
-        m.notConfiguredValue = value
-    }
+    m.notConfiguredValue = value
 }

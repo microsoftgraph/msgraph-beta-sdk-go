@@ -30,19 +30,11 @@ func CreateAndroidPermissionActionFromDiscriminatorValue(parseNode i878a80d2330e
 }
 // GetAction gets the action property value. Android action taken when an app requests a dangerous permission.
 func (m *AndroidPermissionAction) GetAction()(*AndroidPermissionActionType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.action
-    }
+    return m.action
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AndroidPermissionAction) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AndroidPermissionAction) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -81,19 +73,11 @@ func (m *AndroidPermissionAction) GetFieldDeserializers()(map[string]func(i878a8
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *AndroidPermissionAction) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetPermission gets the permission property value. Android permission string, defined in the official Android documentation.  Example 'android.permission.READ_CONTACTS'.
 func (m *AndroidPermissionAction) GetPermission()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.permission
-    }
+    return m.permission
 }
 // Serialize serializes information the current object
 func (m *AndroidPermissionAction) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -126,25 +110,17 @@ func (m *AndroidPermissionAction) Serialize(writer i878a80d2330e89d26896388a3f48
 }
 // SetAction sets the action property value. Android action taken when an app requests a dangerous permission.
 func (m *AndroidPermissionAction) SetAction(value *AndroidPermissionActionType)() {
-    if m != nil {
-        m.action = value
-    }
+    m.action = value
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AndroidPermissionAction) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *AndroidPermissionAction) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetPermission sets the permission property value. Android permission string, defined in the official Android documentation.  Example 'android.permission.READ_CONTACTS'.
 func (m *AndroidPermissionAction) SetPermission(value *string)() {
-    if m != nil {
-        m.permission = value
-    }
+    m.permission = value
 }

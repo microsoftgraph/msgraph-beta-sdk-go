@@ -40,11 +40,7 @@ func (m *FileContentThreatSubmission) GetFieldDeserializers()(map[string]func(i8
 }
 // GetFileContent gets the fileContent property value. It specifies the file content in base 64 format.
 func (m *FileContentThreatSubmission) GetFileContent()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.fileContent
-    }
+    return m.fileContent
 }
 // Serialize serializes information the current object
 func (m *FileContentThreatSubmission) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -62,7 +58,5 @@ func (m *FileContentThreatSubmission) Serialize(writer i878a80d2330e89d26896388a
 }
 // SetFileContent sets the fileContent property value. It specifies the file content in base 64 format.
 func (m *FileContentThreatSubmission) SetFileContent(value *string)() {
-    if m != nil {
-        m.fileContent = value
-    }
+    m.fileContent = value
 }

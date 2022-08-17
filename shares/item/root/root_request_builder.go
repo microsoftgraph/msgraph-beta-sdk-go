@@ -16,7 +16,7 @@ type RootRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// RootRequestBuilderGetQueryParameters used to access the underlying driveItem. Deprecated -- use driveItem instead.
+// RootRequestBuilderGetQueryParameters get root from shares
 type RootRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -55,11 +55,11 @@ func NewRootRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1
 func (m *RootRequestBuilder) Content()(*i54fa39dd49ef2ad0152f58f8a5825a8dfb325e7a8a93701de76719cd098602de.ContentRequestBuilder) {
     return i54fa39dd49ef2ad0152f58f8a5825a8dfb325e7a8a93701de76719cd098602de.NewContentRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation used to access the underlying driveItem. Deprecated -- use driveItem instead.
+// CreateGetRequestInformation get root from shares
 func (m *RootRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration used to access the underlying driveItem. Deprecated -- use driveItem instead.
+// CreateGetRequestInformationWithRequestConfiguration get root from shares
 func (m *RootRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *RootRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -75,11 +75,11 @@ func (m *RootRequestBuilder) CreateGetRequestInformationWithRequestConfiguration
     }
     return requestInfo, nil
 }
-// Get used to access the underlying driveItem. Deprecated -- use driveItem instead.
+// Get get root from shares
 func (m *RootRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DriveItemable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
-// GetWithRequestConfigurationAndResponseHandler used to access the underlying driveItem. Deprecated -- use driveItem instead.
+// GetWithRequestConfigurationAndResponseHandler get root from shares
 func (m *RootRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *RootRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DriveItemable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

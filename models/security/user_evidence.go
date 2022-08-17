@@ -40,11 +40,7 @@ func (m *UserEvidence) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
 }
 // GetUserAccount gets the userAccount property value. The userAccount property
 func (m *UserEvidence) GetUserAccount()(UserAccountable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userAccount
-    }
+    return m.userAccount
 }
 // Serialize serializes information the current object
 func (m *UserEvidence) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -62,7 +58,5 @@ func (m *UserEvidence) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
 }
 // SetUserAccount sets the userAccount property value. The userAccount property
 func (m *UserEvidence) SetUserAccount(value UserAccountable)() {
-    if m != nil {
-        m.userAccount = value
-    }
+    m.userAccount = value
 }

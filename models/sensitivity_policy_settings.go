@@ -31,19 +31,11 @@ func CreateSensitivityPolicySettingsFromDiscriminatorValue(parseNode i878a80d233
 }
 // GetApplicableTo gets the applicableTo property value. The applicableTo property
 func (m *SensitivityPolicySettings) GetApplicableTo()(*SensitivityLabelTarget) {
-    if m == nil {
-        return nil
-    } else {
-        return m.applicableTo
-    }
+    return m.applicableTo
 }
 // GetDowngradeSensitivityRequiresJustification gets the downgradeSensitivityRequiresJustification property value. The downgradeSensitivityRequiresJustification property
 func (m *SensitivityPolicySettings) GetDowngradeSensitivityRequiresJustification()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.downgradeSensitivityRequiresJustification
-    }
+    return m.downgradeSensitivityRequiresJustification
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *SensitivityPolicySettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -92,19 +84,11 @@ func (m *SensitivityPolicySettings) GetFieldDeserializers()(map[string]func(i878
 }
 // GetHelpWebUrl gets the helpWebUrl property value. The helpWebUrl property
 func (m *SensitivityPolicySettings) GetHelpWebUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.helpWebUrl
-    }
+    return m.helpWebUrl
 }
 // GetIsMandatory gets the isMandatory property value. The isMandatory property
 func (m *SensitivityPolicySettings) GetIsMandatory()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isMandatory
-    }
+    return m.isMandatory
 }
 // Serialize serializes information the current object
 func (m *SensitivityPolicySettings) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -141,25 +125,17 @@ func (m *SensitivityPolicySettings) Serialize(writer i878a80d2330e89d26896388a3f
 }
 // SetApplicableTo sets the applicableTo property value. The applicableTo property
 func (m *SensitivityPolicySettings) SetApplicableTo(value *SensitivityLabelTarget)() {
-    if m != nil {
-        m.applicableTo = value
-    }
+    m.applicableTo = value
 }
 // SetDowngradeSensitivityRequiresJustification sets the downgradeSensitivityRequiresJustification property value. The downgradeSensitivityRequiresJustification property
 func (m *SensitivityPolicySettings) SetDowngradeSensitivityRequiresJustification(value *bool)() {
-    if m != nil {
-        m.downgradeSensitivityRequiresJustification = value
-    }
+    m.downgradeSensitivityRequiresJustification = value
 }
 // SetHelpWebUrl sets the helpWebUrl property value. The helpWebUrl property
 func (m *SensitivityPolicySettings) SetHelpWebUrl(value *string)() {
-    if m != nil {
-        m.helpWebUrl = value
-    }
+    m.helpWebUrl = value
 }
 // SetIsMandatory sets the isMandatory property value. The isMandatory property
 func (m *SensitivityPolicySettings) SetIsMandatory(value *bool)() {
-    if m != nil {
-        m.isMandatory = value
-    }
+    m.isMandatory = value
 }

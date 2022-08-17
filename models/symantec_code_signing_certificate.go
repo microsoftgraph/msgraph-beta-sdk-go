@@ -27,7 +27,7 @@ type SymantecCodeSigningCertificate struct {
     // The Type of the CodeSigning Cert as Symantec Cert.
     uploadDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
 }
-// NewSymantecCodeSigningCertificate instantiates a new SymantecCodeSigningCertificate and sets the default values.
+// NewSymantecCodeSigningCertificate instantiates a new symantecCodeSigningCertificate and sets the default values.
 func NewSymantecCodeSigningCertificate()(*SymantecCodeSigningCertificate) {
     m := &SymantecCodeSigningCertificate{
         Entity: *NewEntity(),
@@ -42,19 +42,11 @@ func CreateSymantecCodeSigningCertificateFromDiscriminatorValue(parseNode i878a8
 }
 // GetContent gets the content property value. The Windows Symantec Code-Signing Certificate in the raw data format.
 func (m *SymantecCodeSigningCertificate) GetContent()([]byte) {
-    if m == nil {
-        return nil
-    } else {
-        return m.content
-    }
+    return m.content
 }
 // GetExpirationDateTime gets the expirationDateTime property value. The Cert Expiration Date.
 func (m *SymantecCodeSigningCertificate) GetExpirationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.expirationDateTime
-    }
+    return m.expirationDateTime
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *SymantecCodeSigningCertificate) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -153,59 +145,31 @@ func (m *SymantecCodeSigningCertificate) GetFieldDeserializers()(map[string]func
 }
 // GetIssuer gets the issuer property value. The Issuer value for the cert.
 func (m *SymantecCodeSigningCertificate) GetIssuer()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.issuer
-    }
+    return m.issuer
 }
 // GetIssuerName gets the issuerName property value. The Issuer Name for the cert.
 func (m *SymantecCodeSigningCertificate) GetIssuerName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.issuerName
-    }
+    return m.issuerName
 }
 // GetPassword gets the password property value. The Password required for .pfx file.
 func (m *SymantecCodeSigningCertificate) GetPassword()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.password
-    }
+    return m.password
 }
 // GetStatus gets the status property value. The status property
 func (m *SymantecCodeSigningCertificate) GetStatus()(*CertificateStatus) {
-    if m == nil {
-        return nil
-    } else {
-        return m.status
-    }
+    return m.status
 }
 // GetSubject gets the subject property value. The Subject value for the cert.
 func (m *SymantecCodeSigningCertificate) GetSubject()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.subject
-    }
+    return m.subject
 }
 // GetSubjectName gets the subjectName property value. The Subject Name for the cert.
 func (m *SymantecCodeSigningCertificate) GetSubjectName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.subjectName
-    }
+    return m.subjectName
 }
 // GetUploadDateTime gets the uploadDateTime property value. The Type of the CodeSigning Cert as Symantec Cert.
 func (m *SymantecCodeSigningCertificate) GetUploadDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.uploadDateTime
-    }
+    return m.uploadDateTime
 }
 // Serialize serializes information the current object
 func (m *SymantecCodeSigningCertificate) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -272,55 +236,37 @@ func (m *SymantecCodeSigningCertificate) Serialize(writer i878a80d2330e89d268963
 }
 // SetContent sets the content property value. The Windows Symantec Code-Signing Certificate in the raw data format.
 func (m *SymantecCodeSigningCertificate) SetContent(value []byte)() {
-    if m != nil {
-        m.content = value
-    }
+    m.content = value
 }
 // SetExpirationDateTime sets the expirationDateTime property value. The Cert Expiration Date.
 func (m *SymantecCodeSigningCertificate) SetExpirationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.expirationDateTime = value
-    }
+    m.expirationDateTime = value
 }
 // SetIssuer sets the issuer property value. The Issuer value for the cert.
 func (m *SymantecCodeSigningCertificate) SetIssuer(value *string)() {
-    if m != nil {
-        m.issuer = value
-    }
+    m.issuer = value
 }
 // SetIssuerName sets the issuerName property value. The Issuer Name for the cert.
 func (m *SymantecCodeSigningCertificate) SetIssuerName(value *string)() {
-    if m != nil {
-        m.issuerName = value
-    }
+    m.issuerName = value
 }
 // SetPassword sets the password property value. The Password required for .pfx file.
 func (m *SymantecCodeSigningCertificate) SetPassword(value *string)() {
-    if m != nil {
-        m.password = value
-    }
+    m.password = value
 }
 // SetStatus sets the status property value. The status property
 func (m *SymantecCodeSigningCertificate) SetStatus(value *CertificateStatus)() {
-    if m != nil {
-        m.status = value
-    }
+    m.status = value
 }
 // SetSubject sets the subject property value. The Subject value for the cert.
 func (m *SymantecCodeSigningCertificate) SetSubject(value *string)() {
-    if m != nil {
-        m.subject = value
-    }
+    m.subject = value
 }
 // SetSubjectName sets the subjectName property value. The Subject Name for the cert.
 func (m *SymantecCodeSigningCertificate) SetSubjectName(value *string)() {
-    if m != nil {
-        m.subjectName = value
-    }
+    m.subjectName = value
 }
 // SetUploadDateTime sets the uploadDateTime property value. The Type of the CodeSigning Cert as Symantec Cert.
 func (m *SymantecCodeSigningCertificate) SetUploadDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.uploadDateTime = value
-    }
+    m.uploadDateTime = value
 }

@@ -29,19 +29,11 @@ func CreateMobileAppTroubleshootingAppStateHistoryFromDiscriminatorValue(parseNo
 }
 // GetActionType gets the actionType property value. Defines the Action Types for an Intune Application.
 func (m *MobileAppTroubleshootingAppStateHistory) GetActionType()(*MobileAppActionType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.actionType
-    }
+    return m.actionType
 }
 // GetErrorCode gets the errorCode property value. Error code for the failure, empty if no failure.
 func (m *MobileAppTroubleshootingAppStateHistory) GetErrorCode()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.errorCode
-    }
+    return m.errorCode
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *MobileAppTroubleshootingAppStateHistory) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -80,11 +72,7 @@ func (m *MobileAppTroubleshootingAppStateHistory) GetFieldDeserializers()(map[st
 }
 // GetRunState gets the runState property value. Indicates the type of execution status of the device management script.
 func (m *MobileAppTroubleshootingAppStateHistory) GetRunState()(*RunState) {
-    if m == nil {
-        return nil
-    } else {
-        return m.runState
-    }
+    return m.runState
 }
 // Serialize serializes information the current object
 func (m *MobileAppTroubleshootingAppStateHistory) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -116,19 +104,13 @@ func (m *MobileAppTroubleshootingAppStateHistory) Serialize(writer i878a80d2330e
 }
 // SetActionType sets the actionType property value. Defines the Action Types for an Intune Application.
 func (m *MobileAppTroubleshootingAppStateHistory) SetActionType(value *MobileAppActionType)() {
-    if m != nil {
-        m.actionType = value
-    }
+    m.actionType = value
 }
 // SetErrorCode sets the errorCode property value. Error code for the failure, empty if no failure.
 func (m *MobileAppTroubleshootingAppStateHistory) SetErrorCode(value *string)() {
-    if m != nil {
-        m.errorCode = value
-    }
+    m.errorCode = value
 }
 // SetRunState sets the runState property value. Indicates the type of execution status of the device management script.
 func (m *MobileAppTroubleshootingAppStateHistory) SetRunState(value *RunState)() {
-    if m != nil {
-        m.runState = value
-    }
+    m.runState = value
 }

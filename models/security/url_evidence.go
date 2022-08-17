@@ -40,11 +40,7 @@ func (m *UrlEvidence) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
 }
 // GetUrl gets the url property value. The url property
 func (m *UrlEvidence) GetUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.url
-    }
+    return m.url
 }
 // Serialize serializes information the current object
 func (m *UrlEvidence) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -62,7 +58,5 @@ func (m *UrlEvidence) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
 }
 // SetUrl sets the url property value. The url property
 func (m *UrlEvidence) SetUrl(value *string)() {
-    if m != nil {
-        m.url = value
-    }
+    m.url = value
 }

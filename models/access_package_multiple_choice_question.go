@@ -27,19 +27,11 @@ func CreateAccessPackageMultipleChoiceQuestionFromDiscriminatorValue(parseNode i
 }
 // GetAllowsMultipleSelection gets the allowsMultipleSelection property value. Indicates whether requestor can select multiple choices as their answer.
 func (m *AccessPackageMultipleChoiceQuestion) GetAllowsMultipleSelection()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.allowsMultipleSelection
-    }
+    return m.allowsMultipleSelection
 }
 // GetChoices gets the choices property value. List of answer choices.
 func (m *AccessPackageMultipleChoiceQuestion) GetChoices()([]AccessPackageAnswerChoiceable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.choices
-    }
+    return m.choices
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AccessPackageMultipleChoiceQuestion) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -96,13 +88,9 @@ func (m *AccessPackageMultipleChoiceQuestion) Serialize(writer i878a80d2330e89d2
 }
 // SetAllowsMultipleSelection sets the allowsMultipleSelection property value. Indicates whether requestor can select multiple choices as their answer.
 func (m *AccessPackageMultipleChoiceQuestion) SetAllowsMultipleSelection(value *bool)() {
-    if m != nil {
-        m.allowsMultipleSelection = value
-    }
+    m.allowsMultipleSelection = value
 }
 // SetChoices sets the choices property value. List of answer choices.
 func (m *AccessPackageMultipleChoiceQuestion) SetChoices(value []AccessPackageAnswerChoiceable)() {
-    if m != nil {
-        m.choices = value
-    }
+    m.choices = value
 }

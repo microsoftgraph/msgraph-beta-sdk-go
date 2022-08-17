@@ -45,51 +45,27 @@ func CreateExecuteActionPostRequestBodyFromDiscriminatorValue(parseNode i878a80d
 }
 // GetActionName gets the actionName property value. The actionName property
 func (m *ExecuteActionPostRequestBody) GetActionName()(*ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ManagedDeviceRemoteAction) {
-    if m == nil {
-        return nil
-    } else {
-        return m.actionName
-    }
+    return m.actionName
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ExecuteActionPostRequestBody) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetCarrierUrl gets the carrierUrl property value. The carrierUrl property
 func (m *ExecuteActionPostRequestBody) GetCarrierUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.carrierUrl
-    }
+    return m.carrierUrl
 }
 // GetDeprovisionReason gets the deprovisionReason property value. The deprovisionReason property
 func (m *ExecuteActionPostRequestBody) GetDeprovisionReason()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deprovisionReason
-    }
+    return m.deprovisionReason
 }
 // GetDeviceIds gets the deviceIds property value. The deviceIds property
 func (m *ExecuteActionPostRequestBody) GetDeviceIds()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deviceIds
-    }
+    return m.deviceIds
 }
 // GetDeviceName gets the deviceName property value. The deviceName property
 func (m *ExecuteActionPostRequestBody) GetDeviceName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deviceName
-    }
+    return m.deviceName
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ExecuteActionPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -212,51 +188,27 @@ func (m *ExecuteActionPostRequestBody) GetFieldDeserializers()(map[string]func(i
 }
 // GetKeepEnrollmentData gets the keepEnrollmentData property value. The keepEnrollmentData property
 func (m *ExecuteActionPostRequestBody) GetKeepEnrollmentData()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.keepEnrollmentData
-    }
+    return m.keepEnrollmentData
 }
 // GetKeepUserData gets the keepUserData property value. The keepUserData property
 func (m *ExecuteActionPostRequestBody) GetKeepUserData()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.keepUserData
-    }
+    return m.keepUserData
 }
 // GetNotificationBody gets the notificationBody property value. The notificationBody property
 func (m *ExecuteActionPostRequestBody) GetNotificationBody()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.notificationBody
-    }
+    return m.notificationBody
 }
 // GetNotificationTitle gets the notificationTitle property value. The notificationTitle property
 func (m *ExecuteActionPostRequestBody) GetNotificationTitle()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.notificationTitle
-    }
+    return m.notificationTitle
 }
 // GetOrganizationalUnitPath gets the organizationalUnitPath property value. The organizationalUnitPath property
 func (m *ExecuteActionPostRequestBody) GetOrganizationalUnitPath()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.organizationalUnitPath
-    }
+    return m.organizationalUnitPath
 }
 // GetPersistEsimDataPlan gets the persistEsimDataPlan property value. The persistEsimDataPlan property
 func (m *ExecuteActionPostRequestBody) GetPersistEsimDataPlan()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.persistEsimDataPlan
-    }
+    return m.persistEsimDataPlan
 }
 // Serialize serializes information the current object
 func (m *ExecuteActionPostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -337,73 +289,49 @@ func (m *ExecuteActionPostRequestBody) Serialize(writer i878a80d2330e89d26896388
 }
 // SetActionName sets the actionName property value. The actionName property
 func (m *ExecuteActionPostRequestBody) SetActionName(value *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ManagedDeviceRemoteAction)() {
-    if m != nil {
-        m.actionName = value
-    }
+    m.actionName = value
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ExecuteActionPostRequestBody) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetCarrierUrl sets the carrierUrl property value. The carrierUrl property
 func (m *ExecuteActionPostRequestBody) SetCarrierUrl(value *string)() {
-    if m != nil {
-        m.carrierUrl = value
-    }
+    m.carrierUrl = value
 }
 // SetDeprovisionReason sets the deprovisionReason property value. The deprovisionReason property
 func (m *ExecuteActionPostRequestBody) SetDeprovisionReason(value *string)() {
-    if m != nil {
-        m.deprovisionReason = value
-    }
+    m.deprovisionReason = value
 }
 // SetDeviceIds sets the deviceIds property value. The deviceIds property
 func (m *ExecuteActionPostRequestBody) SetDeviceIds(value []string)() {
-    if m != nil {
-        m.deviceIds = value
-    }
+    m.deviceIds = value
 }
 // SetDeviceName sets the deviceName property value. The deviceName property
 func (m *ExecuteActionPostRequestBody) SetDeviceName(value *string)() {
-    if m != nil {
-        m.deviceName = value
-    }
+    m.deviceName = value
 }
 // SetKeepEnrollmentData sets the keepEnrollmentData property value. The keepEnrollmentData property
 func (m *ExecuteActionPostRequestBody) SetKeepEnrollmentData(value *bool)() {
-    if m != nil {
-        m.keepEnrollmentData = value
-    }
+    m.keepEnrollmentData = value
 }
 // SetKeepUserData sets the keepUserData property value. The keepUserData property
 func (m *ExecuteActionPostRequestBody) SetKeepUserData(value *bool)() {
-    if m != nil {
-        m.keepUserData = value
-    }
+    m.keepUserData = value
 }
 // SetNotificationBody sets the notificationBody property value. The notificationBody property
 func (m *ExecuteActionPostRequestBody) SetNotificationBody(value *string)() {
-    if m != nil {
-        m.notificationBody = value
-    }
+    m.notificationBody = value
 }
 // SetNotificationTitle sets the notificationTitle property value. The notificationTitle property
 func (m *ExecuteActionPostRequestBody) SetNotificationTitle(value *string)() {
-    if m != nil {
-        m.notificationTitle = value
-    }
+    m.notificationTitle = value
 }
 // SetOrganizationalUnitPath sets the organizationalUnitPath property value. The organizationalUnitPath property
 func (m *ExecuteActionPostRequestBody) SetOrganizationalUnitPath(value *string)() {
-    if m != nil {
-        m.organizationalUnitPath = value
-    }
+    m.organizationalUnitPath = value
 }
 // SetPersistEsimDataPlan sets the persistEsimDataPlan property value. The persistEsimDataPlan property
 func (m *ExecuteActionPostRequestBody) SetPersistEsimDataPlan(value *bool)() {
-    if m != nil {
-        m.persistEsimDataPlan = value
-    }
+    m.persistEsimDataPlan = value
 }

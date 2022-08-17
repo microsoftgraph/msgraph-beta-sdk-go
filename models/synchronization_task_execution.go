@@ -55,99 +55,51 @@ func CreateSynchronizationTaskExecutionFromDiscriminatorValue(parseNode i878a80d
 }
 // GetActivityIdentifier gets the activityIdentifier property value. Identifier of the job run.
 func (m *SynchronizationTaskExecution) GetActivityIdentifier()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.activityIdentifier
-    }
+    return m.activityIdentifier
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SynchronizationTaskExecution) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetCountEntitled gets the countEntitled property value. Count of processed entries that were assigned for this application.
 func (m *SynchronizationTaskExecution) GetCountEntitled()(*int64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.countEntitled
-    }
+    return m.countEntitled
 }
 // GetCountEntitledForProvisioning gets the countEntitledForProvisioning property value. Count of processed entries that were assigned for provisioning.
 func (m *SynchronizationTaskExecution) GetCountEntitledForProvisioning()(*int64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.countEntitledForProvisioning
-    }
+    return m.countEntitledForProvisioning
 }
 // GetCountEscrowed gets the countEscrowed property value. Count of entries that were escrowed (errors).
 func (m *SynchronizationTaskExecution) GetCountEscrowed()(*int64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.countEscrowed
-    }
+    return m.countEscrowed
 }
 // GetCountEscrowedRaw gets the countEscrowedRaw property value. Count of entries that were escrowed, including system-generated escrows.
 func (m *SynchronizationTaskExecution) GetCountEscrowedRaw()(*int64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.countEscrowedRaw
-    }
+    return m.countEscrowedRaw
 }
 // GetCountExported gets the countExported property value. Count of exported entries.
 func (m *SynchronizationTaskExecution) GetCountExported()(*int64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.countExported
-    }
+    return m.countExported
 }
 // GetCountExports gets the countExports property value. Count of entries that were expected to be exported.
 func (m *SynchronizationTaskExecution) GetCountExports()(*int64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.countExports
-    }
+    return m.countExports
 }
 // GetCountImported gets the countImported property value. Count of imported entries.
 func (m *SynchronizationTaskExecution) GetCountImported()(*int64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.countImported
-    }
+    return m.countImported
 }
 // GetCountImportedDeltas gets the countImportedDeltas property value. Count of imported delta-changes.
 func (m *SynchronizationTaskExecution) GetCountImportedDeltas()(*int64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.countImportedDeltas
-    }
+    return m.countImportedDeltas
 }
 // GetCountImportedReferenceDeltas gets the countImportedReferenceDeltas property value. Count of imported delta-changes pertaining to reference changes.
 func (m *SynchronizationTaskExecution) GetCountImportedReferenceDeltas()(*int64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.countImportedReferenceDeltas
-    }
+    return m.countImportedReferenceDeltas
 }
 // GetError gets the error property value. If an error was encountered, contains a synchronizationError object with details.
 func (m *SynchronizationTaskExecution) GetError()(SynchronizationErrorable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.error
-    }
+    return m.error
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *SynchronizationTaskExecution) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -306,35 +258,19 @@ func (m *SynchronizationTaskExecution) GetFieldDeserializers()(map[string]func(i
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *SynchronizationTaskExecution) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetState gets the state property value. The state property
 func (m *SynchronizationTaskExecution) GetState()(*SynchronizationTaskExecutionResult) {
-    if m == nil {
-        return nil
-    } else {
-        return m.state
-    }
+    return m.state
 }
 // GetTimeBegan gets the timeBegan property value. Time when this job run began. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *SynchronizationTaskExecution) GetTimeBegan()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.timeBegan
-    }
+    return m.timeBegan
 }
 // GetTimeEnded gets the timeEnded property value. Time when this job run ended. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *SynchronizationTaskExecution) GetTimeEnded()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.timeEnded
-    }
+    return m.timeEnded
 }
 // Serialize serializes information the current object
 func (m *SynchronizationTaskExecution) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -439,97 +375,65 @@ func (m *SynchronizationTaskExecution) Serialize(writer i878a80d2330e89d26896388
 }
 // SetActivityIdentifier sets the activityIdentifier property value. Identifier of the job run.
 func (m *SynchronizationTaskExecution) SetActivityIdentifier(value *string)() {
-    if m != nil {
-        m.activityIdentifier = value
-    }
+    m.activityIdentifier = value
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SynchronizationTaskExecution) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetCountEntitled sets the countEntitled property value. Count of processed entries that were assigned for this application.
 func (m *SynchronizationTaskExecution) SetCountEntitled(value *int64)() {
-    if m != nil {
-        m.countEntitled = value
-    }
+    m.countEntitled = value
 }
 // SetCountEntitledForProvisioning sets the countEntitledForProvisioning property value. Count of processed entries that were assigned for provisioning.
 func (m *SynchronizationTaskExecution) SetCountEntitledForProvisioning(value *int64)() {
-    if m != nil {
-        m.countEntitledForProvisioning = value
-    }
+    m.countEntitledForProvisioning = value
 }
 // SetCountEscrowed sets the countEscrowed property value. Count of entries that were escrowed (errors).
 func (m *SynchronizationTaskExecution) SetCountEscrowed(value *int64)() {
-    if m != nil {
-        m.countEscrowed = value
-    }
+    m.countEscrowed = value
 }
 // SetCountEscrowedRaw sets the countEscrowedRaw property value. Count of entries that were escrowed, including system-generated escrows.
 func (m *SynchronizationTaskExecution) SetCountEscrowedRaw(value *int64)() {
-    if m != nil {
-        m.countEscrowedRaw = value
-    }
+    m.countEscrowedRaw = value
 }
 // SetCountExported sets the countExported property value. Count of exported entries.
 func (m *SynchronizationTaskExecution) SetCountExported(value *int64)() {
-    if m != nil {
-        m.countExported = value
-    }
+    m.countExported = value
 }
 // SetCountExports sets the countExports property value. Count of entries that were expected to be exported.
 func (m *SynchronizationTaskExecution) SetCountExports(value *int64)() {
-    if m != nil {
-        m.countExports = value
-    }
+    m.countExports = value
 }
 // SetCountImported sets the countImported property value. Count of imported entries.
 func (m *SynchronizationTaskExecution) SetCountImported(value *int64)() {
-    if m != nil {
-        m.countImported = value
-    }
+    m.countImported = value
 }
 // SetCountImportedDeltas sets the countImportedDeltas property value. Count of imported delta-changes.
 func (m *SynchronizationTaskExecution) SetCountImportedDeltas(value *int64)() {
-    if m != nil {
-        m.countImportedDeltas = value
-    }
+    m.countImportedDeltas = value
 }
 // SetCountImportedReferenceDeltas sets the countImportedReferenceDeltas property value. Count of imported delta-changes pertaining to reference changes.
 func (m *SynchronizationTaskExecution) SetCountImportedReferenceDeltas(value *int64)() {
-    if m != nil {
-        m.countImportedReferenceDeltas = value
-    }
+    m.countImportedReferenceDeltas = value
 }
 // SetError sets the error property value. If an error was encountered, contains a synchronizationError object with details.
 func (m *SynchronizationTaskExecution) SetError(value SynchronizationErrorable)() {
-    if m != nil {
-        m.error = value
-    }
+    m.error = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *SynchronizationTaskExecution) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetState sets the state property value. The state property
 func (m *SynchronizationTaskExecution) SetState(value *SynchronizationTaskExecutionResult)() {
-    if m != nil {
-        m.state = value
-    }
+    m.state = value
 }
 // SetTimeBegan sets the timeBegan property value. Time when this job run began. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *SynchronizationTaskExecution) SetTimeBegan(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.timeBegan = value
-    }
+    m.timeBegan = value
 }
 // SetTimeEnded sets the timeEnded property value. Time when this job run ended. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *SynchronizationTaskExecution) SetTimeEnded(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.timeEnded = value
-    }
+    m.timeEnded = value
 }

@@ -36,11 +36,7 @@ func CreateManagementActionDeploymentStatusFromDiscriminatorValue(parseNode i878
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ManagementActionDeploymentStatus) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ManagementActionDeploymentStatus) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -113,51 +109,27 @@ func (m *ManagementActionDeploymentStatus) GetFieldDeserializers()(map[string]fu
 }
 // GetManagementActionId gets the managementActionId property value. The identifier for the management action. Required. Read-only.
 func (m *ManagementActionDeploymentStatus) GetManagementActionId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.managementActionId
-    }
+    return m.managementActionId
 }
 // GetManagementTemplateId gets the managementTemplateId property value. The management template identifier that was used to generate the management action. Required. Read-only.
 func (m *ManagementActionDeploymentStatus) GetManagementTemplateId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.managementTemplateId
-    }
+    return m.managementTemplateId
 }
 // GetManagementTemplateVersion gets the managementTemplateVersion property value. The managementTemplateVersion property
 func (m *ManagementActionDeploymentStatus) GetManagementTemplateVersion()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.managementTemplateVersion
-    }
+    return m.managementTemplateVersion
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *ManagementActionDeploymentStatus) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetStatus gets the status property value. The status property
 func (m *ManagementActionDeploymentStatus) GetStatus()(*ManagementActionStatus) {
-    if m == nil {
-        return nil
-    } else {
-        return m.status
-    }
+    return m.status
 }
 // GetWorkloadActionDeploymentStatuses gets the workloadActionDeploymentStatuses property value. The collection of workload action deployment statues for the given management action. Optional.
 func (m *ManagementActionDeploymentStatus) GetWorkloadActionDeploymentStatuses()([]WorkloadActionDeploymentStatusable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.workloadActionDeploymentStatuses
-    }
+    return m.workloadActionDeploymentStatuses
 }
 // Serialize serializes information the current object
 func (m *ManagementActionDeploymentStatus) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -212,43 +184,29 @@ func (m *ManagementActionDeploymentStatus) Serialize(writer i878a80d2330e89d2689
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ManagementActionDeploymentStatus) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetManagementActionId sets the managementActionId property value. The identifier for the management action. Required. Read-only.
 func (m *ManagementActionDeploymentStatus) SetManagementActionId(value *string)() {
-    if m != nil {
-        m.managementActionId = value
-    }
+    m.managementActionId = value
 }
 // SetManagementTemplateId sets the managementTemplateId property value. The management template identifier that was used to generate the management action. Required. Read-only.
 func (m *ManagementActionDeploymentStatus) SetManagementTemplateId(value *string)() {
-    if m != nil {
-        m.managementTemplateId = value
-    }
+    m.managementTemplateId = value
 }
 // SetManagementTemplateVersion sets the managementTemplateVersion property value. The managementTemplateVersion property
 func (m *ManagementActionDeploymentStatus) SetManagementTemplateVersion(value *int32)() {
-    if m != nil {
-        m.managementTemplateVersion = value
-    }
+    m.managementTemplateVersion = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *ManagementActionDeploymentStatus) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetStatus sets the status property value. The status property
 func (m *ManagementActionDeploymentStatus) SetStatus(value *ManagementActionStatus)() {
-    if m != nil {
-        m.status = value
-    }
+    m.status = value
 }
 // SetWorkloadActionDeploymentStatuses sets the workloadActionDeploymentStatuses property value. The collection of workload action deployment statues for the given management action. Optional.
 func (m *ManagementActionDeploymentStatus) SetWorkloadActionDeploymentStatuses(value []WorkloadActionDeploymentStatusable)() {
-    if m != nil {
-        m.workloadActionDeploymentStatuses = value
-    }
+    m.workloadActionDeploymentStatuses = value
 }

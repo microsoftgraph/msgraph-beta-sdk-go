@@ -31,19 +31,11 @@ func CreateGovernanceSubjectFromDiscriminatorValue(parseNode i878a80d2330e89d268
 }
 // GetDisplayName gets the displayName property value. The display name of the subject.
 func (m *GovernanceSubject) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
 // GetEmail gets the email property value. The email address of the user subject. If the subject is in other types, it is empty.
 func (m *GovernanceSubject) GetEmail()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.email
-    }
+    return m.email
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *GovernanceSubject) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -92,19 +84,11 @@ func (m *GovernanceSubject) GetFieldDeserializers()(map[string]func(i878a80d2330
 }
 // GetPrincipalName gets the principalName property value. The principal name of the user subject. If the subject is in other types, it is empty.
 func (m *GovernanceSubject) GetPrincipalName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.principalName
-    }
+    return m.principalName
 }
 // GetType gets the type property value. The type of the subject. The value can be User, Group, and ServicePrincipal.
 func (m *GovernanceSubject) GetType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.type_escaped
-    }
+    return m.type_escaped
 }
 // Serialize serializes information the current object
 func (m *GovernanceSubject) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -140,25 +124,17 @@ func (m *GovernanceSubject) Serialize(writer i878a80d2330e89d26896388a3f487eef27
 }
 // SetDisplayName sets the displayName property value. The display name of the subject.
 func (m *GovernanceSubject) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }
 // SetEmail sets the email property value. The email address of the user subject. If the subject is in other types, it is empty.
 func (m *GovernanceSubject) SetEmail(value *string)() {
-    if m != nil {
-        m.email = value
-    }
+    m.email = value
 }
 // SetPrincipalName sets the principalName property value. The principal name of the user subject. If the subject is in other types, it is empty.
 func (m *GovernanceSubject) SetPrincipalName(value *string)() {
-    if m != nil {
-        m.principalName = value
-    }
+    m.principalName = value
 }
 // SetType sets the type property value. The type of the subject. The value can be User, Group, and ServicePrincipal.
 func (m *GovernanceSubject) SetType(value *string)() {
-    if m != nil {
-        m.type_escaped = value
-    }
+    m.type_escaped = value
 }

@@ -64,27 +64,15 @@ func (m *IosLobAppAssignmentSettings) GetFieldDeserializers()(map[string]func(i8
 }
 // GetIsRemovable gets the isRemovable property value. Whether or not the app can be removed by the user.
 func (m *IosLobAppAssignmentSettings) GetIsRemovable()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isRemovable
-    }
+    return m.isRemovable
 }
 // GetUninstallOnDeviceRemoval gets the uninstallOnDeviceRemoval property value. Whether or not to uninstall the app when device is removed from Intune.
 func (m *IosLobAppAssignmentSettings) GetUninstallOnDeviceRemoval()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.uninstallOnDeviceRemoval
-    }
+    return m.uninstallOnDeviceRemoval
 }
 // GetVpnConfigurationId gets the vpnConfigurationId property value. The VPN Configuration Id to apply for this app.
 func (m *IosLobAppAssignmentSettings) GetVpnConfigurationId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.vpnConfigurationId
-    }
+    return m.vpnConfigurationId
 }
 // Serialize serializes information the current object
 func (m *IosLobAppAssignmentSettings) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -114,19 +102,13 @@ func (m *IosLobAppAssignmentSettings) Serialize(writer i878a80d2330e89d26896388a
 }
 // SetIsRemovable sets the isRemovable property value. Whether or not the app can be removed by the user.
 func (m *IosLobAppAssignmentSettings) SetIsRemovable(value *bool)() {
-    if m != nil {
-        m.isRemovable = value
-    }
+    m.isRemovable = value
 }
 // SetUninstallOnDeviceRemoval sets the uninstallOnDeviceRemoval property value. Whether or not to uninstall the app when device is removed from Intune.
 func (m *IosLobAppAssignmentSettings) SetUninstallOnDeviceRemoval(value *bool)() {
-    if m != nil {
-        m.uninstallOnDeviceRemoval = value
-    }
+    m.uninstallOnDeviceRemoval = value
 }
 // SetVpnConfigurationId sets the vpnConfigurationId property value. The VPN Configuration Id to apply for this app.
 func (m *IosLobAppAssignmentSettings) SetVpnConfigurationId(value *string)() {
-    if m != nil {
-        m.vpnConfigurationId = value
-    }
+    m.vpnConfigurationId = value
 }

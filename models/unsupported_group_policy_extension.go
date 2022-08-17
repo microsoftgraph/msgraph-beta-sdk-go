@@ -31,11 +31,7 @@ func CreateUnsupportedGroupPolicyExtensionFromDiscriminatorValue(parseNode i878a
 }
 // GetExtensionType gets the extensionType property value. ExtensionType of the unsupported extension.
 func (m *UnsupportedGroupPolicyExtension) GetExtensionType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.extensionType
-    }
+    return m.extensionType
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *UnsupportedGroupPolicyExtension) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -84,27 +80,15 @@ func (m *UnsupportedGroupPolicyExtension) GetFieldDeserializers()(map[string]fun
 }
 // GetNamespaceUrl gets the namespaceUrl property value. Namespace Url of the unsupported extension.
 func (m *UnsupportedGroupPolicyExtension) GetNamespaceUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.namespaceUrl
-    }
+    return m.namespaceUrl
 }
 // GetNodeName gets the nodeName property value. Node name of the unsupported extension.
 func (m *UnsupportedGroupPolicyExtension) GetNodeName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.nodeName
-    }
+    return m.nodeName
 }
 // GetSettingScope gets the settingScope property value. Scope of the group policy setting.
 func (m *UnsupportedGroupPolicyExtension) GetSettingScope()(*GroupPolicySettingScope) {
-    if m == nil {
-        return nil
-    } else {
-        return m.settingScope
-    }
+    return m.settingScope
 }
 // Serialize serializes information the current object
 func (m *UnsupportedGroupPolicyExtension) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -141,25 +125,17 @@ func (m *UnsupportedGroupPolicyExtension) Serialize(writer i878a80d2330e89d26896
 }
 // SetExtensionType sets the extensionType property value. ExtensionType of the unsupported extension.
 func (m *UnsupportedGroupPolicyExtension) SetExtensionType(value *string)() {
-    if m != nil {
-        m.extensionType = value
-    }
+    m.extensionType = value
 }
 // SetNamespaceUrl sets the namespaceUrl property value. Namespace Url of the unsupported extension.
 func (m *UnsupportedGroupPolicyExtension) SetNamespaceUrl(value *string)() {
-    if m != nil {
-        m.namespaceUrl = value
-    }
+    m.namespaceUrl = value
 }
 // SetNodeName sets the nodeName property value. Node name of the unsupported extension.
 func (m *UnsupportedGroupPolicyExtension) SetNodeName(value *string)() {
-    if m != nil {
-        m.nodeName = value
-    }
+    m.nodeName = value
 }
 // SetSettingScope sets the settingScope property value. Scope of the group policy setting.
 func (m *UnsupportedGroupPolicyExtension) SetSettingScope(value *GroupPolicySettingScope)() {
-    if m != nil {
-        m.settingScope = value
-    }
+    m.settingScope = value
 }

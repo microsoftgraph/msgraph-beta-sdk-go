@@ -50,35 +50,19 @@ func CreateTeamworkSystemConfigurationFromDiscriminatorValue(parseNode i878a80d2
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TeamworkSystemConfiguration) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetDateTimeConfiguration gets the dateTimeConfiguration property value. The date and time configurations for a device.
 func (m *TeamworkSystemConfiguration) GetDateTimeConfiguration()(TeamworkDateTimeConfigurationable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.dateTimeConfiguration
-    }
+    return m.dateTimeConfiguration
 }
 // GetDefaultPassword gets the defaultPassword property value. The default password for the device. Write-Only.
 func (m *TeamworkSystemConfiguration) GetDefaultPassword()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.defaultPassword
-    }
+    return m.defaultPassword
 }
 // GetDeviceLockTimeout gets the deviceLockTimeout property value. The device lock timeout in seconds.
 func (m *TeamworkSystemConfiguration) GetDeviceLockTimeout()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deviceLockTimeout
-    }
+    return m.deviceLockTimeout
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *TeamworkSystemConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -217,83 +201,43 @@ func (m *TeamworkSystemConfiguration) GetFieldDeserializers()(map[string]func(i8
 }
 // GetIsDeviceLockEnabled gets the isDeviceLockEnabled property value. True if the device lock is enabled.
 func (m *TeamworkSystemConfiguration) GetIsDeviceLockEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isDeviceLockEnabled
-    }
+    return m.isDeviceLockEnabled
 }
 // GetIsLoggingEnabled gets the isLoggingEnabled property value. True if logging is enabled.
 func (m *TeamworkSystemConfiguration) GetIsLoggingEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isLoggingEnabled
-    }
+    return m.isLoggingEnabled
 }
 // GetIsPowerSavingEnabled gets the isPowerSavingEnabled property value. True if power saving is enabled.
 func (m *TeamworkSystemConfiguration) GetIsPowerSavingEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isPowerSavingEnabled
-    }
+    return m.isPowerSavingEnabled
 }
 // GetIsScreenCaptureEnabled gets the isScreenCaptureEnabled property value. True if screen capture is enabled.
 func (m *TeamworkSystemConfiguration) GetIsScreenCaptureEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isScreenCaptureEnabled
-    }
+    return m.isScreenCaptureEnabled
 }
 // GetIsSilentModeEnabled gets the isSilentModeEnabled property value. True if silent mode is enabled.
 func (m *TeamworkSystemConfiguration) GetIsSilentModeEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isSilentModeEnabled
-    }
+    return m.isSilentModeEnabled
 }
 // GetLanguage gets the language property value. The language option for the device.
 func (m *TeamworkSystemConfiguration) GetLanguage()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.language
-    }
+    return m.language
 }
 // GetLockPin gets the lockPin property value. The pin that unlocks the device. Write-Only.
 func (m *TeamworkSystemConfiguration) GetLockPin()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lockPin
-    }
+    return m.lockPin
 }
 // GetLoggingLevel gets the loggingLevel property value. The logging level for the device.
 func (m *TeamworkSystemConfiguration) GetLoggingLevel()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.loggingLevel
-    }
+    return m.loggingLevel
 }
 // GetNetworkConfiguration gets the networkConfiguration property value. The network configuration for the device.
 func (m *TeamworkSystemConfiguration) GetNetworkConfiguration()(TeamworkNetworkConfigurationable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.networkConfiguration
-    }
+    return m.networkConfiguration
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *TeamworkSystemConfiguration) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // Serialize serializes information the current object
 func (m *TeamworkSystemConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -385,85 +329,57 @@ func (m *TeamworkSystemConfiguration) Serialize(writer i878a80d2330e89d26896388a
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TeamworkSystemConfiguration) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetDateTimeConfiguration sets the dateTimeConfiguration property value. The date and time configurations for a device.
 func (m *TeamworkSystemConfiguration) SetDateTimeConfiguration(value TeamworkDateTimeConfigurationable)() {
-    if m != nil {
-        m.dateTimeConfiguration = value
-    }
+    m.dateTimeConfiguration = value
 }
 // SetDefaultPassword sets the defaultPassword property value. The default password for the device. Write-Only.
 func (m *TeamworkSystemConfiguration) SetDefaultPassword(value *string)() {
-    if m != nil {
-        m.defaultPassword = value
-    }
+    m.defaultPassword = value
 }
 // SetDeviceLockTimeout sets the deviceLockTimeout property value. The device lock timeout in seconds.
 func (m *TeamworkSystemConfiguration) SetDeviceLockTimeout(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)() {
-    if m != nil {
-        m.deviceLockTimeout = value
-    }
+    m.deviceLockTimeout = value
 }
 // SetIsDeviceLockEnabled sets the isDeviceLockEnabled property value. True if the device lock is enabled.
 func (m *TeamworkSystemConfiguration) SetIsDeviceLockEnabled(value *bool)() {
-    if m != nil {
-        m.isDeviceLockEnabled = value
-    }
+    m.isDeviceLockEnabled = value
 }
 // SetIsLoggingEnabled sets the isLoggingEnabled property value. True if logging is enabled.
 func (m *TeamworkSystemConfiguration) SetIsLoggingEnabled(value *bool)() {
-    if m != nil {
-        m.isLoggingEnabled = value
-    }
+    m.isLoggingEnabled = value
 }
 // SetIsPowerSavingEnabled sets the isPowerSavingEnabled property value. True if power saving is enabled.
 func (m *TeamworkSystemConfiguration) SetIsPowerSavingEnabled(value *bool)() {
-    if m != nil {
-        m.isPowerSavingEnabled = value
-    }
+    m.isPowerSavingEnabled = value
 }
 // SetIsScreenCaptureEnabled sets the isScreenCaptureEnabled property value. True if screen capture is enabled.
 func (m *TeamworkSystemConfiguration) SetIsScreenCaptureEnabled(value *bool)() {
-    if m != nil {
-        m.isScreenCaptureEnabled = value
-    }
+    m.isScreenCaptureEnabled = value
 }
 // SetIsSilentModeEnabled sets the isSilentModeEnabled property value. True if silent mode is enabled.
 func (m *TeamworkSystemConfiguration) SetIsSilentModeEnabled(value *bool)() {
-    if m != nil {
-        m.isSilentModeEnabled = value
-    }
+    m.isSilentModeEnabled = value
 }
 // SetLanguage sets the language property value. The language option for the device.
 func (m *TeamworkSystemConfiguration) SetLanguage(value *string)() {
-    if m != nil {
-        m.language = value
-    }
+    m.language = value
 }
 // SetLockPin sets the lockPin property value. The pin that unlocks the device. Write-Only.
 func (m *TeamworkSystemConfiguration) SetLockPin(value *string)() {
-    if m != nil {
-        m.lockPin = value
-    }
+    m.lockPin = value
 }
 // SetLoggingLevel sets the loggingLevel property value. The logging level for the device.
 func (m *TeamworkSystemConfiguration) SetLoggingLevel(value *string)() {
-    if m != nil {
-        m.loggingLevel = value
-    }
+    m.loggingLevel = value
 }
 // SetNetworkConfiguration sets the networkConfiguration property value. The network configuration for the device.
 func (m *TeamworkSystemConfiguration) SetNetworkConfiguration(value TeamworkNetworkConfigurationable)() {
-    if m != nil {
-        m.networkConfiguration = value
-    }
+    m.networkConfiguration = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *TeamworkSystemConfiguration) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }

@@ -19,7 +19,7 @@ type AccessPackageSubject struct {
     email *string
     // The object identifier of the subject. null if the subject is not yet a user in the tenant.
     objectId *string
-    // A string representation of the principal's security identifier, if known, or null if the subject does not have a security identifier.
+    // The onPremisesSecurityIdentifier property
     onPremisesSecurityIdentifier *string
     // The principal name, if known, of the subject.
     principalName *string
@@ -43,43 +43,23 @@ func CreateAccessPackageSubjectFromDiscriminatorValue(parseNode i878a80d2330e89d
 }
 // GetAltSecId gets the altSecId property value. The altSecId property
 func (m *AccessPackageSubject) GetAltSecId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.altSecId
-    }
+    return m.altSecId
 }
 // GetConnectedOrganization gets the connectedOrganization property value. The connected organization of the subject. Read-only. Nullable.
 func (m *AccessPackageSubject) GetConnectedOrganization()(ConnectedOrganizationable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.connectedOrganization
-    }
+    return m.connectedOrganization
 }
 // GetConnectedOrganizationId gets the connectedOrganizationId property value. The identifier of the connected organization of the subject.
 func (m *AccessPackageSubject) GetConnectedOrganizationId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.connectedOrganizationId
-    }
+    return m.connectedOrganizationId
 }
 // GetDisplayName gets the displayName property value. The display name of the subject.
 func (m *AccessPackageSubject) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
 // GetEmail gets the email property value. The email address of the subject.
 func (m *AccessPackageSubject) GetEmail()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.email
-    }
+    return m.email
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AccessPackageSubject) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -188,43 +168,23 @@ func (m *AccessPackageSubject) GetFieldDeserializers()(map[string]func(i878a80d2
 }
 // GetObjectId gets the objectId property value. The object identifier of the subject. null if the subject is not yet a user in the tenant.
 func (m *AccessPackageSubject) GetObjectId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.objectId
-    }
+    return m.objectId
 }
-// GetOnPremisesSecurityIdentifier gets the onPremisesSecurityIdentifier property value. A string representation of the principal's security identifier, if known, or null if the subject does not have a security identifier.
+// GetOnPremisesSecurityIdentifier gets the onPremisesSecurityIdentifier property value. The onPremisesSecurityIdentifier property
 func (m *AccessPackageSubject) GetOnPremisesSecurityIdentifier()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.onPremisesSecurityIdentifier
-    }
+    return m.onPremisesSecurityIdentifier
 }
 // GetPrincipalName gets the principalName property value. The principal name, if known, of the subject.
 func (m *AccessPackageSubject) GetPrincipalName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.principalName
-    }
+    return m.principalName
 }
 // GetSubjectLifecycle gets the subjectLifecycle property value. The subjectLifecycle property
 func (m *AccessPackageSubject) GetSubjectLifecycle()(*AccessPackageSubjectLifecycle) {
-    if m == nil {
-        return nil
-    } else {
-        return m.subjectLifecycle
-    }
+    return m.subjectLifecycle
 }
 // GetType gets the type property value. The resource type of the subject.
 func (m *AccessPackageSubject) GetType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.type_escaped
-    }
+    return m.type_escaped
 }
 // Serialize serializes information the current object
 func (m *AccessPackageSubject) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -297,61 +257,41 @@ func (m *AccessPackageSubject) Serialize(writer i878a80d2330e89d26896388a3f487ee
 }
 // SetAltSecId sets the altSecId property value. The altSecId property
 func (m *AccessPackageSubject) SetAltSecId(value *string)() {
-    if m != nil {
-        m.altSecId = value
-    }
+    m.altSecId = value
 }
 // SetConnectedOrganization sets the connectedOrganization property value. The connected organization of the subject. Read-only. Nullable.
 func (m *AccessPackageSubject) SetConnectedOrganization(value ConnectedOrganizationable)() {
-    if m != nil {
-        m.connectedOrganization = value
-    }
+    m.connectedOrganization = value
 }
 // SetConnectedOrganizationId sets the connectedOrganizationId property value. The identifier of the connected organization of the subject.
 func (m *AccessPackageSubject) SetConnectedOrganizationId(value *string)() {
-    if m != nil {
-        m.connectedOrganizationId = value
-    }
+    m.connectedOrganizationId = value
 }
 // SetDisplayName sets the displayName property value. The display name of the subject.
 func (m *AccessPackageSubject) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }
 // SetEmail sets the email property value. The email address of the subject.
 func (m *AccessPackageSubject) SetEmail(value *string)() {
-    if m != nil {
-        m.email = value
-    }
+    m.email = value
 }
 // SetObjectId sets the objectId property value. The object identifier of the subject. null if the subject is not yet a user in the tenant.
 func (m *AccessPackageSubject) SetObjectId(value *string)() {
-    if m != nil {
-        m.objectId = value
-    }
+    m.objectId = value
 }
-// SetOnPremisesSecurityIdentifier sets the onPremisesSecurityIdentifier property value. A string representation of the principal's security identifier, if known, or null if the subject does not have a security identifier.
+// SetOnPremisesSecurityIdentifier sets the onPremisesSecurityIdentifier property value. The onPremisesSecurityIdentifier property
 func (m *AccessPackageSubject) SetOnPremisesSecurityIdentifier(value *string)() {
-    if m != nil {
-        m.onPremisesSecurityIdentifier = value
-    }
+    m.onPremisesSecurityIdentifier = value
 }
 // SetPrincipalName sets the principalName property value. The principal name, if known, of the subject.
 func (m *AccessPackageSubject) SetPrincipalName(value *string)() {
-    if m != nil {
-        m.principalName = value
-    }
+    m.principalName = value
 }
 // SetSubjectLifecycle sets the subjectLifecycle property value. The subjectLifecycle property
 func (m *AccessPackageSubject) SetSubjectLifecycle(value *AccessPackageSubjectLifecycle)() {
-    if m != nil {
-        m.subjectLifecycle = value
-    }
+    m.subjectLifecycle = value
 }
 // SetType sets the type property value. The resource type of the subject.
 func (m *AccessPackageSubject) SetType(value *string)() {
-    if m != nil {
-        m.type_escaped = value
-    }
+    m.type_escaped = value
 }

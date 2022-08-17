@@ -64,27 +64,15 @@ func (m *WindowsManagementAppHealthSummary) GetFieldDeserializers()(map[string]f
 }
 // GetHealthyDeviceCount gets the healthyDeviceCount property value. Healthy device count.
 func (m *WindowsManagementAppHealthSummary) GetHealthyDeviceCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.healthyDeviceCount
-    }
+    return m.healthyDeviceCount
 }
 // GetUnhealthyDeviceCount gets the unhealthyDeviceCount property value. Unhealthy device count.
 func (m *WindowsManagementAppHealthSummary) GetUnhealthyDeviceCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.unhealthyDeviceCount
-    }
+    return m.unhealthyDeviceCount
 }
 // GetUnknownDeviceCount gets the unknownDeviceCount property value. Unknown device count.
 func (m *WindowsManagementAppHealthSummary) GetUnknownDeviceCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.unknownDeviceCount
-    }
+    return m.unknownDeviceCount
 }
 // Serialize serializes information the current object
 func (m *WindowsManagementAppHealthSummary) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -114,19 +102,13 @@ func (m *WindowsManagementAppHealthSummary) Serialize(writer i878a80d2330e89d268
 }
 // SetHealthyDeviceCount sets the healthyDeviceCount property value. Healthy device count.
 func (m *WindowsManagementAppHealthSummary) SetHealthyDeviceCount(value *int32)() {
-    if m != nil {
-        m.healthyDeviceCount = value
-    }
+    m.healthyDeviceCount = value
 }
 // SetUnhealthyDeviceCount sets the unhealthyDeviceCount property value. Unhealthy device count.
 func (m *WindowsManagementAppHealthSummary) SetUnhealthyDeviceCount(value *int32)() {
-    if m != nil {
-        m.unhealthyDeviceCount = value
-    }
+    m.unhealthyDeviceCount = value
 }
 // SetUnknownDeviceCount sets the unknownDeviceCount property value. Unknown device count.
 func (m *WindowsManagementAppHealthSummary) SetUnknownDeviceCount(value *int32)() {
-    if m != nil {
-        m.unknownDeviceCount = value
-    }
+    m.unknownDeviceCount = value
 }

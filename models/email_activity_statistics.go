@@ -29,11 +29,7 @@ func CreateEmailActivityStatisticsFromDiscriminatorValue(parseNode i878a80d2330e
 }
 // GetAfterHours gets the afterHours property value. Total hours spent on email outside of working hours, which is based on the user's Outlook calendar setting for work hours. The value is represented in ISO 8601 format for durations.
 func (m *EmailActivityStatistics) GetAfterHours()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration) {
-    if m == nil {
-        return nil
-    } else {
-        return m.afterHours
-    }
+    return m.afterHours
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *EmailActivityStatistics) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -72,19 +68,11 @@ func (m *EmailActivityStatistics) GetFieldDeserializers()(map[string]func(i878a8
 }
 // GetReadEmail gets the readEmail property value. Total hours spent reading email. The value is represented in ISO 8601 format for durations.
 func (m *EmailActivityStatistics) GetReadEmail()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration) {
-    if m == nil {
-        return nil
-    } else {
-        return m.readEmail
-    }
+    return m.readEmail
 }
 // GetSentEmail gets the sentEmail property value. Total hours spent writing and sending email. The value is represented in ISO 8601 format for durations.
 func (m *EmailActivityStatistics) GetSentEmail()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration) {
-    if m == nil {
-        return nil
-    } else {
-        return m.sentEmail
-    }
+    return m.sentEmail
 }
 // Serialize serializes information the current object
 func (m *EmailActivityStatistics) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -114,19 +102,13 @@ func (m *EmailActivityStatistics) Serialize(writer i878a80d2330e89d26896388a3f48
 }
 // SetAfterHours sets the afterHours property value. Total hours spent on email outside of working hours, which is based on the user's Outlook calendar setting for work hours. The value is represented in ISO 8601 format for durations.
 func (m *EmailActivityStatistics) SetAfterHours(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)() {
-    if m != nil {
-        m.afterHours = value
-    }
+    m.afterHours = value
 }
 // SetReadEmail sets the readEmail property value. Total hours spent reading email. The value is represented in ISO 8601 format for durations.
 func (m *EmailActivityStatistics) SetReadEmail(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)() {
-    if m != nil {
-        m.readEmail = value
-    }
+    m.readEmail = value
 }
 // SetSentEmail sets the sentEmail property value. Total hours spent writing and sending email. The value is represented in ISO 8601 format for durations.
 func (m *EmailActivityStatistics) SetSentEmail(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)() {
-    if m != nil {
-        m.sentEmail = value
-    }
+    m.sentEmail = value
 }

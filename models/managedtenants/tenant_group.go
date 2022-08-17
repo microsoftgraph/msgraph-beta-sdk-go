@@ -5,7 +5,7 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
-// TenantGroup provides operations to manage the collection of activityStatistics entities.
+// TenantGroup provides operations to manage the collection of accessReviewDecision entities.
 type TenantGroup struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
     // A flag indicating whether all managed tenant are included in the tenant group. Required. Read-only.
@@ -34,19 +34,11 @@ func CreateTenantGroupFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a
 }
 // GetAllTenantsIncluded gets the allTenantsIncluded property value. A flag indicating whether all managed tenant are included in the tenant group. Required. Read-only.
 func (m *TenantGroup) GetAllTenantsIncluded()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.allTenantsIncluded
-    }
+    return m.allTenantsIncluded
 }
 // GetDisplayName gets the displayName property value. The display name for the tenant group. Optional. Read-only.
 func (m *TenantGroup) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *TenantGroup) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -117,27 +109,15 @@ func (m *TenantGroup) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
 }
 // GetManagementActions gets the managementActions property value. The collection of management action associated with the tenant group. Optional. Read-only.
 func (m *TenantGroup) GetManagementActions()([]ManagementActionInfoable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.managementActions
-    }
+    return m.managementActions
 }
 // GetManagementIntents gets the managementIntents property value. The collection of management intents associated with the tenant group. Optional. Read-only.
 func (m *TenantGroup) GetManagementIntents()([]ManagementIntentInfoable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.managementIntents
-    }
+    return m.managementIntents
 }
 // GetTenantIds gets the tenantIds property value. The collection of managed tenant identifiers include in the tenant group. Optional. Read-only.
 func (m *TenantGroup) GetTenantIds()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.tenantIds
-    }
+    return m.tenantIds
 }
 // Serialize serializes information the current object
 func (m *TenantGroup) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -187,31 +167,21 @@ func (m *TenantGroup) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
 }
 // SetAllTenantsIncluded sets the allTenantsIncluded property value. A flag indicating whether all managed tenant are included in the tenant group. Required. Read-only.
 func (m *TenantGroup) SetAllTenantsIncluded(value *bool)() {
-    if m != nil {
-        m.allTenantsIncluded = value
-    }
+    m.allTenantsIncluded = value
 }
 // SetDisplayName sets the displayName property value. The display name for the tenant group. Optional. Read-only.
 func (m *TenantGroup) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }
 // SetManagementActions sets the managementActions property value. The collection of management action associated with the tenant group. Optional. Read-only.
 func (m *TenantGroup) SetManagementActions(value []ManagementActionInfoable)() {
-    if m != nil {
-        m.managementActions = value
-    }
+    m.managementActions = value
 }
 // SetManagementIntents sets the managementIntents property value. The collection of management intents associated with the tenant group. Optional. Read-only.
 func (m *TenantGroup) SetManagementIntents(value []ManagementIntentInfoable)() {
-    if m != nil {
-        m.managementIntents = value
-    }
+    m.managementIntents = value
 }
 // SetTenantIds sets the tenantIds property value. The collection of managed tenant identifiers include in the tenant group. Optional. Read-only.
 func (m *TenantGroup) SetTenantIds(value []string)() {
-    if m != nil {
-        m.tenantIds = value
-    }
+    m.tenantIds = value
 }

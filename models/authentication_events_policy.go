@@ -44,11 +44,7 @@ func (m *AuthenticationEventsPolicy) GetFieldDeserializers()(map[string]func(i87
 }
 // GetOnSignupStart gets the onSignupStart property value. A list of applicable actions to be taken on sign-up.
 func (m *AuthenticationEventsPolicy) GetOnSignupStart()([]AuthenticationListenerable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.onSignupStart
-    }
+    return m.onSignupStart
 }
 // Serialize serializes information the current object
 func (m *AuthenticationEventsPolicy) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -70,7 +66,5 @@ func (m *AuthenticationEventsPolicy) Serialize(writer i878a80d2330e89d26896388a3
 }
 // SetOnSignupStart sets the onSignupStart property value. A list of applicable actions to be taken on sign-up.
 func (m *AuthenticationEventsPolicy) SetOnSignupStart(value []AuthenticationListenerable)() {
-    if m != nil {
-        m.onSignupStart = value
-    }
+    m.onSignupStart = value
 }

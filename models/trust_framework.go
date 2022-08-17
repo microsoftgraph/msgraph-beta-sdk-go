@@ -30,11 +30,7 @@ func CreateTrustFrameworkFromDiscriminatorValue(parseNode i878a80d2330e89d268963
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TrustFramework) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *TrustFramework) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -81,27 +77,15 @@ func (m *TrustFramework) GetFieldDeserializers()(map[string]func(i878a80d2330e89
 }
 // GetKeySets gets the keySets property value. The keySets property
 func (m *TrustFramework) GetKeySets()([]TrustFrameworkKeySetable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.keySets
-    }
+    return m.keySets
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *TrustFramework) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetPolicies gets the policies property value. The policies property
 func (m *TrustFramework) GetPolicies()([]TrustFrameworkPolicyable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.policies
-    }
+    return m.policies
 }
 // Serialize serializes information the current object
 func (m *TrustFramework) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -141,25 +125,17 @@ func (m *TrustFramework) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TrustFramework) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetKeySets sets the keySets property value. The keySets property
 func (m *TrustFramework) SetKeySets(value []TrustFrameworkKeySetable)() {
-    if m != nil {
-        m.keySets = value
-    }
+    m.keySets = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *TrustFramework) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetPolicies sets the policies property value. The policies property
 func (m *TrustFramework) SetPolicies(value []TrustFrameworkPolicyable)() {
-    if m != nil {
-        m.policies = value
-    }
+    m.policies = value
 }

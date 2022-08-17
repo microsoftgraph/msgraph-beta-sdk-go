@@ -40,11 +40,7 @@ func (m *DeviceManagementSettingRegexConstraint) GetFieldDeserializers()(map[str
 }
 // GetRegex gets the regex property value. The RegEx pattern to match against
 func (m *DeviceManagementSettingRegexConstraint) GetRegex()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.regex
-    }
+    return m.regex
 }
 // Serialize serializes information the current object
 func (m *DeviceManagementSettingRegexConstraint) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -62,7 +58,5 @@ func (m *DeviceManagementSettingRegexConstraint) Serialize(writer i878a80d2330e8
 }
 // SetRegex sets the regex property value. The RegEx pattern to match against
 func (m *DeviceManagementSettingRegexConstraint) SetRegex(value *string)() {
-    if m != nil {
-        m.regex = value
-    }
+    m.regex = value
 }

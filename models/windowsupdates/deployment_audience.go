@@ -28,11 +28,7 @@ func CreateDeploymentAudienceFromDiscriminatorValue(parseNode i878a80d2330e89d26
 }
 // GetExclusions gets the exclusions property value. Specifies the assets to exclude from the audience.
 func (m *DeploymentAudience) GetExclusions()([]UpdatableAssetable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.exclusions
-    }
+    return m.exclusions
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeploymentAudience) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -69,11 +65,7 @@ func (m *DeploymentAudience) GetFieldDeserializers()(map[string]func(i878a80d233
 }
 // GetMembers gets the members property value. Specifies the assets to include in the audience.
 func (m *DeploymentAudience) GetMembers()([]UpdatableAssetable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.members
-    }
+    return m.members
 }
 // Serialize serializes information the current object
 func (m *DeploymentAudience) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -105,13 +97,9 @@ func (m *DeploymentAudience) Serialize(writer i878a80d2330e89d26896388a3f487eef2
 }
 // SetExclusions sets the exclusions property value. Specifies the assets to exclude from the audience.
 func (m *DeploymentAudience) SetExclusions(value []UpdatableAssetable)() {
-    if m != nil {
-        m.exclusions = value
-    }
+    m.exclusions = value
 }
 // SetMembers sets the members property value. Specifies the assets to include in the audience.
 func (m *DeploymentAudience) SetMembers(value []UpdatableAssetable)() {
-    if m != nil {
-        m.members = value
-    }
+    m.members = value
 }

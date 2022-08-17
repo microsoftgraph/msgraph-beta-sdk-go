@@ -22,7 +22,7 @@ type DeletedItemsRequestBuilder struct {
     // Url template to use to build the URL for the current request builder
     urlTemplate string
 }
-// DeletedItemsRequestBuilderGetQueryParameters recently deleted items. Read-only. Nullable.
+// DeletedItemsRequestBuilderGetQueryParameters get deletedItems from directory
 type DeletedItemsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -84,11 +84,11 @@ func NewDeletedItemsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2
 func (m *DeletedItemsRequestBuilder) Count()(*i582b3dfc89fb8335c62d5c1b642f724197229635d5f263e6cc636b61190df708.CountRequestBuilder) {
     return i582b3dfc89fb8335c62d5c1b642f724197229635d5f263e6cc636b61190df708.NewCountRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// CreateGetRequestInformation recently deleted items. Read-only. Nullable.
+// CreateGetRequestInformation get deletedItems from directory
 func (m *DeletedItemsRequestBuilder) CreateGetRequestInformation()(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     return m.CreateGetRequestInformationWithRequestConfiguration(nil);
 }
-// CreateGetRequestInformationWithRequestConfiguration recently deleted items. Read-only. Nullable.
+// CreateGetRequestInformationWithRequestConfiguration get deletedItems from directory
 func (m *DeletedItemsRequestBuilder) CreateGetRequestInformationWithRequestConfiguration(requestConfiguration *DeletedItemsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     requestInfo.UrlTemplate = m.urlTemplate
@@ -122,7 +122,7 @@ func (m *DeletedItemsRequestBuilder) CreatePostRequestInformationWithRequestConf
     }
     return requestInfo, nil
 }
-// Get recently deleted items. Read-only. Nullable.
+// Get get deletedItems from directory
 func (m *DeletedItemsRequestBuilder) Get()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectCollectionResponseable, error) {
     return m.GetWithRequestConfigurationAndResponseHandler(nil, nil);
 }
@@ -134,7 +134,7 @@ func (m *DeletedItemsRequestBuilder) GetByIds()(*ie1025c6f61e31a1860f913437eacc7
 func (m *DeletedItemsRequestBuilder) GetUserOwnedObjects()(*i4389b9aaa346a5fdf53bb167cf00b6bdc4aa52db66b0adf49337c8a1c78f8a32.GetUserOwnedObjectsRequestBuilder) {
     return i4389b9aaa346a5fdf53bb167cf00b6bdc4aa52db66b0adf49337c8a1c78f8a32.NewGetUserOwnedObjectsRequestBuilderInternal(m.pathParameters, m.requestAdapter);
 }
-// GetWithRequestConfigurationAndResponseHandler recently deleted items. Read-only. Nullable.
+// GetWithRequestConfigurationAndResponseHandler get deletedItems from directory
 func (m *DeletedItemsRequestBuilder) GetWithRequestConfigurationAndResponseHandler(requestConfiguration *DeletedItemsRequestBuilderGetRequestConfiguration, responseHandler i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ResponseHandler)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectCollectionResponseable, error) {
     requestInfo, err := m.CreateGetRequestInformationWithRequestConfiguration(requestConfiguration);
     if err != nil {

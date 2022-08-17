@@ -37,27 +37,15 @@ func CreateUserAppInstallStatusFromDiscriminatorValue(parseNode i878a80d2330e89d
 }
 // GetApp gets the app property value. The navigation link to the mobile app.
 func (m *UserAppInstallStatus) GetApp()(MobileAppable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.app
-    }
+    return m.app
 }
 // GetDeviceStatuses gets the deviceStatuses property value. The install state of the app on devices.
 func (m *UserAppInstallStatus) GetDeviceStatuses()([]MobileAppInstallStatusable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deviceStatuses
-    }
+    return m.deviceStatuses
 }
 // GetFailedDeviceCount gets the failedDeviceCount property value. Failed Device Count.
 func (m *UserAppInstallStatus) GetFailedDeviceCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.failedDeviceCount
-    }
+    return m.failedDeviceCount
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *UserAppInstallStatus) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -140,35 +128,19 @@ func (m *UserAppInstallStatus) GetFieldDeserializers()(map[string]func(i878a80d2
 }
 // GetInstalledDeviceCount gets the installedDeviceCount property value. Installed Device Count.
 func (m *UserAppInstallStatus) GetInstalledDeviceCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.installedDeviceCount
-    }
+    return m.installedDeviceCount
 }
 // GetNotInstalledDeviceCount gets the notInstalledDeviceCount property value. Not installed device count.
 func (m *UserAppInstallStatus) GetNotInstalledDeviceCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.notInstalledDeviceCount
-    }
+    return m.notInstalledDeviceCount
 }
 // GetUserName gets the userName property value. User name.
 func (m *UserAppInstallStatus) GetUserName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userName
-    }
+    return m.userName
 }
 // GetUserPrincipalName gets the userPrincipalName property value. User Principal Name.
 func (m *UserAppInstallStatus) GetUserPrincipalName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userPrincipalName
-    }
+    return m.userPrincipalName
 }
 // Serialize serializes information the current object
 func (m *UserAppInstallStatus) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -226,43 +198,29 @@ func (m *UserAppInstallStatus) Serialize(writer i878a80d2330e89d26896388a3f487ee
 }
 // SetApp sets the app property value. The navigation link to the mobile app.
 func (m *UserAppInstallStatus) SetApp(value MobileAppable)() {
-    if m != nil {
-        m.app = value
-    }
+    m.app = value
 }
 // SetDeviceStatuses sets the deviceStatuses property value. The install state of the app on devices.
 func (m *UserAppInstallStatus) SetDeviceStatuses(value []MobileAppInstallStatusable)() {
-    if m != nil {
-        m.deviceStatuses = value
-    }
+    m.deviceStatuses = value
 }
 // SetFailedDeviceCount sets the failedDeviceCount property value. Failed Device Count.
 func (m *UserAppInstallStatus) SetFailedDeviceCount(value *int32)() {
-    if m != nil {
-        m.failedDeviceCount = value
-    }
+    m.failedDeviceCount = value
 }
 // SetInstalledDeviceCount sets the installedDeviceCount property value. Installed Device Count.
 func (m *UserAppInstallStatus) SetInstalledDeviceCount(value *int32)() {
-    if m != nil {
-        m.installedDeviceCount = value
-    }
+    m.installedDeviceCount = value
 }
 // SetNotInstalledDeviceCount sets the notInstalledDeviceCount property value. Not installed device count.
 func (m *UserAppInstallStatus) SetNotInstalledDeviceCount(value *int32)() {
-    if m != nil {
-        m.notInstalledDeviceCount = value
-    }
+    m.notInstalledDeviceCount = value
 }
 // SetUserName sets the userName property value. User name.
 func (m *UserAppInstallStatus) SetUserName(value *string)() {
-    if m != nil {
-        m.userName = value
-    }
+    m.userName = value
 }
 // SetUserPrincipalName sets the userPrincipalName property value. User Principal Name.
 func (m *UserAppInstallStatus) SetUserPrincipalName(value *string)() {
-    if m != nil {
-        m.userPrincipalName = value
-    }
+    m.userPrincipalName = value
 }

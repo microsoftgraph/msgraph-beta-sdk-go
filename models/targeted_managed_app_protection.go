@@ -52,19 +52,11 @@ func CreateTargetedManagedAppProtectionFromDiscriminatorValue(parseNode i878a80d
 }
 // GetAppGroupType gets the appGroupType property value. Indicates a collection of apps to target which can be one of several pre-defined lists of apps or a manually selected list of apps
 func (m *TargetedManagedAppProtection) GetAppGroupType()(*TargetedManagedAppGroupType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.appGroupType
-    }
+    return m.appGroupType
 }
 // GetAssignments gets the assignments property value. Navigation property to list of inclusion and exclusion groups to which the policy is deployed.
 func (m *TargetedManagedAppProtection) GetAssignments()([]TargetedManagedAppPolicyAssignmentable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.assignments
-    }
+    return m.assignments
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *TargetedManagedAppProtection) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -117,19 +109,11 @@ func (m *TargetedManagedAppProtection) GetFieldDeserializers()(map[string]func(i
 }
 // GetIsAssigned gets the isAssigned property value. Indicates if the policy is deployed to any inclusion groups or not.
 func (m *TargetedManagedAppProtection) GetIsAssigned()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isAssigned
-    }
+    return m.isAssigned
 }
 // GetTargetedAppManagementLevels gets the targetedAppManagementLevels property value. Management levels for apps
 func (m *TargetedManagedAppProtection) GetTargetedAppManagementLevels()(*AppManagementLevel) {
-    if m == nil {
-        return nil
-    } else {
-        return m.targetedAppManagementLevels
-    }
+    return m.targetedAppManagementLevels
 }
 // Serialize serializes information the current object
 func (m *TargetedManagedAppProtection) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -171,25 +155,17 @@ func (m *TargetedManagedAppProtection) Serialize(writer i878a80d2330e89d26896388
 }
 // SetAppGroupType sets the appGroupType property value. Indicates a collection of apps to target which can be one of several pre-defined lists of apps or a manually selected list of apps
 func (m *TargetedManagedAppProtection) SetAppGroupType(value *TargetedManagedAppGroupType)() {
-    if m != nil {
-        m.appGroupType = value
-    }
+    m.appGroupType = value
 }
 // SetAssignments sets the assignments property value. Navigation property to list of inclusion and exclusion groups to which the policy is deployed.
 func (m *TargetedManagedAppProtection) SetAssignments(value []TargetedManagedAppPolicyAssignmentable)() {
-    if m != nil {
-        m.assignments = value
-    }
+    m.assignments = value
 }
 // SetIsAssigned sets the isAssigned property value. Indicates if the policy is deployed to any inclusion groups or not.
 func (m *TargetedManagedAppProtection) SetIsAssigned(value *bool)() {
-    if m != nil {
-        m.isAssigned = value
-    }
+    m.isAssigned = value
 }
 // SetTargetedAppManagementLevels sets the targetedAppManagementLevels property value. Management levels for apps
 func (m *TargetedManagedAppProtection) SetTargetedAppManagementLevels(value *AppManagementLevel)() {
-    if m != nil {
-        m.targetedAppManagementLevels = value
-    }
+    m.targetedAppManagementLevels = value
 }

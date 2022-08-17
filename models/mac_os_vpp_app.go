@@ -48,27 +48,15 @@ func CreateMacOsVppAppFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a
 }
 // GetAppStoreUrl gets the appStoreUrl property value. The store URL.
 func (m *MacOsVppApp) GetAppStoreUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.appStoreUrl
-    }
+    return m.appStoreUrl
 }
 // GetAssignedLicenses gets the assignedLicenses property value. The licenses assigned to this app.
 func (m *MacOsVppApp) GetAssignedLicenses()([]MacOsVppAppAssignedLicenseable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.assignedLicenses
-    }
+    return m.assignedLicenses
 }
 // GetBundleId gets the bundleId property value. The Identity Name.
 func (m *MacOsVppApp) GetBundleId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.bundleId
-    }
+    return m.bundleId
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *MacOsVppApp) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -205,75 +193,39 @@ func (m *MacOsVppApp) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
 }
 // GetLicensingType gets the licensingType property value. The supported License Type.
 func (m *MacOsVppApp) GetLicensingType()(VppLicensingTypeable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.licensingType
-    }
+    return m.licensingType
 }
 // GetReleaseDateTime gets the releaseDateTime property value. The VPP application release date and time.
 func (m *MacOsVppApp) GetReleaseDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.releaseDateTime
-    }
+    return m.releaseDateTime
 }
 // GetRevokeLicenseActionResults gets the revokeLicenseActionResults property value. Results of revoke license actions on this app.
 func (m *MacOsVppApp) GetRevokeLicenseActionResults()([]MacOsVppAppRevokeLicensesActionResultable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.revokeLicenseActionResults
-    }
+    return m.revokeLicenseActionResults
 }
 // GetTotalLicenseCount gets the totalLicenseCount property value. The total number of VPP licenses.
 func (m *MacOsVppApp) GetTotalLicenseCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.totalLicenseCount
-    }
+    return m.totalLicenseCount
 }
 // GetUsedLicenseCount gets the usedLicenseCount property value. The number of VPP licenses in use.
 func (m *MacOsVppApp) GetUsedLicenseCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.usedLicenseCount
-    }
+    return m.usedLicenseCount
 }
 // GetVppTokenAccountType gets the vppTokenAccountType property value. Possible types of an Apple Volume Purchase Program token.
 func (m *MacOsVppApp) GetVppTokenAccountType()(*VppTokenAccountType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.vppTokenAccountType
-    }
+    return m.vppTokenAccountType
 }
 // GetVppTokenAppleId gets the vppTokenAppleId property value. The Apple Id associated with the given Apple Volume Purchase Program Token.
 func (m *MacOsVppApp) GetVppTokenAppleId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.vppTokenAppleId
-    }
+    return m.vppTokenAppleId
 }
 // GetVppTokenId gets the vppTokenId property value. Identifier of the VPP token associated with this app.
 func (m *MacOsVppApp) GetVppTokenId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.vppTokenId
-    }
+    return m.vppTokenId
 }
 // GetVppTokenOrganizationName gets the vppTokenOrganizationName property value. The organization associated with the Apple Volume Purchase Program Token
 func (m *MacOsVppApp) GetVppTokenOrganizationName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.vppTokenOrganizationName
-    }
+    return m.vppTokenOrganizationName
 }
 // Serialize serializes information the current object
 func (m *MacOsVppApp) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -366,73 +318,49 @@ func (m *MacOsVppApp) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
 }
 // SetAppStoreUrl sets the appStoreUrl property value. The store URL.
 func (m *MacOsVppApp) SetAppStoreUrl(value *string)() {
-    if m != nil {
-        m.appStoreUrl = value
-    }
+    m.appStoreUrl = value
 }
 // SetAssignedLicenses sets the assignedLicenses property value. The licenses assigned to this app.
 func (m *MacOsVppApp) SetAssignedLicenses(value []MacOsVppAppAssignedLicenseable)() {
-    if m != nil {
-        m.assignedLicenses = value
-    }
+    m.assignedLicenses = value
 }
 // SetBundleId sets the bundleId property value. The Identity Name.
 func (m *MacOsVppApp) SetBundleId(value *string)() {
-    if m != nil {
-        m.bundleId = value
-    }
+    m.bundleId = value
 }
 // SetLicensingType sets the licensingType property value. The supported License Type.
 func (m *MacOsVppApp) SetLicensingType(value VppLicensingTypeable)() {
-    if m != nil {
-        m.licensingType = value
-    }
+    m.licensingType = value
 }
 // SetReleaseDateTime sets the releaseDateTime property value. The VPP application release date and time.
 func (m *MacOsVppApp) SetReleaseDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.releaseDateTime = value
-    }
+    m.releaseDateTime = value
 }
 // SetRevokeLicenseActionResults sets the revokeLicenseActionResults property value. Results of revoke license actions on this app.
 func (m *MacOsVppApp) SetRevokeLicenseActionResults(value []MacOsVppAppRevokeLicensesActionResultable)() {
-    if m != nil {
-        m.revokeLicenseActionResults = value
-    }
+    m.revokeLicenseActionResults = value
 }
 // SetTotalLicenseCount sets the totalLicenseCount property value. The total number of VPP licenses.
 func (m *MacOsVppApp) SetTotalLicenseCount(value *int32)() {
-    if m != nil {
-        m.totalLicenseCount = value
-    }
+    m.totalLicenseCount = value
 }
 // SetUsedLicenseCount sets the usedLicenseCount property value. The number of VPP licenses in use.
 func (m *MacOsVppApp) SetUsedLicenseCount(value *int32)() {
-    if m != nil {
-        m.usedLicenseCount = value
-    }
+    m.usedLicenseCount = value
 }
 // SetVppTokenAccountType sets the vppTokenAccountType property value. Possible types of an Apple Volume Purchase Program token.
 func (m *MacOsVppApp) SetVppTokenAccountType(value *VppTokenAccountType)() {
-    if m != nil {
-        m.vppTokenAccountType = value
-    }
+    m.vppTokenAccountType = value
 }
 // SetVppTokenAppleId sets the vppTokenAppleId property value. The Apple Id associated with the given Apple Volume Purchase Program Token.
 func (m *MacOsVppApp) SetVppTokenAppleId(value *string)() {
-    if m != nil {
-        m.vppTokenAppleId = value
-    }
+    m.vppTokenAppleId = value
 }
 // SetVppTokenId sets the vppTokenId property value. Identifier of the VPP token associated with this app.
 func (m *MacOsVppApp) SetVppTokenId(value *string)() {
-    if m != nil {
-        m.vppTokenId = value
-    }
+    m.vppTokenId = value
 }
 // SetVppTokenOrganizationName sets the vppTokenOrganizationName property value. The organization associated with the Apple Volume Purchase Program Token
 func (m *MacOsVppApp) SetVppTokenOrganizationName(value *string)() {
-    if m != nil {
-        m.vppTokenOrganizationName = value
-    }
+    m.vppTokenOrganizationName = value
 }

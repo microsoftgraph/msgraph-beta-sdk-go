@@ -40,11 +40,7 @@ func (m *WindowsDeploymentSettings) GetFieldDeserializers()(map[string]func(i878
 }
 // GetUserExperience gets the userExperience property value. Settings governing the user's update experience on a device.
 func (m *WindowsDeploymentSettings) GetUserExperience()(UserExperienceSettingsable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userExperience
-    }
+    return m.userExperience
 }
 // Serialize serializes information the current object
 func (m *WindowsDeploymentSettings) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -62,7 +58,5 @@ func (m *WindowsDeploymentSettings) Serialize(writer i878a80d2330e89d26896388a3f
 }
 // SetUserExperience sets the userExperience property value. Settings governing the user's update experience on a device.
 func (m *WindowsDeploymentSettings) SetUserExperience(value UserExperienceSettingsable)() {
-    if m != nil {
-        m.userExperience = value
-    }
+    m.userExperience = value
 }

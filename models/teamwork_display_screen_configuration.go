@@ -36,27 +36,15 @@ func CreateTeamworkDisplayScreenConfigurationFromDiscriminatorValue(parseNode i8
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TeamworkDisplayScreenConfiguration) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetBacklightBrightness gets the backlightBrightness property value. The brightness level on the device (0-100). Not applicable for Microsoft Teams Rooms devices.
 func (m *TeamworkDisplayScreenConfiguration) GetBacklightBrightness()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.backlightBrightness
-    }
+    return m.backlightBrightness
 }
 // GetBacklightTimeout gets the backlightTimeout property value. Timeout for backlight (30-3600 secs). Not applicable for Teams Rooms devices.
 func (m *TeamworkDisplayScreenConfiguration) GetBacklightTimeout()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration) {
-    if m == nil {
-        return nil
-    } else {
-        return m.backlightTimeout
-    }
+    return m.backlightTimeout
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *TeamworkDisplayScreenConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -125,35 +113,19 @@ func (m *TeamworkDisplayScreenConfiguration) GetFieldDeserializers()(map[string]
 }
 // GetIsHighContrastEnabled gets the isHighContrastEnabled property value. True if high contrast mode is enabled. Not applicable for Teams Rooms devices.
 func (m *TeamworkDisplayScreenConfiguration) GetIsHighContrastEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isHighContrastEnabled
-    }
+    return m.isHighContrastEnabled
 }
 // GetIsScreensaverEnabled gets the isScreensaverEnabled property value. True if screensaver is enabled. Not applicable for Teams Rooms devices.
 func (m *TeamworkDisplayScreenConfiguration) GetIsScreensaverEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isScreensaverEnabled
-    }
+    return m.isScreensaverEnabled
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *TeamworkDisplayScreenConfiguration) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetScreensaverTimeout gets the screensaverTimeout property value. Screensaver timeout from 30 to 3600 secs. Not applicable for Teams Rooms devices.
 func (m *TeamworkDisplayScreenConfiguration) GetScreensaverTimeout()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration) {
-    if m == nil {
-        return nil
-    } else {
-        return m.screensaverTimeout
-    }
+    return m.screensaverTimeout
 }
 // Serialize serializes information the current object
 func (m *TeamworkDisplayScreenConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -203,43 +175,29 @@ func (m *TeamworkDisplayScreenConfiguration) Serialize(writer i878a80d2330e89d26
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TeamworkDisplayScreenConfiguration) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetBacklightBrightness sets the backlightBrightness property value. The brightness level on the device (0-100). Not applicable for Microsoft Teams Rooms devices.
 func (m *TeamworkDisplayScreenConfiguration) SetBacklightBrightness(value *int32)() {
-    if m != nil {
-        m.backlightBrightness = value
-    }
+    m.backlightBrightness = value
 }
 // SetBacklightTimeout sets the backlightTimeout property value. Timeout for backlight (30-3600 secs). Not applicable for Teams Rooms devices.
 func (m *TeamworkDisplayScreenConfiguration) SetBacklightTimeout(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)() {
-    if m != nil {
-        m.backlightTimeout = value
-    }
+    m.backlightTimeout = value
 }
 // SetIsHighContrastEnabled sets the isHighContrastEnabled property value. True if high contrast mode is enabled. Not applicable for Teams Rooms devices.
 func (m *TeamworkDisplayScreenConfiguration) SetIsHighContrastEnabled(value *bool)() {
-    if m != nil {
-        m.isHighContrastEnabled = value
-    }
+    m.isHighContrastEnabled = value
 }
 // SetIsScreensaverEnabled sets the isScreensaverEnabled property value. True if screensaver is enabled. Not applicable for Teams Rooms devices.
 func (m *TeamworkDisplayScreenConfiguration) SetIsScreensaverEnabled(value *bool)() {
-    if m != nil {
-        m.isScreensaverEnabled = value
-    }
+    m.isScreensaverEnabled = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *TeamworkDisplayScreenConfiguration) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetScreensaverTimeout sets the screensaverTimeout property value. Screensaver timeout from 30 to 3600 secs. Not applicable for Teams Rooms devices.
 func (m *TeamworkDisplayScreenConfiguration) SetScreensaverTimeout(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)() {
-    if m != nil {
-        m.screensaverTimeout = value
-    }
+    m.screensaverTimeout = value
 }

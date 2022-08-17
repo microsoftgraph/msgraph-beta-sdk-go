@@ -53,19 +53,11 @@ func CreateWin32LobAppRequirementFromDiscriminatorValue(parseNode i878a80d2330e8
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *Win32LobAppRequirement) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetDetectionValue gets the detectionValue property value. The detection value
 func (m *Win32LobAppRequirement) GetDetectionValue()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.detectionValue
-    }
+    return m.detectionValue
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Win32LobAppRequirement) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -104,19 +96,11 @@ func (m *Win32LobAppRequirement) GetFieldDeserializers()(map[string]func(i878a80
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *Win32LobAppRequirement) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetOperator gets the operator property value. Contains properties for detection operator.
 func (m *Win32LobAppRequirement) GetOperator()(*Win32LobAppDetectionOperator) {
-    if m == nil {
-        return nil
-    } else {
-        return m.operator
-    }
+    return m.operator
 }
 // Serialize serializes information the current object
 func (m *Win32LobAppRequirement) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -149,25 +133,17 @@ func (m *Win32LobAppRequirement) Serialize(writer i878a80d2330e89d26896388a3f487
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *Win32LobAppRequirement) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetDetectionValue sets the detectionValue property value. The detection value
 func (m *Win32LobAppRequirement) SetDetectionValue(value *string)() {
-    if m != nil {
-        m.detectionValue = value
-    }
+    m.detectionValue = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *Win32LobAppRequirement) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetOperator sets the operator property value. Contains properties for detection operator.
 func (m *Win32LobAppRequirement) SetOperator(value *Win32LobAppDetectionOperator)() {
-    if m != nil {
-        m.operator = value
-    }
+    m.operator = value
 }

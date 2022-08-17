@@ -25,11 +25,7 @@ func CreateMicrosoftStoreForBusinessContainedAppFromDiscriminatorValue(parseNode
 }
 // GetAppUserModelId gets the appUserModelId property value. The app user model ID of the contained app of a MicrosoftStoreForBusinessApp.
 func (m *MicrosoftStoreForBusinessContainedApp) GetAppUserModelId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.appUserModelId
-    }
+    return m.appUserModelId
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *MicrosoftStoreForBusinessContainedApp) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -62,7 +58,5 @@ func (m *MicrosoftStoreForBusinessContainedApp) Serialize(writer i878a80d2330e89
 }
 // SetAppUserModelId sets the appUserModelId property value. The app user model ID of the contained app of a MicrosoftStoreForBusinessApp.
 func (m *MicrosoftStoreForBusinessContainedApp) SetAppUserModelId(value *string)() {
-    if m != nil {
-        m.appUserModelId = value
-    }
+    m.appUserModelId = value
 }

@@ -29,19 +29,11 @@ func CreateCrossCloudAzureActiveDirectoryTenantFromDiscriminatorValue(parseNode 
 }
 // GetCloudInstance gets the cloudInstance property value. The ID of the cloud where the tenant is located, one of microsoftonline.com, microsoftonline.us or partner.microsoftonline.cn. Read only.
 func (m *CrossCloudAzureActiveDirectoryTenant) GetCloudInstance()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.cloudInstance
-    }
+    return m.cloudInstance
 }
 // GetDisplayName gets the displayName property value. The name of the Azure Active Directory tenant. Read only.
 func (m *CrossCloudAzureActiveDirectoryTenant) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *CrossCloudAzureActiveDirectoryTenant) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -80,11 +72,7 @@ func (m *CrossCloudAzureActiveDirectoryTenant) GetFieldDeserializers()(map[strin
 }
 // GetTenantId gets the tenantId property value. The ID of the Azure Active Directory tenant. Read only.
 func (m *CrossCloudAzureActiveDirectoryTenant) GetTenantId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.tenantId
-    }
+    return m.tenantId
 }
 // Serialize serializes information the current object
 func (m *CrossCloudAzureActiveDirectoryTenant) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -114,19 +102,13 @@ func (m *CrossCloudAzureActiveDirectoryTenant) Serialize(writer i878a80d2330e89d
 }
 // SetCloudInstance sets the cloudInstance property value. The ID of the cloud where the tenant is located, one of microsoftonline.com, microsoftonline.us or partner.microsoftonline.cn. Read only.
 func (m *CrossCloudAzureActiveDirectoryTenant) SetCloudInstance(value *string)() {
-    if m != nil {
-        m.cloudInstance = value
-    }
+    m.cloudInstance = value
 }
 // SetDisplayName sets the displayName property value. The name of the Azure Active Directory tenant. Read only.
 func (m *CrossCloudAzureActiveDirectoryTenant) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }
 // SetTenantId sets the tenantId property value. The ID of the Azure Active Directory tenant. Read only.
 func (m *CrossCloudAzureActiveDirectoryTenant) SetTenantId(value *string)() {
-    if m != nil {
-        m.tenantId = value
-    }
+    m.tenantId = value
 }

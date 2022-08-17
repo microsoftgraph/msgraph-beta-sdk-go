@@ -33,19 +33,11 @@ func CreateEducationalActivityFromDiscriminatorValue(parseNode i878a80d2330e89d2
 }
 // GetCompletionMonthYear gets the completionMonthYear property value. The month and year the user graduated or completed the activity.
 func (m *EducationalActivity) GetCompletionMonthYear()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly) {
-    if m == nil {
-        return nil
-    } else {
-        return m.completionMonthYear
-    }
+    return m.completionMonthYear
 }
 // GetEndMonthYear gets the endMonthYear property value. The month and year the user completed the educational activity referenced.
 func (m *EducationalActivity) GetEndMonthYear()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly) {
-    if m == nil {
-        return nil
-    } else {
-        return m.endMonthYear
-    }
+    return m.endMonthYear
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *EducationalActivity) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -104,27 +96,15 @@ func (m *EducationalActivity) GetFieldDeserializers()(map[string]func(i878a80d23
 }
 // GetInstitution gets the institution property value. The institution property
 func (m *EducationalActivity) GetInstitution()(InstitutionDataable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.institution
-    }
+    return m.institution
 }
 // GetProgram gets the program property value. The program property
 func (m *EducationalActivity) GetProgram()(EducationalActivityDetailable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.program
-    }
+    return m.program
 }
 // GetStartMonthYear gets the startMonthYear property value. The month and year the user commenced the activity referenced.
 func (m *EducationalActivity) GetStartMonthYear()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly) {
-    if m == nil {
-        return nil
-    } else {
-        return m.startMonthYear
-    }
+    return m.startMonthYear
 }
 // Serialize serializes information the current object
 func (m *EducationalActivity) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -166,31 +146,21 @@ func (m *EducationalActivity) Serialize(writer i878a80d2330e89d26896388a3f487eef
 }
 // SetCompletionMonthYear sets the completionMonthYear property value. The month and year the user graduated or completed the activity.
 func (m *EducationalActivity) SetCompletionMonthYear(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)() {
-    if m != nil {
-        m.completionMonthYear = value
-    }
+    m.completionMonthYear = value
 }
 // SetEndMonthYear sets the endMonthYear property value. The month and year the user completed the educational activity referenced.
 func (m *EducationalActivity) SetEndMonthYear(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)() {
-    if m != nil {
-        m.endMonthYear = value
-    }
+    m.endMonthYear = value
 }
 // SetInstitution sets the institution property value. The institution property
 func (m *EducationalActivity) SetInstitution(value InstitutionDataable)() {
-    if m != nil {
-        m.institution = value
-    }
+    m.institution = value
 }
 // SetProgram sets the program property value. The program property
 func (m *EducationalActivity) SetProgram(value EducationalActivityDetailable)() {
-    if m != nil {
-        m.program = value
-    }
+    m.program = value
 }
 // SetStartMonthYear sets the startMonthYear property value. The month and year the user commenced the activity referenced.
 func (m *EducationalActivity) SetStartMonthYear(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)() {
-    if m != nil {
-        m.startMonthYear = value
-    }
+    m.startMonthYear = value
 }

@@ -35,27 +35,15 @@ func CreateWin32LobAppPowerShellScriptRequirementFromDiscriminatorValue(parseNod
 }
 // GetDetectionType gets the detectionType property value. Contains all supported Powershell Script output detection type.
 func (m *Win32LobAppPowerShellScriptRequirement) GetDetectionType()(*Win32LobAppPowerShellScriptDetectionType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.detectionType
-    }
+    return m.detectionType
 }
 // GetDisplayName gets the displayName property value. The unique display name for this rule
 func (m *Win32LobAppPowerShellScriptRequirement) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
 // GetEnforceSignatureCheck gets the enforceSignatureCheck property value. A value indicating whether signature check is enforced
 func (m *Win32LobAppPowerShellScriptRequirement) GetEnforceSignatureCheck()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.enforceSignatureCheck
-    }
+    return m.enforceSignatureCheck
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Win32LobAppPowerShellScriptRequirement) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -124,27 +112,15 @@ func (m *Win32LobAppPowerShellScriptRequirement) GetFieldDeserializers()(map[str
 }
 // GetRunAs32Bit gets the runAs32Bit property value. A value indicating whether this script should run as 32-bit
 func (m *Win32LobAppPowerShellScriptRequirement) GetRunAs32Bit()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.runAs32Bit
-    }
+    return m.runAs32Bit
 }
 // GetRunAsAccount gets the runAsAccount property value. Indicates the type of execution context the app runs in.
 func (m *Win32LobAppPowerShellScriptRequirement) GetRunAsAccount()(*RunAsAccountType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.runAsAccount
-    }
+    return m.runAsAccount
 }
 // GetScriptContent gets the scriptContent property value. The base64 encoded script content to detect Win32 Line of Business (LoB) app
 func (m *Win32LobAppPowerShellScriptRequirement) GetScriptContent()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.scriptContent
-    }
+    return m.scriptContent
 }
 // Serialize serializes information the current object
 func (m *Win32LobAppPowerShellScriptRequirement) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -194,37 +170,25 @@ func (m *Win32LobAppPowerShellScriptRequirement) Serialize(writer i878a80d2330e8
 }
 // SetDetectionType sets the detectionType property value. Contains all supported Powershell Script output detection type.
 func (m *Win32LobAppPowerShellScriptRequirement) SetDetectionType(value *Win32LobAppPowerShellScriptDetectionType)() {
-    if m != nil {
-        m.detectionType = value
-    }
+    m.detectionType = value
 }
 // SetDisplayName sets the displayName property value. The unique display name for this rule
 func (m *Win32LobAppPowerShellScriptRequirement) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }
 // SetEnforceSignatureCheck sets the enforceSignatureCheck property value. A value indicating whether signature check is enforced
 func (m *Win32LobAppPowerShellScriptRequirement) SetEnforceSignatureCheck(value *bool)() {
-    if m != nil {
-        m.enforceSignatureCheck = value
-    }
+    m.enforceSignatureCheck = value
 }
 // SetRunAs32Bit sets the runAs32Bit property value. A value indicating whether this script should run as 32-bit
 func (m *Win32LobAppPowerShellScriptRequirement) SetRunAs32Bit(value *bool)() {
-    if m != nil {
-        m.runAs32Bit = value
-    }
+    m.runAs32Bit = value
 }
 // SetRunAsAccount sets the runAsAccount property value. Indicates the type of execution context the app runs in.
 func (m *Win32LobAppPowerShellScriptRequirement) SetRunAsAccount(value *RunAsAccountType)() {
-    if m != nil {
-        m.runAsAccount = value
-    }
+    m.runAsAccount = value
 }
 // SetScriptContent sets the scriptContent property value. The base64 encoded script content to detect Win32 Line of Business (LoB) app
 func (m *Win32LobAppPowerShellScriptRequirement) SetScriptContent(value *string)() {
-    if m != nil {
-        m.scriptContent = value
-    }
+    m.scriptContent = value
 }

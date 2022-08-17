@@ -40,11 +40,7 @@ func (m *EdgeHomeButtonOpensCustomURL) GetFieldDeserializers()(map[string]func(i
 }
 // GetHomeButtonCustomURL gets the homeButtonCustomURL property value. The specific URL to load.
 func (m *EdgeHomeButtonOpensCustomURL) GetHomeButtonCustomURL()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.homeButtonCustomURL
-    }
+    return m.homeButtonCustomURL
 }
 // Serialize serializes information the current object
 func (m *EdgeHomeButtonOpensCustomURL) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -62,7 +58,5 @@ func (m *EdgeHomeButtonOpensCustomURL) Serialize(writer i878a80d2330e89d26896388
 }
 // SetHomeButtonCustomURL sets the homeButtonCustomURL property value. The specific URL to load.
 func (m *EdgeHomeButtonOpensCustomURL) SetHomeButtonCustomURL(value *string)() {
-    if m != nil {
-        m.homeButtonCustomURL = value
-    }
+    m.homeButtonCustomURL = value
 }

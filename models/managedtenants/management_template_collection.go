@@ -6,7 +6,7 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
-// ManagementTemplateCollection provides operations to manage the collection of activityStatistics entities.
+// ManagementTemplateCollection provides operations to manage the collection of accessReviewDecision entities.
 type ManagementTemplateCollection struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
     // The createdByUserId property
@@ -39,35 +39,19 @@ func CreateManagementTemplateCollectionFromDiscriminatorValue(parseNode i878a80d
 }
 // GetCreatedByUserId gets the createdByUserId property value. The createdByUserId property
 func (m *ManagementTemplateCollection) GetCreatedByUserId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.createdByUserId
-    }
+    return m.createdByUserId
 }
 // GetCreatedDateTime gets the createdDateTime property value. The createdDateTime property
 func (m *ManagementTemplateCollection) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.createdDateTime
-    }
+    return m.createdDateTime
 }
 // GetDescription gets the description property value. The description property
 func (m *ManagementTemplateCollection) GetDescription()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.description
-    }
+    return m.description
 }
 // GetDisplayName gets the displayName property value. The displayName property
 func (m *ManagementTemplateCollection) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ManagementTemplateCollection) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -150,27 +134,15 @@ func (m *ManagementTemplateCollection) GetFieldDeserializers()(map[string]func(i
 }
 // GetLastActionByUserId gets the lastActionByUserId property value. The lastActionByUserId property
 func (m *ManagementTemplateCollection) GetLastActionByUserId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastActionByUserId
-    }
+    return m.lastActionByUserId
 }
 // GetLastActionDateTime gets the lastActionDateTime property value. The lastActionDateTime property
 func (m *ManagementTemplateCollection) GetLastActionDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastActionDateTime
-    }
+    return m.lastActionDateTime
 }
 // GetManagementTemplates gets the managementTemplates property value. The managementTemplates property
 func (m *ManagementTemplateCollection) GetManagementTemplates()([]ManagementTemplateable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.managementTemplates
-    }
+    return m.managementTemplates
 }
 // Serialize serializes information the current object
 func (m *ManagementTemplateCollection) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -228,43 +200,29 @@ func (m *ManagementTemplateCollection) Serialize(writer i878a80d2330e89d26896388
 }
 // SetCreatedByUserId sets the createdByUserId property value. The createdByUserId property
 func (m *ManagementTemplateCollection) SetCreatedByUserId(value *string)() {
-    if m != nil {
-        m.createdByUserId = value
-    }
+    m.createdByUserId = value
 }
 // SetCreatedDateTime sets the createdDateTime property value. The createdDateTime property
 func (m *ManagementTemplateCollection) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.createdDateTime = value
-    }
+    m.createdDateTime = value
 }
 // SetDescription sets the description property value. The description property
 func (m *ManagementTemplateCollection) SetDescription(value *string)() {
-    if m != nil {
-        m.description = value
-    }
+    m.description = value
 }
 // SetDisplayName sets the displayName property value. The displayName property
 func (m *ManagementTemplateCollection) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }
 // SetLastActionByUserId sets the lastActionByUserId property value. The lastActionByUserId property
 func (m *ManagementTemplateCollection) SetLastActionByUserId(value *string)() {
-    if m != nil {
-        m.lastActionByUserId = value
-    }
+    m.lastActionByUserId = value
 }
 // SetLastActionDateTime sets the lastActionDateTime property value. The lastActionDateTime property
 func (m *ManagementTemplateCollection) SetLastActionDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.lastActionDateTime = value
-    }
+    m.lastActionDateTime = value
 }
 // SetManagementTemplates sets the managementTemplates property value. The managementTemplates property
 func (m *ManagementTemplateCollection) SetManagementTemplates(value []ManagementTemplateable)() {
-    if m != nil {
-        m.managementTemplates = value
-    }
+    m.managementTemplates = value
 }

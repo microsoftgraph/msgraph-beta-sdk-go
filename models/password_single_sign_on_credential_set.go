@@ -30,19 +30,11 @@ func CreatePasswordSingleSignOnCredentialSetFromDiscriminatorValue(parseNode i87
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *PasswordSingleSignOnCredentialSet) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetCredentials gets the credentials property value. A list of credential objects that define the complete sign in flow.
 func (m *PasswordSingleSignOnCredentialSet) GetCredentials()([]Credentialable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.credentials
-    }
+    return m.credentials
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *PasswordSingleSignOnCredentialSet) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -85,19 +77,11 @@ func (m *PasswordSingleSignOnCredentialSet) GetFieldDeserializers()(map[string]f
 }
 // GetId gets the id property value. The ID of the user or group this credential set belongs to.
 func (m *PasswordSingleSignOnCredentialSet) GetId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.id
-    }
+    return m.id
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *PasswordSingleSignOnCredentialSet) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // Serialize serializes information the current object
 func (m *PasswordSingleSignOnCredentialSet) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -133,25 +117,17 @@ func (m *PasswordSingleSignOnCredentialSet) Serialize(writer i878a80d2330e89d268
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *PasswordSingleSignOnCredentialSet) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetCredentials sets the credentials property value. A list of credential objects that define the complete sign in flow.
 func (m *PasswordSingleSignOnCredentialSet) SetCredentials(value []Credentialable)() {
-    if m != nil {
-        m.credentials = value
-    }
+    m.credentials = value
 }
 // SetId sets the id property value. The ID of the user or group this credential set belongs to.
 func (m *PasswordSingleSignOnCredentialSet) SetId(value *string)() {
-    if m != nil {
-        m.id = value
-    }
+    m.id = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *PasswordSingleSignOnCredentialSet) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }

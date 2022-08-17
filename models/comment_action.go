@@ -32,11 +32,7 @@ func CreateCommentActionFromDiscriminatorValue(parseNode i878a80d2330e89d2689638
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CommentAction) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *CommentAction) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -89,35 +85,19 @@ func (m *CommentAction) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
 }
 // GetIsReply gets the isReply property value. If true, this activity was a reply to an existing comment thread.
 func (m *CommentAction) GetIsReply()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isReply
-    }
+    return m.isReply
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *CommentAction) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetParentAuthor gets the parentAuthor property value. The identity of the user who started the comment thread.
 func (m *CommentAction) GetParentAuthor()(IdentitySetable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.parentAuthor
-    }
+    return m.parentAuthor
 }
 // GetParticipants gets the participants property value. The identities of the users participating in this comment thread.
 func (m *CommentAction) GetParticipants()([]IdentitySetable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.participants
-    }
+    return m.participants
 }
 // Serialize serializes information the current object
 func (m *CommentAction) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -159,31 +139,21 @@ func (m *CommentAction) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CommentAction) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetIsReply sets the isReply property value. If true, this activity was a reply to an existing comment thread.
 func (m *CommentAction) SetIsReply(value *bool)() {
-    if m != nil {
-        m.isReply = value
-    }
+    m.isReply = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *CommentAction) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetParentAuthor sets the parentAuthor property value. The identity of the user who started the comment thread.
 func (m *CommentAction) SetParentAuthor(value IdentitySetable)() {
-    if m != nil {
-        m.parentAuthor = value
-    }
+    m.parentAuthor = value
 }
 // SetParticipants sets the participants property value. The identities of the users participating in this comment thread.
 func (m *CommentAction) SetParticipants(value []IdentitySetable)() {
-    if m != nil {
-        m.participants = value
-    }
+    m.participants = value
 }

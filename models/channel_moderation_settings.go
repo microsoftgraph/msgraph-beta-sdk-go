@@ -34,27 +34,15 @@ func CreateChannelModerationSettingsFromDiscriminatorValue(parseNode i878a80d233
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ChannelModerationSettings) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetAllowNewMessageFromBots gets the allowNewMessageFromBots property value. Indicates whether bots are allowed to post messages.
 func (m *ChannelModerationSettings) GetAllowNewMessageFromBots()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.allowNewMessageFromBots
-    }
+    return m.allowNewMessageFromBots
 }
 // GetAllowNewMessageFromConnectors gets the allowNewMessageFromConnectors property value. Indicates whether connectors are allowed to post messages.
 func (m *ChannelModerationSettings) GetAllowNewMessageFromConnectors()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.allowNewMessageFromConnectors
-    }
+    return m.allowNewMessageFromConnectors
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ChannelModerationSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -113,27 +101,15 @@ func (m *ChannelModerationSettings) GetFieldDeserializers()(map[string]func(i878
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *ChannelModerationSettings) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetReplyRestriction gets the replyRestriction property value. Indicates who is allowed to reply to the teams channel. Possible values are: everyone, authorAndModerators, unknownFutureValue.
 func (m *ChannelModerationSettings) GetReplyRestriction()(*ReplyRestriction) {
-    if m == nil {
-        return nil
-    } else {
-        return m.replyRestriction
-    }
+    return m.replyRestriction
 }
 // GetUserNewMessageRestriction gets the userNewMessageRestriction property value. Indicates who is allowed to post messages to teams channel. Possible values are: everyone, everyoneExceptGuests, moderators, unknownFutureValue.
 func (m *ChannelModerationSettings) GetUserNewMessageRestriction()(*UserNewMessageRestriction) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userNewMessageRestriction
-    }
+    return m.userNewMessageRestriction
 }
 // Serialize serializes information the current object
 func (m *ChannelModerationSettings) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -179,37 +155,25 @@ func (m *ChannelModerationSettings) Serialize(writer i878a80d2330e89d26896388a3f
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ChannelModerationSettings) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetAllowNewMessageFromBots sets the allowNewMessageFromBots property value. Indicates whether bots are allowed to post messages.
 func (m *ChannelModerationSettings) SetAllowNewMessageFromBots(value *bool)() {
-    if m != nil {
-        m.allowNewMessageFromBots = value
-    }
+    m.allowNewMessageFromBots = value
 }
 // SetAllowNewMessageFromConnectors sets the allowNewMessageFromConnectors property value. Indicates whether connectors are allowed to post messages.
 func (m *ChannelModerationSettings) SetAllowNewMessageFromConnectors(value *bool)() {
-    if m != nil {
-        m.allowNewMessageFromConnectors = value
-    }
+    m.allowNewMessageFromConnectors = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *ChannelModerationSettings) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetReplyRestriction sets the replyRestriction property value. Indicates who is allowed to reply to the teams channel. Possible values are: everyone, authorAndModerators, unknownFutureValue.
 func (m *ChannelModerationSettings) SetReplyRestriction(value *ReplyRestriction)() {
-    if m != nil {
-        m.replyRestriction = value
-    }
+    m.replyRestriction = value
 }
 // SetUserNewMessageRestriction sets the userNewMessageRestriction property value. Indicates who is allowed to post messages to teams channel. Possible values are: everyone, everyoneExceptGuests, moderators, unknownFutureValue.
 func (m *ChannelModerationSettings) SetUserNewMessageRestriction(value *UserNewMessageRestriction)() {
-    if m != nil {
-        m.userNewMessageRestriction = value
-    }
+    m.userNewMessageRestriction = value
 }

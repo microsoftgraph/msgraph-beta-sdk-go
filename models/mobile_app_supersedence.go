@@ -64,27 +64,15 @@ func (m *MobileAppSupersedence) GetFieldDeserializers()(map[string]func(i878a80d
 }
 // GetSupersededAppCount gets the supersededAppCount property value. The total number of apps directly or indirectly superseded by the child app.
 func (m *MobileAppSupersedence) GetSupersededAppCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.supersededAppCount
-    }
+    return m.supersededAppCount
 }
 // GetSupersedenceType gets the supersedenceType property value. Indicates the supersedence type associated with a relationship between two mobile apps.
 func (m *MobileAppSupersedence) GetSupersedenceType()(*MobileAppSupersedenceType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.supersedenceType
-    }
+    return m.supersedenceType
 }
 // GetSupersedingAppCount gets the supersedingAppCount property value. The total number of apps directly or indirectly superseding the parent app.
 func (m *MobileAppSupersedence) GetSupersedingAppCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.supersedingAppCount
-    }
+    return m.supersedingAppCount
 }
 // Serialize serializes information the current object
 func (m *MobileAppSupersedence) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -115,19 +103,13 @@ func (m *MobileAppSupersedence) Serialize(writer i878a80d2330e89d26896388a3f487e
 }
 // SetSupersededAppCount sets the supersededAppCount property value. The total number of apps directly or indirectly superseded by the child app.
 func (m *MobileAppSupersedence) SetSupersededAppCount(value *int32)() {
-    if m != nil {
-        m.supersededAppCount = value
-    }
+    m.supersededAppCount = value
 }
 // SetSupersedenceType sets the supersedenceType property value. Indicates the supersedence type associated with a relationship between two mobile apps.
 func (m *MobileAppSupersedence) SetSupersedenceType(value *MobileAppSupersedenceType)() {
-    if m != nil {
-        m.supersedenceType = value
-    }
+    m.supersedenceType = value
 }
 // SetSupersedingAppCount sets the supersedingAppCount property value. The total number of apps directly or indirectly superseding the parent app.
 func (m *MobileAppSupersedence) SetSupersedingAppCount(value *int32)() {
-    if m != nil {
-        m.supersedingAppCount = value
-    }
+    m.supersedingAppCount = value
 }

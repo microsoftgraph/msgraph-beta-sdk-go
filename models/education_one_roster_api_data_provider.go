@@ -35,27 +35,15 @@ func CreateEducationOneRosterApiDataProviderFromDiscriminatorValue(parseNode i87
 }
 // GetConnectionSettings gets the connectionSettings property value. The connectionSettings property
 func (m *EducationOneRosterApiDataProvider) GetConnectionSettings()(EducationSynchronizationConnectionSettingsable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.connectionSettings
-    }
+    return m.connectionSettings
 }
 // GetConnectionUrl gets the connectionUrl property value. The connectionUrl property
 func (m *EducationOneRosterApiDataProvider) GetConnectionUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.connectionUrl
-    }
+    return m.connectionUrl
 }
 // GetCustomizations gets the customizations property value. The customizations property
 func (m *EducationOneRosterApiDataProvider) GetCustomizations()(EducationSynchronizationCustomizationsable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.customizations
-    }
+    return m.customizations
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *EducationOneRosterApiDataProvider) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -132,27 +120,15 @@ func (m *EducationOneRosterApiDataProvider) GetFieldDeserializers()(map[string]f
 }
 // GetProviderName gets the providerName property value. The providerName property
 func (m *EducationOneRosterApiDataProvider) GetProviderName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.providerName
-    }
+    return m.providerName
 }
 // GetSchoolsIds gets the schoolsIds property value. The schoolsIds property
 func (m *EducationOneRosterApiDataProvider) GetSchoolsIds()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.schoolsIds
-    }
+    return m.schoolsIds
 }
 // GetTermIds gets the termIds property value. The termIds property
 func (m *EducationOneRosterApiDataProvider) GetTermIds()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.termIds
-    }
+    return m.termIds
 }
 // Serialize serializes information the current object
 func (m *EducationOneRosterApiDataProvider) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -200,37 +176,25 @@ func (m *EducationOneRosterApiDataProvider) Serialize(writer i878a80d2330e89d268
 }
 // SetConnectionSettings sets the connectionSettings property value. The connectionSettings property
 func (m *EducationOneRosterApiDataProvider) SetConnectionSettings(value EducationSynchronizationConnectionSettingsable)() {
-    if m != nil {
-        m.connectionSettings = value
-    }
+    m.connectionSettings = value
 }
 // SetConnectionUrl sets the connectionUrl property value. The connectionUrl property
 func (m *EducationOneRosterApiDataProvider) SetConnectionUrl(value *string)() {
-    if m != nil {
-        m.connectionUrl = value
-    }
+    m.connectionUrl = value
 }
 // SetCustomizations sets the customizations property value. The customizations property
 func (m *EducationOneRosterApiDataProvider) SetCustomizations(value EducationSynchronizationCustomizationsable)() {
-    if m != nil {
-        m.customizations = value
-    }
+    m.customizations = value
 }
 // SetProviderName sets the providerName property value. The providerName property
 func (m *EducationOneRosterApiDataProvider) SetProviderName(value *string)() {
-    if m != nil {
-        m.providerName = value
-    }
+    m.providerName = value
 }
 // SetSchoolsIds sets the schoolsIds property value. The schoolsIds property
 func (m *EducationOneRosterApiDataProvider) SetSchoolsIds(value []string)() {
-    if m != nil {
-        m.schoolsIds = value
-    }
+    m.schoolsIds = value
 }
 // SetTermIds sets the termIds property value. The termIds property
 func (m *EducationOneRosterApiDataProvider) SetTermIds(value []string)() {
-    if m != nil {
-        m.termIds = value
-    }
+    m.termIds = value
 }

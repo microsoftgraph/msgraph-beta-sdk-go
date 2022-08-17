@@ -25,11 +25,7 @@ func CreateDeviceManagementSettingEnrollmentTypeConstraintFromDiscriminatorValue
 }
 // GetEnrollmentTypes gets the enrollmentTypes property value. List of enrollment types
 func (m *DeviceManagementSettingEnrollmentTypeConstraint) GetEnrollmentTypes()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.enrollmentTypes
-    }
+    return m.enrollmentTypes
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceManagementSettingEnrollmentTypeConstraint) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -66,7 +62,5 @@ func (m *DeviceManagementSettingEnrollmentTypeConstraint) Serialize(writer i878a
 }
 // SetEnrollmentTypes sets the enrollmentTypes property value. List of enrollment types
 func (m *DeviceManagementSettingEnrollmentTypeConstraint) SetEnrollmentTypes(value []string)() {
-    if m != nil {
-        m.enrollmentTypes = value
-    }
+    m.enrollmentTypes = value
 }

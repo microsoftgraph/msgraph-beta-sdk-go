@@ -92,35 +92,19 @@ func (m *OutlookUser) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
 }
 // GetMasterCategories gets the masterCategories property value. A list of categories defined for the user.
 func (m *OutlookUser) GetMasterCategories()([]OutlookCategoryable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.masterCategories
-    }
+    return m.masterCategories
 }
 // GetTaskFolders gets the taskFolders property value. The taskFolders property
 func (m *OutlookUser) GetTaskFolders()([]OutlookTaskFolderable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.taskFolders
-    }
+    return m.taskFolders
 }
 // GetTaskGroups gets the taskGroups property value. The taskGroups property
 func (m *OutlookUser) GetTaskGroups()([]OutlookTaskGroupable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.taskGroups
-    }
+    return m.taskGroups
 }
 // GetTasks gets the tasks property value. The tasks property
 func (m *OutlookUser) GetTasks()([]OutlookTaskable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.tasks
-    }
+    return m.tasks
 }
 // Serialize serializes information the current object
 func (m *OutlookUser) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -172,25 +156,17 @@ func (m *OutlookUser) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
 }
 // SetMasterCategories sets the masterCategories property value. A list of categories defined for the user.
 func (m *OutlookUser) SetMasterCategories(value []OutlookCategoryable)() {
-    if m != nil {
-        m.masterCategories = value
-    }
+    m.masterCategories = value
 }
 // SetTaskFolders sets the taskFolders property value. The taskFolders property
 func (m *OutlookUser) SetTaskFolders(value []OutlookTaskFolderable)() {
-    if m != nil {
-        m.taskFolders = value
-    }
+    m.taskFolders = value
 }
 // SetTaskGroups sets the taskGroups property value. The taskGroups property
 func (m *OutlookUser) SetTaskGroups(value []OutlookTaskGroupable)() {
-    if m != nil {
-        m.taskGroups = value
-    }
+    m.taskGroups = value
 }
 // SetTasks sets the tasks property value. The tasks property
 func (m *OutlookUser) SetTasks(value []OutlookTaskable)() {
-    if m != nil {
-        m.tasks = value
-    }
+    m.tasks = value
 }

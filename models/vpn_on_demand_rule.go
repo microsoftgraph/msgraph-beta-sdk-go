@@ -44,51 +44,27 @@ func CreateVpnOnDemandRuleFromDiscriminatorValue(parseNode i878a80d2330e89d26896
 }
 // GetAction gets the action property value. VPN On-Demand Rule Connection Action.
 func (m *VpnOnDemandRule) GetAction()(*VpnOnDemandRuleConnectionAction) {
-    if m == nil {
-        return nil
-    } else {
-        return m.action
-    }
+    return m.action
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *VpnOnDemandRule) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetDnsSearchDomains gets the dnsSearchDomains property value. DNS Search Domains.
 func (m *VpnOnDemandRule) GetDnsSearchDomains()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.dnsSearchDomains
-    }
+    return m.dnsSearchDomains
 }
 // GetDnsServerAddressMatch gets the dnsServerAddressMatch property value. DNS Search Server Address.
 func (m *VpnOnDemandRule) GetDnsServerAddressMatch()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.dnsServerAddressMatch
-    }
+    return m.dnsServerAddressMatch
 }
 // GetDomainAction gets the domainAction property value. VPN On-Demand Rule Connection Domain Action.
 func (m *VpnOnDemandRule) GetDomainAction()(*VpnOnDemandRuleConnectionDomainAction) {
-    if m == nil {
-        return nil
-    } else {
-        return m.domainAction
-    }
+    return m.domainAction
 }
 // GetDomains gets the domains property value. Domains (Only applicable when Action is evaluate connection).
 func (m *VpnOnDemandRule) GetDomains()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.domains
-    }
+    return m.domains
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *VpnOnDemandRule) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -213,43 +189,23 @@ func (m *VpnOnDemandRule) GetFieldDeserializers()(map[string]func(i878a80d2330e8
 }
 // GetInterfaceTypeMatch gets the interfaceTypeMatch property value. VPN On-Demand Rule Connection network interface type.
 func (m *VpnOnDemandRule) GetInterfaceTypeMatch()(*VpnOnDemandRuleInterfaceTypeMatch) {
-    if m == nil {
-        return nil
-    } else {
-        return m.interfaceTypeMatch
-    }
+    return m.interfaceTypeMatch
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *VpnOnDemandRule) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetProbeRequiredUrl gets the probeRequiredUrl property value. Probe Required Url (Only applicable when Action is evaluate connection and DomainAction is connect if needed).
 func (m *VpnOnDemandRule) GetProbeRequiredUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.probeRequiredUrl
-    }
+    return m.probeRequiredUrl
 }
 // GetProbeUrl gets the probeUrl property value. A URL to probe. If this URL is successfully fetched (returning a 200 HTTP status code) without redirection, this rule matches.
 func (m *VpnOnDemandRule) GetProbeUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.probeUrl
-    }
+    return m.probeUrl
 }
 // GetSsids gets the ssids property value. Network Service Set Identifiers (SSIDs).
 func (m *VpnOnDemandRule) GetSsids()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.ssids
-    }
+    return m.ssids
 }
 // Serialize serializes information the current object
 func (m *VpnOnDemandRule) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -326,67 +282,45 @@ func (m *VpnOnDemandRule) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
 }
 // SetAction sets the action property value. VPN On-Demand Rule Connection Action.
 func (m *VpnOnDemandRule) SetAction(value *VpnOnDemandRuleConnectionAction)() {
-    if m != nil {
-        m.action = value
-    }
+    m.action = value
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *VpnOnDemandRule) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetDnsSearchDomains sets the dnsSearchDomains property value. DNS Search Domains.
 func (m *VpnOnDemandRule) SetDnsSearchDomains(value []string)() {
-    if m != nil {
-        m.dnsSearchDomains = value
-    }
+    m.dnsSearchDomains = value
 }
 // SetDnsServerAddressMatch sets the dnsServerAddressMatch property value. DNS Search Server Address.
 func (m *VpnOnDemandRule) SetDnsServerAddressMatch(value []string)() {
-    if m != nil {
-        m.dnsServerAddressMatch = value
-    }
+    m.dnsServerAddressMatch = value
 }
 // SetDomainAction sets the domainAction property value. VPN On-Demand Rule Connection Domain Action.
 func (m *VpnOnDemandRule) SetDomainAction(value *VpnOnDemandRuleConnectionDomainAction)() {
-    if m != nil {
-        m.domainAction = value
-    }
+    m.domainAction = value
 }
 // SetDomains sets the domains property value. Domains (Only applicable when Action is evaluate connection).
 func (m *VpnOnDemandRule) SetDomains(value []string)() {
-    if m != nil {
-        m.domains = value
-    }
+    m.domains = value
 }
 // SetInterfaceTypeMatch sets the interfaceTypeMatch property value. VPN On-Demand Rule Connection network interface type.
 func (m *VpnOnDemandRule) SetInterfaceTypeMatch(value *VpnOnDemandRuleInterfaceTypeMatch)() {
-    if m != nil {
-        m.interfaceTypeMatch = value
-    }
+    m.interfaceTypeMatch = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *VpnOnDemandRule) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetProbeRequiredUrl sets the probeRequiredUrl property value. Probe Required Url (Only applicable when Action is evaluate connection and DomainAction is connect if needed).
 func (m *VpnOnDemandRule) SetProbeRequiredUrl(value *string)() {
-    if m != nil {
-        m.probeRequiredUrl = value
-    }
+    m.probeRequiredUrl = value
 }
 // SetProbeUrl sets the probeUrl property value. A URL to probe. If this URL is successfully fetched (returning a 200 HTTP status code) without redirection, this rule matches.
 func (m *VpnOnDemandRule) SetProbeUrl(value *string)() {
-    if m != nil {
-        m.probeUrl = value
-    }
+    m.probeUrl = value
 }
 // SetSsids sets the ssids property value. Network Service Set Identifiers (SSIDs).
 func (m *VpnOnDemandRule) SetSsids(value []string)() {
-    if m != nil {
-        m.ssids = value
-    }
+    m.ssids = value
 }

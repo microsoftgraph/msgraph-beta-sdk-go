@@ -27,19 +27,11 @@ func CreateDeviceManagementConfigurationChoiceSettingCollectionInstanceTemplateF
 }
 // GetAllowUnmanagedValues gets the allowUnmanagedValues property value. Linked policy may append values which are not present in the template.
 func (m *DeviceManagementConfigurationChoiceSettingCollectionInstanceTemplate) GetAllowUnmanagedValues()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.allowUnmanagedValues
-    }
+    return m.allowUnmanagedValues
 }
 // GetChoiceSettingCollectionValueTemplate gets the choiceSettingCollectionValueTemplate property value. Choice Setting Collection Value Template
 func (m *DeviceManagementConfigurationChoiceSettingCollectionInstanceTemplate) GetChoiceSettingCollectionValueTemplate()([]DeviceManagementConfigurationChoiceSettingValueTemplateable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.choiceSettingCollectionValueTemplate
-    }
+    return m.choiceSettingCollectionValueTemplate
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceManagementConfigurationChoiceSettingCollectionInstanceTemplate) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -96,13 +88,9 @@ func (m *DeviceManagementConfigurationChoiceSettingCollectionInstanceTemplate) S
 }
 // SetAllowUnmanagedValues sets the allowUnmanagedValues property value. Linked policy may append values which are not present in the template.
 func (m *DeviceManagementConfigurationChoiceSettingCollectionInstanceTemplate) SetAllowUnmanagedValues(value *bool)() {
-    if m != nil {
-        m.allowUnmanagedValues = value
-    }
+    m.allowUnmanagedValues = value
 }
 // SetChoiceSettingCollectionValueTemplate sets the choiceSettingCollectionValueTemplate property value. Choice Setting Collection Value Template
 func (m *DeviceManagementConfigurationChoiceSettingCollectionInstanceTemplate) SetChoiceSettingCollectionValueTemplate(value []DeviceManagementConfigurationChoiceSettingValueTemplateable)() {
-    if m != nil {
-        m.choiceSettingCollectionValueTemplate = value
-    }
+    m.choiceSettingCollectionValueTemplate = value
 }

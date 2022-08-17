@@ -44,11 +44,7 @@ func (m *DeviceManagementTemplateSettingCategory) GetFieldDeserializers()(map[st
 }
 // GetRecommendedSettings gets the recommendedSettings property value. The settings this category contains
 func (m *DeviceManagementTemplateSettingCategory) GetRecommendedSettings()([]DeviceManagementSettingInstanceable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.recommendedSettings
-    }
+    return m.recommendedSettings
 }
 // Serialize serializes information the current object
 func (m *DeviceManagementTemplateSettingCategory) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -70,7 +66,5 @@ func (m *DeviceManagementTemplateSettingCategory) Serialize(writer i878a80d2330e
 }
 // SetRecommendedSettings sets the recommendedSettings property value. The settings this category contains
 func (m *DeviceManagementTemplateSettingCategory) SetRecommendedSettings(value []DeviceManagementSettingInstanceable)() {
-    if m != nil {
-        m.recommendedSettings = value
-    }
+    m.recommendedSettings = value
 }
