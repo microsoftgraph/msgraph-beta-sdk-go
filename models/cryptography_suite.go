@@ -38,43 +38,23 @@ func CreateCryptographySuiteFromDiscriminatorValue(parseNode i878a80d2330e89d268
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CryptographySuite) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetAuthenticationTransformConstants gets the authenticationTransformConstants property value. Authentication Transform Constants. Possible values are: md5_96, sha1_96, sha_256_128, aes128Gcm, aes192Gcm, aes256Gcm.
 func (m *CryptographySuite) GetAuthenticationTransformConstants()(*AuthenticationTransformConstant) {
-    if m == nil {
-        return nil
-    } else {
-        return m.authenticationTransformConstants
-    }
+    return m.authenticationTransformConstants
 }
 // GetCipherTransformConstants gets the cipherTransformConstants property value. Cipher Transform Constants. Possible values are: aes256, des, tripleDes, aes128, aes128Gcm, aes256Gcm, aes192, aes192Gcm, chaCha20Poly1305.
 func (m *CryptographySuite) GetCipherTransformConstants()(*VpnEncryptionAlgorithmType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.cipherTransformConstants
-    }
+    return m.cipherTransformConstants
 }
 // GetDhGroup gets the dhGroup property value. Diffie Hellman Group. Possible values are: group1, group2, group14, ecp256, ecp384, group24.
 func (m *CryptographySuite) GetDhGroup()(*DiffieHellmanGroup) {
-    if m == nil {
-        return nil
-    } else {
-        return m.dhGroup
-    }
+    return m.dhGroup
 }
 // GetEncryptionMethod gets the encryptionMethod property value. Encryption Method. Possible values are: aes256, des, tripleDes, aes128, aes128Gcm, aes256Gcm, aes192, aes192Gcm, chaCha20Poly1305.
 func (m *CryptographySuite) GetEncryptionMethod()(*VpnEncryptionAlgorithmType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.encryptionMethod
-    }
+    return m.encryptionMethod
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *CryptographySuite) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -153,27 +133,15 @@ func (m *CryptographySuite) GetFieldDeserializers()(map[string]func(i878a80d2330
 }
 // GetIntegrityCheckMethod gets the integrityCheckMethod property value. Integrity Check Method. Possible values are: sha2_256, sha1_96, sha1_160, sha2_384, sha2_512, md5.
 func (m *CryptographySuite) GetIntegrityCheckMethod()(*VpnIntegrityAlgorithmType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.integrityCheckMethod
-    }
+    return m.integrityCheckMethod
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *CryptographySuite) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetPfsGroup gets the pfsGroup property value. Perfect Forward Secrecy Group. Possible values are: pfs1, pfs2, pfs2048, ecp256, ecp384, pfsMM, pfs24.
 func (m *CryptographySuite) GetPfsGroup()(*PerfectForwardSecrecyGroup) {
-    if m == nil {
-        return nil
-    } else {
-        return m.pfsGroup
-    }
+    return m.pfsGroup
 }
 // Serialize serializes information the current object
 func (m *CryptographySuite) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -235,49 +203,33 @@ func (m *CryptographySuite) Serialize(writer i878a80d2330e89d26896388a3f487eef27
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CryptographySuite) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetAuthenticationTransformConstants sets the authenticationTransformConstants property value. Authentication Transform Constants. Possible values are: md5_96, sha1_96, sha_256_128, aes128Gcm, aes192Gcm, aes256Gcm.
 func (m *CryptographySuite) SetAuthenticationTransformConstants(value *AuthenticationTransformConstant)() {
-    if m != nil {
-        m.authenticationTransformConstants = value
-    }
+    m.authenticationTransformConstants = value
 }
 // SetCipherTransformConstants sets the cipherTransformConstants property value. Cipher Transform Constants. Possible values are: aes256, des, tripleDes, aes128, aes128Gcm, aes256Gcm, aes192, aes192Gcm, chaCha20Poly1305.
 func (m *CryptographySuite) SetCipherTransformConstants(value *VpnEncryptionAlgorithmType)() {
-    if m != nil {
-        m.cipherTransformConstants = value
-    }
+    m.cipherTransformConstants = value
 }
 // SetDhGroup sets the dhGroup property value. Diffie Hellman Group. Possible values are: group1, group2, group14, ecp256, ecp384, group24.
 func (m *CryptographySuite) SetDhGroup(value *DiffieHellmanGroup)() {
-    if m != nil {
-        m.dhGroup = value
-    }
+    m.dhGroup = value
 }
 // SetEncryptionMethod sets the encryptionMethod property value. Encryption Method. Possible values are: aes256, des, tripleDes, aes128, aes128Gcm, aes256Gcm, aes192, aes192Gcm, chaCha20Poly1305.
 func (m *CryptographySuite) SetEncryptionMethod(value *VpnEncryptionAlgorithmType)() {
-    if m != nil {
-        m.encryptionMethod = value
-    }
+    m.encryptionMethod = value
 }
 // SetIntegrityCheckMethod sets the integrityCheckMethod property value. Integrity Check Method. Possible values are: sha2_256, sha1_96, sha1_160, sha2_384, sha2_512, md5.
 func (m *CryptographySuite) SetIntegrityCheckMethod(value *VpnIntegrityAlgorithmType)() {
-    if m != nil {
-        m.integrityCheckMethod = value
-    }
+    m.integrityCheckMethod = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *CryptographySuite) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetPfsGroup sets the pfsGroup property value. Perfect Forward Secrecy Group. Possible values are: pfs1, pfs2, pfs2048, ecp256, ecp384, pfsMM, pfs24.
 func (m *CryptographySuite) SetPfsGroup(value *PerfectForwardSecrecyGroup)() {
-    if m != nil {
-        m.pfsGroup = value
-    }
+    m.pfsGroup = value
 }

@@ -33,11 +33,7 @@ func CreateConditionalAccessPolicyCoverageFromDiscriminatorValue(parseNode i878a
 }
 // GetConditionalAccessPolicyState gets the conditionalAccessPolicyState property value. The state for the conditional access policy. Possible values are: enabled, disabled, enabledForReportingButNotEnforced. Required. Read-only.
 func (m *ConditionalAccessPolicyCoverage) GetConditionalAccessPolicyState()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.conditionalAccessPolicyState
-    }
+    return m.conditionalAccessPolicyState
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ConditionalAccessPolicyCoverage) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -86,27 +82,15 @@ func (m *ConditionalAccessPolicyCoverage) GetFieldDeserializers()(map[string]fun
 }
 // GetLatestPolicyModifiedDateTime gets the latestPolicyModifiedDateTime property value. The date and time the conditional access policy was last modified. Required. Read-only.
 func (m *ConditionalAccessPolicyCoverage) GetLatestPolicyModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.latestPolicyModifiedDateTime
-    }
+    return m.latestPolicyModifiedDateTime
 }
 // GetRequiresDeviceCompliance gets the requiresDeviceCompliance property value. A flag indicating whether the conditional access policy requires device compliance. Required. Read-only.
 func (m *ConditionalAccessPolicyCoverage) GetRequiresDeviceCompliance()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.requiresDeviceCompliance
-    }
+    return m.requiresDeviceCompliance
 }
 // GetTenantDisplayName gets the tenantDisplayName property value. The display name for the managed tenant. Required. Read-only.
 func (m *ConditionalAccessPolicyCoverage) GetTenantDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.tenantDisplayName
-    }
+    return m.tenantDisplayName
 }
 // Serialize serializes information the current object
 func (m *ConditionalAccessPolicyCoverage) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -142,25 +126,17 @@ func (m *ConditionalAccessPolicyCoverage) Serialize(writer i878a80d2330e89d26896
 }
 // SetConditionalAccessPolicyState sets the conditionalAccessPolicyState property value. The state for the conditional access policy. Possible values are: enabled, disabled, enabledForReportingButNotEnforced. Required. Read-only.
 func (m *ConditionalAccessPolicyCoverage) SetConditionalAccessPolicyState(value *string)() {
-    if m != nil {
-        m.conditionalAccessPolicyState = value
-    }
+    m.conditionalAccessPolicyState = value
 }
 // SetLatestPolicyModifiedDateTime sets the latestPolicyModifiedDateTime property value. The date and time the conditional access policy was last modified. Required. Read-only.
 func (m *ConditionalAccessPolicyCoverage) SetLatestPolicyModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.latestPolicyModifiedDateTime = value
-    }
+    m.latestPolicyModifiedDateTime = value
 }
 // SetRequiresDeviceCompliance sets the requiresDeviceCompliance property value. A flag indicating whether the conditional access policy requires device compliance. Required. Read-only.
 func (m *ConditionalAccessPolicyCoverage) SetRequiresDeviceCompliance(value *bool)() {
-    if m != nil {
-        m.requiresDeviceCompliance = value
-    }
+    m.requiresDeviceCompliance = value
 }
 // SetTenantDisplayName sets the tenantDisplayName property value. The display name for the managed tenant. Required. Read-only.
 func (m *ConditionalAccessPolicyCoverage) SetTenantDisplayName(value *string)() {
-    if m != nil {
-        m.tenantDisplayName = value
-    }
+    m.tenantDisplayName = value
 }

@@ -27,11 +27,7 @@ func CreateChannelMembersNotificationRecipientFromDiscriminatorValue(parseNode i
 }
 // GetChannelId gets the channelId property value. The channel's identifier.
 func (m *ChannelMembersNotificationRecipient) GetChannelId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.channelId
-    }
+    return m.channelId
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ChannelMembersNotificationRecipient) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -60,11 +56,7 @@ func (m *ChannelMembersNotificationRecipient) GetFieldDeserializers()(map[string
 }
 // GetTeamId gets the teamId property value. The team's identifier under which the channel resides.
 func (m *ChannelMembersNotificationRecipient) GetTeamId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.teamId
-    }
+    return m.teamId
 }
 // Serialize serializes information the current object
 func (m *ChannelMembersNotificationRecipient) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -88,13 +80,9 @@ func (m *ChannelMembersNotificationRecipient) Serialize(writer i878a80d2330e89d2
 }
 // SetChannelId sets the channelId property value. The channel's identifier.
 func (m *ChannelMembersNotificationRecipient) SetChannelId(value *string)() {
-    if m != nil {
-        m.channelId = value
-    }
+    m.channelId = value
 }
 // SetTeamId sets the teamId property value. The team's identifier under which the channel resides.
 func (m *ChannelMembersNotificationRecipient) SetTeamId(value *string)() {
-    if m != nil {
-        m.teamId = value
-    }
+    m.teamId = value
 }

@@ -28,11 +28,7 @@ func CreateDeviceManagementPartnerAssignmentFromDiscriminatorValue(parseNode i87
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DeviceManagementPartnerAssignment) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceManagementPartnerAssignment) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -61,19 +57,11 @@ func (m *DeviceManagementPartnerAssignment) GetFieldDeserializers()(map[string]f
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *DeviceManagementPartnerAssignment) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetTarget gets the target property value. User groups targeting for devices to be enrolled through partner.
 func (m *DeviceManagementPartnerAssignment) GetTarget()(DeviceAndAppManagementAssignmentTargetable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.target
-    }
+    return m.target
 }
 // Serialize serializes information the current object
 func (m *DeviceManagementPartnerAssignment) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -99,19 +87,13 @@ func (m *DeviceManagementPartnerAssignment) Serialize(writer i878a80d2330e89d268
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DeviceManagementPartnerAssignment) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *DeviceManagementPartnerAssignment) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetTarget sets the target property value. User groups targeting for devices to be enrolled through partner.
 func (m *DeviceManagementPartnerAssignment) SetTarget(value DeviceAndAppManagementAssignmentTargetable)() {
-    if m != nil {
-        m.target = value
-    }
+    m.target = value
 }

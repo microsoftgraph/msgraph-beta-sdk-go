@@ -27,11 +27,7 @@ func CreateEdiscoveryFileFromDiscriminatorValue(parseNode i878a80d2330e89d268963
 }
 // GetCustodian gets the custodian property value. Custodians associated with the file.
 func (m *EdiscoveryFile) GetCustodian()(EdiscoveryCustodianable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.custodian
-    }
+    return m.custodian
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *EdiscoveryFile) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -64,11 +60,7 @@ func (m *EdiscoveryFile) GetFieldDeserializers()(map[string]func(i878a80d2330e89
 }
 // GetTags gets the tags property value. Tags associated with the file.
 func (m *EdiscoveryFile) GetTags()([]EdiscoveryReviewTagable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.tags
-    }
+    return m.tags
 }
 // Serialize serializes information the current object
 func (m *EdiscoveryFile) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -96,13 +88,9 @@ func (m *EdiscoveryFile) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
 }
 // SetCustodian sets the custodian property value. Custodians associated with the file.
 func (m *EdiscoveryFile) SetCustodian(value EdiscoveryCustodianable)() {
-    if m != nil {
-        m.custodian = value
-    }
+    m.custodian = value
 }
 // SetTags sets the tags property value. Tags associated with the file.
 func (m *EdiscoveryFile) SetTags(value []EdiscoveryReviewTagable)() {
-    if m != nil {
-        m.tags = value
-    }
+    m.tags = value
 }

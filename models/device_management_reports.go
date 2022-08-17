@@ -27,19 +27,11 @@ func CreateDeviceManagementReportsFromDiscriminatorValue(parseNode i878a80d2330e
 }
 // GetCachedReportConfigurations gets the cachedReportConfigurations property value. Entity representing the configuration of a cached report
 func (m *DeviceManagementReports) GetCachedReportConfigurations()([]DeviceManagementCachedReportConfigurationable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.cachedReportConfigurations
-    }
+    return m.cachedReportConfigurations
 }
 // GetExportJobs gets the exportJobs property value. Entity representing a job to export a report
 func (m *DeviceManagementReports) GetExportJobs()([]DeviceManagementExportJobable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.exportJobs
-    }
+    return m.exportJobs
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceManagementReports) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -104,13 +96,9 @@ func (m *DeviceManagementReports) Serialize(writer i878a80d2330e89d26896388a3f48
 }
 // SetCachedReportConfigurations sets the cachedReportConfigurations property value. Entity representing the configuration of a cached report
 func (m *DeviceManagementReports) SetCachedReportConfigurations(value []DeviceManagementCachedReportConfigurationable)() {
-    if m != nil {
-        m.cachedReportConfigurations = value
-    }
+    m.cachedReportConfigurations = value
 }
 // SetExportJobs sets the exportJobs property value. Entity representing a job to export a report
 func (m *DeviceManagementReports) SetExportJobs(value []DeviceManagementExportJobable)() {
-    if m != nil {
-        m.exportJobs = value
-    }
+    m.exportJobs = value
 }

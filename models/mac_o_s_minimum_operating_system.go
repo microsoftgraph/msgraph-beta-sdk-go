@@ -48,11 +48,7 @@ func CreateMacOSMinimumOperatingSystemFromDiscriminatorValue(parseNode i878a80d2
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *MacOSMinimumOperatingSystem) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *MacOSMinimumOperatingSystem) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -181,99 +177,51 @@ func (m *MacOSMinimumOperatingSystem) GetFieldDeserializers()(map[string]func(i8
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *MacOSMinimumOperatingSystem) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetV10_10 gets the v10_10 property value. Mac OS 10.10 or later.
 func (m *MacOSMinimumOperatingSystem) GetV10_10()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.v10_10
-    }
+    return m.v10_10
 }
 // GetV10_11 gets the v10_11 property value. Mac OS 10.11 or later.
 func (m *MacOSMinimumOperatingSystem) GetV10_11()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.v10_11
-    }
+    return m.v10_11
 }
 // GetV10_12 gets the v10_12 property value. Mac OS 10.12 or later.
 func (m *MacOSMinimumOperatingSystem) GetV10_12()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.v10_12
-    }
+    return m.v10_12
 }
 // GetV10_13 gets the v10_13 property value. Mac OS 10.13 or later.
 func (m *MacOSMinimumOperatingSystem) GetV10_13()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.v10_13
-    }
+    return m.v10_13
 }
 // GetV10_14 gets the v10_14 property value. Mac OS 10.14 or later.
 func (m *MacOSMinimumOperatingSystem) GetV10_14()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.v10_14
-    }
+    return m.v10_14
 }
 // GetV10_15 gets the v10_15 property value. Mac OS 10.15 or later.
 func (m *MacOSMinimumOperatingSystem) GetV10_15()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.v10_15
-    }
+    return m.v10_15
 }
 // GetV10_7 gets the v10_7 property value. Mac OS 10.7 or later.
 func (m *MacOSMinimumOperatingSystem) GetV10_7()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.v10_7
-    }
+    return m.v10_7
 }
 // GetV10_8 gets the v10_8 property value. Mac OS 10.8 or later.
 func (m *MacOSMinimumOperatingSystem) GetV10_8()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.v10_8
-    }
+    return m.v10_8
 }
 // GetV10_9 gets the v10_9 property value. Mac OS 10.9 or later.
 func (m *MacOSMinimumOperatingSystem) GetV10_9()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.v10_9
-    }
+    return m.v10_9
 }
 // GetV11_0 gets the v11_0 property value. Mac OS 11.0 or later.
 func (m *MacOSMinimumOperatingSystem) GetV11_0()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.v11_0
-    }
+    return m.v11_0
 }
 // GetV12_0 gets the v12_0 property value. Mac OS 12.0 or later.
 func (m *MacOSMinimumOperatingSystem) GetV12_0()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.v12_0
-    }
+    return m.v12_0
 }
 // Serialize serializes information the current object
 func (m *MacOSMinimumOperatingSystem) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -359,79 +307,53 @@ func (m *MacOSMinimumOperatingSystem) Serialize(writer i878a80d2330e89d26896388a
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *MacOSMinimumOperatingSystem) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *MacOSMinimumOperatingSystem) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetV10_10 sets the v10_10 property value. Mac OS 10.10 or later.
 func (m *MacOSMinimumOperatingSystem) SetV10_10(value *bool)() {
-    if m != nil {
-        m.v10_10 = value
-    }
+    m.v10_10 = value
 }
 // SetV10_11 sets the v10_11 property value. Mac OS 10.11 or later.
 func (m *MacOSMinimumOperatingSystem) SetV10_11(value *bool)() {
-    if m != nil {
-        m.v10_11 = value
-    }
+    m.v10_11 = value
 }
 // SetV10_12 sets the v10_12 property value. Mac OS 10.12 or later.
 func (m *MacOSMinimumOperatingSystem) SetV10_12(value *bool)() {
-    if m != nil {
-        m.v10_12 = value
-    }
+    m.v10_12 = value
 }
 // SetV10_13 sets the v10_13 property value. Mac OS 10.13 or later.
 func (m *MacOSMinimumOperatingSystem) SetV10_13(value *bool)() {
-    if m != nil {
-        m.v10_13 = value
-    }
+    m.v10_13 = value
 }
 // SetV10_14 sets the v10_14 property value. Mac OS 10.14 or later.
 func (m *MacOSMinimumOperatingSystem) SetV10_14(value *bool)() {
-    if m != nil {
-        m.v10_14 = value
-    }
+    m.v10_14 = value
 }
 // SetV10_15 sets the v10_15 property value. Mac OS 10.15 or later.
 func (m *MacOSMinimumOperatingSystem) SetV10_15(value *bool)() {
-    if m != nil {
-        m.v10_15 = value
-    }
+    m.v10_15 = value
 }
 // SetV10_7 sets the v10_7 property value. Mac OS 10.7 or later.
 func (m *MacOSMinimumOperatingSystem) SetV10_7(value *bool)() {
-    if m != nil {
-        m.v10_7 = value
-    }
+    m.v10_7 = value
 }
 // SetV10_8 sets the v10_8 property value. Mac OS 10.8 or later.
 func (m *MacOSMinimumOperatingSystem) SetV10_8(value *bool)() {
-    if m != nil {
-        m.v10_8 = value
-    }
+    m.v10_8 = value
 }
 // SetV10_9 sets the v10_9 property value. Mac OS 10.9 or later.
 func (m *MacOSMinimumOperatingSystem) SetV10_9(value *bool)() {
-    if m != nil {
-        m.v10_9 = value
-    }
+    m.v10_9 = value
 }
 // SetV11_0 sets the v11_0 property value. Mac OS 11.0 or later.
 func (m *MacOSMinimumOperatingSystem) SetV11_0(value *bool)() {
-    if m != nil {
-        m.v11_0 = value
-    }
+    m.v11_0 = value
 }
 // SetV12_0 sets the v12_0 property value. Mac OS 12.0 or later.
 func (m *MacOSMinimumOperatingSystem) SetV12_0(value *bool)() {
-    if m != nil {
-        m.v12_0 = value
-    }
+    m.v12_0 = value
 }

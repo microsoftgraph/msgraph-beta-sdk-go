@@ -34,35 +34,19 @@ func CreateDeviceScopeActionResultFromDiscriminatorValue(parseNode i878a80d2330e
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DeviceScopeActionResult) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetDeviceScopeAction gets the deviceScopeAction property value. Trigger on the service to either START or STOP computing metrics data based on a device scope configuration.
 func (m *DeviceScopeActionResult) GetDeviceScopeAction()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deviceScopeAction
-    }
+    return m.deviceScopeAction
 }
 // GetDeviceScopeId gets the deviceScopeId property value. The unique identifier of the device scope the action was triggered on.
 func (m *DeviceScopeActionResult) GetDeviceScopeId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deviceScopeId
-    }
+    return m.deviceScopeId
 }
 // GetFailedMessage gets the failedMessage property value. The message indicates the reason the device scope action failed to trigger.
 func (m *DeviceScopeActionResult) GetFailedMessage()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.failedMessage
-    }
+    return m.failedMessage
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceScopeActionResult) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -121,19 +105,11 @@ func (m *DeviceScopeActionResult) GetFieldDeserializers()(map[string]func(i878a8
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *DeviceScopeActionResult) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetStatus gets the status property value. Indicates the status of the attempted device scope action
 func (m *DeviceScopeActionResult) GetStatus()(*DeviceScopeActionStatus) {
-    if m == nil {
-        return nil
-    } else {
-        return m.status
-    }
+    return m.status
 }
 // Serialize serializes information the current object
 func (m *DeviceScopeActionResult) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -178,37 +154,25 @@ func (m *DeviceScopeActionResult) Serialize(writer i878a80d2330e89d26896388a3f48
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DeviceScopeActionResult) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetDeviceScopeAction sets the deviceScopeAction property value. Trigger on the service to either START or STOP computing metrics data based on a device scope configuration.
 func (m *DeviceScopeActionResult) SetDeviceScopeAction(value *string)() {
-    if m != nil {
-        m.deviceScopeAction = value
-    }
+    m.deviceScopeAction = value
 }
 // SetDeviceScopeId sets the deviceScopeId property value. The unique identifier of the device scope the action was triggered on.
 func (m *DeviceScopeActionResult) SetDeviceScopeId(value *string)() {
-    if m != nil {
-        m.deviceScopeId = value
-    }
+    m.deviceScopeId = value
 }
 // SetFailedMessage sets the failedMessage property value. The message indicates the reason the device scope action failed to trigger.
 func (m *DeviceScopeActionResult) SetFailedMessage(value *string)() {
-    if m != nil {
-        m.failedMessage = value
-    }
+    m.failedMessage = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *DeviceScopeActionResult) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetStatus sets the status property value. Indicates the status of the attempted device scope action
 func (m *DeviceScopeActionResult) SetStatus(value *DeviceScopeActionStatus)() {
-    if m != nil {
-        m.status = value
-    }
+    m.status = value
 }

@@ -110,131 +110,67 @@ func CreateDeviceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
 }
 // GetAccountEnabled gets the accountEnabled property value. true if the account is enabled; otherwise, false. Default is true.  Supports $filter (eq, ne, not, in). Only callers in Global Administrator and Cloud Device Administrator roles can set this property.
 func (m *Device) GetAccountEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.accountEnabled
-    }
+    return m.accountEnabled
 }
 // GetAlternativeSecurityIds gets the alternativeSecurityIds property value. For internal use only. Not nullable. Supports $filter (eq, not, ge, le).
 func (m *Device) GetAlternativeSecurityIds()([]AlternativeSecurityIdable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.alternativeSecurityIds
-    }
+    return m.alternativeSecurityIds
 }
 // GetApproximateLastSignInDateTime gets the approximateLastSignInDateTime property value. The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Supports $filter (eq, ne, not, ge, le, and eq on null values) and $orderBy.
 func (m *Device) GetApproximateLastSignInDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.approximateLastSignInDateTime
-    }
+    return m.approximateLastSignInDateTime
 }
 // GetCommands gets the commands property value. Set of commands sent to this device.
 func (m *Device) GetCommands()([]Commandable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.commands
-    }
+    return m.commands
 }
 // GetComplianceExpirationDateTime gets the complianceExpirationDateTime property value. The timestamp when the device is no longer deemed compliant. The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
 func (m *Device) GetComplianceExpirationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.complianceExpirationDateTime
-    }
+    return m.complianceExpirationDateTime
 }
 // GetDeviceCategory gets the deviceCategory property value. User-defined property set by Intune to automatically add devices to groups and simplify managing devices.
 func (m *Device) GetDeviceCategory()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deviceCategory
-    }
+    return m.deviceCategory
 }
 // GetDeviceId gets the deviceId property value. Identifier set by Azure Device Registration Service at the time of registration. Supports $filter (eq, ne, not, startsWith).
 func (m *Device) GetDeviceId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deviceId
-    }
+    return m.deviceId
 }
 // GetDeviceMetadata gets the deviceMetadata property value. For internal use only. Set to null.
 func (m *Device) GetDeviceMetadata()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deviceMetadata
-    }
+    return m.deviceMetadata
 }
 // GetDeviceOwnership gets the deviceOwnership property value. Ownership of the device. This property is set by Intune. Possible values are: unknown, company, personal.
 func (m *Device) GetDeviceOwnership()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deviceOwnership
-    }
+    return m.deviceOwnership
 }
 // GetDeviceVersion gets the deviceVersion property value. For internal use only.
 func (m *Device) GetDeviceVersion()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deviceVersion
-    }
+    return m.deviceVersion
 }
 // GetDisplayName gets the displayName property value. The display name for the device. Required. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.
 func (m *Device) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
 // GetDomainName gets the domainName property value. The on-premises domain name of Hybrid Azure AD joined devices. This property is set by Intune.
 func (m *Device) GetDomainName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.domainName
-    }
+    return m.domainName
 }
 // GetEnrollmentProfileName gets the enrollmentProfileName property value. Enrollment profile applied to the device. For example, Apple Device Enrollment Profile, Device enrollment - Corporate device identifiers, or Windows Autopilot profile name. This property is set by Intune.
 func (m *Device) GetEnrollmentProfileName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.enrollmentProfileName
-    }
+    return m.enrollmentProfileName
 }
 // GetEnrollmentType gets the enrollmentType property value. Enrollment type of the device. This property is set by Intune. Possible values are: unknown, userEnrollment, deviceEnrollmentManager, appleBulkWithUser, appleBulkWithoutUser, windowsAzureADJoin, windowsBulkUserless, windowsAutoEnrollment, windowsBulkAzureDomainJoin, windowsCoManagement.
 func (m *Device) GetEnrollmentType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.enrollmentType
-    }
+    return m.enrollmentType
 }
 // GetExtensionAttributes gets the extensionAttributes property value. Contains extension attributes 1-15 for the device. The individual extension attributes are not selectable. These properties are mastered in cloud and can be set during creation or update of a device object in Azure AD. Supports $filter (eq, not, startsWith, and eq on null values).
 func (m *Device) GetExtensionAttributes()(OnPremisesExtensionAttributesable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.extensionAttributes
-    }
+    return m.extensionAttributes
 }
 // GetExtensions gets the extensions property value. The collection of open extensions defined for the device. Read-only. Nullable.
 func (m *Device) GetExtensions()([]Extensionable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.extensions
-    }
+    return m.extensions
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Device) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -717,219 +653,111 @@ func (m *Device) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689638
 }
 // GetHostnames gets the hostnames property value. List of hostNames for the device.
 func (m *Device) GetHostnames()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.hostnames
-    }
+    return m.hostnames
 }
 // GetIsCompliant gets the isCompliant property value. true if the device complies with Mobile Device Management (MDM) policies; otherwise, false. Read-only. This can only be updated by Intune for any device OS type or by an approved MDM app for Windows OS devices. Supports $filter (eq, ne, not).
 func (m *Device) GetIsCompliant()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isCompliant
-    }
+    return m.isCompliant
 }
 // GetIsManaged gets the isManaged property value. true if the device is managed by a Mobile Device Management (MDM) app; otherwise, false. This can only be updated by Intune for any device OS type or by an approved MDM app for Windows OS devices. Supports $filter (eq, ne, not).
 func (m *Device) GetIsManaged()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isManaged
-    }
+    return m.isManaged
 }
 // GetIsManagementRestricted gets the isManagementRestricted property value. The isManagementRestricted property
 func (m *Device) GetIsManagementRestricted()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isManagementRestricted
-    }
+    return m.isManagementRestricted
 }
 // GetIsRooted gets the isRooted property value. true if device is rooted; false if device is jail-broken. This can only be updated by Intune.
 func (m *Device) GetIsRooted()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isRooted
-    }
+    return m.isRooted
 }
 // GetKind gets the kind property value. Form factor of device. Only returned if user signs in with a Microsoft account as part of Project Rome.
 func (m *Device) GetKind()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.kind
-    }
+    return m.kind
 }
 // GetManagementType gets the managementType property value. Management channel of the device.  This property is set by Intune. Possible values are: eas, mdm, easMdm, intuneClient, easIntuneClient, configurationManagerClient, configurationManagerClientMdm, configurationManagerClientMdmEas, unknown, jamf, googleCloudDevicePolicyController.
 func (m *Device) GetManagementType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.managementType
-    }
+    return m.managementType
 }
 // GetManufacturer gets the manufacturer property value. Manufacturer of the device. Read-only.
 func (m *Device) GetManufacturer()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.manufacturer
-    }
+    return m.manufacturer
 }
 // GetMdmAppId gets the mdmAppId property value. Application identifier used to register device into MDM. Read-only. Supports $filter (eq, ne, not, startsWith).
 func (m *Device) GetMdmAppId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.mdmAppId
-    }
+    return m.mdmAppId
 }
 // GetMemberOf gets the memberOf property value. Groups and administrative units that this device is a member of. Read-only. Nullable. Supports $expand.
 func (m *Device) GetMemberOf()([]DirectoryObjectable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.memberOf
-    }
+    return m.memberOf
 }
 // GetModel gets the model property value. Model of the device. Read-only.
 func (m *Device) GetModel()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.model
-    }
+    return m.model
 }
 // GetName gets the name property value. Friendly name of a device. Only returned if user signs in with a Microsoft account as part of Project Rome.
 func (m *Device) GetName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.name
-    }
+    return m.name
 }
 // GetOnPremisesLastSyncDateTime gets the onPremisesLastSyncDateTime property value. The last time at which the object was synced with the on-premises directory. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z Read-only. Supports $filter (eq, ne, not, ge, le, in).
 func (m *Device) GetOnPremisesLastSyncDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.onPremisesLastSyncDateTime
-    }
+    return m.onPremisesLastSyncDateTime
 }
 // GetOnPremisesSyncEnabled gets the onPremisesSyncEnabled property value. true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced; null if this object has never been synced from an on-premises directory (default). Read-only. Supports $filter (eq, ne, not, in, and eq on null values).
 func (m *Device) GetOnPremisesSyncEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.onPremisesSyncEnabled
-    }
+    return m.onPremisesSyncEnabled
 }
 // GetOperatingSystem gets the operatingSystem property value. The type of operating system on the device. Required. Supports $filter (eq, ne, not, ge, le, startsWith, and eq on null values).
 func (m *Device) GetOperatingSystem()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.operatingSystem
-    }
+    return m.operatingSystem
 }
 // GetOperatingSystemVersion gets the operatingSystemVersion property value. Operating system version of the device. Required. Supports $filter (eq, ne, not, ge, le, startsWith, and eq on null values).
 func (m *Device) GetOperatingSystemVersion()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.operatingSystemVersion
-    }
+    return m.operatingSystemVersion
 }
 // GetPhysicalIds gets the physicalIds property value. For internal use only. Not nullable. Supports $filter (eq, not, ge, le, startsWith, and counting empty collections).
 func (m *Device) GetPhysicalIds()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.physicalIds
-    }
+    return m.physicalIds
 }
 // GetPlatform gets the platform property value. Platform of device. Only returned if user signs in with a Microsoft account as part of Project Rome. Only returned if user signs in with a Microsoft account as part of Project Rome.
 func (m *Device) GetPlatform()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.platform
-    }
+    return m.platform
 }
 // GetProfileType gets the profileType property value. The profile type of the device. Possible values: RegisteredDevice (default), SecureVM, Printer, Shared, IoT.
 func (m *Device) GetProfileType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.profileType
-    }
+    return m.profileType
 }
 // GetRegisteredOwners gets the registeredOwners property value. The user that cloud joined the device or registered their personal device. The registered owner is set at the time of registration. Currently, there can be only one owner. Read-only. Nullable. Supports $expand.
 func (m *Device) GetRegisteredOwners()([]DirectoryObjectable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.registeredOwners
-    }
+    return m.registeredOwners
 }
 // GetRegisteredUsers gets the registeredUsers property value. Collection of registered users of the device. For cloud joined devices and registered personal devices, registered users are set to the same value as registered owners at the time of registration. Read-only. Nullable. Supports $expand.
 func (m *Device) GetRegisteredUsers()([]DirectoryObjectable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.registeredUsers
-    }
+    return m.registeredUsers
 }
 // GetRegistrationDateTime gets the registrationDateTime property value. Date and time of when the device was registered. The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
 func (m *Device) GetRegistrationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.registrationDateTime
-    }
+    return m.registrationDateTime
 }
 // GetStatus gets the status property value. Device is online or offline. Only returned if user signs in with a Microsoft account as part of Project Rome.
 func (m *Device) GetStatus()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.status
-    }
+    return m.status
 }
 // GetSystemLabels gets the systemLabels property value. List of labels applied to the device by the system. Supports $filter (eq when counting empty collections).
 func (m *Device) GetSystemLabels()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.systemLabels
-    }
+    return m.systemLabels
 }
 // GetTransitiveMemberOf gets the transitiveMemberOf property value. Groups and administrative units that this device is a member of. This operation is transitive. Supports $expand.
 func (m *Device) GetTransitiveMemberOf()([]DirectoryObjectable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.transitiveMemberOf
-    }
+    return m.transitiveMemberOf
 }
 // GetTrustType gets the trustType property value. Type of trust for the joined device. Read-only. Possible values: Workplace (indicates bring your own personal devices), AzureAd (Cloud only joined devices), ServerAd (on-premises domain joined devices joined to Azure AD). For more details, see Introduction to device management in Azure Active Directory
 func (m *Device) GetTrustType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.trustType
-    }
+    return m.trustType
 }
 // GetUsageRights gets the usageRights property value. Represents the usage rights a device has been granted.
 func (m *Device) GetUsageRights()([]UsageRightable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.usageRights
-    }
+    return m.usageRights
 }
 // Serialize serializes information the current object
 func (m *Device) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -1231,259 +1059,173 @@ func (m *Device) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c
 }
 // SetAccountEnabled sets the accountEnabled property value. true if the account is enabled; otherwise, false. Default is true.  Supports $filter (eq, ne, not, in). Only callers in Global Administrator and Cloud Device Administrator roles can set this property.
 func (m *Device) SetAccountEnabled(value *bool)() {
-    if m != nil {
-        m.accountEnabled = value
-    }
+    m.accountEnabled = value
 }
 // SetAlternativeSecurityIds sets the alternativeSecurityIds property value. For internal use only. Not nullable. Supports $filter (eq, not, ge, le).
 func (m *Device) SetAlternativeSecurityIds(value []AlternativeSecurityIdable)() {
-    if m != nil {
-        m.alternativeSecurityIds = value
-    }
+    m.alternativeSecurityIds = value
 }
 // SetApproximateLastSignInDateTime sets the approximateLastSignInDateTime property value. The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Supports $filter (eq, ne, not, ge, le, and eq on null values) and $orderBy.
 func (m *Device) SetApproximateLastSignInDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.approximateLastSignInDateTime = value
-    }
+    m.approximateLastSignInDateTime = value
 }
 // SetCommands sets the commands property value. Set of commands sent to this device.
 func (m *Device) SetCommands(value []Commandable)() {
-    if m != nil {
-        m.commands = value
-    }
+    m.commands = value
 }
 // SetComplianceExpirationDateTime sets the complianceExpirationDateTime property value. The timestamp when the device is no longer deemed compliant. The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
 func (m *Device) SetComplianceExpirationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.complianceExpirationDateTime = value
-    }
+    m.complianceExpirationDateTime = value
 }
 // SetDeviceCategory sets the deviceCategory property value. User-defined property set by Intune to automatically add devices to groups and simplify managing devices.
 func (m *Device) SetDeviceCategory(value *string)() {
-    if m != nil {
-        m.deviceCategory = value
-    }
+    m.deviceCategory = value
 }
 // SetDeviceId sets the deviceId property value. Identifier set by Azure Device Registration Service at the time of registration. Supports $filter (eq, ne, not, startsWith).
 func (m *Device) SetDeviceId(value *string)() {
-    if m != nil {
-        m.deviceId = value
-    }
+    m.deviceId = value
 }
 // SetDeviceMetadata sets the deviceMetadata property value. For internal use only. Set to null.
 func (m *Device) SetDeviceMetadata(value *string)() {
-    if m != nil {
-        m.deviceMetadata = value
-    }
+    m.deviceMetadata = value
 }
 // SetDeviceOwnership sets the deviceOwnership property value. Ownership of the device. This property is set by Intune. Possible values are: unknown, company, personal.
 func (m *Device) SetDeviceOwnership(value *string)() {
-    if m != nil {
-        m.deviceOwnership = value
-    }
+    m.deviceOwnership = value
 }
 // SetDeviceVersion sets the deviceVersion property value. For internal use only.
 func (m *Device) SetDeviceVersion(value *int32)() {
-    if m != nil {
-        m.deviceVersion = value
-    }
+    m.deviceVersion = value
 }
 // SetDisplayName sets the displayName property value. The display name for the device. Required. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.
 func (m *Device) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }
 // SetDomainName sets the domainName property value. The on-premises domain name of Hybrid Azure AD joined devices. This property is set by Intune.
 func (m *Device) SetDomainName(value *string)() {
-    if m != nil {
-        m.domainName = value
-    }
+    m.domainName = value
 }
 // SetEnrollmentProfileName sets the enrollmentProfileName property value. Enrollment profile applied to the device. For example, Apple Device Enrollment Profile, Device enrollment - Corporate device identifiers, or Windows Autopilot profile name. This property is set by Intune.
 func (m *Device) SetEnrollmentProfileName(value *string)() {
-    if m != nil {
-        m.enrollmentProfileName = value
-    }
+    m.enrollmentProfileName = value
 }
 // SetEnrollmentType sets the enrollmentType property value. Enrollment type of the device. This property is set by Intune. Possible values are: unknown, userEnrollment, deviceEnrollmentManager, appleBulkWithUser, appleBulkWithoutUser, windowsAzureADJoin, windowsBulkUserless, windowsAutoEnrollment, windowsBulkAzureDomainJoin, windowsCoManagement.
 func (m *Device) SetEnrollmentType(value *string)() {
-    if m != nil {
-        m.enrollmentType = value
-    }
+    m.enrollmentType = value
 }
 // SetExtensionAttributes sets the extensionAttributes property value. Contains extension attributes 1-15 for the device. The individual extension attributes are not selectable. These properties are mastered in cloud and can be set during creation or update of a device object in Azure AD. Supports $filter (eq, not, startsWith, and eq on null values).
 func (m *Device) SetExtensionAttributes(value OnPremisesExtensionAttributesable)() {
-    if m != nil {
-        m.extensionAttributes = value
-    }
+    m.extensionAttributes = value
 }
 // SetExtensions sets the extensions property value. The collection of open extensions defined for the device. Read-only. Nullable.
 func (m *Device) SetExtensions(value []Extensionable)() {
-    if m != nil {
-        m.extensions = value
-    }
+    m.extensions = value
 }
 // SetHostnames sets the hostnames property value. List of hostNames for the device.
 func (m *Device) SetHostnames(value []string)() {
-    if m != nil {
-        m.hostnames = value
-    }
+    m.hostnames = value
 }
 // SetIsCompliant sets the isCompliant property value. true if the device complies with Mobile Device Management (MDM) policies; otherwise, false. Read-only. This can only be updated by Intune for any device OS type or by an approved MDM app for Windows OS devices. Supports $filter (eq, ne, not).
 func (m *Device) SetIsCompliant(value *bool)() {
-    if m != nil {
-        m.isCompliant = value
-    }
+    m.isCompliant = value
 }
 // SetIsManaged sets the isManaged property value. true if the device is managed by a Mobile Device Management (MDM) app; otherwise, false. This can only be updated by Intune for any device OS type or by an approved MDM app for Windows OS devices. Supports $filter (eq, ne, not).
 func (m *Device) SetIsManaged(value *bool)() {
-    if m != nil {
-        m.isManaged = value
-    }
+    m.isManaged = value
 }
 // SetIsManagementRestricted sets the isManagementRestricted property value. The isManagementRestricted property
 func (m *Device) SetIsManagementRestricted(value *bool)() {
-    if m != nil {
-        m.isManagementRestricted = value
-    }
+    m.isManagementRestricted = value
 }
 // SetIsRooted sets the isRooted property value. true if device is rooted; false if device is jail-broken. This can only be updated by Intune.
 func (m *Device) SetIsRooted(value *bool)() {
-    if m != nil {
-        m.isRooted = value
-    }
+    m.isRooted = value
 }
 // SetKind sets the kind property value. Form factor of device. Only returned if user signs in with a Microsoft account as part of Project Rome.
 func (m *Device) SetKind(value *string)() {
-    if m != nil {
-        m.kind = value
-    }
+    m.kind = value
 }
 // SetManagementType sets the managementType property value. Management channel of the device.  This property is set by Intune. Possible values are: eas, mdm, easMdm, intuneClient, easIntuneClient, configurationManagerClient, configurationManagerClientMdm, configurationManagerClientMdmEas, unknown, jamf, googleCloudDevicePolicyController.
 func (m *Device) SetManagementType(value *string)() {
-    if m != nil {
-        m.managementType = value
-    }
+    m.managementType = value
 }
 // SetManufacturer sets the manufacturer property value. Manufacturer of the device. Read-only.
 func (m *Device) SetManufacturer(value *string)() {
-    if m != nil {
-        m.manufacturer = value
-    }
+    m.manufacturer = value
 }
 // SetMdmAppId sets the mdmAppId property value. Application identifier used to register device into MDM. Read-only. Supports $filter (eq, ne, not, startsWith).
 func (m *Device) SetMdmAppId(value *string)() {
-    if m != nil {
-        m.mdmAppId = value
-    }
+    m.mdmAppId = value
 }
 // SetMemberOf sets the memberOf property value. Groups and administrative units that this device is a member of. Read-only. Nullable. Supports $expand.
 func (m *Device) SetMemberOf(value []DirectoryObjectable)() {
-    if m != nil {
-        m.memberOf = value
-    }
+    m.memberOf = value
 }
 // SetModel sets the model property value. Model of the device. Read-only.
 func (m *Device) SetModel(value *string)() {
-    if m != nil {
-        m.model = value
-    }
+    m.model = value
 }
 // SetName sets the name property value. Friendly name of a device. Only returned if user signs in with a Microsoft account as part of Project Rome.
 func (m *Device) SetName(value *string)() {
-    if m != nil {
-        m.name = value
-    }
+    m.name = value
 }
 // SetOnPremisesLastSyncDateTime sets the onPremisesLastSyncDateTime property value. The last time at which the object was synced with the on-premises directory. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z Read-only. Supports $filter (eq, ne, not, ge, le, in).
 func (m *Device) SetOnPremisesLastSyncDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.onPremisesLastSyncDateTime = value
-    }
+    m.onPremisesLastSyncDateTime = value
 }
 // SetOnPremisesSyncEnabled sets the onPremisesSyncEnabled property value. true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced; null if this object has never been synced from an on-premises directory (default). Read-only. Supports $filter (eq, ne, not, in, and eq on null values).
 func (m *Device) SetOnPremisesSyncEnabled(value *bool)() {
-    if m != nil {
-        m.onPremisesSyncEnabled = value
-    }
+    m.onPremisesSyncEnabled = value
 }
 // SetOperatingSystem sets the operatingSystem property value. The type of operating system on the device. Required. Supports $filter (eq, ne, not, ge, le, startsWith, and eq on null values).
 func (m *Device) SetOperatingSystem(value *string)() {
-    if m != nil {
-        m.operatingSystem = value
-    }
+    m.operatingSystem = value
 }
 // SetOperatingSystemVersion sets the operatingSystemVersion property value. Operating system version of the device. Required. Supports $filter (eq, ne, not, ge, le, startsWith, and eq on null values).
 func (m *Device) SetOperatingSystemVersion(value *string)() {
-    if m != nil {
-        m.operatingSystemVersion = value
-    }
+    m.operatingSystemVersion = value
 }
 // SetPhysicalIds sets the physicalIds property value. For internal use only. Not nullable. Supports $filter (eq, not, ge, le, startsWith, and counting empty collections).
 func (m *Device) SetPhysicalIds(value []string)() {
-    if m != nil {
-        m.physicalIds = value
-    }
+    m.physicalIds = value
 }
 // SetPlatform sets the platform property value. Platform of device. Only returned if user signs in with a Microsoft account as part of Project Rome. Only returned if user signs in with a Microsoft account as part of Project Rome.
 func (m *Device) SetPlatform(value *string)() {
-    if m != nil {
-        m.platform = value
-    }
+    m.platform = value
 }
 // SetProfileType sets the profileType property value. The profile type of the device. Possible values: RegisteredDevice (default), SecureVM, Printer, Shared, IoT.
 func (m *Device) SetProfileType(value *string)() {
-    if m != nil {
-        m.profileType = value
-    }
+    m.profileType = value
 }
 // SetRegisteredOwners sets the registeredOwners property value. The user that cloud joined the device or registered their personal device. The registered owner is set at the time of registration. Currently, there can be only one owner. Read-only. Nullable. Supports $expand.
 func (m *Device) SetRegisteredOwners(value []DirectoryObjectable)() {
-    if m != nil {
-        m.registeredOwners = value
-    }
+    m.registeredOwners = value
 }
 // SetRegisteredUsers sets the registeredUsers property value. Collection of registered users of the device. For cloud joined devices and registered personal devices, registered users are set to the same value as registered owners at the time of registration. Read-only. Nullable. Supports $expand.
 func (m *Device) SetRegisteredUsers(value []DirectoryObjectable)() {
-    if m != nil {
-        m.registeredUsers = value
-    }
+    m.registeredUsers = value
 }
 // SetRegistrationDateTime sets the registrationDateTime property value. Date and time of when the device was registered. The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
 func (m *Device) SetRegistrationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.registrationDateTime = value
-    }
+    m.registrationDateTime = value
 }
 // SetStatus sets the status property value. Device is online or offline. Only returned if user signs in with a Microsoft account as part of Project Rome.
 func (m *Device) SetStatus(value *string)() {
-    if m != nil {
-        m.status = value
-    }
+    m.status = value
 }
 // SetSystemLabels sets the systemLabels property value. List of labels applied to the device by the system. Supports $filter (eq when counting empty collections).
 func (m *Device) SetSystemLabels(value []string)() {
-    if m != nil {
-        m.systemLabels = value
-    }
+    m.systemLabels = value
 }
 // SetTransitiveMemberOf sets the transitiveMemberOf property value. Groups and administrative units that this device is a member of. This operation is transitive. Supports $expand.
 func (m *Device) SetTransitiveMemberOf(value []DirectoryObjectable)() {
-    if m != nil {
-        m.transitiveMemberOf = value
-    }
+    m.transitiveMemberOf = value
 }
 // SetTrustType sets the trustType property value. Type of trust for the joined device. Read-only. Possible values: Workplace (indicates bring your own personal devices), AzureAd (Cloud only joined devices), ServerAd (on-premises domain joined devices joined to Azure AD). For more details, see Introduction to device management in Azure Active Directory
 func (m *Device) SetTrustType(value *string)() {
-    if m != nil {
-        m.trustType = value
-    }
+    m.trustType = value
 }
 // SetUsageRights sets the usageRights property value. Represents the usage rights a device has been granted.
 func (m *Device) SetUsageRights(value []UsageRightable)() {
-    if m != nil {
-        m.usageRights = value
-    }
+    m.usageRights = value
 }

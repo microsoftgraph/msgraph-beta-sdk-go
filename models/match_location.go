@@ -30,11 +30,7 @@ func CreateMatchLocationFromDiscriminatorValue(parseNode i878a80d2330e89d2689638
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *MatchLocation) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *MatchLocation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -73,27 +69,15 @@ func (m *MatchLocation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
 }
 // GetLength gets the length property value. The length property
 func (m *MatchLocation) GetLength()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.length
-    }
+    return m.length
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *MatchLocation) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetOffset gets the offset property value. The offset property
 func (m *MatchLocation) GetOffset()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.offset
-    }
+    return m.offset
 }
 // Serialize serializes information the current object
 func (m *MatchLocation) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -125,25 +109,17 @@ func (m *MatchLocation) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *MatchLocation) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetLength sets the length property value. The length property
 func (m *MatchLocation) SetLength(value *int32)() {
-    if m != nil {
-        m.length = value
-    }
+    m.length = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *MatchLocation) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetOffset sets the offset property value. The offset property
 func (m *MatchLocation) SetOffset(value *int32)() {
-    if m != nil {
-        m.offset = value
-    }
+    m.offset = value
 }

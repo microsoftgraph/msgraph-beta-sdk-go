@@ -40,51 +40,27 @@ func CreateWindowsEnrollmentStatusScreenSettingsFromDiscriminatorValue(parseNode
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *WindowsEnrollmentStatusScreenSettings) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetAllowDeviceUseBeforeProfileAndAppInstallComplete gets the allowDeviceUseBeforeProfileAndAppInstallComplete property value. Allow or block user to use device before profile and app installation complete
 func (m *WindowsEnrollmentStatusScreenSettings) GetAllowDeviceUseBeforeProfileAndAppInstallComplete()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.allowDeviceUseBeforeProfileAndAppInstallComplete
-    }
+    return m.allowDeviceUseBeforeProfileAndAppInstallComplete
 }
 // GetAllowDeviceUseOnInstallFailure gets the allowDeviceUseOnInstallFailure property value. Allow the user to continue using the device on installation failure
 func (m *WindowsEnrollmentStatusScreenSettings) GetAllowDeviceUseOnInstallFailure()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.allowDeviceUseOnInstallFailure
-    }
+    return m.allowDeviceUseOnInstallFailure
 }
 // GetAllowLogCollectionOnInstallFailure gets the allowLogCollectionOnInstallFailure property value. Allow or block log collection on installation failure
 func (m *WindowsEnrollmentStatusScreenSettings) GetAllowLogCollectionOnInstallFailure()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.allowLogCollectionOnInstallFailure
-    }
+    return m.allowLogCollectionOnInstallFailure
 }
 // GetBlockDeviceSetupRetryByUser gets the blockDeviceSetupRetryByUser property value. Allow the user to retry the setup on installation failure
 func (m *WindowsEnrollmentStatusScreenSettings) GetBlockDeviceSetupRetryByUser()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.blockDeviceSetupRetryByUser
-    }
+    return m.blockDeviceSetupRetryByUser
 }
 // GetCustomErrorMessage gets the customErrorMessage property value. Set custom error message to show upon installation failure
 func (m *WindowsEnrollmentStatusScreenSettings) GetCustomErrorMessage()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.customErrorMessage
-    }
+    return m.customErrorMessage
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *WindowsEnrollmentStatusScreenSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -173,27 +149,15 @@ func (m *WindowsEnrollmentStatusScreenSettings) GetFieldDeserializers()(map[stri
 }
 // GetHideInstallationProgress gets the hideInstallationProgress property value. Show or hide installation progress to user
 func (m *WindowsEnrollmentStatusScreenSettings) GetHideInstallationProgress()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.hideInstallationProgress
-    }
+    return m.hideInstallationProgress
 }
 // GetInstallProgressTimeoutInMinutes gets the installProgressTimeoutInMinutes property value. Set installation progress timeout in minutes
 func (m *WindowsEnrollmentStatusScreenSettings) GetInstallProgressTimeoutInMinutes()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.installProgressTimeoutInMinutes
-    }
+    return m.installProgressTimeoutInMinutes
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *WindowsEnrollmentStatusScreenSettings) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // Serialize serializes information the current object
 func (m *WindowsEnrollmentStatusScreenSettings) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -255,55 +219,37 @@ func (m *WindowsEnrollmentStatusScreenSettings) Serialize(writer i878a80d2330e89
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *WindowsEnrollmentStatusScreenSettings) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetAllowDeviceUseBeforeProfileAndAppInstallComplete sets the allowDeviceUseBeforeProfileAndAppInstallComplete property value. Allow or block user to use device before profile and app installation complete
 func (m *WindowsEnrollmentStatusScreenSettings) SetAllowDeviceUseBeforeProfileAndAppInstallComplete(value *bool)() {
-    if m != nil {
-        m.allowDeviceUseBeforeProfileAndAppInstallComplete = value
-    }
+    m.allowDeviceUseBeforeProfileAndAppInstallComplete = value
 }
 // SetAllowDeviceUseOnInstallFailure sets the allowDeviceUseOnInstallFailure property value. Allow the user to continue using the device on installation failure
 func (m *WindowsEnrollmentStatusScreenSettings) SetAllowDeviceUseOnInstallFailure(value *bool)() {
-    if m != nil {
-        m.allowDeviceUseOnInstallFailure = value
-    }
+    m.allowDeviceUseOnInstallFailure = value
 }
 // SetAllowLogCollectionOnInstallFailure sets the allowLogCollectionOnInstallFailure property value. Allow or block log collection on installation failure
 func (m *WindowsEnrollmentStatusScreenSettings) SetAllowLogCollectionOnInstallFailure(value *bool)() {
-    if m != nil {
-        m.allowLogCollectionOnInstallFailure = value
-    }
+    m.allowLogCollectionOnInstallFailure = value
 }
 // SetBlockDeviceSetupRetryByUser sets the blockDeviceSetupRetryByUser property value. Allow the user to retry the setup on installation failure
 func (m *WindowsEnrollmentStatusScreenSettings) SetBlockDeviceSetupRetryByUser(value *bool)() {
-    if m != nil {
-        m.blockDeviceSetupRetryByUser = value
-    }
+    m.blockDeviceSetupRetryByUser = value
 }
 // SetCustomErrorMessage sets the customErrorMessage property value. Set custom error message to show upon installation failure
 func (m *WindowsEnrollmentStatusScreenSettings) SetCustomErrorMessage(value *string)() {
-    if m != nil {
-        m.customErrorMessage = value
-    }
+    m.customErrorMessage = value
 }
 // SetHideInstallationProgress sets the hideInstallationProgress property value. Show or hide installation progress to user
 func (m *WindowsEnrollmentStatusScreenSettings) SetHideInstallationProgress(value *bool)() {
-    if m != nil {
-        m.hideInstallationProgress = value
-    }
+    m.hideInstallationProgress = value
 }
 // SetInstallProgressTimeoutInMinutes sets the installProgressTimeoutInMinutes property value. Set installation progress timeout in minutes
 func (m *WindowsEnrollmentStatusScreenSettings) SetInstallProgressTimeoutInMinutes(value *int32)() {
-    if m != nil {
-        m.installProgressTimeoutInMinutes = value
-    }
+    m.installProgressTimeoutInMinutes = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *WindowsEnrollmentStatusScreenSettings) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }

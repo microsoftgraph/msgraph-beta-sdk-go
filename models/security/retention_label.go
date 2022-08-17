@@ -6,7 +6,7 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
-// RetentionLabel provides operations to manage the collection of accessReview entities.
+// RetentionLabel provides operations to manage the collection of accessReviewDecision entities.
 type RetentionLabel struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
     // Specifies the action to take on a document with this label applied during the retention period. The possible values are: none, delete, startDispositionReview, unknownFutureValue.
@@ -57,75 +57,39 @@ func CreateRetentionLabelFromDiscriminatorValue(parseNode i878a80d2330e89d268963
 }
 // GetActionAfterRetentionPeriod gets the actionAfterRetentionPeriod property value. Specifies the action to take on a document with this label applied during the retention period. The possible values are: none, delete, startDispositionReview, unknownFutureValue.
 func (m *RetentionLabel) GetActionAfterRetentionPeriod()(*ActionAfterRetentionPeriod) {
-    if m == nil {
-        return nil
-    } else {
-        return m.actionAfterRetentionPeriod
-    }
+    return m.actionAfterRetentionPeriod
 }
 // GetBehaviorDuringRetentionPeriod gets the behaviorDuringRetentionPeriod property value. Specifies how the behavior of a document with this label should be during the retention period. The possible values are: doNotRetain, retain, retainAsRecord, retainAsRegulatoryRecord, unknownFutureValue.
 func (m *RetentionLabel) GetBehaviorDuringRetentionPeriod()(*BehaviorDuringRetentionPeriod) {
-    if m == nil {
-        return nil
-    } else {
-        return m.behaviorDuringRetentionPeriod
-    }
+    return m.behaviorDuringRetentionPeriod
 }
 // GetCreatedBy gets the createdBy property value. Represents the user who created the retentionLabel.
 func (m *RetentionLabel) GetCreatedBy()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentitySetable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.createdBy
-    }
+    return m.createdBy
 }
 // GetCreatedDateTime gets the createdDateTime property value. Represents the date and time in which the retentionLabel is created.
 func (m *RetentionLabel) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.createdDateTime
-    }
+    return m.createdDateTime
 }
 // GetDefaultRecordBehavior gets the defaultRecordBehavior property value. Specifies the locked or unlocked state of a record label when it is created.The possible values are: startLocked, startUnlocked, unknownFutureValue.
 func (m *RetentionLabel) GetDefaultRecordBehavior()(*DefaultRecordBehavior) {
-    if m == nil {
-        return nil
-    } else {
-        return m.defaultRecordBehavior
-    }
+    return m.defaultRecordBehavior
 }
 // GetDescriptionForAdmins gets the descriptionForAdmins property value. Provides label information for the admin. Optional.
 func (m *RetentionLabel) GetDescriptionForAdmins()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.descriptionForAdmins
-    }
+    return m.descriptionForAdmins
 }
 // GetDescriptionForUsers gets the descriptionForUsers property value. Provides the label information for the user. Optional.
 func (m *RetentionLabel) GetDescriptionForUsers()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.descriptionForUsers
-    }
+    return m.descriptionForUsers
 }
 // GetDisplayName gets the displayName property value. Unique string that defines a label name.
 func (m *RetentionLabel) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
 // GetDispositionReviewStages gets the dispositionReviewStages property value. Review stages during which reviewers are notified to determine whether a document must be deleted or retained.
 func (m *RetentionLabel) GetDispositionReviewStages()([]DispositionReviewStageable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.dispositionReviewStages
-    }
+    return m.dispositionReviewStages
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *RetentionLabel) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -298,59 +262,31 @@ func (m *RetentionLabel) GetFieldDeserializers()(map[string]func(i878a80d2330e89
 }
 // GetIsInUse gets the isInUse property value. Specifies whether the label is currently being used.
 func (m *RetentionLabel) GetIsInUse()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isInUse
-    }
+    return m.isInUse
 }
 // GetLabelToBeApplied gets the labelToBeApplied property value. Specifies the replacement label to be applied automatically after the retention period of the current label ends.
 func (m *RetentionLabel) GetLabelToBeApplied()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.labelToBeApplied
-    }
+    return m.labelToBeApplied
 }
 // GetLastModifiedBy gets the lastModifiedBy property value. The user who last modified the retentionLabel.
 func (m *RetentionLabel) GetLastModifiedBy()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentitySetable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastModifiedBy
-    }
+    return m.lastModifiedBy
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. The latest date time when the retentionLabel was modified.
 func (m *RetentionLabel) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastModifiedDateTime
-    }
+    return m.lastModifiedDateTime
 }
 // GetRetentionDuration gets the retentionDuration property value. Specifies the number of days to retain the content.
 func (m *RetentionLabel) GetRetentionDuration()(RetentionDurationable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.retentionDuration
-    }
+    return m.retentionDuration
 }
 // GetRetentionEventType gets the retentionEventType property value. The retentionEventType property
 func (m *RetentionLabel) GetRetentionEventType()(RetentionEventTypeable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.retentionEventType
-    }
+    return m.retentionEventType
 }
 // GetRetentionTrigger gets the retentionTrigger property value. Specifies whether the retention duration is calculated from the content creation date, labeled date, or last modification date. The possible values are: dateLabeled, dateCreated, dateModified, dateOfEvent, unknownFutureValue.
 func (m *RetentionLabel) GetRetentionTrigger()(*RetentionTrigger) {
-    if m == nil {
-        return nil
-    } else {
-        return m.retentionTrigger
-    }
+    return m.retentionTrigger
 }
 // Serialize serializes information the current object
 func (m *RetentionLabel) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -466,97 +402,65 @@ func (m *RetentionLabel) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
 }
 // SetActionAfterRetentionPeriod sets the actionAfterRetentionPeriod property value. Specifies the action to take on a document with this label applied during the retention period. The possible values are: none, delete, startDispositionReview, unknownFutureValue.
 func (m *RetentionLabel) SetActionAfterRetentionPeriod(value *ActionAfterRetentionPeriod)() {
-    if m != nil {
-        m.actionAfterRetentionPeriod = value
-    }
+    m.actionAfterRetentionPeriod = value
 }
 // SetBehaviorDuringRetentionPeriod sets the behaviorDuringRetentionPeriod property value. Specifies how the behavior of a document with this label should be during the retention period. The possible values are: doNotRetain, retain, retainAsRecord, retainAsRegulatoryRecord, unknownFutureValue.
 func (m *RetentionLabel) SetBehaviorDuringRetentionPeriod(value *BehaviorDuringRetentionPeriod)() {
-    if m != nil {
-        m.behaviorDuringRetentionPeriod = value
-    }
+    m.behaviorDuringRetentionPeriod = value
 }
 // SetCreatedBy sets the createdBy property value. Represents the user who created the retentionLabel.
 func (m *RetentionLabel) SetCreatedBy(value ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentitySetable)() {
-    if m != nil {
-        m.createdBy = value
-    }
+    m.createdBy = value
 }
 // SetCreatedDateTime sets the createdDateTime property value. Represents the date and time in which the retentionLabel is created.
 func (m *RetentionLabel) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.createdDateTime = value
-    }
+    m.createdDateTime = value
 }
 // SetDefaultRecordBehavior sets the defaultRecordBehavior property value. Specifies the locked or unlocked state of a record label when it is created.The possible values are: startLocked, startUnlocked, unknownFutureValue.
 func (m *RetentionLabel) SetDefaultRecordBehavior(value *DefaultRecordBehavior)() {
-    if m != nil {
-        m.defaultRecordBehavior = value
-    }
+    m.defaultRecordBehavior = value
 }
 // SetDescriptionForAdmins sets the descriptionForAdmins property value. Provides label information for the admin. Optional.
 func (m *RetentionLabel) SetDescriptionForAdmins(value *string)() {
-    if m != nil {
-        m.descriptionForAdmins = value
-    }
+    m.descriptionForAdmins = value
 }
 // SetDescriptionForUsers sets the descriptionForUsers property value. Provides the label information for the user. Optional.
 func (m *RetentionLabel) SetDescriptionForUsers(value *string)() {
-    if m != nil {
-        m.descriptionForUsers = value
-    }
+    m.descriptionForUsers = value
 }
 // SetDisplayName sets the displayName property value. Unique string that defines a label name.
 func (m *RetentionLabel) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }
 // SetDispositionReviewStages sets the dispositionReviewStages property value. Review stages during which reviewers are notified to determine whether a document must be deleted or retained.
 func (m *RetentionLabel) SetDispositionReviewStages(value []DispositionReviewStageable)() {
-    if m != nil {
-        m.dispositionReviewStages = value
-    }
+    m.dispositionReviewStages = value
 }
 // SetIsInUse sets the isInUse property value. Specifies whether the label is currently being used.
 func (m *RetentionLabel) SetIsInUse(value *bool)() {
-    if m != nil {
-        m.isInUse = value
-    }
+    m.isInUse = value
 }
 // SetLabelToBeApplied sets the labelToBeApplied property value. Specifies the replacement label to be applied automatically after the retention period of the current label ends.
 func (m *RetentionLabel) SetLabelToBeApplied(value *string)() {
-    if m != nil {
-        m.labelToBeApplied = value
-    }
+    m.labelToBeApplied = value
 }
 // SetLastModifiedBy sets the lastModifiedBy property value. The user who last modified the retentionLabel.
 func (m *RetentionLabel) SetLastModifiedBy(value ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentitySetable)() {
-    if m != nil {
-        m.lastModifiedBy = value
-    }
+    m.lastModifiedBy = value
 }
 // SetLastModifiedDateTime sets the lastModifiedDateTime property value. The latest date time when the retentionLabel was modified.
 func (m *RetentionLabel) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.lastModifiedDateTime = value
-    }
+    m.lastModifiedDateTime = value
 }
 // SetRetentionDuration sets the retentionDuration property value. Specifies the number of days to retain the content.
 func (m *RetentionLabel) SetRetentionDuration(value RetentionDurationable)() {
-    if m != nil {
-        m.retentionDuration = value
-    }
+    m.retentionDuration = value
 }
 // SetRetentionEventType sets the retentionEventType property value. The retentionEventType property
 func (m *RetentionLabel) SetRetentionEventType(value RetentionEventTypeable)() {
-    if m != nil {
-        m.retentionEventType = value
-    }
+    m.retentionEventType = value
 }
 // SetRetentionTrigger sets the retentionTrigger property value. Specifies whether the retention duration is calculated from the content creation date, labeled date, or last modification date. The possible values are: dateLabeled, dateCreated, dateModified, dateOfEvent, unknownFutureValue.
 func (m *RetentionLabel) SetRetentionTrigger(value *RetentionTrigger)() {
-    if m != nil {
-        m.retentionTrigger = value
-    }
+    m.retentionTrigger = value
 }

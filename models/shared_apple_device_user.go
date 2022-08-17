@@ -34,35 +34,19 @@ func CreateSharedAppleDeviceUserFromDiscriminatorValue(parseNode i878a80d2330e89
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SharedAppleDeviceUser) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetDataQuota gets the dataQuota property value. Data quota
 func (m *SharedAppleDeviceUser) GetDataQuota()(*int64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.dataQuota
-    }
+    return m.dataQuota
 }
 // GetDataToSync gets the dataToSync property value. Data to sync
 func (m *SharedAppleDeviceUser) GetDataToSync()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.dataToSync
-    }
+    return m.dataToSync
 }
 // GetDataUsed gets the dataUsed property value. Data quota
 func (m *SharedAppleDeviceUser) GetDataUsed()(*int64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.dataUsed
-    }
+    return m.dataUsed
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *SharedAppleDeviceUser) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -121,19 +105,11 @@ func (m *SharedAppleDeviceUser) GetFieldDeserializers()(map[string]func(i878a80d
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *SharedAppleDeviceUser) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetUserPrincipalName gets the userPrincipalName property value. User name
 func (m *SharedAppleDeviceUser) GetUserPrincipalName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userPrincipalName
-    }
+    return m.userPrincipalName
 }
 // Serialize serializes information the current object
 func (m *SharedAppleDeviceUser) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -177,37 +153,25 @@ func (m *SharedAppleDeviceUser) Serialize(writer i878a80d2330e89d26896388a3f487e
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SharedAppleDeviceUser) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetDataQuota sets the dataQuota property value. Data quota
 func (m *SharedAppleDeviceUser) SetDataQuota(value *int64)() {
-    if m != nil {
-        m.dataQuota = value
-    }
+    m.dataQuota = value
 }
 // SetDataToSync sets the dataToSync property value. Data to sync
 func (m *SharedAppleDeviceUser) SetDataToSync(value *bool)() {
-    if m != nil {
-        m.dataToSync = value
-    }
+    m.dataToSync = value
 }
 // SetDataUsed sets the dataUsed property value. Data quota
 func (m *SharedAppleDeviceUser) SetDataUsed(value *int64)() {
-    if m != nil {
-        m.dataUsed = value
-    }
+    m.dataUsed = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *SharedAppleDeviceUser) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetUserPrincipalName sets the userPrincipalName property value. User name
 func (m *SharedAppleDeviceUser) SetUserPrincipalName(value *string)() {
-    if m != nil {
-        m.userPrincipalName = value
-    }
+    m.userPrincipalName = value
 }

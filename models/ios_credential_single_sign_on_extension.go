@@ -33,27 +33,15 @@ func CreateIosCredentialSingleSignOnExtensionFromDiscriminatorValue(parseNode i8
 }
 // GetConfigurations gets the configurations property value. Gets or sets a list of typed key-value pairs used to configure Credential-type profiles. This collection can contain a maximum of 500 elements.
 func (m *IosCredentialSingleSignOnExtension) GetConfigurations()([]KeyTypedValuePairable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.configurations
-    }
+    return m.configurations
 }
 // GetDomains gets the domains property value. Gets or sets a list of hosts or domain names for which the app extension performs SSO.
 func (m *IosCredentialSingleSignOnExtension) GetDomains()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.domains
-    }
+    return m.domains
 }
 // GetExtensionIdentifier gets the extensionIdentifier property value. Gets or sets the bundle ID of the app extension that performs SSO for the specified URLs.
 func (m *IosCredentialSingleSignOnExtension) GetExtensionIdentifier()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.extensionIdentifier
-    }
+    return m.extensionIdentifier
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *IosCredentialSingleSignOnExtension) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -120,19 +108,11 @@ func (m *IosCredentialSingleSignOnExtension) GetFieldDeserializers()(map[string]
 }
 // GetRealm gets the realm property value. Gets or sets the case-sensitive realm name for this profile.
 func (m *IosCredentialSingleSignOnExtension) GetRealm()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.realm
-    }
+    return m.realm
 }
 // GetTeamIdentifier gets the teamIdentifier property value. Gets or sets the team ID of the app extension that performs SSO for the specified URLs.
 func (m *IosCredentialSingleSignOnExtension) GetTeamIdentifier()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.teamIdentifier
-    }
+    return m.teamIdentifier
 }
 // Serialize serializes information the current object
 func (m *IosCredentialSingleSignOnExtension) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -178,31 +158,21 @@ func (m *IosCredentialSingleSignOnExtension) Serialize(writer i878a80d2330e89d26
 }
 // SetConfigurations sets the configurations property value. Gets or sets a list of typed key-value pairs used to configure Credential-type profiles. This collection can contain a maximum of 500 elements.
 func (m *IosCredentialSingleSignOnExtension) SetConfigurations(value []KeyTypedValuePairable)() {
-    if m != nil {
-        m.configurations = value
-    }
+    m.configurations = value
 }
 // SetDomains sets the domains property value. Gets or sets a list of hosts or domain names for which the app extension performs SSO.
 func (m *IosCredentialSingleSignOnExtension) SetDomains(value []string)() {
-    if m != nil {
-        m.domains = value
-    }
+    m.domains = value
 }
 // SetExtensionIdentifier sets the extensionIdentifier property value. Gets or sets the bundle ID of the app extension that performs SSO for the specified URLs.
 func (m *IosCredentialSingleSignOnExtension) SetExtensionIdentifier(value *string)() {
-    if m != nil {
-        m.extensionIdentifier = value
-    }
+    m.extensionIdentifier = value
 }
 // SetRealm sets the realm property value. Gets or sets the case-sensitive realm name for this profile.
 func (m *IosCredentialSingleSignOnExtension) SetRealm(value *string)() {
-    if m != nil {
-        m.realm = value
-    }
+    m.realm = value
 }
 // SetTeamIdentifier sets the teamIdentifier property value. Gets or sets the team ID of the app extension that performs SSO for the specified URLs.
 func (m *IosCredentialSingleSignOnExtension) SetTeamIdentifier(value *string)() {
-    if m != nil {
-        m.teamIdentifier = value
-    }
+    m.teamIdentifier = value
 }

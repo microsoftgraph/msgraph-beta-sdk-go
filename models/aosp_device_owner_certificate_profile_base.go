@@ -58,27 +58,15 @@ func CreateAospDeviceOwnerCertificateProfileBaseFromDiscriminatorValue(parseNode
 }
 // GetCertificateValidityPeriodScale gets the certificateValidityPeriodScale property value. Certificate Validity Period Options.
 func (m *AospDeviceOwnerCertificateProfileBase) GetCertificateValidityPeriodScale()(*CertificateValidityPeriodScale) {
-    if m == nil {
-        return nil
-    } else {
-        return m.certificateValidityPeriodScale
-    }
+    return m.certificateValidityPeriodScale
 }
 // GetCertificateValidityPeriodValue gets the certificateValidityPeriodValue property value. Value for the Certificate Validity Period.
 func (m *AospDeviceOwnerCertificateProfileBase) GetCertificateValidityPeriodValue()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.certificateValidityPeriodValue
-    }
+    return m.certificateValidityPeriodValue
 }
 // GetExtendedKeyUsages gets the extendedKeyUsages property value. Extended Key Usage (EKU) settings. This collection can contain a maximum of 500 elements.
 func (m *AospDeviceOwnerCertificateProfileBase) GetExtendedKeyUsages()([]ExtendedKeyUsageable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.extendedKeyUsages
-    }
+    return m.extendedKeyUsages
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AospDeviceOwnerCertificateProfileBase) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -161,35 +149,19 @@ func (m *AospDeviceOwnerCertificateProfileBase) GetFieldDeserializers()(map[stri
 }
 // GetRenewalThresholdPercentage gets the renewalThresholdPercentage property value. Certificate renewal threshold percentage. Valid values 1 to 99
 func (m *AospDeviceOwnerCertificateProfileBase) GetRenewalThresholdPercentage()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.renewalThresholdPercentage
-    }
+    return m.renewalThresholdPercentage
 }
 // GetRootCertificate gets the rootCertificate property value. Trusted Root Certificate.
 func (m *AospDeviceOwnerCertificateProfileBase) GetRootCertificate()(AospDeviceOwnerTrustedRootCertificateable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.rootCertificate
-    }
+    return m.rootCertificate
 }
 // GetSubjectAlternativeNameType gets the subjectAlternativeNameType property value. Certificate Subject Alternative Name Type. This collection can contain a maximum of 500 elements. Possible values are: none, emailAddress, userPrincipalName, customAzureADAttribute, domainNameService, universalResourceIdentifier.
 func (m *AospDeviceOwnerCertificateProfileBase) GetSubjectAlternativeNameType()(*SubjectAlternativeNameType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.subjectAlternativeNameType
-    }
+    return m.subjectAlternativeNameType
 }
 // GetSubjectNameFormat gets the subjectNameFormat property value. Certificate Subject Name Format. This collection can contain a maximum of 500 elements. Possible values are: commonName, commonNameIncludingEmail, commonNameAsEmail, custom, commonNameAsIMEI, commonNameAsSerialNumber, commonNameAsAadDeviceId, commonNameAsIntuneDeviceId, commonNameAsDurableDeviceId.
 func (m *AospDeviceOwnerCertificateProfileBase) GetSubjectNameFormat()(*SubjectNameFormat) {
-    if m == nil {
-        return nil
-    } else {
-        return m.subjectNameFormat
-    }
+    return m.subjectNameFormat
 }
 // Serialize serializes information the current object
 func (m *AospDeviceOwnerCertificateProfileBase) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -250,43 +222,29 @@ func (m *AospDeviceOwnerCertificateProfileBase) Serialize(writer i878a80d2330e89
 }
 // SetCertificateValidityPeriodScale sets the certificateValidityPeriodScale property value. Certificate Validity Period Options.
 func (m *AospDeviceOwnerCertificateProfileBase) SetCertificateValidityPeriodScale(value *CertificateValidityPeriodScale)() {
-    if m != nil {
-        m.certificateValidityPeriodScale = value
-    }
+    m.certificateValidityPeriodScale = value
 }
 // SetCertificateValidityPeriodValue sets the certificateValidityPeriodValue property value. Value for the Certificate Validity Period.
 func (m *AospDeviceOwnerCertificateProfileBase) SetCertificateValidityPeriodValue(value *int32)() {
-    if m != nil {
-        m.certificateValidityPeriodValue = value
-    }
+    m.certificateValidityPeriodValue = value
 }
 // SetExtendedKeyUsages sets the extendedKeyUsages property value. Extended Key Usage (EKU) settings. This collection can contain a maximum of 500 elements.
 func (m *AospDeviceOwnerCertificateProfileBase) SetExtendedKeyUsages(value []ExtendedKeyUsageable)() {
-    if m != nil {
-        m.extendedKeyUsages = value
-    }
+    m.extendedKeyUsages = value
 }
 // SetRenewalThresholdPercentage sets the renewalThresholdPercentage property value. Certificate renewal threshold percentage. Valid values 1 to 99
 func (m *AospDeviceOwnerCertificateProfileBase) SetRenewalThresholdPercentage(value *int32)() {
-    if m != nil {
-        m.renewalThresholdPercentage = value
-    }
+    m.renewalThresholdPercentage = value
 }
 // SetRootCertificate sets the rootCertificate property value. Trusted Root Certificate.
 func (m *AospDeviceOwnerCertificateProfileBase) SetRootCertificate(value AospDeviceOwnerTrustedRootCertificateable)() {
-    if m != nil {
-        m.rootCertificate = value
-    }
+    m.rootCertificate = value
 }
 // SetSubjectAlternativeNameType sets the subjectAlternativeNameType property value. Certificate Subject Alternative Name Type. This collection can contain a maximum of 500 elements. Possible values are: none, emailAddress, userPrincipalName, customAzureADAttribute, domainNameService, universalResourceIdentifier.
 func (m *AospDeviceOwnerCertificateProfileBase) SetSubjectAlternativeNameType(value *SubjectAlternativeNameType)() {
-    if m != nil {
-        m.subjectAlternativeNameType = value
-    }
+    m.subjectAlternativeNameType = value
 }
 // SetSubjectNameFormat sets the subjectNameFormat property value. Certificate Subject Name Format. This collection can contain a maximum of 500 elements. Possible values are: commonName, commonNameIncludingEmail, commonNameAsEmail, custom, commonNameAsIMEI, commonNameAsSerialNumber, commonNameAsAadDeviceId, commonNameAsIntuneDeviceId, commonNameAsDurableDeviceId.
 func (m *AospDeviceOwnerCertificateProfileBase) SetSubjectNameFormat(value *SubjectNameFormat)() {
-    if m != nil {
-        m.subjectNameFormat = value
-    }
+    m.subjectNameFormat = value
 }

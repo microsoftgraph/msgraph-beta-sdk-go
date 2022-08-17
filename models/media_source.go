@@ -28,19 +28,11 @@ func CreateMediaSourceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *MediaSource) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetContentCategory gets the contentCategory property value. Enumeration value that indicates the media content category.
 func (m *MediaSource) GetContentCategory()(*MediaSourceContentCategory) {
-    if m == nil {
-        return nil
-    } else {
-        return m.contentCategory
-    }
+    return m.contentCategory
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *MediaSource) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -69,11 +61,7 @@ func (m *MediaSource) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *MediaSource) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // Serialize serializes information the current object
 func (m *MediaSource) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -100,19 +88,13 @@ func (m *MediaSource) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *MediaSource) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetContentCategory sets the contentCategory property value. Enumeration value that indicates the media content category.
 func (m *MediaSource) SetContentCategory(value *MediaSourceContentCategory)() {
-    if m != nil {
-        m.contentCategory = value
-    }
+    m.contentCategory = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *MediaSource) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }

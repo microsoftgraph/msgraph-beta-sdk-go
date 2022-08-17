@@ -30,11 +30,7 @@ func CreateGovernanceRuleSettingFromDiscriminatorValue(parseNode i878a80d2330e89
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *GovernanceRuleSetting) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *GovernanceRuleSetting) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -73,27 +69,15 @@ func (m *GovernanceRuleSetting) GetFieldDeserializers()(map[string]func(i878a80d
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *GovernanceRuleSetting) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetRuleIdentifier gets the ruleIdentifier property value. The id of the rule. For example, ExpirationRule and MfaRule.
 func (m *GovernanceRuleSetting) GetRuleIdentifier()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.ruleIdentifier
-    }
+    return m.ruleIdentifier
 }
 // GetSetting gets the setting property value. The settings of the rule. The value is a JSON string with a list of pairs in the format of Parameter_Name:Parameter_Value. For example, {'permanentAssignment':false,'maximumGrantPeriodInMinutes':129600}
 func (m *GovernanceRuleSetting) GetSetting()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.setting
-    }
+    return m.setting
 }
 // Serialize serializes information the current object
 func (m *GovernanceRuleSetting) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -125,25 +109,17 @@ func (m *GovernanceRuleSetting) Serialize(writer i878a80d2330e89d26896388a3f487e
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *GovernanceRuleSetting) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *GovernanceRuleSetting) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetRuleIdentifier sets the ruleIdentifier property value. The id of the rule. For example, ExpirationRule and MfaRule.
 func (m *GovernanceRuleSetting) SetRuleIdentifier(value *string)() {
-    if m != nil {
-        m.ruleIdentifier = value
-    }
+    m.ruleIdentifier = value
 }
 // SetSetting sets the setting property value. The settings of the rule. The value is a JSON string with a list of pairs in the format of Parameter_Name:Parameter_Value. For example, {'permanentAssignment':false,'maximumGrantPeriodInMinutes':129600}
 func (m *GovernanceRuleSetting) SetSetting(value *string)() {
-    if m != nil {
-        m.setting = value
-    }
+    m.setting = value
 }

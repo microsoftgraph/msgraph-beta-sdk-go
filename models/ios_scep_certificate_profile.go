@@ -43,27 +43,15 @@ func CreateIosScepCertificateProfileFromDiscriminatorValue(parseNode i878a80d233
 }
 // GetCertificateStore gets the certificateStore property value. Target store certificate. Possible values are: user, machine.
 func (m *IosScepCertificateProfile) GetCertificateStore()(*CertificateStore) {
-    if m == nil {
-        return nil
-    } else {
-        return m.certificateStore
-    }
+    return m.certificateStore
 }
 // GetCustomSubjectAlternativeNames gets the customSubjectAlternativeNames property value. Custom Subject Alternative Name Settings. The OnPremisesUserPrincipalName variable is support as well as others documented here: https://go.microsoft.com/fwlink/?LinkId=2027630. This collection can contain a maximum of 500 elements.
 func (m *IosScepCertificateProfile) GetCustomSubjectAlternativeNames()([]CustomSubjectAlternativeNameable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.customSubjectAlternativeNames
-    }
+    return m.customSubjectAlternativeNames
 }
 // GetExtendedKeyUsages gets the extendedKeyUsages property value. Extended Key Usage (EKU) settings. This collection can contain a maximum of 500 elements.
 func (m *IosScepCertificateProfile) GetExtendedKeyUsages()([]ExtendedKeyUsageable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.extendedKeyUsages
-    }
+    return m.extendedKeyUsages
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *IosScepCertificateProfile) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -188,59 +176,31 @@ func (m *IosScepCertificateProfile) GetFieldDeserializers()(map[string]func(i878
 }
 // GetKeySize gets the keySize property value. Key Size Options.
 func (m *IosScepCertificateProfile) GetKeySize()(*KeySize) {
-    if m == nil {
-        return nil
-    } else {
-        return m.keySize
-    }
+    return m.keySize
 }
 // GetKeyUsage gets the keyUsage property value. Key Usage Options.
 func (m *IosScepCertificateProfile) GetKeyUsage()(*KeyUsages) {
-    if m == nil {
-        return nil
-    } else {
-        return m.keyUsage
-    }
+    return m.keyUsage
 }
 // GetManagedDeviceCertificateStates gets the managedDeviceCertificateStates property value. Certificate state for devices. This collection can contain a maximum of 2147483647 elements.
 func (m *IosScepCertificateProfile) GetManagedDeviceCertificateStates()([]ManagedDeviceCertificateStateable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.managedDeviceCertificateStates
-    }
+    return m.managedDeviceCertificateStates
 }
 // GetRootCertificate gets the rootCertificate property value. Trusted Root Certificate.
 func (m *IosScepCertificateProfile) GetRootCertificate()(IosTrustedRootCertificateable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.rootCertificate
-    }
+    return m.rootCertificate
 }
 // GetScepServerUrls gets the scepServerUrls property value. SCEP Server Url(s).
 func (m *IosScepCertificateProfile) GetScepServerUrls()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.scepServerUrls
-    }
+    return m.scepServerUrls
 }
 // GetSubjectAlternativeNameFormatString gets the subjectAlternativeNameFormatString property value. Custom String that defines the AAD Attribute.
 func (m *IosScepCertificateProfile) GetSubjectAlternativeNameFormatString()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.subjectAlternativeNameFormatString
-    }
+    return m.subjectAlternativeNameFormatString
 }
 // GetSubjectNameFormatString gets the subjectNameFormatString property value. Custom format to use with SubjectNameFormat = Custom. Example: CN={{EmailAddress}},E={{EmailAddress}},OU=Enterprise Users,O=Contoso Corporation,L=Redmond,ST=WA,C=US
 func (m *IosScepCertificateProfile) GetSubjectNameFormatString()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.subjectNameFormatString
-    }
+    return m.subjectNameFormatString
 }
 // Serialize serializes information the current object
 func (m *IosScepCertificateProfile) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -327,61 +287,41 @@ func (m *IosScepCertificateProfile) Serialize(writer i878a80d2330e89d26896388a3f
 }
 // SetCertificateStore sets the certificateStore property value. Target store certificate. Possible values are: user, machine.
 func (m *IosScepCertificateProfile) SetCertificateStore(value *CertificateStore)() {
-    if m != nil {
-        m.certificateStore = value
-    }
+    m.certificateStore = value
 }
 // SetCustomSubjectAlternativeNames sets the customSubjectAlternativeNames property value. Custom Subject Alternative Name Settings. The OnPremisesUserPrincipalName variable is support as well as others documented here: https://go.microsoft.com/fwlink/?LinkId=2027630. This collection can contain a maximum of 500 elements.
 func (m *IosScepCertificateProfile) SetCustomSubjectAlternativeNames(value []CustomSubjectAlternativeNameable)() {
-    if m != nil {
-        m.customSubjectAlternativeNames = value
-    }
+    m.customSubjectAlternativeNames = value
 }
 // SetExtendedKeyUsages sets the extendedKeyUsages property value. Extended Key Usage (EKU) settings. This collection can contain a maximum of 500 elements.
 func (m *IosScepCertificateProfile) SetExtendedKeyUsages(value []ExtendedKeyUsageable)() {
-    if m != nil {
-        m.extendedKeyUsages = value
-    }
+    m.extendedKeyUsages = value
 }
 // SetKeySize sets the keySize property value. Key Size Options.
 func (m *IosScepCertificateProfile) SetKeySize(value *KeySize)() {
-    if m != nil {
-        m.keySize = value
-    }
+    m.keySize = value
 }
 // SetKeyUsage sets the keyUsage property value. Key Usage Options.
 func (m *IosScepCertificateProfile) SetKeyUsage(value *KeyUsages)() {
-    if m != nil {
-        m.keyUsage = value
-    }
+    m.keyUsage = value
 }
 // SetManagedDeviceCertificateStates sets the managedDeviceCertificateStates property value. Certificate state for devices. This collection can contain a maximum of 2147483647 elements.
 func (m *IosScepCertificateProfile) SetManagedDeviceCertificateStates(value []ManagedDeviceCertificateStateable)() {
-    if m != nil {
-        m.managedDeviceCertificateStates = value
-    }
+    m.managedDeviceCertificateStates = value
 }
 // SetRootCertificate sets the rootCertificate property value. Trusted Root Certificate.
 func (m *IosScepCertificateProfile) SetRootCertificate(value IosTrustedRootCertificateable)() {
-    if m != nil {
-        m.rootCertificate = value
-    }
+    m.rootCertificate = value
 }
 // SetScepServerUrls sets the scepServerUrls property value. SCEP Server Url(s).
 func (m *IosScepCertificateProfile) SetScepServerUrls(value []string)() {
-    if m != nil {
-        m.scepServerUrls = value
-    }
+    m.scepServerUrls = value
 }
 // SetSubjectAlternativeNameFormatString sets the subjectAlternativeNameFormatString property value. Custom String that defines the AAD Attribute.
 func (m *IosScepCertificateProfile) SetSubjectAlternativeNameFormatString(value *string)() {
-    if m != nil {
-        m.subjectAlternativeNameFormatString = value
-    }
+    m.subjectAlternativeNameFormatString = value
 }
 // SetSubjectNameFormatString sets the subjectNameFormatString property value. Custom format to use with SubjectNameFormat = Custom. Example: CN={{EmailAddress}},E={{EmailAddress}},OU=Enterprise Users,O=Contoso Corporation,L=Redmond,ST=WA,C=US
 func (m *IosScepCertificateProfile) SetSubjectNameFormatString(value *string)() {
-    if m != nil {
-        m.subjectNameFormatString = value
-    }
+    m.subjectNameFormatString = value
 }

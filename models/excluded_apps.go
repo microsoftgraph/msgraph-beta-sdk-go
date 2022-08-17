@@ -56,35 +56,19 @@ func CreateExcludedAppsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388
 }
 // GetAccess gets the access property value. The value for if MS Office Access should be excluded or not.
 func (m *ExcludedApps) GetAccess()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.access
-    }
+    return m.access
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ExcludedApps) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetBing gets the bing property value. The value for if Microsoft Search as default should be excluded or not.
 func (m *ExcludedApps) GetBing()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.bing
-    }
+    return m.bing
 }
 // GetExcel gets the excel property value. The value for if MS Office Excel should be excluded or not.
 func (m *ExcludedApps) GetExcel()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.excel
-    }
+    return m.excel
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ExcludedApps) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -253,107 +237,55 @@ func (m *ExcludedApps) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
 }
 // GetGroove gets the groove property value. The value for if MS Office OneDrive for Business - Groove should be excluded or not.
 func (m *ExcludedApps) GetGroove()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.groove
-    }
+    return m.groove
 }
 // GetInfoPath gets the infoPath property value. The value for if MS Office InfoPath should be excluded or not.
 func (m *ExcludedApps) GetInfoPath()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.infoPath
-    }
+    return m.infoPath
 }
 // GetLync gets the lync property value. The value for if MS Office Skype for Business - Lync should be excluded or not.
 func (m *ExcludedApps) GetLync()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lync
-    }
+    return m.lync
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *ExcludedApps) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetOneDrive gets the oneDrive property value. The value for if MS Office OneDrive should be excluded or not.
 func (m *ExcludedApps) GetOneDrive()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.oneDrive
-    }
+    return m.oneDrive
 }
 // GetOneNote gets the oneNote property value. The value for if MS Office OneNote should be excluded or not.
 func (m *ExcludedApps) GetOneNote()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.oneNote
-    }
+    return m.oneNote
 }
 // GetOutlook gets the outlook property value. The value for if MS Office Outlook should be excluded or not.
 func (m *ExcludedApps) GetOutlook()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.outlook
-    }
+    return m.outlook
 }
 // GetPowerPoint gets the powerPoint property value. The value for if MS Office PowerPoint should be excluded or not.
 func (m *ExcludedApps) GetPowerPoint()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.powerPoint
-    }
+    return m.powerPoint
 }
 // GetPublisher gets the publisher property value. The value for if MS Office Publisher should be excluded or not.
 func (m *ExcludedApps) GetPublisher()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.publisher
-    }
+    return m.publisher
 }
 // GetSharePointDesigner gets the sharePointDesigner property value. The value for if MS Office SharePointDesigner should be excluded or not.
 func (m *ExcludedApps) GetSharePointDesigner()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.sharePointDesigner
-    }
+    return m.sharePointDesigner
 }
 // GetTeams gets the teams property value. The value for if MS Office Teams should be excluded or not.
 func (m *ExcludedApps) GetTeams()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.teams
-    }
+    return m.teams
 }
 // GetVisio gets the visio property value. The value for if MS Office Visio should be excluded or not.
 func (m *ExcludedApps) GetVisio()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.visio
-    }
+    return m.visio
 }
 // GetWord gets the word property value. The value for if MS Office Word should be excluded or not.
 func (m *ExcludedApps) GetWord()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.word
-    }
+    return m.word
 }
 // Serialize serializes information the current object
 func (m *ExcludedApps) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -463,103 +395,69 @@ func (m *ExcludedApps) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
 }
 // SetAccess sets the access property value. The value for if MS Office Access should be excluded or not.
 func (m *ExcludedApps) SetAccess(value *bool)() {
-    if m != nil {
-        m.access = value
-    }
+    m.access = value
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ExcludedApps) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetBing sets the bing property value. The value for if Microsoft Search as default should be excluded or not.
 func (m *ExcludedApps) SetBing(value *bool)() {
-    if m != nil {
-        m.bing = value
-    }
+    m.bing = value
 }
 // SetExcel sets the excel property value. The value for if MS Office Excel should be excluded or not.
 func (m *ExcludedApps) SetExcel(value *bool)() {
-    if m != nil {
-        m.excel = value
-    }
+    m.excel = value
 }
 // SetGroove sets the groove property value. The value for if MS Office OneDrive for Business - Groove should be excluded or not.
 func (m *ExcludedApps) SetGroove(value *bool)() {
-    if m != nil {
-        m.groove = value
-    }
+    m.groove = value
 }
 // SetInfoPath sets the infoPath property value. The value for if MS Office InfoPath should be excluded or not.
 func (m *ExcludedApps) SetInfoPath(value *bool)() {
-    if m != nil {
-        m.infoPath = value
-    }
+    m.infoPath = value
 }
 // SetLync sets the lync property value. The value for if MS Office Skype for Business - Lync should be excluded or not.
 func (m *ExcludedApps) SetLync(value *bool)() {
-    if m != nil {
-        m.lync = value
-    }
+    m.lync = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *ExcludedApps) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetOneDrive sets the oneDrive property value. The value for if MS Office OneDrive should be excluded or not.
 func (m *ExcludedApps) SetOneDrive(value *bool)() {
-    if m != nil {
-        m.oneDrive = value
-    }
+    m.oneDrive = value
 }
 // SetOneNote sets the oneNote property value. The value for if MS Office OneNote should be excluded or not.
 func (m *ExcludedApps) SetOneNote(value *bool)() {
-    if m != nil {
-        m.oneNote = value
-    }
+    m.oneNote = value
 }
 // SetOutlook sets the outlook property value. The value for if MS Office Outlook should be excluded or not.
 func (m *ExcludedApps) SetOutlook(value *bool)() {
-    if m != nil {
-        m.outlook = value
-    }
+    m.outlook = value
 }
 // SetPowerPoint sets the powerPoint property value. The value for if MS Office PowerPoint should be excluded or not.
 func (m *ExcludedApps) SetPowerPoint(value *bool)() {
-    if m != nil {
-        m.powerPoint = value
-    }
+    m.powerPoint = value
 }
 // SetPublisher sets the publisher property value. The value for if MS Office Publisher should be excluded or not.
 func (m *ExcludedApps) SetPublisher(value *bool)() {
-    if m != nil {
-        m.publisher = value
-    }
+    m.publisher = value
 }
 // SetSharePointDesigner sets the sharePointDesigner property value. The value for if MS Office SharePointDesigner should be excluded or not.
 func (m *ExcludedApps) SetSharePointDesigner(value *bool)() {
-    if m != nil {
-        m.sharePointDesigner = value
-    }
+    m.sharePointDesigner = value
 }
 // SetTeams sets the teams property value. The value for if MS Office Teams should be excluded or not.
 func (m *ExcludedApps) SetTeams(value *bool)() {
-    if m != nil {
-        m.teams = value
-    }
+    m.teams = value
 }
 // SetVisio sets the visio property value. The value for if MS Office Visio should be excluded or not.
 func (m *ExcludedApps) SetVisio(value *bool)() {
-    if m != nil {
-        m.visio = value
-    }
+    m.visio = value
 }
 // SetWord sets the word property value. The value for if MS Office Word should be excluded or not.
 func (m *ExcludedApps) SetWord(value *bool)() {
-    if m != nil {
-        m.word = value
-    }
+    m.word = value
 }

@@ -30,11 +30,7 @@ func CreateDeviceManagementExchangeDeviceClassFromDiscriminatorValue(parseNode i
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DeviceManagementExchangeDeviceClass) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceManagementExchangeDeviceClass) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -73,27 +69,15 @@ func (m *DeviceManagementExchangeDeviceClass) GetFieldDeserializers()(map[string
 }
 // GetName gets the name property value. Name of the device class which will be impacted by this rule.
 func (m *DeviceManagementExchangeDeviceClass) GetName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.name
-    }
+    return m.name
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *DeviceManagementExchangeDeviceClass) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetType gets the type property value. Criteria which defines the type of device this access rule will apply to
 func (m *DeviceManagementExchangeDeviceClass) GetType()(*DeviceManagementExchangeAccessRuleType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.type_escaped
-    }
+    return m.type_escaped
 }
 // Serialize serializes information the current object
 func (m *DeviceManagementExchangeDeviceClass) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -126,25 +110,17 @@ func (m *DeviceManagementExchangeDeviceClass) Serialize(writer i878a80d2330e89d2
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DeviceManagementExchangeDeviceClass) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetName sets the name property value. Name of the device class which will be impacted by this rule.
 func (m *DeviceManagementExchangeDeviceClass) SetName(value *string)() {
-    if m != nil {
-        m.name = value
-    }
+    m.name = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *DeviceManagementExchangeDeviceClass) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetType sets the type property value. Criteria which defines the type of device this access rule will apply to
 func (m *DeviceManagementExchangeDeviceClass) SetType(value *DeviceManagementExchangeAccessRuleType)() {
-    if m != nil {
-        m.type_escaped = value
-    }
+    m.type_escaped = value
 }

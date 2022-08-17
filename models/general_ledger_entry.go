@@ -44,67 +44,35 @@ func CreateGeneralLedgerEntryFromDiscriminatorValue(parseNode i878a80d2330e89d26
 }
 // GetAccount gets the account property value. The account property
 func (m *GeneralLedgerEntry) GetAccount()(Accountable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.account
-    }
+    return m.account
 }
 // GetAccountId gets the accountId property value. The accountId property
 func (m *GeneralLedgerEntry) GetAccountId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.accountId
-    }
+    return m.accountId
 }
 // GetAccountNumber gets the accountNumber property value. The accountNumber property
 func (m *GeneralLedgerEntry) GetAccountNumber()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.accountNumber
-    }
+    return m.accountNumber
 }
 // GetCreditAmount gets the creditAmount property value. The creditAmount property
 func (m *GeneralLedgerEntry) GetCreditAmount()(*float64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.creditAmount
-    }
+    return m.creditAmount
 }
 // GetDebitAmount gets the debitAmount property value. The debitAmount property
 func (m *GeneralLedgerEntry) GetDebitAmount()(*float64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.debitAmount
-    }
+    return m.debitAmount
 }
 // GetDescription gets the description property value. The description property
 func (m *GeneralLedgerEntry) GetDescription()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.description
-    }
+    return m.description
 }
 // GetDocumentNumber gets the documentNumber property value. The documentNumber property
 func (m *GeneralLedgerEntry) GetDocumentNumber()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.documentNumber
-    }
+    return m.documentNumber
 }
 // GetDocumentType gets the documentType property value. The documentType property
 func (m *GeneralLedgerEntry) GetDocumentType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.documentType
-    }
+    return m.documentType
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *GeneralLedgerEntry) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -213,19 +181,11 @@ func (m *GeneralLedgerEntry) GetFieldDeserializers()(map[string]func(i878a80d233
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. The lastModifiedDateTime property
 func (m *GeneralLedgerEntry) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastModifiedDateTime
-    }
+    return m.lastModifiedDateTime
 }
 // GetPostingDate gets the postingDate property value. The postingDate property
 func (m *GeneralLedgerEntry) GetPostingDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly) {
-    if m == nil {
-        return nil
-    } else {
-        return m.postingDate
-    }
+    return m.postingDate
 }
 // Serialize serializes information the current object
 func (m *GeneralLedgerEntry) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -297,61 +257,41 @@ func (m *GeneralLedgerEntry) Serialize(writer i878a80d2330e89d26896388a3f487eef2
 }
 // SetAccount sets the account property value. The account property
 func (m *GeneralLedgerEntry) SetAccount(value Accountable)() {
-    if m != nil {
-        m.account = value
-    }
+    m.account = value
 }
 // SetAccountId sets the accountId property value. The accountId property
 func (m *GeneralLedgerEntry) SetAccountId(value *string)() {
-    if m != nil {
-        m.accountId = value
-    }
+    m.accountId = value
 }
 // SetAccountNumber sets the accountNumber property value. The accountNumber property
 func (m *GeneralLedgerEntry) SetAccountNumber(value *string)() {
-    if m != nil {
-        m.accountNumber = value
-    }
+    m.accountNumber = value
 }
 // SetCreditAmount sets the creditAmount property value. The creditAmount property
 func (m *GeneralLedgerEntry) SetCreditAmount(value *float64)() {
-    if m != nil {
-        m.creditAmount = value
-    }
+    m.creditAmount = value
 }
 // SetDebitAmount sets the debitAmount property value. The debitAmount property
 func (m *GeneralLedgerEntry) SetDebitAmount(value *float64)() {
-    if m != nil {
-        m.debitAmount = value
-    }
+    m.debitAmount = value
 }
 // SetDescription sets the description property value. The description property
 func (m *GeneralLedgerEntry) SetDescription(value *string)() {
-    if m != nil {
-        m.description = value
-    }
+    m.description = value
 }
 // SetDocumentNumber sets the documentNumber property value. The documentNumber property
 func (m *GeneralLedgerEntry) SetDocumentNumber(value *string)() {
-    if m != nil {
-        m.documentNumber = value
-    }
+    m.documentNumber = value
 }
 // SetDocumentType sets the documentType property value. The documentType property
 func (m *GeneralLedgerEntry) SetDocumentType(value *string)() {
-    if m != nil {
-        m.documentType = value
-    }
+    m.documentType = value
 }
 // SetLastModifiedDateTime sets the lastModifiedDateTime property value. The lastModifiedDateTime property
 func (m *GeneralLedgerEntry) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.lastModifiedDateTime = value
-    }
+    m.lastModifiedDateTime = value
 }
 // SetPostingDate sets the postingDate property value. The postingDate property
 func (m *GeneralLedgerEntry) SetPostingDate(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)() {
-    if m != nil {
-        m.postingDate = value
-    }
+    m.postingDate = value
 }

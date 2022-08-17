@@ -29,19 +29,11 @@ func CreateDirectorySettingTemplateFromDiscriminatorValue(parseNode i878a80d2330
 }
 // GetDescription gets the description property value. Description of the template. Read-only.
 func (m *DirectorySettingTemplate) GetDescription()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.description
-    }
+    return m.description
 }
 // GetDisplayName gets the displayName property value. Display name of the template. Read-only.
 func (m *DirectorySettingTemplate) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DirectorySettingTemplate) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -84,11 +76,7 @@ func (m *DirectorySettingTemplate) GetFieldDeserializers()(map[string]func(i878a
 }
 // GetValues gets the values property value. Collection of settingTemplateValues that list the set of available settings, defaults and types that make up this template.  Read-only.
 func (m *DirectorySettingTemplate) GetValues()([]SettingTemplateValueable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.values
-    }
+    return m.values
 }
 // Serialize serializes information the current object
 func (m *DirectorySettingTemplate) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -122,19 +110,13 @@ func (m *DirectorySettingTemplate) Serialize(writer i878a80d2330e89d26896388a3f4
 }
 // SetDescription sets the description property value. Description of the template. Read-only.
 func (m *DirectorySettingTemplate) SetDescription(value *string)() {
-    if m != nil {
-        m.description = value
-    }
+    m.description = value
 }
 // SetDisplayName sets the displayName property value. Display name of the template. Read-only.
 func (m *DirectorySettingTemplate) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }
 // SetValues sets the values property value. Collection of settingTemplateValues that list the set of available settings, defaults and types that make up this template.  Read-only.
 func (m *DirectorySettingTemplate) SetValues(value []SettingTemplateValueable)() {
-    if m != nil {
-        m.values = value
-    }
+    m.values = value
 }

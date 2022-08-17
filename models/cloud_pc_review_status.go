@@ -43,27 +43,15 @@ func CreateCloudPcReviewStatusFromDiscriminatorValue(parseNode i878a80d2330e89d2
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CloudPcReviewStatus) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetAzureStorageAccountId gets the azureStorageAccountId property value. The resource ID of the Azure Storage account in which the Cloud PC snapshot is being saved.
 func (m *CloudPcReviewStatus) GetAzureStorageAccountId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.azureStorageAccountId
-    }
+    return m.azureStorageAccountId
 }
 // GetAzureStorageAccountName gets the azureStorageAccountName property value. The name of the Azure Storage account in which the Cloud PC snapshot is being saved.
 func (m *CloudPcReviewStatus) GetAzureStorageAccountName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.azureStorageAccountName
-    }
+    return m.azureStorageAccountName
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *CloudPcReviewStatus) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -162,59 +150,31 @@ func (m *CloudPcReviewStatus) GetFieldDeserializers()(map[string]func(i878a80d23
 }
 // GetInReview gets the inReview property value. True if the Cloud PC is set to in review by the administrator.
 func (m *CloudPcReviewStatus) GetInReview()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.inReview
-    }
+    return m.inReview
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *CloudPcReviewStatus) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetRestorePointDateTime gets the restorePointDateTime property value. The specific date and time of the Cloud PC snapshot that was taken and saved automatically, when the Cloud PC is set to in review. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 appears as 2014-01-01T00:00:00Z.
 func (m *CloudPcReviewStatus) GetRestorePointDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.restorePointDateTime
-    }
+    return m.restorePointDateTime
 }
 // GetReviewStartDateTime gets the reviewStartDateTime property value. The specific date and time when the Cloud PC was set to in review. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 appears as 2014-01-01T00:00:00Z.
 func (m *CloudPcReviewStatus) GetReviewStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.reviewStartDateTime
-    }
+    return m.reviewStartDateTime
 }
 // GetSubscriptionId gets the subscriptionId property value. The ID of the Azure subscription in which the Cloud PC snapshot is being saved, in GUID format.
 func (m *CloudPcReviewStatus) GetSubscriptionId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.subscriptionId
-    }
+    return m.subscriptionId
 }
 // GetSubscriptionName gets the subscriptionName property value. The name of the Azure subscription in which the Cloud PC snapshot is being saved.
 func (m *CloudPcReviewStatus) GetSubscriptionName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.subscriptionName
-    }
+    return m.subscriptionName
 }
 // GetUserAccessLevel gets the userAccessLevel property value. The userAccessLevel property
 func (m *CloudPcReviewStatus) GetUserAccessLevel()(*CloudPcUserAccessLevel) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userAccessLevel
-    }
+    return m.userAccessLevel
 }
 // Serialize serializes information the current object
 func (m *CloudPcReviewStatus) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -283,61 +243,41 @@ func (m *CloudPcReviewStatus) Serialize(writer i878a80d2330e89d26896388a3f487eef
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CloudPcReviewStatus) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetAzureStorageAccountId sets the azureStorageAccountId property value. The resource ID of the Azure Storage account in which the Cloud PC snapshot is being saved.
 func (m *CloudPcReviewStatus) SetAzureStorageAccountId(value *string)() {
-    if m != nil {
-        m.azureStorageAccountId = value
-    }
+    m.azureStorageAccountId = value
 }
 // SetAzureStorageAccountName sets the azureStorageAccountName property value. The name of the Azure Storage account in which the Cloud PC snapshot is being saved.
 func (m *CloudPcReviewStatus) SetAzureStorageAccountName(value *string)() {
-    if m != nil {
-        m.azureStorageAccountName = value
-    }
+    m.azureStorageAccountName = value
 }
 // SetInReview sets the inReview property value. True if the Cloud PC is set to in review by the administrator.
 func (m *CloudPcReviewStatus) SetInReview(value *bool)() {
-    if m != nil {
-        m.inReview = value
-    }
+    m.inReview = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *CloudPcReviewStatus) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetRestorePointDateTime sets the restorePointDateTime property value. The specific date and time of the Cloud PC snapshot that was taken and saved automatically, when the Cloud PC is set to in review. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 appears as 2014-01-01T00:00:00Z.
 func (m *CloudPcReviewStatus) SetRestorePointDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.restorePointDateTime = value
-    }
+    m.restorePointDateTime = value
 }
 // SetReviewStartDateTime sets the reviewStartDateTime property value. The specific date and time when the Cloud PC was set to in review. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 appears as 2014-01-01T00:00:00Z.
 func (m *CloudPcReviewStatus) SetReviewStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.reviewStartDateTime = value
-    }
+    m.reviewStartDateTime = value
 }
 // SetSubscriptionId sets the subscriptionId property value. The ID of the Azure subscription in which the Cloud PC snapshot is being saved, in GUID format.
 func (m *CloudPcReviewStatus) SetSubscriptionId(value *string)() {
-    if m != nil {
-        m.subscriptionId = value
-    }
+    m.subscriptionId = value
 }
 // SetSubscriptionName sets the subscriptionName property value. The name of the Azure subscription in which the Cloud PC snapshot is being saved.
 func (m *CloudPcReviewStatus) SetSubscriptionName(value *string)() {
-    if m != nil {
-        m.subscriptionName = value
-    }
+    m.subscriptionName = value
 }
 // SetUserAccessLevel sets the userAccessLevel property value. The userAccessLevel property
 func (m *CloudPcReviewStatus) SetUserAccessLevel(value *CloudPcUserAccessLevel)() {
-    if m != nil {
-        m.userAccessLevel = value
-    }
+    m.userAccessLevel = value
 }

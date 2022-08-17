@@ -34,11 +34,7 @@ func CreateUserExperienceAnalyticsInsightFromDiscriminatorValue(parseNode i878a8
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *UserExperienceAnalyticsInsight) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *UserExperienceAnalyticsInsight) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -101,43 +97,23 @@ func (m *UserExperienceAnalyticsInsight) GetFieldDeserializers()(map[string]func
 }
 // GetInsightId gets the insightId property value. The unique identifier of the user experience analytics insight.
 func (m *UserExperienceAnalyticsInsight) GetInsightId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.insightId
-    }
+    return m.insightId
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *UserExperienceAnalyticsInsight) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetSeverity gets the severity property value. The severity property
 func (m *UserExperienceAnalyticsInsight) GetSeverity()(*UserExperienceAnalyticsInsightSeverity) {
-    if m == nil {
-        return nil
-    } else {
-        return m.severity
-    }
+    return m.severity
 }
 // GetUserExperienceAnalyticsMetricId gets the userExperienceAnalyticsMetricId property value. The unique identifier of the user experience analytics insight.
 func (m *UserExperienceAnalyticsInsight) GetUserExperienceAnalyticsMetricId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userExperienceAnalyticsMetricId
-    }
+    return m.userExperienceAnalyticsMetricId
 }
 // GetValues gets the values property value. The value of the user experience analytics insight.
 func (m *UserExperienceAnalyticsInsight) GetValues()([]UserExperienceAnalyticsInsightValueable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.values
-    }
+    return m.values
 }
 // Serialize serializes information the current object
 func (m *UserExperienceAnalyticsInsight) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -186,37 +162,25 @@ func (m *UserExperienceAnalyticsInsight) Serialize(writer i878a80d2330e89d268963
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *UserExperienceAnalyticsInsight) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetInsightId sets the insightId property value. The unique identifier of the user experience analytics insight.
 func (m *UserExperienceAnalyticsInsight) SetInsightId(value *string)() {
-    if m != nil {
-        m.insightId = value
-    }
+    m.insightId = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *UserExperienceAnalyticsInsight) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetSeverity sets the severity property value. The severity property
 func (m *UserExperienceAnalyticsInsight) SetSeverity(value *UserExperienceAnalyticsInsightSeverity)() {
-    if m != nil {
-        m.severity = value
-    }
+    m.severity = value
 }
 // SetUserExperienceAnalyticsMetricId sets the userExperienceAnalyticsMetricId property value. The unique identifier of the user experience analytics insight.
 func (m *UserExperienceAnalyticsInsight) SetUserExperienceAnalyticsMetricId(value *string)() {
-    if m != nil {
-        m.userExperienceAnalyticsMetricId = value
-    }
+    m.userExperienceAnalyticsMetricId = value
 }
 // SetValues sets the values property value. The value of the user experience analytics insight.
 func (m *UserExperienceAnalyticsInsight) SetValues(value []UserExperienceAnalyticsInsightValueable)() {
-    if m != nil {
-        m.values = value
-    }
+    m.values = value
 }

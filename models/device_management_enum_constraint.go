@@ -44,11 +44,7 @@ func (m *DeviceManagementEnumConstraint) GetFieldDeserializers()(map[string]func
 }
 // GetValues gets the values property value. List of valid values for this string
 func (m *DeviceManagementEnumConstraint) GetValues()([]DeviceManagementEnumValueable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.values
-    }
+    return m.values
 }
 // Serialize serializes information the current object
 func (m *DeviceManagementEnumConstraint) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -70,7 +66,5 @@ func (m *DeviceManagementEnumConstraint) Serialize(writer i878a80d2330e89d268963
 }
 // SetValues sets the values property value. List of valid values for this string
 func (m *DeviceManagementEnumConstraint) SetValues(value []DeviceManagementEnumValueable)() {
-    if m != nil {
-        m.values = value
-    }
+    m.values = value
 }

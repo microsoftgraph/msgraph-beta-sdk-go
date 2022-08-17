@@ -29,11 +29,7 @@ func CreateUnifiedRbacResourceScopeFromDiscriminatorValue(parseNode i878a80d2330
 }
 // GetDisplayName gets the displayName property value. The displayName property
 func (m *UnifiedRbacResourceScope) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *UnifiedRbacResourceScope) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -72,19 +68,11 @@ func (m *UnifiedRbacResourceScope) GetFieldDeserializers()(map[string]func(i878a
 }
 // GetScope gets the scope property value. The scope property
 func (m *UnifiedRbacResourceScope) GetScope()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.scope
-    }
+    return m.scope
 }
 // GetType gets the type property value. The type property
 func (m *UnifiedRbacResourceScope) GetType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.type_escaped
-    }
+    return m.type_escaped
 }
 // Serialize serializes information the current object
 func (m *UnifiedRbacResourceScope) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -114,19 +102,13 @@ func (m *UnifiedRbacResourceScope) Serialize(writer i878a80d2330e89d26896388a3f4
 }
 // SetDisplayName sets the displayName property value. The displayName property
 func (m *UnifiedRbacResourceScope) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }
 // SetScope sets the scope property value. The scope property
 func (m *UnifiedRbacResourceScope) SetScope(value *string)() {
-    if m != nil {
-        m.scope = value
-    }
+    m.scope = value
 }
 // SetType sets the type property value. The type property
 func (m *UnifiedRbacResourceScope) SetType(value *string)() {
-    if m != nil {
-        m.type_escaped = value
-    }
+    m.type_escaped = value
 }

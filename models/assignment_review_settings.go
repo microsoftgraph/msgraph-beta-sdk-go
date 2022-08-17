@@ -45,27 +45,15 @@ func CreateAssignmentReviewSettingsFromDiscriminatorValue(parseNode i878a80d2330
 }
 // GetAccessReviewTimeoutBehavior gets the accessReviewTimeoutBehavior property value. The default decision to apply if the request is not reviewed within the period specified in durationInDays. The possible values are: acceptAccessRecommendation, keepAccess, removeAccess, and unknownFutureValue.
 func (m *AssignmentReviewSettings) GetAccessReviewTimeoutBehavior()(*AccessReviewTimeoutBehavior) {
-    if m == nil {
-        return nil
-    } else {
-        return m.accessReviewTimeoutBehavior
-    }
+    return m.accessReviewTimeoutBehavior
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AssignmentReviewSettings) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetDurationInDays gets the durationInDays property value. The number of days within which reviewers should provide input.
 func (m *AssignmentReviewSettings) GetDurationInDays()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.durationInDays
-    }
+    return m.durationInDays
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AssignmentReviewSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -178,67 +166,35 @@ func (m *AssignmentReviewSettings) GetFieldDeserializers()(map[string]func(i878a
 }
 // GetIsAccessRecommendationEnabled gets the isAccessRecommendationEnabled property value. Specifies whether to display recommendations to the reviewer. The default value is true
 func (m *AssignmentReviewSettings) GetIsAccessRecommendationEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isAccessRecommendationEnabled
-    }
+    return m.isAccessRecommendationEnabled
 }
 // GetIsApprovalJustificationRequired gets the isApprovalJustificationRequired property value. Specifies whether the reviewer must provide justification for the approval. The default value is true.
 func (m *AssignmentReviewSettings) GetIsApprovalJustificationRequired()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isApprovalJustificationRequired
-    }
+    return m.isApprovalJustificationRequired
 }
 // GetIsEnabled gets the isEnabled property value. If true, access reviews are required for assignments from this policy.
 func (m *AssignmentReviewSettings) GetIsEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isEnabled
-    }
+    return m.isEnabled
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *AssignmentReviewSettings) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetRecurrenceType gets the recurrenceType property value. The interval for recurrence, such as monthly or quarterly.
 func (m *AssignmentReviewSettings) GetRecurrenceType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.recurrenceType
-    }
+    return m.recurrenceType
 }
 // GetReviewers gets the reviewers property value. If the reviewerType is Reviewers, this collection specifies the users who will be reviewers, either by ID or as members of a group, using a collection of singleUser and groupMembers.
 func (m *AssignmentReviewSettings) GetReviewers()([]UserSetable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.reviewers
-    }
+    return m.reviewers
 }
 // GetReviewerType gets the reviewerType property value. Who should be asked to do the review, either Self or Reviewers.
 func (m *AssignmentReviewSettings) GetReviewerType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.reviewerType
-    }
+    return m.reviewerType
 }
 // GetStartDateTime gets the startDateTime property value. When the first review should start.
 func (m *AssignmentReviewSettings) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.startDateTime
-    }
+    return m.startDateTime
 }
 // Serialize serializes information the current object
 func (m *AssignmentReviewSettings) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -317,67 +273,45 @@ func (m *AssignmentReviewSettings) Serialize(writer i878a80d2330e89d26896388a3f4
 }
 // SetAccessReviewTimeoutBehavior sets the accessReviewTimeoutBehavior property value. The default decision to apply if the request is not reviewed within the period specified in durationInDays. The possible values are: acceptAccessRecommendation, keepAccess, removeAccess, and unknownFutureValue.
 func (m *AssignmentReviewSettings) SetAccessReviewTimeoutBehavior(value *AccessReviewTimeoutBehavior)() {
-    if m != nil {
-        m.accessReviewTimeoutBehavior = value
-    }
+    m.accessReviewTimeoutBehavior = value
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AssignmentReviewSettings) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetDurationInDays sets the durationInDays property value. The number of days within which reviewers should provide input.
 func (m *AssignmentReviewSettings) SetDurationInDays(value *int32)() {
-    if m != nil {
-        m.durationInDays = value
-    }
+    m.durationInDays = value
 }
 // SetIsAccessRecommendationEnabled sets the isAccessRecommendationEnabled property value. Specifies whether to display recommendations to the reviewer. The default value is true
 func (m *AssignmentReviewSettings) SetIsAccessRecommendationEnabled(value *bool)() {
-    if m != nil {
-        m.isAccessRecommendationEnabled = value
-    }
+    m.isAccessRecommendationEnabled = value
 }
 // SetIsApprovalJustificationRequired sets the isApprovalJustificationRequired property value. Specifies whether the reviewer must provide justification for the approval. The default value is true.
 func (m *AssignmentReviewSettings) SetIsApprovalJustificationRequired(value *bool)() {
-    if m != nil {
-        m.isApprovalJustificationRequired = value
-    }
+    m.isApprovalJustificationRequired = value
 }
 // SetIsEnabled sets the isEnabled property value. If true, access reviews are required for assignments from this policy.
 func (m *AssignmentReviewSettings) SetIsEnabled(value *bool)() {
-    if m != nil {
-        m.isEnabled = value
-    }
+    m.isEnabled = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *AssignmentReviewSettings) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetRecurrenceType sets the recurrenceType property value. The interval for recurrence, such as monthly or quarterly.
 func (m *AssignmentReviewSettings) SetRecurrenceType(value *string)() {
-    if m != nil {
-        m.recurrenceType = value
-    }
+    m.recurrenceType = value
 }
 // SetReviewers sets the reviewers property value. If the reviewerType is Reviewers, this collection specifies the users who will be reviewers, either by ID or as members of a group, using a collection of singleUser and groupMembers.
 func (m *AssignmentReviewSettings) SetReviewers(value []UserSetable)() {
-    if m != nil {
-        m.reviewers = value
-    }
+    m.reviewers = value
 }
 // SetReviewerType sets the reviewerType property value. Who should be asked to do the review, either Self or Reviewers.
 func (m *AssignmentReviewSettings) SetReviewerType(value *string)() {
-    if m != nil {
-        m.reviewerType = value
-    }
+    m.reviewerType = value
 }
 // SetStartDateTime sets the startDateTime property value. When the first review should start.
 func (m *AssignmentReviewSettings) SetStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.startDateTime = value
-    }
+    m.startDateTime = value
 }

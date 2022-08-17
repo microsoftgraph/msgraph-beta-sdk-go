@@ -30,11 +30,7 @@ func CreateWindows10XCustomSubjectAlternativeNameFromDiscriminatorValue(parseNod
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *Windows10XCustomSubjectAlternativeName) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Windows10XCustomSubjectAlternativeName) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -73,27 +69,15 @@ func (m *Windows10XCustomSubjectAlternativeName) GetFieldDeserializers()(map[str
 }
 // GetName gets the name property value. Custom SAN Name
 func (m *Windows10XCustomSubjectAlternativeName) GetName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.name
-    }
+    return m.name
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *Windows10XCustomSubjectAlternativeName) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetSanType gets the sanType property value. Subject Alternative Name Options.
 func (m *Windows10XCustomSubjectAlternativeName) GetSanType()(*SubjectAlternativeNameType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.sanType
-    }
+    return m.sanType
 }
 // Serialize serializes information the current object
 func (m *Windows10XCustomSubjectAlternativeName) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -126,25 +110,17 @@ func (m *Windows10XCustomSubjectAlternativeName) Serialize(writer i878a80d2330e8
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *Windows10XCustomSubjectAlternativeName) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetName sets the name property value. Custom SAN Name
 func (m *Windows10XCustomSubjectAlternativeName) SetName(value *string)() {
-    if m != nil {
-        m.name = value
-    }
+    m.name = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *Windows10XCustomSubjectAlternativeName) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetSanType sets the sanType property value. Subject Alternative Name Options.
 func (m *Windows10XCustomSubjectAlternativeName) SetSanType(value *SubjectAlternativeNameType)() {
-    if m != nil {
-        m.sanType = value
-    }
+    m.sanType = value
 }

@@ -36,27 +36,15 @@ func CreateTeamworkActivePeripheralsFromDiscriminatorValue(parseNode i878a80d233
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TeamworkActivePeripherals) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetCommunicationSpeaker gets the communicationSpeaker property value. The communicationSpeaker property
 func (m *TeamworkActivePeripherals) GetCommunicationSpeaker()(TeamworkPeripheralable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.communicationSpeaker
-    }
+    return m.communicationSpeaker
 }
 // GetContentCamera gets the contentCamera property value. The contentCamera property
 func (m *TeamworkActivePeripherals) GetContentCamera()(TeamworkPeripheralable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.contentCamera
-    }
+    return m.contentCamera
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *TeamworkActivePeripherals) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -125,35 +113,19 @@ func (m *TeamworkActivePeripherals) GetFieldDeserializers()(map[string]func(i878
 }
 // GetMicrophone gets the microphone property value. The microphone property
 func (m *TeamworkActivePeripherals) GetMicrophone()(TeamworkPeripheralable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.microphone
-    }
+    return m.microphone
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *TeamworkActivePeripherals) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetRoomCamera gets the roomCamera property value. The roomCamera property
 func (m *TeamworkActivePeripherals) GetRoomCamera()(TeamworkPeripheralable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.roomCamera
-    }
+    return m.roomCamera
 }
 // GetSpeaker gets the speaker property value. The speaker property
 func (m *TeamworkActivePeripherals) GetSpeaker()(TeamworkPeripheralable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.speaker
-    }
+    return m.speaker
 }
 // Serialize serializes information the current object
 func (m *TeamworkActivePeripherals) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -203,43 +175,29 @@ func (m *TeamworkActivePeripherals) Serialize(writer i878a80d2330e89d26896388a3f
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TeamworkActivePeripherals) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetCommunicationSpeaker sets the communicationSpeaker property value. The communicationSpeaker property
 func (m *TeamworkActivePeripherals) SetCommunicationSpeaker(value TeamworkPeripheralable)() {
-    if m != nil {
-        m.communicationSpeaker = value
-    }
+    m.communicationSpeaker = value
 }
 // SetContentCamera sets the contentCamera property value. The contentCamera property
 func (m *TeamworkActivePeripherals) SetContentCamera(value TeamworkPeripheralable)() {
-    if m != nil {
-        m.contentCamera = value
-    }
+    m.contentCamera = value
 }
 // SetMicrophone sets the microphone property value. The microphone property
 func (m *TeamworkActivePeripherals) SetMicrophone(value TeamworkPeripheralable)() {
-    if m != nil {
-        m.microphone = value
-    }
+    m.microphone = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *TeamworkActivePeripherals) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetRoomCamera sets the roomCamera property value. The roomCamera property
 func (m *TeamworkActivePeripherals) SetRoomCamera(value TeamworkPeripheralable)() {
-    if m != nil {
-        m.roomCamera = value
-    }
+    m.roomCamera = value
 }
 // SetSpeaker sets the speaker property value. The speaker property
 func (m *TeamworkActivePeripherals) SetSpeaker(value TeamworkPeripheralable)() {
-    if m != nil {
-        m.speaker = value
-    }
+    m.speaker = value
 }

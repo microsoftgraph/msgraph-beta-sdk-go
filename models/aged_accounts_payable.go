@@ -43,35 +43,19 @@ func CreateAgedAccountsPayableFromDiscriminatorValue(parseNode i878a80d2330e89d2
 }
 // GetAgedAsOfDate gets the agedAsOfDate property value. The agedAsOfDate property
 func (m *AgedAccountsPayable) GetAgedAsOfDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly) {
-    if m == nil {
-        return nil
-    } else {
-        return m.agedAsOfDate
-    }
+    return m.agedAsOfDate
 }
 // GetBalanceDue gets the balanceDue property value. The balanceDue property
 func (m *AgedAccountsPayable) GetBalanceDue()(*float64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.balanceDue
-    }
+    return m.balanceDue
 }
 // GetCurrencyCode gets the currencyCode property value. The currencyCode property
 func (m *AgedAccountsPayable) GetCurrencyCode()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.currencyCode
-    }
+    return m.currencyCode
 }
 // GetCurrentAmount gets the currentAmount property value. The currentAmount property
 func (m *AgedAccountsPayable) GetCurrentAmount()(*float64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.currentAmount
-    }
+    return m.currentAmount
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AgedAccountsPayable) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -180,51 +164,27 @@ func (m *AgedAccountsPayable) GetFieldDeserializers()(map[string]func(i878a80d23
 }
 // GetName gets the name property value. The name property
 func (m *AgedAccountsPayable) GetName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.name
-    }
+    return m.name
 }
 // GetPeriod1Amount gets the period1Amount property value. The period1Amount property
 func (m *AgedAccountsPayable) GetPeriod1Amount()(*float64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.period1Amount
-    }
+    return m.period1Amount
 }
 // GetPeriod2Amount gets the period2Amount property value. The period2Amount property
 func (m *AgedAccountsPayable) GetPeriod2Amount()(*float64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.period2Amount
-    }
+    return m.period2Amount
 }
 // GetPeriod3Amount gets the period3Amount property value. The period3Amount property
 func (m *AgedAccountsPayable) GetPeriod3Amount()(*float64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.period3Amount
-    }
+    return m.period3Amount
 }
 // GetPeriodLengthFilter gets the periodLengthFilter property value. The periodLengthFilter property
 func (m *AgedAccountsPayable) GetPeriodLengthFilter()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.periodLengthFilter
-    }
+    return m.periodLengthFilter
 }
 // GetVendorNumber gets the vendorNumber property value. The vendorNumber property
 func (m *AgedAccountsPayable) GetVendorNumber()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.vendorNumber
-    }
+    return m.vendorNumber
 }
 // Serialize serializes information the current object
 func (m *AgedAccountsPayable) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -296,61 +256,41 @@ func (m *AgedAccountsPayable) Serialize(writer i878a80d2330e89d26896388a3f487eef
 }
 // SetAgedAsOfDate sets the agedAsOfDate property value. The agedAsOfDate property
 func (m *AgedAccountsPayable) SetAgedAsOfDate(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)() {
-    if m != nil {
-        m.agedAsOfDate = value
-    }
+    m.agedAsOfDate = value
 }
 // SetBalanceDue sets the balanceDue property value. The balanceDue property
 func (m *AgedAccountsPayable) SetBalanceDue(value *float64)() {
-    if m != nil {
-        m.balanceDue = value
-    }
+    m.balanceDue = value
 }
 // SetCurrencyCode sets the currencyCode property value. The currencyCode property
 func (m *AgedAccountsPayable) SetCurrencyCode(value *string)() {
-    if m != nil {
-        m.currencyCode = value
-    }
+    m.currencyCode = value
 }
 // SetCurrentAmount sets the currentAmount property value. The currentAmount property
 func (m *AgedAccountsPayable) SetCurrentAmount(value *float64)() {
-    if m != nil {
-        m.currentAmount = value
-    }
+    m.currentAmount = value
 }
 // SetName sets the name property value. The name property
 func (m *AgedAccountsPayable) SetName(value *string)() {
-    if m != nil {
-        m.name = value
-    }
+    m.name = value
 }
 // SetPeriod1Amount sets the period1Amount property value. The period1Amount property
 func (m *AgedAccountsPayable) SetPeriod1Amount(value *float64)() {
-    if m != nil {
-        m.period1Amount = value
-    }
+    m.period1Amount = value
 }
 // SetPeriod2Amount sets the period2Amount property value. The period2Amount property
 func (m *AgedAccountsPayable) SetPeriod2Amount(value *float64)() {
-    if m != nil {
-        m.period2Amount = value
-    }
+    m.period2Amount = value
 }
 // SetPeriod3Amount sets the period3Amount property value. The period3Amount property
 func (m *AgedAccountsPayable) SetPeriod3Amount(value *float64)() {
-    if m != nil {
-        m.period3Amount = value
-    }
+    m.period3Amount = value
 }
 // SetPeriodLengthFilter sets the periodLengthFilter property value. The periodLengthFilter property
 func (m *AgedAccountsPayable) SetPeriodLengthFilter(value *string)() {
-    if m != nil {
-        m.periodLengthFilter = value
-    }
+    m.periodLengthFilter = value
 }
 // SetVendorNumber sets the vendorNumber property value. The vendorNumber property
 func (m *AgedAccountsPayable) SetVendorNumber(value *string)() {
-    if m != nil {
-        m.vendorNumber = value
-    }
+    m.vendorNumber = value
 }

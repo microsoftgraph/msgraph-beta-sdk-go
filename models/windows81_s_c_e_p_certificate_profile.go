@@ -41,11 +41,7 @@ func CreateWindows81SCEPCertificateProfileFromDiscriminatorValue(parseNode i878a
 }
 // GetCertificateStore gets the certificateStore property value. Target store certificate. Possible values are: user, machine.
 func (m *Windows81SCEPCertificateProfile) GetCertificateStore()(*CertificateStore) {
-    if m == nil {
-        return nil
-    } else {
-        return m.certificateStore
-    }
+    return m.certificateStore
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Windows81SCEPCertificateProfile) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -152,67 +148,35 @@ func (m *Windows81SCEPCertificateProfile) GetFieldDeserializers()(map[string]fun
 }
 // GetHashAlgorithm gets the hashAlgorithm property value. Hash Algorithm Options.
 func (m *Windows81SCEPCertificateProfile) GetHashAlgorithm()(*HashAlgorithms) {
-    if m == nil {
-        return nil
-    } else {
-        return m.hashAlgorithm
-    }
+    return m.hashAlgorithm
 }
 // GetKeySize gets the keySize property value. Key Size Options.
 func (m *Windows81SCEPCertificateProfile) GetKeySize()(*KeySize) {
-    if m == nil {
-        return nil
-    } else {
-        return m.keySize
-    }
+    return m.keySize
 }
 // GetKeyUsage gets the keyUsage property value. Key Usage Options.
 func (m *Windows81SCEPCertificateProfile) GetKeyUsage()(*KeyUsages) {
-    if m == nil {
-        return nil
-    } else {
-        return m.keyUsage
-    }
+    return m.keyUsage
 }
 // GetManagedDeviceCertificateStates gets the managedDeviceCertificateStates property value. Certificate state for devices. This collection can contain a maximum of 2147483647 elements.
 func (m *Windows81SCEPCertificateProfile) GetManagedDeviceCertificateStates()([]ManagedDeviceCertificateStateable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.managedDeviceCertificateStates
-    }
+    return m.managedDeviceCertificateStates
 }
 // GetRootCertificate gets the rootCertificate property value. Trusted Root Certificate
 func (m *Windows81SCEPCertificateProfile) GetRootCertificate()(Windows81TrustedRootCertificateable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.rootCertificate
-    }
+    return m.rootCertificate
 }
 // GetScepServerUrls gets the scepServerUrls property value. SCEP Server Url(s).
 func (m *Windows81SCEPCertificateProfile) GetScepServerUrls()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.scepServerUrls
-    }
+    return m.scepServerUrls
 }
 // GetSubjectAlternativeNameFormatString gets the subjectAlternativeNameFormatString property value. Custom String that defines the AAD Attribute.
 func (m *Windows81SCEPCertificateProfile) GetSubjectAlternativeNameFormatString()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.subjectAlternativeNameFormatString
-    }
+    return m.subjectAlternativeNameFormatString
 }
 // GetSubjectNameFormatString gets the subjectNameFormatString property value. Custom format to use with SubjectNameFormat = Custom. Example: CN={{EmailAddress}},E={{EmailAddress}},OU=Enterprise Users,O=Contoso Corporation,L=Redmond,ST=WA,C=US
 func (m *Windows81SCEPCertificateProfile) GetSubjectNameFormatString()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.subjectNameFormatString
-    }
+    return m.subjectNameFormatString
 }
 // Serialize serializes information the current object
 func (m *Windows81SCEPCertificateProfile) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -286,55 +250,37 @@ func (m *Windows81SCEPCertificateProfile) Serialize(writer i878a80d2330e89d26896
 }
 // SetCertificateStore sets the certificateStore property value. Target store certificate. Possible values are: user, machine.
 func (m *Windows81SCEPCertificateProfile) SetCertificateStore(value *CertificateStore)() {
-    if m != nil {
-        m.certificateStore = value
-    }
+    m.certificateStore = value
 }
 // SetHashAlgorithm sets the hashAlgorithm property value. Hash Algorithm Options.
 func (m *Windows81SCEPCertificateProfile) SetHashAlgorithm(value *HashAlgorithms)() {
-    if m != nil {
-        m.hashAlgorithm = value
-    }
+    m.hashAlgorithm = value
 }
 // SetKeySize sets the keySize property value. Key Size Options.
 func (m *Windows81SCEPCertificateProfile) SetKeySize(value *KeySize)() {
-    if m != nil {
-        m.keySize = value
-    }
+    m.keySize = value
 }
 // SetKeyUsage sets the keyUsage property value. Key Usage Options.
 func (m *Windows81SCEPCertificateProfile) SetKeyUsage(value *KeyUsages)() {
-    if m != nil {
-        m.keyUsage = value
-    }
+    m.keyUsage = value
 }
 // SetManagedDeviceCertificateStates sets the managedDeviceCertificateStates property value. Certificate state for devices. This collection can contain a maximum of 2147483647 elements.
 func (m *Windows81SCEPCertificateProfile) SetManagedDeviceCertificateStates(value []ManagedDeviceCertificateStateable)() {
-    if m != nil {
-        m.managedDeviceCertificateStates = value
-    }
+    m.managedDeviceCertificateStates = value
 }
 // SetRootCertificate sets the rootCertificate property value. Trusted Root Certificate
 func (m *Windows81SCEPCertificateProfile) SetRootCertificate(value Windows81TrustedRootCertificateable)() {
-    if m != nil {
-        m.rootCertificate = value
-    }
+    m.rootCertificate = value
 }
 // SetScepServerUrls sets the scepServerUrls property value. SCEP Server Url(s).
 func (m *Windows81SCEPCertificateProfile) SetScepServerUrls(value []string)() {
-    if m != nil {
-        m.scepServerUrls = value
-    }
+    m.scepServerUrls = value
 }
 // SetSubjectAlternativeNameFormatString sets the subjectAlternativeNameFormatString property value. Custom String that defines the AAD Attribute.
 func (m *Windows81SCEPCertificateProfile) SetSubjectAlternativeNameFormatString(value *string)() {
-    if m != nil {
-        m.subjectAlternativeNameFormatString = value
-    }
+    m.subjectAlternativeNameFormatString = value
 }
 // SetSubjectNameFormatString sets the subjectNameFormatString property value. Custom format to use with SubjectNameFormat = Custom. Example: CN={{EmailAddress}},E={{EmailAddress}},OU=Enterprise Users,O=Contoso Corporation,L=Redmond,ST=WA,C=US
 func (m *Windows81SCEPCertificateProfile) SetSubjectNameFormatString(value *string)() {
-    if m != nil {
-        m.subjectNameFormatString = value
-    }
+    m.subjectNameFormatString = value
 }

@@ -35,11 +35,7 @@ func CreateTenantSetupInfoFromDiscriminatorValue(parseNode i878a80d2330e89d26896
 }
 // GetDefaultRolesSettings gets the defaultRolesSettings property value. The defaultRolesSettings property
 func (m *TenantSetupInfo) GetDefaultRolesSettings()(PrivilegedRoleSettingsable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.defaultRolesSettings
-    }
+    return m.defaultRolesSettings
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *TenantSetupInfo) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -112,43 +108,23 @@ func (m *TenantSetupInfo) GetFieldDeserializers()(map[string]func(i878a80d2330e8
 }
 // GetFirstTimeSetup gets the firstTimeSetup property value. The firstTimeSetup property
 func (m *TenantSetupInfo) GetFirstTimeSetup()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.firstTimeSetup
-    }
+    return m.firstTimeSetup
 }
 // GetRelevantRolesSettings gets the relevantRolesSettings property value. The relevantRolesSettings property
 func (m *TenantSetupInfo) GetRelevantRolesSettings()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.relevantRolesSettings
-    }
+    return m.relevantRolesSettings
 }
 // GetSetupStatus gets the setupStatus property value. The setupStatus property
 func (m *TenantSetupInfo) GetSetupStatus()(*SetupStatus) {
-    if m == nil {
-        return nil
-    } else {
-        return m.setupStatus
-    }
+    return m.setupStatus
 }
 // GetSkipSetup gets the skipSetup property value. The skipSetup property
 func (m *TenantSetupInfo) GetSkipSetup()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.skipSetup
-    }
+    return m.skipSetup
 }
 // GetUserRolesActions gets the userRolesActions property value. The userRolesActions property
 func (m *TenantSetupInfo) GetUserRolesActions()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userRolesActions
-    }
+    return m.userRolesActions
 }
 // Serialize serializes information the current object
 func (m *TenantSetupInfo) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -197,37 +173,25 @@ func (m *TenantSetupInfo) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
 }
 // SetDefaultRolesSettings sets the defaultRolesSettings property value. The defaultRolesSettings property
 func (m *TenantSetupInfo) SetDefaultRolesSettings(value PrivilegedRoleSettingsable)() {
-    if m != nil {
-        m.defaultRolesSettings = value
-    }
+    m.defaultRolesSettings = value
 }
 // SetFirstTimeSetup sets the firstTimeSetup property value. The firstTimeSetup property
 func (m *TenantSetupInfo) SetFirstTimeSetup(value *bool)() {
-    if m != nil {
-        m.firstTimeSetup = value
-    }
+    m.firstTimeSetup = value
 }
 // SetRelevantRolesSettings sets the relevantRolesSettings property value. The relevantRolesSettings property
 func (m *TenantSetupInfo) SetRelevantRolesSettings(value []string)() {
-    if m != nil {
-        m.relevantRolesSettings = value
-    }
+    m.relevantRolesSettings = value
 }
 // SetSetupStatus sets the setupStatus property value. The setupStatus property
 func (m *TenantSetupInfo) SetSetupStatus(value *SetupStatus)() {
-    if m != nil {
-        m.setupStatus = value
-    }
+    m.setupStatus = value
 }
 // SetSkipSetup sets the skipSetup property value. The skipSetup property
 func (m *TenantSetupInfo) SetSkipSetup(value *bool)() {
-    if m != nil {
-        m.skipSetup = value
-    }
+    m.skipSetup = value
 }
 // SetUserRolesActions sets the userRolesActions property value. The userRolesActions property
 func (m *TenantSetupInfo) SetUserRolesActions(value *string)() {
-    if m != nil {
-        m.userRolesActions = value
-    }
+    m.userRolesActions = value
 }

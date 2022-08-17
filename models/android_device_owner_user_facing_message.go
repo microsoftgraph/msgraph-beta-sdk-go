@@ -30,19 +30,11 @@ func CreateAndroidDeviceOwnerUserFacingMessageFromDiscriminatorValue(parseNode i
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AndroidDeviceOwnerUserFacingMessage) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetDefaultMessage gets the defaultMessage property value. The default message displayed if the user's locale doesn't match with any of the localized messages
 func (m *AndroidDeviceOwnerUserFacingMessage) GetDefaultMessage()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.defaultMessage
-    }
+    return m.defaultMessage
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AndroidDeviceOwnerUserFacingMessage) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -85,19 +77,11 @@ func (m *AndroidDeviceOwnerUserFacingMessage) GetFieldDeserializers()(map[string
 }
 // GetLocalizedMessages gets the localizedMessages property value. The list of <locale, message> pairs. This collection can contain a maximum of 500 elements.
 func (m *AndroidDeviceOwnerUserFacingMessage) GetLocalizedMessages()([]KeyValuePairable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.localizedMessages
-    }
+    return m.localizedMessages
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *AndroidDeviceOwnerUserFacingMessage) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // Serialize serializes information the current object
 func (m *AndroidDeviceOwnerUserFacingMessage) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -133,25 +117,17 @@ func (m *AndroidDeviceOwnerUserFacingMessage) Serialize(writer i878a80d2330e89d2
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AndroidDeviceOwnerUserFacingMessage) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetDefaultMessage sets the defaultMessage property value. The default message displayed if the user's locale doesn't match with any of the localized messages
 func (m *AndroidDeviceOwnerUserFacingMessage) SetDefaultMessage(value *string)() {
-    if m != nil {
-        m.defaultMessage = value
-    }
+    m.defaultMessage = value
 }
 // SetLocalizedMessages sets the localizedMessages property value. The list of <locale, message> pairs. This collection can contain a maximum of 500 elements.
 func (m *AndroidDeviceOwnerUserFacingMessage) SetLocalizedMessages(value []KeyValuePairable)() {
-    if m != nil {
-        m.localizedMessages = value
-    }
+    m.localizedMessages = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *AndroidDeviceOwnerUserFacingMessage) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }

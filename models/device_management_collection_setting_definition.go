@@ -25,11 +25,7 @@ func CreateDeviceManagementCollectionSettingDefinitionFromDiscriminatorValue(par
 }
 // GetElementDefinitionId gets the elementDefinitionId property value. The Setting Definition ID that describes what each element of the collection looks like
 func (m *DeviceManagementCollectionSettingDefinition) GetElementDefinitionId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.elementDefinitionId
-    }
+    return m.elementDefinitionId
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceManagementCollectionSettingDefinition) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -62,7 +58,5 @@ func (m *DeviceManagementCollectionSettingDefinition) Serialize(writer i878a80d2
 }
 // SetElementDefinitionId sets the elementDefinitionId property value. The Setting Definition ID that describes what each element of the collection looks like
 func (m *DeviceManagementCollectionSettingDefinition) SetElementDefinitionId(value *string)() {
-    if m != nil {
-        m.elementDefinitionId = value
-    }
+    m.elementDefinitionId = value
 }

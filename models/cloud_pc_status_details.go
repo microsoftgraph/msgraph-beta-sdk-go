@@ -32,27 +32,15 @@ func CreateCloudPcStatusDetailsFromDiscriminatorValue(parseNode i878a80d2330e89d
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CloudPcStatusDetails) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetAdditionalInformation gets the additionalInformation property value. Any additional information about the Cloud PC status.
 func (m *CloudPcStatusDetails) GetAdditionalInformation()([]KeyValuePairable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalInformation
-    }
+    return m.additionalInformation
 }
 // GetCode gets the code property value. The code associated with the Cloud PC status.
 func (m *CloudPcStatusDetails) GetCode()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.code
-    }
+    return m.code
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *CloudPcStatusDetails) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -105,19 +93,11 @@ func (m *CloudPcStatusDetails) GetFieldDeserializers()(map[string]func(i878a80d2
 }
 // GetMessage gets the message property value. The status message.
 func (m *CloudPcStatusDetails) GetMessage()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.message
-    }
+    return m.message
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *CloudPcStatusDetails) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // Serialize serializes information the current object
 func (m *CloudPcStatusDetails) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -159,31 +139,21 @@ func (m *CloudPcStatusDetails) Serialize(writer i878a80d2330e89d26896388a3f487ee
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CloudPcStatusDetails) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetAdditionalInformation sets the additionalInformation property value. Any additional information about the Cloud PC status.
 func (m *CloudPcStatusDetails) SetAdditionalInformation(value []KeyValuePairable)() {
-    if m != nil {
-        m.additionalInformation = value
-    }
+    m.additionalInformation = value
 }
 // SetCode sets the code property value. The code associated with the Cloud PC status.
 func (m *CloudPcStatusDetails) SetCode(value *string)() {
-    if m != nil {
-        m.code = value
-    }
+    m.code = value
 }
 // SetMessage sets the message property value. The status message.
 func (m *CloudPcStatusDetails) SetMessage(value *string)() {
-    if m != nil {
-        m.message = value
-    }
+    m.message = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *CloudPcStatusDetails) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }

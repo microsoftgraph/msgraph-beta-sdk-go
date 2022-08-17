@@ -14,7 +14,7 @@ type UserExperienceAnalyticsRegressionSummary struct {
     // The metric values for the user experience analytics operating system regression.
     operatingSystemRegression []UserExperienceAnalyticsMetricable
 }
-// NewUserExperienceAnalyticsRegressionSummary instantiates a new UserExperienceAnalyticsRegressionSummary and sets the default values.
+// NewUserExperienceAnalyticsRegressionSummary instantiates a new userExperienceAnalyticsRegressionSummary and sets the default values.
 func NewUserExperienceAnalyticsRegressionSummary()(*UserExperienceAnalyticsRegressionSummary) {
     m := &UserExperienceAnalyticsRegressionSummary{
         Entity: *NewEntity(),
@@ -76,27 +76,15 @@ func (m *UserExperienceAnalyticsRegressionSummary) GetFieldDeserializers()(map[s
 }
 // GetManufacturerRegression gets the manufacturerRegression property value. The metric values for the user experience analytics Manufacturer regression.
 func (m *UserExperienceAnalyticsRegressionSummary) GetManufacturerRegression()([]UserExperienceAnalyticsMetricable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.manufacturerRegression
-    }
+    return m.manufacturerRegression
 }
 // GetModelRegression gets the modelRegression property value. The metric values for the user experience analytics model regression.
 func (m *UserExperienceAnalyticsRegressionSummary) GetModelRegression()([]UserExperienceAnalyticsMetricable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.modelRegression
-    }
+    return m.modelRegression
 }
 // GetOperatingSystemRegression gets the operatingSystemRegression property value. The metric values for the user experience analytics operating system regression.
 func (m *UserExperienceAnalyticsRegressionSummary) GetOperatingSystemRegression()([]UserExperienceAnalyticsMetricable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.operatingSystemRegression
-    }
+    return m.operatingSystemRegression
 }
 // Serialize serializes information the current object
 func (m *UserExperienceAnalyticsRegressionSummary) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -138,19 +126,13 @@ func (m *UserExperienceAnalyticsRegressionSummary) Serialize(writer i878a80d2330
 }
 // SetManufacturerRegression sets the manufacturerRegression property value. The metric values for the user experience analytics Manufacturer regression.
 func (m *UserExperienceAnalyticsRegressionSummary) SetManufacturerRegression(value []UserExperienceAnalyticsMetricable)() {
-    if m != nil {
-        m.manufacturerRegression = value
-    }
+    m.manufacturerRegression = value
 }
 // SetModelRegression sets the modelRegression property value. The metric values for the user experience analytics model regression.
 func (m *UserExperienceAnalyticsRegressionSummary) SetModelRegression(value []UserExperienceAnalyticsMetricable)() {
-    if m != nil {
-        m.modelRegression = value
-    }
+    m.modelRegression = value
 }
 // SetOperatingSystemRegression sets the operatingSystemRegression property value. The metric values for the user experience analytics operating system regression.
 func (m *UserExperienceAnalyticsRegressionSummary) SetOperatingSystemRegression(value []UserExperienceAnalyticsMetricable)() {
-    if m != nil {
-        m.operatingSystemRegression = value
-    }
+    m.operatingSystemRegression = value
 }

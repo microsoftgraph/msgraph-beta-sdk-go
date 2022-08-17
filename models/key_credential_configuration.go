@@ -33,11 +33,7 @@ func CreateKeyCredentialConfigurationFromDiscriminatorValue(parseNode i878a80d23
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *KeyCredentialConfiguration) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *KeyCredentialConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -86,35 +82,19 @@ func (m *KeyCredentialConfiguration) GetFieldDeserializers()(map[string]func(i87
 }
 // GetMaxLifetime gets the maxLifetime property value. The maxLifetime property
 func (m *KeyCredentialConfiguration) GetMaxLifetime()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration) {
-    if m == nil {
-        return nil
-    } else {
-        return m.maxLifetime
-    }
+    return m.maxLifetime
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *KeyCredentialConfiguration) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetRestrictForAppsCreatedAfterDateTime gets the restrictForAppsCreatedAfterDateTime property value. Timestamp when the policy is enforced for all apps created on or after the specified date. For existing applications, the enforcement date would be back dated. To apply to all applications regardless of their creation date, this property would be null. Nullable.
 func (m *KeyCredentialConfiguration) GetRestrictForAppsCreatedAfterDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.restrictForAppsCreatedAfterDateTime
-    }
+    return m.restrictForAppsCreatedAfterDateTime
 }
 // GetRestrictionType gets the restrictionType property value. The type of restriction being applied. Possible values are asymmetricKeyLifetime, unknownFutureValue. Each value of restrictionType can be used only once per policy.
 func (m *KeyCredentialConfiguration) GetRestrictionType()(*AppKeyCredentialRestrictionType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.restrictionType
-    }
+    return m.restrictionType
 }
 // Serialize serializes information the current object
 func (m *KeyCredentialConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -153,31 +133,21 @@ func (m *KeyCredentialConfiguration) Serialize(writer i878a80d2330e89d26896388a3
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *KeyCredentialConfiguration) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetMaxLifetime sets the maxLifetime property value. The maxLifetime property
 func (m *KeyCredentialConfiguration) SetMaxLifetime(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)() {
-    if m != nil {
-        m.maxLifetime = value
-    }
+    m.maxLifetime = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *KeyCredentialConfiguration) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetRestrictForAppsCreatedAfterDateTime sets the restrictForAppsCreatedAfterDateTime property value. Timestamp when the policy is enforced for all apps created on or after the specified date. For existing applications, the enforcement date would be back dated. To apply to all applications regardless of their creation date, this property would be null. Nullable.
 func (m *KeyCredentialConfiguration) SetRestrictForAppsCreatedAfterDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.restrictForAppsCreatedAfterDateTime = value
-    }
+    m.restrictForAppsCreatedAfterDateTime = value
 }
 // SetRestrictionType sets the restrictionType property value. The type of restriction being applied. Possible values are asymmetricKeyLifetime, unknownFutureValue. Each value of restrictionType can be used only once per policy.
 func (m *KeyCredentialConfiguration) SetRestrictionType(value *AppKeyCredentialRestrictionType)() {
-    if m != nil {
-        m.restrictionType = value
-    }
+    m.restrictionType = value
 }

@@ -52,19 +52,11 @@ func (m *RegistryKeyEvidence) GetFieldDeserializers()(map[string]func(i878a80d23
 }
 // GetRegistryHive gets the registryHive property value. The registryHive property
 func (m *RegistryKeyEvidence) GetRegistryHive()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.registryHive
-    }
+    return m.registryHive
 }
 // GetRegistryKey gets the registryKey property value. The registryKey property
 func (m *RegistryKeyEvidence) GetRegistryKey()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.registryKey
-    }
+    return m.registryKey
 }
 // Serialize serializes information the current object
 func (m *RegistryKeyEvidence) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -88,13 +80,9 @@ func (m *RegistryKeyEvidence) Serialize(writer i878a80d2330e89d26896388a3f487eef
 }
 // SetRegistryHive sets the registryHive property value. The registryHive property
 func (m *RegistryKeyEvidence) SetRegistryHive(value *string)() {
-    if m != nil {
-        m.registryHive = value
-    }
+    m.registryHive = value
 }
 // SetRegistryKey sets the registryKey property value. The registryKey property
 func (m *RegistryKeyEvidence) SetRegistryKey(value *string)() {
-    if m != nil {
-        m.registryKey = value
-    }
+    m.registryKey = value
 }

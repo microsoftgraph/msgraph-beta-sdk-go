@@ -32,19 +32,11 @@ func CreateThreatSubmissionRootFromDiscriminatorValue(parseNode i878a80d2330e89d
 }
 // GetEmailThreats gets the emailThreats property value. The emailThreats property
 func (m *ThreatSubmissionRoot) GetEmailThreats()([]EmailThreatSubmissionable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.emailThreats
-    }
+    return m.emailThreats
 }
 // GetEmailThreatSubmissionPolicies gets the emailThreatSubmissionPolicies property value. The emailThreatSubmissionPolicies property
 func (m *ThreatSubmissionRoot) GetEmailThreatSubmissionPolicies()([]EmailThreatSubmissionPolicyable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.emailThreatSubmissionPolicies
-    }
+    return m.emailThreatSubmissionPolicies
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ThreatSubmissionRoot) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -109,19 +101,11 @@ func (m *ThreatSubmissionRoot) GetFieldDeserializers()(map[string]func(i878a80d2
 }
 // GetFileThreats gets the fileThreats property value. The fileThreats property
 func (m *ThreatSubmissionRoot) GetFileThreats()([]FileThreatSubmissionable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.fileThreats
-    }
+    return m.fileThreats
 }
 // GetUrlThreats gets the urlThreats property value. The urlThreats property
 func (m *ThreatSubmissionRoot) GetUrlThreats()([]UrlThreatSubmissionable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.urlThreats
-    }
+    return m.urlThreats
 }
 // Serialize serializes information the current object
 func (m *ThreatSubmissionRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -173,25 +157,17 @@ func (m *ThreatSubmissionRoot) Serialize(writer i878a80d2330e89d26896388a3f487ee
 }
 // SetEmailThreats sets the emailThreats property value. The emailThreats property
 func (m *ThreatSubmissionRoot) SetEmailThreats(value []EmailThreatSubmissionable)() {
-    if m != nil {
-        m.emailThreats = value
-    }
+    m.emailThreats = value
 }
 // SetEmailThreatSubmissionPolicies sets the emailThreatSubmissionPolicies property value. The emailThreatSubmissionPolicies property
 func (m *ThreatSubmissionRoot) SetEmailThreatSubmissionPolicies(value []EmailThreatSubmissionPolicyable)() {
-    if m != nil {
-        m.emailThreatSubmissionPolicies = value
-    }
+    m.emailThreatSubmissionPolicies = value
 }
 // SetFileThreats sets the fileThreats property value. The fileThreats property
 func (m *ThreatSubmissionRoot) SetFileThreats(value []FileThreatSubmissionable)() {
-    if m != nil {
-        m.fileThreats = value
-    }
+    m.fileThreats = value
 }
 // SetUrlThreats sets the urlThreats property value. The urlThreats property
 func (m *ThreatSubmissionRoot) SetUrlThreats(value []UrlThreatSubmissionable)() {
-    if m != nil {
-        m.urlThreats = value
-    }
+    m.urlThreats = value
 }

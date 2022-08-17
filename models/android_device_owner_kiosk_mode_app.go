@@ -27,11 +27,7 @@ func CreateAndroidDeviceOwnerKioskModeAppFromDiscriminatorValue(parseNode i878a8
 }
 // GetClassName gets the className property value. Class name of application
 func (m *AndroidDeviceOwnerKioskModeApp) GetClassName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.className
-    }
+    return m.className
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AndroidDeviceOwnerKioskModeApp) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -60,11 +56,7 @@ func (m *AndroidDeviceOwnerKioskModeApp) GetFieldDeserializers()(map[string]func
 }
 // GetPackage gets the package property value. Package name of application
 func (m *AndroidDeviceOwnerKioskModeApp) GetPackage()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.package_escaped
-    }
+    return m.package_escaped
 }
 // Serialize serializes information the current object
 func (m *AndroidDeviceOwnerKioskModeApp) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -88,13 +80,9 @@ func (m *AndroidDeviceOwnerKioskModeApp) Serialize(writer i878a80d2330e89d268963
 }
 // SetClassName sets the className property value. Class name of application
 func (m *AndroidDeviceOwnerKioskModeApp) SetClassName(value *string)() {
-    if m != nil {
-        m.className = value
-    }
+    m.className = value
 }
 // SetPackage sets the package property value. Package name of application
 func (m *AndroidDeviceOwnerKioskModeApp) SetPackage(value *string)() {
-    if m != nil {
-        m.package_escaped = value
-    }
+    m.package_escaped = value
 }

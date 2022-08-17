@@ -32,11 +32,7 @@ func CreateEvaluateLabelJobResultFromDiscriminatorValue(parseNode i878a80d2330e8
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *EvaluateLabelJobResult) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *EvaluateLabelJobResult) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -89,35 +85,19 @@ func (m *EvaluateLabelJobResult) GetFieldDeserializers()(map[string]func(i878a80
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *EvaluateLabelJobResult) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetResponsiblePolicy gets the responsiblePolicy property value. The responsiblePolicy property
 func (m *EvaluateLabelJobResult) GetResponsiblePolicy()(ResponsiblePolicyable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.responsiblePolicy
-    }
+    return m.responsiblePolicy
 }
 // GetResponsibleSensitiveTypes gets the responsibleSensitiveTypes property value. The responsibleSensitiveTypes property
 func (m *EvaluateLabelJobResult) GetResponsibleSensitiveTypes()([]ResponsibleSensitiveTypeable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.responsibleSensitiveTypes
-    }
+    return m.responsibleSensitiveTypes
 }
 // GetSensitivityLabel gets the sensitivityLabel property value. The sensitivityLabel property
 func (m *EvaluateLabelJobResult) GetSensitivityLabel()(MatchingLabelable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.sensitivityLabel
-    }
+    return m.sensitivityLabel
 }
 // Serialize serializes information the current object
 func (m *EvaluateLabelJobResult) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -159,31 +139,21 @@ func (m *EvaluateLabelJobResult) Serialize(writer i878a80d2330e89d26896388a3f487
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *EvaluateLabelJobResult) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *EvaluateLabelJobResult) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetResponsiblePolicy sets the responsiblePolicy property value. The responsiblePolicy property
 func (m *EvaluateLabelJobResult) SetResponsiblePolicy(value ResponsiblePolicyable)() {
-    if m != nil {
-        m.responsiblePolicy = value
-    }
+    m.responsiblePolicy = value
 }
 // SetResponsibleSensitiveTypes sets the responsibleSensitiveTypes property value. The responsibleSensitiveTypes property
 func (m *EvaluateLabelJobResult) SetResponsibleSensitiveTypes(value []ResponsibleSensitiveTypeable)() {
-    if m != nil {
-        m.responsibleSensitiveTypes = value
-    }
+    m.responsibleSensitiveTypes = value
 }
 // SetSensitivityLabel sets the sensitivityLabel property value. The sensitivityLabel property
 func (m *EvaluateLabelJobResult) SetSensitivityLabel(value MatchingLabelable)() {
-    if m != nil {
-        m.sensitivityLabel = value
-    }
+    m.sensitivityLabel = value
 }

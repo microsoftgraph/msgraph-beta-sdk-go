@@ -55,83 +55,43 @@ func CreateArchivedPrintJobFromDiscriminatorValue(parseNode i878a80d2330e89d2689
 }
 // GetAcquiredByPrinter gets the acquiredByPrinter property value. True if the job was acquired by a printer; false otherwise. Read-only.
 func (m *ArchivedPrintJob) GetAcquiredByPrinter()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.acquiredByPrinter
-    }
+    return m.acquiredByPrinter
 }
 // GetAcquiredDateTime gets the acquiredDateTime property value. The dateTimeOffset when the job was acquired by the printer, if any. Read-only.
 func (m *ArchivedPrintJob) GetAcquiredDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.acquiredDateTime
-    }
+    return m.acquiredDateTime
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ArchivedPrintJob) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetBlackAndWhitePageCount gets the blackAndWhitePageCount property value. The number of black and white pages that were printed. Read-only.
 func (m *ArchivedPrintJob) GetBlackAndWhitePageCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.blackAndWhitePageCount
-    }
+    return m.blackAndWhitePageCount
 }
 // GetColorPageCount gets the colorPageCount property value. The number of color pages that were printed. Read-only.
 func (m *ArchivedPrintJob) GetColorPageCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.colorPageCount
-    }
+    return m.colorPageCount
 }
 // GetCompletionDateTime gets the completionDateTime property value. The dateTimeOffset when the job was completed, canceled or aborted. Read-only.
 func (m *ArchivedPrintJob) GetCompletionDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.completionDateTime
-    }
+    return m.completionDateTime
 }
 // GetCopiesPrinted gets the copiesPrinted property value. The number of copies that were printed. Read-only.
 func (m *ArchivedPrintJob) GetCopiesPrinted()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.copiesPrinted
-    }
+    return m.copiesPrinted
 }
 // GetCreatedBy gets the createdBy property value. The user who created the print job. Read-only.
 func (m *ArchivedPrintJob) GetCreatedBy()(UserIdentityable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.createdBy
-    }
+    return m.createdBy
 }
 // GetCreatedDateTime gets the createdDateTime property value. The dateTimeOffset when the job was created. Read-only.
 func (m *ArchivedPrintJob) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.createdDateTime
-    }
+    return m.createdDateTime
 }
 // GetDuplexPageCount gets the duplexPageCount property value. The number of duplex (double-sided) pages that were printed. Read-only.
 func (m *ArchivedPrintJob) GetDuplexPageCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.duplexPageCount
-    }
+    return m.duplexPageCount
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ArchivedPrintJob) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -290,51 +250,27 @@ func (m *ArchivedPrintJob) GetFieldDeserializers()(map[string]func(i878a80d2330e
 }
 // GetId gets the id property value. The archived print job's GUID. Read-only.
 func (m *ArchivedPrintJob) GetId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.id
-    }
+    return m.id
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *ArchivedPrintJob) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetPageCount gets the pageCount property value. The total number of pages that were printed. Read-only.
 func (m *ArchivedPrintJob) GetPageCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.pageCount
-    }
+    return m.pageCount
 }
 // GetPrinterId gets the printerId property value. The printer ID that the job was queued for. Read-only.
 func (m *ArchivedPrintJob) GetPrinterId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.printerId
-    }
+    return m.printerId
 }
 // GetProcessingState gets the processingState property value. The processingState property
 func (m *ArchivedPrintJob) GetProcessingState()(*PrintJobProcessingState) {
-    if m == nil {
-        return nil
-    } else {
-        return m.processingState
-    }
+    return m.processingState
 }
 // GetSimplexPageCount gets the simplexPageCount property value. The number of simplex (single-sided) pages that were printed. Read-only.
 func (m *ArchivedPrintJob) GetSimplexPageCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.simplexPageCount
-    }
+    return m.simplexPageCount
 }
 // Serialize serializes information the current object
 func (m *ArchivedPrintJob) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -439,97 +375,65 @@ func (m *ArchivedPrintJob) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
 }
 // SetAcquiredByPrinter sets the acquiredByPrinter property value. True if the job was acquired by a printer; false otherwise. Read-only.
 func (m *ArchivedPrintJob) SetAcquiredByPrinter(value *bool)() {
-    if m != nil {
-        m.acquiredByPrinter = value
-    }
+    m.acquiredByPrinter = value
 }
 // SetAcquiredDateTime sets the acquiredDateTime property value. The dateTimeOffset when the job was acquired by the printer, if any. Read-only.
 func (m *ArchivedPrintJob) SetAcquiredDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.acquiredDateTime = value
-    }
+    m.acquiredDateTime = value
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ArchivedPrintJob) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetBlackAndWhitePageCount sets the blackAndWhitePageCount property value. The number of black and white pages that were printed. Read-only.
 func (m *ArchivedPrintJob) SetBlackAndWhitePageCount(value *int32)() {
-    if m != nil {
-        m.blackAndWhitePageCount = value
-    }
+    m.blackAndWhitePageCount = value
 }
 // SetColorPageCount sets the colorPageCount property value. The number of color pages that were printed. Read-only.
 func (m *ArchivedPrintJob) SetColorPageCount(value *int32)() {
-    if m != nil {
-        m.colorPageCount = value
-    }
+    m.colorPageCount = value
 }
 // SetCompletionDateTime sets the completionDateTime property value. The dateTimeOffset when the job was completed, canceled or aborted. Read-only.
 func (m *ArchivedPrintJob) SetCompletionDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.completionDateTime = value
-    }
+    m.completionDateTime = value
 }
 // SetCopiesPrinted sets the copiesPrinted property value. The number of copies that were printed. Read-only.
 func (m *ArchivedPrintJob) SetCopiesPrinted(value *int32)() {
-    if m != nil {
-        m.copiesPrinted = value
-    }
+    m.copiesPrinted = value
 }
 // SetCreatedBy sets the createdBy property value. The user who created the print job. Read-only.
 func (m *ArchivedPrintJob) SetCreatedBy(value UserIdentityable)() {
-    if m != nil {
-        m.createdBy = value
-    }
+    m.createdBy = value
 }
 // SetCreatedDateTime sets the createdDateTime property value. The dateTimeOffset when the job was created. Read-only.
 func (m *ArchivedPrintJob) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.createdDateTime = value
-    }
+    m.createdDateTime = value
 }
 // SetDuplexPageCount sets the duplexPageCount property value. The number of duplex (double-sided) pages that were printed. Read-only.
 func (m *ArchivedPrintJob) SetDuplexPageCount(value *int32)() {
-    if m != nil {
-        m.duplexPageCount = value
-    }
+    m.duplexPageCount = value
 }
 // SetId sets the id property value. The archived print job's GUID. Read-only.
 func (m *ArchivedPrintJob) SetId(value *string)() {
-    if m != nil {
-        m.id = value
-    }
+    m.id = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *ArchivedPrintJob) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetPageCount sets the pageCount property value. The total number of pages that were printed. Read-only.
 func (m *ArchivedPrintJob) SetPageCount(value *int32)() {
-    if m != nil {
-        m.pageCount = value
-    }
+    m.pageCount = value
 }
 // SetPrinterId sets the printerId property value. The printer ID that the job was queued for. Read-only.
 func (m *ArchivedPrintJob) SetPrinterId(value *string)() {
-    if m != nil {
-        m.printerId = value
-    }
+    m.printerId = value
 }
 // SetProcessingState sets the processingState property value. The processingState property
 func (m *ArchivedPrintJob) SetProcessingState(value *PrintJobProcessingState)() {
-    if m != nil {
-        m.processingState = value
-    }
+    m.processingState = value
 }
 // SetSimplexPageCount sets the simplexPageCount property value. The number of simplex (single-sided) pages that were printed. Read-only.
 func (m *ArchivedPrintJob) SetSimplexPageCount(value *int32)() {
-    if m != nil {
-        m.simplexPageCount = value
-    }
+    m.simplexPageCount = value
 }

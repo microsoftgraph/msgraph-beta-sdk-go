@@ -30,11 +30,7 @@ func CreateDeviceLogCollectionRequestFromDiscriminatorValue(parseNode i878a80d23
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DeviceLogCollectionRequest) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceLogCollectionRequest) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -73,27 +69,15 @@ func (m *DeviceLogCollectionRequest) GetFieldDeserializers()(map[string]func(i87
 }
 // GetId gets the id property value. The unique identifier
 func (m *DeviceLogCollectionRequest) GetId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.id
-    }
+    return m.id
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *DeviceLogCollectionRequest) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetTemplateType gets the templateType property value. Enum for the template type used for collecting logs
 func (m *DeviceLogCollectionRequest) GetTemplateType()(*DeviceLogCollectionTemplateType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.templateType
-    }
+    return m.templateType
 }
 // Serialize serializes information the current object
 func (m *DeviceLogCollectionRequest) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -126,25 +110,17 @@ func (m *DeviceLogCollectionRequest) Serialize(writer i878a80d2330e89d26896388a3
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DeviceLogCollectionRequest) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetId sets the id property value. The unique identifier
 func (m *DeviceLogCollectionRequest) SetId(value *string)() {
-    if m != nil {
-        m.id = value
-    }
+    m.id = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *DeviceLogCollectionRequest) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetTemplateType sets the templateType property value. Enum for the template type used for collecting logs
 func (m *DeviceLogCollectionRequest) SetTemplateType(value *DeviceLogCollectionTemplateType)() {
-    if m != nil {
-        m.templateType = value
-    }
+    m.templateType = value
 }

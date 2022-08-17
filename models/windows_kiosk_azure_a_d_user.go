@@ -52,19 +52,11 @@ func (m *WindowsKioskAzureADUser) GetFieldDeserializers()(map[string]func(i878a8
 }
 // GetUserId gets the userId property value. The ID of the AzureAD user that will be locked to this kiosk configuration
 func (m *WindowsKioskAzureADUser) GetUserId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userId
-    }
+    return m.userId
 }
 // GetUserPrincipalName gets the userPrincipalName property value. The user accounts that will be locked to this kiosk configuration
 func (m *WindowsKioskAzureADUser) GetUserPrincipalName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userPrincipalName
-    }
+    return m.userPrincipalName
 }
 // Serialize serializes information the current object
 func (m *WindowsKioskAzureADUser) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -88,13 +80,9 @@ func (m *WindowsKioskAzureADUser) Serialize(writer i878a80d2330e89d26896388a3f48
 }
 // SetUserId sets the userId property value. The ID of the AzureAD user that will be locked to this kiosk configuration
 func (m *WindowsKioskAzureADUser) SetUserId(value *string)() {
-    if m != nil {
-        m.userId = value
-    }
+    m.userId = value
 }
 // SetUserPrincipalName sets the userPrincipalName property value. The user accounts that will be locked to this kiosk configuration
 func (m *WindowsKioskAzureADUser) SetUserPrincipalName(value *string)() {
-    if m != nil {
-        m.userPrincipalName = value
-    }
+    m.userPrincipalName = value
 }

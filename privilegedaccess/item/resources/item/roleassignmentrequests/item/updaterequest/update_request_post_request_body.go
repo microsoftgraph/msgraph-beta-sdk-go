@@ -31,27 +31,15 @@ func CreateUpdateRequestPostRequestBodyFromDiscriminatorValue(parseNode i878a80d
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *UpdateRequestPostRequestBody) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetAssignmentState gets the assignmentState property value. The assignmentState property
 func (m *UpdateRequestPostRequestBody) GetAssignmentState()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.assignmentState
-    }
+    return m.assignmentState
 }
 // GetDecision gets the decision property value. The decision property
 func (m *UpdateRequestPostRequestBody) GetDecision()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.decision
-    }
+    return m.decision
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *UpdateRequestPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -100,19 +88,11 @@ func (m *UpdateRequestPostRequestBody) GetFieldDeserializers()(map[string]func(i
 }
 // GetReason gets the reason property value. The reason property
 func (m *UpdateRequestPostRequestBody) GetReason()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.reason
-    }
+    return m.reason
 }
 // GetSchedule gets the schedule property value. The schedule property
 func (m *UpdateRequestPostRequestBody) GetSchedule()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GovernanceScheduleable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.schedule
-    }
+    return m.schedule
 }
 // Serialize serializes information the current object
 func (m *UpdateRequestPostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -150,31 +130,21 @@ func (m *UpdateRequestPostRequestBody) Serialize(writer i878a80d2330e89d26896388
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *UpdateRequestPostRequestBody) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetAssignmentState sets the assignmentState property value. The assignmentState property
 func (m *UpdateRequestPostRequestBody) SetAssignmentState(value *string)() {
-    if m != nil {
-        m.assignmentState = value
-    }
+    m.assignmentState = value
 }
 // SetDecision sets the decision property value. The decision property
 func (m *UpdateRequestPostRequestBody) SetDecision(value *string)() {
-    if m != nil {
-        m.decision = value
-    }
+    m.decision = value
 }
 // SetReason sets the reason property value. The reason property
 func (m *UpdateRequestPostRequestBody) SetReason(value *string)() {
-    if m != nil {
-        m.reason = value
-    }
+    m.reason = value
 }
 // SetSchedule sets the schedule property value. The schedule property
 func (m *UpdateRequestPostRequestBody) SetSchedule(value ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GovernanceScheduleable)() {
-    if m != nil {
-        m.schedule = value
-    }
+    m.schedule = value
 }

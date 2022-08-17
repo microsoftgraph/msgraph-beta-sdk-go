@@ -77,83 +77,43 @@ func CreateWindowsWifiEnterpriseEAPConfigurationFromDiscriminatorValue(parseNode
 }
 // GetAuthenticationMethod gets the authenticationMethod property value. Specify the authentication method. Possible values are: certificate, usernameAndPassword, derivedCredential.
 func (m *WindowsWifiEnterpriseEAPConfiguration) GetAuthenticationMethod()(*WiFiAuthenticationMethod) {
-    if m == nil {
-        return nil
-    } else {
-        return m.authenticationMethod
-    }
+    return m.authenticationMethod
 }
 // GetAuthenticationPeriodInSeconds gets the authenticationPeriodInSeconds property value. Specify the number of seconds for the client to wait after an authentication attempt before failing. Valid range 1-3600.
 func (m *WindowsWifiEnterpriseEAPConfiguration) GetAuthenticationPeriodInSeconds()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.authenticationPeriodInSeconds
-    }
+    return m.authenticationPeriodInSeconds
 }
 // GetAuthenticationRetryDelayPeriodInSeconds gets the authenticationRetryDelayPeriodInSeconds property value. Specify the number of seconds between a failed authentication and the next authentication attempt. Valid range 1-3600.
 func (m *WindowsWifiEnterpriseEAPConfiguration) GetAuthenticationRetryDelayPeriodInSeconds()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.authenticationRetryDelayPeriodInSeconds
-    }
+    return m.authenticationRetryDelayPeriodInSeconds
 }
 // GetAuthenticationType gets the authenticationType property value. Specify whether to authenticate the user, the device, either, or to use guest authentication (none). If you’re using certificate authentication, make sure the certificate type matches the authentication type. Possible values are: none, user, machine, machineOrUser, guest.
 func (m *WindowsWifiEnterpriseEAPConfiguration) GetAuthenticationType()(*WifiAuthenticationType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.authenticationType
-    }
+    return m.authenticationType
 }
 // GetCacheCredentials gets the cacheCredentials property value. Specify whether to cache user credentials on the device so that users don’t need to keep entering them each time they connect.
 func (m *WindowsWifiEnterpriseEAPConfiguration) GetCacheCredentials()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.cacheCredentials
-    }
+    return m.cacheCredentials
 }
 // GetDisableUserPromptForServerValidation gets the disableUserPromptForServerValidation property value. Specify whether to prevent the user from being prompted to authorize new servers for trusted certification authorities when EAP type is selected as PEAP.
 func (m *WindowsWifiEnterpriseEAPConfiguration) GetDisableUserPromptForServerValidation()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.disableUserPromptForServerValidation
-    }
+    return m.disableUserPromptForServerValidation
 }
 // GetEapolStartPeriodInSeconds gets the eapolStartPeriodInSeconds property value. Specify the number of seconds to wait before sending an EAPOL (Extensible Authentication Protocol over LAN) Start message. Valid range 1-3600.
 func (m *WindowsWifiEnterpriseEAPConfiguration) GetEapolStartPeriodInSeconds()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.eapolStartPeriodInSeconds
-    }
+    return m.eapolStartPeriodInSeconds
 }
 // GetEapType gets the eapType property value. Extensible Authentication Protocol (EAP) configuration types.
 func (m *WindowsWifiEnterpriseEAPConfiguration) GetEapType()(*EapType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.eapType
-    }
+    return m.eapType
 }
 // GetEnablePairwiseMasterKeyCaching gets the enablePairwiseMasterKeyCaching property value. Specify whether the wifi connection should enable pairwise master key caching.
 func (m *WindowsWifiEnterpriseEAPConfiguration) GetEnablePairwiseMasterKeyCaching()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.enablePairwiseMasterKeyCaching
-    }
+    return m.enablePairwiseMasterKeyCaching
 }
 // GetEnablePreAuthentication gets the enablePreAuthentication property value. Specify whether pre-authentication should be enabled.
 func (m *WindowsWifiEnterpriseEAPConfiguration) GetEnablePreAuthentication()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.enablePreAuthentication
-    }
+    return m.enablePreAuthentication
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *WindowsWifiEnterpriseEAPConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -440,139 +400,71 @@ func (m *WindowsWifiEnterpriseEAPConfiguration) GetFieldDeserializers()(map[stri
 }
 // GetIdentityCertificateForClientAuthentication gets the identityCertificateForClientAuthentication property value. Specify identity certificate for client authentication.
 func (m *WindowsWifiEnterpriseEAPConfiguration) GetIdentityCertificateForClientAuthentication()(WindowsCertificateProfileBaseable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.identityCertificateForClientAuthentication
-    }
+    return m.identityCertificateForClientAuthentication
 }
 // GetInnerAuthenticationProtocolForEAPTTLS gets the innerAuthenticationProtocolForEAPTTLS property value. Specify inner authentication protocol for EAP TTLS. Possible values are: unencryptedPassword, challengeHandshakeAuthenticationProtocol, microsoftChap, microsoftChapVersionTwo.
 func (m *WindowsWifiEnterpriseEAPConfiguration) GetInnerAuthenticationProtocolForEAPTTLS()(*NonEapAuthenticationMethodForEapTtlsType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.innerAuthenticationProtocolForEAPTTLS
-    }
+    return m.innerAuthenticationProtocolForEAPTTLS
 }
 // GetMaximumAuthenticationFailures gets the maximumAuthenticationFailures property value. Specify the maximum authentication failures allowed for a set of credentials. Valid range 1-100.
 func (m *WindowsWifiEnterpriseEAPConfiguration) GetMaximumAuthenticationFailures()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.maximumAuthenticationFailures
-    }
+    return m.maximumAuthenticationFailures
 }
 // GetMaximumAuthenticationTimeoutInSeconds gets the maximumAuthenticationTimeoutInSeconds property value. Specify maximum authentication timeout (in seconds).  Valid range: 1-120
 func (m *WindowsWifiEnterpriseEAPConfiguration) GetMaximumAuthenticationTimeoutInSeconds()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.maximumAuthenticationTimeoutInSeconds
-    }
+    return m.maximumAuthenticationTimeoutInSeconds
 }
 // GetMaximumEAPOLStartMessages gets the maximumEAPOLStartMessages property value. Specifiy the maximum number of EAPOL (Extensible Authentication Protocol over LAN) Start messages to be sent before returning failure. Valid range 1-100.
 func (m *WindowsWifiEnterpriseEAPConfiguration) GetMaximumEAPOLStartMessages()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.maximumEAPOLStartMessages
-    }
+    return m.maximumEAPOLStartMessages
 }
 // GetMaximumNumberOfPairwiseMasterKeysInCache gets the maximumNumberOfPairwiseMasterKeysInCache property value. Specify maximum number of pairwise master keys in cache.  Valid range: 1-255
 func (m *WindowsWifiEnterpriseEAPConfiguration) GetMaximumNumberOfPairwiseMasterKeysInCache()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.maximumNumberOfPairwiseMasterKeysInCache
-    }
+    return m.maximumNumberOfPairwiseMasterKeysInCache
 }
 // GetMaximumPairwiseMasterKeyCacheTimeInMinutes gets the maximumPairwiseMasterKeyCacheTimeInMinutes property value. Specify maximum pairwise master key cache time (in minutes).  Valid range: 5-1440
 func (m *WindowsWifiEnterpriseEAPConfiguration) GetMaximumPairwiseMasterKeyCacheTimeInMinutes()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.maximumPairwiseMasterKeyCacheTimeInMinutes
-    }
+    return m.maximumPairwiseMasterKeyCacheTimeInMinutes
 }
 // GetMaximumPreAuthenticationAttempts gets the maximumPreAuthenticationAttempts property value. Specify maximum pre-authentication attempts.  Valid range: 1-16
 func (m *WindowsWifiEnterpriseEAPConfiguration) GetMaximumPreAuthenticationAttempts()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.maximumPreAuthenticationAttempts
-    }
+    return m.maximumPreAuthenticationAttempts
 }
 // GetNetworkSingleSignOn gets the networkSingleSignOn property value. Specify the network single sign on type. Possible values are: disabled, prelogon, postlogon.
 func (m *WindowsWifiEnterpriseEAPConfiguration) GetNetworkSingleSignOn()(*NetworkSingleSignOnType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.networkSingleSignOn
-    }
+    return m.networkSingleSignOn
 }
 // GetOuterIdentityPrivacyTemporaryValue gets the outerIdentityPrivacyTemporaryValue property value. Specify the string to replace usernames for privacy when using EAP TTLS or PEAP.
 func (m *WindowsWifiEnterpriseEAPConfiguration) GetOuterIdentityPrivacyTemporaryValue()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.outerIdentityPrivacyTemporaryValue
-    }
+    return m.outerIdentityPrivacyTemporaryValue
 }
 // GetPerformServerValidation gets the performServerValidation property value. Specify whether to enable verification of server's identity by validating the certificate when EAP type is selected as PEAP.
 func (m *WindowsWifiEnterpriseEAPConfiguration) GetPerformServerValidation()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.performServerValidation
-    }
+    return m.performServerValidation
 }
 // GetPromptForAdditionalAuthenticationCredentials gets the promptForAdditionalAuthenticationCredentials property value. Specify whether the wifi connection should prompt for additional authentication credentials.
 func (m *WindowsWifiEnterpriseEAPConfiguration) GetPromptForAdditionalAuthenticationCredentials()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.promptForAdditionalAuthenticationCredentials
-    }
+    return m.promptForAdditionalAuthenticationCredentials
 }
 // GetRequireCryptographicBinding gets the requireCryptographicBinding property value. Specify whether to enable cryptographic binding when EAP type is selected as PEAP.
 func (m *WindowsWifiEnterpriseEAPConfiguration) GetRequireCryptographicBinding()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.requireCryptographicBinding
-    }
+    return m.requireCryptographicBinding
 }
 // GetRootCertificateForClientValidation gets the rootCertificateForClientValidation property value. Specify root certificate for client validation.
 func (m *WindowsWifiEnterpriseEAPConfiguration) GetRootCertificateForClientValidation()(Windows81TrustedRootCertificateable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.rootCertificateForClientValidation
-    }
+    return m.rootCertificateForClientValidation
 }
 // GetRootCertificatesForServerValidation gets the rootCertificatesForServerValidation property value. Specify root certificate for server validation. This collection can contain a maximum of 500 elements.
 func (m *WindowsWifiEnterpriseEAPConfiguration) GetRootCertificatesForServerValidation()([]Windows81TrustedRootCertificateable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.rootCertificatesForServerValidation
-    }
+    return m.rootCertificatesForServerValidation
 }
 // GetTrustedServerCertificateNames gets the trustedServerCertificateNames property value. Specify trusted server certificate names.
 func (m *WindowsWifiEnterpriseEAPConfiguration) GetTrustedServerCertificateNames()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.trustedServerCertificateNames
-    }
+    return m.trustedServerCertificateNames
 }
 // GetUserBasedVirtualLan gets the userBasedVirtualLan property value. Specifiy whether to change the virtual LAN used by the device based on the user’s credentials. Cannot be used when NetworkSingleSignOnType is set to ​Disabled.
 func (m *WindowsWifiEnterpriseEAPConfiguration) GetUserBasedVirtualLan()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userBasedVirtualLan
-    }
+    return m.userBasedVirtualLan
 }
 // Serialize serializes information the current object
 func (m *WindowsWifiEnterpriseEAPConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -755,163 +647,109 @@ func (m *WindowsWifiEnterpriseEAPConfiguration) Serialize(writer i878a80d2330e89
 }
 // SetAuthenticationMethod sets the authenticationMethod property value. Specify the authentication method. Possible values are: certificate, usernameAndPassword, derivedCredential.
 func (m *WindowsWifiEnterpriseEAPConfiguration) SetAuthenticationMethod(value *WiFiAuthenticationMethod)() {
-    if m != nil {
-        m.authenticationMethod = value
-    }
+    m.authenticationMethod = value
 }
 // SetAuthenticationPeriodInSeconds sets the authenticationPeriodInSeconds property value. Specify the number of seconds for the client to wait after an authentication attempt before failing. Valid range 1-3600.
 func (m *WindowsWifiEnterpriseEAPConfiguration) SetAuthenticationPeriodInSeconds(value *int32)() {
-    if m != nil {
-        m.authenticationPeriodInSeconds = value
-    }
+    m.authenticationPeriodInSeconds = value
 }
 // SetAuthenticationRetryDelayPeriodInSeconds sets the authenticationRetryDelayPeriodInSeconds property value. Specify the number of seconds between a failed authentication and the next authentication attempt. Valid range 1-3600.
 func (m *WindowsWifiEnterpriseEAPConfiguration) SetAuthenticationRetryDelayPeriodInSeconds(value *int32)() {
-    if m != nil {
-        m.authenticationRetryDelayPeriodInSeconds = value
-    }
+    m.authenticationRetryDelayPeriodInSeconds = value
 }
 // SetAuthenticationType sets the authenticationType property value. Specify whether to authenticate the user, the device, either, or to use guest authentication (none). If you’re using certificate authentication, make sure the certificate type matches the authentication type. Possible values are: none, user, machine, machineOrUser, guest.
 func (m *WindowsWifiEnterpriseEAPConfiguration) SetAuthenticationType(value *WifiAuthenticationType)() {
-    if m != nil {
-        m.authenticationType = value
-    }
+    m.authenticationType = value
 }
 // SetCacheCredentials sets the cacheCredentials property value. Specify whether to cache user credentials on the device so that users don’t need to keep entering them each time they connect.
 func (m *WindowsWifiEnterpriseEAPConfiguration) SetCacheCredentials(value *bool)() {
-    if m != nil {
-        m.cacheCredentials = value
-    }
+    m.cacheCredentials = value
 }
 // SetDisableUserPromptForServerValidation sets the disableUserPromptForServerValidation property value. Specify whether to prevent the user from being prompted to authorize new servers for trusted certification authorities when EAP type is selected as PEAP.
 func (m *WindowsWifiEnterpriseEAPConfiguration) SetDisableUserPromptForServerValidation(value *bool)() {
-    if m != nil {
-        m.disableUserPromptForServerValidation = value
-    }
+    m.disableUserPromptForServerValidation = value
 }
 // SetEapolStartPeriodInSeconds sets the eapolStartPeriodInSeconds property value. Specify the number of seconds to wait before sending an EAPOL (Extensible Authentication Protocol over LAN) Start message. Valid range 1-3600.
 func (m *WindowsWifiEnterpriseEAPConfiguration) SetEapolStartPeriodInSeconds(value *int32)() {
-    if m != nil {
-        m.eapolStartPeriodInSeconds = value
-    }
+    m.eapolStartPeriodInSeconds = value
 }
 // SetEapType sets the eapType property value. Extensible Authentication Protocol (EAP) configuration types.
 func (m *WindowsWifiEnterpriseEAPConfiguration) SetEapType(value *EapType)() {
-    if m != nil {
-        m.eapType = value
-    }
+    m.eapType = value
 }
 // SetEnablePairwiseMasterKeyCaching sets the enablePairwiseMasterKeyCaching property value. Specify whether the wifi connection should enable pairwise master key caching.
 func (m *WindowsWifiEnterpriseEAPConfiguration) SetEnablePairwiseMasterKeyCaching(value *bool)() {
-    if m != nil {
-        m.enablePairwiseMasterKeyCaching = value
-    }
+    m.enablePairwiseMasterKeyCaching = value
 }
 // SetEnablePreAuthentication sets the enablePreAuthentication property value. Specify whether pre-authentication should be enabled.
 func (m *WindowsWifiEnterpriseEAPConfiguration) SetEnablePreAuthentication(value *bool)() {
-    if m != nil {
-        m.enablePreAuthentication = value
-    }
+    m.enablePreAuthentication = value
 }
 // SetIdentityCertificateForClientAuthentication sets the identityCertificateForClientAuthentication property value. Specify identity certificate for client authentication.
 func (m *WindowsWifiEnterpriseEAPConfiguration) SetIdentityCertificateForClientAuthentication(value WindowsCertificateProfileBaseable)() {
-    if m != nil {
-        m.identityCertificateForClientAuthentication = value
-    }
+    m.identityCertificateForClientAuthentication = value
 }
 // SetInnerAuthenticationProtocolForEAPTTLS sets the innerAuthenticationProtocolForEAPTTLS property value. Specify inner authentication protocol for EAP TTLS. Possible values are: unencryptedPassword, challengeHandshakeAuthenticationProtocol, microsoftChap, microsoftChapVersionTwo.
 func (m *WindowsWifiEnterpriseEAPConfiguration) SetInnerAuthenticationProtocolForEAPTTLS(value *NonEapAuthenticationMethodForEapTtlsType)() {
-    if m != nil {
-        m.innerAuthenticationProtocolForEAPTTLS = value
-    }
+    m.innerAuthenticationProtocolForEAPTTLS = value
 }
 // SetMaximumAuthenticationFailures sets the maximumAuthenticationFailures property value. Specify the maximum authentication failures allowed for a set of credentials. Valid range 1-100.
 func (m *WindowsWifiEnterpriseEAPConfiguration) SetMaximumAuthenticationFailures(value *int32)() {
-    if m != nil {
-        m.maximumAuthenticationFailures = value
-    }
+    m.maximumAuthenticationFailures = value
 }
 // SetMaximumAuthenticationTimeoutInSeconds sets the maximumAuthenticationTimeoutInSeconds property value. Specify maximum authentication timeout (in seconds).  Valid range: 1-120
 func (m *WindowsWifiEnterpriseEAPConfiguration) SetMaximumAuthenticationTimeoutInSeconds(value *int32)() {
-    if m != nil {
-        m.maximumAuthenticationTimeoutInSeconds = value
-    }
+    m.maximumAuthenticationTimeoutInSeconds = value
 }
 // SetMaximumEAPOLStartMessages sets the maximumEAPOLStartMessages property value. Specifiy the maximum number of EAPOL (Extensible Authentication Protocol over LAN) Start messages to be sent before returning failure. Valid range 1-100.
 func (m *WindowsWifiEnterpriseEAPConfiguration) SetMaximumEAPOLStartMessages(value *int32)() {
-    if m != nil {
-        m.maximumEAPOLStartMessages = value
-    }
+    m.maximumEAPOLStartMessages = value
 }
 // SetMaximumNumberOfPairwiseMasterKeysInCache sets the maximumNumberOfPairwiseMasterKeysInCache property value. Specify maximum number of pairwise master keys in cache.  Valid range: 1-255
 func (m *WindowsWifiEnterpriseEAPConfiguration) SetMaximumNumberOfPairwiseMasterKeysInCache(value *int32)() {
-    if m != nil {
-        m.maximumNumberOfPairwiseMasterKeysInCache = value
-    }
+    m.maximumNumberOfPairwiseMasterKeysInCache = value
 }
 // SetMaximumPairwiseMasterKeyCacheTimeInMinutes sets the maximumPairwiseMasterKeyCacheTimeInMinutes property value. Specify maximum pairwise master key cache time (in minutes).  Valid range: 5-1440
 func (m *WindowsWifiEnterpriseEAPConfiguration) SetMaximumPairwiseMasterKeyCacheTimeInMinutes(value *int32)() {
-    if m != nil {
-        m.maximumPairwiseMasterKeyCacheTimeInMinutes = value
-    }
+    m.maximumPairwiseMasterKeyCacheTimeInMinutes = value
 }
 // SetMaximumPreAuthenticationAttempts sets the maximumPreAuthenticationAttempts property value. Specify maximum pre-authentication attempts.  Valid range: 1-16
 func (m *WindowsWifiEnterpriseEAPConfiguration) SetMaximumPreAuthenticationAttempts(value *int32)() {
-    if m != nil {
-        m.maximumPreAuthenticationAttempts = value
-    }
+    m.maximumPreAuthenticationAttempts = value
 }
 // SetNetworkSingleSignOn sets the networkSingleSignOn property value. Specify the network single sign on type. Possible values are: disabled, prelogon, postlogon.
 func (m *WindowsWifiEnterpriseEAPConfiguration) SetNetworkSingleSignOn(value *NetworkSingleSignOnType)() {
-    if m != nil {
-        m.networkSingleSignOn = value
-    }
+    m.networkSingleSignOn = value
 }
 // SetOuterIdentityPrivacyTemporaryValue sets the outerIdentityPrivacyTemporaryValue property value. Specify the string to replace usernames for privacy when using EAP TTLS or PEAP.
 func (m *WindowsWifiEnterpriseEAPConfiguration) SetOuterIdentityPrivacyTemporaryValue(value *string)() {
-    if m != nil {
-        m.outerIdentityPrivacyTemporaryValue = value
-    }
+    m.outerIdentityPrivacyTemporaryValue = value
 }
 // SetPerformServerValidation sets the performServerValidation property value. Specify whether to enable verification of server's identity by validating the certificate when EAP type is selected as PEAP.
 func (m *WindowsWifiEnterpriseEAPConfiguration) SetPerformServerValidation(value *bool)() {
-    if m != nil {
-        m.performServerValidation = value
-    }
+    m.performServerValidation = value
 }
 // SetPromptForAdditionalAuthenticationCredentials sets the promptForAdditionalAuthenticationCredentials property value. Specify whether the wifi connection should prompt for additional authentication credentials.
 func (m *WindowsWifiEnterpriseEAPConfiguration) SetPromptForAdditionalAuthenticationCredentials(value *bool)() {
-    if m != nil {
-        m.promptForAdditionalAuthenticationCredentials = value
-    }
+    m.promptForAdditionalAuthenticationCredentials = value
 }
 // SetRequireCryptographicBinding sets the requireCryptographicBinding property value. Specify whether to enable cryptographic binding when EAP type is selected as PEAP.
 func (m *WindowsWifiEnterpriseEAPConfiguration) SetRequireCryptographicBinding(value *bool)() {
-    if m != nil {
-        m.requireCryptographicBinding = value
-    }
+    m.requireCryptographicBinding = value
 }
 // SetRootCertificateForClientValidation sets the rootCertificateForClientValidation property value. Specify root certificate for client validation.
 func (m *WindowsWifiEnterpriseEAPConfiguration) SetRootCertificateForClientValidation(value Windows81TrustedRootCertificateable)() {
-    if m != nil {
-        m.rootCertificateForClientValidation = value
-    }
+    m.rootCertificateForClientValidation = value
 }
 // SetRootCertificatesForServerValidation sets the rootCertificatesForServerValidation property value. Specify root certificate for server validation. This collection can contain a maximum of 500 elements.
 func (m *WindowsWifiEnterpriseEAPConfiguration) SetRootCertificatesForServerValidation(value []Windows81TrustedRootCertificateable)() {
-    if m != nil {
-        m.rootCertificatesForServerValidation = value
-    }
+    m.rootCertificatesForServerValidation = value
 }
 // SetTrustedServerCertificateNames sets the trustedServerCertificateNames property value. Specify trusted server certificate names.
 func (m *WindowsWifiEnterpriseEAPConfiguration) SetTrustedServerCertificateNames(value []string)() {
-    if m != nil {
-        m.trustedServerCertificateNames = value
-    }
+    m.trustedServerCertificateNames = value
 }
 // SetUserBasedVirtualLan sets the userBasedVirtualLan property value. Specifiy whether to change the virtual LAN used by the device based on the user’s credentials. Cannot be used when NetworkSingleSignOnType is set to ​Disabled.
 func (m *WindowsWifiEnterpriseEAPConfiguration) SetUserBasedVirtualLan(value *bool)() {
-    if m != nil {
-        m.userBasedVirtualLan = value
-    }
+    m.userBasedVirtualLan = value
 }

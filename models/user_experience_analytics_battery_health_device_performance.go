@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// UserExperienceAnalyticsBatteryHealthDevicePerformance 
+// UserExperienceAnalyticsBatteryHealthDevicePerformance the user experience analytics battery health device performance entity contains device level battery information.
 type UserExperienceAnalyticsBatteryHealthDevicePerformance struct {
     Entity
     // Estimated battery age. Unit in days. Valid values -2147483648 to 2147483647
@@ -26,7 +26,7 @@ type UserExperienceAnalyticsBatteryHealthDevicePerformance struct {
     // The model name of the device.
     model *string
 }
-// NewUserExperienceAnalyticsBatteryHealthDevicePerformance instantiates a new UserExperienceAnalyticsBatteryHealthDevicePerformance and sets the default values.
+// NewUserExperienceAnalyticsBatteryHealthDevicePerformance instantiates a new userExperienceAnalyticsBatteryHealthDevicePerformance and sets the default values.
 func NewUserExperienceAnalyticsBatteryHealthDevicePerformance()(*UserExperienceAnalyticsBatteryHealthDevicePerformance) {
     m := &UserExperienceAnalyticsBatteryHealthDevicePerformance{
         Entity: *NewEntity(),
@@ -41,43 +41,23 @@ func CreateUserExperienceAnalyticsBatteryHealthDevicePerformanceFromDiscriminato
 }
 // GetBatteryAgeInDays gets the batteryAgeInDays property value. Estimated battery age. Unit in days. Valid values -2147483648 to 2147483647
 func (m *UserExperienceAnalyticsBatteryHealthDevicePerformance) GetBatteryAgeInDays()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.batteryAgeInDays
-    }
+    return m.batteryAgeInDays
 }
 // GetDeviceBatteryHealthScore gets the deviceBatteryHealthScore property value. A weighted average of a device’s maximum capacity score and runtime estimate score. Values range from 0-100. Valid values -2147483648 to 2147483647
 func (m *UserExperienceAnalyticsBatteryHealthDevicePerformance) GetDeviceBatteryHealthScore()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deviceBatteryHealthScore
-    }
+    return m.deviceBatteryHealthScore
 }
 // GetDeviceId gets the deviceId property value. The unique identifier of the device, Intune DeviceID.
 func (m *UserExperienceAnalyticsBatteryHealthDevicePerformance) GetDeviceId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deviceId
-    }
+    return m.deviceId
 }
 // GetDeviceName gets the deviceName property value. Device friendly name.
 func (m *UserExperienceAnalyticsBatteryHealthDevicePerformance) GetDeviceName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deviceName
-    }
+    return m.deviceName
 }
 // GetEstimatedRuntimeInMinutes gets the estimatedRuntimeInMinutes property value. The estimated runtime of the device when the battery is fully charged. Unit in minutes. Valid values -2147483648 to 2147483647
 func (m *UserExperienceAnalyticsBatteryHealthDevicePerformance) GetEstimatedRuntimeInMinutes()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.estimatedRuntimeInMinutes
-    }
+    return m.estimatedRuntimeInMinutes
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *UserExperienceAnalyticsBatteryHealthDevicePerformance) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -176,35 +156,19 @@ func (m *UserExperienceAnalyticsBatteryHealthDevicePerformance) GetFieldDeserial
 }
 // GetHealthStatus gets the healthStatus property value. The healthStatus property
 func (m *UserExperienceAnalyticsBatteryHealthDevicePerformance) GetHealthStatus()(*UserExperienceAnalyticsHealthState) {
-    if m == nil {
-        return nil
-    } else {
-        return m.healthStatus
-    }
+    return m.healthStatus
 }
 // GetManufacturer gets the manufacturer property value. The manufacturer name of the device.
 func (m *UserExperienceAnalyticsBatteryHealthDevicePerformance) GetManufacturer()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.manufacturer
-    }
+    return m.manufacturer
 }
 // GetMaxCapacityPercentage gets the maxCapacityPercentage property value. Ratio of current capacity and design capacity of the battery with the lowest capacity. Unit in percentage and values range from 0-100. Valid values -2147483648 to 2147483647
 func (m *UserExperienceAnalyticsBatteryHealthDevicePerformance) GetMaxCapacityPercentage()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.maxCapacityPercentage
-    }
+    return m.maxCapacityPercentage
 }
 // GetModel gets the model property value. The model name of the device.
 func (m *UserExperienceAnalyticsBatteryHealthDevicePerformance) GetModel()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.model
-    }
+    return m.model
 }
 // Serialize serializes information the current object
 func (m *UserExperienceAnalyticsBatteryHealthDevicePerformance) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -271,55 +235,37 @@ func (m *UserExperienceAnalyticsBatteryHealthDevicePerformance) Serialize(writer
 }
 // SetBatteryAgeInDays sets the batteryAgeInDays property value. Estimated battery age. Unit in days. Valid values -2147483648 to 2147483647
 func (m *UserExperienceAnalyticsBatteryHealthDevicePerformance) SetBatteryAgeInDays(value *int32)() {
-    if m != nil {
-        m.batteryAgeInDays = value
-    }
+    m.batteryAgeInDays = value
 }
 // SetDeviceBatteryHealthScore sets the deviceBatteryHealthScore property value. A weighted average of a device’s maximum capacity score and runtime estimate score. Values range from 0-100. Valid values -2147483648 to 2147483647
 func (m *UserExperienceAnalyticsBatteryHealthDevicePerformance) SetDeviceBatteryHealthScore(value *int32)() {
-    if m != nil {
-        m.deviceBatteryHealthScore = value
-    }
+    m.deviceBatteryHealthScore = value
 }
 // SetDeviceId sets the deviceId property value. The unique identifier of the device, Intune DeviceID.
 func (m *UserExperienceAnalyticsBatteryHealthDevicePerformance) SetDeviceId(value *string)() {
-    if m != nil {
-        m.deviceId = value
-    }
+    m.deviceId = value
 }
 // SetDeviceName sets the deviceName property value. Device friendly name.
 func (m *UserExperienceAnalyticsBatteryHealthDevicePerformance) SetDeviceName(value *string)() {
-    if m != nil {
-        m.deviceName = value
-    }
+    m.deviceName = value
 }
 // SetEstimatedRuntimeInMinutes sets the estimatedRuntimeInMinutes property value. The estimated runtime of the device when the battery is fully charged. Unit in minutes. Valid values -2147483648 to 2147483647
 func (m *UserExperienceAnalyticsBatteryHealthDevicePerformance) SetEstimatedRuntimeInMinutes(value *int32)() {
-    if m != nil {
-        m.estimatedRuntimeInMinutes = value
-    }
+    m.estimatedRuntimeInMinutes = value
 }
 // SetHealthStatus sets the healthStatus property value. The healthStatus property
 func (m *UserExperienceAnalyticsBatteryHealthDevicePerformance) SetHealthStatus(value *UserExperienceAnalyticsHealthState)() {
-    if m != nil {
-        m.healthStatus = value
-    }
+    m.healthStatus = value
 }
 // SetManufacturer sets the manufacturer property value. The manufacturer name of the device.
 func (m *UserExperienceAnalyticsBatteryHealthDevicePerformance) SetManufacturer(value *string)() {
-    if m != nil {
-        m.manufacturer = value
-    }
+    m.manufacturer = value
 }
 // SetMaxCapacityPercentage sets the maxCapacityPercentage property value. Ratio of current capacity and design capacity of the battery with the lowest capacity. Unit in percentage and values range from 0-100. Valid values -2147483648 to 2147483647
 func (m *UserExperienceAnalyticsBatteryHealthDevicePerformance) SetMaxCapacityPercentage(value *int32)() {
-    if m != nil {
-        m.maxCapacityPercentage = value
-    }
+    m.maxCapacityPercentage = value
 }
 // SetModel sets the model property value. The model name of the device.
 func (m *UserExperienceAnalyticsBatteryHealthDevicePerformance) SetModel(value *string)() {
-    if m != nil {
-        m.model = value
-    }
+    m.model = value
 }

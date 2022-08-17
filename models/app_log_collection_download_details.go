@@ -32,35 +32,19 @@ func CreateAppLogCollectionDownloadDetailsFromDiscriminatorValue(parseNode i878a
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AppLogCollectionDownloadDetails) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetAppLogDecryptionAlgorithm gets the appLogDecryptionAlgorithm property value. The appLogDecryptionAlgorithm property
 func (m *AppLogCollectionDownloadDetails) GetAppLogDecryptionAlgorithm()(*AppLogDecryptionAlgorithm) {
-    if m == nil {
-        return nil
-    } else {
-        return m.appLogDecryptionAlgorithm
-    }
+    return m.appLogDecryptionAlgorithm
 }
 // GetDecryptionKey gets the decryptionKey property value. DecryptionKey as string
 func (m *AppLogCollectionDownloadDetails) GetDecryptionKey()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.decryptionKey
-    }
+    return m.decryptionKey
 }
 // GetDownloadUrl gets the downloadUrl property value. Download SAS Url for completed AppLogUploadRequest
 func (m *AppLogCollectionDownloadDetails) GetDownloadUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.downloadUrl
-    }
+    return m.downloadUrl
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AppLogCollectionDownloadDetails) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -109,11 +93,7 @@ func (m *AppLogCollectionDownloadDetails) GetFieldDeserializers()(map[string]fun
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *AppLogCollectionDownloadDetails) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // Serialize serializes information the current object
 func (m *AppLogCollectionDownloadDetails) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -152,31 +132,21 @@ func (m *AppLogCollectionDownloadDetails) Serialize(writer i878a80d2330e89d26896
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AppLogCollectionDownloadDetails) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetAppLogDecryptionAlgorithm sets the appLogDecryptionAlgorithm property value. The appLogDecryptionAlgorithm property
 func (m *AppLogCollectionDownloadDetails) SetAppLogDecryptionAlgorithm(value *AppLogDecryptionAlgorithm)() {
-    if m != nil {
-        m.appLogDecryptionAlgorithm = value
-    }
+    m.appLogDecryptionAlgorithm = value
 }
 // SetDecryptionKey sets the decryptionKey property value. DecryptionKey as string
 func (m *AppLogCollectionDownloadDetails) SetDecryptionKey(value *string)() {
-    if m != nil {
-        m.decryptionKey = value
-    }
+    m.decryptionKey = value
 }
 // SetDownloadUrl sets the downloadUrl property value. Download SAS Url for completed AppLogUploadRequest
 func (m *AppLogCollectionDownloadDetails) SetDownloadUrl(value *string)() {
-    if m != nil {
-        m.downloadUrl = value
-    }
+    m.downloadUrl = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *AppLogCollectionDownloadDetails) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }

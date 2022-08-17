@@ -30,19 +30,11 @@ func CreateRoleAssignmentFromDiscriminatorValue(parseNode i878a80d2330e89d268963
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *RoleAssignment) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetAssignmentType gets the assignmentType property value. The type of the admin relationship(s) associated with the role assignment. Possible values are: none, delegatedAdminPrivileges, unknownFutureValue, granularDelegatedAdminPrivileges, delegatedAndGranularDelegetedAdminPrivileges. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: granularDelegatedAdminPrivileges , delegatedAndGranularDelegetedAdminPrivileges.
 func (m *RoleAssignment) GetAssignmentType()(*DelegatedPrivilegeStatus) {
-    if m == nil {
-        return nil
-    } else {
-        return m.assignmentType
-    }
+    return m.assignmentType
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *RoleAssignment) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -85,19 +77,11 @@ func (m *RoleAssignment) GetFieldDeserializers()(map[string]func(i878a80d2330e89
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *RoleAssignment) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetRoles gets the roles property value. The collection of roles assigned.
 func (m *RoleAssignment) GetRoles()([]RoleDefinitionable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.roles
-    }
+    return m.roles
 }
 // Serialize serializes information the current object
 func (m *RoleAssignment) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -134,25 +118,17 @@ func (m *RoleAssignment) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *RoleAssignment) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetAssignmentType sets the assignmentType property value. The type of the admin relationship(s) associated with the role assignment. Possible values are: none, delegatedAdminPrivileges, unknownFutureValue, granularDelegatedAdminPrivileges, delegatedAndGranularDelegetedAdminPrivileges. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: granularDelegatedAdminPrivileges , delegatedAndGranularDelegetedAdminPrivileges.
 func (m *RoleAssignment) SetAssignmentType(value *DelegatedPrivilegeStatus)() {
-    if m != nil {
-        m.assignmentType = value
-    }
+    m.assignmentType = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *RoleAssignment) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetRoles sets the roles property value. The collection of roles assigned.
 func (m *RoleAssignment) SetRoles(value []RoleDefinitionable)() {
-    if m != nil {
-        m.roles = value
-    }
+    m.roles = value
 }

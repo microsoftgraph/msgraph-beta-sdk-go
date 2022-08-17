@@ -32,11 +32,7 @@ func CreateSensitiveContentEvidenceFromDiscriminatorValue(parseNode i878a80d2330
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SensitiveContentEvidence) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *SensitiveContentEvidence) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -85,35 +81,19 @@ func (m *SensitiveContentEvidence) GetFieldDeserializers()(map[string]func(i878a
 }
 // GetLength gets the length property value. The length property
 func (m *SensitiveContentEvidence) GetLength()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.length
-    }
+    return m.length
 }
 // GetMatch gets the match property value. The match property
 func (m *SensitiveContentEvidence) GetMatch()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.match
-    }
+    return m.match
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *SensitiveContentEvidence) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetOffset gets the offset property value. The offset property
 func (m *SensitiveContentEvidence) GetOffset()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.offset
-    }
+    return m.offset
 }
 // Serialize serializes information the current object
 func (m *SensitiveContentEvidence) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -151,31 +131,21 @@ func (m *SensitiveContentEvidence) Serialize(writer i878a80d2330e89d26896388a3f4
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SensitiveContentEvidence) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetLength sets the length property value. The length property
 func (m *SensitiveContentEvidence) SetLength(value *int32)() {
-    if m != nil {
-        m.length = value
-    }
+    m.length = value
 }
 // SetMatch sets the match property value. The match property
 func (m *SensitiveContentEvidence) SetMatch(value *string)() {
-    if m != nil {
-        m.match = value
-    }
+    m.match = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *SensitiveContentEvidence) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetOffset sets the offset property value. The offset property
 func (m *SensitiveContentEvidence) SetOffset(value *int32)() {
-    if m != nil {
-        m.offset = value
-    }
+    m.offset = value
 }

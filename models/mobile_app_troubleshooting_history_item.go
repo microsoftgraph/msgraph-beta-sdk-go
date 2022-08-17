@@ -58,11 +58,7 @@ func CreateMobileAppTroubleshootingHistoryItemFromDiscriminatorValue(parseNode i
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *MobileAppTroubleshootingHistoryItem) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *MobileAppTroubleshootingHistoryItem) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -101,27 +97,15 @@ func (m *MobileAppTroubleshootingHistoryItem) GetFieldDeserializers()(map[string
 }
 // GetOccurrenceDateTime gets the occurrenceDateTime property value. Time when the history item occurred.
 func (m *MobileAppTroubleshootingHistoryItem) GetOccurrenceDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.occurrenceDateTime
-    }
+    return m.occurrenceDateTime
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *MobileAppTroubleshootingHistoryItem) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetTroubleshootingErrorDetails gets the troubleshootingErrorDetails property value. Object containing detailed information about the error and its remediation.
 func (m *MobileAppTroubleshootingHistoryItem) GetTroubleshootingErrorDetails()(DeviceManagementTroubleshootingErrorDetailsable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.troubleshootingErrorDetails
-    }
+    return m.troubleshootingErrorDetails
 }
 // Serialize serializes information the current object
 func (m *MobileAppTroubleshootingHistoryItem) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -153,25 +137,17 @@ func (m *MobileAppTroubleshootingHistoryItem) Serialize(writer i878a80d2330e89d2
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *MobileAppTroubleshootingHistoryItem) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetOccurrenceDateTime sets the occurrenceDateTime property value. Time when the history item occurred.
 func (m *MobileAppTroubleshootingHistoryItem) SetOccurrenceDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.occurrenceDateTime = value
-    }
+    m.occurrenceDateTime = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *MobileAppTroubleshootingHistoryItem) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetTroubleshootingErrorDetails sets the troubleshootingErrorDetails property value. Object containing detailed information about the error and its remediation.
 func (m *MobileAppTroubleshootingHistoryItem) SetTroubleshootingErrorDetails(value DeviceManagementTroubleshootingErrorDetailsable)() {
-    if m != nil {
-        m.troubleshootingErrorDetails = value
-    }
+    m.troubleshootingErrorDetails = value
 }

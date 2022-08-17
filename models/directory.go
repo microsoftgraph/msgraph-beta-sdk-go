@@ -45,51 +45,27 @@ func CreateDirectoryFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f
 }
 // GetAdministrativeUnits gets the administrativeUnits property value. Conceptual container for user and group directory objects.
 func (m *Directory) GetAdministrativeUnits()([]AdministrativeUnitable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.administrativeUnits
-    }
+    return m.administrativeUnits
 }
 // GetAttributeSets gets the attributeSets property value. Group of related custom security attribute definitions.
 func (m *Directory) GetAttributeSets()([]AttributeSetable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.attributeSets
-    }
+    return m.attributeSets
 }
 // GetCustomSecurityAttributeDefinitions gets the customSecurityAttributeDefinitions property value. Schema of a custom security attributes (key-value pairs).
 func (m *Directory) GetCustomSecurityAttributeDefinitions()([]CustomSecurityAttributeDefinitionable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.customSecurityAttributeDefinitions
-    }
+    return m.customSecurityAttributeDefinitions
 }
 // GetDeletedItems gets the deletedItems property value. Recently deleted items. Read-only. Nullable.
 func (m *Directory) GetDeletedItems()([]DirectoryObjectable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deletedItems
-    }
+    return m.deletedItems
 }
 // GetFeatureRolloutPolicies gets the featureRolloutPolicies property value. The featureRolloutPolicies property
 func (m *Directory) GetFeatureRolloutPolicies()([]FeatureRolloutPolicyable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.featureRolloutPolicies
-    }
+    return m.featureRolloutPolicies
 }
 // GetFederationConfigurations gets the federationConfigurations property value. Configure domain federation with organizations whose identity provider (IdP) supports either the SAML or WS-Fed protocol.
 func (m *Directory) GetFederationConfigurations()([]IdentityProviderBaseable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.federationConfigurations
-    }
+    return m.federationConfigurations
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Directory) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -252,43 +228,23 @@ func (m *Directory) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
 }
 // GetImpactedResources gets the impactedResources property value. The impactedResources property
 func (m *Directory) GetImpactedResources()([]RecommendationResourceable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.impactedResources
-    }
+    return m.impactedResources
 }
 // GetInboundSharedUserProfiles gets the inboundSharedUserProfiles property value. The inboundSharedUserProfiles property
 func (m *Directory) GetInboundSharedUserProfiles()([]InboundSharedUserProfileable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.inboundSharedUserProfiles
-    }
+    return m.inboundSharedUserProfiles
 }
 // GetOutboundSharedUserProfiles gets the outboundSharedUserProfiles property value. The outboundSharedUserProfiles property
 func (m *Directory) GetOutboundSharedUserProfiles()([]OutboundSharedUserProfileable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.outboundSharedUserProfiles
-    }
+    return m.outboundSharedUserProfiles
 }
 // GetRecommendations gets the recommendations property value. The recommendations property
 func (m *Directory) GetRecommendations()([]Recommendationable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.recommendations
-    }
+    return m.recommendations
 }
 // GetSharedEmailDomains gets the sharedEmailDomains property value. The sharedEmailDomains property
 func (m *Directory) GetSharedEmailDomains()([]SharedEmailDomainable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.sharedEmailDomains
-    }
+    return m.sharedEmailDomains
 }
 // Serialize serializes information the current object
 func (m *Directory) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -410,67 +366,45 @@ func (m *Directory) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
 }
 // SetAdministrativeUnits sets the administrativeUnits property value. Conceptual container for user and group directory objects.
 func (m *Directory) SetAdministrativeUnits(value []AdministrativeUnitable)() {
-    if m != nil {
-        m.administrativeUnits = value
-    }
+    m.administrativeUnits = value
 }
 // SetAttributeSets sets the attributeSets property value. Group of related custom security attribute definitions.
 func (m *Directory) SetAttributeSets(value []AttributeSetable)() {
-    if m != nil {
-        m.attributeSets = value
-    }
+    m.attributeSets = value
 }
 // SetCustomSecurityAttributeDefinitions sets the customSecurityAttributeDefinitions property value. Schema of a custom security attributes (key-value pairs).
 func (m *Directory) SetCustomSecurityAttributeDefinitions(value []CustomSecurityAttributeDefinitionable)() {
-    if m != nil {
-        m.customSecurityAttributeDefinitions = value
-    }
+    m.customSecurityAttributeDefinitions = value
 }
 // SetDeletedItems sets the deletedItems property value. Recently deleted items. Read-only. Nullable.
 func (m *Directory) SetDeletedItems(value []DirectoryObjectable)() {
-    if m != nil {
-        m.deletedItems = value
-    }
+    m.deletedItems = value
 }
 // SetFeatureRolloutPolicies sets the featureRolloutPolicies property value. The featureRolloutPolicies property
 func (m *Directory) SetFeatureRolloutPolicies(value []FeatureRolloutPolicyable)() {
-    if m != nil {
-        m.featureRolloutPolicies = value
-    }
+    m.featureRolloutPolicies = value
 }
 // SetFederationConfigurations sets the federationConfigurations property value. Configure domain federation with organizations whose identity provider (IdP) supports either the SAML or WS-Fed protocol.
 func (m *Directory) SetFederationConfigurations(value []IdentityProviderBaseable)() {
-    if m != nil {
-        m.federationConfigurations = value
-    }
+    m.federationConfigurations = value
 }
 // SetImpactedResources sets the impactedResources property value. The impactedResources property
 func (m *Directory) SetImpactedResources(value []RecommendationResourceable)() {
-    if m != nil {
-        m.impactedResources = value
-    }
+    m.impactedResources = value
 }
 // SetInboundSharedUserProfiles sets the inboundSharedUserProfiles property value. The inboundSharedUserProfiles property
 func (m *Directory) SetInboundSharedUserProfiles(value []InboundSharedUserProfileable)() {
-    if m != nil {
-        m.inboundSharedUserProfiles = value
-    }
+    m.inboundSharedUserProfiles = value
 }
 // SetOutboundSharedUserProfiles sets the outboundSharedUserProfiles property value. The outboundSharedUserProfiles property
 func (m *Directory) SetOutboundSharedUserProfiles(value []OutboundSharedUserProfileable)() {
-    if m != nil {
-        m.outboundSharedUserProfiles = value
-    }
+    m.outboundSharedUserProfiles = value
 }
 // SetRecommendations sets the recommendations property value. The recommendations property
 func (m *Directory) SetRecommendations(value []Recommendationable)() {
-    if m != nil {
-        m.recommendations = value
-    }
+    m.recommendations = value
 }
 // SetSharedEmailDomains sets the sharedEmailDomains property value. The sharedEmailDomains property
 func (m *Directory) SetSharedEmailDomains(value []SharedEmailDomainable)() {
-    if m != nil {
-        m.sharedEmailDomains = value
-    }
+    m.sharedEmailDomains = value
 }

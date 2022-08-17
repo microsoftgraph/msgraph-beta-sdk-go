@@ -30,11 +30,7 @@ func CreateEventQueryFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *EventQuery) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *EventQuery) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -73,27 +69,15 @@ func (m *EventQuery) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *EventQuery) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetQuery gets the query property value. The query property
 func (m *EventQuery) GetQuery()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.query
-    }
+    return m.query
 }
 // GetQueryType gets the queryType property value. The queryType property
 func (m *EventQuery) GetQueryType()(*QueryType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.queryType
-    }
+    return m.queryType
 }
 // Serialize serializes information the current object
 func (m *EventQuery) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -126,25 +110,17 @@ func (m *EventQuery) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *EventQuery) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *EventQuery) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetQuery sets the query property value. The query property
 func (m *EventQuery) SetQuery(value *string)() {
-    if m != nil {
-        m.query = value
-    }
+    m.query = value
 }
 // SetQueryType sets the queryType property value. The queryType property
 func (m *EventQuery) SetQueryType(value *QueryType)() {
-    if m != nil {
-        m.queryType = value
-    }
+    m.queryType = value
 }

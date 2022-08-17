@@ -28,11 +28,7 @@ func CreateDecisionItemPrincipalResourceMembershipFromDiscriminatorValue(parseNo
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DecisionItemPrincipalResourceMembership) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DecisionItemPrincipalResourceMembership) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -61,19 +57,11 @@ func (m *DecisionItemPrincipalResourceMembership) GetFieldDeserializers()(map[st
 }
 // GetMembershipType gets the membershipType property value. The membershipType property
 func (m *DecisionItemPrincipalResourceMembership) GetMembershipType()(*DecisionItemPrincipalResourceMembershipType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.membershipType
-    }
+    return m.membershipType
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *DecisionItemPrincipalResourceMembership) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // Serialize serializes information the current object
 func (m *DecisionItemPrincipalResourceMembership) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -100,19 +88,13 @@ func (m *DecisionItemPrincipalResourceMembership) Serialize(writer i878a80d2330e
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DecisionItemPrincipalResourceMembership) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetMembershipType sets the membershipType property value. The membershipType property
 func (m *DecisionItemPrincipalResourceMembership) SetMembershipType(value *DecisionItemPrincipalResourceMembershipType)() {
-    if m != nil {
-        m.membershipType = value
-    }
+    m.membershipType = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *DecisionItemPrincipalResourceMembership) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }

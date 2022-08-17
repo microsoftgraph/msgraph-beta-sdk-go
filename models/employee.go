@@ -60,43 +60,23 @@ func CreateEmployeeFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f4
 }
 // GetAddress gets the address property value. The address property
 func (m *Employee) GetAddress()(PostalAddressTypeable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.address
-    }
+    return m.address
 }
 // GetBirthDate gets the birthDate property value. The birthDate property
 func (m *Employee) GetBirthDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly) {
-    if m == nil {
-        return nil
-    } else {
-        return m.birthDate
-    }
+    return m.birthDate
 }
 // GetDisplayName gets the displayName property value. The displayName property
 func (m *Employee) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
 // GetEmail gets the email property value. The email property
 func (m *Employee) GetEmail()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.email
-    }
+    return m.email
 }
 // GetEmploymentDate gets the employmentDate property value. The employmentDate property
 func (m *Employee) GetEmploymentDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly) {
-    if m == nil {
-        return nil
-    } else {
-        return m.employmentDate
-    }
+    return m.employmentDate
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Employee) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -289,107 +269,55 @@ func (m *Employee) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
 }
 // GetGivenName gets the givenName property value. The givenName property
 func (m *Employee) GetGivenName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.givenName
-    }
+    return m.givenName
 }
 // GetJobTitle gets the jobTitle property value. The jobTitle property
 func (m *Employee) GetJobTitle()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.jobTitle
-    }
+    return m.jobTitle
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. The lastModifiedDateTime property
 func (m *Employee) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastModifiedDateTime
-    }
+    return m.lastModifiedDateTime
 }
 // GetMiddleName gets the middleName property value. The middleName property
 func (m *Employee) GetMiddleName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.middleName
-    }
+    return m.middleName
 }
 // GetMobilePhone gets the mobilePhone property value. The mobilePhone property
 func (m *Employee) GetMobilePhone()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.mobilePhone
-    }
+    return m.mobilePhone
 }
 // GetNumber gets the number property value. The number property
 func (m *Employee) GetNumber()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.number
-    }
+    return m.number
 }
 // GetPersonalEmail gets the personalEmail property value. The personalEmail property
 func (m *Employee) GetPersonalEmail()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.personalEmail
-    }
+    return m.personalEmail
 }
 // GetPhoneNumber gets the phoneNumber property value. The phoneNumber property
 func (m *Employee) GetPhoneNumber()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.phoneNumber
-    }
+    return m.phoneNumber
 }
 // GetPicture gets the picture property value. The picture property
 func (m *Employee) GetPicture()([]Pictureable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.picture
-    }
+    return m.picture
 }
 // GetStatisticsGroupCode gets the statisticsGroupCode property value. The statisticsGroupCode property
 func (m *Employee) GetStatisticsGroupCode()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.statisticsGroupCode
-    }
+    return m.statisticsGroupCode
 }
 // GetStatus gets the status property value. The status property
 func (m *Employee) GetStatus()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.status
-    }
+    return m.status
 }
 // GetSurname gets the surname property value. The surname property
 func (m *Employee) GetSurname()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.surname
-    }
+    return m.surname
 }
 // GetTerminationDate gets the terminationDate property value. The terminationDate property
 func (m *Employee) GetTerminationDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly) {
-    if m == nil {
-        return nil
-    } else {
-        return m.terminationDate
-    }
+    return m.terminationDate
 }
 // Serialize serializes information the current object
 func (m *Employee) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -513,109 +441,73 @@ func (m *Employee) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
 }
 // SetAddress sets the address property value. The address property
 func (m *Employee) SetAddress(value PostalAddressTypeable)() {
-    if m != nil {
-        m.address = value
-    }
+    m.address = value
 }
 // SetBirthDate sets the birthDate property value. The birthDate property
 func (m *Employee) SetBirthDate(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)() {
-    if m != nil {
-        m.birthDate = value
-    }
+    m.birthDate = value
 }
 // SetDisplayName sets the displayName property value. The displayName property
 func (m *Employee) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }
 // SetEmail sets the email property value. The email property
 func (m *Employee) SetEmail(value *string)() {
-    if m != nil {
-        m.email = value
-    }
+    m.email = value
 }
 // SetEmploymentDate sets the employmentDate property value. The employmentDate property
 func (m *Employee) SetEmploymentDate(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)() {
-    if m != nil {
-        m.employmentDate = value
-    }
+    m.employmentDate = value
 }
 // SetGivenName sets the givenName property value. The givenName property
 func (m *Employee) SetGivenName(value *string)() {
-    if m != nil {
-        m.givenName = value
-    }
+    m.givenName = value
 }
 // SetJobTitle sets the jobTitle property value. The jobTitle property
 func (m *Employee) SetJobTitle(value *string)() {
-    if m != nil {
-        m.jobTitle = value
-    }
+    m.jobTitle = value
 }
 // SetLastModifiedDateTime sets the lastModifiedDateTime property value. The lastModifiedDateTime property
 func (m *Employee) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.lastModifiedDateTime = value
-    }
+    m.lastModifiedDateTime = value
 }
 // SetMiddleName sets the middleName property value. The middleName property
 func (m *Employee) SetMiddleName(value *string)() {
-    if m != nil {
-        m.middleName = value
-    }
+    m.middleName = value
 }
 // SetMobilePhone sets the mobilePhone property value. The mobilePhone property
 func (m *Employee) SetMobilePhone(value *string)() {
-    if m != nil {
-        m.mobilePhone = value
-    }
+    m.mobilePhone = value
 }
 // SetNumber sets the number property value. The number property
 func (m *Employee) SetNumber(value *string)() {
-    if m != nil {
-        m.number = value
-    }
+    m.number = value
 }
 // SetPersonalEmail sets the personalEmail property value. The personalEmail property
 func (m *Employee) SetPersonalEmail(value *string)() {
-    if m != nil {
-        m.personalEmail = value
-    }
+    m.personalEmail = value
 }
 // SetPhoneNumber sets the phoneNumber property value. The phoneNumber property
 func (m *Employee) SetPhoneNumber(value *string)() {
-    if m != nil {
-        m.phoneNumber = value
-    }
+    m.phoneNumber = value
 }
 // SetPicture sets the picture property value. The picture property
 func (m *Employee) SetPicture(value []Pictureable)() {
-    if m != nil {
-        m.picture = value
-    }
+    m.picture = value
 }
 // SetStatisticsGroupCode sets the statisticsGroupCode property value. The statisticsGroupCode property
 func (m *Employee) SetStatisticsGroupCode(value *string)() {
-    if m != nil {
-        m.statisticsGroupCode = value
-    }
+    m.statisticsGroupCode = value
 }
 // SetStatus sets the status property value. The status property
 func (m *Employee) SetStatus(value *string)() {
-    if m != nil {
-        m.status = value
-    }
+    m.status = value
 }
 // SetSurname sets the surname property value. The surname property
 func (m *Employee) SetSurname(value *string)() {
-    if m != nil {
-        m.surname = value
-    }
+    m.surname = value
 }
 // SetTerminationDate sets the terminationDate property value. The terminationDate property
 func (m *Employee) SetTerminationDate(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)() {
-    if m != nil {
-        m.terminationDate = value
-    }
+    m.terminationDate = value
 }

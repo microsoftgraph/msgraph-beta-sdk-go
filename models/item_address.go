@@ -29,19 +29,11 @@ func CreateItemAddressFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a
 }
 // GetDetail gets the detail property value. The detail property
 func (m *ItemAddress) GetDetail()(PhysicalAddressable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.detail
-    }
+    return m.detail
 }
 // GetDisplayName gets the displayName property value. Friendly name the user has assigned to this address.
 func (m *ItemAddress) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ItemAddress) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -80,11 +72,7 @@ func (m *ItemAddress) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
 }
 // GetGeoCoordinates gets the geoCoordinates property value. The geocoordinates of the address.
 func (m *ItemAddress) GetGeoCoordinates()(GeoCoordinatesable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.geoCoordinates
-    }
+    return m.geoCoordinates
 }
 // Serialize serializes information the current object
 func (m *ItemAddress) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -114,19 +102,13 @@ func (m *ItemAddress) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
 }
 // SetDetail sets the detail property value. The detail property
 func (m *ItemAddress) SetDetail(value PhysicalAddressable)() {
-    if m != nil {
-        m.detail = value
-    }
+    m.detail = value
 }
 // SetDisplayName sets the displayName property value. Friendly name the user has assigned to this address.
 func (m *ItemAddress) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }
 // SetGeoCoordinates sets the geoCoordinates property value. The geocoordinates of the address.
 func (m *ItemAddress) SetGeoCoordinates(value GeoCoordinatesable)() {
-    if m != nil {
-        m.geoCoordinates = value
-    }
+    m.geoCoordinates = value
 }

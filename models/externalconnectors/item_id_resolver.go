@@ -52,19 +52,11 @@ func (m *ItemIdResolver) GetFieldDeserializers()(map[string]func(i878a80d2330e89
 }
 // GetItemId gets the itemId property value. Pattern that specifies how to form the ID of the external item that the URL represents. The named groups from the regular expression in urlPattern within the urlMatchInfo can be referenced by inserting the group name inside curly brackets.
 func (m *ItemIdResolver) GetItemId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.itemId
-    }
+    return m.itemId
 }
 // GetUrlMatchInfo gets the urlMatchInfo property value. Configurations to match and resolve URL.
 func (m *ItemIdResolver) GetUrlMatchInfo()(UrlMatchInfoable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.urlMatchInfo
-    }
+    return m.urlMatchInfo
 }
 // Serialize serializes information the current object
 func (m *ItemIdResolver) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -88,13 +80,9 @@ func (m *ItemIdResolver) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
 }
 // SetItemId sets the itemId property value. Pattern that specifies how to form the ID of the external item that the URL represents. The named groups from the regular expression in urlPattern within the urlMatchInfo can be referenced by inserting the group name inside curly brackets.
 func (m *ItemIdResolver) SetItemId(value *string)() {
-    if m != nil {
-        m.itemId = value
-    }
+    m.itemId = value
 }
 // SetUrlMatchInfo sets the urlMatchInfo property value. Configurations to match and resolve URL.
 func (m *ItemIdResolver) SetUrlMatchInfo(value UrlMatchInfoable)() {
-    if m != nil {
-        m.urlMatchInfo = value
-    }
+    m.urlMatchInfo = value
 }

@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AuthenticationContextClassReference 
+// AuthenticationContextClassReference provides operations to manage the collection of accessReviewDecision entities.
 type AuthenticationContextClassReference struct {
     Entity
     // A short explanation of the policies that are enforced by authenticationContextClassReference. This value should be used to provide secondary text to describe the authentication context class reference when building user facing admin experiences. For example, selection UX.
@@ -14,7 +14,7 @@ type AuthenticationContextClassReference struct {
     // Indicates whether the authenticationContextClassReference has been published by the security admin and is ready for use by apps. When it is set to false it should not be shown in admin UX experiences because the value is not currently available for selection.
     isAvailable *bool
 }
-// NewAuthenticationContextClassReference instantiates a new AuthenticationContextClassReference and sets the default values.
+// NewAuthenticationContextClassReference instantiates a new authenticationContextClassReference and sets the default values.
 func NewAuthenticationContextClassReference()(*AuthenticationContextClassReference) {
     m := &AuthenticationContextClassReference{
         Entity: *NewEntity(),
@@ -29,19 +29,11 @@ func CreateAuthenticationContextClassReferenceFromDiscriminatorValue(parseNode i
 }
 // GetDescription gets the description property value. A short explanation of the policies that are enforced by authenticationContextClassReference. This value should be used to provide secondary text to describe the authentication context class reference when building user facing admin experiences. For example, selection UX.
 func (m *AuthenticationContextClassReference) GetDescription()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.description
-    }
+    return m.description
 }
 // GetDisplayName gets the displayName property value. The display name is the friendly name of the authenticationContextClassReference. This value should be used to identify the authentication context class reference when building user facing admin experiences. For example, selection UX.
 func (m *AuthenticationContextClassReference) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AuthenticationContextClassReference) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -80,11 +72,7 @@ func (m *AuthenticationContextClassReference) GetFieldDeserializers()(map[string
 }
 // GetIsAvailable gets the isAvailable property value. Indicates whether the authenticationContextClassReference has been published by the security admin and is ready for use by apps. When it is set to false it should not be shown in admin UX experiences because the value is not currently available for selection.
 func (m *AuthenticationContextClassReference) GetIsAvailable()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isAvailable
-    }
+    return m.isAvailable
 }
 // Serialize serializes information the current object
 func (m *AuthenticationContextClassReference) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -114,19 +102,13 @@ func (m *AuthenticationContextClassReference) Serialize(writer i878a80d2330e89d2
 }
 // SetDescription sets the description property value. A short explanation of the policies that are enforced by authenticationContextClassReference. This value should be used to provide secondary text to describe the authentication context class reference when building user facing admin experiences. For example, selection UX.
 func (m *AuthenticationContextClassReference) SetDescription(value *string)() {
-    if m != nil {
-        m.description = value
-    }
+    m.description = value
 }
 // SetDisplayName sets the displayName property value. The display name is the friendly name of the authenticationContextClassReference. This value should be used to identify the authentication context class reference when building user facing admin experiences. For example, selection UX.
 func (m *AuthenticationContextClassReference) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }
 // SetIsAvailable sets the isAvailable property value. Indicates whether the authenticationContextClassReference has been published by the security admin and is ready for use by apps. When it is set to false it should not be shown in admin UX experiences because the value is not currently available for selection.
 func (m *AuthenticationContextClassReference) SetIsAvailable(value *bool)() {
-    if m != nil {
-        m.isAvailable = value
-    }
+    m.isAvailable = value
 }

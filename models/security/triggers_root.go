@@ -45,11 +45,7 @@ func (m *TriggersRoot) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
 }
 // GetRetentionEvents gets the retentionEvents property value. The retentionEvents property
 func (m *TriggersRoot) GetRetentionEvents()([]RetentionEventable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.retentionEvents
-    }
+    return m.retentionEvents
 }
 // Serialize serializes information the current object
 func (m *TriggersRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -71,7 +67,5 @@ func (m *TriggersRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
 }
 // SetRetentionEvents sets the retentionEvents property value. The retentionEvents property
 func (m *TriggersRoot) SetRetentionEvents(value []RetentionEventable)() {
-    if m != nil {
-        m.retentionEvents = value
-    }
+    m.retentionEvents = value
 }

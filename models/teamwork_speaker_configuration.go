@@ -36,27 +36,15 @@ func CreateTeamworkSpeakerConfigurationFromDiscriminatorValue(parseNode i878a80d
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TeamworkSpeakerConfiguration) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetDefaultCommunicationSpeaker gets the defaultCommunicationSpeaker property value. The defaultCommunicationSpeaker property
 func (m *TeamworkSpeakerConfiguration) GetDefaultCommunicationSpeaker()(TeamworkPeripheralable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.defaultCommunicationSpeaker
-    }
+    return m.defaultCommunicationSpeaker
 }
 // GetDefaultSpeaker gets the defaultSpeaker property value. The defaultSpeaker property
 func (m *TeamworkSpeakerConfiguration) GetDefaultSpeaker()(TeamworkPeripheralable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.defaultSpeaker
-    }
+    return m.defaultSpeaker
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *TeamworkSpeakerConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -129,35 +117,19 @@ func (m *TeamworkSpeakerConfiguration) GetFieldDeserializers()(map[string]func(i
 }
 // GetIsCommunicationSpeakerOptional gets the isCommunicationSpeakerOptional property value. True if the communication speaker is optional. Used to compute the health state if the communication speaker is not optional.
 func (m *TeamworkSpeakerConfiguration) GetIsCommunicationSpeakerOptional()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isCommunicationSpeakerOptional
-    }
+    return m.isCommunicationSpeakerOptional
 }
 // GetIsSpeakerOptional gets the isSpeakerOptional property value. True if the configured speaker is optional. Used to compute the health state if the speaker is not optional.
 func (m *TeamworkSpeakerConfiguration) GetIsSpeakerOptional()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isSpeakerOptional
-    }
+    return m.isSpeakerOptional
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *TeamworkSpeakerConfiguration) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetSpeakers gets the speakers property value. The speakers property
 func (m *TeamworkSpeakerConfiguration) GetSpeakers()([]TeamworkPeripheralable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.speakers
-    }
+    return m.speakers
 }
 // Serialize serializes information the current object
 func (m *TeamworkSpeakerConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -211,43 +183,29 @@ func (m *TeamworkSpeakerConfiguration) Serialize(writer i878a80d2330e89d26896388
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TeamworkSpeakerConfiguration) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetDefaultCommunicationSpeaker sets the defaultCommunicationSpeaker property value. The defaultCommunicationSpeaker property
 func (m *TeamworkSpeakerConfiguration) SetDefaultCommunicationSpeaker(value TeamworkPeripheralable)() {
-    if m != nil {
-        m.defaultCommunicationSpeaker = value
-    }
+    m.defaultCommunicationSpeaker = value
 }
 // SetDefaultSpeaker sets the defaultSpeaker property value. The defaultSpeaker property
 func (m *TeamworkSpeakerConfiguration) SetDefaultSpeaker(value TeamworkPeripheralable)() {
-    if m != nil {
-        m.defaultSpeaker = value
-    }
+    m.defaultSpeaker = value
 }
 // SetIsCommunicationSpeakerOptional sets the isCommunicationSpeakerOptional property value. True if the communication speaker is optional. Used to compute the health state if the communication speaker is not optional.
 func (m *TeamworkSpeakerConfiguration) SetIsCommunicationSpeakerOptional(value *bool)() {
-    if m != nil {
-        m.isCommunicationSpeakerOptional = value
-    }
+    m.isCommunicationSpeakerOptional = value
 }
 // SetIsSpeakerOptional sets the isSpeakerOptional property value. True if the configured speaker is optional. Used to compute the health state if the speaker is not optional.
 func (m *TeamworkSpeakerConfiguration) SetIsSpeakerOptional(value *bool)() {
-    if m != nil {
-        m.isSpeakerOptional = value
-    }
+    m.isSpeakerOptional = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *TeamworkSpeakerConfiguration) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetSpeakers sets the speakers property value. The speakers property
 func (m *TeamworkSpeakerConfiguration) SetSpeakers(value []TeamworkPeripheralable)() {
-    if m != nil {
-        m.speakers = value
-    }
+    m.speakers = value
 }

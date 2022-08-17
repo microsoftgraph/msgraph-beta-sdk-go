@@ -44,67 +44,35 @@ func CreateAndroidForWorkAppConfigurationSchemaItemFromDiscriminatorValue(parseN
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AndroidForWorkAppConfigurationSchemaItem) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetDataType gets the dataType property value. Data type for a configuration item inside an Android for Work application's custom configuration schema
 func (m *AndroidForWorkAppConfigurationSchemaItem) GetDataType()(*AndroidForWorkAppConfigurationSchemaItemDataType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.dataType
-    }
+    return m.dataType
 }
 // GetDefaultBoolValue gets the defaultBoolValue property value. Default value for boolean type items, if specified by the app developer
 func (m *AndroidForWorkAppConfigurationSchemaItem) GetDefaultBoolValue()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.defaultBoolValue
-    }
+    return m.defaultBoolValue
 }
 // GetDefaultIntValue gets the defaultIntValue property value. Default value for integer type items, if specified by the app developer
 func (m *AndroidForWorkAppConfigurationSchemaItem) GetDefaultIntValue()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.defaultIntValue
-    }
+    return m.defaultIntValue
 }
 // GetDefaultStringArrayValue gets the defaultStringArrayValue property value. Default value for string array type items, if specified by the app developer
 func (m *AndroidForWorkAppConfigurationSchemaItem) GetDefaultStringArrayValue()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.defaultStringArrayValue
-    }
+    return m.defaultStringArrayValue
 }
 // GetDefaultStringValue gets the defaultStringValue property value. Default value for string type items, if specified by the app developer
 func (m *AndroidForWorkAppConfigurationSchemaItem) GetDefaultStringValue()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.defaultStringValue
-    }
+    return m.defaultStringValue
 }
 // GetDescription gets the description property value. Description of what the item controls within the application
 func (m *AndroidForWorkAppConfigurationSchemaItem) GetDescription()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.description
-    }
+    return m.description
 }
 // GetDisplayName gets the displayName property value. Human readable name
 func (m *AndroidForWorkAppConfigurationSchemaItem) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AndroidForWorkAppConfigurationSchemaItem) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -221,27 +189,15 @@ func (m *AndroidForWorkAppConfigurationSchemaItem) GetFieldDeserializers()(map[s
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *AndroidForWorkAppConfigurationSchemaItem) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetSchemaItemKey gets the schemaItemKey property value. Unique key the application uses to identify the item
 func (m *AndroidForWorkAppConfigurationSchemaItem) GetSchemaItemKey()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.schemaItemKey
-    }
+    return m.schemaItemKey
 }
 // GetSelections gets the selections property value. List of human readable name/value pairs for the valid values that can be set for this item (Choice and Multiselect items only)
 func (m *AndroidForWorkAppConfigurationSchemaItem) GetSelections()([]KeyValuePairable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.selections
-    }
+    return m.selections
 }
 // Serialize serializes information the current object
 func (m *AndroidForWorkAppConfigurationSchemaItem) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -320,67 +276,45 @@ func (m *AndroidForWorkAppConfigurationSchemaItem) Serialize(writer i878a80d2330
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AndroidForWorkAppConfigurationSchemaItem) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetDataType sets the dataType property value. Data type for a configuration item inside an Android for Work application's custom configuration schema
 func (m *AndroidForWorkAppConfigurationSchemaItem) SetDataType(value *AndroidForWorkAppConfigurationSchemaItemDataType)() {
-    if m != nil {
-        m.dataType = value
-    }
+    m.dataType = value
 }
 // SetDefaultBoolValue sets the defaultBoolValue property value. Default value for boolean type items, if specified by the app developer
 func (m *AndroidForWorkAppConfigurationSchemaItem) SetDefaultBoolValue(value *bool)() {
-    if m != nil {
-        m.defaultBoolValue = value
-    }
+    m.defaultBoolValue = value
 }
 // SetDefaultIntValue sets the defaultIntValue property value. Default value for integer type items, if specified by the app developer
 func (m *AndroidForWorkAppConfigurationSchemaItem) SetDefaultIntValue(value *int32)() {
-    if m != nil {
-        m.defaultIntValue = value
-    }
+    m.defaultIntValue = value
 }
 // SetDefaultStringArrayValue sets the defaultStringArrayValue property value. Default value for string array type items, if specified by the app developer
 func (m *AndroidForWorkAppConfigurationSchemaItem) SetDefaultStringArrayValue(value []string)() {
-    if m != nil {
-        m.defaultStringArrayValue = value
-    }
+    m.defaultStringArrayValue = value
 }
 // SetDefaultStringValue sets the defaultStringValue property value. Default value for string type items, if specified by the app developer
 func (m *AndroidForWorkAppConfigurationSchemaItem) SetDefaultStringValue(value *string)() {
-    if m != nil {
-        m.defaultStringValue = value
-    }
+    m.defaultStringValue = value
 }
 // SetDescription sets the description property value. Description of what the item controls within the application
 func (m *AndroidForWorkAppConfigurationSchemaItem) SetDescription(value *string)() {
-    if m != nil {
-        m.description = value
-    }
+    m.description = value
 }
 // SetDisplayName sets the displayName property value. Human readable name
 func (m *AndroidForWorkAppConfigurationSchemaItem) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *AndroidForWorkAppConfigurationSchemaItem) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetSchemaItemKey sets the schemaItemKey property value. Unique key the application uses to identify the item
 func (m *AndroidForWorkAppConfigurationSchemaItem) SetSchemaItemKey(value *string)() {
-    if m != nil {
-        m.schemaItemKey = value
-    }
+    m.schemaItemKey = value
 }
 // SetSelections sets the selections property value. List of human readable name/value pairs for the valid values that can be set for this item (Choice and Multiselect items only)
 func (m *AndroidForWorkAppConfigurationSchemaItem) SetSelections(value []KeyValuePairable)() {
-    if m != nil {
-        m.selections = value
-    }
+    m.selections = value
 }

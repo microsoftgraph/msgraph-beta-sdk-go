@@ -37,11 +37,7 @@ func CreateMicrosoftStoreForBusinessAppFromDiscriminatorValue(parseNode i878a80d
 }
 // GetContainedApps gets the containedApps property value. The collection of contained apps in a mobileApp acting as a package.
 func (m *MicrosoftStoreForBusinessApp) GetContainedApps()([]MobileContainedAppable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.containedApps
-    }
+    return m.containedApps
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *MicrosoftStoreForBusinessApp) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -124,51 +120,27 @@ func (m *MicrosoftStoreForBusinessApp) GetFieldDeserializers()(map[string]func(i
 }
 // GetLicenseType gets the licenseType property value. The licenseType property
 func (m *MicrosoftStoreForBusinessApp) GetLicenseType()(*MicrosoftStoreForBusinessLicenseType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.licenseType
-    }
+    return m.licenseType
 }
 // GetLicensingType gets the licensingType property value. The supported License Type.
 func (m *MicrosoftStoreForBusinessApp) GetLicensingType()(VppLicensingTypeable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.licensingType
-    }
+    return m.licensingType
 }
 // GetPackageIdentityName gets the packageIdentityName property value. The app package identifier
 func (m *MicrosoftStoreForBusinessApp) GetPackageIdentityName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.packageIdentityName
-    }
+    return m.packageIdentityName
 }
 // GetProductKey gets the productKey property value. The app product key
 func (m *MicrosoftStoreForBusinessApp) GetProductKey()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.productKey
-    }
+    return m.productKey
 }
 // GetTotalLicenseCount gets the totalLicenseCount property value. The total number of Microsoft Store for Business licenses.
 func (m *MicrosoftStoreForBusinessApp) GetTotalLicenseCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.totalLicenseCount
-    }
+    return m.totalLicenseCount
 }
 // GetUsedLicenseCount gets the usedLicenseCount property value. The number of Microsoft Store for Business licenses in use.
 func (m *MicrosoftStoreForBusinessApp) GetUsedLicenseCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.usedLicenseCount
-    }
+    return m.usedLicenseCount
 }
 // Serialize serializes information the current object
 func (m *MicrosoftStoreForBusinessApp) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -227,43 +199,29 @@ func (m *MicrosoftStoreForBusinessApp) Serialize(writer i878a80d2330e89d26896388
 }
 // SetContainedApps sets the containedApps property value. The collection of contained apps in a mobileApp acting as a package.
 func (m *MicrosoftStoreForBusinessApp) SetContainedApps(value []MobileContainedAppable)() {
-    if m != nil {
-        m.containedApps = value
-    }
+    m.containedApps = value
 }
 // SetLicenseType sets the licenseType property value. The licenseType property
 func (m *MicrosoftStoreForBusinessApp) SetLicenseType(value *MicrosoftStoreForBusinessLicenseType)() {
-    if m != nil {
-        m.licenseType = value
-    }
+    m.licenseType = value
 }
 // SetLicensingType sets the licensingType property value. The supported License Type.
 func (m *MicrosoftStoreForBusinessApp) SetLicensingType(value VppLicensingTypeable)() {
-    if m != nil {
-        m.licensingType = value
-    }
+    m.licensingType = value
 }
 // SetPackageIdentityName sets the packageIdentityName property value. The app package identifier
 func (m *MicrosoftStoreForBusinessApp) SetPackageIdentityName(value *string)() {
-    if m != nil {
-        m.packageIdentityName = value
-    }
+    m.packageIdentityName = value
 }
 // SetProductKey sets the productKey property value. The app product key
 func (m *MicrosoftStoreForBusinessApp) SetProductKey(value *string)() {
-    if m != nil {
-        m.productKey = value
-    }
+    m.productKey = value
 }
 // SetTotalLicenseCount sets the totalLicenseCount property value. The total number of Microsoft Store for Business licenses.
 func (m *MicrosoftStoreForBusinessApp) SetTotalLicenseCount(value *int32)() {
-    if m != nil {
-        m.totalLicenseCount = value
-    }
+    m.totalLicenseCount = value
 }
 // SetUsedLicenseCount sets the usedLicenseCount property value. The number of Microsoft Store for Business licenses in use.
 func (m *MicrosoftStoreForBusinessApp) SetUsedLicenseCount(value *int32)() {
-    if m != nil {
-        m.usedLicenseCount = value
-    }
+    m.usedLicenseCount = value
 }

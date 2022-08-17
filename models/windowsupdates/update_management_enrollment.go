@@ -40,11 +40,7 @@ func (m *UpdateManagementEnrollment) GetFieldDeserializers()(map[string]func(i87
 }
 // GetUpdateCategory gets the updateCategory property value. The updateCategory property
 func (m *UpdateManagementEnrollment) GetUpdateCategory()(*UpdateCategory) {
-    if m == nil {
-        return nil
-    } else {
-        return m.updateCategory
-    }
+    return m.updateCategory
 }
 // Serialize serializes information the current object
 func (m *UpdateManagementEnrollment) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -63,7 +59,5 @@ func (m *UpdateManagementEnrollment) Serialize(writer i878a80d2330e89d26896388a3
 }
 // SetUpdateCategory sets the updateCategory property value. The updateCategory property
 func (m *UpdateManagementEnrollment) SetUpdateCategory(value *UpdateCategory)() {
-    if m != nil {
-        m.updateCategory = value
-    }
+    m.updateCategory = value
 }

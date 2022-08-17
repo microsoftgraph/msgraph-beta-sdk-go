@@ -28,11 +28,7 @@ func CreateUnifiedRoleFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *UnifiedRole) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *UnifiedRole) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -61,19 +57,11 @@ func (m *UnifiedRole) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *UnifiedRole) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetRoleDefinitionId gets the roleDefinitionId property value. The unified role definition ID of the directory role. Refer to unifiedRoleDefinition resource.
 func (m *UnifiedRole) GetRoleDefinitionId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.roleDefinitionId
-    }
+    return m.roleDefinitionId
 }
 // Serialize serializes information the current object
 func (m *UnifiedRole) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -99,19 +87,13 @@ func (m *UnifiedRole) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *UnifiedRole) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *UnifiedRole) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetRoleDefinitionId sets the roleDefinitionId property value. The unified role definition ID of the directory role. Refer to unifiedRoleDefinition resource.
 func (m *UnifiedRole) SetRoleDefinitionId(value *string)() {
-    if m != nil {
-        m.roleDefinitionId = value
-    }
+    m.roleDefinitionId = value
 }

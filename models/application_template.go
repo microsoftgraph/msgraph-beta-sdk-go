@@ -43,27 +43,15 @@ func CreateApplicationTemplateFromDiscriminatorValue(parseNode i878a80d2330e89d2
 }
 // GetCategories gets the categories property value. The list of categories for the application. Supported values can be: Collaboration, Business Management, Consumer, Content management, CRM, Data services, Developer services, E-commerce, Education, ERP, Finance, Health, Human resources, IT infrastructure, Mail, Management, Marketing, Media, Productivity, Project management, Telecommunications, Tools, Travel, and Web design & hosting.
 func (m *ApplicationTemplate) GetCategories()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.categories
-    }
+    return m.categories
 }
 // GetDescription gets the description property value. A description of the application.
 func (m *ApplicationTemplate) GetDescription()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.description
-    }
+    return m.description
 }
 // GetDisplayName gets the displayName property value. The name of the application.
 func (m *ApplicationTemplate) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ApplicationTemplate) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -184,59 +172,31 @@ func (m *ApplicationTemplate) GetFieldDeserializers()(map[string]func(i878a80d23
 }
 // GetHomePageUrl gets the homePageUrl property value. The home page URL of the application.
 func (m *ApplicationTemplate) GetHomePageUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.homePageUrl
-    }
+    return m.homePageUrl
 }
 // GetInformationalUrls gets the informationalUrls property value. The informationalUrls property
 func (m *ApplicationTemplate) GetInformationalUrls()(InformationalUrlsable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.informationalUrls
-    }
+    return m.informationalUrls
 }
 // GetLogoUrl gets the logoUrl property value. The URL to get the logo for this application.
 func (m *ApplicationTemplate) GetLogoUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.logoUrl
-    }
+    return m.logoUrl
 }
 // GetPublisher gets the publisher property value. The name of the publisher for this application.
 func (m *ApplicationTemplate) GetPublisher()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.publisher
-    }
+    return m.publisher
 }
 // GetSupportedClaimConfiguration gets the supportedClaimConfiguration property value. The supportedClaimConfiguration property
 func (m *ApplicationTemplate) GetSupportedClaimConfiguration()(SupportedClaimConfigurationable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.supportedClaimConfiguration
-    }
+    return m.supportedClaimConfiguration
 }
 // GetSupportedProvisioningTypes gets the supportedProvisioningTypes property value. The list of provisioning modes supported by this application. The only valid value is sync.
 func (m *ApplicationTemplate) GetSupportedProvisioningTypes()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.supportedProvisioningTypes
-    }
+    return m.supportedProvisioningTypes
 }
 // GetSupportedSingleSignOnModes gets the supportedSingleSignOnModes property value. The list of single sign-on modes supported by this application. The supported values are oidc, password, saml, and notSupported.
 func (m *ApplicationTemplate) GetSupportedSingleSignOnModes()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.supportedSingleSignOnModes
-    }
+    return m.supportedSingleSignOnModes
 }
 // Serialize serializes information the current object
 func (m *ApplicationTemplate) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -308,61 +268,41 @@ func (m *ApplicationTemplate) Serialize(writer i878a80d2330e89d26896388a3f487eef
 }
 // SetCategories sets the categories property value. The list of categories for the application. Supported values can be: Collaboration, Business Management, Consumer, Content management, CRM, Data services, Developer services, E-commerce, Education, ERP, Finance, Health, Human resources, IT infrastructure, Mail, Management, Marketing, Media, Productivity, Project management, Telecommunications, Tools, Travel, and Web design & hosting.
 func (m *ApplicationTemplate) SetCategories(value []string)() {
-    if m != nil {
-        m.categories = value
-    }
+    m.categories = value
 }
 // SetDescription sets the description property value. A description of the application.
 func (m *ApplicationTemplate) SetDescription(value *string)() {
-    if m != nil {
-        m.description = value
-    }
+    m.description = value
 }
 // SetDisplayName sets the displayName property value. The name of the application.
 func (m *ApplicationTemplate) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }
 // SetHomePageUrl sets the homePageUrl property value. The home page URL of the application.
 func (m *ApplicationTemplate) SetHomePageUrl(value *string)() {
-    if m != nil {
-        m.homePageUrl = value
-    }
+    m.homePageUrl = value
 }
 // SetInformationalUrls sets the informationalUrls property value. The informationalUrls property
 func (m *ApplicationTemplate) SetInformationalUrls(value InformationalUrlsable)() {
-    if m != nil {
-        m.informationalUrls = value
-    }
+    m.informationalUrls = value
 }
 // SetLogoUrl sets the logoUrl property value. The URL to get the logo for this application.
 func (m *ApplicationTemplate) SetLogoUrl(value *string)() {
-    if m != nil {
-        m.logoUrl = value
-    }
+    m.logoUrl = value
 }
 // SetPublisher sets the publisher property value. The name of the publisher for this application.
 func (m *ApplicationTemplate) SetPublisher(value *string)() {
-    if m != nil {
-        m.publisher = value
-    }
+    m.publisher = value
 }
 // SetSupportedClaimConfiguration sets the supportedClaimConfiguration property value. The supportedClaimConfiguration property
 func (m *ApplicationTemplate) SetSupportedClaimConfiguration(value SupportedClaimConfigurationable)() {
-    if m != nil {
-        m.supportedClaimConfiguration = value
-    }
+    m.supportedClaimConfiguration = value
 }
 // SetSupportedProvisioningTypes sets the supportedProvisioningTypes property value. The list of provisioning modes supported by this application. The only valid value is sync.
 func (m *ApplicationTemplate) SetSupportedProvisioningTypes(value []string)() {
-    if m != nil {
-        m.supportedProvisioningTypes = value
-    }
+    m.supportedProvisioningTypes = value
 }
 // SetSupportedSingleSignOnModes sets the supportedSingleSignOnModes property value. The list of single sign-on modes supported by this application. The supported values are oidc, password, saml, and notSupported.
 func (m *ApplicationTemplate) SetSupportedSingleSignOnModes(value []string)() {
-    if m != nil {
-        m.supportedSingleSignOnModes = value
-    }
+    m.supportedSingleSignOnModes = value
 }

@@ -27,19 +27,11 @@ func CreateProfileCardPropertyFromDiscriminatorValue(parseNode i878a80d2330e89d2
 }
 // GetAnnotations gets the annotations property value. Allows an administrator to set a custom display label for the directory property and localize it for the users in their tenant.
 func (m *ProfileCardProperty) GetAnnotations()([]ProfileCardAnnotationable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.annotations
-    }
+    return m.annotations
 }
 // GetDirectoryPropertyName gets the directoryPropertyName property value. Identifies a profileCardProperty resource in Get, Update, or Delete operations. Allows an administrator to surface hidden Azure Active Directory (Azure AD) properties on the Microsoft 365 profile card within their tenant. When present, the Azure AD field referenced in this field will be visible to all users in your tenant on the contact pane of the profile card. Allowed values for this field are: UserPrincipalName, Fax, StreetAddress, PostalCode, StateOrProvince, Alias, CustomAttribute1,  CustomAttribute2, CustomAttribute3, CustomAttribute4, CustomAttribute5, CustomAttribute6, CustomAttribute7, CustomAttribute8, CustomAttribute9, CustomAttribute10, CustomAttribute11, CustomAttribute12, CustomAttribute13, CustomAttribute14, CustomAttribute15.
 func (m *ProfileCardProperty) GetDirectoryPropertyName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.directoryPropertyName
-    }
+    return m.directoryPropertyName
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ProfileCardProperty) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -96,13 +88,9 @@ func (m *ProfileCardProperty) Serialize(writer i878a80d2330e89d26896388a3f487eef
 }
 // SetAnnotations sets the annotations property value. Allows an administrator to set a custom display label for the directory property and localize it for the users in their tenant.
 func (m *ProfileCardProperty) SetAnnotations(value []ProfileCardAnnotationable)() {
-    if m != nil {
-        m.annotations = value
-    }
+    m.annotations = value
 }
 // SetDirectoryPropertyName sets the directoryPropertyName property value. Identifies a profileCardProperty resource in Get, Update, or Delete operations. Allows an administrator to surface hidden Azure Active Directory (Azure AD) properties on the Microsoft 365 profile card within their tenant. When present, the Azure AD field referenced in this field will be visible to all users in your tenant on the contact pane of the profile card. Allowed values for this field are: UserPrincipalName, Fax, StreetAddress, PostalCode, StateOrProvince, Alias, CustomAttribute1,  CustomAttribute2, CustomAttribute3, CustomAttribute4, CustomAttribute5, CustomAttribute6, CustomAttribute7, CustomAttribute8, CustomAttribute9, CustomAttribute10, CustomAttribute11, CustomAttribute12, CustomAttribute13, CustomAttribute14, CustomAttribute15.
 func (m *ProfileCardProperty) SetDirectoryPropertyName(value *string)() {
-    if m != nil {
-        m.directoryPropertyName = value
-    }
+    m.directoryPropertyName = value
 }

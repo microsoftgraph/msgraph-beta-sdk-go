@@ -32,19 +32,11 @@ func CreateSensitivityLabelAssignmentFromDiscriminatorValue(parseNode i878a80d23
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SensitivityLabelAssignment) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetAssignmentMethod gets the assignmentMethod property value. The assignmentMethod property
 func (m *SensitivityLabelAssignment) GetAssignmentMethod()(*SensitivityLabelAssignmentMethod) {
-    if m == nil {
-        return nil
-    } else {
-        return m.assignmentMethod
-    }
+    return m.assignmentMethod
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *SensitivityLabelAssignment) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -93,27 +85,15 @@ func (m *SensitivityLabelAssignment) GetFieldDeserializers()(map[string]func(i87
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *SensitivityLabelAssignment) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetSensitivityLabelId gets the sensitivityLabelId property value. The unique identifier for the sensitivity label assigned to the file.
 func (m *SensitivityLabelAssignment) GetSensitivityLabelId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.sensitivityLabelId
-    }
+    return m.sensitivityLabelId
 }
 // GetTenantId gets the tenantId property value. The unique identifier for the tenant that hosts the file when this label is applied.
 func (m *SensitivityLabelAssignment) GetTenantId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.tenantId
-    }
+    return m.tenantId
 }
 // Serialize serializes information the current object
 func (m *SensitivityLabelAssignment) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -152,31 +132,21 @@ func (m *SensitivityLabelAssignment) Serialize(writer i878a80d2330e89d26896388a3
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SensitivityLabelAssignment) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetAssignmentMethod sets the assignmentMethod property value. The assignmentMethod property
 func (m *SensitivityLabelAssignment) SetAssignmentMethod(value *SensitivityLabelAssignmentMethod)() {
-    if m != nil {
-        m.assignmentMethod = value
-    }
+    m.assignmentMethod = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *SensitivityLabelAssignment) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetSensitivityLabelId sets the sensitivityLabelId property value. The unique identifier for the sensitivity label assigned to the file.
 func (m *SensitivityLabelAssignment) SetSensitivityLabelId(value *string)() {
-    if m != nil {
-        m.sensitivityLabelId = value
-    }
+    m.sensitivityLabelId = value
 }
 // SetTenantId sets the tenantId property value. The unique identifier for the tenant that hosts the file when this label is applied.
 func (m *SensitivityLabelAssignment) SetTenantId(value *string)() {
-    if m != nil {
-        m.tenantId = value
-    }
+    m.tenantId = value
 }

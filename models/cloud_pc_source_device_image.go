@@ -34,19 +34,11 @@ func CreateCloudPcSourceDeviceImageFromDiscriminatorValue(parseNode i878a80d2330
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CloudPcSourceDeviceImage) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetDisplayName gets the displayName property value. The display name for the source image.
 func (m *CloudPcSourceDeviceImage) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *CloudPcSourceDeviceImage) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -105,35 +97,19 @@ func (m *CloudPcSourceDeviceImage) GetFieldDeserializers()(map[string]func(i878a
 }
 // GetId gets the id property value. The ID of the source image.
 func (m *CloudPcSourceDeviceImage) GetId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.id
-    }
+    return m.id
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *CloudPcSourceDeviceImage) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetSubscriptionDisplayName gets the subscriptionDisplayName property value. The display name of subscription that hosts the source image.
 func (m *CloudPcSourceDeviceImage) GetSubscriptionDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.subscriptionDisplayName
-    }
+    return m.subscriptionDisplayName
 }
 // GetSubscriptionId gets the subscriptionId property value. The ID of subscription that hosts the source image.
 func (m *CloudPcSourceDeviceImage) GetSubscriptionId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.subscriptionId
-    }
+    return m.subscriptionId
 }
 // Serialize serializes information the current object
 func (m *CloudPcSourceDeviceImage) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -177,37 +153,25 @@ func (m *CloudPcSourceDeviceImage) Serialize(writer i878a80d2330e89d26896388a3f4
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CloudPcSourceDeviceImage) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetDisplayName sets the displayName property value. The display name for the source image.
 func (m *CloudPcSourceDeviceImage) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }
 // SetId sets the id property value. The ID of the source image.
 func (m *CloudPcSourceDeviceImage) SetId(value *string)() {
-    if m != nil {
-        m.id = value
-    }
+    m.id = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *CloudPcSourceDeviceImage) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetSubscriptionDisplayName sets the subscriptionDisplayName property value. The display name of subscription that hosts the source image.
 func (m *CloudPcSourceDeviceImage) SetSubscriptionDisplayName(value *string)() {
-    if m != nil {
-        m.subscriptionDisplayName = value
-    }
+    m.subscriptionDisplayName = value
 }
 // SetSubscriptionId sets the subscriptionId property value. The ID of subscription that hosts the source image.
 func (m *CloudPcSourceDeviceImage) SetSubscriptionId(value *string)() {
-    if m != nil {
-        m.subscriptionId = value
-    }
+    m.subscriptionId = value
 }

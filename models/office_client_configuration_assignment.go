@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// OfficeClientConfigurationAssignment provides operations to manage the collection of accessReview entities.
+// OfficeClientConfigurationAssignment provides operations to manage the collection of activityStatistics entities.
 type OfficeClientConfigurationAssignment struct {
     Entity
     // The target assignment defined by the admin.
@@ -40,11 +40,7 @@ func (m *OfficeClientConfigurationAssignment) GetFieldDeserializers()(map[string
 }
 // GetTarget gets the target property value. The target assignment defined by the admin.
 func (m *OfficeClientConfigurationAssignment) GetTarget()(OfficeConfigurationAssignmentTargetable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.target
-    }
+    return m.target
 }
 // Serialize serializes information the current object
 func (m *OfficeClientConfigurationAssignment) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -62,7 +58,5 @@ func (m *OfficeClientConfigurationAssignment) Serialize(writer i878a80d2330e89d2
 }
 // SetTarget sets the target property value. The target assignment defined by the admin.
 func (m *OfficeClientConfigurationAssignment) SetTarget(value OfficeConfigurationAssignmentTargetable)() {
-    if m != nil {
-        m.target = value
-    }
+    m.target = value
 }

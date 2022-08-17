@@ -43,11 +43,7 @@ func CreateWindowsKioskConfigurationFromDiscriminatorValue(parseNode i878a80d233
 }
 // GetEdgeKioskEnablePublicBrowsing gets the edgeKioskEnablePublicBrowsing property value. Enable public browsing kiosk mode for the Microsoft Edge browser. The Default is false.
 func (m *WindowsKioskConfiguration) GetEdgeKioskEnablePublicBrowsing()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.edgeKioskEnablePublicBrowsing
-    }
+    return m.edgeKioskEnablePublicBrowsing
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *WindowsKioskConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -168,75 +164,39 @@ func (m *WindowsKioskConfiguration) GetFieldDeserializers()(map[string]func(i878
 }
 // GetKioskBrowserBlockedUrlExceptions gets the kioskBrowserBlockedUrlExceptions property value. Specify URLs that the kiosk browser is allowed to navigate to
 func (m *WindowsKioskConfiguration) GetKioskBrowserBlockedUrlExceptions()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.kioskBrowserBlockedUrlExceptions
-    }
+    return m.kioskBrowserBlockedUrlExceptions
 }
 // GetKioskBrowserBlockedURLs gets the kioskBrowserBlockedURLs property value. Specify URLs that the kiosk browsers should not navigate to
 func (m *WindowsKioskConfiguration) GetKioskBrowserBlockedURLs()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.kioskBrowserBlockedURLs
-    }
+    return m.kioskBrowserBlockedURLs
 }
 // GetKioskBrowserDefaultUrl gets the kioskBrowserDefaultUrl property value. Specify the default URL the browser should navigate to on launch.
 func (m *WindowsKioskConfiguration) GetKioskBrowserDefaultUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.kioskBrowserDefaultUrl
-    }
+    return m.kioskBrowserDefaultUrl
 }
 // GetKioskBrowserEnableEndSessionButton gets the kioskBrowserEnableEndSessionButton property value. Enable the kiosk browser's end session button. By default, the end session button is disabled.
 func (m *WindowsKioskConfiguration) GetKioskBrowserEnableEndSessionButton()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.kioskBrowserEnableEndSessionButton
-    }
+    return m.kioskBrowserEnableEndSessionButton
 }
 // GetKioskBrowserEnableHomeButton gets the kioskBrowserEnableHomeButton property value. Enable the kiosk browser's home button. By default, the home button is disabled.
 func (m *WindowsKioskConfiguration) GetKioskBrowserEnableHomeButton()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.kioskBrowserEnableHomeButton
-    }
+    return m.kioskBrowserEnableHomeButton
 }
 // GetKioskBrowserEnableNavigationButtons gets the kioskBrowserEnableNavigationButtons property value. Enable the kiosk browser's navigation buttons(forward/back). By default, the navigation buttons are disabled.
 func (m *WindowsKioskConfiguration) GetKioskBrowserEnableNavigationButtons()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.kioskBrowserEnableNavigationButtons
-    }
+    return m.kioskBrowserEnableNavigationButtons
 }
 // GetKioskBrowserRestartOnIdleTimeInMinutes gets the kioskBrowserRestartOnIdleTimeInMinutes property value. Specify the number of minutes the session is idle until the kiosk browser restarts in a fresh state.  Valid values are 1-1440. Valid values 1 to 1440
 func (m *WindowsKioskConfiguration) GetKioskBrowserRestartOnIdleTimeInMinutes()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.kioskBrowserRestartOnIdleTimeInMinutes
-    }
+    return m.kioskBrowserRestartOnIdleTimeInMinutes
 }
 // GetKioskProfiles gets the kioskProfiles property value. This policy setting allows to define a list of Kiosk profiles for a Kiosk configuration. This collection can contain a maximum of 3 elements.
 func (m *WindowsKioskConfiguration) GetKioskProfiles()([]WindowsKioskProfileable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.kioskProfiles
-    }
+    return m.kioskProfiles
 }
 // GetWindowsKioskForceUpdateSchedule gets the windowsKioskForceUpdateSchedule property value. force update schedule for Kiosk devices.
 func (m *WindowsKioskConfiguration) GetWindowsKioskForceUpdateSchedule()(WindowsKioskForceUpdateScheduleable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.windowsKioskForceUpdateSchedule
-    }
+    return m.windowsKioskForceUpdateSchedule
 }
 // Serialize serializes information the current object
 func (m *WindowsKioskConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -312,61 +272,41 @@ func (m *WindowsKioskConfiguration) Serialize(writer i878a80d2330e89d26896388a3f
 }
 // SetEdgeKioskEnablePublicBrowsing sets the edgeKioskEnablePublicBrowsing property value. Enable public browsing kiosk mode for the Microsoft Edge browser. The Default is false.
 func (m *WindowsKioskConfiguration) SetEdgeKioskEnablePublicBrowsing(value *bool)() {
-    if m != nil {
-        m.edgeKioskEnablePublicBrowsing = value
-    }
+    m.edgeKioskEnablePublicBrowsing = value
 }
 // SetKioskBrowserBlockedUrlExceptions sets the kioskBrowserBlockedUrlExceptions property value. Specify URLs that the kiosk browser is allowed to navigate to
 func (m *WindowsKioskConfiguration) SetKioskBrowserBlockedUrlExceptions(value []string)() {
-    if m != nil {
-        m.kioskBrowserBlockedUrlExceptions = value
-    }
+    m.kioskBrowserBlockedUrlExceptions = value
 }
 // SetKioskBrowserBlockedURLs sets the kioskBrowserBlockedURLs property value. Specify URLs that the kiosk browsers should not navigate to
 func (m *WindowsKioskConfiguration) SetKioskBrowserBlockedURLs(value []string)() {
-    if m != nil {
-        m.kioskBrowserBlockedURLs = value
-    }
+    m.kioskBrowserBlockedURLs = value
 }
 // SetKioskBrowserDefaultUrl sets the kioskBrowserDefaultUrl property value. Specify the default URL the browser should navigate to on launch.
 func (m *WindowsKioskConfiguration) SetKioskBrowserDefaultUrl(value *string)() {
-    if m != nil {
-        m.kioskBrowserDefaultUrl = value
-    }
+    m.kioskBrowserDefaultUrl = value
 }
 // SetKioskBrowserEnableEndSessionButton sets the kioskBrowserEnableEndSessionButton property value. Enable the kiosk browser's end session button. By default, the end session button is disabled.
 func (m *WindowsKioskConfiguration) SetKioskBrowserEnableEndSessionButton(value *bool)() {
-    if m != nil {
-        m.kioskBrowserEnableEndSessionButton = value
-    }
+    m.kioskBrowserEnableEndSessionButton = value
 }
 // SetKioskBrowserEnableHomeButton sets the kioskBrowserEnableHomeButton property value. Enable the kiosk browser's home button. By default, the home button is disabled.
 func (m *WindowsKioskConfiguration) SetKioskBrowserEnableHomeButton(value *bool)() {
-    if m != nil {
-        m.kioskBrowserEnableHomeButton = value
-    }
+    m.kioskBrowserEnableHomeButton = value
 }
 // SetKioskBrowserEnableNavigationButtons sets the kioskBrowserEnableNavigationButtons property value. Enable the kiosk browser's navigation buttons(forward/back). By default, the navigation buttons are disabled.
 func (m *WindowsKioskConfiguration) SetKioskBrowserEnableNavigationButtons(value *bool)() {
-    if m != nil {
-        m.kioskBrowserEnableNavigationButtons = value
-    }
+    m.kioskBrowserEnableNavigationButtons = value
 }
 // SetKioskBrowserRestartOnIdleTimeInMinutes sets the kioskBrowserRestartOnIdleTimeInMinutes property value. Specify the number of minutes the session is idle until the kiosk browser restarts in a fresh state.  Valid values are 1-1440. Valid values 1 to 1440
 func (m *WindowsKioskConfiguration) SetKioskBrowserRestartOnIdleTimeInMinutes(value *int32)() {
-    if m != nil {
-        m.kioskBrowserRestartOnIdleTimeInMinutes = value
-    }
+    m.kioskBrowserRestartOnIdleTimeInMinutes = value
 }
 // SetKioskProfiles sets the kioskProfiles property value. This policy setting allows to define a list of Kiosk profiles for a Kiosk configuration. This collection can contain a maximum of 3 elements.
 func (m *WindowsKioskConfiguration) SetKioskProfiles(value []WindowsKioskProfileable)() {
-    if m != nil {
-        m.kioskProfiles = value
-    }
+    m.kioskProfiles = value
 }
 // SetWindowsKioskForceUpdateSchedule sets the windowsKioskForceUpdateSchedule property value. force update schedule for Kiosk devices.
 func (m *WindowsKioskConfiguration) SetWindowsKioskForceUpdateSchedule(value WindowsKioskForceUpdateScheduleable)() {
-    if m != nil {
-        m.windowsKioskForceUpdateSchedule = value
-    }
+    m.windowsKioskForceUpdateSchedule = value
 }

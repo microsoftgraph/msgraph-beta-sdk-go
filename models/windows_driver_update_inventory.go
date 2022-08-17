@@ -42,43 +42,23 @@ func CreateWindowsDriverUpdateInventoryFromDiscriminatorValue(parseNode i878a80d
 }
 // GetApplicableDeviceCount gets the applicableDeviceCount property value. The number of devices for which this driver is applicable.
 func (m *WindowsDriverUpdateInventory) GetApplicableDeviceCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.applicableDeviceCount
-    }
+    return m.applicableDeviceCount
 }
 // GetApprovalStatus gets the approvalStatus property value. An enum type to represent approval status of a driver.
 func (m *WindowsDriverUpdateInventory) GetApprovalStatus()(*DriverApprovalStatus) {
-    if m == nil {
-        return nil
-    } else {
-        return m.approvalStatus
-    }
+    return m.approvalStatus
 }
 // GetCategory gets the category property value. An enum type to represent which category a driver belongs to.
 func (m *WindowsDriverUpdateInventory) GetCategory()(*DriverCategory) {
-    if m == nil {
-        return nil
-    } else {
-        return m.category
-    }
+    return m.category
 }
 // GetDeployDateTime gets the deployDateTime property value. The date time when a driver should be deployed if approvalStatus is approved.
 func (m *WindowsDriverUpdateInventory) GetDeployDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deployDateTime
-    }
+    return m.deployDateTime
 }
 // GetDriverClass gets the driverClass property value. The class of the driver.
 func (m *WindowsDriverUpdateInventory) GetDriverClass()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.driverClass
-    }
+    return m.driverClass
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *WindowsDriverUpdateInventory) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -177,35 +157,19 @@ func (m *WindowsDriverUpdateInventory) GetFieldDeserializers()(map[string]func(i
 }
 // GetManufacturer gets the manufacturer property value. The manufacturer of the driver.
 func (m *WindowsDriverUpdateInventory) GetManufacturer()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.manufacturer
-    }
+    return m.manufacturer
 }
 // GetName gets the name property value. The name of the driver.
 func (m *WindowsDriverUpdateInventory) GetName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.name
-    }
+    return m.name
 }
 // GetReleaseDateTime gets the releaseDateTime property value. The release date time of the driver.
 func (m *WindowsDriverUpdateInventory) GetReleaseDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.releaseDateTime
-    }
+    return m.releaseDateTime
 }
 // GetVersion gets the version property value. The version of the driver.
 func (m *WindowsDriverUpdateInventory) GetVersion()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.version
-    }
+    return m.version
 }
 // Serialize serializes information the current object
 func (m *WindowsDriverUpdateInventory) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -273,55 +237,37 @@ func (m *WindowsDriverUpdateInventory) Serialize(writer i878a80d2330e89d26896388
 }
 // SetApplicableDeviceCount sets the applicableDeviceCount property value. The number of devices for which this driver is applicable.
 func (m *WindowsDriverUpdateInventory) SetApplicableDeviceCount(value *int32)() {
-    if m != nil {
-        m.applicableDeviceCount = value
-    }
+    m.applicableDeviceCount = value
 }
 // SetApprovalStatus sets the approvalStatus property value. An enum type to represent approval status of a driver.
 func (m *WindowsDriverUpdateInventory) SetApprovalStatus(value *DriverApprovalStatus)() {
-    if m != nil {
-        m.approvalStatus = value
-    }
+    m.approvalStatus = value
 }
 // SetCategory sets the category property value. An enum type to represent which category a driver belongs to.
 func (m *WindowsDriverUpdateInventory) SetCategory(value *DriverCategory)() {
-    if m != nil {
-        m.category = value
-    }
+    m.category = value
 }
 // SetDeployDateTime sets the deployDateTime property value. The date time when a driver should be deployed if approvalStatus is approved.
 func (m *WindowsDriverUpdateInventory) SetDeployDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.deployDateTime = value
-    }
+    m.deployDateTime = value
 }
 // SetDriverClass sets the driverClass property value. The class of the driver.
 func (m *WindowsDriverUpdateInventory) SetDriverClass(value *string)() {
-    if m != nil {
-        m.driverClass = value
-    }
+    m.driverClass = value
 }
 // SetManufacturer sets the manufacturer property value. The manufacturer of the driver.
 func (m *WindowsDriverUpdateInventory) SetManufacturer(value *string)() {
-    if m != nil {
-        m.manufacturer = value
-    }
+    m.manufacturer = value
 }
 // SetName sets the name property value. The name of the driver.
 func (m *WindowsDriverUpdateInventory) SetName(value *string)() {
-    if m != nil {
-        m.name = value
-    }
+    m.name = value
 }
 // SetReleaseDateTime sets the releaseDateTime property value. The release date time of the driver.
 func (m *WindowsDriverUpdateInventory) SetReleaseDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.releaseDateTime = value
-    }
+    m.releaseDateTime = value
 }
 // SetVersion sets the version property value. The version of the driver.
 func (m *WindowsDriverUpdateInventory) SetVersion(value *string)() {
-    if m != nil {
-        m.version = value
-    }
+    m.version = value
 }

@@ -28,11 +28,7 @@ func CreateAuthenticationSourceFilterFromDiscriminatorValue(parseNode i878a80d23
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AuthenticationSourceFilter) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AuthenticationSourceFilter) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -65,19 +61,11 @@ func (m *AuthenticationSourceFilter) GetFieldDeserializers()(map[string]func(i87
 }
 // GetIncludeApplications gets the includeApplications property value. Applications to include for evaluation of the authenticationListener. These applications trigger the associated action when used as the client application in the authentication flow. The application identifer is the application's client id.
 func (m *AuthenticationSourceFilter) GetIncludeApplications()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.includeApplications
-    }
+    return m.includeApplications
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *AuthenticationSourceFilter) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // Serialize serializes information the current object
 func (m *AuthenticationSourceFilter) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -103,19 +91,13 @@ func (m *AuthenticationSourceFilter) Serialize(writer i878a80d2330e89d26896388a3
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AuthenticationSourceFilter) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetIncludeApplications sets the includeApplications property value. Applications to include for evaluation of the authenticationListener. These applications trigger the associated action when used as the client application in the authentication flow. The application identifer is the application's client id.
 func (m *AuthenticationSourceFilter) SetIncludeApplications(value []string)() {
-    if m != nil {
-        m.includeApplications = value
-    }
+    m.includeApplications = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *AuthenticationSourceFilter) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }

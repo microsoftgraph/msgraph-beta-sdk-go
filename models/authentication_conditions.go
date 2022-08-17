@@ -28,19 +28,11 @@ func CreateAuthenticationConditionsFromDiscriminatorValue(parseNode i878a80d2330
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AuthenticationConditions) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetApplications gets the applications property value. The applications property
 func (m *AuthenticationConditions) GetApplications()(AuthenticationConditionsApplicationsable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.applications
-    }
+    return m.applications
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AuthenticationConditions) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -69,11 +61,7 @@ func (m *AuthenticationConditions) GetFieldDeserializers()(map[string]func(i878a
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *AuthenticationConditions) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // Serialize serializes information the current object
 func (m *AuthenticationConditions) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -99,19 +87,13 @@ func (m *AuthenticationConditions) Serialize(writer i878a80d2330e89d26896388a3f4
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AuthenticationConditions) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetApplications sets the applications property value. The applications property
 func (m *AuthenticationConditions) SetApplications(value AuthenticationConditionsApplicationsable)() {
-    if m != nil {
-        m.applications = value
-    }
+    m.applications = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *AuthenticationConditions) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }

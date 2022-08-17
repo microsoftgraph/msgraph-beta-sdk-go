@@ -34,27 +34,15 @@ func CreateManagementTemplateDetailedInfoFromDiscriminatorValue(parseNode i878a8
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ManagementTemplateDetailedInfo) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetCategory gets the category property value. The category property
 func (m *ManagementTemplateDetailedInfo) GetCategory()(*ManagementCategory) {
-    if m == nil {
-        return nil
-    } else {
-        return m.category
-    }
+    return m.category
 }
 // GetDisplayName gets the displayName property value. The display name for the management template. Required. Read-only.
 func (m *ManagementTemplateDetailedInfo) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ManagementTemplateDetailedInfo) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -113,27 +101,15 @@ func (m *ManagementTemplateDetailedInfo) GetFieldDeserializers()(map[string]func
 }
 // GetManagementTemplateId gets the managementTemplateId property value. The unique identifier for the management template. Required. Read-only.
 func (m *ManagementTemplateDetailedInfo) GetManagementTemplateId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.managementTemplateId
-    }
+    return m.managementTemplateId
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *ManagementTemplateDetailedInfo) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetVersion gets the version property value. The version property
 func (m *ManagementTemplateDetailedInfo) GetVersion()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.version
-    }
+    return m.version
 }
 // Serialize serializes information the current object
 func (m *ManagementTemplateDetailedInfo) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -178,37 +154,25 @@ func (m *ManagementTemplateDetailedInfo) Serialize(writer i878a80d2330e89d268963
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ManagementTemplateDetailedInfo) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetCategory sets the category property value. The category property
 func (m *ManagementTemplateDetailedInfo) SetCategory(value *ManagementCategory)() {
-    if m != nil {
-        m.category = value
-    }
+    m.category = value
 }
 // SetDisplayName sets the displayName property value. The display name for the management template. Required. Read-only.
 func (m *ManagementTemplateDetailedInfo) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }
 // SetManagementTemplateId sets the managementTemplateId property value. The unique identifier for the management template. Required. Read-only.
 func (m *ManagementTemplateDetailedInfo) SetManagementTemplateId(value *string)() {
-    if m != nil {
-        m.managementTemplateId = value
-    }
+    m.managementTemplateId = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *ManagementTemplateDetailedInfo) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetVersion sets the version property value. The version property
 func (m *ManagementTemplateDetailedInfo) SetVersion(value *int32)() {
-    if m != nil {
-        m.version = value
-    }
+    m.version = value
 }

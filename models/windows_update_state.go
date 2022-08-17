@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// WindowsUpdateState provides operations to manage the collection of accessReview entities.
+// WindowsUpdateState provides operations to manage the collection of activityStatistics entities.
 type WindowsUpdateState struct {
     Entity
     // Device display name.
@@ -42,27 +42,15 @@ func CreateWindowsUpdateStateFromDiscriminatorValue(parseNode i878a80d2330e89d26
 }
 // GetDeviceDisplayName gets the deviceDisplayName property value. Device display name.
 func (m *WindowsUpdateState) GetDeviceDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deviceDisplayName
-    }
+    return m.deviceDisplayName
 }
 // GetDeviceId gets the deviceId property value. The id of the device.
 func (m *WindowsUpdateState) GetDeviceId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deviceId
-    }
+    return m.deviceId
 }
 // GetFeatureUpdateVersion gets the featureUpdateVersion property value. The current feature update version of the device.
 func (m *WindowsUpdateState) GetFeatureUpdateVersion()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.featureUpdateVersion
-    }
+    return m.featureUpdateVersion
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *WindowsUpdateState) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -161,51 +149,27 @@ func (m *WindowsUpdateState) GetFieldDeserializers()(map[string]func(i878a80d233
 }
 // GetLastScanDateTime gets the lastScanDateTime property value. The date time that the Windows Update Agent did a successful scan.
 func (m *WindowsUpdateState) GetLastScanDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastScanDateTime
-    }
+    return m.lastScanDateTime
 }
 // GetLastSyncDateTime gets the lastSyncDateTime property value. Last date time that the device sync with with Microsoft Intune.
 func (m *WindowsUpdateState) GetLastSyncDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastSyncDateTime
-    }
+    return m.lastSyncDateTime
 }
 // GetQualityUpdateVersion gets the qualityUpdateVersion property value. The Quality Update Version of the device.
 func (m *WindowsUpdateState) GetQualityUpdateVersion()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.qualityUpdateVersion
-    }
+    return m.qualityUpdateVersion
 }
 // GetStatus gets the status property value. Windows update for business configuration device states
 func (m *WindowsUpdateState) GetStatus()(*WindowsUpdateStatus) {
-    if m == nil {
-        return nil
-    } else {
-        return m.status
-    }
+    return m.status
 }
 // GetUserId gets the userId property value. The id of the user.
 func (m *WindowsUpdateState) GetUserId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userId
-    }
+    return m.userId
 }
 // GetUserPrincipalName gets the userPrincipalName property value. User principal name.
 func (m *WindowsUpdateState) GetUserPrincipalName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userPrincipalName
-    }
+    return m.userPrincipalName
 }
 // Serialize serializes information the current object
 func (m *WindowsUpdateState) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -272,55 +236,37 @@ func (m *WindowsUpdateState) Serialize(writer i878a80d2330e89d26896388a3f487eef2
 }
 // SetDeviceDisplayName sets the deviceDisplayName property value. Device display name.
 func (m *WindowsUpdateState) SetDeviceDisplayName(value *string)() {
-    if m != nil {
-        m.deviceDisplayName = value
-    }
+    m.deviceDisplayName = value
 }
 // SetDeviceId sets the deviceId property value. The id of the device.
 func (m *WindowsUpdateState) SetDeviceId(value *string)() {
-    if m != nil {
-        m.deviceId = value
-    }
+    m.deviceId = value
 }
 // SetFeatureUpdateVersion sets the featureUpdateVersion property value. The current feature update version of the device.
 func (m *WindowsUpdateState) SetFeatureUpdateVersion(value *string)() {
-    if m != nil {
-        m.featureUpdateVersion = value
-    }
+    m.featureUpdateVersion = value
 }
 // SetLastScanDateTime sets the lastScanDateTime property value. The date time that the Windows Update Agent did a successful scan.
 func (m *WindowsUpdateState) SetLastScanDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.lastScanDateTime = value
-    }
+    m.lastScanDateTime = value
 }
 // SetLastSyncDateTime sets the lastSyncDateTime property value. Last date time that the device sync with with Microsoft Intune.
 func (m *WindowsUpdateState) SetLastSyncDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.lastSyncDateTime = value
-    }
+    m.lastSyncDateTime = value
 }
 // SetQualityUpdateVersion sets the qualityUpdateVersion property value. The Quality Update Version of the device.
 func (m *WindowsUpdateState) SetQualityUpdateVersion(value *string)() {
-    if m != nil {
-        m.qualityUpdateVersion = value
-    }
+    m.qualityUpdateVersion = value
 }
 // SetStatus sets the status property value. Windows update for business configuration device states
 func (m *WindowsUpdateState) SetStatus(value *WindowsUpdateStatus)() {
-    if m != nil {
-        m.status = value
-    }
+    m.status = value
 }
 // SetUserId sets the userId property value. The id of the user.
 func (m *WindowsUpdateState) SetUserId(value *string)() {
-    if m != nil {
-        m.userId = value
-    }
+    m.userId = value
 }
 // SetUserPrincipalName sets the userPrincipalName property value. User principal name.
 func (m *WindowsUpdateState) SetUserPrincipalName(value *string)() {
-    if m != nil {
-        m.userPrincipalName = value
-    }
+    m.userPrincipalName = value
 }

@@ -38,35 +38,19 @@ func CreateIpReferenceDataFromDiscriminatorValue(parseNode i878a80d2330e89d26896
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *IpReferenceData) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetAsn gets the asn property value. The asn property
 func (m *IpReferenceData) GetAsn()(*int64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.asn
-    }
+    return m.asn
 }
 // GetCity gets the city property value. The city property
 func (m *IpReferenceData) GetCity()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.city
-    }
+    return m.city
 }
 // GetCountryOrRegionCode gets the countryOrRegionCode property value. The countryOrRegionCode property
 func (m *IpReferenceData) GetCountryOrRegionCode()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.countryOrRegionCode
-    }
+    return m.countryOrRegionCode
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *IpReferenceData) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -145,35 +129,19 @@ func (m *IpReferenceData) GetFieldDeserializers()(map[string]func(i878a80d2330e8
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *IpReferenceData) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetOrganization gets the organization property value. The organization property
 func (m *IpReferenceData) GetOrganization()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.organization
-    }
+    return m.organization
 }
 // GetState gets the state property value. The state property
 func (m *IpReferenceData) GetState()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.state
-    }
+    return m.state
 }
 // GetVendor gets the vendor property value. The vendor property
 func (m *IpReferenceData) GetVendor()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.vendor_escaped
-    }
+    return m.vendor_escaped
 }
 // Serialize serializes information the current object
 func (m *IpReferenceData) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -229,49 +197,33 @@ func (m *IpReferenceData) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *IpReferenceData) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetAsn sets the asn property value. The asn property
 func (m *IpReferenceData) SetAsn(value *int64)() {
-    if m != nil {
-        m.asn = value
-    }
+    m.asn = value
 }
 // SetCity sets the city property value. The city property
 func (m *IpReferenceData) SetCity(value *string)() {
-    if m != nil {
-        m.city = value
-    }
+    m.city = value
 }
 // SetCountryOrRegionCode sets the countryOrRegionCode property value. The countryOrRegionCode property
 func (m *IpReferenceData) SetCountryOrRegionCode(value *string)() {
-    if m != nil {
-        m.countryOrRegionCode = value
-    }
+    m.countryOrRegionCode = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *IpReferenceData) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetOrganization sets the organization property value. The organization property
 func (m *IpReferenceData) SetOrganization(value *string)() {
-    if m != nil {
-        m.organization = value
-    }
+    m.organization = value
 }
 // SetState sets the state property value. The state property
 func (m *IpReferenceData) SetState(value *string)() {
-    if m != nil {
-        m.state = value
-    }
+    m.state = value
 }
 // SetVendor sets the vendor property value. The vendor property
 func (m *IpReferenceData) SetVendor(value *string)() {
-    if m != nil {
-        m.vendor_escaped = value
-    }
+    m.vendor_escaped = value
 }

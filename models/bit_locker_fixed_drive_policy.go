@@ -32,19 +32,11 @@ func CreateBitLockerFixedDrivePolicyFromDiscriminatorValue(parseNode i878a80d233
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *BitLockerFixedDrivePolicy) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetEncryptionMethod gets the encryptionMethod property value. Select the encryption method for fixed drives. Possible values are: aesCbc128, aesCbc256, xtsAes128, xtsAes256.
 func (m *BitLockerFixedDrivePolicy) GetEncryptionMethod()(*BitLockerEncryptionMethod) {
-    if m == nil {
-        return nil
-    } else {
-        return m.encryptionMethod
-    }
+    return m.encryptionMethod
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *BitLockerFixedDrivePolicy) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -93,27 +85,15 @@ func (m *BitLockerFixedDrivePolicy) GetFieldDeserializers()(map[string]func(i878
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *BitLockerFixedDrivePolicy) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetRecoveryOptions gets the recoveryOptions property value. This policy setting allows you to control how BitLocker-protected fixed data drives are recovered in the absence of the required credentials. This policy setting is applied when you turn on BitLocker.
 func (m *BitLockerFixedDrivePolicy) GetRecoveryOptions()(BitLockerRecoveryOptionsable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.recoveryOptions
-    }
+    return m.recoveryOptions
 }
 // GetRequireEncryptionForWriteAccess gets the requireEncryptionForWriteAccess property value. This policy setting determines whether BitLocker protection is required for fixed data drives to be writable on a computer.
 func (m *BitLockerFixedDrivePolicy) GetRequireEncryptionForWriteAccess()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.requireEncryptionForWriteAccess
-    }
+    return m.requireEncryptionForWriteAccess
 }
 // Serialize serializes information the current object
 func (m *BitLockerFixedDrivePolicy) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -152,31 +132,21 @@ func (m *BitLockerFixedDrivePolicy) Serialize(writer i878a80d2330e89d26896388a3f
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *BitLockerFixedDrivePolicy) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetEncryptionMethod sets the encryptionMethod property value. Select the encryption method for fixed drives. Possible values are: aesCbc128, aesCbc256, xtsAes128, xtsAes256.
 func (m *BitLockerFixedDrivePolicy) SetEncryptionMethod(value *BitLockerEncryptionMethod)() {
-    if m != nil {
-        m.encryptionMethod = value
-    }
+    m.encryptionMethod = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *BitLockerFixedDrivePolicy) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetRecoveryOptions sets the recoveryOptions property value. This policy setting allows you to control how BitLocker-protected fixed data drives are recovered in the absence of the required credentials. This policy setting is applied when you turn on BitLocker.
 func (m *BitLockerFixedDrivePolicy) SetRecoveryOptions(value BitLockerRecoveryOptionsable)() {
-    if m != nil {
-        m.recoveryOptions = value
-    }
+    m.recoveryOptions = value
 }
 // SetRequireEncryptionForWriteAccess sets the requireEncryptionForWriteAccess property value. This policy setting determines whether BitLocker protection is required for fixed data drives to be writable on a computer.
 func (m *BitLockerFixedDrivePolicy) SetRequireEncryptionForWriteAccess(value *bool)() {
-    if m != nil {
-        m.requireEncryptionForWriteAccess = value
-    }
+    m.requireEncryptionForWriteAccess = value
 }

@@ -36,27 +36,15 @@ func CreateCustodianFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f
 }
 // GetAcknowledgedDateTime gets the acknowledgedDateTime property value. Date and time the custodian acknowledged a hold notification.
 func (m *Custodian) GetAcknowledgedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.acknowledgedDateTime
-    }
+    return m.acknowledgedDateTime
 }
 // GetApplyHoldToSources gets the applyHoldToSources property value. Identifies whether a custodian's sources were placed on hold during creation.
 func (m *Custodian) GetApplyHoldToSources()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.applyHoldToSources
-    }
+    return m.applyHoldToSources
 }
 // GetEmail gets the email property value. Email address of the custodian.
 func (m *Custodian) GetEmail()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.email
-    }
+    return m.email
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Custodian) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -137,27 +125,15 @@ func (m *Custodian) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
 }
 // GetSiteSources gets the siteSources property value. Data source entity for SharePoint sites associated with the custodian.
 func (m *Custodian) GetSiteSources()([]SiteSourceable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.siteSources
-    }
+    return m.siteSources
 }
 // GetUnifiedGroupSources gets the unifiedGroupSources property value. Data source entity for groups associated with the custodian.
 func (m *Custodian) GetUnifiedGroupSources()([]UnifiedGroupSourceable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.unifiedGroupSources
-    }
+    return m.unifiedGroupSources
 }
 // GetUserSources gets the userSources property value. Data source entity for a the custodian. This is the container for a custodian's mailbox and OneDrive for Business site.
 func (m *Custodian) GetUserSources()([]UserSourceable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userSources
-    }
+    return m.userSources
 }
 // Serialize serializes information the current object
 func (m *Custodian) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -217,37 +193,25 @@ func (m *Custodian) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
 }
 // SetAcknowledgedDateTime sets the acknowledgedDateTime property value. Date and time the custodian acknowledged a hold notification.
 func (m *Custodian) SetAcknowledgedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.acknowledgedDateTime = value
-    }
+    m.acknowledgedDateTime = value
 }
 // SetApplyHoldToSources sets the applyHoldToSources property value. Identifies whether a custodian's sources were placed on hold during creation.
 func (m *Custodian) SetApplyHoldToSources(value *bool)() {
-    if m != nil {
-        m.applyHoldToSources = value
-    }
+    m.applyHoldToSources = value
 }
 // SetEmail sets the email property value. Email address of the custodian.
 func (m *Custodian) SetEmail(value *string)() {
-    if m != nil {
-        m.email = value
-    }
+    m.email = value
 }
 // SetSiteSources sets the siteSources property value. Data source entity for SharePoint sites associated with the custodian.
 func (m *Custodian) SetSiteSources(value []SiteSourceable)() {
-    if m != nil {
-        m.siteSources = value
-    }
+    m.siteSources = value
 }
 // SetUnifiedGroupSources sets the unifiedGroupSources property value. Data source entity for groups associated with the custodian.
 func (m *Custodian) SetUnifiedGroupSources(value []UnifiedGroupSourceable)() {
-    if m != nil {
-        m.unifiedGroupSources = value
-    }
+    m.unifiedGroupSources = value
 }
 // SetUserSources sets the userSources property value. Data source entity for a the custodian. This is the container for a custodian's mailbox and OneDrive for Business site.
 func (m *Custodian) SetUserSources(value []UserSourceable)() {
-    if m != nil {
-        m.userSources = value
-    }
+    m.userSources = value
 }

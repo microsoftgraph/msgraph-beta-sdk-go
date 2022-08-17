@@ -51,43 +51,23 @@ func CreateAospDeviceOwnerDeviceConfigurationFromDiscriminatorValue(parseNode i8
 }
 // GetAppsBlockInstallFromUnknownSources gets the appsBlockInstallFromUnknownSources property value. Indicates whether or not the user is allowed to enable unknown sources setting. When set to true, user is not allowed to enable unknown sources settings.
 func (m *AospDeviceOwnerDeviceConfiguration) GetAppsBlockInstallFromUnknownSources()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.appsBlockInstallFromUnknownSources
-    }
+    return m.appsBlockInstallFromUnknownSources
 }
 // GetBluetoothBlockConfiguration gets the bluetoothBlockConfiguration property value. Indicates whether or not to block a user from configuring bluetooth.
 func (m *AospDeviceOwnerDeviceConfiguration) GetBluetoothBlockConfiguration()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.bluetoothBlockConfiguration
-    }
+    return m.bluetoothBlockConfiguration
 }
 // GetBluetoothBlocked gets the bluetoothBlocked property value. Indicates whether or not to disable the use of bluetooth. When set to true, bluetooth cannot be enabled on the device.
 func (m *AospDeviceOwnerDeviceConfiguration) GetBluetoothBlocked()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.bluetoothBlocked
-    }
+    return m.bluetoothBlocked
 }
 // GetCameraBlocked gets the cameraBlocked property value. Indicates whether or not to disable the use of the camera.
 func (m *AospDeviceOwnerDeviceConfiguration) GetCameraBlocked()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.cameraBlocked
-    }
+    return m.cameraBlocked
 }
 // GetFactoryResetBlocked gets the factoryResetBlocked property value. Indicates whether or not the factory reset option in settings is disabled.
 func (m *AospDeviceOwnerDeviceConfiguration) GetFactoryResetBlocked()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.factoryResetBlocked
-    }
+    return m.factoryResetBlocked
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AospDeviceOwnerDeviceConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -236,75 +216,39 @@ func (m *AospDeviceOwnerDeviceConfiguration) GetFieldDeserializers()(map[string]
 }
 // GetPasswordMinimumLength gets the passwordMinimumLength property value. Indicates the minimum length of the password required on the device. Valid values 4 to 16
 func (m *AospDeviceOwnerDeviceConfiguration) GetPasswordMinimumLength()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.passwordMinimumLength
-    }
+    return m.passwordMinimumLength
 }
 // GetPasswordMinutesOfInactivityBeforeScreenTimeout gets the passwordMinutesOfInactivityBeforeScreenTimeout property value. Minutes of inactivity before the screen times out.
 func (m *AospDeviceOwnerDeviceConfiguration) GetPasswordMinutesOfInactivityBeforeScreenTimeout()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.passwordMinutesOfInactivityBeforeScreenTimeout
-    }
+    return m.passwordMinutesOfInactivityBeforeScreenTimeout
 }
 // GetPasswordRequiredType gets the passwordRequiredType property value. Indicates the minimum password quality required on the device. Possible values are: deviceDefault, required, numeric, numericComplex, alphabetic, alphanumeric, alphanumericWithSymbols, lowSecurityBiometric, customPassword.
 func (m *AospDeviceOwnerDeviceConfiguration) GetPasswordRequiredType()(*AndroidDeviceOwnerRequiredPasswordType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.passwordRequiredType
-    }
+    return m.passwordRequiredType
 }
 // GetPasswordSignInFailureCountBeforeFactoryReset gets the passwordSignInFailureCountBeforeFactoryReset property value. Indicates the number of times a user can enter an incorrect password before the device is wiped. Valid values 4 to 11
 func (m *AospDeviceOwnerDeviceConfiguration) GetPasswordSignInFailureCountBeforeFactoryReset()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.passwordSignInFailureCountBeforeFactoryReset
-    }
+    return m.passwordSignInFailureCountBeforeFactoryReset
 }
 // GetScreenCaptureBlocked gets the screenCaptureBlocked property value. Indicates whether or not to disable the capability to take screenshots.
 func (m *AospDeviceOwnerDeviceConfiguration) GetScreenCaptureBlocked()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.screenCaptureBlocked
-    }
+    return m.screenCaptureBlocked
 }
 // GetSecurityAllowDebuggingFeatures gets the securityAllowDebuggingFeatures property value. Indicates whether or not to block the user from enabling debugging features on the device.
 func (m *AospDeviceOwnerDeviceConfiguration) GetSecurityAllowDebuggingFeatures()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.securityAllowDebuggingFeatures
-    }
+    return m.securityAllowDebuggingFeatures
 }
 // GetStorageBlockExternalMedia gets the storageBlockExternalMedia property value. Indicates whether or not to block external media.
 func (m *AospDeviceOwnerDeviceConfiguration) GetStorageBlockExternalMedia()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.storageBlockExternalMedia
-    }
+    return m.storageBlockExternalMedia
 }
 // GetStorageBlockUsbFileTransfer gets the storageBlockUsbFileTransfer property value. Indicates whether or not to block USB file transfer.
 func (m *AospDeviceOwnerDeviceConfiguration) GetStorageBlockUsbFileTransfer()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.storageBlockUsbFileTransfer
-    }
+    return m.storageBlockUsbFileTransfer
 }
 // GetWifiBlockEditConfigurations gets the wifiBlockEditConfigurations property value. Indicates whether or not to block the user from editing the wifi connection settings.
 func (m *AospDeviceOwnerDeviceConfiguration) GetWifiBlockEditConfigurations()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.wifiBlockEditConfigurations
-    }
+    return m.wifiBlockEditConfigurations
 }
 // Serialize serializes information the current object
 func (m *AospDeviceOwnerDeviceConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -401,85 +345,57 @@ func (m *AospDeviceOwnerDeviceConfiguration) Serialize(writer i878a80d2330e89d26
 }
 // SetAppsBlockInstallFromUnknownSources sets the appsBlockInstallFromUnknownSources property value. Indicates whether or not the user is allowed to enable unknown sources setting. When set to true, user is not allowed to enable unknown sources settings.
 func (m *AospDeviceOwnerDeviceConfiguration) SetAppsBlockInstallFromUnknownSources(value *bool)() {
-    if m != nil {
-        m.appsBlockInstallFromUnknownSources = value
-    }
+    m.appsBlockInstallFromUnknownSources = value
 }
 // SetBluetoothBlockConfiguration sets the bluetoothBlockConfiguration property value. Indicates whether or not to block a user from configuring bluetooth.
 func (m *AospDeviceOwnerDeviceConfiguration) SetBluetoothBlockConfiguration(value *bool)() {
-    if m != nil {
-        m.bluetoothBlockConfiguration = value
-    }
+    m.bluetoothBlockConfiguration = value
 }
 // SetBluetoothBlocked sets the bluetoothBlocked property value. Indicates whether or not to disable the use of bluetooth. When set to true, bluetooth cannot be enabled on the device.
 func (m *AospDeviceOwnerDeviceConfiguration) SetBluetoothBlocked(value *bool)() {
-    if m != nil {
-        m.bluetoothBlocked = value
-    }
+    m.bluetoothBlocked = value
 }
 // SetCameraBlocked sets the cameraBlocked property value. Indicates whether or not to disable the use of the camera.
 func (m *AospDeviceOwnerDeviceConfiguration) SetCameraBlocked(value *bool)() {
-    if m != nil {
-        m.cameraBlocked = value
-    }
+    m.cameraBlocked = value
 }
 // SetFactoryResetBlocked sets the factoryResetBlocked property value. Indicates whether or not the factory reset option in settings is disabled.
 func (m *AospDeviceOwnerDeviceConfiguration) SetFactoryResetBlocked(value *bool)() {
-    if m != nil {
-        m.factoryResetBlocked = value
-    }
+    m.factoryResetBlocked = value
 }
 // SetPasswordMinimumLength sets the passwordMinimumLength property value. Indicates the minimum length of the password required on the device. Valid values 4 to 16
 func (m *AospDeviceOwnerDeviceConfiguration) SetPasswordMinimumLength(value *int32)() {
-    if m != nil {
-        m.passwordMinimumLength = value
-    }
+    m.passwordMinimumLength = value
 }
 // SetPasswordMinutesOfInactivityBeforeScreenTimeout sets the passwordMinutesOfInactivityBeforeScreenTimeout property value. Minutes of inactivity before the screen times out.
 func (m *AospDeviceOwnerDeviceConfiguration) SetPasswordMinutesOfInactivityBeforeScreenTimeout(value *int32)() {
-    if m != nil {
-        m.passwordMinutesOfInactivityBeforeScreenTimeout = value
-    }
+    m.passwordMinutesOfInactivityBeforeScreenTimeout = value
 }
 // SetPasswordRequiredType sets the passwordRequiredType property value. Indicates the minimum password quality required on the device. Possible values are: deviceDefault, required, numeric, numericComplex, alphabetic, alphanumeric, alphanumericWithSymbols, lowSecurityBiometric, customPassword.
 func (m *AospDeviceOwnerDeviceConfiguration) SetPasswordRequiredType(value *AndroidDeviceOwnerRequiredPasswordType)() {
-    if m != nil {
-        m.passwordRequiredType = value
-    }
+    m.passwordRequiredType = value
 }
 // SetPasswordSignInFailureCountBeforeFactoryReset sets the passwordSignInFailureCountBeforeFactoryReset property value. Indicates the number of times a user can enter an incorrect password before the device is wiped. Valid values 4 to 11
 func (m *AospDeviceOwnerDeviceConfiguration) SetPasswordSignInFailureCountBeforeFactoryReset(value *int32)() {
-    if m != nil {
-        m.passwordSignInFailureCountBeforeFactoryReset = value
-    }
+    m.passwordSignInFailureCountBeforeFactoryReset = value
 }
 // SetScreenCaptureBlocked sets the screenCaptureBlocked property value. Indicates whether or not to disable the capability to take screenshots.
 func (m *AospDeviceOwnerDeviceConfiguration) SetScreenCaptureBlocked(value *bool)() {
-    if m != nil {
-        m.screenCaptureBlocked = value
-    }
+    m.screenCaptureBlocked = value
 }
 // SetSecurityAllowDebuggingFeatures sets the securityAllowDebuggingFeatures property value. Indicates whether or not to block the user from enabling debugging features on the device.
 func (m *AospDeviceOwnerDeviceConfiguration) SetSecurityAllowDebuggingFeatures(value *bool)() {
-    if m != nil {
-        m.securityAllowDebuggingFeatures = value
-    }
+    m.securityAllowDebuggingFeatures = value
 }
 // SetStorageBlockExternalMedia sets the storageBlockExternalMedia property value. Indicates whether or not to block external media.
 func (m *AospDeviceOwnerDeviceConfiguration) SetStorageBlockExternalMedia(value *bool)() {
-    if m != nil {
-        m.storageBlockExternalMedia = value
-    }
+    m.storageBlockExternalMedia = value
 }
 // SetStorageBlockUsbFileTransfer sets the storageBlockUsbFileTransfer property value. Indicates whether or not to block USB file transfer.
 func (m *AospDeviceOwnerDeviceConfiguration) SetStorageBlockUsbFileTransfer(value *bool)() {
-    if m != nil {
-        m.storageBlockUsbFileTransfer = value
-    }
+    m.storageBlockUsbFileTransfer = value
 }
 // SetWifiBlockEditConfigurations sets the wifiBlockEditConfigurations property value. Indicates whether or not to block the user from editing the wifi connection settings.
 func (m *AospDeviceOwnerDeviceConfiguration) SetWifiBlockEditConfigurations(value *bool)() {
-    if m != nil {
-        m.wifiBlockEditConfigurations = value
-    }
+    m.wifiBlockEditConfigurations = value
 }

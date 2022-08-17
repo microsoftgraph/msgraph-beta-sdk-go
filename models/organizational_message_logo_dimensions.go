@@ -34,11 +34,7 @@ func CreateOrganizationalMessageLogoDimensionsFromDiscriminatorValue(parseNode i
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *OrganizationalMessageLogoDimensions) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *OrganizationalMessageLogoDimensions) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -97,43 +93,23 @@ func (m *OrganizationalMessageLogoDimensions) GetFieldDeserializers()(map[string
 }
 // GetMaxHeight gets the maxHeight property value. Maximum height of the logo
 func (m *OrganizationalMessageLogoDimensions) GetMaxHeight()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.maxHeight
-    }
+    return m.maxHeight
 }
 // GetMaxWidth gets the maxWidth property value. Maximum width of the logo
 func (m *OrganizationalMessageLogoDimensions) GetMaxWidth()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.maxWidth
-    }
+    return m.maxWidth
 }
 // GetMinHeight gets the minHeight property value. Minimum height of the logo
 func (m *OrganizationalMessageLogoDimensions) GetMinHeight()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.minHeight
-    }
+    return m.minHeight
 }
 // GetMinWidth gets the minWidth property value. Minimum width of the logo
 func (m *OrganizationalMessageLogoDimensions) GetMinWidth()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.minWidth
-    }
+    return m.minWidth
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *OrganizationalMessageLogoDimensions) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // Serialize serializes information the current object
 func (m *OrganizationalMessageLogoDimensions) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -177,37 +153,25 @@ func (m *OrganizationalMessageLogoDimensions) Serialize(writer i878a80d2330e89d2
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *OrganizationalMessageLogoDimensions) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetMaxHeight sets the maxHeight property value. Maximum height of the logo
 func (m *OrganizationalMessageLogoDimensions) SetMaxHeight(value *int32)() {
-    if m != nil {
-        m.maxHeight = value
-    }
+    m.maxHeight = value
 }
 // SetMaxWidth sets the maxWidth property value. Maximum width of the logo
 func (m *OrganizationalMessageLogoDimensions) SetMaxWidth(value *int32)() {
-    if m != nil {
-        m.maxWidth = value
-    }
+    m.maxWidth = value
 }
 // SetMinHeight sets the minHeight property value. Minimum height of the logo
 func (m *OrganizationalMessageLogoDimensions) SetMinHeight(value *int32)() {
-    if m != nil {
-        m.minHeight = value
-    }
+    m.minHeight = value
 }
 // SetMinWidth sets the minWidth property value. Minimum width of the logo
 func (m *OrganizationalMessageLogoDimensions) SetMinWidth(value *int32)() {
-    if m != nil {
-        m.minWidth = value
-    }
+    m.minWidth = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *OrganizationalMessageLogoDimensions) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }

@@ -40,11 +40,7 @@ func (m *DeviceManagementConfigurationSimpleSettingInstance) GetFieldDeserialize
 }
 // GetSimpleSettingValue gets the simpleSettingValue property value. The simpleSettingValue property
 func (m *DeviceManagementConfigurationSimpleSettingInstance) GetSimpleSettingValue()(DeviceManagementConfigurationSimpleSettingValueable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.simpleSettingValue
-    }
+    return m.simpleSettingValue
 }
 // Serialize serializes information the current object
 func (m *DeviceManagementConfigurationSimpleSettingInstance) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -62,7 +58,5 @@ func (m *DeviceManagementConfigurationSimpleSettingInstance) Serialize(writer i8
 }
 // SetSimpleSettingValue sets the simpleSettingValue property value. The simpleSettingValue property
 func (m *DeviceManagementConfigurationSimpleSettingInstance) SetSimpleSettingValue(value DeviceManagementConfigurationSimpleSettingValueable)() {
-    if m != nil {
-        m.simpleSettingValue = value
-    }
+    m.simpleSettingValue = value
 }

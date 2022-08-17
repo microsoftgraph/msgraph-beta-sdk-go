@@ -31,19 +31,11 @@ func CreateAndroidStoreAppFromDiscriminatorValue(parseNode i878a80d2330e89d26896
 }
 // GetAppIdentifier gets the appIdentifier property value. The Identity Name.
 func (m *AndroidStoreApp) GetAppIdentifier()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.appIdentifier
-    }
+    return m.appIdentifier
 }
 // GetAppStoreUrl gets the appStoreUrl property value. The Android app store URL.
 func (m *AndroidStoreApp) GetAppStoreUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.appStoreUrl
-    }
+    return m.appStoreUrl
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AndroidStoreApp) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -92,19 +84,11 @@ func (m *AndroidStoreApp) GetFieldDeserializers()(map[string]func(i878a80d2330e8
 }
 // GetMinimumSupportedOperatingSystem gets the minimumSupportedOperatingSystem property value. The value for the minimum applicable operating system.
 func (m *AndroidStoreApp) GetMinimumSupportedOperatingSystem()(AndroidMinimumOperatingSystemable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.minimumSupportedOperatingSystem
-    }
+    return m.minimumSupportedOperatingSystem
 }
 // GetPackageId gets the packageId property value. The package identifier.
 func (m *AndroidStoreApp) GetPackageId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.packageId
-    }
+    return m.packageId
 }
 // Serialize serializes information the current object
 func (m *AndroidStoreApp) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -140,25 +124,17 @@ func (m *AndroidStoreApp) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
 }
 // SetAppIdentifier sets the appIdentifier property value. The Identity Name.
 func (m *AndroidStoreApp) SetAppIdentifier(value *string)() {
-    if m != nil {
-        m.appIdentifier = value
-    }
+    m.appIdentifier = value
 }
 // SetAppStoreUrl sets the appStoreUrl property value. The Android app store URL.
 func (m *AndroidStoreApp) SetAppStoreUrl(value *string)() {
-    if m != nil {
-        m.appStoreUrl = value
-    }
+    m.appStoreUrl = value
 }
 // SetMinimumSupportedOperatingSystem sets the minimumSupportedOperatingSystem property value. The value for the minimum applicable operating system.
 func (m *AndroidStoreApp) SetMinimumSupportedOperatingSystem(value AndroidMinimumOperatingSystemable)() {
-    if m != nil {
-        m.minimumSupportedOperatingSystem = value
-    }
+    m.minimumSupportedOperatingSystem = value
 }
 // SetPackageId sets the packageId property value. The package identifier.
 func (m *AndroidStoreApp) SetPackageId(value *string)() {
-    if m != nil {
-        m.packageId = value
-    }
+    m.packageId = value
 }

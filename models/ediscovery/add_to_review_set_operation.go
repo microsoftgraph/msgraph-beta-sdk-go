@@ -52,19 +52,11 @@ func (m *AddToReviewSetOperation) GetFieldDeserializers()(map[string]func(i878a8
 }
 // GetReviewSet gets the reviewSet property value. The review set to which items matching the source collection query are added to.
 func (m *AddToReviewSetOperation) GetReviewSet()(ReviewSetable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.reviewSet
-    }
+    return m.reviewSet
 }
 // GetSourceCollection gets the sourceCollection property value. The sourceCollection that items are being added from.
 func (m *AddToReviewSetOperation) GetSourceCollection()(SourceCollectionable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.sourceCollection
-    }
+    return m.sourceCollection
 }
 // Serialize serializes information the current object
 func (m *AddToReviewSetOperation) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -88,13 +80,9 @@ func (m *AddToReviewSetOperation) Serialize(writer i878a80d2330e89d26896388a3f48
 }
 // SetReviewSet sets the reviewSet property value. The review set to which items matching the source collection query are added to.
 func (m *AddToReviewSetOperation) SetReviewSet(value ReviewSetable)() {
-    if m != nil {
-        m.reviewSet = value
-    }
+    m.reviewSet = value
 }
 // SetSourceCollection sets the sourceCollection property value. The sourceCollection that items are being added from.
 func (m *AddToReviewSetOperation) SetSourceCollection(value SourceCollectionable)() {
-    if m != nil {
-        m.sourceCollection = value
-    }
+    m.sourceCollection = value
 }

@@ -25,11 +25,7 @@ func CreateEducationCsvDataProviderFromDiscriminatorValue(parseNode i878a80d2330
 }
 // GetCustomizations gets the customizations property value. Optional customizations to be applied to the synchronization profile.
 func (m *EducationCsvDataProvider) GetCustomizations()(EducationSynchronizationCustomizationsable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.customizations
-    }
+    return m.customizations
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *EducationCsvDataProvider) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -62,7 +58,5 @@ func (m *EducationCsvDataProvider) Serialize(writer i878a80d2330e89d26896388a3f4
 }
 // SetCustomizations sets the customizations property value. Optional customizations to be applied to the synchronization profile.
 func (m *EducationCsvDataProvider) SetCustomizations(value EducationSynchronizationCustomizationsable)() {
-    if m != nil {
-        m.customizations = value
-    }
+    m.customizations = value
 }

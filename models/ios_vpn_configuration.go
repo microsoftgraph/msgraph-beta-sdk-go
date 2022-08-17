@@ -58,27 +58,15 @@ func CreateIosVpnConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d2
 }
 // GetCloudName gets the cloudName property value. Zscaler only. Zscaler cloud which the user is assigned to.
 func (m *IosVpnConfiguration) GetCloudName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.cloudName
-    }
+    return m.cloudName
 }
 // GetDerivedCredentialSettings gets the derivedCredentialSettings property value. Tenant level settings for the Derived Credentials to be used for authentication.
 func (m *IosVpnConfiguration) GetDerivedCredentialSettings()(DeviceManagementDerivedCredentialSettingsable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.derivedCredentialSettings
-    }
+    return m.derivedCredentialSettings
 }
 // GetExcludeList gets the excludeList property value. Zscaler only. List of network addresses which are not sent through the Zscaler cloud.
 func (m *IosVpnConfiguration) GetExcludeList()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.excludeList
-    }
+    return m.excludeList
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *IosVpnConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -175,43 +163,23 @@ func (m *IosVpnConfiguration) GetFieldDeserializers()(map[string]func(i878a80d23
 }
 // GetIdentityCertificate gets the identityCertificate property value. Identity certificate for client authentication when authentication method is certificate.
 func (m *IosVpnConfiguration) GetIdentityCertificate()(IosCertificateProfileBaseable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.identityCertificate
-    }
+    return m.identityCertificate
 }
 // GetMicrosoftTunnelSiteId gets the microsoftTunnelSiteId property value. Microsoft Tunnel site ID.
 func (m *IosVpnConfiguration) GetMicrosoftTunnelSiteId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.microsoftTunnelSiteId
-    }
+    return m.microsoftTunnelSiteId
 }
 // GetStrictEnforcement gets the strictEnforcement property value. Zscaler only. Blocks network traffic until the user signs into Zscaler app. 'True' means traffic is blocked.
 func (m *IosVpnConfiguration) GetStrictEnforcement()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.strictEnforcement
-    }
+    return m.strictEnforcement
 }
 // GetTargetedMobileApps gets the targetedMobileApps property value. Targeted mobile apps. This collection can contain a maximum of 500 elements.
 func (m *IosVpnConfiguration) GetTargetedMobileApps()([]AppListItemable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.targetedMobileApps
-    }
+    return m.targetedMobileApps
 }
 // GetUserDomain gets the userDomain property value. Zscaler only. Enter a static domain to pre-populate the login field with in the Zscaler app. If this is left empty, the user's Azure Active Directory domain will be used instead.
 func (m *IosVpnConfiguration) GetUserDomain()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userDomain
-    }
+    return m.userDomain
 }
 // Serialize serializes information the current object
 func (m *IosVpnConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -275,49 +243,33 @@ func (m *IosVpnConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef
 }
 // SetCloudName sets the cloudName property value. Zscaler only. Zscaler cloud which the user is assigned to.
 func (m *IosVpnConfiguration) SetCloudName(value *string)() {
-    if m != nil {
-        m.cloudName = value
-    }
+    m.cloudName = value
 }
 // SetDerivedCredentialSettings sets the derivedCredentialSettings property value. Tenant level settings for the Derived Credentials to be used for authentication.
 func (m *IosVpnConfiguration) SetDerivedCredentialSettings(value DeviceManagementDerivedCredentialSettingsable)() {
-    if m != nil {
-        m.derivedCredentialSettings = value
-    }
+    m.derivedCredentialSettings = value
 }
 // SetExcludeList sets the excludeList property value. Zscaler only. List of network addresses which are not sent through the Zscaler cloud.
 func (m *IosVpnConfiguration) SetExcludeList(value []string)() {
-    if m != nil {
-        m.excludeList = value
-    }
+    m.excludeList = value
 }
 // SetIdentityCertificate sets the identityCertificate property value. Identity certificate for client authentication when authentication method is certificate.
 func (m *IosVpnConfiguration) SetIdentityCertificate(value IosCertificateProfileBaseable)() {
-    if m != nil {
-        m.identityCertificate = value
-    }
+    m.identityCertificate = value
 }
 // SetMicrosoftTunnelSiteId sets the microsoftTunnelSiteId property value. Microsoft Tunnel site ID.
 func (m *IosVpnConfiguration) SetMicrosoftTunnelSiteId(value *string)() {
-    if m != nil {
-        m.microsoftTunnelSiteId = value
-    }
+    m.microsoftTunnelSiteId = value
 }
 // SetStrictEnforcement sets the strictEnforcement property value. Zscaler only. Blocks network traffic until the user signs into Zscaler app. 'True' means traffic is blocked.
 func (m *IosVpnConfiguration) SetStrictEnforcement(value *bool)() {
-    if m != nil {
-        m.strictEnforcement = value
-    }
+    m.strictEnforcement = value
 }
 // SetTargetedMobileApps sets the targetedMobileApps property value. Targeted mobile apps. This collection can contain a maximum of 500 elements.
 func (m *IosVpnConfiguration) SetTargetedMobileApps(value []AppListItemable)() {
-    if m != nil {
-        m.targetedMobileApps = value
-    }
+    m.targetedMobileApps = value
 }
 // SetUserDomain sets the userDomain property value. Zscaler only. Enter a static domain to pre-populate the login field with in the Zscaler app. If this is left empty, the user's Azure Active Directory domain will be used instead.
 func (m *IosVpnConfiguration) SetUserDomain(value *string)() {
-    if m != nil {
-        m.userDomain = value
-    }
+    m.userDomain = value
 }

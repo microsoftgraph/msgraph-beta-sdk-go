@@ -38,35 +38,19 @@ func CreateMobileAppIntentAndStateDetailFromDiscriminatorValue(parseNode i878a80
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *MobileAppIntentAndStateDetail) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetApplicationId gets the applicationId property value. MobieApp identifier.
 func (m *MobileAppIntentAndStateDetail) GetApplicationId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.applicationId
-    }
+    return m.applicationId
 }
 // GetDisplayName gets the displayName property value. The admin provided or imported title of the app.
 func (m *MobileAppIntentAndStateDetail) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
 // GetDisplayVersion gets the displayVersion property value. Human readable version of the application
 func (m *MobileAppIntentAndStateDetail) GetDisplayVersion()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayVersion
-    }
+    return m.displayVersion
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *MobileAppIntentAndStateDetail) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -149,35 +133,19 @@ func (m *MobileAppIntentAndStateDetail) GetFieldDeserializers()(map[string]func(
 }
 // GetInstallState gets the installState property value. A list of possible states for application status on an individual device. When devices contact the Intune service and find targeted application enforcement intent, the status of the enforcement is recorded and becomes accessible in the Graph API. Since the application status is identified during device interaction with the Intune service, status records do not immediately appear upon application group assignment; it is created only after the assignment is evaluated in the service and devices start receiving the policy during check-ins.
 func (m *MobileAppIntentAndStateDetail) GetInstallState()(*ResultantAppState) {
-    if m == nil {
-        return nil
-    } else {
-        return m.installState
-    }
+    return m.installState
 }
 // GetMobileAppIntent gets the mobileAppIntent property value. Indicates the status of the mobile app on the device.
 func (m *MobileAppIntentAndStateDetail) GetMobileAppIntent()(*MobileAppIntent) {
-    if m == nil {
-        return nil
-    } else {
-        return m.mobileAppIntent
-    }
+    return m.mobileAppIntent
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *MobileAppIntentAndStateDetail) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetSupportedDeviceTypes gets the supportedDeviceTypes property value. The supported platforms for the app.
 func (m *MobileAppIntentAndStateDetail) GetSupportedDeviceTypes()([]MobileAppSupportedDeviceTypeable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.supportedDeviceTypes
-    }
+    return m.supportedDeviceTypes
 }
 // Serialize serializes information the current object
 func (m *MobileAppIntentAndStateDetail) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -239,49 +207,33 @@ func (m *MobileAppIntentAndStateDetail) Serialize(writer i878a80d2330e89d2689638
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *MobileAppIntentAndStateDetail) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetApplicationId sets the applicationId property value. MobieApp identifier.
 func (m *MobileAppIntentAndStateDetail) SetApplicationId(value *string)() {
-    if m != nil {
-        m.applicationId = value
-    }
+    m.applicationId = value
 }
 // SetDisplayName sets the displayName property value. The admin provided or imported title of the app.
 func (m *MobileAppIntentAndStateDetail) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }
 // SetDisplayVersion sets the displayVersion property value. Human readable version of the application
 func (m *MobileAppIntentAndStateDetail) SetDisplayVersion(value *string)() {
-    if m != nil {
-        m.displayVersion = value
-    }
+    m.displayVersion = value
 }
 // SetInstallState sets the installState property value. A list of possible states for application status on an individual device. When devices contact the Intune service and find targeted application enforcement intent, the status of the enforcement is recorded and becomes accessible in the Graph API. Since the application status is identified during device interaction with the Intune service, status records do not immediately appear upon application group assignment; it is created only after the assignment is evaluated in the service and devices start receiving the policy during check-ins.
 func (m *MobileAppIntentAndStateDetail) SetInstallState(value *ResultantAppState)() {
-    if m != nil {
-        m.installState = value
-    }
+    m.installState = value
 }
 // SetMobileAppIntent sets the mobileAppIntent property value. Indicates the status of the mobile app on the device.
 func (m *MobileAppIntentAndStateDetail) SetMobileAppIntent(value *MobileAppIntent)() {
-    if m != nil {
-        m.mobileAppIntent = value
-    }
+    m.mobileAppIntent = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *MobileAppIntentAndStateDetail) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetSupportedDeviceTypes sets the supportedDeviceTypes property value. The supported platforms for the app.
 func (m *MobileAppIntentAndStateDetail) SetSupportedDeviceTypes(value []MobileAppSupportedDeviceTypeable)() {
-    if m != nil {
-        m.supportedDeviceTypes = value
-    }
+    m.supportedDeviceTypes = value
 }

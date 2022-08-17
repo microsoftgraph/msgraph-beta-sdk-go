@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DirectorySetting provides operations to manage the collection of activityStatistics entities.
+// DirectorySetting provides operations to manage the collection of accessReviewDecision entities.
 type DirectorySetting struct {
     Entity
     // Display name of this group of settings, which comes from the associated template. Read-only.
@@ -29,11 +29,7 @@ func CreateDirectorySettingFromDiscriminatorValue(parseNode i878a80d2330e89d2689
 }
 // GetDisplayName gets the displayName property value. Display name of this group of settings, which comes from the associated template. Read-only.
 func (m *DirectorySetting) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DirectorySetting) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -76,19 +72,11 @@ func (m *DirectorySetting) GetFieldDeserializers()(map[string]func(i878a80d2330e
 }
 // GetTemplateId gets the templateId property value. Unique identifier for the template used to create this group of settings. Read-only.
 func (m *DirectorySetting) GetTemplateId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.templateId
-    }
+    return m.templateId
 }
 // GetValues gets the values property value. Collection of name-value pairs corresponding to the name and defaultValue properties in the referenced directorySettingTemplates object.
 func (m *DirectorySetting) GetValues()([]SettingValueable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.values
-    }
+    return m.values
 }
 // Serialize serializes information the current object
 func (m *DirectorySetting) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -122,19 +110,13 @@ func (m *DirectorySetting) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
 }
 // SetDisplayName sets the displayName property value. Display name of this group of settings, which comes from the associated template. Read-only.
 func (m *DirectorySetting) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }
 // SetTemplateId sets the templateId property value. Unique identifier for the template used to create this group of settings. Read-only.
 func (m *DirectorySetting) SetTemplateId(value *string)() {
-    if m != nil {
-        m.templateId = value
-    }
+    m.templateId = value
 }
 // SetValues sets the values property value. Collection of name-value pairs corresponding to the name and defaultValue properties in the referenced directorySettingTemplates object.
 func (m *DirectorySetting) SetValues(value []SettingValueable)() {
-    if m != nil {
-        m.values = value
-    }
+    m.values = value
 }

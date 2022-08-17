@@ -40,11 +40,7 @@ func (m *WindowsKioskActiveDirectoryGroup) GetFieldDeserializers()(map[string]fu
 }
 // GetGroupName gets the groupName property value. The name of the AD group that will be locked to this kiosk configuration
 func (m *WindowsKioskActiveDirectoryGroup) GetGroupName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.groupName
-    }
+    return m.groupName
 }
 // Serialize serializes information the current object
 func (m *WindowsKioskActiveDirectoryGroup) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -62,7 +58,5 @@ func (m *WindowsKioskActiveDirectoryGroup) Serialize(writer i878a80d2330e89d2689
 }
 // SetGroupName sets the groupName property value. The name of the AD group that will be locked to this kiosk configuration
 func (m *WindowsKioskActiveDirectoryGroup) SetGroupName(value *string)() {
-    if m != nil {
-        m.groupName = value
-    }
+    m.groupName = value
 }

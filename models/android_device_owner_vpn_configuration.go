@@ -45,51 +45,27 @@ func CreateAndroidDeviceOwnerVpnConfigurationFromDiscriminatorValue(parseNode i8
 }
 // GetAlwaysOn gets the alwaysOn property value. Whether or not to enable always-on VPN connection.
 func (m *AndroidDeviceOwnerVpnConfiguration) GetAlwaysOn()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.alwaysOn
-    }
+    return m.alwaysOn
 }
 // GetAlwaysOnLockdown gets the alwaysOnLockdown property value. If always-on VPN connection is enabled, whether or not to lock network traffic when that VPN is disconnected.
 func (m *AndroidDeviceOwnerVpnConfiguration) GetAlwaysOnLockdown()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.alwaysOnLockdown
-    }
+    return m.alwaysOnLockdown
 }
 // GetConnectionType gets the connectionType property value. Android VPN connection type.
 func (m *AndroidDeviceOwnerVpnConfiguration) GetConnectionType()(*AndroidVpnConnectionType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.connectionType
-    }
+    return m.connectionType
 }
 // GetCustomData gets the customData property value. Custom data to define key/value pairs specific to a VPN provider. This collection can contain a maximum of 25 elements.
 func (m *AndroidDeviceOwnerVpnConfiguration) GetCustomData()([]KeyValueable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.customData
-    }
+    return m.customData
 }
 // GetCustomKeyValueData gets the customKeyValueData property value. Custom data to define key/value pairs specific to a VPN provider. This collection can contain a maximum of 25 elements.
 func (m *AndroidDeviceOwnerVpnConfiguration) GetCustomKeyValueData()([]KeyValuePairable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.customKeyValueData
-    }
+    return m.customKeyValueData
 }
 // GetDerivedCredentialSettings gets the derivedCredentialSettings property value. Tenant level settings for the Derived Credentials to be used for authentication.
 func (m *AndroidDeviceOwnerVpnConfiguration) GetDerivedCredentialSettings()(DeviceManagementDerivedCredentialSettingsable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.derivedCredentialSettings
-    }
+    return m.derivedCredentialSettings
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AndroidDeviceOwnerVpnConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -224,43 +200,23 @@ func (m *AndroidDeviceOwnerVpnConfiguration) GetFieldDeserializers()(map[string]
 }
 // GetIdentityCertificate gets the identityCertificate property value. Identity certificate for client authentication when authentication method is certificate.
 func (m *AndroidDeviceOwnerVpnConfiguration) GetIdentityCertificate()(AndroidDeviceOwnerCertificateProfileBaseable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.identityCertificate
-    }
+    return m.identityCertificate
 }
 // GetMicrosoftTunnelSiteId gets the microsoftTunnelSiteId property value. Microsoft Tunnel site ID.
 func (m *AndroidDeviceOwnerVpnConfiguration) GetMicrosoftTunnelSiteId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.microsoftTunnelSiteId
-    }
+    return m.microsoftTunnelSiteId
 }
 // GetProxyServer gets the proxyServer property value. Proxy server.
 func (m *AndroidDeviceOwnerVpnConfiguration) GetProxyServer()(VpnProxyServerable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.proxyServer
-    }
+    return m.proxyServer
 }
 // GetTargetedMobileApps gets the targetedMobileApps property value. Targeted mobile apps. This collection can contain a maximum of 500 elements.
 func (m *AndroidDeviceOwnerVpnConfiguration) GetTargetedMobileApps()([]AppListItemable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.targetedMobileApps
-    }
+    return m.targetedMobileApps
 }
 // GetTargetedPackageIds gets the targetedPackageIds property value. Targeted App package IDs.
 func (m *AndroidDeviceOwnerVpnConfiguration) GetTargetedPackageIds()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.targetedPackageIds
-    }
+    return m.targetedPackageIds
 }
 // Serialize serializes information the current object
 func (m *AndroidDeviceOwnerVpnConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -351,67 +307,45 @@ func (m *AndroidDeviceOwnerVpnConfiguration) Serialize(writer i878a80d2330e89d26
 }
 // SetAlwaysOn sets the alwaysOn property value. Whether or not to enable always-on VPN connection.
 func (m *AndroidDeviceOwnerVpnConfiguration) SetAlwaysOn(value *bool)() {
-    if m != nil {
-        m.alwaysOn = value
-    }
+    m.alwaysOn = value
 }
 // SetAlwaysOnLockdown sets the alwaysOnLockdown property value. If always-on VPN connection is enabled, whether or not to lock network traffic when that VPN is disconnected.
 func (m *AndroidDeviceOwnerVpnConfiguration) SetAlwaysOnLockdown(value *bool)() {
-    if m != nil {
-        m.alwaysOnLockdown = value
-    }
+    m.alwaysOnLockdown = value
 }
 // SetConnectionType sets the connectionType property value. Android VPN connection type.
 func (m *AndroidDeviceOwnerVpnConfiguration) SetConnectionType(value *AndroidVpnConnectionType)() {
-    if m != nil {
-        m.connectionType = value
-    }
+    m.connectionType = value
 }
 // SetCustomData sets the customData property value. Custom data to define key/value pairs specific to a VPN provider. This collection can contain a maximum of 25 elements.
 func (m *AndroidDeviceOwnerVpnConfiguration) SetCustomData(value []KeyValueable)() {
-    if m != nil {
-        m.customData = value
-    }
+    m.customData = value
 }
 // SetCustomKeyValueData sets the customKeyValueData property value. Custom data to define key/value pairs specific to a VPN provider. This collection can contain a maximum of 25 elements.
 func (m *AndroidDeviceOwnerVpnConfiguration) SetCustomKeyValueData(value []KeyValuePairable)() {
-    if m != nil {
-        m.customKeyValueData = value
-    }
+    m.customKeyValueData = value
 }
 // SetDerivedCredentialSettings sets the derivedCredentialSettings property value. Tenant level settings for the Derived Credentials to be used for authentication.
 func (m *AndroidDeviceOwnerVpnConfiguration) SetDerivedCredentialSettings(value DeviceManagementDerivedCredentialSettingsable)() {
-    if m != nil {
-        m.derivedCredentialSettings = value
-    }
+    m.derivedCredentialSettings = value
 }
 // SetIdentityCertificate sets the identityCertificate property value. Identity certificate for client authentication when authentication method is certificate.
 func (m *AndroidDeviceOwnerVpnConfiguration) SetIdentityCertificate(value AndroidDeviceOwnerCertificateProfileBaseable)() {
-    if m != nil {
-        m.identityCertificate = value
-    }
+    m.identityCertificate = value
 }
 // SetMicrosoftTunnelSiteId sets the microsoftTunnelSiteId property value. Microsoft Tunnel site ID.
 func (m *AndroidDeviceOwnerVpnConfiguration) SetMicrosoftTunnelSiteId(value *string)() {
-    if m != nil {
-        m.microsoftTunnelSiteId = value
-    }
+    m.microsoftTunnelSiteId = value
 }
 // SetProxyServer sets the proxyServer property value. Proxy server.
 func (m *AndroidDeviceOwnerVpnConfiguration) SetProxyServer(value VpnProxyServerable)() {
-    if m != nil {
-        m.proxyServer = value
-    }
+    m.proxyServer = value
 }
 // SetTargetedMobileApps sets the targetedMobileApps property value. Targeted mobile apps. This collection can contain a maximum of 500 elements.
 func (m *AndroidDeviceOwnerVpnConfiguration) SetTargetedMobileApps(value []AppListItemable)() {
-    if m != nil {
-        m.targetedMobileApps = value
-    }
+    m.targetedMobileApps = value
 }
 // SetTargetedPackageIds sets the targetedPackageIds property value. Targeted App package IDs.
 func (m *AndroidDeviceOwnerVpnConfiguration) SetTargetedPackageIds(value []string)() {
-    if m != nil {
-        m.targetedPackageIds = value
-    }
+    m.targetedPackageIds = value
 }

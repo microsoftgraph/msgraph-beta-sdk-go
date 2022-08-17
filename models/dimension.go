@@ -32,27 +32,15 @@ func CreateDimensionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f
 }
 // GetCode gets the code property value. The code property
 func (m *Dimension) GetCode()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.code
-    }
+    return m.code
 }
 // GetDimensionValues gets the dimensionValues property value. The dimensionValues property
 func (m *Dimension) GetDimensionValues()([]DimensionValueable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.dimensionValues
-    }
+    return m.dimensionValues
 }
 // GetDisplayName gets the displayName property value. The displayName property
 func (m *Dimension) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Dimension) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -105,11 +93,7 @@ func (m *Dimension) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. The lastModifiedDateTime property
 func (m *Dimension) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastModifiedDateTime
-    }
+    return m.lastModifiedDateTime
 }
 // Serialize serializes information the current object
 func (m *Dimension) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -149,25 +133,17 @@ func (m *Dimension) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
 }
 // SetCode sets the code property value. The code property
 func (m *Dimension) SetCode(value *string)() {
-    if m != nil {
-        m.code = value
-    }
+    m.code = value
 }
 // SetDimensionValues sets the dimensionValues property value. The dimensionValues property
 func (m *Dimension) SetDimensionValues(value []DimensionValueable)() {
-    if m != nil {
-        m.dimensionValues = value
-    }
+    m.dimensionValues = value
 }
 // SetDisplayName sets the displayName property value. The displayName property
 func (m *Dimension) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }
 // SetLastModifiedDateTime sets the lastModifiedDateTime property value. The lastModifiedDateTime property
 func (m *Dimension) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.lastModifiedDateTime = value
-    }
+    m.lastModifiedDateTime = value
 }

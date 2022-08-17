@@ -34,19 +34,11 @@ func CreateNotifyUserActionFromDiscriminatorValue(parseNode i878a80d2330e89d2689
 }
 // GetActionLastModifiedDateTime gets the actionLastModifiedDateTime property value. The actionLastModifiedDateTime property
 func (m *NotifyUserAction) GetActionLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.actionLastModifiedDateTime
-    }
+    return m.actionLastModifiedDateTime
 }
 // GetEmailText gets the emailText property value. The emailText property
 func (m *NotifyUserAction) GetEmailText()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.emailText
-    }
+    return m.emailText
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *NotifyUserAction) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -109,27 +101,15 @@ func (m *NotifyUserAction) GetFieldDeserializers()(map[string]func(i878a80d2330e
 }
 // GetOverrideOption gets the overrideOption property value. The overrideOption property
 func (m *NotifyUserAction) GetOverrideOption()(*OverrideOption) {
-    if m == nil {
-        return nil
-    } else {
-        return m.overrideOption
-    }
+    return m.overrideOption
 }
 // GetPolicyTip gets the policyTip property value. The policyTip property
 func (m *NotifyUserAction) GetPolicyTip()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.policyTip
-    }
+    return m.policyTip
 }
 // GetRecipients gets the recipients property value. The recipients property
 func (m *NotifyUserAction) GetRecipients()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.recipients
-    }
+    return m.recipients
 }
 // Serialize serializes information the current object
 func (m *NotifyUserAction) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -172,31 +152,21 @@ func (m *NotifyUserAction) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
 }
 // SetActionLastModifiedDateTime sets the actionLastModifiedDateTime property value. The actionLastModifiedDateTime property
 func (m *NotifyUserAction) SetActionLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.actionLastModifiedDateTime = value
-    }
+    m.actionLastModifiedDateTime = value
 }
 // SetEmailText sets the emailText property value. The emailText property
 func (m *NotifyUserAction) SetEmailText(value *string)() {
-    if m != nil {
-        m.emailText = value
-    }
+    m.emailText = value
 }
 // SetOverrideOption sets the overrideOption property value. The overrideOption property
 func (m *NotifyUserAction) SetOverrideOption(value *OverrideOption)() {
-    if m != nil {
-        m.overrideOption = value
-    }
+    m.overrideOption = value
 }
 // SetPolicyTip sets the policyTip property value. The policyTip property
 func (m *NotifyUserAction) SetPolicyTip(value *string)() {
-    if m != nil {
-        m.policyTip = value
-    }
+    m.policyTip = value
 }
 // SetRecipients sets the recipients property value. The recipients property
 func (m *NotifyUserAction) SetRecipients(value []string)() {
-    if m != nil {
-        m.recipients = value
-    }
+    m.recipients = value
 }

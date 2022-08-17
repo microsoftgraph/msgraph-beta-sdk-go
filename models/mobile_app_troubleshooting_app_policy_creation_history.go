@@ -27,11 +27,7 @@ func CreateMobileAppTroubleshootingAppPolicyCreationHistoryFromDiscriminatorValu
 }
 // GetErrorCode gets the errorCode property value. Error code for the failure, empty if no failure.
 func (m *MobileAppTroubleshootingAppPolicyCreationHistory) GetErrorCode()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.errorCode
-    }
+    return m.errorCode
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *MobileAppTroubleshootingAppPolicyCreationHistory) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -60,11 +56,7 @@ func (m *MobileAppTroubleshootingAppPolicyCreationHistory) GetFieldDeserializers
 }
 // GetRunState gets the runState property value. Indicates the type of execution status of the device management script.
 func (m *MobileAppTroubleshootingAppPolicyCreationHistory) GetRunState()(*RunState) {
-    if m == nil {
-        return nil
-    } else {
-        return m.runState
-    }
+    return m.runState
 }
 // Serialize serializes information the current object
 func (m *MobileAppTroubleshootingAppPolicyCreationHistory) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -89,13 +81,9 @@ func (m *MobileAppTroubleshootingAppPolicyCreationHistory) Serialize(writer i878
 }
 // SetErrorCode sets the errorCode property value. Error code for the failure, empty if no failure.
 func (m *MobileAppTroubleshootingAppPolicyCreationHistory) SetErrorCode(value *string)() {
-    if m != nil {
-        m.errorCode = value
-    }
+    m.errorCode = value
 }
 // SetRunState sets the runState property value. Indicates the type of execution status of the device management script.
 func (m *MobileAppTroubleshootingAppPolicyCreationHistory) SetRunState(value *RunState)() {
-    if m != nil {
-        m.runState = value
-    }
+    m.runState = value
 }

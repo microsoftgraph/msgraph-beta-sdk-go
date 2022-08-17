@@ -6,7 +6,7 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
-// RetentionEvent provides operations to manage the collection of accessReview entities.
+// RetentionEvent provides operations to manage the collection of accessReviewDecision entities.
 type RetentionEvent struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
     // The user who created the retentionEvent.
@@ -49,67 +49,35 @@ func CreateRetentionEventFromDiscriminatorValue(parseNode i878a80d2330e89d268963
 }
 // GetCreatedBy gets the createdBy property value. The user who created the retentionEvent.
 func (m *RetentionEvent) GetCreatedBy()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentitySetable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.createdBy
-    }
+    return m.createdBy
 }
 // GetCreatedDateTime gets the createdDateTime property value. The date time when the retentionEvent was created.
 func (m *RetentionEvent) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.createdDateTime
-    }
+    return m.createdDateTime
 }
 // GetDescription gets the description property value. Optional information about the event.
 func (m *RetentionEvent) GetDescription()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.description
-    }
+    return m.description
 }
 // GetDisplayName gets the displayName property value. Name of the event.
 func (m *RetentionEvent) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
 // GetEventPropagationResults gets the eventPropagationResults property value. The eventPropagationResults property
 func (m *RetentionEvent) GetEventPropagationResults()([]EventPropagationResultable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.eventPropagationResults
-    }
+    return m.eventPropagationResults
 }
 // GetEventQueries gets the eventQueries property value. Represents the workload (SharePoint Online, OneDrive for Business, Exchange Online) and identification information associated with a retention event.
 func (m *RetentionEvent) GetEventQueries()([]EventQueryable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.eventQueries
-    }
+    return m.eventQueries
 }
 // GetEventStatus gets the eventStatus property value. The eventStatus property
 func (m *RetentionEvent) GetEventStatus()(RetentionEventStatusable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.eventStatus
-    }
+    return m.eventStatus
 }
 // GetEventTriggerDateTime gets the eventTriggerDateTime property value. Optional time when the event should be triggered.
 func (m *RetentionEvent) GetEventTriggerDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.eventTriggerDateTime
-    }
+    return m.eventTriggerDateTime
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *RetentionEvent) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -246,35 +214,19 @@ func (m *RetentionEvent) GetFieldDeserializers()(map[string]func(i878a80d2330e89
 }
 // GetLastModifiedBy gets the lastModifiedBy property value. The user who last modified the retentionEvent.
 func (m *RetentionEvent) GetLastModifiedBy()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentitySetable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastModifiedBy
-    }
+    return m.lastModifiedBy
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. The latest date time when the retentionEvent was modified.
 func (m *RetentionEvent) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastModifiedDateTime
-    }
+    return m.lastModifiedDateTime
 }
 // GetLastStatusUpdateDateTime gets the lastStatusUpdateDateTime property value. Last time the status of the event was updated.
 func (m *RetentionEvent) GetLastStatusUpdateDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastStatusUpdateDateTime
-    }
+    return m.lastStatusUpdateDateTime
 }
 // GetRetentionEventType gets the retentionEventType property value. Specifies the event that will start the retention period for labels that use this event type when an event is created.
 func (m *RetentionEvent) GetRetentionEventType()(RetentionEventTypeable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.retentionEventType
-    }
+    return m.retentionEventType
 }
 // Serialize serializes information the current object
 func (m *RetentionEvent) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -366,73 +318,49 @@ func (m *RetentionEvent) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
 }
 // SetCreatedBy sets the createdBy property value. The user who created the retentionEvent.
 func (m *RetentionEvent) SetCreatedBy(value ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentitySetable)() {
-    if m != nil {
-        m.createdBy = value
-    }
+    m.createdBy = value
 }
 // SetCreatedDateTime sets the createdDateTime property value. The date time when the retentionEvent was created.
 func (m *RetentionEvent) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.createdDateTime = value
-    }
+    m.createdDateTime = value
 }
 // SetDescription sets the description property value. Optional information about the event.
 func (m *RetentionEvent) SetDescription(value *string)() {
-    if m != nil {
-        m.description = value
-    }
+    m.description = value
 }
 // SetDisplayName sets the displayName property value. Name of the event.
 func (m *RetentionEvent) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }
 // SetEventPropagationResults sets the eventPropagationResults property value. The eventPropagationResults property
 func (m *RetentionEvent) SetEventPropagationResults(value []EventPropagationResultable)() {
-    if m != nil {
-        m.eventPropagationResults = value
-    }
+    m.eventPropagationResults = value
 }
 // SetEventQueries sets the eventQueries property value. Represents the workload (SharePoint Online, OneDrive for Business, Exchange Online) and identification information associated with a retention event.
 func (m *RetentionEvent) SetEventQueries(value []EventQueryable)() {
-    if m != nil {
-        m.eventQueries = value
-    }
+    m.eventQueries = value
 }
 // SetEventStatus sets the eventStatus property value. The eventStatus property
 func (m *RetentionEvent) SetEventStatus(value RetentionEventStatusable)() {
-    if m != nil {
-        m.eventStatus = value
-    }
+    m.eventStatus = value
 }
 // SetEventTriggerDateTime sets the eventTriggerDateTime property value. Optional time when the event should be triggered.
 func (m *RetentionEvent) SetEventTriggerDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.eventTriggerDateTime = value
-    }
+    m.eventTriggerDateTime = value
 }
 // SetLastModifiedBy sets the lastModifiedBy property value. The user who last modified the retentionEvent.
 func (m *RetentionEvent) SetLastModifiedBy(value ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentitySetable)() {
-    if m != nil {
-        m.lastModifiedBy = value
-    }
+    m.lastModifiedBy = value
 }
 // SetLastModifiedDateTime sets the lastModifiedDateTime property value. The latest date time when the retentionEvent was modified.
 func (m *RetentionEvent) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.lastModifiedDateTime = value
-    }
+    m.lastModifiedDateTime = value
 }
 // SetLastStatusUpdateDateTime sets the lastStatusUpdateDateTime property value. Last time the status of the event was updated.
 func (m *RetentionEvent) SetLastStatusUpdateDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.lastStatusUpdateDateTime = value
-    }
+    m.lastStatusUpdateDateTime = value
 }
 // SetRetentionEventType sets the retentionEventType property value. Specifies the event that will start the retention period for labels that use this event type when an event is created.
 func (m *RetentionEvent) SetRetentionEventType(value RetentionEventTypeable)() {
-    if m != nil {
-        m.retentionEventType = value
-    }
+    m.retentionEventType = value
 }

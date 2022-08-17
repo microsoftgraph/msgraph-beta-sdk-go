@@ -34,11 +34,7 @@ func CreateChromeOSDevicePropertyFromDiscriminatorValue(parseNode i878a80d2330e8
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ChromeOSDeviceProperty) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ChromeOSDeviceProperty) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -97,43 +93,23 @@ func (m *ChromeOSDeviceProperty) GetFieldDeserializers()(map[string]func(i878a80
 }
 // GetName gets the name property value. Name of the property
 func (m *ChromeOSDeviceProperty) GetName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.name
-    }
+    return m.name
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *ChromeOSDeviceProperty) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetUpdatable gets the updatable property value. Whether this property is updatable
 func (m *ChromeOSDeviceProperty) GetUpdatable()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.updatable
-    }
+    return m.updatable
 }
 // GetValue gets the value property value. Value of the property
 func (m *ChromeOSDeviceProperty) GetValue()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.value
-    }
+    return m.value
 }
 // GetValueType gets the valueType property value. Type of the value
 func (m *ChromeOSDeviceProperty) GetValueType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.valueType
-    }
+    return m.valueType
 }
 // Serialize serializes information the current object
 func (m *ChromeOSDeviceProperty) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -177,37 +153,25 @@ func (m *ChromeOSDeviceProperty) Serialize(writer i878a80d2330e89d26896388a3f487
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ChromeOSDeviceProperty) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetName sets the name property value. Name of the property
 func (m *ChromeOSDeviceProperty) SetName(value *string)() {
-    if m != nil {
-        m.name = value
-    }
+    m.name = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *ChromeOSDeviceProperty) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetUpdatable sets the updatable property value. Whether this property is updatable
 func (m *ChromeOSDeviceProperty) SetUpdatable(value *bool)() {
-    if m != nil {
-        m.updatable = value
-    }
+    m.updatable = value
 }
 // SetValue sets the value property value. Value of the property
 func (m *ChromeOSDeviceProperty) SetValue(value *string)() {
-    if m != nil {
-        m.value = value
-    }
+    m.value = value
 }
 // SetValueType sets the valueType property value. Type of the value
 func (m *ChromeOSDeviceProperty) SetValueType(value *string)() {
-    if m != nil {
-        m.valueType = value
-    }
+    m.valueType = value
 }

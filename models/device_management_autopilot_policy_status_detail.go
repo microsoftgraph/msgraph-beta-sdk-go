@@ -36,27 +36,15 @@ func CreateDeviceManagementAutopilotPolicyStatusDetailFromDiscriminatorValue(par
 }
 // GetComplianceStatus gets the complianceStatus property value. The complianceStatus property
 func (m *DeviceManagementAutopilotPolicyStatusDetail) GetComplianceStatus()(*DeviceManagementAutopilotPolicyComplianceStatus) {
-    if m == nil {
-        return nil
-    } else {
-        return m.complianceStatus
-    }
+    return m.complianceStatus
 }
 // GetDisplayName gets the displayName property value. The friendly name of the policy.
 func (m *DeviceManagementAutopilotPolicyStatusDetail) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
 // GetErrorCode gets the errorCode property value. The errorode associated with the compliance or enforcement status of the policy. Error code for enforcement status takes precedence if it exists.
 func (m *DeviceManagementAutopilotPolicyStatusDetail) GetErrorCode()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.errorCode
-    }
+    return m.errorCode
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceManagementAutopilotPolicyStatusDetail) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -125,27 +113,15 @@ func (m *DeviceManagementAutopilotPolicyStatusDetail) GetFieldDeserializers()(ma
 }
 // GetLastReportedDateTime gets the lastReportedDateTime property value. Timestamp of the reported policy status
 func (m *DeviceManagementAutopilotPolicyStatusDetail) GetLastReportedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastReportedDateTime
-    }
+    return m.lastReportedDateTime
 }
 // GetPolicyType gets the policyType property value. The policyType property
 func (m *DeviceManagementAutopilotPolicyStatusDetail) GetPolicyType()(*DeviceManagementAutopilotPolicyType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.policyType
-    }
+    return m.policyType
 }
 // GetTrackedOnEnrollmentStatus gets the trackedOnEnrollmentStatus property value. Indicates if this prolicy was tracked as part of the autopilot bootstrap enrollment sync session
 func (m *DeviceManagementAutopilotPolicyStatusDetail) GetTrackedOnEnrollmentStatus()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.trackedOnEnrollmentStatus
-    }
+    return m.trackedOnEnrollmentStatus
 }
 // Serialize serializes information the current object
 func (m *DeviceManagementAutopilotPolicyStatusDetail) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -195,37 +171,25 @@ func (m *DeviceManagementAutopilotPolicyStatusDetail) Serialize(writer i878a80d2
 }
 // SetComplianceStatus sets the complianceStatus property value. The complianceStatus property
 func (m *DeviceManagementAutopilotPolicyStatusDetail) SetComplianceStatus(value *DeviceManagementAutopilotPolicyComplianceStatus)() {
-    if m != nil {
-        m.complianceStatus = value
-    }
+    m.complianceStatus = value
 }
 // SetDisplayName sets the displayName property value. The friendly name of the policy.
 func (m *DeviceManagementAutopilotPolicyStatusDetail) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }
 // SetErrorCode sets the errorCode property value. The errorode associated with the compliance or enforcement status of the policy. Error code for enforcement status takes precedence if it exists.
 func (m *DeviceManagementAutopilotPolicyStatusDetail) SetErrorCode(value *int32)() {
-    if m != nil {
-        m.errorCode = value
-    }
+    m.errorCode = value
 }
 // SetLastReportedDateTime sets the lastReportedDateTime property value. Timestamp of the reported policy status
 func (m *DeviceManagementAutopilotPolicyStatusDetail) SetLastReportedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.lastReportedDateTime = value
-    }
+    m.lastReportedDateTime = value
 }
 // SetPolicyType sets the policyType property value. The policyType property
 func (m *DeviceManagementAutopilotPolicyStatusDetail) SetPolicyType(value *DeviceManagementAutopilotPolicyType)() {
-    if m != nil {
-        m.policyType = value
-    }
+    m.policyType = value
 }
 // SetTrackedOnEnrollmentStatus sets the trackedOnEnrollmentStatus property value. Indicates if this prolicy was tracked as part of the autopilot bootstrap enrollment sync session
 func (m *DeviceManagementAutopilotPolicyStatusDetail) SetTrackedOnEnrollmentStatus(value *bool)() {
-    if m != nil {
-        m.trackedOnEnrollmentStatus = value
-    }
+    m.trackedOnEnrollmentStatus = value
 }

@@ -25,11 +25,7 @@ func CreateChatMembersNotificationRecipientFromDiscriminatorValue(parseNode i878
 }
 // GetChatId gets the chatId property value. The chat's identifier.
 func (m *ChatMembersNotificationRecipient) GetChatId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.chatId
-    }
+    return m.chatId
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ChatMembersNotificationRecipient) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -62,7 +58,5 @@ func (m *ChatMembersNotificationRecipient) Serialize(writer i878a80d2330e89d2689
 }
 // SetChatId sets the chatId property value. The chat's identifier.
 func (m *ChatMembersNotificationRecipient) SetChatId(value *string)() {
-    if m != nil {
-        m.chatId = value
-    }
+    m.chatId = value
 }

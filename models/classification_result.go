@@ -32,27 +32,15 @@ func CreateClassificationResultFromDiscriminatorValue(parseNode i878a80d2330e89d
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ClassificationResult) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetConfidenceLevel gets the confidenceLevel property value. The confidence level, 0 to 100, of the result.
 func (m *ClassificationResult) GetConfidenceLevel()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.confidenceLevel
-    }
+    return m.confidenceLevel
 }
 // GetCount gets the count property value. The number of instances of the specific information type in the input.
 func (m *ClassificationResult) GetCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.count
-    }
+    return m.count
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ClassificationResult) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -101,19 +89,11 @@ func (m *ClassificationResult) GetFieldDeserializers()(map[string]func(i878a80d2
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *ClassificationResult) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetSensitiveTypeId gets the sensitiveTypeId property value. The GUID of the discovered sensitive information type.
 func (m *ClassificationResult) GetSensitiveTypeId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.sensitiveTypeId
-    }
+    return m.sensitiveTypeId
 }
 // Serialize serializes information the current object
 func (m *ClassificationResult) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -151,31 +131,21 @@ func (m *ClassificationResult) Serialize(writer i878a80d2330e89d26896388a3f487ee
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ClassificationResult) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetConfidenceLevel sets the confidenceLevel property value. The confidence level, 0 to 100, of the result.
 func (m *ClassificationResult) SetConfidenceLevel(value *int32)() {
-    if m != nil {
-        m.confidenceLevel = value
-    }
+    m.confidenceLevel = value
 }
 // SetCount sets the count property value. The number of instances of the specific information type in the input.
 func (m *ClassificationResult) SetCount(value *int32)() {
-    if m != nil {
-        m.count = value
-    }
+    m.count = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *ClassificationResult) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetSensitiveTypeId sets the sensitiveTypeId property value. The GUID of the discovered sensitive information type.
 func (m *ClassificationResult) SetSensitiveTypeId(value *string)() {
-    if m != nil {
-        m.sensitiveTypeId = value
-    }
+    m.sensitiveTypeId = value
 }

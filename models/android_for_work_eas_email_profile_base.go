@@ -58,27 +58,15 @@ func CreateAndroidForWorkEasEmailProfileBaseFromDiscriminatorValue(parseNode i87
 }
 // GetAuthenticationMethod gets the authenticationMethod property value. Exchange Active Sync authentication method.
 func (m *AndroidForWorkEasEmailProfileBase) GetAuthenticationMethod()(*EasAuthenticationMethod) {
-    if m == nil {
-        return nil
-    } else {
-        return m.authenticationMethod
-    }
+    return m.authenticationMethod
 }
 // GetDurationOfEmailToSync gets the durationOfEmailToSync property value. Possible values for email sync duration.
 func (m *AndroidForWorkEasEmailProfileBase) GetDurationOfEmailToSync()(*EmailSyncDuration) {
-    if m == nil {
-        return nil
-    } else {
-        return m.durationOfEmailToSync
-    }
+    return m.durationOfEmailToSync
 }
 // GetEmailAddressSource gets the emailAddressSource property value. Possible values for username source or email source.
 func (m *AndroidForWorkEasEmailProfileBase) GetEmailAddressSource()(*UserEmailSource) {
-    if m == nil {
-        return nil
-    } else {
-        return m.emailAddressSource
-    }
+    return m.emailAddressSource
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AndroidForWorkEasEmailProfileBase) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -157,35 +145,19 @@ func (m *AndroidForWorkEasEmailProfileBase) GetFieldDeserializers()(map[string]f
 }
 // GetHostName gets the hostName property value. Exchange location (URL) that the mail app connects to.
 func (m *AndroidForWorkEasEmailProfileBase) GetHostName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.hostName
-    }
+    return m.hostName
 }
 // GetIdentityCertificate gets the identityCertificate property value. Identity certificate.
 func (m *AndroidForWorkEasEmailProfileBase) GetIdentityCertificate()(AndroidForWorkCertificateProfileBaseable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.identityCertificate
-    }
+    return m.identityCertificate
 }
 // GetRequireSsl gets the requireSsl property value. Indicates whether or not to use SSL.
 func (m *AndroidForWorkEasEmailProfileBase) GetRequireSsl()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.requireSsl
-    }
+    return m.requireSsl
 }
 // GetUsernameSource gets the usernameSource property value. Android username source.
 func (m *AndroidForWorkEasEmailProfileBase) GetUsernameSource()(*AndroidUsernameSource) {
-    if m == nil {
-        return nil
-    } else {
-        return m.usernameSource
-    }
+    return m.usernameSource
 }
 // Serialize serializes information the current object
 func (m *AndroidForWorkEasEmailProfileBase) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -243,43 +215,29 @@ func (m *AndroidForWorkEasEmailProfileBase) Serialize(writer i878a80d2330e89d268
 }
 // SetAuthenticationMethod sets the authenticationMethod property value. Exchange Active Sync authentication method.
 func (m *AndroidForWorkEasEmailProfileBase) SetAuthenticationMethod(value *EasAuthenticationMethod)() {
-    if m != nil {
-        m.authenticationMethod = value
-    }
+    m.authenticationMethod = value
 }
 // SetDurationOfEmailToSync sets the durationOfEmailToSync property value. Possible values for email sync duration.
 func (m *AndroidForWorkEasEmailProfileBase) SetDurationOfEmailToSync(value *EmailSyncDuration)() {
-    if m != nil {
-        m.durationOfEmailToSync = value
-    }
+    m.durationOfEmailToSync = value
 }
 // SetEmailAddressSource sets the emailAddressSource property value. Possible values for username source or email source.
 func (m *AndroidForWorkEasEmailProfileBase) SetEmailAddressSource(value *UserEmailSource)() {
-    if m != nil {
-        m.emailAddressSource = value
-    }
+    m.emailAddressSource = value
 }
 // SetHostName sets the hostName property value. Exchange location (URL) that the mail app connects to.
 func (m *AndroidForWorkEasEmailProfileBase) SetHostName(value *string)() {
-    if m != nil {
-        m.hostName = value
-    }
+    m.hostName = value
 }
 // SetIdentityCertificate sets the identityCertificate property value. Identity certificate.
 func (m *AndroidForWorkEasEmailProfileBase) SetIdentityCertificate(value AndroidForWorkCertificateProfileBaseable)() {
-    if m != nil {
-        m.identityCertificate = value
-    }
+    m.identityCertificate = value
 }
 // SetRequireSsl sets the requireSsl property value. Indicates whether or not to use SSL.
 func (m *AndroidForWorkEasEmailProfileBase) SetRequireSsl(value *bool)() {
-    if m != nil {
-        m.requireSsl = value
-    }
+    m.requireSsl = value
 }
 // SetUsernameSource sets the usernameSource property value. Android username source.
 func (m *AndroidForWorkEasEmailProfileBase) SetUsernameSource(value *AndroidUsernameSource)() {
-    if m != nil {
-        m.usernameSource = value
-    }
+    m.usernameSource = value
 }

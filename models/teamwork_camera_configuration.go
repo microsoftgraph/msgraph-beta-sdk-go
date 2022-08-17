@@ -32,35 +32,19 @@ func CreateTeamworkCameraConfigurationFromDiscriminatorValue(parseNode i878a80d2
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TeamworkCameraConfiguration) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetCameras gets the cameras property value. The cameras property
 func (m *TeamworkCameraConfiguration) GetCameras()([]TeamworkPeripheralable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.cameras
-    }
+    return m.cameras
 }
 // GetContentCameraConfiguration gets the contentCameraConfiguration property value. The configuration for the content camera.
 func (m *TeamworkCameraConfiguration) GetContentCameraConfiguration()(TeamworkContentCameraConfigurationable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.contentCameraConfiguration
-    }
+    return m.contentCameraConfiguration
 }
 // GetDefaultContentCamera gets the defaultContentCamera property value. The defaultContentCamera property
 func (m *TeamworkCameraConfiguration) GetDefaultContentCamera()(TeamworkPeripheralable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.defaultContentCamera
-    }
+    return m.defaultContentCamera
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *TeamworkCameraConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -113,11 +97,7 @@ func (m *TeamworkCameraConfiguration) GetFieldDeserializers()(map[string]func(i8
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *TeamworkCameraConfiguration) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // Serialize serializes information the current object
 func (m *TeamworkCameraConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -159,31 +139,21 @@ func (m *TeamworkCameraConfiguration) Serialize(writer i878a80d2330e89d26896388a
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TeamworkCameraConfiguration) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetCameras sets the cameras property value. The cameras property
 func (m *TeamworkCameraConfiguration) SetCameras(value []TeamworkPeripheralable)() {
-    if m != nil {
-        m.cameras = value
-    }
+    m.cameras = value
 }
 // SetContentCameraConfiguration sets the contentCameraConfiguration property value. The configuration for the content camera.
 func (m *TeamworkCameraConfiguration) SetContentCameraConfiguration(value TeamworkContentCameraConfigurationable)() {
-    if m != nil {
-        m.contentCameraConfiguration = value
-    }
+    m.contentCameraConfiguration = value
 }
 // SetDefaultContentCamera sets the defaultContentCamera property value. The defaultContentCamera property
 func (m *TeamworkCameraConfiguration) SetDefaultContentCamera(value TeamworkPeripheralable)() {
-    if m != nil {
-        m.defaultContentCamera = value
-    }
+    m.defaultContentCamera = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *TeamworkCameraConfiguration) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }

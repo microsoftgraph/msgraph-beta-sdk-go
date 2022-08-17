@@ -30,19 +30,11 @@ func CreateDeviceManagementEnumValueFromDiscriminatorValue(parseNode i878a80d233
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DeviceManagementEnumValue) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetDisplayName gets the displayName property value. Display name for this enum value
 func (m *DeviceManagementEnumValue) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceManagementEnumValue) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -81,19 +73,11 @@ func (m *DeviceManagementEnumValue) GetFieldDeserializers()(map[string]func(i878
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *DeviceManagementEnumValue) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetValue gets the value property value. The raw enum value text
 func (m *DeviceManagementEnumValue) GetValue()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.value
-    }
+    return m.value
 }
 // Serialize serializes information the current object
 func (m *DeviceManagementEnumValue) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -125,25 +109,17 @@ func (m *DeviceManagementEnumValue) Serialize(writer i878a80d2330e89d26896388a3f
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DeviceManagementEnumValue) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetDisplayName sets the displayName property value. Display name for this enum value
 func (m *DeviceManagementEnumValue) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *DeviceManagementEnumValue) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetValue sets the value property value. The raw enum value text
 func (m *DeviceManagementEnumValue) SetValue(value *string)() {
-    if m != nil {
-        m.value = value
-    }
+    m.value = value
 }

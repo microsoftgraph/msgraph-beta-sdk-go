@@ -40,11 +40,7 @@ func (m *FileUrlThreatSubmission) GetFieldDeserializers()(map[string]func(i878a8
 }
 // GetFileUrl gets the fileUrl property value. It specifies the URL of the file which needs to be submitted.
 func (m *FileUrlThreatSubmission) GetFileUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.fileUrl
-    }
+    return m.fileUrl
 }
 // Serialize serializes information the current object
 func (m *FileUrlThreatSubmission) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -62,7 +58,5 @@ func (m *FileUrlThreatSubmission) Serialize(writer i878a80d2330e89d26896388a3f48
 }
 // SetFileUrl sets the fileUrl property value. It specifies the URL of the file which needs to be submitted.
 func (m *FileUrlThreatSubmission) SetFileUrl(value *string)() {
-    if m != nil {
-        m.fileUrl = value
-    }
+    m.fileUrl = value
 }

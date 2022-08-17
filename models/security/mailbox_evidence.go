@@ -29,11 +29,7 @@ func CreateMailboxEvidenceFromDiscriminatorValue(parseNode i878a80d2330e89d26896
 }
 // GetDisplayName gets the displayName property value. The displayName property
 func (m *MailboxEvidence) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *MailboxEvidence) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -72,19 +68,11 @@ func (m *MailboxEvidence) GetFieldDeserializers()(map[string]func(i878a80d2330e8
 }
 // GetPrimaryAddress gets the primaryAddress property value. The primaryAddress property
 func (m *MailboxEvidence) GetPrimaryAddress()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.primaryAddress
-    }
+    return m.primaryAddress
 }
 // GetUserAccount gets the userAccount property value. The userAccount property
 func (m *MailboxEvidence) GetUserAccount()(UserAccountable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userAccount
-    }
+    return m.userAccount
 }
 // Serialize serializes information the current object
 func (m *MailboxEvidence) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -114,19 +102,13 @@ func (m *MailboxEvidence) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
 }
 // SetDisplayName sets the displayName property value. The displayName property
 func (m *MailboxEvidence) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }
 // SetPrimaryAddress sets the primaryAddress property value. The primaryAddress property
 func (m *MailboxEvidence) SetPrimaryAddress(value *string)() {
-    if m != nil {
-        m.primaryAddress = value
-    }
+    m.primaryAddress = value
 }
 // SetUserAccount sets the userAccount property value. The userAccount property
 func (m *MailboxEvidence) SetUserAccount(value UserAccountable)() {
-    if m != nil {
-        m.userAccount = value
-    }
+    m.userAccount = value
 }

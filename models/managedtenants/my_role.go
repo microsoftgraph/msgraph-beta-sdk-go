@@ -30,19 +30,11 @@ func CreateMyRoleFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *MyRole) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetAssignments gets the assignments property value. A collection of role assignments for the managed tenant.
 func (m *MyRole) GetAssignments()([]RoleAssignmentable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.assignments
-    }
+    return m.assignments
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *MyRole) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -85,19 +77,11 @@ func (m *MyRole) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689638
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *MyRole) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetTenantId gets the tenantId property value. The Azure Active Directory tenant identifier for the managed tenant. Optional. Read-only.
 func (m *MyRole) GetTenantId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.tenantId
-    }
+    return m.tenantId
 }
 // Serialize serializes information the current object
 func (m *MyRole) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -133,25 +117,17 @@ func (m *MyRole) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *MyRole) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetAssignments sets the assignments property value. A collection of role assignments for the managed tenant.
 func (m *MyRole) SetAssignments(value []RoleAssignmentable)() {
-    if m != nil {
-        m.assignments = value
-    }
+    m.assignments = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *MyRole) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetTenantId sets the tenantId property value. The Azure Active Directory tenant identifier for the managed tenant. Optional. Read-only.
 func (m *MyRole) SetTenantId(value *string)() {
-    if m != nil {
-        m.tenantId = value
-    }
+    m.tenantId = value
 }

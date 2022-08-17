@@ -27,19 +27,11 @@ func CreateDeliveryOptimizationBandwidthHoursWithPercentageFromDiscriminatorValu
 }
 // GetBandwidthBackgroundPercentageHours gets the bandwidthBackgroundPercentageHours property value. Background download percentage hours.
 func (m *DeliveryOptimizationBandwidthHoursWithPercentage) GetBandwidthBackgroundPercentageHours()(DeliveryOptimizationBandwidthBusinessHoursLimitable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.bandwidthBackgroundPercentageHours
-    }
+    return m.bandwidthBackgroundPercentageHours
 }
 // GetBandwidthForegroundPercentageHours gets the bandwidthForegroundPercentageHours property value. Foreground download percentage hours.
 func (m *DeliveryOptimizationBandwidthHoursWithPercentage) GetBandwidthForegroundPercentageHours()(DeliveryOptimizationBandwidthBusinessHoursLimitable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.bandwidthForegroundPercentageHours
-    }
+    return m.bandwidthForegroundPercentageHours
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeliveryOptimizationBandwidthHoursWithPercentage) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -88,13 +80,9 @@ func (m *DeliveryOptimizationBandwidthHoursWithPercentage) Serialize(writer i878
 }
 // SetBandwidthBackgroundPercentageHours sets the bandwidthBackgroundPercentageHours property value. Background download percentage hours.
 func (m *DeliveryOptimizationBandwidthHoursWithPercentage) SetBandwidthBackgroundPercentageHours(value DeliveryOptimizationBandwidthBusinessHoursLimitable)() {
-    if m != nil {
-        m.bandwidthBackgroundPercentageHours = value
-    }
+    m.bandwidthBackgroundPercentageHours = value
 }
 // SetBandwidthForegroundPercentageHours sets the bandwidthForegroundPercentageHours property value. Foreground download percentage hours.
 func (m *DeliveryOptimizationBandwidthHoursWithPercentage) SetBandwidthForegroundPercentageHours(value DeliveryOptimizationBandwidthBusinessHoursLimitable)() {
-    if m != nil {
-        m.bandwidthForegroundPercentageHours = value
-    }
+    m.bandwidthForegroundPercentageHours = value
 }

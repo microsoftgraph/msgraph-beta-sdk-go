@@ -25,11 +25,7 @@ func CreateWindowsPhone81AppXBundleFromDiscriminatorValue(parseNode i878a80d2330
 }
 // GetAppXPackageInformationList gets the appXPackageInformationList property value. The list of AppX Package Information.
 func (m *WindowsPhone81AppXBundle) GetAppXPackageInformationList()([]WindowsPackageInformationable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.appXPackageInformationList
-    }
+    return m.appXPackageInformationList
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *WindowsPhone81AppXBundle) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -70,7 +66,5 @@ func (m *WindowsPhone81AppXBundle) Serialize(writer i878a80d2330e89d26896388a3f4
 }
 // SetAppXPackageInformationList sets the appXPackageInformationList property value. The list of AppX Package Information.
 func (m *WindowsPhone81AppXBundle) SetAppXPackageInformationList(value []WindowsPackageInformationable)() {
-    if m != nil {
-        m.appXPackageInformationList = value
-    }
+    m.appXPackageInformationList = value
 }

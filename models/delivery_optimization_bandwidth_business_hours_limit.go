@@ -34,43 +34,23 @@ func CreateDeliveryOptimizationBandwidthBusinessHoursLimitFromDiscriminatorValue
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DeliveryOptimizationBandwidthBusinessHoursLimit) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetBandwidthBeginBusinessHours gets the bandwidthBeginBusinessHours property value. Specifies the beginning of business hours using a 24-hour clock (0-23). Valid values 0 to 23
 func (m *DeliveryOptimizationBandwidthBusinessHoursLimit) GetBandwidthBeginBusinessHours()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.bandwidthBeginBusinessHours
-    }
+    return m.bandwidthBeginBusinessHours
 }
 // GetBandwidthEndBusinessHours gets the bandwidthEndBusinessHours property value. Specifies the end of business hours using a 24-hour clock (0-23). Valid values 0 to 23
 func (m *DeliveryOptimizationBandwidthBusinessHoursLimit) GetBandwidthEndBusinessHours()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.bandwidthEndBusinessHours
-    }
+    return m.bandwidthEndBusinessHours
 }
 // GetBandwidthPercentageDuringBusinessHours gets the bandwidthPercentageDuringBusinessHours property value. Specifies the percentage of bandwidth to limit during business hours (0-100). Valid values 0 to 100
 func (m *DeliveryOptimizationBandwidthBusinessHoursLimit) GetBandwidthPercentageDuringBusinessHours()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.bandwidthPercentageDuringBusinessHours
-    }
+    return m.bandwidthPercentageDuringBusinessHours
 }
 // GetBandwidthPercentageOutsideBusinessHours gets the bandwidthPercentageOutsideBusinessHours property value. Specifies the percentage of bandwidth to limit outsidse business hours (0-100). Valid values 0 to 100
 func (m *DeliveryOptimizationBandwidthBusinessHoursLimit) GetBandwidthPercentageOutsideBusinessHours()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.bandwidthPercentageOutsideBusinessHours
-    }
+    return m.bandwidthPercentageOutsideBusinessHours
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeliveryOptimizationBandwidthBusinessHoursLimit) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -129,11 +109,7 @@ func (m *DeliveryOptimizationBandwidthBusinessHoursLimit) GetFieldDeserializers(
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *DeliveryOptimizationBandwidthBusinessHoursLimit) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // Serialize serializes information the current object
 func (m *DeliveryOptimizationBandwidthBusinessHoursLimit) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -177,37 +153,25 @@ func (m *DeliveryOptimizationBandwidthBusinessHoursLimit) Serialize(writer i878a
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DeliveryOptimizationBandwidthBusinessHoursLimit) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetBandwidthBeginBusinessHours sets the bandwidthBeginBusinessHours property value. Specifies the beginning of business hours using a 24-hour clock (0-23). Valid values 0 to 23
 func (m *DeliveryOptimizationBandwidthBusinessHoursLimit) SetBandwidthBeginBusinessHours(value *int32)() {
-    if m != nil {
-        m.bandwidthBeginBusinessHours = value
-    }
+    m.bandwidthBeginBusinessHours = value
 }
 // SetBandwidthEndBusinessHours sets the bandwidthEndBusinessHours property value. Specifies the end of business hours using a 24-hour clock (0-23). Valid values 0 to 23
 func (m *DeliveryOptimizationBandwidthBusinessHoursLimit) SetBandwidthEndBusinessHours(value *int32)() {
-    if m != nil {
-        m.bandwidthEndBusinessHours = value
-    }
+    m.bandwidthEndBusinessHours = value
 }
 // SetBandwidthPercentageDuringBusinessHours sets the bandwidthPercentageDuringBusinessHours property value. Specifies the percentage of bandwidth to limit during business hours (0-100). Valid values 0 to 100
 func (m *DeliveryOptimizationBandwidthBusinessHoursLimit) SetBandwidthPercentageDuringBusinessHours(value *int32)() {
-    if m != nil {
-        m.bandwidthPercentageDuringBusinessHours = value
-    }
+    m.bandwidthPercentageDuringBusinessHours = value
 }
 // SetBandwidthPercentageOutsideBusinessHours sets the bandwidthPercentageOutsideBusinessHours property value. Specifies the percentage of bandwidth to limit outsidse business hours (0-100). Valid values 0 to 100
 func (m *DeliveryOptimizationBandwidthBusinessHoursLimit) SetBandwidthPercentageOutsideBusinessHours(value *int32)() {
-    if m != nil {
-        m.bandwidthPercentageOutsideBusinessHours = value
-    }
+    m.bandwidthPercentageOutsideBusinessHours = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *DeliveryOptimizationBandwidthBusinessHoursLimit) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }

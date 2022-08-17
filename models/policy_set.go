@@ -44,43 +44,23 @@ func CreatePolicySetFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f
 }
 // GetAssignments gets the assignments property value. Assignments of the PolicySet.
 func (m *PolicySet) GetAssignments()([]PolicySetAssignmentable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.assignments
-    }
+    return m.assignments
 }
 // GetCreatedDateTime gets the createdDateTime property value. Creation time of the PolicySet.
 func (m *PolicySet) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.createdDateTime
-    }
+    return m.createdDateTime
 }
 // GetDescription gets the description property value. Description of the PolicySet.
 func (m *PolicySet) GetDescription()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.description
-    }
+    return m.description
 }
 // GetDisplayName gets the displayName property value. DisplayName of the PolicySet.
 func (m *PolicySet) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
 // GetErrorCode gets the errorCode property value. The errorCode property
 func (m *PolicySet) GetErrorCode()(*ErrorCode) {
-    if m == nil {
-        return nil
-    } else {
-        return m.errorCode
-    }
+    return m.errorCode
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *PolicySet) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -205,43 +185,23 @@ func (m *PolicySet) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
 }
 // GetGuidedDeploymentTags gets the guidedDeploymentTags property value. Tags of the guided deployment
 func (m *PolicySet) GetGuidedDeploymentTags()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.guidedDeploymentTags
-    }
+    return m.guidedDeploymentTags
 }
 // GetItems gets the items property value. Items of the PolicySet with maximum count 100.
 func (m *PolicySet) GetItems()([]PolicySetItemable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.items
-    }
+    return m.items
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. Last modified time of the PolicySet.
 func (m *PolicySet) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastModifiedDateTime
-    }
+    return m.lastModifiedDateTime
 }
 // GetRoleScopeTags gets the roleScopeTags property value. RoleScopeTags of the PolicySet
 func (m *PolicySet) GetRoleScopeTags()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.roleScopeTags
-    }
+    return m.roleScopeTags
 }
 // GetStatus gets the status property value. The enum to specify the status of PolicySet.
 func (m *PolicySet) GetStatus()(*PolicySetStatus) {
-    if m == nil {
-        return nil
-    } else {
-        return m.status
-    }
+    return m.status
 }
 // Serialize serializes information the current object
 func (m *PolicySet) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -323,61 +283,41 @@ func (m *PolicySet) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
 }
 // SetAssignments sets the assignments property value. Assignments of the PolicySet.
 func (m *PolicySet) SetAssignments(value []PolicySetAssignmentable)() {
-    if m != nil {
-        m.assignments = value
-    }
+    m.assignments = value
 }
 // SetCreatedDateTime sets the createdDateTime property value. Creation time of the PolicySet.
 func (m *PolicySet) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.createdDateTime = value
-    }
+    m.createdDateTime = value
 }
 // SetDescription sets the description property value. Description of the PolicySet.
 func (m *PolicySet) SetDescription(value *string)() {
-    if m != nil {
-        m.description = value
-    }
+    m.description = value
 }
 // SetDisplayName sets the displayName property value. DisplayName of the PolicySet.
 func (m *PolicySet) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }
 // SetErrorCode sets the errorCode property value. The errorCode property
 func (m *PolicySet) SetErrorCode(value *ErrorCode)() {
-    if m != nil {
-        m.errorCode = value
-    }
+    m.errorCode = value
 }
 // SetGuidedDeploymentTags sets the guidedDeploymentTags property value. Tags of the guided deployment
 func (m *PolicySet) SetGuidedDeploymentTags(value []string)() {
-    if m != nil {
-        m.guidedDeploymentTags = value
-    }
+    m.guidedDeploymentTags = value
 }
 // SetItems sets the items property value. Items of the PolicySet with maximum count 100.
 func (m *PolicySet) SetItems(value []PolicySetItemable)() {
-    if m != nil {
-        m.items = value
-    }
+    m.items = value
 }
 // SetLastModifiedDateTime sets the lastModifiedDateTime property value. Last modified time of the PolicySet.
 func (m *PolicySet) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.lastModifiedDateTime = value
-    }
+    m.lastModifiedDateTime = value
 }
 // SetRoleScopeTags sets the roleScopeTags property value. RoleScopeTags of the PolicySet
 func (m *PolicySet) SetRoleScopeTags(value []string)() {
-    if m != nil {
-        m.roleScopeTags = value
-    }
+    m.roleScopeTags = value
 }
 // SetStatus sets the status property value. The enum to specify the status of PolicySet.
 func (m *PolicySet) SetStatus(value *PolicySetStatus)() {
-    if m != nil {
-        m.status = value
-    }
+    m.status = value
 }

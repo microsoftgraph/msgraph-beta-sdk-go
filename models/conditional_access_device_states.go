@@ -30,19 +30,11 @@ func CreateConditionalAccessDeviceStatesFromDiscriminatorValue(parseNode i878a80
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ConditionalAccessDeviceStates) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetExcludeStates gets the excludeStates property value. States excluded from the scope of the policy. Possible values: Compliant, DomainJoined.
 func (m *ConditionalAccessDeviceStates) GetExcludeStates()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.excludeStates
-    }
+    return m.excludeStates
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ConditionalAccessDeviceStates) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -89,19 +81,11 @@ func (m *ConditionalAccessDeviceStates) GetFieldDeserializers()(map[string]func(
 }
 // GetIncludeStates gets the includeStates property value. States in the scope of the policy. All is the only allowed value.
 func (m *ConditionalAccessDeviceStates) GetIncludeStates()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.includeStates
-    }
+    return m.includeStates
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *ConditionalAccessDeviceStates) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // Serialize serializes information the current object
 func (m *ConditionalAccessDeviceStates) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -133,25 +117,17 @@ func (m *ConditionalAccessDeviceStates) Serialize(writer i878a80d2330e89d2689638
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ConditionalAccessDeviceStates) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetExcludeStates sets the excludeStates property value. States excluded from the scope of the policy. Possible values: Compliant, DomainJoined.
 func (m *ConditionalAccessDeviceStates) SetExcludeStates(value []string)() {
-    if m != nil {
-        m.excludeStates = value
-    }
+    m.excludeStates = value
 }
 // SetIncludeStates sets the includeStates property value. States in the scope of the policy. All is the only allowed value.
 func (m *ConditionalAccessDeviceStates) SetIncludeStates(value []string)() {
-    if m != nil {
-        m.includeStates = value
-    }
+    m.includeStates = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *ConditionalAccessDeviceStates) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }

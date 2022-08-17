@@ -25,11 +25,7 @@ func CreateRotateBitLockerKeysDeviceActionResultFromDiscriminatorValue(parseNode
 }
 // GetErrorCode gets the errorCode property value. RotateBitLockerKeys action error code
 func (m *RotateBitLockerKeysDeviceActionResult) GetErrorCode()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.errorCode
-    }
+    return m.errorCode
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *RotateBitLockerKeysDeviceActionResult) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -62,7 +58,5 @@ func (m *RotateBitLockerKeysDeviceActionResult) Serialize(writer i878a80d2330e89
 }
 // SetErrorCode sets the errorCode property value. RotateBitLockerKeys action error code
 func (m *RotateBitLockerKeysDeviceActionResult) SetErrorCode(value *int32)() {
-    if m != nil {
-        m.errorCode = value
-    }
+    m.errorCode = value
 }

@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AllowedDataLocation 
+// AllowedDataLocation provides operations to manage the collection of allowedDataLocation entities.
 type AllowedDataLocation struct {
     Entity
     // The appId property
@@ -16,7 +16,7 @@ type AllowedDataLocation struct {
     // The location property
     location *string
 }
-// NewAllowedDataLocation instantiates a new AllowedDataLocation and sets the default values.
+// NewAllowedDataLocation instantiates a new allowedDataLocation and sets the default values.
 func NewAllowedDataLocation()(*AllowedDataLocation) {
     m := &AllowedDataLocation{
         Entity: *NewEntity(),
@@ -31,19 +31,11 @@ func CreateAllowedDataLocationFromDiscriminatorValue(parseNode i878a80d2330e89d2
 }
 // GetAppId gets the appId property value. The appId property
 func (m *AllowedDataLocation) GetAppId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.appId
-    }
+    return m.appId
 }
 // GetDomain gets the domain property value. The domain property
 func (m *AllowedDataLocation) GetDomain()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.domain
-    }
+    return m.domain
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AllowedDataLocation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -92,19 +84,11 @@ func (m *AllowedDataLocation) GetFieldDeserializers()(map[string]func(i878a80d23
 }
 // GetIsDefault gets the isDefault property value. The isDefault property
 func (m *AllowedDataLocation) GetIsDefault()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isDefault
-    }
+    return m.isDefault
 }
 // GetLocation gets the location property value. The location property
 func (m *AllowedDataLocation) GetLocation()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.location
-    }
+    return m.location
 }
 // Serialize serializes information the current object
 func (m *AllowedDataLocation) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -140,25 +124,17 @@ func (m *AllowedDataLocation) Serialize(writer i878a80d2330e89d26896388a3f487eef
 }
 // SetAppId sets the appId property value. The appId property
 func (m *AllowedDataLocation) SetAppId(value *string)() {
-    if m != nil {
-        m.appId = value
-    }
+    m.appId = value
 }
 // SetDomain sets the domain property value. The domain property
 func (m *AllowedDataLocation) SetDomain(value *string)() {
-    if m != nil {
-        m.domain = value
-    }
+    m.domain = value
 }
 // SetIsDefault sets the isDefault property value. The isDefault property
 func (m *AllowedDataLocation) SetIsDefault(value *bool)() {
-    if m != nil {
-        m.isDefault = value
-    }
+    m.isDefault = value
 }
 // SetLocation sets the location property value. The location property
 func (m *AllowedDataLocation) SetLocation(value *string)() {
-    if m != nil {
-        m.location = value
-    }
+    m.location = value
 }

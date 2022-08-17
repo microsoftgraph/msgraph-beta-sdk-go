@@ -58,19 +58,11 @@ func CreateRoleDefinitionFromDiscriminatorValue(parseNode i878a80d2330e89d268963
 }
 // GetDescription gets the description property value. Description of the Role definition.
 func (m *RoleDefinition) GetDescription()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.description
-    }
+    return m.description
 }
 // GetDisplayName gets the displayName property value. Display Name of the Role definition.
 func (m *RoleDefinition) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *RoleDefinition) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -175,51 +167,27 @@ func (m *RoleDefinition) GetFieldDeserializers()(map[string]func(i878a80d2330e89
 }
 // GetIsBuiltIn gets the isBuiltIn property value. Type of Role. Set to True if it is built-in, or set to False if it is a custom role definition.
 func (m *RoleDefinition) GetIsBuiltIn()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isBuiltIn
-    }
+    return m.isBuiltIn
 }
 // GetIsBuiltInRoleDefinition gets the isBuiltInRoleDefinition property value. Type of Role. Set to True if it is built-in, or set to False if it is a custom role definition.
 func (m *RoleDefinition) GetIsBuiltInRoleDefinition()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isBuiltInRoleDefinition
-    }
+    return m.isBuiltInRoleDefinition
 }
 // GetPermissions gets the permissions property value. List of Role Permissions this role is allowed to perform. These must match the actionName that is defined as part of the rolePermission.
 func (m *RoleDefinition) GetPermissions()([]RolePermissionable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.permissions
-    }
+    return m.permissions
 }
 // GetRoleAssignments gets the roleAssignments property value. List of Role assignments for this role definition.
 func (m *RoleDefinition) GetRoleAssignments()([]RoleAssignmentable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.roleAssignments
-    }
+    return m.roleAssignments
 }
 // GetRolePermissions gets the rolePermissions property value. List of Role Permissions this role is allowed to perform. These must match the actionName that is defined as part of the rolePermission.
 func (m *RoleDefinition) GetRolePermissions()([]RolePermissionable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.rolePermissions
-    }
+    return m.rolePermissions
 }
 // GetRoleScopeTagIds gets the roleScopeTagIds property value. List of Scope Tags for this Entity instance.
 func (m *RoleDefinition) GetRoleScopeTagIds()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.roleScopeTagIds
-    }
+    return m.roleScopeTagIds
 }
 // Serialize serializes information the current object
 func (m *RoleDefinition) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -291,49 +259,33 @@ func (m *RoleDefinition) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
 }
 // SetDescription sets the description property value. Description of the Role definition.
 func (m *RoleDefinition) SetDescription(value *string)() {
-    if m != nil {
-        m.description = value
-    }
+    m.description = value
 }
 // SetDisplayName sets the displayName property value. Display Name of the Role definition.
 func (m *RoleDefinition) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }
 // SetIsBuiltIn sets the isBuiltIn property value. Type of Role. Set to True if it is built-in, or set to False if it is a custom role definition.
 func (m *RoleDefinition) SetIsBuiltIn(value *bool)() {
-    if m != nil {
-        m.isBuiltIn = value
-    }
+    m.isBuiltIn = value
 }
 // SetIsBuiltInRoleDefinition sets the isBuiltInRoleDefinition property value. Type of Role. Set to True if it is built-in, or set to False if it is a custom role definition.
 func (m *RoleDefinition) SetIsBuiltInRoleDefinition(value *bool)() {
-    if m != nil {
-        m.isBuiltInRoleDefinition = value
-    }
+    m.isBuiltInRoleDefinition = value
 }
 // SetPermissions sets the permissions property value. List of Role Permissions this role is allowed to perform. These must match the actionName that is defined as part of the rolePermission.
 func (m *RoleDefinition) SetPermissions(value []RolePermissionable)() {
-    if m != nil {
-        m.permissions = value
-    }
+    m.permissions = value
 }
 // SetRoleAssignments sets the roleAssignments property value. List of Role assignments for this role definition.
 func (m *RoleDefinition) SetRoleAssignments(value []RoleAssignmentable)() {
-    if m != nil {
-        m.roleAssignments = value
-    }
+    m.roleAssignments = value
 }
 // SetRolePermissions sets the rolePermissions property value. List of Role Permissions this role is allowed to perform. These must match the actionName that is defined as part of the rolePermission.
 func (m *RoleDefinition) SetRolePermissions(value []RolePermissionable)() {
-    if m != nil {
-        m.rolePermissions = value
-    }
+    m.rolePermissions = value
 }
 // SetRoleScopeTagIds sets the roleScopeTagIds property value. List of Scope Tags for this Entity instance.
 func (m *RoleDefinition) SetRoleScopeTagIds(value []string)() {
-    if m != nil {
-        m.roleScopeTagIds = value
-    }
+    m.roleScopeTagIds = value
 }

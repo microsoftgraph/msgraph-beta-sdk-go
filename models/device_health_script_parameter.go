@@ -57,27 +57,15 @@ func CreateDeviceHealthScriptParameterFromDiscriminatorValue(parseNode i878a80d2
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DeviceHealthScriptParameter) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetApplyDefaultValueWhenNotAssigned gets the applyDefaultValueWhenNotAssigned property value. Whether Apply DefaultValue When Not Assigned
 func (m *DeviceHealthScriptParameter) GetApplyDefaultValueWhenNotAssigned()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.applyDefaultValueWhenNotAssigned
-    }
+    return m.applyDefaultValueWhenNotAssigned
 }
 // GetDescription gets the description property value. The description of the param
 func (m *DeviceHealthScriptParameter) GetDescription()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.description
-    }
+    return m.description
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceHealthScriptParameter) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -136,27 +124,15 @@ func (m *DeviceHealthScriptParameter) GetFieldDeserializers()(map[string]func(i8
 }
 // GetIsRequired gets the isRequired property value. Whether the param is required
 func (m *DeviceHealthScriptParameter) GetIsRequired()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isRequired
-    }
+    return m.isRequired
 }
 // GetName gets the name property value. The name of the param
 func (m *DeviceHealthScriptParameter) GetName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.name
-    }
+    return m.name
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *DeviceHealthScriptParameter) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // Serialize serializes information the current object
 func (m *DeviceHealthScriptParameter) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -200,37 +176,25 @@ func (m *DeviceHealthScriptParameter) Serialize(writer i878a80d2330e89d26896388a
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DeviceHealthScriptParameter) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetApplyDefaultValueWhenNotAssigned sets the applyDefaultValueWhenNotAssigned property value. Whether Apply DefaultValue When Not Assigned
 func (m *DeviceHealthScriptParameter) SetApplyDefaultValueWhenNotAssigned(value *bool)() {
-    if m != nil {
-        m.applyDefaultValueWhenNotAssigned = value
-    }
+    m.applyDefaultValueWhenNotAssigned = value
 }
 // SetDescription sets the description property value. The description of the param
 func (m *DeviceHealthScriptParameter) SetDescription(value *string)() {
-    if m != nil {
-        m.description = value
-    }
+    m.description = value
 }
 // SetIsRequired sets the isRequired property value. Whether the param is required
 func (m *DeviceHealthScriptParameter) SetIsRequired(value *bool)() {
-    if m != nil {
-        m.isRequired = value
-    }
+    m.isRequired = value
 }
 // SetName sets the name property value. The name of the param
 func (m *DeviceHealthScriptParameter) SetName(value *string)() {
-    if m != nil {
-        m.name = value
-    }
+    m.name = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *DeviceHealthScriptParameter) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }

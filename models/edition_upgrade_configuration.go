@@ -88,43 +88,23 @@ func (m *EditionUpgradeConfiguration) GetFieldDeserializers()(map[string]func(i8
 }
 // GetLicense gets the license property value. Edition Upgrade License File Content.
 func (m *EditionUpgradeConfiguration) GetLicense()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.license
-    }
+    return m.license
 }
 // GetLicenseType gets the licenseType property value. Edition Upgrade License type
 func (m *EditionUpgradeConfiguration) GetLicenseType()(*EditionUpgradeLicenseType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.licenseType
-    }
+    return m.licenseType
 }
 // GetProductKey gets the productKey property value. Edition Upgrade Product Key.
 func (m *EditionUpgradeConfiguration) GetProductKey()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.productKey
-    }
+    return m.productKey
 }
 // GetTargetEdition gets the targetEdition property value. Windows 10 Edition type.
 func (m *EditionUpgradeConfiguration) GetTargetEdition()(*Windows10EditionType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.targetEdition
-    }
+    return m.targetEdition
 }
 // GetWindowsSMode gets the windowsSMode property value. The possible options to configure S mode unlock
 func (m *EditionUpgradeConfiguration) GetWindowsSMode()(*WindowsSModeConfiguration) {
-    if m == nil {
-        return nil
-    } else {
-        return m.windowsSMode
-    }
+    return m.windowsSMode
 }
 // Serialize serializes information the current object
 func (m *EditionUpgradeConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -169,31 +149,21 @@ func (m *EditionUpgradeConfiguration) Serialize(writer i878a80d2330e89d26896388a
 }
 // SetLicense sets the license property value. Edition Upgrade License File Content.
 func (m *EditionUpgradeConfiguration) SetLicense(value *string)() {
-    if m != nil {
-        m.license = value
-    }
+    m.license = value
 }
 // SetLicenseType sets the licenseType property value. Edition Upgrade License type
 func (m *EditionUpgradeConfiguration) SetLicenseType(value *EditionUpgradeLicenseType)() {
-    if m != nil {
-        m.licenseType = value
-    }
+    m.licenseType = value
 }
 // SetProductKey sets the productKey property value. Edition Upgrade Product Key.
 func (m *EditionUpgradeConfiguration) SetProductKey(value *string)() {
-    if m != nil {
-        m.productKey = value
-    }
+    m.productKey = value
 }
 // SetTargetEdition sets the targetEdition property value. Windows 10 Edition type.
 func (m *EditionUpgradeConfiguration) SetTargetEdition(value *Windows10EditionType)() {
-    if m != nil {
-        m.targetEdition = value
-    }
+    m.targetEdition = value
 }
 // SetWindowsSMode sets the windowsSMode property value. The possible options to configure S mode unlock
 func (m *EditionUpgradeConfiguration) SetWindowsSMode(value *WindowsSModeConfiguration)() {
-    if m != nil {
-        m.windowsSMode = value
-    }
+    m.windowsSMode = value
 }

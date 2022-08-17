@@ -25,11 +25,7 @@ func CreateWindowsStoreAppFromDiscriminatorValue(parseNode i878a80d2330e89d26896
 }
 // GetAppStoreUrl gets the appStoreUrl property value. The Windows app store URL.
 func (m *WindowsStoreApp) GetAppStoreUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.appStoreUrl
-    }
+    return m.appStoreUrl
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *WindowsStoreApp) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -62,7 +58,5 @@ func (m *WindowsStoreApp) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
 }
 // SetAppStoreUrl sets the appStoreUrl property value. The Windows app store URL.
 func (m *WindowsStoreApp) SetAppStoreUrl(value *string)() {
-    if m != nil {
-        m.appStoreUrl = value
-    }
+    m.appStoreUrl = value
 }

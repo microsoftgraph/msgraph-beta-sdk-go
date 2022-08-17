@@ -6,7 +6,7 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
-// Alert provides operations to manage the collection of accessReview entities.
+// Alert provides operations to manage the collection of accessReviewDecision entities.
 type Alert struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
     // The actorDisplayName property
@@ -81,99 +81,51 @@ func CreateAlertFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487e
 }
 // GetActorDisplayName gets the actorDisplayName property value. The actorDisplayName property
 func (m *Alert) GetActorDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.actorDisplayName
-    }
+    return m.actorDisplayName
 }
 // GetAlertWebUrl gets the alertWebUrl property value. The alertWebUrl property
 func (m *Alert) GetAlertWebUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.alertWebUrl
-    }
+    return m.alertWebUrl
 }
 // GetAssignedTo gets the assignedTo property value. The assignedTo property
 func (m *Alert) GetAssignedTo()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.assignedTo
-    }
+    return m.assignedTo
 }
 // GetCategory gets the category property value. The category property
 func (m *Alert) GetCategory()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.category
-    }
+    return m.category
 }
 // GetClassification gets the classification property value. The classification property
 func (m *Alert) GetClassification()(*AlertClassification) {
-    if m == nil {
-        return nil
-    } else {
-        return m.classification
-    }
+    return m.classification
 }
 // GetComments gets the comments property value. The comments property
 func (m *Alert) GetComments()([]AlertCommentable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.comments
-    }
+    return m.comments
 }
 // GetCreatedDateTime gets the createdDateTime property value. The createdDateTime property
 func (m *Alert) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.createdDateTime
-    }
+    return m.createdDateTime
 }
 // GetDescription gets the description property value. The description property
 func (m *Alert) GetDescription()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.description
-    }
+    return m.description
 }
 // GetDetectionSource gets the detectionSource property value. The detectionSource property
 func (m *Alert) GetDetectionSource()(*DetectionSource) {
-    if m == nil {
-        return nil
-    } else {
-        return m.detectionSource
-    }
+    return m.detectionSource
 }
 // GetDetectorId gets the detectorId property value. The detectorId property
 func (m *Alert) GetDetectorId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.detectorId
-    }
+    return m.detectorId
 }
 // GetDetermination gets the determination property value. The determination property
 func (m *Alert) GetDetermination()(*AlertDetermination) {
-    if m == nil {
-        return nil
-    } else {
-        return m.determination
-    }
+    return m.determination
 }
 // GetEvidence gets the evidence property value. The evidence property
 func (m *Alert) GetEvidence()([]AlertEvidenceable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.evidence
-    }
+    return m.evidence
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Alert) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -474,131 +426,67 @@ func (m *Alert) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388
 }
 // GetFirstActivityDateTime gets the firstActivityDateTime property value. The firstActivityDateTime property
 func (m *Alert) GetFirstActivityDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.firstActivityDateTime
-    }
+    return m.firstActivityDateTime
 }
 // GetIncidentId gets the incidentId property value. The incidentId property
 func (m *Alert) GetIncidentId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.incidentId
-    }
+    return m.incidentId
 }
 // GetIncidentWebUrl gets the incidentWebUrl property value. The incidentWebUrl property
 func (m *Alert) GetIncidentWebUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.incidentWebUrl
-    }
+    return m.incidentWebUrl
 }
 // GetLastActivityDateTime gets the lastActivityDateTime property value. The lastActivityDateTime property
 func (m *Alert) GetLastActivityDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastActivityDateTime
-    }
+    return m.lastActivityDateTime
 }
 // GetLastUpdateDateTime gets the lastUpdateDateTime property value. The lastUpdateDateTime property
 func (m *Alert) GetLastUpdateDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastUpdateDateTime
-    }
+    return m.lastUpdateDateTime
 }
 // GetMitreTechniques gets the mitreTechniques property value. The mitreTechniques property
 func (m *Alert) GetMitreTechniques()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.mitreTechniques
-    }
+    return m.mitreTechniques
 }
 // GetProviderAlertId gets the providerAlertId property value. The providerAlertId property
 func (m *Alert) GetProviderAlertId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.providerAlertId
-    }
+    return m.providerAlertId
 }
 // GetRecommendedActions gets the recommendedActions property value. The recommendedActions property
 func (m *Alert) GetRecommendedActions()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.recommendedActions
-    }
+    return m.recommendedActions
 }
 // GetResolvedDateTime gets the resolvedDateTime property value. The resolvedDateTime property
 func (m *Alert) GetResolvedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.resolvedDateTime
-    }
+    return m.resolvedDateTime
 }
 // GetServiceSource gets the serviceSource property value. The serviceSource property
 func (m *Alert) GetServiceSource()(*ServiceSource) {
-    if m == nil {
-        return nil
-    } else {
-        return m.serviceSource
-    }
+    return m.serviceSource
 }
 // GetSeverity gets the severity property value. The severity property
 func (m *Alert) GetSeverity()(*AlertSeverity) {
-    if m == nil {
-        return nil
-    } else {
-        return m.severity
-    }
+    return m.severity
 }
 // GetStatus gets the status property value. The status property
 func (m *Alert) GetStatus()(*AlertStatus) {
-    if m == nil {
-        return nil
-    } else {
-        return m.status
-    }
+    return m.status
 }
 // GetTenantId gets the tenantId property value. The tenantId property
 func (m *Alert) GetTenantId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.tenantId
-    }
+    return m.tenantId
 }
 // GetThreatDisplayName gets the threatDisplayName property value. The threatDisplayName property
 func (m *Alert) GetThreatDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.threatDisplayName
-    }
+    return m.threatDisplayName
 }
 // GetThreatFamilyName gets the threatFamilyName property value. The threatFamilyName property
 func (m *Alert) GetThreatFamilyName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.threatFamilyName
-    }
+    return m.threatFamilyName
 }
 // GetTitle gets the title property value. The title property
 func (m *Alert) GetTitle()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.title
-    }
+    return m.title
 }
 // Serialize serializes information the current object
 func (m *Alert) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -792,169 +680,113 @@ func (m *Alert) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c4
 }
 // SetActorDisplayName sets the actorDisplayName property value. The actorDisplayName property
 func (m *Alert) SetActorDisplayName(value *string)() {
-    if m != nil {
-        m.actorDisplayName = value
-    }
+    m.actorDisplayName = value
 }
 // SetAlertWebUrl sets the alertWebUrl property value. The alertWebUrl property
 func (m *Alert) SetAlertWebUrl(value *string)() {
-    if m != nil {
-        m.alertWebUrl = value
-    }
+    m.alertWebUrl = value
 }
 // SetAssignedTo sets the assignedTo property value. The assignedTo property
 func (m *Alert) SetAssignedTo(value *string)() {
-    if m != nil {
-        m.assignedTo = value
-    }
+    m.assignedTo = value
 }
 // SetCategory sets the category property value. The category property
 func (m *Alert) SetCategory(value *string)() {
-    if m != nil {
-        m.category = value
-    }
+    m.category = value
 }
 // SetClassification sets the classification property value. The classification property
 func (m *Alert) SetClassification(value *AlertClassification)() {
-    if m != nil {
-        m.classification = value
-    }
+    m.classification = value
 }
 // SetComments sets the comments property value. The comments property
 func (m *Alert) SetComments(value []AlertCommentable)() {
-    if m != nil {
-        m.comments = value
-    }
+    m.comments = value
 }
 // SetCreatedDateTime sets the createdDateTime property value. The createdDateTime property
 func (m *Alert) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.createdDateTime = value
-    }
+    m.createdDateTime = value
 }
 // SetDescription sets the description property value. The description property
 func (m *Alert) SetDescription(value *string)() {
-    if m != nil {
-        m.description = value
-    }
+    m.description = value
 }
 // SetDetectionSource sets the detectionSource property value. The detectionSource property
 func (m *Alert) SetDetectionSource(value *DetectionSource)() {
-    if m != nil {
-        m.detectionSource = value
-    }
+    m.detectionSource = value
 }
 // SetDetectorId sets the detectorId property value. The detectorId property
 func (m *Alert) SetDetectorId(value *string)() {
-    if m != nil {
-        m.detectorId = value
-    }
+    m.detectorId = value
 }
 // SetDetermination sets the determination property value. The determination property
 func (m *Alert) SetDetermination(value *AlertDetermination)() {
-    if m != nil {
-        m.determination = value
-    }
+    m.determination = value
 }
 // SetEvidence sets the evidence property value. The evidence property
 func (m *Alert) SetEvidence(value []AlertEvidenceable)() {
-    if m != nil {
-        m.evidence = value
-    }
+    m.evidence = value
 }
 // SetFirstActivityDateTime sets the firstActivityDateTime property value. The firstActivityDateTime property
 func (m *Alert) SetFirstActivityDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.firstActivityDateTime = value
-    }
+    m.firstActivityDateTime = value
 }
 // SetIncidentId sets the incidentId property value. The incidentId property
 func (m *Alert) SetIncidentId(value *string)() {
-    if m != nil {
-        m.incidentId = value
-    }
+    m.incidentId = value
 }
 // SetIncidentWebUrl sets the incidentWebUrl property value. The incidentWebUrl property
 func (m *Alert) SetIncidentWebUrl(value *string)() {
-    if m != nil {
-        m.incidentWebUrl = value
-    }
+    m.incidentWebUrl = value
 }
 // SetLastActivityDateTime sets the lastActivityDateTime property value. The lastActivityDateTime property
 func (m *Alert) SetLastActivityDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.lastActivityDateTime = value
-    }
+    m.lastActivityDateTime = value
 }
 // SetLastUpdateDateTime sets the lastUpdateDateTime property value. The lastUpdateDateTime property
 func (m *Alert) SetLastUpdateDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.lastUpdateDateTime = value
-    }
+    m.lastUpdateDateTime = value
 }
 // SetMitreTechniques sets the mitreTechniques property value. The mitreTechniques property
 func (m *Alert) SetMitreTechniques(value []string)() {
-    if m != nil {
-        m.mitreTechniques = value
-    }
+    m.mitreTechniques = value
 }
 // SetProviderAlertId sets the providerAlertId property value. The providerAlertId property
 func (m *Alert) SetProviderAlertId(value *string)() {
-    if m != nil {
-        m.providerAlertId = value
-    }
+    m.providerAlertId = value
 }
 // SetRecommendedActions sets the recommendedActions property value. The recommendedActions property
 func (m *Alert) SetRecommendedActions(value *string)() {
-    if m != nil {
-        m.recommendedActions = value
-    }
+    m.recommendedActions = value
 }
 // SetResolvedDateTime sets the resolvedDateTime property value. The resolvedDateTime property
 func (m *Alert) SetResolvedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.resolvedDateTime = value
-    }
+    m.resolvedDateTime = value
 }
 // SetServiceSource sets the serviceSource property value. The serviceSource property
 func (m *Alert) SetServiceSource(value *ServiceSource)() {
-    if m != nil {
-        m.serviceSource = value
-    }
+    m.serviceSource = value
 }
 // SetSeverity sets the severity property value. The severity property
 func (m *Alert) SetSeverity(value *AlertSeverity)() {
-    if m != nil {
-        m.severity = value
-    }
+    m.severity = value
 }
 // SetStatus sets the status property value. The status property
 func (m *Alert) SetStatus(value *AlertStatus)() {
-    if m != nil {
-        m.status = value
-    }
+    m.status = value
 }
 // SetTenantId sets the tenantId property value. The tenantId property
 func (m *Alert) SetTenantId(value *string)() {
-    if m != nil {
-        m.tenantId = value
-    }
+    m.tenantId = value
 }
 // SetThreatDisplayName sets the threatDisplayName property value. The threatDisplayName property
 func (m *Alert) SetThreatDisplayName(value *string)() {
-    if m != nil {
-        m.threatDisplayName = value
-    }
+    m.threatDisplayName = value
 }
 // SetThreatFamilyName sets the threatFamilyName property value. The threatFamilyName property
 func (m *Alert) SetThreatFamilyName(value *string)() {
-    if m != nil {
-        m.threatFamilyName = value
-    }
+    m.threatFamilyName = value
 }
 // SetTitle sets the title property value. The title property
 func (m *Alert) SetTitle(value *string)() {
-    if m != nil {
-        m.title = value
-    }
+    m.title = value
 }

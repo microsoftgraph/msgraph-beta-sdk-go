@@ -37,27 +37,15 @@ func CreateAnswerVariantFromDiscriminatorValue(parseNode i878a80d2330e89d2689638
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AnswerVariant) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetDescription gets the description property value. Answer variation description shown on search results page.
 func (m *AnswerVariant) GetDescription()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.description
-    }
+    return m.description
 }
 // GetDisplayName gets the displayName property value. Answer variation name displayed in search results.
 func (m *AnswerVariant) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AnswerVariant) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -126,35 +114,19 @@ func (m *AnswerVariant) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
 }
 // GetLanguageTag gets the languageTag property value. The languageTag property
 func (m *AnswerVariant) GetLanguageTag()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.languageTag
-    }
+    return m.languageTag
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *AnswerVariant) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetPlatform gets the platform property value. The platform property
 func (m *AnswerVariant) GetPlatform()(*ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DevicePlatformType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.platform
-    }
+    return m.platform
 }
 // GetWebUrl gets the webUrl property value. Answer variation URL link. When users click this answer variation in search results, they will go to this URL.
 func (m *AnswerVariant) GetWebUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.webUrl
-    }
+    return m.webUrl
 }
 // Serialize serializes information the current object
 func (m *AnswerVariant) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -205,43 +177,29 @@ func (m *AnswerVariant) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AnswerVariant) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetDescription sets the description property value. Answer variation description shown on search results page.
 func (m *AnswerVariant) SetDescription(value *string)() {
-    if m != nil {
-        m.description = value
-    }
+    m.description = value
 }
 // SetDisplayName sets the displayName property value. Answer variation name displayed in search results.
 func (m *AnswerVariant) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }
 // SetLanguageTag sets the languageTag property value. The languageTag property
 func (m *AnswerVariant) SetLanguageTag(value *string)() {
-    if m != nil {
-        m.languageTag = value
-    }
+    m.languageTag = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *AnswerVariant) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetPlatform sets the platform property value. The platform property
 func (m *AnswerVariant) SetPlatform(value *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DevicePlatformType)() {
-    if m != nil {
-        m.platform = value
-    }
+    m.platform = value
 }
 // SetWebUrl sets the webUrl property value. Answer variation URL link. When users click this answer variation in search results, they will go to this URL.
 func (m *AnswerVariant) SetWebUrl(value *string)() {
-    if m != nil {
-        m.webUrl = value
-    }
+    m.webUrl = value
 }

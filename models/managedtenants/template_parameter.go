@@ -36,27 +36,15 @@ func CreateTemplateParameterFromDiscriminatorValue(parseNode i878a80d2330e89d268
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TemplateParameter) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetDescription gets the description property value. The description for the template parameter. Optional. Read-only.
 func (m *TemplateParameter) GetDescription()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.description
-    }
+    return m.description
 }
 // GetDisplayName gets the displayName property value. The display name for the template parameter. Required. Read-only.
 func (m *TemplateParameter) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *TemplateParameter) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -125,35 +113,19 @@ func (m *TemplateParameter) GetFieldDeserializers()(map[string]func(i878a80d2330
 }
 // GetJsonAllowedValues gets the jsonAllowedValues property value. The allowed values for the template parameter represented by a serialized string of JSON. Optional. Read-only.
 func (m *TemplateParameter) GetJsonAllowedValues()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.jsonAllowedValues
-    }
+    return m.jsonAllowedValues
 }
 // GetJsonDefaultValue gets the jsonDefaultValue property value. The default value for the template parameter represented by a serialized string of JSON. Required. Read-only.
 func (m *TemplateParameter) GetJsonDefaultValue()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.jsonDefaultValue
-    }
+    return m.jsonDefaultValue
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *TemplateParameter) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetValueType gets the valueType property value. The valueType property
 func (m *TemplateParameter) GetValueType()(*ManagementParameterValueType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.valueType
-    }
+    return m.valueType
 }
 // Serialize serializes information the current object
 func (m *TemplateParameter) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -204,43 +176,29 @@ func (m *TemplateParameter) Serialize(writer i878a80d2330e89d26896388a3f487eef27
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TemplateParameter) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetDescription sets the description property value. The description for the template parameter. Optional. Read-only.
 func (m *TemplateParameter) SetDescription(value *string)() {
-    if m != nil {
-        m.description = value
-    }
+    m.description = value
 }
 // SetDisplayName sets the displayName property value. The display name for the template parameter. Required. Read-only.
 func (m *TemplateParameter) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }
 // SetJsonAllowedValues sets the jsonAllowedValues property value. The allowed values for the template parameter represented by a serialized string of JSON. Optional. Read-only.
 func (m *TemplateParameter) SetJsonAllowedValues(value *string)() {
-    if m != nil {
-        m.jsonAllowedValues = value
-    }
+    m.jsonAllowedValues = value
 }
 // SetJsonDefaultValue sets the jsonDefaultValue property value. The default value for the template parameter represented by a serialized string of JSON. Required. Read-only.
 func (m *TemplateParameter) SetJsonDefaultValue(value *string)() {
-    if m != nil {
-        m.jsonDefaultValue = value
-    }
+    m.jsonDefaultValue = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *TemplateParameter) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetValueType sets the valueType property value. The valueType property
 func (m *TemplateParameter) SetValueType(value *ManagementParameterValueType)() {
-    if m != nil {
-        m.valueType = value
-    }
+    m.valueType = value
 }

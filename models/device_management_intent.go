@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DeviceManagementIntent entity that represents an intent to apply settings to a device
+// DeviceManagementIntent 
 type DeviceManagementIntent struct {
     Entity
     // Collection of assignments
@@ -37,7 +37,7 @@ type DeviceManagementIntent struct {
     // A summary of user states and counts of users that belong to corresponding state for all users that the intent is applied to
     userStateSummary DeviceManagementIntentUserStateSummaryable
 }
-// NewDeviceManagementIntent instantiates a new deviceManagementIntent and sets the default values.
+// NewDeviceManagementIntent instantiates a new DeviceManagementIntent and sets the default values.
 func NewDeviceManagementIntent()(*DeviceManagementIntent) {
     m := &DeviceManagementIntent{
         Entity: *NewEntity(),
@@ -52,59 +52,31 @@ func CreateDeviceManagementIntentFromDiscriminatorValue(parseNode i878a80d2330e8
 }
 // GetAssignments gets the assignments property value. Collection of assignments
 func (m *DeviceManagementIntent) GetAssignments()([]DeviceManagementIntentAssignmentable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.assignments
-    }
+    return m.assignments
 }
 // GetCategories gets the categories property value. Collection of setting categories within the intent
 func (m *DeviceManagementIntent) GetCategories()([]DeviceManagementIntentSettingCategoryable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.categories
-    }
+    return m.categories
 }
 // GetDescription gets the description property value. The user given description
 func (m *DeviceManagementIntent) GetDescription()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.description
-    }
+    return m.description
 }
 // GetDeviceSettingStateSummaries gets the deviceSettingStateSummaries property value. Collection of settings and their states and counts of devices that belong to corresponding state for all settings within the intent
 func (m *DeviceManagementIntent) GetDeviceSettingStateSummaries()([]DeviceManagementIntentDeviceSettingStateSummaryable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deviceSettingStateSummaries
-    }
+    return m.deviceSettingStateSummaries
 }
 // GetDeviceStates gets the deviceStates property value. Collection of states of all devices that the intent is applied to
 func (m *DeviceManagementIntent) GetDeviceStates()([]DeviceManagementIntentDeviceStateable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deviceStates
-    }
+    return m.deviceStates
 }
 // GetDeviceStateSummary gets the deviceStateSummary property value. A summary of device states and counts of devices that belong to corresponding state for all devices that the intent is applied to
 func (m *DeviceManagementIntent) GetDeviceStateSummary()(DeviceManagementIntentDeviceStateSummaryable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deviceStateSummary
-    }
+    return m.deviceStateSummary
 }
 // GetDisplayName gets the displayName property value. The user given display name
 func (m *DeviceManagementIntent) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceManagementIntent) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -281,59 +253,31 @@ func (m *DeviceManagementIntent) GetFieldDeserializers()(map[string]func(i878a80
 }
 // GetIsAssigned gets the isAssigned property value. Signifies whether or not the intent is assigned to users
 func (m *DeviceManagementIntent) GetIsAssigned()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isAssigned
-    }
+    return m.isAssigned
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. When the intent was last modified
 func (m *DeviceManagementIntent) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastModifiedDateTime
-    }
+    return m.lastModifiedDateTime
 }
 // GetRoleScopeTagIds gets the roleScopeTagIds property value. List of Scope Tags for this Entity instance.
 func (m *DeviceManagementIntent) GetRoleScopeTagIds()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.roleScopeTagIds
-    }
+    return m.roleScopeTagIds
 }
 // GetSettings gets the settings property value. Collection of all settings to be applied
 func (m *DeviceManagementIntent) GetSettings()([]DeviceManagementSettingInstanceable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.settings
-    }
+    return m.settings
 }
 // GetTemplateId gets the templateId property value. The ID of the template this intent was created from (if any)
 func (m *DeviceManagementIntent) GetTemplateId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.templateId
-    }
+    return m.templateId
 }
 // GetUserStates gets the userStates property value. Collection of states of all users that the intent is applied to
 func (m *DeviceManagementIntent) GetUserStates()([]DeviceManagementIntentUserStateable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userStates
-    }
+    return m.userStates
 }
 // GetUserStateSummary gets the userStateSummary property value. A summary of user states and counts of users that belong to corresponding state for all users that the intent is applied to
 func (m *DeviceManagementIntent) GetUserStateSummary()(DeviceManagementIntentUserStateSummaryable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userStateSummary
-    }
+    return m.userStateSummary
 }
 // Serialize serializes information the current object
 func (m *DeviceManagementIntent) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -453,85 +397,57 @@ func (m *DeviceManagementIntent) Serialize(writer i878a80d2330e89d26896388a3f487
 }
 // SetAssignments sets the assignments property value. Collection of assignments
 func (m *DeviceManagementIntent) SetAssignments(value []DeviceManagementIntentAssignmentable)() {
-    if m != nil {
-        m.assignments = value
-    }
+    m.assignments = value
 }
 // SetCategories sets the categories property value. Collection of setting categories within the intent
 func (m *DeviceManagementIntent) SetCategories(value []DeviceManagementIntentSettingCategoryable)() {
-    if m != nil {
-        m.categories = value
-    }
+    m.categories = value
 }
 // SetDescription sets the description property value. The user given description
 func (m *DeviceManagementIntent) SetDescription(value *string)() {
-    if m != nil {
-        m.description = value
-    }
+    m.description = value
 }
 // SetDeviceSettingStateSummaries sets the deviceSettingStateSummaries property value. Collection of settings and their states and counts of devices that belong to corresponding state for all settings within the intent
 func (m *DeviceManagementIntent) SetDeviceSettingStateSummaries(value []DeviceManagementIntentDeviceSettingStateSummaryable)() {
-    if m != nil {
-        m.deviceSettingStateSummaries = value
-    }
+    m.deviceSettingStateSummaries = value
 }
 // SetDeviceStates sets the deviceStates property value. Collection of states of all devices that the intent is applied to
 func (m *DeviceManagementIntent) SetDeviceStates(value []DeviceManagementIntentDeviceStateable)() {
-    if m != nil {
-        m.deviceStates = value
-    }
+    m.deviceStates = value
 }
 // SetDeviceStateSummary sets the deviceStateSummary property value. A summary of device states and counts of devices that belong to corresponding state for all devices that the intent is applied to
 func (m *DeviceManagementIntent) SetDeviceStateSummary(value DeviceManagementIntentDeviceStateSummaryable)() {
-    if m != nil {
-        m.deviceStateSummary = value
-    }
+    m.deviceStateSummary = value
 }
 // SetDisplayName sets the displayName property value. The user given display name
 func (m *DeviceManagementIntent) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }
 // SetIsAssigned sets the isAssigned property value. Signifies whether or not the intent is assigned to users
 func (m *DeviceManagementIntent) SetIsAssigned(value *bool)() {
-    if m != nil {
-        m.isAssigned = value
-    }
+    m.isAssigned = value
 }
 // SetLastModifiedDateTime sets the lastModifiedDateTime property value. When the intent was last modified
 func (m *DeviceManagementIntent) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.lastModifiedDateTime = value
-    }
+    m.lastModifiedDateTime = value
 }
 // SetRoleScopeTagIds sets the roleScopeTagIds property value. List of Scope Tags for this Entity instance.
 func (m *DeviceManagementIntent) SetRoleScopeTagIds(value []string)() {
-    if m != nil {
-        m.roleScopeTagIds = value
-    }
+    m.roleScopeTagIds = value
 }
 // SetSettings sets the settings property value. Collection of all settings to be applied
 func (m *DeviceManagementIntent) SetSettings(value []DeviceManagementSettingInstanceable)() {
-    if m != nil {
-        m.settings = value
-    }
+    m.settings = value
 }
 // SetTemplateId sets the templateId property value. The ID of the template this intent was created from (if any)
 func (m *DeviceManagementIntent) SetTemplateId(value *string)() {
-    if m != nil {
-        m.templateId = value
-    }
+    m.templateId = value
 }
 // SetUserStates sets the userStates property value. Collection of states of all users that the intent is applied to
 func (m *DeviceManagementIntent) SetUserStates(value []DeviceManagementIntentUserStateable)() {
-    if m != nil {
-        m.userStates = value
-    }
+    m.userStates = value
 }
 // SetUserStateSummary sets the userStateSummary property value. A summary of user states and counts of users that belong to corresponding state for all users that the intent is applied to
 func (m *DeviceManagementIntent) SetUserStateSummary(value DeviceManagementIntentUserStateSummaryable)() {
-    if m != nil {
-        m.userStateSummary = value
-    }
+    m.userStateSummary = value
 }

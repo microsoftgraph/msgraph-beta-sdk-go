@@ -30,19 +30,11 @@ func CreateWindows10AssociatedAppsFromDiscriminatorValue(parseNode i878a80d2330e
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *Windows10AssociatedApps) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetAppType gets the appType property value. Windows 10 Application type.
 func (m *Windows10AssociatedApps) GetAppType()(*Windows10AppType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.appType
-    }
+    return m.appType
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Windows10AssociatedApps) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -81,19 +73,11 @@ func (m *Windows10AssociatedApps) GetFieldDeserializers()(map[string]func(i878a8
 }
 // GetIdentifier gets the identifier property value. Identifier.
 func (m *Windows10AssociatedApps) GetIdentifier()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.identifier
-    }
+    return m.identifier
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *Windows10AssociatedApps) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // Serialize serializes information the current object
 func (m *Windows10AssociatedApps) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -126,25 +110,17 @@ func (m *Windows10AssociatedApps) Serialize(writer i878a80d2330e89d26896388a3f48
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *Windows10AssociatedApps) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetAppType sets the appType property value. Windows 10 Application type.
 func (m *Windows10AssociatedApps) SetAppType(value *Windows10AppType)() {
-    if m != nil {
-        m.appType = value
-    }
+    m.appType = value
 }
 // SetIdentifier sets the identifier property value. Identifier.
 func (m *Windows10AssociatedApps) SetIdentifier(value *string)() {
-    if m != nil {
-        m.identifier = value
-    }
+    m.identifier = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *Windows10AssociatedApps) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }

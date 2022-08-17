@@ -30,11 +30,7 @@ func CreateUnsupportedDeviceConfigurationDetailFromDiscriminatorValue(parseNode 
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *UnsupportedDeviceConfigurationDetail) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *UnsupportedDeviceConfigurationDetail) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -73,27 +69,15 @@ func (m *UnsupportedDeviceConfigurationDetail) GetFieldDeserializers()(map[strin
 }
 // GetMessage gets the message property value. A message explaining why an entity is unsupported.
 func (m *UnsupportedDeviceConfigurationDetail) GetMessage()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.message
-    }
+    return m.message
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *UnsupportedDeviceConfigurationDetail) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetPropertyName gets the propertyName property value. If message is related to a specific property in the original entity, then the name of that property.
 func (m *UnsupportedDeviceConfigurationDetail) GetPropertyName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.propertyName
-    }
+    return m.propertyName
 }
 // Serialize serializes information the current object
 func (m *UnsupportedDeviceConfigurationDetail) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -125,25 +109,17 @@ func (m *UnsupportedDeviceConfigurationDetail) Serialize(writer i878a80d2330e89d
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *UnsupportedDeviceConfigurationDetail) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetMessage sets the message property value. A message explaining why an entity is unsupported.
 func (m *UnsupportedDeviceConfigurationDetail) SetMessage(value *string)() {
-    if m != nil {
-        m.message = value
-    }
+    m.message = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *UnsupportedDeviceConfigurationDetail) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetPropertyName sets the propertyName property value. If message is related to a specific property in the original entity, then the name of that property.
 func (m *UnsupportedDeviceConfigurationDetail) SetPropertyName(value *string)() {
-    if m != nil {
-        m.propertyName = value
-    }
+    m.propertyName = value
 }

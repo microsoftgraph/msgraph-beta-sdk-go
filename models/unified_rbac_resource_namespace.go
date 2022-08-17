@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// UnifiedRbacResourceNamespace provides operations to manage the collection of accessReview entities.
+// UnifiedRbacResourceNamespace provides operations to manage the collection of accessReviewDecision entities.
 type UnifiedRbacResourceNamespace struct {
     Entity
     // Name of the resource namespace. Typically, the same name as the id property, such as microsoft.aad.b2c. Required. Supports $filter (eq, startsWith).
@@ -56,19 +56,11 @@ func (m *UnifiedRbacResourceNamespace) GetFieldDeserializers()(map[string]func(i
 }
 // GetName gets the name property value. Name of the resource namespace. Typically, the same name as the id property, such as microsoft.aad.b2c. Required. Supports $filter (eq, startsWith).
 func (m *UnifiedRbacResourceNamespace) GetName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.name
-    }
+    return m.name
 }
 // GetResourceActions gets the resourceActions property value. Operations that an authorized principal are allowed to perform.
 func (m *UnifiedRbacResourceNamespace) GetResourceActions()([]UnifiedRbacResourceActionable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.resourceActions
-    }
+    return m.resourceActions
 }
 // Serialize serializes information the current object
 func (m *UnifiedRbacResourceNamespace) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -96,13 +88,9 @@ func (m *UnifiedRbacResourceNamespace) Serialize(writer i878a80d2330e89d26896388
 }
 // SetName sets the name property value. Name of the resource namespace. Typically, the same name as the id property, such as microsoft.aad.b2c. Required. Supports $filter (eq, startsWith).
 func (m *UnifiedRbacResourceNamespace) SetName(value *string)() {
-    if m != nil {
-        m.name = value
-    }
+    m.name = value
 }
 // SetResourceActions sets the resourceActions property value. Operations that an authorized principal are allowed to perform.
 func (m *UnifiedRbacResourceNamespace) SetResourceActions(value []UnifiedRbacResourceActionable)() {
-    if m != nil {
-        m.resourceActions = value
-    }
+    m.resourceActions = value
 }

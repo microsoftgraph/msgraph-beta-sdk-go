@@ -41,11 +41,7 @@ func (m *ConnectionQuota) GetFieldDeserializers()(map[string]func(i878a80d2330e8
 }
 // GetItemsRemaining gets the itemsRemaining property value. The minimum of two values, one representing the items remaining in the connection and the other remaining items at tenant-level. The following equation represents the formula used to calculate the minimum number: min ({max capacity in the connection} – {number of items in the connection}, {tenant quota} – {number of items indexed in all connections}). If the connection is not monetized, such as in a preview connector or preview content experience, then this property is simply the number of remaining items in the connection.
 func (m *ConnectionQuota) GetItemsRemaining()(*int64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.itemsRemaining
-    }
+    return m.itemsRemaining
 }
 // Serialize serializes information the current object
 func (m *ConnectionQuota) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -63,7 +59,5 @@ func (m *ConnectionQuota) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
 }
 // SetItemsRemaining sets the itemsRemaining property value. The minimum of two values, one representing the items remaining in the connection and the other remaining items at tenant-level. The following equation represents the formula used to calculate the minimum number: min ({max capacity in the connection} – {number of items in the connection}, {tenant quota} – {number of items indexed in all connections}). If the connection is not monetized, such as in a preview connector or preview content experience, then this property is simply the number of remaining items in the connection.
 func (m *ConnectionQuota) SetItemsRemaining(value *int64)() {
-    if m != nil {
-        m.itemsRemaining = value
-    }
+    m.itemsRemaining = value
 }

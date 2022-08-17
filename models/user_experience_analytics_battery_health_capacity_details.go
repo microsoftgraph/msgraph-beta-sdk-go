@@ -34,35 +34,19 @@ func CreateUserExperienceAnalyticsBatteryHealthCapacityDetailsFromDiscriminatorV
 }
 // GetActiveDevices gets the activeDevices property value. Number of active devices within the tenant. Valid values -2147483648 to 2147483647
 func (m *UserExperienceAnalyticsBatteryHealthCapacityDetails) GetActiveDevices()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.activeDevices
-    }
+    return m.activeDevices
 }
 // GetBatteryCapacityFair gets the batteryCapacityFair property value. Number of devices whose battery maximum capacity is greater than 50% but lesser than 80%. Valid values -2147483648 to 2147483647
 func (m *UserExperienceAnalyticsBatteryHealthCapacityDetails) GetBatteryCapacityFair()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.batteryCapacityFair
-    }
+    return m.batteryCapacityFair
 }
 // GetBatteryCapacityGood gets the batteryCapacityGood property value. Number of devices whose battery maximum capacity is greater than 80%. Valid values -2147483648 to 2147483647
 func (m *UserExperienceAnalyticsBatteryHealthCapacityDetails) GetBatteryCapacityGood()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.batteryCapacityGood
-    }
+    return m.batteryCapacityGood
 }
 // GetBatteryCapacityPoor gets the batteryCapacityPoor property value. Number of devices whose battery maximum capacity is lesser than 50%. Valid values -2147483648 to 2147483647
 func (m *UserExperienceAnalyticsBatteryHealthCapacityDetails) GetBatteryCapacityPoor()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.batteryCapacityPoor
-    }
+    return m.batteryCapacityPoor
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *UserExperienceAnalyticsBatteryHealthCapacityDetails) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -121,11 +105,7 @@ func (m *UserExperienceAnalyticsBatteryHealthCapacityDetails) GetFieldDeserializ
 }
 // GetLastRefreshedDateTime gets the lastRefreshedDateTime property value. Recorded date time of this capacity details instance.
 func (m *UserExperienceAnalyticsBatteryHealthCapacityDetails) GetLastRefreshedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastRefreshedDateTime
-    }
+    return m.lastRefreshedDateTime
 }
 // Serialize serializes information the current object
 func (m *UserExperienceAnalyticsBatteryHealthCapacityDetails) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -167,31 +147,21 @@ func (m *UserExperienceAnalyticsBatteryHealthCapacityDetails) Serialize(writer i
 }
 // SetActiveDevices sets the activeDevices property value. Number of active devices within the tenant. Valid values -2147483648 to 2147483647
 func (m *UserExperienceAnalyticsBatteryHealthCapacityDetails) SetActiveDevices(value *int32)() {
-    if m != nil {
-        m.activeDevices = value
-    }
+    m.activeDevices = value
 }
 // SetBatteryCapacityFair sets the batteryCapacityFair property value. Number of devices whose battery maximum capacity is greater than 50% but lesser than 80%. Valid values -2147483648 to 2147483647
 func (m *UserExperienceAnalyticsBatteryHealthCapacityDetails) SetBatteryCapacityFair(value *int32)() {
-    if m != nil {
-        m.batteryCapacityFair = value
-    }
+    m.batteryCapacityFair = value
 }
 // SetBatteryCapacityGood sets the batteryCapacityGood property value. Number of devices whose battery maximum capacity is greater than 80%. Valid values -2147483648 to 2147483647
 func (m *UserExperienceAnalyticsBatteryHealthCapacityDetails) SetBatteryCapacityGood(value *int32)() {
-    if m != nil {
-        m.batteryCapacityGood = value
-    }
+    m.batteryCapacityGood = value
 }
 // SetBatteryCapacityPoor sets the batteryCapacityPoor property value. Number of devices whose battery maximum capacity is lesser than 50%. Valid values -2147483648 to 2147483647
 func (m *UserExperienceAnalyticsBatteryHealthCapacityDetails) SetBatteryCapacityPoor(value *int32)() {
-    if m != nil {
-        m.batteryCapacityPoor = value
-    }
+    m.batteryCapacityPoor = value
 }
 // SetLastRefreshedDateTime sets the lastRefreshedDateTime property value. Recorded date time of this capacity details instance.
 func (m *UserExperienceAnalyticsBatteryHealthCapacityDetails) SetLastRefreshedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.lastRefreshedDateTime = value
-    }
+    m.lastRefreshedDateTime = value
 }

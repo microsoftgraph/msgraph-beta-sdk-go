@@ -32,11 +32,7 @@ func CreateX509CertificateUserBindingFromDiscriminatorValue(parseNode i878a80d23
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *X509CertificateUserBinding) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *X509CertificateUserBinding) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -85,35 +81,19 @@ func (m *X509CertificateUserBinding) GetFieldDeserializers()(map[string]func(i87
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *X509CertificateUserBinding) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetPriority gets the priority property value. The priority of the binding. Azure AD uses the binding with the highest priority. This value must be a non-negative integer and unique in the collection of objects in the certificateUserBindings property of an x509CertificateAuthenticationMethodConfiguration object. Required
 func (m *X509CertificateUserBinding) GetPriority()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.priority
-    }
+    return m.priority
 }
 // GetUserProperty gets the userProperty property value. Defines the Azure AD user property of the user object to use for the binding. The possible values are: userPrincipalName, onPremisesUserPrincipalName, email. Required.
 func (m *X509CertificateUserBinding) GetUserProperty()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userProperty
-    }
+    return m.userProperty
 }
 // GetX509CertificateField gets the x509CertificateField property value. The field on the X.509 certificate to use for the binding. The possible values are: PrincipalName, RFC822Name.
 func (m *X509CertificateUserBinding) GetX509CertificateField()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.x509CertificateField
-    }
+    return m.x509CertificateField
 }
 // Serialize serializes information the current object
 func (m *X509CertificateUserBinding) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -151,31 +131,21 @@ func (m *X509CertificateUserBinding) Serialize(writer i878a80d2330e89d26896388a3
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *X509CertificateUserBinding) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *X509CertificateUserBinding) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetPriority sets the priority property value. The priority of the binding. Azure AD uses the binding with the highest priority. This value must be a non-negative integer and unique in the collection of objects in the certificateUserBindings property of an x509CertificateAuthenticationMethodConfiguration object. Required
 func (m *X509CertificateUserBinding) SetPriority(value *int32)() {
-    if m != nil {
-        m.priority = value
-    }
+    m.priority = value
 }
 // SetUserProperty sets the userProperty property value. Defines the Azure AD user property of the user object to use for the binding. The possible values are: userPrincipalName, onPremisesUserPrincipalName, email. Required.
 func (m *X509CertificateUserBinding) SetUserProperty(value *string)() {
-    if m != nil {
-        m.userProperty = value
-    }
+    m.userProperty = value
 }
 // SetX509CertificateField sets the x509CertificateField property value. The field on the X.509 certificate to use for the binding. The possible values are: PrincipalName, RFC822Name.
 func (m *X509CertificateUserBinding) SetX509CertificateField(value *string)() {
-    if m != nil {
-        m.x509CertificateField = value
-    }
+    m.x509CertificateField = value
 }

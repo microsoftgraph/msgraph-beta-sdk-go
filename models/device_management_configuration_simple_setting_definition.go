@@ -50,27 +50,15 @@ func CreateDeviceManagementConfigurationSimpleSettingDefinitionFromDiscriminator
 }
 // GetDefaultValue gets the defaultValue property value. Default setting value for this setting
 func (m *DeviceManagementConfigurationSimpleSettingDefinition) GetDefaultValue()(DeviceManagementConfigurationSettingValueable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.defaultValue
-    }
+    return m.defaultValue
 }
 // GetDependedOnBy gets the dependedOnBy property value. list of child settings that depend on this setting
 func (m *DeviceManagementConfigurationSimpleSettingDefinition) GetDependedOnBy()([]DeviceManagementConfigurationSettingDependedOnByable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.dependedOnBy
-    }
+    return m.dependedOnBy
 }
 // GetDependentOn gets the dependentOn property value. list of parent settings this setting is dependent on
 func (m *DeviceManagementConfigurationSimpleSettingDefinition) GetDependentOn()([]DeviceManagementConfigurationDependentOnable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.dependentOn
-    }
+    return m.dependentOn
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceManagementConfigurationSimpleSettingDefinition) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -127,11 +115,7 @@ func (m *DeviceManagementConfigurationSimpleSettingDefinition) GetFieldDeseriali
 }
 // GetValueDefinition gets the valueDefinition property value. Definition of the value for this setting
 func (m *DeviceManagementConfigurationSimpleSettingDefinition) GetValueDefinition()(DeviceManagementConfigurationSettingValueDefinitionable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.valueDefinition
-    }
+    return m.valueDefinition
 }
 // Serialize serializes information the current object
 func (m *DeviceManagementConfigurationSimpleSettingDefinition) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -175,25 +159,17 @@ func (m *DeviceManagementConfigurationSimpleSettingDefinition) Serialize(writer 
 }
 // SetDefaultValue sets the defaultValue property value. Default setting value for this setting
 func (m *DeviceManagementConfigurationSimpleSettingDefinition) SetDefaultValue(value DeviceManagementConfigurationSettingValueable)() {
-    if m != nil {
-        m.defaultValue = value
-    }
+    m.defaultValue = value
 }
 // SetDependedOnBy sets the dependedOnBy property value. list of child settings that depend on this setting
 func (m *DeviceManagementConfigurationSimpleSettingDefinition) SetDependedOnBy(value []DeviceManagementConfigurationSettingDependedOnByable)() {
-    if m != nil {
-        m.dependedOnBy = value
-    }
+    m.dependedOnBy = value
 }
 // SetDependentOn sets the dependentOn property value. list of parent settings this setting is dependent on
 func (m *DeviceManagementConfigurationSimpleSettingDefinition) SetDependentOn(value []DeviceManagementConfigurationDependentOnable)() {
-    if m != nil {
-        m.dependentOn = value
-    }
+    m.dependentOn = value
 }
 // SetValueDefinition sets the valueDefinition property value. Definition of the value for this setting
 func (m *DeviceManagementConfigurationSimpleSettingDefinition) SetValueDefinition(value DeviceManagementConfigurationSettingValueDefinitionable)() {
-    if m != nil {
-        m.valueDefinition = value
-    }
+    m.valueDefinition = value
 }

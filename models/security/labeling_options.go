@@ -34,35 +34,19 @@ func CreateLabelingOptionsFromDiscriminatorValue(parseNode i878a80d2330e89d26896
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *LabelingOptions) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetAssignmentMethod gets the assignmentMethod property value. The assignmentMethod property
 func (m *LabelingOptions) GetAssignmentMethod()(*AssignmentMethod) {
-    if m == nil {
-        return nil
-    } else {
-        return m.assignmentMethod
-    }
+    return m.assignmentMethod
 }
 // GetDowngradeJustification gets the downgradeJustification property value. The downgrade justification object that indicates if downgrade was justified and, if so, the reason.
 func (m *LabelingOptions) GetDowngradeJustification()(DowngradeJustificationable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.downgradeJustification
-    }
+    return m.downgradeJustification
 }
 // GetExtendedProperties gets the extendedProperties property value. Extended properties will be parsed and returned in the standard Microsoft Purview Information Protection labeled metadata format as part of the label information.
 func (m *LabelingOptions) GetExtendedProperties()([]KeyValuePairable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.extendedProperties
-    }
+    return m.extendedProperties
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *LabelingOptions) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -125,19 +109,11 @@ func (m *LabelingOptions) GetFieldDeserializers()(map[string]func(i878a80d2330e8
 }
 // GetLabelId gets the labelId property value. The GUID of the label that should be applied to the information.
 func (m *LabelingOptions) GetLabelId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.labelId
-    }
+    return m.labelId
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *LabelingOptions) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // Serialize serializes information the current object
 func (m *LabelingOptions) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -186,37 +162,25 @@ func (m *LabelingOptions) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *LabelingOptions) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetAssignmentMethod sets the assignmentMethod property value. The assignmentMethod property
 func (m *LabelingOptions) SetAssignmentMethod(value *AssignmentMethod)() {
-    if m != nil {
-        m.assignmentMethod = value
-    }
+    m.assignmentMethod = value
 }
 // SetDowngradeJustification sets the downgradeJustification property value. The downgrade justification object that indicates if downgrade was justified and, if so, the reason.
 func (m *LabelingOptions) SetDowngradeJustification(value DowngradeJustificationable)() {
-    if m != nil {
-        m.downgradeJustification = value
-    }
+    m.downgradeJustification = value
 }
 // SetExtendedProperties sets the extendedProperties property value. Extended properties will be parsed and returned in the standard Microsoft Purview Information Protection labeled metadata format as part of the label information.
 func (m *LabelingOptions) SetExtendedProperties(value []KeyValuePairable)() {
-    if m != nil {
-        m.extendedProperties = value
-    }
+    m.extendedProperties = value
 }
 // SetLabelId sets the labelId property value. The GUID of the label that should be applied to the information.
 func (m *LabelingOptions) SetLabelId(value *string)() {
-    if m != nil {
-        m.labelId = value
-    }
+    m.labelId = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *LabelingOptions) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }

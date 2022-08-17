@@ -26,27 +26,15 @@ func CreateTriggerDeviceScopeActionPostRequestBodyFromDiscriminatorValue(parseNo
 }
 // GetActionName gets the actionName property value. Trigger on the service to either START or STOP computing metrics data based on a device scope configuration.
 func (m *TriggerDeviceScopeActionPostRequestBody) GetActionName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.actionName
-    }
+    return m.actionName
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TriggerDeviceScopeActionPostRequestBody) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetDeviceScopeId gets the deviceScopeId property value. The deviceScopeId property
 func (m *TriggerDeviceScopeActionPostRequestBody) GetDeviceScopeId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deviceScopeId
-    }
+    return m.deviceScopeId
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *TriggerDeviceScopeActionPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -97,19 +85,13 @@ func (m *TriggerDeviceScopeActionPostRequestBody) Serialize(writer i878a80d2330e
 }
 // SetActionName sets the actionName property value. Trigger on the service to either START or STOP computing metrics data based on a device scope configuration.
 func (m *TriggerDeviceScopeActionPostRequestBody) SetActionName(value *string)() {
-    if m != nil {
-        m.actionName = value
-    }
+    m.actionName = value
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TriggerDeviceScopeActionPostRequestBody) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetDeviceScopeId sets the deviceScopeId property value. The deviceScopeId property
 func (m *TriggerDeviceScopeActionPostRequestBody) SetDeviceScopeId(value *string)() {
-    if m != nil {
-        m.deviceScopeId = value
-    }
+    m.deviceScopeId = value
 }

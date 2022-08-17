@@ -30,27 +30,15 @@ func CreateDriveItemSourceFromDiscriminatorValue(parseNode i878a80d2330e89d26896
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DriveItemSource) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetApplication gets the application property value. Enumeration value that indicates the source application where the file was created.
 func (m *DriveItemSource) GetApplication()(*DriveItemSourceApplication) {
-    if m == nil {
-        return nil
-    } else {
-        return m.application
-    }
+    return m.application
 }
 // GetExternalId gets the externalId property value. The external identifier for the drive item from the source.
 func (m *DriveItemSource) GetExternalId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.externalId
-    }
+    return m.externalId
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DriveItemSource) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -89,11 +77,7 @@ func (m *DriveItemSource) GetFieldDeserializers()(map[string]func(i878a80d2330e8
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *DriveItemSource) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // Serialize serializes information the current object
 func (m *DriveItemSource) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -126,25 +110,17 @@ func (m *DriveItemSource) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DriveItemSource) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetApplication sets the application property value. Enumeration value that indicates the source application where the file was created.
 func (m *DriveItemSource) SetApplication(value *DriveItemSourceApplication)() {
-    if m != nil {
-        m.application = value
-    }
+    m.application = value
 }
 // SetExternalId sets the externalId property value. The external identifier for the drive item from the source.
 func (m *DriveItemSource) SetExternalId(value *string)() {
-    if m != nil {
-        m.externalId = value
-    }
+    m.externalId = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *DriveItemSource) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }

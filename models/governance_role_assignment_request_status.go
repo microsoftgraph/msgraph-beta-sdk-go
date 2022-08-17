@@ -32,11 +32,7 @@ func CreateGovernanceRoleAssignmentRequestStatusFromDiscriminatorValue(parseNode
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *GovernanceRoleAssignmentRequestStatus) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *GovernanceRoleAssignmentRequestStatus) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -89,35 +85,19 @@ func (m *GovernanceRoleAssignmentRequestStatus) GetFieldDeserializers()(map[stri
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *GovernanceRoleAssignmentRequestStatus) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetStatus gets the status property value. The status of the role assignment request. The value can be InProgress or Closed.
 func (m *GovernanceRoleAssignmentRequestStatus) GetStatus()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.status
-    }
+    return m.status
 }
 // GetStatusDetails gets the statusDetails property value. The details of the status of the role assignment request. It represents the evaluation results of different rules.
 func (m *GovernanceRoleAssignmentRequestStatus) GetStatusDetails()([]KeyValueable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.statusDetails
-    }
+    return m.statusDetails
 }
 // GetSubStatus gets the subStatus property value. The sub status of the role assignment request. The values can be Accepted, PendingEvaluation, Granted, Denied, PendingProvisioning, Provisioned, PendingRevocation, Revoked, Canceled, Failed, PendingApprovalProvisioning, PendingApproval, FailedAsResourceIsLocked, PendingAdminDecision, AdminApproved, AdminDenied, TimedOut, and ProvisioningStarted.
 func (m *GovernanceRoleAssignmentRequestStatus) GetSubStatus()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.subStatus
-    }
+    return m.subStatus
 }
 // Serialize serializes information the current object
 func (m *GovernanceRoleAssignmentRequestStatus) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -159,31 +139,21 @@ func (m *GovernanceRoleAssignmentRequestStatus) Serialize(writer i878a80d2330e89
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *GovernanceRoleAssignmentRequestStatus) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *GovernanceRoleAssignmentRequestStatus) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetStatus sets the status property value. The status of the role assignment request. The value can be InProgress or Closed.
 func (m *GovernanceRoleAssignmentRequestStatus) SetStatus(value *string)() {
-    if m != nil {
-        m.status = value
-    }
+    m.status = value
 }
 // SetStatusDetails sets the statusDetails property value. The details of the status of the role assignment request. It represents the evaluation results of different rules.
 func (m *GovernanceRoleAssignmentRequestStatus) SetStatusDetails(value []KeyValueable)() {
-    if m != nil {
-        m.statusDetails = value
-    }
+    m.statusDetails = value
 }
 // SetSubStatus sets the subStatus property value. The sub status of the role assignment request. The values can be Accepted, PendingEvaluation, Granted, Denied, PendingProvisioning, Provisioned, PendingRevocation, Revoked, Canceled, Failed, PendingApprovalProvisioning, PendingApproval, FailedAsResourceIsLocked, PendingAdminDecision, AdminApproved, AdminDenied, TimedOut, and ProvisioningStarted.
 func (m *GovernanceRoleAssignmentRequestStatus) SetSubStatus(value *string)() {
-    if m != nil {
-        m.subStatus = value
-    }
+    m.subStatus = value
 }

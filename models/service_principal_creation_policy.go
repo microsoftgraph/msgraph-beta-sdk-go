@@ -29,11 +29,7 @@ func CreateServicePrincipalCreationPolicyFromDiscriminatorValue(parseNode i878a8
 }
 // GetExcludes gets the excludes property value. The excludes property
 func (m *ServicePrincipalCreationPolicy) GetExcludes()([]ServicePrincipalCreationConditionSetable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.excludes
-    }
+    return m.excludes
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ServicePrincipalCreationPolicy) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -80,19 +76,11 @@ func (m *ServicePrincipalCreationPolicy) GetFieldDeserializers()(map[string]func
 }
 // GetIncludes gets the includes property value. The includes property
 func (m *ServicePrincipalCreationPolicy) GetIncludes()([]ServicePrincipalCreationConditionSetable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.includes
-    }
+    return m.includes
 }
 // GetIsBuiltIn gets the isBuiltIn property value. The isBuiltIn property
 func (m *ServicePrincipalCreationPolicy) GetIsBuiltIn()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isBuiltIn
-    }
+    return m.isBuiltIn
 }
 // Serialize serializes information the current object
 func (m *ServicePrincipalCreationPolicy) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -130,19 +118,13 @@ func (m *ServicePrincipalCreationPolicy) Serialize(writer i878a80d2330e89d268963
 }
 // SetExcludes sets the excludes property value. The excludes property
 func (m *ServicePrincipalCreationPolicy) SetExcludes(value []ServicePrincipalCreationConditionSetable)() {
-    if m != nil {
-        m.excludes = value
-    }
+    m.excludes = value
 }
 // SetIncludes sets the includes property value. The includes property
 func (m *ServicePrincipalCreationPolicy) SetIncludes(value []ServicePrincipalCreationConditionSetable)() {
-    if m != nil {
-        m.includes = value
-    }
+    m.includes = value
 }
 // SetIsBuiltIn sets the isBuiltIn property value. The isBuiltIn property
 func (m *ServicePrincipalCreationPolicy) SetIsBuiltIn(value *bool)() {
-    if m != nil {
-        m.isBuiltIn = value
-    }
+    m.isBuiltIn = value
 }

@@ -60,19 +60,11 @@ func (m *MetadataAction) GetFieldDeserializers()(map[string]func(i878a80d2330e89
 }
 // GetMetadataToAdd gets the metadataToAdd property value. A collection of key-value pairs that should be added to the file.
 func (m *MetadataAction) GetMetadataToAdd()([]KeyValuePairable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.metadataToAdd
-    }
+    return m.metadataToAdd
 }
 // GetMetadataToRemove gets the metadataToRemove property value. A collection of strings that indicate which keys to remove from the file metadata.
 func (m *MetadataAction) GetMetadataToRemove()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.metadataToRemove
-    }
+    return m.metadataToRemove
 }
 // Serialize serializes information the current object
 func (m *MetadataAction) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -100,13 +92,9 @@ func (m *MetadataAction) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
 }
 // SetMetadataToAdd sets the metadataToAdd property value. A collection of key-value pairs that should be added to the file.
 func (m *MetadataAction) SetMetadataToAdd(value []KeyValuePairable)() {
-    if m != nil {
-        m.metadataToAdd = value
-    }
+    m.metadataToAdd = value
 }
 // SetMetadataToRemove sets the metadataToRemove property value. A collection of strings that indicate which keys to remove from the file metadata.
 func (m *MetadataAction) SetMetadataToRemove(value []string)() {
-    if m != nil {
-        m.metadataToRemove = value
-    }
+    m.metadataToRemove = value
 }

@@ -40,11 +40,7 @@ func (m *ManagedAppProtectionPolicySetItem) GetFieldDeserializers()(map[string]f
 }
 // GetTargetedAppManagementLevels gets the targetedAppManagementLevels property value. TargetedAppManagementLevels of the ManagedAppPolicySetItem.
 func (m *ManagedAppProtectionPolicySetItem) GetTargetedAppManagementLevels()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.targetedAppManagementLevels
-    }
+    return m.targetedAppManagementLevels
 }
 // Serialize serializes information the current object
 func (m *ManagedAppProtectionPolicySetItem) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -62,7 +58,5 @@ func (m *ManagedAppProtectionPolicySetItem) Serialize(writer i878a80d2330e89d268
 }
 // SetTargetedAppManagementLevels sets the targetedAppManagementLevels property value. TargetedAppManagementLevels of the ManagedAppPolicySetItem.
 func (m *ManagedAppProtectionPolicySetItem) SetTargetedAppManagementLevels(value *string)() {
-    if m != nil {
-        m.targetedAppManagementLevels = value
-    }
+    m.targetedAppManagementLevels = value
 }

@@ -39,35 +39,19 @@ func CreateCertificateConnectorSettingFromDiscriminatorValue(parseNode i878a80d2
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CertificateConnectorSetting) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetCertExpiryTime gets the certExpiryTime property value. Certificate expire time
 func (m *CertificateConnectorSetting) GetCertExpiryTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.certExpiryTime
-    }
+    return m.certExpiryTime
 }
 // GetConnectorVersion gets the connectorVersion property value. Version of certificate connector
 func (m *CertificateConnectorSetting) GetConnectorVersion()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.connectorVersion
-    }
+    return m.connectorVersion
 }
 // GetEnrollmentError gets the enrollmentError property value. Certificate connector enrollment error
 func (m *CertificateConnectorSetting) GetEnrollmentError()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.enrollmentError
-    }
+    return m.enrollmentError
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *CertificateConnectorSetting) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -146,35 +130,19 @@ func (m *CertificateConnectorSetting) GetFieldDeserializers()(map[string]func(i8
 }
 // GetLastConnectorConnectionTime gets the lastConnectorConnectionTime property value. Last time certificate connector connected
 func (m *CertificateConnectorSetting) GetLastConnectorConnectionTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastConnectorConnectionTime
-    }
+    return m.lastConnectorConnectionTime
 }
 // GetLastUploadVersion gets the lastUploadVersion property value. Version of last uploaded certificate connector
 func (m *CertificateConnectorSetting) GetLastUploadVersion()(*int64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastUploadVersion
-    }
+    return m.lastUploadVersion
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *CertificateConnectorSetting) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetStatus gets the status property value. Certificate connector status
 func (m *CertificateConnectorSetting) GetStatus()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.status
-    }
+    return m.status
 }
 // Serialize serializes information the current object
 func (m *CertificateConnectorSetting) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -230,49 +198,33 @@ func (m *CertificateConnectorSetting) Serialize(writer i878a80d2330e89d26896388a
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CertificateConnectorSetting) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetCertExpiryTime sets the certExpiryTime property value. Certificate expire time
 func (m *CertificateConnectorSetting) SetCertExpiryTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.certExpiryTime = value
-    }
+    m.certExpiryTime = value
 }
 // SetConnectorVersion sets the connectorVersion property value. Version of certificate connector
 func (m *CertificateConnectorSetting) SetConnectorVersion(value *string)() {
-    if m != nil {
-        m.connectorVersion = value
-    }
+    m.connectorVersion = value
 }
 // SetEnrollmentError sets the enrollmentError property value. Certificate connector enrollment error
 func (m *CertificateConnectorSetting) SetEnrollmentError(value *string)() {
-    if m != nil {
-        m.enrollmentError = value
-    }
+    m.enrollmentError = value
 }
 // SetLastConnectorConnectionTime sets the lastConnectorConnectionTime property value. Last time certificate connector connected
 func (m *CertificateConnectorSetting) SetLastConnectorConnectionTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.lastConnectorConnectionTime = value
-    }
+    m.lastConnectorConnectionTime = value
 }
 // SetLastUploadVersion sets the lastUploadVersion property value. Version of last uploaded certificate connector
 func (m *CertificateConnectorSetting) SetLastUploadVersion(value *int64)() {
-    if m != nil {
-        m.lastUploadVersion = value
-    }
+    m.lastUploadVersion = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *CertificateConnectorSetting) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetStatus sets the status property value. Certificate connector status
 func (m *CertificateConnectorSetting) SetStatus(value *int32)() {
-    if m != nil {
-        m.status = value
-    }
+    m.status = value
 }

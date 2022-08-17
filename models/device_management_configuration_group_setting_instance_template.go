@@ -40,11 +40,7 @@ func (m *DeviceManagementConfigurationGroupSettingInstanceTemplate) GetFieldDese
 }
 // GetGroupSettingValueTemplate gets the groupSettingValueTemplate property value. Group Setting Value Template
 func (m *DeviceManagementConfigurationGroupSettingInstanceTemplate) GetGroupSettingValueTemplate()(DeviceManagementConfigurationGroupSettingValueTemplateable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.groupSettingValueTemplate
-    }
+    return m.groupSettingValueTemplate
 }
 // Serialize serializes information the current object
 func (m *DeviceManagementConfigurationGroupSettingInstanceTemplate) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -62,7 +58,5 @@ func (m *DeviceManagementConfigurationGroupSettingInstanceTemplate) Serialize(wr
 }
 // SetGroupSettingValueTemplate sets the groupSettingValueTemplate property value. Group Setting Value Template
 func (m *DeviceManagementConfigurationGroupSettingInstanceTemplate) SetGroupSettingValueTemplate(value DeviceManagementConfigurationGroupSettingValueTemplateable)() {
-    if m != nil {
-        m.groupSettingValueTemplate = value
-    }
+    m.groupSettingValueTemplate = value
 }

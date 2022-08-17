@@ -30,11 +30,7 @@ func CreateManagementIntentFromDiscriminatorValue(parseNode i878a80d2330e89d2689
 }
 // GetDisplayName gets the displayName property value. The display name for the management intent. Optional. Read-only.
 func (m *ManagementIntent) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ManagementIntent) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -77,19 +73,11 @@ func (m *ManagementIntent) GetFieldDeserializers()(map[string]func(i878a80d2330e
 }
 // GetIsGlobal gets the isGlobal property value. A flag indicating whether the management intent is global. Required. Read-only.
 func (m *ManagementIntent) GetIsGlobal()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isGlobal
-    }
+    return m.isGlobal
 }
 // GetManagementTemplates gets the managementTemplates property value. The collection of management templates associated with the management intent. Optional. Read-only.
 func (m *ManagementIntent) GetManagementTemplates()([]ManagementTemplateDetailedInfoable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.managementTemplates
-    }
+    return m.managementTemplates
 }
 // Serialize serializes information the current object
 func (m *ManagementIntent) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -123,19 +111,13 @@ func (m *ManagementIntent) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
 }
 // SetDisplayName sets the displayName property value. The display name for the management intent. Optional. Read-only.
 func (m *ManagementIntent) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }
 // SetIsGlobal sets the isGlobal property value. A flag indicating whether the management intent is global. Required. Read-only.
 func (m *ManagementIntent) SetIsGlobal(value *bool)() {
-    if m != nil {
-        m.isGlobal = value
-    }
+    m.isGlobal = value
 }
 // SetManagementTemplates sets the managementTemplates property value. The collection of management templates associated with the management intent. Optional. Read-only.
 func (m *ManagementIntent) SetManagementTemplates(value []ManagementTemplateDetailedInfoable)() {
-    if m != nil {
-        m.managementTemplates = value
-    }
+    m.managementTemplates = value
 }

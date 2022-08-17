@@ -29,19 +29,11 @@ func CreateMessageRecipientFromDiscriminatorValue(parseNode i878a80d2330e89d2689
 }
 // GetDeliveryStatus gets the deliveryStatus property value. The deliveryStatus property
 func (m *MessageRecipient) GetDeliveryStatus()(*MessageStatus) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deliveryStatus
-    }
+    return m.deliveryStatus
 }
 // GetEvents gets the events property value. The events property
 func (m *MessageRecipient) GetEvents()([]MessageEventable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.events
-    }
+    return m.events
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *MessageRecipient) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -84,11 +76,7 @@ func (m *MessageRecipient) GetFieldDeserializers()(map[string]func(i878a80d2330e
 }
 // GetRecipientEmail gets the recipientEmail property value. The recipientEmail property
 func (m *MessageRecipient) GetRecipientEmail()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.recipientEmail
-    }
+    return m.recipientEmail
 }
 // Serialize serializes information the current object
 func (m *MessageRecipient) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -123,19 +111,13 @@ func (m *MessageRecipient) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
 }
 // SetDeliveryStatus sets the deliveryStatus property value. The deliveryStatus property
 func (m *MessageRecipient) SetDeliveryStatus(value *MessageStatus)() {
-    if m != nil {
-        m.deliveryStatus = value
-    }
+    m.deliveryStatus = value
 }
 // SetEvents sets the events property value. The events property
 func (m *MessageRecipient) SetEvents(value []MessageEventable)() {
-    if m != nil {
-        m.events = value
-    }
+    m.events = value
 }
 // SetRecipientEmail sets the recipientEmail property value. The recipientEmail property
 func (m *MessageRecipient) SetRecipientEmail(value *string)() {
-    if m != nil {
-        m.recipientEmail = value
-    }
+    m.recipientEmail = value
 }

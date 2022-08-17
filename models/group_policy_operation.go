@@ -77,35 +77,19 @@ func (m *GroupPolicyOperation) GetFieldDeserializers()(map[string]func(i878a80d2
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. The date and time the entity was last modified.
 func (m *GroupPolicyOperation) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastModifiedDateTime
-    }
+    return m.lastModifiedDateTime
 }
 // GetOperationStatus gets the operationStatus property value. Type of Group Policy operation status.
 func (m *GroupPolicyOperation) GetOperationStatus()(*GroupPolicyOperationStatus) {
-    if m == nil {
-        return nil
-    } else {
-        return m.operationStatus
-    }
+    return m.operationStatus
 }
 // GetOperationType gets the operationType property value. Type of Group Policy operation.
 func (m *GroupPolicyOperation) GetOperationType()(*GroupPolicyOperationType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.operationType
-    }
+    return m.operationType
 }
 // GetStatusDetails gets the statusDetails property value. The group policy operation status detail.
 func (m *GroupPolicyOperation) GetStatusDetails()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.statusDetails
-    }
+    return m.statusDetails
 }
 // Serialize serializes information the current object
 func (m *GroupPolicyOperation) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -143,25 +127,17 @@ func (m *GroupPolicyOperation) Serialize(writer i878a80d2330e89d26896388a3f487ee
 }
 // SetLastModifiedDateTime sets the lastModifiedDateTime property value. The date and time the entity was last modified.
 func (m *GroupPolicyOperation) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.lastModifiedDateTime = value
-    }
+    m.lastModifiedDateTime = value
 }
 // SetOperationStatus sets the operationStatus property value. Type of Group Policy operation status.
 func (m *GroupPolicyOperation) SetOperationStatus(value *GroupPolicyOperationStatus)() {
-    if m != nil {
-        m.operationStatus = value
-    }
+    m.operationStatus = value
 }
 // SetOperationType sets the operationType property value. Type of Group Policy operation.
 func (m *GroupPolicyOperation) SetOperationType(value *GroupPolicyOperationType)() {
-    if m != nil {
-        m.operationType = value
-    }
+    m.operationType = value
 }
 // SetStatusDetails sets the statusDetails property value. The group policy operation status detail.
 func (m *GroupPolicyOperation) SetStatusDetails(value *string)() {
-    if m != nil {
-        m.statusDetails = value
-    }
+    m.statusDetails = value
 }

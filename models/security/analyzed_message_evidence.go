@@ -60,35 +60,19 @@ func CreateAnalyzedMessageEvidenceFromDiscriminatorValue(parseNode i878a80d2330e
 }
 // GetAntiSpamDirection gets the antiSpamDirection property value. The antiSpamDirection property
 func (m *AnalyzedMessageEvidence) GetAntiSpamDirection()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.antiSpamDirection
-    }
+    return m.antiSpamDirection
 }
 // GetAttachmentsCount gets the attachmentsCount property value. The attachmentsCount property
 func (m *AnalyzedMessageEvidence) GetAttachmentsCount()(*int64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.attachmentsCount
-    }
+    return m.attachmentsCount
 }
 // GetDeliveryAction gets the deliveryAction property value. The deliveryAction property
 func (m *AnalyzedMessageEvidence) GetDeliveryAction()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deliveryAction
-    }
+    return m.deliveryAction
 }
 // GetDeliveryLocation gets the deliveryLocation property value. The deliveryLocation property
 func (m *AnalyzedMessageEvidence) GetDeliveryLocation()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deliveryLocation
-    }
+    return m.deliveryLocation
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AnalyzedMessageEvidence) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -289,115 +273,59 @@ func (m *AnalyzedMessageEvidence) GetFieldDeserializers()(map[string]func(i878a8
 }
 // GetInternetMessageId gets the internetMessageId property value. The internetMessageId property
 func (m *AnalyzedMessageEvidence) GetInternetMessageId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.internetMessageId
-    }
+    return m.internetMessageId
 }
 // GetLanguage gets the language property value. The language property
 func (m *AnalyzedMessageEvidence) GetLanguage()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.language
-    }
+    return m.language
 }
 // GetNetworkMessageId gets the networkMessageId property value. The networkMessageId property
 func (m *AnalyzedMessageEvidence) GetNetworkMessageId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.networkMessageId
-    }
+    return m.networkMessageId
 }
 // GetP1Sender gets the p1Sender property value. The p1Sender property
 func (m *AnalyzedMessageEvidence) GetP1Sender()(EmailSenderable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.p1Sender
-    }
+    return m.p1Sender
 }
 // GetP2Sender gets the p2Sender property value. The p2Sender property
 func (m *AnalyzedMessageEvidence) GetP2Sender()(EmailSenderable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.p2Sender
-    }
+    return m.p2Sender
 }
 // GetReceivedDateTime gets the receivedDateTime property value. The receivedDateTime property
 func (m *AnalyzedMessageEvidence) GetReceivedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.receivedDateTime
-    }
+    return m.receivedDateTime
 }
 // GetRecipientEmailAddress gets the recipientEmailAddress property value. The recipientEmailAddress property
 func (m *AnalyzedMessageEvidence) GetRecipientEmailAddress()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.recipientEmailAddress
-    }
+    return m.recipientEmailAddress
 }
 // GetSenderIp gets the senderIp property value. The senderIp property
 func (m *AnalyzedMessageEvidence) GetSenderIp()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.senderIp
-    }
+    return m.senderIp
 }
 // GetSubject gets the subject property value. The subject property
 func (m *AnalyzedMessageEvidence) GetSubject()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.subject
-    }
+    return m.subject
 }
 // GetThreatDetectionMethods gets the threatDetectionMethods property value. The threatDetectionMethods property
 func (m *AnalyzedMessageEvidence) GetThreatDetectionMethods()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.threatDetectionMethods
-    }
+    return m.threatDetectionMethods
 }
 // GetThreats gets the threats property value. The threats property
 func (m *AnalyzedMessageEvidence) GetThreats()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.threats
-    }
+    return m.threats
 }
 // GetUrlCount gets the urlCount property value. The urlCount property
 func (m *AnalyzedMessageEvidence) GetUrlCount()(*int64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.urlCount
-    }
+    return m.urlCount
 }
 // GetUrls gets the urls property value. The urls property
 func (m *AnalyzedMessageEvidence) GetUrls()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.urls
-    }
+    return m.urls
 }
 // GetUrn gets the urn property value. The urn property
 func (m *AnalyzedMessageEvidence) GetUrn()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.urn
-    }
+    return m.urn
 }
 // Serialize serializes information the current object
 func (m *AnalyzedMessageEvidence) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -517,109 +445,73 @@ func (m *AnalyzedMessageEvidence) Serialize(writer i878a80d2330e89d26896388a3f48
 }
 // SetAntiSpamDirection sets the antiSpamDirection property value. The antiSpamDirection property
 func (m *AnalyzedMessageEvidence) SetAntiSpamDirection(value *string)() {
-    if m != nil {
-        m.antiSpamDirection = value
-    }
+    m.antiSpamDirection = value
 }
 // SetAttachmentsCount sets the attachmentsCount property value. The attachmentsCount property
 func (m *AnalyzedMessageEvidence) SetAttachmentsCount(value *int64)() {
-    if m != nil {
-        m.attachmentsCount = value
-    }
+    m.attachmentsCount = value
 }
 // SetDeliveryAction sets the deliveryAction property value. The deliveryAction property
 func (m *AnalyzedMessageEvidence) SetDeliveryAction(value *string)() {
-    if m != nil {
-        m.deliveryAction = value
-    }
+    m.deliveryAction = value
 }
 // SetDeliveryLocation sets the deliveryLocation property value. The deliveryLocation property
 func (m *AnalyzedMessageEvidence) SetDeliveryLocation(value *string)() {
-    if m != nil {
-        m.deliveryLocation = value
-    }
+    m.deliveryLocation = value
 }
 // SetInternetMessageId sets the internetMessageId property value. The internetMessageId property
 func (m *AnalyzedMessageEvidence) SetInternetMessageId(value *string)() {
-    if m != nil {
-        m.internetMessageId = value
-    }
+    m.internetMessageId = value
 }
 // SetLanguage sets the language property value. The language property
 func (m *AnalyzedMessageEvidence) SetLanguage(value *string)() {
-    if m != nil {
-        m.language = value
-    }
+    m.language = value
 }
 // SetNetworkMessageId sets the networkMessageId property value. The networkMessageId property
 func (m *AnalyzedMessageEvidence) SetNetworkMessageId(value *string)() {
-    if m != nil {
-        m.networkMessageId = value
-    }
+    m.networkMessageId = value
 }
 // SetP1Sender sets the p1Sender property value. The p1Sender property
 func (m *AnalyzedMessageEvidence) SetP1Sender(value EmailSenderable)() {
-    if m != nil {
-        m.p1Sender = value
-    }
+    m.p1Sender = value
 }
 // SetP2Sender sets the p2Sender property value. The p2Sender property
 func (m *AnalyzedMessageEvidence) SetP2Sender(value EmailSenderable)() {
-    if m != nil {
-        m.p2Sender = value
-    }
+    m.p2Sender = value
 }
 // SetReceivedDateTime sets the receivedDateTime property value. The receivedDateTime property
 func (m *AnalyzedMessageEvidence) SetReceivedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.receivedDateTime = value
-    }
+    m.receivedDateTime = value
 }
 // SetRecipientEmailAddress sets the recipientEmailAddress property value. The recipientEmailAddress property
 func (m *AnalyzedMessageEvidence) SetRecipientEmailAddress(value *string)() {
-    if m != nil {
-        m.recipientEmailAddress = value
-    }
+    m.recipientEmailAddress = value
 }
 // SetSenderIp sets the senderIp property value. The senderIp property
 func (m *AnalyzedMessageEvidence) SetSenderIp(value *string)() {
-    if m != nil {
-        m.senderIp = value
-    }
+    m.senderIp = value
 }
 // SetSubject sets the subject property value. The subject property
 func (m *AnalyzedMessageEvidence) SetSubject(value *string)() {
-    if m != nil {
-        m.subject = value
-    }
+    m.subject = value
 }
 // SetThreatDetectionMethods sets the threatDetectionMethods property value. The threatDetectionMethods property
 func (m *AnalyzedMessageEvidence) SetThreatDetectionMethods(value []string)() {
-    if m != nil {
-        m.threatDetectionMethods = value
-    }
+    m.threatDetectionMethods = value
 }
 // SetThreats sets the threats property value. The threats property
 func (m *AnalyzedMessageEvidence) SetThreats(value []string)() {
-    if m != nil {
-        m.threats = value
-    }
+    m.threats = value
 }
 // SetUrlCount sets the urlCount property value. The urlCount property
 func (m *AnalyzedMessageEvidence) SetUrlCount(value *int64)() {
-    if m != nil {
-        m.urlCount = value
-    }
+    m.urlCount = value
 }
 // SetUrls sets the urls property value. The urls property
 func (m *AnalyzedMessageEvidence) SetUrls(value []string)() {
-    if m != nil {
-        m.urls = value
-    }
+    m.urls = value
 }
 // SetUrn sets the urn property value. The urn property
 func (m *AnalyzedMessageEvidence) SetUrn(value *string)() {
-    if m != nil {
-        m.urn = value
-    }
+    m.urn = value
 }

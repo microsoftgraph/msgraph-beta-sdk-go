@@ -33,27 +33,15 @@ func CreateAndroidPkcsCertificateProfileFromDiscriminatorValue(parseNode i878a80
 }
 // GetCertificateTemplateName gets the certificateTemplateName property value. PKCS Certificate Template Name
 func (m *AndroidPkcsCertificateProfile) GetCertificateTemplateName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.certificateTemplateName
-    }
+    return m.certificateTemplateName
 }
 // GetCertificationAuthority gets the certificationAuthority property value. PKCS Certification Authority
 func (m *AndroidPkcsCertificateProfile) GetCertificationAuthority()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.certificationAuthority
-    }
+    return m.certificationAuthority
 }
 // GetCertificationAuthorityName gets the certificationAuthorityName property value. PKCS Certification Authority Name
 func (m *AndroidPkcsCertificateProfile) GetCertificationAuthorityName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.certificationAuthorityName
-    }
+    return m.certificationAuthorityName
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AndroidPkcsCertificateProfile) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -116,19 +104,11 @@ func (m *AndroidPkcsCertificateProfile) GetFieldDeserializers()(map[string]func(
 }
 // GetManagedDeviceCertificateStates gets the managedDeviceCertificateStates property value. Certificate state for devices. This collection can contain a maximum of 2147483647 elements.
 func (m *AndroidPkcsCertificateProfile) GetManagedDeviceCertificateStates()([]ManagedDeviceCertificateStateable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.managedDeviceCertificateStates
-    }
+    return m.managedDeviceCertificateStates
 }
 // GetSubjectAlternativeNameFormatString gets the subjectAlternativeNameFormatString property value. Custom String that defines the AAD Attribute.
 func (m *AndroidPkcsCertificateProfile) GetSubjectAlternativeNameFormatString()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.subjectAlternativeNameFormatString
-    }
+    return m.subjectAlternativeNameFormatString
 }
 // Serialize serializes information the current object
 func (m *AndroidPkcsCertificateProfile) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -174,31 +154,21 @@ func (m *AndroidPkcsCertificateProfile) Serialize(writer i878a80d2330e89d2689638
 }
 // SetCertificateTemplateName sets the certificateTemplateName property value. PKCS Certificate Template Name
 func (m *AndroidPkcsCertificateProfile) SetCertificateTemplateName(value *string)() {
-    if m != nil {
-        m.certificateTemplateName = value
-    }
+    m.certificateTemplateName = value
 }
 // SetCertificationAuthority sets the certificationAuthority property value. PKCS Certification Authority
 func (m *AndroidPkcsCertificateProfile) SetCertificationAuthority(value *string)() {
-    if m != nil {
-        m.certificationAuthority = value
-    }
+    m.certificationAuthority = value
 }
 // SetCertificationAuthorityName sets the certificationAuthorityName property value. PKCS Certification Authority Name
 func (m *AndroidPkcsCertificateProfile) SetCertificationAuthorityName(value *string)() {
-    if m != nil {
-        m.certificationAuthorityName = value
-    }
+    m.certificationAuthorityName = value
 }
 // SetManagedDeviceCertificateStates sets the managedDeviceCertificateStates property value. Certificate state for devices. This collection can contain a maximum of 2147483647 elements.
 func (m *AndroidPkcsCertificateProfile) SetManagedDeviceCertificateStates(value []ManagedDeviceCertificateStateable)() {
-    if m != nil {
-        m.managedDeviceCertificateStates = value
-    }
+    m.managedDeviceCertificateStates = value
 }
 // SetSubjectAlternativeNameFormatString sets the subjectAlternativeNameFormatString property value. Custom String that defines the AAD Attribute.
 func (m *AndroidPkcsCertificateProfile) SetSubjectAlternativeNameFormatString(value *string)() {
-    if m != nil {
-        m.subjectAlternativeNameFormatString = value
-    }
+    m.subjectAlternativeNameFormatString = value
 }

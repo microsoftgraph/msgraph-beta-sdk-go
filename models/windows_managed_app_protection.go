@@ -71,59 +71,31 @@ func CreateWindowsManagedAppProtectionFromDiscriminatorValue(parseNode i878a80d2
 }
 // GetAllowedInboundDataTransferSources gets the allowedInboundDataTransferSources property value. Data can be transferred from/to these classes of apps
 func (m *WindowsManagedAppProtection) GetAllowedInboundDataTransferSources()(*WindowsManagedAppDataTransferLevel) {
-    if m == nil {
-        return nil
-    } else {
-        return m.allowedInboundDataTransferSources
-    }
+    return m.allowedInboundDataTransferSources
 }
 // GetAllowedOutboundClipboardSharingLevel gets the allowedOutboundClipboardSharingLevel property value. Represents the level to which the device's clipboard may be shared between apps
 func (m *WindowsManagedAppProtection) GetAllowedOutboundClipboardSharingLevel()(*WindowsManagedAppClipboardSharingLevel) {
-    if m == nil {
-        return nil
-    } else {
-        return m.allowedOutboundClipboardSharingLevel
-    }
+    return m.allowedOutboundClipboardSharingLevel
 }
 // GetAllowedOutboundDataTransferDestinations gets the allowedOutboundDataTransferDestinations property value. Data can be transferred from/to these classes of apps
 func (m *WindowsManagedAppProtection) GetAllowedOutboundDataTransferDestinations()(*WindowsManagedAppDataTransferLevel) {
-    if m == nil {
-        return nil
-    } else {
-        return m.allowedOutboundDataTransferDestinations
-    }
+    return m.allowedOutboundDataTransferDestinations
 }
 // GetAppActionIfUnableToAuthenticateUser gets the appActionIfUnableToAuthenticateUser property value. If set, it will specify what action to take in the case where the user is unable to checkin because their authentication token is invalid. This happens when the user is deleted or disabled in AAD. Some possible values are block or wipe. If this property is not set, no action will be taken. Possible values are: block, wipe, warn.
 func (m *WindowsManagedAppProtection) GetAppActionIfUnableToAuthenticateUser()(*ManagedAppRemediationAction) {
-    if m == nil {
-        return nil
-    } else {
-        return m.appActionIfUnableToAuthenticateUser
-    }
+    return m.appActionIfUnableToAuthenticateUser
 }
 // GetApps gets the apps property value. List of apps to which the policy is deployed.
 func (m *WindowsManagedAppProtection) GetApps()([]ManagedMobileAppable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.apps
-    }
+    return m.apps
 }
 // GetAssignments gets the assignments property value. Navigation property to list of inclusion and exclusion groups to which the policy is deployed.
 func (m *WindowsManagedAppProtection) GetAssignments()([]TargetedManagedAppPolicyAssignmentable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.assignments
-    }
+    return m.assignments
 }
 // GetDeployedAppCount gets the deployedAppCount property value. Indicates the total number of applications for which the current policy is deployed.
 func (m *WindowsManagedAppProtection) GetDeployedAppCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deployedAppCount
-    }
+    return m.deployedAppCount
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *WindowsManagedAppProtection) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -380,139 +352,71 @@ func (m *WindowsManagedAppProtection) GetFieldDeserializers()(map[string]func(i8
 }
 // GetIsAssigned gets the isAssigned property value. When TRUE, indicates that the policy is deployed to some inclusion groups. When FALSE, indicates that the policy is not deployed to any inclusion groups. Default value is FALSE.
 func (m *WindowsManagedAppProtection) GetIsAssigned()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isAssigned
-    }
+    return m.isAssigned
 }
 // GetMaximumAllowedDeviceThreatLevel gets the maximumAllowedDeviceThreatLevel property value. The maxium threat level allowed for an app to be compliant.
 func (m *WindowsManagedAppProtection) GetMaximumAllowedDeviceThreatLevel()(*ManagedAppDeviceThreatLevel) {
-    if m == nil {
-        return nil
-    } else {
-        return m.maximumAllowedDeviceThreatLevel
-    }
+    return m.maximumAllowedDeviceThreatLevel
 }
 // GetMaximumRequiredOsVersion gets the maximumRequiredOsVersion property value. Versions bigger than the specified version will block the managed app from accessing company data. For example: '8.1.0' or '13.1.1'.
 func (m *WindowsManagedAppProtection) GetMaximumRequiredOsVersion()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.maximumRequiredOsVersion
-    }
+    return m.maximumRequiredOsVersion
 }
 // GetMaximumWarningOsVersion gets the maximumWarningOsVersion property value. Versions bigger than the specified version will result in warning message on the managed app from accessing company data. For example: '8.1.0' or '13.1.1'.
 func (m *WindowsManagedAppProtection) GetMaximumWarningOsVersion()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.maximumWarningOsVersion
-    }
+    return m.maximumWarningOsVersion
 }
 // GetMaximumWipeOsVersion gets the maximumWipeOsVersion property value. Versions bigger than the specified version will wipe the managed app and the associated company data. For example: '8.1.0' or '13.1.1'.
 func (m *WindowsManagedAppProtection) GetMaximumWipeOsVersion()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.maximumWipeOsVersion
-    }
+    return m.maximumWipeOsVersion
 }
 // GetMinimumRequiredAppVersion gets the minimumRequiredAppVersion property value. Versions less than the specified version will block the managed app from accessing company data. For example: '8.1.0' or '13.1.1'.
 func (m *WindowsManagedAppProtection) GetMinimumRequiredAppVersion()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.minimumRequiredAppVersion
-    }
+    return m.minimumRequiredAppVersion
 }
 // GetMinimumRequiredOsVersion gets the minimumRequiredOsVersion property value. Versions less than the specified version will block the managed app from accessing company data. For example: '8.1.0' or '13.1.1'.
 func (m *WindowsManagedAppProtection) GetMinimumRequiredOsVersion()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.minimumRequiredOsVersion
-    }
+    return m.minimumRequiredOsVersion
 }
 // GetMinimumRequiredSdkVersion gets the minimumRequiredSdkVersion property value. Versions less than the specified version will block the managed app from accessing company data. For example: '8.1.0' or '13.1.1'.
 func (m *WindowsManagedAppProtection) GetMinimumRequiredSdkVersion()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.minimumRequiredSdkVersion
-    }
+    return m.minimumRequiredSdkVersion
 }
 // GetMinimumWarningAppVersion gets the minimumWarningAppVersion property value. Versions less than the specified version will result in warning message on the managed app from accessing company data. For example: '8.1.0' or '13.1.1'.
 func (m *WindowsManagedAppProtection) GetMinimumWarningAppVersion()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.minimumWarningAppVersion
-    }
+    return m.minimumWarningAppVersion
 }
 // GetMinimumWarningOsVersion gets the minimumWarningOsVersion property value. Versions less than the specified version will result in warning message on the managed app from accessing company data. For example: '8.1.0' or '13.1.1'.
 func (m *WindowsManagedAppProtection) GetMinimumWarningOsVersion()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.minimumWarningOsVersion
-    }
+    return m.minimumWarningOsVersion
 }
 // GetMinimumWipeAppVersion gets the minimumWipeAppVersion property value. Versions less than the specified version will wipe the managed app and the associated company data. For example: '8.1.0' or '13.1.1'.
 func (m *WindowsManagedAppProtection) GetMinimumWipeAppVersion()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.minimumWipeAppVersion
-    }
+    return m.minimumWipeAppVersion
 }
 // GetMinimumWipeOsVersion gets the minimumWipeOsVersion property value. Versions less than the specified version will wipe the managed app and the associated company data. For example: '8.1.0' or '13.1.1'.
 func (m *WindowsManagedAppProtection) GetMinimumWipeOsVersion()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.minimumWipeOsVersion
-    }
+    return m.minimumWipeOsVersion
 }
 // GetMinimumWipeSdkVersion gets the minimumWipeSdkVersion property value. Versions less than the specified version will wipe the managed app and the associated company data. For example: '8.1.0' or '13.1.1'.
 func (m *WindowsManagedAppProtection) GetMinimumWipeSdkVersion()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.minimumWipeSdkVersion
-    }
+    return m.minimumWipeSdkVersion
 }
 // GetMobileThreatDefenseRemediationAction gets the mobileThreatDefenseRemediationAction property value. An admin initiated action to be applied on a managed app.
 func (m *WindowsManagedAppProtection) GetMobileThreatDefenseRemediationAction()(*ManagedAppRemediationAction) {
-    if m == nil {
-        return nil
-    } else {
-        return m.mobileThreatDefenseRemediationAction
-    }
+    return m.mobileThreatDefenseRemediationAction
 }
 // GetPeriodOfflineBeforeAccessCheck gets the periodOfflineBeforeAccessCheck property value. The period after which access is checked when the device is not connected to the internet. For example, PT5M indicates that the interval is 5 minutes in duration. A timespan value of PT0S indicates that access will be blocked immediately when the device is not connected to the internet.
 func (m *WindowsManagedAppProtection) GetPeriodOfflineBeforeAccessCheck()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration) {
-    if m == nil {
-        return nil
-    } else {
-        return m.periodOfflineBeforeAccessCheck
-    }
+    return m.periodOfflineBeforeAccessCheck
 }
 // GetPeriodOfflineBeforeWipeIsEnforced gets the periodOfflineBeforeWipeIsEnforced property value. The amount of time an app is allowed to remain disconnected from the internet before all managed data it is wiped. For example, P5D indicates that the interval is 5 days in duration. A timespan value of PT0S indicates that managed data will never be wiped when the device is not connected to the internet.
 func (m *WindowsManagedAppProtection) GetPeriodOfflineBeforeWipeIsEnforced()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration) {
-    if m == nil {
-        return nil
-    } else {
-        return m.periodOfflineBeforeWipeIsEnforced
-    }
+    return m.periodOfflineBeforeWipeIsEnforced
 }
 // GetPrintBlocked gets the printBlocked property value. When TRUE, indicates that printing is blocked from managed apps. When FALSE, indicates that printing is allowed from managed apps. Default value is FALSE.
 func (m *WindowsManagedAppProtection) GetPrintBlocked()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.printBlocked
-    }
+    return m.printBlocked
 }
 // Serialize serializes information the current object
 func (m *WindowsManagedAppProtection) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -682,145 +586,97 @@ func (m *WindowsManagedAppProtection) Serialize(writer i878a80d2330e89d26896388a
 }
 // SetAllowedInboundDataTransferSources sets the allowedInboundDataTransferSources property value. Data can be transferred from/to these classes of apps
 func (m *WindowsManagedAppProtection) SetAllowedInboundDataTransferSources(value *WindowsManagedAppDataTransferLevel)() {
-    if m != nil {
-        m.allowedInboundDataTransferSources = value
-    }
+    m.allowedInboundDataTransferSources = value
 }
 // SetAllowedOutboundClipboardSharingLevel sets the allowedOutboundClipboardSharingLevel property value. Represents the level to which the device's clipboard may be shared between apps
 func (m *WindowsManagedAppProtection) SetAllowedOutboundClipboardSharingLevel(value *WindowsManagedAppClipboardSharingLevel)() {
-    if m != nil {
-        m.allowedOutboundClipboardSharingLevel = value
-    }
+    m.allowedOutboundClipboardSharingLevel = value
 }
 // SetAllowedOutboundDataTransferDestinations sets the allowedOutboundDataTransferDestinations property value. Data can be transferred from/to these classes of apps
 func (m *WindowsManagedAppProtection) SetAllowedOutboundDataTransferDestinations(value *WindowsManagedAppDataTransferLevel)() {
-    if m != nil {
-        m.allowedOutboundDataTransferDestinations = value
-    }
+    m.allowedOutboundDataTransferDestinations = value
 }
 // SetAppActionIfUnableToAuthenticateUser sets the appActionIfUnableToAuthenticateUser property value. If set, it will specify what action to take in the case where the user is unable to checkin because their authentication token is invalid. This happens when the user is deleted or disabled in AAD. Some possible values are block or wipe. If this property is not set, no action will be taken. Possible values are: block, wipe, warn.
 func (m *WindowsManagedAppProtection) SetAppActionIfUnableToAuthenticateUser(value *ManagedAppRemediationAction)() {
-    if m != nil {
-        m.appActionIfUnableToAuthenticateUser = value
-    }
+    m.appActionIfUnableToAuthenticateUser = value
 }
 // SetApps sets the apps property value. List of apps to which the policy is deployed.
 func (m *WindowsManagedAppProtection) SetApps(value []ManagedMobileAppable)() {
-    if m != nil {
-        m.apps = value
-    }
+    m.apps = value
 }
 // SetAssignments sets the assignments property value. Navigation property to list of inclusion and exclusion groups to which the policy is deployed.
 func (m *WindowsManagedAppProtection) SetAssignments(value []TargetedManagedAppPolicyAssignmentable)() {
-    if m != nil {
-        m.assignments = value
-    }
+    m.assignments = value
 }
 // SetDeployedAppCount sets the deployedAppCount property value. Indicates the total number of applications for which the current policy is deployed.
 func (m *WindowsManagedAppProtection) SetDeployedAppCount(value *int32)() {
-    if m != nil {
-        m.deployedAppCount = value
-    }
+    m.deployedAppCount = value
 }
 // SetIsAssigned sets the isAssigned property value. When TRUE, indicates that the policy is deployed to some inclusion groups. When FALSE, indicates that the policy is not deployed to any inclusion groups. Default value is FALSE.
 func (m *WindowsManagedAppProtection) SetIsAssigned(value *bool)() {
-    if m != nil {
-        m.isAssigned = value
-    }
+    m.isAssigned = value
 }
 // SetMaximumAllowedDeviceThreatLevel sets the maximumAllowedDeviceThreatLevel property value. The maxium threat level allowed for an app to be compliant.
 func (m *WindowsManagedAppProtection) SetMaximumAllowedDeviceThreatLevel(value *ManagedAppDeviceThreatLevel)() {
-    if m != nil {
-        m.maximumAllowedDeviceThreatLevel = value
-    }
+    m.maximumAllowedDeviceThreatLevel = value
 }
 // SetMaximumRequiredOsVersion sets the maximumRequiredOsVersion property value. Versions bigger than the specified version will block the managed app from accessing company data. For example: '8.1.0' or '13.1.1'.
 func (m *WindowsManagedAppProtection) SetMaximumRequiredOsVersion(value *string)() {
-    if m != nil {
-        m.maximumRequiredOsVersion = value
-    }
+    m.maximumRequiredOsVersion = value
 }
 // SetMaximumWarningOsVersion sets the maximumWarningOsVersion property value. Versions bigger than the specified version will result in warning message on the managed app from accessing company data. For example: '8.1.0' or '13.1.1'.
 func (m *WindowsManagedAppProtection) SetMaximumWarningOsVersion(value *string)() {
-    if m != nil {
-        m.maximumWarningOsVersion = value
-    }
+    m.maximumWarningOsVersion = value
 }
 // SetMaximumWipeOsVersion sets the maximumWipeOsVersion property value. Versions bigger than the specified version will wipe the managed app and the associated company data. For example: '8.1.0' or '13.1.1'.
 func (m *WindowsManagedAppProtection) SetMaximumWipeOsVersion(value *string)() {
-    if m != nil {
-        m.maximumWipeOsVersion = value
-    }
+    m.maximumWipeOsVersion = value
 }
 // SetMinimumRequiredAppVersion sets the minimumRequiredAppVersion property value. Versions less than the specified version will block the managed app from accessing company data. For example: '8.1.0' or '13.1.1'.
 func (m *WindowsManagedAppProtection) SetMinimumRequiredAppVersion(value *string)() {
-    if m != nil {
-        m.minimumRequiredAppVersion = value
-    }
+    m.minimumRequiredAppVersion = value
 }
 // SetMinimumRequiredOsVersion sets the minimumRequiredOsVersion property value. Versions less than the specified version will block the managed app from accessing company data. For example: '8.1.0' or '13.1.1'.
 func (m *WindowsManagedAppProtection) SetMinimumRequiredOsVersion(value *string)() {
-    if m != nil {
-        m.minimumRequiredOsVersion = value
-    }
+    m.minimumRequiredOsVersion = value
 }
 // SetMinimumRequiredSdkVersion sets the minimumRequiredSdkVersion property value. Versions less than the specified version will block the managed app from accessing company data. For example: '8.1.0' or '13.1.1'.
 func (m *WindowsManagedAppProtection) SetMinimumRequiredSdkVersion(value *string)() {
-    if m != nil {
-        m.minimumRequiredSdkVersion = value
-    }
+    m.minimumRequiredSdkVersion = value
 }
 // SetMinimumWarningAppVersion sets the minimumWarningAppVersion property value. Versions less than the specified version will result in warning message on the managed app from accessing company data. For example: '8.1.0' or '13.1.1'.
 func (m *WindowsManagedAppProtection) SetMinimumWarningAppVersion(value *string)() {
-    if m != nil {
-        m.minimumWarningAppVersion = value
-    }
+    m.minimumWarningAppVersion = value
 }
 // SetMinimumWarningOsVersion sets the minimumWarningOsVersion property value. Versions less than the specified version will result in warning message on the managed app from accessing company data. For example: '8.1.0' or '13.1.1'.
 func (m *WindowsManagedAppProtection) SetMinimumWarningOsVersion(value *string)() {
-    if m != nil {
-        m.minimumWarningOsVersion = value
-    }
+    m.minimumWarningOsVersion = value
 }
 // SetMinimumWipeAppVersion sets the minimumWipeAppVersion property value. Versions less than the specified version will wipe the managed app and the associated company data. For example: '8.1.0' or '13.1.1'.
 func (m *WindowsManagedAppProtection) SetMinimumWipeAppVersion(value *string)() {
-    if m != nil {
-        m.minimumWipeAppVersion = value
-    }
+    m.minimumWipeAppVersion = value
 }
 // SetMinimumWipeOsVersion sets the minimumWipeOsVersion property value. Versions less than the specified version will wipe the managed app and the associated company data. For example: '8.1.0' or '13.1.1'.
 func (m *WindowsManagedAppProtection) SetMinimumWipeOsVersion(value *string)() {
-    if m != nil {
-        m.minimumWipeOsVersion = value
-    }
+    m.minimumWipeOsVersion = value
 }
 // SetMinimumWipeSdkVersion sets the minimumWipeSdkVersion property value. Versions less than the specified version will wipe the managed app and the associated company data. For example: '8.1.0' or '13.1.1'.
 func (m *WindowsManagedAppProtection) SetMinimumWipeSdkVersion(value *string)() {
-    if m != nil {
-        m.minimumWipeSdkVersion = value
-    }
+    m.minimumWipeSdkVersion = value
 }
 // SetMobileThreatDefenseRemediationAction sets the mobileThreatDefenseRemediationAction property value. An admin initiated action to be applied on a managed app.
 func (m *WindowsManagedAppProtection) SetMobileThreatDefenseRemediationAction(value *ManagedAppRemediationAction)() {
-    if m != nil {
-        m.mobileThreatDefenseRemediationAction = value
-    }
+    m.mobileThreatDefenseRemediationAction = value
 }
 // SetPeriodOfflineBeforeAccessCheck sets the periodOfflineBeforeAccessCheck property value. The period after which access is checked when the device is not connected to the internet. For example, PT5M indicates that the interval is 5 minutes in duration. A timespan value of PT0S indicates that access will be blocked immediately when the device is not connected to the internet.
 func (m *WindowsManagedAppProtection) SetPeriodOfflineBeforeAccessCheck(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)() {
-    if m != nil {
-        m.periodOfflineBeforeAccessCheck = value
-    }
+    m.periodOfflineBeforeAccessCheck = value
 }
 // SetPeriodOfflineBeforeWipeIsEnforced sets the periodOfflineBeforeWipeIsEnforced property value. The amount of time an app is allowed to remain disconnected from the internet before all managed data it is wiped. For example, P5D indicates that the interval is 5 days in duration. A timespan value of PT0S indicates that managed data will never be wiped when the device is not connected to the internet.
 func (m *WindowsManagedAppProtection) SetPeriodOfflineBeforeWipeIsEnforced(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)() {
-    if m != nil {
-        m.periodOfflineBeforeWipeIsEnforced = value
-    }
+    m.periodOfflineBeforeWipeIsEnforced = value
 }
 // SetPrintBlocked sets the printBlocked property value. When TRUE, indicates that printing is blocked from managed apps. When FALSE, indicates that printing is allowed from managed apps. Default value is FALSE.
 func (m *WindowsManagedAppProtection) SetPrintBlocked(value *bool)() {
-    if m != nil {
-        m.printBlocked = value
-    }
+    m.printBlocked = value
 }

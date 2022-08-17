@@ -46,67 +46,35 @@ func CreateIdentityContainerFromDiscriminatorValue(parseNode i878a80d2330e89d268
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *IdentityContainer) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetApiConnectors gets the apiConnectors property value. Represents entry point for API connectors.
 func (m *IdentityContainer) GetApiConnectors()([]IdentityApiConnectorable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.apiConnectors
-    }
+    return m.apiConnectors
 }
 // GetAuthenticationEventListeners gets the authenticationEventListeners property value. The authenticationEventListeners property
 func (m *IdentityContainer) GetAuthenticationEventListeners()([]AuthenticationEventListenerable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.authenticationEventListeners
-    }
+    return m.authenticationEventListeners
 }
 // GetB2cUserFlows gets the b2cUserFlows property value. Represents entry point for B2C identity userflows.
 func (m *IdentityContainer) GetB2cUserFlows()([]B2cIdentityUserFlowable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.b2cUserFlows
-    }
+    return m.b2cUserFlows
 }
 // GetB2xUserFlows gets the b2xUserFlows property value. Represents entry point for B2X and self-service sign-up identity userflows.
 func (m *IdentityContainer) GetB2xUserFlows()([]B2xIdentityUserFlowable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.b2xUserFlows
-    }
+    return m.b2xUserFlows
 }
 // GetConditionalAccess gets the conditionalAccess property value. the entry point for the Conditional Access (CA) object model.
 func (m *IdentityContainer) GetConditionalAccess()(ConditionalAccessRootable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.conditionalAccess
-    }
+    return m.conditionalAccess
 }
 // GetContinuousAccessEvaluationPolicy gets the continuousAccessEvaluationPolicy property value. Represents entry point for continuous access evaluation policy.
 func (m *IdentityContainer) GetContinuousAccessEvaluationPolicy()(ContinuousAccessEvaluationPolicyable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.continuousAccessEvaluationPolicy
-    }
+    return m.continuousAccessEvaluationPolicy
 }
 // GetCustomAuthenticationExtensions gets the customAuthenticationExtensions property value. The customAuthenticationExtensions property
 func (m *IdentityContainer) GetCustomAuthenticationExtensions()([]CustomAuthenticationExtensionable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.customAuthenticationExtensions
-    }
+    return m.customAuthenticationExtensions
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *IdentityContainer) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -257,35 +225,19 @@ func (m *IdentityContainer) GetFieldDeserializers()(map[string]func(i878a80d2330
 }
 // GetIdentityProviders gets the identityProviders property value. Represents entry point for identity provider base.
 func (m *IdentityContainer) GetIdentityProviders()([]IdentityProviderBaseable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.identityProviders
-    }
+    return m.identityProviders
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *IdentityContainer) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetUserFlowAttributes gets the userFlowAttributes property value. Represents entry point for identity userflow attributes.
 func (m *IdentityContainer) GetUserFlowAttributes()([]IdentityUserFlowAttributeable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userFlowAttributes
-    }
+    return m.userFlowAttributes
 }
 // GetUserFlows gets the userFlows property value. The userFlows property
 func (m *IdentityContainer) GetUserFlows()([]IdentityUserFlowable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userFlows
-    }
+    return m.userFlows
 }
 // Serialize serializes information the current object
 func (m *IdentityContainer) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -397,73 +349,49 @@ func (m *IdentityContainer) Serialize(writer i878a80d2330e89d26896388a3f487eef27
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *IdentityContainer) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetApiConnectors sets the apiConnectors property value. Represents entry point for API connectors.
 func (m *IdentityContainer) SetApiConnectors(value []IdentityApiConnectorable)() {
-    if m != nil {
-        m.apiConnectors = value
-    }
+    m.apiConnectors = value
 }
 // SetAuthenticationEventListeners sets the authenticationEventListeners property value. The authenticationEventListeners property
 func (m *IdentityContainer) SetAuthenticationEventListeners(value []AuthenticationEventListenerable)() {
-    if m != nil {
-        m.authenticationEventListeners = value
-    }
+    m.authenticationEventListeners = value
 }
 // SetB2cUserFlows sets the b2cUserFlows property value. Represents entry point for B2C identity userflows.
 func (m *IdentityContainer) SetB2cUserFlows(value []B2cIdentityUserFlowable)() {
-    if m != nil {
-        m.b2cUserFlows = value
-    }
+    m.b2cUserFlows = value
 }
 // SetB2xUserFlows sets the b2xUserFlows property value. Represents entry point for B2X and self-service sign-up identity userflows.
 func (m *IdentityContainer) SetB2xUserFlows(value []B2xIdentityUserFlowable)() {
-    if m != nil {
-        m.b2xUserFlows = value
-    }
+    m.b2xUserFlows = value
 }
 // SetConditionalAccess sets the conditionalAccess property value. the entry point for the Conditional Access (CA) object model.
 func (m *IdentityContainer) SetConditionalAccess(value ConditionalAccessRootable)() {
-    if m != nil {
-        m.conditionalAccess = value
-    }
+    m.conditionalAccess = value
 }
 // SetContinuousAccessEvaluationPolicy sets the continuousAccessEvaluationPolicy property value. Represents entry point for continuous access evaluation policy.
 func (m *IdentityContainer) SetContinuousAccessEvaluationPolicy(value ContinuousAccessEvaluationPolicyable)() {
-    if m != nil {
-        m.continuousAccessEvaluationPolicy = value
-    }
+    m.continuousAccessEvaluationPolicy = value
 }
 // SetCustomAuthenticationExtensions sets the customAuthenticationExtensions property value. The customAuthenticationExtensions property
 func (m *IdentityContainer) SetCustomAuthenticationExtensions(value []CustomAuthenticationExtensionable)() {
-    if m != nil {
-        m.customAuthenticationExtensions = value
-    }
+    m.customAuthenticationExtensions = value
 }
 // SetIdentityProviders sets the identityProviders property value. Represents entry point for identity provider base.
 func (m *IdentityContainer) SetIdentityProviders(value []IdentityProviderBaseable)() {
-    if m != nil {
-        m.identityProviders = value
-    }
+    m.identityProviders = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *IdentityContainer) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetUserFlowAttributes sets the userFlowAttributes property value. Represents entry point for identity userflow attributes.
 func (m *IdentityContainer) SetUserFlowAttributes(value []IdentityUserFlowAttributeable)() {
-    if m != nil {
-        m.userFlowAttributes = value
-    }
+    m.userFlowAttributes = value
 }
 // SetUserFlows sets the userFlows property value. The userFlows property
 func (m *IdentityContainer) SetUserFlows(value []IdentityUserFlowable)() {
-    if m != nil {
-        m.userFlows = value
-    }
+    m.userFlows = value
 }

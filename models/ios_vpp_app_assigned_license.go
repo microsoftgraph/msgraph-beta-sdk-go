@@ -97,35 +97,19 @@ func (m *IosVppAppAssignedLicense) GetFieldDeserializers()(map[string]func(i878a
 }
 // GetUserEmailAddress gets the userEmailAddress property value. The user email address.
 func (m *IosVppAppAssignedLicense) GetUserEmailAddress()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userEmailAddress
-    }
+    return m.userEmailAddress
 }
 // GetUserId gets the userId property value. The user ID.
 func (m *IosVppAppAssignedLicense) GetUserId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userId
-    }
+    return m.userId
 }
 // GetUserName gets the userName property value. The user name.
 func (m *IosVppAppAssignedLicense) GetUserName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userName
-    }
+    return m.userName
 }
 // GetUserPrincipalName gets the userPrincipalName property value. The user principal name.
 func (m *IosVppAppAssignedLicense) GetUserPrincipalName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userPrincipalName
-    }
+    return m.userPrincipalName
 }
 // Serialize serializes information the current object
 func (m *IosVppAppAssignedLicense) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -161,25 +145,17 @@ func (m *IosVppAppAssignedLicense) Serialize(writer i878a80d2330e89d26896388a3f4
 }
 // SetUserEmailAddress sets the userEmailAddress property value. The user email address.
 func (m *IosVppAppAssignedLicense) SetUserEmailAddress(value *string)() {
-    if m != nil {
-        m.userEmailAddress = value
-    }
+    m.userEmailAddress = value
 }
 // SetUserId sets the userId property value. The user ID.
 func (m *IosVppAppAssignedLicense) SetUserId(value *string)() {
-    if m != nil {
-        m.userId = value
-    }
+    m.userId = value
 }
 // SetUserName sets the userName property value. The user name.
 func (m *IosVppAppAssignedLicense) SetUserName(value *string)() {
-    if m != nil {
-        m.userName = value
-    }
+    m.userName = value
 }
 // SetUserPrincipalName sets the userPrincipalName property value. The user principal name.
 func (m *IosVppAppAssignedLicense) SetUserPrincipalName(value *string)() {
-    if m != nil {
-        m.userPrincipalName = value
-    }
+    m.userPrincipalName = value
 }

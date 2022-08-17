@@ -34,35 +34,19 @@ func CreateOnPremisesApplicationSegmentFromDiscriminatorValue(parseNode i878a80d
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *OnPremisesApplicationSegment) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetAlternateUrl gets the alternateUrl property value. The alternateUrl property
 func (m *OnPremisesApplicationSegment) GetAlternateUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.alternateUrl
-    }
+    return m.alternateUrl
 }
 // GetCorsConfigurations gets the corsConfigurations property value. The corsConfigurations property
 func (m *OnPremisesApplicationSegment) GetCorsConfigurations()([]CorsConfigurationable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.corsConfigurations
-    }
+    return m.corsConfigurations
 }
 // GetExternalUrl gets the externalUrl property value. The externalUrl property
 func (m *OnPremisesApplicationSegment) GetExternalUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.externalUrl
-    }
+    return m.externalUrl
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *OnPremisesApplicationSegment) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -125,19 +109,11 @@ func (m *OnPremisesApplicationSegment) GetFieldDeserializers()(map[string]func(i
 }
 // GetInternalUrl gets the internalUrl property value. The internalUrl property
 func (m *OnPremisesApplicationSegment) GetInternalUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.internalUrl
-    }
+    return m.internalUrl
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *OnPremisesApplicationSegment) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // Serialize serializes information the current object
 func (m *OnPremisesApplicationSegment) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -185,37 +161,25 @@ func (m *OnPremisesApplicationSegment) Serialize(writer i878a80d2330e89d26896388
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *OnPremisesApplicationSegment) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetAlternateUrl sets the alternateUrl property value. The alternateUrl property
 func (m *OnPremisesApplicationSegment) SetAlternateUrl(value *string)() {
-    if m != nil {
-        m.alternateUrl = value
-    }
+    m.alternateUrl = value
 }
 // SetCorsConfigurations sets the corsConfigurations property value. The corsConfigurations property
 func (m *OnPremisesApplicationSegment) SetCorsConfigurations(value []CorsConfigurationable)() {
-    if m != nil {
-        m.corsConfigurations = value
-    }
+    m.corsConfigurations = value
 }
 // SetExternalUrl sets the externalUrl property value. The externalUrl property
 func (m *OnPremisesApplicationSegment) SetExternalUrl(value *string)() {
-    if m != nil {
-        m.externalUrl = value
-    }
+    m.externalUrl = value
 }
 // SetInternalUrl sets the internalUrl property value. The internalUrl property
 func (m *OnPremisesApplicationSegment) SetInternalUrl(value *string)() {
-    if m != nil {
-        m.internalUrl = value
-    }
+    m.internalUrl = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *OnPremisesApplicationSegment) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }

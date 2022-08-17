@@ -24,11 +24,7 @@ func CreateUploadCertificatePostRequestBodyFromDiscriminatorValue(parseNode i878
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *UploadCertificatePostRequestBody) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *UploadCertificatePostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -47,11 +43,7 @@ func (m *UploadCertificatePostRequestBody) GetFieldDeserializers()(map[string]fu
 }
 // GetKey gets the key property value. The key property
 func (m *UploadCertificatePostRequestBody) GetKey()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.key
-    }
+    return m.key
 }
 // Serialize serializes information the current object
 func (m *UploadCertificatePostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -71,13 +63,9 @@ func (m *UploadCertificatePostRequestBody) Serialize(writer i878a80d2330e89d2689
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *UploadCertificatePostRequestBody) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetKey sets the key property value. The key property
 func (m *UploadCertificatePostRequestBody) SetKey(value *string)() {
-    if m != nil {
-        m.key = value
-    }
+    m.key = value
 }

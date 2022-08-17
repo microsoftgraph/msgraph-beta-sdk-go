@@ -34,11 +34,7 @@ func CreatePrivateLinkDetailsFromDiscriminatorValue(parseNode i878a80d2330e89d26
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *PrivateLinkDetails) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *PrivateLinkDetails) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -97,43 +93,23 @@ func (m *PrivateLinkDetails) GetFieldDeserializers()(map[string]func(i878a80d233
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *PrivateLinkDetails) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetPolicyId gets the policyId property value. The unique identifier for the Private Link policy.
 func (m *PrivateLinkDetails) GetPolicyId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.policyId
-    }
+    return m.policyId
 }
 // GetPolicyName gets the policyName property value. The name of the Private Link policy in Azure AD.
 func (m *PrivateLinkDetails) GetPolicyName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.policyName
-    }
+    return m.policyName
 }
 // GetPolicyTenantId gets the policyTenantId property value. The tenant identifier of the Azure AD tenant the Private Link policy belongs to.
 func (m *PrivateLinkDetails) GetPolicyTenantId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.policyTenantId
-    }
+    return m.policyTenantId
 }
 // GetResourceId gets the resourceId property value. The Azure Resource Manager (ARM) path for the Private Link policy resource.
 func (m *PrivateLinkDetails) GetResourceId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.resourceId
-    }
+    return m.resourceId
 }
 // Serialize serializes information the current object
 func (m *PrivateLinkDetails) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -177,37 +153,25 @@ func (m *PrivateLinkDetails) Serialize(writer i878a80d2330e89d26896388a3f487eef2
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *PrivateLinkDetails) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *PrivateLinkDetails) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetPolicyId sets the policyId property value. The unique identifier for the Private Link policy.
 func (m *PrivateLinkDetails) SetPolicyId(value *string)() {
-    if m != nil {
-        m.policyId = value
-    }
+    m.policyId = value
 }
 // SetPolicyName sets the policyName property value. The name of the Private Link policy in Azure AD.
 func (m *PrivateLinkDetails) SetPolicyName(value *string)() {
-    if m != nil {
-        m.policyName = value
-    }
+    m.policyName = value
 }
 // SetPolicyTenantId sets the policyTenantId property value. The tenant identifier of the Azure AD tenant the Private Link policy belongs to.
 func (m *PrivateLinkDetails) SetPolicyTenantId(value *string)() {
-    if m != nil {
-        m.policyTenantId = value
-    }
+    m.policyTenantId = value
 }
 // SetResourceId sets the resourceId property value. The Azure Resource Manager (ARM) path for the Private Link policy resource.
 func (m *PrivateLinkDetails) SetResourceId(value *string)() {
-    if m != nil {
-        m.resourceId = value
-    }
+    m.resourceId = value
 }

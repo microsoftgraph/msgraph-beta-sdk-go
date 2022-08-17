@@ -44,11 +44,7 @@ func (m *AttributeMappingFunctionSchema) GetFieldDeserializers()(map[string]func
 }
 // GetParameters gets the parameters property value. Collection of function parameters.
 func (m *AttributeMappingFunctionSchema) GetParameters()([]AttributeMappingParameterSchemaable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.parameters
-    }
+    return m.parameters
 }
 // Serialize serializes information the current object
 func (m *AttributeMappingFunctionSchema) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -70,7 +66,5 @@ func (m *AttributeMappingFunctionSchema) Serialize(writer i878a80d2330e89d268963
 }
 // SetParameters sets the parameters property value. Collection of function parameters.
 func (m *AttributeMappingFunctionSchema) SetParameters(value []AttributeMappingParameterSchemaable)() {
-    if m != nil {
-        m.parameters = value
-    }
+    m.parameters = value
 }

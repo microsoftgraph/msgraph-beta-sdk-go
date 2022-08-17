@@ -26,11 +26,7 @@ func CreateClassifyFilePostRequestBodyFromDiscriminatorValue(parseNode i878a80d2
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ClassifyFilePostRequestBody) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ClassifyFilePostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -63,19 +59,11 @@ func (m *ClassifyFilePostRequestBody) GetFieldDeserializers()(map[string]func(i8
 }
 // GetFile gets the file property value. The file property
 func (m *ClassifyFilePostRequestBody) GetFile()([]byte) {
-    if m == nil {
-        return nil
-    } else {
-        return m.file
-    }
+    return m.file
 }
 // GetSensitiveTypeIds gets the sensitiveTypeIds property value. The sensitiveTypeIds property
 func (m *ClassifyFilePostRequestBody) GetSensitiveTypeIds()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.sensitiveTypeIds
-    }
+    return m.sensitiveTypeIds
 }
 // Serialize serializes information the current object
 func (m *ClassifyFilePostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -101,19 +89,13 @@ func (m *ClassifyFilePostRequestBody) Serialize(writer i878a80d2330e89d26896388a
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ClassifyFilePostRequestBody) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetFile sets the file property value. The file property
 func (m *ClassifyFilePostRequestBody) SetFile(value []byte)() {
-    if m != nil {
-        m.file = value
-    }
+    m.file = value
 }
 // SetSensitiveTypeIds sets the sensitiveTypeIds property value. The sensitiveTypeIds property
 func (m *ClassifyFilePostRequestBody) SetSensitiveTypeIds(value []string)() {
-    if m != nil {
-        m.sensitiveTypeIds = value
-    }
+    m.sensitiveTypeIds = value
 }

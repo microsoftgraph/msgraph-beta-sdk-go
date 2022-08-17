@@ -34,19 +34,11 @@ func CreateContentClassificationFromDiscriminatorValue(parseNode i878a80d2330e89
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ContentClassification) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetConfidence gets the confidence property value. The confidence property
 func (m *ContentClassification) GetConfidence()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.confidence
-    }
+    return m.confidence
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ContentClassification) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -109,35 +101,19 @@ func (m *ContentClassification) GetFieldDeserializers()(map[string]func(i878a80d
 }
 // GetMatches gets the matches property value. The matches property
 func (m *ContentClassification) GetMatches()([]MatchLocationable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.matches
-    }
+    return m.matches
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *ContentClassification) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetSensitiveTypeId gets the sensitiveTypeId property value. The sensitiveTypeId property
 func (m *ContentClassification) GetSensitiveTypeId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.sensitiveTypeId
-    }
+    return m.sensitiveTypeId
 }
 // GetUniqueCount gets the uniqueCount property value. The uniqueCount property
 func (m *ContentClassification) GetUniqueCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.uniqueCount
-    }
+    return m.uniqueCount
 }
 // Serialize serializes information the current object
 func (m *ContentClassification) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -185,37 +161,25 @@ func (m *ContentClassification) Serialize(writer i878a80d2330e89d26896388a3f487e
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ContentClassification) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetConfidence sets the confidence property value. The confidence property
 func (m *ContentClassification) SetConfidence(value *int32)() {
-    if m != nil {
-        m.confidence = value
-    }
+    m.confidence = value
 }
 // SetMatches sets the matches property value. The matches property
 func (m *ContentClassification) SetMatches(value []MatchLocationable)() {
-    if m != nil {
-        m.matches = value
-    }
+    m.matches = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *ContentClassification) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetSensitiveTypeId sets the sensitiveTypeId property value. The sensitiveTypeId property
 func (m *ContentClassification) SetSensitiveTypeId(value *string)() {
-    if m != nil {
-        m.sensitiveTypeId = value
-    }
+    m.sensitiveTypeId = value
 }
 // SetUniqueCount sets the uniqueCount property value. The uniqueCount property
 func (m *ContentClassification) SetUniqueCount(value *int32)() {
-    if m != nil {
-        m.uniqueCount = value
-    }
+    m.uniqueCount = value
 }

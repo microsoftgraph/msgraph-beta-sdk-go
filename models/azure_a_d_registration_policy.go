@@ -34,35 +34,19 @@ func CreateAzureADRegistrationPolicyFromDiscriminatorValue(parseNode i878a80d233
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AzureADRegistrationPolicy) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetAllowedGroups gets the allowedGroups property value. The identifiers of the groups that are in the scope of the policy. Either this property or allowedUsers is required when the appliesTo property is set to selected.
 func (m *AzureADRegistrationPolicy) GetAllowedGroups()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.allowedGroups
-    }
+    return m.allowedGroups
 }
 // GetAllowedUsers gets the allowedUsers property value. The identifiers of users that are in the scope of the policy. Either this property or allowedGroups is required when the appliesTo property is set to selected.
 func (m *AzureADRegistrationPolicy) GetAllowedUsers()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.allowedUsers
-    }
+    return m.allowedUsers
 }
 // GetAppliesTo gets the appliesTo property value. Specifies whether to block or allow fine-grained control of the policy scope. The possible values are: 0 (meaning none), 1 (meaning all), 2 (meaning selected), 3 (meaning unknownFutureValue). The default value is 1. When set to 2, at least one user or group identifier must be specified in either allowedUsers or allowedGroups.  Setting this property to 0 or 1 removes all identifiers in both allowedUsers and allowedGroups.
 func (m *AzureADRegistrationPolicy) GetAppliesTo()(*PolicyScope) {
-    if m == nil {
-        return nil
-    } else {
-        return m.appliesTo
-    }
+    return m.appliesTo
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AzureADRegistrationPolicy) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -129,19 +113,11 @@ func (m *AzureADRegistrationPolicy) GetFieldDeserializers()(map[string]func(i878
 }
 // GetIsAdminConfigurable gets the isAdminConfigurable property value. Specifies whether this policy scope is configurable by the admin. The default value is false. When an admin has enabled Intune (MEM) to manage devices, this property is set to false and appliesTo defaults to 1 (meaning all).
 func (m *AzureADRegistrationPolicy) GetIsAdminConfigurable()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isAdminConfigurable
-    }
+    return m.isAdminConfigurable
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *AzureADRegistrationPolicy) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // Serialize serializes information the current object
 func (m *AzureADRegistrationPolicy) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -186,37 +162,25 @@ func (m *AzureADRegistrationPolicy) Serialize(writer i878a80d2330e89d26896388a3f
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AzureADRegistrationPolicy) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetAllowedGroups sets the allowedGroups property value. The identifiers of the groups that are in the scope of the policy. Either this property or allowedUsers is required when the appliesTo property is set to selected.
 func (m *AzureADRegistrationPolicy) SetAllowedGroups(value []string)() {
-    if m != nil {
-        m.allowedGroups = value
-    }
+    m.allowedGroups = value
 }
 // SetAllowedUsers sets the allowedUsers property value. The identifiers of users that are in the scope of the policy. Either this property or allowedGroups is required when the appliesTo property is set to selected.
 func (m *AzureADRegistrationPolicy) SetAllowedUsers(value []string)() {
-    if m != nil {
-        m.allowedUsers = value
-    }
+    m.allowedUsers = value
 }
 // SetAppliesTo sets the appliesTo property value. Specifies whether to block or allow fine-grained control of the policy scope. The possible values are: 0 (meaning none), 1 (meaning all), 2 (meaning selected), 3 (meaning unknownFutureValue). The default value is 1. When set to 2, at least one user or group identifier must be specified in either allowedUsers or allowedGroups.  Setting this property to 0 or 1 removes all identifiers in both allowedUsers and allowedGroups.
 func (m *AzureADRegistrationPolicy) SetAppliesTo(value *PolicyScope)() {
-    if m != nil {
-        m.appliesTo = value
-    }
+    m.appliesTo = value
 }
 // SetIsAdminConfigurable sets the isAdminConfigurable property value. Specifies whether this policy scope is configurable by the admin. The default value is false. When an admin has enabled Intune (MEM) to manage devices, this property is set to false and appliesTo defaults to 1 (meaning all).
 func (m *AzureADRegistrationPolicy) SetIsAdminConfigurable(value *bool)() {
-    if m != nil {
-        m.isAdminConfigurable = value
-    }
+    m.isAdminConfigurable = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *AzureADRegistrationPolicy) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }

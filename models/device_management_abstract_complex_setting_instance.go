@@ -56,19 +56,11 @@ func (m *DeviceManagementAbstractComplexSettingInstance) GetFieldDeserializers()
 }
 // GetImplementationId gets the implementationId property value. The definition ID for the chosen implementation of this complex setting
 func (m *DeviceManagementAbstractComplexSettingInstance) GetImplementationId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.implementationId
-    }
+    return m.implementationId
 }
 // GetValue gets the value property value. The values that make up the complex setting
 func (m *DeviceManagementAbstractComplexSettingInstance) GetValue()([]DeviceManagementSettingInstanceable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.value
-    }
+    return m.value
 }
 // Serialize serializes information the current object
 func (m *DeviceManagementAbstractComplexSettingInstance) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -96,13 +88,9 @@ func (m *DeviceManagementAbstractComplexSettingInstance) Serialize(writer i878a8
 }
 // SetImplementationId sets the implementationId property value. The definition ID for the chosen implementation of this complex setting
 func (m *DeviceManagementAbstractComplexSettingInstance) SetImplementationId(value *string)() {
-    if m != nil {
-        m.implementationId = value
-    }
+    m.implementationId = value
 }
 // SetValue sets the value property value. The values that make up the complex setting
 func (m *DeviceManagementAbstractComplexSettingInstance) SetValue(value []DeviceManagementSettingInstanceable)() {
-    if m != nil {
-        m.value = value
-    }
+    m.value = value
 }

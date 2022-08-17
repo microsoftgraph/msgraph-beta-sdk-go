@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DeviceComplianceScript intune will provide customer the ability to run their Powershell Compliance scripts (detection) on the enrolled windows 10 Azure Active Directory joined devices.
+// DeviceComplianceScript 
 type DeviceComplianceScript struct {
     Entity
     // The list of group assignments for the device compliance script
@@ -37,7 +37,7 @@ type DeviceComplianceScript struct {
     // Version of the device compliance script
     version *string
 }
-// NewDeviceComplianceScript instantiates a new deviceComplianceScript and sets the default values.
+// NewDeviceComplianceScript instantiates a new DeviceComplianceScript and sets the default values.
 func NewDeviceComplianceScript()(*DeviceComplianceScript) {
     m := &DeviceComplianceScript{
         Entity: *NewEntity(),
@@ -52,59 +52,31 @@ func CreateDeviceComplianceScriptFromDiscriminatorValue(parseNode i878a80d2330e8
 }
 // GetAssignments gets the assignments property value. The list of group assignments for the device compliance script
 func (m *DeviceComplianceScript) GetAssignments()([]DeviceHealthScriptAssignmentable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.assignments
-    }
+    return m.assignments
 }
 // GetCreatedDateTime gets the createdDateTime property value. The timestamp of when the device compliance script was created. This property is read-only.
 func (m *DeviceComplianceScript) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.createdDateTime
-    }
+    return m.createdDateTime
 }
 // GetDescription gets the description property value. Description of the device compliance script
 func (m *DeviceComplianceScript) GetDescription()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.description
-    }
+    return m.description
 }
 // GetDetectionScriptContent gets the detectionScriptContent property value. The entire content of the detection powershell script
 func (m *DeviceComplianceScript) GetDetectionScriptContent()([]byte) {
-    if m == nil {
-        return nil
-    } else {
-        return m.detectionScriptContent
-    }
+    return m.detectionScriptContent
 }
 // GetDeviceRunStates gets the deviceRunStates property value. List of run states for the device compliance script across all devices
 func (m *DeviceComplianceScript) GetDeviceRunStates()([]DeviceComplianceScriptDeviceStateable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deviceRunStates
-    }
+    return m.deviceRunStates
 }
 // GetDisplayName gets the displayName property value. Name of the device compliance script
 func (m *DeviceComplianceScript) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
 // GetEnforceSignatureCheck gets the enforceSignatureCheck property value. Indicate whether the script signature needs be checked
 func (m *DeviceComplianceScript) GetEnforceSignatureCheck()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.enforceSignatureCheck
-    }
+    return m.enforceSignatureCheck
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceComplianceScript) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -265,59 +237,31 @@ func (m *DeviceComplianceScript) GetFieldDeserializers()(map[string]func(i878a80
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. The timestamp of when the device compliance script was modified. This property is read-only.
 func (m *DeviceComplianceScript) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastModifiedDateTime
-    }
+    return m.lastModifiedDateTime
 }
 // GetPublisher gets the publisher property value. Name of the device compliance script publisher
 func (m *DeviceComplianceScript) GetPublisher()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.publisher
-    }
+    return m.publisher
 }
 // GetRoleScopeTagIds gets the roleScopeTagIds property value. List of Scope Tag IDs for the device compliance script
 func (m *DeviceComplianceScript) GetRoleScopeTagIds()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.roleScopeTagIds
-    }
+    return m.roleScopeTagIds
 }
 // GetRunAs32Bit gets the runAs32Bit property value. Indicate whether PowerShell script(s) should run as 32-bit
 func (m *DeviceComplianceScript) GetRunAs32Bit()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.runAs32Bit
-    }
+    return m.runAs32Bit
 }
 // GetRunAsAccount gets the runAsAccount property value. Indicates the type of execution context the app runs in.
 func (m *DeviceComplianceScript) GetRunAsAccount()(*RunAsAccountType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.runAsAccount
-    }
+    return m.runAsAccount
 }
 // GetRunSummary gets the runSummary property value. High level run summary for device compliance script.
 func (m *DeviceComplianceScript) GetRunSummary()(DeviceComplianceScriptRunSummaryable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.runSummary
-    }
+    return m.runSummary
 }
 // GetVersion gets the version property value. Version of the device compliance script
 func (m *DeviceComplianceScript) GetVersion()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.version
-    }
+    return m.version
 }
 // Serialize serializes information the current object
 func (m *DeviceComplianceScript) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -422,85 +366,57 @@ func (m *DeviceComplianceScript) Serialize(writer i878a80d2330e89d26896388a3f487
 }
 // SetAssignments sets the assignments property value. The list of group assignments for the device compliance script
 func (m *DeviceComplianceScript) SetAssignments(value []DeviceHealthScriptAssignmentable)() {
-    if m != nil {
-        m.assignments = value
-    }
+    m.assignments = value
 }
 // SetCreatedDateTime sets the createdDateTime property value. The timestamp of when the device compliance script was created. This property is read-only.
 func (m *DeviceComplianceScript) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.createdDateTime = value
-    }
+    m.createdDateTime = value
 }
 // SetDescription sets the description property value. Description of the device compliance script
 func (m *DeviceComplianceScript) SetDescription(value *string)() {
-    if m != nil {
-        m.description = value
-    }
+    m.description = value
 }
 // SetDetectionScriptContent sets the detectionScriptContent property value. The entire content of the detection powershell script
 func (m *DeviceComplianceScript) SetDetectionScriptContent(value []byte)() {
-    if m != nil {
-        m.detectionScriptContent = value
-    }
+    m.detectionScriptContent = value
 }
 // SetDeviceRunStates sets the deviceRunStates property value. List of run states for the device compliance script across all devices
 func (m *DeviceComplianceScript) SetDeviceRunStates(value []DeviceComplianceScriptDeviceStateable)() {
-    if m != nil {
-        m.deviceRunStates = value
-    }
+    m.deviceRunStates = value
 }
 // SetDisplayName sets the displayName property value. Name of the device compliance script
 func (m *DeviceComplianceScript) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }
 // SetEnforceSignatureCheck sets the enforceSignatureCheck property value. Indicate whether the script signature needs be checked
 func (m *DeviceComplianceScript) SetEnforceSignatureCheck(value *bool)() {
-    if m != nil {
-        m.enforceSignatureCheck = value
-    }
+    m.enforceSignatureCheck = value
 }
 // SetLastModifiedDateTime sets the lastModifiedDateTime property value. The timestamp of when the device compliance script was modified. This property is read-only.
 func (m *DeviceComplianceScript) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.lastModifiedDateTime = value
-    }
+    m.lastModifiedDateTime = value
 }
 // SetPublisher sets the publisher property value. Name of the device compliance script publisher
 func (m *DeviceComplianceScript) SetPublisher(value *string)() {
-    if m != nil {
-        m.publisher = value
-    }
+    m.publisher = value
 }
 // SetRoleScopeTagIds sets the roleScopeTagIds property value. List of Scope Tag IDs for the device compliance script
 func (m *DeviceComplianceScript) SetRoleScopeTagIds(value []string)() {
-    if m != nil {
-        m.roleScopeTagIds = value
-    }
+    m.roleScopeTagIds = value
 }
 // SetRunAs32Bit sets the runAs32Bit property value. Indicate whether PowerShell script(s) should run as 32-bit
 func (m *DeviceComplianceScript) SetRunAs32Bit(value *bool)() {
-    if m != nil {
-        m.runAs32Bit = value
-    }
+    m.runAs32Bit = value
 }
 // SetRunAsAccount sets the runAsAccount property value. Indicates the type of execution context the app runs in.
 func (m *DeviceComplianceScript) SetRunAsAccount(value *RunAsAccountType)() {
-    if m != nil {
-        m.runAsAccount = value
-    }
+    m.runAsAccount = value
 }
 // SetRunSummary sets the runSummary property value. High level run summary for device compliance script.
 func (m *DeviceComplianceScript) SetRunSummary(value DeviceComplianceScriptRunSummaryable)() {
-    if m != nil {
-        m.runSummary = value
-    }
+    m.runSummary = value
 }
 // SetVersion sets the version property value. Version of the device compliance script
 func (m *DeviceComplianceScript) SetVersion(value *string)() {
-    if m != nil {
-        m.version = value
-    }
+    m.version = value
 }

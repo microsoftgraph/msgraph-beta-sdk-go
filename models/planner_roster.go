@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// PlannerRoster provides operations to manage the collection of accessReview entities.
+// PlannerRoster 
 type PlannerRoster struct {
     Entity
     // Retrieves the members of the plannerRoster.
@@ -12,7 +12,7 @@ type PlannerRoster struct {
     // Retrieves the plans contained by the plannerRoster.
     plans []PlannerPlanable
 }
-// NewPlannerRoster instantiates a new plannerRoster and sets the default values.
+// NewPlannerRoster instantiates a new PlannerRoster and sets the default values.
 func NewPlannerRoster()(*PlannerRoster) {
     m := &PlannerRoster{
         Entity: *NewEntity(),
@@ -60,19 +60,11 @@ func (m *PlannerRoster) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
 }
 // GetMembers gets the members property value. Retrieves the members of the plannerRoster.
 func (m *PlannerRoster) GetMembers()([]PlannerRosterMemberable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.members
-    }
+    return m.members
 }
 // GetPlans gets the plans property value. Retrieves the plans contained by the plannerRoster.
 func (m *PlannerRoster) GetPlans()([]PlannerPlanable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.plans
-    }
+    return m.plans
 }
 // Serialize serializes information the current object
 func (m *PlannerRoster) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -104,13 +96,9 @@ func (m *PlannerRoster) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
 }
 // SetMembers sets the members property value. Retrieves the members of the plannerRoster.
 func (m *PlannerRoster) SetMembers(value []PlannerRosterMemberable)() {
-    if m != nil {
-        m.members = value
-    }
+    m.members = value
 }
 // SetPlans sets the plans property value. Retrieves the plans contained by the plannerRoster.
 func (m *PlannerRoster) SetPlans(value []PlannerPlanable)() {
-    if m != nil {
-        m.plans = value
-    }
+    m.plans = value
 }

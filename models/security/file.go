@@ -6,7 +6,7 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
-// File provides operations to manage the collection of accessReview entities.
+// File provides operations to manage the collection of accessReviewDecision entities.
 type File struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
     // The content property
@@ -68,35 +68,19 @@ func CreateFileFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487ee
 }
 // GetContent gets the content property value. The content property
 func (m *File) GetContent()([]byte) {
-    if m == nil {
-        return nil
-    } else {
-        return m.content
-    }
+    return m.content
 }
 // GetDateTime gets the dateTime property value. The dateTime property
 func (m *File) GetDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.dateTime
-    }
+    return m.dateTime
 }
 // GetExtension gets the extension property value. The extension property
 func (m *File) GetExtension()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.extension
-    }
+    return m.extension
 }
 // GetExtractedTextContent gets the extractedTextContent property value. The extractedTextContent property
 func (m *File) GetExtractedTextContent()([]byte) {
-    if m == nil {
-        return nil
-    } else {
-        return m.extractedTextContent
-    }
+    return m.extractedTextContent
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *File) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -229,67 +213,35 @@ func (m *File) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a
 }
 // GetMediaType gets the mediaType property value. The mediaType property
 func (m *File) GetMediaType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.mediaType
-    }
+    return m.mediaType
 }
 // GetName gets the name property value. The name property
 func (m *File) GetName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.name
-    }
+    return m.name
 }
 // GetOtherProperties gets the otherProperties property value. The otherProperties property
 func (m *File) GetOtherProperties()(StringValueDictionaryable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.otherProperties
-    }
+    return m.otherProperties
 }
 // GetProcessingStatus gets the processingStatus property value. The processingStatus property
 func (m *File) GetProcessingStatus()(*FileProcessingStatus) {
-    if m == nil {
-        return nil
-    } else {
-        return m.processingStatus
-    }
+    return m.processingStatus
 }
 // GetSenderOrAuthors gets the senderOrAuthors property value. The senderOrAuthors property
 func (m *File) GetSenderOrAuthors()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.senderOrAuthors
-    }
+    return m.senderOrAuthors
 }
 // GetSize gets the size property value. The size property
 func (m *File) GetSize()(*int64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.size
-    }
+    return m.size
 }
 // GetSourceType gets the sourceType property value. The sourceType property
 func (m *File) GetSourceType()(*SourceType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.sourceType
-    }
+    return m.sourceType
 }
 // GetSubjectTitle gets the subjectTitle property value. The subjectTitle property
 func (m *File) GetSubjectTitle()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.subjectTitle
-    }
+    return m.subjectTitle
 }
 // Serialize serializes information the current object
 func (m *File) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -375,73 +327,49 @@ func (m *File) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c49
 }
 // SetContent sets the content property value. The content property
 func (m *File) SetContent(value []byte)() {
-    if m != nil {
-        m.content = value
-    }
+    m.content = value
 }
 // SetDateTime sets the dateTime property value. The dateTime property
 func (m *File) SetDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.dateTime = value
-    }
+    m.dateTime = value
 }
 // SetExtension sets the extension property value. The extension property
 func (m *File) SetExtension(value *string)() {
-    if m != nil {
-        m.extension = value
-    }
+    m.extension = value
 }
 // SetExtractedTextContent sets the extractedTextContent property value. The extractedTextContent property
 func (m *File) SetExtractedTextContent(value []byte)() {
-    if m != nil {
-        m.extractedTextContent = value
-    }
+    m.extractedTextContent = value
 }
 // SetMediaType sets the mediaType property value. The mediaType property
 func (m *File) SetMediaType(value *string)() {
-    if m != nil {
-        m.mediaType = value
-    }
+    m.mediaType = value
 }
 // SetName sets the name property value. The name property
 func (m *File) SetName(value *string)() {
-    if m != nil {
-        m.name = value
-    }
+    m.name = value
 }
 // SetOtherProperties sets the otherProperties property value. The otherProperties property
 func (m *File) SetOtherProperties(value StringValueDictionaryable)() {
-    if m != nil {
-        m.otherProperties = value
-    }
+    m.otherProperties = value
 }
 // SetProcessingStatus sets the processingStatus property value. The processingStatus property
 func (m *File) SetProcessingStatus(value *FileProcessingStatus)() {
-    if m != nil {
-        m.processingStatus = value
-    }
+    m.processingStatus = value
 }
 // SetSenderOrAuthors sets the senderOrAuthors property value. The senderOrAuthors property
 func (m *File) SetSenderOrAuthors(value []string)() {
-    if m != nil {
-        m.senderOrAuthors = value
-    }
+    m.senderOrAuthors = value
 }
 // SetSize sets the size property value. The size property
 func (m *File) SetSize(value *int64)() {
-    if m != nil {
-        m.size = value
-    }
+    m.size = value
 }
 // SetSourceType sets the sourceType property value. The sourceType property
 func (m *File) SetSourceType(value *SourceType)() {
-    if m != nil {
-        m.sourceType = value
-    }
+    m.sourceType = value
 }
 // SetSubjectTitle sets the subjectTitle property value. The subjectTitle property
 func (m *File) SetSubjectTitle(value *string)() {
-    if m != nil {
-        m.subjectTitle = value
-    }
+    m.subjectTitle = value
 }

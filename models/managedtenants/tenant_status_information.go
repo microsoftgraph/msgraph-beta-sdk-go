@@ -45,19 +45,11 @@ func CreateTenantStatusInformationFromDiscriminatorValue(parseNode i878a80d2330e
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TenantStatusInformation) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetDelegatedPrivilegeStatus gets the delegatedPrivilegeStatus property value. The status of the delegated admin privilege relationship between the managing entity and the managed tenant. Possible values are: none, delegatedAdminPrivileges, unknownFutureValue. Optional. Read-only.
 func (m *TenantStatusInformation) GetDelegatedPrivilegeStatus()(*DelegatedPrivilegeStatus) {
-    if m == nil {
-        return nil
-    } else {
-        return m.delegatedPrivilegeStatus
-    }
+    return m.delegatedPrivilegeStatus
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *TenantStatusInformation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -170,75 +162,39 @@ func (m *TenantStatusInformation) GetFieldDeserializers()(map[string]func(i878a8
 }
 // GetLastDelegatedPrivilegeRefreshDateTime gets the lastDelegatedPrivilegeRefreshDateTime property value. The date and time the delegated admin privileges status was updated. Optional. Read-only.
 func (m *TenantStatusInformation) GetLastDelegatedPrivilegeRefreshDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastDelegatedPrivilegeRefreshDateTime
-    }
+    return m.lastDelegatedPrivilegeRefreshDateTime
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *TenantStatusInformation) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetOffboardedByUserId gets the offboardedByUserId property value. The identifier for the account that offboarded the managed tenant. Optional. Read-only.
 func (m *TenantStatusInformation) GetOffboardedByUserId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.offboardedByUserId
-    }
+    return m.offboardedByUserId
 }
 // GetOffboardedDateTime gets the offboardedDateTime property value. The date and time when the managed tenant was offboarded. Optional. Read-only.
 func (m *TenantStatusInformation) GetOffboardedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.offboardedDateTime
-    }
+    return m.offboardedDateTime
 }
 // GetOnboardedByUserId gets the onboardedByUserId property value. The identifier for the account that onboarded the managed tenant. Optional. Read-only.
 func (m *TenantStatusInformation) GetOnboardedByUserId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.onboardedByUserId
-    }
+    return m.onboardedByUserId
 }
 // GetOnboardedDateTime gets the onboardedDateTime property value. The date and time when the managed tenant was onboarded. Optional. Read-only.
 func (m *TenantStatusInformation) GetOnboardedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.onboardedDateTime
-    }
+    return m.onboardedDateTime
 }
 // GetOnboardingStatus gets the onboardingStatus property value. The onboarding status for the managed tenant.. Possible values are: ineligible, inProcess, active, inactive, unknownFutureValue. Optional. Read-only.
 func (m *TenantStatusInformation) GetOnboardingStatus()(*TenantOnboardingStatus) {
-    if m == nil {
-        return nil
-    } else {
-        return m.onboardingStatus
-    }
+    return m.onboardingStatus
 }
 // GetTenantOnboardingEligibilityReason gets the tenantOnboardingEligibilityReason property value. Organization's onboarding eligibility reason in Microsoft 365 Lighthouse.. Possible values are: none, contractType, delegatedAdminPrivileges,usersCount,license and unknownFutureValue. Optional. Read-only.
 func (m *TenantStatusInformation) GetTenantOnboardingEligibilityReason()(*TenantOnboardingEligibilityReason) {
-    if m == nil {
-        return nil
-    } else {
-        return m.tenantOnboardingEligibilityReason
-    }
+    return m.tenantOnboardingEligibilityReason
 }
 // GetWorkloadStatuses gets the workloadStatuses property value. The collection of workload statues for the managed tenant. Optional. Read-only.
 func (m *TenantStatusInformation) GetWorkloadStatuses()([]WorkloadStatusable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.workloadStatuses
-    }
+    return m.workloadStatuses
 }
 // Serialize serializes information the current object
 func (m *TenantStatusInformation) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -319,67 +275,45 @@ func (m *TenantStatusInformation) Serialize(writer i878a80d2330e89d26896388a3f48
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TenantStatusInformation) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetDelegatedPrivilegeStatus sets the delegatedPrivilegeStatus property value. The status of the delegated admin privilege relationship between the managing entity and the managed tenant. Possible values are: none, delegatedAdminPrivileges, unknownFutureValue. Optional. Read-only.
 func (m *TenantStatusInformation) SetDelegatedPrivilegeStatus(value *DelegatedPrivilegeStatus)() {
-    if m != nil {
-        m.delegatedPrivilegeStatus = value
-    }
+    m.delegatedPrivilegeStatus = value
 }
 // SetLastDelegatedPrivilegeRefreshDateTime sets the lastDelegatedPrivilegeRefreshDateTime property value. The date and time the delegated admin privileges status was updated. Optional. Read-only.
 func (m *TenantStatusInformation) SetLastDelegatedPrivilegeRefreshDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.lastDelegatedPrivilegeRefreshDateTime = value
-    }
+    m.lastDelegatedPrivilegeRefreshDateTime = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *TenantStatusInformation) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetOffboardedByUserId sets the offboardedByUserId property value. The identifier for the account that offboarded the managed tenant. Optional. Read-only.
 func (m *TenantStatusInformation) SetOffboardedByUserId(value *string)() {
-    if m != nil {
-        m.offboardedByUserId = value
-    }
+    m.offboardedByUserId = value
 }
 // SetOffboardedDateTime sets the offboardedDateTime property value. The date and time when the managed tenant was offboarded. Optional. Read-only.
 func (m *TenantStatusInformation) SetOffboardedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.offboardedDateTime = value
-    }
+    m.offboardedDateTime = value
 }
 // SetOnboardedByUserId sets the onboardedByUserId property value. The identifier for the account that onboarded the managed tenant. Optional. Read-only.
 func (m *TenantStatusInformation) SetOnboardedByUserId(value *string)() {
-    if m != nil {
-        m.onboardedByUserId = value
-    }
+    m.onboardedByUserId = value
 }
 // SetOnboardedDateTime sets the onboardedDateTime property value. The date and time when the managed tenant was onboarded. Optional. Read-only.
 func (m *TenantStatusInformation) SetOnboardedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.onboardedDateTime = value
-    }
+    m.onboardedDateTime = value
 }
 // SetOnboardingStatus sets the onboardingStatus property value. The onboarding status for the managed tenant.. Possible values are: ineligible, inProcess, active, inactive, unknownFutureValue. Optional. Read-only.
 func (m *TenantStatusInformation) SetOnboardingStatus(value *TenantOnboardingStatus)() {
-    if m != nil {
-        m.onboardingStatus = value
-    }
+    m.onboardingStatus = value
 }
 // SetTenantOnboardingEligibilityReason sets the tenantOnboardingEligibilityReason property value. Organization's onboarding eligibility reason in Microsoft 365 Lighthouse.. Possible values are: none, contractType, delegatedAdminPrivileges,usersCount,license and unknownFutureValue. Optional. Read-only.
 func (m *TenantStatusInformation) SetTenantOnboardingEligibilityReason(value *TenantOnboardingEligibilityReason)() {
-    if m != nil {
-        m.tenantOnboardingEligibilityReason = value
-    }
+    m.tenantOnboardingEligibilityReason = value
 }
 // SetWorkloadStatuses sets the workloadStatuses property value. The collection of workload statues for the managed tenant. Optional. Read-only.
 func (m *TenantStatusInformation) SetWorkloadStatuses(value []WorkloadStatusable)() {
-    if m != nil {
-        m.workloadStatuses = value
-    }
+    m.workloadStatuses = value
 }

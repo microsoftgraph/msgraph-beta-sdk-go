@@ -40,11 +40,7 @@ func (m *AccessPackageAnswerString) GetFieldDeserializers()(map[string]func(i878
 }
 // GetValue gets the value property value. The value stored on the requestor's user profile, if this answer is configured to be stored as a specific attribute.
 func (m *AccessPackageAnswerString) GetValue()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.value
-    }
+    return m.value
 }
 // Serialize serializes information the current object
 func (m *AccessPackageAnswerString) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -62,7 +58,5 @@ func (m *AccessPackageAnswerString) Serialize(writer i878a80d2330e89d26896388a3f
 }
 // SetValue sets the value property value. The value stored on the requestor's user profile, if this answer is configured to be stored as a specific attribute.
 func (m *AccessPackageAnswerString) SetValue(value *string)() {
-    if m != nil {
-        m.value = value
-    }
+    m.value = value
 }

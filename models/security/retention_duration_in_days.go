@@ -25,11 +25,7 @@ func CreateRetentionDurationInDaysFromDiscriminatorValue(parseNode i878a80d2330e
 }
 // GetDays gets the days property value. Specifies the time period in days for which an item with the applied retention label will be retained for.
 func (m *RetentionDurationInDays) GetDays()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.days
-    }
+    return m.days
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *RetentionDurationInDays) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -62,7 +58,5 @@ func (m *RetentionDurationInDays) Serialize(writer i878a80d2330e89d26896388a3f48
 }
 // SetDays sets the days property value. Specifies the time period in days for which an item with the applied retention label will be retained for.
 func (m *RetentionDurationInDays) SetDays(value *int32)() {
-    if m != nil {
-        m.days = value
-    }
+    m.days = value
 }

@@ -38,19 +38,11 @@ func CreateApprovalStepFromDiscriminatorValue(parseNode i878a80d2330e89d26896388
 }
 // GetAssignedToMe gets the assignedToMe property value. Indicates whether the step is assigned to the calling user to review. Read-only.
 func (m *ApprovalStep) GetAssignedToMe()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.assignedToMe
-    }
+    return m.assignedToMe
 }
 // GetDisplayName gets the displayName property value. The label provided by the policy creator to identify an approval step. Read-only.
 func (m *ApprovalStep) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ApprovalStep) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -129,43 +121,23 @@ func (m *ApprovalStep) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
 }
 // GetJustification gets the justification property value. The justification associated with the approval step decision.
 func (m *ApprovalStep) GetJustification()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.justification
-    }
+    return m.justification
 }
 // GetReviewedBy gets the reviewedBy property value. The identifier of the reviewer. Read-only.
 func (m *ApprovalStep) GetReviewedBy()(Identityable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.reviewedBy
-    }
+    return m.reviewedBy
 }
 // GetReviewedDateTime gets the reviewedDateTime property value. The date and time when a decision was recorded. The date and time information uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
 func (m *ApprovalStep) GetReviewedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.reviewedDateTime
-    }
+    return m.reviewedDateTime
 }
 // GetReviewResult gets the reviewResult property value. The result of this approval record. Possible values include: NotReviewed, Approved, Denied.
 func (m *ApprovalStep) GetReviewResult()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.reviewResult
-    }
+    return m.reviewResult
 }
 // GetStatus gets the status property value. The step status. Possible values: InProgress, Initializing, Completed, Expired. Read-only.
 func (m *ApprovalStep) GetStatus()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.status
-    }
+    return m.status
 }
 // Serialize serializes information the current object
 func (m *ApprovalStep) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -219,43 +191,29 @@ func (m *ApprovalStep) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
 }
 // SetAssignedToMe sets the assignedToMe property value. Indicates whether the step is assigned to the calling user to review. Read-only.
 func (m *ApprovalStep) SetAssignedToMe(value *bool)() {
-    if m != nil {
-        m.assignedToMe = value
-    }
+    m.assignedToMe = value
 }
 // SetDisplayName sets the displayName property value. The label provided by the policy creator to identify an approval step. Read-only.
 func (m *ApprovalStep) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }
 // SetJustification sets the justification property value. The justification associated with the approval step decision.
 func (m *ApprovalStep) SetJustification(value *string)() {
-    if m != nil {
-        m.justification = value
-    }
+    m.justification = value
 }
 // SetReviewedBy sets the reviewedBy property value. The identifier of the reviewer. Read-only.
 func (m *ApprovalStep) SetReviewedBy(value Identityable)() {
-    if m != nil {
-        m.reviewedBy = value
-    }
+    m.reviewedBy = value
 }
 // SetReviewedDateTime sets the reviewedDateTime property value. The date and time when a decision was recorded. The date and time information uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
 func (m *ApprovalStep) SetReviewedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.reviewedDateTime = value
-    }
+    m.reviewedDateTime = value
 }
 // SetReviewResult sets the reviewResult property value. The result of this approval record. Possible values include: NotReviewed, Approved, Denied.
 func (m *ApprovalStep) SetReviewResult(value *string)() {
-    if m != nil {
-        m.reviewResult = value
-    }
+    m.reviewResult = value
 }
 // SetStatus sets the status property value. The step status. Possible values: InProgress, Initializing, Completed, Expired. Read-only.
 func (m *ApprovalStep) SetStatus(value *string)() {
-    if m != nil {
-        m.status = value
-    }
+    m.status = value
 }

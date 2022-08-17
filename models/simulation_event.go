@@ -30,27 +30,15 @@ func CreateSimulationEventFromDiscriminatorValue(parseNode i878a80d2330e89d26896
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SimulationEvent) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetCount gets the count property value. Count of occurence of the simulation event in an attack simulation and training campaign.
 func (m *SimulationEvent) GetCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.count
-    }
+    return m.count
 }
 // GetEventName gets the eventName property value. Name of the simulation event in an attack simulation and training campaign.
 func (m *SimulationEvent) GetEventName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.eventName
-    }
+    return m.eventName
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *SimulationEvent) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -89,11 +77,7 @@ func (m *SimulationEvent) GetFieldDeserializers()(map[string]func(i878a80d2330e8
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *SimulationEvent) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // Serialize serializes information the current object
 func (m *SimulationEvent) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -125,25 +109,17 @@ func (m *SimulationEvent) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SimulationEvent) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetCount sets the count property value. Count of occurence of the simulation event in an attack simulation and training campaign.
 func (m *SimulationEvent) SetCount(value *int32)() {
-    if m != nil {
-        m.count = value
-    }
+    m.count = value
 }
 // SetEventName sets the eventName property value. Name of the simulation event in an attack simulation and training campaign.
 func (m *SimulationEvent) SetEventName(value *string)() {
-    if m != nil {
-        m.eventName = value
-    }
+    m.eventName = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *SimulationEvent) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }

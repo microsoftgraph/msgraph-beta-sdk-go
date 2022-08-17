@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DeviceManagementPartner 
+// DeviceManagementPartner entity which represents a connection to device management partner.
 type DeviceManagementPartner struct {
     Entity
     // Partner display name
@@ -31,7 +31,7 @@ type DeviceManagementPartner struct {
     // DateTime in UTC when PartnerDevices will be removed
     whenPartnerDevicesWillBeRemovedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
 }
-// NewDeviceManagementPartner instantiates a new DeviceManagementPartner and sets the default values.
+// NewDeviceManagementPartner instantiates a new deviceManagementPartner and sets the default values.
 func NewDeviceManagementPartner()(*DeviceManagementPartner) {
     m := &DeviceManagementPartner{
         Entity: *NewEntity(),
@@ -46,11 +46,7 @@ func CreateDeviceManagementPartnerFromDiscriminatorValue(parseNode i878a80d2330e
 }
 // GetDisplayName gets the displayName property value. Partner display name
 func (m *DeviceManagementPartner) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceManagementPartner) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -173,83 +169,43 @@ func (m *DeviceManagementPartner) GetFieldDeserializers()(map[string]func(i878a8
 }
 // GetGroupsRequiringPartnerEnrollment gets the groupsRequiringPartnerEnrollment property value. User groups that specifies whether enrollment is through partner.
 func (m *DeviceManagementPartner) GetGroupsRequiringPartnerEnrollment()([]DeviceManagementPartnerAssignmentable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.groupsRequiringPartnerEnrollment
-    }
+    return m.groupsRequiringPartnerEnrollment
 }
 // GetIsConfigured gets the isConfigured property value. Whether device management partner is configured or not
 func (m *DeviceManagementPartner) GetIsConfigured()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isConfigured
-    }
+    return m.isConfigured
 }
 // GetLastHeartbeatDateTime gets the lastHeartbeatDateTime property value. Timestamp of last heartbeat after admin enabled option Connect to Device management Partner
 func (m *DeviceManagementPartner) GetLastHeartbeatDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastHeartbeatDateTime
-    }
+    return m.lastHeartbeatDateTime
 }
 // GetPartnerAppType gets the partnerAppType property value. Partner App Type.
 func (m *DeviceManagementPartner) GetPartnerAppType()(*DeviceManagementPartnerAppType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.partnerAppType
-    }
+    return m.partnerAppType
 }
 // GetPartnerState gets the partnerState property value. Partner state of this tenant.
 func (m *DeviceManagementPartner) GetPartnerState()(*DeviceManagementPartnerTenantState) {
-    if m == nil {
-        return nil
-    } else {
-        return m.partnerState
-    }
+    return m.partnerState
 }
 // GetSingleTenantAppId gets the singleTenantAppId property value. Partner Single tenant App id
 func (m *DeviceManagementPartner) GetSingleTenantAppId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.singleTenantAppId
-    }
+    return m.singleTenantAppId
 }
 // GetWhenPartnerDevicesWillBeMarkedAsNonCompliant gets the whenPartnerDevicesWillBeMarkedAsNonCompliant property value. DateTime in UTC when PartnerDevices will be marked as NonCompliant. This will become obselete soon.
 func (m *DeviceManagementPartner) GetWhenPartnerDevicesWillBeMarkedAsNonCompliant()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.whenPartnerDevicesWillBeMarkedAsNonCompliant
-    }
+    return m.whenPartnerDevicesWillBeMarkedAsNonCompliant
 }
 // GetWhenPartnerDevicesWillBeMarkedAsNonCompliantDateTime gets the whenPartnerDevicesWillBeMarkedAsNonCompliantDateTime property value. DateTime in UTC when PartnerDevices will be marked as NonCompliant
 func (m *DeviceManagementPartner) GetWhenPartnerDevicesWillBeMarkedAsNonCompliantDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.whenPartnerDevicesWillBeMarkedAsNonCompliantDateTime
-    }
+    return m.whenPartnerDevicesWillBeMarkedAsNonCompliantDateTime
 }
 // GetWhenPartnerDevicesWillBeRemoved gets the whenPartnerDevicesWillBeRemoved property value. DateTime in UTC when PartnerDevices will be removed. This will become obselete soon.
 func (m *DeviceManagementPartner) GetWhenPartnerDevicesWillBeRemoved()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.whenPartnerDevicesWillBeRemoved
-    }
+    return m.whenPartnerDevicesWillBeRemoved
 }
 // GetWhenPartnerDevicesWillBeRemovedDateTime gets the whenPartnerDevicesWillBeRemovedDateTime property value. DateTime in UTC when PartnerDevices will be removed
 func (m *DeviceManagementPartner) GetWhenPartnerDevicesWillBeRemovedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.whenPartnerDevicesWillBeRemovedDateTime
-    }
+    return m.whenPartnerDevicesWillBeRemovedDateTime
 }
 // Serialize serializes information the current object
 func (m *DeviceManagementPartner) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -333,67 +289,45 @@ func (m *DeviceManagementPartner) Serialize(writer i878a80d2330e89d26896388a3f48
 }
 // SetDisplayName sets the displayName property value. Partner display name
 func (m *DeviceManagementPartner) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }
 // SetGroupsRequiringPartnerEnrollment sets the groupsRequiringPartnerEnrollment property value. User groups that specifies whether enrollment is through partner.
 func (m *DeviceManagementPartner) SetGroupsRequiringPartnerEnrollment(value []DeviceManagementPartnerAssignmentable)() {
-    if m != nil {
-        m.groupsRequiringPartnerEnrollment = value
-    }
+    m.groupsRequiringPartnerEnrollment = value
 }
 // SetIsConfigured sets the isConfigured property value. Whether device management partner is configured or not
 func (m *DeviceManagementPartner) SetIsConfigured(value *bool)() {
-    if m != nil {
-        m.isConfigured = value
-    }
+    m.isConfigured = value
 }
 // SetLastHeartbeatDateTime sets the lastHeartbeatDateTime property value. Timestamp of last heartbeat after admin enabled option Connect to Device management Partner
 func (m *DeviceManagementPartner) SetLastHeartbeatDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.lastHeartbeatDateTime = value
-    }
+    m.lastHeartbeatDateTime = value
 }
 // SetPartnerAppType sets the partnerAppType property value. Partner App Type.
 func (m *DeviceManagementPartner) SetPartnerAppType(value *DeviceManagementPartnerAppType)() {
-    if m != nil {
-        m.partnerAppType = value
-    }
+    m.partnerAppType = value
 }
 // SetPartnerState sets the partnerState property value. Partner state of this tenant.
 func (m *DeviceManagementPartner) SetPartnerState(value *DeviceManagementPartnerTenantState)() {
-    if m != nil {
-        m.partnerState = value
-    }
+    m.partnerState = value
 }
 // SetSingleTenantAppId sets the singleTenantAppId property value. Partner Single tenant App id
 func (m *DeviceManagementPartner) SetSingleTenantAppId(value *string)() {
-    if m != nil {
-        m.singleTenantAppId = value
-    }
+    m.singleTenantAppId = value
 }
 // SetWhenPartnerDevicesWillBeMarkedAsNonCompliant sets the whenPartnerDevicesWillBeMarkedAsNonCompliant property value. DateTime in UTC when PartnerDevices will be marked as NonCompliant. This will become obselete soon.
 func (m *DeviceManagementPartner) SetWhenPartnerDevicesWillBeMarkedAsNonCompliant(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.whenPartnerDevicesWillBeMarkedAsNonCompliant = value
-    }
+    m.whenPartnerDevicesWillBeMarkedAsNonCompliant = value
 }
 // SetWhenPartnerDevicesWillBeMarkedAsNonCompliantDateTime sets the whenPartnerDevicesWillBeMarkedAsNonCompliantDateTime property value. DateTime in UTC when PartnerDevices will be marked as NonCompliant
 func (m *DeviceManagementPartner) SetWhenPartnerDevicesWillBeMarkedAsNonCompliantDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.whenPartnerDevicesWillBeMarkedAsNonCompliantDateTime = value
-    }
+    m.whenPartnerDevicesWillBeMarkedAsNonCompliantDateTime = value
 }
 // SetWhenPartnerDevicesWillBeRemoved sets the whenPartnerDevicesWillBeRemoved property value. DateTime in UTC when PartnerDevices will be removed. This will become obselete soon.
 func (m *DeviceManagementPartner) SetWhenPartnerDevicesWillBeRemoved(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.whenPartnerDevicesWillBeRemoved = value
-    }
+    m.whenPartnerDevicesWillBeRemoved = value
 }
 // SetWhenPartnerDevicesWillBeRemovedDateTime sets the whenPartnerDevicesWillBeRemovedDateTime property value. DateTime in UTC when PartnerDevices will be removed
 func (m *DeviceManagementPartner) SetWhenPartnerDevicesWillBeRemovedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.whenPartnerDevicesWillBeRemovedDateTime = value
-    }
+    m.whenPartnerDevicesWillBeRemovedDateTime = value
 }

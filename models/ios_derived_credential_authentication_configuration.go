@@ -25,11 +25,7 @@ func CreateIosDerivedCredentialAuthenticationConfigurationFromDiscriminatorValue
 }
 // GetDerivedCredentialSettings gets the derivedCredentialSettings property value. Tenant level settings for the Derived Credentials to be used for authentication.
 func (m *IosDerivedCredentialAuthenticationConfiguration) GetDerivedCredentialSettings()(DeviceManagementDerivedCredentialSettingsable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.derivedCredentialSettings
-    }
+    return m.derivedCredentialSettings
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *IosDerivedCredentialAuthenticationConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -62,7 +58,5 @@ func (m *IosDerivedCredentialAuthenticationConfiguration) Serialize(writer i878a
 }
 // SetDerivedCredentialSettings sets the derivedCredentialSettings property value. Tenant level settings for the Derived Credentials to be used for authentication.
 func (m *IosDerivedCredentialAuthenticationConfiguration) SetDerivedCredentialSettings(value DeviceManagementDerivedCredentialSettingsable)() {
-    if m != nil {
-        m.derivedCredentialSettings = value
-    }
+    m.derivedCredentialSettings = value
 }

@@ -65,27 +65,15 @@ func (m *WindowsAutopilotSettings) GetFieldDeserializers()(map[string]func(i878a
 }
 // GetLastManualSyncTriggerDateTime gets the lastManualSyncTriggerDateTime property value. Last data sync date time with DDS service.
 func (m *WindowsAutopilotSettings) GetLastManualSyncTriggerDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastManualSyncTriggerDateTime
-    }
+    return m.lastManualSyncTriggerDateTime
 }
 // GetLastSyncDateTime gets the lastSyncDateTime property value. Last data sync date time with DDS service.
 func (m *WindowsAutopilotSettings) GetLastSyncDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastSyncDateTime
-    }
+    return m.lastSyncDateTime
 }
 // GetSyncStatus gets the syncStatus property value. The syncStatus property
 func (m *WindowsAutopilotSettings) GetSyncStatus()(*WindowsAutopilotSyncStatus) {
-    if m == nil {
-        return nil
-    } else {
-        return m.syncStatus
-    }
+    return m.syncStatus
 }
 // Serialize serializes information the current object
 func (m *WindowsAutopilotSettings) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -116,19 +104,13 @@ func (m *WindowsAutopilotSettings) Serialize(writer i878a80d2330e89d26896388a3f4
 }
 // SetLastManualSyncTriggerDateTime sets the lastManualSyncTriggerDateTime property value. Last data sync date time with DDS service.
 func (m *WindowsAutopilotSettings) SetLastManualSyncTriggerDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.lastManualSyncTriggerDateTime = value
-    }
+    m.lastManualSyncTriggerDateTime = value
 }
 // SetLastSyncDateTime sets the lastSyncDateTime property value. Last data sync date time with DDS service.
 func (m *WindowsAutopilotSettings) SetLastSyncDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.lastSyncDateTime = value
-    }
+    m.lastSyncDateTime = value
 }
 // SetSyncStatus sets the syncStatus property value. The syncStatus property
 func (m *WindowsAutopilotSettings) SetSyncStatus(value *WindowsAutopilotSyncStatus)() {
-    if m != nil {
-        m.syncStatus = value
-    }
+    m.syncStatus = value
 }

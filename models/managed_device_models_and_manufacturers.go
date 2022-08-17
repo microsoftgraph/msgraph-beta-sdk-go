@@ -30,27 +30,15 @@ func CreateManagedDeviceModelsAndManufacturersFromDiscriminatorValue(parseNode i
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ManagedDeviceModelsAndManufacturers) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetDeviceManufacturers gets the deviceManufacturers property value. List of Manufactures for managed devices in the account
 func (m *ManagedDeviceModelsAndManufacturers) GetDeviceManufacturers()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deviceManufacturers
-    }
+    return m.deviceManufacturers
 }
 // GetDeviceModels gets the deviceModels property value. List of Models for managed devices in the account
 func (m *ManagedDeviceModelsAndManufacturers) GetDeviceModels()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deviceModels
-    }
+    return m.deviceModels
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ManagedDeviceModelsAndManufacturers) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -97,11 +85,7 @@ func (m *ManagedDeviceModelsAndManufacturers) GetFieldDeserializers()(map[string
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *ManagedDeviceModelsAndManufacturers) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // Serialize serializes information the current object
 func (m *ManagedDeviceModelsAndManufacturers) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -133,25 +117,17 @@ func (m *ManagedDeviceModelsAndManufacturers) Serialize(writer i878a80d2330e89d2
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ManagedDeviceModelsAndManufacturers) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetDeviceManufacturers sets the deviceManufacturers property value. List of Manufactures for managed devices in the account
 func (m *ManagedDeviceModelsAndManufacturers) SetDeviceManufacturers(value []string)() {
-    if m != nil {
-        m.deviceManufacturers = value
-    }
+    m.deviceManufacturers = value
 }
 // SetDeviceModels sets the deviceModels property value. List of Models for managed devices in the account
 func (m *ManagedDeviceModelsAndManufacturers) SetDeviceModels(value []string)() {
-    if m != nil {
-        m.deviceModels = value
-    }
+    m.deviceModels = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *ManagedDeviceModelsAndManufacturers) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }

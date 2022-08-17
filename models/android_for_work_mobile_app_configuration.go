@@ -33,11 +33,7 @@ func CreateAndroidForWorkMobileAppConfigurationFromDiscriminatorValue(parseNode 
 }
 // GetConnectedAppsEnabled gets the connectedAppsEnabled property value. Setting to specify whether to allow ConnectedApps experience for this app.
 func (m *AndroidForWorkMobileAppConfiguration) GetConnectedAppsEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.connectedAppsEnabled
-    }
+    return m.connectedAppsEnabled
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AndroidForWorkMobileAppConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -100,35 +96,19 @@ func (m *AndroidForWorkMobileAppConfiguration) GetFieldDeserializers()(map[strin
 }
 // GetPackageId gets the packageId property value. Android For Work app configuration package id.
 func (m *AndroidForWorkMobileAppConfiguration) GetPackageId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.packageId
-    }
+    return m.packageId
 }
 // GetPayloadJson gets the payloadJson property value. Android For Work app configuration JSON payload.
 func (m *AndroidForWorkMobileAppConfiguration) GetPayloadJson()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.payloadJson
-    }
+    return m.payloadJson
 }
 // GetPermissionActions gets the permissionActions property value. List of Android app permissions and corresponding permission actions.
 func (m *AndroidForWorkMobileAppConfiguration) GetPermissionActions()([]AndroidPermissionActionable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.permissionActions
-    }
+    return m.permissionActions
 }
 // GetProfileApplicability gets the profileApplicability property value. Android profile applicability
 func (m *AndroidForWorkMobileAppConfiguration) GetProfileApplicability()(*AndroidProfileApplicability) {
-    if m == nil {
-        return nil
-    } else {
-        return m.profileApplicability
-    }
+    return m.profileApplicability
 }
 // Serialize serializes information the current object
 func (m *AndroidForWorkMobileAppConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -175,31 +155,21 @@ func (m *AndroidForWorkMobileAppConfiguration) Serialize(writer i878a80d2330e89d
 }
 // SetConnectedAppsEnabled sets the connectedAppsEnabled property value. Setting to specify whether to allow ConnectedApps experience for this app.
 func (m *AndroidForWorkMobileAppConfiguration) SetConnectedAppsEnabled(value *bool)() {
-    if m != nil {
-        m.connectedAppsEnabled = value
-    }
+    m.connectedAppsEnabled = value
 }
 // SetPackageId sets the packageId property value. Android For Work app configuration package id.
 func (m *AndroidForWorkMobileAppConfiguration) SetPackageId(value *string)() {
-    if m != nil {
-        m.packageId = value
-    }
+    m.packageId = value
 }
 // SetPayloadJson sets the payloadJson property value. Android For Work app configuration JSON payload.
 func (m *AndroidForWorkMobileAppConfiguration) SetPayloadJson(value *string)() {
-    if m != nil {
-        m.payloadJson = value
-    }
+    m.payloadJson = value
 }
 // SetPermissionActions sets the permissionActions property value. List of Android app permissions and corresponding permission actions.
 func (m *AndroidForWorkMobileAppConfiguration) SetPermissionActions(value []AndroidPermissionActionable)() {
-    if m != nil {
-        m.permissionActions = value
-    }
+    m.permissionActions = value
 }
 // SetProfileApplicability sets the profileApplicability property value. Android profile applicability
 func (m *AndroidForWorkMobileAppConfiguration) SetProfileApplicability(value *AndroidProfileApplicability)() {
-    if m != nil {
-        m.profileApplicability = value
-    }
+    m.profileApplicability = value
 }

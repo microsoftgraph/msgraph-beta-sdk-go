@@ -32,11 +32,7 @@ func CreateInformationProtectionPolicySettingFromDiscriminatorValue(parseNode i8
 }
 // GetDefaultLabelId gets the defaultLabelId property value. The defaultLabelId property
 func (m *InformationProtectionPolicySetting) GetDefaultLabelId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.defaultLabelId
-    }
+    return m.defaultLabelId
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *InformationProtectionPolicySetting) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -85,27 +81,15 @@ func (m *InformationProtectionPolicySetting) GetFieldDeserializers()(map[string]
 }
 // GetIsDowngradeJustificationRequired gets the isDowngradeJustificationRequired property value. Exposes whether justification input is required on label downgrade.
 func (m *InformationProtectionPolicySetting) GetIsDowngradeJustificationRequired()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isDowngradeJustificationRequired
-    }
+    return m.isDowngradeJustificationRequired
 }
 // GetIsMandatory gets the isMandatory property value. Exposes whether mandatory labeling is enabled.
 func (m *InformationProtectionPolicySetting) GetIsMandatory()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isMandatory
-    }
+    return m.isMandatory
 }
 // GetMoreInfoUrl gets the moreInfoUrl property value. Exposes the more information URL that can be configured by the administrator.
 func (m *InformationProtectionPolicySetting) GetMoreInfoUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.moreInfoUrl
-    }
+    return m.moreInfoUrl
 }
 // Serialize serializes information the current object
 func (m *InformationProtectionPolicySetting) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -141,25 +125,17 @@ func (m *InformationProtectionPolicySetting) Serialize(writer i878a80d2330e89d26
 }
 // SetDefaultLabelId sets the defaultLabelId property value. The defaultLabelId property
 func (m *InformationProtectionPolicySetting) SetDefaultLabelId(value *string)() {
-    if m != nil {
-        m.defaultLabelId = value
-    }
+    m.defaultLabelId = value
 }
 // SetIsDowngradeJustificationRequired sets the isDowngradeJustificationRequired property value. Exposes whether justification input is required on label downgrade.
 func (m *InformationProtectionPolicySetting) SetIsDowngradeJustificationRequired(value *bool)() {
-    if m != nil {
-        m.isDowngradeJustificationRequired = value
-    }
+    m.isDowngradeJustificationRequired = value
 }
 // SetIsMandatory sets the isMandatory property value. Exposes whether mandatory labeling is enabled.
 func (m *InformationProtectionPolicySetting) SetIsMandatory(value *bool)() {
-    if m != nil {
-        m.isMandatory = value
-    }
+    m.isMandatory = value
 }
 // SetMoreInfoUrl sets the moreInfoUrl property value. Exposes the more information URL that can be configured by the administrator.
 func (m *InformationProtectionPolicySetting) SetMoreInfoUrl(value *string)() {
-    if m != nil {
-        m.moreInfoUrl = value
-    }
+    m.moreInfoUrl = value
 }

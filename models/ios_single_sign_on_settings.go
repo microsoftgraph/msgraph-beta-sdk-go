@@ -36,35 +36,19 @@ func CreateIosSingleSignOnSettingsFromDiscriminatorValue(parseNode i878a80d2330e
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *IosSingleSignOnSettings) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetAllowedAppsList gets the allowedAppsList property value. List of app identifiers that are allowed to use this login. If this field is omitted, the login applies to all applications on the device. This collection can contain a maximum of 500 elements.
 func (m *IosSingleSignOnSettings) GetAllowedAppsList()([]AppListItemable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.allowedAppsList
-    }
+    return m.allowedAppsList
 }
 // GetAllowedUrls gets the allowedUrls property value. List of HTTP URLs that must be matched in order to use this login. With iOS 9.0 or later, a wildcard characters may be used.
 func (m *IosSingleSignOnSettings) GetAllowedUrls()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.allowedUrls
-    }
+    return m.allowedUrls
 }
 // GetDisplayName gets the displayName property value. The display name of login settings shown on the receiving device.
 func (m *IosSingleSignOnSettings) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *IosSingleSignOnSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -141,27 +125,15 @@ func (m *IosSingleSignOnSettings) GetFieldDeserializers()(map[string]func(i878a8
 }
 // GetKerberosPrincipalName gets the kerberosPrincipalName property value. A Kerberos principal name. If not provided, the user is prompted for one during profile installation.
 func (m *IosSingleSignOnSettings) GetKerberosPrincipalName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.kerberosPrincipalName
-    }
+    return m.kerberosPrincipalName
 }
 // GetKerberosRealm gets the kerberosRealm property value. A Kerberos realm name. Case sensitive.
 func (m *IosSingleSignOnSettings) GetKerberosRealm()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.kerberosRealm
-    }
+    return m.kerberosRealm
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *IosSingleSignOnSettings) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // Serialize serializes information the current object
 func (m *IosSingleSignOnSettings) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -215,43 +187,29 @@ func (m *IosSingleSignOnSettings) Serialize(writer i878a80d2330e89d26896388a3f48
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *IosSingleSignOnSettings) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetAllowedAppsList sets the allowedAppsList property value. List of app identifiers that are allowed to use this login. If this field is omitted, the login applies to all applications on the device. This collection can contain a maximum of 500 elements.
 func (m *IosSingleSignOnSettings) SetAllowedAppsList(value []AppListItemable)() {
-    if m != nil {
-        m.allowedAppsList = value
-    }
+    m.allowedAppsList = value
 }
 // SetAllowedUrls sets the allowedUrls property value. List of HTTP URLs that must be matched in order to use this login. With iOS 9.0 or later, a wildcard characters may be used.
 func (m *IosSingleSignOnSettings) SetAllowedUrls(value []string)() {
-    if m != nil {
-        m.allowedUrls = value
-    }
+    m.allowedUrls = value
 }
 // SetDisplayName sets the displayName property value. The display name of login settings shown on the receiving device.
 func (m *IosSingleSignOnSettings) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }
 // SetKerberosPrincipalName sets the kerberosPrincipalName property value. A Kerberos principal name. If not provided, the user is prompted for one during profile installation.
 func (m *IosSingleSignOnSettings) SetKerberosPrincipalName(value *string)() {
-    if m != nil {
-        m.kerberosPrincipalName = value
-    }
+    m.kerberosPrincipalName = value
 }
 // SetKerberosRealm sets the kerberosRealm property value. A Kerberos realm name. Case sensitive.
 func (m *IosSingleSignOnSettings) SetKerberosRealm(value *string)() {
-    if m != nil {
-        m.kerberosRealm = value
-    }
+    m.kerberosRealm = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *IosSingleSignOnSettings) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }

@@ -5,13 +5,13 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// UserExperienceAnalyticsScoreHistory 
+// UserExperienceAnalyticsScoreHistory the user experience analytics device startup score history.
 type UserExperienceAnalyticsScoreHistory struct {
     Entity
     // The user experience analytics device startup date time.
     startupDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
 }
-// NewUserExperienceAnalyticsScoreHistory instantiates a new UserExperienceAnalyticsScoreHistory and sets the default values.
+// NewUserExperienceAnalyticsScoreHistory instantiates a new userExperienceAnalyticsScoreHistory and sets the default values.
 func NewUserExperienceAnalyticsScoreHistory()(*UserExperienceAnalyticsScoreHistory) {
     m := &UserExperienceAnalyticsScoreHistory{
         Entity: *NewEntity(),
@@ -41,11 +41,7 @@ func (m *UserExperienceAnalyticsScoreHistory) GetFieldDeserializers()(map[string
 }
 // GetStartupDateTime gets the startupDateTime property value. The user experience analytics device startup date time.
 func (m *UserExperienceAnalyticsScoreHistory) GetStartupDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.startupDateTime
-    }
+    return m.startupDateTime
 }
 // Serialize serializes information the current object
 func (m *UserExperienceAnalyticsScoreHistory) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -63,7 +59,5 @@ func (m *UserExperienceAnalyticsScoreHistory) Serialize(writer i878a80d2330e89d2
 }
 // SetStartupDateTime sets the startupDateTime property value. The user experience analytics device startup date time.
 func (m *UserExperienceAnalyticsScoreHistory) SetStartupDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.startupDateTime = value
-    }
+    m.startupDateTime = value
 }

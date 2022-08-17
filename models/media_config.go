@@ -49,11 +49,7 @@ func CreateMediaConfigFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *MediaConfig) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *MediaConfig) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -82,19 +78,11 @@ func (m *MediaConfig) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *MediaConfig) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetRemoveFromDefaultAudioGroup gets the removeFromDefaultAudioGroup property value. The removeFromDefaultAudioGroup property
 func (m *MediaConfig) GetRemoveFromDefaultAudioGroup()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.removeFromDefaultAudioGroup
-    }
+    return m.removeFromDefaultAudioGroup
 }
 // Serialize serializes information the current object
 func (m *MediaConfig) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -120,19 +108,13 @@ func (m *MediaConfig) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *MediaConfig) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *MediaConfig) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetRemoveFromDefaultAudioGroup sets the removeFromDefaultAudioGroup property value. The removeFromDefaultAudioGroup property
 func (m *MediaConfig) SetRemoveFromDefaultAudioGroup(value *bool)() {
-    if m != nil {
-        m.removeFromDefaultAudioGroup = value
-    }
+    m.removeFromDefaultAudioGroup = value
 }

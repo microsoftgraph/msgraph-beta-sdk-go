@@ -31,19 +31,11 @@ func CreateTeamworkConnectionFromDiscriminatorValue(parseNode i878a80d2330e89d26
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TeamworkConnection) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetConnectionStatus gets the connectionStatus property value. Indicates whether a component/peripheral is connected/disconnected or its state is unknown. The possible values are: unknown, connected, disconnected, unknownFutureValue.
 func (m *TeamworkConnection) GetConnectionStatus()(*TeamworkConnectionStatus) {
-    if m == nil {
-        return nil
-    } else {
-        return m.connectionStatus
-    }
+    return m.connectionStatus
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *TeamworkConnection) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -82,19 +74,11 @@ func (m *TeamworkConnection) GetFieldDeserializers()(map[string]func(i878a80d233
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. Time at which the state was last changed. For example, indicates connected since when the state is connected and disconnected since when the state is disconnected.
 func (m *TeamworkConnection) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastModifiedDateTime
-    }
+    return m.lastModifiedDateTime
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *TeamworkConnection) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // Serialize serializes information the current object
 func (m *TeamworkConnection) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -127,25 +111,17 @@ func (m *TeamworkConnection) Serialize(writer i878a80d2330e89d26896388a3f487eef2
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TeamworkConnection) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetConnectionStatus sets the connectionStatus property value. Indicates whether a component/peripheral is connected/disconnected or its state is unknown. The possible values are: unknown, connected, disconnected, unknownFutureValue.
 func (m *TeamworkConnection) SetConnectionStatus(value *TeamworkConnectionStatus)() {
-    if m != nil {
-        m.connectionStatus = value
-    }
+    m.connectionStatus = value
 }
 // SetLastModifiedDateTime sets the lastModifiedDateTime property value. Time at which the state was last changed. For example, indicates connected since when the state is connected and disconnected since when the state is disconnected.
 func (m *TeamworkConnection) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.lastModifiedDateTime = value
-    }
+    m.lastModifiedDateTime = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *TeamworkConnection) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }

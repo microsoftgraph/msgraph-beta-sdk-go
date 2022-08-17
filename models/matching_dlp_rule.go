@@ -42,19 +42,11 @@ func CreateMatchingDlpRuleFromDiscriminatorValue(parseNode i878a80d2330e89d26896
 }
 // GetActions gets the actions property value. The actions property
 func (m *MatchingDlpRule) GetActions()([]DlpActionInfoable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.actions
-    }
+    return m.actions
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *MatchingDlpRule) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *MatchingDlpRule) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -157,67 +149,35 @@ func (m *MatchingDlpRule) GetFieldDeserializers()(map[string]func(i878a80d2330e8
 }
 // GetIsMostRestrictive gets the isMostRestrictive property value. The isMostRestrictive property
 func (m *MatchingDlpRule) GetIsMostRestrictive()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isMostRestrictive
-    }
+    return m.isMostRestrictive
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *MatchingDlpRule) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetPolicyId gets the policyId property value. The policyId property
 func (m *MatchingDlpRule) GetPolicyId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.policyId
-    }
+    return m.policyId
 }
 // GetPolicyName gets the policyName property value. The policyName property
 func (m *MatchingDlpRule) GetPolicyName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.policyName
-    }
+    return m.policyName
 }
 // GetPriority gets the priority property value. The priority property
 func (m *MatchingDlpRule) GetPriority()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.priority
-    }
+    return m.priority
 }
 // GetRuleId gets the ruleId property value. The ruleId property
 func (m *MatchingDlpRule) GetRuleId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.ruleId
-    }
+    return m.ruleId
 }
 // GetRuleMode gets the ruleMode property value. The ruleMode property
 func (m *MatchingDlpRule) GetRuleMode()(*RuleMode) {
-    if m == nil {
-        return nil
-    } else {
-        return m.ruleMode
-    }
+    return m.ruleMode
 }
 // GetRuleName gets the ruleName property value. The ruleName property
 func (m *MatchingDlpRule) GetRuleName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.ruleName
-    }
+    return m.ruleName
 }
 // Serialize serializes information the current object
 func (m *MatchingDlpRule) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -290,61 +250,41 @@ func (m *MatchingDlpRule) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
 }
 // SetActions sets the actions property value. The actions property
 func (m *MatchingDlpRule) SetActions(value []DlpActionInfoable)() {
-    if m != nil {
-        m.actions = value
-    }
+    m.actions = value
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *MatchingDlpRule) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetIsMostRestrictive sets the isMostRestrictive property value. The isMostRestrictive property
 func (m *MatchingDlpRule) SetIsMostRestrictive(value *bool)() {
-    if m != nil {
-        m.isMostRestrictive = value
-    }
+    m.isMostRestrictive = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *MatchingDlpRule) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetPolicyId sets the policyId property value. The policyId property
 func (m *MatchingDlpRule) SetPolicyId(value *string)() {
-    if m != nil {
-        m.policyId = value
-    }
+    m.policyId = value
 }
 // SetPolicyName sets the policyName property value. The policyName property
 func (m *MatchingDlpRule) SetPolicyName(value *string)() {
-    if m != nil {
-        m.policyName = value
-    }
+    m.policyName = value
 }
 // SetPriority sets the priority property value. The priority property
 func (m *MatchingDlpRule) SetPriority(value *int32)() {
-    if m != nil {
-        m.priority = value
-    }
+    m.priority = value
 }
 // SetRuleId sets the ruleId property value. The ruleId property
 func (m *MatchingDlpRule) SetRuleId(value *string)() {
-    if m != nil {
-        m.ruleId = value
-    }
+    m.ruleId = value
 }
 // SetRuleMode sets the ruleMode property value. The ruleMode property
 func (m *MatchingDlpRule) SetRuleMode(value *RuleMode)() {
-    if m != nil {
-        m.ruleMode = value
-    }
+    m.ruleMode = value
 }
 // SetRuleName sets the ruleName property value. The ruleName property
 func (m *MatchingDlpRule) SetRuleName(value *string)() {
-    if m != nil {
-        m.ruleName = value
-    }
+    m.ruleName = value
 }

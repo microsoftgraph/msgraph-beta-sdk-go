@@ -33,11 +33,7 @@ func CreatePasswordCredentialConfigurationFromDiscriminatorValue(parseNode i878a
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *PasswordCredentialConfiguration) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *PasswordCredentialConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -86,35 +82,19 @@ func (m *PasswordCredentialConfiguration) GetFieldDeserializers()(map[string]fun
 }
 // GetMaxLifetime gets the maxLifetime property value. The maxLifetime property
 func (m *PasswordCredentialConfiguration) GetMaxLifetime()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration) {
-    if m == nil {
-        return nil
-    } else {
-        return m.maxLifetime
-    }
+    return m.maxLifetime
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *PasswordCredentialConfiguration) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetRestrictForAppsCreatedAfterDateTime gets the restrictForAppsCreatedAfterDateTime property value. Enforces the policy for an app created on or after the enforcement date. For existing applications, the enforcement date would be backdated. To apply to all applications, this date would be null.
 func (m *PasswordCredentialConfiguration) GetRestrictForAppsCreatedAfterDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.restrictForAppsCreatedAfterDateTime
-    }
+    return m.restrictForAppsCreatedAfterDateTime
 }
 // GetRestrictionType gets the restrictionType property value. The type of restriction being applied. The possible values are: passwordAddition, passwordLifetime, symmetricKeyAddition, symmetricKeyLifetime,customPasswordAddition, unknownFutureValue. Each value of restrictionType can be used only once per policy.
 func (m *PasswordCredentialConfiguration) GetRestrictionType()(*AppCredentialRestrictionType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.restrictionType
-    }
+    return m.restrictionType
 }
 // Serialize serializes information the current object
 func (m *PasswordCredentialConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -153,31 +133,21 @@ func (m *PasswordCredentialConfiguration) Serialize(writer i878a80d2330e89d26896
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *PasswordCredentialConfiguration) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetMaxLifetime sets the maxLifetime property value. The maxLifetime property
 func (m *PasswordCredentialConfiguration) SetMaxLifetime(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)() {
-    if m != nil {
-        m.maxLifetime = value
-    }
+    m.maxLifetime = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *PasswordCredentialConfiguration) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetRestrictForAppsCreatedAfterDateTime sets the restrictForAppsCreatedAfterDateTime property value. Enforces the policy for an app created on or after the enforcement date. For existing applications, the enforcement date would be backdated. To apply to all applications, this date would be null.
 func (m *PasswordCredentialConfiguration) SetRestrictForAppsCreatedAfterDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.restrictForAppsCreatedAfterDateTime = value
-    }
+    m.restrictForAppsCreatedAfterDateTime = value
 }
 // SetRestrictionType sets the restrictionType property value. The type of restriction being applied. The possible values are: passwordAddition, passwordLifetime, symmetricKeyAddition, symmetricKeyLifetime,customPasswordAddition, unknownFutureValue. Each value of restrictionType can be used only once per policy.
 func (m *PasswordCredentialConfiguration) SetRestrictionType(value *AppCredentialRestrictionType)() {
-    if m != nil {
-        m.restrictionType = value
-    }
+    m.restrictionType = value
 }

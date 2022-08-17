@@ -38,35 +38,19 @@ func CreateManagedDeviceOverviewFromDiscriminatorValue(parseNode i878a80d2330e89
 }
 // GetDeviceExchangeAccessStateSummary gets the deviceExchangeAccessStateSummary property value. Distribution of Exchange Access State in Intune
 func (m *ManagedDeviceOverview) GetDeviceExchangeAccessStateSummary()(DeviceExchangeAccessStateSummaryable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deviceExchangeAccessStateSummary
-    }
+    return m.deviceExchangeAccessStateSummary
 }
 // GetDeviceOperatingSystemSummary gets the deviceOperatingSystemSummary property value. Device operating system summary.
 func (m *ManagedDeviceOverview) GetDeviceOperatingSystemSummary()(DeviceOperatingSystemSummaryable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deviceOperatingSystemSummary
-    }
+    return m.deviceOperatingSystemSummary
 }
 // GetDualEnrolledDeviceCount gets the dualEnrolledDeviceCount property value. The number of devices enrolled in both MDM and EAS
 func (m *ManagedDeviceOverview) GetDualEnrolledDeviceCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.dualEnrolledDeviceCount
-    }
+    return m.dualEnrolledDeviceCount
 }
 // GetEnrolledDeviceCount gets the enrolledDeviceCount property value. Total enrolled device count. Does not include PC devices managed via Intune PC Agent
 func (m *ManagedDeviceOverview) GetEnrolledDeviceCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.enrolledDeviceCount
-    }
+    return m.enrolledDeviceCount
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ManagedDeviceOverview) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -145,27 +129,15 @@ func (m *ManagedDeviceOverview) GetFieldDeserializers()(map[string]func(i878a80d
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. Last modified date time of device overview
 func (m *ManagedDeviceOverview) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastModifiedDateTime
-    }
+    return m.lastModifiedDateTime
 }
 // GetManagedDeviceModelsAndManufacturers gets the managedDeviceModelsAndManufacturers property value. Models and Manufactures meatadata for managed devices in the account
 func (m *ManagedDeviceOverview) GetManagedDeviceModelsAndManufacturers()(ManagedDeviceModelsAndManufacturersable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.managedDeviceModelsAndManufacturers
-    }
+    return m.managedDeviceModelsAndManufacturers
 }
 // GetMdmEnrolledCount gets the mdmEnrolledCount property value. The number of devices enrolled in MDM
 func (m *ManagedDeviceOverview) GetMdmEnrolledCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.mdmEnrolledCount
-    }
+    return m.mdmEnrolledCount
 }
 // Serialize serializes information the current object
 func (m *ManagedDeviceOverview) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -219,43 +191,29 @@ func (m *ManagedDeviceOverview) Serialize(writer i878a80d2330e89d26896388a3f487e
 }
 // SetDeviceExchangeAccessStateSummary sets the deviceExchangeAccessStateSummary property value. Distribution of Exchange Access State in Intune
 func (m *ManagedDeviceOverview) SetDeviceExchangeAccessStateSummary(value DeviceExchangeAccessStateSummaryable)() {
-    if m != nil {
-        m.deviceExchangeAccessStateSummary = value
-    }
+    m.deviceExchangeAccessStateSummary = value
 }
 // SetDeviceOperatingSystemSummary sets the deviceOperatingSystemSummary property value. Device operating system summary.
 func (m *ManagedDeviceOverview) SetDeviceOperatingSystemSummary(value DeviceOperatingSystemSummaryable)() {
-    if m != nil {
-        m.deviceOperatingSystemSummary = value
-    }
+    m.deviceOperatingSystemSummary = value
 }
 // SetDualEnrolledDeviceCount sets the dualEnrolledDeviceCount property value. The number of devices enrolled in both MDM and EAS
 func (m *ManagedDeviceOverview) SetDualEnrolledDeviceCount(value *int32)() {
-    if m != nil {
-        m.dualEnrolledDeviceCount = value
-    }
+    m.dualEnrolledDeviceCount = value
 }
 // SetEnrolledDeviceCount sets the enrolledDeviceCount property value. Total enrolled device count. Does not include PC devices managed via Intune PC Agent
 func (m *ManagedDeviceOverview) SetEnrolledDeviceCount(value *int32)() {
-    if m != nil {
-        m.enrolledDeviceCount = value
-    }
+    m.enrolledDeviceCount = value
 }
 // SetLastModifiedDateTime sets the lastModifiedDateTime property value. Last modified date time of device overview
 func (m *ManagedDeviceOverview) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.lastModifiedDateTime = value
-    }
+    m.lastModifiedDateTime = value
 }
 // SetManagedDeviceModelsAndManufacturers sets the managedDeviceModelsAndManufacturers property value. Models and Manufactures meatadata for managed devices in the account
 func (m *ManagedDeviceOverview) SetManagedDeviceModelsAndManufacturers(value ManagedDeviceModelsAndManufacturersable)() {
-    if m != nil {
-        m.managedDeviceModelsAndManufacturers = value
-    }
+    m.managedDeviceModelsAndManufacturers = value
 }
 // SetMdmEnrolledCount sets the mdmEnrolledCount property value. The number of devices enrolled in MDM
 func (m *ManagedDeviceOverview) SetMdmEnrolledCount(value *int32)() {
-    if m != nil {
-        m.mdmEnrolledCount = value
-    }
+    m.mdmEnrolledCount = value
 }

@@ -28,11 +28,7 @@ func CreateDelegatedAdminAccessDetailsFromDiscriminatorValue(parseNode i878a80d2
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DelegatedAdminAccessDetails) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DelegatedAdminAccessDetails) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -65,19 +61,11 @@ func (m *DelegatedAdminAccessDetails) GetFieldDeserializers()(map[string]func(i8
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *DelegatedAdminAccessDetails) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetUnifiedRoles gets the unifiedRoles property value. The directory roles that the Microsoft partner is assigned in the customer tenant.
 func (m *DelegatedAdminAccessDetails) GetUnifiedRoles()([]UnifiedRoleable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.unifiedRoles
-    }
+    return m.unifiedRoles
 }
 // Serialize serializes information the current object
 func (m *DelegatedAdminAccessDetails) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -107,19 +95,13 @@ func (m *DelegatedAdminAccessDetails) Serialize(writer i878a80d2330e89d26896388a
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DelegatedAdminAccessDetails) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *DelegatedAdminAccessDetails) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetUnifiedRoles sets the unifiedRoles property value. The directory roles that the Microsoft partner is assigned in the customer tenant.
 func (m *DelegatedAdminAccessDetails) SetUnifiedRoles(value []UnifiedRoleable)() {
-    if m != nil {
-        m.unifiedRoles = value
-    }
+    m.unifiedRoles = value
 }

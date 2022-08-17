@@ -61,11 +61,7 @@ func (m *FileThreatSubmission) GetFieldDeserializers()(map[string]func(i878a80d2
 }
 // GetFileName gets the fileName property value. It specifies the file name to be submitted.
 func (m *FileThreatSubmission) GetFileName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.fileName
-    }
+    return m.fileName
 }
 // Serialize serializes information the current object
 func (m *FileThreatSubmission) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -83,7 +79,5 @@ func (m *FileThreatSubmission) Serialize(writer i878a80d2330e89d26896388a3f487ee
 }
 // SetFileName sets the fileName property value. It specifies the file name to be submitted.
 func (m *FileThreatSubmission) SetFileName(value *string)() {
-    if m != nil {
-        m.fileName = value
-    }
+    m.fileName = value
 }

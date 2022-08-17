@@ -30,19 +30,11 @@ func CreateRecordAllDecisionsPostRequestBodyFromDiscriminatorValue(parseNode i87
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *RecordAllDecisionsPostRequestBody) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetDecision gets the decision property value. The decision property
 func (m *RecordAllDecisionsPostRequestBody) GetDecision()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.decision
-    }
+    return m.decision
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *RecordAllDecisionsPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -91,27 +83,15 @@ func (m *RecordAllDecisionsPostRequestBody) GetFieldDeserializers()(map[string]f
 }
 // GetJustification gets the justification property value. The justification property
 func (m *RecordAllDecisionsPostRequestBody) GetJustification()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.justification
-    }
+    return m.justification
 }
 // GetPrincipalId gets the principalId property value. The principalId property
 func (m *RecordAllDecisionsPostRequestBody) GetPrincipalId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.principalId
-    }
+    return m.principalId
 }
 // GetResourceId gets the resourceId property value. The resourceId property
 func (m *RecordAllDecisionsPostRequestBody) GetResourceId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.resourceId
-    }
+    return m.resourceId
 }
 // Serialize serializes information the current object
 func (m *RecordAllDecisionsPostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -149,31 +129,21 @@ func (m *RecordAllDecisionsPostRequestBody) Serialize(writer i878a80d2330e89d268
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *RecordAllDecisionsPostRequestBody) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetDecision sets the decision property value. The decision property
 func (m *RecordAllDecisionsPostRequestBody) SetDecision(value *string)() {
-    if m != nil {
-        m.decision = value
-    }
+    m.decision = value
 }
 // SetJustification sets the justification property value. The justification property
 func (m *RecordAllDecisionsPostRequestBody) SetJustification(value *string)() {
-    if m != nil {
-        m.justification = value
-    }
+    m.justification = value
 }
 // SetPrincipalId sets the principalId property value. The principalId property
 func (m *RecordAllDecisionsPostRequestBody) SetPrincipalId(value *string)() {
-    if m != nil {
-        m.principalId = value
-    }
+    m.principalId = value
 }
 // SetResourceId sets the resourceId property value. The resourceId property
 func (m *RecordAllDecisionsPostRequestBody) SetResourceId(value *string)() {
-    if m != nil {
-        m.resourceId = value
-    }
+    m.resourceId = value
 }

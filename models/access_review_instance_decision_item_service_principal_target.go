@@ -29,11 +29,7 @@ func CreateAccessReviewInstanceDecisionItemServicePrincipalTargetFromDiscriminat
 }
 // GetAppId gets the appId property value. The appId for the service principal entity being reviewed.
 func (m *AccessReviewInstanceDecisionItemServicePrincipalTarget) GetAppId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.appId
-    }
+    return m.appId
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AccessReviewInstanceDecisionItemServicePrincipalTarget) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -72,19 +68,11 @@ func (m *AccessReviewInstanceDecisionItemServicePrincipalTarget) GetFieldDeseria
 }
 // GetServicePrincipalDisplayName gets the servicePrincipalDisplayName property value. The display name of the service principal whose access is being reviewed.
 func (m *AccessReviewInstanceDecisionItemServicePrincipalTarget) GetServicePrincipalDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.servicePrincipalDisplayName
-    }
+    return m.servicePrincipalDisplayName
 }
 // GetServicePrincipalId gets the servicePrincipalId property value. The servicePrincipalId property
 func (m *AccessReviewInstanceDecisionItemServicePrincipalTarget) GetServicePrincipalId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.servicePrincipalId
-    }
+    return m.servicePrincipalId
 }
 // Serialize serializes information the current object
 func (m *AccessReviewInstanceDecisionItemServicePrincipalTarget) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -114,19 +102,13 @@ func (m *AccessReviewInstanceDecisionItemServicePrincipalTarget) Serialize(write
 }
 // SetAppId sets the appId property value. The appId for the service principal entity being reviewed.
 func (m *AccessReviewInstanceDecisionItemServicePrincipalTarget) SetAppId(value *string)() {
-    if m != nil {
-        m.appId = value
-    }
+    m.appId = value
 }
 // SetServicePrincipalDisplayName sets the servicePrincipalDisplayName property value. The display name of the service principal whose access is being reviewed.
 func (m *AccessReviewInstanceDecisionItemServicePrincipalTarget) SetServicePrincipalDisplayName(value *string)() {
-    if m != nil {
-        m.servicePrincipalDisplayName = value
-    }
+    m.servicePrincipalDisplayName = value
 }
 // SetServicePrincipalId sets the servicePrincipalId property value. The servicePrincipalId property
 func (m *AccessReviewInstanceDecisionItemServicePrincipalTarget) SetServicePrincipalId(value *string)() {
-    if m != nil {
-        m.servicePrincipalId = value
-    }
+    m.servicePrincipalId = value
 }

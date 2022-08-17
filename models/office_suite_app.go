@@ -49,19 +49,11 @@ func CreateOfficeSuiteAppFromDiscriminatorValue(parseNode i878a80d2330e89d268963
 }
 // GetAutoAcceptEula gets the autoAcceptEula property value. The value to accept the EULA automatically on the enduser's device.
 func (m *OfficeSuiteApp) GetAutoAcceptEula()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.autoAcceptEula
-    }
+    return m.autoAcceptEula
 }
 // GetExcludedApps gets the excludedApps property value. The property to represent the apps which are excluded from the selected Office365 Product Id.
 func (m *OfficeSuiteApp) GetExcludedApps()(ExcludedAppsable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.excludedApps
-    }
+    return m.excludedApps
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *OfficeSuiteApp) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -208,91 +200,47 @@ func (m *OfficeSuiteApp) GetFieldDeserializers()(map[string]func(i878a80d2330e89
 }
 // GetInstallProgressDisplayLevel gets the installProgressDisplayLevel property value. The Enum to specify the level of display for the Installation Progress Setup UI on the Device.
 func (m *OfficeSuiteApp) GetInstallProgressDisplayLevel()(*OfficeSuiteInstallProgressDisplayLevel) {
-    if m == nil {
-        return nil
-    } else {
-        return m.installProgressDisplayLevel
-    }
+    return m.installProgressDisplayLevel
 }
 // GetLocalesToInstall gets the localesToInstall property value. The property to represent the locales which are installed when the apps from Office365 is installed. It uses standard RFC 6033. Ref: https://technet.microsoft.com/library/cc179219(v=office.16).aspx
 func (m *OfficeSuiteApp) GetLocalesToInstall()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.localesToInstall
-    }
+    return m.localesToInstall
 }
 // GetOfficeConfigurationXml gets the officeConfigurationXml property value. The property to represent the XML configuration file that can be specified for Office ProPlus Apps. Takes precedence over all other properties. When present, the XML configuration file will be used to create the app.
 func (m *OfficeSuiteApp) GetOfficeConfigurationXml()([]byte) {
-    if m == nil {
-        return nil
-    } else {
-        return m.officeConfigurationXml
-    }
+    return m.officeConfigurationXml
 }
 // GetOfficePlatformArchitecture gets the officePlatformArchitecture property value. Contains properties for Windows architecture.
 func (m *OfficeSuiteApp) GetOfficePlatformArchitecture()(*WindowsArchitecture) {
-    if m == nil {
-        return nil
-    } else {
-        return m.officePlatformArchitecture
-    }
+    return m.officePlatformArchitecture
 }
 // GetOfficeSuiteAppDefaultFileFormat gets the officeSuiteAppDefaultFileFormat property value. Describes the OfficeSuiteApp file format types that can be selected.
 func (m *OfficeSuiteApp) GetOfficeSuiteAppDefaultFileFormat()(*OfficeSuiteDefaultFileFormatType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.officeSuiteAppDefaultFileFormat
-    }
+    return m.officeSuiteAppDefaultFileFormat
 }
 // GetProductIds gets the productIds property value. The Product Ids that represent the Office365 Suite SKU.
 func (m *OfficeSuiteApp) GetProductIds()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.productIds
-    }
+    return m.productIds
 }
 // GetShouldUninstallOlderVersionsOfOffice gets the shouldUninstallOlderVersionsOfOffice property value. The property to determine whether to uninstall existing Office MSI if an Office365 app suite is deployed to the device or not.
 func (m *OfficeSuiteApp) GetShouldUninstallOlderVersionsOfOffice()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.shouldUninstallOlderVersionsOfOffice
-    }
+    return m.shouldUninstallOlderVersionsOfOffice
 }
 // GetTargetVersion gets the targetVersion property value. The property to represent the specific target version for the Office365 app suite that should be remained deployed on the devices.
 func (m *OfficeSuiteApp) GetTargetVersion()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.targetVersion
-    }
+    return m.targetVersion
 }
 // GetUpdateChannel gets the updateChannel property value. The Enum to specify the Office365 Updates Channel.
 func (m *OfficeSuiteApp) GetUpdateChannel()(*OfficeUpdateChannel) {
-    if m == nil {
-        return nil
-    } else {
-        return m.updateChannel
-    }
+    return m.updateChannel
 }
 // GetUpdateVersion gets the updateVersion property value. The property to represent the update version in which the specific target version is available for the Office365 app suite.
 func (m *OfficeSuiteApp) GetUpdateVersion()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.updateVersion
-    }
+    return m.updateVersion
 }
 // GetUseSharedComputerActivation gets the useSharedComputerActivation property value. The property to represent that whether the shared computer activation is used not for Office365 app suite.
 func (m *OfficeSuiteApp) GetUseSharedComputerActivation()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.useSharedComputerActivation
-    }
+    return m.useSharedComputerActivation
 }
 // Serialize serializes information the current object
 func (m *OfficeSuiteApp) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -386,79 +334,53 @@ func (m *OfficeSuiteApp) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
 }
 // SetAutoAcceptEula sets the autoAcceptEula property value. The value to accept the EULA automatically on the enduser's device.
 func (m *OfficeSuiteApp) SetAutoAcceptEula(value *bool)() {
-    if m != nil {
-        m.autoAcceptEula = value
-    }
+    m.autoAcceptEula = value
 }
 // SetExcludedApps sets the excludedApps property value. The property to represent the apps which are excluded from the selected Office365 Product Id.
 func (m *OfficeSuiteApp) SetExcludedApps(value ExcludedAppsable)() {
-    if m != nil {
-        m.excludedApps = value
-    }
+    m.excludedApps = value
 }
 // SetInstallProgressDisplayLevel sets the installProgressDisplayLevel property value. The Enum to specify the level of display for the Installation Progress Setup UI on the Device.
 func (m *OfficeSuiteApp) SetInstallProgressDisplayLevel(value *OfficeSuiteInstallProgressDisplayLevel)() {
-    if m != nil {
-        m.installProgressDisplayLevel = value
-    }
+    m.installProgressDisplayLevel = value
 }
 // SetLocalesToInstall sets the localesToInstall property value. The property to represent the locales which are installed when the apps from Office365 is installed. It uses standard RFC 6033. Ref: https://technet.microsoft.com/library/cc179219(v=office.16).aspx
 func (m *OfficeSuiteApp) SetLocalesToInstall(value []string)() {
-    if m != nil {
-        m.localesToInstall = value
-    }
+    m.localesToInstall = value
 }
 // SetOfficeConfigurationXml sets the officeConfigurationXml property value. The property to represent the XML configuration file that can be specified for Office ProPlus Apps. Takes precedence over all other properties. When present, the XML configuration file will be used to create the app.
 func (m *OfficeSuiteApp) SetOfficeConfigurationXml(value []byte)() {
-    if m != nil {
-        m.officeConfigurationXml = value
-    }
+    m.officeConfigurationXml = value
 }
 // SetOfficePlatformArchitecture sets the officePlatformArchitecture property value. Contains properties for Windows architecture.
 func (m *OfficeSuiteApp) SetOfficePlatformArchitecture(value *WindowsArchitecture)() {
-    if m != nil {
-        m.officePlatformArchitecture = value
-    }
+    m.officePlatformArchitecture = value
 }
 // SetOfficeSuiteAppDefaultFileFormat sets the officeSuiteAppDefaultFileFormat property value. Describes the OfficeSuiteApp file format types that can be selected.
 func (m *OfficeSuiteApp) SetOfficeSuiteAppDefaultFileFormat(value *OfficeSuiteDefaultFileFormatType)() {
-    if m != nil {
-        m.officeSuiteAppDefaultFileFormat = value
-    }
+    m.officeSuiteAppDefaultFileFormat = value
 }
 // SetProductIds sets the productIds property value. The Product Ids that represent the Office365 Suite SKU.
 func (m *OfficeSuiteApp) SetProductIds(value []string)() {
-    if m != nil {
-        m.productIds = value
-    }
+    m.productIds = value
 }
 // SetShouldUninstallOlderVersionsOfOffice sets the shouldUninstallOlderVersionsOfOffice property value. The property to determine whether to uninstall existing Office MSI if an Office365 app suite is deployed to the device or not.
 func (m *OfficeSuiteApp) SetShouldUninstallOlderVersionsOfOffice(value *bool)() {
-    if m != nil {
-        m.shouldUninstallOlderVersionsOfOffice = value
-    }
+    m.shouldUninstallOlderVersionsOfOffice = value
 }
 // SetTargetVersion sets the targetVersion property value. The property to represent the specific target version for the Office365 app suite that should be remained deployed on the devices.
 func (m *OfficeSuiteApp) SetTargetVersion(value *string)() {
-    if m != nil {
-        m.targetVersion = value
-    }
+    m.targetVersion = value
 }
 // SetUpdateChannel sets the updateChannel property value. The Enum to specify the Office365 Updates Channel.
 func (m *OfficeSuiteApp) SetUpdateChannel(value *OfficeUpdateChannel)() {
-    if m != nil {
-        m.updateChannel = value
-    }
+    m.updateChannel = value
 }
 // SetUpdateVersion sets the updateVersion property value. The property to represent the update version in which the specific target version is available for the Office365 app suite.
 func (m *OfficeSuiteApp) SetUpdateVersion(value *string)() {
-    if m != nil {
-        m.updateVersion = value
-    }
+    m.updateVersion = value
 }
 // SetUseSharedComputerActivation sets the useSharedComputerActivation property value. The property to represent that whether the shared computer activation is used not for Office365 app suite.
 func (m *OfficeSuiteApp) SetUseSharedComputerActivation(value *bool)() {
-    if m != nil {
-        m.useSharedComputerActivation = value
-    }
+    m.useSharedComputerActivation = value
 }

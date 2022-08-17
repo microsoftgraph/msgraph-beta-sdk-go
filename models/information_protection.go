@@ -20,7 +20,7 @@ type InformationProtection struct {
     // The threatAssessmentRequests property
     threatAssessmentRequests []ThreatAssessmentRequestable
 }
-// NewInformationProtection instantiates a new informationProtection and sets the default values.
+// NewInformationProtection instantiates a new InformationProtection and sets the default values.
 func NewInformationProtection()(*InformationProtection) {
     m := &InformationProtection{
         Entity: *NewEntity(),
@@ -35,19 +35,11 @@ func CreateInformationProtectionFromDiscriminatorValue(parseNode i878a80d2330e89
 }
 // GetBitlocker gets the bitlocker property value. The bitlocker property
 func (m *InformationProtection) GetBitlocker()(Bitlockerable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.bitlocker
-    }
+    return m.bitlocker
 }
 // GetDataLossPreventionPolicies gets the dataLossPreventionPolicies property value. The dataLossPreventionPolicies property
 func (m *InformationProtection) GetDataLossPreventionPolicies()([]DataLossPreventionPolicyable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.dataLossPreventionPolicies
-    }
+    return m.dataLossPreventionPolicies
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *InformationProtection) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -128,35 +120,19 @@ func (m *InformationProtection) GetFieldDeserializers()(map[string]func(i878a80d
 }
 // GetPolicy gets the policy property value. The policy property
 func (m *InformationProtection) GetPolicy()(InformationProtectionPolicyable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.policy
-    }
+    return m.policy
 }
 // GetSensitivityLabels gets the sensitivityLabels property value. The sensitivityLabels property
 func (m *InformationProtection) GetSensitivityLabels()([]SensitivityLabelable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.sensitivityLabels
-    }
+    return m.sensitivityLabels
 }
 // GetSensitivityPolicySettings gets the sensitivityPolicySettings property value. The sensitivityPolicySettings property
 func (m *InformationProtection) GetSensitivityPolicySettings()(SensitivityPolicySettingsable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.sensitivityPolicySettings
-    }
+    return m.sensitivityPolicySettings
 }
 // GetThreatAssessmentRequests gets the threatAssessmentRequests property value. The threatAssessmentRequests property
 func (m *InformationProtection) GetThreatAssessmentRequests()([]ThreatAssessmentRequestable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.threatAssessmentRequests
-    }
+    return m.threatAssessmentRequests
 }
 // Serialize serializes information the current object
 func (m *InformationProtection) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -216,37 +192,25 @@ func (m *InformationProtection) Serialize(writer i878a80d2330e89d26896388a3f487e
 }
 // SetBitlocker sets the bitlocker property value. The bitlocker property
 func (m *InformationProtection) SetBitlocker(value Bitlockerable)() {
-    if m != nil {
-        m.bitlocker = value
-    }
+    m.bitlocker = value
 }
 // SetDataLossPreventionPolicies sets the dataLossPreventionPolicies property value. The dataLossPreventionPolicies property
 func (m *InformationProtection) SetDataLossPreventionPolicies(value []DataLossPreventionPolicyable)() {
-    if m != nil {
-        m.dataLossPreventionPolicies = value
-    }
+    m.dataLossPreventionPolicies = value
 }
 // SetPolicy sets the policy property value. The policy property
 func (m *InformationProtection) SetPolicy(value InformationProtectionPolicyable)() {
-    if m != nil {
-        m.policy = value
-    }
+    m.policy = value
 }
 // SetSensitivityLabels sets the sensitivityLabels property value. The sensitivityLabels property
 func (m *InformationProtection) SetSensitivityLabels(value []SensitivityLabelable)() {
-    if m != nil {
-        m.sensitivityLabels = value
-    }
+    m.sensitivityLabels = value
 }
 // SetSensitivityPolicySettings sets the sensitivityPolicySettings property value. The sensitivityPolicySettings property
 func (m *InformationProtection) SetSensitivityPolicySettings(value SensitivityPolicySettingsable)() {
-    if m != nil {
-        m.sensitivityPolicySettings = value
-    }
+    m.sensitivityPolicySettings = value
 }
 // SetThreatAssessmentRequests sets the threatAssessmentRequests property value. The threatAssessmentRequests property
 func (m *InformationProtection) SetThreatAssessmentRequests(value []ThreatAssessmentRequestable)() {
-    if m != nil {
-        m.threatAssessmentRequests = value
-    }
+    m.threatAssessmentRequests = value
 }

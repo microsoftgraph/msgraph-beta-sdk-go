@@ -35,11 +35,7 @@ func CreateCloudPcServicePlanFromDiscriminatorValue(parseNode i878a80d2330e89d26
 }
 // GetDisplayName gets the displayName property value. The name for the service plan. Read-only.
 func (m *CloudPcServicePlan) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *CloudPcServicePlan) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -108,43 +104,23 @@ func (m *CloudPcServicePlan) GetFieldDeserializers()(map[string]func(i878a80d233
 }
 // GetRamInGB gets the ramInGB property value. The size of the RAM in GB. Read-only.
 func (m *CloudPcServicePlan) GetRamInGB()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.ramInGB
-    }
+    return m.ramInGB
 }
 // GetStorageInGB gets the storageInGB property value. The size of the OS Disk in GB. Read-only.
 func (m *CloudPcServicePlan) GetStorageInGB()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.storageInGB
-    }
+    return m.storageInGB
 }
 // GetType gets the type property value. The type of the service plan. Possible values are: enterprise, business, unknownFutureValue. Read-only.
 func (m *CloudPcServicePlan) GetType()(*CloudPcServicePlanType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.type_escaped
-    }
+    return m.type_escaped
 }
 // GetUserProfileInGB gets the userProfileInGB property value. The size of the user profile disk in GB. Read-only.
 func (m *CloudPcServicePlan) GetUserProfileInGB()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userProfileInGB
-    }
+    return m.userProfileInGB
 }
 // GetVCpuCount gets the vCpuCount property value. The number of vCPUs. Read-only.
 func (m *CloudPcServicePlan) GetVCpuCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.vCpuCount
-    }
+    return m.vCpuCount
 }
 // Serialize serializes information the current object
 func (m *CloudPcServicePlan) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -193,37 +169,25 @@ func (m *CloudPcServicePlan) Serialize(writer i878a80d2330e89d26896388a3f487eef2
 }
 // SetDisplayName sets the displayName property value. The name for the service plan. Read-only.
 func (m *CloudPcServicePlan) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }
 // SetRamInGB sets the ramInGB property value. The size of the RAM in GB. Read-only.
 func (m *CloudPcServicePlan) SetRamInGB(value *int32)() {
-    if m != nil {
-        m.ramInGB = value
-    }
+    m.ramInGB = value
 }
 // SetStorageInGB sets the storageInGB property value. The size of the OS Disk in GB. Read-only.
 func (m *CloudPcServicePlan) SetStorageInGB(value *int32)() {
-    if m != nil {
-        m.storageInGB = value
-    }
+    m.storageInGB = value
 }
 // SetType sets the type property value. The type of the service plan. Possible values are: enterprise, business, unknownFutureValue. Read-only.
 func (m *CloudPcServicePlan) SetType(value *CloudPcServicePlanType)() {
-    if m != nil {
-        m.type_escaped = value
-    }
+    m.type_escaped = value
 }
 // SetUserProfileInGB sets the userProfileInGB property value. The size of the user profile disk in GB. Read-only.
 func (m *CloudPcServicePlan) SetUserProfileInGB(value *int32)() {
-    if m != nil {
-        m.userProfileInGB = value
-    }
+    m.userProfileInGB = value
 }
 // SetVCpuCount sets the vCpuCount property value. The number of vCPUs. Read-only.
 func (m *CloudPcServicePlan) SetVCpuCount(value *int32)() {
-    if m != nil {
-        m.vCpuCount = value
-    }
+    m.vCpuCount = value
 }

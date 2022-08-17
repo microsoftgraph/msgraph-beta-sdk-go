@@ -35,27 +35,15 @@ func CreateUserExperienceAnalyticsImpactingProcessFromDiscriminatorValue(parseNo
 }
 // GetCategory gets the category property value. The category of impacting process.
 func (m *UserExperienceAnalyticsImpactingProcess) GetCategory()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.category
-    }
+    return m.category
 }
 // GetDescription gets the description property value. The description of process.
 func (m *UserExperienceAnalyticsImpactingProcess) GetDescription()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.description
-    }
+    return m.description
 }
 // GetDeviceId gets the deviceId property value. The unique identifier of the impacted device.
 func (m *UserExperienceAnalyticsImpactingProcess) GetDeviceId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deviceId
-    }
+    return m.deviceId
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *UserExperienceAnalyticsImpactingProcess) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -124,27 +112,15 @@ func (m *UserExperienceAnalyticsImpactingProcess) GetFieldDeserializers()(map[st
 }
 // GetImpactValue gets the impactValue property value. The impact value of the process. Valid values 0 to 1.79769313486232E+308
 func (m *UserExperienceAnalyticsImpactingProcess) GetImpactValue()(*float64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.impactValue
-    }
+    return m.impactValue
 }
 // GetProcessName gets the processName property value. The process name.
 func (m *UserExperienceAnalyticsImpactingProcess) GetProcessName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.processName
-    }
+    return m.processName
 }
 // GetPublisher gets the publisher property value. The publisher of the process.
 func (m *UserExperienceAnalyticsImpactingProcess) GetPublisher()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.publisher
-    }
+    return m.publisher
 }
 // Serialize serializes information the current object
 func (m *UserExperienceAnalyticsImpactingProcess) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -192,37 +168,25 @@ func (m *UserExperienceAnalyticsImpactingProcess) Serialize(writer i878a80d2330e
 }
 // SetCategory sets the category property value. The category of impacting process.
 func (m *UserExperienceAnalyticsImpactingProcess) SetCategory(value *string)() {
-    if m != nil {
-        m.category = value
-    }
+    m.category = value
 }
 // SetDescription sets the description property value. The description of process.
 func (m *UserExperienceAnalyticsImpactingProcess) SetDescription(value *string)() {
-    if m != nil {
-        m.description = value
-    }
+    m.description = value
 }
 // SetDeviceId sets the deviceId property value. The unique identifier of the impacted device.
 func (m *UserExperienceAnalyticsImpactingProcess) SetDeviceId(value *string)() {
-    if m != nil {
-        m.deviceId = value
-    }
+    m.deviceId = value
 }
 // SetImpactValue sets the impactValue property value. The impact value of the process. Valid values 0 to 1.79769313486232E+308
 func (m *UserExperienceAnalyticsImpactingProcess) SetImpactValue(value *float64)() {
-    if m != nil {
-        m.impactValue = value
-    }
+    m.impactValue = value
 }
 // SetProcessName sets the processName property value. The process name.
 func (m *UserExperienceAnalyticsImpactingProcess) SetProcessName(value *string)() {
-    if m != nil {
-        m.processName = value
-    }
+    m.processName = value
 }
 // SetPublisher sets the publisher property value. The publisher of the process.
 func (m *UserExperienceAnalyticsImpactingProcess) SetPublisher(value *string)() {
-    if m != nil {
-        m.publisher = value
-    }
+    m.publisher = value
 }

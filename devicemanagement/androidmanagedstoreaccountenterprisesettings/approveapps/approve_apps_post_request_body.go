@@ -26,19 +26,11 @@ func CreateApproveAppsPostRequestBodyFromDiscriminatorValue(parseNode i878a80d23
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ApproveAppsPostRequestBody) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetApproveAllPermissions gets the approveAllPermissions property value. The approveAllPermissions property
 func (m *ApproveAppsPostRequestBody) GetApproveAllPermissions()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.approveAllPermissions
-    }
+    return m.approveAllPermissions
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ApproveAppsPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -71,11 +63,7 @@ func (m *ApproveAppsPostRequestBody) GetFieldDeserializers()(map[string]func(i87
 }
 // GetPackageIds gets the packageIds property value. The packageIds property
 func (m *ApproveAppsPostRequestBody) GetPackageIds()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.packageIds
-    }
+    return m.packageIds
 }
 // Serialize serializes information the current object
 func (m *ApproveAppsPostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -101,19 +89,13 @@ func (m *ApproveAppsPostRequestBody) Serialize(writer i878a80d2330e89d26896388a3
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ApproveAppsPostRequestBody) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetApproveAllPermissions sets the approveAllPermissions property value. The approveAllPermissions property
 func (m *ApproveAppsPostRequestBody) SetApproveAllPermissions(value *bool)() {
-    if m != nil {
-        m.approveAllPermissions = value
-    }
+    m.approveAllPermissions = value
 }
 // SetPackageIds sets the packageIds property value. The packageIds property
 func (m *ApproveAppsPostRequestBody) SetPackageIds(value []string)() {
-    if m != nil {
-        m.packageIds = value
-    }
+    m.packageIds = value
 }

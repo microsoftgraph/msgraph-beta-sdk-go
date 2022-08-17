@@ -29,19 +29,11 @@ func CreateProtectGroupFromDiscriminatorValue(parseNode i878a80d2330e89d26896388
 }
 // GetAllowEmailFromGuestUsers gets the allowEmailFromGuestUsers property value. The allowEmailFromGuestUsers property
 func (m *ProtectGroup) GetAllowEmailFromGuestUsers()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.allowEmailFromGuestUsers
-    }
+    return m.allowEmailFromGuestUsers
 }
 // GetAllowGuestUsers gets the allowGuestUsers property value. The allowGuestUsers property
 func (m *ProtectGroup) GetAllowGuestUsers()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.allowGuestUsers
-    }
+    return m.allowGuestUsers
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ProtectGroup) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -80,11 +72,7 @@ func (m *ProtectGroup) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
 }
 // GetPrivacy gets the privacy property value. The privacy property
 func (m *ProtectGroup) GetPrivacy()(*GroupPrivacy) {
-    if m == nil {
-        return nil
-    } else {
-        return m.privacy
-    }
+    return m.privacy
 }
 // Serialize serializes information the current object
 func (m *ProtectGroup) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -115,19 +103,13 @@ func (m *ProtectGroup) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
 }
 // SetAllowEmailFromGuestUsers sets the allowEmailFromGuestUsers property value. The allowEmailFromGuestUsers property
 func (m *ProtectGroup) SetAllowEmailFromGuestUsers(value *bool)() {
-    if m != nil {
-        m.allowEmailFromGuestUsers = value
-    }
+    m.allowEmailFromGuestUsers = value
 }
 // SetAllowGuestUsers sets the allowGuestUsers property value. The allowGuestUsers property
 func (m *ProtectGroup) SetAllowGuestUsers(value *bool)() {
-    if m != nil {
-        m.allowGuestUsers = value
-    }
+    m.allowGuestUsers = value
 }
 // SetPrivacy sets the privacy property value. The privacy property
 func (m *ProtectGroup) SetPrivacy(value *GroupPrivacy)() {
-    if m != nil {
-        m.privacy = value
-    }
+    m.privacy = value
 }

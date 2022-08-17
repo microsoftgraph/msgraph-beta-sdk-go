@@ -64,27 +64,15 @@ func (m *AccessReviewInstanceDecisionItemUserTarget) GetFieldDeserializers()(map
 }
 // GetUserDisplayName gets the userDisplayName property value. The name of user.
 func (m *AccessReviewInstanceDecisionItemUserTarget) GetUserDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userDisplayName
-    }
+    return m.userDisplayName
 }
 // GetUserId gets the userId property value. The identifier of user.
 func (m *AccessReviewInstanceDecisionItemUserTarget) GetUserId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userId
-    }
+    return m.userId
 }
 // GetUserPrincipalName gets the userPrincipalName property value. The user principal name.
 func (m *AccessReviewInstanceDecisionItemUserTarget) GetUserPrincipalName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userPrincipalName
-    }
+    return m.userPrincipalName
 }
 // Serialize serializes information the current object
 func (m *AccessReviewInstanceDecisionItemUserTarget) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -114,19 +102,13 @@ func (m *AccessReviewInstanceDecisionItemUserTarget) Serialize(writer i878a80d23
 }
 // SetUserDisplayName sets the userDisplayName property value. The name of user.
 func (m *AccessReviewInstanceDecisionItemUserTarget) SetUserDisplayName(value *string)() {
-    if m != nil {
-        m.userDisplayName = value
-    }
+    m.userDisplayName = value
 }
 // SetUserId sets the userId property value. The identifier of user.
 func (m *AccessReviewInstanceDecisionItemUserTarget) SetUserId(value *string)() {
-    if m != nil {
-        m.userId = value
-    }
+    m.userId = value
 }
 // SetUserPrincipalName sets the userPrincipalName property value. The user principal name.
 func (m *AccessReviewInstanceDecisionItemUserTarget) SetUserPrincipalName(value *string)() {
-    if m != nil {
-        m.userPrincipalName = value
-    }
+    m.userPrincipalName = value
 }

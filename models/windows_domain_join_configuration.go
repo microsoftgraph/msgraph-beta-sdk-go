@@ -33,27 +33,15 @@ func CreateWindowsDomainJoinConfigurationFromDiscriminatorValue(parseNode i878a8
 }
 // GetActiveDirectoryDomainName gets the activeDirectoryDomainName property value. Active Directory domain name to join.
 func (m *WindowsDomainJoinConfiguration) GetActiveDirectoryDomainName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.activeDirectoryDomainName
-    }
+    return m.activeDirectoryDomainName
 }
 // GetComputerNameStaticPrefix gets the computerNameStaticPrefix property value. Fixed prefix to be used for computer name.
 func (m *WindowsDomainJoinConfiguration) GetComputerNameStaticPrefix()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.computerNameStaticPrefix
-    }
+    return m.computerNameStaticPrefix
 }
 // GetComputerNameSuffixRandomCharCount gets the computerNameSuffixRandomCharCount property value. Dynamically generated characters used as suffix for computer name. Valid values 3 to 14
 func (m *WindowsDomainJoinConfiguration) GetComputerNameSuffixRandomCharCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.computerNameSuffixRandomCharCount
-    }
+    return m.computerNameSuffixRandomCharCount
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *WindowsDomainJoinConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -116,19 +104,11 @@ func (m *WindowsDomainJoinConfiguration) GetFieldDeserializers()(map[string]func
 }
 // GetNetworkAccessConfigurations gets the networkAccessConfigurations property value. Reference to device configurations required for network connectivity
 func (m *WindowsDomainJoinConfiguration) GetNetworkAccessConfigurations()([]DeviceConfigurationable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.networkAccessConfigurations
-    }
+    return m.networkAccessConfigurations
 }
 // GetOrganizationalUnit gets the organizationalUnit property value. Organizational unit (OU) where the computer account will be created. If this parameter is NULL, the well known computer object container will be used as published in the domain.
 func (m *WindowsDomainJoinConfiguration) GetOrganizationalUnit()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.organizationalUnit
-    }
+    return m.organizationalUnit
 }
 // Serialize serializes information the current object
 func (m *WindowsDomainJoinConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -174,31 +154,21 @@ func (m *WindowsDomainJoinConfiguration) Serialize(writer i878a80d2330e89d268963
 }
 // SetActiveDirectoryDomainName sets the activeDirectoryDomainName property value. Active Directory domain name to join.
 func (m *WindowsDomainJoinConfiguration) SetActiveDirectoryDomainName(value *string)() {
-    if m != nil {
-        m.activeDirectoryDomainName = value
-    }
+    m.activeDirectoryDomainName = value
 }
 // SetComputerNameStaticPrefix sets the computerNameStaticPrefix property value. Fixed prefix to be used for computer name.
 func (m *WindowsDomainJoinConfiguration) SetComputerNameStaticPrefix(value *string)() {
-    if m != nil {
-        m.computerNameStaticPrefix = value
-    }
+    m.computerNameStaticPrefix = value
 }
 // SetComputerNameSuffixRandomCharCount sets the computerNameSuffixRandomCharCount property value. Dynamically generated characters used as suffix for computer name. Valid values 3 to 14
 func (m *WindowsDomainJoinConfiguration) SetComputerNameSuffixRandomCharCount(value *int32)() {
-    if m != nil {
-        m.computerNameSuffixRandomCharCount = value
-    }
+    m.computerNameSuffixRandomCharCount = value
 }
 // SetNetworkAccessConfigurations sets the networkAccessConfigurations property value. Reference to device configurations required for network connectivity
 func (m *WindowsDomainJoinConfiguration) SetNetworkAccessConfigurations(value []DeviceConfigurationable)() {
-    if m != nil {
-        m.networkAccessConfigurations = value
-    }
+    m.networkAccessConfigurations = value
 }
 // SetOrganizationalUnit sets the organizationalUnit property value. Organizational unit (OU) where the computer account will be created. If this parameter is NULL, the well known computer object container will be used as published in the domain.
 func (m *WindowsDomainJoinConfiguration) SetOrganizationalUnit(value *string)() {
-    if m != nil {
-        m.organizationalUnit = value
-    }
+    m.organizationalUnit = value
 }

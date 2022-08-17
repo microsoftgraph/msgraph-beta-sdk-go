@@ -30,11 +30,7 @@ func CreateNumberRangeFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *NumberRange) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *NumberRange) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -73,27 +69,15 @@ func (m *NumberRange) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
 }
 // GetLowerNumber gets the lowerNumber property value. Lower number.
 func (m *NumberRange) GetLowerNumber()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lowerNumber
-    }
+    return m.lowerNumber
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *NumberRange) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetUpperNumber gets the upperNumber property value. Upper number.
 func (m *NumberRange) GetUpperNumber()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.upperNumber
-    }
+    return m.upperNumber
 }
 // Serialize serializes information the current object
 func (m *NumberRange) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -125,25 +109,17 @@ func (m *NumberRange) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *NumberRange) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetLowerNumber sets the lowerNumber property value. Lower number.
 func (m *NumberRange) SetLowerNumber(value *int32)() {
-    if m != nil {
-        m.lowerNumber = value
-    }
+    m.lowerNumber = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *NumberRange) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetUpperNumber sets the upperNumber property value. Upper number.
 func (m *NumberRange) SetUpperNumber(value *int32)() {
-    if m != nil {
-        m.upperNumber = value
-    }
+    m.upperNumber = value
 }

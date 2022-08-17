@@ -30,11 +30,7 @@ func CreateNetworkLocationDetailFromDiscriminatorValue(parseNode i878a80d2330e89
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *NetworkLocationDetail) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *NetworkLocationDetail) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -77,27 +73,15 @@ func (m *NetworkLocationDetail) GetFieldDeserializers()(map[string]func(i878a80d
 }
 // GetNetworkNames gets the networkNames property value. Provides the name of the network used when signing in.
 func (m *NetworkLocationDetail) GetNetworkNames()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.networkNames
-    }
+    return m.networkNames
 }
 // GetNetworkType gets the networkType property value. Provides the type of network used when signing in. Possible values are: intranet, extranet, namedNetwork, trusted, unknownFutureValue.
 func (m *NetworkLocationDetail) GetNetworkType()(*NetworkType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.networkType
-    }
+    return m.networkType
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *NetworkLocationDetail) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // Serialize serializes information the current object
 func (m *NetworkLocationDetail) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -130,25 +114,17 @@ func (m *NetworkLocationDetail) Serialize(writer i878a80d2330e89d26896388a3f487e
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *NetworkLocationDetail) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetNetworkNames sets the networkNames property value. Provides the name of the network used when signing in.
 func (m *NetworkLocationDetail) SetNetworkNames(value []string)() {
-    if m != nil {
-        m.networkNames = value
-    }
+    m.networkNames = value
 }
 // SetNetworkType sets the networkType property value. Provides the type of network used when signing in. Possible values are: intranet, extranet, namedNetwork, trusted, unknownFutureValue.
 func (m *NetworkLocationDetail) SetNetworkType(value *NetworkType)() {
-    if m != nil {
-        m.networkType = value
-    }
+    m.networkType = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *NetworkLocationDetail) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }

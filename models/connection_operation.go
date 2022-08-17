@@ -27,11 +27,7 @@ func CreateConnectionOperationFromDiscriminatorValue(parseNode i878a80d2330e89d2
 }
 // GetError gets the error property value. The error property
 func (m *ConnectionOperation) GetError()(PublicErrorable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.error
-    }
+    return m.error
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ConnectionOperation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -60,11 +56,7 @@ func (m *ConnectionOperation) GetFieldDeserializers()(map[string]func(i878a80d23
 }
 // GetStatus gets the status property value. The status property
 func (m *ConnectionOperation) GetStatus()(*ConnectionOperationStatus) {
-    if m == nil {
-        return nil
-    } else {
-        return m.status
-    }
+    return m.status
 }
 // Serialize serializes information the current object
 func (m *ConnectionOperation) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -89,13 +81,9 @@ func (m *ConnectionOperation) Serialize(writer i878a80d2330e89d26896388a3f487eef
 }
 // SetError sets the error property value. The error property
 func (m *ConnectionOperation) SetError(value PublicErrorable)() {
-    if m != nil {
-        m.error = value
-    }
+    m.error = value
 }
 // SetStatus sets the status property value. The status property
 func (m *ConnectionOperation) SetStatus(value *ConnectionOperationStatus)() {
-    if m != nil {
-        m.status = value
-    }
+    m.status = value
 }

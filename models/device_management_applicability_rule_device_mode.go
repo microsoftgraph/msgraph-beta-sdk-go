@@ -32,19 +32,11 @@ func CreateDeviceManagementApplicabilityRuleDeviceModeFromDiscriminatorValue(par
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DeviceManagementApplicabilityRuleDeviceMode) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetDeviceMode gets the deviceMode property value. Windows 10 Device Mode type.
 func (m *DeviceManagementApplicabilityRuleDeviceMode) GetDeviceMode()(*Windows10DeviceModeType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deviceMode
-    }
+    return m.deviceMode
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceManagementApplicabilityRuleDeviceMode) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -93,27 +85,15 @@ func (m *DeviceManagementApplicabilityRuleDeviceMode) GetFieldDeserializers()(ma
 }
 // GetName gets the name property value. Name for object.
 func (m *DeviceManagementApplicabilityRuleDeviceMode) GetName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.name
-    }
+    return m.name
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *DeviceManagementApplicabilityRuleDeviceMode) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetRuleType gets the ruleType property value. Supported Applicability rule types for Device Configuration
 func (m *DeviceManagementApplicabilityRuleDeviceMode) GetRuleType()(*DeviceManagementApplicabilityRuleType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.ruleType
-    }
+    return m.ruleType
 }
 // Serialize serializes information the current object
 func (m *DeviceManagementApplicabilityRuleDeviceMode) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -153,31 +133,21 @@ func (m *DeviceManagementApplicabilityRuleDeviceMode) Serialize(writer i878a80d2
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DeviceManagementApplicabilityRuleDeviceMode) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetDeviceMode sets the deviceMode property value. Windows 10 Device Mode type.
 func (m *DeviceManagementApplicabilityRuleDeviceMode) SetDeviceMode(value *Windows10DeviceModeType)() {
-    if m != nil {
-        m.deviceMode = value
-    }
+    m.deviceMode = value
 }
 // SetName sets the name property value. Name for object.
 func (m *DeviceManagementApplicabilityRuleDeviceMode) SetName(value *string)() {
-    if m != nil {
-        m.name = value
-    }
+    m.name = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *DeviceManagementApplicabilityRuleDeviceMode) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetRuleType sets the ruleType property value. Supported Applicability rule types for Device Configuration
 func (m *DeviceManagementApplicabilityRuleDeviceMode) SetRuleType(value *DeviceManagementApplicabilityRuleType)() {
-    if m != nil {
-        m.ruleType = value
-    }
+    m.ruleType = value
 }

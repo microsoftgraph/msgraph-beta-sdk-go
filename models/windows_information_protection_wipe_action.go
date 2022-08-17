@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// WindowsInformationProtectionWipeAction 
+// WindowsInformationProtectionWipeAction represents wipe requests issued by tenant admin for Bring-Your-Own-Device(BYOD) Windows devices.
 type WindowsInformationProtectionWipeAction struct {
     Entity
     // Last checkin time of the device that was targeted by this wipe action.
@@ -21,7 +21,7 @@ type WindowsInformationProtectionWipeAction struct {
     // The UserId being targeted by this wipe action.
     targetedUserId *string
 }
-// NewWindowsInformationProtectionWipeAction instantiates a new WindowsInformationProtectionWipeAction and sets the default values.
+// NewWindowsInformationProtectionWipeAction instantiates a new windowsInformationProtectionWipeAction and sets the default values.
 func NewWindowsInformationProtectionWipeAction()(*WindowsInformationProtectionWipeAction) {
     m := &WindowsInformationProtectionWipeAction{
         Entity: *NewEntity(),
@@ -101,51 +101,27 @@ func (m *WindowsInformationProtectionWipeAction) GetFieldDeserializers()(map[str
 }
 // GetLastCheckInDateTime gets the lastCheckInDateTime property value. Last checkin time of the device that was targeted by this wipe action.
 func (m *WindowsInformationProtectionWipeAction) GetLastCheckInDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastCheckInDateTime
-    }
+    return m.lastCheckInDateTime
 }
 // GetStatus gets the status property value. The status property
 func (m *WindowsInformationProtectionWipeAction) GetStatus()(*ActionState) {
-    if m == nil {
-        return nil
-    } else {
-        return m.status
-    }
+    return m.status
 }
 // GetTargetedDeviceMacAddress gets the targetedDeviceMacAddress property value. Targeted device Mac address.
 func (m *WindowsInformationProtectionWipeAction) GetTargetedDeviceMacAddress()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.targetedDeviceMacAddress
-    }
+    return m.targetedDeviceMacAddress
 }
 // GetTargetedDeviceName gets the targetedDeviceName property value. Targeted device name.
 func (m *WindowsInformationProtectionWipeAction) GetTargetedDeviceName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.targetedDeviceName
-    }
+    return m.targetedDeviceName
 }
 // GetTargetedDeviceRegistrationId gets the targetedDeviceRegistrationId property value. The DeviceRegistrationId being targeted by this wipe action.
 func (m *WindowsInformationProtectionWipeAction) GetTargetedDeviceRegistrationId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.targetedDeviceRegistrationId
-    }
+    return m.targetedDeviceRegistrationId
 }
 // GetTargetedUserId gets the targetedUserId property value. The UserId being targeted by this wipe action.
 func (m *WindowsInformationProtectionWipeAction) GetTargetedUserId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.targetedUserId
-    }
+    return m.targetedUserId
 }
 // Serialize serializes information the current object
 func (m *WindowsInformationProtectionWipeAction) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -194,37 +170,25 @@ func (m *WindowsInformationProtectionWipeAction) Serialize(writer i878a80d2330e8
 }
 // SetLastCheckInDateTime sets the lastCheckInDateTime property value. Last checkin time of the device that was targeted by this wipe action.
 func (m *WindowsInformationProtectionWipeAction) SetLastCheckInDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.lastCheckInDateTime = value
-    }
+    m.lastCheckInDateTime = value
 }
 // SetStatus sets the status property value. The status property
 func (m *WindowsInformationProtectionWipeAction) SetStatus(value *ActionState)() {
-    if m != nil {
-        m.status = value
-    }
+    m.status = value
 }
 // SetTargetedDeviceMacAddress sets the targetedDeviceMacAddress property value. Targeted device Mac address.
 func (m *WindowsInformationProtectionWipeAction) SetTargetedDeviceMacAddress(value *string)() {
-    if m != nil {
-        m.targetedDeviceMacAddress = value
-    }
+    m.targetedDeviceMacAddress = value
 }
 // SetTargetedDeviceName sets the targetedDeviceName property value. Targeted device name.
 func (m *WindowsInformationProtectionWipeAction) SetTargetedDeviceName(value *string)() {
-    if m != nil {
-        m.targetedDeviceName = value
-    }
+    m.targetedDeviceName = value
 }
 // SetTargetedDeviceRegistrationId sets the targetedDeviceRegistrationId property value. The DeviceRegistrationId being targeted by this wipe action.
 func (m *WindowsInformationProtectionWipeAction) SetTargetedDeviceRegistrationId(value *string)() {
-    if m != nil {
-        m.targetedDeviceRegistrationId = value
-    }
+    m.targetedDeviceRegistrationId = value
 }
 // SetTargetedUserId sets the targetedUserId property value. The UserId being targeted by this wipe action.
 func (m *WindowsInformationProtectionWipeAction) SetTargetedUserId(value *string)() {
-    if m != nil {
-        m.targetedUserId = value
-    }
+    m.targetedUserId = value
 }

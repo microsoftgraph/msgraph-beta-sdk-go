@@ -27,19 +27,11 @@ func CreateAzureADDeviceFromDiscriminatorValue(parseNode i878a80d2330e89d2689638
 }
 // GetEnrollments gets the enrollments property value. Specifies areas of the service in which the device is enrolled. Read-only. Returned by default.
 func (m *AzureADDevice) GetEnrollments()([]UpdatableAssetEnrollmentable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.enrollments
-    }
+    return m.enrollments
 }
 // GetErrors gets the errors property value. Specifies any errors that prevent the device from being enrolled in update management or receving deployed content. Read-only. Returned by default.
 func (m *AzureADDevice) GetErrors()([]UpdatableAssetErrorable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.errors
-    }
+    return m.errors
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AzureADDevice) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -104,13 +96,9 @@ func (m *AzureADDevice) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
 }
 // SetEnrollments sets the enrollments property value. Specifies areas of the service in which the device is enrolled. Read-only. Returned by default.
 func (m *AzureADDevice) SetEnrollments(value []UpdatableAssetEnrollmentable)() {
-    if m != nil {
-        m.enrollments = value
-    }
+    m.enrollments = value
 }
 // SetErrors sets the errors property value. Specifies any errors that prevent the device from being enrolled in update management or receving deployed content. Read-only. Returned by default.
 func (m *AzureADDevice) SetErrors(value []UpdatableAssetErrorable)() {
-    if m != nil {
-        m.errors = value
-    }
+    m.errors = value
 }

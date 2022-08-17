@@ -29,11 +29,7 @@ func CreateCloudCommunicationsFromDiscriminatorValue(parseNode i878a80d2330e89d2
 }
 // GetCalls gets the calls property value. The calls property
 func (m *CloudCommunications) GetCalls()([]Callable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.calls
-    }
+    return m.calls
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *CloudCommunications) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -84,19 +80,11 @@ func (m *CloudCommunications) GetFieldDeserializers()(map[string]func(i878a80d23
 }
 // GetOnlineMeetings gets the onlineMeetings property value. The onlineMeetings property
 func (m *CloudCommunications) GetOnlineMeetings()([]OnlineMeetingable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.onlineMeetings
-    }
+    return m.onlineMeetings
 }
 // GetPresences gets the presences property value. The presences property
 func (m *CloudCommunications) GetPresences()([]Presenceable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.presences
-    }
+    return m.presences
 }
 // Serialize serializes information the current object
 func (m *CloudCommunications) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -138,19 +126,13 @@ func (m *CloudCommunications) Serialize(writer i878a80d2330e89d26896388a3f487eef
 }
 // SetCalls sets the calls property value. The calls property
 func (m *CloudCommunications) SetCalls(value []Callable)() {
-    if m != nil {
-        m.calls = value
-    }
+    m.calls = value
 }
 // SetOnlineMeetings sets the onlineMeetings property value. The onlineMeetings property
 func (m *CloudCommunications) SetOnlineMeetings(value []OnlineMeetingable)() {
-    if m != nil {
-        m.onlineMeetings = value
-    }
+    m.onlineMeetings = value
 }
 // SetPresences sets the presences property value. The presences property
 func (m *CloudCommunications) SetPresences(value []Presenceable)() {
-    if m != nil {
-        m.presences = value
-    }
+    m.presences = value
 }

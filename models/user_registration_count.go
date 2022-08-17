@@ -30,11 +30,7 @@ func CreateUserRegistrationCountFromDiscriminatorValue(parseNode i878a80d2330e89
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *UserRegistrationCount) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *UserRegistrationCount) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -73,27 +69,15 @@ func (m *UserRegistrationCount) GetFieldDeserializers()(map[string]func(i878a80d
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *UserRegistrationCount) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetRegistrationCount gets the registrationCount property value. Provides the registration count for your tenant.
 func (m *UserRegistrationCount) GetRegistrationCount()(*int64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.registrationCount
-    }
+    return m.registrationCount
 }
 // GetRegistrationStatus gets the registrationStatus property value. The registrationStatus property
 func (m *UserRegistrationCount) GetRegistrationStatus()(*RegistrationStatusType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.registrationStatus
-    }
+    return m.registrationStatus
 }
 // Serialize serializes information the current object
 func (m *UserRegistrationCount) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -126,25 +110,17 @@ func (m *UserRegistrationCount) Serialize(writer i878a80d2330e89d26896388a3f487e
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *UserRegistrationCount) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *UserRegistrationCount) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetRegistrationCount sets the registrationCount property value. Provides the registration count for your tenant.
 func (m *UserRegistrationCount) SetRegistrationCount(value *int64)() {
-    if m != nil {
-        m.registrationCount = value
-    }
+    m.registrationCount = value
 }
 // SetRegistrationStatus sets the registrationStatus property value. The registrationStatus property
 func (m *UserRegistrationCount) SetRegistrationStatus(value *RegistrationStatusType)() {
-    if m != nil {
-        m.registrationStatus = value
-    }
+    m.registrationStatus = value
 }

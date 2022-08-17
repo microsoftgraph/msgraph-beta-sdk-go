@@ -24,7 +24,7 @@ type CaseOperation struct {
     // The status of the case operation. Possible values are: notStarted, submissionFailed, running, succeeded, partiallySucceeded, failed.
     status *CaseOperationStatus
 }
-// NewCaseOperation instantiates a new caseOperation and sets the default values.
+// NewCaseOperation instantiates a new CaseOperation and sets the default values.
 func NewCaseOperation()(*CaseOperation) {
     m := &CaseOperation{
         Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),
@@ -70,35 +70,19 @@ func CreateCaseOperationFromDiscriminatorValue(parseNode i878a80d2330e89d2689638
 }
 // GetAction gets the action property value. The type of action the operation represents. Possible values are: addToReviewSet,applyTags,contentExport,convertToPdf,estimateStatistics, purgeData
 func (m *CaseOperation) GetAction()(*CaseAction) {
-    if m == nil {
-        return nil
-    } else {
-        return m.action
-    }
+    return m.action
 }
 // GetCompletedDateTime gets the completedDateTime property value. The date and time the operation was completed.
 func (m *CaseOperation) GetCompletedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.completedDateTime
-    }
+    return m.completedDateTime
 }
 // GetCreatedBy gets the createdBy property value. The user that created the operation.
 func (m *CaseOperation) GetCreatedBy()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentitySetable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.createdBy
-    }
+    return m.createdBy
 }
 // GetCreatedDateTime gets the createdDateTime property value. The date and time the operation was created.
 func (m *CaseOperation) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.createdDateTime
-    }
+    return m.createdDateTime
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *CaseOperation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -177,27 +161,15 @@ func (m *CaseOperation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
 }
 // GetPercentProgress gets the percentProgress property value. The progress of the operation.
 func (m *CaseOperation) GetPercentProgress()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.percentProgress
-    }
+    return m.percentProgress
 }
 // GetResultInfo gets the resultInfo property value. Contains success and failure-specific result information.
 func (m *CaseOperation) GetResultInfo()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ResultInfoable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.resultInfo
-    }
+    return m.resultInfo
 }
 // GetStatus gets the status property value. The status of the case operation. Possible values are: notStarted, submissionFailed, running, succeeded, partiallySucceeded, failed.
 func (m *CaseOperation) GetStatus()(*CaseOperationStatus) {
-    if m == nil {
-        return nil
-    } else {
-        return m.status
-    }
+    return m.status
 }
 // Serialize serializes information the current object
 func (m *CaseOperation) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -253,43 +225,29 @@ func (m *CaseOperation) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
 }
 // SetAction sets the action property value. The type of action the operation represents. Possible values are: addToReviewSet,applyTags,contentExport,convertToPdf,estimateStatistics, purgeData
 func (m *CaseOperation) SetAction(value *CaseAction)() {
-    if m != nil {
-        m.action = value
-    }
+    m.action = value
 }
 // SetCompletedDateTime sets the completedDateTime property value. The date and time the operation was completed.
 func (m *CaseOperation) SetCompletedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.completedDateTime = value
-    }
+    m.completedDateTime = value
 }
 // SetCreatedBy sets the createdBy property value. The user that created the operation.
 func (m *CaseOperation) SetCreatedBy(value ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentitySetable)() {
-    if m != nil {
-        m.createdBy = value
-    }
+    m.createdBy = value
 }
 // SetCreatedDateTime sets the createdDateTime property value. The date and time the operation was created.
 func (m *CaseOperation) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.createdDateTime = value
-    }
+    m.createdDateTime = value
 }
 // SetPercentProgress sets the percentProgress property value. The progress of the operation.
 func (m *CaseOperation) SetPercentProgress(value *int32)() {
-    if m != nil {
-        m.percentProgress = value
-    }
+    m.percentProgress = value
 }
 // SetResultInfo sets the resultInfo property value. Contains success and failure-specific result information.
 func (m *CaseOperation) SetResultInfo(value ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ResultInfoable)() {
-    if m != nil {
-        m.resultInfo = value
-    }
+    m.resultInfo = value
 }
 // SetStatus sets the status property value. The status of the case operation. Possible values are: notStarted, submissionFailed, running, succeeded, partiallySucceeded, failed.
 func (m *CaseOperation) SetStatus(value *CaseOperationStatus)() {
-    if m != nil {
-        m.status = value
-    }
+    m.status = value
 }

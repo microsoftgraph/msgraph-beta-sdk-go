@@ -24,19 +24,11 @@ func CreateSignDigestPostRequestBodyFromDiscriminatorValue(parseNode i878a80d233
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SignDigestPostRequestBody) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetDigest gets the digest property value. The digest property
 func (m *SignDigestPostRequestBody) GetDigest()([]byte) {
-    if m == nil {
-        return nil
-    } else {
-        return m.digest
-    }
+    return m.digest
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *SignDigestPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -71,13 +63,9 @@ func (m *SignDigestPostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SignDigestPostRequestBody) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetDigest sets the digest property value. The digest property
 func (m *SignDigestPostRequestBody) SetDigest(value []byte)() {
-    if m != nil {
-        m.digest = value
-    }
+    m.digest = value
 }

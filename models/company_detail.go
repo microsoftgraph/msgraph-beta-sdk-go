@@ -38,35 +38,19 @@ func CreateCompanyDetailFromDiscriminatorValue(parseNode i878a80d2330e89d2689638
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CompanyDetail) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetAddress gets the address property value. Address of the company.
 func (m *CompanyDetail) GetAddress()(PhysicalAddressable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.address
-    }
+    return m.address
 }
 // GetDepartment gets the department property value. Department Name within a company.
 func (m *CompanyDetail) GetDepartment()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.department
-    }
+    return m.department
 }
 // GetDisplayName gets the displayName property value. Company name.
 func (m *CompanyDetail) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *CompanyDetail) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -145,35 +129,19 @@ func (m *CompanyDetail) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *CompanyDetail) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetOfficeLocation gets the officeLocation property value. Office Location of the person referred to.
 func (m *CompanyDetail) GetOfficeLocation()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.officeLocation
-    }
+    return m.officeLocation
 }
 // GetPronunciation gets the pronunciation property value. Pronunciation guide for the company name.
 func (m *CompanyDetail) GetPronunciation()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.pronunciation
-    }
+    return m.pronunciation
 }
 // GetWebUrl gets the webUrl property value. Link to the company home page.
 func (m *CompanyDetail) GetWebUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.webUrl
-    }
+    return m.webUrl
 }
 // Serialize serializes information the current object
 func (m *CompanyDetail) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -229,49 +197,33 @@ func (m *CompanyDetail) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CompanyDetail) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetAddress sets the address property value. Address of the company.
 func (m *CompanyDetail) SetAddress(value PhysicalAddressable)() {
-    if m != nil {
-        m.address = value
-    }
+    m.address = value
 }
 // SetDepartment sets the department property value. Department Name within a company.
 func (m *CompanyDetail) SetDepartment(value *string)() {
-    if m != nil {
-        m.department = value
-    }
+    m.department = value
 }
 // SetDisplayName sets the displayName property value. Company name.
 func (m *CompanyDetail) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *CompanyDetail) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetOfficeLocation sets the officeLocation property value. Office Location of the person referred to.
 func (m *CompanyDetail) SetOfficeLocation(value *string)() {
-    if m != nil {
-        m.officeLocation = value
-    }
+    m.officeLocation = value
 }
 // SetPronunciation sets the pronunciation property value. Pronunciation guide for the company name.
 func (m *CompanyDetail) SetPronunciation(value *string)() {
-    if m != nil {
-        m.pronunciation = value
-    }
+    m.pronunciation = value
 }
 // SetWebUrl sets the webUrl property value. Link to the company home page.
 func (m *CompanyDetail) SetWebUrl(value *string)() {
-    if m != nil {
-        m.webUrl = value
-    }
+    m.webUrl = value
 }

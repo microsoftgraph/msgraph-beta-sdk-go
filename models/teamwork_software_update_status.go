@@ -32,27 +32,15 @@ func CreateTeamworkSoftwareUpdateStatusFromDiscriminatorValue(parseNode i878a80d
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TeamworkSoftwareUpdateStatus) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetAvailableVersion gets the availableVersion property value. The available software version to update.
 func (m *TeamworkSoftwareUpdateStatus) GetAvailableVersion()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.availableVersion
-    }
+    return m.availableVersion
 }
 // GetCurrentVersion gets the currentVersion property value. The current software version.
 func (m *TeamworkSoftwareUpdateStatus) GetCurrentVersion()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.currentVersion
-    }
+    return m.currentVersion
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *TeamworkSoftwareUpdateStatus) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -101,19 +89,11 @@ func (m *TeamworkSoftwareUpdateStatus) GetFieldDeserializers()(map[string]func(i
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *TeamworkSoftwareUpdateStatus) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetSoftwareFreshness gets the softwareFreshness property value. The update status of the software. The possible values are: unknown, latest, updateAvailable, unknownFutureValue.
 func (m *TeamworkSoftwareUpdateStatus) GetSoftwareFreshness()(*TeamworkSoftwareFreshness) {
-    if m == nil {
-        return nil
-    } else {
-        return m.softwareFreshness
-    }
+    return m.softwareFreshness
 }
 // Serialize serializes information the current object
 func (m *TeamworkSoftwareUpdateStatus) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -152,31 +132,21 @@ func (m *TeamworkSoftwareUpdateStatus) Serialize(writer i878a80d2330e89d26896388
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TeamworkSoftwareUpdateStatus) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetAvailableVersion sets the availableVersion property value. The available software version to update.
 func (m *TeamworkSoftwareUpdateStatus) SetAvailableVersion(value *string)() {
-    if m != nil {
-        m.availableVersion = value
-    }
+    m.availableVersion = value
 }
 // SetCurrentVersion sets the currentVersion property value. The current software version.
 func (m *TeamworkSoftwareUpdateStatus) SetCurrentVersion(value *string)() {
-    if m != nil {
-        m.currentVersion = value
-    }
+    m.currentVersion = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *TeamworkSoftwareUpdateStatus) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetSoftwareFreshness sets the softwareFreshness property value. The update status of the software. The possible values are: unknown, latest, updateAvailable, unknownFutureValue.
 func (m *TeamworkSoftwareUpdateStatus) SetSoftwareFreshness(value *TeamworkSoftwareFreshness)() {
-    if m != nil {
-        m.softwareFreshness = value
-    }
+    m.softwareFreshness = value
 }

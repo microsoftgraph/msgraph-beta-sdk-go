@@ -32,19 +32,11 @@ func CreateDeviceHealthScriptRemediationHistoryDataFromDiscriminatorValue(parseN
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DeviceHealthScriptRemediationHistoryData) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetDate gets the date property value. The date on which devices were remediated by the device health script.
 func (m *DeviceHealthScriptRemediationHistoryData) GetDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly) {
-    if m == nil {
-        return nil
-    } else {
-        return m.date
-    }
+    return m.date
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceHealthScriptRemediationHistoryData) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -93,27 +85,15 @@ func (m *DeviceHealthScriptRemediationHistoryData) GetFieldDeserializers()(map[s
 }
 // GetNoIssueDeviceCount gets the noIssueDeviceCount property value. The number of devices that were found to have no issue by the device health script.
 func (m *DeviceHealthScriptRemediationHistoryData) GetNoIssueDeviceCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.noIssueDeviceCount
-    }
+    return m.noIssueDeviceCount
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *DeviceHealthScriptRemediationHistoryData) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetRemediatedDeviceCount gets the remediatedDeviceCount property value. The number of devices remediated by the device health script.
 func (m *DeviceHealthScriptRemediationHistoryData) GetRemediatedDeviceCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.remediatedDeviceCount
-    }
+    return m.remediatedDeviceCount
 }
 // Serialize serializes information the current object
 func (m *DeviceHealthScriptRemediationHistoryData) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -151,31 +131,21 @@ func (m *DeviceHealthScriptRemediationHistoryData) Serialize(writer i878a80d2330
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DeviceHealthScriptRemediationHistoryData) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetDate sets the date property value. The date on which devices were remediated by the device health script.
 func (m *DeviceHealthScriptRemediationHistoryData) SetDate(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)() {
-    if m != nil {
-        m.date = value
-    }
+    m.date = value
 }
 // SetNoIssueDeviceCount sets the noIssueDeviceCount property value. The number of devices that were found to have no issue by the device health script.
 func (m *DeviceHealthScriptRemediationHistoryData) SetNoIssueDeviceCount(value *int32)() {
-    if m != nil {
-        m.noIssueDeviceCount = value
-    }
+    m.noIssueDeviceCount = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *DeviceHealthScriptRemediationHistoryData) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetRemediatedDeviceCount sets the remediatedDeviceCount property value. The number of devices remediated by the device health script.
 func (m *DeviceHealthScriptRemediationHistoryData) SetRemediatedDeviceCount(value *int32)() {
-    if m != nil {
-        m.remediatedDeviceCount = value
-    }
+    m.remediatedDeviceCount = value
 }

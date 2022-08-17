@@ -39,27 +39,15 @@ func CreatePlannerUserFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a
 }
 // GetAll gets the all property value. The all property
 func (m *PlannerUser) GetAll()([]PlannerDeltaable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.all
-    }
+    return m.all
 }
 // GetFavoritePlanReferences gets the favoritePlanReferences property value. A collection containing the references to the plans that the user has marked as favorites.
 func (m *PlannerUser) GetFavoritePlanReferences()(PlannerFavoritePlanReferenceCollectionable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.favoritePlanReferences
-    }
+    return m.favoritePlanReferences
 }
 // GetFavoritePlans gets the favoritePlans property value. Read-only. Nullable. Returns the plannerPlans that the user marked as favorites.
 func (m *PlannerUser) GetFavoritePlans()([]PlannerPlanable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.favoritePlans
-    }
+    return m.favoritePlans
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *PlannerUser) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -172,43 +160,23 @@ func (m *PlannerUser) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
 }
 // GetPlans gets the plans property value. Read-only. Nullable. Returns the plannerTasks assigned to the user.
 func (m *PlannerUser) GetPlans()([]PlannerPlanable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.plans
-    }
+    return m.plans
 }
 // GetRecentPlanReferences gets the recentPlanReferences property value. A collection containing references to the plans that were viewed recently by the user in apps that support recent plans.
 func (m *PlannerUser) GetRecentPlanReferences()(PlannerRecentPlanReferenceCollectionable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.recentPlanReferences
-    }
+    return m.recentPlanReferences
 }
 // GetRecentPlans gets the recentPlans property value. Read-only. Nullable. Returns the plannerPlans that have been recently viewed by the user in apps that support recent plans.
 func (m *PlannerUser) GetRecentPlans()([]PlannerPlanable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.recentPlans
-    }
+    return m.recentPlans
 }
 // GetRosterPlans gets the rosterPlans property value. Read-only. Nullable. Returns the plannerPlans contained by the plannerRosters the user is a member.
 func (m *PlannerUser) GetRosterPlans()([]PlannerPlanable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.rosterPlans
-    }
+    return m.rosterPlans
 }
 // GetTasks gets the tasks property value. Read-only. Nullable. Returns the plannerTasks assigned to the user.
 func (m *PlannerUser) GetTasks()([]PlannerTaskable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.tasks
-    }
+    return m.tasks
 }
 // Serialize serializes information the current object
 func (m *PlannerUser) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -292,49 +260,33 @@ func (m *PlannerUser) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
 }
 // SetAll sets the all property value. The all property
 func (m *PlannerUser) SetAll(value []PlannerDeltaable)() {
-    if m != nil {
-        m.all = value
-    }
+    m.all = value
 }
 // SetFavoritePlanReferences sets the favoritePlanReferences property value. A collection containing the references to the plans that the user has marked as favorites.
 func (m *PlannerUser) SetFavoritePlanReferences(value PlannerFavoritePlanReferenceCollectionable)() {
-    if m != nil {
-        m.favoritePlanReferences = value
-    }
+    m.favoritePlanReferences = value
 }
 // SetFavoritePlans sets the favoritePlans property value. Read-only. Nullable. Returns the plannerPlans that the user marked as favorites.
 func (m *PlannerUser) SetFavoritePlans(value []PlannerPlanable)() {
-    if m != nil {
-        m.favoritePlans = value
-    }
+    m.favoritePlans = value
 }
 // SetPlans sets the plans property value. Read-only. Nullable. Returns the plannerTasks assigned to the user.
 func (m *PlannerUser) SetPlans(value []PlannerPlanable)() {
-    if m != nil {
-        m.plans = value
-    }
+    m.plans = value
 }
 // SetRecentPlanReferences sets the recentPlanReferences property value. A collection containing references to the plans that were viewed recently by the user in apps that support recent plans.
 func (m *PlannerUser) SetRecentPlanReferences(value PlannerRecentPlanReferenceCollectionable)() {
-    if m != nil {
-        m.recentPlanReferences = value
-    }
+    m.recentPlanReferences = value
 }
 // SetRecentPlans sets the recentPlans property value. Read-only. Nullable. Returns the plannerPlans that have been recently viewed by the user in apps that support recent plans.
 func (m *PlannerUser) SetRecentPlans(value []PlannerPlanable)() {
-    if m != nil {
-        m.recentPlans = value
-    }
+    m.recentPlans = value
 }
 // SetRosterPlans sets the rosterPlans property value. Read-only. Nullable. Returns the plannerPlans contained by the plannerRosters the user is a member.
 func (m *PlannerUser) SetRosterPlans(value []PlannerPlanable)() {
-    if m != nil {
-        m.rosterPlans = value
-    }
+    m.rosterPlans = value
 }
 // SetTasks sets the tasks property value. Read-only. Nullable. Returns the plannerTasks assigned to the user.
 func (m *PlannerUser) SetTasks(value []PlannerTaskable)() {
-    if m != nil {
-        m.tasks = value
-    }
+    m.tasks = value
 }

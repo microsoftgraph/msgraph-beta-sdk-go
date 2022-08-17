@@ -30,27 +30,15 @@ func CreateMacOSFirewallApplicationFromDiscriminatorValue(parseNode i878a80d2330
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *MacOSFirewallApplication) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetAllowsIncomingConnections gets the allowsIncomingConnections property value. Whether or not incoming connections are allowed.
 func (m *MacOSFirewallApplication) GetAllowsIncomingConnections()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.allowsIncomingConnections
-    }
+    return m.allowsIncomingConnections
 }
 // GetBundleId gets the bundleId property value. BundleId of the application.
 func (m *MacOSFirewallApplication) GetBundleId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.bundleId
-    }
+    return m.bundleId
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *MacOSFirewallApplication) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -89,11 +77,7 @@ func (m *MacOSFirewallApplication) GetFieldDeserializers()(map[string]func(i878a
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *MacOSFirewallApplication) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // Serialize serializes information the current object
 func (m *MacOSFirewallApplication) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -125,25 +109,17 @@ func (m *MacOSFirewallApplication) Serialize(writer i878a80d2330e89d26896388a3f4
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *MacOSFirewallApplication) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetAllowsIncomingConnections sets the allowsIncomingConnections property value. Whether or not incoming connections are allowed.
 func (m *MacOSFirewallApplication) SetAllowsIncomingConnections(value *bool)() {
-    if m != nil {
-        m.allowsIncomingConnections = value
-    }
+    m.allowsIncomingConnections = value
 }
 // SetBundleId sets the bundleId property value. BundleId of the application.
 func (m *MacOSFirewallApplication) SetBundleId(value *string)() {
-    if m != nil {
-        m.bundleId = value
-    }
+    m.bundleId = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *MacOSFirewallApplication) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }

@@ -34,35 +34,19 @@ func CreateDiscoveredSensitiveTypeFromDiscriminatorValue(parseNode i878a80d2330e
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DiscoveredSensitiveType) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetClassificationAttributes gets the classificationAttributes property value. The classificationAttributes property
 func (m *DiscoveredSensitiveType) GetClassificationAttributes()([]ClassificationAttributeable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.classificationAttributes
-    }
+    return m.classificationAttributes
 }
 // GetConfidence gets the confidence property value. The confidence property
 func (m *DiscoveredSensitiveType) GetConfidence()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.confidence
-    }
+    return m.confidence
 }
 // GetCount gets the count property value. The count property
 func (m *DiscoveredSensitiveType) GetCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.count
-    }
+    return m.count
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DiscoveredSensitiveType) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -125,19 +109,11 @@ func (m *DiscoveredSensitiveType) GetFieldDeserializers()(map[string]func(i878a8
 }
 // GetId gets the id property value. The id property
 func (m *DiscoveredSensitiveType) GetId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.id
-    }
+    return m.id
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *DiscoveredSensitiveType) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // Serialize serializes information the current object
 func (m *DiscoveredSensitiveType) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -185,37 +161,25 @@ func (m *DiscoveredSensitiveType) Serialize(writer i878a80d2330e89d26896388a3f48
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DiscoveredSensitiveType) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetClassificationAttributes sets the classificationAttributes property value. The classificationAttributes property
 func (m *DiscoveredSensitiveType) SetClassificationAttributes(value []ClassificationAttributeable)() {
-    if m != nil {
-        m.classificationAttributes = value
-    }
+    m.classificationAttributes = value
 }
 // SetConfidence sets the confidence property value. The confidence property
 func (m *DiscoveredSensitiveType) SetConfidence(value *int32)() {
-    if m != nil {
-        m.confidence = value
-    }
+    m.confidence = value
 }
 // SetCount sets the count property value. The count property
 func (m *DiscoveredSensitiveType) SetCount(value *int32)() {
-    if m != nil {
-        m.count = value
-    }
+    m.count = value
 }
 // SetId sets the id property value. The id property
 func (m *DiscoveredSensitiveType) SetId(value *string)() {
-    if m != nil {
-        m.id = value
-    }
+    m.id = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *DiscoveredSensitiveType) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }

@@ -34,19 +34,11 @@ func CreateAttributeMappingSourceFromDiscriminatorValue(parseNode i878a80d2330e8
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AttributeMappingSource) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetExpression gets the expression property value. The expression property
 func (m *AttributeMappingSource) GetExpression()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.expression
-    }
+    return m.expression
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AttributeMappingSource) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -109,35 +101,19 @@ func (m *AttributeMappingSource) GetFieldDeserializers()(map[string]func(i878a80
 }
 // GetName gets the name property value. The name property
 func (m *AttributeMappingSource) GetName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.name
-    }
+    return m.name
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *AttributeMappingSource) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetParameters gets the parameters property value. The parameters property
 func (m *AttributeMappingSource) GetParameters()([]StringKeyAttributeMappingSourceValuePairable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.parameters
-    }
+    return m.parameters
 }
 // GetType gets the type property value. The type property
 func (m *AttributeMappingSource) GetType()(*AttributeMappingSourceType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.type_escaped
-    }
+    return m.type_escaped
 }
 // Serialize serializes information the current object
 func (m *AttributeMappingSource) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -186,37 +162,25 @@ func (m *AttributeMappingSource) Serialize(writer i878a80d2330e89d26896388a3f487
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AttributeMappingSource) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetExpression sets the expression property value. The expression property
 func (m *AttributeMappingSource) SetExpression(value *string)() {
-    if m != nil {
-        m.expression = value
-    }
+    m.expression = value
 }
 // SetName sets the name property value. The name property
 func (m *AttributeMappingSource) SetName(value *string)() {
-    if m != nil {
-        m.name = value
-    }
+    m.name = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *AttributeMappingSource) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetParameters sets the parameters property value. The parameters property
 func (m *AttributeMappingSource) SetParameters(value []StringKeyAttributeMappingSourceValuePairable)() {
-    if m != nil {
-        m.parameters = value
-    }
+    m.parameters = value
 }
 // SetType sets the type property value. The type property
 func (m *AttributeMappingSource) SetType(value *AttributeMappingSourceType)() {
-    if m != nil {
-        m.type_escaped = value
-    }
+    m.type_escaped = value
 }

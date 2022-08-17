@@ -52,19 +52,11 @@ func (m *QualityUpdateCatalogEntry) GetFieldDeserializers()(map[string]func(i878
 }
 // GetIsExpeditable gets the isExpeditable property value. Indicates whether the content can be deployed as an expedited quality update. Read-only.
 func (m *QualityUpdateCatalogEntry) GetIsExpeditable()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isExpeditable
-    }
+    return m.isExpeditable
 }
 // GetQualityUpdateClassification gets the qualityUpdateClassification property value. The qualityUpdateClassification property
 func (m *QualityUpdateCatalogEntry) GetQualityUpdateClassification()(*QualityUpdateClassification) {
-    if m == nil {
-        return nil
-    } else {
-        return m.qualityUpdateClassification
-    }
+    return m.qualityUpdateClassification
 }
 // Serialize serializes information the current object
 func (m *QualityUpdateCatalogEntry) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -89,13 +81,9 @@ func (m *QualityUpdateCatalogEntry) Serialize(writer i878a80d2330e89d26896388a3f
 }
 // SetIsExpeditable sets the isExpeditable property value. Indicates whether the content can be deployed as an expedited quality update. Read-only.
 func (m *QualityUpdateCatalogEntry) SetIsExpeditable(value *bool)() {
-    if m != nil {
-        m.isExpeditable = value
-    }
+    m.isExpeditable = value
 }
 // SetQualityUpdateClassification sets the qualityUpdateClassification property value. The qualityUpdateClassification property
 func (m *QualityUpdateCatalogEntry) SetQualityUpdateClassification(value *QualityUpdateClassification)() {
-    if m != nil {
-        m.qualityUpdateClassification = value
-    }
+    m.qualityUpdateClassification = value
 }

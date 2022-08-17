@@ -30,11 +30,7 @@ func CreateSynchronizationJobApplicationParametersFromDiscriminatorValue(parseNo
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SynchronizationJobApplicationParameters) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *SynchronizationJobApplicationParameters) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -77,27 +73,15 @@ func (m *SynchronizationJobApplicationParameters) GetFieldDeserializers()(map[st
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *SynchronizationJobApplicationParameters) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetRuleId gets the ruleId property value. The identifier of the synchronizationRule to be applied. This rule ID is defined in the schema for a given synchronization job or template.
 func (m *SynchronizationJobApplicationParameters) GetRuleId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.ruleId
-    }
+    return m.ruleId
 }
 // GetSubjects gets the subjects property value. The identifiers of one or more objects to which a synchronizationJob is to be applied.
 func (m *SynchronizationJobApplicationParameters) GetSubjects()([]SynchronizationJobSubjectable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.subjects
-    }
+    return m.subjects
 }
 // Serialize serializes information the current object
 func (m *SynchronizationJobApplicationParameters) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -133,25 +117,17 @@ func (m *SynchronizationJobApplicationParameters) Serialize(writer i878a80d2330e
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SynchronizationJobApplicationParameters) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *SynchronizationJobApplicationParameters) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetRuleId sets the ruleId property value. The identifier of the synchronizationRule to be applied. This rule ID is defined in the schema for a given synchronization job or template.
 func (m *SynchronizationJobApplicationParameters) SetRuleId(value *string)() {
-    if m != nil {
-        m.ruleId = value
-    }
+    m.ruleId = value
 }
 // SetSubjects sets the subjects property value. The identifiers of one or more objects to which a synchronizationJob is to be applied.
 func (m *SynchronizationJobApplicationParameters) SetSubjects(value []SynchronizationJobSubjectable)() {
-    if m != nil {
-        m.subjects = value
-    }
+    m.subjects = value
 }

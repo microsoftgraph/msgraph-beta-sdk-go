@@ -40,11 +40,7 @@ func (m *SmsAuthenticationMethodTarget) GetFieldDeserializers()(map[string]func(
 }
 // GetIsUsableForSignIn gets the isUsableForSignIn property value. Determines if the users or groups can use this authentication method to sign in to Azure AD. The value is always true.
 func (m *SmsAuthenticationMethodTarget) GetIsUsableForSignIn()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isUsableForSignIn
-    }
+    return m.isUsableForSignIn
 }
 // Serialize serializes information the current object
 func (m *SmsAuthenticationMethodTarget) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -62,7 +58,5 @@ func (m *SmsAuthenticationMethodTarget) Serialize(writer i878a80d2330e89d2689638
 }
 // SetIsUsableForSignIn sets the isUsableForSignIn property value. Determines if the users or groups can use this authentication method to sign in to Azure AD. The value is always true.
 func (m *SmsAuthenticationMethodTarget) SetIsUsableForSignIn(value *bool)() {
-    if m != nil {
-        m.isUsableForSignIn = value
-    }
+    m.isUsableForSignIn = value
 }

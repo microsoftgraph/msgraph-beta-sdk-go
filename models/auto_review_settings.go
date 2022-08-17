@@ -28,11 +28,7 @@ func CreateAutoReviewSettingsFromDiscriminatorValue(parseNode i878a80d2330e89d26
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AutoReviewSettings) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AutoReviewSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -61,19 +57,11 @@ func (m *AutoReviewSettings) GetFieldDeserializers()(map[string]func(i878a80d233
 }
 // GetNotReviewedResult gets the notReviewedResult property value. Possible values: Approve, Deny, or Recommendation.  If Recommendation, then accessRecommendationsEnabled in the accessReviewSettings resource should also be set to true. If you want to have the system provide a decision even if the reviewer does not make a choice, set the autoReviewEnabled property in the accessReviewSettings resource to true and include an autoReviewSettings object with the notReviewedResult property. Then, when a review completes, based on the notReviewedResult property, the decision is recorded as either Approve or Deny.
 func (m *AutoReviewSettings) GetNotReviewedResult()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.notReviewedResult
-    }
+    return m.notReviewedResult
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *AutoReviewSettings) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // Serialize serializes information the current object
 func (m *AutoReviewSettings) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -99,19 +87,13 @@ func (m *AutoReviewSettings) Serialize(writer i878a80d2330e89d26896388a3f487eef2
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AutoReviewSettings) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetNotReviewedResult sets the notReviewedResult property value. Possible values: Approve, Deny, or Recommendation.  If Recommendation, then accessRecommendationsEnabled in the accessReviewSettings resource should also be set to true. If you want to have the system provide a decision even if the reviewer does not make a choice, set the autoReviewEnabled property in the accessReviewSettings resource to true and include an autoReviewSettings object with the notReviewedResult property. Then, when a review completes, based on the notReviewedResult property, the decision is recorded as either Approve or Deny.
 func (m *AutoReviewSettings) SetNotReviewedResult(value *string)() {
-    if m != nil {
-        m.notReviewedResult = value
-    }
+    m.notReviewedResult = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *AutoReviewSettings) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }

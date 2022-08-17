@@ -29,19 +29,11 @@ func CreatePlayPromptPostRequestBodyFromDiscriminatorValue(parseNode i878a80d233
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *PlayPromptPostRequestBody) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetClientContext gets the clientContext property value. The clientContext property
 func (m *PlayPromptPostRequestBody) GetClientContext()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.clientContext
-    }
+    return m.clientContext
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *PlayPromptPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -84,19 +76,11 @@ func (m *PlayPromptPostRequestBody) GetFieldDeserializers()(map[string]func(i878
 }
 // GetLoop gets the loop property value. The loop property
 func (m *PlayPromptPostRequestBody) GetLoop()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.loop
-    }
+    return m.loop
 }
 // GetPrompts gets the prompts property value. The prompts property
 func (m *PlayPromptPostRequestBody) GetPrompts()([]ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Promptable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.prompts
-    }
+    return m.prompts
 }
 // Serialize serializes information the current object
 func (m *PlayPromptPostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -132,25 +116,17 @@ func (m *PlayPromptPostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *PlayPromptPostRequestBody) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetClientContext sets the clientContext property value. The clientContext property
 func (m *PlayPromptPostRequestBody) SetClientContext(value *string)() {
-    if m != nil {
-        m.clientContext = value
-    }
+    m.clientContext = value
 }
 // SetLoop sets the loop property value. The loop property
 func (m *PlayPromptPostRequestBody) SetLoop(value *bool)() {
-    if m != nil {
-        m.loop = value
-    }
+    m.loop = value
 }
 // SetPrompts sets the prompts property value. The prompts property
 func (m *PlayPromptPostRequestBody) SetPrompts(value []ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Promptable)() {
-    if m != nil {
-        m.prompts = value
-    }
+    m.prompts = value
 }

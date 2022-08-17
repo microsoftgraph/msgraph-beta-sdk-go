@@ -41,19 +41,11 @@ func CreateCommandFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f48
 }
 // GetAppServiceName gets the appServiceName property value. The appServiceName property
 func (m *Command) GetAppServiceName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.appServiceName
-    }
+    return m.appServiceName
 }
 // GetError gets the error property value. The error property
 func (m *Command) GetError()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.error
-    }
+    return m.error
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Command) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -152,59 +144,31 @@ func (m *Command) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
 }
 // GetPackageFamilyName gets the packageFamilyName property value. The packageFamilyName property
 func (m *Command) GetPackageFamilyName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.packageFamilyName
-    }
+    return m.packageFamilyName
 }
 // GetPayload gets the payload property value. The payload property
 func (m *Command) GetPayload()(PayloadRequestable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.payload
-    }
+    return m.payload
 }
 // GetPermissionTicket gets the permissionTicket property value. The permissionTicket property
 func (m *Command) GetPermissionTicket()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.permissionTicket
-    }
+    return m.permissionTicket
 }
 // GetPostBackUri gets the postBackUri property value. The postBackUri property
 func (m *Command) GetPostBackUri()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.postBackUri
-    }
+    return m.postBackUri
 }
 // GetResponsepayload gets the responsepayload property value. The responsepayload property
 func (m *Command) GetResponsepayload()(PayloadResponseable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.responsepayload
-    }
+    return m.responsepayload
 }
 // GetStatus gets the status property value. The status property
 func (m *Command) GetStatus()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.status
-    }
+    return m.status
 }
 // GetType gets the type property value. The type property
 func (m *Command) GetType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.type_escaped
-    }
+    return m.type_escaped
 }
 // Serialize serializes information the current object
 func (m *Command) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -270,55 +234,37 @@ func (m *Command) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
 }
 // SetAppServiceName sets the appServiceName property value. The appServiceName property
 func (m *Command) SetAppServiceName(value *string)() {
-    if m != nil {
-        m.appServiceName = value
-    }
+    m.appServiceName = value
 }
 // SetError sets the error property value. The error property
 func (m *Command) SetError(value *string)() {
-    if m != nil {
-        m.error = value
-    }
+    m.error = value
 }
 // SetPackageFamilyName sets the packageFamilyName property value. The packageFamilyName property
 func (m *Command) SetPackageFamilyName(value *string)() {
-    if m != nil {
-        m.packageFamilyName = value
-    }
+    m.packageFamilyName = value
 }
 // SetPayload sets the payload property value. The payload property
 func (m *Command) SetPayload(value PayloadRequestable)() {
-    if m != nil {
-        m.payload = value
-    }
+    m.payload = value
 }
 // SetPermissionTicket sets the permissionTicket property value. The permissionTicket property
 func (m *Command) SetPermissionTicket(value *string)() {
-    if m != nil {
-        m.permissionTicket = value
-    }
+    m.permissionTicket = value
 }
 // SetPostBackUri sets the postBackUri property value. The postBackUri property
 func (m *Command) SetPostBackUri(value *string)() {
-    if m != nil {
-        m.postBackUri = value
-    }
+    m.postBackUri = value
 }
 // SetResponsepayload sets the responsepayload property value. The responsepayload property
 func (m *Command) SetResponsepayload(value PayloadResponseable)() {
-    if m != nil {
-        m.responsepayload = value
-    }
+    m.responsepayload = value
 }
 // SetStatus sets the status property value. The status property
 func (m *Command) SetStatus(value *string)() {
-    if m != nil {
-        m.status = value
-    }
+    m.status = value
 }
 // SetType sets the type property value. The type property
 func (m *Command) SetType(value *string)() {
-    if m != nil {
-        m.type_escaped = value
-    }
+    m.type_escaped = value
 }

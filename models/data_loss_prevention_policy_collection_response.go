@@ -26,11 +26,7 @@ func CreateDataLossPreventionPolicyCollectionResponseFromDiscriminatorValue(pars
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DataLossPreventionPolicyCollectionResponse) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DataLossPreventionPolicyCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -63,19 +59,11 @@ func (m *DataLossPreventionPolicyCollectionResponse) GetFieldDeserializers()(map
 }
 // GetOdataNextLink gets the @odata.nextLink property value. The OdataNextLink property
 func (m *DataLossPreventionPolicyCollectionResponse) GetOdataNextLink()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataNextLink
-    }
+    return m.odataNextLink
 }
 // GetValue gets the value property value. The value property
 func (m *DataLossPreventionPolicyCollectionResponse) GetValue()([]DataLossPreventionPolicyable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.value
-    }
+    return m.value
 }
 // Serialize serializes information the current object
 func (m *DataLossPreventionPolicyCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -105,19 +93,13 @@ func (m *DataLossPreventionPolicyCollectionResponse) Serialize(writer i878a80d23
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DataLossPreventionPolicyCollectionResponse) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetOdataNextLink sets the @odata.nextLink property value. The OdataNextLink property
 func (m *DataLossPreventionPolicyCollectionResponse) SetOdataNextLink(value *string)() {
-    if m != nil {
-        m.odataNextLink = value
-    }
+    m.odataNextLink = value
 }
 // SetValue sets the value property value. The value property
 func (m *DataLossPreventionPolicyCollectionResponse) SetValue(value []DataLossPreventionPolicyable)() {
-    if m != nil {
-        m.value = value
-    }
+    m.value = value
 }

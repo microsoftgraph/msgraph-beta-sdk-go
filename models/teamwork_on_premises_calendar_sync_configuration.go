@@ -32,27 +32,15 @@ func CreateTeamworkOnPremisesCalendarSyncConfigurationFromDiscriminatorValue(par
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TeamworkOnPremisesCalendarSyncConfiguration) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetDomain gets the domain property value. The fully qualified domain name (FQDN) of the Skype for Business Server. Use the Exchange domain if the Skype for Business SIP domain is different from the Exchange domain of the user.
 func (m *TeamworkOnPremisesCalendarSyncConfiguration) GetDomain()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.domain
-    }
+    return m.domain
 }
 // GetDomainUserName gets the domainUserName property value. The domain and username of the console device, for example, Seattle/RanierConf.
 func (m *TeamworkOnPremisesCalendarSyncConfiguration) GetDomainUserName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.domainUserName
-    }
+    return m.domainUserName
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *TeamworkOnPremisesCalendarSyncConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -101,19 +89,11 @@ func (m *TeamworkOnPremisesCalendarSyncConfiguration) GetFieldDeserializers()(ma
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *TeamworkOnPremisesCalendarSyncConfiguration) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetSmtpAddress gets the smtpAddress property value. The Simple Mail Transfer Protocol (SMTP) address of the user account. This is only required if a different user principal name (UPN) is used to sign in to Exchange other than Microsoft Teams and Skype for Business. This is a common scenario in a hybrid environment where an on-premises Exchange server is used.
 func (m *TeamworkOnPremisesCalendarSyncConfiguration) GetSmtpAddress()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.smtpAddress
-    }
+    return m.smtpAddress
 }
 // Serialize serializes information the current object
 func (m *TeamworkOnPremisesCalendarSyncConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -151,31 +131,21 @@ func (m *TeamworkOnPremisesCalendarSyncConfiguration) Serialize(writer i878a80d2
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TeamworkOnPremisesCalendarSyncConfiguration) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetDomain sets the domain property value. The fully qualified domain name (FQDN) of the Skype for Business Server. Use the Exchange domain if the Skype for Business SIP domain is different from the Exchange domain of the user.
 func (m *TeamworkOnPremisesCalendarSyncConfiguration) SetDomain(value *string)() {
-    if m != nil {
-        m.domain = value
-    }
+    m.domain = value
 }
 // SetDomainUserName sets the domainUserName property value. The domain and username of the console device, for example, Seattle/RanierConf.
 func (m *TeamworkOnPremisesCalendarSyncConfiguration) SetDomainUserName(value *string)() {
-    if m != nil {
-        m.domainUserName = value
-    }
+    m.domainUserName = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *TeamworkOnPremisesCalendarSyncConfiguration) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetSmtpAddress sets the smtpAddress property value. The Simple Mail Transfer Protocol (SMTP) address of the user account. This is only required if a different user principal name (UPN) is used to sign in to Exchange other than Microsoft Teams and Skype for Business. This is a common scenario in a hybrid environment where an on-premises Exchange server is used.
 func (m *TeamworkOnPremisesCalendarSyncConfiguration) SetSmtpAddress(value *string)() {
-    if m != nil {
-        m.smtpAddress = value
-    }
+    m.smtpAddress = value
 }

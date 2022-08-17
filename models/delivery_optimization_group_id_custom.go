@@ -40,11 +40,7 @@ func (m *DeliveryOptimizationGroupIdCustom) GetFieldDeserializers()(map[string]f
 }
 // GetGroupIdCustom gets the groupIdCustom property value. Specifies an arbitrary group ID that the device belongs to
 func (m *DeliveryOptimizationGroupIdCustom) GetGroupIdCustom()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.groupIdCustom
-    }
+    return m.groupIdCustom
 }
 // Serialize serializes information the current object
 func (m *DeliveryOptimizationGroupIdCustom) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -62,7 +58,5 @@ func (m *DeliveryOptimizationGroupIdCustom) Serialize(writer i878a80d2330e89d268
 }
 // SetGroupIdCustom sets the groupIdCustom property value. Specifies an arbitrary group ID that the device belongs to
 func (m *DeliveryOptimizationGroupIdCustom) SetGroupIdCustom(value *string)() {
-    if m != nil {
-        m.groupIdCustom = value
-    }
+    m.groupIdCustom = value
 }

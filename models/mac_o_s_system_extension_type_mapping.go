@@ -30,19 +30,11 @@ func CreateMacOSSystemExtensionTypeMappingFromDiscriminatorValue(parseNode i878a
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *MacOSSystemExtensionTypeMapping) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetAllowedTypes gets the allowedTypes property value. Flag enum representing the allowed macOS system extension types.
 func (m *MacOSSystemExtensionTypeMapping) GetAllowedTypes()(*MacOSSystemExtensionType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.allowedTypes
-    }
+    return m.allowedTypes
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *MacOSSystemExtensionTypeMapping) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -81,19 +73,11 @@ func (m *MacOSSystemExtensionTypeMapping) GetFieldDeserializers()(map[string]fun
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *MacOSSystemExtensionTypeMapping) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetTeamIdentifier gets the teamIdentifier property value. Gets or sets the team identifier used to sign the system extension.
 func (m *MacOSSystemExtensionTypeMapping) GetTeamIdentifier()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.teamIdentifier
-    }
+    return m.teamIdentifier
 }
 // Serialize serializes information the current object
 func (m *MacOSSystemExtensionTypeMapping) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -126,25 +110,17 @@ func (m *MacOSSystemExtensionTypeMapping) Serialize(writer i878a80d2330e89d26896
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *MacOSSystemExtensionTypeMapping) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetAllowedTypes sets the allowedTypes property value. Flag enum representing the allowed macOS system extension types.
 func (m *MacOSSystemExtensionTypeMapping) SetAllowedTypes(value *MacOSSystemExtensionType)() {
-    if m != nil {
-        m.allowedTypes = value
-    }
+    m.allowedTypes = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *MacOSSystemExtensionTypeMapping) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetTeamIdentifier sets the teamIdentifier property value. Gets or sets the team identifier used to sign the system extension.
 func (m *MacOSSystemExtensionTypeMapping) SetTeamIdentifier(value *string)() {
-    if m != nil {
-        m.teamIdentifier = value
-    }
+    m.teamIdentifier = value
 }

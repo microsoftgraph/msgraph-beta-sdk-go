@@ -32,11 +32,7 @@ func CreateAnswerKeywordFromDiscriminatorValue(parseNode i878a80d2330e89d2689638
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AnswerKeyword) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AnswerKeyword) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -93,35 +89,19 @@ func (m *AnswerKeyword) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
 }
 // GetKeywords gets the keywords property value. A collection of keywords used to trigger the search answer.
 func (m *AnswerKeyword) GetKeywords()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.keywords
-    }
+    return m.keywords
 }
 // GetMatchSimilarKeywords gets the matchSimilarKeywords property value. If true, indicates that the search term contains similar words to the keywords that should trigger the search answer.
 func (m *AnswerKeyword) GetMatchSimilarKeywords()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.matchSimilarKeywords
-    }
+    return m.matchSimilarKeywords
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *AnswerKeyword) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetReservedKeywords gets the reservedKeywords property value. Unique keywords that will guarantee the search answer is triggered.
 func (m *AnswerKeyword) GetReservedKeywords()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.reservedKeywords
-    }
+    return m.reservedKeywords
 }
 // Serialize serializes information the current object
 func (m *AnswerKeyword) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -159,31 +139,21 @@ func (m *AnswerKeyword) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AnswerKeyword) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetKeywords sets the keywords property value. A collection of keywords used to trigger the search answer.
 func (m *AnswerKeyword) SetKeywords(value []string)() {
-    if m != nil {
-        m.keywords = value
-    }
+    m.keywords = value
 }
 // SetMatchSimilarKeywords sets the matchSimilarKeywords property value. If true, indicates that the search term contains similar words to the keywords that should trigger the search answer.
 func (m *AnswerKeyword) SetMatchSimilarKeywords(value *bool)() {
-    if m != nil {
-        m.matchSimilarKeywords = value
-    }
+    m.matchSimilarKeywords = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *AnswerKeyword) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetReservedKeywords sets the reservedKeywords property value. Unique keywords that will guarantee the search answer is triggered.
 func (m *AnswerKeyword) SetReservedKeywords(value []string)() {
-    if m != nil {
-        m.reservedKeywords = value
-    }
+    m.reservedKeywords = value
 }

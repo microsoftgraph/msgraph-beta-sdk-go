@@ -52,19 +52,11 @@ func (m *DeviceManagementConfigurationSettingGroupCollectionDefinition) GetField
 }
 // GetMaximumCount gets the maximumCount property value. Maximum number of setting group count in the collection. Valid values 1 to 100
 func (m *DeviceManagementConfigurationSettingGroupCollectionDefinition) GetMaximumCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.maximumCount
-    }
+    return m.maximumCount
 }
 // GetMinimumCount gets the minimumCount property value. Minimum number of setting group count in the collection. Valid values 1 to 100
 func (m *DeviceManagementConfigurationSettingGroupCollectionDefinition) GetMinimumCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.minimumCount
-    }
+    return m.minimumCount
 }
 // Serialize serializes information the current object
 func (m *DeviceManagementConfigurationSettingGroupCollectionDefinition) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -88,13 +80,9 @@ func (m *DeviceManagementConfigurationSettingGroupCollectionDefinition) Serializ
 }
 // SetMaximumCount sets the maximumCount property value. Maximum number of setting group count in the collection. Valid values 1 to 100
 func (m *DeviceManagementConfigurationSettingGroupCollectionDefinition) SetMaximumCount(value *int32)() {
-    if m != nil {
-        m.maximumCount = value
-    }
+    m.maximumCount = value
 }
 // SetMinimumCount sets the minimumCount property value. Minimum number of setting group count in the collection. Valid values 1 to 100
 func (m *DeviceManagementConfigurationSettingGroupCollectionDefinition) SetMinimumCount(value *int32)() {
-    if m != nil {
-        m.minimumCount = value
-    }
+    m.minimumCount = value
 }

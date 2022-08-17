@@ -36,35 +36,19 @@ func CreateUserAccountFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a
 }
 // GetAccountName gets the accountName property value. The accountName property
 func (m *UserAccount) GetAccountName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.accountName
-    }
+    return m.accountName
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *UserAccount) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetAzureAdUserId gets the azureAdUserId property value. The azureAdUserId property
 func (m *UserAccount) GetAzureAdUserId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.azureAdUserId
-    }
+    return m.azureAdUserId
 }
 // GetDomainName gets the domainName property value. The domainName property
 func (m *UserAccount) GetDomainName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.domainName
-    }
+    return m.domainName
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *UserAccount) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -133,27 +117,15 @@ func (m *UserAccount) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *UserAccount) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetUserPrincipalName gets the userPrincipalName property value. The userPrincipalName property
 func (m *UserAccount) GetUserPrincipalName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userPrincipalName
-    }
+    return m.userPrincipalName
 }
 // GetUserSid gets the userSid property value. The userSid property
 func (m *UserAccount) GetUserSid()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userSid
-    }
+    return m.userSid
 }
 // Serialize serializes information the current object
 func (m *UserAccount) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -203,43 +175,29 @@ func (m *UserAccount) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
 }
 // SetAccountName sets the accountName property value. The accountName property
 func (m *UserAccount) SetAccountName(value *string)() {
-    if m != nil {
-        m.accountName = value
-    }
+    m.accountName = value
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *UserAccount) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetAzureAdUserId sets the azureAdUserId property value. The azureAdUserId property
 func (m *UserAccount) SetAzureAdUserId(value *string)() {
-    if m != nil {
-        m.azureAdUserId = value
-    }
+    m.azureAdUserId = value
 }
 // SetDomainName sets the domainName property value. The domainName property
 func (m *UserAccount) SetDomainName(value *string)() {
-    if m != nil {
-        m.domainName = value
-    }
+    m.domainName = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *UserAccount) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetUserPrincipalName sets the userPrincipalName property value. The userPrincipalName property
 func (m *UserAccount) SetUserPrincipalName(value *string)() {
-    if m != nil {
-        m.userPrincipalName = value
-    }
+    m.userPrincipalName = value
 }
 // SetUserSid sets the userSid property value. The userSid property
 func (m *UserAccount) SetUserSid(value *string)() {
-    if m != nil {
-        m.userSid = value
-    }
+    m.userSid = value
 }

@@ -50,51 +50,27 @@ func CreateIpSecurityProfileFromDiscriminatorValue(parseNode i878a80d2330e89d268
 }
 // GetActivityGroupNames gets the activityGroupNames property value. The activityGroupNames property
 func (m *IpSecurityProfile) GetActivityGroupNames()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.activityGroupNames
-    }
+    return m.activityGroupNames
 }
 // GetAddress gets the address property value. The address property
 func (m *IpSecurityProfile) GetAddress()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.address
-    }
+    return m.address
 }
 // GetAzureSubscriptionId gets the azureSubscriptionId property value. The azureSubscriptionId property
 func (m *IpSecurityProfile) GetAzureSubscriptionId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.azureSubscriptionId
-    }
+    return m.azureSubscriptionId
 }
 // GetAzureTenantId gets the azureTenantId property value. The azureTenantId property
 func (m *IpSecurityProfile) GetAzureTenantId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.azureTenantId
-    }
+    return m.azureTenantId
 }
 // GetCountHits gets the countHits property value. The countHits property
 func (m *IpSecurityProfile) GetCountHits()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.countHits
-    }
+    return m.countHits
 }
 // GetCountHosts gets the countHosts property value. The countHosts property
 func (m *IpSecurityProfile) GetCountHosts()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.countHosts
-    }
+    return m.countHosts
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *IpSecurityProfile) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -249,59 +225,31 @@ func (m *IpSecurityProfile) GetFieldDeserializers()(map[string]func(i878a80d2330
 }
 // GetFirstSeenDateTime gets the firstSeenDateTime property value. The firstSeenDateTime property
 func (m *IpSecurityProfile) GetFirstSeenDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.firstSeenDateTime
-    }
+    return m.firstSeenDateTime
 }
 // GetIpCategories gets the ipCategories property value. The ipCategories property
 func (m *IpSecurityProfile) GetIpCategories()([]IpCategoryable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.ipCategories
-    }
+    return m.ipCategories
 }
 // GetIpReferenceData gets the ipReferenceData property value. The ipReferenceData property
 func (m *IpSecurityProfile) GetIpReferenceData()([]IpReferenceDataable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.ipReferenceData
-    }
+    return m.ipReferenceData
 }
 // GetLastSeenDateTime gets the lastSeenDateTime property value. The lastSeenDateTime property
 func (m *IpSecurityProfile) GetLastSeenDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastSeenDateTime
-    }
+    return m.lastSeenDateTime
 }
 // GetRiskScore gets the riskScore property value. The riskScore property
 func (m *IpSecurityProfile) GetRiskScore()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.riskScore
-    }
+    return m.riskScore
 }
 // GetTags gets the tags property value. The tags property
 func (m *IpSecurityProfile) GetTags()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.tags
-    }
+    return m.tags
 }
 // GetVendorInformation gets the vendorInformation property value. The vendorInformation property
 func (m *IpSecurityProfile) GetVendorInformation()(SecurityVendorInformationable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.vendorInformation
-    }
+    return m.vendorInformation
 }
 // Serialize serializes information the current object
 func (m *IpSecurityProfile) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -399,79 +347,53 @@ func (m *IpSecurityProfile) Serialize(writer i878a80d2330e89d26896388a3f487eef27
 }
 // SetActivityGroupNames sets the activityGroupNames property value. The activityGroupNames property
 func (m *IpSecurityProfile) SetActivityGroupNames(value []string)() {
-    if m != nil {
-        m.activityGroupNames = value
-    }
+    m.activityGroupNames = value
 }
 // SetAddress sets the address property value. The address property
 func (m *IpSecurityProfile) SetAddress(value *string)() {
-    if m != nil {
-        m.address = value
-    }
+    m.address = value
 }
 // SetAzureSubscriptionId sets the azureSubscriptionId property value. The azureSubscriptionId property
 func (m *IpSecurityProfile) SetAzureSubscriptionId(value *string)() {
-    if m != nil {
-        m.azureSubscriptionId = value
-    }
+    m.azureSubscriptionId = value
 }
 // SetAzureTenantId sets the azureTenantId property value. The azureTenantId property
 func (m *IpSecurityProfile) SetAzureTenantId(value *string)() {
-    if m != nil {
-        m.azureTenantId = value
-    }
+    m.azureTenantId = value
 }
 // SetCountHits sets the countHits property value. The countHits property
 func (m *IpSecurityProfile) SetCountHits(value *int32)() {
-    if m != nil {
-        m.countHits = value
-    }
+    m.countHits = value
 }
 // SetCountHosts sets the countHosts property value. The countHosts property
 func (m *IpSecurityProfile) SetCountHosts(value *int32)() {
-    if m != nil {
-        m.countHosts = value
-    }
+    m.countHosts = value
 }
 // SetFirstSeenDateTime sets the firstSeenDateTime property value. The firstSeenDateTime property
 func (m *IpSecurityProfile) SetFirstSeenDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.firstSeenDateTime = value
-    }
+    m.firstSeenDateTime = value
 }
 // SetIpCategories sets the ipCategories property value. The ipCategories property
 func (m *IpSecurityProfile) SetIpCategories(value []IpCategoryable)() {
-    if m != nil {
-        m.ipCategories = value
-    }
+    m.ipCategories = value
 }
 // SetIpReferenceData sets the ipReferenceData property value. The ipReferenceData property
 func (m *IpSecurityProfile) SetIpReferenceData(value []IpReferenceDataable)() {
-    if m != nil {
-        m.ipReferenceData = value
-    }
+    m.ipReferenceData = value
 }
 // SetLastSeenDateTime sets the lastSeenDateTime property value. The lastSeenDateTime property
 func (m *IpSecurityProfile) SetLastSeenDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.lastSeenDateTime = value
-    }
+    m.lastSeenDateTime = value
 }
 // SetRiskScore sets the riskScore property value. The riskScore property
 func (m *IpSecurityProfile) SetRiskScore(value *string)() {
-    if m != nil {
-        m.riskScore = value
-    }
+    m.riskScore = value
 }
 // SetTags sets the tags property value. The tags property
 func (m *IpSecurityProfile) SetTags(value []string)() {
-    if m != nil {
-        m.tags = value
-    }
+    m.tags = value
 }
 // SetVendorInformation sets the vendorInformation property value. The vendorInformation property
 func (m *IpSecurityProfile) SetVendorInformation(value SecurityVendorInformationable)() {
-    if m != nil {
-        m.vendorInformation = value
-    }
+    m.vendorInformation = value
 }

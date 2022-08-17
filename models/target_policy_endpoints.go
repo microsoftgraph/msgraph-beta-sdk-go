@@ -28,11 +28,7 @@ func CreateTargetPolicyEndpointsFromDiscriminatorValue(parseNode i878a80d2330e89
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TargetPolicyEndpoints) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *TargetPolicyEndpoints) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -65,19 +61,11 @@ func (m *TargetPolicyEndpoints) GetFieldDeserializers()(map[string]func(i878a80d
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *TargetPolicyEndpoints) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetPlatformTypes gets the platformTypes property value. Use to filter the notification distribution to a specific platform or platforms. Valid values are Windows, iOS, Android and WebPush. By default, all push endpoint types (Windows, iOS, Android and WebPush) are enabled.
 func (m *TargetPolicyEndpoints) GetPlatformTypes()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.platformTypes
-    }
+    return m.platformTypes
 }
 // Serialize serializes information the current object
 func (m *TargetPolicyEndpoints) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -103,19 +91,13 @@ func (m *TargetPolicyEndpoints) Serialize(writer i878a80d2330e89d26896388a3f487e
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TargetPolicyEndpoints) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *TargetPolicyEndpoints) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetPlatformTypes sets the platformTypes property value. Use to filter the notification distribution to a specific platform or platforms. Valid values are Windows, iOS, Android and WebPush. By default, all push endpoint types (Windows, iOS, Android and WebPush) are enabled.
 func (m *TargetPolicyEndpoints) SetPlatformTypes(value []string)() {
-    if m != nil {
-        m.platformTypes = value
-    }
+    m.platformTypes = value
 }

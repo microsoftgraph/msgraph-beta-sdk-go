@@ -44,11 +44,7 @@ func (m *EducationIdentityCreationConfiguration) GetFieldDeserializers()(map[str
 }
 // GetUserDomains gets the userDomains property value. The userDomains property
 func (m *EducationIdentityCreationConfiguration) GetUserDomains()([]EducationIdentityDomainable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userDomains
-    }
+    return m.userDomains
 }
 // Serialize serializes information the current object
 func (m *EducationIdentityCreationConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -70,7 +66,5 @@ func (m *EducationIdentityCreationConfiguration) Serialize(writer i878a80d2330e8
 }
 // SetUserDomains sets the userDomains property value. The userDomains property
 func (m *EducationIdentityCreationConfiguration) SetUserDomains(value []EducationIdentityDomainable)() {
-    if m != nil {
-        m.userDomains = value
-    }
+    m.userDomains = value
 }

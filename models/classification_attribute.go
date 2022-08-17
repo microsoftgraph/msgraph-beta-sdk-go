@@ -30,27 +30,15 @@ func CreateClassificationAttributeFromDiscriminatorValue(parseNode i878a80d2330e
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ClassificationAttribute) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetConfidence gets the confidence property value. The confidence property
 func (m *ClassificationAttribute) GetConfidence()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.confidence
-    }
+    return m.confidence
 }
 // GetCount gets the count property value. The count property
 func (m *ClassificationAttribute) GetCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.count
-    }
+    return m.count
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ClassificationAttribute) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -89,11 +77,7 @@ func (m *ClassificationAttribute) GetFieldDeserializers()(map[string]func(i878a8
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *ClassificationAttribute) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // Serialize serializes information the current object
 func (m *ClassificationAttribute) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -125,25 +109,17 @@ func (m *ClassificationAttribute) Serialize(writer i878a80d2330e89d26896388a3f48
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ClassificationAttribute) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetConfidence sets the confidence property value. The confidence property
 func (m *ClassificationAttribute) SetConfidence(value *int32)() {
-    if m != nil {
-        m.confidence = value
-    }
+    m.confidence = value
 }
 // SetCount sets the count property value. The count property
 func (m *ClassificationAttribute) SetCount(value *int32)() {
-    if m != nil {
-        m.count = value
-    }
+    m.count = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *ClassificationAttribute) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }

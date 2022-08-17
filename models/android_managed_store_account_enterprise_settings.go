@@ -33,7 +33,7 @@ type AndroidManagedStoreAccountEnterpriseSettings struct {
     // Specifies which AAD groups can enroll devices in Android for Work device management if enrollmentTarget is set to 'Targeted'
     targetGroupIds []string
 }
-// NewAndroidManagedStoreAccountEnterpriseSettings instantiates a new AndroidManagedStoreAccountEnterpriseSettings and sets the default values.
+// NewAndroidManagedStoreAccountEnterpriseSettings instantiates a new androidManagedStoreAccountEnterpriseSettings and sets the default values.
 func NewAndroidManagedStoreAccountEnterpriseSettings()(*AndroidManagedStoreAccountEnterpriseSettings) {
     m := &AndroidManagedStoreAccountEnterpriseSettings{
         Entity: *NewEntity(),
@@ -48,43 +48,23 @@ func CreateAndroidManagedStoreAccountEnterpriseSettingsFromDiscriminatorValue(pa
 }
 // GetAndroidDeviceOwnerFullyManagedEnrollmentEnabled gets the androidDeviceOwnerFullyManagedEnrollmentEnabled property value. Company codes for AndroidManagedStoreAccountEnterpriseSettings
 func (m *AndroidManagedStoreAccountEnterpriseSettings) GetAndroidDeviceOwnerFullyManagedEnrollmentEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.androidDeviceOwnerFullyManagedEnrollmentEnabled
-    }
+    return m.androidDeviceOwnerFullyManagedEnrollmentEnabled
 }
 // GetBindStatus gets the bindStatus property value. Bind status of the tenant with the Google EMM API
 func (m *AndroidManagedStoreAccountEnterpriseSettings) GetBindStatus()(*AndroidManagedStoreAccountBindStatus) {
-    if m == nil {
-        return nil
-    } else {
-        return m.bindStatus
-    }
+    return m.bindStatus
 }
 // GetCompanyCodes gets the companyCodes property value. Company codes for AndroidManagedStoreAccountEnterpriseSettings
 func (m *AndroidManagedStoreAccountEnterpriseSettings) GetCompanyCodes()([]AndroidEnrollmentCompanyCodeable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.companyCodes
-    }
+    return m.companyCodes
 }
 // GetDeviceOwnerManagementEnabled gets the deviceOwnerManagementEnabled property value. Indicates if this account is flighting for Android Device Owner Management with CloudDPC.
 func (m *AndroidManagedStoreAccountEnterpriseSettings) GetDeviceOwnerManagementEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deviceOwnerManagementEnabled
-    }
+    return m.deviceOwnerManagementEnabled
 }
 // GetEnrollmentTarget gets the enrollmentTarget property value. Android for Work device management targeting type for the account
 func (m *AndroidManagedStoreAccountEnterpriseSettings) GetEnrollmentTarget()(*AndroidManagedStoreAccountEnrollmentTarget) {
-    if m == nil {
-        return nil
-    } else {
-        return m.enrollmentTarget
-    }
+    return m.enrollmentTarget
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AndroidManagedStoreAccountEnterpriseSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -225,59 +205,31 @@ func (m *AndroidManagedStoreAccountEnterpriseSettings) GetFieldDeserializers()(m
 }
 // GetLastAppSyncDateTime gets the lastAppSyncDateTime property value. Last completion time for app sync
 func (m *AndroidManagedStoreAccountEnterpriseSettings) GetLastAppSyncDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastAppSyncDateTime
-    }
+    return m.lastAppSyncDateTime
 }
 // GetLastAppSyncStatus gets the lastAppSyncStatus property value. Sync status of the tenant with the Google EMM API
 func (m *AndroidManagedStoreAccountEnterpriseSettings) GetLastAppSyncStatus()(*AndroidManagedStoreAccountAppSyncStatus) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastAppSyncStatus
-    }
+    return m.lastAppSyncStatus
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. Last modification time for Android enterprise settings
 func (m *AndroidManagedStoreAccountEnterpriseSettings) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastModifiedDateTime
-    }
+    return m.lastModifiedDateTime
 }
 // GetManagedGooglePlayInitialScopeTagIds gets the managedGooglePlayInitialScopeTagIds property value. Initial scope tags for MGP apps
 func (m *AndroidManagedStoreAccountEnterpriseSettings) GetManagedGooglePlayInitialScopeTagIds()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.managedGooglePlayInitialScopeTagIds
-    }
+    return m.managedGooglePlayInitialScopeTagIds
 }
 // GetOwnerOrganizationName gets the ownerOrganizationName property value. Organization name used when onboarding Android Enterprise
 func (m *AndroidManagedStoreAccountEnterpriseSettings) GetOwnerOrganizationName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.ownerOrganizationName
-    }
+    return m.ownerOrganizationName
 }
 // GetOwnerUserPrincipalName gets the ownerUserPrincipalName property value. Owner UPN that created the enterprise
 func (m *AndroidManagedStoreAccountEnterpriseSettings) GetOwnerUserPrincipalName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.ownerUserPrincipalName
-    }
+    return m.ownerUserPrincipalName
 }
 // GetTargetGroupIds gets the targetGroupIds property value. Specifies which AAD groups can enroll devices in Android for Work device management if enrollmentTarget is set to 'Targeted'
 func (m *AndroidManagedStoreAccountEnterpriseSettings) GetTargetGroupIds()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.targetGroupIds
-    }
+    return m.targetGroupIds
 }
 // Serialize serializes information the current object
 func (m *AndroidManagedStoreAccountEnterpriseSettings) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -368,73 +320,49 @@ func (m *AndroidManagedStoreAccountEnterpriseSettings) Serialize(writer i878a80d
 }
 // SetAndroidDeviceOwnerFullyManagedEnrollmentEnabled sets the androidDeviceOwnerFullyManagedEnrollmentEnabled property value. Company codes for AndroidManagedStoreAccountEnterpriseSettings
 func (m *AndroidManagedStoreAccountEnterpriseSettings) SetAndroidDeviceOwnerFullyManagedEnrollmentEnabled(value *bool)() {
-    if m != nil {
-        m.androidDeviceOwnerFullyManagedEnrollmentEnabled = value
-    }
+    m.androidDeviceOwnerFullyManagedEnrollmentEnabled = value
 }
 // SetBindStatus sets the bindStatus property value. Bind status of the tenant with the Google EMM API
 func (m *AndroidManagedStoreAccountEnterpriseSettings) SetBindStatus(value *AndroidManagedStoreAccountBindStatus)() {
-    if m != nil {
-        m.bindStatus = value
-    }
+    m.bindStatus = value
 }
 // SetCompanyCodes sets the companyCodes property value. Company codes for AndroidManagedStoreAccountEnterpriseSettings
 func (m *AndroidManagedStoreAccountEnterpriseSettings) SetCompanyCodes(value []AndroidEnrollmentCompanyCodeable)() {
-    if m != nil {
-        m.companyCodes = value
-    }
+    m.companyCodes = value
 }
 // SetDeviceOwnerManagementEnabled sets the deviceOwnerManagementEnabled property value. Indicates if this account is flighting for Android Device Owner Management with CloudDPC.
 func (m *AndroidManagedStoreAccountEnterpriseSettings) SetDeviceOwnerManagementEnabled(value *bool)() {
-    if m != nil {
-        m.deviceOwnerManagementEnabled = value
-    }
+    m.deviceOwnerManagementEnabled = value
 }
 // SetEnrollmentTarget sets the enrollmentTarget property value. Android for Work device management targeting type for the account
 func (m *AndroidManagedStoreAccountEnterpriseSettings) SetEnrollmentTarget(value *AndroidManagedStoreAccountEnrollmentTarget)() {
-    if m != nil {
-        m.enrollmentTarget = value
-    }
+    m.enrollmentTarget = value
 }
 // SetLastAppSyncDateTime sets the lastAppSyncDateTime property value. Last completion time for app sync
 func (m *AndroidManagedStoreAccountEnterpriseSettings) SetLastAppSyncDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.lastAppSyncDateTime = value
-    }
+    m.lastAppSyncDateTime = value
 }
 // SetLastAppSyncStatus sets the lastAppSyncStatus property value. Sync status of the tenant with the Google EMM API
 func (m *AndroidManagedStoreAccountEnterpriseSettings) SetLastAppSyncStatus(value *AndroidManagedStoreAccountAppSyncStatus)() {
-    if m != nil {
-        m.lastAppSyncStatus = value
-    }
+    m.lastAppSyncStatus = value
 }
 // SetLastModifiedDateTime sets the lastModifiedDateTime property value. Last modification time for Android enterprise settings
 func (m *AndroidManagedStoreAccountEnterpriseSettings) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.lastModifiedDateTime = value
-    }
+    m.lastModifiedDateTime = value
 }
 // SetManagedGooglePlayInitialScopeTagIds sets the managedGooglePlayInitialScopeTagIds property value. Initial scope tags for MGP apps
 func (m *AndroidManagedStoreAccountEnterpriseSettings) SetManagedGooglePlayInitialScopeTagIds(value []string)() {
-    if m != nil {
-        m.managedGooglePlayInitialScopeTagIds = value
-    }
+    m.managedGooglePlayInitialScopeTagIds = value
 }
 // SetOwnerOrganizationName sets the ownerOrganizationName property value. Organization name used when onboarding Android Enterprise
 func (m *AndroidManagedStoreAccountEnterpriseSettings) SetOwnerOrganizationName(value *string)() {
-    if m != nil {
-        m.ownerOrganizationName = value
-    }
+    m.ownerOrganizationName = value
 }
 // SetOwnerUserPrincipalName sets the ownerUserPrincipalName property value. Owner UPN that created the enterprise
 func (m *AndroidManagedStoreAccountEnterpriseSettings) SetOwnerUserPrincipalName(value *string)() {
-    if m != nil {
-        m.ownerUserPrincipalName = value
-    }
+    m.ownerUserPrincipalName = value
 }
 // SetTargetGroupIds sets the targetGroupIds property value. Specifies which AAD groups can enroll devices in Android for Work device management if enrollmentTarget is set to 'Targeted'
 func (m *AndroidManagedStoreAccountEnterpriseSettings) SetTargetGroupIds(value []string)() {
-    if m != nil {
-        m.targetGroupIds = value
-    }
+    m.targetGroupIds = value
 }

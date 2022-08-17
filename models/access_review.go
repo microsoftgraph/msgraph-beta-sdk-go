@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AccessReview 
+// AccessReview provides operations to manage the collection of accessReview entities.
 type AccessReview struct {
     Entity
     // The business flow template identifier. Required on create.  This value is case sensitive.
@@ -37,7 +37,7 @@ type AccessReview struct {
     // This read-only field specifies the status of an accessReview. The typical states include Initializing, NotStarted, Starting,InProgress, Completing, Completed, AutoReviewing, and AutoReviewed.
     status *string
 }
-// NewAccessReview instantiates a new AccessReview and sets the default values.
+// NewAccessReview instantiates a new accessReview and sets the default values.
 func NewAccessReview()(*AccessReview) {
     m := &AccessReview{
         Entity: *NewEntity(),
@@ -52,51 +52,27 @@ func CreateAccessReviewFromDiscriminatorValue(parseNode i878a80d2330e89d26896388
 }
 // GetBusinessFlowTemplateId gets the businessFlowTemplateId property value. The business flow template identifier. Required on create.  This value is case sensitive.
 func (m *AccessReview) GetBusinessFlowTemplateId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.businessFlowTemplateId
-    }
+    return m.businessFlowTemplateId
 }
 // GetCreatedBy gets the createdBy property value. The user who created this review.
 func (m *AccessReview) GetCreatedBy()(UserIdentityable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.createdBy
-    }
+    return m.createdBy
 }
 // GetDecisions gets the decisions property value. The collection of decisions for this access review.
 func (m *AccessReview) GetDecisions()([]AccessReviewDecisionable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.decisions
-    }
+    return m.decisions
 }
 // GetDescription gets the description property value. The description provided by the access review creator, to show to the reviewers.
 func (m *AccessReview) GetDescription()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.description
-    }
+    return m.description
 }
 // GetDisplayName gets the displayName property value. The access review name. Required on create.
 func (m *AccessReview) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
 // GetEndDateTime gets the endDateTime property value. The DateTime when the review is scheduled to end. This must be at least one day later than the start date.  Required on create.
 func (m *AccessReview) GetEndDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.endDateTime
-    }
+    return m.endDateTime
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AccessReview) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -261,67 +237,35 @@ func (m *AccessReview) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
 }
 // GetInstances gets the instances property value. The collection of access reviews instances past, present and future, if this object is a recurring access review.
 func (m *AccessReview) GetInstances()([]AccessReviewable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.instances
-    }
+    return m.instances
 }
 // GetMyDecisions gets the myDecisions property value. The collection of decisions for the caller, if the caller is a reviewer.
 func (m *AccessReview) GetMyDecisions()([]AccessReviewDecisionable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.myDecisions
-    }
+    return m.myDecisions
 }
 // GetReviewedEntity gets the reviewedEntity property value. The object for which the access reviews is reviewing the access rights assignments. This can be the group for the review of memberships of users in a group, or the app for a review of assignments of users to an application. Required on create.
 func (m *AccessReview) GetReviewedEntity()(Identityable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.reviewedEntity
-    }
+    return m.reviewedEntity
 }
 // GetReviewers gets the reviewers property value. The collection of reviewers for an access review, if access review reviewerType is of type delegated.
 func (m *AccessReview) GetReviewers()([]AccessReviewReviewerable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.reviewers
-    }
+    return m.reviewers
 }
 // GetReviewerType gets the reviewerType property value. The relationship type of reviewer to the target object, one of self, delegated or entityOwners. Required on create.
 func (m *AccessReview) GetReviewerType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.reviewerType
-    }
+    return m.reviewerType
 }
 // GetSettings gets the settings property value. The settings of an accessReview, see type definition below.
 func (m *AccessReview) GetSettings()(AccessReviewSettingsable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.settings
-    }
+    return m.settings
 }
 // GetStartDateTime gets the startDateTime property value. The DateTime when the review is scheduled to be start.  This could be a date in the future.  Required on create.
 func (m *AccessReview) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.startDateTime
-    }
+    return m.startDateTime
 }
 // GetStatus gets the status property value. This read-only field specifies the status of an accessReview. The typical states include Initializing, NotStarted, Starting,InProgress, Completing, Completed, AutoReviewing, and AutoReviewed.
 func (m *AccessReview) GetStatus()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.status
-    }
+    return m.status
 }
 // Serialize serializes information the current object
 func (m *AccessReview) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -433,85 +377,57 @@ func (m *AccessReview) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
 }
 // SetBusinessFlowTemplateId sets the businessFlowTemplateId property value. The business flow template identifier. Required on create.  This value is case sensitive.
 func (m *AccessReview) SetBusinessFlowTemplateId(value *string)() {
-    if m != nil {
-        m.businessFlowTemplateId = value
-    }
+    m.businessFlowTemplateId = value
 }
 // SetCreatedBy sets the createdBy property value. The user who created this review.
 func (m *AccessReview) SetCreatedBy(value UserIdentityable)() {
-    if m != nil {
-        m.createdBy = value
-    }
+    m.createdBy = value
 }
 // SetDecisions sets the decisions property value. The collection of decisions for this access review.
 func (m *AccessReview) SetDecisions(value []AccessReviewDecisionable)() {
-    if m != nil {
-        m.decisions = value
-    }
+    m.decisions = value
 }
 // SetDescription sets the description property value. The description provided by the access review creator, to show to the reviewers.
 func (m *AccessReview) SetDescription(value *string)() {
-    if m != nil {
-        m.description = value
-    }
+    m.description = value
 }
 // SetDisplayName sets the displayName property value. The access review name. Required on create.
 func (m *AccessReview) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }
 // SetEndDateTime sets the endDateTime property value. The DateTime when the review is scheduled to end. This must be at least one day later than the start date.  Required on create.
 func (m *AccessReview) SetEndDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.endDateTime = value
-    }
+    m.endDateTime = value
 }
 // SetInstances sets the instances property value. The collection of access reviews instances past, present and future, if this object is a recurring access review.
 func (m *AccessReview) SetInstances(value []AccessReviewable)() {
-    if m != nil {
-        m.instances = value
-    }
+    m.instances = value
 }
 // SetMyDecisions sets the myDecisions property value. The collection of decisions for the caller, if the caller is a reviewer.
 func (m *AccessReview) SetMyDecisions(value []AccessReviewDecisionable)() {
-    if m != nil {
-        m.myDecisions = value
-    }
+    m.myDecisions = value
 }
 // SetReviewedEntity sets the reviewedEntity property value. The object for which the access reviews is reviewing the access rights assignments. This can be the group for the review of memberships of users in a group, or the app for a review of assignments of users to an application. Required on create.
 func (m *AccessReview) SetReviewedEntity(value Identityable)() {
-    if m != nil {
-        m.reviewedEntity = value
-    }
+    m.reviewedEntity = value
 }
 // SetReviewers sets the reviewers property value. The collection of reviewers for an access review, if access review reviewerType is of type delegated.
 func (m *AccessReview) SetReviewers(value []AccessReviewReviewerable)() {
-    if m != nil {
-        m.reviewers = value
-    }
+    m.reviewers = value
 }
 // SetReviewerType sets the reviewerType property value. The relationship type of reviewer to the target object, one of self, delegated or entityOwners. Required on create.
 func (m *AccessReview) SetReviewerType(value *string)() {
-    if m != nil {
-        m.reviewerType = value
-    }
+    m.reviewerType = value
 }
 // SetSettings sets the settings property value. The settings of an accessReview, see type definition below.
 func (m *AccessReview) SetSettings(value AccessReviewSettingsable)() {
-    if m != nil {
-        m.settings = value
-    }
+    m.settings = value
 }
 // SetStartDateTime sets the startDateTime property value. The DateTime when the review is scheduled to be start.  This could be a date in the future.  Required on create.
 func (m *AccessReview) SetStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.startDateTime = value
-    }
+    m.startDateTime = value
 }
 // SetStatus sets the status property value. This read-only field specifies the status of an accessReview. The typical states include Initializing, NotStarted, Starting,InProgress, Completing, Completed, AutoReviewing, and AutoReviewed.
 func (m *AccessReview) SetStatus(value *string)() {
-    if m != nil {
-        m.status = value
-    }
+    m.status = value
 }

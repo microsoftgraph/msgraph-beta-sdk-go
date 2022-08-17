@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ConfigManagerCollection a ConfigManager defined collection of devices or users.
+// ConfigManagerCollection 
 type ConfigManagerCollection struct {
     Entity
     // The collection identifier in SCCM.
@@ -21,7 +21,7 @@ type ConfigManagerCollection struct {
     // The last modified date.
     lastModifiedDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
 }
-// NewConfigManagerCollection instantiates a new configManagerCollection and sets the default values.
+// NewConfigManagerCollection instantiates a new ConfigManagerCollection and sets the default values.
 func NewConfigManagerCollection()(*ConfigManagerCollection) {
     m := &ConfigManagerCollection{
         Entity: *NewEntity(),
@@ -36,27 +36,15 @@ func CreateConfigManagerCollectionFromDiscriminatorValue(parseNode i878a80d2330e
 }
 // GetCollectionIdentifier gets the collectionIdentifier property value. The collection identifier in SCCM.
 func (m *ConfigManagerCollection) GetCollectionIdentifier()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.collectionIdentifier
-    }
+    return m.collectionIdentifier
 }
 // GetCreatedDateTime gets the createdDateTime property value. The created date.
 func (m *ConfigManagerCollection) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.createdDateTime
-    }
+    return m.createdDateTime
 }
 // GetDisplayName gets the displayName property value. The DisplayName.
 func (m *ConfigManagerCollection) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ConfigManagerCollection) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -125,27 +113,15 @@ func (m *ConfigManagerCollection) GetFieldDeserializers()(map[string]func(i878a8
 }
 // GetHierarchyIdentifier gets the hierarchyIdentifier property value. The Hierarchy Identifier.
 func (m *ConfigManagerCollection) GetHierarchyIdentifier()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.hierarchyIdentifier
-    }
+    return m.hierarchyIdentifier
 }
 // GetHierarchyName gets the hierarchyName property value. The HierarchyName.
 func (m *ConfigManagerCollection) GetHierarchyName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.hierarchyName
-    }
+    return m.hierarchyName
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. The last modified date.
 func (m *ConfigManagerCollection) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastModifiedDateTime
-    }
+    return m.lastModifiedDateTime
 }
 // Serialize serializes information the current object
 func (m *ConfigManagerCollection) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -193,37 +169,25 @@ func (m *ConfigManagerCollection) Serialize(writer i878a80d2330e89d26896388a3f48
 }
 // SetCollectionIdentifier sets the collectionIdentifier property value. The collection identifier in SCCM.
 func (m *ConfigManagerCollection) SetCollectionIdentifier(value *string)() {
-    if m != nil {
-        m.collectionIdentifier = value
-    }
+    m.collectionIdentifier = value
 }
 // SetCreatedDateTime sets the createdDateTime property value. The created date.
 func (m *ConfigManagerCollection) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.createdDateTime = value
-    }
+    m.createdDateTime = value
 }
 // SetDisplayName sets the displayName property value. The DisplayName.
 func (m *ConfigManagerCollection) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }
 // SetHierarchyIdentifier sets the hierarchyIdentifier property value. The Hierarchy Identifier.
 func (m *ConfigManagerCollection) SetHierarchyIdentifier(value *string)() {
-    if m != nil {
-        m.hierarchyIdentifier = value
-    }
+    m.hierarchyIdentifier = value
 }
 // SetHierarchyName sets the hierarchyName property value. The HierarchyName.
 func (m *ConfigManagerCollection) SetHierarchyName(value *string)() {
-    if m != nil {
-        m.hierarchyName = value
-    }
+    m.hierarchyName = value
 }
 // SetLastModifiedDateTime sets the lastModifiedDateTime property value. The last modified date.
 func (m *ConfigManagerCollection) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.lastModifiedDateTime = value
-    }
+    m.lastModifiedDateTime = value
 }

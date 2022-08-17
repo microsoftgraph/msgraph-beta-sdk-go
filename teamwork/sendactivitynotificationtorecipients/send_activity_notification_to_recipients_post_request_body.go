@@ -37,27 +37,15 @@ func CreateSendActivityNotificationToRecipientsPostRequestBodyFromDiscriminatorV
 }
 // GetActivityType gets the activityType property value. The activityType property
 func (m *SendActivityNotificationToRecipientsPostRequestBody) GetActivityType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.activityType
-    }
+    return m.activityType
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SendActivityNotificationToRecipientsPostRequestBody) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetChainId gets the chainId property value. The chainId property
 func (m *SendActivityNotificationToRecipientsPostRequestBody) GetChainId()(*int64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.chainId
-    }
+    return m.chainId
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *SendActivityNotificationToRecipientsPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -144,43 +132,23 @@ func (m *SendActivityNotificationToRecipientsPostRequestBody) GetFieldDeserializ
 }
 // GetPreviewText gets the previewText property value. The previewText property
 func (m *SendActivityNotificationToRecipientsPostRequestBody) GetPreviewText()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemBodyable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.previewText
-    }
+    return m.previewText
 }
 // GetRecipients gets the recipients property value. The recipients property
 func (m *SendActivityNotificationToRecipientsPostRequestBody) GetRecipients()([]ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamworkNotificationRecipientable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.recipients
-    }
+    return m.recipients
 }
 // GetTeamsAppId gets the teamsAppId property value. The teamsAppId property
 func (m *SendActivityNotificationToRecipientsPostRequestBody) GetTeamsAppId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.teamsAppId
-    }
+    return m.teamsAppId
 }
 // GetTemplateParameters gets the templateParameters property value. The templateParameters property
 func (m *SendActivityNotificationToRecipientsPostRequestBody) GetTemplateParameters()([]ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.KeyValuePairable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.templateParameters
-    }
+    return m.templateParameters
 }
 // GetTopic gets the topic property value. The topic property
 func (m *SendActivityNotificationToRecipientsPostRequestBody) GetTopic()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamworkActivityTopicable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.topic
-    }
+    return m.topic
 }
 // Serialize serializes information the current object
 func (m *SendActivityNotificationToRecipientsPostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -244,49 +212,33 @@ func (m *SendActivityNotificationToRecipientsPostRequestBody) Serialize(writer i
 }
 // SetActivityType sets the activityType property value. The activityType property
 func (m *SendActivityNotificationToRecipientsPostRequestBody) SetActivityType(value *string)() {
-    if m != nil {
-        m.activityType = value
-    }
+    m.activityType = value
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SendActivityNotificationToRecipientsPostRequestBody) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetChainId sets the chainId property value. The chainId property
 func (m *SendActivityNotificationToRecipientsPostRequestBody) SetChainId(value *int64)() {
-    if m != nil {
-        m.chainId = value
-    }
+    m.chainId = value
 }
 // SetPreviewText sets the previewText property value. The previewText property
 func (m *SendActivityNotificationToRecipientsPostRequestBody) SetPreviewText(value ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemBodyable)() {
-    if m != nil {
-        m.previewText = value
-    }
+    m.previewText = value
 }
 // SetRecipients sets the recipients property value. The recipients property
 func (m *SendActivityNotificationToRecipientsPostRequestBody) SetRecipients(value []ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamworkNotificationRecipientable)() {
-    if m != nil {
-        m.recipients = value
-    }
+    m.recipients = value
 }
 // SetTeamsAppId sets the teamsAppId property value. The teamsAppId property
 func (m *SendActivityNotificationToRecipientsPostRequestBody) SetTeamsAppId(value *string)() {
-    if m != nil {
-        m.teamsAppId = value
-    }
+    m.teamsAppId = value
 }
 // SetTemplateParameters sets the templateParameters property value. The templateParameters property
 func (m *SendActivityNotificationToRecipientsPostRequestBody) SetTemplateParameters(value []ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.KeyValuePairable)() {
-    if m != nil {
-        m.templateParameters = value
-    }
+    m.templateParameters = value
 }
 // SetTopic sets the topic property value. The topic property
 func (m *SendActivityNotificationToRecipientsPostRequestBody) SetTopic(value ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamworkActivityTopicable)() {
-    if m != nil {
-        m.topic = value
-    }
+    m.topic = value
 }

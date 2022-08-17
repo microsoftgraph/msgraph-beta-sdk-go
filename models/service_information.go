@@ -30,11 +30,7 @@ func CreateServiceInformationFromDiscriminatorValue(parseNode i878a80d2330e89d26
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ServiceInformation) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ServiceInformation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -73,27 +69,15 @@ func (m *ServiceInformation) GetFieldDeserializers()(map[string]func(i878a80d233
 }
 // GetName gets the name property value. The name of the cloud service (for example, Twitter, Instagram).
 func (m *ServiceInformation) GetName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.name
-    }
+    return m.name
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *ServiceInformation) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetWebUrl gets the webUrl property value. Contains the URL for the service being referenced.
 func (m *ServiceInformation) GetWebUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.webUrl
-    }
+    return m.webUrl
 }
 // Serialize serializes information the current object
 func (m *ServiceInformation) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -125,25 +109,17 @@ func (m *ServiceInformation) Serialize(writer i878a80d2330e89d26896388a3f487eef2
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ServiceInformation) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetName sets the name property value. The name of the cloud service (for example, Twitter, Instagram).
 func (m *ServiceInformation) SetName(value *string)() {
-    if m != nil {
-        m.name = value
-    }
+    m.name = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *ServiceInformation) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetWebUrl sets the webUrl property value. Contains the URL for the service being referenced.
 func (m *ServiceInformation) SetWebUrl(value *string)() {
-    if m != nil {
-        m.webUrl = value
-    }
+    m.webUrl = value
 }

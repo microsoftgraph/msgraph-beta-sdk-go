@@ -40,11 +40,7 @@ func (m *WindowsQualityUpdateProfileAssignment) GetFieldDeserializers()(map[stri
 }
 // GetTarget gets the target property value. The assignment target that the quality update profile is assigned to.
 func (m *WindowsQualityUpdateProfileAssignment) GetTarget()(DeviceAndAppManagementAssignmentTargetable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.target
-    }
+    return m.target
 }
 // Serialize serializes information the current object
 func (m *WindowsQualityUpdateProfileAssignment) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -62,7 +58,5 @@ func (m *WindowsQualityUpdateProfileAssignment) Serialize(writer i878a80d2330e89
 }
 // SetTarget sets the target property value. The assignment target that the quality update profile is assigned to.
 func (m *WindowsQualityUpdateProfileAssignment) SetTarget(value DeviceAndAppManagementAssignmentTargetable)() {
-    if m != nil {
-        m.target = value
-    }
+    m.target = value
 }

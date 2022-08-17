@@ -37,43 +37,23 @@ func CreateRegionalAndLanguageSettingsFromDiscriminatorValue(parseNode i878a80d2
 }
 // GetAuthoringLanguages gets the authoringLanguages property value. Prioritized list of languages the user reads and authors in.Returned by default. Not nullable.
 func (m *RegionalAndLanguageSettings) GetAuthoringLanguages()([]LocaleInfoable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.authoringLanguages
-    }
+    return m.authoringLanguages
 }
 // GetDefaultDisplayLanguage gets the defaultDisplayLanguage property value. The  user's preferred user interface language (menus, buttons, ribbons, warning messages) for Microsoft web applications.Returned by default. Not nullable.
 func (m *RegionalAndLanguageSettings) GetDefaultDisplayLanguage()(LocaleInfoable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.defaultDisplayLanguage
-    }
+    return m.defaultDisplayLanguage
 }
 // GetDefaultRegionalFormat gets the defaultRegionalFormat property value. The locale that drives the default date, time, and calendar formatting.Returned by default.
 func (m *RegionalAndLanguageSettings) GetDefaultRegionalFormat()(LocaleInfoable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.defaultRegionalFormat
-    }
+    return m.defaultRegionalFormat
 }
 // GetDefaultSpeechInputLanguage gets the defaultSpeechInputLanguage property value. The language a user expected to use as input for text to speech scenarios.Returned by default.
 func (m *RegionalAndLanguageSettings) GetDefaultSpeechInputLanguage()(LocaleInfoable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.defaultSpeechInputLanguage
-    }
+    return m.defaultSpeechInputLanguage
 }
 // GetDefaultTranslationLanguage gets the defaultTranslationLanguage property value. The language a user expects to have documents, emails, and messages translated into.Returned by default.
 func (m *RegionalAndLanguageSettings) GetDefaultTranslationLanguage()(LocaleInfoable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.defaultTranslationLanguage
-    }
+    return m.defaultTranslationLanguage
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *RegionalAndLanguageSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -156,19 +136,11 @@ func (m *RegionalAndLanguageSettings) GetFieldDeserializers()(map[string]func(i8
 }
 // GetRegionalFormatOverrides gets the regionalFormatOverrides property value. Allows a user to override their defaultRegionalFormat with field specific formats.Returned by default.
 func (m *RegionalAndLanguageSettings) GetRegionalFormatOverrides()(RegionalFormatOverridesable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.regionalFormatOverrides
-    }
+    return m.regionalFormatOverrides
 }
 // GetTranslationPreferences gets the translationPreferences property value. The user's preferred settings when consuming translated documents, emails, messages, and websites.Returned by default. Not nullable.
 func (m *RegionalAndLanguageSettings) GetTranslationPreferences()(TranslationPreferencesable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.translationPreferences
-    }
+    return m.translationPreferences
 }
 // Serialize serializes information the current object
 func (m *RegionalAndLanguageSettings) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -226,43 +198,29 @@ func (m *RegionalAndLanguageSettings) Serialize(writer i878a80d2330e89d26896388a
 }
 // SetAuthoringLanguages sets the authoringLanguages property value. Prioritized list of languages the user reads and authors in.Returned by default. Not nullable.
 func (m *RegionalAndLanguageSettings) SetAuthoringLanguages(value []LocaleInfoable)() {
-    if m != nil {
-        m.authoringLanguages = value
-    }
+    m.authoringLanguages = value
 }
 // SetDefaultDisplayLanguage sets the defaultDisplayLanguage property value. The  user's preferred user interface language (menus, buttons, ribbons, warning messages) for Microsoft web applications.Returned by default. Not nullable.
 func (m *RegionalAndLanguageSettings) SetDefaultDisplayLanguage(value LocaleInfoable)() {
-    if m != nil {
-        m.defaultDisplayLanguage = value
-    }
+    m.defaultDisplayLanguage = value
 }
 // SetDefaultRegionalFormat sets the defaultRegionalFormat property value. The locale that drives the default date, time, and calendar formatting.Returned by default.
 func (m *RegionalAndLanguageSettings) SetDefaultRegionalFormat(value LocaleInfoable)() {
-    if m != nil {
-        m.defaultRegionalFormat = value
-    }
+    m.defaultRegionalFormat = value
 }
 // SetDefaultSpeechInputLanguage sets the defaultSpeechInputLanguage property value. The language a user expected to use as input for text to speech scenarios.Returned by default.
 func (m *RegionalAndLanguageSettings) SetDefaultSpeechInputLanguage(value LocaleInfoable)() {
-    if m != nil {
-        m.defaultSpeechInputLanguage = value
-    }
+    m.defaultSpeechInputLanguage = value
 }
 // SetDefaultTranslationLanguage sets the defaultTranslationLanguage property value. The language a user expects to have documents, emails, and messages translated into.Returned by default.
 func (m *RegionalAndLanguageSettings) SetDefaultTranslationLanguage(value LocaleInfoable)() {
-    if m != nil {
-        m.defaultTranslationLanguage = value
-    }
+    m.defaultTranslationLanguage = value
 }
 // SetRegionalFormatOverrides sets the regionalFormatOverrides property value. Allows a user to override their defaultRegionalFormat with field specific formats.Returned by default.
 func (m *RegionalAndLanguageSettings) SetRegionalFormatOverrides(value RegionalFormatOverridesable)() {
-    if m != nil {
-        m.regionalFormatOverrides = value
-    }
+    m.regionalFormatOverrides = value
 }
 // SetTranslationPreferences sets the translationPreferences property value. The user's preferred settings when consuming translated documents, emails, messages, and websites.Returned by default. Not nullable.
 func (m *RegionalAndLanguageSettings) SetTranslationPreferences(value TranslationPreferencesable)() {
-    if m != nil {
-        m.translationPreferences = value
-    }
+    m.translationPreferences = value
 }

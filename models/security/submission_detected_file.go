@@ -30,11 +30,7 @@ func CreateSubmissionDetectedFileFromDiscriminatorValue(parseNode i878a80d2330e8
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SubmissionDetectedFile) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *SubmissionDetectedFile) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -73,27 +69,15 @@ func (m *SubmissionDetectedFile) GetFieldDeserializers()(map[string]func(i878a80
 }
 // GetFileHash gets the fileHash property value. The file hash.
 func (m *SubmissionDetectedFile) GetFileHash()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.fileHash
-    }
+    return m.fileHash
 }
 // GetFileName gets the fileName property value. The file name.
 func (m *SubmissionDetectedFile) GetFileName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.fileName
-    }
+    return m.fileName
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *SubmissionDetectedFile) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // Serialize serializes information the current object
 func (m *SubmissionDetectedFile) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -125,25 +109,17 @@ func (m *SubmissionDetectedFile) Serialize(writer i878a80d2330e89d26896388a3f487
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SubmissionDetectedFile) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetFileHash sets the fileHash property value. The file hash.
 func (m *SubmissionDetectedFile) SetFileHash(value *string)() {
-    if m != nil {
-        m.fileHash = value
-    }
+    m.fileHash = value
 }
 // SetFileName sets the fileName property value. The file name.
 func (m *SubmissionDetectedFile) SetFileName(value *string)() {
-    if m != nil {
-        m.fileName = value
-    }
+    m.fileName = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *SubmissionDetectedFile) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }

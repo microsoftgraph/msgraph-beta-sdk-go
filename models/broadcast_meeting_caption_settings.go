@@ -32,11 +32,7 @@ func CreateBroadcastMeetingCaptionSettingsFromDiscriminatorValue(parseNode i878a
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *BroadcastMeetingCaptionSettings) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *BroadcastMeetingCaptionSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -89,35 +85,19 @@ func (m *BroadcastMeetingCaptionSettings) GetFieldDeserializers()(map[string]fun
 }
 // GetIsCaptionEnabled gets the isCaptionEnabled property value. Indicates whether caption is enabled for this Teams live event.
 func (m *BroadcastMeetingCaptionSettings) GetIsCaptionEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isCaptionEnabled
-    }
+    return m.isCaptionEnabled
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *BroadcastMeetingCaptionSettings) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetSpokenLanguage gets the spokenLanguage property value. The spoken language.
 func (m *BroadcastMeetingCaptionSettings) GetSpokenLanguage()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.spokenLanguage
-    }
+    return m.spokenLanguage
 }
 // GetTranslationLanguages gets the translationLanguages property value. The translation languages (choose up to 6).
 func (m *BroadcastMeetingCaptionSettings) GetTranslationLanguages()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.translationLanguages
-    }
+    return m.translationLanguages
 }
 // Serialize serializes information the current object
 func (m *BroadcastMeetingCaptionSettings) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -155,31 +135,21 @@ func (m *BroadcastMeetingCaptionSettings) Serialize(writer i878a80d2330e89d26896
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *BroadcastMeetingCaptionSettings) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetIsCaptionEnabled sets the isCaptionEnabled property value. Indicates whether caption is enabled for this Teams live event.
 func (m *BroadcastMeetingCaptionSettings) SetIsCaptionEnabled(value *bool)() {
-    if m != nil {
-        m.isCaptionEnabled = value
-    }
+    m.isCaptionEnabled = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *BroadcastMeetingCaptionSettings) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetSpokenLanguage sets the spokenLanguage property value. The spoken language.
 func (m *BroadcastMeetingCaptionSettings) SetSpokenLanguage(value *string)() {
-    if m != nil {
-        m.spokenLanguage = value
-    }
+    m.spokenLanguage = value
 }
 // SetTranslationLanguages sets the translationLanguages property value. The translation languages (choose up to 6).
 func (m *BroadcastMeetingCaptionSettings) SetTranslationLanguages(value []string)() {
-    if m != nil {
-        m.translationLanguages = value
-    }
+    m.translationLanguages = value
 }

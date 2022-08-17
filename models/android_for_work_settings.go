@@ -27,7 +27,7 @@ type AndroidForWorkSettings struct {
     // Specifies which AAD groups can enroll devices in Android for Work device management if enrollmentTarget is set to 'Targeted'
     targetGroupIds []string
 }
-// NewAndroidForWorkSettings instantiates a new AndroidForWorkSettings and sets the default values.
+// NewAndroidForWorkSettings instantiates a new androidForWorkSettings and sets the default values.
 func NewAndroidForWorkSettings()(*AndroidForWorkSettings) {
     m := &AndroidForWorkSettings{
         Entity: *NewEntity(),
@@ -42,27 +42,15 @@ func CreateAndroidForWorkSettingsFromDiscriminatorValue(parseNode i878a80d2330e8
 }
 // GetBindStatus gets the bindStatus property value. Bind status of the tenant with the Google EMM API
 func (m *AndroidForWorkSettings) GetBindStatus()(*AndroidForWorkBindStatus) {
-    if m == nil {
-        return nil
-    } else {
-        return m.bindStatus
-    }
+    return m.bindStatus
 }
 // GetDeviceOwnerManagementEnabled gets the deviceOwnerManagementEnabled property value. Indicates if this account is flighting for Android Device Owner Management with CloudDPC.
 func (m *AndroidForWorkSettings) GetDeviceOwnerManagementEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deviceOwnerManagementEnabled
-    }
+    return m.deviceOwnerManagementEnabled
 }
 // GetEnrollmentTarget gets the enrollmentTarget property value. Android for Work device management targeting type for the account
 func (m *AndroidForWorkSettings) GetEnrollmentTarget()(*AndroidForWorkEnrollmentTarget) {
-    if m == nil {
-        return nil
-    } else {
-        return m.enrollmentTarget
-    }
+    return m.enrollmentTarget
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AndroidForWorkSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -165,51 +153,27 @@ func (m *AndroidForWorkSettings) GetFieldDeserializers()(map[string]func(i878a80
 }
 // GetLastAppSyncDateTime gets the lastAppSyncDateTime property value. Last completion time for app sync
 func (m *AndroidForWorkSettings) GetLastAppSyncDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastAppSyncDateTime
-    }
+    return m.lastAppSyncDateTime
 }
 // GetLastAppSyncStatus gets the lastAppSyncStatus property value. Sync status of the tenant with the Google EMM API
 func (m *AndroidForWorkSettings) GetLastAppSyncStatus()(*AndroidForWorkSyncStatus) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastAppSyncStatus
-    }
+    return m.lastAppSyncStatus
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. Last modification time for Android for Work settings
 func (m *AndroidForWorkSettings) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastModifiedDateTime
-    }
+    return m.lastModifiedDateTime
 }
 // GetOwnerOrganizationName gets the ownerOrganizationName property value. Organization name used when onboarding Android for Work
 func (m *AndroidForWorkSettings) GetOwnerOrganizationName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.ownerOrganizationName
-    }
+    return m.ownerOrganizationName
 }
 // GetOwnerUserPrincipalName gets the ownerUserPrincipalName property value. Owner UPN that created the enterprise
 func (m *AndroidForWorkSettings) GetOwnerUserPrincipalName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.ownerUserPrincipalName
-    }
+    return m.ownerUserPrincipalName
 }
 // GetTargetGroupIds gets the targetGroupIds property value. Specifies which AAD groups can enroll devices in Android for Work device management if enrollmentTarget is set to 'Targeted'
 func (m *AndroidForWorkSettings) GetTargetGroupIds()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.targetGroupIds
-    }
+    return m.targetGroupIds
 }
 // Serialize serializes information the current object
 func (m *AndroidForWorkSettings) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -278,55 +242,37 @@ func (m *AndroidForWorkSettings) Serialize(writer i878a80d2330e89d26896388a3f487
 }
 // SetBindStatus sets the bindStatus property value. Bind status of the tenant with the Google EMM API
 func (m *AndroidForWorkSettings) SetBindStatus(value *AndroidForWorkBindStatus)() {
-    if m != nil {
-        m.bindStatus = value
-    }
+    m.bindStatus = value
 }
 // SetDeviceOwnerManagementEnabled sets the deviceOwnerManagementEnabled property value. Indicates if this account is flighting for Android Device Owner Management with CloudDPC.
 func (m *AndroidForWorkSettings) SetDeviceOwnerManagementEnabled(value *bool)() {
-    if m != nil {
-        m.deviceOwnerManagementEnabled = value
-    }
+    m.deviceOwnerManagementEnabled = value
 }
 // SetEnrollmentTarget sets the enrollmentTarget property value. Android for Work device management targeting type for the account
 func (m *AndroidForWorkSettings) SetEnrollmentTarget(value *AndroidForWorkEnrollmentTarget)() {
-    if m != nil {
-        m.enrollmentTarget = value
-    }
+    m.enrollmentTarget = value
 }
 // SetLastAppSyncDateTime sets the lastAppSyncDateTime property value. Last completion time for app sync
 func (m *AndroidForWorkSettings) SetLastAppSyncDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.lastAppSyncDateTime = value
-    }
+    m.lastAppSyncDateTime = value
 }
 // SetLastAppSyncStatus sets the lastAppSyncStatus property value. Sync status of the tenant with the Google EMM API
 func (m *AndroidForWorkSettings) SetLastAppSyncStatus(value *AndroidForWorkSyncStatus)() {
-    if m != nil {
-        m.lastAppSyncStatus = value
-    }
+    m.lastAppSyncStatus = value
 }
 // SetLastModifiedDateTime sets the lastModifiedDateTime property value. Last modification time for Android for Work settings
 func (m *AndroidForWorkSettings) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.lastModifiedDateTime = value
-    }
+    m.lastModifiedDateTime = value
 }
 // SetOwnerOrganizationName sets the ownerOrganizationName property value. Organization name used when onboarding Android for Work
 func (m *AndroidForWorkSettings) SetOwnerOrganizationName(value *string)() {
-    if m != nil {
-        m.ownerOrganizationName = value
-    }
+    m.ownerOrganizationName = value
 }
 // SetOwnerUserPrincipalName sets the ownerUserPrincipalName property value. Owner UPN that created the enterprise
 func (m *AndroidForWorkSettings) SetOwnerUserPrincipalName(value *string)() {
-    if m != nil {
-        m.ownerUserPrincipalName = value
-    }
+    m.ownerUserPrincipalName = value
 }
 // SetTargetGroupIds sets the targetGroupIds property value. Specifies which AAD groups can enroll devices in Android for Work device management if enrollmentTarget is set to 'Targeted'
 func (m *AndroidForWorkSettings) SetTargetGroupIds(value []string)() {
-    if m != nil {
-        m.targetGroupIds = value
-    }
+    m.targetGroupIds = value
 }

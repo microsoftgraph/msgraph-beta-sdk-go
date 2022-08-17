@@ -33,19 +33,11 @@ func CreateCloudPcConnectivityResultFromDiscriminatorValue(parseNode i878a80d233
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CloudPcConnectivityResult) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFailedHealthCheckItems gets the failedHealthCheckItems property value. The failedHealthCheckItems property
 func (m *CloudPcConnectivityResult) GetFailedHealthCheckItems()([]CloudPcHealthCheckItemable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.failedHealthCheckItems
-    }
+    return m.failedHealthCheckItems
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *CloudPcConnectivityResult) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -98,27 +90,15 @@ func (m *CloudPcConnectivityResult) GetFieldDeserializers()(map[string]func(i878
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *CloudPcConnectivityResult) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetStatus gets the status property value. The status property
 func (m *CloudPcConnectivityResult) GetStatus()(*CloudPcConnectivityStatus) {
-    if m == nil {
-        return nil
-    } else {
-        return m.status
-    }
+    return m.status
 }
 // GetUpdatedDateTime gets the updatedDateTime property value. The updatedDateTime property
 func (m *CloudPcConnectivityResult) GetUpdatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.updatedDateTime
-    }
+    return m.updatedDateTime
 }
 // Serialize serializes information the current object
 func (m *CloudPcConnectivityResult) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -161,31 +141,21 @@ func (m *CloudPcConnectivityResult) Serialize(writer i878a80d2330e89d26896388a3f
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CloudPcConnectivityResult) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetFailedHealthCheckItems sets the failedHealthCheckItems property value. The failedHealthCheckItems property
 func (m *CloudPcConnectivityResult) SetFailedHealthCheckItems(value []CloudPcHealthCheckItemable)() {
-    if m != nil {
-        m.failedHealthCheckItems = value
-    }
+    m.failedHealthCheckItems = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *CloudPcConnectivityResult) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetStatus sets the status property value. The status property
 func (m *CloudPcConnectivityResult) SetStatus(value *CloudPcConnectivityStatus)() {
-    if m != nil {
-        m.status = value
-    }
+    m.status = value
 }
 // SetUpdatedDateTime sets the updatedDateTime property value. The updatedDateTime property
 func (m *CloudPcConnectivityResult) SetUpdatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.updatedDateTime = value
-    }
+    m.updatedDateTime = value
 }

@@ -25,11 +25,7 @@ func CreateChatActivityStatisticsFromDiscriminatorValue(parseNode i878a80d2330e8
 }
 // GetAfterHours gets the afterHours property value. Time spent on chats outside of working hours, which is based on the user's Microsoft Outlook calendar setting for work hours. The value is represented in ISO 8601 format for durations.
 func (m *ChatActivityStatistics) GetAfterHours()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration) {
-    if m == nil {
-        return nil
-    } else {
-        return m.afterHours
-    }
+    return m.afterHours
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ChatActivityStatistics) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -62,7 +58,5 @@ func (m *ChatActivityStatistics) Serialize(writer i878a80d2330e89d26896388a3f487
 }
 // SetAfterHours sets the afterHours property value. Time spent on chats outside of working hours, which is based on the user's Microsoft Outlook calendar setting for work hours. The value is represented in ISO 8601 format for durations.
 func (m *ChatActivityStatistics) SetAfterHours(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)() {
-    if m != nil {
-        m.afterHours = value
-    }
+    m.afterHours = value
 }

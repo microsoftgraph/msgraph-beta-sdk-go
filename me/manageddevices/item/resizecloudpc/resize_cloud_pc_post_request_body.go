@@ -24,11 +24,7 @@ func CreateResizeCloudPcPostRequestBodyFromDiscriminatorValue(parseNode i878a80d
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ResizeCloudPcPostRequestBody) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ResizeCloudPcPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -47,11 +43,7 @@ func (m *ResizeCloudPcPostRequestBody) GetFieldDeserializers()(map[string]func(i
 }
 // GetTargetServicePlanId gets the targetServicePlanId property value. The targetServicePlanId property
 func (m *ResizeCloudPcPostRequestBody) GetTargetServicePlanId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.targetServicePlanId
-    }
+    return m.targetServicePlanId
 }
 // Serialize serializes information the current object
 func (m *ResizeCloudPcPostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -71,13 +63,9 @@ func (m *ResizeCloudPcPostRequestBody) Serialize(writer i878a80d2330e89d26896388
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ResizeCloudPcPostRequestBody) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetTargetServicePlanId sets the targetServicePlanId property value. The targetServicePlanId property
 func (m *ResizeCloudPcPostRequestBody) SetTargetServicePlanId(value *string)() {
-    if m != nil {
-        m.targetServicePlanId = value
-    }
+    m.targetServicePlanId = value
 }

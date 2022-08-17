@@ -32,35 +32,19 @@ func CreateDefaultUserRolePermissionsFromDiscriminatorValue(parseNode i878a80d23
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DefaultUserRolePermissions) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetAllowedToCreateApps gets the allowedToCreateApps property value. Indicates whether the default user role can create applications.
 func (m *DefaultUserRolePermissions) GetAllowedToCreateApps()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.allowedToCreateApps
-    }
+    return m.allowedToCreateApps
 }
 // GetAllowedToCreateSecurityGroups gets the allowedToCreateSecurityGroups property value. Indicates whether the default user role can create security groups.
 func (m *DefaultUserRolePermissions) GetAllowedToCreateSecurityGroups()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.allowedToCreateSecurityGroups
-    }
+    return m.allowedToCreateSecurityGroups
 }
 // GetAllowedToReadOtherUsers gets the allowedToReadOtherUsers property value. Indicates whether the default user role can read other users.
 func (m *DefaultUserRolePermissions) GetAllowedToReadOtherUsers()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.allowedToReadOtherUsers
-    }
+    return m.allowedToReadOtherUsers
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DefaultUserRolePermissions) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -109,11 +93,7 @@ func (m *DefaultUserRolePermissions) GetFieldDeserializers()(map[string]func(i87
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *DefaultUserRolePermissions) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // Serialize serializes information the current object
 func (m *DefaultUserRolePermissions) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -151,31 +131,21 @@ func (m *DefaultUserRolePermissions) Serialize(writer i878a80d2330e89d26896388a3
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DefaultUserRolePermissions) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetAllowedToCreateApps sets the allowedToCreateApps property value. Indicates whether the default user role can create applications.
 func (m *DefaultUserRolePermissions) SetAllowedToCreateApps(value *bool)() {
-    if m != nil {
-        m.allowedToCreateApps = value
-    }
+    m.allowedToCreateApps = value
 }
 // SetAllowedToCreateSecurityGroups sets the allowedToCreateSecurityGroups property value. Indicates whether the default user role can create security groups.
 func (m *DefaultUserRolePermissions) SetAllowedToCreateSecurityGroups(value *bool)() {
-    if m != nil {
-        m.allowedToCreateSecurityGroups = value
-    }
+    m.allowedToCreateSecurityGroups = value
 }
 // SetAllowedToReadOtherUsers sets the allowedToReadOtherUsers property value. Indicates whether the default user role can read other users.
 func (m *DefaultUserRolePermissions) SetAllowedToReadOtherUsers(value *bool)() {
-    if m != nil {
-        m.allowedToReadOtherUsers = value
-    }
+    m.allowedToReadOtherUsers = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *DefaultUserRolePermissions) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }

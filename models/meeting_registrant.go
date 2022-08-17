@@ -36,19 +36,11 @@ func CreateMeetingRegistrantFromDiscriminatorValue(parseNode i878a80d2330e89d268
 }
 // GetCustomQuestionAnswers gets the customQuestionAnswers property value. The registrant's answer to custom questions.
 func (m *MeetingRegistrant) GetCustomQuestionAnswers()([]CustomQuestionAnswerable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.customQuestionAnswers
-    }
+    return m.customQuestionAnswers
 }
 // GetEmail gets the email property value. The email address of the registrant.
 func (m *MeetingRegistrant) GetEmail()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.email
-    }
+    return m.email
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *MeetingRegistrant) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -121,35 +113,19 @@ func (m *MeetingRegistrant) GetFieldDeserializers()(map[string]func(i878a80d2330
 }
 // GetFirstName gets the firstName property value. The first name of the registrant.
 func (m *MeetingRegistrant) GetFirstName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.firstName
-    }
+    return m.firstName
 }
 // GetLastName gets the lastName property value. The last name of the registrant.
 func (m *MeetingRegistrant) GetLastName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastName
-    }
+    return m.lastName
 }
 // GetRegistrationDateTime gets the registrationDateTime property value. Time in UTC when the registrant registers for the meeting. Read-only.
 func (m *MeetingRegistrant) GetRegistrationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.registrationDateTime
-    }
+    return m.registrationDateTime
 }
 // GetStatus gets the status property value. The registration status of the registrant. Read-only.
 func (m *MeetingRegistrant) GetStatus()(*MeetingRegistrantStatus) {
-    if m == nil {
-        return nil
-    } else {
-        return m.status
-    }
+    return m.status
 }
 // Serialize serializes information the current object
 func (m *MeetingRegistrant) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -202,37 +178,25 @@ func (m *MeetingRegistrant) Serialize(writer i878a80d2330e89d26896388a3f487eef27
 }
 // SetCustomQuestionAnswers sets the customQuestionAnswers property value. The registrant's answer to custom questions.
 func (m *MeetingRegistrant) SetCustomQuestionAnswers(value []CustomQuestionAnswerable)() {
-    if m != nil {
-        m.customQuestionAnswers = value
-    }
+    m.customQuestionAnswers = value
 }
 // SetEmail sets the email property value. The email address of the registrant.
 func (m *MeetingRegistrant) SetEmail(value *string)() {
-    if m != nil {
-        m.email = value
-    }
+    m.email = value
 }
 // SetFirstName sets the firstName property value. The first name of the registrant.
 func (m *MeetingRegistrant) SetFirstName(value *string)() {
-    if m != nil {
-        m.firstName = value
-    }
+    m.firstName = value
 }
 // SetLastName sets the lastName property value. The last name of the registrant.
 func (m *MeetingRegistrant) SetLastName(value *string)() {
-    if m != nil {
-        m.lastName = value
-    }
+    m.lastName = value
 }
 // SetRegistrationDateTime sets the registrationDateTime property value. Time in UTC when the registrant registers for the meeting. Read-only.
 func (m *MeetingRegistrant) SetRegistrationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.registrationDateTime = value
-    }
+    m.registrationDateTime = value
 }
 // SetStatus sets the status property value. The registration status of the registrant. Read-only.
 func (m *MeetingRegistrant) SetStatus(value *MeetingRegistrantStatus)() {
-    if m != nil {
-        m.status = value
-    }
+    m.status = value
 }

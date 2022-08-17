@@ -36,43 +36,23 @@ func CreateSubmissionResultFromDiscriminatorValue(parseNode i878a80d2330e89d2689
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SubmissionResult) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetCategory gets the category property value. The submission result category. The possible values are: notJunk, spam, phishing, malware, allowedByPolicy, blockedByPolicy, spoof, unknown, noResultAvailable and unkownFutureValue.
 func (m *SubmissionResult) GetCategory()(*SubmissionResultCategory) {
-    if m == nil {
-        return nil
-    } else {
-        return m.category
-    }
+    return m.category
 }
 // GetDetail gets the detail property value. Specifies the additional details provided by Microsoft to substantiate their analysis result.
 func (m *SubmissionResult) GetDetail()(*SubmissionResultDetail) {
-    if m == nil {
-        return nil
-    } else {
-        return m.detail
-    }
+    return m.detail
 }
 // GetDetectedFiles gets the detectedFiles property value. Specifies the files detected by Microsoft in the submitted emails.
 func (m *SubmissionResult) GetDetectedFiles()([]SubmissionDetectedFileable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.detectedFiles
-    }
+    return m.detectedFiles
 }
 // GetDetectedUrls gets the detectedUrls property value. Specifes the URLs detected by Microsoft in the submitted email.
 func (m *SubmissionResult) GetDetectedUrls()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.detectedUrls
-    }
+    return m.detectedUrls
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *SubmissionResult) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -149,19 +129,11 @@ func (m *SubmissionResult) GetFieldDeserializers()(map[string]func(i878a80d2330e
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *SubmissionResult) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetUserMailboxSetting gets the userMailboxSetting property value. Specifies the setting for user mailbox denoted by a comma-separated string.
 func (m *SubmissionResult) GetUserMailboxSetting()(*UserMailboxSetting) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userMailboxSetting
-    }
+    return m.userMailboxSetting
 }
 // Serialize serializes information the current object
 func (m *SubmissionResult) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -218,43 +190,29 @@ func (m *SubmissionResult) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SubmissionResult) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetCategory sets the category property value. The submission result category. The possible values are: notJunk, spam, phishing, malware, allowedByPolicy, blockedByPolicy, spoof, unknown, noResultAvailable and unkownFutureValue.
 func (m *SubmissionResult) SetCategory(value *SubmissionResultCategory)() {
-    if m != nil {
-        m.category = value
-    }
+    m.category = value
 }
 // SetDetail sets the detail property value. Specifies the additional details provided by Microsoft to substantiate their analysis result.
 func (m *SubmissionResult) SetDetail(value *SubmissionResultDetail)() {
-    if m != nil {
-        m.detail = value
-    }
+    m.detail = value
 }
 // SetDetectedFiles sets the detectedFiles property value. Specifies the files detected by Microsoft in the submitted emails.
 func (m *SubmissionResult) SetDetectedFiles(value []SubmissionDetectedFileable)() {
-    if m != nil {
-        m.detectedFiles = value
-    }
+    m.detectedFiles = value
 }
 // SetDetectedUrls sets the detectedUrls property value. Specifes the URLs detected by Microsoft in the submitted email.
 func (m *SubmissionResult) SetDetectedUrls(value []string)() {
-    if m != nil {
-        m.detectedUrls = value
-    }
+    m.detectedUrls = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *SubmissionResult) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetUserMailboxSetting sets the userMailboxSetting property value. Specifies the setting for user mailbox denoted by a comma-separated string.
 func (m *SubmissionResult) SetUserMailboxSetting(value *UserMailboxSetting)() {
-    if m != nil {
-        m.userMailboxSetting = value
-    }
+    m.userMailboxSetting = value
 }

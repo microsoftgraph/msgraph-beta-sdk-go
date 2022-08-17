@@ -36,35 +36,19 @@ func CreateWindowsInformationProtectionDeviceRegistrationFromDiscriminatorValue(
 }
 // GetDeviceMacAddress gets the deviceMacAddress property value. Device Mac address.
 func (m *WindowsInformationProtectionDeviceRegistration) GetDeviceMacAddress()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deviceMacAddress
-    }
+    return m.deviceMacAddress
 }
 // GetDeviceName gets the deviceName property value. Device name.
 func (m *WindowsInformationProtectionDeviceRegistration) GetDeviceName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deviceName
-    }
+    return m.deviceName
 }
 // GetDeviceRegistrationId gets the deviceRegistrationId property value. Device identifier for this device registration record.
 func (m *WindowsInformationProtectionDeviceRegistration) GetDeviceRegistrationId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deviceRegistrationId
-    }
+    return m.deviceRegistrationId
 }
 // GetDeviceType gets the deviceType property value. Device type, for example, Windows laptop VS Windows phone.
 func (m *WindowsInformationProtectionDeviceRegistration) GetDeviceType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deviceType
-    }
+    return m.deviceType
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *WindowsInformationProtectionDeviceRegistration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -133,19 +117,11 @@ func (m *WindowsInformationProtectionDeviceRegistration) GetFieldDeserializers()
 }
 // GetLastCheckInDateTime gets the lastCheckInDateTime property value. Last checkin time of the device.
 func (m *WindowsInformationProtectionDeviceRegistration) GetLastCheckInDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastCheckInDateTime
-    }
+    return m.lastCheckInDateTime
 }
 // GetUserId gets the userId property value. UserId associated with this device registration record.
 func (m *WindowsInformationProtectionDeviceRegistration) GetUserId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userId
-    }
+    return m.userId
 }
 // Serialize serializes information the current object
 func (m *WindowsInformationProtectionDeviceRegistration) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -193,37 +169,25 @@ func (m *WindowsInformationProtectionDeviceRegistration) Serialize(writer i878a8
 }
 // SetDeviceMacAddress sets the deviceMacAddress property value. Device Mac address.
 func (m *WindowsInformationProtectionDeviceRegistration) SetDeviceMacAddress(value *string)() {
-    if m != nil {
-        m.deviceMacAddress = value
-    }
+    m.deviceMacAddress = value
 }
 // SetDeviceName sets the deviceName property value. Device name.
 func (m *WindowsInformationProtectionDeviceRegistration) SetDeviceName(value *string)() {
-    if m != nil {
-        m.deviceName = value
-    }
+    m.deviceName = value
 }
 // SetDeviceRegistrationId sets the deviceRegistrationId property value. Device identifier for this device registration record.
 func (m *WindowsInformationProtectionDeviceRegistration) SetDeviceRegistrationId(value *string)() {
-    if m != nil {
-        m.deviceRegistrationId = value
-    }
+    m.deviceRegistrationId = value
 }
 // SetDeviceType sets the deviceType property value. Device type, for example, Windows laptop VS Windows phone.
 func (m *WindowsInformationProtectionDeviceRegistration) SetDeviceType(value *string)() {
-    if m != nil {
-        m.deviceType = value
-    }
+    m.deviceType = value
 }
 // SetLastCheckInDateTime sets the lastCheckInDateTime property value. Last checkin time of the device.
 func (m *WindowsInformationProtectionDeviceRegistration) SetLastCheckInDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.lastCheckInDateTime = value
-    }
+    m.lastCheckInDateTime = value
 }
 // SetUserId sets the userId property value. UserId associated with this device registration record.
 func (m *WindowsInformationProtectionDeviceRegistration) SetUserId(value *string)() {
-    if m != nil {
-        m.userId = value
-    }
+    m.userId = value
 }

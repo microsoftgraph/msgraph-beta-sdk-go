@@ -25,11 +25,7 @@ func CreateExpeditedQualityUpdateReferenceFromDiscriminatorValue(parseNode i878a
 }
 // GetEquivalentContent gets the equivalentContent property value. Specifies other content to consider as equivalent. Supports a subset of the values for equivalentContentOption. Default value is latestSecurity. Possible values are: latestSecurity, unknownFutureValue.
 func (m *ExpeditedQualityUpdateReference) GetEquivalentContent()(*EquivalentContentOption) {
-    if m == nil {
-        return nil
-    } else {
-        return m.equivalentContent
-    }
+    return m.equivalentContent
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ExpeditedQualityUpdateReference) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -63,7 +59,5 @@ func (m *ExpeditedQualityUpdateReference) Serialize(writer i878a80d2330e89d26896
 }
 // SetEquivalentContent sets the equivalentContent property value. Specifies other content to consider as equivalent. Supports a subset of the values for equivalentContentOption. Default value is latestSecurity. Possible values are: latestSecurity, unknownFutureValue.
 func (m *ExpeditedQualityUpdateReference) SetEquivalentContent(value *EquivalentContentOption)() {
-    if m != nil {
-        m.equivalentContent = value
-    }
+    m.equivalentContent = value
 }

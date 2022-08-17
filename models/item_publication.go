@@ -35,19 +35,11 @@ func CreateItemPublicationFromDiscriminatorValue(parseNode i878a80d2330e89d26896
 }
 // GetDescription gets the description property value. Description of the publication.
 func (m *ItemPublication) GetDescription()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.description
-    }
+    return m.description
 }
 // GetDisplayName gets the displayName property value. Title of the publication.
 func (m *ItemPublication) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ItemPublication) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -116,35 +108,19 @@ func (m *ItemPublication) GetFieldDeserializers()(map[string]func(i878a80d2330e8
 }
 // GetPublishedDate gets the publishedDate property value. The date that the publication was published.
 func (m *ItemPublication) GetPublishedDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly) {
-    if m == nil {
-        return nil
-    } else {
-        return m.publishedDate
-    }
+    return m.publishedDate
 }
 // GetPublisher gets the publisher property value. Publication or publisher for the publication.
 func (m *ItemPublication) GetPublisher()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.publisher
-    }
+    return m.publisher
 }
 // GetThumbnailUrl gets the thumbnailUrl property value. URL referencing a thumbnail of the publication.
 func (m *ItemPublication) GetThumbnailUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.thumbnailUrl
-    }
+    return m.thumbnailUrl
 }
 // GetWebUrl gets the webUrl property value. URL referencing the publication.
 func (m *ItemPublication) GetWebUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.webUrl
-    }
+    return m.webUrl
 }
 // Serialize serializes information the current object
 func (m *ItemPublication) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -192,37 +168,25 @@ func (m *ItemPublication) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
 }
 // SetDescription sets the description property value. Description of the publication.
 func (m *ItemPublication) SetDescription(value *string)() {
-    if m != nil {
-        m.description = value
-    }
+    m.description = value
 }
 // SetDisplayName sets the displayName property value. Title of the publication.
 func (m *ItemPublication) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }
 // SetPublishedDate sets the publishedDate property value. The date that the publication was published.
 func (m *ItemPublication) SetPublishedDate(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)() {
-    if m != nil {
-        m.publishedDate = value
-    }
+    m.publishedDate = value
 }
 // SetPublisher sets the publisher property value. Publication or publisher for the publication.
 func (m *ItemPublication) SetPublisher(value *string)() {
-    if m != nil {
-        m.publisher = value
-    }
+    m.publisher = value
 }
 // SetThumbnailUrl sets the thumbnailUrl property value. URL referencing a thumbnail of the publication.
 func (m *ItemPublication) SetThumbnailUrl(value *string)() {
-    if m != nil {
-        m.thumbnailUrl = value
-    }
+    m.thumbnailUrl = value
 }
 // SetWebUrl sets the webUrl property value. URL referencing the publication.
 func (m *ItemPublication) SetWebUrl(value *string)() {
-    if m != nil {
-        m.webUrl = value
-    }
+    m.webUrl = value
 }

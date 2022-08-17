@@ -33,19 +33,11 @@ func CreateAndroidForWorkAppFromDiscriminatorValue(parseNode i878a80d2330e89d268
 }
 // GetAppIdentifier gets the appIdentifier property value. The Identity Name.
 func (m *AndroidForWorkApp) GetAppIdentifier()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.appIdentifier
-    }
+    return m.appIdentifier
 }
 // GetAppStoreUrl gets the appStoreUrl property value. The Play for Work Store app URL.
 func (m *AndroidForWorkApp) GetAppStoreUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.appStoreUrl
-    }
+    return m.appStoreUrl
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AndroidForWorkApp) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -104,27 +96,15 @@ func (m *AndroidForWorkApp) GetFieldDeserializers()(map[string]func(i878a80d2330
 }
 // GetPackageId gets the packageId property value. The package identifier.
 func (m *AndroidForWorkApp) GetPackageId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.packageId
-    }
+    return m.packageId
 }
 // GetTotalLicenseCount gets the totalLicenseCount property value. The total number of VPP licenses.
 func (m *AndroidForWorkApp) GetTotalLicenseCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.totalLicenseCount
-    }
+    return m.totalLicenseCount
 }
 // GetUsedLicenseCount gets the usedLicenseCount property value. The number of VPP licenses in use.
 func (m *AndroidForWorkApp) GetUsedLicenseCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.usedLicenseCount
-    }
+    return m.usedLicenseCount
 }
 // Serialize serializes information the current object
 func (m *AndroidForWorkApp) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -166,31 +146,21 @@ func (m *AndroidForWorkApp) Serialize(writer i878a80d2330e89d26896388a3f487eef27
 }
 // SetAppIdentifier sets the appIdentifier property value. The Identity Name.
 func (m *AndroidForWorkApp) SetAppIdentifier(value *string)() {
-    if m != nil {
-        m.appIdentifier = value
-    }
+    m.appIdentifier = value
 }
 // SetAppStoreUrl sets the appStoreUrl property value. The Play for Work Store app URL.
 func (m *AndroidForWorkApp) SetAppStoreUrl(value *string)() {
-    if m != nil {
-        m.appStoreUrl = value
-    }
+    m.appStoreUrl = value
 }
 // SetPackageId sets the packageId property value. The package identifier.
 func (m *AndroidForWorkApp) SetPackageId(value *string)() {
-    if m != nil {
-        m.packageId = value
-    }
+    m.packageId = value
 }
 // SetTotalLicenseCount sets the totalLicenseCount property value. The total number of VPP licenses.
 func (m *AndroidForWorkApp) SetTotalLicenseCount(value *int32)() {
-    if m != nil {
-        m.totalLicenseCount = value
-    }
+    m.totalLicenseCount = value
 }
 // SetUsedLicenseCount sets the usedLicenseCount property value. The number of VPP licenses in use.
 func (m *AndroidForWorkApp) SetUsedLicenseCount(value *int32)() {
-    if m != nil {
-        m.usedLicenseCount = value
-    }
+    m.usedLicenseCount = value
 }

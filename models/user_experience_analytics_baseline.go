@@ -44,51 +44,27 @@ func CreateUserExperienceAnalyticsBaselineFromDiscriminatorValue(parseNode i878a
 }
 // GetAppHealthMetrics gets the appHealthMetrics property value. The user experience analytics app health metrics.
 func (m *UserExperienceAnalyticsBaseline) GetAppHealthMetrics()(UserExperienceAnalyticsCategoryable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.appHealthMetrics
-    }
+    return m.appHealthMetrics
 }
 // GetBatteryHealthMetrics gets the batteryHealthMetrics property value. The user experience analytics battery health metrics.
 func (m *UserExperienceAnalyticsBaseline) GetBatteryHealthMetrics()(UserExperienceAnalyticsCategoryable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.batteryHealthMetrics
-    }
+    return m.batteryHealthMetrics
 }
 // GetBestPracticesMetrics gets the bestPracticesMetrics property value. The user experience analytics best practices metrics.
 func (m *UserExperienceAnalyticsBaseline) GetBestPracticesMetrics()(UserExperienceAnalyticsCategoryable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.bestPracticesMetrics
-    }
+    return m.bestPracticesMetrics
 }
 // GetCreatedDateTime gets the createdDateTime property value. The date the custom baseline was created.
 func (m *UserExperienceAnalyticsBaseline) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.createdDateTime
-    }
+    return m.createdDateTime
 }
 // GetDeviceBootPerformanceMetrics gets the deviceBootPerformanceMetrics property value. The user experience analytics device boot performance metrics.
 func (m *UserExperienceAnalyticsBaseline) GetDeviceBootPerformanceMetrics()(UserExperienceAnalyticsCategoryable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deviceBootPerformanceMetrics
-    }
+    return m.deviceBootPerformanceMetrics
 }
 // GetDisplayName gets the displayName property value. The name of the user experience analytics baseline.
 func (m *UserExperienceAnalyticsBaseline) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *UserExperienceAnalyticsBaseline) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -197,35 +173,19 @@ func (m *UserExperienceAnalyticsBaseline) GetFieldDeserializers()(map[string]fun
 }
 // GetIsBuiltIn gets the isBuiltIn property value. Signifies if the current baseline is the commercial median baseline or a custom baseline.
 func (m *UserExperienceAnalyticsBaseline) GetIsBuiltIn()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isBuiltIn
-    }
+    return m.isBuiltIn
 }
 // GetRebootAnalyticsMetrics gets the rebootAnalyticsMetrics property value. The user experience analytics reboot analytics metrics.
 func (m *UserExperienceAnalyticsBaseline) GetRebootAnalyticsMetrics()(UserExperienceAnalyticsCategoryable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.rebootAnalyticsMetrics
-    }
+    return m.rebootAnalyticsMetrics
 }
 // GetResourcePerformanceMetrics gets the resourcePerformanceMetrics property value. The user experience analytics resource performance metrics.
 func (m *UserExperienceAnalyticsBaseline) GetResourcePerformanceMetrics()(UserExperienceAnalyticsCategoryable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.resourcePerformanceMetrics
-    }
+    return m.resourcePerformanceMetrics
 }
 // GetWorkFromAnywhereMetrics gets the workFromAnywhereMetrics property value. The user experience analytics work from anywhere metrics.
 func (m *UserExperienceAnalyticsBaseline) GetWorkFromAnywhereMetrics()(UserExperienceAnalyticsCategoryable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.workFromAnywhereMetrics
-    }
+    return m.workFromAnywhereMetrics
 }
 // Serialize serializes information the current object
 func (m *UserExperienceAnalyticsBaseline) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -297,61 +257,41 @@ func (m *UserExperienceAnalyticsBaseline) Serialize(writer i878a80d2330e89d26896
 }
 // SetAppHealthMetrics sets the appHealthMetrics property value. The user experience analytics app health metrics.
 func (m *UserExperienceAnalyticsBaseline) SetAppHealthMetrics(value UserExperienceAnalyticsCategoryable)() {
-    if m != nil {
-        m.appHealthMetrics = value
-    }
+    m.appHealthMetrics = value
 }
 // SetBatteryHealthMetrics sets the batteryHealthMetrics property value. The user experience analytics battery health metrics.
 func (m *UserExperienceAnalyticsBaseline) SetBatteryHealthMetrics(value UserExperienceAnalyticsCategoryable)() {
-    if m != nil {
-        m.batteryHealthMetrics = value
-    }
+    m.batteryHealthMetrics = value
 }
 // SetBestPracticesMetrics sets the bestPracticesMetrics property value. The user experience analytics best practices metrics.
 func (m *UserExperienceAnalyticsBaseline) SetBestPracticesMetrics(value UserExperienceAnalyticsCategoryable)() {
-    if m != nil {
-        m.bestPracticesMetrics = value
-    }
+    m.bestPracticesMetrics = value
 }
 // SetCreatedDateTime sets the createdDateTime property value. The date the custom baseline was created.
 func (m *UserExperienceAnalyticsBaseline) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.createdDateTime = value
-    }
+    m.createdDateTime = value
 }
 // SetDeviceBootPerformanceMetrics sets the deviceBootPerformanceMetrics property value. The user experience analytics device boot performance metrics.
 func (m *UserExperienceAnalyticsBaseline) SetDeviceBootPerformanceMetrics(value UserExperienceAnalyticsCategoryable)() {
-    if m != nil {
-        m.deviceBootPerformanceMetrics = value
-    }
+    m.deviceBootPerformanceMetrics = value
 }
 // SetDisplayName sets the displayName property value. The name of the user experience analytics baseline.
 func (m *UserExperienceAnalyticsBaseline) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }
 // SetIsBuiltIn sets the isBuiltIn property value. Signifies if the current baseline is the commercial median baseline or a custom baseline.
 func (m *UserExperienceAnalyticsBaseline) SetIsBuiltIn(value *bool)() {
-    if m != nil {
-        m.isBuiltIn = value
-    }
+    m.isBuiltIn = value
 }
 // SetRebootAnalyticsMetrics sets the rebootAnalyticsMetrics property value. The user experience analytics reboot analytics metrics.
 func (m *UserExperienceAnalyticsBaseline) SetRebootAnalyticsMetrics(value UserExperienceAnalyticsCategoryable)() {
-    if m != nil {
-        m.rebootAnalyticsMetrics = value
-    }
+    m.rebootAnalyticsMetrics = value
 }
 // SetResourcePerformanceMetrics sets the resourcePerformanceMetrics property value. The user experience analytics resource performance metrics.
 func (m *UserExperienceAnalyticsBaseline) SetResourcePerformanceMetrics(value UserExperienceAnalyticsCategoryable)() {
-    if m != nil {
-        m.resourcePerformanceMetrics = value
-    }
+    m.resourcePerformanceMetrics = value
 }
 // SetWorkFromAnywhereMetrics sets the workFromAnywhereMetrics property value. The user experience analytics work from anywhere metrics.
 func (m *UserExperienceAnalyticsBaseline) SetWorkFromAnywhereMetrics(value UserExperienceAnalyticsCategoryable)() {
-    if m != nil {
-        m.workFromAnywhereMetrics = value
-    }
+    m.workFromAnywhereMetrics = value
 }

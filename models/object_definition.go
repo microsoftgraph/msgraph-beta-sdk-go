@@ -34,19 +34,11 @@ func CreateObjectDefinitionFromDiscriminatorValue(parseNode i878a80d2330e89d2689
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ObjectDefinition) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetAttributes gets the attributes property value. The attributes property
 func (m *ObjectDefinition) GetAttributes()([]AttributeDefinitionable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.attributes
-    }
+    return m.attributes
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ObjectDefinition) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -117,35 +109,19 @@ func (m *ObjectDefinition) GetFieldDeserializers()(map[string]func(i878a80d2330e
 }
 // GetMetadata gets the metadata property value. The metadata property
 func (m *ObjectDefinition) GetMetadata()([]MetadataEntryable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.metadata
-    }
+    return m.metadata
 }
 // GetName gets the name property value. The name property
 func (m *ObjectDefinition) GetName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.name
-    }
+    return m.name
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *ObjectDefinition) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetSupportedApis gets the supportedApis property value. The supportedApis property
 func (m *ObjectDefinition) GetSupportedApis()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.supportedApis
-    }
+    return m.supportedApis
 }
 // Serialize serializes information the current object
 func (m *ObjectDefinition) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -197,37 +173,25 @@ func (m *ObjectDefinition) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ObjectDefinition) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetAttributes sets the attributes property value. The attributes property
 func (m *ObjectDefinition) SetAttributes(value []AttributeDefinitionable)() {
-    if m != nil {
-        m.attributes = value
-    }
+    m.attributes = value
 }
 // SetMetadata sets the metadata property value. The metadata property
 func (m *ObjectDefinition) SetMetadata(value []MetadataEntryable)() {
-    if m != nil {
-        m.metadata = value
-    }
+    m.metadata = value
 }
 // SetName sets the name property value. The name property
 func (m *ObjectDefinition) SetName(value *string)() {
-    if m != nil {
-        m.name = value
-    }
+    m.name = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *ObjectDefinition) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetSupportedApis sets the supportedApis property value. The supportedApis property
 func (m *ObjectDefinition) SetSupportedApis(value []string)() {
-    if m != nil {
-        m.supportedApis = value
-    }
+    m.supportedApis = value
 }

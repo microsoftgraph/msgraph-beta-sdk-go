@@ -69,19 +69,11 @@ func CreateAndroidForWorkCompliancePolicyFromDiscriminatorValue(parseNode i878a8
 }
 // GetDeviceThreatProtectionEnabled gets the deviceThreatProtectionEnabled property value. Require that devices have enabled device threat protection.
 func (m *AndroidForWorkCompliancePolicy) GetDeviceThreatProtectionEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deviceThreatProtectionEnabled
-    }
+    return m.deviceThreatProtectionEnabled
 }
 // GetDeviceThreatProtectionRequiredSecurityLevel gets the deviceThreatProtectionRequiredSecurityLevel property value. Device threat protection levels for the Device Threat Protection API.
 func (m *AndroidForWorkCompliancePolicy) GetDeviceThreatProtectionRequiredSecurityLevel()(*DeviceThreatProtectionLevel) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deviceThreatProtectionRequiredSecurityLevel
-    }
+    return m.deviceThreatProtectionRequiredSecurityLevel
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AndroidForWorkCompliancePolicy) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -320,171 +312,87 @@ func (m *AndroidForWorkCompliancePolicy) GetFieldDeserializers()(map[string]func
 }
 // GetMinAndroidSecurityPatchLevel gets the minAndroidSecurityPatchLevel property value. Minimum Android security patch level.
 func (m *AndroidForWorkCompliancePolicy) GetMinAndroidSecurityPatchLevel()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.minAndroidSecurityPatchLevel
-    }
+    return m.minAndroidSecurityPatchLevel
 }
 // GetOsMaximumVersion gets the osMaximumVersion property value. Maximum Android version.
 func (m *AndroidForWorkCompliancePolicy) GetOsMaximumVersion()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.osMaximumVersion
-    }
+    return m.osMaximumVersion
 }
 // GetOsMinimumVersion gets the osMinimumVersion property value. Minimum Android version.
 func (m *AndroidForWorkCompliancePolicy) GetOsMinimumVersion()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.osMinimumVersion
-    }
+    return m.osMinimumVersion
 }
 // GetPasswordExpirationDays gets the passwordExpirationDays property value. Number of days before the password expires. Valid values 1 to 365
 func (m *AndroidForWorkCompliancePolicy) GetPasswordExpirationDays()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.passwordExpirationDays
-    }
+    return m.passwordExpirationDays
 }
 // GetPasswordMinimumLength gets the passwordMinimumLength property value. Minimum password length. Valid values 4 to 16
 func (m *AndroidForWorkCompliancePolicy) GetPasswordMinimumLength()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.passwordMinimumLength
-    }
+    return m.passwordMinimumLength
 }
 // GetPasswordMinutesOfInactivityBeforeLock gets the passwordMinutesOfInactivityBeforeLock property value. Minutes of inactivity before a password is required.
 func (m *AndroidForWorkCompliancePolicy) GetPasswordMinutesOfInactivityBeforeLock()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.passwordMinutesOfInactivityBeforeLock
-    }
+    return m.passwordMinutesOfInactivityBeforeLock
 }
 // GetPasswordPreviousPasswordBlockCount gets the passwordPreviousPasswordBlockCount property value. Number of previous passwords to block. Valid values 1 to 24
 func (m *AndroidForWorkCompliancePolicy) GetPasswordPreviousPasswordBlockCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.passwordPreviousPasswordBlockCount
-    }
+    return m.passwordPreviousPasswordBlockCount
 }
 // GetPasswordRequired gets the passwordRequired property value. Require a password to unlock device.
 func (m *AndroidForWorkCompliancePolicy) GetPasswordRequired()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.passwordRequired
-    }
+    return m.passwordRequired
 }
 // GetPasswordRequiredType gets the passwordRequiredType property value. Android required password type.
 func (m *AndroidForWorkCompliancePolicy) GetPasswordRequiredType()(*AndroidRequiredPasswordType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.passwordRequiredType
-    }
+    return m.passwordRequiredType
 }
 // GetPasswordSignInFailureCountBeforeFactoryReset gets the passwordSignInFailureCountBeforeFactoryReset property value. Number of sign-in failures allowed before factory reset. Valid values 1 to 16
 func (m *AndroidForWorkCompliancePolicy) GetPasswordSignInFailureCountBeforeFactoryReset()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.passwordSignInFailureCountBeforeFactoryReset
-    }
+    return m.passwordSignInFailureCountBeforeFactoryReset
 }
 // GetSecurityBlockJailbrokenDevices gets the securityBlockJailbrokenDevices property value. Devices must not be jailbroken or rooted.
 func (m *AndroidForWorkCompliancePolicy) GetSecurityBlockJailbrokenDevices()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.securityBlockJailbrokenDevices
-    }
+    return m.securityBlockJailbrokenDevices
 }
 // GetSecurityDisableUsbDebugging gets the securityDisableUsbDebugging property value. Disable USB debugging on Android devices.
 func (m *AndroidForWorkCompliancePolicy) GetSecurityDisableUsbDebugging()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.securityDisableUsbDebugging
-    }
+    return m.securityDisableUsbDebugging
 }
 // GetSecurityPreventInstallAppsFromUnknownSources gets the securityPreventInstallAppsFromUnknownSources property value. Require that devices disallow installation of apps from unknown sources.
 func (m *AndroidForWorkCompliancePolicy) GetSecurityPreventInstallAppsFromUnknownSources()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.securityPreventInstallAppsFromUnknownSources
-    }
+    return m.securityPreventInstallAppsFromUnknownSources
 }
 // GetSecurityRequireCompanyPortalAppIntegrity gets the securityRequireCompanyPortalAppIntegrity property value. Require the device to pass the Company Portal client app runtime integrity check.
 func (m *AndroidForWorkCompliancePolicy) GetSecurityRequireCompanyPortalAppIntegrity()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.securityRequireCompanyPortalAppIntegrity
-    }
+    return m.securityRequireCompanyPortalAppIntegrity
 }
 // GetSecurityRequiredAndroidSafetyNetEvaluationType gets the securityRequiredAndroidSafetyNetEvaluationType property value. An enum representing the Android SafetyNet attestation evaluation types.
 func (m *AndroidForWorkCompliancePolicy) GetSecurityRequiredAndroidSafetyNetEvaluationType()(*AndroidSafetyNetEvaluationType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.securityRequiredAndroidSafetyNetEvaluationType
-    }
+    return m.securityRequiredAndroidSafetyNetEvaluationType
 }
 // GetSecurityRequireGooglePlayServices gets the securityRequireGooglePlayServices property value. Require Google Play Services to be installed and enabled on the device.
 func (m *AndroidForWorkCompliancePolicy) GetSecurityRequireGooglePlayServices()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.securityRequireGooglePlayServices
-    }
+    return m.securityRequireGooglePlayServices
 }
 // GetSecurityRequireSafetyNetAttestationBasicIntegrity gets the securityRequireSafetyNetAttestationBasicIntegrity property value. Require the device to pass the SafetyNet basic integrity check.
 func (m *AndroidForWorkCompliancePolicy) GetSecurityRequireSafetyNetAttestationBasicIntegrity()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.securityRequireSafetyNetAttestationBasicIntegrity
-    }
+    return m.securityRequireSafetyNetAttestationBasicIntegrity
 }
 // GetSecurityRequireSafetyNetAttestationCertifiedDevice gets the securityRequireSafetyNetAttestationCertifiedDevice property value. Require the device to pass the SafetyNet certified device check.
 func (m *AndroidForWorkCompliancePolicy) GetSecurityRequireSafetyNetAttestationCertifiedDevice()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.securityRequireSafetyNetAttestationCertifiedDevice
-    }
+    return m.securityRequireSafetyNetAttestationCertifiedDevice
 }
 // GetSecurityRequireUpToDateSecurityProviders gets the securityRequireUpToDateSecurityProviders property value. Require the device to have up to date security providers. The device will require Google Play Services to be enabled and up to date.
 func (m *AndroidForWorkCompliancePolicy) GetSecurityRequireUpToDateSecurityProviders()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.securityRequireUpToDateSecurityProviders
-    }
+    return m.securityRequireUpToDateSecurityProviders
 }
 // GetSecurityRequireVerifyApps gets the securityRequireVerifyApps property value. Require the Android Verify apps feature is turned on.
 func (m *AndroidForWorkCompliancePolicy) GetSecurityRequireVerifyApps()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.securityRequireVerifyApps
-    }
+    return m.securityRequireVerifyApps
 }
 // GetStorageRequireEncryption gets the storageRequireEncryption property value. Require encryption on Android devices.
 func (m *AndroidForWorkCompliancePolicy) GetStorageRequireEncryption()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.storageRequireEncryption
-    }
+    return m.storageRequireEncryption
 }
 // Serialize serializes information the current object
 func (m *AndroidForWorkCompliancePolicy) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -637,139 +545,93 @@ func (m *AndroidForWorkCompliancePolicy) Serialize(writer i878a80d2330e89d268963
 }
 // SetDeviceThreatProtectionEnabled sets the deviceThreatProtectionEnabled property value. Require that devices have enabled device threat protection.
 func (m *AndroidForWorkCompliancePolicy) SetDeviceThreatProtectionEnabled(value *bool)() {
-    if m != nil {
-        m.deviceThreatProtectionEnabled = value
-    }
+    m.deviceThreatProtectionEnabled = value
 }
 // SetDeviceThreatProtectionRequiredSecurityLevel sets the deviceThreatProtectionRequiredSecurityLevel property value. Device threat protection levels for the Device Threat Protection API.
 func (m *AndroidForWorkCompliancePolicy) SetDeviceThreatProtectionRequiredSecurityLevel(value *DeviceThreatProtectionLevel)() {
-    if m != nil {
-        m.deviceThreatProtectionRequiredSecurityLevel = value
-    }
+    m.deviceThreatProtectionRequiredSecurityLevel = value
 }
 // SetMinAndroidSecurityPatchLevel sets the minAndroidSecurityPatchLevel property value. Minimum Android security patch level.
 func (m *AndroidForWorkCompliancePolicy) SetMinAndroidSecurityPatchLevel(value *string)() {
-    if m != nil {
-        m.minAndroidSecurityPatchLevel = value
-    }
+    m.minAndroidSecurityPatchLevel = value
 }
 // SetOsMaximumVersion sets the osMaximumVersion property value. Maximum Android version.
 func (m *AndroidForWorkCompliancePolicy) SetOsMaximumVersion(value *string)() {
-    if m != nil {
-        m.osMaximumVersion = value
-    }
+    m.osMaximumVersion = value
 }
 // SetOsMinimumVersion sets the osMinimumVersion property value. Minimum Android version.
 func (m *AndroidForWorkCompliancePolicy) SetOsMinimumVersion(value *string)() {
-    if m != nil {
-        m.osMinimumVersion = value
-    }
+    m.osMinimumVersion = value
 }
 // SetPasswordExpirationDays sets the passwordExpirationDays property value. Number of days before the password expires. Valid values 1 to 365
 func (m *AndroidForWorkCompliancePolicy) SetPasswordExpirationDays(value *int32)() {
-    if m != nil {
-        m.passwordExpirationDays = value
-    }
+    m.passwordExpirationDays = value
 }
 // SetPasswordMinimumLength sets the passwordMinimumLength property value. Minimum password length. Valid values 4 to 16
 func (m *AndroidForWorkCompliancePolicy) SetPasswordMinimumLength(value *int32)() {
-    if m != nil {
-        m.passwordMinimumLength = value
-    }
+    m.passwordMinimumLength = value
 }
 // SetPasswordMinutesOfInactivityBeforeLock sets the passwordMinutesOfInactivityBeforeLock property value. Minutes of inactivity before a password is required.
 func (m *AndroidForWorkCompliancePolicy) SetPasswordMinutesOfInactivityBeforeLock(value *int32)() {
-    if m != nil {
-        m.passwordMinutesOfInactivityBeforeLock = value
-    }
+    m.passwordMinutesOfInactivityBeforeLock = value
 }
 // SetPasswordPreviousPasswordBlockCount sets the passwordPreviousPasswordBlockCount property value. Number of previous passwords to block. Valid values 1 to 24
 func (m *AndroidForWorkCompliancePolicy) SetPasswordPreviousPasswordBlockCount(value *int32)() {
-    if m != nil {
-        m.passwordPreviousPasswordBlockCount = value
-    }
+    m.passwordPreviousPasswordBlockCount = value
 }
 // SetPasswordRequired sets the passwordRequired property value. Require a password to unlock device.
 func (m *AndroidForWorkCompliancePolicy) SetPasswordRequired(value *bool)() {
-    if m != nil {
-        m.passwordRequired = value
-    }
+    m.passwordRequired = value
 }
 // SetPasswordRequiredType sets the passwordRequiredType property value. Android required password type.
 func (m *AndroidForWorkCompliancePolicy) SetPasswordRequiredType(value *AndroidRequiredPasswordType)() {
-    if m != nil {
-        m.passwordRequiredType = value
-    }
+    m.passwordRequiredType = value
 }
 // SetPasswordSignInFailureCountBeforeFactoryReset sets the passwordSignInFailureCountBeforeFactoryReset property value. Number of sign-in failures allowed before factory reset. Valid values 1 to 16
 func (m *AndroidForWorkCompliancePolicy) SetPasswordSignInFailureCountBeforeFactoryReset(value *int32)() {
-    if m != nil {
-        m.passwordSignInFailureCountBeforeFactoryReset = value
-    }
+    m.passwordSignInFailureCountBeforeFactoryReset = value
 }
 // SetSecurityBlockJailbrokenDevices sets the securityBlockJailbrokenDevices property value. Devices must not be jailbroken or rooted.
 func (m *AndroidForWorkCompliancePolicy) SetSecurityBlockJailbrokenDevices(value *bool)() {
-    if m != nil {
-        m.securityBlockJailbrokenDevices = value
-    }
+    m.securityBlockJailbrokenDevices = value
 }
 // SetSecurityDisableUsbDebugging sets the securityDisableUsbDebugging property value. Disable USB debugging on Android devices.
 func (m *AndroidForWorkCompliancePolicy) SetSecurityDisableUsbDebugging(value *bool)() {
-    if m != nil {
-        m.securityDisableUsbDebugging = value
-    }
+    m.securityDisableUsbDebugging = value
 }
 // SetSecurityPreventInstallAppsFromUnknownSources sets the securityPreventInstallAppsFromUnknownSources property value. Require that devices disallow installation of apps from unknown sources.
 func (m *AndroidForWorkCompliancePolicy) SetSecurityPreventInstallAppsFromUnknownSources(value *bool)() {
-    if m != nil {
-        m.securityPreventInstallAppsFromUnknownSources = value
-    }
+    m.securityPreventInstallAppsFromUnknownSources = value
 }
 // SetSecurityRequireCompanyPortalAppIntegrity sets the securityRequireCompanyPortalAppIntegrity property value. Require the device to pass the Company Portal client app runtime integrity check.
 func (m *AndroidForWorkCompliancePolicy) SetSecurityRequireCompanyPortalAppIntegrity(value *bool)() {
-    if m != nil {
-        m.securityRequireCompanyPortalAppIntegrity = value
-    }
+    m.securityRequireCompanyPortalAppIntegrity = value
 }
 // SetSecurityRequiredAndroidSafetyNetEvaluationType sets the securityRequiredAndroidSafetyNetEvaluationType property value. An enum representing the Android SafetyNet attestation evaluation types.
 func (m *AndroidForWorkCompliancePolicy) SetSecurityRequiredAndroidSafetyNetEvaluationType(value *AndroidSafetyNetEvaluationType)() {
-    if m != nil {
-        m.securityRequiredAndroidSafetyNetEvaluationType = value
-    }
+    m.securityRequiredAndroidSafetyNetEvaluationType = value
 }
 // SetSecurityRequireGooglePlayServices sets the securityRequireGooglePlayServices property value. Require Google Play Services to be installed and enabled on the device.
 func (m *AndroidForWorkCompliancePolicy) SetSecurityRequireGooglePlayServices(value *bool)() {
-    if m != nil {
-        m.securityRequireGooglePlayServices = value
-    }
+    m.securityRequireGooglePlayServices = value
 }
 // SetSecurityRequireSafetyNetAttestationBasicIntegrity sets the securityRequireSafetyNetAttestationBasicIntegrity property value. Require the device to pass the SafetyNet basic integrity check.
 func (m *AndroidForWorkCompliancePolicy) SetSecurityRequireSafetyNetAttestationBasicIntegrity(value *bool)() {
-    if m != nil {
-        m.securityRequireSafetyNetAttestationBasicIntegrity = value
-    }
+    m.securityRequireSafetyNetAttestationBasicIntegrity = value
 }
 // SetSecurityRequireSafetyNetAttestationCertifiedDevice sets the securityRequireSafetyNetAttestationCertifiedDevice property value. Require the device to pass the SafetyNet certified device check.
 func (m *AndroidForWorkCompliancePolicy) SetSecurityRequireSafetyNetAttestationCertifiedDevice(value *bool)() {
-    if m != nil {
-        m.securityRequireSafetyNetAttestationCertifiedDevice = value
-    }
+    m.securityRequireSafetyNetAttestationCertifiedDevice = value
 }
 // SetSecurityRequireUpToDateSecurityProviders sets the securityRequireUpToDateSecurityProviders property value. Require the device to have up to date security providers. The device will require Google Play Services to be enabled and up to date.
 func (m *AndroidForWorkCompliancePolicy) SetSecurityRequireUpToDateSecurityProviders(value *bool)() {
-    if m != nil {
-        m.securityRequireUpToDateSecurityProviders = value
-    }
+    m.securityRequireUpToDateSecurityProviders = value
 }
 // SetSecurityRequireVerifyApps sets the securityRequireVerifyApps property value. Require the Android Verify apps feature is turned on.
 func (m *AndroidForWorkCompliancePolicy) SetSecurityRequireVerifyApps(value *bool)() {
-    if m != nil {
-        m.securityRequireVerifyApps = value
-    }
+    m.securityRequireVerifyApps = value
 }
 // SetStorageRequireEncryption sets the storageRequireEncryption property value. Require encryption on Android devices.
 func (m *AndroidForWorkCompliancePolicy) SetStorageRequireEncryption(value *bool)() {
-    if m != nil {
-        m.storageRequireEncryption = value
-    }
+    m.storageRequireEncryption = value
 }

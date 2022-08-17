@@ -101,115 +101,59 @@ func CreateCompanyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f48
 }
 // GetAccounts gets the accounts property value. The accounts property
 func (m *Company) GetAccounts()([]Accountable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.accounts
-    }
+    return m.accounts
 }
 // GetAgedAccountsPayable gets the agedAccountsPayable property value. The agedAccountsPayable property
 func (m *Company) GetAgedAccountsPayable()([]AgedAccountsPayableable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.agedAccountsPayable
-    }
+    return m.agedAccountsPayable
 }
 // GetAgedAccountsReceivable gets the agedAccountsReceivable property value. The agedAccountsReceivable property
 func (m *Company) GetAgedAccountsReceivable()([]AgedAccountsReceivableable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.agedAccountsReceivable
-    }
+    return m.agedAccountsReceivable
 }
 // GetBusinessProfileId gets the businessProfileId property value. The businessProfileId property
 func (m *Company) GetBusinessProfileId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.businessProfileId
-    }
+    return m.businessProfileId
 }
 // GetCompanyInformation gets the companyInformation property value. The companyInformation property
 func (m *Company) GetCompanyInformation()([]CompanyInformationable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.companyInformation
-    }
+    return m.companyInformation
 }
 // GetCountriesRegions gets the countriesRegions property value. The countriesRegions property
 func (m *Company) GetCountriesRegions()([]CountryRegionable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.countriesRegions
-    }
+    return m.countriesRegions
 }
 // GetCurrencies gets the currencies property value. The currencies property
 func (m *Company) GetCurrencies()([]Currencyable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.currencies
-    }
+    return m.currencies
 }
 // GetCustomerPaymentJournals gets the customerPaymentJournals property value. The customerPaymentJournals property
 func (m *Company) GetCustomerPaymentJournals()([]CustomerPaymentJournalable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.customerPaymentJournals
-    }
+    return m.customerPaymentJournals
 }
 // GetCustomerPayments gets the customerPayments property value. The customerPayments property
 func (m *Company) GetCustomerPayments()([]CustomerPaymentable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.customerPayments
-    }
+    return m.customerPayments
 }
 // GetCustomers gets the customers property value. The customers property
 func (m *Company) GetCustomers()([]Customerable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.customers
-    }
+    return m.customers
 }
 // GetDimensions gets the dimensions property value. The dimensions property
 func (m *Company) GetDimensions()([]Dimensionable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.dimensions
-    }
+    return m.dimensions
 }
 // GetDimensionValues gets the dimensionValues property value. The dimensionValues property
 func (m *Company) GetDimensionValues()([]DimensionValueable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.dimensionValues
-    }
+    return m.dimensionValues
 }
 // GetDisplayName gets the displayName property value. The displayName property
 func (m *Company) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
 // GetEmployees gets the employees property value. The employees property
 func (m *Company) GetEmployees()([]Employeeable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.employees
-    }
+    return m.employees
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Company) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -748,203 +692,103 @@ func (m *Company) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
 }
 // GetGeneralLedgerEntries gets the generalLedgerEntries property value. The generalLedgerEntries property
 func (m *Company) GetGeneralLedgerEntries()([]GeneralLedgerEntryable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.generalLedgerEntries
-    }
+    return m.generalLedgerEntries
 }
 // GetItemCategories gets the itemCategories property value. The itemCategories property
 func (m *Company) GetItemCategories()([]ItemCategoryable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.itemCategories
-    }
+    return m.itemCategories
 }
 // GetItems gets the items property value. The items property
 func (m *Company) GetItems()([]Itemable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.items
-    }
+    return m.items
 }
 // GetJournalLines gets the journalLines property value. The journalLines property
 func (m *Company) GetJournalLines()([]JournalLineable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.journalLines
-    }
+    return m.journalLines
 }
 // GetJournals gets the journals property value. The journals property
 func (m *Company) GetJournals()([]Journalable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.journals
-    }
+    return m.journals
 }
 // GetName gets the name property value. The name property
 func (m *Company) GetName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.name
-    }
+    return m.name
 }
 // GetPaymentMethods gets the paymentMethods property value. The paymentMethods property
 func (m *Company) GetPaymentMethods()([]PaymentMethodable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.paymentMethods
-    }
+    return m.paymentMethods
 }
 // GetPaymentTerms gets the paymentTerms property value. The paymentTerms property
 func (m *Company) GetPaymentTerms()([]PaymentTermable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.paymentTerms
-    }
+    return m.paymentTerms
 }
 // GetPicture gets the picture property value. The picture property
 func (m *Company) GetPicture()([]Pictureable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.picture
-    }
+    return m.picture
 }
 // GetPurchaseInvoiceLines gets the purchaseInvoiceLines property value. The purchaseInvoiceLines property
 func (m *Company) GetPurchaseInvoiceLines()([]PurchaseInvoiceLineable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.purchaseInvoiceLines
-    }
+    return m.purchaseInvoiceLines
 }
 // GetPurchaseInvoices gets the purchaseInvoices property value. The purchaseInvoices property
 func (m *Company) GetPurchaseInvoices()([]PurchaseInvoiceable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.purchaseInvoices
-    }
+    return m.purchaseInvoices
 }
 // GetSalesCreditMemoLines gets the salesCreditMemoLines property value. The salesCreditMemoLines property
 func (m *Company) GetSalesCreditMemoLines()([]SalesCreditMemoLineable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.salesCreditMemoLines
-    }
+    return m.salesCreditMemoLines
 }
 // GetSalesCreditMemos gets the salesCreditMemos property value. The salesCreditMemos property
 func (m *Company) GetSalesCreditMemos()([]SalesCreditMemoable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.salesCreditMemos
-    }
+    return m.salesCreditMemos
 }
 // GetSalesInvoiceLines gets the salesInvoiceLines property value. The salesInvoiceLines property
 func (m *Company) GetSalesInvoiceLines()([]SalesInvoiceLineable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.salesInvoiceLines
-    }
+    return m.salesInvoiceLines
 }
 // GetSalesInvoices gets the salesInvoices property value. The salesInvoices property
 func (m *Company) GetSalesInvoices()([]SalesInvoiceable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.salesInvoices
-    }
+    return m.salesInvoices
 }
 // GetSalesOrderLines gets the salesOrderLines property value. The salesOrderLines property
 func (m *Company) GetSalesOrderLines()([]SalesOrderLineable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.salesOrderLines
-    }
+    return m.salesOrderLines
 }
 // GetSalesOrders gets the salesOrders property value. The salesOrders property
 func (m *Company) GetSalesOrders()([]SalesOrderable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.salesOrders
-    }
+    return m.salesOrders
 }
 // GetSalesQuoteLines gets the salesQuoteLines property value. The salesQuoteLines property
 func (m *Company) GetSalesQuoteLines()([]SalesQuoteLineable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.salesQuoteLines
-    }
+    return m.salesQuoteLines
 }
 // GetSalesQuotes gets the salesQuotes property value. The salesQuotes property
 func (m *Company) GetSalesQuotes()([]SalesQuoteable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.salesQuotes
-    }
+    return m.salesQuotes
 }
 // GetShipmentMethods gets the shipmentMethods property value. The shipmentMethods property
 func (m *Company) GetShipmentMethods()([]ShipmentMethodable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.shipmentMethods
-    }
+    return m.shipmentMethods
 }
 // GetSystemVersion gets the systemVersion property value. The systemVersion property
 func (m *Company) GetSystemVersion()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.systemVersion
-    }
+    return m.systemVersion
 }
 // GetTaxAreas gets the taxAreas property value. The taxAreas property
 func (m *Company) GetTaxAreas()([]TaxAreaable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.taxAreas
-    }
+    return m.taxAreas
 }
 // GetTaxGroups gets the taxGroups property value. The taxGroups property
 func (m *Company) GetTaxGroups()([]TaxGroupable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.taxGroups
-    }
+    return m.taxGroups
 }
 // GetUnitsOfMeasure gets the unitsOfMeasure property value. The unitsOfMeasure property
 func (m *Company) GetUnitsOfMeasure()([]UnitOfMeasureable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.unitsOfMeasure
-    }
+    return m.unitsOfMeasure
 }
 // GetVendors gets the vendors property value. The vendors property
 func (m *Company) GetVendors()([]Vendor_escapedable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.vendors
-    }
+    return m.vendors
 }
 // Serialize serializes information the current object
 func (m *Company) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -1330,235 +1174,157 @@ func (m *Company) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
 }
 // SetAccounts sets the accounts property value. The accounts property
 func (m *Company) SetAccounts(value []Accountable)() {
-    if m != nil {
-        m.accounts = value
-    }
+    m.accounts = value
 }
 // SetAgedAccountsPayable sets the agedAccountsPayable property value. The agedAccountsPayable property
 func (m *Company) SetAgedAccountsPayable(value []AgedAccountsPayableable)() {
-    if m != nil {
-        m.agedAccountsPayable = value
-    }
+    m.agedAccountsPayable = value
 }
 // SetAgedAccountsReceivable sets the agedAccountsReceivable property value. The agedAccountsReceivable property
 func (m *Company) SetAgedAccountsReceivable(value []AgedAccountsReceivableable)() {
-    if m != nil {
-        m.agedAccountsReceivable = value
-    }
+    m.agedAccountsReceivable = value
 }
 // SetBusinessProfileId sets the businessProfileId property value. The businessProfileId property
 func (m *Company) SetBusinessProfileId(value *string)() {
-    if m != nil {
-        m.businessProfileId = value
-    }
+    m.businessProfileId = value
 }
 // SetCompanyInformation sets the companyInformation property value. The companyInformation property
 func (m *Company) SetCompanyInformation(value []CompanyInformationable)() {
-    if m != nil {
-        m.companyInformation = value
-    }
+    m.companyInformation = value
 }
 // SetCountriesRegions sets the countriesRegions property value. The countriesRegions property
 func (m *Company) SetCountriesRegions(value []CountryRegionable)() {
-    if m != nil {
-        m.countriesRegions = value
-    }
+    m.countriesRegions = value
 }
 // SetCurrencies sets the currencies property value. The currencies property
 func (m *Company) SetCurrencies(value []Currencyable)() {
-    if m != nil {
-        m.currencies = value
-    }
+    m.currencies = value
 }
 // SetCustomerPaymentJournals sets the customerPaymentJournals property value. The customerPaymentJournals property
 func (m *Company) SetCustomerPaymentJournals(value []CustomerPaymentJournalable)() {
-    if m != nil {
-        m.customerPaymentJournals = value
-    }
+    m.customerPaymentJournals = value
 }
 // SetCustomerPayments sets the customerPayments property value. The customerPayments property
 func (m *Company) SetCustomerPayments(value []CustomerPaymentable)() {
-    if m != nil {
-        m.customerPayments = value
-    }
+    m.customerPayments = value
 }
 // SetCustomers sets the customers property value. The customers property
 func (m *Company) SetCustomers(value []Customerable)() {
-    if m != nil {
-        m.customers = value
-    }
+    m.customers = value
 }
 // SetDimensions sets the dimensions property value. The dimensions property
 func (m *Company) SetDimensions(value []Dimensionable)() {
-    if m != nil {
-        m.dimensions = value
-    }
+    m.dimensions = value
 }
 // SetDimensionValues sets the dimensionValues property value. The dimensionValues property
 func (m *Company) SetDimensionValues(value []DimensionValueable)() {
-    if m != nil {
-        m.dimensionValues = value
-    }
+    m.dimensionValues = value
 }
 // SetDisplayName sets the displayName property value. The displayName property
 func (m *Company) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }
 // SetEmployees sets the employees property value. The employees property
 func (m *Company) SetEmployees(value []Employeeable)() {
-    if m != nil {
-        m.employees = value
-    }
+    m.employees = value
 }
 // SetGeneralLedgerEntries sets the generalLedgerEntries property value. The generalLedgerEntries property
 func (m *Company) SetGeneralLedgerEntries(value []GeneralLedgerEntryable)() {
-    if m != nil {
-        m.generalLedgerEntries = value
-    }
+    m.generalLedgerEntries = value
 }
 // SetItemCategories sets the itemCategories property value. The itemCategories property
 func (m *Company) SetItemCategories(value []ItemCategoryable)() {
-    if m != nil {
-        m.itemCategories = value
-    }
+    m.itemCategories = value
 }
 // SetItems sets the items property value. The items property
 func (m *Company) SetItems(value []Itemable)() {
-    if m != nil {
-        m.items = value
-    }
+    m.items = value
 }
 // SetJournalLines sets the journalLines property value. The journalLines property
 func (m *Company) SetJournalLines(value []JournalLineable)() {
-    if m != nil {
-        m.journalLines = value
-    }
+    m.journalLines = value
 }
 // SetJournals sets the journals property value. The journals property
 func (m *Company) SetJournals(value []Journalable)() {
-    if m != nil {
-        m.journals = value
-    }
+    m.journals = value
 }
 // SetName sets the name property value. The name property
 func (m *Company) SetName(value *string)() {
-    if m != nil {
-        m.name = value
-    }
+    m.name = value
 }
 // SetPaymentMethods sets the paymentMethods property value. The paymentMethods property
 func (m *Company) SetPaymentMethods(value []PaymentMethodable)() {
-    if m != nil {
-        m.paymentMethods = value
-    }
+    m.paymentMethods = value
 }
 // SetPaymentTerms sets the paymentTerms property value. The paymentTerms property
 func (m *Company) SetPaymentTerms(value []PaymentTermable)() {
-    if m != nil {
-        m.paymentTerms = value
-    }
+    m.paymentTerms = value
 }
 // SetPicture sets the picture property value. The picture property
 func (m *Company) SetPicture(value []Pictureable)() {
-    if m != nil {
-        m.picture = value
-    }
+    m.picture = value
 }
 // SetPurchaseInvoiceLines sets the purchaseInvoiceLines property value. The purchaseInvoiceLines property
 func (m *Company) SetPurchaseInvoiceLines(value []PurchaseInvoiceLineable)() {
-    if m != nil {
-        m.purchaseInvoiceLines = value
-    }
+    m.purchaseInvoiceLines = value
 }
 // SetPurchaseInvoices sets the purchaseInvoices property value. The purchaseInvoices property
 func (m *Company) SetPurchaseInvoices(value []PurchaseInvoiceable)() {
-    if m != nil {
-        m.purchaseInvoices = value
-    }
+    m.purchaseInvoices = value
 }
 // SetSalesCreditMemoLines sets the salesCreditMemoLines property value. The salesCreditMemoLines property
 func (m *Company) SetSalesCreditMemoLines(value []SalesCreditMemoLineable)() {
-    if m != nil {
-        m.salesCreditMemoLines = value
-    }
+    m.salesCreditMemoLines = value
 }
 // SetSalesCreditMemos sets the salesCreditMemos property value. The salesCreditMemos property
 func (m *Company) SetSalesCreditMemos(value []SalesCreditMemoable)() {
-    if m != nil {
-        m.salesCreditMemos = value
-    }
+    m.salesCreditMemos = value
 }
 // SetSalesInvoiceLines sets the salesInvoiceLines property value. The salesInvoiceLines property
 func (m *Company) SetSalesInvoiceLines(value []SalesInvoiceLineable)() {
-    if m != nil {
-        m.salesInvoiceLines = value
-    }
+    m.salesInvoiceLines = value
 }
 // SetSalesInvoices sets the salesInvoices property value. The salesInvoices property
 func (m *Company) SetSalesInvoices(value []SalesInvoiceable)() {
-    if m != nil {
-        m.salesInvoices = value
-    }
+    m.salesInvoices = value
 }
 // SetSalesOrderLines sets the salesOrderLines property value. The salesOrderLines property
 func (m *Company) SetSalesOrderLines(value []SalesOrderLineable)() {
-    if m != nil {
-        m.salesOrderLines = value
-    }
+    m.salesOrderLines = value
 }
 // SetSalesOrders sets the salesOrders property value. The salesOrders property
 func (m *Company) SetSalesOrders(value []SalesOrderable)() {
-    if m != nil {
-        m.salesOrders = value
-    }
+    m.salesOrders = value
 }
 // SetSalesQuoteLines sets the salesQuoteLines property value. The salesQuoteLines property
 func (m *Company) SetSalesQuoteLines(value []SalesQuoteLineable)() {
-    if m != nil {
-        m.salesQuoteLines = value
-    }
+    m.salesQuoteLines = value
 }
 // SetSalesQuotes sets the salesQuotes property value. The salesQuotes property
 func (m *Company) SetSalesQuotes(value []SalesQuoteable)() {
-    if m != nil {
-        m.salesQuotes = value
-    }
+    m.salesQuotes = value
 }
 // SetShipmentMethods sets the shipmentMethods property value. The shipmentMethods property
 func (m *Company) SetShipmentMethods(value []ShipmentMethodable)() {
-    if m != nil {
-        m.shipmentMethods = value
-    }
+    m.shipmentMethods = value
 }
 // SetSystemVersion sets the systemVersion property value. The systemVersion property
 func (m *Company) SetSystemVersion(value *string)() {
-    if m != nil {
-        m.systemVersion = value
-    }
+    m.systemVersion = value
 }
 // SetTaxAreas sets the taxAreas property value. The taxAreas property
 func (m *Company) SetTaxAreas(value []TaxAreaable)() {
-    if m != nil {
-        m.taxAreas = value
-    }
+    m.taxAreas = value
 }
 // SetTaxGroups sets the taxGroups property value. The taxGroups property
 func (m *Company) SetTaxGroups(value []TaxGroupable)() {
-    if m != nil {
-        m.taxGroups = value
-    }
+    m.taxGroups = value
 }
 // SetUnitsOfMeasure sets the unitsOfMeasure property value. The unitsOfMeasure property
 func (m *Company) SetUnitsOfMeasure(value []UnitOfMeasureable)() {
-    if m != nil {
-        m.unitsOfMeasure = value
-    }
+    m.unitsOfMeasure = value
 }
 // SetVendors sets the vendors property value. The vendors property
 func (m *Company) SetVendors(value []Vendor_escapedable)() {
-    if m != nil {
-        m.vendors = value
-    }
+    m.vendors = value
 }

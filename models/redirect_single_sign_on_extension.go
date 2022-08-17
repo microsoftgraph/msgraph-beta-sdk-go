@@ -31,19 +31,11 @@ func CreateRedirectSingleSignOnExtensionFromDiscriminatorValue(parseNode i878a80
 }
 // GetConfigurations gets the configurations property value. Gets or sets a list of typed key-value pairs used to configure Credential-type profiles. This collection can contain a maximum of 500 elements.
 func (m *RedirectSingleSignOnExtension) GetConfigurations()([]KeyTypedValuePairable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.configurations
-    }
+    return m.configurations
 }
 // GetExtensionIdentifier gets the extensionIdentifier property value. Gets or sets the bundle ID of the app extension that performs SSO for the specified URLs.
 func (m *RedirectSingleSignOnExtension) GetExtensionIdentifier()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.extensionIdentifier
-    }
+    return m.extensionIdentifier
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *RedirectSingleSignOnExtension) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -100,19 +92,11 @@ func (m *RedirectSingleSignOnExtension) GetFieldDeserializers()(map[string]func(
 }
 // GetTeamIdentifier gets the teamIdentifier property value. Gets or sets the team ID of the app extension that performs SSO for the specified URLs.
 func (m *RedirectSingleSignOnExtension) GetTeamIdentifier()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.teamIdentifier
-    }
+    return m.teamIdentifier
 }
 // GetUrlPrefixes gets the urlPrefixes property value. One or more URL prefixes of identity providers on whose behalf the app extension performs single sign-on. URLs must begin with http:// or https://. All URL prefixes must be unique for all profiles.
 func (m *RedirectSingleSignOnExtension) GetUrlPrefixes()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.urlPrefixes
-    }
+    return m.urlPrefixes
 }
 // Serialize serializes information the current object
 func (m *RedirectSingleSignOnExtension) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -152,25 +136,17 @@ func (m *RedirectSingleSignOnExtension) Serialize(writer i878a80d2330e89d2689638
 }
 // SetConfigurations sets the configurations property value. Gets or sets a list of typed key-value pairs used to configure Credential-type profiles. This collection can contain a maximum of 500 elements.
 func (m *RedirectSingleSignOnExtension) SetConfigurations(value []KeyTypedValuePairable)() {
-    if m != nil {
-        m.configurations = value
-    }
+    m.configurations = value
 }
 // SetExtensionIdentifier sets the extensionIdentifier property value. Gets or sets the bundle ID of the app extension that performs SSO for the specified URLs.
 func (m *RedirectSingleSignOnExtension) SetExtensionIdentifier(value *string)() {
-    if m != nil {
-        m.extensionIdentifier = value
-    }
+    m.extensionIdentifier = value
 }
 // SetTeamIdentifier sets the teamIdentifier property value. Gets or sets the team ID of the app extension that performs SSO for the specified URLs.
 func (m *RedirectSingleSignOnExtension) SetTeamIdentifier(value *string)() {
-    if m != nil {
-        m.teamIdentifier = value
-    }
+    m.teamIdentifier = value
 }
 // SetUrlPrefixes sets the urlPrefixes property value. One or more URL prefixes of identity providers on whose behalf the app extension performs single sign-on. URLs must begin with http:// or https://. All URL prefixes must be unique for all profiles.
 func (m *RedirectSingleSignOnExtension) SetUrlPrefixes(value []string)() {
-    if m != nil {
-        m.urlPrefixes = value
-    }
+    m.urlPrefixes = value
 }

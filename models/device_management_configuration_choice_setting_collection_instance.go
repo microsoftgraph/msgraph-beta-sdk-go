@@ -25,11 +25,7 @@ func CreateDeviceManagementConfigurationChoiceSettingCollectionInstanceFromDiscr
 }
 // GetChoiceSettingCollectionValue gets the choiceSettingCollectionValue property value. Choice setting collection value
 func (m *DeviceManagementConfigurationChoiceSettingCollectionInstance) GetChoiceSettingCollectionValue()([]DeviceManagementConfigurationChoiceSettingValueable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.choiceSettingCollectionValue
-    }
+    return m.choiceSettingCollectionValue
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceManagementConfigurationChoiceSettingCollectionInstance) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -70,7 +66,5 @@ func (m *DeviceManagementConfigurationChoiceSettingCollectionInstance) Serialize
 }
 // SetChoiceSettingCollectionValue sets the choiceSettingCollectionValue property value. Choice setting collection value
 func (m *DeviceManagementConfigurationChoiceSettingCollectionInstance) SetChoiceSettingCollectionValue(value []DeviceManagementConfigurationChoiceSettingValueable)() {
-    if m != nil {
-        m.choiceSettingCollectionValue = value
-    }
+    m.choiceSettingCollectionValue = value
 }

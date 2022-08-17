@@ -36,19 +36,11 @@ func CreateVpnDnsRuleFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *VpnDnsRule) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetAutoTrigger gets the autoTrigger property value. Automatically connect to the VPN when the device connects to this domain: Default False.
 func (m *VpnDnsRule) GetAutoTrigger()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.autoTrigger
-    }
+    return m.autoTrigger
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *VpnDnsRule) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -121,43 +113,23 @@ func (m *VpnDnsRule) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
 }
 // GetName gets the name property value. Name.
 func (m *VpnDnsRule) GetName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.name
-    }
+    return m.name
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *VpnDnsRule) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetPersistent gets the persistent property value. Keep this rule active even when the VPN is not connected: Default False
 func (m *VpnDnsRule) GetPersistent()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.persistent
-    }
+    return m.persistent
 }
 // GetProxyServerUri gets the proxyServerUri property value. Proxy Server Uri.
 func (m *VpnDnsRule) GetProxyServerUri()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.proxyServerUri
-    }
+    return m.proxyServerUri
 }
 // GetServers gets the servers property value. Servers.
 func (m *VpnDnsRule) GetServers()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.servers
-    }
+    return m.servers
 }
 // Serialize serializes information the current object
 func (m *VpnDnsRule) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -207,43 +179,29 @@ func (m *VpnDnsRule) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *VpnDnsRule) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetAutoTrigger sets the autoTrigger property value. Automatically connect to the VPN when the device connects to this domain: Default False.
 func (m *VpnDnsRule) SetAutoTrigger(value *bool)() {
-    if m != nil {
-        m.autoTrigger = value
-    }
+    m.autoTrigger = value
 }
 // SetName sets the name property value. Name.
 func (m *VpnDnsRule) SetName(value *string)() {
-    if m != nil {
-        m.name = value
-    }
+    m.name = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *VpnDnsRule) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetPersistent sets the persistent property value. Keep this rule active even when the VPN is not connected: Default False
 func (m *VpnDnsRule) SetPersistent(value *bool)() {
-    if m != nil {
-        m.persistent = value
-    }
+    m.persistent = value
 }
 // SetProxyServerUri sets the proxyServerUri property value. Proxy Server Uri.
 func (m *VpnDnsRule) SetProxyServerUri(value *string)() {
-    if m != nil {
-        m.proxyServerUri = value
-    }
+    m.proxyServerUri = value
 }
 // SetServers sets the servers property value. Servers.
 func (m *VpnDnsRule) SetServers(value []string)() {
-    if m != nil {
-        m.servers = value
-    }
+    m.servers = value
 }

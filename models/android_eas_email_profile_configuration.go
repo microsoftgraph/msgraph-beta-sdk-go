@@ -57,51 +57,27 @@ func CreateAndroidEasEmailProfileConfigurationFromDiscriminatorValue(parseNode i
 }
 // GetAccountName gets the accountName property value. Exchange ActiveSync account name, displayed to users as name of EAS (this) profile.
 func (m *AndroidEasEmailProfileConfiguration) GetAccountName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.accountName
-    }
+    return m.accountName
 }
 // GetAuthenticationMethod gets the authenticationMethod property value. Exchange Active Sync authentication method.
 func (m *AndroidEasEmailProfileConfiguration) GetAuthenticationMethod()(*EasAuthenticationMethod) {
-    if m == nil {
-        return nil
-    } else {
-        return m.authenticationMethod
-    }
+    return m.authenticationMethod
 }
 // GetCustomDomainName gets the customDomainName property value. Custom domain name value used while generating an email profile before installing on the device.
 func (m *AndroidEasEmailProfileConfiguration) GetCustomDomainName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.customDomainName
-    }
+    return m.customDomainName
 }
 // GetDurationOfEmailToSync gets the durationOfEmailToSync property value. Possible values for email sync duration.
 func (m *AndroidEasEmailProfileConfiguration) GetDurationOfEmailToSync()(*EmailSyncDuration) {
-    if m == nil {
-        return nil
-    } else {
-        return m.durationOfEmailToSync
-    }
+    return m.durationOfEmailToSync
 }
 // GetEmailAddressSource gets the emailAddressSource property value. Possible values for username source or email source.
 func (m *AndroidEasEmailProfileConfiguration) GetEmailAddressSource()(*UserEmailSource) {
-    if m == nil {
-        return nil
-    } else {
-        return m.emailAddressSource
-    }
+    return m.emailAddressSource
 }
 // GetEmailSyncSchedule gets the emailSyncSchedule property value. Possible values for email sync schedule.
 func (m *AndroidEasEmailProfileConfiguration) GetEmailSyncSchedule()(*EmailSyncSchedule) {
-    if m == nil {
-        return nil
-    } else {
-        return m.emailSyncSchedule
-    }
+    return m.emailSyncSchedule
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AndroidEasEmailProfileConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -280,91 +256,47 @@ func (m *AndroidEasEmailProfileConfiguration) GetFieldDeserializers()(map[string
 }
 // GetHostName gets the hostName property value. Exchange location (URL) that the native mail app connects to.
 func (m *AndroidEasEmailProfileConfiguration) GetHostName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.hostName
-    }
+    return m.hostName
 }
 // GetIdentityCertificate gets the identityCertificate property value. Identity certificate.
 func (m *AndroidEasEmailProfileConfiguration) GetIdentityCertificate()(AndroidCertificateProfileBaseable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.identityCertificate
-    }
+    return m.identityCertificate
 }
 // GetRequireSmime gets the requireSmime property value. Indicates whether or not to use S/MIME certificate.
 func (m *AndroidEasEmailProfileConfiguration) GetRequireSmime()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.requireSmime
-    }
+    return m.requireSmime
 }
 // GetRequireSsl gets the requireSsl property value. Indicates whether or not to use SSL.
 func (m *AndroidEasEmailProfileConfiguration) GetRequireSsl()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.requireSsl
-    }
+    return m.requireSsl
 }
 // GetSmimeSigningCertificate gets the smimeSigningCertificate property value. S/MIME signing certificate.
 func (m *AndroidEasEmailProfileConfiguration) GetSmimeSigningCertificate()(AndroidCertificateProfileBaseable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.smimeSigningCertificate
-    }
+    return m.smimeSigningCertificate
 }
 // GetSyncCalendar gets the syncCalendar property value. Toggles syncing the calendar. If set to false calendar is turned off on the device.
 func (m *AndroidEasEmailProfileConfiguration) GetSyncCalendar()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.syncCalendar
-    }
+    return m.syncCalendar
 }
 // GetSyncContacts gets the syncContacts property value. Toggles syncing contacts. If set to false contacts are turned off on the device.
 func (m *AndroidEasEmailProfileConfiguration) GetSyncContacts()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.syncContacts
-    }
+    return m.syncContacts
 }
 // GetSyncNotes gets the syncNotes property value. Toggles syncing notes. If set to false notes are turned off on the device.
 func (m *AndroidEasEmailProfileConfiguration) GetSyncNotes()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.syncNotes
-    }
+    return m.syncNotes
 }
 // GetSyncTasks gets the syncTasks property value. Toggles syncing tasks. If set to false tasks are turned off on the device.
 func (m *AndroidEasEmailProfileConfiguration) GetSyncTasks()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.syncTasks
-    }
+    return m.syncTasks
 }
 // GetUserDomainNameSource gets the userDomainNameSource property value. UserDomainname attribute that is picked from AAD and injected into this profile before installing on the device. Possible values are: fullDomainName, netBiosDomainName.
 func (m *AndroidEasEmailProfileConfiguration) GetUserDomainNameSource()(*DomainNameSource) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userDomainNameSource
-    }
+    return m.userDomainNameSource
 }
 // GetUsernameSource gets the usernameSource property value. Android username source.
 func (m *AndroidEasEmailProfileConfiguration) GetUsernameSource()(*AndroidUsernameSource) {
-    if m == nil {
-        return nil
-    } else {
-        return m.usernameSource
-    }
+    return m.usernameSource
 }
 // Serialize serializes information the current object
 func (m *AndroidEasEmailProfileConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -484,103 +416,69 @@ func (m *AndroidEasEmailProfileConfiguration) Serialize(writer i878a80d2330e89d2
 }
 // SetAccountName sets the accountName property value. Exchange ActiveSync account name, displayed to users as name of EAS (this) profile.
 func (m *AndroidEasEmailProfileConfiguration) SetAccountName(value *string)() {
-    if m != nil {
-        m.accountName = value
-    }
+    m.accountName = value
 }
 // SetAuthenticationMethod sets the authenticationMethod property value. Exchange Active Sync authentication method.
 func (m *AndroidEasEmailProfileConfiguration) SetAuthenticationMethod(value *EasAuthenticationMethod)() {
-    if m != nil {
-        m.authenticationMethod = value
-    }
+    m.authenticationMethod = value
 }
 // SetCustomDomainName sets the customDomainName property value. Custom domain name value used while generating an email profile before installing on the device.
 func (m *AndroidEasEmailProfileConfiguration) SetCustomDomainName(value *string)() {
-    if m != nil {
-        m.customDomainName = value
-    }
+    m.customDomainName = value
 }
 // SetDurationOfEmailToSync sets the durationOfEmailToSync property value. Possible values for email sync duration.
 func (m *AndroidEasEmailProfileConfiguration) SetDurationOfEmailToSync(value *EmailSyncDuration)() {
-    if m != nil {
-        m.durationOfEmailToSync = value
-    }
+    m.durationOfEmailToSync = value
 }
 // SetEmailAddressSource sets the emailAddressSource property value. Possible values for username source or email source.
 func (m *AndroidEasEmailProfileConfiguration) SetEmailAddressSource(value *UserEmailSource)() {
-    if m != nil {
-        m.emailAddressSource = value
-    }
+    m.emailAddressSource = value
 }
 // SetEmailSyncSchedule sets the emailSyncSchedule property value. Possible values for email sync schedule.
 func (m *AndroidEasEmailProfileConfiguration) SetEmailSyncSchedule(value *EmailSyncSchedule)() {
-    if m != nil {
-        m.emailSyncSchedule = value
-    }
+    m.emailSyncSchedule = value
 }
 // SetHostName sets the hostName property value. Exchange location (URL) that the native mail app connects to.
 func (m *AndroidEasEmailProfileConfiguration) SetHostName(value *string)() {
-    if m != nil {
-        m.hostName = value
-    }
+    m.hostName = value
 }
 // SetIdentityCertificate sets the identityCertificate property value. Identity certificate.
 func (m *AndroidEasEmailProfileConfiguration) SetIdentityCertificate(value AndroidCertificateProfileBaseable)() {
-    if m != nil {
-        m.identityCertificate = value
-    }
+    m.identityCertificate = value
 }
 // SetRequireSmime sets the requireSmime property value. Indicates whether or not to use S/MIME certificate.
 func (m *AndroidEasEmailProfileConfiguration) SetRequireSmime(value *bool)() {
-    if m != nil {
-        m.requireSmime = value
-    }
+    m.requireSmime = value
 }
 // SetRequireSsl sets the requireSsl property value. Indicates whether or not to use SSL.
 func (m *AndroidEasEmailProfileConfiguration) SetRequireSsl(value *bool)() {
-    if m != nil {
-        m.requireSsl = value
-    }
+    m.requireSsl = value
 }
 // SetSmimeSigningCertificate sets the smimeSigningCertificate property value. S/MIME signing certificate.
 func (m *AndroidEasEmailProfileConfiguration) SetSmimeSigningCertificate(value AndroidCertificateProfileBaseable)() {
-    if m != nil {
-        m.smimeSigningCertificate = value
-    }
+    m.smimeSigningCertificate = value
 }
 // SetSyncCalendar sets the syncCalendar property value. Toggles syncing the calendar. If set to false calendar is turned off on the device.
 func (m *AndroidEasEmailProfileConfiguration) SetSyncCalendar(value *bool)() {
-    if m != nil {
-        m.syncCalendar = value
-    }
+    m.syncCalendar = value
 }
 // SetSyncContacts sets the syncContacts property value. Toggles syncing contacts. If set to false contacts are turned off on the device.
 func (m *AndroidEasEmailProfileConfiguration) SetSyncContacts(value *bool)() {
-    if m != nil {
-        m.syncContacts = value
-    }
+    m.syncContacts = value
 }
 // SetSyncNotes sets the syncNotes property value. Toggles syncing notes. If set to false notes are turned off on the device.
 func (m *AndroidEasEmailProfileConfiguration) SetSyncNotes(value *bool)() {
-    if m != nil {
-        m.syncNotes = value
-    }
+    m.syncNotes = value
 }
 // SetSyncTasks sets the syncTasks property value. Toggles syncing tasks. If set to false tasks are turned off on the device.
 func (m *AndroidEasEmailProfileConfiguration) SetSyncTasks(value *bool)() {
-    if m != nil {
-        m.syncTasks = value
-    }
+    m.syncTasks = value
 }
 // SetUserDomainNameSource sets the userDomainNameSource property value. UserDomainname attribute that is picked from AAD and injected into this profile before installing on the device. Possible values are: fullDomainName, netBiosDomainName.
 func (m *AndroidEasEmailProfileConfiguration) SetUserDomainNameSource(value *DomainNameSource)() {
-    if m != nil {
-        m.userDomainNameSource = value
-    }
+    m.userDomainNameSource = value
 }
 // SetUsernameSource sets the usernameSource property value. Android username source.
 func (m *AndroidEasEmailProfileConfiguration) SetUsernameSource(value *AndroidUsernameSource)() {
-    if m != nil {
-        m.usernameSource = value
-    }
+    m.usernameSource = value
 }

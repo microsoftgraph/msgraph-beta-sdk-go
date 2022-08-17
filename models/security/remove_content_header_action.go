@@ -44,11 +44,7 @@ func (m *RemoveContentHeaderAction) GetFieldDeserializers()(map[string]func(i878
 }
 // GetUiElementNames gets the uiElementNames property value. The name of the UI element of the header to be removed.
 func (m *RemoveContentHeaderAction) GetUiElementNames()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.uiElementNames
-    }
+    return m.uiElementNames
 }
 // Serialize serializes information the current object
 func (m *RemoveContentHeaderAction) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -66,7 +62,5 @@ func (m *RemoveContentHeaderAction) Serialize(writer i878a80d2330e89d26896388a3f
 }
 // SetUiElementNames sets the uiElementNames property value. The name of the UI element of the header to be removed.
 func (m *RemoveContentHeaderAction) SetUiElementNames(value []string)() {
-    if m != nil {
-        m.uiElementNames = value
-    }
+    m.uiElementNames = value
 }

@@ -63,11 +63,7 @@ func CreateDeviceManagementConfigurationSettingInstanceFromDiscriminatorValue(pa
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DeviceManagementConfigurationSettingInstance) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceManagementConfigurationSettingInstance) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -106,27 +102,15 @@ func (m *DeviceManagementConfigurationSettingInstance) GetFieldDeserializers()(m
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *DeviceManagementConfigurationSettingInstance) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetSettingDefinitionId gets the settingDefinitionId property value. Setting Definition Id
 func (m *DeviceManagementConfigurationSettingInstance) GetSettingDefinitionId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.settingDefinitionId
-    }
+    return m.settingDefinitionId
 }
 // GetSettingInstanceTemplateReference gets the settingInstanceTemplateReference property value. Setting Instance Template Reference
 func (m *DeviceManagementConfigurationSettingInstance) GetSettingInstanceTemplateReference()(DeviceManagementConfigurationSettingInstanceTemplateReferenceable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.settingInstanceTemplateReference
-    }
+    return m.settingInstanceTemplateReference
 }
 // Serialize serializes information the current object
 func (m *DeviceManagementConfigurationSettingInstance) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -158,25 +142,17 @@ func (m *DeviceManagementConfigurationSettingInstance) Serialize(writer i878a80d
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DeviceManagementConfigurationSettingInstance) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *DeviceManagementConfigurationSettingInstance) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetSettingDefinitionId sets the settingDefinitionId property value. Setting Definition Id
 func (m *DeviceManagementConfigurationSettingInstance) SetSettingDefinitionId(value *string)() {
-    if m != nil {
-        m.settingDefinitionId = value
-    }
+    m.settingDefinitionId = value
 }
 // SetSettingInstanceTemplateReference sets the settingInstanceTemplateReference property value. Setting Instance Template Reference
 func (m *DeviceManagementConfigurationSettingInstance) SetSettingInstanceTemplateReference(value DeviceManagementConfigurationSettingInstanceTemplateReferenceable)() {
-    if m != nil {
-        m.settingInstanceTemplateReference = value
-    }
+    m.settingInstanceTemplateReference = value
 }

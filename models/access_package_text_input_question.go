@@ -52,19 +52,11 @@ func (m *AccessPackageTextInputQuestion) GetFieldDeserializers()(map[string]func
 }
 // GetIsSingleLineQuestion gets the isSingleLineQuestion property value. Indicates whether the answer will be in single or multiple line format.
 func (m *AccessPackageTextInputQuestion) GetIsSingleLineQuestion()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isSingleLineQuestion
-    }
+    return m.isSingleLineQuestion
 }
 // GetRegexPattern gets the regexPattern property value. The regexPattern property
 func (m *AccessPackageTextInputQuestion) GetRegexPattern()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.regexPattern
-    }
+    return m.regexPattern
 }
 // Serialize serializes information the current object
 func (m *AccessPackageTextInputQuestion) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -88,13 +80,9 @@ func (m *AccessPackageTextInputQuestion) Serialize(writer i878a80d2330e89d268963
 }
 // SetIsSingleLineQuestion sets the isSingleLineQuestion property value. Indicates whether the answer will be in single or multiple line format.
 func (m *AccessPackageTextInputQuestion) SetIsSingleLineQuestion(value *bool)() {
-    if m != nil {
-        m.isSingleLineQuestion = value
-    }
+    m.isSingleLineQuestion = value
 }
 // SetRegexPattern sets the regexPattern property value. The regexPattern property
 func (m *AccessPackageTextInputQuestion) SetRegexPattern(value *string)() {
-    if m != nil {
-        m.regexPattern = value
-    }
+    m.regexPattern = value
 }

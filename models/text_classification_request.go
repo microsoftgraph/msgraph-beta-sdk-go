@@ -92,43 +92,23 @@ func (m *TextClassificationRequest) GetFieldDeserializers()(map[string]func(i878
 }
 // GetFileExtension gets the fileExtension property value. The fileExtension property
 func (m *TextClassificationRequest) GetFileExtension()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.fileExtension
-    }
+    return m.fileExtension
 }
 // GetMatchTolerancesToInclude gets the matchTolerancesToInclude property value. The matchTolerancesToInclude property
 func (m *TextClassificationRequest) GetMatchTolerancesToInclude()(*MlClassificationMatchTolerance) {
-    if m == nil {
-        return nil
-    } else {
-        return m.matchTolerancesToInclude
-    }
+    return m.matchTolerancesToInclude
 }
 // GetScopesToRun gets the scopesToRun property value. The scopesToRun property
 func (m *TextClassificationRequest) GetScopesToRun()(*SensitiveTypeScope) {
-    if m == nil {
-        return nil
-    } else {
-        return m.scopesToRun
-    }
+    return m.scopesToRun
 }
 // GetSensitiveTypeIds gets the sensitiveTypeIds property value. The sensitiveTypeIds property
 func (m *TextClassificationRequest) GetSensitiveTypeIds()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.sensitiveTypeIds
-    }
+    return m.sensitiveTypeIds
 }
 // GetText gets the text property value. The text property
 func (m *TextClassificationRequest) GetText()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.text
-    }
+    return m.text
 }
 // Serialize serializes information the current object
 func (m *TextClassificationRequest) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -172,31 +152,21 @@ func (m *TextClassificationRequest) Serialize(writer i878a80d2330e89d26896388a3f
 }
 // SetFileExtension sets the fileExtension property value. The fileExtension property
 func (m *TextClassificationRequest) SetFileExtension(value *string)() {
-    if m != nil {
-        m.fileExtension = value
-    }
+    m.fileExtension = value
 }
 // SetMatchTolerancesToInclude sets the matchTolerancesToInclude property value. The matchTolerancesToInclude property
 func (m *TextClassificationRequest) SetMatchTolerancesToInclude(value *MlClassificationMatchTolerance)() {
-    if m != nil {
-        m.matchTolerancesToInclude = value
-    }
+    m.matchTolerancesToInclude = value
 }
 // SetScopesToRun sets the scopesToRun property value. The scopesToRun property
 func (m *TextClassificationRequest) SetScopesToRun(value *SensitiveTypeScope)() {
-    if m != nil {
-        m.scopesToRun = value
-    }
+    m.scopesToRun = value
 }
 // SetSensitiveTypeIds sets the sensitiveTypeIds property value. The sensitiveTypeIds property
 func (m *TextClassificationRequest) SetSensitiveTypeIds(value []string)() {
-    if m != nil {
-        m.sensitiveTypeIds = value
-    }
+    m.sensitiveTypeIds = value
 }
 // SetText sets the text property value. The text property
 func (m *TextClassificationRequest) SetText(value *string)() {
-    if m != nil {
-        m.text = value
-    }
+    m.text = value
 }

@@ -30,11 +30,7 @@ func CreateOutboundSharedUserProfileFromDiscriminatorValue(parseNode i878a80d233
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *OutboundSharedUserProfile) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *OutboundSharedUserProfile) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -77,27 +73,15 @@ func (m *OutboundSharedUserProfile) GetFieldDeserializers()(map[string]func(i878
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *OutboundSharedUserProfile) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetTenants gets the tenants property value. The tenants property
 func (m *OutboundSharedUserProfile) GetTenants()([]TenantReferenceable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.tenants
-    }
+    return m.tenants
 }
 // GetUserId gets the userId property value. The userId property
 func (m *OutboundSharedUserProfile) GetUserId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userId
-    }
+    return m.userId
 }
 // Serialize serializes information the current object
 func (m *OutboundSharedUserProfile) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -133,25 +117,17 @@ func (m *OutboundSharedUserProfile) Serialize(writer i878a80d2330e89d26896388a3f
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *OutboundSharedUserProfile) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *OutboundSharedUserProfile) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetTenants sets the tenants property value. The tenants property
 func (m *OutboundSharedUserProfile) SetTenants(value []TenantReferenceable)() {
-    if m != nil {
-        m.tenants = value
-    }
+    m.tenants = value
 }
 // SetUserId sets the userId property value. The userId property
 func (m *OutboundSharedUserProfile) SetUserId(value *string)() {
-    if m != nil {
-        m.userId = value
-    }
+    m.userId = value
 }

@@ -41,27 +41,15 @@ func CreateRestrictedAppsViolationFromDiscriminatorValue(parseNode i878a80d2330e
 }
 // GetDeviceConfigurationId gets the deviceConfigurationId property value. Device configuration profile unique identifier, must be Guid
 func (m *RestrictedAppsViolation) GetDeviceConfigurationId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deviceConfigurationId
-    }
+    return m.deviceConfigurationId
 }
 // GetDeviceConfigurationName gets the deviceConfigurationName property value. Device configuration profile name
 func (m *RestrictedAppsViolation) GetDeviceConfigurationName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deviceConfigurationName
-    }
+    return m.deviceConfigurationName
 }
 // GetDeviceName gets the deviceName property value. Device name
 func (m *RestrictedAppsViolation) GetDeviceName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deviceName
-    }
+    return m.deviceName
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *RestrictedAppsViolation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -164,51 +152,27 @@ func (m *RestrictedAppsViolation) GetFieldDeserializers()(map[string]func(i878a8
 }
 // GetManagedDeviceId gets the managedDeviceId property value. Managed device unique identifier, must be Guid
 func (m *RestrictedAppsViolation) GetManagedDeviceId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.managedDeviceId
-    }
+    return m.managedDeviceId
 }
 // GetPlatformType gets the platformType property value. Supported platform types for policies.
 func (m *RestrictedAppsViolation) GetPlatformType()(*PolicyPlatformType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.platformType
-    }
+    return m.platformType
 }
 // GetRestrictedApps gets the restrictedApps property value. List of violated restricted apps
 func (m *RestrictedAppsViolation) GetRestrictedApps()([]ManagedDeviceReportedAppable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.restrictedApps
-    }
+    return m.restrictedApps
 }
 // GetRestrictedAppsState gets the restrictedAppsState property value. Restricted apps state
 func (m *RestrictedAppsViolation) GetRestrictedAppsState()(*RestrictedAppsState) {
-    if m == nil {
-        return nil
-    } else {
-        return m.restrictedAppsState
-    }
+    return m.restrictedAppsState
 }
 // GetUserId gets the userId property value. User unique identifier, must be Guid
 func (m *RestrictedAppsViolation) GetUserId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userId
-    }
+    return m.userId
 }
 // GetUserName gets the userName property value. User name
 func (m *RestrictedAppsViolation) GetUserName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userName
-    }
+    return m.userName
 }
 // Serialize serializes information the current object
 func (m *RestrictedAppsViolation) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -280,55 +244,37 @@ func (m *RestrictedAppsViolation) Serialize(writer i878a80d2330e89d26896388a3f48
 }
 // SetDeviceConfigurationId sets the deviceConfigurationId property value. Device configuration profile unique identifier, must be Guid
 func (m *RestrictedAppsViolation) SetDeviceConfigurationId(value *string)() {
-    if m != nil {
-        m.deviceConfigurationId = value
-    }
+    m.deviceConfigurationId = value
 }
 // SetDeviceConfigurationName sets the deviceConfigurationName property value. Device configuration profile name
 func (m *RestrictedAppsViolation) SetDeviceConfigurationName(value *string)() {
-    if m != nil {
-        m.deviceConfigurationName = value
-    }
+    m.deviceConfigurationName = value
 }
 // SetDeviceName sets the deviceName property value. Device name
 func (m *RestrictedAppsViolation) SetDeviceName(value *string)() {
-    if m != nil {
-        m.deviceName = value
-    }
+    m.deviceName = value
 }
 // SetManagedDeviceId sets the managedDeviceId property value. Managed device unique identifier, must be Guid
 func (m *RestrictedAppsViolation) SetManagedDeviceId(value *string)() {
-    if m != nil {
-        m.managedDeviceId = value
-    }
+    m.managedDeviceId = value
 }
 // SetPlatformType sets the platformType property value. Supported platform types for policies.
 func (m *RestrictedAppsViolation) SetPlatformType(value *PolicyPlatformType)() {
-    if m != nil {
-        m.platformType = value
-    }
+    m.platformType = value
 }
 // SetRestrictedApps sets the restrictedApps property value. List of violated restricted apps
 func (m *RestrictedAppsViolation) SetRestrictedApps(value []ManagedDeviceReportedAppable)() {
-    if m != nil {
-        m.restrictedApps = value
-    }
+    m.restrictedApps = value
 }
 // SetRestrictedAppsState sets the restrictedAppsState property value. Restricted apps state
 func (m *RestrictedAppsViolation) SetRestrictedAppsState(value *RestrictedAppsState)() {
-    if m != nil {
-        m.restrictedAppsState = value
-    }
+    m.restrictedAppsState = value
 }
 // SetUserId sets the userId property value. User unique identifier, must be Guid
 func (m *RestrictedAppsViolation) SetUserId(value *string)() {
-    if m != nil {
-        m.userId = value
-    }
+    m.userId = value
 }
 // SetUserName sets the userName property value. User name
 func (m *RestrictedAppsViolation) SetUserName(value *string)() {
-    if m != nil {
-        m.userName = value
-    }
+    m.userName = value
 }

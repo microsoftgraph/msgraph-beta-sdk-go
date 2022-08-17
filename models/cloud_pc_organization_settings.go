@@ -64,27 +64,15 @@ func (m *CloudPcOrganizationSettings) GetFieldDeserializers()(map[string]func(i8
 }
 // GetOsVersion gets the osVersion property value. The version of the operating system (OS) to provision on Cloud PCs. The possible values are: windows10, windows11, unknownFutureValue.
 func (m *CloudPcOrganizationSettings) GetOsVersion()(*CloudPcOperatingSystem) {
-    if m == nil {
-        return nil
-    } else {
-        return m.osVersion
-    }
+    return m.osVersion
 }
 // GetUserAccountType gets the userAccountType property value. The account type of the user on provisioned Cloud PCs. The possible values are: standardUser, administrator, unknownFutureValue.
 func (m *CloudPcOrganizationSettings) GetUserAccountType()(*CloudPcUserAccountType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userAccountType
-    }
+    return m.userAccountType
 }
 // GetWindowsSettings gets the windowsSettings property value. Represents the Cloud PC organization settings for a tenant. A tenant has only one cloudPcOrganizationSettings object. The default language value en-US.
 func (m *CloudPcOrganizationSettings) GetWindowsSettings()(CloudPcWindowsSettingsable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.windowsSettings
-    }
+    return m.windowsSettings
 }
 // Serialize serializes information the current object
 func (m *CloudPcOrganizationSettings) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -116,19 +104,13 @@ func (m *CloudPcOrganizationSettings) Serialize(writer i878a80d2330e89d26896388a
 }
 // SetOsVersion sets the osVersion property value. The version of the operating system (OS) to provision on Cloud PCs. The possible values are: windows10, windows11, unknownFutureValue.
 func (m *CloudPcOrganizationSettings) SetOsVersion(value *CloudPcOperatingSystem)() {
-    if m != nil {
-        m.osVersion = value
-    }
+    m.osVersion = value
 }
 // SetUserAccountType sets the userAccountType property value. The account type of the user on provisioned Cloud PCs. The possible values are: standardUser, administrator, unknownFutureValue.
 func (m *CloudPcOrganizationSettings) SetUserAccountType(value *CloudPcUserAccountType)() {
-    if m != nil {
-        m.userAccountType = value
-    }
+    m.userAccountType = value
 }
 // SetWindowsSettings sets the windowsSettings property value. Represents the Cloud PC organization settings for a tenant. A tenant has only one cloudPcOrganizationSettings object. The default language value en-US.
 func (m *CloudPcOrganizationSettings) SetWindowsSettings(value CloudPcWindowsSettingsable)() {
-    if m != nil {
-        m.windowsSettings = value
-    }
+    m.windowsSettings = value
 }

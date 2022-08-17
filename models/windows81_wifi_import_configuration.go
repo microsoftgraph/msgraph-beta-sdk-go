@@ -64,27 +64,15 @@ func (m *Windows81WifiImportConfiguration) GetFieldDeserializers()(map[string]fu
 }
 // GetPayload gets the payload property value. Payload. (UTF8 encoded byte array). This is the XML file saved on the device you used to connect to the Wi-Fi endpoint.
 func (m *Windows81WifiImportConfiguration) GetPayload()([]byte) {
-    if m == nil {
-        return nil
-    } else {
-        return m.payload
-    }
+    return m.payload
 }
 // GetPayloadFileName gets the payloadFileName property value. Payload file name (.xml).
 func (m *Windows81WifiImportConfiguration) GetPayloadFileName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.payloadFileName
-    }
+    return m.payloadFileName
 }
 // GetProfileName gets the profileName property value. Profile name displayed in the UI.
 func (m *Windows81WifiImportConfiguration) GetProfileName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.profileName
-    }
+    return m.profileName
 }
 // Serialize serializes information the current object
 func (m *Windows81WifiImportConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -114,19 +102,13 @@ func (m *Windows81WifiImportConfiguration) Serialize(writer i878a80d2330e89d2689
 }
 // SetPayload sets the payload property value. Payload. (UTF8 encoded byte array). This is the XML file saved on the device you used to connect to the Wi-Fi endpoint.
 func (m *Windows81WifiImportConfiguration) SetPayload(value []byte)() {
-    if m != nil {
-        m.payload = value
-    }
+    m.payload = value
 }
 // SetPayloadFileName sets the payloadFileName property value. Payload file name (.xml).
 func (m *Windows81WifiImportConfiguration) SetPayloadFileName(value *string)() {
-    if m != nil {
-        m.payloadFileName = value
-    }
+    m.payloadFileName = value
 }
 // SetProfileName sets the profileName property value. Profile name displayed in the UI.
 func (m *Windows81WifiImportConfiguration) SetProfileName(value *string)() {
-    if m != nil {
-        m.profileName = value
-    }
+    m.profileName = value
 }

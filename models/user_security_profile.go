@@ -44,43 +44,23 @@ func CreateUserSecurityProfileFromDiscriminatorValue(parseNode i878a80d2330e89d2
 }
 // GetAccounts gets the accounts property value. The accounts property
 func (m *UserSecurityProfile) GetAccounts()([]UserAccountable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.accounts
-    }
+    return m.accounts
 }
 // GetAzureSubscriptionId gets the azureSubscriptionId property value. The azureSubscriptionId property
 func (m *UserSecurityProfile) GetAzureSubscriptionId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.azureSubscriptionId
-    }
+    return m.azureSubscriptionId
 }
 // GetAzureTenantId gets the azureTenantId property value. The azureTenantId property
 func (m *UserSecurityProfile) GetAzureTenantId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.azureTenantId
-    }
+    return m.azureTenantId
 }
 // GetCreatedDateTime gets the createdDateTime property value. The createdDateTime property
 func (m *UserSecurityProfile) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.createdDateTime
-    }
+    return m.createdDateTime
 }
 // GetDisplayName gets the displayName property value. The displayName property
 func (m *UserSecurityProfile) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *UserSecurityProfile) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -197,43 +177,23 @@ func (m *UserSecurityProfile) GetFieldDeserializers()(map[string]func(i878a80d23
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. The lastModifiedDateTime property
 func (m *UserSecurityProfile) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastModifiedDateTime
-    }
+    return m.lastModifiedDateTime
 }
 // GetRiskScore gets the riskScore property value. The riskScore property
 func (m *UserSecurityProfile) GetRiskScore()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.riskScore
-    }
+    return m.riskScore
 }
 // GetTags gets the tags property value. The tags property
 func (m *UserSecurityProfile) GetTags()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.tags
-    }
+    return m.tags
 }
 // GetUserPrincipalName gets the userPrincipalName property value. The userPrincipalName property
 func (m *UserSecurityProfile) GetUserPrincipalName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userPrincipalName
-    }
+    return m.userPrincipalName
 }
 // GetVendorInformation gets the vendorInformation property value. The vendorInformation property
 func (m *UserSecurityProfile) GetVendorInformation()(SecurityVendorInformationable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.vendorInformation
-    }
+    return m.vendorInformation
 }
 // Serialize serializes information the current object
 func (m *UserSecurityProfile) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -309,61 +269,41 @@ func (m *UserSecurityProfile) Serialize(writer i878a80d2330e89d26896388a3f487eef
 }
 // SetAccounts sets the accounts property value. The accounts property
 func (m *UserSecurityProfile) SetAccounts(value []UserAccountable)() {
-    if m != nil {
-        m.accounts = value
-    }
+    m.accounts = value
 }
 // SetAzureSubscriptionId sets the azureSubscriptionId property value. The azureSubscriptionId property
 func (m *UserSecurityProfile) SetAzureSubscriptionId(value *string)() {
-    if m != nil {
-        m.azureSubscriptionId = value
-    }
+    m.azureSubscriptionId = value
 }
 // SetAzureTenantId sets the azureTenantId property value. The azureTenantId property
 func (m *UserSecurityProfile) SetAzureTenantId(value *string)() {
-    if m != nil {
-        m.azureTenantId = value
-    }
+    m.azureTenantId = value
 }
 // SetCreatedDateTime sets the createdDateTime property value. The createdDateTime property
 func (m *UserSecurityProfile) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.createdDateTime = value
-    }
+    m.createdDateTime = value
 }
 // SetDisplayName sets the displayName property value. The displayName property
 func (m *UserSecurityProfile) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }
 // SetLastModifiedDateTime sets the lastModifiedDateTime property value. The lastModifiedDateTime property
 func (m *UserSecurityProfile) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.lastModifiedDateTime = value
-    }
+    m.lastModifiedDateTime = value
 }
 // SetRiskScore sets the riskScore property value. The riskScore property
 func (m *UserSecurityProfile) SetRiskScore(value *string)() {
-    if m != nil {
-        m.riskScore = value
-    }
+    m.riskScore = value
 }
 // SetTags sets the tags property value. The tags property
 func (m *UserSecurityProfile) SetTags(value []string)() {
-    if m != nil {
-        m.tags = value
-    }
+    m.tags = value
 }
 // SetUserPrincipalName sets the userPrincipalName property value. The userPrincipalName property
 func (m *UserSecurityProfile) SetUserPrincipalName(value *string)() {
-    if m != nil {
-        m.userPrincipalName = value
-    }
+    m.userPrincipalName = value
 }
 // SetVendorInformation sets the vendorInformation property value. The vendorInformation property
 func (m *UserSecurityProfile) SetVendorInformation(value SecurityVendorInformationable)() {
-    if m != nil {
-        m.vendorInformation = value
-    }
+    m.vendorInformation = value
 }

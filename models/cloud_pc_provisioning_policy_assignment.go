@@ -4,13 +4,13 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// CloudPcProvisioningPolicyAssignment 
+// CloudPcProvisioningPolicyAssignment provides operations to manage the collection of activityStatistics entities.
 type CloudPcProvisioningPolicyAssignment struct {
     Entity
     // The assignment target for the provisioning policy. Currently, the only target supported for this policy is a user group. For details, see cloudPcManagementGroupAssignmentTarget.
     target CloudPcManagementAssignmentTargetable
 }
-// NewCloudPcProvisioningPolicyAssignment instantiates a new CloudPcProvisioningPolicyAssignment and sets the default values.
+// NewCloudPcProvisioningPolicyAssignment instantiates a new cloudPcProvisioningPolicyAssignment and sets the default values.
 func NewCloudPcProvisioningPolicyAssignment()(*CloudPcProvisioningPolicyAssignment) {
     m := &CloudPcProvisioningPolicyAssignment{
         Entity: *NewEntity(),
@@ -40,11 +40,7 @@ func (m *CloudPcProvisioningPolicyAssignment) GetFieldDeserializers()(map[string
 }
 // GetTarget gets the target property value. The assignment target for the provisioning policy. Currently, the only target supported for this policy is a user group. For details, see cloudPcManagementGroupAssignmentTarget.
 func (m *CloudPcProvisioningPolicyAssignment) GetTarget()(CloudPcManagementAssignmentTargetable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.target
-    }
+    return m.target
 }
 // Serialize serializes information the current object
 func (m *CloudPcProvisioningPolicyAssignment) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -62,7 +58,5 @@ func (m *CloudPcProvisioningPolicyAssignment) Serialize(writer i878a80d2330e89d2
 }
 // SetTarget sets the target property value. The assignment target for the provisioning policy. Currently, the only target supported for this policy is a user group. For details, see cloudPcManagementGroupAssignmentTarget.
 func (m *CloudPcProvisioningPolicyAssignment) SetTarget(value CloudPcManagementAssignmentTargetable)() {
-    if m != nil {
-        m.target = value
-    }
+    m.target = value
 }

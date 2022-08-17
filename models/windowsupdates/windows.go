@@ -11,7 +11,7 @@ type Windows struct {
     // Entity that acts as a container for the functionality of the Windows Update for Business deployment service. Read-only.
     updates Updatesable
 }
-// NewWindows instantiates a new Windows and sets the default values.
+// NewWindows instantiates a new windows and sets the default values.
 func NewWindows()(*Windows) {
     m := &Windows{
         Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),
@@ -41,11 +41,7 @@ func (m *Windows) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
 }
 // GetUpdates gets the updates property value. Entity that acts as a container for the functionality of the Windows Update for Business deployment service. Read-only.
 func (m *Windows) GetUpdates()(Updatesable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.updates
-    }
+    return m.updates
 }
 // Serialize serializes information the current object
 func (m *Windows) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -63,7 +59,5 @@ func (m *Windows) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
 }
 // SetUpdates sets the updates property value. Entity that acts as a container for the functionality of the Windows Update for Business deployment service. Read-only.
 func (m *Windows) SetUpdates(value Updatesable)() {
-    if m != nil {
-        m.updates = value
-    }
+    m.updates = value
 }

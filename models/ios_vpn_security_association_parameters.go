@@ -34,11 +34,7 @@ func CreateIosVpnSecurityAssociationParametersFromDiscriminatorValue(parseNode i
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *IosVpnSecurityAssociationParameters) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *IosVpnSecurityAssociationParameters) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -97,43 +93,23 @@ func (m *IosVpnSecurityAssociationParameters) GetFieldDeserializers()(map[string
 }
 // GetLifetimeInMinutes gets the lifetimeInMinutes property value. Lifetime (minutes)
 func (m *IosVpnSecurityAssociationParameters) GetLifetimeInMinutes()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lifetimeInMinutes
-    }
+    return m.lifetimeInMinutes
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *IosVpnSecurityAssociationParameters) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetSecurityDiffieHellmanGroup gets the securityDiffieHellmanGroup property value. Diffie-Hellman Group
 func (m *IosVpnSecurityAssociationParameters) GetSecurityDiffieHellmanGroup()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.securityDiffieHellmanGroup
-    }
+    return m.securityDiffieHellmanGroup
 }
 // GetSecurityEncryptionAlgorithm gets the securityEncryptionAlgorithm property value. Encryption algorithm. Possible values are: aes256, des, tripleDes, aes128, aes128Gcm, aes256Gcm, aes192, aes192Gcm, chaCha20Poly1305.
 func (m *IosVpnSecurityAssociationParameters) GetSecurityEncryptionAlgorithm()(*VpnEncryptionAlgorithmType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.securityEncryptionAlgorithm
-    }
+    return m.securityEncryptionAlgorithm
 }
 // GetSecurityIntegrityAlgorithm gets the securityIntegrityAlgorithm property value. Integrity algorithm. Possible values are: sha2_256, sha1_96, sha1_160, sha2_384, sha2_512, md5.
 func (m *IosVpnSecurityAssociationParameters) GetSecurityIntegrityAlgorithm()(*VpnIntegrityAlgorithmType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.securityIntegrityAlgorithm
-    }
+    return m.securityIntegrityAlgorithm
 }
 // Serialize serializes information the current object
 func (m *IosVpnSecurityAssociationParameters) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -179,37 +155,25 @@ func (m *IosVpnSecurityAssociationParameters) Serialize(writer i878a80d2330e89d2
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *IosVpnSecurityAssociationParameters) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetLifetimeInMinutes sets the lifetimeInMinutes property value. Lifetime (minutes)
 func (m *IosVpnSecurityAssociationParameters) SetLifetimeInMinutes(value *int32)() {
-    if m != nil {
-        m.lifetimeInMinutes = value
-    }
+    m.lifetimeInMinutes = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *IosVpnSecurityAssociationParameters) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetSecurityDiffieHellmanGroup sets the securityDiffieHellmanGroup property value. Diffie-Hellman Group
 func (m *IosVpnSecurityAssociationParameters) SetSecurityDiffieHellmanGroup(value *int32)() {
-    if m != nil {
-        m.securityDiffieHellmanGroup = value
-    }
+    m.securityDiffieHellmanGroup = value
 }
 // SetSecurityEncryptionAlgorithm sets the securityEncryptionAlgorithm property value. Encryption algorithm. Possible values are: aes256, des, tripleDes, aes128, aes128Gcm, aes256Gcm, aes192, aes192Gcm, chaCha20Poly1305.
 func (m *IosVpnSecurityAssociationParameters) SetSecurityEncryptionAlgorithm(value *VpnEncryptionAlgorithmType)() {
-    if m != nil {
-        m.securityEncryptionAlgorithm = value
-    }
+    m.securityEncryptionAlgorithm = value
 }
 // SetSecurityIntegrityAlgorithm sets the securityIntegrityAlgorithm property value. Integrity algorithm. Possible values are: sha2_256, sha1_96, sha1_160, sha2_384, sha2_512, md5.
 func (m *IosVpnSecurityAssociationParameters) SetSecurityIntegrityAlgorithm(value *VpnIntegrityAlgorithmType)() {
-    if m != nil {
-        m.securityIntegrityAlgorithm = value
-    }
+    m.securityIntegrityAlgorithm = value
 }

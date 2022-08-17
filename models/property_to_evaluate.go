@@ -30,11 +30,7 @@ func CreatePropertyToEvaluateFromDiscriminatorValue(parseNode i878a80d2330e89d26
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *PropertyToEvaluate) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *PropertyToEvaluate) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -73,27 +69,15 @@ func (m *PropertyToEvaluate) GetFieldDeserializers()(map[string]func(i878a80d233
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *PropertyToEvaluate) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetPropertyName gets the propertyName property value. Provides the property name.
 func (m *PropertyToEvaluate) GetPropertyName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.propertyName
-    }
+    return m.propertyName
 }
 // GetPropertyValue gets the propertyValue property value. Provides the property value.
 func (m *PropertyToEvaluate) GetPropertyValue()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.propertyValue
-    }
+    return m.propertyValue
 }
 // Serialize serializes information the current object
 func (m *PropertyToEvaluate) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -125,25 +109,17 @@ func (m *PropertyToEvaluate) Serialize(writer i878a80d2330e89d26896388a3f487eef2
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *PropertyToEvaluate) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *PropertyToEvaluate) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetPropertyName sets the propertyName property value. Provides the property name.
 func (m *PropertyToEvaluate) SetPropertyName(value *string)() {
-    if m != nil {
-        m.propertyName = value
-    }
+    m.propertyName = value
 }
 // SetPropertyValue sets the propertyValue property value. Provides the property value.
 func (m *PropertyToEvaluate) SetPropertyValue(value *string)() {
-    if m != nil {
-        m.propertyValue = value
-    }
+    m.propertyValue = value
 }

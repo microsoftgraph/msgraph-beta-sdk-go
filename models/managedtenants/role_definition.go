@@ -32,27 +32,15 @@ func CreateRoleDefinitionFromDiscriminatorValue(parseNode i878a80d2330e89d268963
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *RoleDefinition) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetDescription gets the description property value. The description for the role.
 func (m *RoleDefinition) GetDescription()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.description
-    }
+    return m.description
 }
 // GetDisplayName gets the displayName property value. The display name for the role assignment.
 func (m *RoleDefinition) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *RoleDefinition) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -101,19 +89,11 @@ func (m *RoleDefinition) GetFieldDeserializers()(map[string]func(i878a80d2330e89
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *RoleDefinition) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetTemplateId gets the templateId property value. The unique identifier for the template.
 func (m *RoleDefinition) GetTemplateId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.templateId
-    }
+    return m.templateId
 }
 // Serialize serializes information the current object
 func (m *RoleDefinition) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -151,31 +131,21 @@ func (m *RoleDefinition) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *RoleDefinition) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetDescription sets the description property value. The description for the role.
 func (m *RoleDefinition) SetDescription(value *string)() {
-    if m != nil {
-        m.description = value
-    }
+    m.description = value
 }
 // SetDisplayName sets the displayName property value. The display name for the role assignment.
 func (m *RoleDefinition) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *RoleDefinition) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetTemplateId sets the templateId property value. The unique identifier for the template.
 func (m *RoleDefinition) SetTemplateId(value *string)() {
-    if m != nil {
-        m.templateId = value
-    }
+    m.templateId = value
 }

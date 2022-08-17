@@ -41,27 +41,15 @@ func CreateManagementTemplateStepDeploymentFromDiscriminatorValue(parseNode i878
 }
 // GetCreatedByUserId gets the createdByUserId property value. The createdByUserId property
 func (m *ManagementTemplateStepDeployment) GetCreatedByUserId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.createdByUserId
-    }
+    return m.createdByUserId
 }
 // GetCreatedDateTime gets the createdDateTime property value. The createdDateTime property
 func (m *ManagementTemplateStepDeployment) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.createdDateTime
-    }
+    return m.createdDateTime
 }
 // GetError gets the error property value. The error property
 func (m *ManagementTemplateStepDeployment) GetError()(GraphAPIErrorDetailsable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.error
-    }
+    return m.error
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ManagementTemplateStepDeployment) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -150,43 +138,23 @@ func (m *ManagementTemplateStepDeployment) GetFieldDeserializers()(map[string]fu
 }
 // GetLastActionByUserId gets the lastActionByUserId property value. The lastActionByUserId property
 func (m *ManagementTemplateStepDeployment) GetLastActionByUserId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastActionByUserId
-    }
+    return m.lastActionByUserId
 }
 // GetLastActionDateTime gets the lastActionDateTime property value. The lastActionDateTime property
 func (m *ManagementTemplateStepDeployment) GetLastActionDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastActionDateTime
-    }
+    return m.lastActionDateTime
 }
 // GetStatus gets the status property value. The status property
 func (m *ManagementTemplateStepDeployment) GetStatus()(*ManagementTemplateDeploymentStatus) {
-    if m == nil {
-        return nil
-    } else {
-        return m.status
-    }
+    return m.status
 }
 // GetTemplateStepVersion gets the templateStepVersion property value. The templateStepVersion property
 func (m *ManagementTemplateStepDeployment) GetTemplateStepVersion()(ManagementTemplateStepVersionable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.templateStepVersion
-    }
+    return m.templateStepVersion
 }
 // GetTenantId gets the tenantId property value. The tenantId property
 func (m *ManagementTemplateStepDeployment) GetTenantId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.tenantId
-    }
+    return m.tenantId
 }
 // Serialize serializes information the current object
 func (m *ManagementTemplateStepDeployment) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -247,49 +215,33 @@ func (m *ManagementTemplateStepDeployment) Serialize(writer i878a80d2330e89d2689
 }
 // SetCreatedByUserId sets the createdByUserId property value. The createdByUserId property
 func (m *ManagementTemplateStepDeployment) SetCreatedByUserId(value *string)() {
-    if m != nil {
-        m.createdByUserId = value
-    }
+    m.createdByUserId = value
 }
 // SetCreatedDateTime sets the createdDateTime property value. The createdDateTime property
 func (m *ManagementTemplateStepDeployment) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.createdDateTime = value
-    }
+    m.createdDateTime = value
 }
 // SetError sets the error property value. The error property
 func (m *ManagementTemplateStepDeployment) SetError(value GraphAPIErrorDetailsable)() {
-    if m != nil {
-        m.error = value
-    }
+    m.error = value
 }
 // SetLastActionByUserId sets the lastActionByUserId property value. The lastActionByUserId property
 func (m *ManagementTemplateStepDeployment) SetLastActionByUserId(value *string)() {
-    if m != nil {
-        m.lastActionByUserId = value
-    }
+    m.lastActionByUserId = value
 }
 // SetLastActionDateTime sets the lastActionDateTime property value. The lastActionDateTime property
 func (m *ManagementTemplateStepDeployment) SetLastActionDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.lastActionDateTime = value
-    }
+    m.lastActionDateTime = value
 }
 // SetStatus sets the status property value. The status property
 func (m *ManagementTemplateStepDeployment) SetStatus(value *ManagementTemplateDeploymentStatus)() {
-    if m != nil {
-        m.status = value
-    }
+    m.status = value
 }
 // SetTemplateStepVersion sets the templateStepVersion property value. The templateStepVersion property
 func (m *ManagementTemplateStepDeployment) SetTemplateStepVersion(value ManagementTemplateStepVersionable)() {
-    if m != nil {
-        m.templateStepVersion = value
-    }
+    m.templateStepVersion = value
 }
 // SetTenantId sets the tenantId property value. The tenantId property
 func (m *ManagementTemplateStepDeployment) SetTenantId(value *string)() {
-    if m != nil {
-        m.tenantId = value
-    }
+    m.tenantId = value
 }

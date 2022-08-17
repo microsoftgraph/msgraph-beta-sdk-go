@@ -41,43 +41,23 @@ func CreateIosUpdateConfigurationFromDiscriminatorValue(parseNode i878a80d2330e8
 }
 // GetActiveHoursEnd gets the activeHoursEnd property value. Active Hours End (active hours mean the time window when updates install should not happen)
 func (m *IosUpdateConfiguration) GetActiveHoursEnd()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.TimeOnly) {
-    if m == nil {
-        return nil
-    } else {
-        return m.activeHoursEnd
-    }
+    return m.activeHoursEnd
 }
 // GetActiveHoursStart gets the activeHoursStart property value. Active Hours Start (active hours mean the time window when updates install should not happen)
 func (m *IosUpdateConfiguration) GetActiveHoursStart()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.TimeOnly) {
-    if m == nil {
-        return nil
-    } else {
-        return m.activeHoursStart
-    }
+    return m.activeHoursStart
 }
 // GetCustomUpdateTimeWindows gets the customUpdateTimeWindows property value. If update schedule type is set to use time window scheduling, custom time windows when updates will be scheduled. This collection can contain a maximum of 20 elements.
 func (m *IosUpdateConfiguration) GetCustomUpdateTimeWindows()([]CustomUpdateTimeWindowable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.customUpdateTimeWindows
-    }
+    return m.customUpdateTimeWindows
 }
 // GetDesiredOsVersion gets the desiredOsVersion property value. If left unspecified, devices will update to the latest version of the OS.
 func (m *IosUpdateConfiguration) GetDesiredOsVersion()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.desiredOsVersion
-    }
+    return m.desiredOsVersion
 }
 // GetEnforcedSoftwareUpdateDelayInDays gets the enforcedSoftwareUpdateDelayInDays property value. Days before software updates are visible to iOS devices ranging from 0 to 90 inclusive
 func (m *IosUpdateConfiguration) GetEnforcedSoftwareUpdateDelayInDays()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.enforcedSoftwareUpdateDelayInDays
-    }
+    return m.enforcedSoftwareUpdateDelayInDays
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *IosUpdateConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -184,35 +164,19 @@ func (m *IosUpdateConfiguration) GetFieldDeserializers()(map[string]func(i878a80
 }
 // GetIsEnabled gets the isEnabled property value. Is setting enabled in UI
 func (m *IosUpdateConfiguration) GetIsEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isEnabled
-    }
+    return m.isEnabled
 }
 // GetScheduledInstallDays gets the scheduledInstallDays property value. Days in week for which active hours are configured. This collection can contain a maximum of 7 elements.
 func (m *IosUpdateConfiguration) GetScheduledInstallDays()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.scheduledInstallDays
-    }
+    return m.scheduledInstallDays
 }
 // GetUpdateScheduleType gets the updateScheduleType property value. Update schedule type for iOS software updates.
 func (m *IosUpdateConfiguration) GetUpdateScheduleType()(*IosSoftwareUpdateScheduleType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.updateScheduleType
-    }
+    return m.updateScheduleType
 }
 // GetUtcTimeOffsetInMinutes gets the utcTimeOffsetInMinutes property value. UTC Time Offset indicated in minutes
 func (m *IosUpdateConfiguration) GetUtcTimeOffsetInMinutes()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.utcTimeOffsetInMinutes
-    }
+    return m.utcTimeOffsetInMinutes
 }
 // Serialize serializes information the current object
 func (m *IosUpdateConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -283,55 +247,37 @@ func (m *IosUpdateConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487
 }
 // SetActiveHoursEnd sets the activeHoursEnd property value. Active Hours End (active hours mean the time window when updates install should not happen)
 func (m *IosUpdateConfiguration) SetActiveHoursEnd(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.TimeOnly)() {
-    if m != nil {
-        m.activeHoursEnd = value
-    }
+    m.activeHoursEnd = value
 }
 // SetActiveHoursStart sets the activeHoursStart property value. Active Hours Start (active hours mean the time window when updates install should not happen)
 func (m *IosUpdateConfiguration) SetActiveHoursStart(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.TimeOnly)() {
-    if m != nil {
-        m.activeHoursStart = value
-    }
+    m.activeHoursStart = value
 }
 // SetCustomUpdateTimeWindows sets the customUpdateTimeWindows property value. If update schedule type is set to use time window scheduling, custom time windows when updates will be scheduled. This collection can contain a maximum of 20 elements.
 func (m *IosUpdateConfiguration) SetCustomUpdateTimeWindows(value []CustomUpdateTimeWindowable)() {
-    if m != nil {
-        m.customUpdateTimeWindows = value
-    }
+    m.customUpdateTimeWindows = value
 }
 // SetDesiredOsVersion sets the desiredOsVersion property value. If left unspecified, devices will update to the latest version of the OS.
 func (m *IosUpdateConfiguration) SetDesiredOsVersion(value *string)() {
-    if m != nil {
-        m.desiredOsVersion = value
-    }
+    m.desiredOsVersion = value
 }
 // SetEnforcedSoftwareUpdateDelayInDays sets the enforcedSoftwareUpdateDelayInDays property value. Days before software updates are visible to iOS devices ranging from 0 to 90 inclusive
 func (m *IosUpdateConfiguration) SetEnforcedSoftwareUpdateDelayInDays(value *int32)() {
-    if m != nil {
-        m.enforcedSoftwareUpdateDelayInDays = value
-    }
+    m.enforcedSoftwareUpdateDelayInDays = value
 }
 // SetIsEnabled sets the isEnabled property value. Is setting enabled in UI
 func (m *IosUpdateConfiguration) SetIsEnabled(value *bool)() {
-    if m != nil {
-        m.isEnabled = value
-    }
+    m.isEnabled = value
 }
 // SetScheduledInstallDays sets the scheduledInstallDays property value. Days in week for which active hours are configured. This collection can contain a maximum of 7 elements.
 func (m *IosUpdateConfiguration) SetScheduledInstallDays(value []string)() {
-    if m != nil {
-        m.scheduledInstallDays = value
-    }
+    m.scheduledInstallDays = value
 }
 // SetUpdateScheduleType sets the updateScheduleType property value. Update schedule type for iOS software updates.
 func (m *IosUpdateConfiguration) SetUpdateScheduleType(value *IosSoftwareUpdateScheduleType)() {
-    if m != nil {
-        m.updateScheduleType = value
-    }
+    m.updateScheduleType = value
 }
 // SetUtcTimeOffsetInMinutes sets the utcTimeOffsetInMinutes property value. UTC Time Offset indicated in minutes
 func (m *IosUpdateConfiguration) SetUtcTimeOffsetInMinutes(value *int32)() {
-    if m != nil {
-        m.utcTimeOffsetInMinutes = value
-    }
+    m.utcTimeOffsetInMinutes = value
 }

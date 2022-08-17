@@ -32,27 +32,15 @@ func CreateUpdateAudienceByIdPostRequestBodyFromDiscriminatorValue(parseNode i87
 }
 // GetAddExclusions gets the addExclusions property value. The addExclusions property
 func (m *UpdateAudienceByIdPostRequestBody) GetAddExclusions()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.addExclusions
-    }
+    return m.addExclusions
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *UpdateAudienceByIdPostRequestBody) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetAddMembers gets the addMembers property value. The addMembers property
 func (m *UpdateAudienceByIdPostRequestBody) GetAddMembers()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.addMembers
-    }
+    return m.addMembers
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *UpdateAudienceByIdPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -127,27 +115,15 @@ func (m *UpdateAudienceByIdPostRequestBody) GetFieldDeserializers()(map[string]f
 }
 // GetMemberEntityType gets the memberEntityType property value. The memberEntityType property
 func (m *UpdateAudienceByIdPostRequestBody) GetMemberEntityType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.memberEntityType
-    }
+    return m.memberEntityType
 }
 // GetRemoveExclusions gets the removeExclusions property value. The removeExclusions property
 func (m *UpdateAudienceByIdPostRequestBody) GetRemoveExclusions()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.removeExclusions
-    }
+    return m.removeExclusions
 }
 // GetRemoveMembers gets the removeMembers property value. The removeMembers property
 func (m *UpdateAudienceByIdPostRequestBody) GetRemoveMembers()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.removeMembers
-    }
+    return m.removeMembers
 }
 // Serialize serializes information the current object
 func (m *UpdateAudienceByIdPostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -191,37 +167,25 @@ func (m *UpdateAudienceByIdPostRequestBody) Serialize(writer i878a80d2330e89d268
 }
 // SetAddExclusions sets the addExclusions property value. The addExclusions property
 func (m *UpdateAudienceByIdPostRequestBody) SetAddExclusions(value []string)() {
-    if m != nil {
-        m.addExclusions = value
-    }
+    m.addExclusions = value
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *UpdateAudienceByIdPostRequestBody) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetAddMembers sets the addMembers property value. The addMembers property
 func (m *UpdateAudienceByIdPostRequestBody) SetAddMembers(value []string)() {
-    if m != nil {
-        m.addMembers = value
-    }
+    m.addMembers = value
 }
 // SetMemberEntityType sets the memberEntityType property value. The memberEntityType property
 func (m *UpdateAudienceByIdPostRequestBody) SetMemberEntityType(value *string)() {
-    if m != nil {
-        m.memberEntityType = value
-    }
+    m.memberEntityType = value
 }
 // SetRemoveExclusions sets the removeExclusions property value. The removeExclusions property
 func (m *UpdateAudienceByIdPostRequestBody) SetRemoveExclusions(value []string)() {
-    if m != nil {
-        m.removeExclusions = value
-    }
+    m.removeExclusions = value
 }
 // SetRemoveMembers sets the removeMembers property value. The removeMembers property
 func (m *UpdateAudienceByIdPostRequestBody) SetRemoveMembers(value []string)() {
-    if m != nil {
-        m.removeMembers = value
-    }
+    m.removeMembers = value
 }

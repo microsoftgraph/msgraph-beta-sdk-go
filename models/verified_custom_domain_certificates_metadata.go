@@ -37,19 +37,11 @@ func CreateVerifiedCustomDomainCertificatesMetadataFromDiscriminatorValue(parseN
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *VerifiedCustomDomainCertificatesMetadata) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetExpiryDate gets the expiryDate property value. The expiry date of the custom domain certificate. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *VerifiedCustomDomainCertificatesMetadata) GetExpiryDate()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.expiryDate
-    }
+    return m.expiryDate
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *VerifiedCustomDomainCertificatesMetadata) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -118,43 +110,23 @@ func (m *VerifiedCustomDomainCertificatesMetadata) GetFieldDeserializers()(map[s
 }
 // GetIssueDate gets the issueDate property value. The issue date of the custom domain. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *VerifiedCustomDomainCertificatesMetadata) GetIssueDate()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.issueDate
-    }
+    return m.issueDate
 }
 // GetIssuerName gets the issuerName property value. The issuer name of the custom domain certificate.
 func (m *VerifiedCustomDomainCertificatesMetadata) GetIssuerName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.issuerName
-    }
+    return m.issuerName
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *VerifiedCustomDomainCertificatesMetadata) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetSubjectName gets the subjectName property value. The subject name of the custom domain certificate.
 func (m *VerifiedCustomDomainCertificatesMetadata) GetSubjectName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.subjectName
-    }
+    return m.subjectName
 }
 // GetThumbprint gets the thumbprint property value. The thumbprint associated with the custom domain certificate.
 func (m *VerifiedCustomDomainCertificatesMetadata) GetThumbprint()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.thumbprint
-    }
+    return m.thumbprint
 }
 // Serialize serializes information the current object
 func (m *VerifiedCustomDomainCertificatesMetadata) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -204,43 +176,29 @@ func (m *VerifiedCustomDomainCertificatesMetadata) Serialize(writer i878a80d2330
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *VerifiedCustomDomainCertificatesMetadata) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetExpiryDate sets the expiryDate property value. The expiry date of the custom domain certificate. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *VerifiedCustomDomainCertificatesMetadata) SetExpiryDate(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.expiryDate = value
-    }
+    m.expiryDate = value
 }
 // SetIssueDate sets the issueDate property value. The issue date of the custom domain. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *VerifiedCustomDomainCertificatesMetadata) SetIssueDate(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.issueDate = value
-    }
+    m.issueDate = value
 }
 // SetIssuerName sets the issuerName property value. The issuer name of the custom domain certificate.
 func (m *VerifiedCustomDomainCertificatesMetadata) SetIssuerName(value *string)() {
-    if m != nil {
-        m.issuerName = value
-    }
+    m.issuerName = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *VerifiedCustomDomainCertificatesMetadata) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetSubjectName sets the subjectName property value. The subject name of the custom domain certificate.
 func (m *VerifiedCustomDomainCertificatesMetadata) SetSubjectName(value *string)() {
-    if m != nil {
-        m.subjectName = value
-    }
+    m.subjectName = value
 }
 // SetThumbprint sets the thumbprint property value. The thumbprint associated with the custom domain certificate.
 func (m *VerifiedCustomDomainCertificatesMetadata) SetThumbprint(value *string)() {
-    if m != nil {
-        m.thumbprint = value
-    }
+    m.thumbprint = value
 }

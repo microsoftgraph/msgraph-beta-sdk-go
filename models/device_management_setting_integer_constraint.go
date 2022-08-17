@@ -52,19 +52,11 @@ func (m *DeviceManagementSettingIntegerConstraint) GetFieldDeserializers()(map[s
 }
 // GetMaximumValue gets the maximumValue property value. The maximum permitted value
 func (m *DeviceManagementSettingIntegerConstraint) GetMaximumValue()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.maximumValue
-    }
+    return m.maximumValue
 }
 // GetMinimumValue gets the minimumValue property value. The minimum permitted value
 func (m *DeviceManagementSettingIntegerConstraint) GetMinimumValue()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.minimumValue
-    }
+    return m.minimumValue
 }
 // Serialize serializes information the current object
 func (m *DeviceManagementSettingIntegerConstraint) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -88,13 +80,9 @@ func (m *DeviceManagementSettingIntegerConstraint) Serialize(writer i878a80d2330
 }
 // SetMaximumValue sets the maximumValue property value. The maximum permitted value
 func (m *DeviceManagementSettingIntegerConstraint) SetMaximumValue(value *int32)() {
-    if m != nil {
-        m.maximumValue = value
-    }
+    m.maximumValue = value
 }
 // SetMinimumValue sets the minimumValue property value. The minimum permitted value
 func (m *DeviceManagementSettingIntegerConstraint) SetMinimumValue(value *int32)() {
-    if m != nil {
-        m.minimumValue = value
-    }
+    m.minimumValue = value
 }

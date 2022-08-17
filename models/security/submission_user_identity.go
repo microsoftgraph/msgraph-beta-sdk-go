@@ -26,11 +26,7 @@ func CreateSubmissionUserIdentityFromDiscriminatorValue(parseNode i878a80d2330e8
 }
 // GetEmail gets the email property value. The email of user who is making the submission when logged in (delegated token case).
 func (m *SubmissionUserIdentity) GetEmail()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.email
-    }
+    return m.email
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *SubmissionUserIdentity) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -63,7 +59,5 @@ func (m *SubmissionUserIdentity) Serialize(writer i878a80d2330e89d26896388a3f487
 }
 // SetEmail sets the email property value. The email of user who is making the submission when logged in (delegated token case).
 func (m *SubmissionUserIdentity) SetEmail(value *string)() {
-    if m != nil {
-        m.email = value
-    }
+    m.email = value
 }

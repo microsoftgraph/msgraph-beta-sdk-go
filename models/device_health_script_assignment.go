@@ -64,27 +64,15 @@ func (m *DeviceHealthScriptAssignment) GetFieldDeserializers()(map[string]func(i
 }
 // GetRunRemediationScript gets the runRemediationScript property value. Determine whether we want to run detection script only or run both detection script and remediation script
 func (m *DeviceHealthScriptAssignment) GetRunRemediationScript()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.runRemediationScript
-    }
+    return m.runRemediationScript
 }
 // GetRunSchedule gets the runSchedule property value. Script run schedule for the target group
 func (m *DeviceHealthScriptAssignment) GetRunSchedule()(DeviceHealthScriptRunScheduleable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.runSchedule
-    }
+    return m.runSchedule
 }
 // GetTarget gets the target property value. The Azure Active Directory group we are targeting the script to
 func (m *DeviceHealthScriptAssignment) GetTarget()(DeviceAndAppManagementAssignmentTargetable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.target
-    }
+    return m.target
 }
 // Serialize serializes information the current object
 func (m *DeviceHealthScriptAssignment) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -114,19 +102,13 @@ func (m *DeviceHealthScriptAssignment) Serialize(writer i878a80d2330e89d26896388
 }
 // SetRunRemediationScript sets the runRemediationScript property value. Determine whether we want to run detection script only or run both detection script and remediation script
 func (m *DeviceHealthScriptAssignment) SetRunRemediationScript(value *bool)() {
-    if m != nil {
-        m.runRemediationScript = value
-    }
+    m.runRemediationScript = value
 }
 // SetRunSchedule sets the runSchedule property value. Script run schedule for the target group
 func (m *DeviceHealthScriptAssignment) SetRunSchedule(value DeviceHealthScriptRunScheduleable)() {
-    if m != nil {
-        m.runSchedule = value
-    }
+    m.runSchedule = value
 }
 // SetTarget sets the target property value. The Azure Active Directory group we are targeting the script to
 func (m *DeviceHealthScriptAssignment) SetTarget(value DeviceAndAppManagementAssignmentTargetable)() {
-    if m != nil {
-        m.target = value
-    }
+    m.target = value
 }

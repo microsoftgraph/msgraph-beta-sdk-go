@@ -44,11 +44,7 @@ func (m *SubjectRightsRequestEnumeratedMailboxLocation) GetFieldDeserializers()(
 }
 // GetUpns gets the upns property value. Collection of mailboxes that should be included in the search. Includes the UPN (user principal name) of each mailbox, for example, Monica.Thompson@contoso.com.
 func (m *SubjectRightsRequestEnumeratedMailboxLocation) GetUpns()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.upns
-    }
+    return m.upns
 }
 // Serialize serializes information the current object
 func (m *SubjectRightsRequestEnumeratedMailboxLocation) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -66,7 +62,5 @@ func (m *SubjectRightsRequestEnumeratedMailboxLocation) Serialize(writer i878a80
 }
 // SetUpns sets the upns property value. Collection of mailboxes that should be included in the search. Includes the UPN (user principal name) of each mailbox, for example, Monica.Thompson@contoso.com.
 func (m *SubjectRightsRequestEnumeratedMailboxLocation) SetUpns(value []string)() {
-    if m != nil {
-        m.upns = value
-    }
+    m.upns = value
 }

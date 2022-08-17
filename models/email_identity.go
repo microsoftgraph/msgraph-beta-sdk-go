@@ -25,11 +25,7 @@ func CreateEmailIdentityFromDiscriminatorValue(parseNode i878a80d2330e89d2689638
 }
 // GetEmail gets the email property value. Email address of the user.
 func (m *EmailIdentity) GetEmail()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.email
-    }
+    return m.email
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *EmailIdentity) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -62,7 +58,5 @@ func (m *EmailIdentity) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
 }
 // SetEmail sets the email property value. Email address of the user.
 func (m *EmailIdentity) SetEmail(value *string)() {
-    if m != nil {
-        m.email = value
-    }
+    m.email = value
 }

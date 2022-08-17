@@ -36,35 +36,19 @@ func CreateParseExpressionResponseFromDiscriminatorValue(parseNode i878a80d2330e
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ParseExpressionResponse) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetError gets the error property value. Error details, if expression evaluation resulted in an error.
 func (m *ParseExpressionResponse) GetError()(PublicErrorable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.error
-    }
+    return m.error
 }
 // GetEvaluationResult gets the evaluationResult property value. A collection of values produced by the evaluation of the expression.
 func (m *ParseExpressionResponse) GetEvaluationResult()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.evaluationResult
-    }
+    return m.evaluationResult
 }
 // GetEvaluationSucceeded gets the evaluationSucceeded property value. true if the evaluation was successful.
 func (m *ParseExpressionResponse) GetEvaluationSucceeded()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.evaluationSucceeded
-    }
+    return m.evaluationSucceeded
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ParseExpressionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -137,27 +121,15 @@ func (m *ParseExpressionResponse) GetFieldDeserializers()(map[string]func(i878a8
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *ParseExpressionResponse) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetParsedExpression gets the parsedExpression property value. An attributeMappingSource object representing the parsed expression.
 func (m *ParseExpressionResponse) GetParsedExpression()(AttributeMappingSourceable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.parsedExpression
-    }
+    return m.parsedExpression
 }
 // GetParsingSucceeded gets the parsingSucceeded property value. true if the expression was parsed successfully.
 func (m *ParseExpressionResponse) GetParsingSucceeded()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.parsingSucceeded
-    }
+    return m.parsingSucceeded
 }
 // Serialize serializes information the current object
 func (m *ParseExpressionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -207,43 +179,29 @@ func (m *ParseExpressionResponse) Serialize(writer i878a80d2330e89d26896388a3f48
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ParseExpressionResponse) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetError sets the error property value. Error details, if expression evaluation resulted in an error.
 func (m *ParseExpressionResponse) SetError(value PublicErrorable)() {
-    if m != nil {
-        m.error = value
-    }
+    m.error = value
 }
 // SetEvaluationResult sets the evaluationResult property value. A collection of values produced by the evaluation of the expression.
 func (m *ParseExpressionResponse) SetEvaluationResult(value []string)() {
-    if m != nil {
-        m.evaluationResult = value
-    }
+    m.evaluationResult = value
 }
 // SetEvaluationSucceeded sets the evaluationSucceeded property value. true if the evaluation was successful.
 func (m *ParseExpressionResponse) SetEvaluationSucceeded(value *bool)() {
-    if m != nil {
-        m.evaluationSucceeded = value
-    }
+    m.evaluationSucceeded = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *ParseExpressionResponse) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetParsedExpression sets the parsedExpression property value. An attributeMappingSource object representing the parsed expression.
 func (m *ParseExpressionResponse) SetParsedExpression(value AttributeMappingSourceable)() {
-    if m != nil {
-        m.parsedExpression = value
-    }
+    m.parsedExpression = value
 }
 // SetParsingSucceeded sets the parsingSucceeded property value. true if the expression was parsed successfully.
 func (m *ParseExpressionResponse) SetParsingSucceeded(value *bool)() {
-    if m != nil {
-        m.parsingSucceeded = value
-    }
+    m.parsingSucceeded = value
 }

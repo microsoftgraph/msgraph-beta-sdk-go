@@ -33,11 +33,7 @@ func CreateItemActivityTimeSetFromDiscriminatorValue(parseNode i878a80d2330e89d2
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ItemActivityTimeSet) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ItemActivityTimeSet) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -86,35 +82,19 @@ func (m *ItemActivityTimeSet) GetFieldDeserializers()(map[string]func(i878a80d23
 }
 // GetLastRecordedDateTime gets the lastRecordedDateTime property value. The lastRecordedDateTime property
 func (m *ItemActivityTimeSet) GetLastRecordedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastRecordedDateTime
-    }
+    return m.lastRecordedDateTime
 }
 // GetObservedDateTime gets the observedDateTime property value. When the activity was observed to take place.
 func (m *ItemActivityTimeSet) GetObservedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.observedDateTime
-    }
+    return m.observedDateTime
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *ItemActivityTimeSet) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetRecordedDateTime gets the recordedDateTime property value. When the observation was recorded on the service.
 func (m *ItemActivityTimeSet) GetRecordedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.recordedDateTime
-    }
+    return m.recordedDateTime
 }
 // Serialize serializes information the current object
 func (m *ItemActivityTimeSet) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -152,31 +132,21 @@ func (m *ItemActivityTimeSet) Serialize(writer i878a80d2330e89d26896388a3f487eef
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ItemActivityTimeSet) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetLastRecordedDateTime sets the lastRecordedDateTime property value. The lastRecordedDateTime property
 func (m *ItemActivityTimeSet) SetLastRecordedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.lastRecordedDateTime = value
-    }
+    m.lastRecordedDateTime = value
 }
 // SetObservedDateTime sets the observedDateTime property value. When the activity was observed to take place.
 func (m *ItemActivityTimeSet) SetObservedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.observedDateTime = value
-    }
+    m.observedDateTime = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *ItemActivityTimeSet) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetRecordedDateTime sets the recordedDateTime property value. When the observation was recorded on the service.
 func (m *ItemActivityTimeSet) SetRecordedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.recordedDateTime = value
-    }
+    m.recordedDateTime = value
 }

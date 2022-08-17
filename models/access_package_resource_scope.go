@@ -39,27 +39,15 @@ func CreateAccessPackageResourceScopeFromDiscriminatorValue(parseNode i878a80d23
 }
 // GetAccessPackageResource gets the accessPackageResource property value. The accessPackageResource property
 func (m *AccessPackageResourceScope) GetAccessPackageResource()(AccessPackageResourceable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.accessPackageResource
-    }
+    return m.accessPackageResource
 }
 // GetDescription gets the description property value. The description of the scope.
 func (m *AccessPackageResourceScope) GetDescription()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.description
-    }
+    return m.description
 }
 // GetDisplayName gets the displayName property value. The display name of the scope.
 func (m *AccessPackageResourceScope) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AccessPackageResourceScope) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -148,43 +136,23 @@ func (m *AccessPackageResourceScope) GetFieldDeserializers()(map[string]func(i87
 }
 // GetIsRootScope gets the isRootScope property value. True if the scopes are arranged in a hierarchy and this is the top or root scope of the resource.
 func (m *AccessPackageResourceScope) GetIsRootScope()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isRootScope
-    }
+    return m.isRootScope
 }
 // GetOriginId gets the originId property value. The unique identifier for the scope in the resource as defined in the origin system.
 func (m *AccessPackageResourceScope) GetOriginId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.originId
-    }
+    return m.originId
 }
 // GetOriginSystem gets the originSystem property value. The origin system for the scope.
 func (m *AccessPackageResourceScope) GetOriginSystem()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.originSystem
-    }
+    return m.originSystem
 }
 // GetRoleOriginId gets the roleOriginId property value. The origin system for the role, if different.
 func (m *AccessPackageResourceScope) GetRoleOriginId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.roleOriginId
-    }
+    return m.roleOriginId
 }
 // GetUrl gets the url property value. A resource locator for the scope.
 func (m *AccessPackageResourceScope) GetUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.url
-    }
+    return m.url
 }
 // Serialize serializes information the current object
 func (m *AccessPackageResourceScope) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -244,49 +212,33 @@ func (m *AccessPackageResourceScope) Serialize(writer i878a80d2330e89d26896388a3
 }
 // SetAccessPackageResource sets the accessPackageResource property value. The accessPackageResource property
 func (m *AccessPackageResourceScope) SetAccessPackageResource(value AccessPackageResourceable)() {
-    if m != nil {
-        m.accessPackageResource = value
-    }
+    m.accessPackageResource = value
 }
 // SetDescription sets the description property value. The description of the scope.
 func (m *AccessPackageResourceScope) SetDescription(value *string)() {
-    if m != nil {
-        m.description = value
-    }
+    m.description = value
 }
 // SetDisplayName sets the displayName property value. The display name of the scope.
 func (m *AccessPackageResourceScope) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }
 // SetIsRootScope sets the isRootScope property value. True if the scopes are arranged in a hierarchy and this is the top or root scope of the resource.
 func (m *AccessPackageResourceScope) SetIsRootScope(value *bool)() {
-    if m != nil {
-        m.isRootScope = value
-    }
+    m.isRootScope = value
 }
 // SetOriginId sets the originId property value. The unique identifier for the scope in the resource as defined in the origin system.
 func (m *AccessPackageResourceScope) SetOriginId(value *string)() {
-    if m != nil {
-        m.originId = value
-    }
+    m.originId = value
 }
 // SetOriginSystem sets the originSystem property value. The origin system for the scope.
 func (m *AccessPackageResourceScope) SetOriginSystem(value *string)() {
-    if m != nil {
-        m.originSystem = value
-    }
+    m.originSystem = value
 }
 // SetRoleOriginId sets the roleOriginId property value. The origin system for the role, if different.
 func (m *AccessPackageResourceScope) SetRoleOriginId(value *string)() {
-    if m != nil {
-        m.roleOriginId = value
-    }
+    m.roleOriginId = value
 }
 // SetUrl sets the url property value. A resource locator for the scope.
 func (m *AccessPackageResourceScope) SetUrl(value *string)() {
-    if m != nil {
-        m.url = value
-    }
+    m.url = value
 }

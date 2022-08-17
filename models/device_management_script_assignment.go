@@ -40,11 +40,7 @@ func (m *DeviceManagementScriptAssignment) GetFieldDeserializers()(map[string]fu
 }
 // GetTarget gets the target property value. The Id of the Azure Active Directory group we are targeting the script to.
 func (m *DeviceManagementScriptAssignment) GetTarget()(DeviceAndAppManagementAssignmentTargetable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.target
-    }
+    return m.target
 }
 // Serialize serializes information the current object
 func (m *DeviceManagementScriptAssignment) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -62,7 +58,5 @@ func (m *DeviceManagementScriptAssignment) Serialize(writer i878a80d2330e89d2689
 }
 // SetTarget sets the target property value. The Id of the Azure Active Directory group we are targeting the script to.
 func (m *DeviceManagementScriptAssignment) SetTarget(value DeviceAndAppManagementAssignmentTargetable)() {
-    if m != nil {
-        m.target = value
-    }
+    m.target = value
 }

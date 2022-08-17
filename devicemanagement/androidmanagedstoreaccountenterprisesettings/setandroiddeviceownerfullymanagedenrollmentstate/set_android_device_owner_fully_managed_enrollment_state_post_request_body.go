@@ -24,19 +24,11 @@ func CreateSetAndroidDeviceOwnerFullyManagedEnrollmentStatePostRequestBodyFromDi
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SetAndroidDeviceOwnerFullyManagedEnrollmentStatePostRequestBody) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetEnabled gets the enabled property value. The enabled property
 func (m *SetAndroidDeviceOwnerFullyManagedEnrollmentStatePostRequestBody) GetEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.enabled
-    }
+    return m.enabled
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *SetAndroidDeviceOwnerFullyManagedEnrollmentStatePostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -71,13 +63,9 @@ func (m *SetAndroidDeviceOwnerFullyManagedEnrollmentStatePostRequestBody) Serial
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SetAndroidDeviceOwnerFullyManagedEnrollmentStatePostRequestBody) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetEnabled sets the enabled property value. The enabled property
 func (m *SetAndroidDeviceOwnerFullyManagedEnrollmentStatePostRequestBody) SetEnabled(value *bool)() {
-    if m != nil {
-        m.enabled = value
-    }
+    m.enabled = value
 }

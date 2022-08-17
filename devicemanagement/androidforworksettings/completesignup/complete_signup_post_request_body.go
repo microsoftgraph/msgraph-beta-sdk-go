@@ -24,19 +24,11 @@ func CreateCompleteSignupPostRequestBodyFromDiscriminatorValue(parseNode i878a80
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CompleteSignupPostRequestBody) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetEnterpriseToken gets the enterpriseToken property value. The enterpriseToken property
 func (m *CompleteSignupPostRequestBody) GetEnterpriseToken()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.enterpriseToken
-    }
+    return m.enterpriseToken
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *CompleteSignupPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -71,13 +63,9 @@ func (m *CompleteSignupPostRequestBody) Serialize(writer i878a80d2330e89d2689638
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CompleteSignupPostRequestBody) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetEnterpriseToken sets the enterpriseToken property value. The enterpriseToken property
 func (m *CompleteSignupPostRequestBody) SetEnterpriseToken(value *string)() {
-    if m != nil {
-        m.enterpriseToken = value
-    }
+    m.enterpriseToken = value
 }

@@ -69,27 +69,15 @@ func (m *ManagementActionTenantDeploymentStatus) GetFieldDeserializers()(map[str
 }
 // GetStatuses gets the statuses property value. The collection of deployment status for each instance of a management action. Optional.
 func (m *ManagementActionTenantDeploymentStatus) GetStatuses()([]ManagementActionDeploymentStatusable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.statuses
-    }
+    return m.statuses
 }
 // GetTenantGroupId gets the tenantGroupId property value. The identifier for the tenant group that is associated with the management action. Required. Read-only.
 func (m *ManagementActionTenantDeploymentStatus) GetTenantGroupId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.tenantGroupId
-    }
+    return m.tenantGroupId
 }
 // GetTenantId gets the tenantId property value. The Azure Active Directory tenant identifier for the managed tenant. Required. Read-only.
 func (m *ManagementActionTenantDeploymentStatus) GetTenantId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.tenantId
-    }
+    return m.tenantId
 }
 // Serialize serializes information the current object
 func (m *ManagementActionTenantDeploymentStatus) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -123,19 +111,13 @@ func (m *ManagementActionTenantDeploymentStatus) Serialize(writer i878a80d2330e8
 }
 // SetStatuses sets the statuses property value. The collection of deployment status for each instance of a management action. Optional.
 func (m *ManagementActionTenantDeploymentStatus) SetStatuses(value []ManagementActionDeploymentStatusable)() {
-    if m != nil {
-        m.statuses = value
-    }
+    m.statuses = value
 }
 // SetTenantGroupId sets the tenantGroupId property value. The identifier for the tenant group that is associated with the management action. Required. Read-only.
 func (m *ManagementActionTenantDeploymentStatus) SetTenantGroupId(value *string)() {
-    if m != nil {
-        m.tenantGroupId = value
-    }
+    m.tenantGroupId = value
 }
 // SetTenantId sets the tenantId property value. The Azure Active Directory tenant identifier for the managed tenant. Required. Read-only.
 func (m *ManagementActionTenantDeploymentStatus) SetTenantId(value *string)() {
-    if m != nil {
-        m.tenantId = value
-    }
+    m.tenantId = value
 }

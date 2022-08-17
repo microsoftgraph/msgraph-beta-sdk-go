@@ -66,51 +66,27 @@ func CreateOnPremisesPublishingFromDiscriminatorValue(parseNode i878a80d2330e89d
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *OnPremisesPublishing) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetAlternateUrl gets the alternateUrl property value. If you are configuring a traffic manager in front of multiple App Proxy applications, the alternateUrl is the user-friendly URL that will point to the traffic manager.
 func (m *OnPremisesPublishing) GetAlternateUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.alternateUrl
-    }
+    return m.alternateUrl
 }
 // GetApplicationServerTimeout gets the applicationServerTimeout property value. The duration the connector will wait for a response from the backend application before closing the connection. Possible values are default, long. When set to default, the backend application timeout has a length of 85 seconds. When set to long, the backend timeout is increased to 180 seconds. Use long if your server takes more than 85 seconds to respond to requests or if you are unable to access the application and the error status is 'Backend Timeout'. Default value is default.
 func (m *OnPremisesPublishing) GetApplicationServerTimeout()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.applicationServerTimeout
-    }
+    return m.applicationServerTimeout
 }
 // GetApplicationType gets the applicationType property value. Indicates if this application is an Application Proxy configured application. This is pre-set by the system. Read-only.
 func (m *OnPremisesPublishing) GetApplicationType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.applicationType
-    }
+    return m.applicationType
 }
 // GetExternalAuthenticationType gets the externalAuthenticationType property value. Details the pre-authentication setting for the application. Pre-authentication enforces that users must authenticate before accessing the app. Passthru does not require authentication. Possible values are: passthru, aadPreAuthentication.
 func (m *OnPremisesPublishing) GetExternalAuthenticationType()(*ExternalAuthenticationType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.externalAuthenticationType
-    }
+    return m.externalAuthenticationType
 }
 // GetExternalUrl gets the externalUrl property value. The published external url for the application. For example, https://intranet-contoso.msappproxy.net/.
 func (m *OnPremisesPublishing) GetExternalUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.externalUrl
-    }
+    return m.externalUrl
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *OnPremisesPublishing) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -333,131 +309,67 @@ func (m *OnPremisesPublishing) GetFieldDeserializers()(map[string]func(i878a80d2
 }
 // GetInternalUrl gets the internalUrl property value. The internal url of the application. For example, https://intranet/.
 func (m *OnPremisesPublishing) GetInternalUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.internalUrl
-    }
+    return m.internalUrl
 }
 // GetIsBackendCertificateValidationEnabled gets the isBackendCertificateValidationEnabled property value. Indicates whether backend SSL certificate validation is enabled for the application. For all new Application Proxy apps, the property will be set to true by default. For all existing apps, the property will be set to false.
 func (m *OnPremisesPublishing) GetIsBackendCertificateValidationEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isBackendCertificateValidationEnabled
-    }
+    return m.isBackendCertificateValidationEnabled
 }
 // GetIsHttpOnlyCookieEnabled gets the isHttpOnlyCookieEnabled property value. Indicates if the HTTPOnly cookie flag should be set in the HTTP response headers. Set this value to true to have Application Proxy cookies include the HTTPOnly flag in the HTTP response headers. If using Remote Desktop Services, set this value to False. Default value is false.
 func (m *OnPremisesPublishing) GetIsHttpOnlyCookieEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isHttpOnlyCookieEnabled
-    }
+    return m.isHttpOnlyCookieEnabled
 }
 // GetIsOnPremPublishingEnabled gets the isOnPremPublishingEnabled property value. Indicates if the application is currently being published via Application Proxy or not. This is pre-set by the system. Read-only.
 func (m *OnPremisesPublishing) GetIsOnPremPublishingEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isOnPremPublishingEnabled
-    }
+    return m.isOnPremPublishingEnabled
 }
 // GetIsPersistentCookieEnabled gets the isPersistentCookieEnabled property value. Indicates if the Persistent cookie flag should be set in the HTTP response headers. Keep this value set to false. Only use this setting for applications that can't share cookies between processes. For more information about cookie settings, see Cookie settings for accessing on-premises applications in Azure Active Directory. Default value is false.
 func (m *OnPremisesPublishing) GetIsPersistentCookieEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isPersistentCookieEnabled
-    }
+    return m.isPersistentCookieEnabled
 }
 // GetIsSecureCookieEnabled gets the isSecureCookieEnabled property value. Indicates if the Secure cookie flag should be set in the HTTP response headers. Set this value to true to transmit cookies over a secure channel such as an encrypted HTTPS request. Default value is true.
 func (m *OnPremisesPublishing) GetIsSecureCookieEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isSecureCookieEnabled
-    }
+    return m.isSecureCookieEnabled
 }
 // GetIsStateSessionEnabled gets the isStateSessionEnabled property value. Indicates whether validation of the state parameter when the client uses the OAuth 2.0 authorization code grant flow is enabled. This setting allows admins to specify whether they want to enable CSRF protection for their apps.
 func (m *OnPremisesPublishing) GetIsStateSessionEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isStateSessionEnabled
-    }
+    return m.isStateSessionEnabled
 }
 // GetIsTranslateHostHeaderEnabled gets the isTranslateHostHeaderEnabled property value. Indicates if the application should translate urls in the reponse headers. Keep this value as true unless your application required the original host header in the authentication request. Default value is true.
 func (m *OnPremisesPublishing) GetIsTranslateHostHeaderEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isTranslateHostHeaderEnabled
-    }
+    return m.isTranslateHostHeaderEnabled
 }
 // GetIsTranslateLinksInBodyEnabled gets the isTranslateLinksInBodyEnabled property value. Indicates if the application should translate urls in the application body. Keep this value as false unless you have hardcoded HTML links to other on-premises applications and don't use custom domains. For more information, see Link translation with Application Proxy. Default value is false.
 func (m *OnPremisesPublishing) GetIsTranslateLinksInBodyEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isTranslateLinksInBodyEnabled
-    }
+    return m.isTranslateLinksInBodyEnabled
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *OnPremisesPublishing) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetOnPremisesApplicationSegments gets the onPremisesApplicationSegments property value. The onPremisesApplicationSegments property
 func (m *OnPremisesPublishing) GetOnPremisesApplicationSegments()([]OnPremisesApplicationSegmentable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.onPremisesApplicationSegments
-    }
+    return m.onPremisesApplicationSegments
 }
 // GetSingleSignOnSettings gets the singleSignOnSettings property value. Represents the single sign-on configuration for the on-premises application.
 func (m *OnPremisesPublishing) GetSingleSignOnSettings()(OnPremisesPublishingSingleSignOnable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.singleSignOnSettings
-    }
+    return m.singleSignOnSettings
 }
 // GetUseAlternateUrlForTranslationAndRedirect gets the useAlternateUrlForTranslationAndRedirect property value. The useAlternateUrlForTranslationAndRedirect property
 func (m *OnPremisesPublishing) GetUseAlternateUrlForTranslationAndRedirect()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.useAlternateUrlForTranslationAndRedirect
-    }
+    return m.useAlternateUrlForTranslationAndRedirect
 }
 // GetVerifiedCustomDomainCertificatesMetadata gets the verifiedCustomDomainCertificatesMetadata property value. Details of the certificate associated with the application when a custom domain is in use. null when using the default domain. Read-only.
 func (m *OnPremisesPublishing) GetVerifiedCustomDomainCertificatesMetadata()(VerifiedCustomDomainCertificatesMetadataable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.verifiedCustomDomainCertificatesMetadata
-    }
+    return m.verifiedCustomDomainCertificatesMetadata
 }
 // GetVerifiedCustomDomainKeyCredential gets the verifiedCustomDomainKeyCredential property value. The associated key credential for the custom domain used.
 func (m *OnPremisesPublishing) GetVerifiedCustomDomainKeyCredential()(KeyCredentialable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.verifiedCustomDomainKeyCredential
-    }
+    return m.verifiedCustomDomainKeyCredential
 }
 // GetVerifiedCustomDomainPasswordCredential gets the verifiedCustomDomainPasswordCredential property value. The associated password credential for the custom domain used.
 func (m *OnPremisesPublishing) GetVerifiedCustomDomainPasswordCredential()(PasswordCredentialable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.verifiedCustomDomainPasswordCredential
-    }
+    return m.verifiedCustomDomainPasswordCredential
 }
 // Serialize serializes information the current object
 func (m *OnPremisesPublishing) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -602,133 +514,89 @@ func (m *OnPremisesPublishing) Serialize(writer i878a80d2330e89d26896388a3f487ee
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *OnPremisesPublishing) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetAlternateUrl sets the alternateUrl property value. If you are configuring a traffic manager in front of multiple App Proxy applications, the alternateUrl is the user-friendly URL that will point to the traffic manager.
 func (m *OnPremisesPublishing) SetAlternateUrl(value *string)() {
-    if m != nil {
-        m.alternateUrl = value
-    }
+    m.alternateUrl = value
 }
 // SetApplicationServerTimeout sets the applicationServerTimeout property value. The duration the connector will wait for a response from the backend application before closing the connection. Possible values are default, long. When set to default, the backend application timeout has a length of 85 seconds. When set to long, the backend timeout is increased to 180 seconds. Use long if your server takes more than 85 seconds to respond to requests or if you are unable to access the application and the error status is 'Backend Timeout'. Default value is default.
 func (m *OnPremisesPublishing) SetApplicationServerTimeout(value *string)() {
-    if m != nil {
-        m.applicationServerTimeout = value
-    }
+    m.applicationServerTimeout = value
 }
 // SetApplicationType sets the applicationType property value. Indicates if this application is an Application Proxy configured application. This is pre-set by the system. Read-only.
 func (m *OnPremisesPublishing) SetApplicationType(value *string)() {
-    if m != nil {
-        m.applicationType = value
-    }
+    m.applicationType = value
 }
 // SetExternalAuthenticationType sets the externalAuthenticationType property value. Details the pre-authentication setting for the application. Pre-authentication enforces that users must authenticate before accessing the app. Passthru does not require authentication. Possible values are: passthru, aadPreAuthentication.
 func (m *OnPremisesPublishing) SetExternalAuthenticationType(value *ExternalAuthenticationType)() {
-    if m != nil {
-        m.externalAuthenticationType = value
-    }
+    m.externalAuthenticationType = value
 }
 // SetExternalUrl sets the externalUrl property value. The published external url for the application. For example, https://intranet-contoso.msappproxy.net/.
 func (m *OnPremisesPublishing) SetExternalUrl(value *string)() {
-    if m != nil {
-        m.externalUrl = value
-    }
+    m.externalUrl = value
 }
 // SetInternalUrl sets the internalUrl property value. The internal url of the application. For example, https://intranet/.
 func (m *OnPremisesPublishing) SetInternalUrl(value *string)() {
-    if m != nil {
-        m.internalUrl = value
-    }
+    m.internalUrl = value
 }
 // SetIsBackendCertificateValidationEnabled sets the isBackendCertificateValidationEnabled property value. Indicates whether backend SSL certificate validation is enabled for the application. For all new Application Proxy apps, the property will be set to true by default. For all existing apps, the property will be set to false.
 func (m *OnPremisesPublishing) SetIsBackendCertificateValidationEnabled(value *bool)() {
-    if m != nil {
-        m.isBackendCertificateValidationEnabled = value
-    }
+    m.isBackendCertificateValidationEnabled = value
 }
 // SetIsHttpOnlyCookieEnabled sets the isHttpOnlyCookieEnabled property value. Indicates if the HTTPOnly cookie flag should be set in the HTTP response headers. Set this value to true to have Application Proxy cookies include the HTTPOnly flag in the HTTP response headers. If using Remote Desktop Services, set this value to False. Default value is false.
 func (m *OnPremisesPublishing) SetIsHttpOnlyCookieEnabled(value *bool)() {
-    if m != nil {
-        m.isHttpOnlyCookieEnabled = value
-    }
+    m.isHttpOnlyCookieEnabled = value
 }
 // SetIsOnPremPublishingEnabled sets the isOnPremPublishingEnabled property value. Indicates if the application is currently being published via Application Proxy or not. This is pre-set by the system. Read-only.
 func (m *OnPremisesPublishing) SetIsOnPremPublishingEnabled(value *bool)() {
-    if m != nil {
-        m.isOnPremPublishingEnabled = value
-    }
+    m.isOnPremPublishingEnabled = value
 }
 // SetIsPersistentCookieEnabled sets the isPersistentCookieEnabled property value. Indicates if the Persistent cookie flag should be set in the HTTP response headers. Keep this value set to false. Only use this setting for applications that can't share cookies between processes. For more information about cookie settings, see Cookie settings for accessing on-premises applications in Azure Active Directory. Default value is false.
 func (m *OnPremisesPublishing) SetIsPersistentCookieEnabled(value *bool)() {
-    if m != nil {
-        m.isPersistentCookieEnabled = value
-    }
+    m.isPersistentCookieEnabled = value
 }
 // SetIsSecureCookieEnabled sets the isSecureCookieEnabled property value. Indicates if the Secure cookie flag should be set in the HTTP response headers. Set this value to true to transmit cookies over a secure channel such as an encrypted HTTPS request. Default value is true.
 func (m *OnPremisesPublishing) SetIsSecureCookieEnabled(value *bool)() {
-    if m != nil {
-        m.isSecureCookieEnabled = value
-    }
+    m.isSecureCookieEnabled = value
 }
 // SetIsStateSessionEnabled sets the isStateSessionEnabled property value. Indicates whether validation of the state parameter when the client uses the OAuth 2.0 authorization code grant flow is enabled. This setting allows admins to specify whether they want to enable CSRF protection for their apps.
 func (m *OnPremisesPublishing) SetIsStateSessionEnabled(value *bool)() {
-    if m != nil {
-        m.isStateSessionEnabled = value
-    }
+    m.isStateSessionEnabled = value
 }
 // SetIsTranslateHostHeaderEnabled sets the isTranslateHostHeaderEnabled property value. Indicates if the application should translate urls in the reponse headers. Keep this value as true unless your application required the original host header in the authentication request. Default value is true.
 func (m *OnPremisesPublishing) SetIsTranslateHostHeaderEnabled(value *bool)() {
-    if m != nil {
-        m.isTranslateHostHeaderEnabled = value
-    }
+    m.isTranslateHostHeaderEnabled = value
 }
 // SetIsTranslateLinksInBodyEnabled sets the isTranslateLinksInBodyEnabled property value. Indicates if the application should translate urls in the application body. Keep this value as false unless you have hardcoded HTML links to other on-premises applications and don't use custom domains. For more information, see Link translation with Application Proxy. Default value is false.
 func (m *OnPremisesPublishing) SetIsTranslateLinksInBodyEnabled(value *bool)() {
-    if m != nil {
-        m.isTranslateLinksInBodyEnabled = value
-    }
+    m.isTranslateLinksInBodyEnabled = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *OnPremisesPublishing) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetOnPremisesApplicationSegments sets the onPremisesApplicationSegments property value. The onPremisesApplicationSegments property
 func (m *OnPremisesPublishing) SetOnPremisesApplicationSegments(value []OnPremisesApplicationSegmentable)() {
-    if m != nil {
-        m.onPremisesApplicationSegments = value
-    }
+    m.onPremisesApplicationSegments = value
 }
 // SetSingleSignOnSettings sets the singleSignOnSettings property value. Represents the single sign-on configuration for the on-premises application.
 func (m *OnPremisesPublishing) SetSingleSignOnSettings(value OnPremisesPublishingSingleSignOnable)() {
-    if m != nil {
-        m.singleSignOnSettings = value
-    }
+    m.singleSignOnSettings = value
 }
 // SetUseAlternateUrlForTranslationAndRedirect sets the useAlternateUrlForTranslationAndRedirect property value. The useAlternateUrlForTranslationAndRedirect property
 func (m *OnPremisesPublishing) SetUseAlternateUrlForTranslationAndRedirect(value *bool)() {
-    if m != nil {
-        m.useAlternateUrlForTranslationAndRedirect = value
-    }
+    m.useAlternateUrlForTranslationAndRedirect = value
 }
 // SetVerifiedCustomDomainCertificatesMetadata sets the verifiedCustomDomainCertificatesMetadata property value. Details of the certificate associated with the application when a custom domain is in use. null when using the default domain. Read-only.
 func (m *OnPremisesPublishing) SetVerifiedCustomDomainCertificatesMetadata(value VerifiedCustomDomainCertificatesMetadataable)() {
-    if m != nil {
-        m.verifiedCustomDomainCertificatesMetadata = value
-    }
+    m.verifiedCustomDomainCertificatesMetadata = value
 }
 // SetVerifiedCustomDomainKeyCredential sets the verifiedCustomDomainKeyCredential property value. The associated key credential for the custom domain used.
 func (m *OnPremisesPublishing) SetVerifiedCustomDomainKeyCredential(value KeyCredentialable)() {
-    if m != nil {
-        m.verifiedCustomDomainKeyCredential = value
-    }
+    m.verifiedCustomDomainKeyCredential = value
 }
 // SetVerifiedCustomDomainPasswordCredential sets the verifiedCustomDomainPasswordCredential property value. The associated password credential for the custom domain used.
 func (m *OnPremisesPublishing) SetVerifiedCustomDomainPasswordCredential(value PasswordCredentialable)() {
-    if m != nil {
-        m.verifiedCustomDomainPasswordCredential = value
-    }
+    m.verifiedCustomDomainPasswordCredential = value
 }

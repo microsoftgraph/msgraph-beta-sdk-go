@@ -4,13 +4,13 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// BookingPerson represents a booking customer or staff member.
+// BookingPerson 
 type BookingPerson struct {
     BookingNamedEntity
     // The email address of the person.
     emailAddress *string
 }
-// NewBookingPerson instantiates a new bookingPerson and sets the default values.
+// NewBookingPerson instantiates a new BookingPerson and sets the default values.
 func NewBookingPerson()(*BookingPerson) {
     m := &BookingPerson{
         BookingNamedEntity: *NewBookingNamedEntity(),
@@ -46,11 +46,7 @@ func CreateBookingPersonFromDiscriminatorValue(parseNode i878a80d2330e89d2689638
 }
 // GetEmailAddress gets the emailAddress property value. The email address of the person.
 func (m *BookingPerson) GetEmailAddress()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.emailAddress
-    }
+    return m.emailAddress
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *BookingPerson) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -83,7 +79,5 @@ func (m *BookingPerson) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
 }
 // SetEmailAddress sets the emailAddress property value. The email address of the person.
 func (m *BookingPerson) SetEmailAddress(value *string)() {
-    if m != nil {
-        m.emailAddress = value
-    }
+    m.emailAddress = value
 }

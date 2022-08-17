@@ -37,27 +37,15 @@ func CreateTenantFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
 }
 // GetContract gets the contract property value. The relationship details for the tenant with the managing entity.
 func (m *Tenant) GetContract()(TenantContractable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.contract
-    }
+    return m.contract
 }
 // GetCreatedDateTime gets the createdDateTime property value. The date and time the tenant was created in the multi-tenant management platform. Optional. Read-only.
 func (m *Tenant) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.createdDateTime
-    }
+    return m.createdDateTime
 }
 // GetDisplayName gets the displayName property value. The display name for the tenant. Required. Read-only.
 func (m *Tenant) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Tenant) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -126,27 +114,15 @@ func (m *Tenant) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689638
 }
 // GetLastUpdatedDateTime gets the lastUpdatedDateTime property value. The date and time the tenant was last updated within the multi-tenant management platform. Optional. Read-only.
 func (m *Tenant) GetLastUpdatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastUpdatedDateTime
-    }
+    return m.lastUpdatedDateTime
 }
 // GetTenantId gets the tenantId property value. The Azure Active Directory tenant identifier for the managed tenant. Optional. Read-only.
 func (m *Tenant) GetTenantId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.tenantId
-    }
+    return m.tenantId
 }
 // GetTenantStatusInformation gets the tenantStatusInformation property value. The onboarding status information for the tenant. Optional. Read-only.
 func (m *Tenant) GetTenantStatusInformation()(TenantStatusInformationable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.tenantStatusInformation
-    }
+    return m.tenantStatusInformation
 }
 // Serialize serializes information the current object
 func (m *Tenant) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -194,37 +170,25 @@ func (m *Tenant) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c
 }
 // SetContract sets the contract property value. The relationship details for the tenant with the managing entity.
 func (m *Tenant) SetContract(value TenantContractable)() {
-    if m != nil {
-        m.contract = value
-    }
+    m.contract = value
 }
 // SetCreatedDateTime sets the createdDateTime property value. The date and time the tenant was created in the multi-tenant management platform. Optional. Read-only.
 func (m *Tenant) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.createdDateTime = value
-    }
+    m.createdDateTime = value
 }
 // SetDisplayName sets the displayName property value. The display name for the tenant. Required. Read-only.
 func (m *Tenant) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }
 // SetLastUpdatedDateTime sets the lastUpdatedDateTime property value. The date and time the tenant was last updated within the multi-tenant management platform. Optional. Read-only.
 func (m *Tenant) SetLastUpdatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.lastUpdatedDateTime = value
-    }
+    m.lastUpdatedDateTime = value
 }
 // SetTenantId sets the tenantId property value. The Azure Active Directory tenant identifier for the managed tenant. Optional. Read-only.
 func (m *Tenant) SetTenantId(value *string)() {
-    if m != nil {
-        m.tenantId = value
-    }
+    m.tenantId = value
 }
 // SetTenantStatusInformation sets the tenantStatusInformation property value. The onboarding status information for the tenant. Optional. Read-only.
 func (m *Tenant) SetTenantStatusInformation(value TenantStatusInformationable)() {
-    if m != nil {
-        m.tenantStatusInformation = value
-    }
+    m.tenantStatusInformation = value
 }

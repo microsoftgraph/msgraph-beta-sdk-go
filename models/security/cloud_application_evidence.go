@@ -33,19 +33,11 @@ func CreateCloudApplicationEvidenceFromDiscriminatorValue(parseNode i878a80d2330
 }
 // GetAppId gets the appId property value. The appId property
 func (m *CloudApplicationEvidence) GetAppId()(*int64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.appId
-    }
+    return m.appId
 }
 // GetDisplayName gets the displayName property value. The displayName property
 func (m *CloudApplicationEvidence) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *CloudApplicationEvidence) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -104,27 +96,15 @@ func (m *CloudApplicationEvidence) GetFieldDeserializers()(map[string]func(i878a
 }
 // GetInstanceId gets the instanceId property value. The instanceId property
 func (m *CloudApplicationEvidence) GetInstanceId()(*int64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.instanceId
-    }
+    return m.instanceId
 }
 // GetInstanceName gets the instanceName property value. The instanceName property
 func (m *CloudApplicationEvidence) GetInstanceName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.instanceName
-    }
+    return m.instanceName
 }
 // GetSaasAppId gets the saasAppId property value. The saasAppId property
 func (m *CloudApplicationEvidence) GetSaasAppId()(*int64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.saasAppId
-    }
+    return m.saasAppId
 }
 // Serialize serializes information the current object
 func (m *CloudApplicationEvidence) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -166,31 +146,21 @@ func (m *CloudApplicationEvidence) Serialize(writer i878a80d2330e89d26896388a3f4
 }
 // SetAppId sets the appId property value. The appId property
 func (m *CloudApplicationEvidence) SetAppId(value *int64)() {
-    if m != nil {
-        m.appId = value
-    }
+    m.appId = value
 }
 // SetDisplayName sets the displayName property value. The displayName property
 func (m *CloudApplicationEvidence) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }
 // SetInstanceId sets the instanceId property value. The instanceId property
 func (m *CloudApplicationEvidence) SetInstanceId(value *int64)() {
-    if m != nil {
-        m.instanceId = value
-    }
+    m.instanceId = value
 }
 // SetInstanceName sets the instanceName property value. The instanceName property
 func (m *CloudApplicationEvidence) SetInstanceName(value *string)() {
-    if m != nil {
-        m.instanceName = value
-    }
+    m.instanceName = value
 }
 // SetSaasAppId sets the saasAppId property value. The saasAppId property
 func (m *CloudApplicationEvidence) SetSaasAppId(value *int64)() {
-    if m != nil {
-        m.saasAppId = value
-    }
+    m.saasAppId = value
 }

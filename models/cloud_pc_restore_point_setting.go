@@ -30,11 +30,7 @@ func CreateCloudPcRestorePointSettingFromDiscriminatorValue(parseNode i878a80d23
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CloudPcRestorePointSetting) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *CloudPcRestorePointSetting) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -73,27 +69,15 @@ func (m *CloudPcRestorePointSetting) GetFieldDeserializers()(map[string]func(i87
 }
 // GetFrequencyInHours gets the frequencyInHours property value. The time interval in hours to take snapshots (restore points) of a Cloud PC automatically. Possible values are 4, 6, 12, 16, and 24. The default frequency is 12 hours.
 func (m *CloudPcRestorePointSetting) GetFrequencyInHours()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.frequencyInHours
-    }
+    return m.frequencyInHours
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *CloudPcRestorePointSetting) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetUserRestoreEnabled gets the userRestoreEnabled property value. If true, the user has the ability to use snapshots to restore Cloud PCs. If false, non-admin users cannot use snapshots to restore the Cloud PC.
 func (m *CloudPcRestorePointSetting) GetUserRestoreEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userRestoreEnabled
-    }
+    return m.userRestoreEnabled
 }
 // Serialize serializes information the current object
 func (m *CloudPcRestorePointSetting) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -125,25 +109,17 @@ func (m *CloudPcRestorePointSetting) Serialize(writer i878a80d2330e89d26896388a3
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CloudPcRestorePointSetting) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetFrequencyInHours sets the frequencyInHours property value. The time interval in hours to take snapshots (restore points) of a Cloud PC automatically. Possible values are 4, 6, 12, 16, and 24. The default frequency is 12 hours.
 func (m *CloudPcRestorePointSetting) SetFrequencyInHours(value *int32)() {
-    if m != nil {
-        m.frequencyInHours = value
-    }
+    m.frequencyInHours = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *CloudPcRestorePointSetting) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetUserRestoreEnabled sets the userRestoreEnabled property value. If true, the user has the ability to use snapshots to restore Cloud PCs. If false, non-admin users cannot use snapshots to restore the Cloud PC.
 func (m *CloudPcRestorePointSetting) SetUserRestoreEnabled(value *bool)() {
-    if m != nil {
-        m.userRestoreEnabled = value
-    }
+    m.userRestoreEnabled = value
 }

@@ -61,11 +61,7 @@ func CreateDeviceManagementConfigurationSettingInstanceTemplateFromDiscriminator
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DeviceManagementConfigurationSettingInstanceTemplate) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceManagementConfigurationSettingInstanceTemplate) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -114,35 +110,19 @@ func (m *DeviceManagementConfigurationSettingInstanceTemplate) GetFieldDeseriali
 }
 // GetIsRequired gets the isRequired property value. Indicates if a policy must specify this setting.
 func (m *DeviceManagementConfigurationSettingInstanceTemplate) GetIsRequired()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isRequired
-    }
+    return m.isRequired
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *DeviceManagementConfigurationSettingInstanceTemplate) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetSettingDefinitionId gets the settingDefinitionId property value. Setting Definition Id
 func (m *DeviceManagementConfigurationSettingInstanceTemplate) GetSettingDefinitionId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.settingDefinitionId
-    }
+    return m.settingDefinitionId
 }
 // GetSettingInstanceTemplateId gets the settingInstanceTemplateId property value. Setting Instance Template Id
 func (m *DeviceManagementConfigurationSettingInstanceTemplate) GetSettingInstanceTemplateId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.settingInstanceTemplateId
-    }
+    return m.settingInstanceTemplateId
 }
 // Serialize serializes information the current object
 func (m *DeviceManagementConfigurationSettingInstanceTemplate) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -180,31 +160,21 @@ func (m *DeviceManagementConfigurationSettingInstanceTemplate) Serialize(writer 
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DeviceManagementConfigurationSettingInstanceTemplate) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetIsRequired sets the isRequired property value. Indicates if a policy must specify this setting.
 func (m *DeviceManagementConfigurationSettingInstanceTemplate) SetIsRequired(value *bool)() {
-    if m != nil {
-        m.isRequired = value
-    }
+    m.isRequired = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *DeviceManagementConfigurationSettingInstanceTemplate) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetSettingDefinitionId sets the settingDefinitionId property value. Setting Definition Id
 func (m *DeviceManagementConfigurationSettingInstanceTemplate) SetSettingDefinitionId(value *string)() {
-    if m != nil {
-        m.settingDefinitionId = value
-    }
+    m.settingDefinitionId = value
 }
 // SetSettingInstanceTemplateId sets the settingInstanceTemplateId property value. Setting Instance Template Id
 func (m *DeviceManagementConfigurationSettingInstanceTemplate) SetSettingInstanceTemplateId(value *string)() {
-    if m != nil {
-        m.settingInstanceTemplateId = value
-    }
+    m.settingInstanceTemplateId = value
 }

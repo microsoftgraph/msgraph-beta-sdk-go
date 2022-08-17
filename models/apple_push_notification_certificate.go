@@ -40,51 +40,27 @@ func CreateApplePushNotificationCertificateFromDiscriminatorValue(parseNode i878
 }
 // GetAppleIdentifier gets the appleIdentifier property value. Apple Id of the account used to create the MDM push certificate.
 func (m *ApplePushNotificationCertificate) GetAppleIdentifier()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.appleIdentifier
-    }
+    return m.appleIdentifier
 }
 // GetCertificate gets the certificate property value. Not yet documented
 func (m *ApplePushNotificationCertificate) GetCertificate()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.certificate
-    }
+    return m.certificate
 }
 // GetCertificateSerialNumber gets the certificateSerialNumber property value. Certificate serial number. This property is read-only.
 func (m *ApplePushNotificationCertificate) GetCertificateSerialNumber()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.certificateSerialNumber
-    }
+    return m.certificateSerialNumber
 }
 // GetCertificateUploadFailureReason gets the certificateUploadFailureReason property value. The reason the certificate upload failed.
 func (m *ApplePushNotificationCertificate) GetCertificateUploadFailureReason()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.certificateUploadFailureReason
-    }
+    return m.certificateUploadFailureReason
 }
 // GetCertificateUploadStatus gets the certificateUploadStatus property value. The certificate upload status.
 func (m *ApplePushNotificationCertificate) GetCertificateUploadStatus()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.certificateUploadStatus
-    }
+    return m.certificateUploadStatus
 }
 // GetExpirationDateTime gets the expirationDateTime property value. The expiration date and time for Apple push notification certificate.
 func (m *ApplePushNotificationCertificate) GetExpirationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.expirationDateTime
-    }
+    return m.expirationDateTime
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ApplePushNotificationCertificate) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -173,19 +149,11 @@ func (m *ApplePushNotificationCertificate) GetFieldDeserializers()(map[string]fu
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. Last modified date and time for Apple push notification certificate.
 func (m *ApplePushNotificationCertificate) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastModifiedDateTime
-    }
+    return m.lastModifiedDateTime
 }
 // GetTopicIdentifier gets the topicIdentifier property value. Topic Id.
 func (m *ApplePushNotificationCertificate) GetTopicIdentifier()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.topicIdentifier
-    }
+    return m.topicIdentifier
 }
 // Serialize serializes information the current object
 func (m *ApplePushNotificationCertificate) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -245,49 +213,33 @@ func (m *ApplePushNotificationCertificate) Serialize(writer i878a80d2330e89d2689
 }
 // SetAppleIdentifier sets the appleIdentifier property value. Apple Id of the account used to create the MDM push certificate.
 func (m *ApplePushNotificationCertificate) SetAppleIdentifier(value *string)() {
-    if m != nil {
-        m.appleIdentifier = value
-    }
+    m.appleIdentifier = value
 }
 // SetCertificate sets the certificate property value. Not yet documented
 func (m *ApplePushNotificationCertificate) SetCertificate(value *string)() {
-    if m != nil {
-        m.certificate = value
-    }
+    m.certificate = value
 }
 // SetCertificateSerialNumber sets the certificateSerialNumber property value. Certificate serial number. This property is read-only.
 func (m *ApplePushNotificationCertificate) SetCertificateSerialNumber(value *string)() {
-    if m != nil {
-        m.certificateSerialNumber = value
-    }
+    m.certificateSerialNumber = value
 }
 // SetCertificateUploadFailureReason sets the certificateUploadFailureReason property value. The reason the certificate upload failed.
 func (m *ApplePushNotificationCertificate) SetCertificateUploadFailureReason(value *string)() {
-    if m != nil {
-        m.certificateUploadFailureReason = value
-    }
+    m.certificateUploadFailureReason = value
 }
 // SetCertificateUploadStatus sets the certificateUploadStatus property value. The certificate upload status.
 func (m *ApplePushNotificationCertificate) SetCertificateUploadStatus(value *string)() {
-    if m != nil {
-        m.certificateUploadStatus = value
-    }
+    m.certificateUploadStatus = value
 }
 // SetExpirationDateTime sets the expirationDateTime property value. The expiration date and time for Apple push notification certificate.
 func (m *ApplePushNotificationCertificate) SetExpirationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.expirationDateTime = value
-    }
+    m.expirationDateTime = value
 }
 // SetLastModifiedDateTime sets the lastModifiedDateTime property value. Last modified date and time for Apple push notification certificate.
 func (m *ApplePushNotificationCertificate) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.lastModifiedDateTime = value
-    }
+    m.lastModifiedDateTime = value
 }
 // SetTopicIdentifier sets the topicIdentifier property value. Topic Id.
 func (m *ApplePushNotificationCertificate) SetTopicIdentifier(value *string)() {
-    if m != nil {
-        m.topicIdentifier = value
-    }
+    m.topicIdentifier = value
 }

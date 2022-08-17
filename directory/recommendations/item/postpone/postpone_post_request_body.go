@@ -25,11 +25,7 @@ func CreatePostponePostRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *PostponePostRequestBody) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *PostponePostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -48,11 +44,7 @@ func (m *PostponePostRequestBody) GetFieldDeserializers()(map[string]func(i878a8
 }
 // GetPostponeUntilDateTime gets the postponeUntilDateTime property value. The postponeUntilDateTime property
 func (m *PostponePostRequestBody) GetPostponeUntilDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.postponeUntilDateTime
-    }
+    return m.postponeUntilDateTime
 }
 // Serialize serializes information the current object
 func (m *PostponePostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -72,13 +64,9 @@ func (m *PostponePostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f48
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *PostponePostRequestBody) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetPostponeUntilDateTime sets the postponeUntilDateTime property value. The postponeUntilDateTime property
 func (m *PostponePostRequestBody) SetPostponeUntilDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.postponeUntilDateTime = value
-    }
+    m.postponeUntilDateTime = value
 }

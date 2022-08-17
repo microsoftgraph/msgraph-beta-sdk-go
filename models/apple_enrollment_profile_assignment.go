@@ -40,11 +40,7 @@ func (m *AppleEnrollmentProfileAssignment) GetFieldDeserializers()(map[string]fu
 }
 // GetTarget gets the target property value. The assignment target for the Apple user initiated deployment profile.
 func (m *AppleEnrollmentProfileAssignment) GetTarget()(DeviceAndAppManagementAssignmentTargetable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.target
-    }
+    return m.target
 }
 // Serialize serializes information the current object
 func (m *AppleEnrollmentProfileAssignment) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -62,7 +58,5 @@ func (m *AppleEnrollmentProfileAssignment) Serialize(writer i878a80d2330e89d2689
 }
 // SetTarget sets the target property value. The assignment target for the Apple user initiated deployment profile.
 func (m *AppleEnrollmentProfileAssignment) SetTarget(value DeviceAndAppManagementAssignmentTargetable)() {
-    if m != nil {
-        m.target = value
-    }
+    m.target = value
 }

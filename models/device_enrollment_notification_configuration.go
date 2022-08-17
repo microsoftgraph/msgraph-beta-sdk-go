@@ -35,19 +35,11 @@ func CreateDeviceEnrollmentNotificationConfigurationFromDiscriminatorValue(parse
 }
 // GetBrandingOptions gets the brandingOptions property value. Branding Options for the Message Template. Branding is defined in the Intune Admin Console.
 func (m *DeviceEnrollmentNotificationConfiguration) GetBrandingOptions()(*EnrollmentNotificationBrandingOptions) {
-    if m == nil {
-        return nil
-    } else {
-        return m.brandingOptions
-    }
+    return m.brandingOptions
 }
 // GetDefaultLocale gets the defaultLocale property value. DefaultLocale for the Enrollment Notification
 func (m *DeviceEnrollmentNotificationConfiguration) GetDefaultLocale()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.defaultLocale
-    }
+    return m.defaultLocale
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceEnrollmentNotificationConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -120,35 +112,19 @@ func (m *DeviceEnrollmentNotificationConfiguration) GetFieldDeserializers()(map[
 }
 // GetNotificationMessageTemplateId gets the notificationMessageTemplateId property value. Notification Message Template Id
 func (m *DeviceEnrollmentNotificationConfiguration) GetNotificationMessageTemplateId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.notificationMessageTemplateId
-    }
+    return m.notificationMessageTemplateId
 }
 // GetNotificationTemplates gets the notificationTemplates property value. The list of notification data -
 func (m *DeviceEnrollmentNotificationConfiguration) GetNotificationTemplates()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.notificationTemplates
-    }
+    return m.notificationTemplates
 }
 // GetPlatformType gets the platformType property value. This enum indicates the platform type for which the enrollment restriction applies.
 func (m *DeviceEnrollmentNotificationConfiguration) GetPlatformType()(*EnrollmentRestrictionPlatformType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.platformType
-    }
+    return m.platformType
 }
 // GetTemplateType gets the templateType property value. This enum indicates the Template type for which the enrollment notification applies.
 func (m *DeviceEnrollmentNotificationConfiguration) GetTemplateType()(*EnrollmentNotificationTemplateType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.templateType
-    }
+    return m.templateType
 }
 // Serialize serializes information the current object
 func (m *DeviceEnrollmentNotificationConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -199,37 +175,25 @@ func (m *DeviceEnrollmentNotificationConfiguration) Serialize(writer i878a80d233
 }
 // SetBrandingOptions sets the brandingOptions property value. Branding Options for the Message Template. Branding is defined in the Intune Admin Console.
 func (m *DeviceEnrollmentNotificationConfiguration) SetBrandingOptions(value *EnrollmentNotificationBrandingOptions)() {
-    if m != nil {
-        m.brandingOptions = value
-    }
+    m.brandingOptions = value
 }
 // SetDefaultLocale sets the defaultLocale property value. DefaultLocale for the Enrollment Notification
 func (m *DeviceEnrollmentNotificationConfiguration) SetDefaultLocale(value *string)() {
-    if m != nil {
-        m.defaultLocale = value
-    }
+    m.defaultLocale = value
 }
 // SetNotificationMessageTemplateId sets the notificationMessageTemplateId property value. Notification Message Template Id
 func (m *DeviceEnrollmentNotificationConfiguration) SetNotificationMessageTemplateId(value *string)() {
-    if m != nil {
-        m.notificationMessageTemplateId = value
-    }
+    m.notificationMessageTemplateId = value
 }
 // SetNotificationTemplates sets the notificationTemplates property value. The list of notification data -
 func (m *DeviceEnrollmentNotificationConfiguration) SetNotificationTemplates(value []string)() {
-    if m != nil {
-        m.notificationTemplates = value
-    }
+    m.notificationTemplates = value
 }
 // SetPlatformType sets the platformType property value. This enum indicates the platform type for which the enrollment restriction applies.
 func (m *DeviceEnrollmentNotificationConfiguration) SetPlatformType(value *EnrollmentRestrictionPlatformType)() {
-    if m != nil {
-        m.platformType = value
-    }
+    m.platformType = value
 }
 // SetTemplateType sets the templateType property value. This enum indicates the Template type for which the enrollment notification applies.
 func (m *DeviceEnrollmentNotificationConfiguration) SetTemplateType(value *EnrollmentNotificationTemplateType)() {
-    if m != nil {
-        m.templateType = value
-    }
+    m.templateType = value
 }

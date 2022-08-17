@@ -30,11 +30,7 @@ func CreateBulkRestoreCloudPcPostRequestBodyFromDiscriminatorValue(parseNode i87
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *BulkRestoreCloudPcPostRequestBody) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *BulkRestoreCloudPcPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -77,27 +73,15 @@ func (m *BulkRestoreCloudPcPostRequestBody) GetFieldDeserializers()(map[string]f
 }
 // GetManagedDeviceIds gets the managedDeviceIds property value. The managedDeviceIds property
 func (m *BulkRestoreCloudPcPostRequestBody) GetManagedDeviceIds()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.managedDeviceIds
-    }
+    return m.managedDeviceIds
 }
 // GetRestorePointDateTime gets the restorePointDateTime property value. The restorePointDateTime property
 func (m *BulkRestoreCloudPcPostRequestBody) GetRestorePointDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.restorePointDateTime
-    }
+    return m.restorePointDateTime
 }
 // GetTimeRange gets the timeRange property value. The timeRange property
 func (m *BulkRestoreCloudPcPostRequestBody) GetTimeRange()(*ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RestoreTimeRange) {
-    if m == nil {
-        return nil
-    } else {
-        return m.timeRange
-    }
+    return m.timeRange
 }
 // Serialize serializes information the current object
 func (m *BulkRestoreCloudPcPostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -130,25 +114,17 @@ func (m *BulkRestoreCloudPcPostRequestBody) Serialize(writer i878a80d2330e89d268
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *BulkRestoreCloudPcPostRequestBody) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetManagedDeviceIds sets the managedDeviceIds property value. The managedDeviceIds property
 func (m *BulkRestoreCloudPcPostRequestBody) SetManagedDeviceIds(value []string)() {
-    if m != nil {
-        m.managedDeviceIds = value
-    }
+    m.managedDeviceIds = value
 }
 // SetRestorePointDateTime sets the restorePointDateTime property value. The restorePointDateTime property
 func (m *BulkRestoreCloudPcPostRequestBody) SetRestorePointDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.restorePointDateTime = value
-    }
+    m.restorePointDateTime = value
 }
 // SetTimeRange sets the timeRange property value. The timeRange property
 func (m *BulkRestoreCloudPcPostRequestBody) SetTimeRange(value *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RestoreTimeRange)() {
-    if m != nil {
-        m.timeRange = value
-    }
+    m.timeRange = value
 }

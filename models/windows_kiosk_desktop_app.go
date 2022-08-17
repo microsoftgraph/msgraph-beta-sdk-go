@@ -29,19 +29,11 @@ func CreateWindowsKioskDesktopAppFromDiscriminatorValue(parseNode i878a80d2330e8
 }
 // GetDesktopApplicationId gets the desktopApplicationId property value. Define the DesktopApplicationID of the app
 func (m *WindowsKioskDesktopApp) GetDesktopApplicationId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.desktopApplicationId
-    }
+    return m.desktopApplicationId
 }
 // GetDesktopApplicationLinkPath gets the desktopApplicationLinkPath property value. Define the DesktopApplicationLinkPath of the app
 func (m *WindowsKioskDesktopApp) GetDesktopApplicationLinkPath()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.desktopApplicationLinkPath
-    }
+    return m.desktopApplicationLinkPath
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *WindowsKioskDesktopApp) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -80,11 +72,7 @@ func (m *WindowsKioskDesktopApp) GetFieldDeserializers()(map[string]func(i878a80
 }
 // GetPath gets the path property value. Define the path of a desktop app
 func (m *WindowsKioskDesktopApp) GetPath()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.path
-    }
+    return m.path
 }
 // Serialize serializes information the current object
 func (m *WindowsKioskDesktopApp) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -114,19 +102,13 @@ func (m *WindowsKioskDesktopApp) Serialize(writer i878a80d2330e89d26896388a3f487
 }
 // SetDesktopApplicationId sets the desktopApplicationId property value. Define the DesktopApplicationID of the app
 func (m *WindowsKioskDesktopApp) SetDesktopApplicationId(value *string)() {
-    if m != nil {
-        m.desktopApplicationId = value
-    }
+    m.desktopApplicationId = value
 }
 // SetDesktopApplicationLinkPath sets the desktopApplicationLinkPath property value. Define the DesktopApplicationLinkPath of the app
 func (m *WindowsKioskDesktopApp) SetDesktopApplicationLinkPath(value *string)() {
-    if m != nil {
-        m.desktopApplicationLinkPath = value
-    }
+    m.desktopApplicationLinkPath = value
 }
 // SetPath sets the path property value. Define the path of a desktop app
 func (m *WindowsKioskDesktopApp) SetPath(value *string)() {
-    if m != nil {
-        m.path = value
-    }
+    m.path = value
 }

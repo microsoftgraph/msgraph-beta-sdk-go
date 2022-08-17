@@ -34,11 +34,7 @@ func CreateDeviceManagementIntentUserStateFromDiscriminatorValue(parseNode i878a
 }
 // GetDeviceCount gets the deviceCount property value. Count of Devices that belongs to a user for an intent
 func (m *DeviceManagementIntentUserState) GetDeviceCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deviceCount
-    }
+    return m.deviceCount
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceManagementIntentUserState) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -97,35 +93,19 @@ func (m *DeviceManagementIntentUserState) GetFieldDeserializers()(map[string]fun
 }
 // GetLastReportedDateTime gets the lastReportedDateTime property value. Last modified date time of an intent report
 func (m *DeviceManagementIntentUserState) GetLastReportedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastReportedDateTime
-    }
+    return m.lastReportedDateTime
 }
 // GetState gets the state property value. The state property
 func (m *DeviceManagementIntentUserState) GetState()(*ComplianceStatus) {
-    if m == nil {
-        return nil
-    } else {
-        return m.state
-    }
+    return m.state
 }
 // GetUserName gets the userName property value. The user name that is being reported on a device
 func (m *DeviceManagementIntentUserState) GetUserName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userName
-    }
+    return m.userName
 }
 // GetUserPrincipalName gets the userPrincipalName property value. The user principal name that is being reported on a device
 func (m *DeviceManagementIntentUserState) GetUserPrincipalName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userPrincipalName
-    }
+    return m.userPrincipalName
 }
 // Serialize serializes information the current object
 func (m *DeviceManagementIntentUserState) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -168,31 +148,21 @@ func (m *DeviceManagementIntentUserState) Serialize(writer i878a80d2330e89d26896
 }
 // SetDeviceCount sets the deviceCount property value. Count of Devices that belongs to a user for an intent
 func (m *DeviceManagementIntentUserState) SetDeviceCount(value *int32)() {
-    if m != nil {
-        m.deviceCount = value
-    }
+    m.deviceCount = value
 }
 // SetLastReportedDateTime sets the lastReportedDateTime property value. Last modified date time of an intent report
 func (m *DeviceManagementIntentUserState) SetLastReportedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.lastReportedDateTime = value
-    }
+    m.lastReportedDateTime = value
 }
 // SetState sets the state property value. The state property
 func (m *DeviceManagementIntentUserState) SetState(value *ComplianceStatus)() {
-    if m != nil {
-        m.state = value
-    }
+    m.state = value
 }
 // SetUserName sets the userName property value. The user name that is being reported on a device
 func (m *DeviceManagementIntentUserState) SetUserName(value *string)() {
-    if m != nil {
-        m.userName = value
-    }
+    m.userName = value
 }
 // SetUserPrincipalName sets the userPrincipalName property value. The user principal name that is being reported on a device
 func (m *DeviceManagementIntentUserState) SetUserPrincipalName(value *string)() {
-    if m != nil {
-        m.userPrincipalName = value
-    }
+    m.userPrincipalName = value
 }

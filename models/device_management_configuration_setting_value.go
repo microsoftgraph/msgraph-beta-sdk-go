@@ -59,11 +59,7 @@ func CreateDeviceManagementConfigurationSettingValueFromDiscriminatorValue(parse
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DeviceManagementConfigurationSettingValue) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceManagementConfigurationSettingValue) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -92,19 +88,11 @@ func (m *DeviceManagementConfigurationSettingValue) GetFieldDeserializers()(map[
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *DeviceManagementConfigurationSettingValue) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetSettingValueTemplateReference gets the settingValueTemplateReference property value. Setting value template reference
 func (m *DeviceManagementConfigurationSettingValue) GetSettingValueTemplateReference()(DeviceManagementConfigurationSettingValueTemplateReferenceable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.settingValueTemplateReference
-    }
+    return m.settingValueTemplateReference
 }
 // Serialize serializes information the current object
 func (m *DeviceManagementConfigurationSettingValue) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -130,19 +118,13 @@ func (m *DeviceManagementConfigurationSettingValue) Serialize(writer i878a80d233
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *DeviceManagementConfigurationSettingValue) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *DeviceManagementConfigurationSettingValue) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetSettingValueTemplateReference sets the settingValueTemplateReference property value. Setting value template reference
 func (m *DeviceManagementConfigurationSettingValue) SetSettingValueTemplateReference(value DeviceManagementConfigurationSettingValueTemplateReferenceable)() {
-    if m != nil {
-        m.settingValueTemplateReference = value
-    }
+    m.settingValueTemplateReference = value
 }

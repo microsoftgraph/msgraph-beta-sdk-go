@@ -28,19 +28,11 @@ func CreateTenantAttachRBACStateFromDiscriminatorValue(parseNode i878a80d2330e89
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TenantAttachRBACState) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetEnabled gets the enabled property value. Indicates whether the tenant is enabled for Tenant Attach with role management.  TRUE if enabled, FALSE if the Tenant Attach with rolemanagement is disabled.
 func (m *TenantAttachRBACState) GetEnabled()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.enabled
-    }
+    return m.enabled
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *TenantAttachRBACState) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -69,11 +61,7 @@ func (m *TenantAttachRBACState) GetFieldDeserializers()(map[string]func(i878a80d
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *TenantAttachRBACState) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // Serialize serializes information the current object
 func (m *TenantAttachRBACState) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -99,19 +87,13 @@ func (m *TenantAttachRBACState) Serialize(writer i878a80d2330e89d26896388a3f487e
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TenantAttachRBACState) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetEnabled sets the enabled property value. Indicates whether the tenant is enabled for Tenant Attach with role management.  TRUE if enabled, FALSE if the Tenant Attach with rolemanagement is disabled.
 func (m *TenantAttachRBACState) SetEnabled(value *bool)() {
-    if m != nil {
-        m.enabled = value
-    }
+    m.enabled = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *TenantAttachRBACState) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }

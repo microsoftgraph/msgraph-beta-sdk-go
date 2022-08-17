@@ -40,11 +40,7 @@ func (m *KeyBooleanValuePair) GetFieldDeserializers()(map[string]func(i878a80d23
 }
 // GetValue gets the value property value. The Boolean value of the key-value pair.
 func (m *KeyBooleanValuePair) GetValue()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.value
-    }
+    return m.value
 }
 // Serialize serializes information the current object
 func (m *KeyBooleanValuePair) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -62,7 +58,5 @@ func (m *KeyBooleanValuePair) Serialize(writer i878a80d2330e89d26896388a3f487eef
 }
 // SetValue sets the value property value. The Boolean value of the key-value pair.
 func (m *KeyBooleanValuePair) SetValue(value *bool)() {
-    if m != nil {
-        m.value = value
-    }
+    m.value = value
 }

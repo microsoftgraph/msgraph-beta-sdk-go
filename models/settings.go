@@ -32,11 +32,7 @@ func CreateSettingsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f4
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *Settings) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Settings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -85,35 +81,19 @@ func (m *Settings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
 }
 // GetHasGraphMailbox gets the hasGraphMailbox property value. Specifies if the user's primary mailbox is hosted in the cloud and is enabled for Microsoft Graph.
 func (m *Settings) GetHasGraphMailbox()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.hasGraphMailbox
-    }
+    return m.hasGraphMailbox
 }
 // GetHasLicense gets the hasLicense property value. Specifies if the user has a MyAnalytics license assigned.
 func (m *Settings) GetHasLicense()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.hasLicense
-    }
+    return m.hasLicense
 }
 // GetHasOptedOut gets the hasOptedOut property value. Specifies if the user opted out of MyAnalytics.
 func (m *Settings) GetHasOptedOut()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.hasOptedOut
-    }
+    return m.hasOptedOut
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *Settings) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // Serialize serializes information the current object
 func (m *Settings) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -151,31 +131,21 @@ func (m *Settings) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *Settings) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetHasGraphMailbox sets the hasGraphMailbox property value. Specifies if the user's primary mailbox is hosted in the cloud and is enabled for Microsoft Graph.
 func (m *Settings) SetHasGraphMailbox(value *bool)() {
-    if m != nil {
-        m.hasGraphMailbox = value
-    }
+    m.hasGraphMailbox = value
 }
 // SetHasLicense sets the hasLicense property value. Specifies if the user has a MyAnalytics license assigned.
 func (m *Settings) SetHasLicense(value *bool)() {
-    if m != nil {
-        m.hasLicense = value
-    }
+    m.hasLicense = value
 }
 // SetHasOptedOut sets the hasOptedOut property value. Specifies if the user opted out of MyAnalytics.
 func (m *Settings) SetHasOptedOut(value *bool)() {
-    if m != nil {
-        m.hasOptedOut = value
-    }
+    m.hasOptedOut = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *Settings) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }

@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// OutlookTaskGroup provides operations to manage the collection of accessReview entities.
+// OutlookTaskGroup provides operations to manage the collection of activityStatistics entities.
 type OutlookTaskGroup struct {
     Entity
     // The version of the task group.
@@ -33,11 +33,7 @@ func CreateOutlookTaskGroupFromDiscriminatorValue(parseNode i878a80d2330e89d2689
 }
 // GetChangeKey gets the changeKey property value. The version of the task group.
 func (m *OutlookTaskGroup) GetChangeKey()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.changeKey
-    }
+    return m.changeKey
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *OutlookTaskGroup) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -100,35 +96,19 @@ func (m *OutlookTaskGroup) GetFieldDeserializers()(map[string]func(i878a80d2330e
 }
 // GetGroupKey gets the groupKey property value. The unique GUID identifier for the task group.
 func (m *OutlookTaskGroup) GetGroupKey()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.groupKey
-    }
+    return m.groupKey
 }
 // GetIsDefaultGroup gets the isDefaultGroup property value. True if the task group is the default task group.
 func (m *OutlookTaskGroup) GetIsDefaultGroup()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isDefaultGroup
-    }
+    return m.isDefaultGroup
 }
 // GetName gets the name property value. The name of the task group.
 func (m *OutlookTaskGroup) GetName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.name
-    }
+    return m.name
 }
 // GetTaskFolders gets the taskFolders property value. The collection of task folders in the task group. Read-only. Nullable.
 func (m *OutlookTaskGroup) GetTaskFolders()([]OutlookTaskFolderable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.taskFolders
-    }
+    return m.taskFolders
 }
 // Serialize serializes information the current object
 func (m *OutlookTaskGroup) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -174,31 +154,21 @@ func (m *OutlookTaskGroup) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
 }
 // SetChangeKey sets the changeKey property value. The version of the task group.
 func (m *OutlookTaskGroup) SetChangeKey(value *string)() {
-    if m != nil {
-        m.changeKey = value
-    }
+    m.changeKey = value
 }
 // SetGroupKey sets the groupKey property value. The unique GUID identifier for the task group.
 func (m *OutlookTaskGroup) SetGroupKey(value *string)() {
-    if m != nil {
-        m.groupKey = value
-    }
+    m.groupKey = value
 }
 // SetIsDefaultGroup sets the isDefaultGroup property value. True if the task group is the default task group.
 func (m *OutlookTaskGroup) SetIsDefaultGroup(value *bool)() {
-    if m != nil {
-        m.isDefaultGroup = value
-    }
+    m.isDefaultGroup = value
 }
 // SetName sets the name property value. The name of the task group.
 func (m *OutlookTaskGroup) SetName(value *string)() {
-    if m != nil {
-        m.name = value
-    }
+    m.name = value
 }
 // SetTaskFolders sets the taskFolders property value. The collection of task folders in the task group. Read-only. Nullable.
 func (m *OutlookTaskGroup) SetTaskFolders(value []OutlookTaskFolderable)() {
-    if m != nil {
-        m.taskFolders = value
-    }
+    m.taskFolders = value
 }

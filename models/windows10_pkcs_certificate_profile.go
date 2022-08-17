@@ -41,51 +41,27 @@ func CreateWindows10PkcsCertificateProfileFromDiscriminatorValue(parseNode i878a
 }
 // GetCertificateStore gets the certificateStore property value. Target store certificate. Possible values are: user, machine.
 func (m *Windows10PkcsCertificateProfile) GetCertificateStore()(*CertificateStore) {
-    if m == nil {
-        return nil
-    } else {
-        return m.certificateStore
-    }
+    return m.certificateStore
 }
 // GetCertificateTemplateName gets the certificateTemplateName property value. PKCS Certificate Template Name
 func (m *Windows10PkcsCertificateProfile) GetCertificateTemplateName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.certificateTemplateName
-    }
+    return m.certificateTemplateName
 }
 // GetCertificationAuthority gets the certificationAuthority property value. PKCS Certification Authority
 func (m *Windows10PkcsCertificateProfile) GetCertificationAuthority()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.certificationAuthority
-    }
+    return m.certificationAuthority
 }
 // GetCertificationAuthorityName gets the certificationAuthorityName property value. PKCS Certification Authority Name
 func (m *Windows10PkcsCertificateProfile) GetCertificationAuthorityName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.certificationAuthorityName
-    }
+    return m.certificationAuthorityName
 }
 // GetCustomSubjectAlternativeNames gets the customSubjectAlternativeNames property value. Custom Subject Alternative Name Settings. This collection can contain a maximum of 500 elements.
 func (m *Windows10PkcsCertificateProfile) GetCustomSubjectAlternativeNames()([]CustomSubjectAlternativeNameable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.customSubjectAlternativeNames
-    }
+    return m.customSubjectAlternativeNames
 }
 // GetExtendedKeyUsages gets the extendedKeyUsages property value. Extended Key Usage (EKU) settings. This collection can contain a maximum of 500 elements.
 func (m *Windows10PkcsCertificateProfile) GetExtendedKeyUsages()([]ExtendedKeyUsageable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.extendedKeyUsages
-    }
+    return m.extendedKeyUsages
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Windows10PkcsCertificateProfile) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -196,27 +172,15 @@ func (m *Windows10PkcsCertificateProfile) GetFieldDeserializers()(map[string]fun
 }
 // GetManagedDeviceCertificateStates gets the managedDeviceCertificateStates property value. Certificate state for devices. This collection can contain a maximum of 2147483647 elements.
 func (m *Windows10PkcsCertificateProfile) GetManagedDeviceCertificateStates()([]ManagedDeviceCertificateStateable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.managedDeviceCertificateStates
-    }
+    return m.managedDeviceCertificateStates
 }
 // GetSubjectAlternativeNameFormatString gets the subjectAlternativeNameFormatString property value. Custom String that defines the AAD Attribute.
 func (m *Windows10PkcsCertificateProfile) GetSubjectAlternativeNameFormatString()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.subjectAlternativeNameFormatString
-    }
+    return m.subjectAlternativeNameFormatString
 }
 // GetSubjectNameFormatString gets the subjectNameFormatString property value. Custom format to use with SubjectNameFormat = Custom. Example: CN={{EmailAddress}},E={{EmailAddress}},OU=Enterprise Users,O=Contoso Corporation,L=Redmond,ST=WA,C=US
 func (m *Windows10PkcsCertificateProfile) GetSubjectNameFormatString()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.subjectNameFormatString
-    }
+    return m.subjectNameFormatString
 }
 // Serialize serializes information the current object
 func (m *Windows10PkcsCertificateProfile) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -295,55 +259,37 @@ func (m *Windows10PkcsCertificateProfile) Serialize(writer i878a80d2330e89d26896
 }
 // SetCertificateStore sets the certificateStore property value. Target store certificate. Possible values are: user, machine.
 func (m *Windows10PkcsCertificateProfile) SetCertificateStore(value *CertificateStore)() {
-    if m != nil {
-        m.certificateStore = value
-    }
+    m.certificateStore = value
 }
 // SetCertificateTemplateName sets the certificateTemplateName property value. PKCS Certificate Template Name
 func (m *Windows10PkcsCertificateProfile) SetCertificateTemplateName(value *string)() {
-    if m != nil {
-        m.certificateTemplateName = value
-    }
+    m.certificateTemplateName = value
 }
 // SetCertificationAuthority sets the certificationAuthority property value. PKCS Certification Authority
 func (m *Windows10PkcsCertificateProfile) SetCertificationAuthority(value *string)() {
-    if m != nil {
-        m.certificationAuthority = value
-    }
+    m.certificationAuthority = value
 }
 // SetCertificationAuthorityName sets the certificationAuthorityName property value. PKCS Certification Authority Name
 func (m *Windows10PkcsCertificateProfile) SetCertificationAuthorityName(value *string)() {
-    if m != nil {
-        m.certificationAuthorityName = value
-    }
+    m.certificationAuthorityName = value
 }
 // SetCustomSubjectAlternativeNames sets the customSubjectAlternativeNames property value. Custom Subject Alternative Name Settings. This collection can contain a maximum of 500 elements.
 func (m *Windows10PkcsCertificateProfile) SetCustomSubjectAlternativeNames(value []CustomSubjectAlternativeNameable)() {
-    if m != nil {
-        m.customSubjectAlternativeNames = value
-    }
+    m.customSubjectAlternativeNames = value
 }
 // SetExtendedKeyUsages sets the extendedKeyUsages property value. Extended Key Usage (EKU) settings. This collection can contain a maximum of 500 elements.
 func (m *Windows10PkcsCertificateProfile) SetExtendedKeyUsages(value []ExtendedKeyUsageable)() {
-    if m != nil {
-        m.extendedKeyUsages = value
-    }
+    m.extendedKeyUsages = value
 }
 // SetManagedDeviceCertificateStates sets the managedDeviceCertificateStates property value. Certificate state for devices. This collection can contain a maximum of 2147483647 elements.
 func (m *Windows10PkcsCertificateProfile) SetManagedDeviceCertificateStates(value []ManagedDeviceCertificateStateable)() {
-    if m != nil {
-        m.managedDeviceCertificateStates = value
-    }
+    m.managedDeviceCertificateStates = value
 }
 // SetSubjectAlternativeNameFormatString sets the subjectAlternativeNameFormatString property value. Custom String that defines the AAD Attribute.
 func (m *Windows10PkcsCertificateProfile) SetSubjectAlternativeNameFormatString(value *string)() {
-    if m != nil {
-        m.subjectAlternativeNameFormatString = value
-    }
+    m.subjectAlternativeNameFormatString = value
 }
 // SetSubjectNameFormatString sets the subjectNameFormatString property value. Custom format to use with SubjectNameFormat = Custom. Example: CN={{EmailAddress}},E={{EmailAddress}},OU=Enterprise Users,O=Contoso Corporation,L=Redmond,ST=WA,C=US
 func (m *Windows10PkcsCertificateProfile) SetSubjectNameFormatString(value *string)() {
-    if m != nil {
-        m.subjectNameFormatString = value
-    }
+    m.subjectNameFormatString = value
 }

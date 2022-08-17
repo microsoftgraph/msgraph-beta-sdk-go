@@ -52,19 +52,11 @@ func CreateDetectedSensitiveContentFromDiscriminatorValue(parseNode i878a80d2330
 }
 // GetClassificationAttributes gets the classificationAttributes property value. The classificationAttributes property
 func (m *DetectedSensitiveContent) GetClassificationAttributes()([]ClassificationAttributeable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.classificationAttributes
-    }
+    return m.classificationAttributes
 }
 // GetClassificationMethod gets the classificationMethod property value. The classificationMethod property
 func (m *DetectedSensitiveContent) GetClassificationMethod()(*ClassificationMethod) {
-    if m == nil {
-        return nil
-    } else {
-        return m.classificationMethod
-    }
+    return m.classificationMethod
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DetectedSensitiveContent) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -131,27 +123,15 @@ func (m *DetectedSensitiveContent) GetFieldDeserializers()(map[string]func(i878a
 }
 // GetMatches gets the matches property value. The matches property
 func (m *DetectedSensitiveContent) GetMatches()([]SensitiveContentLocationable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.matches
-    }
+    return m.matches
 }
 // GetScope gets the scope property value. The scope property
 func (m *DetectedSensitiveContent) GetScope()(*SensitiveTypeScope) {
-    if m == nil {
-        return nil
-    } else {
-        return m.scope
-    }
+    return m.scope
 }
 // GetSensitiveTypeSource gets the sensitiveTypeSource property value. The sensitiveTypeSource property
 func (m *DetectedSensitiveContent) GetSensitiveTypeSource()(*SensitiveTypeSource) {
-    if m == nil {
-        return nil
-    } else {
-        return m.sensitiveTypeSource
-    }
+    return m.sensitiveTypeSource
 }
 // Serialize serializes information the current object
 func (m *DetectedSensitiveContent) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -204,31 +184,21 @@ func (m *DetectedSensitiveContent) Serialize(writer i878a80d2330e89d26896388a3f4
 }
 // SetClassificationAttributes sets the classificationAttributes property value. The classificationAttributes property
 func (m *DetectedSensitiveContent) SetClassificationAttributes(value []ClassificationAttributeable)() {
-    if m != nil {
-        m.classificationAttributes = value
-    }
+    m.classificationAttributes = value
 }
 // SetClassificationMethod sets the classificationMethod property value. The classificationMethod property
 func (m *DetectedSensitiveContent) SetClassificationMethod(value *ClassificationMethod)() {
-    if m != nil {
-        m.classificationMethod = value
-    }
+    m.classificationMethod = value
 }
 // SetMatches sets the matches property value. The matches property
 func (m *DetectedSensitiveContent) SetMatches(value []SensitiveContentLocationable)() {
-    if m != nil {
-        m.matches = value
-    }
+    m.matches = value
 }
 // SetScope sets the scope property value. The scope property
 func (m *DetectedSensitiveContent) SetScope(value *SensitiveTypeScope)() {
-    if m != nil {
-        m.scope = value
-    }
+    m.scope = value
 }
 // SetSensitiveTypeSource sets the sensitiveTypeSource property value. The sensitiveTypeSource property
 func (m *DetectedSensitiveContent) SetSensitiveTypeSource(value *SensitiveTypeSource)() {
-    if m != nil {
-        m.sensitiveTypeSource = value
-    }
+    m.sensitiveTypeSource = value
 }

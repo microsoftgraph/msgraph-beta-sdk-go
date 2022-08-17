@@ -48,27 +48,15 @@ func CreateDeviceManagementConfigurationSettingGroupDefinitionFromDiscriminatorV
 }
 // GetChildIds gets the childIds property value. Dependent child settings to this group of settings
 func (m *DeviceManagementConfigurationSettingGroupDefinition) GetChildIds()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.childIds
-    }
+    return m.childIds
 }
 // GetDependedOnBy gets the dependedOnBy property value. List of child settings that depend on this setting
 func (m *DeviceManagementConfigurationSettingGroupDefinition) GetDependedOnBy()([]DeviceManagementConfigurationSettingDependedOnByable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.dependedOnBy
-    }
+    return m.dependedOnBy
 }
 // GetDependentOn gets the dependentOn property value. List of Dependencies for the setting group
 func (m *DeviceManagementConfigurationSettingGroupDefinition) GetDependentOn()([]DeviceManagementConfigurationDependentOnable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.dependentOn
-    }
+    return m.dependentOn
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceManagementConfigurationSettingGroupDefinition) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -153,19 +141,13 @@ func (m *DeviceManagementConfigurationSettingGroupDefinition) Serialize(writer i
 }
 // SetChildIds sets the childIds property value. Dependent child settings to this group of settings
 func (m *DeviceManagementConfigurationSettingGroupDefinition) SetChildIds(value []string)() {
-    if m != nil {
-        m.childIds = value
-    }
+    m.childIds = value
 }
 // SetDependedOnBy sets the dependedOnBy property value. List of child settings that depend on this setting
 func (m *DeviceManagementConfigurationSettingGroupDefinition) SetDependedOnBy(value []DeviceManagementConfigurationSettingDependedOnByable)() {
-    if m != nil {
-        m.dependedOnBy = value
-    }
+    m.dependedOnBy = value
 }
 // SetDependentOn sets the dependentOn property value. List of Dependencies for the setting group
 func (m *DeviceManagementConfigurationSettingGroupDefinition) SetDependentOn(value []DeviceManagementConfigurationDependentOnable)() {
-    if m != nil {
-        m.dependentOn = value
-    }
+    m.dependentOn = value
 }

@@ -60,19 +60,11 @@ func (m *UserExperienceAnalyticsCategory) GetFieldDeserializers()(map[string]fun
 }
 // GetInsights gets the insights property value. The insights for the user experience analytics category.
 func (m *UserExperienceAnalyticsCategory) GetInsights()([]UserExperienceAnalyticsInsightable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.insights
-    }
+    return m.insights
 }
 // GetMetricValues gets the metricValues property value. The metric values for the user experience analytics category.
 func (m *UserExperienceAnalyticsCategory) GetMetricValues()([]UserExperienceAnalyticsMetricable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.metricValues
-    }
+    return m.metricValues
 }
 // Serialize serializes information the current object
 func (m *UserExperienceAnalyticsCategory) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -104,13 +96,9 @@ func (m *UserExperienceAnalyticsCategory) Serialize(writer i878a80d2330e89d26896
 }
 // SetInsights sets the insights property value. The insights for the user experience analytics category.
 func (m *UserExperienceAnalyticsCategory) SetInsights(value []UserExperienceAnalyticsInsightable)() {
-    if m != nil {
-        m.insights = value
-    }
+    m.insights = value
 }
 // SetMetricValues sets the metricValues property value. The metric values for the user experience analytics category.
 func (m *UserExperienceAnalyticsCategory) SetMetricValues(value []UserExperienceAnalyticsMetricable)() {
-    if m != nil {
-        m.metricValues = value
-    }
+    m.metricValues = value
 }

@@ -33,11 +33,7 @@ func CreateWindowsUpdateRolloutSettingsFromDiscriminatorValue(parseNode i878a80d
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *WindowsUpdateRolloutSettings) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *WindowsUpdateRolloutSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -86,35 +82,19 @@ func (m *WindowsUpdateRolloutSettings) GetFieldDeserializers()(map[string]func(i
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *WindowsUpdateRolloutSettings) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetOfferEndDateTimeInUTC gets the offerEndDateTimeInUTC property value. The feature update's ending  of release date and time to be set, update, and displayed for a feature Update profile for example: 2020-06-09T10:00:00Z.
 func (m *WindowsUpdateRolloutSettings) GetOfferEndDateTimeInUTC()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.offerEndDateTimeInUTC
-    }
+    return m.offerEndDateTimeInUTC
 }
 // GetOfferIntervalInDays gets the offerIntervalInDays property value. The number of day(s) between each set of offers to be set, updated, and displayed for a feature update profile, for example: if OfferStartDateTimeInUTC is 2020-06-09T10:00:00Z, and OfferIntervalInDays is 1, then the next two sets of offers will be made consecutively on 2020-06-10T10:00:00Z (next day at the same specified time) and 2020-06-11T10:00:00Z (next next day at the same specified time) with 1 day in between each set of offers.
 func (m *WindowsUpdateRolloutSettings) GetOfferIntervalInDays()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.offerIntervalInDays
-    }
+    return m.offerIntervalInDays
 }
 // GetOfferStartDateTimeInUTC gets the offerStartDateTimeInUTC property value. The feature update's starting date and time to be set, update, and displayed for a feature Update profile for example: 2020-06-09T10:00:00Z.
 func (m *WindowsUpdateRolloutSettings) GetOfferStartDateTimeInUTC()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.offerStartDateTimeInUTC
-    }
+    return m.offerStartDateTimeInUTC
 }
 // Serialize serializes information the current object
 func (m *WindowsUpdateRolloutSettings) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -152,31 +132,21 @@ func (m *WindowsUpdateRolloutSettings) Serialize(writer i878a80d2330e89d26896388
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *WindowsUpdateRolloutSettings) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *WindowsUpdateRolloutSettings) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetOfferEndDateTimeInUTC sets the offerEndDateTimeInUTC property value. The feature update's ending  of release date and time to be set, update, and displayed for a feature Update profile for example: 2020-06-09T10:00:00Z.
 func (m *WindowsUpdateRolloutSettings) SetOfferEndDateTimeInUTC(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.offerEndDateTimeInUTC = value
-    }
+    m.offerEndDateTimeInUTC = value
 }
 // SetOfferIntervalInDays sets the offerIntervalInDays property value. The number of day(s) between each set of offers to be set, updated, and displayed for a feature update profile, for example: if OfferStartDateTimeInUTC is 2020-06-09T10:00:00Z, and OfferIntervalInDays is 1, then the next two sets of offers will be made consecutively on 2020-06-10T10:00:00Z (next day at the same specified time) and 2020-06-11T10:00:00Z (next next day at the same specified time) with 1 day in between each set of offers.
 func (m *WindowsUpdateRolloutSettings) SetOfferIntervalInDays(value *int32)() {
-    if m != nil {
-        m.offerIntervalInDays = value
-    }
+    m.offerIntervalInDays = value
 }
 // SetOfferStartDateTimeInUTC sets the offerStartDateTimeInUTC property value. The feature update's starting date and time to be set, update, and displayed for a feature Update profile for example: 2020-06-09T10:00:00Z.
 func (m *WindowsUpdateRolloutSettings) SetOfferStartDateTimeInUTC(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.offerStartDateTimeInUTC = value
-    }
+    m.offerStartDateTimeInUTC = value
 }

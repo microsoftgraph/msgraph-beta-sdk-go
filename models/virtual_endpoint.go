@@ -32,7 +32,7 @@ type VirtualEndpoint struct {
     // Cloud PC user settings.
     userSettings []CloudPcUserSettingable
 }
-// NewVirtualEndpoint instantiates a new VirtualEndpoint and sets the default values.
+// NewVirtualEndpoint instantiates a new virtualEndpoint and sets the default values.
 func NewVirtualEndpoint()(*VirtualEndpoint) {
     m := &VirtualEndpoint{
         Entity: *NewEntity(),
@@ -47,35 +47,19 @@ func CreateVirtualEndpointFromDiscriminatorValue(parseNode i878a80d2330e89d26896
 }
 // GetAuditEvents gets the auditEvents property value. Cloud PC audit event.
 func (m *VirtualEndpoint) GetAuditEvents()([]CloudPcAuditEventable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.auditEvents
-    }
+    return m.auditEvents
 }
 // GetCloudPCs gets the cloudPCs property value. Cloud managed virtual desktops.
 func (m *VirtualEndpoint) GetCloudPCs()([]CloudPCable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.cloudPCs
-    }
+    return m.cloudPCs
 }
 // GetDeviceImages gets the deviceImages property value. The image resource on Cloud PC.
 func (m *VirtualEndpoint) GetDeviceImages()([]CloudPcDeviceImageable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deviceImages
-    }
+    return m.deviceImages
 }
 // GetExternalPartnerSettings gets the externalPartnerSettings property value. The external partner settings on a Cloud PC.
 func (m *VirtualEndpoint) GetExternalPartnerSettings()([]CloudPcExternalPartnerSettingable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.externalPartnerSettings
-    }
+    return m.externalPartnerSettings
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *VirtualEndpoint) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -248,67 +232,35 @@ func (m *VirtualEndpoint) GetFieldDeserializers()(map[string]func(i878a80d2330e8
 }
 // GetGalleryImages gets the galleryImages property value. The gallery image resource on Cloud PC.
 func (m *VirtualEndpoint) GetGalleryImages()([]CloudPcGalleryImageable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.galleryImages
-    }
+    return m.galleryImages
 }
 // GetOnPremisesConnections gets the onPremisesConnections property value. A defined collection of Azure resource information that can be used to establish on-premises network connectivity for Cloud PCs.
 func (m *VirtualEndpoint) GetOnPremisesConnections()([]CloudPcOnPremisesConnectionable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.onPremisesConnections
-    }
+    return m.onPremisesConnections
 }
 // GetOrganizationSettings gets the organizationSettings property value. The Cloud PC organization settings for a tenant.
 func (m *VirtualEndpoint) GetOrganizationSettings()(CloudPcOrganizationSettingsable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.organizationSettings
-    }
+    return m.organizationSettings
 }
 // GetProvisioningPolicies gets the provisioningPolicies property value. Cloud PC provisioning policy.
 func (m *VirtualEndpoint) GetProvisioningPolicies()([]CloudPcProvisioningPolicyable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.provisioningPolicies
-    }
+    return m.provisioningPolicies
 }
 // GetServicePlans gets the servicePlans property value. Cloud PC service plans.
 func (m *VirtualEndpoint) GetServicePlans()([]CloudPcServicePlanable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.servicePlans
-    }
+    return m.servicePlans
 }
 // GetSnapshots gets the snapshots property value. Cloud PC snapshots.
 func (m *VirtualEndpoint) GetSnapshots()([]CloudPcSnapshotable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.snapshots
-    }
+    return m.snapshots
 }
 // GetSupportedRegions gets the supportedRegions property value. Cloud PC supported regions.
 func (m *VirtualEndpoint) GetSupportedRegions()([]CloudPcSupportedRegionable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.supportedRegions
-    }
+    return m.supportedRegions
 }
 // GetUserSettings gets the userSettings property value. Cloud PC user settings.
 func (m *VirtualEndpoint) GetUserSettings()([]CloudPcUserSettingable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userSettings
-    }
+    return m.userSettings
 }
 // Serialize serializes information the current object
 func (m *VirtualEndpoint) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -436,73 +388,49 @@ func (m *VirtualEndpoint) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
 }
 // SetAuditEvents sets the auditEvents property value. Cloud PC audit event.
 func (m *VirtualEndpoint) SetAuditEvents(value []CloudPcAuditEventable)() {
-    if m != nil {
-        m.auditEvents = value
-    }
+    m.auditEvents = value
 }
 // SetCloudPCs sets the cloudPCs property value. Cloud managed virtual desktops.
 func (m *VirtualEndpoint) SetCloudPCs(value []CloudPCable)() {
-    if m != nil {
-        m.cloudPCs = value
-    }
+    m.cloudPCs = value
 }
 // SetDeviceImages sets the deviceImages property value. The image resource on Cloud PC.
 func (m *VirtualEndpoint) SetDeviceImages(value []CloudPcDeviceImageable)() {
-    if m != nil {
-        m.deviceImages = value
-    }
+    m.deviceImages = value
 }
 // SetExternalPartnerSettings sets the externalPartnerSettings property value. The external partner settings on a Cloud PC.
 func (m *VirtualEndpoint) SetExternalPartnerSettings(value []CloudPcExternalPartnerSettingable)() {
-    if m != nil {
-        m.externalPartnerSettings = value
-    }
+    m.externalPartnerSettings = value
 }
 // SetGalleryImages sets the galleryImages property value. The gallery image resource on Cloud PC.
 func (m *VirtualEndpoint) SetGalleryImages(value []CloudPcGalleryImageable)() {
-    if m != nil {
-        m.galleryImages = value
-    }
+    m.galleryImages = value
 }
 // SetOnPremisesConnections sets the onPremisesConnections property value. A defined collection of Azure resource information that can be used to establish on-premises network connectivity for Cloud PCs.
 func (m *VirtualEndpoint) SetOnPremisesConnections(value []CloudPcOnPremisesConnectionable)() {
-    if m != nil {
-        m.onPremisesConnections = value
-    }
+    m.onPremisesConnections = value
 }
 // SetOrganizationSettings sets the organizationSettings property value. The Cloud PC organization settings for a tenant.
 func (m *VirtualEndpoint) SetOrganizationSettings(value CloudPcOrganizationSettingsable)() {
-    if m != nil {
-        m.organizationSettings = value
-    }
+    m.organizationSettings = value
 }
 // SetProvisioningPolicies sets the provisioningPolicies property value. Cloud PC provisioning policy.
 func (m *VirtualEndpoint) SetProvisioningPolicies(value []CloudPcProvisioningPolicyable)() {
-    if m != nil {
-        m.provisioningPolicies = value
-    }
+    m.provisioningPolicies = value
 }
 // SetServicePlans sets the servicePlans property value. Cloud PC service plans.
 func (m *VirtualEndpoint) SetServicePlans(value []CloudPcServicePlanable)() {
-    if m != nil {
-        m.servicePlans = value
-    }
+    m.servicePlans = value
 }
 // SetSnapshots sets the snapshots property value. Cloud PC snapshots.
 func (m *VirtualEndpoint) SetSnapshots(value []CloudPcSnapshotable)() {
-    if m != nil {
-        m.snapshots = value
-    }
+    m.snapshots = value
 }
 // SetSupportedRegions sets the supportedRegions property value. Cloud PC supported regions.
 func (m *VirtualEndpoint) SetSupportedRegions(value []CloudPcSupportedRegionable)() {
-    if m != nil {
-        m.supportedRegions = value
-    }
+    m.supportedRegions = value
 }
 // SetUserSettings sets the userSettings property value. Cloud PC user settings.
 func (m *VirtualEndpoint) SetUserSettings(value []CloudPcUserSettingable)() {
-    if m != nil {
-        m.userSettings = value
-    }
+    m.userSettings = value
 }

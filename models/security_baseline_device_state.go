@@ -34,11 +34,7 @@ func CreateSecurityBaselineDeviceStateFromDiscriminatorValue(parseNode i878a80d2
 }
 // GetDeviceDisplayName gets the deviceDisplayName property value. Display name of the device
 func (m *SecurityBaselineDeviceState) GetDeviceDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deviceDisplayName
-    }
+    return m.deviceDisplayName
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *SecurityBaselineDeviceState) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -97,35 +93,19 @@ func (m *SecurityBaselineDeviceState) GetFieldDeserializers()(map[string]func(i8
 }
 // GetLastReportedDateTime gets the lastReportedDateTime property value. Last modified date time of the policy report
 func (m *SecurityBaselineDeviceState) GetLastReportedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastReportedDateTime
-    }
+    return m.lastReportedDateTime
 }
 // GetManagedDeviceId gets the managedDeviceId property value. Intune device id
 func (m *SecurityBaselineDeviceState) GetManagedDeviceId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.managedDeviceId
-    }
+    return m.managedDeviceId
 }
 // GetState gets the state property value. Security Baseline Compliance State
 func (m *SecurityBaselineDeviceState) GetState()(*SecurityBaselineComplianceState) {
-    if m == nil {
-        return nil
-    } else {
-        return m.state
-    }
+    return m.state
 }
 // GetUserPrincipalName gets the userPrincipalName property value. User Principal Name
 func (m *SecurityBaselineDeviceState) GetUserPrincipalName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userPrincipalName
-    }
+    return m.userPrincipalName
 }
 // Serialize serializes information the current object
 func (m *SecurityBaselineDeviceState) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -168,31 +148,21 @@ func (m *SecurityBaselineDeviceState) Serialize(writer i878a80d2330e89d26896388a
 }
 // SetDeviceDisplayName sets the deviceDisplayName property value. Display name of the device
 func (m *SecurityBaselineDeviceState) SetDeviceDisplayName(value *string)() {
-    if m != nil {
-        m.deviceDisplayName = value
-    }
+    m.deviceDisplayName = value
 }
 // SetLastReportedDateTime sets the lastReportedDateTime property value. Last modified date time of the policy report
 func (m *SecurityBaselineDeviceState) SetLastReportedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.lastReportedDateTime = value
-    }
+    m.lastReportedDateTime = value
 }
 // SetManagedDeviceId sets the managedDeviceId property value. Intune device id
 func (m *SecurityBaselineDeviceState) SetManagedDeviceId(value *string)() {
-    if m != nil {
-        m.managedDeviceId = value
-    }
+    m.managedDeviceId = value
 }
 // SetState sets the state property value. Security Baseline Compliance State
 func (m *SecurityBaselineDeviceState) SetState(value *SecurityBaselineComplianceState)() {
-    if m != nil {
-        m.state = value
-    }
+    m.state = value
 }
 // SetUserPrincipalName sets the userPrincipalName property value. User Principal Name
 func (m *SecurityBaselineDeviceState) SetUserPrincipalName(value *string)() {
-    if m != nil {
-        m.userPrincipalName = value
-    }
+    m.userPrincipalName = value
 }

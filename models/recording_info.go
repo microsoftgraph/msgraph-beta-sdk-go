@@ -32,11 +32,7 @@ func CreateRecordingInfoFromDiscriminatorValue(parseNode i878a80d2330e89d2689638
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *RecordingInfo) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *RecordingInfo) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -85,35 +81,19 @@ func (m *RecordingInfo) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
 }
 // GetInitiatedBy gets the initiatedBy property value. The participant who initiated the recording.
 func (m *RecordingInfo) GetInitiatedBy()(ParticipantInfoable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.initiatedBy
-    }
+    return m.initiatedBy
 }
 // GetInitiator gets the initiator property value. The identities of recording initiator.
 func (m *RecordingInfo) GetInitiator()(IdentitySetable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.initiator
-    }
+    return m.initiator
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *RecordingInfo) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetRecordingStatus gets the recordingStatus property value. The recordingStatus property
 func (m *RecordingInfo) GetRecordingStatus()(*RecordingStatus) {
-    if m == nil {
-        return nil
-    } else {
-        return m.recordingStatus
-    }
+    return m.recordingStatus
 }
 // Serialize serializes information the current object
 func (m *RecordingInfo) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -152,31 +132,21 @@ func (m *RecordingInfo) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *RecordingInfo) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetInitiatedBy sets the initiatedBy property value. The participant who initiated the recording.
 func (m *RecordingInfo) SetInitiatedBy(value ParticipantInfoable)() {
-    if m != nil {
-        m.initiatedBy = value
-    }
+    m.initiatedBy = value
 }
 // SetInitiator sets the initiator property value. The identities of recording initiator.
 func (m *RecordingInfo) SetInitiator(value IdentitySetable)() {
-    if m != nil {
-        m.initiator = value
-    }
+    m.initiator = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *RecordingInfo) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetRecordingStatus sets the recordingStatus property value. The recordingStatus property
 func (m *RecordingInfo) SetRecordingStatus(value *RecordingStatus)() {
-    if m != nil {
-        m.recordingStatus = value
-    }
+    m.recordingStatus = value
 }

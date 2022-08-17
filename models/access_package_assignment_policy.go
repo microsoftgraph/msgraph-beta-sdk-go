@@ -58,99 +58,51 @@ func CreateAccessPackageAssignmentPolicyFromDiscriminatorValue(parseNode i878a80
 }
 // GetAccessPackage gets the accessPackage property value. The access package with this policy. Read-only. Nullable. Supports $expand.
 func (m *AccessPackageAssignmentPolicy) GetAccessPackage()(AccessPackageable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.accessPackage
-    }
+    return m.accessPackage
 }
 // GetAccessPackageCatalog gets the accessPackageCatalog property value. The accessPackageCatalog property
 func (m *AccessPackageAssignmentPolicy) GetAccessPackageCatalog()(AccessPackageCatalogable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.accessPackageCatalog
-    }
+    return m.accessPackageCatalog
 }
 // GetAccessPackageId gets the accessPackageId property value. Identifier of the access package.
 func (m *AccessPackageAssignmentPolicy) GetAccessPackageId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.accessPackageId
-    }
+    return m.accessPackageId
 }
 // GetAccessReviewSettings gets the accessReviewSettings property value. Who must review, and how often, the assignments to the access package from this policy. This property is null if reviews are not required.
 func (m *AccessPackageAssignmentPolicy) GetAccessReviewSettings()(AssignmentReviewSettingsable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.accessReviewSettings
-    }
+    return m.accessReviewSettings
 }
 // GetCanExtend gets the canExtend property value. Indicates whether a user can extend the access package assignment duration after approval.
 func (m *AccessPackageAssignmentPolicy) GetCanExtend()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.canExtend
-    }
+    return m.canExtend
 }
 // GetCreatedBy gets the createdBy property value. The createdBy property
 func (m *AccessPackageAssignmentPolicy) GetCreatedBy()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.createdBy
-    }
+    return m.createdBy
 }
 // GetCreatedDateTime gets the createdDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 func (m *AccessPackageAssignmentPolicy) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.createdDateTime
-    }
+    return m.createdDateTime
 }
 // GetCustomExtensionHandlers gets the customExtensionHandlers property value. The collection of stages when to execute one or more custom access package workflow extensions. Supports $expand.
 func (m *AccessPackageAssignmentPolicy) GetCustomExtensionHandlers()([]CustomExtensionHandlerable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.customExtensionHandlers
-    }
+    return m.customExtensionHandlers
 }
 // GetDescription gets the description property value. The description of the policy.
 func (m *AccessPackageAssignmentPolicy) GetDescription()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.description
-    }
+    return m.description
 }
 // GetDisplayName gets the displayName property value. The display name of the policy. Supports $filter (eq).
 func (m *AccessPackageAssignmentPolicy) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
 // GetDurationInDays gets the durationInDays property value. The number of days in which assignments from this policy last until they are expired.
 func (m *AccessPackageAssignmentPolicy) GetDurationInDays()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.durationInDays
-    }
+    return m.durationInDays
 }
 // GetExpirationDateTime gets the expirationDateTime property value. The expiration date for assignments created in this policy. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 func (m *AccessPackageAssignmentPolicy) GetExpirationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.expirationDateTime
-    }
+    return m.expirationDateTime
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AccessPackageAssignmentPolicy) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -337,43 +289,23 @@ func (m *AccessPackageAssignmentPolicy) GetFieldDeserializers()(map[string]func(
 }
 // GetModifiedBy gets the modifiedBy property value. The modifiedBy property
 func (m *AccessPackageAssignmentPolicy) GetModifiedBy()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.modifiedBy
-    }
+    return m.modifiedBy
 }
 // GetModifiedDateTime gets the modifiedDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 func (m *AccessPackageAssignmentPolicy) GetModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.modifiedDateTime
-    }
+    return m.modifiedDateTime
 }
 // GetQuestions gets the questions property value. Questions that are posed to the  requestor.
 func (m *AccessPackageAssignmentPolicy) GetQuestions()([]AccessPackageQuestionable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.questions
-    }
+    return m.questions
 }
 // GetRequestApprovalSettings gets the requestApprovalSettings property value. Who must approve requests for access package in this policy.
 func (m *AccessPackageAssignmentPolicy) GetRequestApprovalSettings()(ApprovalSettingsable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.requestApprovalSettings
-    }
+    return m.requestApprovalSettings
 }
 // GetRequestorSettings gets the requestorSettings property value. Who can request this access package from this policy.
 func (m *AccessPackageAssignmentPolicy) GetRequestorSettings()(RequestorSettingsable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.requestorSettings
-    }
+    return m.requestorSettings
 }
 // Serialize serializes information the current object
 func (m *AccessPackageAssignmentPolicy) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -495,103 +427,69 @@ func (m *AccessPackageAssignmentPolicy) Serialize(writer i878a80d2330e89d2689638
 }
 // SetAccessPackage sets the accessPackage property value. The access package with this policy. Read-only. Nullable. Supports $expand.
 func (m *AccessPackageAssignmentPolicy) SetAccessPackage(value AccessPackageable)() {
-    if m != nil {
-        m.accessPackage = value
-    }
+    m.accessPackage = value
 }
 // SetAccessPackageCatalog sets the accessPackageCatalog property value. The accessPackageCatalog property
 func (m *AccessPackageAssignmentPolicy) SetAccessPackageCatalog(value AccessPackageCatalogable)() {
-    if m != nil {
-        m.accessPackageCatalog = value
-    }
+    m.accessPackageCatalog = value
 }
 // SetAccessPackageId sets the accessPackageId property value. Identifier of the access package.
 func (m *AccessPackageAssignmentPolicy) SetAccessPackageId(value *string)() {
-    if m != nil {
-        m.accessPackageId = value
-    }
+    m.accessPackageId = value
 }
 // SetAccessReviewSettings sets the accessReviewSettings property value. Who must review, and how often, the assignments to the access package from this policy. This property is null if reviews are not required.
 func (m *AccessPackageAssignmentPolicy) SetAccessReviewSettings(value AssignmentReviewSettingsable)() {
-    if m != nil {
-        m.accessReviewSettings = value
-    }
+    m.accessReviewSettings = value
 }
 // SetCanExtend sets the canExtend property value. Indicates whether a user can extend the access package assignment duration after approval.
 func (m *AccessPackageAssignmentPolicy) SetCanExtend(value *bool)() {
-    if m != nil {
-        m.canExtend = value
-    }
+    m.canExtend = value
 }
 // SetCreatedBy sets the createdBy property value. The createdBy property
 func (m *AccessPackageAssignmentPolicy) SetCreatedBy(value *string)() {
-    if m != nil {
-        m.createdBy = value
-    }
+    m.createdBy = value
 }
 // SetCreatedDateTime sets the createdDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 func (m *AccessPackageAssignmentPolicy) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.createdDateTime = value
-    }
+    m.createdDateTime = value
 }
 // SetCustomExtensionHandlers sets the customExtensionHandlers property value. The collection of stages when to execute one or more custom access package workflow extensions. Supports $expand.
 func (m *AccessPackageAssignmentPolicy) SetCustomExtensionHandlers(value []CustomExtensionHandlerable)() {
-    if m != nil {
-        m.customExtensionHandlers = value
-    }
+    m.customExtensionHandlers = value
 }
 // SetDescription sets the description property value. The description of the policy.
 func (m *AccessPackageAssignmentPolicy) SetDescription(value *string)() {
-    if m != nil {
-        m.description = value
-    }
+    m.description = value
 }
 // SetDisplayName sets the displayName property value. The display name of the policy. Supports $filter (eq).
 func (m *AccessPackageAssignmentPolicy) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }
 // SetDurationInDays sets the durationInDays property value. The number of days in which assignments from this policy last until they are expired.
 func (m *AccessPackageAssignmentPolicy) SetDurationInDays(value *int32)() {
-    if m != nil {
-        m.durationInDays = value
-    }
+    m.durationInDays = value
 }
 // SetExpirationDateTime sets the expirationDateTime property value. The expiration date for assignments created in this policy. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 func (m *AccessPackageAssignmentPolicy) SetExpirationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.expirationDateTime = value
-    }
+    m.expirationDateTime = value
 }
 // SetModifiedBy sets the modifiedBy property value. The modifiedBy property
 func (m *AccessPackageAssignmentPolicy) SetModifiedBy(value *string)() {
-    if m != nil {
-        m.modifiedBy = value
-    }
+    m.modifiedBy = value
 }
 // SetModifiedDateTime sets the modifiedDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 func (m *AccessPackageAssignmentPolicy) SetModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.modifiedDateTime = value
-    }
+    m.modifiedDateTime = value
 }
 // SetQuestions sets the questions property value. Questions that are posed to the  requestor.
 func (m *AccessPackageAssignmentPolicy) SetQuestions(value []AccessPackageQuestionable)() {
-    if m != nil {
-        m.questions = value
-    }
+    m.questions = value
 }
 // SetRequestApprovalSettings sets the requestApprovalSettings property value. Who must approve requests for access package in this policy.
 func (m *AccessPackageAssignmentPolicy) SetRequestApprovalSettings(value ApprovalSettingsable)() {
-    if m != nil {
-        m.requestApprovalSettings = value
-    }
+    m.requestApprovalSettings = value
 }
 // SetRequestorSettings sets the requestorSettings property value. Who can request this access package from this policy.
 func (m *AccessPackageAssignmentPolicy) SetRequestorSettings(value RequestorSettingsable)() {
-    if m != nil {
-        m.requestorSettings = value
-    }
+    m.requestorSettings = value
 }

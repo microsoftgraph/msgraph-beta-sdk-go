@@ -30,19 +30,11 @@ func CreateAuthenticationRequirementPolicyFromDiscriminatorValue(parseNode i878a
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AuthenticationRequirementPolicy) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetDetail gets the detail property value. Provides additional detail on the feature identified in requirementProvider.
 func (m *AuthenticationRequirementPolicy) GetDetail()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.detail
-    }
+    return m.detail
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AuthenticationRequirementPolicy) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -81,19 +73,11 @@ func (m *AuthenticationRequirementPolicy) GetFieldDeserializers()(map[string]fun
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *AuthenticationRequirementPolicy) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetRequirementProvider gets the requirementProvider property value. Identifies what Azure AD feature requires MFA in this policy. Possible values are: user, request, servicePrincipal, v1ConditionalAccess, multiConditionalAccess, tenantSessionRiskPolicy, accountCompromisePolicies, v1ConditionalAccessDependency, v1ConditionalAccessPolicyIdRequested, mfaRegistrationRequiredByIdentityProtectionPolicy, baselineProtection, mfaRegistrationRequiredByBaselineProtection, mfaRegistrationRequiredByMultiConditionalAccess, enforcedForCspAdmins, securityDefaults, mfaRegistrationRequiredBySecurityDefaults, proofUpCodeRequest, crossTenantOutboundRule, gpsLocationCondition, riskBasedPolicy, unknownFutureValue.
 func (m *AuthenticationRequirementPolicy) GetRequirementProvider()(*RequirementProvider) {
-    if m == nil {
-        return nil
-    } else {
-        return m.requirementProvider
-    }
+    return m.requirementProvider
 }
 // Serialize serializes information the current object
 func (m *AuthenticationRequirementPolicy) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -126,25 +110,17 @@ func (m *AuthenticationRequirementPolicy) Serialize(writer i878a80d2330e89d26896
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AuthenticationRequirementPolicy) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetDetail sets the detail property value. Provides additional detail on the feature identified in requirementProvider.
 func (m *AuthenticationRequirementPolicy) SetDetail(value *string)() {
-    if m != nil {
-        m.detail = value
-    }
+    m.detail = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *AuthenticationRequirementPolicy) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetRequirementProvider sets the requirementProvider property value. Identifies what Azure AD feature requires MFA in this policy. Possible values are: user, request, servicePrincipal, v1ConditionalAccess, multiConditionalAccess, tenantSessionRiskPolicy, accountCompromisePolicies, v1ConditionalAccessDependency, v1ConditionalAccessPolicyIdRequested, mfaRegistrationRequiredByIdentityProtectionPolicy, baselineProtection, mfaRegistrationRequiredByBaselineProtection, mfaRegistrationRequiredByMultiConditionalAccess, enforcedForCspAdmins, securityDefaults, mfaRegistrationRequiredBySecurityDefaults, proofUpCodeRequest, crossTenantOutboundRule, gpsLocationCondition, riskBasedPolicy, unknownFutureValue.
 func (m *AuthenticationRequirementPolicy) SetRequirementProvider(value *RequirementProvider)() {
-    if m != nil {
-        m.requirementProvider = value
-    }
+    m.requirementProvider = value
 }

@@ -24,11 +24,7 @@ func CreateValidateXmlPostRequestBodyFromDiscriminatorValue(parseNode i878a80d23
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ValidateXmlPostRequestBody) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ValidateXmlPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -47,11 +43,7 @@ func (m *ValidateXmlPostRequestBody) GetFieldDeserializers()(map[string]func(i87
 }
 // GetOfficeConfigurationXml gets the officeConfigurationXml property value. The officeConfigurationXml property
 func (m *ValidateXmlPostRequestBody) GetOfficeConfigurationXml()([]byte) {
-    if m == nil {
-        return nil
-    } else {
-        return m.officeConfigurationXml
-    }
+    return m.officeConfigurationXml
 }
 // Serialize serializes information the current object
 func (m *ValidateXmlPostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -71,13 +63,9 @@ func (m *ValidateXmlPostRequestBody) Serialize(writer i878a80d2330e89d26896388a3
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ValidateXmlPostRequestBody) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetOfficeConfigurationXml sets the officeConfigurationXml property value. The officeConfigurationXml property
 func (m *ValidateXmlPostRequestBody) SetOfficeConfigurationXml(value []byte)() {
-    if m != nil {
-        m.officeConfigurationXml = value
-    }
+    m.officeConfigurationXml = value
 }

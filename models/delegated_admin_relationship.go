@@ -48,67 +48,35 @@ func CreateDelegatedAdminRelationshipFromDiscriminatorValue(parseNode i878a80d23
 }
 // GetAccessAssignments gets the accessAssignments property value. The access assignments associated with the delegated admin relationship.
 func (m *DelegatedAdminRelationship) GetAccessAssignments()([]DelegatedAdminAccessAssignmentable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.accessAssignments
-    }
+    return m.accessAssignments
 }
 // GetAccessDetails gets the accessDetails property value. The accessDetails property
 func (m *DelegatedAdminRelationship) GetAccessDetails()(DelegatedAdminAccessDetailsable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.accessDetails
-    }
+    return m.accessDetails
 }
 // GetActivatedDateTime gets the activatedDateTime property value. The date and time in ISO 8601 format and in UTC time when the relationship became active. Read-only.
 func (m *DelegatedAdminRelationship) GetActivatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.activatedDateTime
-    }
+    return m.activatedDateTime
 }
 // GetCreatedDateTime gets the createdDateTime property value. The date and time in ISO 8601 format and in UTC time when the relationship was created. Read-only.
 func (m *DelegatedAdminRelationship) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.createdDateTime
-    }
+    return m.createdDateTime
 }
 // GetCustomer gets the customer property value. The display name and unique identifier of the customer of the relationship. This is configured either by the partner at the time the relationship is created or by the system after the customer approves the relationship. Cannot be changed by the customer.
 func (m *DelegatedAdminRelationship) GetCustomer()(DelegatedAdminRelationshipCustomerParticipantable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.customer
-    }
+    return m.customer
 }
 // GetDisplayName gets the displayName property value. The display name of the relationship used for ease of identification. Must be unique across all delegated admin relationships of the partner. This is set by the partner only when the relationship is in the created status and cannot be changed by the customer.
 func (m *DelegatedAdminRelationship) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
 // GetDuration gets the duration property value. The duration of the relationship in ISO 8601 format. Must be a value between P1D and P2Y inclusive. This is set by the partner only when the relationship is in the created status and cannot be changed by the customer.
 func (m *DelegatedAdminRelationship) GetDuration()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration) {
-    if m == nil {
-        return nil
-    } else {
-        return m.duration
-    }
+    return m.duration
 }
 // GetEndDateTime gets the endDateTime property value. The date and time in ISO 8601 format and in UTC time when the status of relationship changes to either terminated or expired. Calculated as endDateTime = activatedDateTime + duration. Read-only.
 func (m *DelegatedAdminRelationship) GetEndDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.endDateTime
-    }
+    return m.endDateTime
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DelegatedAdminRelationship) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -249,35 +217,19 @@ func (m *DelegatedAdminRelationship) GetFieldDeserializers()(map[string]func(i87
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. The date and time in ISO 8601 format and in UTC time when the relationship was last modified. Read-only.
 func (m *DelegatedAdminRelationship) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastModifiedDateTime
-    }
+    return m.lastModifiedDateTime
 }
 // GetOperations gets the operations property value. The long running operations associated with the delegated admin relationship.
 func (m *DelegatedAdminRelationship) GetOperations()([]DelegatedAdminRelationshipOperationable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.operations
-    }
+    return m.operations
 }
 // GetRequests gets the requests property value. The requests associated with the delegated admin relationship.
 func (m *DelegatedAdminRelationship) GetRequests()([]DelegatedAdminRelationshipRequestable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.requests
-    }
+    return m.requests
 }
 // GetStatus gets the status property value. The status of the relationship. Read Only. The possible values are: activating, active, approvalPending, approved, created, expired, expiring, terminated, terminating, terminationRequested, unknownFutureValue. Supports $orderBy.
 func (m *DelegatedAdminRelationship) GetStatus()(*DelegatedAdminRelationshipStatus) {
-    if m == nil {
-        return nil
-    } else {
-        return m.status
-    }
+    return m.status
 }
 // Serialize serializes information the current object
 func (m *DelegatedAdminRelationship) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -374,73 +326,49 @@ func (m *DelegatedAdminRelationship) Serialize(writer i878a80d2330e89d26896388a3
 }
 // SetAccessAssignments sets the accessAssignments property value. The access assignments associated with the delegated admin relationship.
 func (m *DelegatedAdminRelationship) SetAccessAssignments(value []DelegatedAdminAccessAssignmentable)() {
-    if m != nil {
-        m.accessAssignments = value
-    }
+    m.accessAssignments = value
 }
 // SetAccessDetails sets the accessDetails property value. The accessDetails property
 func (m *DelegatedAdminRelationship) SetAccessDetails(value DelegatedAdminAccessDetailsable)() {
-    if m != nil {
-        m.accessDetails = value
-    }
+    m.accessDetails = value
 }
 // SetActivatedDateTime sets the activatedDateTime property value. The date and time in ISO 8601 format and in UTC time when the relationship became active. Read-only.
 func (m *DelegatedAdminRelationship) SetActivatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.activatedDateTime = value
-    }
+    m.activatedDateTime = value
 }
 // SetCreatedDateTime sets the createdDateTime property value. The date and time in ISO 8601 format and in UTC time when the relationship was created. Read-only.
 func (m *DelegatedAdminRelationship) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.createdDateTime = value
-    }
+    m.createdDateTime = value
 }
 // SetCustomer sets the customer property value. The display name and unique identifier of the customer of the relationship. This is configured either by the partner at the time the relationship is created or by the system after the customer approves the relationship. Cannot be changed by the customer.
 func (m *DelegatedAdminRelationship) SetCustomer(value DelegatedAdminRelationshipCustomerParticipantable)() {
-    if m != nil {
-        m.customer = value
-    }
+    m.customer = value
 }
 // SetDisplayName sets the displayName property value. The display name of the relationship used for ease of identification. Must be unique across all delegated admin relationships of the partner. This is set by the partner only when the relationship is in the created status and cannot be changed by the customer.
 func (m *DelegatedAdminRelationship) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }
 // SetDuration sets the duration property value. The duration of the relationship in ISO 8601 format. Must be a value between P1D and P2Y inclusive. This is set by the partner only when the relationship is in the created status and cannot be changed by the customer.
 func (m *DelegatedAdminRelationship) SetDuration(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)() {
-    if m != nil {
-        m.duration = value
-    }
+    m.duration = value
 }
 // SetEndDateTime sets the endDateTime property value. The date and time in ISO 8601 format and in UTC time when the status of relationship changes to either terminated or expired. Calculated as endDateTime = activatedDateTime + duration. Read-only.
 func (m *DelegatedAdminRelationship) SetEndDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.endDateTime = value
-    }
+    m.endDateTime = value
 }
 // SetLastModifiedDateTime sets the lastModifiedDateTime property value. The date and time in ISO 8601 format and in UTC time when the relationship was last modified. Read-only.
 func (m *DelegatedAdminRelationship) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.lastModifiedDateTime = value
-    }
+    m.lastModifiedDateTime = value
 }
 // SetOperations sets the operations property value. The long running operations associated with the delegated admin relationship.
 func (m *DelegatedAdminRelationship) SetOperations(value []DelegatedAdminRelationshipOperationable)() {
-    if m != nil {
-        m.operations = value
-    }
+    m.operations = value
 }
 // SetRequests sets the requests property value. The requests associated with the delegated admin relationship.
 func (m *DelegatedAdminRelationship) SetRequests(value []DelegatedAdminRelationshipRequestable)() {
-    if m != nil {
-        m.requests = value
-    }
+    m.requests = value
 }
 // SetStatus sets the status property value. The status of the relationship. Read Only. The possible values are: activating, active, approvalPending, approved, created, expired, expiring, terminated, terminating, terminationRequested, unknownFutureValue. Supports $orderBy.
 func (m *DelegatedAdminRelationship) SetStatus(value *DelegatedAdminRelationshipStatus)() {
-    if m != nil {
-        m.status = value
-    }
+    m.status = value
 }

@@ -43,43 +43,23 @@ func CreatePowerliftIncidentMetadataFromDiscriminatorValue(parseNode i878a80d233
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *PowerliftIncidentMetadata) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetApplication gets the application property value. The name of the application the diagnostic is from. Example: com.microsoft.CompanyPortal
 func (m *PowerliftIncidentMetadata) GetApplication()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.application
-    }
+    return m.application
 }
 // GetClientVersion gets the clientVersion property value. The version of the application. Example: 5.2203.1
 func (m *PowerliftIncidentMetadata) GetClientVersion()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.clientVersion
-    }
+    return m.clientVersion
 }
 // GetCreatedAtDateTime gets the createdAtDateTime property value. The time the app diagnostic was created. Example: 2022-04-19T17:24:45.313Z
 func (m *PowerliftIncidentMetadata) GetCreatedAtDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.createdAtDateTime
-    }
+    return m.createdAtDateTime
 }
 // GetEasyId gets the easyId property value. The unique app diagnostic identifier as a user friendly 8 character hexadecimal string. Example: 8520467A
 func (m *PowerliftIncidentMetadata) GetEasyId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.easyId
-    }
+    return m.easyId
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *PowerliftIncidentMetadata) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -182,43 +162,23 @@ func (m *PowerliftIncidentMetadata) GetFieldDeserializers()(map[string]func(i878
 }
 // GetFileNames gets the fileNames property value. A list of files that are associated with the diagnostic.
 func (m *PowerliftIncidentMetadata) GetFileNames()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.fileNames
-    }
+    return m.fileNames
 }
 // GetLocale gets the locale property value. The locale information of the application. Example: en-US
 func (m *PowerliftIncidentMetadata) GetLocale()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.locale
-    }
+    return m.locale
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *PowerliftIncidentMetadata) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetPlatform gets the platform property value. The device's OS the diagnostic is from. Example: iOS
 func (m *PowerliftIncidentMetadata) GetPlatform()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.platform
-    }
+    return m.platform
 }
 // GetPowerliftId gets the powerliftId property value. The unique identifier of the app diagnostic. Example: 8520467a-49a9-44a4-8447-8dfb8bec6726
 func (m *PowerliftIncidentMetadata) GetPowerliftId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.powerliftId
-    }
+    return m.powerliftId
 }
 // Serialize serializes information the current object
 func (m *PowerliftIncidentMetadata) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -286,61 +246,41 @@ func (m *PowerliftIncidentMetadata) Serialize(writer i878a80d2330e89d26896388a3f
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *PowerliftIncidentMetadata) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetApplication sets the application property value. The name of the application the diagnostic is from. Example: com.microsoft.CompanyPortal
 func (m *PowerliftIncidentMetadata) SetApplication(value *string)() {
-    if m != nil {
-        m.application = value
-    }
+    m.application = value
 }
 // SetClientVersion sets the clientVersion property value. The version of the application. Example: 5.2203.1
 func (m *PowerliftIncidentMetadata) SetClientVersion(value *string)() {
-    if m != nil {
-        m.clientVersion = value
-    }
+    m.clientVersion = value
 }
 // SetCreatedAtDateTime sets the createdAtDateTime property value. The time the app diagnostic was created. Example: 2022-04-19T17:24:45.313Z
 func (m *PowerliftIncidentMetadata) SetCreatedAtDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.createdAtDateTime = value
-    }
+    m.createdAtDateTime = value
 }
 // SetEasyId sets the easyId property value. The unique app diagnostic identifier as a user friendly 8 character hexadecimal string. Example: 8520467A
 func (m *PowerliftIncidentMetadata) SetEasyId(value *string)() {
-    if m != nil {
-        m.easyId = value
-    }
+    m.easyId = value
 }
 // SetFileNames sets the fileNames property value. A list of files that are associated with the diagnostic.
 func (m *PowerliftIncidentMetadata) SetFileNames(value []string)() {
-    if m != nil {
-        m.fileNames = value
-    }
+    m.fileNames = value
 }
 // SetLocale sets the locale property value. The locale information of the application. Example: en-US
 func (m *PowerliftIncidentMetadata) SetLocale(value *string)() {
-    if m != nil {
-        m.locale = value
-    }
+    m.locale = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *PowerliftIncidentMetadata) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetPlatform sets the platform property value. The device's OS the diagnostic is from. Example: iOS
 func (m *PowerliftIncidentMetadata) SetPlatform(value *string)() {
-    if m != nil {
-        m.platform = value
-    }
+    m.platform = value
 }
 // SetPowerliftId sets the powerliftId property value. The unique identifier of the app diagnostic. Example: 8520467a-49a9-44a4-8447-8dfb8bec6726
 func (m *PowerliftIncidentMetadata) SetPowerliftId(value *string)() {
-    if m != nil {
-        m.powerliftId = value
-    }
+    m.powerliftId = value
 }

@@ -40,11 +40,7 @@ func (m *MobileAppProvisioningConfigGroupAssignment) GetFieldDeserializers()(map
 }
 // GetTargetGroupId gets the targetGroupId property value. The ID of the AAD group in which the app provisioning configuration is being targeted.
 func (m *MobileAppProvisioningConfigGroupAssignment) GetTargetGroupId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.targetGroupId
-    }
+    return m.targetGroupId
 }
 // Serialize serializes information the current object
 func (m *MobileAppProvisioningConfigGroupAssignment) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -62,7 +58,5 @@ func (m *MobileAppProvisioningConfigGroupAssignment) Serialize(writer i878a80d23
 }
 // SetTargetGroupId sets the targetGroupId property value. The ID of the AAD group in which the app provisioning configuration is being targeted.
 func (m *MobileAppProvisioningConfigGroupAssignment) SetTargetGroupId(value *string)() {
-    if m != nil {
-        m.targetGroupId = value
-    }
+    m.targetGroupId = value
 }

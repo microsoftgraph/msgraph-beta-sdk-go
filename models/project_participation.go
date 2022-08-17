@@ -39,51 +39,27 @@ func CreateProjectParticipationFromDiscriminatorValue(parseNode i878a80d2330e89d
 }
 // GetCategories gets the categories property value. Contains categories a user has associated with the project (for example, digital transformation, oil rig).
 func (m *ProjectParticipation) GetCategories()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.categories
-    }
+    return m.categories
 }
 // GetClient gets the client property value. Contains detailed information about the client the project was for.
 func (m *ProjectParticipation) GetClient()(CompanyDetailable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.client
-    }
+    return m.client
 }
 // GetCollaborationTags gets the collaborationTags property value. Contains experience scenario tags a user has associated with the interest. Allowed values in the collection are: askMeAbout, ableToMentor, wantsToLearn, wantsToImprove.
 func (m *ProjectParticipation) GetCollaborationTags()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.collaborationTags
-    }
+    return m.collaborationTags
 }
 // GetColleagues gets the colleagues property value. Lists people that also worked on the project.
 func (m *ProjectParticipation) GetColleagues()([]RelatedPersonable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.colleagues
-    }
+    return m.colleagues
 }
 // GetDetail gets the detail property value. Contains detail about the user's role on the project.
 func (m *ProjectParticipation) GetDetail()(PositionDetailable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.detail
-    }
+    return m.detail
 }
 // GetDisplayName gets the displayName property value. Contains a friendly name for the project.
 func (m *ProjectParticipation) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ProjectParticipation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -188,19 +164,11 @@ func (m *ProjectParticipation) GetFieldDeserializers()(map[string]func(i878a80d2
 }
 // GetSponsors gets the sponsors property value. The Person or people who sponsored the project.
 func (m *ProjectParticipation) GetSponsors()([]RelatedPersonable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.sponsors
-    }
+    return m.sponsors
 }
 // GetThumbnailUrl gets the thumbnailUrl property value. The thumbnailUrl property
 func (m *ProjectParticipation) GetThumbnailUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.thumbnailUrl
-    }
+    return m.thumbnailUrl
 }
 // Serialize serializes information the current object
 func (m *ProjectParticipation) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -268,49 +236,33 @@ func (m *ProjectParticipation) Serialize(writer i878a80d2330e89d26896388a3f487ee
 }
 // SetCategories sets the categories property value. Contains categories a user has associated with the project (for example, digital transformation, oil rig).
 func (m *ProjectParticipation) SetCategories(value []string)() {
-    if m != nil {
-        m.categories = value
-    }
+    m.categories = value
 }
 // SetClient sets the client property value. Contains detailed information about the client the project was for.
 func (m *ProjectParticipation) SetClient(value CompanyDetailable)() {
-    if m != nil {
-        m.client = value
-    }
+    m.client = value
 }
 // SetCollaborationTags sets the collaborationTags property value. Contains experience scenario tags a user has associated with the interest. Allowed values in the collection are: askMeAbout, ableToMentor, wantsToLearn, wantsToImprove.
 func (m *ProjectParticipation) SetCollaborationTags(value []string)() {
-    if m != nil {
-        m.collaborationTags = value
-    }
+    m.collaborationTags = value
 }
 // SetColleagues sets the colleagues property value. Lists people that also worked on the project.
 func (m *ProjectParticipation) SetColleagues(value []RelatedPersonable)() {
-    if m != nil {
-        m.colleagues = value
-    }
+    m.colleagues = value
 }
 // SetDetail sets the detail property value. Contains detail about the user's role on the project.
 func (m *ProjectParticipation) SetDetail(value PositionDetailable)() {
-    if m != nil {
-        m.detail = value
-    }
+    m.detail = value
 }
 // SetDisplayName sets the displayName property value. Contains a friendly name for the project.
 func (m *ProjectParticipation) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }
 // SetSponsors sets the sponsors property value. The Person or people who sponsored the project.
 func (m *ProjectParticipation) SetSponsors(value []RelatedPersonable)() {
-    if m != nil {
-        m.sponsors = value
-    }
+    m.sponsors = value
 }
 // SetThumbnailUrl sets the thumbnailUrl property value. The thumbnailUrl property
 func (m *ProjectParticipation) SetThumbnailUrl(value *string)() {
-    if m != nil {
-        m.thumbnailUrl = value
-    }
+    m.thumbnailUrl = value
 }

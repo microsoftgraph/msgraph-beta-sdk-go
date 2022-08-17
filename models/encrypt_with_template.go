@@ -27,11 +27,7 @@ func CreateEncryptWithTemplateFromDiscriminatorValue(parseNode i878a80d2330e89d2
 }
 // GetAvailableForEncryption gets the availableForEncryption property value. The availableForEncryption property
 func (m *EncryptWithTemplate) GetAvailableForEncryption()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.availableForEncryption
-    }
+    return m.availableForEncryption
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *EncryptWithTemplate) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -60,11 +56,7 @@ func (m *EncryptWithTemplate) GetFieldDeserializers()(map[string]func(i878a80d23
 }
 // GetTemplateId gets the templateId property value. The templateId property
 func (m *EncryptWithTemplate) GetTemplateId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.templateId
-    }
+    return m.templateId
 }
 // Serialize serializes information the current object
 func (m *EncryptWithTemplate) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -88,13 +80,9 @@ func (m *EncryptWithTemplate) Serialize(writer i878a80d2330e89d26896388a3f487eef
 }
 // SetAvailableForEncryption sets the availableForEncryption property value. The availableForEncryption property
 func (m *EncryptWithTemplate) SetAvailableForEncryption(value *bool)() {
-    if m != nil {
-        m.availableForEncryption = value
-    }
+    m.availableForEncryption = value
 }
 // SetTemplateId sets the templateId property value. The templateId property
 func (m *EncryptWithTemplate) SetTemplateId(value *string)() {
-    if m != nil {
-        m.templateId = value
-    }
+    m.templateId = value
 }

@@ -40,11 +40,7 @@ func (m *MicrosoftAccountUserConversationMember) GetFieldDeserializers()(map[str
 }
 // GetUserId gets the userId property value. ID of the user.
 func (m *MicrosoftAccountUserConversationMember) GetUserId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userId
-    }
+    return m.userId
 }
 // Serialize serializes information the current object
 func (m *MicrosoftAccountUserConversationMember) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -62,7 +58,5 @@ func (m *MicrosoftAccountUserConversationMember) Serialize(writer i878a80d2330e8
 }
 // SetUserId sets the userId property value. ID of the user.
 func (m *MicrosoftAccountUserConversationMember) SetUserId(value *string)() {
-    if m != nil {
-        m.userId = value
-    }
+    m.userId = value
 }

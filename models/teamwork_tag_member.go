@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// TeamworkTagMember provides operations to manage the collection of activityStatistics entities.
+// TeamworkTagMember provides operations to manage the collection of accessReviewDecision entities.
 type TeamworkTagMember struct {
     Entity
     // The member's display name.
@@ -29,11 +29,7 @@ func CreateTeamworkTagMemberFromDiscriminatorValue(parseNode i878a80d2330e89d268
 }
 // GetDisplayName gets the displayName property value. The member's display name.
 func (m *TeamworkTagMember) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *TeamworkTagMember) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -72,19 +68,11 @@ func (m *TeamworkTagMember) GetFieldDeserializers()(map[string]func(i878a80d2330
 }
 // GetTenantId gets the tenantId property value. The tenantId property
 func (m *TeamworkTagMember) GetTenantId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.tenantId
-    }
+    return m.tenantId
 }
 // GetUserId gets the userId property value. The userId property
 func (m *TeamworkTagMember) GetUserId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userId
-    }
+    return m.userId
 }
 // Serialize serializes information the current object
 func (m *TeamworkTagMember) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -114,19 +102,13 @@ func (m *TeamworkTagMember) Serialize(writer i878a80d2330e89d26896388a3f487eef27
 }
 // SetDisplayName sets the displayName property value. The member's display name.
 func (m *TeamworkTagMember) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }
 // SetTenantId sets the tenantId property value. The tenantId property
 func (m *TeamworkTagMember) SetTenantId(value *string)() {
-    if m != nil {
-        m.tenantId = value
-    }
+    m.tenantId = value
 }
 // SetUserId sets the userId property value. The userId property
 func (m *TeamworkTagMember) SetUserId(value *string)() {
-    if m != nil {
-        m.userId = value
-    }
+    m.userId = value
 }

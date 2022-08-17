@@ -36,35 +36,19 @@ func CreateAccessPackageResourceRoleScopeFromDiscriminatorValue(parseNode i878a8
 }
 // GetAccessPackageResourceRole gets the accessPackageResourceRole property value. Read-only. Nullable. Supports $expand.
 func (m *AccessPackageResourceRoleScope) GetAccessPackageResourceRole()(AccessPackageResourceRoleable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.accessPackageResourceRole
-    }
+    return m.accessPackageResourceRole
 }
 // GetAccessPackageResourceScope gets the accessPackageResourceScope property value. The accessPackageResourceScope property
 func (m *AccessPackageResourceRoleScope) GetAccessPackageResourceScope()(AccessPackageResourceScopeable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.accessPackageResourceScope
-    }
+    return m.accessPackageResourceScope
 }
 // GetCreatedBy gets the createdBy property value. The createdBy property
 func (m *AccessPackageResourceRoleScope) GetCreatedBy()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.createdBy
-    }
+    return m.createdBy
 }
 // GetCreatedDateTime gets the createdDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 func (m *AccessPackageResourceRoleScope) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.createdDateTime
-    }
+    return m.createdDateTime
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AccessPackageResourceRoleScope) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -133,19 +117,11 @@ func (m *AccessPackageResourceRoleScope) GetFieldDeserializers()(map[string]func
 }
 // GetModifiedBy gets the modifiedBy property value. The modifiedBy property
 func (m *AccessPackageResourceRoleScope) GetModifiedBy()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.modifiedBy
-    }
+    return m.modifiedBy
 }
 // GetModifiedDateTime gets the modifiedDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 func (m *AccessPackageResourceRoleScope) GetModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.modifiedDateTime
-    }
+    return m.modifiedDateTime
 }
 // Serialize serializes information the current object
 func (m *AccessPackageResourceRoleScope) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -193,37 +169,25 @@ func (m *AccessPackageResourceRoleScope) Serialize(writer i878a80d2330e89d268963
 }
 // SetAccessPackageResourceRole sets the accessPackageResourceRole property value. Read-only. Nullable. Supports $expand.
 func (m *AccessPackageResourceRoleScope) SetAccessPackageResourceRole(value AccessPackageResourceRoleable)() {
-    if m != nil {
-        m.accessPackageResourceRole = value
-    }
+    m.accessPackageResourceRole = value
 }
 // SetAccessPackageResourceScope sets the accessPackageResourceScope property value. The accessPackageResourceScope property
 func (m *AccessPackageResourceRoleScope) SetAccessPackageResourceScope(value AccessPackageResourceScopeable)() {
-    if m != nil {
-        m.accessPackageResourceScope = value
-    }
+    m.accessPackageResourceScope = value
 }
 // SetCreatedBy sets the createdBy property value. The createdBy property
 func (m *AccessPackageResourceRoleScope) SetCreatedBy(value *string)() {
-    if m != nil {
-        m.createdBy = value
-    }
+    m.createdBy = value
 }
 // SetCreatedDateTime sets the createdDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 func (m *AccessPackageResourceRoleScope) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.createdDateTime = value
-    }
+    m.createdDateTime = value
 }
 // SetModifiedBy sets the modifiedBy property value. The modifiedBy property
 func (m *AccessPackageResourceRoleScope) SetModifiedBy(value *string)() {
-    if m != nil {
-        m.modifiedBy = value
-    }
+    m.modifiedBy = value
 }
 // SetModifiedDateTime sets the modifiedDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 func (m *AccessPackageResourceRoleScope) SetModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.modifiedDateTime = value
-    }
+    m.modifiedDateTime = value
 }

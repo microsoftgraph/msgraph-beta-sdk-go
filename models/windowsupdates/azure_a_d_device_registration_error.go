@@ -40,11 +40,7 @@ func (m *AzureADDeviceRegistrationError) GetFieldDeserializers()(map[string]func
 }
 // GetReason gets the reason property value. The reason property
 func (m *AzureADDeviceRegistrationError) GetReason()(*AzureADDeviceRegistrationErrorReason) {
-    if m == nil {
-        return nil
-    } else {
-        return m.reason
-    }
+    return m.reason
 }
 // Serialize serializes information the current object
 func (m *AzureADDeviceRegistrationError) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -63,7 +59,5 @@ func (m *AzureADDeviceRegistrationError) Serialize(writer i878a80d2330e89d268963
 }
 // SetReason sets the reason property value. The reason property
 func (m *AzureADDeviceRegistrationError) SetReason(value *AzureADDeviceRegistrationErrorReason)() {
-    if m != nil {
-        m.reason = value
-    }
+    m.reason = value
 }

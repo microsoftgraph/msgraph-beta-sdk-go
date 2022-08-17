@@ -49,67 +49,35 @@ func CreateUserExperienceAnalyticsRemoteConnectionFromDiscriminatorValue(parseNo
 }
 // GetCloudPcFailurePercentage gets the cloudPcFailurePercentage property value. The sign in failure percentage of Cloud PC Device. Valid values 0 to 100
 func (m *UserExperienceAnalyticsRemoteConnection) GetCloudPcFailurePercentage()(*float64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.cloudPcFailurePercentage
-    }
+    return m.cloudPcFailurePercentage
 }
 // GetCloudPcRoundTripTime gets the cloudPcRoundTripTime property value. The round tip time of Cloud PC Device. Valid values 0 to 1.79769313486232E+308
 func (m *UserExperienceAnalyticsRemoteConnection) GetCloudPcRoundTripTime()(*float64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.cloudPcRoundTripTime
-    }
+    return m.cloudPcRoundTripTime
 }
 // GetCloudPcSignInTime gets the cloudPcSignInTime property value. The sign in time of Cloud PC Device. Valid values 0 to 1.79769313486232E+308
 func (m *UserExperienceAnalyticsRemoteConnection) GetCloudPcSignInTime()(*float64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.cloudPcSignInTime
-    }
+    return m.cloudPcSignInTime
 }
 // GetCoreBootTime gets the coreBootTime property value. The core boot time of Cloud PC Device. Valid values 0 to 1.79769313486232E+308
 func (m *UserExperienceAnalyticsRemoteConnection) GetCoreBootTime()(*float64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.coreBootTime
-    }
+    return m.coreBootTime
 }
 // GetCoreSignInTime gets the coreSignInTime property value. The core sign in time of Cloud PC Device. Valid values 0 to 1.79769313486232E+308
 func (m *UserExperienceAnalyticsRemoteConnection) GetCoreSignInTime()(*float64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.coreSignInTime
-    }
+    return m.coreSignInTime
 }
 // GetDeviceCount gets the deviceCount property value. The count of remote connection. Valid values 0 to 2147483647
 func (m *UserExperienceAnalyticsRemoteConnection) GetDeviceCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deviceCount
-    }
+    return m.deviceCount
 }
 // GetDeviceId gets the deviceId property value. The id of the device.
 func (m *UserExperienceAnalyticsRemoteConnection) GetDeviceId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deviceId
-    }
+    return m.deviceId
 }
 // GetDeviceName gets the deviceName property value. The name of the device.
 func (m *UserExperienceAnalyticsRemoteConnection) GetDeviceName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deviceName
-    }
+    return m.deviceName
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *UserExperienceAnalyticsRemoteConnection) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -248,43 +216,23 @@ func (m *UserExperienceAnalyticsRemoteConnection) GetFieldDeserializers()(map[st
 }
 // GetManufacturer gets the manufacturer property value. The user experience analytics manufacturer.
 func (m *UserExperienceAnalyticsRemoteConnection) GetManufacturer()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.manufacturer
-    }
+    return m.manufacturer
 }
 // GetModel gets the model property value. The user experience analytics device model.
 func (m *UserExperienceAnalyticsRemoteConnection) GetModel()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.model
-    }
+    return m.model
 }
 // GetRemoteSignInTime gets the remoteSignInTime property value. The remote sign in time of Cloud PC Device. Valid values 0 to 1.79769313486232E+308
 func (m *UserExperienceAnalyticsRemoteConnection) GetRemoteSignInTime()(*float64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.remoteSignInTime
-    }
+    return m.remoteSignInTime
 }
 // GetUserPrincipalName gets the userPrincipalName property value. The user experience analytics userPrincipalName.
 func (m *UserExperienceAnalyticsRemoteConnection) GetUserPrincipalName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userPrincipalName
-    }
+    return m.userPrincipalName
 }
 // GetVirtualNetwork gets the virtualNetwork property value. The user experience analytics virtual network.
 func (m *UserExperienceAnalyticsRemoteConnection) GetVirtualNetwork()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.virtualNetwork
-    }
+    return m.virtualNetwork
 }
 // Serialize serializes information the current object
 func (m *UserExperienceAnalyticsRemoteConnection) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -374,79 +322,53 @@ func (m *UserExperienceAnalyticsRemoteConnection) Serialize(writer i878a80d2330e
 }
 // SetCloudPcFailurePercentage sets the cloudPcFailurePercentage property value. The sign in failure percentage of Cloud PC Device. Valid values 0 to 100
 func (m *UserExperienceAnalyticsRemoteConnection) SetCloudPcFailurePercentage(value *float64)() {
-    if m != nil {
-        m.cloudPcFailurePercentage = value
-    }
+    m.cloudPcFailurePercentage = value
 }
 // SetCloudPcRoundTripTime sets the cloudPcRoundTripTime property value. The round tip time of Cloud PC Device. Valid values 0 to 1.79769313486232E+308
 func (m *UserExperienceAnalyticsRemoteConnection) SetCloudPcRoundTripTime(value *float64)() {
-    if m != nil {
-        m.cloudPcRoundTripTime = value
-    }
+    m.cloudPcRoundTripTime = value
 }
 // SetCloudPcSignInTime sets the cloudPcSignInTime property value. The sign in time of Cloud PC Device. Valid values 0 to 1.79769313486232E+308
 func (m *UserExperienceAnalyticsRemoteConnection) SetCloudPcSignInTime(value *float64)() {
-    if m != nil {
-        m.cloudPcSignInTime = value
-    }
+    m.cloudPcSignInTime = value
 }
 // SetCoreBootTime sets the coreBootTime property value. The core boot time of Cloud PC Device. Valid values 0 to 1.79769313486232E+308
 func (m *UserExperienceAnalyticsRemoteConnection) SetCoreBootTime(value *float64)() {
-    if m != nil {
-        m.coreBootTime = value
-    }
+    m.coreBootTime = value
 }
 // SetCoreSignInTime sets the coreSignInTime property value. The core sign in time of Cloud PC Device. Valid values 0 to 1.79769313486232E+308
 func (m *UserExperienceAnalyticsRemoteConnection) SetCoreSignInTime(value *float64)() {
-    if m != nil {
-        m.coreSignInTime = value
-    }
+    m.coreSignInTime = value
 }
 // SetDeviceCount sets the deviceCount property value. The count of remote connection. Valid values 0 to 2147483647
 func (m *UserExperienceAnalyticsRemoteConnection) SetDeviceCount(value *int32)() {
-    if m != nil {
-        m.deviceCount = value
-    }
+    m.deviceCount = value
 }
 // SetDeviceId sets the deviceId property value. The id of the device.
 func (m *UserExperienceAnalyticsRemoteConnection) SetDeviceId(value *string)() {
-    if m != nil {
-        m.deviceId = value
-    }
+    m.deviceId = value
 }
 // SetDeviceName sets the deviceName property value. The name of the device.
 func (m *UserExperienceAnalyticsRemoteConnection) SetDeviceName(value *string)() {
-    if m != nil {
-        m.deviceName = value
-    }
+    m.deviceName = value
 }
 // SetManufacturer sets the manufacturer property value. The user experience analytics manufacturer.
 func (m *UserExperienceAnalyticsRemoteConnection) SetManufacturer(value *string)() {
-    if m != nil {
-        m.manufacturer = value
-    }
+    m.manufacturer = value
 }
 // SetModel sets the model property value. The user experience analytics device model.
 func (m *UserExperienceAnalyticsRemoteConnection) SetModel(value *string)() {
-    if m != nil {
-        m.model = value
-    }
+    m.model = value
 }
 // SetRemoteSignInTime sets the remoteSignInTime property value. The remote sign in time of Cloud PC Device. Valid values 0 to 1.79769313486232E+308
 func (m *UserExperienceAnalyticsRemoteConnection) SetRemoteSignInTime(value *float64)() {
-    if m != nil {
-        m.remoteSignInTime = value
-    }
+    m.remoteSignInTime = value
 }
 // SetUserPrincipalName sets the userPrincipalName property value. The user experience analytics userPrincipalName.
 func (m *UserExperienceAnalyticsRemoteConnection) SetUserPrincipalName(value *string)() {
-    if m != nil {
-        m.userPrincipalName = value
-    }
+    m.userPrincipalName = value
 }
 // SetVirtualNetwork sets the virtualNetwork property value. The user experience analytics virtual network.
 func (m *UserExperienceAnalyticsRemoteConnection) SetVirtualNetwork(value *string)() {
-    if m != nil {
-        m.virtualNetwork = value
-    }
+    m.virtualNetwork = value
 }

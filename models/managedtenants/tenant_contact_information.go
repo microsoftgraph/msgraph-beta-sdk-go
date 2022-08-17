@@ -36,19 +36,11 @@ func CreateTenantContactInformationFromDiscriminatorValue(parseNode i878a80d2330
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TenantContactInformation) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetEmail gets the email property value. The email address for the contact. Optional
 func (m *TenantContactInformation) GetEmail()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.email
-    }
+    return m.email
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *TenantContactInformation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -117,43 +109,23 @@ func (m *TenantContactInformation) GetFieldDeserializers()(map[string]func(i878a
 }
 // GetName gets the name property value. The name for the contact. Required.
 func (m *TenantContactInformation) GetName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.name
-    }
+    return m.name
 }
 // GetNotes gets the notes property value. The notes associated with the contact. Optional
 func (m *TenantContactInformation) GetNotes()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.notes
-    }
+    return m.notes
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *TenantContactInformation) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetPhone gets the phone property value. The phone number for the contact. Optional.
 func (m *TenantContactInformation) GetPhone()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.phone
-    }
+    return m.phone
 }
 // GetTitle gets the title property value. The title for the contact. Required.
 func (m *TenantContactInformation) GetTitle()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.title
-    }
+    return m.title
 }
 // Serialize serializes information the current object
 func (m *TenantContactInformation) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -203,43 +175,29 @@ func (m *TenantContactInformation) Serialize(writer i878a80d2330e89d26896388a3f4
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TenantContactInformation) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetEmail sets the email property value. The email address for the contact. Optional
 func (m *TenantContactInformation) SetEmail(value *string)() {
-    if m != nil {
-        m.email = value
-    }
+    m.email = value
 }
 // SetName sets the name property value. The name for the contact. Required.
 func (m *TenantContactInformation) SetName(value *string)() {
-    if m != nil {
-        m.name = value
-    }
+    m.name = value
 }
 // SetNotes sets the notes property value. The notes associated with the contact. Optional
 func (m *TenantContactInformation) SetNotes(value *string)() {
-    if m != nil {
-        m.notes = value
-    }
+    m.notes = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *TenantContactInformation) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetPhone sets the phone property value. The phone number for the contact. Optional.
 func (m *TenantContactInformation) SetPhone(value *string)() {
-    if m != nil {
-        m.phone = value
-    }
+    m.phone = value
 }
 // SetTitle sets the title property value. The title for the contact. Required.
 func (m *TenantContactInformation) SetTitle(value *string)() {
-    if m != nil {
-        m.title = value
-    }
+    m.title = value
 }

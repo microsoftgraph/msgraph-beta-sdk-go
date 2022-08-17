@@ -29,19 +29,11 @@ func CreateClockInPostRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e8
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ClockInPostRequestBody) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetAtApprovedLocation gets the atApprovedLocation property value. The atApprovedLocation property
 func (m *ClockInPostRequestBody) GetAtApprovedLocation()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.atApprovedLocation
-    }
+    return m.atApprovedLocation
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ClockInPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -80,19 +72,11 @@ func (m *ClockInPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80
 }
 // GetNotes gets the notes property value. The notes property
 func (m *ClockInPostRequestBody) GetNotes()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemBodyable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.notes
-    }
+    return m.notes
 }
 // GetOnBehalfOfUserId gets the onBehalfOfUserId property value. The onBehalfOfUserId property
 func (m *ClockInPostRequestBody) GetOnBehalfOfUserId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.onBehalfOfUserId
-    }
+    return m.onBehalfOfUserId
 }
 // Serialize serializes information the current object
 func (m *ClockInPostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -124,25 +108,17 @@ func (m *ClockInPostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ClockInPostRequestBody) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetAtApprovedLocation sets the atApprovedLocation property value. The atApprovedLocation property
 func (m *ClockInPostRequestBody) SetAtApprovedLocation(value *bool)() {
-    if m != nil {
-        m.atApprovedLocation = value
-    }
+    m.atApprovedLocation = value
 }
 // SetNotes sets the notes property value. The notes property
 func (m *ClockInPostRequestBody) SetNotes(value ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemBodyable)() {
-    if m != nil {
-        m.notes = value
-    }
+    m.notes = value
 }
 // SetOnBehalfOfUserId sets the onBehalfOfUserId property value. The onBehalfOfUserId property
 func (m *ClockInPostRequestBody) SetOnBehalfOfUserId(value *string)() {
-    if m != nil {
-        m.onBehalfOfUserId = value
-    }
+    m.onBehalfOfUserId = value
 }

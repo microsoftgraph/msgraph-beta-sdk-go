@@ -38,27 +38,15 @@ func CreateTeamworkSoftwareUpdateHealthFromDiscriminatorValue(parseNode i878a80d
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TeamworkSoftwareUpdateHealth) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetAdminAgentSoftwareUpdateStatus gets the adminAgentSoftwareUpdateStatus property value. The software update available for the admin agent.
 func (m *TeamworkSoftwareUpdateHealth) GetAdminAgentSoftwareUpdateStatus()(TeamworkSoftwareUpdateStatusable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.adminAgentSoftwareUpdateStatus
-    }
+    return m.adminAgentSoftwareUpdateStatus
 }
 // GetCompanyPortalSoftwareUpdateStatus gets the companyPortalSoftwareUpdateStatus property value. The software update available for the company portal.
 func (m *TeamworkSoftwareUpdateHealth) GetCompanyPortalSoftwareUpdateStatus()(TeamworkSoftwareUpdateStatusable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.companyPortalSoftwareUpdateStatus
-    }
+    return m.companyPortalSoftwareUpdateStatus
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *TeamworkSoftwareUpdateHealth) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -137,43 +125,23 @@ func (m *TeamworkSoftwareUpdateHealth) GetFieldDeserializers()(map[string]func(i
 }
 // GetFirmwareSoftwareUpdateStatus gets the firmwareSoftwareUpdateStatus property value. The software update available for the firmware.
 func (m *TeamworkSoftwareUpdateHealth) GetFirmwareSoftwareUpdateStatus()(TeamworkSoftwareUpdateStatusable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.firmwareSoftwareUpdateStatus
-    }
+    return m.firmwareSoftwareUpdateStatus
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *TeamworkSoftwareUpdateHealth) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetOperatingSystemSoftwareUpdateStatus gets the operatingSystemSoftwareUpdateStatus property value. The software update available for the operating system.
 func (m *TeamworkSoftwareUpdateHealth) GetOperatingSystemSoftwareUpdateStatus()(TeamworkSoftwareUpdateStatusable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.operatingSystemSoftwareUpdateStatus
-    }
+    return m.operatingSystemSoftwareUpdateStatus
 }
 // GetPartnerAgentSoftwareUpdateStatus gets the partnerAgentSoftwareUpdateStatus property value. The software update available for the partner agent.
 func (m *TeamworkSoftwareUpdateHealth) GetPartnerAgentSoftwareUpdateStatus()(TeamworkSoftwareUpdateStatusable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.partnerAgentSoftwareUpdateStatus
-    }
+    return m.partnerAgentSoftwareUpdateStatus
 }
 // GetTeamsClientSoftwareUpdateStatus gets the teamsClientSoftwareUpdateStatus property value. The software update available for the Teams client.
 func (m *TeamworkSoftwareUpdateHealth) GetTeamsClientSoftwareUpdateStatus()(TeamworkSoftwareUpdateStatusable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.teamsClientSoftwareUpdateStatus
-    }
+    return m.teamsClientSoftwareUpdateStatus
 }
 // Serialize serializes information the current object
 func (m *TeamworkSoftwareUpdateHealth) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -229,49 +197,33 @@ func (m *TeamworkSoftwareUpdateHealth) Serialize(writer i878a80d2330e89d26896388
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TeamworkSoftwareUpdateHealth) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetAdminAgentSoftwareUpdateStatus sets the adminAgentSoftwareUpdateStatus property value. The software update available for the admin agent.
 func (m *TeamworkSoftwareUpdateHealth) SetAdminAgentSoftwareUpdateStatus(value TeamworkSoftwareUpdateStatusable)() {
-    if m != nil {
-        m.adminAgentSoftwareUpdateStatus = value
-    }
+    m.adminAgentSoftwareUpdateStatus = value
 }
 // SetCompanyPortalSoftwareUpdateStatus sets the companyPortalSoftwareUpdateStatus property value. The software update available for the company portal.
 func (m *TeamworkSoftwareUpdateHealth) SetCompanyPortalSoftwareUpdateStatus(value TeamworkSoftwareUpdateStatusable)() {
-    if m != nil {
-        m.companyPortalSoftwareUpdateStatus = value
-    }
+    m.companyPortalSoftwareUpdateStatus = value
 }
 // SetFirmwareSoftwareUpdateStatus sets the firmwareSoftwareUpdateStatus property value. The software update available for the firmware.
 func (m *TeamworkSoftwareUpdateHealth) SetFirmwareSoftwareUpdateStatus(value TeamworkSoftwareUpdateStatusable)() {
-    if m != nil {
-        m.firmwareSoftwareUpdateStatus = value
-    }
+    m.firmwareSoftwareUpdateStatus = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *TeamworkSoftwareUpdateHealth) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetOperatingSystemSoftwareUpdateStatus sets the operatingSystemSoftwareUpdateStatus property value. The software update available for the operating system.
 func (m *TeamworkSoftwareUpdateHealth) SetOperatingSystemSoftwareUpdateStatus(value TeamworkSoftwareUpdateStatusable)() {
-    if m != nil {
-        m.operatingSystemSoftwareUpdateStatus = value
-    }
+    m.operatingSystemSoftwareUpdateStatus = value
 }
 // SetPartnerAgentSoftwareUpdateStatus sets the partnerAgentSoftwareUpdateStatus property value. The software update available for the partner agent.
 func (m *TeamworkSoftwareUpdateHealth) SetPartnerAgentSoftwareUpdateStatus(value TeamworkSoftwareUpdateStatusable)() {
-    if m != nil {
-        m.partnerAgentSoftwareUpdateStatus = value
-    }
+    m.partnerAgentSoftwareUpdateStatus = value
 }
 // SetTeamsClientSoftwareUpdateStatus sets the teamsClientSoftwareUpdateStatus property value. The software update available for the Teams client.
 func (m *TeamworkSoftwareUpdateHealth) SetTeamsClientSoftwareUpdateStatus(value TeamworkSoftwareUpdateStatusable)() {
-    if m != nil {
-        m.teamsClientSoftwareUpdateStatus = value
-    }
+    m.teamsClientSoftwareUpdateStatus = value
 }

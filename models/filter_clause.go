@@ -32,11 +32,7 @@ func CreateFilterClauseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *FilterClause) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *FilterClause) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -85,35 +81,19 @@ func (m *FilterClause) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *FilterClause) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetOperatorName gets the operatorName property value. Name of the operator to be applied to the source and target operands. Must be one of the supported operators. Supported operators can be discovered.
 func (m *FilterClause) GetOperatorName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.operatorName
-    }
+    return m.operatorName
 }
 // GetSourceOperandName gets the sourceOperandName property value. Name of source operand (the operand being tested). The source operand name must match one of the attribute names on the source object.
 func (m *FilterClause) GetSourceOperandName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.sourceOperandName
-    }
+    return m.sourceOperandName
 }
 // GetTargetOperand gets the targetOperand property value. Values that the source operand will be tested against.
 func (m *FilterClause) GetTargetOperand()(FilterOperandable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.targetOperand
-    }
+    return m.targetOperand
 }
 // Serialize serializes information the current object
 func (m *FilterClause) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -151,31 +131,21 @@ func (m *FilterClause) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *FilterClause) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *FilterClause) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetOperatorName sets the operatorName property value. Name of the operator to be applied to the source and target operands. Must be one of the supported operators. Supported operators can be discovered.
 func (m *FilterClause) SetOperatorName(value *string)() {
-    if m != nil {
-        m.operatorName = value
-    }
+    m.operatorName = value
 }
 // SetSourceOperandName sets the sourceOperandName property value. Name of source operand (the operand being tested). The source operand name must match one of the attribute names on the source object.
 func (m *FilterClause) SetSourceOperandName(value *string)() {
-    if m != nil {
-        m.sourceOperandName = value
-    }
+    m.sourceOperandName = value
 }
 // SetTargetOperand sets the targetOperand property value. Values that the source operand will be tested against.
 func (m *FilterClause) SetTargetOperand(value FilterOperandable)() {
-    if m != nil {
-        m.targetOperand = value
-    }
+    m.targetOperand = value
 }

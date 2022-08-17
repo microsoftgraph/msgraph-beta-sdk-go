@@ -37,19 +37,11 @@ func CreateFeatureUsageDetailFromDiscriminatorValue(parseNode i878a80d2330e89d26
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *FeatureUsageDetail) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFeatureName gets the featureName property value. The featureName property
 func (m *FeatureUsageDetail) GetFeatureName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.featureName
-    }
+    return m.featureName
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *FeatureUsageDetail) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -118,43 +110,23 @@ func (m *FeatureUsageDetail) GetFieldDeserializers()(map[string]func(i878a80d233
 }
 // GetLastConfiguredDateTime gets the lastConfiguredDateTime property value. The lastConfiguredDateTime property
 func (m *FeatureUsageDetail) GetLastConfiguredDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastConfiguredDateTime
-    }
+    return m.lastConfiguredDateTime
 }
 // GetLastUsedDateTime gets the lastUsedDateTime property value. The lastUsedDateTime property
 func (m *FeatureUsageDetail) GetLastUsedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastUsedDateTime
-    }
+    return m.lastUsedDateTime
 }
 // GetLicenseAssigned gets the licenseAssigned property value. The licenseAssigned property
 func (m *FeatureUsageDetail) GetLicenseAssigned()(*AzureADLicenseType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.licenseAssigned
-    }
+    return m.licenseAssigned
 }
 // GetLicenseRequired gets the licenseRequired property value. The licenseRequired property
 func (m *FeatureUsageDetail) GetLicenseRequired()(*AzureADLicenseType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.licenseRequired
-    }
+    return m.licenseRequired
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *FeatureUsageDetail) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // Serialize serializes information the current object
 func (m *FeatureUsageDetail) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -206,43 +178,29 @@ func (m *FeatureUsageDetail) Serialize(writer i878a80d2330e89d26896388a3f487eef2
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *FeatureUsageDetail) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetFeatureName sets the featureName property value. The featureName property
 func (m *FeatureUsageDetail) SetFeatureName(value *string)() {
-    if m != nil {
-        m.featureName = value
-    }
+    m.featureName = value
 }
 // SetLastConfiguredDateTime sets the lastConfiguredDateTime property value. The lastConfiguredDateTime property
 func (m *FeatureUsageDetail) SetLastConfiguredDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.lastConfiguredDateTime = value
-    }
+    m.lastConfiguredDateTime = value
 }
 // SetLastUsedDateTime sets the lastUsedDateTime property value. The lastUsedDateTime property
 func (m *FeatureUsageDetail) SetLastUsedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.lastUsedDateTime = value
-    }
+    m.lastUsedDateTime = value
 }
 // SetLicenseAssigned sets the licenseAssigned property value. The licenseAssigned property
 func (m *FeatureUsageDetail) SetLicenseAssigned(value *AzureADLicenseType)() {
-    if m != nil {
-        m.licenseAssigned = value
-    }
+    m.licenseAssigned = value
 }
 // SetLicenseRequired sets the licenseRequired property value. The licenseRequired property
 func (m *FeatureUsageDetail) SetLicenseRequired(value *AzureADLicenseType)() {
-    if m != nil {
-        m.licenseRequired = value
-    }
+    m.licenseRequired = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *FeatureUsageDetail) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }

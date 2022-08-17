@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DefaultUserRoleOverride provides operations to manage the collection of accessReview entities.
+// DefaultUserRoleOverride provides operations to manage the collection of activityStatistics entities.
 type DefaultUserRoleOverride struct {
     Entity
     // The isDefault property
@@ -56,19 +56,11 @@ func (m *DefaultUserRoleOverride) GetFieldDeserializers()(map[string]func(i878a8
 }
 // GetIsDefault gets the isDefault property value. The isDefault property
 func (m *DefaultUserRoleOverride) GetIsDefault()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isDefault
-    }
+    return m.isDefault
 }
 // GetRolePermissions gets the rolePermissions property value. The rolePermissions property
 func (m *DefaultUserRoleOverride) GetRolePermissions()([]UnifiedRolePermissionable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.rolePermissions
-    }
+    return m.rolePermissions
 }
 // Serialize serializes information the current object
 func (m *DefaultUserRoleOverride) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -96,13 +88,9 @@ func (m *DefaultUserRoleOverride) Serialize(writer i878a80d2330e89d26896388a3f48
 }
 // SetIsDefault sets the isDefault property value. The isDefault property
 func (m *DefaultUserRoleOverride) SetIsDefault(value *bool)() {
-    if m != nil {
-        m.isDefault = value
-    }
+    m.isDefault = value
 }
 // SetRolePermissions sets the rolePermissions property value. The rolePermissions property
 func (m *DefaultUserRoleOverride) SetRolePermissions(value []UnifiedRolePermissionable)() {
-    if m != nil {
-        m.rolePermissions = value
-    }
+    m.rolePermissions = value
 }

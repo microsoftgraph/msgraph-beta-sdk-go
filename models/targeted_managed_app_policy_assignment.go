@@ -64,27 +64,15 @@ func (m *TargetedManagedAppPolicyAssignment) GetFieldDeserializers()(map[string]
 }
 // GetSource gets the source property value. Represents source of assignment.
 func (m *TargetedManagedAppPolicyAssignment) GetSource()(*DeviceAndAppManagementAssignmentSource) {
-    if m == nil {
-        return nil
-    } else {
-        return m.source
-    }
+    return m.source
 }
 // GetSourceId gets the sourceId property value. Identifier for resource used for deployment to a group
 func (m *TargetedManagedAppPolicyAssignment) GetSourceId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.sourceId
-    }
+    return m.sourceId
 }
 // GetTarget gets the target property value. Identifier for deployment to a group or app
 func (m *TargetedManagedAppPolicyAssignment) GetTarget()(DeviceAndAppManagementAssignmentTargetable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.target
-    }
+    return m.target
 }
 // Serialize serializes information the current object
 func (m *TargetedManagedAppPolicyAssignment) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -115,19 +103,13 @@ func (m *TargetedManagedAppPolicyAssignment) Serialize(writer i878a80d2330e89d26
 }
 // SetSource sets the source property value. Represents source of assignment.
 func (m *TargetedManagedAppPolicyAssignment) SetSource(value *DeviceAndAppManagementAssignmentSource)() {
-    if m != nil {
-        m.source = value
-    }
+    m.source = value
 }
 // SetSourceId sets the sourceId property value. Identifier for resource used for deployment to a group
 func (m *TargetedManagedAppPolicyAssignment) SetSourceId(value *string)() {
-    if m != nil {
-        m.sourceId = value
-    }
+    m.sourceId = value
 }
 // SetTarget sets the target property value. Identifier for deployment to a group or app
 func (m *TargetedManagedAppPolicyAssignment) SetTarget(value DeviceAndAppManagementAssignmentTargetable)() {
-    if m != nil {
-        m.target = value
-    }
+    m.target = value
 }

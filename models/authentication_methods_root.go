@@ -44,11 +44,7 @@ func (m *AuthenticationMethodsRoot) GetFieldDeserializers()(map[string]func(i878
 }
 // GetUserRegistrationDetails gets the userRegistrationDetails property value. Represents the state of a user's authentication methods, including which methods are registered and which features the user is registered and capable of (such as multi-factor authentication, self-service password reset, and passwordless authentication).
 func (m *AuthenticationMethodsRoot) GetUserRegistrationDetails()([]UserRegistrationDetailsable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userRegistrationDetails
-    }
+    return m.userRegistrationDetails
 }
 // Serialize serializes information the current object
 func (m *AuthenticationMethodsRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -70,7 +66,5 @@ func (m *AuthenticationMethodsRoot) Serialize(writer i878a80d2330e89d26896388a3f
 }
 // SetUserRegistrationDetails sets the userRegistrationDetails property value. Represents the state of a user's authentication methods, including which methods are registered and which features the user is registered and capable of (such as multi-factor authentication, self-service password reset, and passwordless authentication).
 func (m *AuthenticationMethodsRoot) SetUserRegistrationDetails(value []UserRegistrationDetailsable)() {
-    if m != nil {
-        m.userRegistrationDetails = value
-    }
+    m.userRegistrationDetails = value
 }

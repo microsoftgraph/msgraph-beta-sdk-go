@@ -40,11 +40,7 @@ func (m *WellKnownTaskList) GetFieldDeserializers()(map[string]func(i878a80d2330
 }
 // GetWellKnownListName gets the wellKnownListName property value. The wellKnownListName property
 func (m *WellKnownTaskList) GetWellKnownListName()(*WellKnownListName_v2) {
-    if m == nil {
-        return nil
-    } else {
-        return m.wellKnownListName
-    }
+    return m.wellKnownListName
 }
 // Serialize serializes information the current object
 func (m *WellKnownTaskList) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -63,7 +59,5 @@ func (m *WellKnownTaskList) Serialize(writer i878a80d2330e89d26896388a3f487eef27
 }
 // SetWellKnownListName sets the wellKnownListName property value. The wellKnownListName property
 func (m *WellKnownTaskList) SetWellKnownListName(value *WellKnownListName_v2)() {
-    if m != nil {
-        m.wellKnownListName = value
-    }
+    m.wellKnownListName = value
 }

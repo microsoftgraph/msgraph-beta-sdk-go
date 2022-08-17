@@ -32,11 +32,7 @@ func CreateManagementIntentInfoFromDiscriminatorValue(parseNode i878a80d2330e89d
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ManagementIntentInfo) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ManagementIntentInfo) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -89,35 +85,19 @@ func (m *ManagementIntentInfo) GetFieldDeserializers()(map[string]func(i878a80d2
 }
 // GetManagementIntentDisplayName gets the managementIntentDisplayName property value. The display name for the management intent. Optional. Read-only.
 func (m *ManagementIntentInfo) GetManagementIntentDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.managementIntentDisplayName
-    }
+    return m.managementIntentDisplayName
 }
 // GetManagementIntentId gets the managementIntentId property value. The identifier for the management intent. Required. Read-only.
 func (m *ManagementIntentInfo) GetManagementIntentId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.managementIntentId
-    }
+    return m.managementIntentId
 }
 // GetManagementTemplates gets the managementTemplates property value. The collection of management template information associated with the management intent. Optional. Read-only.
 func (m *ManagementIntentInfo) GetManagementTemplates()([]ManagementTemplateDetailedInfoable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.managementTemplates
-    }
+    return m.managementTemplates
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *ManagementIntentInfo) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // Serialize serializes information the current object
 func (m *ManagementIntentInfo) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -159,31 +139,21 @@ func (m *ManagementIntentInfo) Serialize(writer i878a80d2330e89d26896388a3f487ee
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ManagementIntentInfo) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetManagementIntentDisplayName sets the managementIntentDisplayName property value. The display name for the management intent. Optional. Read-only.
 func (m *ManagementIntentInfo) SetManagementIntentDisplayName(value *string)() {
-    if m != nil {
-        m.managementIntentDisplayName = value
-    }
+    m.managementIntentDisplayName = value
 }
 // SetManagementIntentId sets the managementIntentId property value. The identifier for the management intent. Required. Read-only.
 func (m *ManagementIntentInfo) SetManagementIntentId(value *string)() {
-    if m != nil {
-        m.managementIntentId = value
-    }
+    m.managementIntentId = value
 }
 // SetManagementTemplates sets the managementTemplates property value. The collection of management template information associated with the management intent. Optional. Read-only.
 func (m *ManagementIntentInfo) SetManagementTemplates(value []ManagementTemplateDetailedInfoable)() {
-    if m != nil {
-        m.managementTemplates = value
-    }
+    m.managementTemplates = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *ManagementIntentInfo) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }

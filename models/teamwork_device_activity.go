@@ -34,27 +34,15 @@ func CreateTeamworkDeviceActivityFromDiscriminatorValue(parseNode i878a80d2330e8
 }
 // GetActivePeripherals gets the activePeripherals property value. The active peripheral devices attached to the device.
 func (m *TeamworkDeviceActivity) GetActivePeripherals()(TeamworkActivePeripheralsable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.activePeripherals
-    }
+    return m.activePeripherals
 }
 // GetCreatedBy gets the createdBy property value. Identity of the user who created the device activity document.
 func (m *TeamworkDeviceActivity) GetCreatedBy()(IdentitySetable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.createdBy
-    }
+    return m.createdBy
 }
 // GetCreatedDateTime gets the createdDateTime property value. The UTC date and time when the device activity document was created.
 func (m *TeamworkDeviceActivity) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.createdDateTime
-    }
+    return m.createdDateTime
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *TeamworkDeviceActivity) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -113,19 +101,11 @@ func (m *TeamworkDeviceActivity) GetFieldDeserializers()(map[string]func(i878a80
 }
 // GetLastModifiedBy gets the lastModifiedBy property value. Identity of the user who last modified the device activity details.
 func (m *TeamworkDeviceActivity) GetLastModifiedBy()(IdentitySetable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastModifiedBy
-    }
+    return m.lastModifiedBy
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. The UTC date and time when the device activity detail was last modified.
 func (m *TeamworkDeviceActivity) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastModifiedDateTime
-    }
+    return m.lastModifiedDateTime
 }
 // Serialize serializes information the current object
 func (m *TeamworkDeviceActivity) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -167,31 +147,21 @@ func (m *TeamworkDeviceActivity) Serialize(writer i878a80d2330e89d26896388a3f487
 }
 // SetActivePeripherals sets the activePeripherals property value. The active peripheral devices attached to the device.
 func (m *TeamworkDeviceActivity) SetActivePeripherals(value TeamworkActivePeripheralsable)() {
-    if m != nil {
-        m.activePeripherals = value
-    }
+    m.activePeripherals = value
 }
 // SetCreatedBy sets the createdBy property value. Identity of the user who created the device activity document.
 func (m *TeamworkDeviceActivity) SetCreatedBy(value IdentitySetable)() {
-    if m != nil {
-        m.createdBy = value
-    }
+    m.createdBy = value
 }
 // SetCreatedDateTime sets the createdDateTime property value. The UTC date and time when the device activity document was created.
 func (m *TeamworkDeviceActivity) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.createdDateTime = value
-    }
+    m.createdDateTime = value
 }
 // SetLastModifiedBy sets the lastModifiedBy property value. Identity of the user who last modified the device activity details.
 func (m *TeamworkDeviceActivity) SetLastModifiedBy(value IdentitySetable)() {
-    if m != nil {
-        m.lastModifiedBy = value
-    }
+    m.lastModifiedBy = value
 }
 // SetLastModifiedDateTime sets the lastModifiedDateTime property value. The UTC date and time when the device activity detail was last modified.
 func (m *TeamworkDeviceActivity) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.lastModifiedDateTime = value
-    }
+    m.lastModifiedDateTime = value
 }

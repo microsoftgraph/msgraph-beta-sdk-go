@@ -27,19 +27,11 @@ func CreateWindowsDefenderApplicationControlSupplementalPolicyDeploymentSummaryF
 }
 // GetDeployedDeviceCount gets the deployedDeviceCount property value. Number of Devices that have successfully deployed this WindowsDefenderApplicationControl supplemental policy.
 func (m *WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary) GetDeployedDeviceCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deployedDeviceCount
-    }
+    return m.deployedDeviceCount
 }
 // GetFailedDeviceCount gets the failedDeviceCount property value. Number of Devices that have failed to deploy this WindowsDefenderApplicationControl supplemental policy.
 func (m *WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary) GetFailedDeviceCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.failedDeviceCount
-    }
+    return m.failedDeviceCount
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -88,13 +80,9 @@ func (m *WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary) S
 }
 // SetDeployedDeviceCount sets the deployedDeviceCount property value. Number of Devices that have successfully deployed this WindowsDefenderApplicationControl supplemental policy.
 func (m *WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary) SetDeployedDeviceCount(value *int32)() {
-    if m != nil {
-        m.deployedDeviceCount = value
-    }
+    m.deployedDeviceCount = value
 }
 // SetFailedDeviceCount sets the failedDeviceCount property value. Number of Devices that have failed to deploy this WindowsDefenderApplicationControl supplemental policy.
 func (m *WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary) SetFailedDeviceCount(value *int32)() {
-    if m != nil {
-        m.failedDeviceCount = value
-    }
+    m.failedDeviceCount = value
 }

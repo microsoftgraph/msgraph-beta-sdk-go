@@ -32,19 +32,11 @@ func CreateTeamworkPeripheralHealthFromDiscriminatorValue(parseNode i878a80d2330
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TeamworkPeripheralHealth) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetConnection gets the connection property value. The connected state and time since the peripheral device was connected.
 func (m *TeamworkPeripheralHealth) GetConnection()(TeamworkConnectionable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.connection
-    }
+    return m.connection
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *TeamworkPeripheralHealth) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -93,27 +85,15 @@ func (m *TeamworkPeripheralHealth) GetFieldDeserializers()(map[string]func(i878a
 }
 // GetIsOptional gets the isOptional property value. True if the peripheral is optional. Used for health computation.
 func (m *TeamworkPeripheralHealth) GetIsOptional()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isOptional
-    }
+    return m.isOptional
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *TeamworkPeripheralHealth) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetPeripheral gets the peripheral property value. The peripheral property
 func (m *TeamworkPeripheralHealth) GetPeripheral()(TeamworkPeripheralable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.peripheral
-    }
+    return m.peripheral
 }
 // Serialize serializes information the current object
 func (m *TeamworkPeripheralHealth) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -151,31 +131,21 @@ func (m *TeamworkPeripheralHealth) Serialize(writer i878a80d2330e89d26896388a3f4
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *TeamworkPeripheralHealth) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetConnection sets the connection property value. The connected state and time since the peripheral device was connected.
 func (m *TeamworkPeripheralHealth) SetConnection(value TeamworkConnectionable)() {
-    if m != nil {
-        m.connection = value
-    }
+    m.connection = value
 }
 // SetIsOptional sets the isOptional property value. True if the peripheral is optional. Used for health computation.
 func (m *TeamworkPeripheralHealth) SetIsOptional(value *bool)() {
-    if m != nil {
-        m.isOptional = value
-    }
+    m.isOptional = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *TeamworkPeripheralHealth) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetPeripheral sets the peripheral property value. The peripheral property
 func (m *TeamworkPeripheralHealth) SetPeripheral(value TeamworkPeripheralable)() {
-    if m != nil {
-        m.peripheral = value
-    }
+    m.peripheral = value
 }

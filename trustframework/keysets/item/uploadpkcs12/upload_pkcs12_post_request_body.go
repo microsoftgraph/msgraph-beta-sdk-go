@@ -26,11 +26,7 @@ func CreateUploadPkcs12PostRequestBodyFromDiscriminatorValue(parseNode i878a80d2
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *UploadPkcs12PostRequestBody) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *UploadPkcs12PostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -59,19 +55,11 @@ func (m *UploadPkcs12PostRequestBody) GetFieldDeserializers()(map[string]func(i8
 }
 // GetKey gets the key property value. The key property
 func (m *UploadPkcs12PostRequestBody) GetKey()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.key
-    }
+    return m.key
 }
 // GetPassword gets the password property value. The password property
 func (m *UploadPkcs12PostRequestBody) GetPassword()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.password
-    }
+    return m.password
 }
 // Serialize serializes information the current object
 func (m *UploadPkcs12PostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -97,19 +85,13 @@ func (m *UploadPkcs12PostRequestBody) Serialize(writer i878a80d2330e89d26896388a
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *UploadPkcs12PostRequestBody) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetKey sets the key property value. The key property
 func (m *UploadPkcs12PostRequestBody) SetKey(value *string)() {
-    if m != nil {
-        m.key = value
-    }
+    m.key = value
 }
 // SetPassword sets the password property value. The password property
 func (m *UploadPkcs12PostRequestBody) SetPassword(value *string)() {
-    if m != nil {
-        m.password = value
-    }
+    m.password = value
 }

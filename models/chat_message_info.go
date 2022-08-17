@@ -36,27 +36,15 @@ func CreateChatMessageInfoFromDiscriminatorValue(parseNode i878a80d2330e89d26896
 }
 // GetBody gets the body property value. Body of the chatMessage. This will still contain markers for @mentions and attachments even though the object does not return @mentions and attachments.
 func (m *ChatMessageInfo) GetBody()(ItemBodyable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.body
-    }
+    return m.body
 }
 // GetCreatedDateTime gets the createdDateTime property value. Date time object representing the time at which message was created.
 func (m *ChatMessageInfo) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.createdDateTime
-    }
+    return m.createdDateTime
 }
 // GetEventDetail gets the eventDetail property value. Read-only.  If present, represents details of an event that happened in a chat, a channel, or a team, for example, members were added, and so on. For event messages, the messageType property will be set to systemEventMessage.
 func (m *ChatMessageInfo) GetEventDetail()(EventMessageDetailable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.eventDetail
-    }
+    return m.eventDetail
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ChatMessageInfo) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -125,27 +113,15 @@ func (m *ChatMessageInfo) GetFieldDeserializers()(map[string]func(i878a80d2330e8
 }
 // GetFrom gets the from property value. Information about the sender of the message.
 func (m *ChatMessageInfo) GetFrom()(ChatMessageFromIdentitySetable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.from
-    }
+    return m.from
 }
 // GetIsDeleted gets the isDeleted property value. If set to true, the original message has been deleted.
 func (m *ChatMessageInfo) GetIsDeleted()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.isDeleted
-    }
+    return m.isDeleted
 }
 // GetMessageType gets the messageType property value. The messageType property
 func (m *ChatMessageInfo) GetMessageType()(*ChatMessageType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.messageType
-    }
+    return m.messageType
 }
 // Serialize serializes information the current object
 func (m *ChatMessageInfo) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -194,37 +170,25 @@ func (m *ChatMessageInfo) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
 }
 // SetBody sets the body property value. Body of the chatMessage. This will still contain markers for @mentions and attachments even though the object does not return @mentions and attachments.
 func (m *ChatMessageInfo) SetBody(value ItemBodyable)() {
-    if m != nil {
-        m.body = value
-    }
+    m.body = value
 }
 // SetCreatedDateTime sets the createdDateTime property value. Date time object representing the time at which message was created.
 func (m *ChatMessageInfo) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.createdDateTime = value
-    }
+    m.createdDateTime = value
 }
 // SetEventDetail sets the eventDetail property value. Read-only.  If present, represents details of an event that happened in a chat, a channel, or a team, for example, members were added, and so on. For event messages, the messageType property will be set to systemEventMessage.
 func (m *ChatMessageInfo) SetEventDetail(value EventMessageDetailable)() {
-    if m != nil {
-        m.eventDetail = value
-    }
+    m.eventDetail = value
 }
 // SetFrom sets the from property value. Information about the sender of the message.
 func (m *ChatMessageInfo) SetFrom(value ChatMessageFromIdentitySetable)() {
-    if m != nil {
-        m.from = value
-    }
+    m.from = value
 }
 // SetIsDeleted sets the isDeleted property value. If set to true, the original message has been deleted.
 func (m *ChatMessageInfo) SetIsDeleted(value *bool)() {
-    if m != nil {
-        m.isDeleted = value
-    }
+    m.isDeleted = value
 }
 // SetMessageType sets the messageType property value. The messageType property
 func (m *ChatMessageInfo) SetMessageType(value *ChatMessageType)() {
-    if m != nil {
-        m.messageType = value
-    }
+    m.messageType = value
 }

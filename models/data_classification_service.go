@@ -41,51 +41,27 @@ func CreateDataClassificationServiceFromDiscriminatorValue(parseNode i878a80d233
 }
 // GetClassifyFileJobs gets the classifyFileJobs property value. The classifyFileJobs property
 func (m *DataClassificationService) GetClassifyFileJobs()([]JobResponseBaseable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.classifyFileJobs
-    }
+    return m.classifyFileJobs
 }
 // GetClassifyTextJobs gets the classifyTextJobs property value. The classifyTextJobs property
 func (m *DataClassificationService) GetClassifyTextJobs()([]JobResponseBaseable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.classifyTextJobs
-    }
+    return m.classifyTextJobs
 }
 // GetEvaluateDlpPoliciesJobs gets the evaluateDlpPoliciesJobs property value. The evaluateDlpPoliciesJobs property
 func (m *DataClassificationService) GetEvaluateDlpPoliciesJobs()([]JobResponseBaseable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.evaluateDlpPoliciesJobs
-    }
+    return m.evaluateDlpPoliciesJobs
 }
 // GetEvaluateLabelJobs gets the evaluateLabelJobs property value. The evaluateLabelJobs property
 func (m *DataClassificationService) GetEvaluateLabelJobs()([]JobResponseBaseable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.evaluateLabelJobs
-    }
+    return m.evaluateLabelJobs
 }
 // GetExactMatchDataStores gets the exactMatchDataStores property value. The exactMatchDataStores property
 func (m *DataClassificationService) GetExactMatchDataStores()([]ExactMatchDataStoreable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.exactMatchDataStores
-    }
+    return m.exactMatchDataStores
 }
 // GetExactMatchUploadAgents gets the exactMatchUploadAgents property value. The exactMatchUploadAgents property
 func (m *DataClassificationService) GetExactMatchUploadAgents()([]ExactMatchUploadAgentable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.exactMatchUploadAgents
-    }
+    return m.exactMatchUploadAgents
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DataClassificationService) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -220,27 +196,15 @@ func (m *DataClassificationService) GetFieldDeserializers()(map[string]func(i878
 }
 // GetJobs gets the jobs property value. The jobs property
 func (m *DataClassificationService) GetJobs()([]JobResponseBaseable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.jobs
-    }
+    return m.jobs
 }
 // GetSensitiveTypes gets the sensitiveTypes property value. The sensitiveTypes property
 func (m *DataClassificationService) GetSensitiveTypes()([]SensitiveTypeable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.sensitiveTypes
-    }
+    return m.sensitiveTypes
 }
 // GetSensitivityLabels gets the sensitivityLabels property value. The sensitivityLabels property
 func (m *DataClassificationService) GetSensitivityLabels()([]SensitivityLabelable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.sensitivityLabels
-    }
+    return m.sensitivityLabels
 }
 // Serialize serializes information the current object
 func (m *DataClassificationService) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -342,55 +306,37 @@ func (m *DataClassificationService) Serialize(writer i878a80d2330e89d26896388a3f
 }
 // SetClassifyFileJobs sets the classifyFileJobs property value. The classifyFileJobs property
 func (m *DataClassificationService) SetClassifyFileJobs(value []JobResponseBaseable)() {
-    if m != nil {
-        m.classifyFileJobs = value
-    }
+    m.classifyFileJobs = value
 }
 // SetClassifyTextJobs sets the classifyTextJobs property value. The classifyTextJobs property
 func (m *DataClassificationService) SetClassifyTextJobs(value []JobResponseBaseable)() {
-    if m != nil {
-        m.classifyTextJobs = value
-    }
+    m.classifyTextJobs = value
 }
 // SetEvaluateDlpPoliciesJobs sets the evaluateDlpPoliciesJobs property value. The evaluateDlpPoliciesJobs property
 func (m *DataClassificationService) SetEvaluateDlpPoliciesJobs(value []JobResponseBaseable)() {
-    if m != nil {
-        m.evaluateDlpPoliciesJobs = value
-    }
+    m.evaluateDlpPoliciesJobs = value
 }
 // SetEvaluateLabelJobs sets the evaluateLabelJobs property value. The evaluateLabelJobs property
 func (m *DataClassificationService) SetEvaluateLabelJobs(value []JobResponseBaseable)() {
-    if m != nil {
-        m.evaluateLabelJobs = value
-    }
+    m.evaluateLabelJobs = value
 }
 // SetExactMatchDataStores sets the exactMatchDataStores property value. The exactMatchDataStores property
 func (m *DataClassificationService) SetExactMatchDataStores(value []ExactMatchDataStoreable)() {
-    if m != nil {
-        m.exactMatchDataStores = value
-    }
+    m.exactMatchDataStores = value
 }
 // SetExactMatchUploadAgents sets the exactMatchUploadAgents property value. The exactMatchUploadAgents property
 func (m *DataClassificationService) SetExactMatchUploadAgents(value []ExactMatchUploadAgentable)() {
-    if m != nil {
-        m.exactMatchUploadAgents = value
-    }
+    m.exactMatchUploadAgents = value
 }
 // SetJobs sets the jobs property value. The jobs property
 func (m *DataClassificationService) SetJobs(value []JobResponseBaseable)() {
-    if m != nil {
-        m.jobs = value
-    }
+    m.jobs = value
 }
 // SetSensitiveTypes sets the sensitiveTypes property value. The sensitiveTypes property
 func (m *DataClassificationService) SetSensitiveTypes(value []SensitiveTypeable)() {
-    if m != nil {
-        m.sensitiveTypes = value
-    }
+    m.sensitiveTypes = value
 }
 // SetSensitivityLabels sets the sensitivityLabels property value. The sensitivityLabels property
 func (m *DataClassificationService) SetSensitivityLabels(value []SensitivityLabelable)() {
-    if m != nil {
-        m.sensitivityLabels = value
-    }
+    m.sensitivityLabels = value
 }

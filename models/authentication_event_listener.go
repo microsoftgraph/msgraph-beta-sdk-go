@@ -50,19 +50,11 @@ func CreateAuthenticationEventListenerFromDiscriminatorValue(parseNode i878a80d2
 }
 // GetAuthenticationEventsFlowId gets the authenticationEventsFlowId property value. The authenticationEventsFlowId property
 func (m *AuthenticationEventListener) GetAuthenticationEventsFlowId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.authenticationEventsFlowId
-    }
+    return m.authenticationEventsFlowId
 }
 // GetConditions gets the conditions property value. The conditions property
 func (m *AuthenticationEventListener) GetConditions()(AuthenticationConditionsable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.conditions
-    }
+    return m.conditions
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AuthenticationEventListener) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -115,19 +107,11 @@ func (m *AuthenticationEventListener) GetFieldDeserializers()(map[string]func(i8
 }
 // GetPriority gets the priority property value. The priority property
 func (m *AuthenticationEventListener) GetPriority()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.priority
-    }
+    return m.priority
 }
 // GetTags gets the tags property value. The tags property
 func (m *AuthenticationEventListener) GetTags()([]KeyValuePairable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.tags
-    }
+    return m.tags
 }
 // Serialize serializes information the current object
 func (m *AuthenticationEventListener) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -167,25 +151,17 @@ func (m *AuthenticationEventListener) Serialize(writer i878a80d2330e89d26896388a
 }
 // SetAuthenticationEventsFlowId sets the authenticationEventsFlowId property value. The authenticationEventsFlowId property
 func (m *AuthenticationEventListener) SetAuthenticationEventsFlowId(value *string)() {
-    if m != nil {
-        m.authenticationEventsFlowId = value
-    }
+    m.authenticationEventsFlowId = value
 }
 // SetConditions sets the conditions property value. The conditions property
 func (m *AuthenticationEventListener) SetConditions(value AuthenticationConditionsable)() {
-    if m != nil {
-        m.conditions = value
-    }
+    m.conditions = value
 }
 // SetPriority sets the priority property value. The priority property
 func (m *AuthenticationEventListener) SetPriority(value *int32)() {
-    if m != nil {
-        m.priority = value
-    }
+    m.priority = value
 }
 // SetTags sets the tags property value. The tags property
 func (m *AuthenticationEventListener) SetTags(value []KeyValuePairable)() {
-    if m != nil {
-        m.tags = value
-    }
+    m.tags = value
 }

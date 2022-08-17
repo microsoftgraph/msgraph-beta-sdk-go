@@ -30,35 +30,19 @@ func CreateExecuteActionPostRequestBodyFromDiscriminatorValue(parseNode i878a80d
 }
 // GetActionName gets the actionName property value. An enum type to represent approval actions of single or list of drivers.
 func (m *ExecuteActionPostRequestBody) GetActionName()(*ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DriverApprovalAction) {
-    if m == nil {
-        return nil
-    } else {
-        return m.actionName
-    }
+    return m.actionName
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ExecuteActionPostRequestBody) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetDeploymentDate gets the deploymentDate property value. The deploymentDate property
 func (m *ExecuteActionPostRequestBody) GetDeploymentDate()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deploymentDate
-    }
+    return m.deploymentDate
 }
 // GetDriverIds gets the driverIds property value. The driverIds property
 func (m *ExecuteActionPostRequestBody) GetDriverIds()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.driverIds
-    }
+    return m.driverIds
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ExecuteActionPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -130,25 +114,17 @@ func (m *ExecuteActionPostRequestBody) Serialize(writer i878a80d2330e89d26896388
 }
 // SetActionName sets the actionName property value. An enum type to represent approval actions of single or list of drivers.
 func (m *ExecuteActionPostRequestBody) SetActionName(value *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DriverApprovalAction)() {
-    if m != nil {
-        m.actionName = value
-    }
+    m.actionName = value
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ExecuteActionPostRequestBody) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetDeploymentDate sets the deploymentDate property value. The deploymentDate property
 func (m *ExecuteActionPostRequestBody) SetDeploymentDate(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.deploymentDate = value
-    }
+    m.deploymentDate = value
 }
 // SetDriverIds sets the driverIds property value. The driverIds property
 func (m *ExecuteActionPostRequestBody) SetDriverIds(value []string)() {
-    if m != nil {
-        m.driverIds = value
-    }
+    m.driverIds = value
 }

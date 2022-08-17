@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DeviceCustomAttributeShellScript 
+// DeviceCustomAttributeShellScript represents a custom attribute script for macOS.
 type DeviceCustomAttributeShellScript struct {
     Entity
     // The list of group assignments for the device management script.
@@ -39,7 +39,7 @@ type DeviceCustomAttributeShellScript struct {
     // List of run states for this script across all users.
     userRunStates []DeviceManagementScriptUserStateable
 }
-// NewDeviceCustomAttributeShellScript instantiates a new DeviceCustomAttributeShellScript and sets the default values.
+// NewDeviceCustomAttributeShellScript instantiates a new deviceCustomAttributeShellScript and sets the default values.
 func NewDeviceCustomAttributeShellScript()(*DeviceCustomAttributeShellScript) {
     m := &DeviceCustomAttributeShellScript{
         Entity: *NewEntity(),
@@ -54,59 +54,31 @@ func CreateDeviceCustomAttributeShellScriptFromDiscriminatorValue(parseNode i878
 }
 // GetAssignments gets the assignments property value. The list of group assignments for the device management script.
 func (m *DeviceCustomAttributeShellScript) GetAssignments()([]DeviceManagementScriptAssignmentable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.assignments
-    }
+    return m.assignments
 }
 // GetCreatedDateTime gets the createdDateTime property value. The date and time the device management script was created. This property is read-only.
 func (m *DeviceCustomAttributeShellScript) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.createdDateTime
-    }
+    return m.createdDateTime
 }
 // GetCustomAttributeName gets the customAttributeName property value. The name of the custom attribute.
 func (m *DeviceCustomAttributeShellScript) GetCustomAttributeName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.customAttributeName
-    }
+    return m.customAttributeName
 }
 // GetCustomAttributeType gets the customAttributeType property value. Represents the expected type for a macOS custom attribute script value.
 func (m *DeviceCustomAttributeShellScript) GetCustomAttributeType()(*DeviceCustomAttributeValueType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.customAttributeType
-    }
+    return m.customAttributeType
 }
 // GetDescription gets the description property value. Optional description for the device management script.
 func (m *DeviceCustomAttributeShellScript) GetDescription()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.description
-    }
+    return m.description
 }
 // GetDeviceRunStates gets the deviceRunStates property value. List of run states for this script across all devices.
 func (m *DeviceCustomAttributeShellScript) GetDeviceRunStates()([]DeviceManagementScriptDeviceStateable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deviceRunStates
-    }
+    return m.deviceRunStates
 }
 // GetDisplayName gets the displayName property value. Name of the device management script.
 func (m *DeviceCustomAttributeShellScript) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceCustomAttributeShellScript) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -285,67 +257,35 @@ func (m *DeviceCustomAttributeShellScript) GetFieldDeserializers()(map[string]fu
 }
 // GetFileName gets the fileName property value. Script file name.
 func (m *DeviceCustomAttributeShellScript) GetFileName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.fileName
-    }
+    return m.fileName
 }
 // GetGroupAssignments gets the groupAssignments property value. The list of group assignments for the device management script.
 func (m *DeviceCustomAttributeShellScript) GetGroupAssignments()([]DeviceManagementScriptGroupAssignmentable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.groupAssignments
-    }
+    return m.groupAssignments
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. The date and time the device management script was last modified. This property is read-only.
 func (m *DeviceCustomAttributeShellScript) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastModifiedDateTime
-    }
+    return m.lastModifiedDateTime
 }
 // GetRoleScopeTagIds gets the roleScopeTagIds property value. List of Scope Tag IDs for this PowerShellScript instance.
 func (m *DeviceCustomAttributeShellScript) GetRoleScopeTagIds()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.roleScopeTagIds
-    }
+    return m.roleScopeTagIds
 }
 // GetRunAsAccount gets the runAsAccount property value. Indicates the type of execution context the app runs in.
 func (m *DeviceCustomAttributeShellScript) GetRunAsAccount()(*RunAsAccountType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.runAsAccount
-    }
+    return m.runAsAccount
 }
 // GetRunSummary gets the runSummary property value. Run summary for device management script.
 func (m *DeviceCustomAttributeShellScript) GetRunSummary()(DeviceManagementScriptRunSummaryable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.runSummary
-    }
+    return m.runSummary
 }
 // GetScriptContent gets the scriptContent property value. The script content.
 func (m *DeviceCustomAttributeShellScript) GetScriptContent()([]byte) {
-    if m == nil {
-        return nil
-    } else {
-        return m.scriptContent
-    }
+    return m.scriptContent
 }
 // GetUserRunStates gets the userRunStates property value. List of run states for this script across all users.
 func (m *DeviceCustomAttributeShellScript) GetUserRunStates()([]DeviceManagementScriptUserStateable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userRunStates
-    }
+    return m.userRunStates
 }
 // Serialize serializes information the current object
 func (m *DeviceCustomAttributeShellScript) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -465,91 +405,61 @@ func (m *DeviceCustomAttributeShellScript) Serialize(writer i878a80d2330e89d2689
 }
 // SetAssignments sets the assignments property value. The list of group assignments for the device management script.
 func (m *DeviceCustomAttributeShellScript) SetAssignments(value []DeviceManagementScriptAssignmentable)() {
-    if m != nil {
-        m.assignments = value
-    }
+    m.assignments = value
 }
 // SetCreatedDateTime sets the createdDateTime property value. The date and time the device management script was created. This property is read-only.
 func (m *DeviceCustomAttributeShellScript) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.createdDateTime = value
-    }
+    m.createdDateTime = value
 }
 // SetCustomAttributeName sets the customAttributeName property value. The name of the custom attribute.
 func (m *DeviceCustomAttributeShellScript) SetCustomAttributeName(value *string)() {
-    if m != nil {
-        m.customAttributeName = value
-    }
+    m.customAttributeName = value
 }
 // SetCustomAttributeType sets the customAttributeType property value. Represents the expected type for a macOS custom attribute script value.
 func (m *DeviceCustomAttributeShellScript) SetCustomAttributeType(value *DeviceCustomAttributeValueType)() {
-    if m != nil {
-        m.customAttributeType = value
-    }
+    m.customAttributeType = value
 }
 // SetDescription sets the description property value. Optional description for the device management script.
 func (m *DeviceCustomAttributeShellScript) SetDescription(value *string)() {
-    if m != nil {
-        m.description = value
-    }
+    m.description = value
 }
 // SetDeviceRunStates sets the deviceRunStates property value. List of run states for this script across all devices.
 func (m *DeviceCustomAttributeShellScript) SetDeviceRunStates(value []DeviceManagementScriptDeviceStateable)() {
-    if m != nil {
-        m.deviceRunStates = value
-    }
+    m.deviceRunStates = value
 }
 // SetDisplayName sets the displayName property value. Name of the device management script.
 func (m *DeviceCustomAttributeShellScript) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }
 // SetFileName sets the fileName property value. Script file name.
 func (m *DeviceCustomAttributeShellScript) SetFileName(value *string)() {
-    if m != nil {
-        m.fileName = value
-    }
+    m.fileName = value
 }
 // SetGroupAssignments sets the groupAssignments property value. The list of group assignments for the device management script.
 func (m *DeviceCustomAttributeShellScript) SetGroupAssignments(value []DeviceManagementScriptGroupAssignmentable)() {
-    if m != nil {
-        m.groupAssignments = value
-    }
+    m.groupAssignments = value
 }
 // SetLastModifiedDateTime sets the lastModifiedDateTime property value. The date and time the device management script was last modified. This property is read-only.
 func (m *DeviceCustomAttributeShellScript) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.lastModifiedDateTime = value
-    }
+    m.lastModifiedDateTime = value
 }
 // SetRoleScopeTagIds sets the roleScopeTagIds property value. List of Scope Tag IDs for this PowerShellScript instance.
 func (m *DeviceCustomAttributeShellScript) SetRoleScopeTagIds(value []string)() {
-    if m != nil {
-        m.roleScopeTagIds = value
-    }
+    m.roleScopeTagIds = value
 }
 // SetRunAsAccount sets the runAsAccount property value. Indicates the type of execution context the app runs in.
 func (m *DeviceCustomAttributeShellScript) SetRunAsAccount(value *RunAsAccountType)() {
-    if m != nil {
-        m.runAsAccount = value
-    }
+    m.runAsAccount = value
 }
 // SetRunSummary sets the runSummary property value. Run summary for device management script.
 func (m *DeviceCustomAttributeShellScript) SetRunSummary(value DeviceManagementScriptRunSummaryable)() {
-    if m != nil {
-        m.runSummary = value
-    }
+    m.runSummary = value
 }
 // SetScriptContent sets the scriptContent property value. The script content.
 func (m *DeviceCustomAttributeShellScript) SetScriptContent(value []byte)() {
-    if m != nil {
-        m.scriptContent = value
-    }
+    m.scriptContent = value
 }
 // SetUserRunStates sets the userRunStates property value. List of run states for this script across all users.
 func (m *DeviceCustomAttributeShellScript) SetUserRunStates(value []DeviceManagementScriptUserStateable)() {
-    if m != nil {
-        m.userRunStates = value
-    }
+    m.userRunStates = value
 }

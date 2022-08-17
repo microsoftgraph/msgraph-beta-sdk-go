@@ -48,67 +48,35 @@ func CreateJournalLineFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a
 }
 // GetAccount gets the account property value. The account property
 func (m *JournalLine) GetAccount()(Accountable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.account
-    }
+    return m.account
 }
 // GetAccountId gets the accountId property value. The accountId property
 func (m *JournalLine) GetAccountId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.accountId
-    }
+    return m.accountId
 }
 // GetAccountNumber gets the accountNumber property value. The accountNumber property
 func (m *JournalLine) GetAccountNumber()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.accountNumber
-    }
+    return m.accountNumber
 }
 // GetAmount gets the amount property value. The amount property
 func (m *JournalLine) GetAmount()(*float64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.amount
-    }
+    return m.amount
 }
 // GetComment gets the comment property value. The comment property
 func (m *JournalLine) GetComment()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.comment
-    }
+    return m.comment
 }
 // GetDescription gets the description property value. The description property
 func (m *JournalLine) GetDescription()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.description
-    }
+    return m.description
 }
 // GetDocumentNumber gets the documentNumber property value. The documentNumber property
 func (m *JournalLine) GetDocumentNumber()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.documentNumber
-    }
+    return m.documentNumber
 }
 // GetExternalDocumentNumber gets the externalDocumentNumber property value. The externalDocumentNumber property
 func (m *JournalLine) GetExternalDocumentNumber()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.externalDocumentNumber
-    }
+    return m.externalDocumentNumber
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *JournalLine) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -237,35 +205,19 @@ func (m *JournalLine) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
 }
 // GetJournalDisplayName gets the journalDisplayName property value. The journalDisplayName property
 func (m *JournalLine) GetJournalDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.journalDisplayName
-    }
+    return m.journalDisplayName
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. The lastModifiedDateTime property
 func (m *JournalLine) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastModifiedDateTime
-    }
+    return m.lastModifiedDateTime
 }
 // GetLineNumber gets the lineNumber property value. The lineNumber property
 func (m *JournalLine) GetLineNumber()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lineNumber
-    }
+    return m.lineNumber
 }
 // GetPostingDate gets the postingDate property value. The postingDate property
 func (m *JournalLine) GetPostingDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly) {
-    if m == nil {
-        return nil
-    } else {
-        return m.postingDate
-    }
+    return m.postingDate
 }
 // Serialize serializes information the current object
 func (m *JournalLine) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -349,73 +301,49 @@ func (m *JournalLine) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
 }
 // SetAccount sets the account property value. The account property
 func (m *JournalLine) SetAccount(value Accountable)() {
-    if m != nil {
-        m.account = value
-    }
+    m.account = value
 }
 // SetAccountId sets the accountId property value. The accountId property
 func (m *JournalLine) SetAccountId(value *string)() {
-    if m != nil {
-        m.accountId = value
-    }
+    m.accountId = value
 }
 // SetAccountNumber sets the accountNumber property value. The accountNumber property
 func (m *JournalLine) SetAccountNumber(value *string)() {
-    if m != nil {
-        m.accountNumber = value
-    }
+    m.accountNumber = value
 }
 // SetAmount sets the amount property value. The amount property
 func (m *JournalLine) SetAmount(value *float64)() {
-    if m != nil {
-        m.amount = value
-    }
+    m.amount = value
 }
 // SetComment sets the comment property value. The comment property
 func (m *JournalLine) SetComment(value *string)() {
-    if m != nil {
-        m.comment = value
-    }
+    m.comment = value
 }
 // SetDescription sets the description property value. The description property
 func (m *JournalLine) SetDescription(value *string)() {
-    if m != nil {
-        m.description = value
-    }
+    m.description = value
 }
 // SetDocumentNumber sets the documentNumber property value. The documentNumber property
 func (m *JournalLine) SetDocumentNumber(value *string)() {
-    if m != nil {
-        m.documentNumber = value
-    }
+    m.documentNumber = value
 }
 // SetExternalDocumentNumber sets the externalDocumentNumber property value. The externalDocumentNumber property
 func (m *JournalLine) SetExternalDocumentNumber(value *string)() {
-    if m != nil {
-        m.externalDocumentNumber = value
-    }
+    m.externalDocumentNumber = value
 }
 // SetJournalDisplayName sets the journalDisplayName property value. The journalDisplayName property
 func (m *JournalLine) SetJournalDisplayName(value *string)() {
-    if m != nil {
-        m.journalDisplayName = value
-    }
+    m.journalDisplayName = value
 }
 // SetLastModifiedDateTime sets the lastModifiedDateTime property value. The lastModifiedDateTime property
 func (m *JournalLine) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.lastModifiedDateTime = value
-    }
+    m.lastModifiedDateTime = value
 }
 // SetLineNumber sets the lineNumber property value. The lineNumber property
 func (m *JournalLine) SetLineNumber(value *int32)() {
-    if m != nil {
-        m.lineNumber = value
-    }
+    m.lineNumber = value
 }
 // SetPostingDate sets the postingDate property value. The postingDate property
 func (m *JournalLine) SetPostingDate(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)() {
-    if m != nil {
-        m.postingDate = value
-    }
+    m.postingDate = value
 }

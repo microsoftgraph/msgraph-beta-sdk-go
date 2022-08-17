@@ -45,43 +45,23 @@ func CreateIosVppAppRevokeLicensesActionResultFromDiscriminatorValue(parseNode i
 }
 // GetActionFailureReason gets the actionFailureReason property value. Possible types of reasons for an Apple Volume Purchase Program token action failure.
 func (m *IosVppAppRevokeLicensesActionResult) GetActionFailureReason()(*VppTokenActionFailureReason) {
-    if m == nil {
-        return nil
-    } else {
-        return m.actionFailureReason
-    }
+    return m.actionFailureReason
 }
 // GetActionName gets the actionName property value. Action name
 func (m *IosVppAppRevokeLicensesActionResult) GetActionName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.actionName
-    }
+    return m.actionName
 }
 // GetActionState gets the actionState property value. The actionState property
 func (m *IosVppAppRevokeLicensesActionResult) GetActionState()(*ActionState) {
-    if m == nil {
-        return nil
-    } else {
-        return m.actionState
-    }
+    return m.actionState
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *IosVppAppRevokeLicensesActionResult) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFailedLicensesCount gets the failedLicensesCount property value. A count of the number of licenses for which revoke failed.
 func (m *IosVppAppRevokeLicensesActionResult) GetFailedLicensesCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.failedLicensesCount
-    }
+    return m.failedLicensesCount
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *IosVppAppRevokeLicensesActionResult) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -190,51 +170,27 @@ func (m *IosVppAppRevokeLicensesActionResult) GetFieldDeserializers()(map[string
 }
 // GetLastUpdatedDateTime gets the lastUpdatedDateTime property value. Time the action state was last updated
 func (m *IosVppAppRevokeLicensesActionResult) GetLastUpdatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastUpdatedDateTime
-    }
+    return m.lastUpdatedDateTime
 }
 // GetManagedDeviceId gets the managedDeviceId property value. DeviceId associated with the action.
 func (m *IosVppAppRevokeLicensesActionResult) GetManagedDeviceId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.managedDeviceId
-    }
+    return m.managedDeviceId
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *IosVppAppRevokeLicensesActionResult) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetStartDateTime gets the startDateTime property value. Time the action was initiated
 func (m *IosVppAppRevokeLicensesActionResult) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.startDateTime
-    }
+    return m.startDateTime
 }
 // GetTotalLicensesCount gets the totalLicensesCount property value. A count of the number of licenses for which revoke was attempted.
 func (m *IosVppAppRevokeLicensesActionResult) GetTotalLicensesCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.totalLicensesCount
-    }
+    return m.totalLicensesCount
 }
 // GetUserId gets the userId property value. UserId associated with the action.
 func (m *IosVppAppRevokeLicensesActionResult) GetUserId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userId
-    }
+    return m.userId
 }
 // Serialize serializes information the current object
 func (m *IosVppAppRevokeLicensesActionResult) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -310,67 +266,45 @@ func (m *IosVppAppRevokeLicensesActionResult) Serialize(writer i878a80d2330e89d2
 }
 // SetActionFailureReason sets the actionFailureReason property value. Possible types of reasons for an Apple Volume Purchase Program token action failure.
 func (m *IosVppAppRevokeLicensesActionResult) SetActionFailureReason(value *VppTokenActionFailureReason)() {
-    if m != nil {
-        m.actionFailureReason = value
-    }
+    m.actionFailureReason = value
 }
 // SetActionName sets the actionName property value. Action name
 func (m *IosVppAppRevokeLicensesActionResult) SetActionName(value *string)() {
-    if m != nil {
-        m.actionName = value
-    }
+    m.actionName = value
 }
 // SetActionState sets the actionState property value. The actionState property
 func (m *IosVppAppRevokeLicensesActionResult) SetActionState(value *ActionState)() {
-    if m != nil {
-        m.actionState = value
-    }
+    m.actionState = value
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *IosVppAppRevokeLicensesActionResult) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetFailedLicensesCount sets the failedLicensesCount property value. A count of the number of licenses for which revoke failed.
 func (m *IosVppAppRevokeLicensesActionResult) SetFailedLicensesCount(value *int32)() {
-    if m != nil {
-        m.failedLicensesCount = value
-    }
+    m.failedLicensesCount = value
 }
 // SetLastUpdatedDateTime sets the lastUpdatedDateTime property value. Time the action state was last updated
 func (m *IosVppAppRevokeLicensesActionResult) SetLastUpdatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.lastUpdatedDateTime = value
-    }
+    m.lastUpdatedDateTime = value
 }
 // SetManagedDeviceId sets the managedDeviceId property value. DeviceId associated with the action.
 func (m *IosVppAppRevokeLicensesActionResult) SetManagedDeviceId(value *string)() {
-    if m != nil {
-        m.managedDeviceId = value
-    }
+    m.managedDeviceId = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *IosVppAppRevokeLicensesActionResult) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetStartDateTime sets the startDateTime property value. Time the action was initiated
 func (m *IosVppAppRevokeLicensesActionResult) SetStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.startDateTime = value
-    }
+    m.startDateTime = value
 }
 // SetTotalLicensesCount sets the totalLicensesCount property value. A count of the number of licenses for which revoke was attempted.
 func (m *IosVppAppRevokeLicensesActionResult) SetTotalLicensesCount(value *int32)() {
-    if m != nil {
-        m.totalLicensesCount = value
-    }
+    m.totalLicensesCount = value
 }
 // SetUserId sets the userId property value. UserId associated with the action.
 func (m *IosVppAppRevokeLicensesActionResult) SetUserId(value *string)() {
-    if m != nil {
-        m.userId = value
-    }
+    m.userId = value
 }

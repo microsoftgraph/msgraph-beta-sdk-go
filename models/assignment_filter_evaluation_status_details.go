@@ -40,11 +40,7 @@ func (m *AssignmentFilterEvaluationStatusDetails) GetFieldDeserializers()(map[st
 }
 // GetPayloadId gets the payloadId property value. PayloadId on which filter has been applied.
 func (m *AssignmentFilterEvaluationStatusDetails) GetPayloadId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.payloadId
-    }
+    return m.payloadId
 }
 // Serialize serializes information the current object
 func (m *AssignmentFilterEvaluationStatusDetails) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -62,7 +58,5 @@ func (m *AssignmentFilterEvaluationStatusDetails) Serialize(writer i878a80d2330e
 }
 // SetPayloadId sets the payloadId property value. PayloadId on which filter has been applied.
 func (m *AssignmentFilterEvaluationStatusDetails) SetPayloadId(value *string)() {
-    if m != nil {
-        m.payloadId = value
-    }
+    m.payloadId = value
 }

@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ItemActivityOLD provides operations to manage the collection of activityStatistics entities.
+// ItemActivityOLD provides operations to manage the collection of accessReviewDecision entities.
 type ItemActivityOLD struct {
     Entity
     // The action property
@@ -33,27 +33,15 @@ func CreateItemActivityOLDFromDiscriminatorValue(parseNode i878a80d2330e89d26896
 }
 // GetAction gets the action property value. The action property
 func (m *ItemActivityOLD) GetAction()(ItemActionSetable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.action
-    }
+    return m.action
 }
 // GetActor gets the actor property value. The actor property
 func (m *ItemActivityOLD) GetActor()(IdentitySetable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.actor
-    }
+    return m.actor
 }
 // GetDriveItem gets the driveItem property value. The driveItem property
 func (m *ItemActivityOLD) GetDriveItem()(DriveItemable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.driveItem
-    }
+    return m.driveItem
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ItemActivityOLD) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -112,19 +100,11 @@ func (m *ItemActivityOLD) GetFieldDeserializers()(map[string]func(i878a80d2330e8
 }
 // GetListItem gets the listItem property value. The listItem property
 func (m *ItemActivityOLD) GetListItem()(ListItemable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.listItem
-    }
+    return m.listItem
 }
 // GetTimes gets the times property value. The times property
 func (m *ItemActivityOLD) GetTimes()(ItemActivityTimeSetable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.times
-    }
+    return m.times
 }
 // Serialize serializes information the current object
 func (m *ItemActivityOLD) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -166,31 +146,21 @@ func (m *ItemActivityOLD) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
 }
 // SetAction sets the action property value. The action property
 func (m *ItemActivityOLD) SetAction(value ItemActionSetable)() {
-    if m != nil {
-        m.action = value
-    }
+    m.action = value
 }
 // SetActor sets the actor property value. The actor property
 func (m *ItemActivityOLD) SetActor(value IdentitySetable)() {
-    if m != nil {
-        m.actor = value
-    }
+    m.actor = value
 }
 // SetDriveItem sets the driveItem property value. The driveItem property
 func (m *ItemActivityOLD) SetDriveItem(value DriveItemable)() {
-    if m != nil {
-        m.driveItem = value
-    }
+    m.driveItem = value
 }
 // SetListItem sets the listItem property value. The listItem property
 func (m *ItemActivityOLD) SetListItem(value ListItemable)() {
-    if m != nil {
-        m.listItem = value
-    }
+    m.listItem = value
 }
 // SetTimes sets the times property value. The times property
 func (m *ItemActivityOLD) SetTimes(value ItemActivityTimeSetable)() {
-    if m != nil {
-        m.times = value
-    }
+    m.times = value
 }

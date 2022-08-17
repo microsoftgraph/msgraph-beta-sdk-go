@@ -58,11 +58,7 @@ func CreateAndroidMinimumOperatingSystemFromDiscriminatorValue(parseNode i878a80
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AndroidMinimumOperatingSystem) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AndroidMinimumOperatingSystem) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -241,139 +237,71 @@ func (m *AndroidMinimumOperatingSystem) GetFieldDeserializers()(map[string]func(
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *AndroidMinimumOperatingSystem) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetV10_0 gets the v10_0 property value. Version 10.0 or later.
 func (m *AndroidMinimumOperatingSystem) GetV10_0()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.v10_0
-    }
+    return m.v10_0
 }
 // GetV11_0 gets the v11_0 property value. Version 11.0 or later.
 func (m *AndroidMinimumOperatingSystem) GetV11_0()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.v11_0
-    }
+    return m.v11_0
 }
 // GetV4_0 gets the v4_0 property value. Version 4.0 or later.
 func (m *AndroidMinimumOperatingSystem) GetV4_0()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.v4_0
-    }
+    return m.v4_0
 }
 // GetV4_0_3 gets the v4_0_3 property value. Version 4.0.3 or later.
 func (m *AndroidMinimumOperatingSystem) GetV4_0_3()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.v4_0_3
-    }
+    return m.v4_0_3
 }
 // GetV4_1 gets the v4_1 property value. Version 4.1 or later.
 func (m *AndroidMinimumOperatingSystem) GetV4_1()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.v4_1
-    }
+    return m.v4_1
 }
 // GetV4_2 gets the v4_2 property value. Version 4.2 or later.
 func (m *AndroidMinimumOperatingSystem) GetV4_2()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.v4_2
-    }
+    return m.v4_2
 }
 // GetV4_3 gets the v4_3 property value. Version 4.3 or later.
 func (m *AndroidMinimumOperatingSystem) GetV4_3()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.v4_3
-    }
+    return m.v4_3
 }
 // GetV4_4 gets the v4_4 property value. Version 4.4 or later.
 func (m *AndroidMinimumOperatingSystem) GetV4_4()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.v4_4
-    }
+    return m.v4_4
 }
 // GetV5_0 gets the v5_0 property value. Version 5.0 or later.
 func (m *AndroidMinimumOperatingSystem) GetV5_0()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.v5_0
-    }
+    return m.v5_0
 }
 // GetV5_1 gets the v5_1 property value. Version 5.1 or later.
 func (m *AndroidMinimumOperatingSystem) GetV5_1()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.v5_1
-    }
+    return m.v5_1
 }
 // GetV6_0 gets the v6_0 property value. Version 6.0 or later.
 func (m *AndroidMinimumOperatingSystem) GetV6_0()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.v6_0
-    }
+    return m.v6_0
 }
 // GetV7_0 gets the v7_0 property value. Version 7.0 or later.
 func (m *AndroidMinimumOperatingSystem) GetV7_0()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.v7_0
-    }
+    return m.v7_0
 }
 // GetV7_1 gets the v7_1 property value. Version 7.1 or later.
 func (m *AndroidMinimumOperatingSystem) GetV7_1()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.v7_1
-    }
+    return m.v7_1
 }
 // GetV8_0 gets the v8_0 property value. Version 8.0 or later.
 func (m *AndroidMinimumOperatingSystem) GetV8_0()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.v8_0
-    }
+    return m.v8_0
 }
 // GetV8_1 gets the v8_1 property value. Version 8.1 or later.
 func (m *AndroidMinimumOperatingSystem) GetV8_1()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.v8_1
-    }
+    return m.v8_1
 }
 // GetV9_0 gets the v9_0 property value. Version 9.0 or later.
 func (m *AndroidMinimumOperatingSystem) GetV9_0()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.v9_0
-    }
+    return m.v9_0
 }
 // Serialize serializes information the current object
 func (m *AndroidMinimumOperatingSystem) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -489,109 +417,73 @@ func (m *AndroidMinimumOperatingSystem) Serialize(writer i878a80d2330e89d2689638
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AndroidMinimumOperatingSystem) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *AndroidMinimumOperatingSystem) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetV10_0 sets the v10_0 property value. Version 10.0 or later.
 func (m *AndroidMinimumOperatingSystem) SetV10_0(value *bool)() {
-    if m != nil {
-        m.v10_0 = value
-    }
+    m.v10_0 = value
 }
 // SetV11_0 sets the v11_0 property value. Version 11.0 or later.
 func (m *AndroidMinimumOperatingSystem) SetV11_0(value *bool)() {
-    if m != nil {
-        m.v11_0 = value
-    }
+    m.v11_0 = value
 }
 // SetV4_0 sets the v4_0 property value. Version 4.0 or later.
 func (m *AndroidMinimumOperatingSystem) SetV4_0(value *bool)() {
-    if m != nil {
-        m.v4_0 = value
-    }
+    m.v4_0 = value
 }
 // SetV4_0_3 sets the v4_0_3 property value. Version 4.0.3 or later.
 func (m *AndroidMinimumOperatingSystem) SetV4_0_3(value *bool)() {
-    if m != nil {
-        m.v4_0_3 = value
-    }
+    m.v4_0_3 = value
 }
 // SetV4_1 sets the v4_1 property value. Version 4.1 or later.
 func (m *AndroidMinimumOperatingSystem) SetV4_1(value *bool)() {
-    if m != nil {
-        m.v4_1 = value
-    }
+    m.v4_1 = value
 }
 // SetV4_2 sets the v4_2 property value. Version 4.2 or later.
 func (m *AndroidMinimumOperatingSystem) SetV4_2(value *bool)() {
-    if m != nil {
-        m.v4_2 = value
-    }
+    m.v4_2 = value
 }
 // SetV4_3 sets the v4_3 property value. Version 4.3 or later.
 func (m *AndroidMinimumOperatingSystem) SetV4_3(value *bool)() {
-    if m != nil {
-        m.v4_3 = value
-    }
+    m.v4_3 = value
 }
 // SetV4_4 sets the v4_4 property value. Version 4.4 or later.
 func (m *AndroidMinimumOperatingSystem) SetV4_4(value *bool)() {
-    if m != nil {
-        m.v4_4 = value
-    }
+    m.v4_4 = value
 }
 // SetV5_0 sets the v5_0 property value. Version 5.0 or later.
 func (m *AndroidMinimumOperatingSystem) SetV5_0(value *bool)() {
-    if m != nil {
-        m.v5_0 = value
-    }
+    m.v5_0 = value
 }
 // SetV5_1 sets the v5_1 property value. Version 5.1 or later.
 func (m *AndroidMinimumOperatingSystem) SetV5_1(value *bool)() {
-    if m != nil {
-        m.v5_1 = value
-    }
+    m.v5_1 = value
 }
 // SetV6_0 sets the v6_0 property value. Version 6.0 or later.
 func (m *AndroidMinimumOperatingSystem) SetV6_0(value *bool)() {
-    if m != nil {
-        m.v6_0 = value
-    }
+    m.v6_0 = value
 }
 // SetV7_0 sets the v7_0 property value. Version 7.0 or later.
 func (m *AndroidMinimumOperatingSystem) SetV7_0(value *bool)() {
-    if m != nil {
-        m.v7_0 = value
-    }
+    m.v7_0 = value
 }
 // SetV7_1 sets the v7_1 property value. Version 7.1 or later.
 func (m *AndroidMinimumOperatingSystem) SetV7_1(value *bool)() {
-    if m != nil {
-        m.v7_1 = value
-    }
+    m.v7_1 = value
 }
 // SetV8_0 sets the v8_0 property value. Version 8.0 or later.
 func (m *AndroidMinimumOperatingSystem) SetV8_0(value *bool)() {
-    if m != nil {
-        m.v8_0 = value
-    }
+    m.v8_0 = value
 }
 // SetV8_1 sets the v8_1 property value. Version 8.1 or later.
 func (m *AndroidMinimumOperatingSystem) SetV8_1(value *bool)() {
-    if m != nil {
-        m.v8_1 = value
-    }
+    m.v8_1 = value
 }
 // SetV9_0 sets the v9_0 property value. Version 9.0 or later.
 func (m *AndroidMinimumOperatingSystem) SetV9_0(value *bool)() {
-    if m != nil {
-        m.v9_0 = value
-    }
+    m.v9_0 = value
 }

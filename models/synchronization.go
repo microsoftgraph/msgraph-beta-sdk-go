@@ -76,27 +76,15 @@ func (m *Synchronization) GetFieldDeserializers()(map[string]func(i878a80d2330e8
 }
 // GetJobs gets the jobs property value. Performs synchronization by periodically running in the background, polling for changes in one directory, and pushing them to another directory.
 func (m *Synchronization) GetJobs()([]SynchronizationJobable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.jobs
-    }
+    return m.jobs
 }
 // GetSecrets gets the secrets property value. Represents a collection of credentials to access provisioned cloud applications.
 func (m *Synchronization) GetSecrets()([]SynchronizationSecretKeyStringValuePairable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.secrets
-    }
+    return m.secrets
 }
 // GetTemplates gets the templates property value. Pre-configured synchronization settings for a particular application.
 func (m *Synchronization) GetTemplates()([]SynchronizationTemplateable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.templates
-    }
+    return m.templates
 }
 // Serialize serializes information the current object
 func (m *Synchronization) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -138,19 +126,13 @@ func (m *Synchronization) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
 }
 // SetJobs sets the jobs property value. Performs synchronization by periodically running in the background, polling for changes in one directory, and pushing them to another directory.
 func (m *Synchronization) SetJobs(value []SynchronizationJobable)() {
-    if m != nil {
-        m.jobs = value
-    }
+    m.jobs = value
 }
 // SetSecrets sets the secrets property value. Represents a collection of credentials to access provisioned cloud applications.
 func (m *Synchronization) SetSecrets(value []SynchronizationSecretKeyStringValuePairable)() {
-    if m != nil {
-        m.secrets = value
-    }
+    m.secrets = value
 }
 // SetTemplates sets the templates property value. Pre-configured synchronization settings for a particular application.
 func (m *Synchronization) SetTemplates(value []SynchronizationTemplateable)() {
-    if m != nil {
-        m.templates = value
-    }
+    m.templates = value
 }

@@ -35,35 +35,19 @@ func CreateRolloutSettingsFromDiscriminatorValue(parseNode i878a80d2330e89d26896
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *RolloutSettings) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetDevicesPerOffer gets the devicesPerOffer property value. Specifies the number of devices that are offered at the same time. Has no effect when endDateTime is set. When endDateTime and devicesPerOffer are both not set, all devices in the deployment are offered content at the same time.
 func (m *RolloutSettings) GetDevicesPerOffer()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.devicesPerOffer
-    }
+    return m.devicesPerOffer
 }
 // GetDurationBetweenOffers gets the durationBetweenOffers property value. Specifies duration between each set of devices being offered the update. Has an effect when endDateTime or devicesPerOffer are defined. Default value is P1D (1 day).
 func (m *RolloutSettings) GetDurationBetweenOffers()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.durationBetweenOffers
-    }
+    return m.durationBetweenOffers
 }
 // GetEndDateTime gets the endDateTime property value. Specifies the date before which all devices currently in the deployment are offered the update. Devices added after this date are offered immediately. When endDateTime and devicesPerOffer are both not set, all devices in the deployment are offered content at the same time.
 func (m *RolloutSettings) GetEndDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.endDateTime
-    }
+    return m.endDateTime
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *RolloutSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -122,19 +106,11 @@ func (m *RolloutSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e8
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *RolloutSettings) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetStartDateTime gets the startDateTime property value. Date on which devices in the deployment start receiving the update. When not set, the deployment starts as soon as devices are assigned.
 func (m *RolloutSettings) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.startDateTime
-    }
+    return m.startDateTime
 }
 // Serialize serializes information the current object
 func (m *RolloutSettings) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -178,37 +154,25 @@ func (m *RolloutSettings) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *RolloutSettings) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetDevicesPerOffer sets the devicesPerOffer property value. Specifies the number of devices that are offered at the same time. Has no effect when endDateTime is set. When endDateTime and devicesPerOffer are both not set, all devices in the deployment are offered content at the same time.
 func (m *RolloutSettings) SetDevicesPerOffer(value *int32)() {
-    if m != nil {
-        m.devicesPerOffer = value
-    }
+    m.devicesPerOffer = value
 }
 // SetDurationBetweenOffers sets the durationBetweenOffers property value. Specifies duration between each set of devices being offered the update. Has an effect when endDateTime or devicesPerOffer are defined. Default value is P1D (1 day).
 func (m *RolloutSettings) SetDurationBetweenOffers(value *string)() {
-    if m != nil {
-        m.durationBetweenOffers = value
-    }
+    m.durationBetweenOffers = value
 }
 // SetEndDateTime sets the endDateTime property value. Specifies the date before which all devices currently in the deployment are offered the update. Devices added after this date are offered immediately. When endDateTime and devicesPerOffer are both not set, all devices in the deployment are offered content at the same time.
 func (m *RolloutSettings) SetEndDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.endDateTime = value
-    }
+    m.endDateTime = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *RolloutSettings) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetStartDateTime sets the startDateTime property value. Date on which devices in the deployment start receiving the update. When not set, the deployment starts as soon as devices are assigned.
 func (m *RolloutSettings) SetStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.startDateTime = value
-    }
+    m.startDateTime = value
 }

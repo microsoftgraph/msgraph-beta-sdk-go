@@ -55,59 +55,31 @@ func CreateAndroidWorkProfileVpnConfigurationFromDiscriminatorValue(parseNode i8
 }
 // GetAlwaysOn gets the alwaysOn property value. Whether or not to enable always-on VPN connection.
 func (m *AndroidWorkProfileVpnConfiguration) GetAlwaysOn()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.alwaysOn
-    }
+    return m.alwaysOn
 }
 // GetAlwaysOnLockdown gets the alwaysOnLockdown property value. If always-on VPN connection is enabled, whether or not to lock network traffic when that VPN is disconnected.
 func (m *AndroidWorkProfileVpnConfiguration) GetAlwaysOnLockdown()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.alwaysOnLockdown
-    }
+    return m.alwaysOnLockdown
 }
 // GetAuthenticationMethod gets the authenticationMethod property value. VPN Authentication Method.
 func (m *AndroidWorkProfileVpnConfiguration) GetAuthenticationMethod()(*VpnAuthenticationMethod) {
-    if m == nil {
-        return nil
-    } else {
-        return m.authenticationMethod
-    }
+    return m.authenticationMethod
 }
 // GetConnectionName gets the connectionName property value. Connection name displayed to the user.
 func (m *AndroidWorkProfileVpnConfiguration) GetConnectionName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.connectionName
-    }
+    return m.connectionName
 }
 // GetConnectionType gets the connectionType property value. Android Work Profile VPN connection type.
 func (m *AndroidWorkProfileVpnConfiguration) GetConnectionType()(*AndroidWorkProfileVpnConnectionType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.connectionType
-    }
+    return m.connectionType
 }
 // GetCustomData gets the customData property value. Custom data when connection type is set to Citrix. This collection can contain a maximum of 25 elements.
 func (m *AndroidWorkProfileVpnConfiguration) GetCustomData()([]KeyValueable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.customData
-    }
+    return m.customData
 }
 // GetCustomKeyValueData gets the customKeyValueData property value. Custom data when connection type is set to Citrix. This collection can contain a maximum of 25 elements.
 func (m *AndroidWorkProfileVpnConfiguration) GetCustomKeyValueData()([]KeyValuePairable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.customKeyValueData
-    }
+    return m.customKeyValueData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AndroidWorkProfileVpnConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -296,75 +268,39 @@ func (m *AndroidWorkProfileVpnConfiguration) GetFieldDeserializers()(map[string]
 }
 // GetFingerprint gets the fingerprint property value. Fingerprint is a string that will be used to verify the VPN server can be trusted, which is only applicable when connection type is Check Point Capsule VPN.
 func (m *AndroidWorkProfileVpnConfiguration) GetFingerprint()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.fingerprint
-    }
+    return m.fingerprint
 }
 // GetIdentityCertificate gets the identityCertificate property value. Identity certificate for client authentication when authentication method is certificate.
 func (m *AndroidWorkProfileVpnConfiguration) GetIdentityCertificate()(AndroidWorkProfileCertificateProfileBaseable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.identityCertificate
-    }
+    return m.identityCertificate
 }
 // GetMicrosoftTunnelSiteId gets the microsoftTunnelSiteId property value. Microsoft Tunnel site ID.
 func (m *AndroidWorkProfileVpnConfiguration) GetMicrosoftTunnelSiteId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.microsoftTunnelSiteId
-    }
+    return m.microsoftTunnelSiteId
 }
 // GetProxyServer gets the proxyServer property value. Proxy server.
 func (m *AndroidWorkProfileVpnConfiguration) GetProxyServer()(VpnProxyServerable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.proxyServer
-    }
+    return m.proxyServer
 }
 // GetRealm gets the realm property value. Realm when connection type is set to Pulse Secure.
 func (m *AndroidWorkProfileVpnConfiguration) GetRealm()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.realm
-    }
+    return m.realm
 }
 // GetRole gets the role property value. Role when connection type is set to Pulse Secure.
 func (m *AndroidWorkProfileVpnConfiguration) GetRole()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.role
-    }
+    return m.role
 }
 // GetServers gets the servers property value. List of VPN Servers on the network. Make sure end users can access these network locations. This collection can contain a maximum of 500 elements.
 func (m *AndroidWorkProfileVpnConfiguration) GetServers()([]VpnServerable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.servers
-    }
+    return m.servers
 }
 // GetTargetedMobileApps gets the targetedMobileApps property value. Targeted mobile apps. This collection can contain a maximum of 500 elements.
 func (m *AndroidWorkProfileVpnConfiguration) GetTargetedMobileApps()([]AppListItemable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.targetedMobileApps
-    }
+    return m.targetedMobileApps
 }
 // GetTargetedPackageIds gets the targetedPackageIds property value. Targeted App package IDs.
 func (m *AndroidWorkProfileVpnConfiguration) GetTargetedPackageIds()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.targetedPackageIds
-    }
+    return m.targetedPackageIds
 }
 // Serialize serializes information the current object
 func (m *AndroidWorkProfileVpnConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -490,97 +426,65 @@ func (m *AndroidWorkProfileVpnConfiguration) Serialize(writer i878a80d2330e89d26
 }
 // SetAlwaysOn sets the alwaysOn property value. Whether or not to enable always-on VPN connection.
 func (m *AndroidWorkProfileVpnConfiguration) SetAlwaysOn(value *bool)() {
-    if m != nil {
-        m.alwaysOn = value
-    }
+    m.alwaysOn = value
 }
 // SetAlwaysOnLockdown sets the alwaysOnLockdown property value. If always-on VPN connection is enabled, whether or not to lock network traffic when that VPN is disconnected.
 func (m *AndroidWorkProfileVpnConfiguration) SetAlwaysOnLockdown(value *bool)() {
-    if m != nil {
-        m.alwaysOnLockdown = value
-    }
+    m.alwaysOnLockdown = value
 }
 // SetAuthenticationMethod sets the authenticationMethod property value. VPN Authentication Method.
 func (m *AndroidWorkProfileVpnConfiguration) SetAuthenticationMethod(value *VpnAuthenticationMethod)() {
-    if m != nil {
-        m.authenticationMethod = value
-    }
+    m.authenticationMethod = value
 }
 // SetConnectionName sets the connectionName property value. Connection name displayed to the user.
 func (m *AndroidWorkProfileVpnConfiguration) SetConnectionName(value *string)() {
-    if m != nil {
-        m.connectionName = value
-    }
+    m.connectionName = value
 }
 // SetConnectionType sets the connectionType property value. Android Work Profile VPN connection type.
 func (m *AndroidWorkProfileVpnConfiguration) SetConnectionType(value *AndroidWorkProfileVpnConnectionType)() {
-    if m != nil {
-        m.connectionType = value
-    }
+    m.connectionType = value
 }
 // SetCustomData sets the customData property value. Custom data when connection type is set to Citrix. This collection can contain a maximum of 25 elements.
 func (m *AndroidWorkProfileVpnConfiguration) SetCustomData(value []KeyValueable)() {
-    if m != nil {
-        m.customData = value
-    }
+    m.customData = value
 }
 // SetCustomKeyValueData sets the customKeyValueData property value. Custom data when connection type is set to Citrix. This collection can contain a maximum of 25 elements.
 func (m *AndroidWorkProfileVpnConfiguration) SetCustomKeyValueData(value []KeyValuePairable)() {
-    if m != nil {
-        m.customKeyValueData = value
-    }
+    m.customKeyValueData = value
 }
 // SetFingerprint sets the fingerprint property value. Fingerprint is a string that will be used to verify the VPN server can be trusted, which is only applicable when connection type is Check Point Capsule VPN.
 func (m *AndroidWorkProfileVpnConfiguration) SetFingerprint(value *string)() {
-    if m != nil {
-        m.fingerprint = value
-    }
+    m.fingerprint = value
 }
 // SetIdentityCertificate sets the identityCertificate property value. Identity certificate for client authentication when authentication method is certificate.
 func (m *AndroidWorkProfileVpnConfiguration) SetIdentityCertificate(value AndroidWorkProfileCertificateProfileBaseable)() {
-    if m != nil {
-        m.identityCertificate = value
-    }
+    m.identityCertificate = value
 }
 // SetMicrosoftTunnelSiteId sets the microsoftTunnelSiteId property value. Microsoft Tunnel site ID.
 func (m *AndroidWorkProfileVpnConfiguration) SetMicrosoftTunnelSiteId(value *string)() {
-    if m != nil {
-        m.microsoftTunnelSiteId = value
-    }
+    m.microsoftTunnelSiteId = value
 }
 // SetProxyServer sets the proxyServer property value. Proxy server.
 func (m *AndroidWorkProfileVpnConfiguration) SetProxyServer(value VpnProxyServerable)() {
-    if m != nil {
-        m.proxyServer = value
-    }
+    m.proxyServer = value
 }
 // SetRealm sets the realm property value. Realm when connection type is set to Pulse Secure.
 func (m *AndroidWorkProfileVpnConfiguration) SetRealm(value *string)() {
-    if m != nil {
-        m.realm = value
-    }
+    m.realm = value
 }
 // SetRole sets the role property value. Role when connection type is set to Pulse Secure.
 func (m *AndroidWorkProfileVpnConfiguration) SetRole(value *string)() {
-    if m != nil {
-        m.role = value
-    }
+    m.role = value
 }
 // SetServers sets the servers property value. List of VPN Servers on the network. Make sure end users can access these network locations. This collection can contain a maximum of 500 elements.
 func (m *AndroidWorkProfileVpnConfiguration) SetServers(value []VpnServerable)() {
-    if m != nil {
-        m.servers = value
-    }
+    m.servers = value
 }
 // SetTargetedMobileApps sets the targetedMobileApps property value. Targeted mobile apps. This collection can contain a maximum of 500 elements.
 func (m *AndroidWorkProfileVpnConfiguration) SetTargetedMobileApps(value []AppListItemable)() {
-    if m != nil {
-        m.targetedMobileApps = value
-    }
+    m.targetedMobileApps = value
 }
 // SetTargetedPackageIds sets the targetedPackageIds property value. Targeted App package IDs.
 func (m *AndroidWorkProfileVpnConfiguration) SetTargetedPackageIds(value []string)() {
-    if m != nil {
-        m.targetedPackageIds = value
-    }
+    m.targetedPackageIds = value
 }

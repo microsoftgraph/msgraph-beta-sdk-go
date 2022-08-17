@@ -29,11 +29,7 @@ func CreateDelegatedAdminCustomerFromDiscriminatorValue(parseNode i878a80d2330e8
 }
 // GetDisplayName gets the displayName property value. The Azure AD display name of the customer tenant. Read-only. Supports $orderBy.
 func (m *DelegatedAdminCustomer) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DelegatedAdminCustomer) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -76,19 +72,11 @@ func (m *DelegatedAdminCustomer) GetFieldDeserializers()(map[string]func(i878a80
 }
 // GetServiceManagementDetails gets the serviceManagementDetails property value. Contains the management details of a service in the customer tenant that's managed by delegated administration.
 func (m *DelegatedAdminCustomer) GetServiceManagementDetails()([]DelegatedAdminServiceManagementDetailable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.serviceManagementDetails
-    }
+    return m.serviceManagementDetails
 }
 // GetTenantId gets the tenantId property value. The Azure AD-assigned tenant ID of the customer. Read-only.
 func (m *DelegatedAdminCustomer) GetTenantId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.tenantId
-    }
+    return m.tenantId
 }
 // Serialize serializes information the current object
 func (m *DelegatedAdminCustomer) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -122,19 +110,13 @@ func (m *DelegatedAdminCustomer) Serialize(writer i878a80d2330e89d26896388a3f487
 }
 // SetDisplayName sets the displayName property value. The Azure AD display name of the customer tenant. Read-only. Supports $orderBy.
 func (m *DelegatedAdminCustomer) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }
 // SetServiceManagementDetails sets the serviceManagementDetails property value. Contains the management details of a service in the customer tenant that's managed by delegated administration.
 func (m *DelegatedAdminCustomer) SetServiceManagementDetails(value []DelegatedAdminServiceManagementDetailable)() {
-    if m != nil {
-        m.serviceManagementDetails = value
-    }
+    m.serviceManagementDetails = value
 }
 // SetTenantId sets the tenantId property value. The Azure AD-assigned tenant ID of the customer. Read-only.
 func (m *DelegatedAdminCustomer) SetTenantId(value *string)() {
-    if m != nil {
-        m.tenantId = value
-    }
+    m.tenantId = value
 }

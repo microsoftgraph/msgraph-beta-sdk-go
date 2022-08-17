@@ -56,19 +56,11 @@ func (m *DeviceManagementConfigurationSettingTemplate) GetFieldDeserializers()(m
 }
 // GetSettingDefinitions gets the settingDefinitions property value. List of related Setting Definitions
 func (m *DeviceManagementConfigurationSettingTemplate) GetSettingDefinitions()([]DeviceManagementConfigurationSettingDefinitionable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.settingDefinitions
-    }
+    return m.settingDefinitions
 }
 // GetSettingInstanceTemplate gets the settingInstanceTemplate property value. Setting Instance Template
 func (m *DeviceManagementConfigurationSettingTemplate) GetSettingInstanceTemplate()(DeviceManagementConfigurationSettingInstanceTemplateable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.settingInstanceTemplate
-    }
+    return m.settingInstanceTemplate
 }
 // Serialize serializes information the current object
 func (m *DeviceManagementConfigurationSettingTemplate) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -96,13 +88,9 @@ func (m *DeviceManagementConfigurationSettingTemplate) Serialize(writer i878a80d
 }
 // SetSettingDefinitions sets the settingDefinitions property value. List of related Setting Definitions
 func (m *DeviceManagementConfigurationSettingTemplate) SetSettingDefinitions(value []DeviceManagementConfigurationSettingDefinitionable)() {
-    if m != nil {
-        m.settingDefinitions = value
-    }
+    m.settingDefinitions = value
 }
 // SetSettingInstanceTemplate sets the settingInstanceTemplate property value. Setting Instance Template
 func (m *DeviceManagementConfigurationSettingTemplate) SetSettingInstanceTemplate(value DeviceManagementConfigurationSettingInstanceTemplateable)() {
-    if m != nil {
-        m.settingInstanceTemplate = value
-    }
+    m.settingInstanceTemplate = value
 }

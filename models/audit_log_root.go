@@ -33,19 +33,11 @@ func CreateAuditLogRootFromDiscriminatorValue(parseNode i878a80d2330e89d26896388
 }
 // GetDirectoryAudits gets the directoryAudits property value. The directoryAudits property
 func (m *AuditLogRoot) GetDirectoryAudits()([]DirectoryAuditable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.directoryAudits
-    }
+    return m.directoryAudits
 }
 // GetDirectoryProvisioning gets the directoryProvisioning property value. The directoryProvisioning property
 func (m *AuditLogRoot) GetDirectoryProvisioning()([]ProvisioningObjectSummaryable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.directoryProvisioning
-    }
+    return m.directoryProvisioning
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AuditLogRoot) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -124,27 +116,15 @@ func (m *AuditLogRoot) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
 }
 // GetProvisioning gets the provisioning property value. The provisioning property
 func (m *AuditLogRoot) GetProvisioning()([]ProvisioningObjectSummaryable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.provisioning
-    }
+    return m.provisioning
 }
 // GetRestrictedSignIns gets the restrictedSignIns property value. The restrictedSignIns property
 func (m *AuditLogRoot) GetRestrictedSignIns()([]RestrictedSignInable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.restrictedSignIns
-    }
+    return m.restrictedSignIns
 }
 // GetSignIns gets the signIns property value. The signIns property
 func (m *AuditLogRoot) GetSignIns()([]SignInable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.signIns
-    }
+    return m.signIns
 }
 // Serialize serializes information the current object
 func (m *AuditLogRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -206,31 +186,21 @@ func (m *AuditLogRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
 }
 // SetDirectoryAudits sets the directoryAudits property value. The directoryAudits property
 func (m *AuditLogRoot) SetDirectoryAudits(value []DirectoryAuditable)() {
-    if m != nil {
-        m.directoryAudits = value
-    }
+    m.directoryAudits = value
 }
 // SetDirectoryProvisioning sets the directoryProvisioning property value. The directoryProvisioning property
 func (m *AuditLogRoot) SetDirectoryProvisioning(value []ProvisioningObjectSummaryable)() {
-    if m != nil {
-        m.directoryProvisioning = value
-    }
+    m.directoryProvisioning = value
 }
 // SetProvisioning sets the provisioning property value. The provisioning property
 func (m *AuditLogRoot) SetProvisioning(value []ProvisioningObjectSummaryable)() {
-    if m != nil {
-        m.provisioning = value
-    }
+    m.provisioning = value
 }
 // SetRestrictedSignIns sets the restrictedSignIns property value. The restrictedSignIns property
 func (m *AuditLogRoot) SetRestrictedSignIns(value []RestrictedSignInable)() {
-    if m != nil {
-        m.restrictedSignIns = value
-    }
+    m.restrictedSignIns = value
 }
 // SetSignIns sets the signIns property value. The signIns property
 func (m *AuditLogRoot) SetSignIns(value []SignInable)() {
-    if m != nil {
-        m.signIns = value
-    }
+    m.signIns = value
 }

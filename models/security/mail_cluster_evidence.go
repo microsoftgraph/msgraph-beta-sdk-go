@@ -35,27 +35,15 @@ func CreateMailClusterEvidenceFromDiscriminatorValue(parseNode i878a80d2330e89d2
 }
 // GetClusterBy gets the clusterBy property value. The clusterBy property
 func (m *MailClusterEvidence) GetClusterBy()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.clusterBy
-    }
+    return m.clusterBy
 }
 // GetClusterByValue gets the clusterByValue property value. The clusterByValue property
 func (m *MailClusterEvidence) GetClusterByValue()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.clusterByValue
-    }
+    return m.clusterByValue
 }
 // GetEmailCount gets the emailCount property value. The emailCount property
 func (m *MailClusterEvidence) GetEmailCount()(*int64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.emailCount
-    }
+    return m.emailCount
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *MailClusterEvidence) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -128,27 +116,15 @@ func (m *MailClusterEvidence) GetFieldDeserializers()(map[string]func(i878a80d23
 }
 // GetNetworkMessageIds gets the networkMessageIds property value. The networkMessageIds property
 func (m *MailClusterEvidence) GetNetworkMessageIds()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.networkMessageIds
-    }
+    return m.networkMessageIds
 }
 // GetQuery gets the query property value. The query property
 func (m *MailClusterEvidence) GetQuery()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.query
-    }
+    return m.query
 }
 // GetUrn gets the urn property value. The urn property
 func (m *MailClusterEvidence) GetUrn()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.urn
-    }
+    return m.urn
 }
 // Serialize serializes information the current object
 func (m *MailClusterEvidence) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -196,37 +172,25 @@ func (m *MailClusterEvidence) Serialize(writer i878a80d2330e89d26896388a3f487eef
 }
 // SetClusterBy sets the clusterBy property value. The clusterBy property
 func (m *MailClusterEvidence) SetClusterBy(value *string)() {
-    if m != nil {
-        m.clusterBy = value
-    }
+    m.clusterBy = value
 }
 // SetClusterByValue sets the clusterByValue property value. The clusterByValue property
 func (m *MailClusterEvidence) SetClusterByValue(value *string)() {
-    if m != nil {
-        m.clusterByValue = value
-    }
+    m.clusterByValue = value
 }
 // SetEmailCount sets the emailCount property value. The emailCount property
 func (m *MailClusterEvidence) SetEmailCount(value *int64)() {
-    if m != nil {
-        m.emailCount = value
-    }
+    m.emailCount = value
 }
 // SetNetworkMessageIds sets the networkMessageIds property value. The networkMessageIds property
 func (m *MailClusterEvidence) SetNetworkMessageIds(value []string)() {
-    if m != nil {
-        m.networkMessageIds = value
-    }
+    m.networkMessageIds = value
 }
 // SetQuery sets the query property value. The query property
 func (m *MailClusterEvidence) SetQuery(value *string)() {
-    if m != nil {
-        m.query = value
-    }
+    m.query = value
 }
 // SetUrn sets the urn property value. The urn property
 func (m *MailClusterEvidence) SetUrn(value *string)() {
-    if m != nil {
-        m.urn = value
-    }
+    m.urn = value
 }

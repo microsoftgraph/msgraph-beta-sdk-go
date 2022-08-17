@@ -52,59 +52,31 @@ func CreateDomainSecurityProfileFromDiscriminatorValue(parseNode i878a80d2330e89
 }
 // GetActivityGroupNames gets the activityGroupNames property value. The activityGroupNames property
 func (m *DomainSecurityProfile) GetActivityGroupNames()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.activityGroupNames
-    }
+    return m.activityGroupNames
 }
 // GetAzureSubscriptionId gets the azureSubscriptionId property value. The azureSubscriptionId property
 func (m *DomainSecurityProfile) GetAzureSubscriptionId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.azureSubscriptionId
-    }
+    return m.azureSubscriptionId
 }
 // GetAzureTenantId gets the azureTenantId property value. The azureTenantId property
 func (m *DomainSecurityProfile) GetAzureTenantId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.azureTenantId
-    }
+    return m.azureTenantId
 }
 // GetCountHits gets the countHits property value. The countHits property
 func (m *DomainSecurityProfile) GetCountHits()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.countHits
-    }
+    return m.countHits
 }
 // GetCountInOrg gets the countInOrg property value. The countInOrg property
 func (m *DomainSecurityProfile) GetCountInOrg()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.countInOrg
-    }
+    return m.countInOrg
 }
 // GetDomainCategories gets the domainCategories property value. The domainCategories property
 func (m *DomainSecurityProfile) GetDomainCategories()([]ReputationCategoryable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.domainCategories
-    }
+    return m.domainCategories
 }
 // GetDomainRegisteredDateTime gets the domainRegisteredDateTime property value. The domainRegisteredDateTime property
 func (m *DomainSecurityProfile) GetDomainRegisteredDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.domainRegisteredDateTime
-    }
+    return m.domainRegisteredDateTime
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DomainSecurityProfile) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -265,59 +237,31 @@ func (m *DomainSecurityProfile) GetFieldDeserializers()(map[string]func(i878a80d
 }
 // GetFirstSeenDateTime gets the firstSeenDateTime property value. The firstSeenDateTime property
 func (m *DomainSecurityProfile) GetFirstSeenDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.firstSeenDateTime
-    }
+    return m.firstSeenDateTime
 }
 // GetLastSeenDateTime gets the lastSeenDateTime property value. The lastSeenDateTime property
 func (m *DomainSecurityProfile) GetLastSeenDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastSeenDateTime
-    }
+    return m.lastSeenDateTime
 }
 // GetName gets the name property value. The name property
 func (m *DomainSecurityProfile) GetName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.name
-    }
+    return m.name
 }
 // GetRegistrant gets the registrant property value. The registrant property
 func (m *DomainSecurityProfile) GetRegistrant()(DomainRegistrantable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.registrant
-    }
+    return m.registrant
 }
 // GetRiskScore gets the riskScore property value. The riskScore property
 func (m *DomainSecurityProfile) GetRiskScore()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.riskScore
-    }
+    return m.riskScore
 }
 // GetTags gets the tags property value. The tags property
 func (m *DomainSecurityProfile) GetTags()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.tags
-    }
+    return m.tags
 }
 // GetVendorInformation gets the vendorInformation property value. The vendorInformation property
 func (m *DomainSecurityProfile) GetVendorInformation()(SecurityVendorInformationable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.vendorInformation
-    }
+    return m.vendorInformation
 }
 // Serialize serializes information the current object
 func (m *DomainSecurityProfile) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -417,85 +361,57 @@ func (m *DomainSecurityProfile) Serialize(writer i878a80d2330e89d26896388a3f487e
 }
 // SetActivityGroupNames sets the activityGroupNames property value. The activityGroupNames property
 func (m *DomainSecurityProfile) SetActivityGroupNames(value []string)() {
-    if m != nil {
-        m.activityGroupNames = value
-    }
+    m.activityGroupNames = value
 }
 // SetAzureSubscriptionId sets the azureSubscriptionId property value. The azureSubscriptionId property
 func (m *DomainSecurityProfile) SetAzureSubscriptionId(value *string)() {
-    if m != nil {
-        m.azureSubscriptionId = value
-    }
+    m.azureSubscriptionId = value
 }
 // SetAzureTenantId sets the azureTenantId property value. The azureTenantId property
 func (m *DomainSecurityProfile) SetAzureTenantId(value *string)() {
-    if m != nil {
-        m.azureTenantId = value
-    }
+    m.azureTenantId = value
 }
 // SetCountHits sets the countHits property value. The countHits property
 func (m *DomainSecurityProfile) SetCountHits(value *int32)() {
-    if m != nil {
-        m.countHits = value
-    }
+    m.countHits = value
 }
 // SetCountInOrg sets the countInOrg property value. The countInOrg property
 func (m *DomainSecurityProfile) SetCountInOrg(value *int32)() {
-    if m != nil {
-        m.countInOrg = value
-    }
+    m.countInOrg = value
 }
 // SetDomainCategories sets the domainCategories property value. The domainCategories property
 func (m *DomainSecurityProfile) SetDomainCategories(value []ReputationCategoryable)() {
-    if m != nil {
-        m.domainCategories = value
-    }
+    m.domainCategories = value
 }
 // SetDomainRegisteredDateTime sets the domainRegisteredDateTime property value. The domainRegisteredDateTime property
 func (m *DomainSecurityProfile) SetDomainRegisteredDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.domainRegisteredDateTime = value
-    }
+    m.domainRegisteredDateTime = value
 }
 // SetFirstSeenDateTime sets the firstSeenDateTime property value. The firstSeenDateTime property
 func (m *DomainSecurityProfile) SetFirstSeenDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.firstSeenDateTime = value
-    }
+    m.firstSeenDateTime = value
 }
 // SetLastSeenDateTime sets the lastSeenDateTime property value. The lastSeenDateTime property
 func (m *DomainSecurityProfile) SetLastSeenDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.lastSeenDateTime = value
-    }
+    m.lastSeenDateTime = value
 }
 // SetName sets the name property value. The name property
 func (m *DomainSecurityProfile) SetName(value *string)() {
-    if m != nil {
-        m.name = value
-    }
+    m.name = value
 }
 // SetRegistrant sets the registrant property value. The registrant property
 func (m *DomainSecurityProfile) SetRegistrant(value DomainRegistrantable)() {
-    if m != nil {
-        m.registrant = value
-    }
+    m.registrant = value
 }
 // SetRiskScore sets the riskScore property value. The riskScore property
 func (m *DomainSecurityProfile) SetRiskScore(value *string)() {
-    if m != nil {
-        m.riskScore = value
-    }
+    m.riskScore = value
 }
 // SetTags sets the tags property value. The tags property
 func (m *DomainSecurityProfile) SetTags(value []string)() {
-    if m != nil {
-        m.tags = value
-    }
+    m.tags = value
 }
 // SetVendorInformation sets the vendorInformation property value. The vendorInformation property
 func (m *DomainSecurityProfile) SetVendorInformation(value SecurityVendorInformationable)() {
-    if m != nil {
-        m.vendorInformation = value
-    }
+    m.vendorInformation = value
 }

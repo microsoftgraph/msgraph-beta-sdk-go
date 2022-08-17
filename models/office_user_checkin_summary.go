@@ -30,19 +30,11 @@ func CreateOfficeUserCheckinSummaryFromDiscriminatorValue(parseNode i878a80d2330
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *OfficeUserCheckinSummary) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFailedUserCount gets the failedUserCount property value. Total failed user check ins for the last 3 months.
 func (m *OfficeUserCheckinSummary) GetFailedUserCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.failedUserCount
-    }
+    return m.failedUserCount
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *OfficeUserCheckinSummary) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -81,19 +73,11 @@ func (m *OfficeUserCheckinSummary) GetFieldDeserializers()(map[string]func(i878a
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *OfficeUserCheckinSummary) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetSucceededUserCount gets the succeededUserCount property value. Total successful user check ins for the last 3 months.
 func (m *OfficeUserCheckinSummary) GetSucceededUserCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.succeededUserCount
-    }
+    return m.succeededUserCount
 }
 // Serialize serializes information the current object
 func (m *OfficeUserCheckinSummary) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -125,25 +109,17 @@ func (m *OfficeUserCheckinSummary) Serialize(writer i878a80d2330e89d26896388a3f4
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *OfficeUserCheckinSummary) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetFailedUserCount sets the failedUserCount property value. Total failed user check ins for the last 3 months.
 func (m *OfficeUserCheckinSummary) SetFailedUserCount(value *int32)() {
-    if m != nil {
-        m.failedUserCount = value
-    }
+    m.failedUserCount = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *OfficeUserCheckinSummary) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetSucceededUserCount sets the succeededUserCount property value. Total successful user check ins for the last 3 months.
 func (m *OfficeUserCheckinSummary) SetSucceededUserCount(value *int32)() {
-    if m != nil {
-        m.succeededUserCount = value
-    }
+    m.succeededUserCount = value
 }

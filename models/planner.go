@@ -31,11 +31,7 @@ func CreatePlannerFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f48
 }
 // GetBuckets gets the buckets property value. Read-only. Nullable. Returns a collection of the specified buckets
 func (m *Planner) GetBuckets()([]PlannerBucketable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.buckets
-    }
+    return m.buckets
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Planner) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -100,27 +96,15 @@ func (m *Planner) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
 }
 // GetPlans gets the plans property value. Read-only. Nullable. Returns a collection of the specified plans
 func (m *Planner) GetPlans()([]PlannerPlanable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.plans
-    }
+    return m.plans
 }
 // GetRosters gets the rosters property value. Read-only. Nullable. Returns a collection of the specified rosters
 func (m *Planner) GetRosters()([]PlannerRosterable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.rosters
-    }
+    return m.rosters
 }
 // GetTasks gets the tasks property value. Read-only. Nullable. Returns a collection of the specified tasks
 func (m *Planner) GetTasks()([]PlannerTaskable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.tasks
-    }
+    return m.tasks
 }
 // Serialize serializes information the current object
 func (m *Planner) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -172,25 +156,17 @@ func (m *Planner) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
 }
 // SetBuckets sets the buckets property value. Read-only. Nullable. Returns a collection of the specified buckets
 func (m *Planner) SetBuckets(value []PlannerBucketable)() {
-    if m != nil {
-        m.buckets = value
-    }
+    m.buckets = value
 }
 // SetPlans sets the plans property value. Read-only. Nullable. Returns a collection of the specified plans
 func (m *Planner) SetPlans(value []PlannerPlanable)() {
-    if m != nil {
-        m.plans = value
-    }
+    m.plans = value
 }
 // SetRosters sets the rosters property value. Read-only. Nullable. Returns a collection of the specified rosters
 func (m *Planner) SetRosters(value []PlannerRosterable)() {
-    if m != nil {
-        m.rosters = value
-    }
+    m.rosters = value
 }
 // SetTasks sets the tasks property value. Read-only. Nullable. Returns a collection of the specified tasks
 func (m *Planner) SetTasks(value []PlannerTaskable)() {
-    if m != nil {
-        m.tasks = value
-    }
+    m.tasks = value
 }

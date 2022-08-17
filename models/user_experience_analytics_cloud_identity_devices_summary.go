@@ -28,19 +28,11 @@ func CreateUserExperienceAnalyticsCloudIdentityDevicesSummaryFromDiscriminatorVa
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *UserExperienceAnalyticsCloudIdentityDevicesSummary) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetDeviceWithoutCloudIdentityCount gets the deviceWithoutCloudIdentityCount property value. The count of devices that are not cloud identity.
 func (m *UserExperienceAnalyticsCloudIdentityDevicesSummary) GetDeviceWithoutCloudIdentityCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.deviceWithoutCloudIdentityCount
-    }
+    return m.deviceWithoutCloudIdentityCount
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *UserExperienceAnalyticsCloudIdentityDevicesSummary) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -69,11 +61,7 @@ func (m *UserExperienceAnalyticsCloudIdentityDevicesSummary) GetFieldDeserialize
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *UserExperienceAnalyticsCloudIdentityDevicesSummary) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // Serialize serializes information the current object
 func (m *UserExperienceAnalyticsCloudIdentityDevicesSummary) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -99,19 +87,13 @@ func (m *UserExperienceAnalyticsCloudIdentityDevicesSummary) Serialize(writer i8
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *UserExperienceAnalyticsCloudIdentityDevicesSummary) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetDeviceWithoutCloudIdentityCount sets the deviceWithoutCloudIdentityCount property value. The count of devices that are not cloud identity.
 func (m *UserExperienceAnalyticsCloudIdentityDevicesSummary) SetDeviceWithoutCloudIdentityCount(value *int32)() {
-    if m != nil {
-        m.deviceWithoutCloudIdentityCount = value
-    }
+    m.deviceWithoutCloudIdentityCount = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *UserExperienceAnalyticsCloudIdentityDevicesSummary) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }

@@ -68,27 +68,15 @@ func (m *MobileAppIntentAndState) GetFieldDeserializers()(map[string]func(i878a8
 }
 // GetManagedDeviceIdentifier gets the managedDeviceIdentifier property value. Device identifier created or collected by Intune.
 func (m *MobileAppIntentAndState) GetManagedDeviceIdentifier()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.managedDeviceIdentifier
-    }
+    return m.managedDeviceIdentifier
 }
 // GetMobileAppList gets the mobileAppList property value. The list of payload intents and states for the tenant.
 func (m *MobileAppIntentAndState) GetMobileAppList()([]MobileAppIntentAndStateDetailable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.mobileAppList
-    }
+    return m.mobileAppList
 }
 // GetUserId gets the userId property value. Identifier for the user that tried to enroll the device.
 func (m *MobileAppIntentAndState) GetUserId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.userId
-    }
+    return m.userId
 }
 // Serialize serializes information the current object
 func (m *MobileAppIntentAndState) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -122,19 +110,13 @@ func (m *MobileAppIntentAndState) Serialize(writer i878a80d2330e89d26896388a3f48
 }
 // SetManagedDeviceIdentifier sets the managedDeviceIdentifier property value. Device identifier created or collected by Intune.
 func (m *MobileAppIntentAndState) SetManagedDeviceIdentifier(value *string)() {
-    if m != nil {
-        m.managedDeviceIdentifier = value
-    }
+    m.managedDeviceIdentifier = value
 }
 // SetMobileAppList sets the mobileAppList property value. The list of payload intents and states for the tenant.
 func (m *MobileAppIntentAndState) SetMobileAppList(value []MobileAppIntentAndStateDetailable)() {
-    if m != nil {
-        m.mobileAppList = value
-    }
+    m.mobileAppList = value
 }
 // SetUserId sets the userId property value. Identifier for the user that tried to enroll the device.
 func (m *MobileAppIntentAndState) SetUserId(value *string)() {
-    if m != nil {
-        m.userId = value
-    }
+    m.userId = value
 }

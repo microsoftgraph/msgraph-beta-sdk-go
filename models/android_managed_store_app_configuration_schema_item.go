@@ -48,67 +48,35 @@ func CreateAndroidManagedStoreAppConfigurationSchemaItemFromDiscriminatorValue(p
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AndroidManagedStoreAppConfigurationSchemaItem) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetDataType gets the dataType property value. Data type for a configuration item inside an Android application's custom configuration schema
 func (m *AndroidManagedStoreAppConfigurationSchemaItem) GetDataType()(*AndroidManagedStoreAppConfigurationSchemaItemDataType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.dataType
-    }
+    return m.dataType
 }
 // GetDefaultBoolValue gets the defaultBoolValue property value. Default value for boolean type items, if specified by the app developer
 func (m *AndroidManagedStoreAppConfigurationSchemaItem) GetDefaultBoolValue()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.defaultBoolValue
-    }
+    return m.defaultBoolValue
 }
 // GetDefaultIntValue gets the defaultIntValue property value. Default value for integer type items, if specified by the app developer
 func (m *AndroidManagedStoreAppConfigurationSchemaItem) GetDefaultIntValue()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.defaultIntValue
-    }
+    return m.defaultIntValue
 }
 // GetDefaultStringArrayValue gets the defaultStringArrayValue property value. Default value for string array type items, if specified by the app developer
 func (m *AndroidManagedStoreAppConfigurationSchemaItem) GetDefaultStringArrayValue()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.defaultStringArrayValue
-    }
+    return m.defaultStringArrayValue
 }
 // GetDefaultStringValue gets the defaultStringValue property value. Default value for string type items, if specified by the app developer
 func (m *AndroidManagedStoreAppConfigurationSchemaItem) GetDefaultStringValue()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.defaultStringValue
-    }
+    return m.defaultStringValue
 }
 // GetDescription gets the description property value. Description of what the item controls within the application
 func (m *AndroidManagedStoreAppConfigurationSchemaItem) GetDescription()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.description
-    }
+    return m.description
 }
 // GetDisplayName gets the displayName property value. Human readable name
 func (m *AndroidManagedStoreAppConfigurationSchemaItem) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AndroidManagedStoreAppConfigurationSchemaItem) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -245,43 +213,23 @@ func (m *AndroidManagedStoreAppConfigurationSchemaItem) GetFieldDeserializers()(
 }
 // GetIndex gets the index property value. Unique index the application uses to maintain nested schema items
 func (m *AndroidManagedStoreAppConfigurationSchemaItem) GetIndex()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.index
-    }
+    return m.index
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *AndroidManagedStoreAppConfigurationSchemaItem) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetParentIndex gets the parentIndex property value. Index of parent schema item to track nested schema items
 func (m *AndroidManagedStoreAppConfigurationSchemaItem) GetParentIndex()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.parentIndex
-    }
+    return m.parentIndex
 }
 // GetSchemaItemKey gets the schemaItemKey property value. Unique key the application uses to identify the item
 func (m *AndroidManagedStoreAppConfigurationSchemaItem) GetSchemaItemKey()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.schemaItemKey
-    }
+    return m.schemaItemKey
 }
 // GetSelections gets the selections property value. List of human readable name/value pairs for the valid values that can be set for this item (Choice and Multiselect items only)
 func (m *AndroidManagedStoreAppConfigurationSchemaItem) GetSelections()([]KeyValuePairable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.selections
-    }
+    return m.selections
 }
 // Serialize serializes information the current object
 func (m *AndroidManagedStoreAppConfigurationSchemaItem) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -372,79 +320,53 @@ func (m *AndroidManagedStoreAppConfigurationSchemaItem) Serialize(writer i878a80
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AndroidManagedStoreAppConfigurationSchemaItem) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetDataType sets the dataType property value. Data type for a configuration item inside an Android application's custom configuration schema
 func (m *AndroidManagedStoreAppConfigurationSchemaItem) SetDataType(value *AndroidManagedStoreAppConfigurationSchemaItemDataType)() {
-    if m != nil {
-        m.dataType = value
-    }
+    m.dataType = value
 }
 // SetDefaultBoolValue sets the defaultBoolValue property value. Default value for boolean type items, if specified by the app developer
 func (m *AndroidManagedStoreAppConfigurationSchemaItem) SetDefaultBoolValue(value *bool)() {
-    if m != nil {
-        m.defaultBoolValue = value
-    }
+    m.defaultBoolValue = value
 }
 // SetDefaultIntValue sets the defaultIntValue property value. Default value for integer type items, if specified by the app developer
 func (m *AndroidManagedStoreAppConfigurationSchemaItem) SetDefaultIntValue(value *int32)() {
-    if m != nil {
-        m.defaultIntValue = value
-    }
+    m.defaultIntValue = value
 }
 // SetDefaultStringArrayValue sets the defaultStringArrayValue property value. Default value for string array type items, if specified by the app developer
 func (m *AndroidManagedStoreAppConfigurationSchemaItem) SetDefaultStringArrayValue(value []string)() {
-    if m != nil {
-        m.defaultStringArrayValue = value
-    }
+    m.defaultStringArrayValue = value
 }
 // SetDefaultStringValue sets the defaultStringValue property value. Default value for string type items, if specified by the app developer
 func (m *AndroidManagedStoreAppConfigurationSchemaItem) SetDefaultStringValue(value *string)() {
-    if m != nil {
-        m.defaultStringValue = value
-    }
+    m.defaultStringValue = value
 }
 // SetDescription sets the description property value. Description of what the item controls within the application
 func (m *AndroidManagedStoreAppConfigurationSchemaItem) SetDescription(value *string)() {
-    if m != nil {
-        m.description = value
-    }
+    m.description = value
 }
 // SetDisplayName sets the displayName property value. Human readable name
 func (m *AndroidManagedStoreAppConfigurationSchemaItem) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }
 // SetIndex sets the index property value. Unique index the application uses to maintain nested schema items
 func (m *AndroidManagedStoreAppConfigurationSchemaItem) SetIndex(value *int32)() {
-    if m != nil {
-        m.index = value
-    }
+    m.index = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *AndroidManagedStoreAppConfigurationSchemaItem) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetParentIndex sets the parentIndex property value. Index of parent schema item to track nested schema items
 func (m *AndroidManagedStoreAppConfigurationSchemaItem) SetParentIndex(value *int32)() {
-    if m != nil {
-        m.parentIndex = value
-    }
+    m.parentIndex = value
 }
 // SetSchemaItemKey sets the schemaItemKey property value. Unique key the application uses to identify the item
 func (m *AndroidManagedStoreAppConfigurationSchemaItem) SetSchemaItemKey(value *string)() {
-    if m != nil {
-        m.schemaItemKey = value
-    }
+    m.schemaItemKey = value
 }
 // SetSelections sets the selections property value. List of human readable name/value pairs for the valid values that can be set for this item (Choice and Multiselect items only)
 func (m *AndroidManagedStoreAppConfigurationSchemaItem) SetSelections(value []KeyValuePairable)() {
-    if m != nil {
-        m.selections = value
-    }
+    m.selections = value
 }

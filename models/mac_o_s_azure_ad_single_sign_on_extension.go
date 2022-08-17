@@ -29,27 +29,15 @@ func CreateMacOSAzureAdSingleSignOnExtensionFromDiscriminatorValue(parseNode i87
 }
 // GetBundleIdAccessControlList gets the bundleIdAccessControlList property value. An optional list of additional bundle IDs allowed to use the AAD extension for single sign-on.
 func (m *MacOSAzureAdSingleSignOnExtension) GetBundleIdAccessControlList()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.bundleIdAccessControlList
-    }
+    return m.bundleIdAccessControlList
 }
 // GetConfigurations gets the configurations property value. Gets or sets a list of typed key-value pairs used to configure Credential-type profiles. This collection can contain a maximum of 500 elements.
 func (m *MacOSAzureAdSingleSignOnExtension) GetConfigurations()([]KeyTypedValuePairable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.configurations
-    }
+    return m.configurations
 }
 // GetEnableSharedDeviceMode gets the enableSharedDeviceMode property value. Enables or disables shared device mode.
 func (m *MacOSAzureAdSingleSignOnExtension) GetEnableSharedDeviceMode()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.enableSharedDeviceMode
-    }
+    return m.enableSharedDeviceMode
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *MacOSAzureAdSingleSignOnExtension) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -126,19 +114,13 @@ func (m *MacOSAzureAdSingleSignOnExtension) Serialize(writer i878a80d2330e89d268
 }
 // SetBundleIdAccessControlList sets the bundleIdAccessControlList property value. An optional list of additional bundle IDs allowed to use the AAD extension for single sign-on.
 func (m *MacOSAzureAdSingleSignOnExtension) SetBundleIdAccessControlList(value []string)() {
-    if m != nil {
-        m.bundleIdAccessControlList = value
-    }
+    m.bundleIdAccessControlList = value
 }
 // SetConfigurations sets the configurations property value. Gets or sets a list of typed key-value pairs used to configure Credential-type profiles. This collection can contain a maximum of 500 elements.
 func (m *MacOSAzureAdSingleSignOnExtension) SetConfigurations(value []KeyTypedValuePairable)() {
-    if m != nil {
-        m.configurations = value
-    }
+    m.configurations = value
 }
 // SetEnableSharedDeviceMode sets the enableSharedDeviceMode property value. Enables or disables shared device mode.
 func (m *MacOSAzureAdSingleSignOnExtension) SetEnableSharedDeviceMode(value *bool)() {
-    if m != nil {
-        m.enableSharedDeviceMode = value
-    }
+    m.enableSharedDeviceMode = value
 }

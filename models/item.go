@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Item 
+// Item provides operations to manage the collection of activityStatistics entities.
 type Item struct {
     Entity
     // The baseUnitOfMeasureId property
@@ -43,7 +43,7 @@ type Item struct {
     // The unitPrice property
     unitPrice *float64
 }
-// NewItem instantiates a new Item and sets the default values.
+// NewItem instantiates a new item and sets the default values.
 func NewItem()(*Item) {
     m := &Item{
         Entity: *NewEntity(),
@@ -58,27 +58,15 @@ func CreateItemFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487ee
 }
 // GetBaseUnitOfMeasureId gets the baseUnitOfMeasureId property value. The baseUnitOfMeasureId property
 func (m *Item) GetBaseUnitOfMeasureId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.baseUnitOfMeasureId
-    }
+    return m.baseUnitOfMeasureId
 }
 // GetBlocked gets the blocked property value. The blocked property
 func (m *Item) GetBlocked()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.blocked
-    }
+    return m.blocked
 }
 // GetDisplayName gets the displayName property value. The displayName property
 func (m *Item) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Item) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -261,115 +249,59 @@ func (m *Item) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a
 }
 // GetGtin gets the gtin property value. The gtin property
 func (m *Item) GetGtin()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.gtin
-    }
+    return m.gtin
 }
 // GetInventory gets the inventory property value. The inventory property
 func (m *Item) GetInventory()(*float64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.inventory
-    }
+    return m.inventory
 }
 // GetItemCategory gets the itemCategory property value. The itemCategory property
 func (m *Item) GetItemCategory()(ItemCategoryable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.itemCategory
-    }
+    return m.itemCategory
 }
 // GetItemCategoryCode gets the itemCategoryCode property value. The itemCategoryCode property
 func (m *Item) GetItemCategoryCode()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.itemCategoryCode
-    }
+    return m.itemCategoryCode
 }
 // GetItemCategoryId gets the itemCategoryId property value. The itemCategoryId property
 func (m *Item) GetItemCategoryId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.itemCategoryId
-    }
+    return m.itemCategoryId
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. The lastModifiedDateTime property
 func (m *Item) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastModifiedDateTime
-    }
+    return m.lastModifiedDateTime
 }
 // GetNumber gets the number property value. The number property
 func (m *Item) GetNumber()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.number
-    }
+    return m.number
 }
 // GetPicture gets the picture property value. The picture property
 func (m *Item) GetPicture()([]Pictureable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.picture
-    }
+    return m.picture
 }
 // GetPriceIncludesTax gets the priceIncludesTax property value. The priceIncludesTax property
 func (m *Item) GetPriceIncludesTax()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.priceIncludesTax
-    }
+    return m.priceIncludesTax
 }
 // GetTaxGroupCode gets the taxGroupCode property value. The taxGroupCode property
 func (m *Item) GetTaxGroupCode()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.taxGroupCode
-    }
+    return m.taxGroupCode
 }
 // GetTaxGroupId gets the taxGroupId property value. The taxGroupId property
 func (m *Item) GetTaxGroupId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.taxGroupId
-    }
+    return m.taxGroupId
 }
 // GetType gets the type property value. The type property
 func (m *Item) GetType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.type_escaped
-    }
+    return m.type_escaped
 }
 // GetUnitCost gets the unitCost property value. The unitCost property
 func (m *Item) GetUnitCost()(*float64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.unitCost
-    }
+    return m.unitCost
 }
 // GetUnitPrice gets the unitPrice property value. The unitPrice property
 func (m *Item) GetUnitPrice()(*float64) {
-    if m == nil {
-        return nil
-    } else {
-        return m.unitPrice
-    }
+    return m.unitPrice
 }
 // Serialize serializes information the current object
 func (m *Item) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -487,103 +419,69 @@ func (m *Item) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c49
 }
 // SetBaseUnitOfMeasureId sets the baseUnitOfMeasureId property value. The baseUnitOfMeasureId property
 func (m *Item) SetBaseUnitOfMeasureId(value *string)() {
-    if m != nil {
-        m.baseUnitOfMeasureId = value
-    }
+    m.baseUnitOfMeasureId = value
 }
 // SetBlocked sets the blocked property value. The blocked property
 func (m *Item) SetBlocked(value *bool)() {
-    if m != nil {
-        m.blocked = value
-    }
+    m.blocked = value
 }
 // SetDisplayName sets the displayName property value. The displayName property
 func (m *Item) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }
 // SetGtin sets the gtin property value. The gtin property
 func (m *Item) SetGtin(value *string)() {
-    if m != nil {
-        m.gtin = value
-    }
+    m.gtin = value
 }
 // SetInventory sets the inventory property value. The inventory property
 func (m *Item) SetInventory(value *float64)() {
-    if m != nil {
-        m.inventory = value
-    }
+    m.inventory = value
 }
 // SetItemCategory sets the itemCategory property value. The itemCategory property
 func (m *Item) SetItemCategory(value ItemCategoryable)() {
-    if m != nil {
-        m.itemCategory = value
-    }
+    m.itemCategory = value
 }
 // SetItemCategoryCode sets the itemCategoryCode property value. The itemCategoryCode property
 func (m *Item) SetItemCategoryCode(value *string)() {
-    if m != nil {
-        m.itemCategoryCode = value
-    }
+    m.itemCategoryCode = value
 }
 // SetItemCategoryId sets the itemCategoryId property value. The itemCategoryId property
 func (m *Item) SetItemCategoryId(value *string)() {
-    if m != nil {
-        m.itemCategoryId = value
-    }
+    m.itemCategoryId = value
 }
 // SetLastModifiedDateTime sets the lastModifiedDateTime property value. The lastModifiedDateTime property
 func (m *Item) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.lastModifiedDateTime = value
-    }
+    m.lastModifiedDateTime = value
 }
 // SetNumber sets the number property value. The number property
 func (m *Item) SetNumber(value *string)() {
-    if m != nil {
-        m.number = value
-    }
+    m.number = value
 }
 // SetPicture sets the picture property value. The picture property
 func (m *Item) SetPicture(value []Pictureable)() {
-    if m != nil {
-        m.picture = value
-    }
+    m.picture = value
 }
 // SetPriceIncludesTax sets the priceIncludesTax property value. The priceIncludesTax property
 func (m *Item) SetPriceIncludesTax(value *bool)() {
-    if m != nil {
-        m.priceIncludesTax = value
-    }
+    m.priceIncludesTax = value
 }
 // SetTaxGroupCode sets the taxGroupCode property value. The taxGroupCode property
 func (m *Item) SetTaxGroupCode(value *string)() {
-    if m != nil {
-        m.taxGroupCode = value
-    }
+    m.taxGroupCode = value
 }
 // SetTaxGroupId sets the taxGroupId property value. The taxGroupId property
 func (m *Item) SetTaxGroupId(value *string)() {
-    if m != nil {
-        m.taxGroupId = value
-    }
+    m.taxGroupId = value
 }
 // SetType sets the type property value. The type property
 func (m *Item) SetType(value *string)() {
-    if m != nil {
-        m.type_escaped = value
-    }
+    m.type_escaped = value
 }
 // SetUnitCost sets the unitCost property value. The unitCost property
 func (m *Item) SetUnitCost(value *float64)() {
-    if m != nil {
-        m.unitCost = value
-    }
+    m.unitCost = value
 }
 // SetUnitPrice sets the unitPrice property value. The unitPrice property
 func (m *Item) SetUnitPrice(value *float64)() {
-    if m != nil {
-        m.unitPrice = value
-    }
+    m.unitPrice = value
 }

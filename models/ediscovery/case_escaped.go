@@ -59,59 +59,31 @@ func CreateCase_escapedFromDiscriminatorValue(parseNode i878a80d2330e89d26896388
 }
 // GetClosedBy gets the closedBy property value. The user who closed the case.
 func (m *Case_escaped) GetClosedBy()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentitySetable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.closedBy
-    }
+    return m.closedBy
 }
 // GetClosedDateTime gets the closedDateTime property value. The date and time when the case was closed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 func (m *Case_escaped) GetClosedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.closedDateTime
-    }
+    return m.closedDateTime
 }
 // GetCreatedDateTime gets the createdDateTime property value. The date and time when the entity was created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 func (m *Case_escaped) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.createdDateTime
-    }
+    return m.createdDateTime
 }
 // GetCustodians gets the custodians property value. Returns a list of case custodian objects for this case.  Nullable.
 func (m *Case_escaped) GetCustodians()([]Custodianable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.custodians
-    }
+    return m.custodians
 }
 // GetDescription gets the description property value. The case description.
 func (m *Case_escaped) GetDescription()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.description
-    }
+    return m.description
 }
 // GetDisplayName gets the displayName property value. The case name.
 func (m *Case_escaped) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
 // GetExternalId gets the externalId property value. The external case number for customer reference.
 func (m *Case_escaped) GetExternalId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.externalId
-    }
+    return m.externalId
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *Case_escaped) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -318,83 +290,43 @@ func (m *Case_escaped) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
 }
 // GetLastModifiedBy gets the lastModifiedBy property value. The last user who modified the entity.
 func (m *Case_escaped) GetLastModifiedBy()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentitySetable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastModifiedBy
-    }
+    return m.lastModifiedBy
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. The latest date and time when the case was modified. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 func (m *Case_escaped) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    if m == nil {
-        return nil
-    } else {
-        return m.lastModifiedDateTime
-    }
+    return m.lastModifiedDateTime
 }
 // GetLegalHolds gets the legalHolds property value. Returns a list of case legalHold objects for this case.  Nullable.
 func (m *Case_escaped) GetLegalHolds()([]LegalHoldable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.legalHolds
-    }
+    return m.legalHolds
 }
 // GetNoncustodialDataSources gets the noncustodialDataSources property value. Returns a list of case noncustodialDataSource objects for this case.  Nullable.
 func (m *Case_escaped) GetNoncustodialDataSources()([]NoncustodialDataSourceable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.noncustodialDataSources
-    }
+    return m.noncustodialDataSources
 }
 // GetOperations gets the operations property value. Returns a list of case operation objects for this case. Nullable.
 func (m *Case_escaped) GetOperations()([]CaseOperationable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.operations
-    }
+    return m.operations
 }
 // GetReviewSets gets the reviewSets property value. Returns a list of reviewSet objects in the case. Read-only. Nullable.
 func (m *Case_escaped) GetReviewSets()([]ReviewSetable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.reviewSets
-    }
+    return m.reviewSets
 }
 // GetSettings gets the settings property value. The settings property
 func (m *Case_escaped) GetSettings()(CaseSettingsable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.settings
-    }
+    return m.settings
 }
 // GetSourceCollections gets the sourceCollections property value. Returns a list of sourceCollection objects associated with this case.
 func (m *Case_escaped) GetSourceCollections()([]SourceCollectionable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.sourceCollections
-    }
+    return m.sourceCollections
 }
 // GetStatus gets the status property value. The case status. Possible values are unknown, active, pendingDelete, closing, closed, and closedWithError. For details, see the following table.
 func (m *Case_escaped) GetStatus()(*CaseStatus) {
-    if m == nil {
-        return nil
-    } else {
-        return m.status
-    }
+    return m.status
 }
 // GetTags gets the tags property value. Returns a list of tag objects associated to this case.
 func (m *Case_escaped) GetTags()([]Tagable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.tags
-    }
+    return m.tags
 }
 // Serialize serializes information the current object
 func (m *Case_escaped) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -537,103 +469,69 @@ func (m *Case_escaped) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
 }
 // SetClosedBy sets the closedBy property value. The user who closed the case.
 func (m *Case_escaped) SetClosedBy(value ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentitySetable)() {
-    if m != nil {
-        m.closedBy = value
-    }
+    m.closedBy = value
 }
 // SetClosedDateTime sets the closedDateTime property value. The date and time when the case was closed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 func (m *Case_escaped) SetClosedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.closedDateTime = value
-    }
+    m.closedDateTime = value
 }
 // SetCreatedDateTime sets the createdDateTime property value. The date and time when the entity was created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 func (m *Case_escaped) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.createdDateTime = value
-    }
+    m.createdDateTime = value
 }
 // SetCustodians sets the custodians property value. Returns a list of case custodian objects for this case.  Nullable.
 func (m *Case_escaped) SetCustodians(value []Custodianable)() {
-    if m != nil {
-        m.custodians = value
-    }
+    m.custodians = value
 }
 // SetDescription sets the description property value. The case description.
 func (m *Case_escaped) SetDescription(value *string)() {
-    if m != nil {
-        m.description = value
-    }
+    m.description = value
 }
 // SetDisplayName sets the displayName property value. The case name.
 func (m *Case_escaped) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }
 // SetExternalId sets the externalId property value. The external case number for customer reference.
 func (m *Case_escaped) SetExternalId(value *string)() {
-    if m != nil {
-        m.externalId = value
-    }
+    m.externalId = value
 }
 // SetLastModifiedBy sets the lastModifiedBy property value. The last user who modified the entity.
 func (m *Case_escaped) SetLastModifiedBy(value ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentitySetable)() {
-    if m != nil {
-        m.lastModifiedBy = value
-    }
+    m.lastModifiedBy = value
 }
 // SetLastModifiedDateTime sets the lastModifiedDateTime property value. The latest date and time when the case was modified. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 func (m *Case_escaped) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    if m != nil {
-        m.lastModifiedDateTime = value
-    }
+    m.lastModifiedDateTime = value
 }
 // SetLegalHolds sets the legalHolds property value. Returns a list of case legalHold objects for this case.  Nullable.
 func (m *Case_escaped) SetLegalHolds(value []LegalHoldable)() {
-    if m != nil {
-        m.legalHolds = value
-    }
+    m.legalHolds = value
 }
 // SetNoncustodialDataSources sets the noncustodialDataSources property value. Returns a list of case noncustodialDataSource objects for this case.  Nullable.
 func (m *Case_escaped) SetNoncustodialDataSources(value []NoncustodialDataSourceable)() {
-    if m != nil {
-        m.noncustodialDataSources = value
-    }
+    m.noncustodialDataSources = value
 }
 // SetOperations sets the operations property value. Returns a list of case operation objects for this case. Nullable.
 func (m *Case_escaped) SetOperations(value []CaseOperationable)() {
-    if m != nil {
-        m.operations = value
-    }
+    m.operations = value
 }
 // SetReviewSets sets the reviewSets property value. Returns a list of reviewSet objects in the case. Read-only. Nullable.
 func (m *Case_escaped) SetReviewSets(value []ReviewSetable)() {
-    if m != nil {
-        m.reviewSets = value
-    }
+    m.reviewSets = value
 }
 // SetSettings sets the settings property value. The settings property
 func (m *Case_escaped) SetSettings(value CaseSettingsable)() {
-    if m != nil {
-        m.settings = value
-    }
+    m.settings = value
 }
 // SetSourceCollections sets the sourceCollections property value. Returns a list of sourceCollection objects associated with this case.
 func (m *Case_escaped) SetSourceCollections(value []SourceCollectionable)() {
-    if m != nil {
-        m.sourceCollections = value
-    }
+    m.sourceCollections = value
 }
 // SetStatus sets the status property value. The case status. Possible values are unknown, active, pendingDelete, closing, closed, and closedWithError. For details, see the following table.
 func (m *Case_escaped) SetStatus(value *CaseStatus)() {
-    if m != nil {
-        m.status = value
-    }
+    m.status = value
 }
 // SetTags sets the tags property value. Returns a list of tag objects associated to this case.
 func (m *Case_escaped) SetTags(value []Tagable)() {
-    if m != nil {
-        m.tags = value
-    }
+    m.tags = value
 }

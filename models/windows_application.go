@@ -30,11 +30,7 @@ func CreateWindowsApplicationFromDiscriminatorValue(parseNode i878a80d2330e89d26
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *WindowsApplication) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *WindowsApplication) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -77,27 +73,15 @@ func (m *WindowsApplication) GetFieldDeserializers()(map[string]func(i878a80d233
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *WindowsApplication) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetPackageSid gets the packageSid property value. The package security identifier that Microsoft has assigned the application. Optional. Read-only.
 func (m *WindowsApplication) GetPackageSid()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.packageSid
-    }
+    return m.packageSid
 }
 // GetRedirectUris gets the redirectUris property value. Specifies the URLs where user tokens are sent for sign-in or the redirect URIs where OAuth 2.0 authorization codes and access tokens are sent. Only available for applications that support the PersonalMicrosoftAccount signInAudience.
 func (m *WindowsApplication) GetRedirectUris()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.redirectUris
-    }
+    return m.redirectUris
 }
 // Serialize serializes information the current object
 func (m *WindowsApplication) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -129,25 +113,17 @@ func (m *WindowsApplication) Serialize(writer i878a80d2330e89d26896388a3f487eef2
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *WindowsApplication) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *WindowsApplication) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetPackageSid sets the packageSid property value. The package security identifier that Microsoft has assigned the application. Optional. Read-only.
 func (m *WindowsApplication) SetPackageSid(value *string)() {
-    if m != nil {
-        m.packageSid = value
-    }
+    m.packageSid = value
 }
 // SetRedirectUris sets the redirectUris property value. Specifies the URLs where user tokens are sent for sign-in or the redirect URIs where OAuth 2.0 authorization codes and access tokens are sent. Only available for applications that support the PersonalMicrosoftAccount signInAudience.
 func (m *WindowsApplication) SetRedirectUris(value []string)() {
-    if m != nil {
-        m.redirectUris = value
-    }
+    m.redirectUris = value
 }

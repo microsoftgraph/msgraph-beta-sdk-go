@@ -34,19 +34,11 @@ func CreateAttributeMappingParameterSchemaFromDiscriminatorValue(parseNode i878a
 }
 // GetAdditionalData gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AttributeMappingParameterSchema) GetAdditionalData()(map[string]interface{}) {
-    if m == nil {
-        return nil
-    } else {
-        return m.additionalData
-    }
+    return m.additionalData
 }
 // GetAllowMultipleOccurrences gets the allowMultipleOccurrences property value. The given parameter can be provided multiple times (for example, multiple input strings in the Concatenate(string,string,...) function).
 func (m *AttributeMappingParameterSchema) GetAllowMultipleOccurrences()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.allowMultipleOccurrences
-    }
+    return m.allowMultipleOccurrences
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *AttributeMappingParameterSchema) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -105,35 +97,19 @@ func (m *AttributeMappingParameterSchema) GetFieldDeserializers()(map[string]fun
 }
 // GetName gets the name property value. Parameter name.
 func (m *AttributeMappingParameterSchema) GetName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.name
-    }
+    return m.name
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 func (m *AttributeMappingParameterSchema) GetOdataType()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.odataType
-    }
+    return m.odataType
 }
 // GetRequired gets the required property value. true if the parameter is required; otherwise false.
 func (m *AttributeMappingParameterSchema) GetRequired()(*bool) {
-    if m == nil {
-        return nil
-    } else {
-        return m.required
-    }
+    return m.required
 }
 // GetType gets the type property value. The type property
 func (m *AttributeMappingParameterSchema) GetType()(*AttributeType) {
-    if m == nil {
-        return nil
-    } else {
-        return m.type_escaped
-    }
+    return m.type_escaped
 }
 // Serialize serializes information the current object
 func (m *AttributeMappingParameterSchema) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -178,37 +154,25 @@ func (m *AttributeMappingParameterSchema) Serialize(writer i878a80d2330e89d26896
 }
 // SetAdditionalData sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *AttributeMappingParameterSchema) SetAdditionalData(value map[string]interface{})() {
-    if m != nil {
-        m.additionalData = value
-    }
+    m.additionalData = value
 }
 // SetAllowMultipleOccurrences sets the allowMultipleOccurrences property value. The given parameter can be provided multiple times (for example, multiple input strings in the Concatenate(string,string,...) function).
 func (m *AttributeMappingParameterSchema) SetAllowMultipleOccurrences(value *bool)() {
-    if m != nil {
-        m.allowMultipleOccurrences = value
-    }
+    m.allowMultipleOccurrences = value
 }
 // SetName sets the name property value. Parameter name.
 func (m *AttributeMappingParameterSchema) SetName(value *string)() {
-    if m != nil {
-        m.name = value
-    }
+    m.name = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *AttributeMappingParameterSchema) SetOdataType(value *string)() {
-    if m != nil {
-        m.odataType = value
-    }
+    m.odataType = value
 }
 // SetRequired sets the required property value. true if the parameter is required; otherwise false.
 func (m *AttributeMappingParameterSchema) SetRequired(value *bool)() {
-    if m != nil {
-        m.required = value
-    }
+    m.required = value
 }
 // SetType sets the type property value. The type property
 func (m *AttributeMappingParameterSchema) SetType(value *AttributeType)() {
-    if m != nil {
-        m.type_escaped = value
-    }
+    m.type_escaped = value
 }

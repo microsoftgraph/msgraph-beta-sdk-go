@@ -44,11 +44,7 @@ func (m *DeviceManagementConfigurationGroupSettingCollectionInstance) GetFieldDe
 }
 // GetGroupSettingCollectionValue gets the groupSettingCollectionValue property value. A collection of GroupSetting values
 func (m *DeviceManagementConfigurationGroupSettingCollectionInstance) GetGroupSettingCollectionValue()([]DeviceManagementConfigurationGroupSettingValueable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.groupSettingCollectionValue
-    }
+    return m.groupSettingCollectionValue
 }
 // Serialize serializes information the current object
 func (m *DeviceManagementConfigurationGroupSettingCollectionInstance) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -70,7 +66,5 @@ func (m *DeviceManagementConfigurationGroupSettingCollectionInstance) Serialize(
 }
 // SetGroupSettingCollectionValue sets the groupSettingCollectionValue property value. A collection of GroupSetting values
 func (m *DeviceManagementConfigurationGroupSettingCollectionInstance) SetGroupSettingCollectionValue(value []DeviceManagementConfigurationGroupSettingValueable)() {
-    if m != nil {
-        m.groupSettingCollectionValue = value
-    }
+    m.groupSettingCollectionValue = value
 }

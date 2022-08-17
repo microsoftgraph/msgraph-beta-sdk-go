@@ -45,11 +45,7 @@ func (m *TriggerTypesRoot) GetFieldDeserializers()(map[string]func(i878a80d2330e
 }
 // GetRetentionEventTypes gets the retentionEventTypes property value. The retentionEventTypes property
 func (m *TriggerTypesRoot) GetRetentionEventTypes()([]RetentionEventTypeable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.retentionEventTypes
-    }
+    return m.retentionEventTypes
 }
 // Serialize serializes information the current object
 func (m *TriggerTypesRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -71,7 +67,5 @@ func (m *TriggerTypesRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
 }
 // SetRetentionEventTypes sets the retentionEventTypes property value. The retentionEventTypes property
 func (m *TriggerTypesRoot) SetRetentionEventTypes(value []RetentionEventTypeable)() {
-    if m != nil {
-        m.retentionEventTypes = value
-    }
+    m.retentionEventTypes = value
 }

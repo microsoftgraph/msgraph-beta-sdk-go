@@ -40,11 +40,7 @@ func (m *DeviceManagementConfigurationReferenceSettingValue) GetFieldDeserialize
 }
 // GetNote gets the note property value. A note that admin can use to put some contextual information
 func (m *DeviceManagementConfigurationReferenceSettingValue) GetNote()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.note
-    }
+    return m.note
 }
 // Serialize serializes information the current object
 func (m *DeviceManagementConfigurationReferenceSettingValue) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -62,7 +58,5 @@ func (m *DeviceManagementConfigurationReferenceSettingValue) Serialize(writer i8
 }
 // SetNote sets the note property value. A note that admin can use to put some contextual information
 func (m *DeviceManagementConfigurationReferenceSettingValue) SetNote(value *string)() {
-    if m != nil {
-        m.note = value
-    }
+    m.note = value
 }

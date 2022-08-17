@@ -27,11 +27,7 @@ func CreateUnsupportedDeviceConfigurationFromDiscriminatorValue(parseNode i878a8
 }
 // GetDetails gets the details property value. Details describing why the entity is unsupported. This collection can contain a maximum of 1000 elements.
 func (m *UnsupportedDeviceConfiguration) GetDetails()([]UnsupportedDeviceConfigurationDetailable) {
-    if m == nil {
-        return nil
-    } else {
-        return m.details
-    }
+    return m.details
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *UnsupportedDeviceConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -64,11 +60,7 @@ func (m *UnsupportedDeviceConfiguration) GetFieldDeserializers()(map[string]func
 }
 // GetOriginalEntityTypeName gets the originalEntityTypeName property value. The type of entity that would be returned otherwise.
 func (m *UnsupportedDeviceConfiguration) GetOriginalEntityTypeName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.originalEntityTypeName
-    }
+    return m.originalEntityTypeName
 }
 // Serialize serializes information the current object
 func (m *UnsupportedDeviceConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -96,13 +88,9 @@ func (m *UnsupportedDeviceConfiguration) Serialize(writer i878a80d2330e89d268963
 }
 // SetDetails sets the details property value. Details describing why the entity is unsupported. This collection can contain a maximum of 1000 elements.
 func (m *UnsupportedDeviceConfiguration) SetDetails(value []UnsupportedDeviceConfigurationDetailable)() {
-    if m != nil {
-        m.details = value
-    }
+    m.details = value
 }
 // SetOriginalEntityTypeName sets the originalEntityTypeName property value. The type of entity that would be returned otherwise.
 func (m *UnsupportedDeviceConfiguration) SetOriginalEntityTypeName(value *string)() {
-    if m != nil {
-        m.originalEntityTypeName = value
-    }
+    m.originalEntityTypeName = value
 }

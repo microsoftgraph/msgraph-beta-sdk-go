@@ -35,35 +35,19 @@ func CreatePersonInterestFromDiscriminatorValue(parseNode i878a80d2330e89d268963
 }
 // GetCategories gets the categories property value. Contains categories a user has associated with the interest (for example, personal, recipies).
 func (m *PersonInterest) GetCategories()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.categories
-    }
+    return m.categories
 }
 // GetCollaborationTags gets the collaborationTags property value. Contains experience scenario tags a user has associated with the interest. Allowed values in the collection are: askMeAbout, ableToMentor, wantsToLearn, wantsToImprove.
 func (m *PersonInterest) GetCollaborationTags()([]string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.collaborationTags
-    }
+    return m.collaborationTags
 }
 // GetDescription gets the description property value. Contains a description of the interest.
 func (m *PersonInterest) GetDescription()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.description
-    }
+    return m.description
 }
 // GetDisplayName gets the displayName property value. Contains a friendly name for the interest.
 func (m *PersonInterest) GetDisplayName()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.displayName
-    }
+    return m.displayName
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *PersonInterest) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -140,19 +124,11 @@ func (m *PersonInterest) GetFieldDeserializers()(map[string]func(i878a80d2330e89
 }
 // GetThumbnailUrl gets the thumbnailUrl property value. The thumbnailUrl property
 func (m *PersonInterest) GetThumbnailUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.thumbnailUrl
-    }
+    return m.thumbnailUrl
 }
 // GetWebUrl gets the webUrl property value. Contains a link to a web page or resource about the interest.
 func (m *PersonInterest) GetWebUrl()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.webUrl
-    }
+    return m.webUrl
 }
 // Serialize serializes information the current object
 func (m *PersonInterest) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -200,37 +176,25 @@ func (m *PersonInterest) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
 }
 // SetCategories sets the categories property value. Contains categories a user has associated with the interest (for example, personal, recipies).
 func (m *PersonInterest) SetCategories(value []string)() {
-    if m != nil {
-        m.categories = value
-    }
+    m.categories = value
 }
 // SetCollaborationTags sets the collaborationTags property value. Contains experience scenario tags a user has associated with the interest. Allowed values in the collection are: askMeAbout, ableToMentor, wantsToLearn, wantsToImprove.
 func (m *PersonInterest) SetCollaborationTags(value []string)() {
-    if m != nil {
-        m.collaborationTags = value
-    }
+    m.collaborationTags = value
 }
 // SetDescription sets the description property value. Contains a description of the interest.
 func (m *PersonInterest) SetDescription(value *string)() {
-    if m != nil {
-        m.description = value
-    }
+    m.description = value
 }
 // SetDisplayName sets the displayName property value. Contains a friendly name for the interest.
 func (m *PersonInterest) SetDisplayName(value *string)() {
-    if m != nil {
-        m.displayName = value
-    }
+    m.displayName = value
 }
 // SetThumbnailUrl sets the thumbnailUrl property value. The thumbnailUrl property
 func (m *PersonInterest) SetThumbnailUrl(value *string)() {
-    if m != nil {
-        m.thumbnailUrl = value
-    }
+    m.thumbnailUrl = value
 }
 // SetWebUrl sets the webUrl property value. Contains a link to a web page or resource about the interest.
 func (m *PersonInterest) SetWebUrl(value *string)() {
-    if m != nil {
-        m.webUrl = value
-    }
+    m.webUrl = value
 }

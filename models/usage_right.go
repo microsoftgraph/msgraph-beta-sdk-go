@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// UsageRight provides operations to manage the collection of accessReview entities.
+// UsageRight provides operations to manage the collection of activityStatistics entities.
 type UsageRight struct {
     Entity
     // Product id corresponding to the usage right.
@@ -29,11 +29,7 @@ func CreateUsageRightFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3
 }
 // GetCatalogId gets the catalogId property value. Product id corresponding to the usage right.
 func (m *UsageRight) GetCatalogId()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.catalogId
-    }
+    return m.catalogId
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *UsageRight) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -72,19 +68,11 @@ func (m *UsageRight) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
 }
 // GetServiceIdentifier gets the serviceIdentifier property value. Identifier of the service corresponding to the usage right.
 func (m *UsageRight) GetServiceIdentifier()(*string) {
-    if m == nil {
-        return nil
-    } else {
-        return m.serviceIdentifier
-    }
+    return m.serviceIdentifier
 }
 // GetState gets the state property value. The state property
 func (m *UsageRight) GetState()(*UsageRightState) {
-    if m == nil {
-        return nil
-    } else {
-        return m.state
-    }
+    return m.state
 }
 // Serialize serializes information the current object
 func (m *UsageRight) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -115,19 +103,13 @@ func (m *UsageRight) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
 }
 // SetCatalogId sets the catalogId property value. Product id corresponding to the usage right.
 func (m *UsageRight) SetCatalogId(value *string)() {
-    if m != nil {
-        m.catalogId = value
-    }
+    m.catalogId = value
 }
 // SetServiceIdentifier sets the serviceIdentifier property value. Identifier of the service corresponding to the usage right.
 func (m *UsageRight) SetServiceIdentifier(value *string)() {
-    if m != nil {
-        m.serviceIdentifier = value
-    }
+    m.serviceIdentifier = value
 }
 // SetState sets the state property value. The state property
 func (m *UsageRight) SetState(value *UsageRightState)() {
-    if m != nil {
-        m.state = value
-    }
+    m.state = value
 }

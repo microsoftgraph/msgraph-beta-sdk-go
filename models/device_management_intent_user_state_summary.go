@@ -33,27 +33,15 @@ func CreateDeviceManagementIntentUserStateSummaryFromDiscriminatorValue(parseNod
 }
 // GetConflictCount gets the conflictCount property value. Number of users in conflict
 func (m *DeviceManagementIntentUserStateSummary) GetConflictCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.conflictCount
-    }
+    return m.conflictCount
 }
 // GetErrorCount gets the errorCount property value. Number of error users
 func (m *DeviceManagementIntentUserStateSummary) GetErrorCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.errorCount
-    }
+    return m.errorCount
 }
 // GetFailedCount gets the failedCount property value. Number of failed users
 func (m *DeviceManagementIntentUserStateSummary) GetFailedCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.failedCount
-    }
+    return m.failedCount
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *DeviceManagementIntentUserStateSummary) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -112,19 +100,11 @@ func (m *DeviceManagementIntentUserStateSummary) GetFieldDeserializers()(map[str
 }
 // GetNotApplicableCount gets the notApplicableCount property value. Number of not applicable users
 func (m *DeviceManagementIntentUserStateSummary) GetNotApplicableCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.notApplicableCount
-    }
+    return m.notApplicableCount
 }
 // GetSuccessCount gets the successCount property value. Number of succeeded users
 func (m *DeviceManagementIntentUserStateSummary) GetSuccessCount()(*int32) {
-    if m == nil {
-        return nil
-    } else {
-        return m.successCount
-    }
+    return m.successCount
 }
 // Serialize serializes information the current object
 func (m *DeviceManagementIntentUserStateSummary) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -166,31 +146,21 @@ func (m *DeviceManagementIntentUserStateSummary) Serialize(writer i878a80d2330e8
 }
 // SetConflictCount sets the conflictCount property value. Number of users in conflict
 func (m *DeviceManagementIntentUserStateSummary) SetConflictCount(value *int32)() {
-    if m != nil {
-        m.conflictCount = value
-    }
+    m.conflictCount = value
 }
 // SetErrorCount sets the errorCount property value. Number of error users
 func (m *DeviceManagementIntentUserStateSummary) SetErrorCount(value *int32)() {
-    if m != nil {
-        m.errorCount = value
-    }
+    m.errorCount = value
 }
 // SetFailedCount sets the failedCount property value. Number of failed users
 func (m *DeviceManagementIntentUserStateSummary) SetFailedCount(value *int32)() {
-    if m != nil {
-        m.failedCount = value
-    }
+    m.failedCount = value
 }
 // SetNotApplicableCount sets the notApplicableCount property value. Number of not applicable users
 func (m *DeviceManagementIntentUserStateSummary) SetNotApplicableCount(value *int32)() {
-    if m != nil {
-        m.notApplicableCount = value
-    }
+    m.notApplicableCount = value
 }
 // SetSuccessCount sets the successCount property value. Number of succeeded users
 func (m *DeviceManagementIntentUserStateSummary) SetSuccessCount(value *int32)() {
-    if m != nil {
-        m.successCount = value
-    }
+    m.successCount = value
 }
